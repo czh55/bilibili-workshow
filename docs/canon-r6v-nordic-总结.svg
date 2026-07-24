@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="10524" viewBox="0 0 1320 10524">
-  <foreignObject x="0" y="0" width="1320" height="10524">
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="11183" viewBox="0 0 1320 11183">
+  <foreignObject x="0" y="0" width="1320" height="11183">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
 * { box-sizing: border-box; }
@@ -226,13 +226,35 @@ tr:nth-child(even) td { background: #f3f6fb; }
 .conclusion h3 { margin: 0 0 9px; color: #aef6df; font-size: 21px; }
 .conclusion p, .conclusion li { color: #f5f8ff; }
 .footer { margin-top: 28px; color: #77859a; text-align: center; font-size: 14px; }
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.evidence-item {
+  padding: 21px;
+  border-radius: 17px;
+  border: 1px solid #d7e1ef;
+  background: #fff;
+}
+.evidence-item strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 20px;
+}
+.evidence-strong { border-top: 6px solid #1d9b70; }
+.evidence-strong strong { color: #087456; }
+.evidence-medium { border-top: 6px solid #e6a323; }
+.evidence-medium strong { color: #985b05; }
+.evidence-weak { border-top: 6px solid #cf5555; }
+.evidence-weak strong { color: #a92f2f; }
 </style>
-      
-<div class="container">
+      <div class="container">
   <div class="hero">
     <div class="eyebrow">BILIBILI VIDEO NOTES · 12分04秒</div>
-    <h1>佳能 R6 V 北欧实拍：性能之外，关键是让相机一直在手上</h1>
-    <p class="subtitle">一个月与挪威、霞慕尼高强度使用后，R6 V 的真正价值不是孤立参数，而是紧凑机身、双原生 ISO 与 Open Gate 共同降低“带不带、怎么拍”的决策成本；代价是海量存储、部分操作绕路和按键误触。</p>
+    <h1>佳能 R6 V 一个月北欧实拍：先让相机在场，再谈规格</h1>
+    <p class="subtitle">重新逐段核对 307 个转录片段后，R6 V 的核心价值仍不是单项参数领先，而是紧凑机身、两档基准 ISO 与 Open Gate 共同降低携带、曝光和构图摩擦；与此同时，近 2TB 素材、菜单绕路和误触把效率成本转移到了存储与操作端。</p>
     <div class="meta">
       <span class="tag">UP 主：刘承宪Allen</span>
       <span class="tag">Canon EOS R6 V</span>
@@ -260,7 +282,7 @@ tr:nth-child(even) td { background: #f3f6fb; }
         <div class="arrow">→</div>
         <div class="node node-green"><strong>提高画面发生率</strong><span>相机在手上<br/>才有机会抓到突发光影</span></div>
       </div>
-      <p class="map-note">视频的价值链不是“规格高所以成功”，而是“愿意带 → 来得及拍 → 有更多素材 → 更愿意继续创作”。</p>
+      <p class="map-note">完整因果链是“体积小而愿意带 → 高 ISO 与 Open Gate 减少现场停顿 → 来得及抓住光影 → 可用素材增加 → 正反馈促使继续创作”；规格只有进入这条链路才产生价值。</p>
     </div>
   </div>
 
@@ -271,6 +293,24 @@ tr:nth-child(even) td { background: #f3f6fb; }
         <div class="wrong"><b>常见预期</b><br/>参数更强、格式更多，就应该替代所有旧机；防雨与不过热也能从一次旅行直接下定论。</div>
         <div class="arrow">→</div>
         <div class="right"><b>视频证据</b><br/>UP 主仍把拍鸟主任务交给 R5 Mark II；R6 V 更像高画质旅行、Vlog 与电影感创作机。雨淋和散热结论只覆盖本次条件。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">✓</span>证据强度：哪些能直接参考，哪些必须自己复测</h2>
+    <div class="evidence-grid">
+      <div class="evidence-item evidence-strong">
+        <strong>较强：明确的工作流记录</strong>
+        一个月使用、早 9 点至下午 4 点、近 2TB 素材与 5 块电池，均有明确叙述。可作为同类高强度旅拍的起始预算，但仍需按格式和预录状态修正。
+      </div>
+      <div class="evidence-item evidence-medium">
+        <strong>中等：单机单次环境经验</strong>
+        挪威低温潮湿和普通雨天未出现风扇进水异常，室内约 5 分钟 Open Gate RAW 未过热。能消除“必然出问题”的担忧，不能证明长期无风险。
+      </div>
+      <div class="evidence-item evidence-weak">
+        <strong>不足：视频没有证明</strong>
+        没有实验室同场横评、防水等级验证、长时间高温测试，也没有量化手机、口袋相机与 R5 Mark II 的画质差距；这些用途不能直接据此下结论。
       </div>
     </div>
   </div>
@@ -485,9 +525,8 @@ tr:nth-child(even) td { background: #f3f6fb; }
     </div>
   </div>
 
-  <div class="footer">根据 B 站视频《带佳能 R6 V 去北欧，实拍一个月后我想说》整理 · 观点归属 UP 主刘承宪Allen · 2026-07-24</div>
+  <div class="footer">根据 B 站视频《带佳能 R6 V 去北欧，实拍一个月后我想说》重新转录整理 · Whisper small 中文 · 307 个字幕片段 · 观点归属 UP 主刘承宪Allen · 2026-07-24</div>
 </div>
-
     </div>
   </foreignObject>
 </svg>
