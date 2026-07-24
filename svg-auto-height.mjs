@@ -39,8 +39,8 @@ export function estimateHeightFromHtml(html, width = 1320) {
   const listItems = n(/<li>/g);
   const h1 = n(/<h1>/g);
 
-  let h = 48; // body padding
-  h += h1 * 72 + 36; // title block
+  let h = 48;
+  h += h1 * 72 + 36;
   h += n(/class="legend"/g) * 44;
   h += maps * 580;
   h += insightKey * 160;
@@ -52,9 +52,8 @@ export function estimateHeightFromHtml(html, width = 1320) {
   h += pres * 110;
   h += Math.max(0, tableRows) * 30;
   h += listItems * 20;
-  h += 64; // footer
+  h += 64;
 
-  // 宽表格/长代码块略增
   if (html.length > 80000) h += 400;
   else if (html.length > 40000) h += 200;
 
@@ -156,7 +155,7 @@ export async function measureHtmlHeight(html, width = 1320) {
     ws.close();
     const measured = Number(result?.value);
     if (!Number.isFinite(measured) || measured < 100) return null;
-    return measured + 24; // 底部缓冲
+    return measured + 24;
   } catch (err) {
     if (process.env.SVG_MEASURE_DEBUG) console.error('[svg-auto-height]', err);
     return null;
@@ -196,7 +195,7 @@ export function fixSvgXml(svg) {
 export async function buildSvg({ css, body, width = 1320 }) {
   const innerHtml = `<style>${css}</style>${body}`;
   const measuredHeight = await resolveSvgHeight(innerHtml, width);
-  const height = Math.ceil(measuredHeight * 1.5); // 50% buffer: CSS gradients, shadows, Chinese font rendering
+  const height = Math.ceil(measuredHeight * 1.5);
   let svg = wrapForeignObjectSvg({ css, body, width, height });
   svg = fixSvgXml(svg);
   return { svg, height };
