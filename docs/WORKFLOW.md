@@ -493,10 +493,14 @@ XML 注意事项：
 git add "docs/{slug}-图文实录.html" "docs/{slug}-理性分析.svg" \
   "docs/assets/{slug}" docs/index.json
 git commit -m "bilibili: add dual-view summary for {视频标题}"
-git push -u origin "{目标分支}"
+git checkout main
+git pull origin main
+git push -u origin main
 ```
 
-网络失败按 4、8、16、32 秒退避重试；冲突时 rebase、解决冲突并重新自检。
+**默认推送目标始终为 `main`。** 所有 webhook/trigger 完成后必须将变更推送到 `origin/main`；禁止只停在 feature 分支。GitHub Pages 从 `main` 的 `docs/` 部署。
+
+网络失败按 4、8、16、32 秒退避重试；冲突时 `git pull --rebase origin main` 后再 push，解决冲突并重新自检。
 
 ---
 
@@ -519,3 +523,4 @@ rm -f "{音频文件}" "{视频文件}"
 - SVG 必须使用 `svg-auto-height.mjs` 和原有分析视觉框架
 - 不使用 `rsvg-convert` 或 Inkscape 渲染 SVG
 - 自动化产出只写入 `docs/`；临时生成脚本除外
+- 必须将最终变更推送到 `main`；Pages 才能展示
