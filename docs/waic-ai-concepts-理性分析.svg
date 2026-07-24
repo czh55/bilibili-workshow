@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7781" viewBox="0 0 1320 7781">
+  <foreignObject x="0" y="0" width="1320" height="7781">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}.tag-red{background:#fee2e2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:20px 0}.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 24px;text-align:center;min-width:150px;font-weight:700;font-size:16px;color:#1e40af}.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}.speaker-host{background:#dbeafe;color:#1e40af}.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#64748b;font-size:13px;padding:32px 0 16px}.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+</style>
+      
+<div class="container">
+  <h1>WAIC AI 热词：从“身体”到“行动”，再到尚未实现的 AGI</h1>
+  <div class="meta">
+    <span class="tag tag-blue">理性分析</span>
+    <span class="tag tag-green">机器人与智能体</span>
+    <span class="tag tag-purple">06:50</span>
+    <span class="tag tag-gray">有点在李</span>
+  </div>
+  <a class="source-link" href="https://b23.tv/dbY41IV">视频来源：b23.tv/dbY41IV</a>
+  <div class="summary-line"><b>核心判断：</b>视频用套娃建立了一套便于入门的关系模型：本体提供身体，大模型提供认知，具身智能把认知接入身体，智能体组织工具与任务，算力支撑运行；AGI 则是尚不能在展馆中找到“真身”的远期目标。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><span class="timeline-time">00:49</span><span class="timeline-text">明确任务：把新闻热词拆成大白话，并以 WAIC 展品作例子。</span></div>
+    <div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">先定义机器人“本体”，再按人形、四足、轮式、机械臂区分身体形态。</span></div>
+    <div class="timeline-item"><span class="timeline-time">02:09</span><span class="timeline-text">把具身智能概括为“把聪明装进身体”，大模型被比作大脑。</span></div>
+    <div class="timeline-item"><span class="timeline-time">02:45</span><span class="timeline-text">智慧药房以三种机器人协作演示“跨本体”。</span></div>
+    <div class="timeline-item"><span class="timeline-time">03:04</span><span class="timeline-text">世界模型被比作行动前的沙盘推演；物理 AI 只做简述。</span></div>
+    <div class="timeline-item"><span class="timeline-time">03:27</span><span class="timeline-text">智能体被定义为能拆任务、调用工具并完成工作流的执行层。</span></div>
+    <div class="timeline-item"><span class="timeline-time">04:51</span><span class="timeline-text">业内受访者强调成本、可靠性、适用性和场景匹配。</span></div>
+    <div class="timeline-item"><span class="timeline-time">05:21</span><span class="timeline-text">算力被称为所有路线都绕不开的“口粮”。</span></div>
+    <div class="timeline-item"><span class="timeline-time">05:47</span><span class="timeline-text">AGI 被放在最内层，但视频明确称它尚未真正出现。</span></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络：能力链与资源链不是一回事</h2>
+    <div class="diagram">
+      <div class="node">本体<br/><small>身体 / 执行器</small></div>
+      <div class="arrow">＋</div>
+      <div class="node">大模型<br/><small>认知能力</small></div>
+      <div class="arrow">→</div>
+      <div class="node node-green">具身智能<br/><small>认知进入身体</small></div>
+      <div class="arrow">→</div>
+      <div class="node node-green">智能体<br/><small>拆解并执行任务</small></div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">场景结果<br/><small>可靠地完成工作</small></div>
+    </div>
+    <div class="diagram">
+      <div class="node node-orange">算力：贯穿模型训练与运行的资源底座</div>
+      <div class="arrow">→</div>
+      <div class="node">世界模型 / 物理 AI：片中仅作概念铺垫</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">AGI：远期愿景，不是当前展品</div>
+    </div>
+    <p class="relation"><b>关系判断：</b>第一行是“怎样形成可执行能力”，第二行分别标出资源依赖、未充分展开的能力模块与远期目标。把它们全部排成一条成熟度阶梯会误导决策。</p>
+  </div>
+
+  <div class="correction">
+    <h3>认知纠偏：没有智能体的机器人，不等于“花架子”</h3>
+    <p>视频中的业内受访者指出，预编程或遥控路线同样可能在特定场景有效。评价重点应从“AI 含量”转向任务完成质量：成本是否可接受、可靠性是否足够、是否适配环境和流程。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">一、先问身体是否匹配任务，而不是先追求“像人”</h2>
+    <div class="card">
+      <h3>本体：硬件形态定义了它能怎样接触世界</h3>
+      <p><b>在讲什么：</b>本体包括骨架、关节、胳膊腿和外壳等硬件；人形、四足、轮式、机械臂服务于不同的运动与操作需求。</p>
+      <p><b>关键理解：</b>外形不是统一的优劣排名。四足强调稳定与越障，轮式适合平整空间移动，机械臂长期用于固定工位。</p>
+      <div class="action"><b>怎么用：</b>选型时先列地面条件、负载、精度、安全边界与维护要求，再讨论是否需要人形。</div>
+      <div class="quote"><span class="speaker speaker-host">UP 主观点</span>“所以你看，长什么样子根本不重要，它们都叫机器人。” [01:54–01:58]</div>
+      <div class="pitfall"><b>适用边界：</b>“不重要”是强调不要只按外形判断，不代表结构差异真的不影响能力与成本。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">二、“大脑进入身体”仍需感知、控制和环境约束</h2>
+    <div class="card card-purple">
+      <h3>具身智能、世界模型与物理 AI</h3>
+      <p><b>在讲什么：</b>视频把具身智能概括为“把聪明装进身体”；把世界模型比作行动前的沙盘推演，把物理 AI 说成在推演中体现物理规律。</p>
+      <p><b>关键理解：</b>这些比喻适合建立方向感，但没有展开训练方式、控制闭环、传感器误差或仿真到现实的差距。</p>
+      <div class="action"><b>怎么用：</b>听到“具身”时追问四件事：感知输入是什么、决策如何产生、动作怎样闭环、失败如何恢复。</div>
+      <div class="quote"><span class="speaker speaker-host">UP 主观点</span>“合起来就是把聪明装进身体。” [02:20–02:22]</div>
+      <div class="pitfall"><b>证据强度：</b>智慧药房画面能证明多种机器人在同一流程出现；“共享同一个大脑”和“不到 90 秒”是视频陈述，本片未展示独立验证。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">三、智能体的价值不在标签，而在闭环完成任务</h2>
+    <div class="card card-green">
+      <h3>从模型回答问题，到系统调用工具</h3>
+      <p><b>在讲什么：</b>智能体被描述为给大脑接上眼睛、手和工具，能够拆解目标、调用工具并完成复杂工作流。</p>
+      <p><b>关键理解：</b>智能体是任务组织方式，不限于机器人。软件、手机、眼镜和实体机器人都可以成为载体。</p>
+      <div class="action"><b>怎么用：</b>验收智能体时观察完整链路：接收目标 → 规划步骤 → 调用工具 → 检查结果 → 异常回退。</div>
+      <div class="quote"><span class="speaker speaker-host">UP 主观点</span>“它们不仅能思考，还能主动拆解任务、调用工具，并最终完成复杂的工作流程。” [03:54–03:59]</div>
+      <div class="pitfall"><b>避坑：</b>“首款”“原生”等称号不是效果证据。比较产品时统一任务、成功率、耗时、人工接管次数与总成本。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>场景匹配优先于技术路线</h3>
+      <p><b>在讲什么：</b>受访业内人士不只考量“聪明程度”，还看成本、可靠性和适用性。</p>
+      <p><b>关键理解：</b>可预测的固定流程可能更适合预编程；环境开放、任务多变时，智能体的灵活性才更有价值。</p>
+      <div class="action"><b>怎么用：</b>先给任务按变化频率、失败代价和可回退性分级，再选择遥控、规则、智能体或混合路线。</div>
+      <div class="quote"><span class="speaker speaker-guest">业内受访者</span>“更重要的是这个技术是否匹配这个场景，最合适的还是最可靠的。” [05:09–05:14]</div>
+      <div class="pitfall"><b>方法边界：</b>视频没有给出量化阈值；具体采购和部署仍需现场测试与安全评估。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">四、算力是约束，AGI 是目标：不要混为“现成功能”</h2>
+    <div class="card">
+      <h3>看不见的资源底座与尚未出现的终点</h3>
+      <p><b>在讲什么：</b>算力支撑模型和智能体运行；AGI 被描绘为能跨任务举一反三的通用能力。</p>
+      <p><b>关键理解：</b>算力增加不自动等于任务更可靠；AGI 也不是当前产品只要扩大规模就必然具备的标签。</p>
+      <div class="action"><b>怎么用：</b>算力预算要绑定响应时延、吞吐、能耗和单位任务成本；面对 AGI 叙事则要求明确当前可交付能力。</div>
+      <div class="quote"><span class="speaker speaker-host">UP 主观点</span>“AGI 离我们到底多远，没人能说得准。” [06:14–06:16]</div>
+      <div class="pitfall"><b>证据边界：</b>片中机柜参数与成本降幅来自现场介绍，未提供测量口径；AGI 时间表被明确标为未知。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：遇到这些词时，分别追问什么</h3>
+    <table>
+      <tr><th>概念</th><th>视频中的角色</th><th>可见证据</th><th>决策追问</th></tr>
+      <tr><td>本体</td><td>身体与执行硬件</td><td>展馆中的人形、四足、轮式、机械臂</td><td>运动、负载、精度和安全是否匹配任务？</td></tr>
+      <tr><td>大模型</td><td>“大脑”的直观比喻</td><td>片中以模型名称举例，未做性能测试</td><td>在目标任务上的准确率、时延和成本如何？</td></tr>
+      <tr><td>具身智能</td><td>把智能接入身体</td><td>智慧药房等流程展示</td><td>感知—决策—动作是否形成可靠闭环？</td></tr>
+      <tr><td>世界模型 / 物理 AI</td><td>行动前推演及物理规律</td><td>仅有概念比喻</td><td>预测对象、误差和现实迁移如何验证？</td></tr>
+      <tr><td>智能体</td><td>拆任务、调工具、完成流程</td><td>电网、气象、手机等现场案例</td><td>成功率、异常回退和人工接管成本如何？</td></tr>
+      <tr><td>算力</td><td>共同资源底座</td><td>超节点机柜与交换柜</td><td>单位任务成本、能耗、吞吐和利用率如何？</td></tr>
+      <tr><td>AGI</td><td>跨领域通用能力愿景</td><td>视频明确称展馆里找不到“真身”</td><td>当前到底交付什么，而非何时实现愿景？</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-purple">
+    <h3>立场与证据分层</h3>
+    <ul>
+      <li><span class="tag tag-green">可直接观察</span>展馆中存在多种机器人、智慧药房、智能体展台和算力机柜；视频画面可以回看。</li>
+      <li><span class="tag tag-purple">视频陈述</span>展会规模、概念年份、药房耗时、机柜卡数和通信成本降幅均由片中口播给出，未在本片独立验证。</li>
+      <li><span class="tag tag-blue">基于原文的推断</span>这些概念更适合按“身体—认知—执行—资源—目标”分层，而不是按热度或先进程度排队。</li>
+      <li><span class="tag tag-orange">识别风险</span>Whisper 对专名有近音误识；分析采用画面与上下文校正概念，但引用时间仍回溯到原始分段。</li>
+    </ul>
+  </div>
+
+  <div class="card card-red">
+    <h3>避坑总结</h3>
+    <ul>
+      <li>不要把“长得像人”当作通用性或先进性的充分证据。</li>
+      <li>不要把“使用大模型”直接等同于形成了可恢复、可验收的智能体闭环。</li>
+      <li>不要因机器人采用预编程或遥控，就忽略它在固定场景里的可靠价值。</li>
+      <li>不要用“首款”“原生”“AGI”之类称号替代同任务、同口径测试。</li>
+      <li>不要把展台口播参数当作独立测评结论；关键数字需另行核验。</li>
+    </ul>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <p>概念关系的关键不是谁包住谁，而是谁为任务提供身体、认知、执行和资源。最终价值落在场景结果，而不是技术标签。</p>
+    <h3>行动清单</h3>
+    <ol>
+      <li>把目标写成可验收任务，并注明环境、时限、精度和失败代价。</li>
+      <li>分别检查本体能力、模型能力、工具调用链与算力成本，避免整包概念。</li>
+      <li>用同任务对比预编程、遥控、智能体与混合路线。</li>
+      <li>记录成功率、人工接管、恢复时间、单位任务成本和安全事件。</li>
+      <li>对展台参数、历史年份与“首款”声明做独立核验后再决策。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从“哪个词更新、哪个产品更像未来”，转向“哪套能力链能在我的场景里持续、可靠、可负担地完成任务”。</p>
+  </div>
+
+  <div class="footer">基于视频完整 Whisper 转录与关键画面整理 · 2026-07-24 · 原视频 06:50</div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="跟随 UP 主逛 WAIC，用套娃顺序理解机器人本体、具身智能、智能体、算力与 AGI。">
+  <title>在 WAIC 一口气看懂 AI 热词｜图文实录</title>
+  <style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+  a{color:#b45309}
+  .container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+  header{padding:36px;background:linear-gradient(135deg,#fff7ed,#fffbeb);border:1px solid #fed7aa;border-radius:24px}
+  .eyebrow{margin:0 0 8px;color:#c2410c;font-weight:800;letter-spacing:.08em}
+  h1{font-size:clamp(32px,6vw,54px);line-height:1.2;margin:0 0 18px;color:#1c1917}
+  h2{font-size:30px;line-height:1.35;margin:0 0 18px;color:#292524}
+  h3{font-size:22px;margin:0 0 10px;color:#44403c}
+  .lead{font-size:19px;color:#57534e;margin:0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+  .meta span{padding:5px 12px;border-radius:999px;background:#fff;border:1px solid #fed7aa;color:#9a3412;font-size:14px}
+  .source{font-weight:700}
+  .toc{margin:28px 0 52px;padding:24px;background:#fff;border:1px solid #e7e5e4;border-radius:16px}
+  .toc strong{display:block;margin-bottom:10px}
+  .toc ol{margin:0;padding-left:24px;columns:2}
+  .documentary{font-size:17px}
+  .story-section{margin:56px 0;scroll-margin-top:24px}
+  .kicker{display:inline-block;margin-bottom:8px;color:#b45309;font-size:14px;font-weight:800;letter-spacing:.05em}
+  .quote{margin:22px 0;padding:18px 22px;background:#fff7ed;border-left:4px solid #f97316;border-radius:0 12px 12px 0;color:#7c2d12;font-size:18px}
+  .speaker{font-weight:800;color:#9a3412}
+  img{display:block;max-width:100%;height:auto}
+  figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+  figcaption{padding:14px 18px;color:#57534e}
+  .note{padding:18px 22px;border-radius:14px;background:#f5f5f4;color:#57534e}
+  .transcript-section{margin-top:72px;padding-top:42px;border-top:4px solid #e7e5e4}
+  .transcript-note{color:#78716c}
+  .transcript-list{list-style:none;padding:0;margin:24px 0 0}
+  .transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+  .transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+  .transcript-row p{margin:0;overflow-wrap:anywhere}
+  footer{margin-top:48px;text-align:center;color:#78716c;font-size:14px}
+  @media(max-width:640px){
+    .container{padding:28px 18px 56px}
+    header{padding:24px 20px}
+    .toc ol{columns:1}
+    .transcript-row{grid-template-columns:56px 1fr;gap:10px}
+  }
+</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header>
+    <p class="eyebrow">WAIC 现场 · 6 分 50 秒概念漫游</p>
+    <h1>在 WAIC，用一只套娃拆开 AI 热词</h1>
+    <p class="lead">从看得见的机器人本体，到让它行动的大模型与智能体，再一路摸到算力和仍未落地的 AGI：UP 主“有点在李”把展馆逛成了一堂大白话概念课。</p>
+    <div class="meta">
+      <span>发布整理：2026-07-24</span>
+      <span>视频时长：06:50</span>
+      <span>转录：Whisper small / Chinese</span>
+      <span>UP 主：有点在李</span>
+    </div>
+    <a class="source" href="https://b23.tv/dbY41IV">打开 B 站原视频 ↗</a>
+  </header>
+
+  <nav class="toc" aria-label="文章目录">
+    <strong>跟着视频往前走</strong>
+    <ol>
+      <li><a href="#opening">套娃开场与 WAIC</a></li>
+      <li><a href="#body">机器人先从“身体”说起</a></li>
+      <li><a href="#brain">把聪明装进身体</a></li>
+      <li><a href="#agent">智能体开始干活</a></li>
+      <li><a href="#compute">算力与 AGI 收尾</a></li>
+      <li><a href="#transcript">完整时间戳转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="opening">
+      <span class="kicker">00:00—00:58</span>
+      <h2>先别被热词绕晕，拿套娃比一比</h2>
+      <p>视频从一段办公室里的对话开始：人形机器人、具身智能、物理 AI、世界模型挤在一起，听着都厉害，却很难立刻说清彼此的关系。镜头前，UP 主掏出一只层层嵌套的玩具，试图给这些概念找一个直观的顺序。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-01.jpg" alt="UP 主在办公室举起黄色套娃，用它比喻层层嵌套的 AI 概念" loading="lazy">
+        <figcaption>[00:12] 一只套娃成为全片的叙事道具：每打开一层，就解释一个更靠里的概念。</figcaption>
+      </figure>
+      <p>画面随后切到世界人工智能大会。UP 主给出的现场规模是“一千多家公司、十万平方米”，任务也很明确：把新闻里反复出现的词拆成大白话，同时看看展馆里的代表性产品。</p>
+      <blockquote class="quote"><span class="speaker">UP 主：</span>“把新闻里那些天天念叨、你听懵的词，给你拆成大白话。” <time>[00:49]</time></blockquote>
+    </section>
+
+    <section class="story-section" id="body">
+      <span class="kicker">00:58—02:09</span>
+      <h2>第一层是“本体”：先看机器人长什么样</h2>
+      <p>讲解从展馆里最容易看见的东西开始。本体就是机器人的骨架、胳膊、腿、关节和外壳等硬件；专门制造这些硬件的是本体厂商，与之相对的是给机器人提供“大脑”的模型公司。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-02.jpg" alt="展墙把人形机器人的骨架、结构件和外壳分开展示" loading="lazy">
+        <figcaption>[01:04] 人形机器人的硬件被拆开展示，正好对应“本体就是这副骨架”的解释。</figcaption>
+      </figure>
+      <p>接下来是一轮快速分类：像人的叫人形机器人，四条腿的常被叫作机器狗，也可能做成机器猫、机器马；带轮子的机器人可以在商场带路、在酒店送餐；工业机械臂则是更早进入生产场景的一类。视频并不把外形当作高下判断，而是强调身体形态要匹配任务。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-03.jpg" alt="展馆中的四足轮足机器人在坡道和台阶前演示运动能力" loading="lazy">
+        <figcaption>[01:31] 四足轮足机器人在障碍区演示；这一类本体突出站稳、越障与搜救等场景能力。</figcaption>
+      </figure>
+      <p>视频还提到机械臂在 1961 年出现、robot 一词可追溯到 1920 年。这里的年份属于视频陈述；页面不另作外部考证。叙事真正要转向的是：身体有了，怎样让它不再只是按固定动作运行？</p>
+    </section>
+
+    <section class="story-section" id="brain">
+      <span class="kicker">02:09—03:19</span>
+      <h2>第二层是具身智能：让“大脑”进入身体</h2>
+      <p>UP 主把“具身智能”拆成两半解释：具身是有身体，智能是变聪明，合起来就是“把聪明装进身体”。随后，大模型被放进了“大脑”的比喻里。视频认为近年的模型能力，让此前推进缓慢的机器人智能重新获得了加速度。</p>
+      <p>蚂蚁灵波机器人智慧药房是这一段的具体例子。三台外形不同的机器人从问诊、抓药到打包协同工作，视频称全流程不到 90 秒，并用“跨本体”描述多副身体共享同一套“大脑”的方式。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-04.jpg" alt="WAIC 展馆内蚂蚁灵波机器人智慧药房的三台不同形态机器人" loading="lazy">
+        <figcaption>[02:49] 智慧药房把“跨本体”变成看得见的现场：三种身体围绕同一流程协作。</figcaption>
+      </figure>
+      <p>接着出现两个只做了简要铺垫的词。世界模型被比作机器人脑中的“预演”：做事前先在沙盘里走一遍；物理 AI 则被描述为让沙盘遵守物理规律的能力。UP 主明确说这两个词值得另开一期，因此本片并没有给出完整技术定义。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-05.jpg" alt="UP 主用双手比划沙盘推演，解释世界模型在行动前进行预测" loading="lazy">
+        <figcaption>[03:08] “先在沙盘里推演一遍，想明白了再动手”是视频对世界模型的直观比喻。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="agent">
+      <span class="kicker">03:19—05:14</span>
+      <h2>第三层是智能体：不只思考，还要调用工具做完事</h2>
+      <p>身体和大脑都到位后，视频追问“谁来当家干活”。智能体的角色由此出现：它给“大脑”接上眼睛、手和各种工具，能够拆解任务、调用工具，并完成一段工作流程。智能体可以组合成软件，也可以进入手机、眼镜，机器人则被说成智能体“最大的一副身体”。</p>
+      <p>现场例子快速掠过：百度的搭建工具会根据一句目标拆步骤，南方电网“大瓦特”负责电网体检，气象场景也有智能体，智能体手机则尝试自动点击屏幕和输入信息。视频面对“全球首款”之类的营销口号保持了距离，没有替产品裁判，只把是否好用留给用户判断。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-06.jpg" alt="UP 主站在南方电网大瓦特智能体展台前介绍电网体检应用" loading="lazy">
+        <figcaption>[04:05] 南方电网“大瓦特”被作为垂直场景智能体的例子，任务是辅助电网体检。</figcaption>
+      </figure>
+      <p>这一段也专门拆掉了一个误区：没有搭载智能体、仍靠预编程或遥控的机器人，不等于没有用。受访业内人士把评价维度拉回成本、可靠性和适用性，认为技术路线是否匹配场景，比单纯追求“更聪明”更重要。</p>
+      <blockquote class="quote"><span class="speaker">受访业内人士：</span>“更重要的是这个技术是否匹配这个场景，最合适的还是最可靠的。” <time>[05:09]</time></blockquote>
+    </section>
+
+    <section class="story-section" id="compute">
+      <span class="kicker">05:14—06:50</span>
+      <h2>再往里是算力，最里面则是仍未现身的 AGI</h2>
+      <p>不管由智能体自主执行，还是由预编程、遥控驱动，视频说它们都有一份绕不开的“口粮”：算力。展馆里的计算机柜不像机器人那样会动，却支撑着前面所有模型和应用。片中举出单柜容纳 128 张卡、柜间通信成本下降等展品说法，这些数字均来自视频现场介绍。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-07.jpg" alt="WAIC 展馆内成排展示的超节点计算柜和交换柜" loading="lazy">
+        <figcaption>[05:24] 一排排计算柜把抽象的“算力底座”变成实体：机器人和智能体背后都要依赖它。</figcaption>
+      </figure>
+      <p>最后一层套娃写着 AGI，也就是通用人工智能。前面的本体、具身智能、智能体与算力都能在展馆里找到产品，AGI 却被明确放在“愿望”一侧：不挑任务、能跨领域举一反三，甚至青出于蓝。它什么时候实现，视频的回答不是预测，而是“没人说得准”。</p>
+      <figure>
+        <img src="assets/waic-ai-concepts/shot-08.jpg" alt="UP 主打开最后一层套娃，画面标出 AGI 通用人工智能" loading="lazy">
+        <figcaption>[05:49] 最后一层套娃是 AGI；它在片中代表尚未真正出现的目标，而不是已经可验证的产品。</figcaption>
+      </figure>
+      <p>收尾时，UP 主用“老身体等来年轻大脑”概括这轮碰撞。新词会继续变化，展馆里的产品也会更新，但这段六分多钟的漫游留下了一条便于记忆的线：身体承载能力，大模型提供认知，智能体组织行动，算力支撑运行，AGI 则仍是远处的目标。</p>
+      <div class="note">转录提示：Whisper 将部分专名识别成了近音字，例如“具身智能”“智能体”“WAIC”等在逐字转录中可能出现误差。为忠于证据，文末仍按模型原始非空分段完整呈现。</div>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，共 218 段，可能包含识别误差。</p>
+      <ol class="transcript-list">
+      <li class="transcript-row" id="transcript-1">
+        <time datetime="PT0S">00:00</time>
+        <p>小李小李</p>
+      </li>
+      <li class="transcript-row" id="transcript-2">
+        <time datetime="PT1S">00:01</time>
+        <p>怎么了</p>
+      </li>
+      <li class="transcript-row" id="transcript-3">
+        <time datetime="PT2S">00:02</time>
+        <p>我最近总听到这几个词</p>
+      </li>
+      <li class="transcript-row" id="transcript-4">
+        <time datetime="PT4S">00:04</time>
+        <p>人型机器人 巨声智能 物理AI 世界模型</p>
+      </li>
+      <li class="transcript-row" id="transcript-5">
+        <time datetime="PT7S">00:07</time>
+        <p>听起来都好厉害</p>
+      </li>
+      <li class="transcript-row" id="transcript-6">
+        <time datetime="PT8S">00:08</time>
+        <p>可是我好乱啊</p>
+      </li>
+      <li class="transcript-row" id="transcript-7">
+        <time datetime="PT10S">00:10</time>
+        <p>不要乱</p>
+      </li>
+      <li class="transcript-row" id="transcript-8">
+        <time datetime="PT10S">00:10</time>
+        <p>这几个词呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-9">
+        <time datetime="PT11S">00:11</time>
+        <p>其实就像这个</p>
+      </li>
+      <li class="transcript-row" id="transcript-10">
+        <time datetime="PT12S">00:12</time>
+        <p>透娃</p>
+      </li>
+      <li class="transcript-row" id="transcript-11">
+        <time datetime="PT13S">00:13</time>
+        <p>还是太受向了</p>
+      </li>
+      <li class="transcript-row" id="transcript-12">
+        <time datetime="PT14S">00:14</time>
+        <p>还是听不懂</p>
+      </li>
+      <li class="transcript-row" id="transcript-13">
+        <time datetime="PT15S">00:15</time>
+        <p>嗯 我该怎么跟你解释呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-14">
+        <time datetime="PT30S">00:30</time>
+        <p>好 今天带我的套娃来到了世界人工智能大会的现场</p>
+      </li>
+      <li class="transcript-row" id="transcript-15">
+        <time datetime="PT36S">00:36</time>
+        <p>这两天呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-16">
+        <time datetime="PT37S">00:37</time>
+        <p>你在网上翻到的各种</p>
+      </li>
+      <li class="transcript-row" id="transcript-17">
+        <time datetime="PT39S">00:39</time>
+        <p>翻跟头打拳的端盘子的机器</p>
+      </li>
+      <li class="transcript-row" id="transcript-18">
+        <time datetime="PT41S">00:41</time>
+        <p>十有八九都来自这场世界人工智能大会</p>
+      </li>
+      <li class="transcript-row" id="transcript-19">
+        <time datetime="PT44S">00:44</time>
+        <p>一千多家公司十万平方米</p>
+      </li>
+      <li class="transcript-row" id="transcript-20">
+        <time datetime="PT47S">00:47</time>
+        <p>小李今天来呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-21">
+        <time datetime="PT48S">00:48</time>
+        <p>就干一件事</p>
+      </li>
+      <li class="transcript-row" id="transcript-22">
+        <time datetime="PT49S">00:49</time>
+        <p>把新闻里那些天天念叨了你听梦的词给你拆成大白话</p>
+      </li>
+      <li class="transcript-row" id="transcript-23">
+        <time datetime="PT54S">00:54</time>
+        <p>顺带再带你看看这次外国的十大正观之宝</p>
+      </li>
+      <li class="transcript-row" id="transcript-24">
+        <time datetime="PT58S">00:58</time>
+        <p>我们从大到小开始讲</p>
+      </li>
+      <li class="transcript-row" id="transcript-25">
+        <time datetime="PT60S">01:00</time>
+        <p>第一个词就是你一进门就看得见摸得着的本体</p>
+      </li>
+      <li class="transcript-row" id="transcript-26">
+        <time datetime="PT64S">01:04</time>
+        <p>简单说就是机器人这副骨架胳膊腿关节</p>
+      </li>
+      <li class="transcript-row" id="transcript-27">
+        <time datetime="PT67S">01:07</time>
+        <p>这些硬件</p>
+      </li>
+      <li class="transcript-row" id="transcript-28">
+        <time datetime="PT68S">01:08</time>
+        <p>那本体厂商就是指专门造机器人硬件的这些公司</p>
+      </li>
+      <li class="transcript-row" id="transcript-29">
+        <time datetime="PT73S">01:13</time>
+        <p>跟它相对就是给机器人做脑子的大模型公司</p>
+      </li>
+      <li class="transcript-row" id="transcript-30">
+        <time datetime="PT76S">01:16</time>
+        <p>而这个本体长什么样</p>
+      </li>
+      <li class="transcript-row" id="transcript-31">
+        <time datetime="PT78S">01:18</time>
+        <p>决定了它的大名叫什么</p>
+      </li>
+      <li class="transcript-row" id="transcript-32">
+        <time datetime="PT80S">01:20</time>
+        <p>长得像人的叫人型机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-33">
+        <time datetime="PT82S">01:22</time>
+        <p>像志愿这台就是本次正观之宝的唯一一个人型机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-34">
+        <time datetime="PT85S">01:25</time>
+        <p>那四条腿的页内叫四足机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-35">
+        <time datetime="PT88S">01:28</time>
+        <p>或者一般叫机器狗</p>
+      </li>
+      <li class="transcript-row" id="transcript-36">
+        <time datetime="PT89S">01:29</time>
+        <p>为啥说一般呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-37">
+        <time datetime="PT90S">01:30</time>
+        <p>因为你看这里还有机器猫 机器马</p>
+      </li>
+      <li class="transcript-row" id="transcript-38">
+        <time datetime="PT93S">01:33</time>
+        <p>还有这是什么呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-39">
+        <time datetime="PT94S">01:34</time>
+        <p>那四足机器人的优势是天生战的稳</p>
+      </li>
+      <li class="transcript-row" id="transcript-40">
+        <time datetime="PT97S">01:37</time>
+        <p>他们就很适合去寻找去再去救援这些场景</p>
+      </li>
+      <li class="transcript-row" id="transcript-41">
+        <time datetime="PT101S">01:41</time>
+        <p>然后是带轮子的</p>
+      </li>
+      <li class="transcript-row" id="transcript-42">
+        <time datetime="PT103S">01:43</time>
+        <p>文氏机器人一般在商场带路</p>
+      </li>
+      <li class="transcript-row" id="transcript-43">
+        <time datetime="PT105S">01:45</time>
+        <p>在酒店里送餐</p>
+      </li>
+      <li class="transcript-row" id="transcript-44">
+        <time datetime="PT106S">01:46</time>
+        <p>还有工程里的机械币</p>
+      </li>
+      <li class="transcript-row" id="transcript-45">
+        <time datetime="PT108S">01:48</time>
+        <p>它是最早的一种机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-46">
+        <time datetime="PT109S">01:49</time>
+        <p>1961年就被发明出来了</p>
+      </li>
+      <li class="transcript-row" id="transcript-47">
+        <time datetime="PT111S">01:51</time>
+        <p>也是现在在工程里应用最广的机器人之一</p>
+      </li>
+      <li class="transcript-row" id="transcript-48">
+        <time datetime="PT114S">01:54</time>
+        <p>所以你看长什么样子根本不重要</p>
+      </li>
+      <li class="transcript-row" id="transcript-49">
+        <time datetime="PT117S">01:57</time>
+        <p>他们都叫机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-50">
+        <time datetime="PT118S">01:58</time>
+        <p>而机器人这个词诞生的更早</p>
+      </li>
+      <li class="transcript-row" id="transcript-51">
+        <time datetime="PT120S">02:00</time>
+        <p>在1920年 今年已经106岁了</p>
+      </li>
+      <li class="transcript-row" id="transcript-52">
+        <time datetime="PT123S">02:03</time>
+        <p>但光有一副身体 动不会响</p>
+      </li>
+      <li class="transcript-row" id="transcript-53">
+        <time datetime="PT126S">02:06</time>
+        <p>所以这个本体还一直在等待它的大脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-54">
+        <time datetime="PT129S">02:09</time>
+        <p>而这就是下一层 巨生智能</p>
+      </li>
+      <li class="transcript-row" id="transcript-55">
+        <time datetime="PT132S">02:12</time>
+        <p>巨生智能呢是新闻里的常客听着有点抽象</p>
+      </li>
+      <li class="transcript-row" id="transcript-56">
+        <time datetime="PT135S">02:15</time>
+        <p>但你把四个字拆开其实就懂了</p>
+      </li>
+      <li class="transcript-row" id="transcript-57">
+        <time datetime="PT137S">02:17</time>
+        <p>巨生就是有身体 智能就变聪明</p>
+      </li>
+      <li class="transcript-row" id="transcript-58">
+        <time datetime="PT140S">02:20</time>
+        <p>合起来就是把聪明装进身体</p>
+      </li>
+      <li class="transcript-row" id="transcript-59">
+        <time datetime="PT142S">02:22</time>
+        <p>最早可以追溯到1948年在口令写的一份报告里</p>
+      </li>
+      <li class="transcript-row" id="transcript-60">
+        <time datetime="PT146S">02:26</time>
+        <p>但当时因为推进太慢 图论就放弃了</p>
+      </li>
+      <li class="transcript-row" id="transcript-61">
+        <time datetime="PT148S">02:28</time>
+        <p>而当时慢的原因就是因为不够智能</p>
+      </li>
+      <li class="transcript-row" id="transcript-62">
+        <time datetime="PT150S">02:30</time>
+        <p>缺一个聪明的大脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-63">
+        <time datetime="PT152S">02:32</time>
+        <p>那这个大脑是啥 你应该已经猜到了</p>
+      </li>
+      <li class="transcript-row" id="transcript-64">
+        <time datetime="PT154S">02:34</time>
+        <p>就是现在的Cloud DeepSeg</p>
+      </li>
+      <li class="transcript-row" id="transcript-65">
+        <time datetime="PT156S">02:36</time>
+        <p>还有这两天非常火的KMI这些大模型</p>
+      </li>
+      <li class="transcript-row" id="transcript-66">
+        <time datetime="PT159S">02:39</time>
+        <p>而他们备用的底层技术其实是到2017年才出现的</p>
+      </li>
+      <li class="transcript-row" id="transcript-67">
+        <time datetime="PT163S">02:43</time>
+        <p>所以咱们接下来看《镇管之宝》</p>
+      </li>
+      <li class="transcript-row" id="transcript-68">
+        <time datetime="PT165S">02:45</time>
+        <p>玛丽林波的智慧药房</p>
+      </li>
+      <li class="transcript-row" id="transcript-69">
+        <time datetime="PT167S">02:47</time>
+        <p>你看这是三台完全长的</p>
+      </li>
+      <li class="transcript-row" id="transcript-70">
+        <time datetime="PT168S">02:48</time>
+        <p>不一样的机器人在大火上班</p>
+      </li>
+      <li class="transcript-row" id="transcript-71">
+        <time datetime="PT171S">02:51</time>
+        <p>从温诊抓药到打包</p>
+      </li>
+      <li class="transcript-row" id="transcript-72">
+        <time datetime="PT173S">02:53</time>
+        <p>全流程不到90秒</p>
+      </li>
+      <li class="transcript-row" id="transcript-73">
+        <time datetime="PT175S">02:55</time>
+        <p>而且他们三副身体用的是同一个大脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-74">
+        <time datetime="PT177S">02:57</time>
+        <p>这个词叫跨本体</p>
+      </li>
+      <li class="transcript-row" id="transcript-75">
+        <time datetime="PT179S">02:59</time>
+        <p>就是你刚学的那个本体</p>
+      </li>
+      <li class="transcript-row" id="transcript-76">
+        <time datetime="PT180S">03:00</time>
+        <p>现在应该听懂了</p>
+      </li>
+      <li class="transcript-row" id="transcript-77">
+        <time datetime="PT181S">03:01</time>
+        <p>说到脑子 最近还有个词挺火的</p>
+      </li>
+      <li class="transcript-row" id="transcript-78">
+        <time datetime="PT184S">03:04</time>
+        <p>叫世界模型</p>
+      </li>
+      <li class="transcript-row" id="transcript-79">
+        <time datetime="PT185S">03:05</time>
+        <p>它管的其实是机器人脑子里的那个预言</p>
+      </li>
+      <li class="transcript-row" id="transcript-80">
+        <time datetime="PT187S">03:07</time>
+        <p>就是做事之前先在沙盘里推演一遍</p>
+      </li>
+      <li class="transcript-row" id="transcript-81">
+        <time datetime="PT190S">03:10</time>
+        <p>想明白了再动手</p>
+      </li>
+      <li class="transcript-row" id="transcript-82">
+        <time datetime="PT192S">03:12</time>
+        <p>而能在沙盘里完整各种物理规律的</p>
+      </li>
+      <li class="transcript-row" id="transcript-83">
+        <time datetime="PT194S">03:14</time>
+        <p>就是物理AI</p>
+      </li>
+      <li class="transcript-row" id="transcript-84">
+        <time datetime="PT195S">03:15</time>
+        <p>这两词值得单独讲一期</p>
+      </li>
+      <li class="transcript-row" id="transcript-85">
+        <time datetime="PT197S">03:17</time>
+        <p>今天先记个这样挖个坑</p>
+      </li>
+      <li class="transcript-row" id="transcript-86">
+        <time datetime="PT199S">03:19</time>
+        <p>好 身体有了 脑子也装进去了</p>
+      </li>
+      <li class="transcript-row" id="transcript-87">
+        <time datetime="PT201S">03:21</time>
+        <p>接下来谁来当家干活呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-88">
+        <time datetime="PT204S">03:24</time>
+        <p>下一层也是今年全场最活跃的一个词</p>
+      </li>
+      <li class="transcript-row" id="transcript-89">
+        <time datetime="PT207S">03:27</time>
+        <p>智能体</p>
+      </li>
+      <li class="transcript-row" id="transcript-90">
+        <time datetime="PT208S">03:28</time>
+        <p>这次光展下来</p>
+      </li>
+      <li class="transcript-row" id="transcript-91">
+        <time datetime="PT209S">03:29</time>
+        <p>我见到最多的一个词就是智能体</p>
+      </li>
+      <li class="transcript-row" id="transcript-92">
+        <time datetime="PT211S">03:31</time>
+        <p>这些 这些 这些 这些 全部都是智能体</p>
+      </li>
+      <li class="transcript-row" id="transcript-93">
+        <time datetime="PT216S">03:36</time>
+        <p>几个智能体组合起来可以是一个软件</p>
+      </li>
+      <li class="transcript-row" id="transcript-94">
+        <time datetime="PT219S">03:39</time>
+        <p>放进手机里就是智能体手机</p>
+      </li>
+      <li class="transcript-row" id="transcript-95">
+        <time datetime="PT221S">03:41</time>
+        <p>放进眼睛里就是智能眼镜</p>
+      </li>
+      <li class="transcript-row" id="transcript-96">
+        <time datetime="PT223S">03:43</time>
+        <p>而这个词最早可以追溯到1995年</p>
+      </li>
+      <li class="transcript-row" id="transcript-97">
+        <time datetime="PT226S">03:46</time>
+        <p>30年后定义终于走进了现实</p>
+      </li>
+      <li class="transcript-row" id="transcript-98">
+        <time datetime="PT228S">03:48</time>
+        <p>刚刚我们说大模型就是那个大脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-99">
+        <time datetime="PT230S">03:50</time>
+        <p>智能体就是给大脑装上了眼睛 手和各种工具</p>
+      </li>
+      <li class="transcript-row" id="transcript-100">
+        <time datetime="PT234S">03:54</time>
+        <p>他们不仅能思考</p>
+      </li>
+      <li class="transcript-row" id="transcript-101">
+        <time datetime="PT235S">03:55</time>
+        <p>还能主动拆解任务 调用工具</p>
+      </li>
+      <li class="transcript-row" id="transcript-102">
+        <time datetime="PT237S">03:57</time>
+        <p>并最主要完成复杂的工作流程</p>
+      </li>
+      <li class="transcript-row" id="transcript-103">
+        <time datetime="PT239S">03:59</time>
+        <p>咱们再挑几个正管之宝看一下</p>
+      </li>
+      <li class="transcript-row" id="transcript-104">
+        <time datetime="PT241S">04:01</time>
+        <p>比如百度搭</p>
+      </li>
+      <li class="transcript-row" id="transcript-105">
+        <time datetime="PT242S">04:02</time>
+        <p>给他一句话的目标</p>
+      </li>
+      <li class="transcript-row" id="transcript-106">
+        <time datetime="PT243S">04:03</time>
+        <p>他能自己拆步骤 搭完交火</p>
+      </li>
+      <li class="transcript-row" id="transcript-107">
+        <time datetime="PT245S">04:05</time>
+        <p>然后是南方电网的大瓦特</p>
+      </li>
+      <li class="transcript-row" id="transcript-108">
+        <time datetime="PT246S">04:06</time>
+        <p>这是一个管电网体检的智能体</p>
+      </li>
+      <li class="transcript-row" id="transcript-109">
+        <time datetime="PT249S">04:09</time>
+        <p>你看 气象台里面也有智能体</p>
+      </li>
+      <li class="transcript-row" id="transcript-110">
+        <time datetime="PT251S">04:11</time>
+        <p>再比如接约这款合伙的智能体手机</p>
+      </li>
+      <li class="transcript-row" id="transcript-111">
+        <time datetime="PT253S">04:13</time>
+        <p>你发了一句话</p>
+      </li>
+      <li class="transcript-row" id="transcript-112">
+        <time datetime="PT254S">04:14</time>
+        <p>智能体就能自己去点屏幕 输入信息</p>
+      </li>
+      <li class="transcript-row" id="transcript-113">
+        <time datetime="PT257S">04:17</time>
+        <p>台号称是全球首款的</p>
+      </li>
+      <li class="transcript-row" id="transcript-114">
+        <time datetime="PT258S">04:18</time>
+        <p>大模型原生的智能体手机</p>
+      </li>
+      <li class="transcript-row" id="transcript-115">
+        <time datetime="PT260S">04:20</time>
+        <p>我想多说一句</p>
+      </li>
+      <li class="transcript-row" id="transcript-116">
+        <time datetime="PT261S">04:21</time>
+        <p>首款这个名头今年抢的人有点多</p>
+      </li>
+      <li class="transcript-row" id="transcript-117">
+        <time datetime="PT263S">04:23</time>
+        <p>比如奴米家的豆包手机</p>
+      </li>
+      <li class="transcript-row" id="transcript-118">
+        <time datetime="PT265S">04:25</time>
+        <p>去年年底就发过第一代</p>
+      </li>
+      <li class="transcript-row" id="transcript-119">
+        <time datetime="PT267S">04:27</time>
+        <p>但谁是第一 咱们不裁判</p>
+      </li>
+      <li class="transcript-row" id="transcript-120">
+        <time datetime="PT268S">04:28</time>
+        <p>好不好用 你说了算</p>
+      </li>
+      <li class="transcript-row" id="transcript-121">
+        <time datetime="PT270S">04:30</time>
+        <p>到时候你可能会问</p>
+      </li>
+      <li class="transcript-row" id="transcript-122">
+        <time datetime="PT271S">04:31</time>
+        <p>机器人在这里算啥</p>
+      </li>
+      <li class="transcript-row" id="transcript-123">
+        <time datetime="PT273S">04:33</time>
+        <p>其实机器人就是智能体最大的一副身体</p>
+      </li>
+      <li class="transcript-row" id="transcript-124">
+        <time datetime="PT275S">04:35</time>
+        <p>因为我听说眼睛的身高心理起伏</p>
+      </li>
+      <li class="transcript-row" id="transcript-125">
+        <time datetime="PT277S">04:37</time>
+        <p>跟我一样的</p>
+      </li>
+      <li class="transcript-row" id="transcript-126">
+        <time datetime="PT278S">04:38</time>
+        <p>所以我想比一下</p>
+      </li>
+      <li class="transcript-row" id="transcript-127">
+        <time datetime="PT279S">04:39</time>
+        <p>当然了 现在很多机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-128">
+        <time datetime="PT280S">04:40</time>
+        <p>其实是预变成或者遥控的</p>
+      </li>
+      <li class="transcript-row" id="transcript-129">
+        <time datetime="PT283S">04:43</time>
+        <p>智能体还没有搭载进去</p>
+      </li>
+      <li class="transcript-row" id="transcript-130">
+        <time datetime="PT284S">04:44</time>
+        <p>这也给很多朋友带来一种错觉说</p>
+      </li>
+      <li class="transcript-row" id="transcript-131">
+        <time datetime="PT286S">04:46</time>
+        <p>没有智能体的机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-132">
+        <time datetime="PT288S">04:48</time>
+        <p>其实就是花架子 没什么用</p>
+      </li>
+      <li class="transcript-row" id="transcript-133">
+        <time datetime="PT289S">04:49</time>
+        <p>咱们来看看业内人是怎么看</p>
+      </li>
+      <li class="transcript-row" id="transcript-134">
+        <time datetime="PT291S">04:51</time>
+        <p>哦 当然了</p>
+      </li>
+      <li class="transcript-row" id="transcript-135">
+        <time datetime="PT293S">04:53</time>
+        <p>智能体肯定是相对于预设的</p>
+      </li>
+      <li class="transcript-row" id="transcript-136">
+        <time datetime="PT295S">04:55</time>
+        <p>一些规则是得更聪明一点</p>
+      </li>
+      <li class="transcript-row" id="transcript-137">
+        <time datetime="PT296S">04:56</time>
+        <p>场景一用</p>
+      </li>
+      <li class="transcript-row" id="transcript-138">
+        <time datetime="PT297S">04:57</time>
+        <p>它不光是考量</p>
+      </li>
+      <li class="transcript-row" id="transcript-139">
+        <time datetime="PT298S">04:58</time>
+        <p>它的聪明程度</p>
+      </li>
+      <li class="transcript-row" id="transcript-140">
+        <time datetime="PT299S">04:59</time>
+        <p>AQ有多少</p>
+      </li>
+      <li class="transcript-row" id="transcript-141">
+        <time datetime="PT299S">04:59</time>
+        <p>是一个多维度的考量</p>
+      </li>
+      <li class="transcript-row" id="transcript-142">
+        <time datetime="PT300S">05:00</time>
+        <p>它会考量它的成本</p>
+      </li>
+      <li class="transcript-row" id="transcript-143">
+        <time datetime="PT302S">05:02</time>
+        <p>可靠性 应用性</p>
+      </li>
+      <li class="transcript-row" id="transcript-144">
+        <time datetime="PT303S">05:03</time>
+        <p>所以从这个角度来说</p>
+      </li>
+      <li class="transcript-row" id="transcript-145">
+        <time datetime="PT305S">05:05</time>
+        <p>是否搭载智能体</p>
+      </li>
+      <li class="transcript-row" id="transcript-146">
+        <time datetime="PT306S">05:06</time>
+        <p>技术路线是什么</p>
+      </li>
+      <li class="transcript-row" id="transcript-147">
+        <time datetime="PT307S">05:07</time>
+        <p>并不是非常重要</p>
+      </li>
+      <li class="transcript-row" id="transcript-148">
+        <time datetime="PT309S">05:09</time>
+        <p>更重要的是这个技术</p>
+      </li>
+      <li class="transcript-row" id="transcript-149">
+        <time datetime="PT310S">05:10</time>
+        <p>是否匹配这个场景</p>
+      </li>
+      <li class="transcript-row" id="transcript-150">
+        <time datetime="PT312S">05:12</time>
+        <p>最合适的 还是最可靠的</p>
+      </li>
+      <li class="transcript-row" id="transcript-151">
+        <time datetime="PT314S">05:14</time>
+        <p>不过 本管是智能体亲自当家</p>
+      </li>
+      <li class="transcript-row" id="transcript-152">
+        <time datetime="PT316S">05:16</time>
+        <p>还是预编程 或者遥控</p>
+      </li>
+      <li class="transcript-row" id="transcript-153">
+        <time datetime="PT318S">05:18</time>
+        <p>有一样硬条件</p>
+      </li>
+      <li class="transcript-row" id="transcript-154">
+        <time datetime="PT319S">05:19</time>
+        <p>谁也绕不开</p>
+      </li>
+      <li class="transcript-row" id="transcript-155">
+        <time datetime="PT320S">05:20</time>
+        <p>这就是他们的口粮</p>
+      </li>
+      <li class="transcript-row" id="transcript-156">
+        <time datetime="PT321S">05:21</time>
+        <p>算力</p>
+      </li>
+      <li class="transcript-row" id="transcript-157">
+        <time datetime="PT322S">05:22</time>
+        <p>你看</p>
+      </li>
+      <li class="transcript-row" id="transcript-158">
+        <time datetime="PT322S">05:22</time>
+        <p>这个大铁锅里装着上百台算力卡</p>
+      </li>
+      <li class="transcript-row" id="transcript-159">
+        <time datetime="PT325S">05:25</time>
+        <p>他们的外观没有机器人那么清晰</p>
+      </li>
+      <li class="transcript-row" id="transcript-160">
+        <time datetime="PT327S">05:27</time>
+        <p>但一个个都是很角色</p>
+      </li>
+      <li class="transcript-row" id="transcript-161">
+        <time datetime="PT329S">05:29</time>
+        <p>阿里的盘9AL128</p>
+      </li>
+      <li class="transcript-row" id="transcript-162">
+        <time datetime="PT331S">05:31</time>
+        <p>一个柜子</p>
+      </li>
+      <li class="transcript-row" id="transcript-163">
+        <time datetime="PT332S">05:32</time>
+        <p>塞128张卡</p>
+      </li>
+      <li class="transcript-row" id="transcript-164">
+        <time datetime="PT333S">05:33</time>
+        <p>中心的OEX</p>
+      </li>
+      <li class="transcript-row" id="transcript-165">
+        <time datetime="PT335S">05:35</time>
+        <p>柜子和柜子之间的通信成本</p>
+      </li>
+      <li class="transcript-row" id="transcript-166">
+        <time datetime="PT337S">05:37</time>
+        <p>砍掉了八成</p>
+      </li>
+      <li class="transcript-row" id="transcript-167">
+        <time datetime="PT338S">05:38</time>
+        <p>你看 机器人又蹦又跳</p>
+      </li>
+      <li class="transcript-row" id="transcript-168">
+        <time datetime="PT340S">05:40</time>
+        <p>智能体 埋头上班</p>
+      </li>
+      <li class="transcript-row" id="transcript-169">
+        <time datetime="PT341S">05:41</time>
+        <p>但背后全得靠算力</p>
+      </li>
+      <li class="transcript-row" id="transcript-170">
+        <time datetime="PT343S">05:43</time>
+        <p>到这里 我们最运的就讲完了</p>
+      </li>
+      <li class="transcript-row" id="transcript-171">
+        <time datetime="PT345S">05:45</time>
+        <p>但你看这个套玩</p>
+      </li>
+      <li class="transcript-row" id="transcript-172">
+        <time datetime="PT346S">05:46</time>
+        <p>怎么还有一层</p>
+      </li>
+      <li class="transcript-row" id="transcript-173">
+        <time datetime="PT347S">05:47</time>
+        <p>这一层叫AGI</p>
+      </li>
+      <li class="transcript-row" id="transcript-174">
+        <time datetime="PT348S">05:48</time>
+        <p>通用人工智能</p>
+      </li>
+      <li class="transcript-row" id="transcript-175">
+        <time datetime="PT350S">05:50</time>
+        <p>今天前面的四个词</p>
+      </li>
+      <li class="transcript-row" id="transcript-176">
+        <time datetime="PT351S">05:51</time>
+        <p>咱们在展观里都能找到他们的真身</p>
+      </li>
+      <li class="transcript-row" id="transcript-177">
+        <time datetime="PT353S">05:53</time>
+        <p>但这个词</p>
+      </li>
+      <li class="transcript-row" id="transcript-178">
+        <time datetime="PT354S">05:54</time>
+        <p>你把10万瓶走穿了</p>
+      </li>
+      <li class="transcript-row" id="transcript-179">
+        <time datetime="PT356S">05:56</time>
+        <p>可能也找不到</p>
+      </li>
+      <li class="transcript-row" id="transcript-180">
+        <time datetime="PT356S">05:56</time>
+        <p>因为它还没有真正的出身</p>
+      </li>
+      <li class="transcript-row" id="transcript-181">
+        <time datetime="PT359S">05:59</time>
+        <p>AGI是人类给人工智能许下的</p>
+      </li>
+      <li class="transcript-row" id="transcript-182">
+        <time datetime="PT361S">06:01</time>
+        <p>一个最大的愿望</p>
+      </li>
+      <li class="transcript-row" id="transcript-183">
+        <time datetime="PT362S">06:02</time>
+        <p>不挑活 不射线</p>
+      </li>
+      <li class="transcript-row" id="transcript-184">
+        <time datetime="PT364S">06:04</time>
+        <p>会下棋 也会做饭</p>
+      </li>
+      <li class="transcript-row" id="transcript-185">
+        <time datetime="PT365S">06:05</time>
+        <p>能读病例 也能安慰人</p>
+      </li>
+      <li class="transcript-row" id="transcript-186">
+        <time datetime="PT366S">06:06</time>
+        <p>像人一样举一反三</p>
+      </li>
+      <li class="transcript-row" id="transcript-187">
+        <time datetime="PT368S">06:08</time>
+        <p>甚至轻出欲拦</p>
+      </li>
+      <li class="transcript-row" id="transcript-188">
+        <time datetime="PT369S">06:09</time>
+        <p>它还是我们前面讲的</p>
+      </li>
+      <li class="transcript-row" id="transcript-189">
+        <time datetime="PT370S">06:10</time>
+        <p>这么多概念和产品</p>
+      </li>
+      <li class="transcript-row" id="transcript-190">
+        <time datetime="PT372S">06:12</time>
+        <p>想要实现的一个最终的功能</p>
+      </li>
+      <li class="transcript-row" id="transcript-191">
+        <time datetime="PT374S">06:14</time>
+        <p>AGI离我们到底多远</p>
+      </li>
+      <li class="transcript-row" id="transcript-192">
+        <time datetime="PT375S">06:15</time>
+        <p>没人能说得准</p>
+      </li>
+      <li class="transcript-row" id="transcript-193">
+        <time datetime="PT376S">06:16</time>
+        <p>也许是五年</p>
+      </li>
+      <li class="transcript-row" id="transcript-194">
+        <time datetime="PT377S">06:17</time>
+        <p>也许是50年</p>
+      </li>
+      <li class="transcript-row" id="transcript-195">
+        <time datetime="PT378S">06:18</time>
+        <p>也许是明年</p>
+      </li>
+      <li class="transcript-row" id="transcript-196">
+        <time datetime="PT379S">06:19</time>
+        <p>到这里视频你要结束了</p>
+      </li>
+      <li class="transcript-row" id="transcript-197">
+        <time datetime="PT381S">06:21</time>
+        <p>你还记得我提到几个数字吗</p>
+      </li>
+      <li class="transcript-row" id="transcript-198">
+        <time datetime="PT383S">06:23</time>
+        <p>介绍这个词</p>
+      </li>
+      <li class="transcript-row" id="transcript-199">
+        <time datetime="PT383S">06:23</time>
+        <p>今年106岁</p>
+      </li>
+      <li class="transcript-row" id="transcript-200">
+        <time datetime="PT385S">06:25</time>
+        <p>居身智能78岁</p>
+      </li>
+      <li class="transcript-row" id="transcript-201">
+        <time datetime="PT386S">06:26</time>
+        <p>正能体这个定义</p>
+      </li>
+      <li class="transcript-row" id="transcript-202">
+        <time datetime="PT387S">06:27</time>
+        <p>31岁</p>
+      </li>
+      <li class="transcript-row" id="transcript-203">
+        <time datetime="PT388S">06:28</time>
+        <p>而大模型只有9岁</p>
+      </li>
+      <li class="transcript-row" id="transcript-204">
+        <time datetime="PT390S">06:30</time>
+        <p>100人流似的机器人</p>
+      </li>
+      <li class="transcript-row" id="transcript-205">
+        <time datetime="PT391S">06:31</time>
+        <p>等来了9岁的大脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-206">
+        <time datetime="PT393S">06:33</time>
+        <p>而这一个美妙的碰撞</p>
+      </li>
+      <li class="transcript-row" id="transcript-207">
+        <time datetime="PT394S">06:34</time>
+        <p>正在彻底改写我们的生活</p>
+      </li>
+      <li class="transcript-row" id="transcript-208">
+        <time datetime="PT396S">06:36</time>
+        <p>虽然新词年年换</p>
+      </li>
+      <li class="transcript-row" id="transcript-209">
+        <time datetime="PT398S">06:38</time>
+        <p>但人类对于未来的探索热情</p>
+      </li>
+      <li class="transcript-row" id="transcript-210">
+        <time datetime="PT400S">06:40</time>
+        <p>永远是那么的持久</p>
+      </li>
+      <li class="transcript-row" id="transcript-211">
+        <time datetime="PT402S">06:42</time>
+        <p>而热烈</p>
+      </li>
+      <li class="transcript-row" id="transcript-212">
+        <time datetime="PT402S">06:42</time>
+        <p>让我们一起期待明年的WAC</p>
+      </li>
+      <li class="transcript-row" id="transcript-213">
+        <time datetime="PT404S">06:44</time>
+        <p>也希望明年</p>
+      </li>
+      <li class="transcript-row" id="transcript-214">
+        <time datetime="PT405S">06:45</time>
+        <p>小脸带你看到更多</p>
+      </li>
+      <li class="transcript-row" id="transcript-215">
+        <time datetime="PT406S">06:46</time>
+        <p>更经验</p>
+      </li>
+      <li class="transcript-row" id="transcript-216">
+        <time datetime="PT407S">06:47</time>
+        <p>更有趣的产品</p>
+      </li>
+      <li class="transcript-row" id="transcript-217">
+        <time datetime="PT408S">06:48</time>
+        <p>我们下期再见</p>
+      </li>
+      <li class="transcript-row" id="transcript-218">
+        <time datetime="PT409S">06:49</time>
+        <p>拜拜</p>
+      </li></ol>
+    </section>
+    <footer>资料来源：B 站视频 <a href="https://b23.tv/dbY41IV">dbY41IV</a> · 本页不依赖远程样式、脚本或字体</footer>
+  </main>
+</body>
+</html>
