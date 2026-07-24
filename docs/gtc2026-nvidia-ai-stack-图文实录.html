@@ -1,0 +1,2768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="按时间顺序还原 GTC 2026 视频：英伟达面对推理转型、自研芯片与 AI 回报压力，如何打出系统平台、软硬生态和 Token 经济三张牌。">
+  <title>芯片不稀有了，但还是只能英伟达？｜图文实录</title>
+  <style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+  a{color:#9a3412;text-underline-offset:3px}
+  .container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+  .hero{padding:36px 0 28px;border-bottom:1px solid #e7e5e4}
+  .eyebrow{margin:0 0 12px;color:#b45309;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  h1{max-width:850px;margin:0;color:#1c1917;font-size:clamp(34px,6vw,58px);line-height:1.16;letter-spacing:-.035em}
+  .dek{max-width:760px;margin:24px 0 18px;color:#57534e;font-size:19px;line-height:1.75}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 16px;color:#78716c;font-size:14px}
+  .source-link{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-weight:700}
+  .notice{margin:28px 0 0;padding:16px 18px;border-left:4px solid #f59e0b;border-radius:0 10px 10px 0;background:#fffbeb;color:#78350f;font-size:14px}
+  .toc{margin:32px 0 56px;padding:24px 26px;border-radius:16px;background:#fff;box-shadow:0 4px 20px rgba(41,37,36,.08)}
+  .toc strong{display:block;margin-bottom:10px;color:#1c1917}
+  .toc ol{columns:2;column-gap:36px;margin:0;padding-left:22px}
+  .toc li{break-inside:avoid;margin:6px 0}
+  .documentary{font-size:17px}
+  .story-section{margin:58px 0;scroll-margin-top:20px}
+  .story-section h2{margin:0 0 8px;color:#1c1917;font-size:30px;line-height:1.3}
+  .time-range{display:block;margin-bottom:20px;color:#b45309;font-size:14px;font-weight:800;font-variant-numeric:tabular-nums}
+  .story-section p{margin:16px 0}
+  .quote{margin:24px 0;padding:18px 22px;border-left:4px solid #b45309;background:#fff7ed;color:#7c2d12;font-size:18px;font-weight:650}
+  .quote cite{display:block;margin-top:7px;color:#9a3412;font-size:13px;font-style:normal;font-weight:500}
+  figure{margin:30px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+  img{display:block;width:100%;max-width:100%;height:auto}
+  figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+  .uncertain{padding:14px 18px;border-radius:10px;background:#f5f5f4;color:#57534e;font-size:14px}
+  .transcript-section{margin-top:80px;padding-top:48px;border-top:2px solid #d6d3d1;scroll-margin-top:20px}
+  .transcript-section h2{margin:0 0 8px;font-size:32px}
+  .transcript-note{margin:0 0 24px;color:#78716c}
+  .transcript-list{list-style:none;margin:0;padding:0}
+  .transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+  .transcript-row time{color:#b45309;font-variant-numeric:tabular-nums;font-weight:700}
+  .transcript-row p{margin:0}
+  footer{margin-top:56px;padding-top:24px;border-top:1px solid #e7e5e4;color:#78716c;font-size:13px}
+  @media(max-width:640px){
+    .container{padding:28px 18px 56px}
+    .hero{padding-top:18px}
+    .dek{font-size:17px}
+    .toc{margin-bottom:42px;padding:20px}
+    .toc ol{columns:1}
+    .story-section{margin:46px 0}
+    .story-section h2{font-size:25px}
+    .quote{padding:16px 18px;font-size:16px}
+    .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px;font-size:15px}
+  }
+</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">GTC 2026 · 图文实录</p>
+    <h1>芯片不稀有了，但还是只能英伟达？</h1>
+    <p class="dek">UP 主“小李”从训练转向推理的行业变化讲起，依次梳理云厂商自研芯片、AMD 价格攻势、AI 投资回报压力，再回到 GTC 现场，观察黄仁勋如何用系统平台、软硬生态和 Token 经济回应这些问题。</p>
+    <div class="meta">
+      <span>视频标题：拆解 GTC2026 黄仁勋甩出的终极底牌</span>
+      <span>时长：19分05秒</span>
+      <span>整理日期：2026-07-24</span>
+      <span>主讲：小李</span>
+    </div>
+    <a class="source-link" href="https://b23.tv/PZ6m72d">观看 B 站原视频 ↗</a>
+    <p class="notice">本文按视频发生顺序整理。行业数据、产品性能和市场判断均为视频中的陈述或 UP 主观点，未经本文另行核验；文末保留 Whisper 的 636 个非空原始分段，专名和数字可能存在识别误差。</p>
+  </header>
+
+  <nav class="toc" aria-label="文章目录">
+    <strong>沿时间线阅读</strong>
+    <ol>
+      <li><a href="#opening">赚钱，却开始被审视</a></li>
+      <li><a href="#inference">训练转向推理</a></li>
+      <li><a href="#rivals">客户自研与 AMD 夹击</a></li>
+      <li><a href="#returns">回报与融资链压力</a></li>
+      <li><a href="#five-layers">五层产业叙事</a></li>
+      <li><a href="#rubin">第一张牌：Vera Rubin</a></li>
+      <li><a href="#lock-in">第二张牌：软硬生态</a></li>
+      <li><a href="#token">第三张牌：Token 经济</a></li>
+      <li><a href="#interlude">图形功能插曲</a></li>
+      <li><a href="#customers">客户为何仍然上车</a></li>
+      <li><a href="#ending">终局仍未写定</a></li>
+      <li><a href="#transcript">完整时间戳转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="opening">
+      <h2>赚钱，却开始被审视</h2>
+      <span class="time-range">00:00–01:20</span>
+      <p>视频从 3 月 16 日的 GTC 会场开场。黄仁勋穿着标志性的皮夹克走上舞台，面对来自许多国家的现场观众。镜头很快切到市场反应：一项消息让股价短暂跳涨，随后又回落。UP 主小李借这个反差定下全片的疑问——英伟达仍握着极赚钱的生意，资本市场看它的目光为什么已经从膜拜变成审视？</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-01.jpg" alt="黄仁勋穿着黑色皮夹克走过 GTC 主舞台" loading="lazy">
+        <figcaption>[00:06] 黄仁勋身穿皮夹克走上 GTC 舞台，视频由此引出“英伟达一边赚钱、一边焦虑”的主问题。</figcaption>
+      </figure>
+      <p>小李在 00:51 自报姓名，说明接下来会先解释 AI 行业规则如何改变，再看 GTC 上打出的牌。开头 00:15–00:19 的订单金额没有被 Whisper 识别出来，因此本文不补写该数字。</p>
+      <blockquote class="quote">“老黄的焦虑其实来源于 A.I. 的游戏规则已经彻底改变。”<cite>UP 主小李，01:16</cite></blockquote>
+    </section>
+
+    <section class="story-section" id="inference">
+      <h2>训练之后，推理成了每天发生的事</h2>
+      <span class="time-range">01:20–03:22</span>
+      <p>视频先把过去几年的主线称为“训练”：让模型读取大量文字、图片和代码，通过堆叠数据与 GPU 获得能力。小李认为，到 2025 年前后，继续扩大训练规模的边际提升正在减小，而使用 AI 的人数与调用次数开始快速增长。</p>
+      <p>为了把变化说得直观，他把训练比作医学生多年读书、看病例和考执照；推理则像毕业后每天坐诊。读书阶段只发生一次，接诊却持续发生，Agent 还可能让一个任务触发许多轮推理。因此，视频把推理时代的竞争标准落到单位成本：每一次“接诊”能不能更便宜。</p>
+      <blockquote class="quote">“训练等于一个医学生读了 10 年书……而推理等于这个医生坐在医院问诊，看了一个又一个病人。”<cite>UP 主小李，02:26–02:35</cite></blockquote>
+      <p>在这个比喻里，通用 GPU 像什么病都能看的全科医生；针对特定推理任务的专用芯片则像只看一种病、但更快更省的专科诊所。视频由此把行业从训练转向推理，作为后面所有竞争压力的起点。</p>
+    </section>
+
+    <section class="story-section" id="rivals">
+      <h2>最难受的对手，是客户开始自己做</h2>
+      <span class="time-range">03:22–05:40</span>
+      <p>第一路压力来自大客户。视频依次提到谷歌、亚马逊、微软和 OpenAI 的自研芯片计划。小李的表述很形象：英伟达最大的客户正在“后院建厨房”。这不等于它们已经完全停止采购 GPU，却意味着供应安全、议价和特定负载的效率，都多了一条选择。</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-02.jpg" alt="视频展示云服务商自研 ASIC 与 GPU 出货增速的文字对比图" loading="lazy">
+        <figcaption>[04:27] 视频引用 TrendForce 画面，称 2026 年云服务商自研 ASIC 出货增速预计为 44.6%，GPU 为 16.1%；该预测未由本文独立核验。</figcaption>
+      </figure>
+      <p>第二路压力来自 AMD。视频把它的策略概括为不追求全方位碾压，而是用“够用、便宜、开放互联”切入，首先冲击英伟达的价格和利润空间。这是 UP 主替竞争策略所作的拟人化总结，并非本文确认的 AMD 官方原话。</p>
+      <blockquote class="quote">“我不需要全方位碾压你，我只主打一个够用而且极度便宜。”<cite>UP 主对 AMD 策略的概括，05:08</cite></blockquote>
+    </section>
+
+    <section class="story-section" id="returns">
+      <h2>钱越多，回报问题越绕不过去</h2>
+      <span class="time-range">05:44–08:41</span>
+      <p>讲完芯片竞争，视频把镜头拉到资本开支。小李列出英伟达营收与云巨头 AI 投入的数字，随后追问：这些投入究竟靠什么收入收回？订阅和企业服务能否覆盖基础设施成本，成为华尔街不断追问的问题。</p>
+      <p>接下来出现一段“循环融资”的风险叙述。画面以英伟达投资 CoreWeave、后者借债并继续购买 GPU 为例，展示资金如何在投资、贷款和采购间流动。视频进一步推演：如果 AI 需求放缓，抵押债务、GPU 贬值和二手设备抛售可能互相放大。</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-03.jpg" alt="NVIDIA 投资 CoreWeave、CoreWeave 向银行融资的关系示意图" loading="lazy">
+        <figcaption>[06:38] 视频中的资金关系示意：NVIDIA 投资 CoreWeave，CoreWeave 再通过银行融资购买 GPU。后续风险链是 UP 主提出的情景，不代表已经发生系统性危机。</figcaption>
+      </figure>
+      <p>小李也主动补了一层限定：相关投资与英伟达整体订单相比只占一部分，核心营收仍来自大型客户。真正让市场敏感的，是下一年能否继续增长。视频用财报后股价下跌说明，赚钱只是底线，资本还要求持续超预期。</p>
+      <blockquote class="quote">“但他不是停不下来，而是不能停。”<cite>UP 主小李，07:40</cite></blockquote>
+    </section>
+
+    <section class="story-section" id="five-layers">
+      <h2>黄仁勋把 AI 画成五层蛋糕</h2>
+      <span class="time-range">08:43–09:59</span>
+      <p>在进入 GTC 的三张牌之前，视频先铺陈黄仁勋反复讲述的“五层”框架：最底层是能源，向上依次是芯片、基础设施、模型和应用。小李认为，这个框架同时回应两件事。</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-04.jpg" alt="UP 主身旁显示能源、芯片、基础设施、模型和应用五层结构图" loading="lazy">
+        <figcaption>[08:50] 视频中的 AI 五层结构：能源层、芯片层、基础设施层、模型层和应用层。</figcaption>
+      </figure>
+      <p>其一，它用底层电力、工厂和基础设施仍在扩张，回应“应用未起量，所以 AI 是泡沫”的质疑；其二，它把英伟达的竞争范围从芯片扩展到供电规划、集群互联、软件生态、模型服务和机器人等应用。视频用一句玩笑收束：“我早就在大气层了。”</p>
+    </section>
+
+    <section class="story-section" id="rubin">
+      <h2>第一张牌：把芯片拼成系统</h2>
+      <span class="time-range">10:00–12:30</span>
+      <p>GTC 的第一项重磅内容是 Vera Rubin。视频将它描述为由七款芯片共同设计的一整套计算平台，覆盖计算、调度、通信、安全、网络和推理。画面展示的不只是一颗 GPU，而是一台从一开始就为协作而设计的超级计算机。</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-05.jpg" alt="Vera Rubin 平台七款芯片与机架组成示意图" loading="lazy">
+        <figcaption>[10:06] 视频展示 Vera Rubin 平台：七款芯片及其对应模块被组合到同一系统中。</figcaption>
+      </figure>
+      <p>小李把真正的“杀招”放在超节点：竞争焦点从单颗芯片多强，转到成千上万颗芯片如何连接、调度和散热。视频称 NVLink、交换芯片、通信协议与背板形成一整套成熟方案，客户买入 GPU 后也会同时进入这套互联体系。</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-06.jpg" alt="芯片与互联硬件展示画面，字幕写有 260TB 每秒总带宽" loading="lazy">
+        <figcaption>[11:19] 视频称 72 颗 GPU 可通过 NVLink 6 以 260TB/s 总带宽协同；性能数字为视频陈述，未由本文独立核验。</figcaption>
+      </figure>
+      <blockquote class="quote">“不是单颗芯片多强，而是几千颗芯片怎么连成一个系统。”<cite>UP 主小李，10:57–11:03</cite></blockquote>
+      <p>视频也没有说对手毫无路线：AMD 的开放互联、谷歌的光交换、华为的大规模 NPU 互联都被提到。小李的判断是，这些替代方案与现有成熟系统之间仍有时间差，而时间差本身会继续累积迁移成本。</p>
+    </section>
+
+    <section class="story-section" id="lock-in">
+      <h2>第二张牌：软件迁移成本，加上专用推理能力</h2>
+      <span class="time-range">12:31–14:19</span>
+      <p>接下来先谈“软”的一面。视频认为，客户若换到更便宜的硬件，代价不只是一张采购单，还包括底层代码、工具链、人才和运行效率。小李用“不是绝对不可替代，而是迁移成本太高”解释 CUDA 生态的黏性。</p>
+      <p>再谈“硬”的一面，视频提到一项与 Groq 相关的交易，以及 LPU 被纳入 Vera Rubin 平台的说法：GPU 处理通用重负载，LPU 处理特定推理任务。由于 Whisper 将多个产品名和人名识别错误，本文只保留视频叙事的结构，不擅自补全交易细节与性能数字。</p>
+      <p class="uncertain">转录中的“GROCK”“Jonathan Rose”“Viva Robin”等专名存在明显识别风险；完整转录区保留原样，正文不将其当作已核实拼写。</p>
+    </section>
+
+    <section class="story-section" id="token">
+      <h2>第三张牌：把 Token 讲成企业的水电费</h2>
+      <span class="time-range">14:19–15:16</span>
+      <p>前两张牌更多是在守住现有阵地，第三张牌则试图给资本市场一个增长故事。视频转述黄仁勋的设想：未来每位工程师可能都有年度 Token 预算，企业不仅给人发工资，也持续为 AI 工作付费。</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-07.jpg" alt="黄仁勋在 GTC 舞台演讲，中文字幕为相当于工资的一半" loading="lazy">
+        <figcaption>[14:32] 黄仁勋在舞台上讲述工程师 Token 预算，视频字幕概括为“相当于工资的一半”。</figcaption>
+      </figure>
+      <p>随后，视频把数字员工部署服务接到这个故事上：如果每家公司都部署持续工作的 AI 员工，每一个 Token 都意味着长期算力消耗。小李将它概括成“高速上了、车门焊死、以后按公里收费”。这是一套需求叙事，是否成立仍取决于数字员工能否创造超过其推理成本的业务价值。</p>
+      <blockquote class="quote">“如果说 Token 是这个 AI 时代的水和电，而我英伟达就是水电厂。”<cite>据 UP 主转述，14:42–14:47</cite></blockquote>
+    </section>
+
+    <section class="story-section" id="interlude">
+      <h2>一段图形功能插曲，再回到万亿美元需求</h2>
+      <span class="time-range">15:17–16:00</span>
+      <p>视频快速带过英特尔合作、电力优化等消息，随后把镜头转向转录识别为“DLS5”的图形功能。黄仁勋将它称为“图形学的 GPT 时刻”，小李则用连续画面和玩梗表现网上的负面评价。笑声过后，叙事马上回到主线：黄仁勋称，到 2027 年看到的需求至少为一万亿美元。</p>
+      <p class="uncertain">“DLS5”是 Whisper 原始识别结果，疑似产品名误识；本文不静默纠正。万亿美元数字也仅按视频转述呈现。</p>
+    </section>
+
+    <section class="story-section" id="customers">
+      <h2>后院有厨房，为什么还要回饭店？</h2>
+      <span class="time-range">16:00–17:40</span>
+      <p>前面刚讲完云巨头自研芯片，视频随后展示 Vera Rubin 的首批部署客户：AWS、Google Cloud、Azure、OpenAI 等名称陆续出现。正是那些想自建硬件的客户，又出现在合作名单里。</p>
+      <figure>
+        <img src="assets/gtc2026-nvidia-ai-stack/shot-08.jpg" alt="UP 主身旁显示 AWS 和 Google Cloud 标志，介绍 Vera Rubin 客户名单" loading="lazy">
+        <figcaption>[16:15] 视频逐项展示 Vera Rubin 合作客户，画面此刻出现 AWS 与 Google Cloud 标志；名单和部署性质仍以视频陈述为准。</figcaption>
+      </figure>
+      <p>小李给出三点解释：专用芯片适配面较窄，模型架构变化可能快于芯片研发周期；CUDA 与 NVLink 叠加出的迁移成本很高；新一代系统用更低成本回应了客户“太贵”的顾虑。因此，自研芯片既能承担固定负载，也能作为分散风险和压价的筹码，却未必会让通用 GPU 从牌桌上消失。</p>
+      <blockquote class="quote">“老板们确实在后院建了厨房，但简单的家常菜可以自己做……还是得回饭店。”<cite>UP 主小李，17:31–17:37；个别词受转录误差影响</cite></blockquote>
+    </section>
+
+    <section class="story-section" id="ending">
+      <h2>三张牌打完，终局仍没有答案</h2>
+      <span class="time-range">17:40–19:04</span>
+      <p>临近结尾，视频不再只看 GTC 舞台的漂亮牌面，而是重新列出风险：市场份额被新玩家分走、数据中心营收依赖少数云巨头、推理占比上升，以及任何一家客户削减开支都可能撼动增长预期。</p>
+      <p>最根本的问题仍是 AI 何时回本。如果巨额资本开支长期只能换来“再等等”，市场耐心终会耗尽。小李没有替观众宣布赢家，而是把三种威胁留作开放题：AMD 的性价比攻势、云巨头的自研硬件，还是 AI 泡沫本身。</p>
+      <blockquote class="quote">“如果答案一直是再等等，那所有人的耐心，终究会有耗尽的一天。”<cite>UP 主小李，18:24–18:29</cite></blockquote>
+      <p>19:00 后，视频以点赞、评论、收藏和“下期再见”结束。英伟达的牌已经亮出，但它们能否把系统护城河变成可持续回报，要等真实需求、客户选择和时间共同回答。</p>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，共 636 段，可能包含识别误差。未擅自修正专名、年份和数字。</p>
+      <ol class="transcript-list">
+      <li class="transcript-row" id="transcript-1">
+        <time datetime="PT0S">00:00</time>
+        <p>3月16号的加州圣河赛</p>
+      </li>
+      <li class="transcript-row" id="transcript-2">
+        <time datetime="PT2S">00:02</time>
+        <p>再来自190个国家</p>
+      </li>
+      <li class="transcript-row" id="transcript-3">
+        <time datetime="PT3S">00:03</time>
+        <p>3万人的住室下</p>
+      </li>
+      <li class="transcript-row" id="transcript-4">
+        <time datetime="PT5S">00:05</time>
+        <p>黄仁勋穿着他标志性的皮加克</p>
+      </li>
+      <li class="transcript-row" id="transcript-5">
+        <time datetime="PT7S">00:07</time>
+        <p>走上了这个被称为A.I.界春晚的舞台</p>
+      </li>
+      <li class="transcript-row" id="transcript-6">
+        <time datetime="PT10S">00:10</time>
+        <p>他有点犹豫的说</p>
+      </li>
+      <li class="transcript-row" id="transcript-7">
+        <time datetime="PT12S">00:12</time>
+        <p>去年我预计2026年的订单金额是</p>
+      </li>
+      <li class="transcript-row" id="transcript-8">
+        <time datetime="PT19S">00:19</time>
+        <p>当所有人都以为老黄要坦白增长法律时</p>
+      </li>
+      <li class="transcript-row" id="transcript-9">
+        <time datetime="PT22S">00:22</time>
+        <p>他甩出一句话</p>
+      </li>
+      <li class="transcript-row" id="transcript-10">
+        <time datetime="PT30S">00:30</time>
+        <p>给他装到了</p>
+      </li>
+      <li class="transcript-row" id="transcript-11">
+        <time datetime="PT35S">00:35</time>
+        <p>然而消息一出</p>
+      </li>
+      <li class="transcript-row" id="transcript-12">
+        <time datetime="PT36S">00:36</time>
+        <p>英国拿的股价跳涨了3%</p>
+      </li>
+      <li class="transcript-row" id="transcript-13">
+        <time datetime="PT38S">00:38</time>
+        <p>很快回落</p>
+      </li>
+      <li class="transcript-row" id="transcript-14">
+        <time datetime="PT39S">00:39</time>
+        <p>大家似乎并不买账</p>
+      </li>
+      <li class="transcript-row" id="transcript-15">
+        <time datetime="PT40S">00:40</time>
+        <p>这就是他此刻的处境</p>
+      </li>
+      <li class="transcript-row" id="transcript-16">
+        <time datetime="PT42S">00:42</time>
+        <p>首货全世界最赚钱的生意</p>
+      </li>
+      <li class="transcript-row" id="transcript-17">
+        <time datetime="PT44S">00:44</time>
+        <p>最厉害的市场最大的数字</p>
+      </li>
+      <li class="transcript-row" id="transcript-18">
+        <time datetime="PT46S">00:46</time>
+        <p>但整个市场看他的眼神</p>
+      </li>
+      <li class="transcript-row" id="transcript-19">
+        <time datetime="PT48S">00:48</time>
+        <p>毕竟从摩拜变成了审视</p>
+      </li>
+      <li class="transcript-row" id="transcript-20">
+        <time datetime="PT51S">00:51</time>
+        <p>大家好 我是小李</p>
+      </li>
+      <li class="transcript-row" id="transcript-21">
+        <time datetime="PT51S">00:51</time>
+        <p>今天我们来聊聊</p>
+      </li>
+      <li class="transcript-row" id="transcript-22">
+        <time datetime="PT52S">00:52</time>
+        <p>在全球资本高喊A.I.泡沫的时刻</p>
+      </li>
+      <li class="transcript-row" id="transcript-23">
+        <time datetime="PT55S">00:55</time>
+        <p>为什么英伟大一边赚钱一边焦虑</p>
+      </li>
+      <li class="transcript-row" id="transcript-24">
+        <time datetime="PT58S">00:58</time>
+        <p>老黄在这些2026上甩出的终极底牌</p>
+      </li>
+      <li class="transcript-row" id="transcript-25">
+        <time datetime="PT61S">01:01</time>
+        <p>又到底是仓座的好赌</p>
+      </li>
+      <li class="transcript-row" id="transcript-26">
+        <time datetime="PT63S">01:03</time>
+        <p>还是碾压级的反击</p>
+      </li>
+      <li class="transcript-row" id="transcript-27">
+        <time datetime="PT68S">01:08</time>
+        <p>如果屏幕觉得你对于A.I.行业十分熟悉</p>
+      </li>
+      <li class="transcript-row" id="transcript-28">
+        <time datetime="PT70S">01:10</time>
+        <p>只想看老黄在这些打了什么牌</p>
+      </li>
+      <li class="transcript-row" id="transcript-29">
+        <time datetime="PT72S">01:12</time>
+        <p>你可以直接跳到这里</p>
+      </li>
+      <li class="transcript-row" id="transcript-30">
+        <time datetime="PT74S">01:14</time>
+        <p>因为小李要先带你看清</p>
+      </li>
+      <li class="transcript-row" id="transcript-31">
+        <time datetime="PT76S">01:16</time>
+        <p>老黄的焦虑其实来源于A.I.的游戏规则已经彻底改变</p>
+      </li>
+      <li class="transcript-row" id="transcript-32">
+        <time datetime="PT80S">01:20</time>
+        <p>过去几年</p>
+      </li>
+      <li class="transcript-row" id="transcript-33">
+        <time datetime="PT80S">01:20</time>
+        <p>整个A.I.行业的资源都在同一件事上</p>
+      </li>
+      <li class="transcript-row" id="transcript-34">
+        <time datetime="PT83S">01:23</time>
+        <p>训练大模型</p>
+      </li>
+      <li class="transcript-row" id="transcript-35">
+        <time datetime="PT85S">01:25</time>
+        <p>训练就是让A.I.读书</p>
+      </li>
+      <li class="transcript-row" id="transcript-36">
+        <time datetime="PT86S">01:26</time>
+        <p>把互联网上几乎所有的文字图片</p>
+      </li>
+      <li class="transcript-row" id="transcript-37">
+        <time datetime="PT89S">01:29</time>
+        <p>代码位给一个神经网络</p>
+      </li>
+      <li class="transcript-row" id="transcript-38">
+        <time datetime="PT91S">01:31</time>
+        <p>让它从零开始学会理解世界</p>
+      </li>
+      <li class="transcript-row" id="transcript-39">
+        <time datetime="PT93S">01:33</time>
+        <p>这个过程需要的算力几乎没有上限</p>
+      </li>
+      <li class="transcript-row" id="transcript-40">
+        <time datetime="PT96S">01:36</time>
+        <p>模型越大越聪明</p>
+      </li>
+      <li class="transcript-row" id="transcript-41">
+        <time datetime="PT97S">01:37</time>
+        <p>数据越多越精确</p>
+      </li>
+      <li class="transcript-row" id="transcript-42">
+        <time datetime="PT98S">01:38</time>
+        <p>GPU堆的越多越好</p>
+      </li>
+      <li class="transcript-row" id="transcript-43">
+        <time datetime="PT100S">01:40</time>
+        <p>这是因为它的绝对舒适区</p>
+      </li>
+      <li class="transcript-row" id="transcript-44">
+        <time datetime="PT102S">01:42</time>
+        <p>没有任何人能在这个战场上正面击败它</p>
+      </li>
+      <li class="transcript-row" id="transcript-45">
+        <time datetime="PT104S">01:44</time>
+        <p>但到了2025年</p>
+      </li>
+      <li class="transcript-row" id="transcript-46">
+        <time datetime="PT106S">01:46</time>
+        <p>你已经听过一句话</p>
+      </li>
+      <li class="transcript-row" id="transcript-47">
+        <time datetime="PT107S">01:47</time>
+        <p>人类所有的预料已经被训练完了</p>
+      </li>
+      <li class="transcript-row" id="transcript-48">
+        <time datetime="PT110S">01:50</time>
+        <p>没错</p>
+      </li>
+      <li class="transcript-row" id="transcript-49">
+        <time datetime="PT110S">01:50</time>
+        <p>A.I.用来上课的书被读完了</p>
+      </li>
+      <li class="transcript-row" id="transcript-50">
+        <time datetime="PT113S">01:53</time>
+        <p>曾经训练GDP3要花几百万美元</p>
+      </li>
+      <li class="transcript-row" id="transcript-51">
+        <time datetime="PT116S">01:56</time>
+        <p>值得</p>
+      </li>
+      <li class="transcript-row" id="transcript-52">
+        <time datetime="PT116S">01:56</time>
+        <p>训练GDP4花了上亿</p>
+      </li>
+      <li class="transcript-row" id="transcript-53">
+        <time datetime="PT118S">01:58</time>
+        <p>也值得</p>
+      </li>
+      <li class="transcript-row" id="transcript-54">
+        <time datetime="PT119S">01:59</time>
+        <p>但再往上堆</p>
+      </li>
+      <li class="transcript-row" id="transcript-55">
+        <time datetime="PT120S">02:00</time>
+        <p>可能要十亿几十亿</p>
+      </li>
+      <li class="transcript-row" id="transcript-56">
+        <time datetime="PT122S">02:02</time>
+        <p>而换来的智能提升却越来越小</p>
+      </li>
+      <li class="transcript-row" id="transcript-57">
+        <time datetime="PT124S">02:04</time>
+        <p>那些曾经被奉为铁律的暴力美学</p>
+      </li>
+      <li class="transcript-row" id="transcript-58">
+        <time datetime="PT127S">02:07</time>
+        <p>scaling law正在放换</p>
+      </li>
+      <li class="transcript-row" id="transcript-59">
+        <time datetime="PT128S">02:08</time>
+        <p>比起同时比起造A.I.的人</p>
+      </li>
+      <li class="transcript-row" id="transcript-60">
+        <time datetime="PT130S">02:10</time>
+        <p>幽门爱的人数开始爆发</p>
+      </li>
+      <li class="transcript-row" id="transcript-61">
+        <time datetime="PT132S">02:12</time>
+        <p>ChartGDP日活突破2亿</p>
+      </li>
+      <li class="transcript-row" id="transcript-62">
+        <time datetime="PT134S">02:14</time>
+        <p>Copilot嵌入了每一台Windows电脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-63">
+        <time datetime="PT136S">02:16</time>
+        <p>Cloud在帮几百万人显带</p>
+      </li>
+      <li class="transcript-row" id="transcript-64">
+        <time datetime="PT138S">02:18</time>
+        <p>每一次你问A.I.一个问题</p>
+      </li>
+      <li class="transcript-row" id="transcript-65">
+        <time datetime="PT140S">02:20</time>
+        <p>生成一张图</p>
+      </li>
+      <li class="transcript-row" id="transcript-66">
+        <time datetime="PT141S">02:21</time>
+        <p>那些跳动的灰色句子</p>
+      </li>
+      <li class="transcript-row" id="transcript-67">
+        <time datetime="PT142S">02:22</time>
+        <p>就是一次次推理</p>
+      </li>
+      <li class="transcript-row" id="transcript-68">
+        <time datetime="PT144S">02:24</time>
+        <p>打个最直白的比方</p>
+      </li>
+      <li class="transcript-row" id="transcript-69">
+        <time datetime="PT146S">02:26</time>
+        <p>训练等于一个医学生读了10年书</p>
+      </li>
+      <li class="transcript-row" id="transcript-70">
+        <time datetime="PT148S">02:28</time>
+        <p>看了100万分病例</p>
+      </li>
+      <li class="transcript-row" id="transcript-71">
+        <time datetime="PT149S">02:29</time>
+        <p>考完它所有的执照</p>
+      </li>
+      <li class="transcript-row" id="transcript-72">
+        <time datetime="PT151S">02:31</time>
+        <p>而推理等于这个医生坐在医院问诊</p>
+      </li>
+      <li class="transcript-row" id="transcript-73">
+        <time datetime="PT153S">02:33</time>
+        <p>看了一个又一个病人</p>
+      </li>
+      <li class="transcript-row" id="transcript-74">
+        <time datetime="PT155S">02:35</time>
+        <p>读书只要读一次</p>
+      </li>
+      <li class="transcript-row" id="transcript-75">
+        <time datetime="PT156S">02:36</time>
+        <p>但病人后来一辈子</p>
+      </li>
+      <li class="transcript-row" id="transcript-76">
+        <time datetime="PT158S">02:38</time>
+        <p>而且A.I.跟真实世界不同</p>
+      </li>
+      <li class="transcript-row" id="transcript-77">
+        <time datetime="PT160S">02:40</time>
+        <p>这个名义一旦毕业</p>
+      </li>
+      <li class="transcript-row" id="transcript-78">
+        <time datetime="PT161S">02:41</time>
+        <p>就能扛出加C 扛出加V</p>
+      </li>
+      <li class="transcript-row" id="transcript-79">
+        <time datetime="PT163S">02:43</time>
+        <p>课农出几百万个分身</p>
+      </li>
+      <li class="transcript-row" id="transcript-80">
+        <time datetime="PT164S">02:44</time>
+        <p>同时给全球两亿人看病</p>
+      </li>
+      <li class="transcript-row" id="transcript-81">
+        <time datetime="PT166S">02:46</time>
+        <p>再加上Agent</p>
+      </li>
+      <li class="transcript-row" id="transcript-82">
+        <time datetime="PT167S">02:47</time>
+        <p>一个挂号单能触发上百轮问诊</p>
+      </li>
+      <li class="transcript-row" id="transcript-83">
+        <time datetime="PT169S">02:49</time>
+        <p>有人统计到2016年</p>
+      </li>
+      <li class="transcript-row" id="transcript-84">
+        <time datetime="PT171S">02:51</time>
+        <p>推理预计占所有A.I.工作负载的三分之二</p>
+      </li>
+      <li class="transcript-row" id="transcript-85">
+        <time datetime="PT174S">02:54</time>
+        <p>这时候张本就变了</p>
+      </li>
+      <li class="transcript-row" id="transcript-86">
+        <time datetime="PT176S">02:56</time>
+        <p>一次性的砸几十亿配合名义是值得的</p>
+      </li>
+      <li class="transcript-row" id="transcript-87">
+        <time datetime="PT179S">02:59</time>
+        <p>但几百万个分身</p>
+      </li>
+      <li class="transcript-row" id="transcript-88">
+        <time datetime="PT180S">03:00</time>
+        <p>24小时接诊</p>
+      </li>
+      <li class="transcript-row" id="transcript-89">
+        <time datetime="PT181S">03:01</time>
+        <p>每开一次方子都要烧电 烧算力</p>
+      </li>
+      <li class="transcript-row" id="transcript-90">
+        <time datetime="PT184S">03:04</time>
+        <p>每天几十亿次</p>
+      </li>
+      <li class="transcript-row" id="transcript-91">
+        <time datetime="PT185S">03:05</time>
+        <p>所以推理时代的竞争规则比的是</p>
+      </li>
+      <li class="transcript-row" id="transcript-92">
+        <time datetime="PT187S">03:07</time>
+        <p>每次接诊能不能再便宜毛钱</p>
+      </li>
+      <li class="transcript-row" id="transcript-93">
+        <time datetime="PT190S">03:10</time>
+        <p>GPU就像全科医生</p>
+      </li>
+      <li class="transcript-row" id="transcript-94">
+        <time datetime="PT191S">03:11</time>
+        <p>什么病都能看</p>
+      </li>
+      <li class="transcript-row" id="transcript-95">
+        <time datetime="PT192S">03:12</time>
+        <p>但用来每天开几十亿次感冒药</p>
+      </li>
+      <li class="transcript-row" id="transcript-96">
+        <time datetime="PT194S">03:14</time>
+        <p>出诊费太贵了</p>
+      </li>
+      <li class="transcript-row" id="transcript-97">
+        <time datetime="PT196S">03:16</time>
+        <p>那些专为推理定制的A.I.专用芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-98">
+        <time datetime="PT198S">03:18</time>
+        <p>就是专科诊所</p>
+      </li>
+      <li class="transcript-row" id="transcript-99">
+        <time datetime="PT199S">03:19</time>
+        <p>是看一种病</p>
+      </li>
+      <li class="transcript-row" id="transcript-100">
+        <time datetime="PT200S">03:20</time>
+        <p>但又快又省</p>
+      </li>
+      <li class="transcript-row" id="transcript-101">
+        <time datetime="PT201S">03:21</time>
+        <p>时代变鬼了</p>
+      </li>
+      <li class="transcript-row" id="transcript-102">
+        <time datetime="PT202S">03:22</time>
+        <p>训练时代是英伟达一家督达</p>
+      </li>
+      <li class="transcript-row" id="transcript-103">
+        <time datetime="PT204S">03:24</time>
+        <p>推理时代所有都看到了机会</p>
+      </li>
+      <li class="transcript-row" id="transcript-104">
+        <time datetime="PT206S">03:26</time>
+        <p>而冲在最前面的是两只老黄最不想面对的军队</p>
+      </li>
+      <li class="transcript-row" id="transcript-105">
+        <time datetime="PT213S">03:33</time>
+        <p>商业世界最大的悲哀不只是对手比你强</p>
+      </li>
+      <li class="transcript-row" id="transcript-106">
+        <time datetime="PT216S">03:36</time>
+        <p>而是你的客户开始想自己干了</p>
+      </li>
+      <li class="transcript-row" id="transcript-107">
+        <time datetime="PT220S">03:40</time>
+        <p>微软、亚马逊、谷歌这几家超级巨头</p>
+      </li>
+      <li class="transcript-row" id="transcript-108">
+        <time datetime="PT222S">03:42</time>
+        <p>每年要买走英伟达数据中先进半壁江山的芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-109">
+        <time datetime="PT226S">03:46</time>
+        <p>老黄的万亿帝国是惊人在他们的资本开支之上的</p>
+      </li>
+      <li class="transcript-row" id="transcript-110">
+        <time datetime="PT229S">03:49</time>
+        <p>但你看看现在的状况</p>
+      </li>
+      <li class="transcript-row" id="transcript-111">
+        <time datetime="PT230S">03:50</time>
+        <p>谷歌的字眼TPU已经更新到第七代艾人物的</p>
+      </li>
+      <li class="transcript-row" id="transcript-112">
+        <time datetime="PT233S">03:53</time>
+        <p>硅谷的顶级智库</p>
+      </li>
+      <li class="transcript-row" id="transcript-113">
+        <time datetime="PT234S">03:54</time>
+        <p>Sama Narciss对TPU的评价是</p>
+      </li>
+      <li class="transcript-row" id="transcript-114">
+        <time datetime="PT237S">03:57</time>
+        <p>与英伟达BlackWail不相上下</p>
+      </li>
+      <li class="transcript-row" id="transcript-115">
+        <time datetime="PT239S">03:59</time>
+        <p>谷歌的GIMNINE已经跑在自家的TPU芯片上了</p>
+      </li>
+      <li class="transcript-row" id="transcript-116">
+        <time datetime="PT242S">04:02</time>
+        <p>亚马逊在英天安纳州建了最大的A.I.数据中心</p>
+      </li>
+      <li class="transcript-row" id="transcript-117">
+        <time datetime="PT245S">04:05</time>
+        <p>Anthropec正在用50万颗亚马逊的芯片训练下一代模型</p>
+      </li>
+      <li class="transcript-row" id="transcript-118">
+        <time datetime="PT249S">04:09</time>
+        <p>微软的Maya芯片已经在于Ardor和Copay的供电</p>
+      </li>
+      <li class="transcript-row" id="transcript-119">
+        <time datetime="PT252S">04:12</time>
+        <p>甚至连OpenAI都准备在2016开始制造自己的定制ISIC</p>
+      </li>
+      <li class="transcript-row" id="transcript-120">
+        <time datetime="PT256S">04:16</time>
+        <p>你看看这一长串名单</p>
+      </li>
+      <li class="transcript-row" id="transcript-121">
+        <time datetime="PT258S">04:18</time>
+        <p>英伟达最大的软件客户都开始自建硬件</p>
+      </li>
+      <li class="transcript-row" id="transcript-122">
+        <time datetime="PT261S">04:21</time>
+        <p>更要命的是这些字眼芯片的出货增速与远超GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-123">
+        <time datetime="PT264S">04:24</time>
+        <p>群FIRST预测</p>
+      </li>
+      <li class="transcript-row" id="transcript-124">
+        <time datetime="PT265S">04:25</time>
+        <p>2016年云场上字眼的ISIC出货量将增长44.6%</p>
+      </li>
+      <li class="transcript-row" id="transcript-125">
+        <time datetime="PT270S">04:30</time>
+        <p>而GPU的出货量增速仅仅有16.1%</p>
+      </li>
+      <li class="transcript-row" id="transcript-126">
+        <time datetime="PT273S">04:33</time>
+        <p>ISIC专用芯片正在已经三倍于GPU的速度扩张</p>
+      </li>
+      <li class="transcript-row" id="transcript-127">
+        <time datetime="PT276S">04:36</time>
+        <p>这好比你开了一家全宇宙最专闲的饭店</p>
+      </li>
+      <li class="transcript-row" id="transcript-128">
+        <time datetime="PT279S">04:39</time>
+        <p>结果你最大的几个老板客户说</p>
+      </li>
+      <li class="transcript-row" id="transcript-129">
+        <time datetime="PT281S">04:41</time>
+        <p>不好意思我们要自己在后院建厨房了</p>
+      </li>
+      <li class="transcript-row" id="transcript-130">
+        <time datetime="PT284S">04:44</time>
+        <p>如果说金主造反是内乱</p>
+      </li>
+      <li class="transcript-row" id="transcript-131">
+        <time datetime="PT286S">04:46</time>
+        <p>那死咬不放的AMD就是外患</p>
+      </li>
+      <li class="transcript-row" id="transcript-132">
+        <time datetime="PT288S">04:48</time>
+        <p>Suzufone哥们没打算在性能网络上跟老黄硬钢</p>
+      </li>
+      <li class="transcript-row" id="transcript-133">
+        <time datetime="PT291S">04:51</time>
+        <p>他的目标是英伟达的利润率</p>
+      </li>
+      <li class="transcript-row" id="transcript-134">
+        <time datetime="PT294S">04:54</time>
+        <p>2016年CES展会上AMD直接掏出MI455X芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-135">
+        <time datetime="PT298S">04:58</time>
+        <p>他直接把数据拍到桌上</p>
+      </li>
+      <li class="transcript-row" id="transcript-136">
+        <time datetime="PT300S">05:00</time>
+        <p>FPS算力是你英伟达的80%</p>
+      </li>
+      <li class="transcript-row" id="transcript-137">
+        <time datetime="PT303S">05:03</time>
+        <p>内存容量是1.5倍</p>
+      </li>
+      <li class="transcript-row" id="transcript-138">
+        <time datetime="PT304S">05:04</time>
+        <p>互联宽带则是持平</p>
+      </li>
+      <li class="transcript-row" id="transcript-139">
+        <time datetime="PT306S">05:06</time>
+        <p>AMD的站处非常清晰</p>
+      </li>
+      <li class="transcript-row" id="transcript-140">
+        <time datetime="PT308S">05:08</time>
+        <p>我不需要全方位碾压你</p>
+      </li>
+      <li class="transcript-row" id="transcript-141">
+        <time datetime="PT310S">05:10</time>
+        <p>我只主打一个够用而且极度便宜</p>
+      </li>
+      <li class="transcript-row" id="transcript-142">
+        <time datetime="PT313S">05:13</time>
+        <p>这把性价比的图刀一挥</p>
+      </li>
+      <li class="transcript-row" id="transcript-143">
+        <time datetime="PT314S">05:14</time>
+        <p>直接从META手里切走了百亿美元级别的GPU订单</p>
+      </li>
+      <li class="transcript-row" id="transcript-144">
+        <time datetime="PT317S">05:17</time>
+        <p>更关键的是</p>
+      </li>
+      <li class="transcript-row" id="transcript-145">
+        <time datetime="PT318S">05:18</time>
+        <p>AMD用的是UALink开放互联标准</p>
+      </li>
+      <li class="transcript-row" id="transcript-146">
+        <time datetime="PT321S">05:21</time>
+        <p>100多家成员单位</p>
+      </li>
+      <li class="transcript-row" id="transcript-147">
+        <time datetime="PT322S">05:22</time>
+        <p>明着告诉大家</p>
+      </li>
+      <li class="transcript-row" id="transcript-148">
+        <time datetime="PT323S">05:23</time>
+        <p>你只要选了AMD就不会被锁进任何一家的生态</p>
+      </li>
+      <li class="transcript-row" id="transcript-149">
+        <time datetime="PT327S">05:27</time>
+        <p>AMD的存在就是在逼着老黄降价</p>
+      </li>
+      <li class="transcript-row" id="transcript-150">
+        <time datetime="PT329S">05:29</time>
+        <p>四川英伟达奥士群雄的超高毛利率</p>
+      </li>
+      <li class="transcript-row" id="transcript-151">
+        <time datetime="PT332S">05:32</time>
+        <p>虽然网上都说Suzufone得官老黄叫表旧</p>
+      </li>
+      <li class="transcript-row" id="transcript-152">
+        <time datetime="PT334S">05:34</time>
+        <p>但他从不手软</p>
+      </li>
+      <li class="transcript-row" id="transcript-153">
+        <time datetime="PT335S">05:35</time>
+        <p>我打不赢你</p>
+      </li>
+      <li class="transcript-row" id="transcript-154">
+        <time datetime="PT336S">05:36</time>
+        <p>但可以让你赚得很难受</p>
+      </li>
+      <li class="transcript-row" id="transcript-155">
+        <time datetime="PT338S">05:38</time>
+        <p>这就是商业阳谋</p>
+      </li>
+      <li class="transcript-row" id="transcript-156">
+        <time datetime="PT342S">05:42</time>
+        <p>前两只军队上的是皮肉</p>
+      </li>
+      <li class="transcript-row" id="transcript-157">
+        <time datetime="PT344S">05:44</time>
+        <p>但真正让老黄睡不着的是一个更底层的问题</p>
+      </li>
+      <li class="transcript-row" id="transcript-158">
+        <time datetime="PT347S">05:47</time>
+        <p>英伟达赚钱吗</p>
+      </li>
+      <li class="transcript-row" id="transcript-159">
+        <time datetime="PT348S">05:48</time>
+        <p>转麻了</p>
+      </li>
+      <li class="transcript-row" id="transcript-160">
+        <time datetime="PT349S">05:49</time>
+        <p>2016彩年</p>
+      </li>
+      <li class="transcript-row" id="transcript-161">
+        <time datetime="PT350S">05:50</time>
+        <p>英伟达单季度营收是681亿美元</p>
+      </li>
+      <li class="transcript-row" id="transcript-162">
+        <time datetime="PT353S">05:53</time>
+        <p>全年是2159亿美元</p>
+      </li>
+      <li class="transcript-row" id="transcript-163">
+        <time datetime="PT355S">05:55</time>
+        <p>印钞速度</p>
+      </li>
+      <li class="transcript-row" id="transcript-164">
+        <time datetime="PT356S">05:56</time>
+        <p>连巅峰器的苹果都要沉默</p>
+      </li>
+      <li class="transcript-row" id="transcript-165">
+        <time datetime="PT358S">05:58</time>
+        <p>但这些钱是从巨头门的资本开支里来的</p>
+      </li>
+      <li class="transcript-row" id="transcript-166">
+        <time datetime="PT361S">06:01</time>
+        <p>微软谷歌、META、亚马逊</p>
+      </li>
+      <li class="transcript-row" id="transcript-167">
+        <time datetime="PT362S">06:02</time>
+        <p>2016年要砸进去超过6000亿美元</p>
+      </li>
+      <li class="transcript-row" id="transcript-168">
+        <time datetime="PT365S">06:05</time>
+        <p>那巨头门靠AI转回来多少呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-169">
+        <time datetime="PT367S">06:07</time>
+        <p>每月20美元的childGBT订阅</p>
+      </li>
+      <li class="transcript-row" id="transcript-170">
+        <time datetime="PT369S">06:09</time>
+        <p>企业端几十美元的扣拍了</p>
+      </li>
+      <li class="transcript-row" id="transcript-171">
+        <time datetime="PT371S">06:11</time>
+        <p>这点收入</p>
+      </li>
+      <li class="transcript-row" id="transcript-172">
+        <time datetime="PT372S">06:12</time>
+        <p>连6000亿开支的利息都添不上</p>
+      </li>
+      <li class="transcript-row" id="transcript-173">
+        <time datetime="PT374S">06:14</time>
+        <p>所以华尔街一直在追问同一个问题</p>
+      </li>
+      <li class="transcript-row" id="transcript-174">
+        <time datetime="PT376S">06:16</time>
+        <p>巨头他们靠AI转回来的钱</p>
+      </li>
+      <li class="transcript-row" id="transcript-175">
+        <time datetime="PT378S">06:18</time>
+        <p>跟砸进去比起来还要差得很远</p>
+      </li>
+      <li class="transcript-row" id="transcript-176">
+        <time datetime="PT381S">06:21</time>
+        <p>这场繁荣是真的吗</p>
+      </li>
+      <li class="transcript-row" id="transcript-177">
+        <time datetime="PT383S">06:23</time>
+        <p>更让市场紧张的是老黄开始亲自下场造需求了</p>
+      </li>
+      <li class="transcript-row" id="transcript-178">
+        <time datetime="PT387S">06:27</time>
+        <p>彩模摄置用了Circular Financial Deal</p>
+      </li>
+      <li class="transcript-row" id="transcript-179">
+        <time datetime="PT389S">06:29</time>
+        <p>才描述老黄这个操作</p>
+      </li>
+      <li class="transcript-row" id="transcript-180">
+        <time datetime="PT391S">06:31</time>
+        <p>漂亮话翻译叫循环融资</p>
+      </li>
+      <li class="transcript-row" id="transcript-181">
+        <time datetime="PT393S">06:33</time>
+        <p>丑话翻译叫自己给自己下单</p>
+      </li>
+      <li class="transcript-row" id="transcript-182">
+        <time datetime="PT395S">06:35</time>
+        <p>它的模式是这样的</p>
+      </li>
+      <li class="transcript-row" id="transcript-183">
+        <time datetime="PT397S">06:37</time>
+        <p>英伟达投30亿美元持有Korea的股权</p>
+      </li>
+      <li class="transcript-row" id="transcript-184">
+        <time datetime="PT400S">06:40</time>
+        <p>Korea转投就决银行开了23亿美元的债务额度</p>
+      </li>
+      <li class="transcript-row" id="transcript-185">
+        <time datetime="PT403S">06:43</time>
+        <p>以R5就是英伟达的GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-186">
+        <time datetime="PT405S">06:45</time>
+        <p>然后再用这笔钱继续买更多的英伟达GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-187">
+        <time datetime="PT408S">06:48</time>
+        <p>这家公司也被牺牲为英伟达最大的二刀贩子</p>
+      </li>
+      <li class="transcript-row" id="transcript-188">
+        <time datetime="PT412S">06:52</time>
+        <p>再比如英伟达还计划下马斯克的XAI投资最多20亿美元</p>
+      </li>
+      <li class="transcript-row" id="transcript-189">
+        <time datetime="PT416S">06:56</time>
+        <p>而马斯克明确表示</p>
+      </li>
+      <li class="transcript-row" id="transcript-190">
+        <time datetime="PT417S">06:57</time>
+        <p>XAI将部署100万颗英伟达Blackwell芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-191">
+        <time datetime="PT421S">07:01</time>
+        <p>但公平点说</p>
+      </li>
+      <li class="transcript-row" id="transcript-192">
+        <time datetime="PT422S">07:02</time>
+        <p>这些投资加起来几十亿到上百亿</p>
+      </li>
+      <li class="transcript-row" id="transcript-193">
+        <time datetime="PT424S">07:04</time>
+        <p>放在英伟达每年2500亿上的订单面前</p>
+      </li>
+      <li class="transcript-row" id="transcript-194">
+        <time datetime="PT427S">07:07</time>
+        <p>确实只是同一滴水</p>
+      </li>
+      <li class="transcript-row" id="transcript-195">
+        <time datetime="PT429S">07:09</time>
+        <p>它的核心营收还是来自微软、麦坦、谷歌、亚马逊这些大客户</p>
+      </li>
+      <li class="transcript-row" id="transcript-196">
+        <time datetime="PT433S">07:13</time>
+        <p>但真正的风险其实是循环融资背后的信贷链条</p>
+      </li>
+      <li class="transcript-row" id="transcript-197">
+        <time datetime="PT437S">07:17</time>
+        <p>光Korea一家就背着超过百亿的GPU抵押债务</p>
+      </li>
+      <li class="transcript-row" id="transcript-198">
+        <time datetime="PT440S">07:20</time>
+        <p>而GPU是快速贬值的资产</p>
+      </li>
+      <li class="transcript-row" id="transcript-199">
+        <time datetime="PT442S">07:22</time>
+        <p>英伟达自己每年出新卡就是在达旧卡的残值</p>
+      </li>
+      <li class="transcript-row" id="transcript-200">
+        <time datetime="PT446S">07:26</time>
+        <p>一旦AI需求增速发还</p>
+      </li>
+      <li class="transcript-row" id="transcript-201">
+        <time datetime="PT447S">07:27</time>
+        <p>Korea的收入就不够还债</p>
+      </li>
+      <li class="transcript-row" id="transcript-202">
+        <time datetime="PT449S">07:29</time>
+        <p>银行收紧信贷被迫抛出GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-203">
+        <time datetime="PT452S">07:32</time>
+        <p>二手GPU洪水冲垮信卡定价权</p>
+      </li>
+      <li class="transcript-row" id="transcript-204">
+        <time datetime="PT454S">07:34</time>
+        <p>到时候英伟达的订单和投资组合就要同时挨到</p>
+      </li>
+      <li class="transcript-row" id="transcript-205">
+        <time datetime="PT458S">07:38</time>
+        <p>老黄不知道危险吗</p>
+      </li>
+      <li class="transcript-row" id="transcript-206">
+        <time datetime="PT459S">07:39</time>
+        <p>他比谁都清楚</p>
+      </li>
+      <li class="transcript-row" id="transcript-207">
+        <time datetime="PT460S">07:40</time>
+        <p>但他不是停不下来而是不能停</p>
+      </li>
+      <li class="transcript-row" id="transcript-208">
+        <time datetime="PT462S">07:42</time>
+        <p>因为他如果不投</p>
+      </li>
+      <li class="transcript-row" id="transcript-209">
+        <time datetime="PT464S">07:44</time>
+        <p>这些公司就会去找AMD、去找谷歌Cloud</p>
+      </li>
+      <li class="transcript-row" id="transcript-210">
+        <time datetime="PT467S">07:47</time>
+        <p>去用自言Icic</p>
+      </li>
+      <li class="transcript-row" id="transcript-211">
+        <time datetime="PT468S">07:48</time>
+        <p>这是老黄不允许发生的事情</p>
+      </li>
+      <li class="transcript-row" id="transcript-212">
+        <time datetime="PT471S">07:51</time>
+        <p>就在前几周</p>
+      </li>
+      <li class="transcript-row" id="transcript-213">
+        <time datetime="PT471S">07:51</time>
+        <p>老黄交出了一份营收暴增73%的炸裂财报</p>
+      </li>
+      <li class="transcript-row" id="transcript-214">
+        <time datetime="PT475S">07:55</time>
+        <p>美狗利润超过6.5%</p>
+      </li>
+      <li class="transcript-row" id="transcript-215">
+        <time datetime="PT477S">07:57</time>
+        <p>结果呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-216">
+        <time datetime="PT478S">07:58</time>
+        <p>第二天虎价直接跳水5.5%</p>
+      </li>
+      <li class="transcript-row" id="transcript-217">
+        <time datetime="PT480S">08:00</time>
+        <p>一夜蒸发了2600亿美元市值</p>
+      </li>
+      <li class="transcript-row" id="transcript-218">
+        <time datetime="PT483S">08:03</time>
+        <p>为什么呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-219">
+        <time datetime="PT484S">08:04</time>
+        <p>看看高盛在报告里写的</p>
+      </li>
+      <li class="transcript-row" id="transcript-220">
+        <time datetime="PT485S">08:05</time>
+        <p>英伟达2026年的增长已经被充分定价</p>
+      </li>
+      <li class="transcript-row" id="transcript-221">
+        <time datetime="PT488S">08:08</time>
+        <p>市场要看的是2027年的故事</p>
+      </li>
+      <li class="transcript-row" id="transcript-222">
+        <time datetime="PT491S">08:11</time>
+        <p>再看看英伟达目前的涨幅对比</p>
+      </li>
+      <li class="transcript-row" id="transcript-223">
+        <time datetime="PT493S">08:13</time>
+        <p>从一季绝称到一起爬我</p>
+      </li>
+      <li class="transcript-row" id="transcript-224">
+        <time datetime="PT495S">08:15</time>
+        <p>这对比过于刺眼</p>
+      </li>
+      <li class="transcript-row" id="transcript-225">
+        <time datetime="PT497S">08:17</time>
+        <p>而这就是老黄脚下的他跑不击</p>
+      </li>
+      <li class="transcript-row" id="transcript-226">
+        <time datetime="PT499S">08:19</time>
+        <p>赚钱只是底线</p>
+      </li>
+      <li class="transcript-row" id="transcript-227">
+        <time datetime="PT500S">08:20</time>
+        <p>赚的太少</p>
+      </li>
+      <li class="transcript-row" id="transcript-228">
+        <time datetime="PT501S">08:21</time>
+        <p>增长太少</p>
+      </li>
+      <li class="transcript-row" id="transcript-229">
+        <time datetime="PT502S">08:22</time>
+        <p>都是错</p>
+      </li>
+      <li class="transcript-row" id="transcript-230">
+        <time datetime="PT502S">08:22</time>
+        <p>只要任何一个巨头随口说一句</p>
+      </li>
+      <li class="transcript-row" id="transcript-231">
+        <time datetime="PT504S">08:24</time>
+        <p>明年少买10%</p>
+      </li>
+      <li class="transcript-row" id="transcript-232">
+        <time datetime="PT506S">08:26</time>
+        <p>5万亿的帝国就可能瞬间崩塌</p>
+      </li>
+      <li class="transcript-row" id="transcript-233">
+        <time datetime="PT508S">08:28</time>
+        <p>客户遭返</p>
+      </li>
+      <li class="transcript-row" id="transcript-234">
+        <time datetime="PT509S">08:29</time>
+        <p>死敌必攻</p>
+      </li>
+      <li class="transcript-row" id="transcript-235">
+        <time datetime="PT510S">08:30</time>
+        <p>行业泡沫</p>
+      </li>
+      <li class="transcript-row" id="transcript-236">
+        <time datetime="PT511S">08:31</time>
+        <p>花姐低债</p>
+      </li>
+      <li class="transcript-row" id="transcript-237">
+        <time datetime="PT512S">08:32</time>
+        <p>换成任何一个理性的</p>
+      </li>
+      <li class="transcript-row" id="transcript-238">
+        <time datetime="PT513S">08:33</time>
+        <p>或者性的CEO</p>
+      </li>
+      <li class="transcript-row" id="transcript-239">
+        <time datetime="PT514S">08:34</time>
+        <p>人家都要开始防守了</p>
+      </li>
+      <li class="transcript-row" id="transcript-240">
+        <time datetime="PT516S">08:36</time>
+        <p>而老黄之所以是老黄</p>
+      </li>
+      <li class="transcript-row" id="transcript-241">
+        <time datetime="PT517S">08:37</time>
+        <p>就在于他的防守</p>
+      </li>
+      <li class="transcript-row" id="transcript-242">
+        <time datetime="PT519S">08:39</time>
+        <p>是更加疯狂的进攻</p>
+      </li>
+      <li class="transcript-row" id="transcript-243">
+        <time datetime="PT523S">08:43</time>
+        <p>从2026年初开始</p>
+      </li>
+      <li class="transcript-row" id="transcript-244">
+        <time datetime="PT525S">08:45</time>
+        <p>老黄在每一个公开场合</p>
+      </li>
+      <li class="transcript-row" id="transcript-245">
+        <time datetime="PT526S">08:46</time>
+        <p>反复在讲同一件事</p>
+      </li>
+      <li class="transcript-row" id="transcript-246">
+        <time datetime="PT528S">08:48</time>
+        <p>AI产业不是一层</p>
+      </li>
+      <li class="transcript-row" id="transcript-247">
+        <time datetime="PT529S">08:49</time>
+        <p>是五层</p>
+      </li>
+      <li class="transcript-row" id="transcript-248">
+        <time datetime="PT530S">08:50</time>
+        <p>最底下是能源</p>
+      </li>
+      <li class="transcript-row" id="transcript-249">
+        <time datetime="PT531S">08:51</time>
+        <p>没有电</p>
+      </li>
+      <li class="transcript-row" id="transcript-250">
+        <time datetime="PT532S">08:52</time>
+        <p>什么AI都跑不起来</p>
+      </li>
+      <li class="transcript-row" id="transcript-251">
+        <time datetime="PT533S">08:53</time>
+        <p>往上是芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-252">
+        <time datetime="PT535S">08:55</time>
+        <p>所有人以为英伟达只住在这一层</p>
+      </li>
+      <li class="transcript-row" id="transcript-253">
+        <time datetime="PT537S">08:57</time>
+        <p>再往上是基础设施</p>
+      </li>
+      <li class="transcript-row" id="transcript-254">
+        <time datetime="PT538S">08:58</time>
+        <p>把芯片连成集群</p>
+      </li>
+      <li class="transcript-row" id="transcript-255">
+        <time datetime="PT540S">09:00</time>
+        <p>铺网络网搭软件</p>
+      </li>
+      <li class="transcript-row" id="transcript-256">
+        <time datetime="PT541S">09:01</time>
+        <p>搭生态</p>
+      </li>
+      <li class="transcript-row" id="transcript-257">
+        <time datetime="PT542S">09:02</time>
+        <p>然后是模型</p>
+      </li>
+      <li class="transcript-row" id="transcript-258">
+        <time datetime="PT543S">09:03</time>
+        <p>XGPT</p>
+      </li>
+      <li class="transcript-row" id="transcript-259">
+        <time datetime="PT544S">09:04</time>
+        <p>Cloud</p>
+      </li>
+      <li class="transcript-row" id="transcript-260">
+        <time datetime="PT544S">09:04</time>
+        <p>GIMNITE</p>
+      </li>
+      <li class="transcript-row" id="transcript-261">
+        <time datetime="PT545S">09:05</time>
+        <p>举头们卷身卷死的大脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-262">
+        <time datetime="PT547S">09:07</time>
+        <p>最上面是应用</p>
+      </li>
+      <li class="transcript-row" id="transcript-263">
+        <time datetime="PT548S">09:08</time>
+        <p>AI落地到医疗</p>
+      </li>
+      <li class="transcript-row" id="transcript-264">
+        <time datetime="PT549S">09:09</time>
+        <p>金融机器人自动驾驶</p>
+      </li>
+      <li class="transcript-row" id="transcript-265">
+        <time datetime="PT551S">09:11</time>
+        <p>这个大蛋糕</p>
+      </li>
+      <li class="transcript-row" id="transcript-266">
+        <time datetime="PT552S">09:12</time>
+        <p>其实是为了回应两件事</p>
+      </li>
+      <li class="transcript-row" id="transcript-267">
+        <time datetime="PT554S">09:14</time>
+        <p>第一就是回对泡沫论</p>
+      </li>
+      <li class="transcript-row" id="transcript-268">
+        <time datetime="PT556S">09:16</time>
+        <p>你们说AI是泡沫</p>
+      </li>
+      <li class="transcript-row" id="transcript-269">
+        <time datetime="PT557S">09:17</time>
+        <p>是因为指定的最上面</p>
+      </li>
+      <li class="transcript-row" id="transcript-270">
+        <time datetime="PT558S">09:18</time>
+        <p>模型烧钱</p>
+      </li>
+      <li class="transcript-row" id="transcript-271">
+        <time datetime="PT559S">09:19</time>
+        <p>应用没起来</p>
+      </li>
+      <li class="transcript-row" id="transcript-272">
+        <time datetime="PT560S">09:20</time>
+        <p>但老黄说</p>
+      </li>
+      <li class="transcript-row" id="transcript-273">
+        <time datetime="PT561S">09:21</time>
+        <p>底下三层才是主战场</p>
+      </li>
+      <li class="transcript-row" id="transcript-274">
+        <time datetime="PT563S">09:23</time>
+        <p>发电场在扩建</p>
+      </li>
+      <li class="transcript-row" id="transcript-275">
+        <time datetime="PT564S">09:24</time>
+        <p>芯片工厂在动工</p>
+      </li>
+      <li class="transcript-row" id="transcript-276">
+        <time datetime="PT565S">09:25</time>
+        <p>几十万人走上新岗位</p>
+      </li>
+      <li class="transcript-row" id="transcript-277">
+        <time datetime="PT567S">09:27</time>
+        <p>地基才刚开始打</p>
+      </li>
+      <li class="transcript-row" id="transcript-278">
+        <time datetime="PT568S">09:28</time>
+        <p>你就跟我说大楼歪了</p>
+      </li>
+      <li class="transcript-row" id="transcript-279">
+        <time datetime="PT570S">09:30</time>
+        <p>第二是告诉所有对手</p>
+      </li>
+      <li class="transcript-row" id="transcript-280">
+        <time datetime="PT571S">09:31</time>
+        <p>你们瞄错靶子了</p>
+      </li>
+      <li class="transcript-row" id="transcript-281">
+        <time datetime="PT573S">09:33</time>
+        <p>金主字眼芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-282">
+        <time datetime="PT574S">09:34</time>
+        <p>AMD砍架</p>
+      </li>
+      <li class="transcript-row" id="transcript-283">
+        <time datetime="PT575S">09:35</time>
+        <p>打的都是第二层</p>
+      </li>
+      <li class="transcript-row" id="transcript-284">
+        <time datetime="PT576S">09:36</time>
+        <p>但老黄早就布置在第二层了</p>
+      </li>
+      <li class="transcript-row" id="transcript-285">
+        <time datetime="PT578S">09:38</time>
+        <p>能源层</p>
+      </li>
+      <li class="transcript-row" id="transcript-286">
+        <time datetime="PT579S">09:39</time>
+        <p>它在跟电力鞠头规划AI工厂供电</p>
+      </li>
+      <li class="transcript-row" id="transcript-287">
+        <time datetime="PT581S">09:41</time>
+        <p>基建层</p>
+      </li>
+      <li class="transcript-row" id="transcript-288">
+        <time datetime="PT582S">09:42</time>
+        <p>古打索死全球开发者</p>
+      </li>
+      <li class="transcript-row" id="transcript-289">
+        <time datetime="PT584S">09:44</time>
+        <p>模型层NMV服务卡住了开发入口</p>
+      </li>
+      <li class="transcript-row" id="transcript-290">
+        <time datetime="PT587S">09:47</time>
+        <p>应用层</p>
+      </li>
+      <li class="transcript-row" id="transcript-291">
+        <time datetime="PT587S">09:47</time>
+        <p>它亲自定义机器人的大脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-292">
+        <time datetime="PT589S">09:49</time>
+        <p>总结一下就是</p>
+      </li>
+      <li class="transcript-row" id="transcript-293">
+        <time datetime="PT590S">09:50</time>
+        <p>你们格局小了</p>
+      </li>
+      <li class="transcript-row" id="transcript-294">
+        <time datetime="PT591S">09:51</time>
+        <p>我早就在大气层了</p>
+      </li>
+      <li class="transcript-row" id="transcript-295">
+        <time datetime="PT593S">09:53</time>
+        <p>而接下来</p>
+      </li>
+      <li class="transcript-row" id="transcript-296">
+        <time datetime="PT593S">09:53</time>
+        <p>3月16号的GTC-2026</p>
+      </li>
+      <li class="transcript-row" id="transcript-297">
+        <time datetime="PT595S">09:55</time>
+        <p>老黄又在大气层给所有人甩售了三张底牌</p>
+      </li>
+      <li class="transcript-row" id="transcript-298">
+        <time datetime="PT598S">09:58</time>
+        <p>而且张张见血</p>
+      </li>
+      <li class="transcript-row" id="transcript-299">
+        <time datetime="PT600S">10:00</time>
+        <p>GTC的第一个重磅</p>
+      </li>
+      <li class="transcript-row" id="transcript-300">
+        <time datetime="PT602S">10:02</time>
+        <p>是英伟达的新一代AI计算平台</p>
+      </li>
+      <li class="transcript-row" id="transcript-301">
+        <time datetime="PT604S">10:04</time>
+        <p>Vera Rubin</p>
+      </li>
+      <li class="transcript-row" id="transcript-302">
+        <time datetime="PT605S">10:05</time>
+        <p>是由7款芯片拼成的一整台超级计算机</p>
+      </li>
+      <li class="transcript-row" id="transcript-303">
+        <time datetime="PT608S">10:08</time>
+        <p>从散力到调度</p>
+      </li>
+      <li class="transcript-row" id="transcript-304">
+        <time datetime="PT609S">10:09</time>
+        <p>从通信到安全</p>
+      </li>
+      <li class="transcript-row" id="transcript-305">
+        <time datetime="PT610S">10:10</time>
+        <p>从网络到推理</p>
+      </li>
+      <li class="transcript-row" id="transcript-306">
+        <time datetime="PT611S">10:11</time>
+        <p>一个机架塞进去了过去</p>
+      </li>
+      <li class="transcript-row" id="transcript-307">
+        <time datetime="PT613S">10:13</time>
+        <p>需要好几种芯片分别提供的能力</p>
+      </li>
+      <li class="transcript-row" id="transcript-308">
+        <time datetime="PT615S">10:15</time>
+        <p>光GPU只有72克</p>
+      </li>
+      <li class="transcript-row" id="transcript-309">
+        <time datetime="PT617S">10:17</time>
+        <p>塞在一个机架里</p>
+      </li>
+      <li class="transcript-row" id="transcript-310">
+        <time datetime="PT619S">10:19</time>
+        <p>这些芯片从第一天</p>
+      </li>
+      <li class="transcript-row" id="transcript-311">
+        <time datetime="PT620S">10:20</time>
+        <p>就是一张图纸画出来的</p>
+      </li>
+      <li class="transcript-row" id="transcript-312">
+        <time datetime="PT621S">10:21</time>
+        <p>故乡之间怎么通信</p>
+      </li>
+      <li class="transcript-row" id="transcript-313">
+        <time datetime="PT623S">10:23</time>
+        <p>怎么分工</p>
+      </li>
+      <li class="transcript-row" id="transcript-314">
+        <time datetime="PT624S">10:24</time>
+        <p>怎么散热</p>
+      </li>
+      <li class="transcript-row" id="transcript-315">
+        <time datetime="PT624S">10:24</time>
+        <p>全部联合优化</p>
+      </li>
+      <li class="transcript-row" id="transcript-316">
+        <time datetime="PT626S">10:26</time>
+        <p>英伟达管着叫极致协同设计</p>
+      </li>
+      <li class="transcript-row" id="transcript-317">
+        <time datetime="PT628S">10:28</time>
+        <p>这也就是老黄所说的</p>
+      </li>
+      <li class="transcript-row" id="transcript-318">
+        <time datetime="PT630S">10:30</time>
+        <p>世界前所未见的芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-319">
+        <time datetime="PT632S">10:32</time>
+        <p>公布的性能也很炸裂</p>
+      </li>
+      <li class="transcript-row" id="transcript-320">
+        <time datetime="PT633S">10:33</time>
+        <p>跟上一代的Black Will Be</p>
+      </li>
+      <li class="transcript-row" id="transcript-321">
+        <time datetime="PT635S">10:35</time>
+        <p>训练桃园的大模型</p>
+      </li>
+      <li class="transcript-row" id="transcript-322">
+        <time datetime="PT636S">10:36</time>
+        <p>只需要1.4G的GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-323">
+        <time datetime="PT637S">10:37</time>
+        <p>推理成本</p>
+      </li>
+      <li class="transcript-row" id="transcript-324">
+        <time datetime="PT638S">10:38</time>
+        <p>看到了1.10</p>
+      </li>
+      <li class="transcript-row" id="transcript-325">
+        <time datetime="PT639S">10:39</time>
+        <p>而且这一代的物理设计都翻新了</p>
+      </li>
+      <li class="transcript-row" id="transcript-326">
+        <time datetime="PT641S">10:41</time>
+        <p>上一代</p>
+      </li>
+      <li class="transcript-row" id="transcript-327">
+        <time datetime="PT642S">10:42</time>
+        <p>5000多跟同览装出来跟圣丹树一样</p>
+      </li>
+      <li class="transcript-row" id="transcript-328">
+        <time datetime="PT644S">10:44</time>
+        <p>而且还经常Bug</p>
+      </li>
+      <li class="transcript-row" id="transcript-329">
+        <time datetime="PT646S">10:46</time>
+        <p>这一代是把计算机</p>
+      </li>
+      <li class="transcript-row" id="transcript-330">
+        <time datetime="PT647S">10:47</time>
+        <p>模块内部的线览全部干掉了</p>
+      </li>
+      <li class="transcript-row" id="transcript-331">
+        <time datetime="PT649S">10:49</time>
+        <p>换成了模块化</p>
+      </li>
+      <li class="transcript-row" id="transcript-332">
+        <time datetime="PT650S">10:50</time>
+        <p>板对板连接器</p>
+      </li>
+      <li class="transcript-row" id="transcript-333">
+        <time datetime="PT651S">10:51</time>
+        <p>装备时间</p>
+      </li>
+      <li class="transcript-row" id="transcript-334">
+        <time datetime="PT652S">10:52</time>
+        <p>从两小时加到了5分钟</p>
+      </li>
+      <li class="transcript-row" id="transcript-335">
+        <time datetime="PT654S">10:54</time>
+        <p>但除了性能</p>
+      </li>
+      <li class="transcript-row" id="transcript-336">
+        <time datetime="PT655S">10:55</time>
+        <p>Vera Rubin真正的杀招在另一个战场</p>
+      </li>
+      <li class="transcript-row" id="transcript-337">
+        <time datetime="PT657S">10:57</time>
+        <p>不是单颗芯片多强</p>
+      </li>
+      <li class="transcript-row" id="transcript-338">
+        <time datetime="PT658S">10:58</time>
+        <p>而是几千颗芯片怎么连成一个系统</p>
+      </li>
+      <li class="transcript-row" id="transcript-339">
+        <time datetime="PT661S">11:01</time>
+        <p>业内管着叫超节点</p>
+      </li>
+      <li class="transcript-row" id="transcript-340">
+        <time datetime="PT664S">11:04</time>
+        <p>现在链盾的共识是</p>
+      </li>
+      <li class="transcript-row" id="transcript-341">
+        <time datetime="PT665S">11:05</time>
+        <p>Ai竞争的焦点</p>
+      </li>
+      <li class="transcript-row" id="transcript-342">
+        <time datetime="PT666S">11:06</time>
+        <p>已经从单颗芯片多强</p>
+      </li>
+      <li class="transcript-row" id="transcript-343">
+        <time datetime="PT668S">11:08</time>
+        <p>转移到了几千颗芯片怎么连成一个系统</p>
+      </li>
+      <li class="transcript-row" id="transcript-344">
+        <time datetime="PT671S">11:11</time>
+        <p>而英伟达</p>
+      </li>
+      <li class="transcript-row" id="transcript-345">
+        <time datetime="PT672S">11:12</time>
+        <p>花了10年达到的NVLink体系</p>
+      </li>
+      <li class="transcript-row" id="transcript-346">
+        <time datetime="PT674S">11:14</time>
+        <p>是目前唯一成熟的超节点方案</p>
+      </li>
+      <li class="transcript-row" id="transcript-347">
+        <time datetime="PT676S">11:16</time>
+        <p>72GPU通过NVLink 6</p>
+      </li>
+      <li class="transcript-row" id="transcript-348">
+        <time datetime="PT678S">11:18</time>
+        <p>以260TB每秒的总宽带协同工作</p>
+      </li>
+      <li class="transcript-row" id="transcript-349">
+        <time datetime="PT682S">11:22</time>
+        <p>延迟在百纳秒级别</p>
+      </li>
+      <li class="transcript-row" id="transcript-350">
+        <time datetime="PT684S">11:24</time>
+        <p>只要你买了英伟达的GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-351">
+        <time datetime="PT685S">11:25</time>
+        <p>就得用它的交换芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-352">
+        <time datetime="PT687S">11:27</time>
+        <p>通信协议</p>
+      </li>
+      <li class="transcript-row" id="transcript-353">
+        <time datetime="PT688S">11:28</time>
+        <p>同览背板</p>
+      </li>
+      <li class="transcript-row" id="transcript-354">
+        <time datetime="PT688S">11:28</time>
+        <p>全套打包</p>
+      </li>
+      <li class="transcript-row" id="transcript-355">
+        <time datetime="PT689S">11:29</time>
+        <p>别人的零件插都插不进去</p>
+      </li>
+      <li class="transcript-row" id="transcript-356">
+        <time datetime="PT691S">11:31</time>
+        <p>而且老黄的大饼</p>
+      </li>
+      <li class="transcript-row" id="transcript-357">
+        <time datetime="PT693S">11:33</time>
+        <p>而不是</p>
+      </li>
+      <li class="transcript-row" id="transcript-358">
+        <time datetime="PT693S">11:33</time>
+        <p>是路线图已经换到了</p>
+      </li>
+      <li class="transcript-row" id="transcript-359">
+        <time datetime="PT695S">11:35</time>
+        <p>2028年</p>
+      </li>
+      <li class="transcript-row" id="transcript-360">
+        <time datetime="PT696S">11:36</time>
+        <p>VR Rubin</p>
+      </li>
+      <li class="transcript-row" id="transcript-361">
+        <time datetime="PT696S">11:36</time>
+        <p>VR Rubin Ultra</p>
+      </li>
+      <li class="transcript-row" id="transcript-362">
+        <time datetime="PT698S">11:38</time>
+        <p>飞满</p>
+      </li>
+      <li class="transcript-row" id="transcript-363">
+        <time datetime="PT698S">11:38</time>
+        <p>一套即时路线下来</p>
+      </li>
+      <li class="transcript-row" id="transcript-364">
+        <time datetime="PT699S">11:39</time>
+        <p>你发现每一代升级</p>
+      </li>
+      <li class="transcript-row" id="transcript-365">
+        <time datetime="PT701S">11:41</time>
+        <p>都让上一代的T代方案</p>
+      </li>
+      <li class="transcript-row" id="transcript-366">
+        <time datetime="PT703S">11:43</time>
+        <p>还没落地</p>
+      </li>
+      <li class="transcript-row" id="transcript-367">
+        <time datetime="PT704S">11:44</time>
+        <p>就直接落后了</p>
+      </li>
+      <li class="transcript-row" id="transcript-368">
+        <time datetime="PT706S">11:46</time>
+        <p>又是避还生态</p>
+      </li>
+      <li class="transcript-row" id="transcript-369">
+        <time datetime="PT707S">11:47</time>
+        <p>又是避着你买新版</p>
+      </li>
+      <li class="transcript-row" id="transcript-370">
+        <time datetime="PT708S">11:48</time>
+        <p>客户上了车就直接开高速</p>
+      </li>
+      <li class="transcript-row" id="transcript-371">
+        <time datetime="PT710S">11:50</time>
+        <p>别想停下来</p>
+      </li>
+      <li class="transcript-row" id="transcript-372">
+        <time datetime="PT710S">11:50</time>
+        <p>当然对手也不会坐一代币</p>
+      </li>
+      <li class="transcript-row" id="transcript-373">
+        <time datetime="PT712S">11:52</time>
+        <p>他们的策略不是在芯片层硬钢应为大</p>
+      </li>
+      <li class="transcript-row" id="transcript-374">
+        <time datetime="PT715S">11:55</time>
+        <p>而是绕开NVLink</p>
+      </li>
+      <li class="transcript-row" id="transcript-375">
+        <time datetime="PT717S">11:57</time>
+        <p>自己定义芯片怎么连的规则</p>
+      </li>
+      <li class="transcript-row" id="transcript-376">
+        <time datetime="PT719S">11:59</time>
+        <p>MD 谷歌</p>
+      </li>
+      <li class="transcript-row" id="transcript-377">
+        <time datetime="PT720S">12:00</time>
+        <p>华为都献出了不错的反制措施</p>
+      </li>
+      <li class="transcript-row" id="transcript-378">
+        <time datetime="PT722S">12:02</time>
+        <p>比如刚才提到的</p>
+      </li>
+      <li class="transcript-row" id="transcript-379">
+        <time datetime="PT723S">12:03</time>
+        <p>MD 推出了UVLink开放互联标准</p>
+      </li>
+      <li class="transcript-row" id="transcript-380">
+        <time datetime="PT725S">12:05</time>
+        <p>谷歌用光交换走了新路线</p>
+      </li>
+      <li class="transcript-row" id="transcript-381">
+        <time datetime="PT727S">12:07</time>
+        <p>华为领取目标是</p>
+      </li>
+      <li class="transcript-row" id="transcript-382">
+        <time datetime="PT729S">12:09</time>
+        <p>8192颗NPU 超大规模互联</p>
+      </li>
+      <li class="transcript-row" id="transcript-383">
+        <time datetime="PT732S">12:12</time>
+        <p>但别忘了我们刚说的关键词</p>
+      </li>
+      <li class="transcript-row" id="transcript-384">
+        <time datetime="PT734S">12:14</time>
+        <p>目前唯一成熟</p>
+      </li>
+      <li class="transcript-row" id="transcript-385">
+        <time datetime="PT735S">12:15</time>
+        <p>说白了</p>
+      </li>
+      <li class="transcript-row" id="transcript-386">
+        <time datetime="PT736S">12:16</time>
+        <p>就是你花三年肆演了一颗芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-387">
+        <time datetime="PT738S">12:18</time>
+        <p>造出来之后</p>
+      </li>
+      <li class="transcript-row" id="transcript-388">
+        <time datetime="PT739S">12:19</time>
+        <p>发现要跑满性能</p>
+      </li>
+      <li class="transcript-row" id="transcript-389">
+        <time datetime="PT740S">12:20</time>
+        <p>最后姐还是差在英文达的机架里</p>
+      </li>
+      <li class="transcript-row" id="transcript-390">
+        <time datetime="PT742S">12:22</time>
+        <p>老黄赌的就是这个时间差</p>
+      </li>
+      <li class="transcript-row" id="transcript-391">
+        <time datetime="PT744S">12:24</time>
+        <p>等你的替代方案真正好用的时候</p>
+      </li>
+      <li class="transcript-row" id="transcript-392">
+        <time datetime="PT746S">12:26</time>
+        <p>我的客户已经被NVLink的生态绑了两三年了</p>
+      </li>
+      <li class="transcript-row" id="transcript-393">
+        <time datetime="PT749S">12:29</time>
+        <p>想走也走不了</p>
+      </li>
+      <li class="transcript-row" id="transcript-394">
+        <time datetime="PT751S">12:31</time>
+        <p>好</p>
+      </li>
+      <li class="transcript-row" id="transcript-395">
+        <time datetime="PT752S">12:32</time>
+        <p>超级点的城墙期好了</p>
+      </li>
+      <li class="transcript-row" id="transcript-396">
+        <time datetime="PT753S">12:33</time>
+        <p>车开上高速了</p>
+      </li>
+      <li class="transcript-row" id="transcript-397">
+        <time datetime="PT754S">12:34</time>
+        <p>接下来就该焊死车门了</p>
+      </li>
+      <li class="transcript-row" id="transcript-398">
+        <time datetime="PT756S">12:36</time>
+        <p>焊车门核心逻辑是四个字</p>
+      </li>
+      <li class="transcript-row" id="transcript-399">
+        <time datetime="PT758S">12:38</time>
+        <p>软硬坚实</p>
+      </li>
+      <li class="transcript-row" id="transcript-400">
+        <time datetime="PT759S">12:39</time>
+        <p>先说软的</p>
+      </li>
+      <li class="transcript-row" id="transcript-401">
+        <time datetime="PT760S">12:40</time>
+        <p>这就是英文达的枯大帝国</p>
+      </li>
+      <li class="transcript-row" id="transcript-402">
+        <time datetime="PT762S">12:42</time>
+        <p>前面说了那么多威胁</p>
+      </li>
+      <li class="transcript-row" id="transcript-403">
+        <time datetime="PT764S">12:44</time>
+        <p>都有一个前提</p>
+      </li>
+      <li class="transcript-row" id="transcript-404">
+        <time datetime="PT765S">12:45</time>
+        <p>就是客户能离开英文达的生态</p>
+      </li>
+      <li class="transcript-row" id="transcript-405">
+        <time datetime="PT767S">12:47</time>
+        <p>问题是你离得开吗</p>
+      </li>
+      <li class="transcript-row" id="transcript-406">
+        <time datetime="PT769S">12:49</time>
+        <p>你想换便宜的AMD芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-407">
+        <time datetime="PT770S">12:50</time>
+        <p>可以</p>
+      </li>
+      <li class="transcript-row" id="transcript-408">
+        <time datetime="PT771S">12:51</time>
+        <p>代价是你把公司澄清上网行的底层代码</p>
+      </li>
+      <li class="transcript-row" id="transcript-409">
+        <time datetime="PT774S">12:54</time>
+        <p>推倒重写</p>
+      </li>
+      <li class="transcript-row" id="transcript-410">
+        <time datetime="PT775S">12:55</time>
+        <p>谷歌前TPU工程是在访谈里说的很直白</p>
+      </li>
+      <li class="transcript-row" id="transcript-411">
+        <time datetime="PT778S">12:58</time>
+        <p>TPU确实能用到风执性的</p>
+      </li>
+      <li class="transcript-row" id="transcript-412">
+        <time datetime="PT780S">13:00</time>
+        <p>但前提是你的工程是得懂得到软件站</p>
+      </li>
+      <li class="transcript-row" id="transcript-413">
+        <time datetime="PT783S">13:03</time>
+        <p>普通客户直接用谷歌Cloud跑TPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-414">
+        <time datetime="PT785S">13:05</time>
+        <p>利用率可能只有50%到60%</p>
+      </li>
+      <li class="transcript-row" id="transcript-415">
+        <time datetime="PT788S">13:08</time>
+        <p>枯大的互成盒</p>
+      </li>
+      <li class="transcript-row" id="transcript-416">
+        <time datetime="PT789S">13:09</time>
+        <p>不知基础上不可替代</p>
+      </li>
+      <li class="transcript-row" id="transcript-417">
+        <time datetime="PT790S">13:10</time>
+        <p>而是欠一成本太高</p>
+      </li>
+      <li class="transcript-row" id="transcript-418">
+        <time datetime="PT792S">13:12</time>
+        <p>高到没人感动</p>
+      </li>
+      <li class="transcript-row" id="transcript-419">
+        <time datetime="PT793S">13:13</time>
+        <p>老黄在GTC上特别强调</p>
+      </li>
+      <li class="transcript-row" id="transcript-420">
+        <time datetime="PT795S">13:15</time>
+        <p>AMD芯片这么老的架构</p>
+      </li>
+      <li class="transcript-row" id="transcript-421">
+        <time datetime="PT796S">13:16</time>
+        <p>在云端的价格反而涨了</p>
+      </li>
+      <li class="transcript-row" id="transcript-422">
+        <time datetime="PT798S">13:18</time>
+        <p>别家的芯片越久越不值钱</p>
+      </li>
+      <li class="transcript-row" id="transcript-423">
+        <time datetime="PT800S">13:20</time>
+        <p>它的芯片越旧越贵</p>
+      </li>
+      <li class="transcript-row" id="transcript-424">
+        <time datetime="PT802S">13:22</time>
+        <p>有点发展赛了</p>
+      </li>
+      <li class="transcript-row" id="transcript-425">
+        <time datetime="PT803S">13:23</time>
+        <p>就差说是茅台生态了</p>
+      </li>
+      <li class="transcript-row" id="transcript-426">
+        <time datetime="PT806S">13:26</time>
+        <p>说完软的再说硬的</p>
+      </li>
+      <li class="transcript-row" id="transcript-427">
+        <time datetime="PT807S">13:27</time>
+        <p>2005年平安夜</p>
+      </li>
+      <li class="transcript-row" id="transcript-428">
+        <time datetime="PT808S">13:28</time>
+        <p>老黄在了200亿美元收购了GROCK</p>
+      </li>
+      <li class="transcript-row" id="transcript-429">
+        <time datetime="PT810S">13:30</time>
+        <p>还记得前面说的吗</p>
+      </li>
+      <li class="transcript-row" id="transcript-430">
+        <time datetime="PT812S">13:32</time>
+        <p>训练是培养医生</p>
+      </li>
+      <li class="transcript-row" id="transcript-431">
+        <time datetime="PT813S">13:33</time>
+        <p>腿里是看病人</p>
+      </li>
+      <li class="transcript-row" id="transcript-432">
+        <time datetime="PT814S">13:34</time>
+        <p>这里的GROCK的LPU芯片就是那个专科诊所</p>
+      </li>
+      <li class="transcript-row" id="transcript-433">
+        <time datetime="PT818S">13:38</time>
+        <p>只看一种病</p>
+      </li>
+      <li class="transcript-row" id="transcript-434">
+        <time datetime="PT819S">13:39</time>
+        <p>但又快又便宜</p>
+      </li>
+      <li class="transcript-row" id="transcript-435">
+        <time datetime="PT821S">13:41</time>
+        <p>但老黄看中的不只是GROCK的芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-436">
+        <time datetime="PT823S">13:43</time>
+        <p>GROCK创神Jonathan Rose</p>
+      </li>
+      <li class="transcript-row" id="transcript-437">
+        <time datetime="PT825S">13:45</time>
+        <p>来自谷歌TPU团队</p>
+      </li>
+      <li class="transcript-row" id="transcript-438">
+        <time datetime="PT827S">13:47</time>
+        <p>他在谷歌干的活</p>
+      </li>
+      <li class="transcript-row" id="transcript-439">
+        <time datetime="PT828S">13:48</time>
+        <p>就是研究怎么把芯片的每一分</p>
+      </li>
+      <li class="transcript-row" id="transcript-440">
+        <time datetime="PT830S">13:50</time>
+        <p>算力都榨干</p>
+      </li>
+      <li class="transcript-row" id="transcript-441">
+        <time datetime="PT831S">13:51</time>
+        <p>一丝一毫都不浪费</p>
+      </li>
+      <li class="transcript-row" id="transcript-442">
+        <time datetime="PT833S">13:53</time>
+        <p>GROCK真正之前的是这套</p>
+      </li>
+      <li class="transcript-row" id="transcript-443">
+        <time datetime="PT834S">13:54</time>
+        <p>怎么把推理的活安排的低水不漏的调度能力</p>
+      </li>
+      <li class="transcript-row" id="transcript-444">
+        <time datetime="PT838S">13:58</time>
+        <p>GTC-2026上</p>
+      </li>
+      <li class="transcript-row" id="transcript-445">
+        <time datetime="PT839S">13:59</time>
+        <p>GROCK 3LPU已经被整合进了Viva Robin平台</p>
+      </li>
+      <li class="transcript-row" id="transcript-446">
+        <time datetime="PT842S">14:02</time>
+        <p>GPU负责重火</p>
+      </li>
+      <li class="transcript-row" id="transcript-447">
+        <time datetime="PT843S">14:03</time>
+        <p>LPU负责集火</p>
+      </li>
+      <li class="transcript-row" id="transcript-448">
+        <time datetime="PT844S">14:04</time>
+        <p>配合使用</p>
+      </li>
+      <li class="transcript-row" id="transcript-449">
+        <time datetime="PT845S">14:05</time>
+        <p>每瓦的推理吞吐提升了35倍</p>
+      </li>
+      <li class="transcript-row" id="transcript-450">
+        <time datetime="PT848S">14:08</time>
+        <p>GPU的血脉和TPU的血脉</p>
+      </li>
+      <li class="transcript-row" id="transcript-451">
+        <time datetime="PT850S">14:10</time>
+        <p>在老黄的手里合流了</p>
+      </li>
+      <li class="transcript-row" id="transcript-452">
+        <time datetime="PT852S">14:12</time>
+        <p>你想用便宜高超的推理芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-453">
+        <time datetime="PT854S">14:14</time>
+        <p>老黄威威一笑</p>
+      </li>
+      <li class="transcript-row" id="transcript-454">
+        <time datetime="PT855S">14:15</time>
+        <p>不用下车</p>
+      </li>
+      <li class="transcript-row" id="transcript-455">
+        <time datetime="PT856S">14:16</time>
+        <p>我这里也有</p>
+      </li>
+      <li class="transcript-row" id="transcript-456">
+        <time datetime="PT858S">14:18</time>
+        <p>前两张牌稳住了现在</p>
+      </li>
+      <li class="transcript-row" id="transcript-457">
+        <time datetime="PT859S">14:19</time>
+        <p>但华尔街的那台跑步机</p>
+      </li>
+      <li class="transcript-row" id="transcript-458">
+        <time datetime="PT861S">14:21</time>
+        <p>要的可不是守住阵地</p>
+      </li>
+      <li class="transcript-row" id="transcript-459">
+        <time datetime="PT863S">14:23</time>
+        <p>它要的是新故事</p>
+      </li>
+      <li class="transcript-row" id="transcript-460">
+        <time datetime="PT864S">14:24</time>
+        <p>而老黄在GTC上也给出了这个故事</p>
+      </li>
+      <li class="transcript-row" id="transcript-461">
+        <time datetime="PT867S">14:27</time>
+        <p>Token经济</p>
+      </li>
+      <li class="transcript-row" id="transcript-462">
+        <time datetime="PT868S">14:28</time>
+        <p>他在台上说</p>
+      </li>
+      <li class="transcript-row" id="transcript-463">
+        <time datetime="PT869S">14:29</time>
+        <p>未来买卫工程师</p>
+      </li>
+      <li class="transcript-row" id="transcript-464">
+        <time datetime="PT870S">14:30</time>
+        <p>都有一笔年度Token预算</p>
+      </li>
+      <li class="transcript-row" id="transcript-465">
+        <time datetime="PT872S">14:32</time>
+        <p>相当于工资的一半</p>
+      </li>
+      <li class="transcript-row" id="transcript-466">
+        <time datetime="PT873S">14:33</time>
+        <p>以后招人不光要发工资</p>
+      </li>
+      <li class="transcript-row" id="transcript-467">
+        <time datetime="PT875S">14:35</time>
+        <p>还得配钱去为AI干活</p>
+      </li>
+      <li class="transcript-row" id="transcript-468">
+        <time datetime="PT877S">14:37</time>
+        <p>那么问题来了</p>
+      </li>
+      <li class="transcript-row" id="transcript-469">
+        <time datetime="PT878S">14:38</time>
+        <p>Token是谁生产的</p>
+      </li>
+      <li class="transcript-row" id="transcript-470">
+        <time datetime="PT880S">14:40</time>
+        <p>英伟达的GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-471">
+        <time datetime="PT882S">14:42</time>
+        <p>如果说Token是这个AIS代的水和电</p>
+      </li>
+      <li class="transcript-row" id="transcript-472">
+        <time datetime="PT884S">14:44</time>
+        <p>而我英伟达就是水电厂</p>
+      </li>
+      <li class="transcript-row" id="transcript-473">
+        <time datetime="PT887S">14:47</time>
+        <p>同时被提到的</p>
+      </li>
+      <li class="transcript-row" id="transcript-474">
+        <time datetime="PT888S">14:48</time>
+        <p>还有最近火热的龙虾OpenCloud</p>
+      </li>
+      <li class="transcript-row" id="transcript-475">
+        <time datetime="PT890S">14:50</time>
+        <p>华尔循在台上称之为</p>
+      </li>
+      <li class="transcript-row" id="transcript-476">
+        <time datetime="PT891S">14:51</time>
+        <p>人类历史上最受欢迎的开源项目之一</p>
+      </li>
+      <li class="transcript-row" id="transcript-477">
+        <time datetime="PT894S">14:54</time>
+        <p>他们特处的NemoCloud</p>
+      </li>
+      <li class="transcript-row" id="transcript-478">
+        <time datetime="PT895S">14:55</time>
+        <p>直接帮企业一键部署和管理数字员工</p>
+      </li>
+      <li class="transcript-row" id="transcript-479">
+        <time datetime="PT898S">14:58</time>
+        <p>它的逻辑非常清楚</p>
+      </li>
+      <li class="transcript-row" id="transcript-480">
+        <time datetime="PT899S">14:59</time>
+        <p>Windows让人人用上电脑</p>
+      </li>
+      <li class="transcript-row" id="transcript-481">
+        <time datetime="PT901S">15:01</time>
+        <p>NemoCloud让每家公司用数字员工</p>
+      </li>
+      <li class="transcript-row" id="transcript-482">
+        <time datetime="PT904S">15:04</time>
+        <p>而数字员工消耗的每一个Token</p>
+      </li>
+      <li class="transcript-row" id="transcript-483">
+        <time datetime="PT906S">15:06</time>
+        <p>都要经过英伟达的GPU</p>
+      </li>
+      <li class="transcript-row" id="transcript-484">
+        <time datetime="PT908S">15:08</time>
+        <p>你看高速上了</p>
+      </li>
+      <li class="transcript-row" id="transcript-485">
+        <time datetime="PT909S">15:09</time>
+        <p>车门焊死</p>
+      </li>
+      <li class="transcript-row" id="transcript-486">
+        <time datetime="PT910S">15:10</time>
+        <p>到这还没完</p>
+      </li>
+      <li class="transcript-row" id="transcript-487">
+        <time datetime="PT911S">15:11</time>
+        <p>Token经济就是要告诉你</p>
+      </li>
+      <li class="transcript-row" id="transcript-488">
+        <time datetime="PT913S">15:13</time>
+        <p>以后开车要按公里收费</p>
+      </li>
+      <li class="transcript-row" id="transcript-489">
+        <time datetime="PT915S">15:15</time>
+        <p>有呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-490">
+        <time datetime="PT915S">15:15</time>
+        <p>我这也有</p>
+      </li>
+      <li class="transcript-row" id="transcript-491">
+        <time datetime="PT917S">15:17</time>
+        <p>当然了</p>
+      </li>
+      <li class="transcript-row" id="transcript-492">
+        <time datetime="PT917S">15:17</time>
+        <p>GT7上的亮点远不值这些</p>
+      </li>
+      <li class="transcript-row" id="transcript-493">
+        <time datetime="PT919S">15:19</time>
+        <p>比如质价跟英特尔的合作</p>
+      </li>
+      <li class="transcript-row" id="transcript-494">
+        <time datetime="PT922S">15:22</time>
+        <p>电力消耗优化</p>
+      </li>
+      <li class="transcript-row" id="transcript-495">
+        <time datetime="PT923S">15:23</time>
+        <p>但是要说最初圈的</p>
+      </li>
+      <li class="transcript-row" id="transcript-496">
+        <time datetime="PT924S">15:24</time>
+        <p>还得是DLS5</p>
+      </li>
+      <li class="transcript-row" id="transcript-497">
+        <time datetime="PT926S">15:26</time>
+        <p>老黄在台上称之为</p>
+      </li>
+      <li class="transcript-row" id="transcript-498">
+        <time datetime="PT927S">15:27</time>
+        <p>图形学的GPT时刻</p>
+      </li>
+      <li class="transcript-row" id="transcript-499">
+        <time datetime="PT929S">15:29</time>
+        <p>结果收获了几乎倾色的差评</p>
+      </li>
+      <li class="transcript-row" id="transcript-500">
+        <time datetime="PT931S">15:31</time>
+        <p>你看</p>
+      </li>
+      <li class="transcript-row" id="transcript-501">
+        <time datetime="PT932S">15:32</time>
+        <p>这</p>
+      </li>
+      <li class="transcript-row" id="transcript-502">
+        <time datetime="PT932S">15:32</time>
+        <p>这</p>
+      </li>
+      <li class="transcript-row" id="transcript-503">
+        <time datetime="PT933S">15:33</time>
+        <p>这</p>
+      </li>
+      <li class="transcript-row" id="transcript-504">
+        <time datetime="PT934S">15:34</time>
+        <p>还有这</p>
+      </li>
+      <li class="transcript-row" id="transcript-505">
+        <time datetime="PT935S">15:35</time>
+        <p>对不起姜老师</p>
+      </li>
+      <li class="transcript-row" id="transcript-506">
+        <time datetime="PT936S">15:36</time>
+        <p>对不起</p>
+      </li>
+      <li class="transcript-row" id="transcript-507">
+        <time datetime="PT937S">15:37</time>
+        <p>玩耿归玩耿</p>
+      </li>
+      <li class="transcript-row" id="transcript-508">
+        <time datetime="PT938S">15:38</time>
+        <p>回过头来看</p>
+      </li>
+      <li class="transcript-row" id="transcript-509">
+        <time datetime="PT939S">15:39</time>
+        <p>老黄这三张牌确实一张笔一张印</p>
+      </li>
+      <li class="transcript-row" id="transcript-510">
+        <time datetime="PT941S">15:41</time>
+        <p>更别提</p>
+      </li>
+      <li class="transcript-row" id="transcript-511">
+        <time datetime="PT942S">15:42</time>
+        <p>最近还有枯大平台扩展</p>
+      </li>
+      <li class="transcript-row" id="transcript-512">
+        <time datetime="PT943S">15:43</time>
+        <p>让GPU不光跑眼</p>
+      </li>
+      <li class="transcript-row" id="transcript-513">
+        <time datetime="PT945S">15:45</time>
+        <p>还能加速所有传统数据处理</p>
+      </li>
+      <li class="transcript-row" id="transcript-514">
+        <time datetime="PT947S">15:47</time>
+        <p>等等这些</p>
+      </li>
+      <li class="transcript-row" id="transcript-515">
+        <time datetime="PT948S">15:48</time>
+        <p>景上天游的消息</p>
+      </li>
+      <li class="transcript-row" id="transcript-516">
+        <time datetime="PT949S">15:49</time>
+        <p>现在</p>
+      </li>
+      <li class="transcript-row" id="transcript-517">
+        <time datetime="PT949S">15:49</time>
+        <p>你应该知道了</p>
+      </li>
+      <li class="transcript-row" id="transcript-518">
+        <time datetime="PT950S">15:50</time>
+        <p>为什么他敢在台上自信放光芒的说</p>
+      </li>
+      <li class="transcript-row" id="transcript-519">
+        <time datetime="PT953S">15:53</time>
+        <p>到2027年</p>
+      </li>
+      <li class="transcript-row" id="transcript-520">
+        <time datetime="PT954S">15:54</time>
+        <p>我看到的需求至少是1万亿美元</p>
+      </li>
+      <li class="transcript-row" id="transcript-521">
+        <time datetime="PT960S">16:00</time>
+        <p>讲到这里</p>
+      </li>
+      <li class="transcript-row" id="transcript-522">
+        <time datetime="PT960S">16:00</time>
+        <p>你可能觉得老黄的反击很漂亮</p>
+      </li>
+      <li class="transcript-row" id="transcript-523">
+        <time datetime="PT963S">16:03</time>
+        <p>但前面说的</p>
+      </li>
+      <li class="transcript-row" id="transcript-524">
+        <time datetime="PT964S">16:04</time>
+        <p>精确的反水和竞争对手的蚕食</p>
+      </li>
+      <li class="transcript-row" id="transcript-525">
+        <time datetime="PT966S">16:06</time>
+        <p>这些威胁也很真实</p>
+      </li>
+      <li class="transcript-row" id="transcript-526">
+        <time datetime="PT968S">16:08</time>
+        <p>所以到底谁赢了</p>
+      </li>
+      <li class="transcript-row" id="transcript-527">
+        <time datetime="PT969S">16:09</time>
+        <p>答案藏在一份名单里</p>
+      </li>
+      <li class="transcript-row" id="transcript-528">
+        <time datetime="PT971S">16:11</time>
+        <p>VRRobin的首批部署客户名单</p>
+      </li>
+      <li class="transcript-row" id="transcript-529">
+        <time datetime="PT973S">16:13</time>
+        <p>你看</p>
+      </li>
+      <li class="transcript-row" id="transcript-530">
+        <time datetime="PT974S">16:14</time>
+        <p>AWS</p>
+      </li>
+      <li class="transcript-row" id="transcript-531">
+        <time datetime="PT975S">16:15</time>
+        <p>Google Cloud</p>
+      </li>
+      <li class="transcript-row" id="transcript-532">
+        <time datetime="PT976S">16:16</time>
+        <p>VirginAzure</p>
+      </li>
+      <li class="transcript-row" id="transcript-533">
+        <time datetime="PT977S">16:17</time>
+        <p>还有加古文</p>
+      </li>
+      <li class="transcript-row" id="transcript-534">
+        <time datetime="PT977S">16:17</time>
+        <p>没错</p>
+      </li>
+      <li class="transcript-row" id="transcript-535">
+        <time datetime="PT978S">16:18</time>
+        <p>就是那几个区因为大话</p>
+      </li>
+      <li class="transcript-row" id="transcript-536">
+        <time datetime="PT979S">16:19</time>
+        <p>喊的最响的巨头</p>
+      </li>
+      <li class="transcript-row" id="transcript-537">
+        <time datetime="PT980S">16:20</time>
+        <p>结果一个不少</p>
+      </li>
+      <li class="transcript-row" id="transcript-538">
+        <time datetime="PT981S">16:21</time>
+        <p>甚至连正在用TPU的Astral Peg</p>
+      </li>
+      <li class="transcript-row" id="transcript-539">
+        <time datetime="PT984S">16:24</time>
+        <p>还有Mata</p>
+      </li>
+      <li class="transcript-row" id="transcript-540">
+        <time datetime="PT984S">16:24</time>
+        <p>还有OpenAI</p>
+      </li>
+      <li class="transcript-row" id="transcript-541">
+        <time datetime="PT985S">16:25</time>
+        <p>也全部出现在了合作伙伴的名单上</p>
+      </li>
+      <li class="transcript-row" id="transcript-542">
+        <time datetime="PT988S">16:28</time>
+        <p>为什么老板们自建厨房了</p>
+      </li>
+      <li class="transcript-row" id="transcript-543">
+        <time datetime="PT989S">16:29</time>
+        <p>还要回来呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-544">
+        <time datetime="PT990S">16:30</time>
+        <p>其实答案刚才你们都知道了</p>
+      </li>
+      <li class="transcript-row" id="transcript-545">
+        <time datetime="PT992S">16:32</time>
+        <p>第一</p>
+      </li>
+      <li class="transcript-row" id="transcript-546">
+        <time datetime="PT993S">16:33</time>
+        <p>自言芯片能吃的菜有限</p>
+      </li>
+      <li class="transcript-row" id="transcript-547">
+        <time datetime="PT994S">16:34</time>
+        <p>谷歌TPU跑自家Gemnite很强</p>
+      </li>
+      <li class="transcript-row" id="transcript-548">
+        <time datetime="PT997S">16:37</time>
+        <p>但换一个架构不同的模型效率就很打折</p>
+      </li>
+      <li class="transcript-row" id="transcript-549">
+        <time datetime="PT999S">16:39</time>
+        <p>Icex苏命就是这样的</p>
+      </li>
+      <li class="transcript-row" id="transcript-550">
+        <time datetime="PT1001S">16:41</time>
+        <p>专用</p>
+      </li>
+      <li class="transcript-row" id="transcript-551">
+        <time datetime="PT1002S">16:42</time>
+        <p>你花三年花好的芯片出厂的天</p>
+      </li>
+      <li class="transcript-row" id="transcript-552">
+        <time datetime="PT1004S">16:44</time>
+        <p>模型架构可能已经变了</p>
+      </li>
+      <li class="transcript-row" id="transcript-553">
+        <time datetime="PT1006S">16:46</time>
+        <p>第二</p>
+      </li>
+      <li class="transcript-row" id="transcript-554">
+        <time datetime="PT1006S">16:46</time>
+        <p>因为达麦的不止是芯片</p>
+      </li>
+      <li class="transcript-row" id="transcript-555">
+        <time datetime="PT1008S">16:48</time>
+        <p>是生态</p>
+      </li>
+      <li class="transcript-row" id="transcript-556">
+        <time datetime="PT1009S">16:49</time>
+        <p>是车门汉死</p>
+      </li>
+      <li class="transcript-row" id="transcript-557">
+        <time datetime="PT1010S">16:50</time>
+        <p>枯大十几年积累的开发者生态</p>
+      </li>
+      <li class="transcript-row" id="transcript-558">
+        <time datetime="PT1012S">16:52</time>
+        <p>加成NVLink构建的私有互联标准</p>
+      </li>
+      <li class="transcript-row" id="transcript-559">
+        <time datetime="PT1015S">16:55</time>
+        <p>叠加在一起的迁移成本</p>
+      </li>
+      <li class="transcript-row" id="transcript-560">
+        <time datetime="PT1016S">16:56</time>
+        <p>比任何单颗芯片的性能差距都要致命</p>
+      </li>
+      <li class="transcript-row" id="transcript-561">
+        <time datetime="PT1020S">17:00</time>
+        <p>第三</p>
+      </li>
+      <li class="transcript-row" id="transcript-562">
+        <time datetime="PT1020S">17:00</time>
+        <p>这些巨头自言芯片的理由</p>
+      </li>
+      <li class="transcript-row" id="transcript-563">
+        <time datetime="PT1022S">17:02</time>
+        <p>一个是怕哪天被卡脖子</p>
+      </li>
+      <li class="transcript-row" id="transcript-564">
+        <time datetime="PT1024S">17:04</time>
+        <p>另一个就是太贵</p>
+      </li>
+      <li class="transcript-row" id="transcript-565">
+        <time datetime="PT1025S">17:05</time>
+        <p>而VirginAzure Robin直接把太贵这个理由堵死了</p>
+      </li>
+      <li class="transcript-row" id="transcript-566">
+        <time datetime="PT1028S">17:08</time>
+        <p>推理成本降到了十分之一</p>
+      </li>
+      <li class="transcript-row" id="transcript-567">
+        <time datetime="PT1030S">17:10</time>
+        <p>训练GPU用量减少了四分之三</p>
+      </li>
+      <li class="transcript-row" id="transcript-568">
+        <time datetime="PT1032S">17:12</time>
+        <p>这其实就是一场微妙的成本博弈</p>
+      </li>
+      <li class="transcript-row" id="transcript-569">
+        <time datetime="PT1035S">17:15</time>
+        <p>巨头们用自言芯片做谈判筹码</p>
+      </li>
+      <li class="transcript-row" id="transcript-570">
+        <time datetime="PT1037S">17:17</time>
+        <p>分散风险</p>
+      </li>
+      <li class="transcript-row" id="transcript-571">
+        <time datetime="PT1038S">17:18</time>
+        <p>压低采购成本</p>
+      </li>
+      <li class="transcript-row" id="transcript-572">
+        <time datetime="PT1039S">17:19</time>
+        <p>英伟达就推出新架构</p>
+      </li>
+      <li class="transcript-row" id="transcript-573">
+        <time datetime="PT1041S">17:21</time>
+        <p>降低成本</p>
+      </li>
+      <li class="transcript-row" id="transcript-574">
+        <time datetime="PT1042S">17:22</time>
+        <p>但你得花钱买新的</p>
+      </li>
+      <li class="transcript-row" id="transcript-575">
+        <time datetime="PT1044S">17:24</time>
+        <p>谁也不敢</p>
+      </li>
+      <li class="transcript-row" id="transcript-576">
+        <time datetime="PT1044S">17:24</time>
+        <p>也做不到真的把英伟达踢出牌桌</p>
+      </li>
+      <li class="transcript-row" id="transcript-577">
+        <time datetime="PT1047S">17:27</time>
+        <p>用一句话总结一下</p>
+      </li>
+      <li class="transcript-row" id="transcript-578">
+        <time datetime="PT1048S">17:28</time>
+        <p>老板们确实在后院建了厨房</p>
+      </li>
+      <li class="transcript-row" id="transcript-579">
+        <time datetime="PT1050S">17:30</time>
+        <p>但简单的家常才可以自己做</p>
+      </li>
+      <li class="transcript-row" id="transcript-580">
+        <time datetime="PT1052S">17:32</time>
+        <p>艳情归兵还是得回饭店</p>
+      </li>
+      <li class="transcript-row" id="transcript-581">
+        <time datetime="PT1054S">17:34</time>
+        <p>而老黄的策略是</p>
+      </li>
+      <li class="transcript-row" id="transcript-582">
+        <time datetime="PT1056S">17:36</time>
+        <p>每年翻新一支菜单</p>
+      </li>
+      <li class="transcript-row" id="transcript-583">
+        <time datetime="PT1057S">17:37</time>
+        <p>让你后院那个厨房永远追不上</p>
+      </li>
+      <li class="transcript-row" id="transcript-584">
+        <time datetime="PT1060S">17:40</time>
+        <p>看完这次GTC你会发现</p>
+      </li>
+      <li class="transcript-row" id="transcript-585">
+        <time datetime="PT1062S">17:42</time>
+        <p>老黄的野心音</p>
+      </li>
+      <li class="transcript-row" id="transcript-586">
+        <time datetime="PT1063S">17:43</time>
+        <p>早也不只是守住卖铲子的生意</p>
+      </li>
+      <li class="transcript-row" id="transcript-587">
+        <time datetime="PT1065S">17:45</time>
+        <p>他要把逃进的路</p>
+      </li>
+      <li class="transcript-row" id="transcript-588">
+        <time datetime="PT1066S">17:46</time>
+        <p>炼进的场</p>
+      </li>
+      <li class="transcript-row" id="transcript-589">
+        <time datetime="PT1067S">17:47</time>
+        <p>甚至精子本身的定价权</p>
+      </li>
+      <li class="transcript-row" id="transcript-590">
+        <time datetime="PT1069S">17:49</time>
+        <p>全部转在自己的手里</p>
+      </li>
+      <li class="transcript-row" id="transcript-591">
+        <time datetime="PT1070S">17:50</time>
+        <p>但排面再漂亮</p>
+      </li>
+      <li class="transcript-row" id="transcript-592">
+        <time datetime="PT1071S">17:51</time>
+        <p>也得看排局怎么走</p>
+      </li>
+      <li class="transcript-row" id="transcript-593">
+        <time datetime="PT1073S">17:53</time>
+        <p>先看市场份额</p>
+      </li>
+      <li class="transcript-row" id="transcript-594">
+        <time datetime="PT1074S">17:54</time>
+        <p>英伟达是在从2014年</p>
+      </li>
+      <li class="transcript-row" id="transcript-595">
+        <time datetime="PT1076S">17:56</time>
+        <p>87%的市场份额高峰</p>
+      </li>
+      <li class="transcript-row" id="transcript-596">
+        <time datetime="PT1078S">17:58</time>
+        <p>华向经典的75%</p>
+      </li>
+      <li class="transcript-row" id="transcript-597">
+        <time datetime="PT1080S">18:00</time>
+        <p>这不是英伟达变弱了</p>
+      </li>
+      <li class="transcript-row" id="transcript-598">
+        <time datetime="PT1081S">18:01</time>
+        <p>而是新玩家在这个迅速膨胀的蛋糕中</p>
+      </li>
+      <li class="transcript-row" id="transcript-599">
+        <time datetime="PT1084S">18:04</time>
+        <p>抢到了更多的份额</p>
+      </li>
+      <li class="transcript-row" id="transcript-600">
+        <time datetime="PT1085S">18:05</time>
+        <p>在他客户</p>
+      </li>
+      <li class="transcript-row" id="transcript-601">
+        <time datetime="PT1086S">18:06</time>
+        <p>英伟达数据中心营收</p>
+      </li>
+      <li class="transcript-row" id="transcript-602">
+        <time datetime="PT1088S">18:08</time>
+        <p>仍高度依赖微软</p>
+      </li>
+      <li class="transcript-row" id="transcript-603">
+        <time datetime="PT1089S">18:09</time>
+        <p>麦塔</p>
+      </li>
+      <li class="transcript-row" id="transcript-604">
+        <time datetime="PT1090S">18:10</time>
+        <p>谷歌</p>
+      </li>
+      <li class="transcript-row" id="transcript-605">
+        <time datetime="PT1090S">18:10</time>
+        <p>亚马逊这几家巨头</p>
+      </li>
+      <li class="transcript-row" id="transcript-606">
+        <time datetime="PT1092S">18:12</time>
+        <p>然而训练增速膨胀</p>
+      </li>
+      <li class="transcript-row" id="transcript-607">
+        <time datetime="PT1093S">18:13</time>
+        <p>腿里占比越来越大</p>
+      </li>
+      <li class="transcript-row" id="transcript-608">
+        <time datetime="PT1094S">18:14</time>
+        <p>任何一家巨头</p>
+      </li>
+      <li class="transcript-row" id="transcript-609">
+        <time datetime="PT1095S">18:15</time>
+        <p>大幅血减开支</p>
+      </li>
+      <li class="transcript-row" id="transcript-610">
+        <time datetime="PT1097S">18:17</time>
+        <p>这个五万一帝国的地基</p>
+      </li>
+      <li class="transcript-row" id="transcript-611">
+        <time datetime="PT1098S">18:18</time>
+        <p>就会开始晃</p>
+      </li>
+      <li class="transcript-row" id="transcript-612">
+        <time datetime="PT1099S">18:19</time>
+        <p>最后也是最根本的</p>
+      </li>
+      <li class="transcript-row" id="transcript-613">
+        <time datetime="PT1101S">18:21</time>
+        <p>六千多位砸下去了</p>
+      </li>
+      <li class="transcript-row" id="transcript-614">
+        <time datetime="PT1102S">18:22</time>
+        <p>AI到底什么时候能赚回本</p>
+      </li>
+      <li class="transcript-row" id="transcript-615">
+        <time datetime="PT1104S">18:24</time>
+        <p>如果答案一直是再等等</p>
+      </li>
+      <li class="transcript-row" id="transcript-616">
+        <time datetime="PT1106S">18:26</time>
+        <p>那所有人的耐心</p>
+      </li>
+      <li class="transcript-row" id="transcript-617">
+        <time datetime="PT1107S">18:27</time>
+        <p>终究会有耗尽的一天</p>
+      </li>
+      <li class="transcript-row" id="transcript-618">
+        <time datetime="PT1109S">18:29</time>
+        <p>这场名为AI的豪赌</p>
+      </li>
+      <li class="transcript-row" id="transcript-619">
+        <time datetime="PT1110S">18:30</time>
+        <p>最后到底是改变人类历史的新工业革命</p>
+      </li>
+      <li class="transcript-row" id="transcript-620">
+        <time datetime="PT1113S">18:33</time>
+        <p>还是一场刺破纳斯达克的超级泡沫</p>
+      </li>
+      <li class="transcript-row" id="transcript-621">
+        <time datetime="PT1115S">18:35</time>
+        <p>也许老黄自己也无法写定终局</p>
+      </li>
+      <li class="transcript-row" id="transcript-622">
+        <time datetime="PT1118S">18:38</time>
+        <p>最后把问题留给大家</p>
+      </li>
+      <li class="transcript-row" id="transcript-623">
+        <time datetime="PT1119S">18:39</time>
+        <p>GTC上老黄最新的牌已经打出</p>
+      </li>
+      <li class="transcript-row" id="transcript-624">
+        <time datetime="PT1122S">18:42</time>
+        <p>你觉得三年后回头看</p>
+      </li>
+      <li class="transcript-row" id="transcript-625">
+        <time datetime="PT1124S">18:44</time>
+        <p>老黄现在最大的威胁到底是什么</p>
+      </li>
+      <li class="transcript-row" id="transcript-626">
+        <time datetime="PT1126S">18:46</time>
+        <p>是挥舞性价比图到的AMD</p>
+      </li>
+      <li class="transcript-row" id="transcript-627">
+        <time datetime="PT1128S">18:48</time>
+        <p>是拼命想造反单干的金主把把</p>
+      </li>
+      <li class="transcript-row" id="transcript-628">
+        <time datetime="PT1130S">18:50</time>
+        <p>还是迟迟见不到回头前的AI泡沫本身</p>
+      </li>
+      <li class="transcript-row" id="transcript-629">
+        <time datetime="PT1133S">18:53</time>
+        <p>又或者</p>
+      </li>
+      <li class="transcript-row" id="transcript-630">
+        <time datetime="PT1134S">18:54</time>
+        <p>毕师老黄毕竟彻底利于腐败之地了</p>
+      </li>
+      <li class="transcript-row" id="transcript-631">
+        <time datetime="PT1137S">18:57</time>
+        <p>欢迎在评论区留下你的预言</p>
+      </li>
+      <li class="transcript-row" id="transcript-632">
+        <time datetime="PT1138S">18:58</time>
+        <p>我们三年后再来挖坟对答案</p>
+      </li>
+      <li class="transcript-row" id="transcript-633">
+        <time datetime="PT1140S">19:00</time>
+        <p>大家好 我是小李</p>
+      </li>
+      <li class="transcript-row" id="transcript-634">
+        <time datetime="PT1141S">19:01</time>
+        <p>如果你喜欢今天的内容</p>
+      </li>
+      <li class="transcript-row" id="transcript-635">
+        <time datetime="PT1142S">19:02</time>
+        <p>记得点赞 评论 收藏</p>
+      </li>
+      <li class="transcript-row" id="transcript-636">
+        <time datetime="PT1143S">19:03</time>
+        <p>我们下期再见 拜拜</p>
+      </li></ol>
+    </section>
+    <footer>本页为视频内容的自动转录与编辑整理，不构成投资建议。来源：B 站视频 BV1d3wyz6Eyp。</footer>
+  </main>
+</body>
+</html>
