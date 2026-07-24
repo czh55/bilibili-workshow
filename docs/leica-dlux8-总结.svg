@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="8313" viewBox="0 0 1320 8313">
+  <foreignObject x="0" y="0" width="1320" height="8313">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: #f4f7fb;
+  color: #172033;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+}
+.container { width: 100%; padding: 52px 58px 64px; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 44px 48px;
+  border-radius: 28px;
+  color: #fff;
+  background: linear-gradient(135deg, #101d3d 0%, #263e77 55%, #7954b5 100%);
+  box-shadow: 0 20px 50px rgba(22, 38, 77, .18);
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  right: -100px;
+  top: -120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .09);
+}
+.eyebrow { font-size: 15px; letter-spacing: .16em; opacity: .76; font-weight: 700; }
+h1 { margin: 8px 0 10px; font-size: 48px; line-height: 1.24; letter-spacing: -.02em; }
+.subtitle { margin: 0; max-width: 1040px; font-size: 23px; line-height: 1.6; color: #edf2ff; }
+.meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.tag {
+  display: inline-flex;
+  padding: 7px 14px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  font-size: 15px;
+  font-weight: 700;
+}
+.tag-blue, .tag-purple, .tag-orange, .tag-green {
+  display: inline-flex;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.tag-blue { color: #174ea6; background: #e8f1ff; }
+.tag-purple { color: #6b35a6; background: #f1e9ff; }
+.tag-orange { color: #a34b00; background: #fff0df; }
+.tag-green { color: #087451; background: #ddf7ed; }
+.timeline {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.time {
+  min-height: 92px;
+  padding: 14px 15px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.16);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.time b { display: block; color: #aee5ff; font-size: 17px; margin-bottom: 3px; }
+.section { margin-top: 38px; }
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 16px;
+  font-size: 28px;
+  line-height: 1.35;
+  color: #14213d;
+}
+.section-title .num {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  color: white;
+  background: #3156a6;
+  font-size: 17px;
+}
+.map {
+  padding: 28px;
+  border: 1px solid #d9e4f3;
+  border-radius: 23px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(29, 55, 96, .07);
+}
+.diagram {
+  display: grid;
+  grid-template-columns: 1fr 80px 1.1fr 80px 1fr;
+  align-items: stretch;
+  gap: 10px;
+}
+.node {
+  display: flex;
+  min-height: 145px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  background: #edf4ff;
+  border: 1px solid #c9ddff;
+}
+.node strong { color: #204b97; font-size: 21px; }
+.node-purple { background: #f4edff; border-color: #ddc9ff; }
+.node-purple strong { color: #6c3ba5; }
+.node-green { background: #eaf9f2; border-color: #bcebd5; }
+.node-green strong { color: #087253; }
+.arrow { display: grid; place-items: center; font-size: 36px; color: #7390c3; font-weight: 800; }
+.map-note {
+  margin: 18px 0 0;
+  padding-top: 17px;
+  border-top: 1px dashed #ccd8e9;
+  color: #4b5b73;
+  text-align: center;
+  font-weight: 700;
+}
+.correction {
+  padding: 25px 28px;
+  border-radius: 20px;
+  border: 1px solid #f1cf7a;
+  background: linear-gradient(135deg, #fff9e9, #fff2d4);
+}
+.correction-grid { display: grid; grid-template-columns: 1fr 70px 1fr; gap: 14px; align-items: center; }
+.wrong, .right { padding: 18px; border-radius: 15px; background: rgba(255,255,255,.72); }
+.wrong b { color: #a14b15; }
+.right b { color: #177253; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card {
+  padding: 25px 27px;
+  border-radius: 20px;
+  border: 1px solid #cbdcf7;
+  border-left: 7px solid #3970c7;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(25, 52, 92, .065);
+}
+.card-purple { border-color: #dfcff4; border-left-color: #8653ba; background: #fcfaff; }
+.card-orange { border-color: #f3d6b9; border-left-color: #e67e22; background: #fffcf8; }
+.card-green { border-color: #bfe8d7; border-left-color: #1d9b70; background: #fbfffd; }
+.card-red { border-color: #f1c5c5; border-left-color: #cf4141; background: #fffafa; }
+.card h3 { margin: 0 0 12px; color: #193a72; font-size: 23px; line-height: 1.4; }
+.card-purple h3 { color: #673a95; }
+.card-orange h3 { color: #a6530c; }
+.card-green h3 { color: #087456; }
+.card-red h3 { color: #a92f2f; }
+.card p { margin: 8px 0; }
+.label { color: #6c7b91; font-weight: 800; font-size: 15px; letter-spacing: .04em; }
+.highlight {
+  padding: 1px 5px;
+  border-radius: 5px;
+  color: #174ea6;
+  background: #eaf2ff;
+  font-weight: 800;
+}
+.speaker {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+  padding: 3px 9px;
+  border-radius: 7px;
+  color: #6b38a0;
+  background: #f0e7fb;
+  font-size: 14px;
+  font-weight: 800;
+}
+.source { color: #65758c; font-size: 15px; }
+.quote {
+  margin: 16px 0;
+  padding: 20px 24px;
+  border-left: 6px solid #8454b5;
+  border-radius: 0 16px 16px 0;
+  color: #4d3270;
+  background: #f4edfb;
+  font-size: 21px;
+  font-weight: 700;
+}
+.pitfall {
+  margin: 9px 0;
+  padding: 11px 14px;
+  border-radius: 10px;
+  color: #8d361f;
+  background: #fff0eb;
+}
+ul, ol { margin: 8px 0 0; padding-left: 24px; }
+li { margin: 6px 0; }
+.table-card { padding: 27px; border-radius: 21px; background: #fff; border: 1px solid #d9e3f2; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; font-size: 16px; }
+th { color: white; background: #263e75; text-align: left; padding: 15px 13px; }
+td { padding: 15px 13px; vertical-align: top; border-bottom: 1px solid #e4eaf3; background: #fbfcfe; }
+tr:nth-child(even) td { background: #f3f6fb; }
+.boundary {
+  margin-top: 12px;
+  padding: 13px 16px;
+  border-radius: 11px;
+  background: #edf3fb;
+  color: #485a72;
+  font-size: 15px;
+}
+.conclusion {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 18px;
+  padding: 30px;
+  border-radius: 24px;
+  color: #f5f8ff;
+  background: linear-gradient(135deg, #172846, #294c82);
+  box-shadow: 0 16px 36px rgba(20, 39, 72, .18);
+}
+.conclusion > div { padding: 18px; border-radius: 16px; background: rgba(255,255,255,.08); }
+.conclusion h3 { margin: 0 0 9px; color: #9ed9ff; font-size: 21px; }
+.conclusion p, .conclusion li { color: #f5f8ff; }
+.footer { margin-top: 28px; color: #77859a; text-align: center; font-size: 14px; }
+</style>
+      
+<div class="container">
+  <div class="hero">
+    <div class="eyebrow">BILIBILI VIDEO NOTES · 5分42秒</div>
+    <h1>徕卡 D-Lux 8：好上手，但不是“闭眼买”</h1>
+    <p class="subtitle">它的价值不在参数碾压，而在轻巧操作、照片与视频快速切换，以及偶尔出现的徕卡光影惊喜；代价是预览体验、对焦稳定性与成片“相机感”都未必配得上一万出头的预期。</p>
+    <div class="meta">
+      <span class="tag">UP 主：游幼釉</span>
+      <span class="tag">徕卡 D-Lux 8</span>
+      <span class="tag">富士 X100 系列</span>
+      <span class="tag">理光 GR III</span>
+      <span class="tag">主观体验测评</span>
+    </div>
+    <div class="timeline">
+      <div class="time"><b>00:00</b>定位与新手上手目标</div>
+      <div class="time"><b>00:18</b>操作、触屏与快捷设置</div>
+      <div class="time"><b>01:55</b>不推荐盲买与四项短板</div>
+      <div class="time"><b>03:19</b>富士、徕卡、理光横评</div>
+      <div class="time"><b>05:16</b>备用机而非保底主力机</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">01</span>核心脉络：先定拍摄诉求，再判断缺点能否接受</h2>
+    <div class="map">
+      <div class="diagram">
+        <div class="node"><strong>你最在乎什么？</strong><span>随身轻松、切换效率、色彩或稳定主力</span></div>
+        <div class="arrow">→</div>
+        <div class="node node-purple"><strong>D-Lux 8 的交换</strong><span>简单好用 + 光影惊喜<br/>换来预览与稳定性的妥协</span></div>
+        <div class="arrow">→</div>
+        <div class="node node-green"><strong>购买角色</strong><span>有主设备：可作风格备用机<br/>只买一台：谨慎</span></div>
+      </div>
+      <p class="map-note">横评不是选“总分冠军”，而是找出哪台相机的核心优点，足以让你长期接受它的缺点。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">02</span>认知纠偏</h2>
+    <div class="correction">
+      <div class="correction-grid">
+        <div class="wrong"><b>常见预期</b><br/>一万多元相机必然比手机更有“相机感”，徕卡标识意味着可以放心买。</div>
+        <div class="arrow">→</div>
+        <div class="right"><b>视频结论</b><br/>价格与品牌不能代替场景匹配。D-Lux 8 有高光照片，但稳定输出与拍摄过程并非都让人安心。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">03</span>先看它为什么让新手快速上手</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="tag-blue">操作</span>
+        <h3>直观拨轮与灵敏触屏，降低第一次使用门槛</h3>
+        <p><span class="label">在讲什么：</span>焦段拨轮直观，点按对焦、滑动和放大都很流畅；新手可先把快门速度放在 A 档。</p>
+        <p><span class="label">关键理解：</span>“好上手”来自少记菜单、快速得到反馈，而不是功能更少。</p>
+        <p><span class="label">怎么用：</span>先固定 A 档，用曝光补偿控制明暗，再按拍摄习惯分配屏幕功能键。</p>
+        <p class="source">原文依据：[00:34–01:07] 焦段拨轮、触屏、A 档、曝光补偿、ISO 与功能键。</p>
+      </div>
+      <div class="card">
+        <span class="tag-green">效率</span>
+        <h3>照片与视频一键切换，适合边走边拍</h3>
+        <p><span class="label">在讲什么：</span>功能键 2 可切换照片/视频，菜单又能分别保存两套参数。</p>
+        <p><span class="label">关键理解：</span>真正的“双修效率”不是规格表，而是临场切换时不必重设参数。</p>
+        <p><span class="label">怎么用：</span>预先给照片设静态参数、视频设连续对焦参数，把 Fn2 保留为模式切换。</p>
+        <p class="source">原文依据：[01:07–01:23] UP 主称这是富士与理光对比中的加分项。</p>
+      </div>
+      <div class="card">
+        <span class="tag-blue">对焦</span>
+        <h3>运动主体用 AF-C，人像开启人眼识别</h3>
+        <p><span class="label">在讲什么：</span>连续自动对焦用于移动主体，人眼识别用于人像。</p>
+        <p><span class="label">关键理解：</span>模式要跟主体运动状态匹配；“自动”不等于所有场景都稳定。</p>
+        <p><span class="label">怎么用：</span>静物先用单次自动对焦；人物走动或边走边拍再切 AF-C，并打开人眼识别。</p>
+        <p class="source">原文依据：[01:23–01:37] 新手对焦设置演示。</p>
+      </div>
+      <div class="card card-green">
+        <span class="tag-green">正面经验</span>
+        <h3>配套闪光灯与开机使用体验贴近随拍</h3>
+        <p><span class="label">在讲什么：</span>配套闪光灯轻、无需单独充电，不用时可关闭；机身的开机使用设计也减少附件遗失焦虑。</p>
+        <p><span class="label">关键理解：</span>随拍设备的价值常藏在“少带一件、少充一次电”里。</p>
+        <p><span class="label">怎么用：</span>拍人或室内场景随包携带闪光灯，需要时直接启用，不额外建立充电流程。</p>
+        <div class="boundary">适用边界：这是便利性评价，不代表机顶闪光能覆盖远距离、大空间或专业布光需求。</div>
+        <p class="source">原文依据：[00:18–00:34] 开机使用与配套闪光灯体验。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">04</span>色彩怎么调：先微调，不要把机内风格当万能滤镜</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="tag-blue">实操</span>
+        <h3>JPG 微调对比度与饱和度，再略降曝光补偿</h3>
+        <p><span class="label">在讲什么：</span>机内风格与预期有差距时，可调整 JPG 对比度、饱和度，并稍微降低曝光补偿。</p>
+        <p><span class="label">关键理解：</span>这些设置提供的是细微倾向，不会像套一层强滤镜那样彻底改头换面。</p>
+        <p><span class="label">怎么用：</span>同一场景连拍三张，每次只改一个参数；确认肤色与暗部仍自然后保存预设。</p>
+        <p class="source">原文依据：[01:37–01:53] UP 主的 JPG 与曝光补偿建议。</p>
+      </div>
+      <div class="card card-purple">
+        <span class="speaker">UP 主观点</span><span class="tag-purple">有争议</span>
+        <h3>徕卡机内风格“太自然”，却也更容易出现光影惊喜</h3>
+        <p><span class="label">在讲什么：</span>UP 主觉得机内观感乍看偏安全、甚至有些无聊，但实际拍摄中惊喜最多，尤其喜欢光影层次。</p>
+        <p><span class="label">关键理解：</span>第一眼浓烈不等于长期耐看；自然基底可能把表现空间留给现场光线。</p>
+        <p><span class="label">怎么用：</span>优先找侧光、明暗交界与层次丰富的场景，不要只在平光下判断色彩能力。</p>
+        <div class="boundary">适用边界：纯属该 UP 主的审美与样片体验，视频没有提供统一曝光、盲测或 RAW 对比。</div>
+        <p class="source">原文依据：[04:46–05:04] 对徕卡色彩与光影的主观评价。</p>
+      </div>
+    </div>
+    <div class="quote"><span class="speaker">UP 主金句</span>“有些相机的一个优点，就可以让你自己去适应它的其他缺点。” <span class="source">[05:04–05:08]</span></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">05</span>购买前必须接受的短板</h2>
+    <div class="cards">
+      <div class="card card-orange">
+        <span class="tag-orange">避坑</span>
+        <h3>不要因为喜欢“徕卡味”就直接盲买</h3>
+        <div class="pitfall">UP 主明确说：预算一万出头、只是喜欢徕卡味，她并不直接推荐 D-Lux 8。</div>
+        <p><span class="label">关键理解：</span>品牌味道只是一个优点；购买前更该验证自己能否承受它的缺点。</p>
+        <p><span class="label">怎么用：</span>把预览、连续对焦、暗光与手机对照列为试机必测项，而不是只看晴天样片。</p>
+        <p class="source">原文依据：[01:55–02:10] “先听听缺点，看你可不可以接受”。</p>
+      </div>
+      <div class="card card-red">
+        <span class="tag-orange">稳定性风险</span>
+        <h3>约 20 张后出现对不上焦：先当个例验证</h3>
+        <p><span class="label">在讲什么：</span>UP 主称拍约 20 张后开始有些对不上焦，但自己也不确定是机型问题还是手中个体问题。</p>
+        <p><span class="label">关键理解：</span>这是值得警惕的使用证据，却不足以推导全部 D-Lux 8 都有缺陷。</p>
+        <p><span class="label">怎么用：</span>实体试机做连续拍摄，分别测试单次、连续与人眼对焦；复现后检查固件并咨询售后。</p>
+        <div class="boundary">方法边界：单台、单人的主观记录；未交代温度、卡速、固件和对焦设置。</div>
+        <p class="source">原文依据：[02:24–02:34] UP 主保留了“机型还是个体”的疑问。</p>
+      </div>
+      <div class="card card-red">
+        <span class="tag-orange">体验缺陷</span>
+        <h3>屏幕预览像“监控”，暗光下更影响拍摄愉悦感</h3>
+        <p><span class="label">在讲什么：</span>屏幕预览尤其暗光下令 UP 主不适，尽管最终照片清晰、光影也可能很好。</p>
+        <p><span class="label">关键理解：</span>成片质量与拍摄过程是两条轴；预览差会削弱构图信心和持续创作欲。</p>
+        <p><span class="label">怎么用：</span>试机时不要只导出成片，还要现场观察暗部噪点、刷新与曝光预览是否影响判断。</p>
+        <p class="source">原文依据：[02:35–02:56] “像监控”是夸张但明确的主观感受。</p>
+      </div>
+      <div class="card card-orange">
+        <span class="tag-orange">价值预期</span>
+        <h3>部分样片与手机边界模糊，万元价格不自动带来差异</h3>
+        <p><span class="label">在讲什么：</span>UP 主称若不看文件名，某组对比里难分手机与相机。</p>
+        <p><span class="label">关键理解：</span>固定镜头便携机的价值可能在操作、焦段习惯与偶发高光，不一定每张都“碾压手机”。</p>
+        <p><span class="label">怎么用：</span>用自己常拍的题材做盲比，并把携带率、拍摄手感和成片成功率一起计入价值判断。</p>
+        <div class="boundary">适用边界：视频未说明手机型号、画面压缩和统一拍摄条件，不能据此判定两者画质等同。</div>
+        <p class="source">原文依据：[02:56–03:16] 手机与相机边界模糊的体验。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">06</span>三机横向对比：相似定位，不同取舍</h2>
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr><th>维度</th><th>理光 GR III</th><th>徕卡 D-Lux 8</th><th>富士 X100 系列</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>共同点</b></td><td colspan="3">价格区间、便携机身、不可更换镜头、风格化机内色彩，使三者具备同桌比较的消费语境。</td></tr>
+          <tr><td><b>随身性</b></td><td>UP 主认为唯一真正能做到“口袋机”，拿起就拍最轻松。</td><td>机身便携度第二；仍偏随身，但不是最轻巧。</td><td>机身体积在三者中排第三。</td></tr>
+          <tr><td><b>色彩性格</b></td><td>负片模式同样吃光；正片更贴近肉眼，带轻微温暖回忆感。</td><td>乍看自然、安全；现场光线合适时惊喜最多，光影层次突出。</td><td>风格鲜明、容易出片；UP 主觉得可能较快拍腻，部分观感有涂抹感。</td></tr>
+          <tr><td><b>后期空间</b></td><td>视频只对负片提出类似局限，未完整测试 RAW。</td><td>可后期 AI 调整，但视频未系统评价 RAW 宽容度。</td><td>UP 主认为机内风格成片对后期调色包容度较低。</td></tr>
+          <tr><td><b>更适合谁</b></td><td>把携带率、轻松感和“什么都想拍”放第一的人。</td><td>已有其他设备，想补充徕卡光影与双修切换体验的人。</td><td>愿接受更大机身，优先要鲜明直出风格的人。</td></tr>
+          <tr><td><b>主要边界</b></td><td>视频未做完整长期横评，参考 UP 主另一期内容。</td><td>不宜被当成稳定保底主力；个体对焦问题仍需复核。</td><td>“涂抹、易腻”均为主观判断，且未区分具体 X100 型号与配方。</td></tr>
+        </tbody>
+      </table>
+      <div class="boundary">比较边界：三者焦段、传感器、操控与目标用户并不完全相同；视频采用日常体验而非实验室测试，表中结论应作为试机清单，而非绝对排名。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">07</span>方法边界：怎样正确使用这期测评</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>主观测评最适合发现“该去验证什么”</h3>
+        <p><span class="label">在讲什么：</span>视频强项是具体说出预览、对焦、便携和色彩感受。</p>
+        <p><span class="label">关键理解：</span>体验证据能暴露风险，但不能替代同条件画质测试和多机统计。</p>
+        <p><span class="label">怎么用：</span>把每个主观缺点转为自己的 A/B 测试，再决定它是否真的影响你。</p>
+        <div class="boundary">上限：帮助快速筛选与形成试机清单。下限：不能证明全体机器都有同样问题。</div>
+      </div>
+      <div class="card">
+        <h3>选相机要按高频场景加权，不按优缺点数量投票</h3>
+        <p><span class="label">在讲什么：</span>一台相机的一个核心优点，可能足以补偿多个缺点。</p>
+        <p><span class="label">关键理解：</span>便携率、色彩偏好、视频需求与主力稳定性，应按个人频率分配权重。</p>
+        <p><span class="label">怎么用：</span>写下前三个高频场景，给“带出门、成功拍到、愿意分享”分别打分。</p>
+        <div class="boundary">上限：能找到更适配自己的设备。下限：无法消除预算、售后和个体品控风险。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><span class="num">08</span>最终判断与行动</h2>
+    <div class="conclusion">
+      <div>
+        <h3>核心要点</h3>
+        <p><span class="speaker">UP 主立场</span>D-Lux 8 很喜欢，但“绝对不是一台保底的相机”。它像开盲盒：会给惊喜，却不适合把所有拍摄任务都押在它身上。</p>
+      </div>
+      <div>
+        <h3>行动清单</h3>
+        <ol>
+          <li>带常用手机到店，同场景盲比成片。</li>
+          <li>连续拍 20 张以上，复核对焦稳定性。</li>
+          <li>在暗光下观察屏幕预览是否妨碍构图。</li>
+          <li>测试 Fn2 切换与照片/视频独立参数。</li>
+          <li>只改一项 JPG 参数，建立自己的预设。</li>
+        </ol>
+      </div>
+      <div>
+        <h3>认知转变</h3>
+        <p>从“哪台最好”转向“哪项优点值得我接受哪些缺点”。若已有主设备，D-Lux 8 可补风格与乐趣；若只买一台主力机，稳定性与可预期输出应优先。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">根据 B 站视频《徕卡D-Lux8！对比富士理光该怎么么选》整理 · 观点归属 UP 主游幼釉 · 2026-07-24</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
