@@ -1,18 +1,19 @@
-# B 站视频 → SVG 自动化工作流
+# B 站视频 → HTML 自动化工作流
 
 当 Cursor Automation 通过 Webhook 收到 B 站视频链接后，严格按本文档逐步骤执行。**不要跳过或合并任何步骤。**
 
 ```
 Task Progress:
-- [ ] 1. yt-dlp 下载音频（m4a 格式）
+- [ ] 1. yt-dlp 获取元数据并下载音频、视频
 - [ ] 2. 安装依赖（ffmpeg + openai-whisper，仅首次）
 - [ ] 3. Whisper 转录（--model small --language Chinese）
-- [ ] 4. 读取转录稿并深度总结
-- [ ] 5. 生成 SVG（Node .mjs + svg-auto-height.mjs）
-- [ ] 6. 质量自检
-- [ ] 7. 更新 docs/index.json
-- [ ] 8. Git 提交并推送到 main（**必须**，Pages 才能展示）
-- [ ] 9. 清理临时文件
+- [ ] 4. 读取完整转录并深度总结
+- [ ] 5. 从视频提取关键截图
+- [ ] 6. 生成包含完整转录与截图的 HTML
+- [ ] 7. 质量自检
+- [ ] 8. 更新 docs/index.json
+- [ ] 9. Git 提交并推送
+- [ ] 10. 清理临时文件
 ```
 
 ---
@@ -30,27 +31,43 @@ Webhook payload 格式：
 
 | 字段 | 必填 | 说明 |
 |------|------|------|
-| `url` | 是 | B 站视频链接（bilibili.com 或 b23.tv 短链接） |
-| `date` | 否 | 前端展示日期，格式 `YYYY-MM-DD`；**未提供时使用当天日期** |
+| `url` | 是 | B 站视频链接（`bilibili.com` 或 `b23.tv`） |
+| `date` | 否 | 前端展示日期，格式 `YYYY-MM-DD`；未提供时使用当天日期 |
 
-从 payload 中提取 `url` 字段。若缺失，记录错误并结束。
-
-`date` 字段用于 Step 7 写入 `index.json`，首页按此日期分组展示。
+从 payload 中提取 `url`。字段缺失、为空或域名不符合约束时，记录错误并结束。开始下载前检查 `docs/index.json`，相同 `url` 已存在则直接结束，避免重复处理。
 
 ---
 
-## Step 1：yt-dlp 下载音频
+## Step 1：获取元数据并下载音频、视频
+
+先获取标题、时长和视频 ID，再按标题生成 `{slug}`：
 
 ```bash
 cd ~/Projects/bilibili-workshop
-yt-dlp -f "bestaudio[ext=m4a]/bestaudio/best" -o "{slug}.%(ext)s" "{url}"
+yt-dlp --print title --print duration_string --print id "{url}"
 ```
 
-- `{slug}`：从视频标题提取英文/拼音关键词，≤30 字符，不含空格和特殊字符
-- 示例：`leica-dlux8`、`fuji-x100-compare`
-- 若下载失败（网络错误、403 等），重试最多 3 次
+`{slug}` 规则：
 
-同时用 `yt-dlp --print title --print duration_string` 提取标题与时长，供后续写入 `index.json`。
+- 从标题提取英文或核心关键词拼音，≤30 字符
+- 只允许小写字母、数字和连字符
+- 若名称冲突，追加数字后缀
+
+下载用于 Whisper 的最佳音频：
+
+```bash
+yt-dlp -f "bestaudio[ext=m4a]/bestaudio/best" \
+  -o "{slug}.%(ext)s" "{url}"
+```
+
+下载用于截图的视频画面；无需音轨，限制到 1080p 以内：
+
+```bash
+yt-dlp -f "bestvideo[height<=1080][ext=mp4]/bestvideo[height<=1080]/best[height<=1080]" \
+  -o "{slug}.source.%(ext)s" "{url}"
+```
+
+任一下载因网络、403 等临时错误失败时，最多重试 3 次。实际扩展名可能不是 `m4a` 或 `mp4`，后续命令必须使用磁盘上的真实文件名。
 
 ---
 
@@ -59,310 +76,336 @@ yt-dlp -f "bestaudio[ext=m4a]/bestaudio/best" -o "{slug}.%(ext)s" "{url}"
 仅首次运行需要，已安装则跳过：
 
 ```bash
-which ffmpeg || brew install ffmpeg
+command -v ffmpeg >/dev/null || brew install ffmpeg
 python3 -c "import whisper" 2>/dev/null || pip3 install --user openai-whisper
-export PATH="$PATH:/Users/chenzhiheng/Library/Python/3.9/bin:/opt/homebrew/bin"
 ```
+
+确保 `yt-dlp`、`ffmpeg`、`ffprobe`、`whisper` 和 `node` 均可执行。
 
 ---
 
 ## Step 3：Whisper 转录
 
 ```bash
-export PATH="$PATH:/Users/chenzhiheng/Library/Python/3.9/bin:/opt/homebrew/bin"
 cd ~/Projects/bilibili-workshop
-whisper {slug}.m4a --model small --language Chinese --output_dir .
+whisper "{音频文件}" --model small --language Chinese --output_dir .
 ```
 
-**模型选择**：
+转录产物为 `{slug}.txt`、`{slug}.srt`、`{slug}.vtt`、`{slug}.tsv` 和 `{slug}.json`。后续必须读取 JSON 中的 `segments`，因为 HTML 的详细转录区需要逐段时间戳。
 
-| 模型 | 中文质量 | 速度 | 适用 |
-|------|---------|------|------|
-| tiny | 一般 | 极快 | 快速预览 |
-| **small** | 较好 | 中等 | **默认** |
-| medium | 很好 | 慢 | 高质量需求 |
-
-转录产物：`{slug}.txt` `{slug}.srt` `{slug}.vtt` `{slug}.json`。
+不得用摘要替代转录。每个非空 segment 都必须出现在最终 HTML 中，保持原顺序和对应时间；听不清的内容标记为 `[听不清]`，不得凭空补写。
 
 ---
 
-## Step 4：读取转录稿并深度总结
+## Step 4：读取完整转录并深度总结
 
-读取 `{slug}.txt` 转录稿全文，按以下规则分析。
+读取 `{slug}.txt` 全文，并结合 `{slug}.json` 的时间分段分析。
 
-### 必须包含
+### 总结必须包含
 
-1. **不罗列名词**：每张卡片回答「在讲什么 → 关键理解 → 与其他概念关系 → 怎么用 → 原文依据」
-2. **行动清单**：可立刻执行的 3-5 件事
-3. **避坑总结**：原文提到的陷阱/误区/不要做的事
-4. **对比分析**：多概念/产品并列时做横向对比表
-5. **方法边界**：每种方法/观点的适用上下限
+1. **核心脉络**：说明内容如何从问题推进到观点和结论
+2. **主题拆解**：每节回答「在讲什么 → 关键理解 → 怎么用 → 原文依据」
+3. **行动清单**：3-5 项可立即执行的具体操作
+4. **避坑总结**：原文提到的陷阱、误区或不要做的事
+5. **对比分析**：涉及多概念、产品或方法时提供横向对比表
+6. **方法边界**：说明每种观点的适用条件、上限和例外
 
 ### 视频特有处理
 
-- **标注时间戳关键节点**（Outline 章节）：如 `[01:23] 开始介绍 D-Lux 8 优点`
-- **UP 主观点**用 `.speaker` / `.card-purple` 标注
-- **保留有争议的结论**，标注立场
-- **提取关键金句**：用 `.quote` 样式框标注
+- 标注关键节点时间戳，例如 `[01:23] 开始介绍 D-Lux 8 优点`
+- UP 主观点用 `.speaker` 或 `.card-purple` 标注
+- 有争议的结论保留原立场，不包装成客观事实
+- 关键原话放入 `.quote`，并标注对应时间
+- 从总结中列出 3-8 个候选截图时间点，说明每张图要佐证的内容
+
+### 总结与转录的边界
+
+- 总结区允许提炼和重组，但必须能回溯到时间戳
+- 转录区必须完整，不删除重复、口语或与总结无关的段落
+- 可修正明显标点，但不得悄悄改写说话人的意思
 
 ---
 
-## Step 5：生成 SVG
+## Step 5：提取关键截图
 
-在仓库根目录创建 `generate-{slug}.mjs` 脚本。**必须使用 `svg-auto-height.mjs` 的 `buildSvg` 函数。**
+截图用于补充无法仅靠文字表达的界面、产品细节、图表、操作步骤或前后对比，不得只截 UP 主头像、转场、黑帧或模糊画面。
 
-### 脚本模板
-
-```javascript
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { buildSvg } from './svg-auto-height.mjs';
-
-const DIR = path.dirname(fileURLToPath(import.meta.url));
-const OUT = path.join(DIR, 'docs', '{slug}-总结.svg');
-
-const CSS = `/* 见下方完整 CSS */`;
-
-const body = `<!-- 见下方 body 区模板 -->`;
-
-const { svg, height } = await buildSvg({ css: CSS, body, width: 1320 });
-fs.writeFileSync(OUT, svg, 'utf8');
-console.log('Generated:', OUT, 'height:', height, 'px');
-```
-
-### body 区模板
-
-```html
-<div class="container">
-
-<h1>{视频标题}</h1>
-<div class="meta">
-  <span class="tag tag-blue">B站视频</span>
-  <span class="tag tag-purple">{主题标签}</span>
-  <span class="tag tag-orange">{时长}</span>
-</div>
-<div class="summary-line">{一句话概括}</div>
-
-<div class="timeline">
-  <h3>关键时间轴</h3>
-  <div class="timeline-item">
-    <span class="timeline-time">00:00</span>
-    <span class="timeline-text">开场介绍</span>
-  </div>
-</div>
-
-<div class="map">
-  <h2>核心脉络</h2>
-  <div class="diagram"><!-- 节点+箭头 --></div>
-</div>
-
-<div class="correction">
-  <h3>⚠ 常见误解 / 认知纠偏</h3>
-  <p>{纠偏内容}</p>
-</div>
-
-<div class="section">
-  <h2 class="sec-title">{章节标题}</h2>
-  <div class="card">...</div>
-  <div class="card card-orange">⚠ 避坑</div>
-  <div class="card card-purple">UP 主观点</div>
-</div>
-
-<div class="card">
-  <h3>观点对比</h3>
-  <table>...</table>
-</div>
-
-<div class="conclusion">
-  <h2>总结与行动</h2>
-  <h3>核心要点</h3>
-  <ul>...</ul>
-  <h3>行动清单</h3>
-  <ol>...</ol>
-  <h3>关键认知转变</h3>
-  <p>以前认为…… 现在理解了……</p>
-</div>
-
-</div>
-```
-
-### 完整 CSS（必须使用）
-
-```css
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
-.container{max-width:1200px;margin:0 auto}
-h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
-h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
-h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
-p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
-ul,ol{padding-left:24px;margin:8px 0}
-li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
-.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
-.tag-blue{background:#dbeafe;color:#1e40af}
-.tag-green{background:#d1fae5;color:#065f46}
-.tag-orange{background:#ffedd5;color:#9a3412}
-.tag-purple{background:#ede9fe;color:#6b21a8}
-.tag-red{background:#fee2e2;color:#991b1b}
-.tag-gray{background:#f1f5f9;color:#64748b}
-.meta{margin:12px 0 20px}
-.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
-.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
-.timeline h3{color:#1e40af;margin-bottom:12px}
-.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
-.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
-.timeline-text{font-size:15px;color:#475569}
-.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
-.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
-.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
-.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
-.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
-.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
-.arrow{font-size:24px;color:#94a3b8}
-.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
-.correction h3{color:#92400e;margin-bottom:8px}
-.correction p{color:#92400e;font-size:15px}
-.section{margin-bottom:32px}
-.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
-.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border-left:5px solid #3b82f6}
-.card.card-green{border-left-color:#10b981}
-.card.card-orange{border-left-color:#f59e0b}
-.card.card-purple{border-left-color:#8b5cf6}
-.card.card-red{border-left-color:#ef4444}
-.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
-.card p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
-.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
-.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
-.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
-.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
-.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
-.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
-.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
-.speaker-host{background:#dbeafe;color:#1e40af}
-.speaker-guest{background:#ede9fe;color:#6b21a8}
-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
-th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
-td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
-tr:nth-child(even) td{background:#fafbfc}
-.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
-.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.2);color:#fff}
-.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,0.9);margin:20px 0 10px}
-.conclusion p,.conclusion li{color:rgba(255,255,255,0.9);font-size:15px}
-.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
-.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
-.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
-```
-
-### 运行
+创建资源目录：
 
 ```bash
-node generate-{slug}.mjs
+mkdir -p "docs/assets/{slug}"
 ```
 
-**Node 路径**：优先 `/Applications/Cursor.app/Contents/Resources/app/resources/helpers/node`。
+按 Step 4 选定的时间点逐张提取：
 
-### XML 避坑
+```bash
+ffmpeg -ss "HH:MM:SS.mmm" -i "{视频文件}" -frames:v 1 \
+  -vf "scale='min(1280,iw)':-2" -q:v 2 \
+  "docs/assets/{slug}/shot-01.jpg"
+```
 
-- HTML 注释中禁止连续双连字符 `--`
-- 文本中裸 `<` 必须转义为 `&lt;`
-- `buildSvg` 已内置 `fixSvgXml()` 修复 `&` 和 `<br/>`
+截图要求：
 
----
-
-## Step 6：质量自检
-
-- [ ] 每张卡片能回答「在讲什么、关键理解、怎么用」
-- [ ] 至少包含 1 处落地建议（可执行的操作步骤）
-- [ ] 至少包含 1 处避坑总结（不该做什么）
-- [ ] 涉及多产品/方法时有选型/决策表
-- [ ] 每个结论都说明了适用边界
-- [ ] 文首有核心脉络关系图
-- [ ] 结论区有三段式（总结 + 行动清单 + 认知转变）
-- [ ] 有视频时间轴关键节点
-- [ ] SVG 高度正常、XML 无错配标签
+- 一般视频提取 3-8 张；每张必须对应一个关键观点
+- 静态画面或纯音频视频至少保留 1 张代表画面，并在图注中说明画面长期不变
+- 文件按内容顺序命名为 `shot-01.jpg`、`shot-02.jpg`……
+- 打开并检查每张图，若黑屏、模糊、字幕遮挡重点或处于转场，前后微调 0.5-2 秒重新截取
+- 不使用 B 站远程图片地址，不将图片转为 base64；图片必须随 HTML 一起提交
 
 ---
 
-## Step 7：更新 index.json
+## Step 6：生成 HTML
 
-读取 `docs/index.json`，将新总结追加到数组开头。
+在仓库根目录临时创建 `generate-{slug}.mjs`，输出 `docs/{slug}-总结.html`。HTML 必须是独立、可直接打开的响应式页面，不依赖构建工具或远程 CSS/JavaScript。
+
+### 脚本骨架
+
+```javascript
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const DIR = path.dirname(fileURLToPath(import.meta.url));
+const OUT = path.join(DIR, 'docs', '{slug}-总结.html');
+const whisper = JSON.parse(
+  fs.readFileSync(path.join(DIR, '{slug}.json'), 'utf8')
+);
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function timestamp(seconds) {
+  const total = Math.max(0, Math.floor(Number(seconds) || 0));
+  const hours = Math.floor(total / 3600);
+  const minutes = Math.floor((total % 3600) / 60);
+  const secs = total % 60;
+  return hours
+    ? `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
+    : `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
+const segments = (whisper.segments || []).filter(
+  segment => String(segment.text || '').trim()
+);
+
+const transcript = segments.map((segment, index) => `
+  <li class="transcript-row" id="transcript-${index + 1}">
+    <time datetime="PT${Math.floor(segment.start || 0)}S">${timestamp(segment.start)}</time>
+    <p>${escapeHtml(segment.text.trim())}</p>
+  </li>
+`).join('');
+
+const CSS = `/* 使用下方样式规范，并包含响应式规则 */`;
+const summaryBody = `<!-- 深度总结、时间轴、卡片、对比表、截图与结论 -->`;
+
+const html = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{一句话摘要}">
+  <title>{视频标题}｜视频总结</title>
+  <style>${CSS}</style>
+</head>
+<body>
+  <main class="container">
+    ${summaryBody}
+    <section class="section transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">${transcript}</ol>
+    </section>
+  </main>
+</body>
+</html>`;
+
+fs.writeFileSync(OUT, html, 'utf8');
+console.log('Generated:', OUT, 'segments:', segments.length);
+```
+
+### 页面结构
+
+```html
+<main class="container">
+  <header><!-- 标题、标签、一句话摘要、原视频链接 --></header>
+  <nav class="toc"><!-- 总结、截图、详细转录的页内链接 --></nav>
+  <section class="timeline"><!-- 关键时间轴 --></section>
+  <section class="map"><!-- 核心脉络 --></section>
+  <section class="section"><!-- 主题卡片、观点、避坑、对比 --></section>
+  <section class="visual-evidence">
+    <h2>关键画面</h2>
+    <figure>
+      <img src="assets/{slug}/shot-01.jpg"
+           alt="{准确描述画面中的关键信息}"
+           loading="lazy">
+      <figcaption>[01:23] {画面内容及其支持的观点}</figcaption>
+    </figure>
+  </section>
+  <section class="conclusion"><!-- 核心要点、行动清单、认知转变 --></section>
+  <section class="transcript-section" id="transcript"><!-- 全部分段 --></section>
+</main>
+```
+
+### 样式规范
+
+沿用原有卡片语义，并增加 HTML 阅读所需样式：
+
+- `.card`：通用概念；`.card-purple`：UP 主观点
+- `.card-orange`：避坑；`.card-green`：正面经验；`.card-red`：严重问题
+- `.quote`：原话；`.speaker`：说话人；`.conclusion`：三段式结论
+- `.visual-evidence`、`figure`、`figcaption`：截图与带时间戳图注
+- `.transcript-list`、`.transcript-row`：完整转录
+
+必须包含以下基础规则，其余视觉样式可参考首页：
+
+```css
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75;color:#1e293b;background:#f8fafc}
+.container{width:min(1120px,100%);margin:0 auto;padding:48px 32px 80px}
+img{display:block;max-width:100%;height:auto}
+figure{margin:24px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(15,23,42,.08)}
+figcaption{padding:14px 18px;color:#475569}
+.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e2e8f0}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#2563eb;font-weight:700}
+.transcript-row p{margin:0}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .transcript-row{grid-template-columns:56px 1fr;gap:10px}
+}
+```
+
+### 安全与可访问性
+
+- 从视频元数据、转录或 payload 插入的纯文本必须经过 `escapeHtml`
+- 每张截图必须提供描述信息的 `alt`，图注必须包含时间戳
+- 页面必须有且仅有一个 `h1`，标题层级不得跳级
+- 不加载远程脚本、跟踪代码或第三方字体
+- 不设置固定页面高度；由浏览器自然滚动
+
+运行：
+
+```bash
+node "generate-{slug}.mjs"
+```
+
+---
+
+## Step 7：质量自检
+
+- [ ] HTML 包含完整的 `<!DOCTYPE html>`、`lang="zh-CN"` 和 viewport
+- [ ] Whisper JSON 中每个非空 segment 都出现在详细转录区，顺序与时间戳一致
+- [ ] 每张总结卡片能回答「在讲什么、关键理解、怎么用、原文依据」
+- [ ] 至少有 1 处行动清单和 1 处避坑总结
+- [ ] 涉及多产品或方法时有对比表
+- [ ] 每个结论都说明适用边界
+- [ ] 文首有核心脉络和关键时间轴
+- [ ] 结论区包含「总结 + 行动清单 + 认知转变」
+- [ ] 一般视频有 3-8 张有效截图；每张图片存在、可打开、带准确 alt 和时间戳图注
+- [ ] 桌面端和 375px 宽度下均无横向溢出，表格可横向滚动
+- [ ] 所有本地图片链接、页内锚点和原视频链接有效
+
+可用浏览器打开产出文件进行最终人工检查；禁止只检查源码后直接发布。
+
+---
+
+## Step 8：更新 index.json
+
+读取 `docs/index.json`，将新条目插入数组开头：
 
 ```json
 {
   "date": "YYYY-MM-DD",
-  "filename": "slug-总结.svg",
+  "filename": "slug-总结.html",
+  "format": "html",
   "title": "视频标题",
   "summary": "一句话摘要，≤120字",
   "tags": ["数码", "相机"],
   "url": "https://www.bilibili.com/video/BVxxx",
   "duration": "5分40秒",
-  "svg_height": 9560
+  "screenshot_count": 5,
+  "transcript_segments": 86
 }
 ```
 
-**字段说明**：
-- `date`：优先 Webhook payload 的 `date`；未提供则用当天日期
-- `filename`：SVG 文件名（在 docs/ 目录下）
-- `title`：视频标题
-- `summary`：摘要（120 字内）
-- `tags`：标签数组（2-4 个）
-- `url`：原始 B 站链接
-- `duration`：视频时长
-- `svg_height`：SVG 高度像素值
+字段要求：
 
-若失败，记录失败项（含 `"error": true` 与 `error_message`）。
+- `date`：优先使用 payload 的 `date`，否则使用当天日期
+- `filename`：位于 `docs/` 的 HTML 文件名
+- `format`：固定为 `html`
+- `summary`：不超过 120 个汉字
+- `tags`：根据内容提取 2-4 个
+- `screenshot_count`：实际提交的截图数
+- `transcript_segments`：HTML 中实际呈现的非空 Whisper 分段数
+
+失败时写入包含 `"error": true` 和 `error_message` 的失败条目，不写虚假的成功数据。
 
 ---
 
-## Step 8：Git 提交与推送到 main（**必须**）
+## Step 9：Git 提交与推送
 
-> **此步骤不可跳过。** GitHub Pages 从 `main` 分支的 `docs/` 目录部署。
+GitHub Pages 从目标发布分支的 `docs/` 目录部署。提交前确认以下文件均已纳入：
+
+- `docs/{slug}-总结.html`
+- `docs/assets/{slug}/shot-*.jpg`
+- `docs/index.json`
 
 ```bash
-git add docs/
-git commit -m "bilibili: summarize {视频标题}"
-git checkout main
-git pull origin main
-git push -u origin main
+git add "docs/{slug}-总结.html" "docs/assets/{slug}" docs/index.json
+git commit -m "bilibili: summarize {视频标题} as HTML"
+git push -u origin "{目标分支}"
 ```
 
-**要求：**
-- 最终变更**必须**出现在 `origin/main` 上
-- 禁止仅推送到 feature 分支就结束
-- 推送前确认 `docs/index.json` 与 `docs/{slug}-总结.svg` 均已纳入提交
-
-若 push 失败（冲突），先 `git pull --rebase origin main` 再 push。
+若推送因网络问题失败，按 4、8、16、32 秒退避重试。若因冲突失败，拉取目标分支并 rebase，解决冲突、重新自检后再推送。
 
 ---
 
-## Step 9：清理
+## Step 10：清理
+
+确认 HTML、截图和索引已提交后，删除生成脚本与本地大文件：
 
 ```bash
-rm generate-{slug}.mjs
-# 可选：rm {slug}.m4a
+rm "generate-{slug}.mjs"
+rm -f "{音频文件}" "{视频文件}"
 ```
+
+转录中间文件可按调试需要保留；它们不提交到仓库，因为完整分段已经嵌入 HTML。
 
 ---
 
-## 产出文件清单
+## 文件清单
+
+### 发布文件
 
 | 文件 | 说明 |
 |------|------|
-| `{slug}.m4a` | 原始音频 |
-| `{slug}.txt` | 纯文本转录稿 |
-| `{slug}.srt` | SRT 字幕 |
-| `{slug}.vtt` | WebVTT 字幕 |
-| `{slug}.json` | Whisper JSON |
-| `docs/{slug}-总结.svg` | 内容总结长图 |
+| `docs/{slug}-总结.html` | 深度总结、关键截图和完整转录页面 |
+| `docs/assets/{slug}/shot-*.jpg` | 关键画面截图 |
+| `docs/index.json` | Pages 内容索引 |
+
+### 临时文件
+
+| 文件 | 说明 |
+|------|------|
+| `{slug}.m4a` 或其他音频格式 | Whisper 输入 |
+| `{slug}.source.*` | 截图用视频 |
+| `{slug}.txt/.srt/.vtt/.tsv/.json` | Whisper 转录产物 |
+| `generate-{slug}.mjs` | 一次性 HTML 生成脚本 |
 
 ---
 
 ## 约束
 
-- 仅处理 B 站（bilibili.com / b23.tv）链接
-- 不修改非 `docs/` 目录的文件（`generate-{slug}.mjs` 除外，用完删除）
-- 不修改 `.gitignore`
-- 每个 URL 只处理一次（检查 `index.json` 中是否已存在相同 `url`）
-- 严禁使用 `rsvg-convert` 或 Inkscape 渲染 SVG
-- **必须将产出推送到 `main` 分支**，否则 GitHub Pages 无法展示
+- 仅处理 `bilibili.com` 或 `b23.tv` 链接
+- 每个 URL 只处理一次
+- 新内容只发布为 HTML，不生成 SVG、Canvas 长图或图片化全文
+- 完整转录必须直接出现在 HTML 中，不能只提供下载链接
+- 截图只能来自所处理的视频，并作为本地资源提交
+- 除临时生成脚本外，自动化产出只写入 `docs/`
