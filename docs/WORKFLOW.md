@@ -20,7 +20,7 @@ Task Progress:
 - [ ] 7. 生成 SVG 理性分析
 - [ ] 8. 双产物质量自检
 - [ ] 9. 更新 docs/index.json
-- [ ] 10. Git 提交并推送
+- [ ] 10. Git 提交并直接推送到 `main`
 - [ ] 11. 清理临时文件
 ```
 
@@ -43,6 +43,13 @@ Webhook payload：
 | `date` | 否 | 展示日期，格式 `YYYY-MM-DD`；未提供时使用当天日期 |
 
 字段缺失、为空或域名不符合约束时，记录错误并结束。下载前检查 `docs/index.json`，相同 `url` 已存在则结束，避免重复处理。
+
+开始处理前切换到 `main` 并拉取最新代码：
+
+```bash
+git checkout main
+git pull origin main
+```
 
 ---
 
@@ -480,27 +487,37 @@ XML 注意事项：
 
 ---
 
-## Step 10：Git 提交与推送
+## Step 10：Git 提交并直接推送到 `main`
 
-提交前确认：
+**全程只在 `main` 分支工作。** 收到 Webhook 后，第一步就切换到 `main`；所有开发、提交、推送都在 `main` 上完成。禁止创建功能分支、禁止只推送到其他分支、禁止依赖 Pull Request 间接合并。
+
+开始前确认当前分支：
+
+```bash
+git checkout main
+git pull origin main
+```
+
+提交前确认以下文件已生成：
 
 - `docs/{slug}-图文实录.html`
 - `docs/{slug}-理性分析.svg`
 - `docs/assets/{slug}/shot-*.jpg`
 - `docs/index.json`
 
+提交并直接推送到 `main`：
+
 ```bash
 git add "docs/{slug}-图文实录.html" "docs/{slug}-理性分析.svg" \
   "docs/assets/{slug}" docs/index.json
 git commit -m "bilibili: add dual-view summary for {视频标题}"
-git checkout main
-git pull origin main
+git pull --rebase origin main
 git push -u origin main
 ```
 
-**默认推送目标始终为 `main`。** 所有 webhook/trigger 完成后必须将变更推送到 `origin/main`；禁止只停在 feature 分支。GitHub Pages 从 `main` 的 `docs/` 部署。
+**默认且唯一的推送目标是 `origin/main`。** 所有 webhook/trigger 完成后，变更必须已经出现在 `main` 上；GitHub Pages 从 `main` 的 `docs/` 部署。
 
-网络失败按 4、8、16、32 秒退避重试；冲突时 `git pull --rebase origin main` 后再 push，解决冲突并重新自检。
+网络失败按 4、8、16、32 秒退避重试。`git pull --rebase origin main` 出现冲突时，解决冲突、重新自检后再 `git push -u origin main`。
 
 ---
 
@@ -523,4 +540,4 @@ rm -f "{音频文件}" "{视频文件}"
 - SVG 必须使用 `svg-auto-height.mjs` 和原有分析视觉框架
 - 不使用 `rsvg-convert` 或 Inkscape 渲染 SVG
 - 自动化产出只写入 `docs/`；临时生成脚本除外
-- 必须将最终变更推送到 `main`；Pages 才能展示
+- 必须直接在 `main` 上开发并推送；禁止功能分支与仅推送到非 `main` 分支；Pages 才能展示
