@@ -20,7 +20,7 @@ Task Progress:
 - [ ] 7. 生成 SVG 理性分析
 - [ ] 8. 双产物质量自检
 - [ ] 9. 更新 docs/index.json
-- [ ] 10. Git 提交并直接推送到 `main`
+- [ ] 10. 在开发分支提交推送，并主动合并到 `main`
 - [ ] 11. 清理临时文件
 ```
 
@@ -44,12 +44,15 @@ Webhook payload：
 
 字段缺失、为空或域名不符合约束时，记录错误并结束。下载前检查 `docs/index.json`，相同 `url` 已存在则结束，避免重复处理。
 
-开始处理前切换到 `main` 并拉取最新代码：
+开始处理前先同步 `main`，再切换到开发分支。若 Automation 已指定开发分支，直接使用该分支；否则从 `main` 创建：
 
 ```bash
 git checkout main
 git pull origin main
+git checkout -B "{dev-branch}"
 ```
+
+`{dev-branch}` 命名建议：`cursor/{slug}` 或 Automation 下发的分支名。后续 Step 1–9 都在开发分支上完成，不要直接在 `main` 上开发。
 
 ---
 
@@ -487,15 +490,16 @@ XML 注意事项：
 
 ---
 
-## Step 10：Git 提交并直接推送到 `main`
+## Step 10：在开发分支提交推送，并主动合并到 `main`
 
-**全程只在 `main` 分支工作。** 收到 Webhook 后，第一步就切换到 `main`；所有开发、提交、推送都在 `main` 上完成。禁止创建功能分支、禁止只推送到其他分支、禁止依赖 Pull Request 间接合并。
+**开发在开发分支，发布在 `main`。** 收到 Webhook 后，先同步 `main` 并切换到开发分支；Step 1–9 的提交与推送都在开发分支完成。任务结束前，必须主动把开发分支合并进 `main` 并推送 `origin/main`。禁止只推送到开发分支就结束。
 
 开始前确认当前分支：
 
 ```bash
 git checkout main
 git pull origin main
+git checkout "{dev-branch}"
 ```
 
 提交前确认以下文件已生成：
@@ -505,19 +509,28 @@ git pull origin main
 - `docs/assets/{slug}/shot-*.jpg`
 - `docs/index.json`
 
-提交并直接推送到 `main`：
+先在开发分支提交并推送：
 
 ```bash
 git add "docs/{slug}-图文实录.html" "docs/{slug}-理性分析.svg" \
   "docs/assets/{slug}" docs/index.json
 git commit -m "bilibili: add dual-view summary for {视频标题}"
 git pull --rebase origin main
+git push -u origin "{dev-branch}"
+```
+
+然后主动合并到 `main` 并推送：
+
+```bash
+git checkout main
+git pull origin main
+git merge "{dev-branch}"
 git push -u origin main
 ```
 
-**默认且唯一的推送目标是 `origin/main`。** 所有 webhook/trigger 完成后，变更必须已经出现在 `main` 上；GitHub Pages 从 `main` 的 `docs/` 部署。
+**最终发布目标是 `origin/main`。** 所有 webhook/trigger 完成后，变更必须已经出现在 `main` 上；GitHub Pages 从 `main` 的 `docs/` 部署。开发分支可以保留，也可以后续清理，但不得以“已推送到开发分支”代替合并。
 
-网络失败按 4、8、16、32 秒退避重试。`git pull --rebase origin main` 出现冲突时，解决冲突、重新自检后再 `git push -u origin main`。
+网络失败按 4、8、16、32 秒退避重试。`git pull --rebase origin main` 或 `git merge` 出现冲突时，解决冲突、重新自检后再继续推送。若已创建 Pull Request，可在合并到 `main` 后关闭。
 
 ---
 
@@ -540,4 +553,4 @@ rm -f "{音频文件}" "{视频文件}"
 - SVG 必须使用 `svg-auto-height.mjs` 和原有分析视觉框架
 - 不使用 `rsvg-convert` 或 Inkscape 渲染 SVG
 - 自动化产出只写入 `docs/`；临时生成脚本除外
-- 必须直接在 `main` 上开发并推送；禁止功能分支与仅推送到非 `main` 分支；Pages 才能展示
+- 必须在开发分支完成开发与提交，并在任务结束前主动合并到 `main`；禁止只推送到开发分支就结束；Pages 从 `main` 的 `docs/` 部署
