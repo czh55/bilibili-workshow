@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="按时间重看德松对松下 L10 的深度上手：机身操控、实时 LUT、画质、视频规格、防抖和镜头边界。">
+  <title>松下 L10 深度上手｜图文实录</title>
+  <style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+  a{color:#9a3412;text-underline-offset:3px}
+  img{display:block;max-width:100%;height:auto}
+  .container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+  .hero{padding:36px 40px;border-radius:24px;background:linear-gradient(145deg,#1c1917,#44403c);color:#fafaf9;box-shadow:0 16px 44px rgba(41,37,36,.18)}
+  .eyebrow{margin:0 0 10px;color:#fdba74;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  h1{margin:0;font-size:clamp(32px,6vw,54px);line-height:1.18;letter-spacing:-.03em}
+  .dek{max-width:760px;margin:22px 0 0;color:#e7e5e4;font-size:18px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .meta span,.meta a{display:inline-flex;align-items:center;min-height:34px;padding:4px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#f5f5f4;font-size:13px;text-decoration:none}
+  .source-note{margin:18px 0 0;color:#d6d3d1;font-size:13px}
+  .toc{margin:28px 0;padding:24px 28px;border:1px solid #e7e5e4;border-radius:18px;background:#fff}
+  .toc strong{display:block;margin-bottom:8px;color:#78350f}
+  .toc ol{margin:0;padding-left:22px;columns:2;column-gap:32px}
+  .toc li{break-inside:avoid;margin:5px 0}
+  .documentary{font-size:17px}
+  .story-section{margin:52px 0;scroll-margin-top:24px}
+  .chapter-label{margin:0 0 6px;color:#b45309;font-size:13px;font-weight:800;letter-spacing:.08em}
+  h2{margin:0 0 18px;color:#292524;font-size:30px;line-height:1.3;letter-spacing:-.02em}
+  h3{margin:28px 0 10px;color:#44403c;font-size:20px}
+  p{margin:12px 0}
+  .lead{font-size:19px;color:#44403c}
+  .quote{margin:24px 0;padding:18px 22px;border-left:4px solid #d97706;border-radius:0 12px 12px 0;background:#fffbeb;color:#78350f;font-size:18px}
+  .stance,.caveat{margin:20px 0;padding:16px 18px;border-radius:12px;font-size:15px}
+  .stance{border:1px solid #ddd6fe;background:#f5f3ff;color:#5b21b6}
+  .caveat{border:1px solid #fed7aa;background:#fff7ed;color:#9a3412}
+  .spec-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+  .spec-choice{padding:18px;border:1px solid #e7e5e4;border-radius:14px;background:#fff}
+  .spec-choice strong{display:block;color:#9a3412}
+  .spec-choice p{margin:6px 0 0;font-size:14px;color:#57534e}
+  figure{margin:30px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+  figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+  .figure-time{color:#b45309;font-weight:800;font-variant-numeric:tabular-nums}
+  .transcript-section{margin-top:72px;padding-top:42px;border-top:3px solid #292524;scroll-margin-top:24px}
+  .transcript-note{padding:16px 18px;border-radius:12px;background:#f5f5f4;color:#57534e;font-size:14px}
+  .transcript-list{list-style:none;margin:24px 0 0;padding:0}
+  .transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+  .transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+  .transcript-row p{margin:0}
+  .footer{margin-top:44px;color:#78716c;font-size:13px;text-align:center}
+  @media(max-width:720px){
+    .container{padding:28px 18px 56px}
+    .hero{padding:28px 22px;border-radius:18px}
+    .toc ol{columns:1}
+    .spec-choices{grid-template-columns:1fr}
+    .story-section{margin:42px 0}
+  }
+  @media(max-width:420px){
+    .transcript-row{grid-template-columns:52px minmax(0,1fr);gap:10px}
+    .transcript-row p{overflow-wrap:anywhere}
+  }
+</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">B 站视频图文实录 · 2026-07-25</p>
+    <h1>松下 L10 深度上手：一台想“融入生活”的紧凑相机</h1>
+    <p class="dek">德松从材质、实体操控和实时 LUT 讲到对焦、视频规格、防抖与镜头边界。下面按视频原本的节奏，看看这台高端 M43 卡片机如何在体积和能力之间做选择。</p>
+    <div class="meta">
+      <span>UP 主：德松 Desong</span>
+      <span>时长：9 分 17 秒</span>
+      <span>完整转录：254 段</span>
+      <a href="https://b23.tv/Zuz8qp2">观看原视频</a>
+    </div>
+    <p class="source-note">本文只整理视频中出现的陈述与画面。参数字符串若受转录影响无法确认，会明确保留边界。</p>
+  </header>
+
+  <nav class="toc" aria-label="文章目录">
+    <strong>沿着视频往下看</strong>
+    <ol>
+      <li><a href="#opening">从器材做大到重新做小</a></li>
+      <li><a href="#body">材质、镜头与握持</a></li>
+      <li><a href="#controls">背部控制和自定义</a></li>
+      <li><a href="#lut">最打动他的四项设计</a></li>
+      <li><a href="#tradeoff">覆盖取舍与体验优先</a></li>
+      <li><a href="#image">对焦、画质与视频规格</a></li>
+      <li><a href="#stabilization">防抖和镜头边界</a></li>
+      <li><a href="#ending">最后如何评价 L10</a></li>
+      <li><a href="#transcript">完整时间戳转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="opening">
+      <p class="chapter-label">00:00–00:55 · 开场</p>
+      <h2>从“越玩越大”，走到“越玩越小”</h2>
+      <p class="lead">视频没有从规格表开场。德松先画出一条他称为“玩机体积曲线”的轨迹：器材越玩越大以后，不少影像爱好者又转向便携与性能的平衡、操控与感官的协调，以及外观和把玩的乐趣。</p>
+      <p>松下 L10 正是在这个语境里登场。它被介绍为可单手掌握、采用专业操控方式，并支持照片和视频实时 LUT 直出的高端 M43 卡片机。德松把这称作一台帮助人“找回初心”的相机，也提前说明：先聊外观、质感和操控，后半程再看场景和画质。</p>
+      <div class="quote">“相比于绝对参数，我们更看重便携与性能的平衡，操控与感官的协调，以及外观与把玩的乐趣。”</div>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-01.jpg" alt="双手托住松下 L10 背面，屏幕显示实时 LUT 选择界面" loading="lazy">
+      <figcaption><span class="figure-time">[00:34]</span> 开场快速交代核心卖点：紧凑机身保留取景器、实体控制和照片视频 LUT 直出。</figcaption>
+    </figure>
+    </section>
+
+    <section class="story-section" id="body">
+      <p class="chapter-label">00:55–02:08 · 机身与镜头</p>
+      <h2>先摸到的是材质、重量和一整套实体控制</h2>
+      <p>近距离上手时，视频依次扫过纹理蒙皮、金属顶盖与底盖，以及后侧面板和取景器区域。称重画面给出的读数约为 510 克（含电池），这让机身有一定压手感，但德松认为仍不会给单手使用造成太大负担。前握把和背部拇指支撑也被反复展示。</p>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-02.jpg" alt="松下 L10 放在电子秤上，屏幕读数约为 510 克" loading="lazy">
+      <figcaption><span class="figure-time">[01:08]</span> 含电池称重画面约为 510 克；这张画面也校正了 Whisper 对数字单位的误识别。</figcaption>
+    </figure>
+      <p>可伸缩镜头覆盖视频所称的等效 24–75mm 焦段。镜筒上能看到手动光圈环、自定义环和切换开关；机顶则安排了模式转盘、变焦控制、快门、录制键、曝光补偿控制以及额外的自定义转盘和按钮。德松尤其强调这些控制在小机身上没有被大幅删减。</p>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-03.jpg" alt="松下 L10 机顶和镜筒控制特写，标出手动光圈环与自定义对焦环" loading="lazy">
+      <figcaption><span class="figure-time">[01:34]</span> 镜筒控制与机顶转盘集中在一张画面中，展示紧凑机身里的操作密度。</figcaption>
+    </figure>
+      <p>背部左侧是 OLED 取景器。视频提到其亮度、分辨率和色准，并特意暂停讲解，让观众听机械快门声。声音无法由静态页面还原，感兴趣的读者可回到原视频 <a href="https://b23.tv/Zuz8qp2">01:58 左右</a>收听。</p>
+    </section>
+
+    <section class="story-section" id="controls">
+      <p class="chapter-label">02:12–03:15 · 背面、屏幕与电池</p>
+      <h2>按钮不只多，还要看按下去是什么感觉</h2>
+      <p>视频从取景器开关讲到照片、视频与快门动作切换控制，再配合 C1–C5 自定义档位。实时 LUT、AF 等按钮也可重新分配功能。德松区分了两类触感：单次按下的按钮更清脆，需要持续按住的 AF 按钮则偏软。这些都是规格表很难表达、却会影响日常使用的细节。</p>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-04.jpg" alt="双手操作松下 L10 背部，取景器、LUT、AF 按钮和控制转盘清楚可见" loading="lazy">
+      <figcaption><span class="figure-time">[02:25]</span> 机背按钮布局；旁白此时强调每个控制都可以自定义功能。</figcaption>
+    </figure>
+      <p>侧翻屏被用于视频自拍和竖构图，视频也称屏幕影调准确并支持方向感应。底部是 SD 卡仓和电池仓。续航部分来自德松的个人使用感受：如果只拍照片，一天使用一块电池没有压力；这不是标准化续航测试，也不能直接外推到高规格视频。</p>
+    </section>
+
+    <section class="story-section" id="lut">
+      <p class="chapter-label">03:15–04:16 · 四项操控设计</p>
+      <h2>实时 LUT、整数焦段和画幅切换，把“直出”做成流程</h2>
+      <p>德松最先展示的是实时 LUT 下拉菜单。LUT 强度、对比度、高光阴影和颗粒等项目可以在机内调整并记忆；本期样片也被说明为使用他自己的 LUT 机内直出。接着是与直出搭配的人像美肤功能，不过 Whisper 没有可靠识别出他推荐的准确档位名称。</p>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-05.jpg" alt="松下 L10 屏幕打开 LUT 参数菜单，正在调节 LUT 强度" loading="lazy">
+      <figcaption><span class="figure-time">[03:22]</span> 实时 LUT 菜单把强度等参数放到拍摄现场调整，减少反复进入深层菜单的步骤。</figcaption>
+    </figure>
+      <p>第三项是把自定义环设为整数焦段切换；拍视频时则可用变焦控制无级推拉。第四项是通过镜头开关切换 4:3、3:2 和 16:9。德松偏爱用 M43 的 4:3 进行竖构图人像和视频拍摄。</p>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-06.jpg" alt="手指拨动松下 L10 镜筒侧面的画幅比例切换开关" loading="lazy">
+      <figcaption><span class="figure-time">[04:03]</span> 镜筒开关被设置为画幅比例切换；单帧展示操作位置，比例变化仍需结合连续视频观看。</figcaption>
+    </figure>
+    </section>
+
+    <section class="story-section" id="tradeoff">
+      <p class="chapter-label">04:16–04:55 · 明确的交换</p>
+      <h2>小镜头没有白来：传感器覆盖要做取舍</h2>
+      <p>视频主动回应了一个争议：无论选择哪种画幅比例，都不能用满整块 M43 传感器。德松承认，小型 24–75mm 镜头在覆盖上需要取舍；他的主观感受是边角损失不多，而且画幅快速切换把原本的劣势转成了一种使用选择。</p>
+      <div class="stance"><strong>立场说明：</strong>“愿意用小镜头体积换少量边角像素”是 UP 主的个人权衡，不是对所有用户都成立的客观结论。购买前仍应查看各比例下的实际视角、像素和画质。</div>
+      <div class="quote">“使用体验比绝对参数优先。是我的话，我也愿意用小镜头体积换少量的边角像素。”</div>
+    </section>
+
+    <section class="story-section" id="image">
+      <p class="chapter-label">04:55–06:58 · 成像与视频</p>
+      <h2>对焦演示很直观，规格字符串却要谨慎阅读</h2>
+      <p>进入画质部分后，视频谈到背照式 CMOS、V-Log 和新一代处理器，并用移动主体和暗光推进镜头演示多主体识别与相位混合对焦。德松认为，在初代固件下，追焦体验已经看齐松下近期旗舰机；这仍是基于本次样片的个人评价，而不是受控横评。</p>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-07.jpg" alt="林间台阶上的人物向镜头移动，右侧标有 4K 60P 与 H.264 等拍摄信息" loading="lazy">
+      <figcaption><span class="figure-time">[05:22]</span> 移动主体测试场景。静态帧只能说明测试内容，连续追焦是否稳定需观看原视频。</figcaption>
+    </figure>
+      <p>随后列出的三种常用视频规格包含分辨率、画幅、位深、色度采样和编码方式，但 Whisper 对这串高密度术语识别得很混乱。因此这里不擅自补全数字，只保留视频清楚给出的选择逻辑：</p>
+      <div class="spec-choices">
+        <div class="spec-choice"><strong>画质与分辨率优先</strong><p>选择第一种高分辨率模式；视频称其使用 H.265。</p></div>
+        <div class="spec-choice"><strong>横竖交付优先</strong><p>选择第二种更适合横竖多用或竖构图的模式，同样需考虑 H.265 后期负载。</p></div>
+        <div class="spec-choice"><strong>后期效率优先</strong><p>选择第三种 H.264 模式，在画质与电脑处理压力之间折中。</p></div>
+      </div>
+      <p>升格部分还展示了 4K 120 帧与 1080p 240 帧。按旁白，前者保留主体识别和对焦，后者只有单次对焦；视频没有进一步讨论过热、录制时限等边界。</p>
+      <div class="caveat"><strong>转录边界：</strong>05:48–06:01 的具体格式字符串受识别错误影响严重。若要据此设置拍摄参数，应以相机菜单、说明书或原视频清晰画面为准。</div>
+    </section>
+
+    <section class="story-section" id="stabilization">
+      <p class="chapter-label">06:58–08:32 · 防抖与镜头</p>
+      <h2>广角能正常走，长焦运镜仍要控制身体</h2>
+      <p>L10 支持镜头防抖，但没有机身防抖。视频用正常跨步而非“猫步”展示广角手持前进，也展示了长焦站定手持。德松的经验是：广角正常走动可以使用，长焦站定也没有明显问题；到了等效 75mm 端要运镜，就需要主动控制呼吸和身体。</p>
+      <p>镜头部分再次回到小体积和等效 24–75mm 的组合。德松认为它适合多天轻量旅行和每日散步，并肯定锐度、焦外与色散表现，尤其喜欢长焦端的焦外过渡。短板也被点出：广角畸变较明显，逆光眩光光斑偏多；他的处理建议是调整角度避开光斑。</p>
+      <p>最后是一段贴近物体表面的广角近摄。旁白强调最近对焦距离可到 3 厘米，并用食物样片展示这种贴近拍摄带来的透视感。</p>
+      
+    <figure>
+      <img src="assets/panasonic-l10-deep-review/shot-08.jpg" alt="广角近摄食物样片，镜头信息标注 36mm、F2.3、1/80 秒和 ISO 640" loading="lazy">
+      <figcaption><span class="figure-time">[08:24]</span> 旁白强调“不是 30 厘米，是 3 厘米”；画面展示贴近主体拍摄的近摄效果。</figcaption>
+    </figure>
+    </section>
+
+    <section class="story-section" id="ending">
+      <p class="chapter-label">08:32–09:14 · 总结</p>
+      <h2>他的答案是：这是一台可以真正融入生活的机器</h2>
+      <p>收尾时，德松把 L10 概括为“性能和参数的下限很高，把玩和体验的上限也很高”。旅行人文扫街、环境人像与生活记录被列为适用场景；“超过 90 分”则是他的个人评分，不应当作标准化测试成绩。</p>
+      <p>视频还预告了 10 月 LUMIX 25 周年版本，但颜色名称在转录中没有被可靠识别。随后就是常规的关注、点赞、收藏、转发与告别。</p>
+      <div class="quote">“它就是一台可以真正融入生活的机器……并且整个过程是充满乐趣的。”</div>
+    </section>
+  </article>
+    <section class="transcript-section" id="transcript">
+      <p class="chapter-label">00:00–09:14 · 原始证据</p>
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下 254 段内容按 Whisper 中文 small 模型的原始分段完整呈现，保持原顺序和时间戳，可能包含同音字、数字及专业术语识别误差。</p>
+      <ol class="transcript-list">
+      <li class="transcript-row" id="transcript-1">
+        <time datetime="PT0S">00:00</time>
+        <p>大部分影像爱好者都会经历一个相机越玩越大</p>
+      </li>
+      <li class="transcript-row" id="transcript-2">
+        <time datetime="PT3S">00:03</time>
+        <p>在越玩越小的阶段</p>
+      </li>
+      <li class="transcript-row" id="transcript-3">
+        <time datetime="PT5S">00:05</time>
+        <p>我给它取名叫玩机体积曲线</p>
+      </li>
+      <li class="transcript-row" id="transcript-4">
+        <time datetime="PT8S">00:08</time>
+        <p>过去几年有越来越多的玩家</p>
+      </li>
+      <li class="transcript-row" id="transcript-5">
+        <time datetime="PT10S">00:10</time>
+        <p>也包括我进入到了曲线的右板边</p>
+      </li>
+      <li class="transcript-row" id="transcript-6">
+        <time datetime="PT12S">00:12</time>
+        <p>相比于绝对参数</p>
+      </li>
+      <li class="transcript-row" id="transcript-7">
+        <time datetime="PT14S">00:14</time>
+        <p>我们更看重便携与性能的平衡</p>
+      </li>
+      <li class="transcript-row" id="transcript-8">
+        <time datetime="PT16S">00:16</time>
+        <p>操控于感官的协调</p>
+      </li>
+      <li class="transcript-row" id="transcript-9">
+        <time datetime="PT18S">00:18</time>
+        <p>以及外观与把玩的乐趣</p>
+      </li>
+      <li class="transcript-row" id="transcript-10">
+        <time datetime="PT22S">00:22</time>
+        <p>嗨各位我是德松</p>
+      </li>
+      <li class="transcript-row" id="transcript-11">
+        <time datetime="PT23S">00:23</time>
+        <p>如果你也和我有着相同的感觉</p>
+      </li>
+      <li class="transcript-row" id="transcript-12">
+        <time datetime="PT25S">00:25</time>
+        <p>那么我手上这台松下全新发布的</p>
+      </li>
+      <li class="transcript-row" id="transcript-13">
+        <time datetime="PT28S">00:28</time>
+        <p>有着复古精巧质感</p>
+      </li>
+      <li class="transcript-row" id="transcript-14">
+        <time datetime="PT30S">00:30</time>
+        <p>可以一只手掌握塞进口袋</p>
+      </li>
+      <li class="transcript-row" id="transcript-15">
+        <time datetime="PT32S">00:32</time>
+        <p>继承了专业操控方式</p>
+      </li>
+      <li class="transcript-row" id="transcript-16">
+        <time datetime="PT34S">00:34</time>
+        <p>照片视频LUT直出</p>
+      </li>
+      <li class="transcript-row" id="transcript-17">
+        <time datetime="PT35S">00:35</time>
+        <p>性能一点也不含糊的高端M43卡片机L10</p>
+      </li>
+      <li class="transcript-row" id="transcript-18">
+        <time datetime="PT39S">00:39</time>
+        <p>就是这样一台找回初心的相机</p>
+      </li>
+      <li class="transcript-row" id="transcript-19">
+        <time datetime="PT42S">00:42</time>
+        <p>如果你对L10感兴趣</p>
+      </li>
+      <li class="transcript-row" id="transcript-20">
+        <time datetime="PT44S">00:44</time>
+        <p>我才你肯定对外观质感和操控体验</p>
+      </li>
+      <li class="transcript-row" id="transcript-21">
+        <time datetime="PT47S">00:47</time>
+        <p>有着很高的要求</p>
+      </li>
+      <li class="transcript-row" id="transcript-22">
+        <time datetime="PT48S">00:48</time>
+        <p>这也是我首先想和你分享的</p>
+      </li>
+      <li class="transcript-row" id="transcript-23">
+        <time datetime="PT50S">00:50</time>
+        <p>如果想直接看使用场景和画质的话</p>
+      </li>
+      <li class="transcript-row" id="transcript-24">
+        <time datetime="PT53S">00:53</time>
+        <p>可以转跳这个时间点</p>
+      </li>
+      <li class="transcript-row" id="transcript-25">
+        <time datetime="PT55S">00:55</time>
+        <p>上手第一时间就能感受到</p>
+      </li>
+      <li class="transcript-row" id="transcript-26">
+        <time datetime="PT57S">00:57</time>
+        <p>L10确实是高端线的产品</p>
+      </li>
+      <li class="transcript-row" id="transcript-27">
+        <time datetime="PT59S">00:59</time>
+        <p>Safiano纹理蒙皮搭配金属顶盖底盖</p>
+      </li>
+      <li class="transcript-row" id="transcript-28">
+        <time datetime="PT63S">01:03</time>
+        <p>只有后侧面板和曲镜器部分是高级塑料</p>
+      </li>
+      <li class="transcript-row" id="transcript-29">
+        <time datetime="PT66S">01:06</time>
+        <p>整机重量含电池500时克左右</p>
+      </li>
+      <li class="transcript-row" id="transcript-30">
+        <time datetime="PT70S">01:10</time>
+        <p>是一个有压手的质感</p>
+      </li>
+      <li class="transcript-row" id="transcript-31">
+        <time datetime="PT71S">01:11</time>
+        <p>又不会给单手使用造成太大负担的重量</p>
+      </li>
+      <li class="transcript-row" id="transcript-32">
+        <time datetime="PT75S">01:15</time>
+        <p>机身前侧的握把和后侧的拇指纸柄恰到好处</p>
+      </li>
+      <li class="transcript-row" id="transcript-33">
+        <time datetime="PT79S">01:19</time>
+        <p>单手的握质感还是不错的</p>
+      </li>
+      <li class="transcript-row" id="transcript-34">
+        <time datetime="PT81S">01:21</time>
+        <p>强烈建议S9后续机型</p>
+      </li>
+      <li class="transcript-row" id="transcript-35">
+        <time datetime="PT83S">01:23</time>
+        <p>也把这个前侧的握把加上</p>
+      </li>
+      <li class="transcript-row" id="transcript-36">
+        <time datetime="PT85S">01:25</time>
+        <p>手感提升巨大</p>
+      </li>
+      <li class="transcript-row" id="transcript-37">
+        <time datetime="PT87S">01:27</time>
+        <p>L10的镜头沿用了可伸缩的来卡</p>
+      </li>
+      <li class="transcript-row" id="transcript-38">
+        <time datetime="PT89S">01:29</time>
+        <p>等下2475焦段</p>
+      </li>
+      <li class="transcript-row" id="transcript-39">
+        <time datetime="PT91S">01:31</time>
+        <p>收纳状态很小巧</p>
+      </li>
+      <li class="transcript-row" id="transcript-40">
+        <time datetime="PT92S">01:32</time>
+        <p>手动光圈环</p>
+      </li>
+      <li class="transcript-row" id="transcript-41">
+        <time datetime="PT94S">01:34</time>
+        <p>自定义对焦环</p>
+      </li>
+      <li class="transcript-row" id="transcript-42">
+        <time datetime="PT95S">01:35</time>
+        <p>画幅比例切换开关</p>
+      </li>
+      <li class="transcript-row" id="transcript-43">
+        <time datetime="PT96S">01:36</time>
+        <p>和AFMF微距切换开关</p>
+      </li>
+      <li class="transcript-row" id="transcript-44">
+        <time datetime="PT99S">01:39</time>
+        <p>一应俱全</p>
+      </li>
+      <li class="transcript-row" id="transcript-45">
+        <time datetime="PT100S">01:40</time>
+        <p>手感很棒</p>
+      </li>
+      <li class="transcript-row" id="transcript-46">
+        <time datetime="PT101S">01:41</time>
+        <p>机身顶部除了模式转盘</p>
+      </li>
+      <li class="transcript-row" id="transcript-47">
+        <time datetime="PT103S">01:43</time>
+        <p>变焦波感</p>
+      </li>
+      <li class="transcript-row" id="transcript-48">
+        <time datetime="PT104S">01:44</time>
+        <p>快门 录制键</p>
+      </li>
+      <li class="transcript-row" id="transcript-49">
+        <time datetime="PT105S">01:45</time>
+        <p>曝光补偿钮之外</p>
+      </li>
+      <li class="transcript-row" id="transcript-50">
+        <time datetime="PT106S">01:46</time>
+        <p>还给了一套自定义转盘和按钮</p>
+      </li>
+      <li class="transcript-row" id="transcript-51">
+        <time datetime="PT108S">01:48</time>
+        <p>自定义档位也给了五个</p>
+      </li>
+      <li class="transcript-row" id="transcript-52">
+        <time datetime="PT110S">01:50</time>
+        <p>最值得关注的是机身背面</p>
+      </li>
+      <li class="transcript-row" id="transcript-53">
+        <time datetime="PT112S">01:52</time>
+        <p>左侧是236万像素OLED取景器</p>
+      </li>
+      <li class="transcript-row" id="transcript-54">
+        <time datetime="PT115S">01:55</time>
+        <p>可调节区光</p>
+      </li>
+      <li class="transcript-row" id="transcript-55">
+        <time datetime="PT116S">01:56</time>
+        <p>亮度分辨率和色准</p>
+      </li>
+      <li class="transcript-row" id="transcript-56">
+        <time datetime="PT118S">01:58</time>
+        <p>都是极其优秀的</p>
+      </li>
+      <li class="transcript-row" id="transcript-57">
+        <time datetime="PT119S">01:59</time>
+        <p>最关键的是</p>
+      </li>
+      <li class="transcript-row" id="transcript-58">
+        <time datetime="PT120S">02:00</time>
+        <p>用取景器拍照的时候</p>
+      </li>
+      <li class="transcript-row" id="transcript-59">
+        <time datetime="PT122S">02:02</time>
+        <p>你可以听到L10非常优雅的</p>
+      </li>
+      <li class="transcript-row" id="transcript-60">
+        <time datetime="PT124S">02:04</time>
+        <p>机械快门的声音</p>
+      </li>
+      <li class="transcript-row" id="transcript-61">
+        <time datetime="PT126S">02:06</time>
+        <p>给你们听一下</p>
+      </li>
+      <li class="transcript-row" id="transcript-62">
+        <time datetime="PT126S">02:06</time>
+        <p>我先讨罪一会儿</p>
+      </li>
+      <li class="transcript-row" id="transcript-63">
+        <time datetime="PT131S">02:11</time>
+        <p>右侧是取景器开关</p>
+      </li>
+      <li class="transcript-row" id="transcript-64">
+        <time datetime="PT133S">02:13</time>
+        <p>照片视频快门动作切换波感</p>
+      </li>
+      <li class="transcript-row" id="transcript-65">
+        <time datetime="PT136S">02:16</time>
+        <p>搭配C1-C5 5个档位</p>
+      </li>
+      <li class="transcript-row" id="transcript-66">
+        <time datetime="PT138S">02:18</time>
+        <p>相当于15套加的自定义设置</p>
+      </li>
+      <li class="transcript-row" id="transcript-67">
+        <time datetime="PT141S">02:21</time>
+        <p>然后是实时LOT按钮</p>
+      </li>
+      <li class="transcript-row" id="transcript-68">
+        <time datetime="PT143S">02:23</time>
+        <p>AF对焦按钮</p>
+      </li>
+      <li class="transcript-row" id="transcript-69">
+        <time datetime="PT144S">02:24</time>
+        <p>并且这些每个都是可以</p>
+      </li>
+      <li class="transcript-row" id="transcript-70">
+        <time datetime="PT146S">02:26</time>
+        <p>自定义功能的</p>
+      </li>
+      <li class="transcript-row" id="transcript-71">
+        <time datetime="PT148S">02:28</time>
+        <p>LVF和LOT这种单次按下的按钮</p>
+      </li>
+      <li class="transcript-row" id="transcript-72">
+        <time datetime="PT151S">02:31</time>
+        <p>手感很清脆</p>
+      </li>
+      <li class="transcript-row" id="transcript-73">
+        <time datetime="PT152S">02:32</time>
+        <p>AF对焦钮这种需要持续按住的按钮</p>
+      </li>
+      <li class="transcript-row" id="transcript-74">
+        <time datetime="PT155S">02:35</time>
+        <p>手感就比较软弱</p>
+      </li>
+      <li class="transcript-row" id="transcript-75">
+        <time datetime="PT156S">02:36</time>
+        <p>不愧是高端线的产品</p>
+      </li>
+      <li class="transcript-row" id="transcript-76">
+        <time datetime="PT158S">02:38</time>
+        <p>真的还蛮用心的</p>
+      </li>
+      <li class="transcript-row" id="transcript-77">
+        <time datetime="PT160S">02:40</time>
+        <p>右下方是松下比较常规的按钮</p>
+      </li>
+      <li class="transcript-row" id="transcript-78">
+        <time datetime="PT162S">02:42</time>
+        <p>和控制转盘</p>
+      </li>
+      <li class="transcript-row" id="transcript-79">
+        <time datetime="PT163S">02:43</time>
+        <p>手感做了改进都很精良</p>
+      </li>
+      <li class="transcript-row" id="transcript-80">
+        <time datetime="PT166S">02:46</time>
+        <p>屏幕是侧翻屏</p>
+      </li>
+      <li class="transcript-row" id="transcript-81">
+        <time datetime="PT167S">02:47</time>
+        <p>对视频自拍和束构图比较友好</p>
+      </li>
+      <li class="transcript-row" id="transcript-82">
+        <time datetime="PT170S">02:50</time>
+        <p>色彩引调一如既往的准确</p>
+      </li>
+      <li class="transcript-row" id="transcript-83">
+        <time datetime="PT172S">02:52</time>
+        <p>松下相机的屏幕确实从来没有让人失望过</p>
+      </li>
+      <li class="transcript-row" id="transcript-84">
+        <time datetime="PT176S">02:56</time>
+        <p>界面也带中立感应</p>
+      </li>
+      <li class="transcript-row" id="transcript-85">
+        <time datetime="PT177S">02:57</time>
+        <p>不论是照片还是视频录制都能自动识别</p>
+      </li>
+      <li class="transcript-row" id="transcript-86">
+        <time datetime="PT181S">03:01</time>
+        <p>来看看相机底部</p>
+      </li>
+      <li class="transcript-row" id="transcript-87">
+        <time datetime="PT183S">03:03</time>
+        <p>SD卡仓和电池仓</p>
+      </li>
+      <li class="transcript-row" id="transcript-88">
+        <time datetime="PT185S">03:05</time>
+        <p>用了全画幅同款电池</p>
+      </li>
+      <li class="transcript-row" id="transcript-89">
+        <time datetime="PT187S">03:07</time>
+        <p>续航真的超过我的预期</p>
+      </li>
+      <li class="transcript-row" id="transcript-90">
+        <time datetime="PT189S">03:09</time>
+        <p>只拍照片的话</p>
+      </li>
+      <li class="transcript-row" id="transcript-91">
+        <time datetime="PT191S">03:11</time>
+        <p>一天一块电池没有什么压力</p>
+      </li>
+      <li class="transcript-row" id="transcript-92">
+        <time datetime="PT193S">03:13</time>
+        <p>捞到了这么多</p>
+      </li>
+      <li class="transcript-row" id="transcript-93">
+        <time datetime="PT194S">03:14</time>
+        <p>来分享几个这台机器最打动我的操控设计</p>
+      </li>
+      <li class="transcript-row" id="transcript-94">
+        <time datetime="PT198S">03:18</time>
+        <p>第一LUT直出有下拉菜单了</p>
+      </li>
+      <li class="transcript-row" id="transcript-95">
+        <time datetime="PT200S">03:20</time>
+        <p>直接调整LUT的强度</p>
+      </li>
+      <li class="transcript-row" id="transcript-96">
+        <time datetime="PT202S">03:22</time>
+        <p>对比度</p>
+      </li>
+      <li class="transcript-row" id="transcript-97">
+        <time datetime="PT202S">03:22</time>
+        <p>高光阴影</p>
+      </li>
+      <li class="transcript-row" id="transcript-98">
+        <time datetime="PT203S">03:23</time>
+        <p>颗粒等等</p>
+      </li>
+      <li class="transcript-row" id="transcript-99">
+        <time datetime="PT204S">03:24</time>
+        <p>并且待记忆</p>
+      </li>
+      <li class="transcript-row" id="transcript-100">
+        <time datetime="PT205S">03:25</time>
+        <p>这个对于我这种重度直出用户</p>
+      </li>
+      <li class="transcript-row" id="transcript-101">
+        <time datetime="PT208S">03:28</time>
+        <p>真的是太友好了</p>
+      </li>
+      <li class="transcript-row" id="transcript-102">
+        <time datetime="PT209S">03:29</time>
+        <p>这次的所有样片</p>
+      </li>
+      <li class="transcript-row" id="transcript-103">
+        <time datetime="PT210S">03:30</time>
+        <p>也都选我自己的LUT在机内直出的</p>
+      </li>
+      <li class="transcript-row" id="transcript-104">
+        <time datetime="PT212S">03:32</time>
+        <p>对这些LUT有兴趣的小伙伴</p>
+      </li>
+      <li class="transcript-row" id="transcript-105">
+        <time datetime="PT214S">03:34</time>
+        <p>可以去我主页看一下</p>
+      </li>
+      <li class="transcript-row" id="transcript-106">
+        <time datetime="PT216S">03:36</time>
+        <p>第二就是配合LUT直出</p>
+      </li>
+      <li class="transcript-row" id="transcript-107">
+        <time datetime="PT218S">03:38</time>
+        <p>非常重要的功能</p>
+      </li>
+      <li class="transcript-row" id="transcript-108">
+        <time datetime="PT219S">03:39</time>
+        <p>人像的美肤</p>
+      </li>
+      <li class="transcript-row" id="transcript-109">
+        <time datetime="PT221S">03:41</time>
+        <p>建议开D或者标准</p>
+      </li>
+      <li class="transcript-row" id="transcript-110">
+        <time datetime="PT223S">03:43</time>
+        <p>可以有85分左右的模皮效果</p>
+      </li>
+      <li class="transcript-row" id="transcript-111">
+        <time datetime="PT225S">03:45</time>
+        <p>对直出来说已经是挺不错的了</p>
+      </li>
+      <li class="transcript-row" id="transcript-112">
+        <time datetime="PT228S">03:48</time>
+        <p>第三对焦环可以设置</p>
+      </li>
+      <li class="transcript-row" id="transcript-113">
+        <time datetime="PT229S">03:49</time>
+        <p>档位整数焦段切换</p>
+      </li>
+      <li class="transcript-row" id="transcript-114">
+        <time datetime="PT232S">03:52</time>
+        <p>对于扫接焦段强迫症</p>
+      </li>
+      <li class="transcript-row" id="transcript-115">
+        <time datetime="PT234S">03:54</time>
+        <p>非常贴心</p>
+      </li>
+      <li class="transcript-row" id="transcript-116">
+        <time datetime="PT235S">03:55</time>
+        <p>拍视频的时候</p>
+      </li>
+      <li class="transcript-row" id="transcript-117">
+        <time datetime="PT236S">03:56</time>
+        <p>用对焦波感</p>
+      </li>
+      <li class="transcript-row" id="transcript-118">
+        <time datetime="PT237S">03:57</time>
+        <p>无极推拉</p>
+      </li>
+      <li class="transcript-row" id="transcript-119">
+        <time datetime="PT238S">03:58</time>
+        <p>非常好用</p>
+      </li>
+      <li class="transcript-row" id="transcript-120">
+        <time datetime="PT239S">03:59</time>
+        <p>第四</p>
+      </li>
+      <li class="transcript-row" id="transcript-121">
+        <time datetime="PT240S">04:00</time>
+        <p>镜头上的切换开关</p>
+      </li>
+      <li class="transcript-row" id="transcript-122">
+        <time datetime="PT241S">04:01</time>
+        <p>我设置的是画幅</p>
+      </li>
+      <li class="transcript-row" id="transcript-123">
+        <time datetime="PT243S">04:03</time>
+        <p>4比3</p>
+      </li>
+      <li class="transcript-row" id="transcript-124">
+        <time datetime="PT244S">04:04</time>
+        <p>3比2</p>
+      </li>
+      <li class="transcript-row" id="transcript-125">
+        <time datetime="PT244S">04:04</time>
+        <p>是6比9</p>
+      </li>
+      <li class="transcript-row" id="transcript-126">
+        <time datetime="PT245S">04:05</time>
+        <p>播一下就能切换</p>
+      </li>
+      <li class="transcript-row" id="transcript-127">
+        <time datetime="PT247S">04:07</time>
+        <p>我是真的挺喜欢用M43的</p>
+      </li>
+      <li class="transcript-row" id="transcript-128">
+        <time datetime="PT248S">04:08</time>
+        <p>4比3拍束构图人像的</p>
+      </li>
+      <li class="transcript-row" id="transcript-129">
+        <time datetime="PT251S">04:11</time>
+        <p>左右宽运很多</p>
+      </li>
+      <li class="transcript-row" id="transcript-130">
+        <time datetime="PT252S">04:12</time>
+        <p>拍束构图视频也很友好</p>
+      </li>
+      <li class="transcript-row" id="transcript-131">
+        <time datetime="PT254S">04:14</time>
+        <p>这个后面我们会再提到</p>
+      </li>
+      <li class="transcript-row" id="transcript-132">
+        <time datetime="PT256S">04:16</time>
+        <p>我也看到有网友吐槽说</p>
+      </li>
+      <li class="transcript-row" id="transcript-133">
+        <time datetime="PT257S">04:17</time>
+        <p>无论使用哪个比例</p>
+      </li>
+      <li class="transcript-row" id="transcript-134">
+        <time datetime="PT259S">04:19</time>
+        <p>都不能用满整个M43传感器</p>
+      </li>
+      <li class="transcript-row" id="transcript-135">
+        <time datetime="PT262S">04:22</time>
+        <p>确实为了使用这颗体积小巧的</p>
+      </li>
+      <li class="transcript-row" id="transcript-136">
+        <time datetime="PT264S">04:24</time>
+        <p>2475镜头</p>
+      </li>
+      <li class="transcript-row" id="transcript-137">
+        <time datetime="PT266S">04:26</time>
+        <p>在覆盖方面要做一些取舍</p>
+      </li>
+      <li class="transcript-row" id="transcript-138">
+        <time datetime="PT268S">04:28</time>
+        <p>我个人的主观感受</p>
+      </li>
+      <li class="transcript-row" id="transcript-139">
+        <time datetime="PT269S">04:29</time>
+        <p>是被裁掉的部分是很少的</p>
+      </li>
+      <li class="transcript-row" id="transcript-140">
+        <time datetime="PT271S">04:31</time>
+        <p>并且画幅比例切换</p>
+      </li>
+      <li class="transcript-row" id="transcript-141">
+        <time datetime="PT273S">04:33</time>
+        <p>这个功能做得挺讨巧</p>
+      </li>
+      <li class="transcript-row" id="transcript-142">
+        <time datetime="PT275S">04:35</time>
+        <p>把原本的劣势转化</p>
+      </li>
+      <li class="transcript-row" id="transcript-143">
+        <time datetime="PT277S">04:37</time>
+        <p>成了一种使用上的个性化选择</p>
+      </li>
+      <li class="transcript-row" id="transcript-144">
+        <time datetime="PT279S">04:39</time>
+        <p>这个其实是非常契合L时</p>
+      </li>
+      <li class="transcript-row" id="transcript-145">
+        <time datetime="PT282S">04:42</time>
+        <p>目标用户所在意的点的</p>
+      </li>
+      <li class="transcript-row" id="transcript-146">
+        <time datetime="PT284S">04:44</time>
+        <p>使用体验比绝对参数优先</p>
+      </li>
+      <li class="transcript-row" id="transcript-147">
+        <time datetime="PT287S">04:47</time>
+        <p>是我的话我也愿意用小镜头体积</p>
+      </li>
+      <li class="transcript-row" id="transcript-148">
+        <time datetime="PT289S">04:49</time>
+        <p>换少量的边角像素</p>
+      </li>
+      <li class="transcript-row" id="transcript-149">
+        <time datetime="PT292S">04:52</time>
+        <p>两碗操控和使用感受</p>
+      </li>
+      <li class="transcript-row" id="transcript-150">
+        <time datetime="PT293S">04:53</time>
+        <p>我们来说说画质</p>
+      </li>
+      <li class="transcript-row" id="transcript-151">
+        <time datetime="PT294S">04:54</time>
+        <p>这本来是我最不在意的部分</p>
+      </li>
+      <li class="transcript-row" id="transcript-152">
+        <time datetime="PT296S">04:56</time>
+        <p>但是这台L10还是给了我非常多的惊喜</p>
+      </li>
+      <li class="transcript-row" id="transcript-153">
+        <time datetime="PT300S">05:00</time>
+        <p>2650万像素备照是CMOS</p>
+      </li>
+      <li class="transcript-row" id="transcript-154">
+        <time datetime="PT303S">05:03</time>
+        <p>VLOG模式ISO500起跳</p>
+      </li>
+      <li class="transcript-row" id="transcript-155">
+        <time datetime="PT305S">05:05</time>
+        <p>和GH7用的同一块底</p>
+      </li>
+      <li class="transcript-row" id="transcript-156">
+        <time datetime="PT307S">05:07</time>
+        <p>松下M43玩家应该知道它的恐怖实力</p>
+      </li>
+      <li class="transcript-row" id="transcript-157">
+        <time datetime="PT311S">05:11</time>
+        <p>图像处理引擎用的是和SEMR</p>
+      </li>
+      <li class="transcript-row" id="transcript-158">
+        <time datetime="PT313S">05:13</time>
+        <p>同一块最新一代的处理器</p>
+      </li>
+      <li class="transcript-row" id="transcript-159">
+        <time datetime="PT315S">05:15</time>
+        <p>多主体识别和相位混合对焦咬得非常牢</p>
+      </li>
+      <li class="transcript-row" id="transcript-160">
+        <time datetime="PT319S">05:19</time>
+        <p>像这种主体大范围的移动的场景</p>
+      </li>
+      <li class="transcript-row" id="transcript-161">
+        <time datetime="PT321S">05:21</time>
+        <p>也完全没有虚焦</p>
+      </li>
+      <li class="transcript-row" id="transcript-162">
+        <time datetime="PT323S">05:23</time>
+        <p>包括这种暗光情况下</p>
+      </li>
+      <li class="transcript-row" id="transcript-163">
+        <time datetime="PT325S">05:25</time>
+        <p>机身快速向主体推进的画面</p>
+      </li>
+      <li class="transcript-row" id="transcript-164">
+        <time datetime="PT327S">05:27</time>
+        <p>也没有什么破绽</p>
+      </li>
+      <li class="transcript-row" id="transcript-165">
+        <time datetime="PT328S">05:28</time>
+        <p>视频对焦如此</p>
+      </li>
+      <li class="transcript-row" id="transcript-166">
+        <time datetime="PT330S">05:30</time>
+        <p>拍照就更有任有余了</p>
+      </li>
+      <li class="transcript-row" id="transcript-167">
+        <time datetime="PT332S">05:32</time>
+        <p>个人主观感受L10的对焦追焦水平</p>
+      </li>
+      <li class="transcript-row" id="transcript-168">
+        <time datetime="PT335S">05:35</time>
+        <p>哪怕是在目前初代固件的状态下</p>
+      </li>
+      <li class="transcript-row" id="transcript-169">
+        <time datetime="PT338S">05:38</time>
+        <p>也完全是看齐松下最新的几台旗舰机的</p>
+      </li>
+      <li class="transcript-row" id="transcript-170">
+        <time datetime="PT342S">05:42</time>
+        <p>视频规格方面L10给的也很足</p>
+      </li>
+      <li class="transcript-row" id="transcript-171">
+        <time datetime="PT345S">05:45</time>
+        <p>比较常用的三个规格分别是</p>
+      </li>
+      <li class="transcript-row" id="transcript-172">
+        <time datetime="PT347S">05:47</time>
+        <p>5.6K 60P 17比90比特420廊只有P</p>
+      </li>
+      <li class="transcript-row" id="transcript-173">
+        <time datetime="PT352S">05:52</time>
+        <p>5.2K 30P 4比30比特420廊只有P</p>
+      </li>
+      <li class="transcript-row" id="transcript-174">
+        <time datetime="PT356S">05:56</time>
+        <p>和4K 60P 16比90比特422O Intra</p>
+      </li>
+      <li class="transcript-row" id="transcript-175">
+        <time datetime="PT360S">06:00</time>
+        <p>三个规格都不会有进一步的裁切</p>
+      </li>
+      <li class="transcript-row" id="transcript-176">
+        <time datetime="PT363S">06:03</time>
+        <p>需要注意的是前两者是H265编码</p>
+      </li>
+      <li class="transcript-row" id="transcript-177">
+        <time datetime="PT366S">06:06</time>
+        <p>对电脑后进行件有一点小要求</p>
+      </li>
+      <li class="transcript-row" id="transcript-178">
+        <time datetime="PT368S">06:08</time>
+        <p>所以如果你需要最好的画质和分辨率</p>
+      </li>
+      <li class="transcript-row" id="transcript-179">
+        <time datetime="PT371S">06:11</time>
+        <p>选第一个5.6K</p>
+      </li>
+      <li class="transcript-row" id="transcript-180">
+        <time datetime="PT373S">06:13</time>
+        <p>需要横数多用或者数构图选第二个5.2K</p>
+      </li>
+      <li class="transcript-row" id="transcript-181">
+        <time datetime="PT378S">06:18</time>
+        <p>想要兼顾画质同时减轻后期负担的</p>
+      </li>
+      <li class="transcript-row" id="transcript-182">
+        <time datetime="PT381S">06:21</time>
+        <p>选H264编码的第三个4K超彩</p>
+      </li>
+      <li class="transcript-row" id="transcript-183">
+        <time datetime="PT385S">06:25</time>
+        <p>Vlog曲线搭配这块CMOS的动态范围实力</p>
+      </li>
+      <li class="transcript-row" id="transcript-184">
+        <time datetime="PT388S">06:28</time>
+        <p>已经让这台机器的画面质感</p>
+      </li>
+      <li class="transcript-row" id="transcript-185">
+        <time datetime="PT390S">06:30</time>
+        <p>远超日常记录或者够用的标签</p>
+      </li>
+      <li class="transcript-row" id="transcript-186">
+        <time datetime="PT393S">06:33</time>
+        <p>还原709后轻微调整</p>
+      </li>
+      <li class="transcript-row" id="transcript-187">
+        <time datetime="PT395S">06:35</time>
+        <p>就能有非常耐看的色彩</p>
+      </li>
+      <li class="transcript-row" id="transcript-188">
+        <time datetime="PT397S">06:37</time>
+        <p>除此之外我还存了两个参数</p>
+      </li>
+      <li class="transcript-row" id="transcript-189">
+        <time datetime="PT399S">06:39</time>
+        <p>非常惊人的升格规格</p>
+      </li>
+      <li class="transcript-row" id="transcript-190">
+        <time datetime="PT401S">06:41</time>
+        <p>分别是4K120帧无彩切</p>
+      </li>
+      <li class="transcript-row" id="transcript-191">
+        <time datetime="PT404S">06:44</time>
+        <p>主体识别和对焦依旧满血在线</p>
+      </li>
+      <li class="transcript-row" id="transcript-192">
+        <time datetime="PT406S">06:46</time>
+        <p>和1080P 240帧无彩切</p>
+      </li>
+      <li class="transcript-row" id="transcript-193">
+        <time datetime="PT410S">06:50</time>
+        <p>仅单次对焦</p>
+      </li>
+      <li class="transcript-row" id="transcript-194">
+        <time datetime="PT411S">06:51</time>
+        <p>是非常有乐趣的两个规格</p>
+      </li>
+      <li class="transcript-row" id="transcript-195">
+        <time datetime="PT413S">06:53</time>
+        <p>大家看看这个8倍慢放效果如何呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-196">
+        <time datetime="PT417S">06:57</time>
+        <p>有好的视频规格</p>
+      </li>
+      <li class="transcript-row" id="transcript-197">
+        <time datetime="PT418S">06:58</time>
+        <p>还需要好的防抖配合</p>
+      </li>
+      <li class="transcript-row" id="transcript-198">
+        <time datetime="PT420S">07:00</time>
+        <p>才能让这台机器真正成为出门</p>
+      </li>
+      <li class="transcript-row" id="transcript-199">
+        <time datetime="PT423S">07:03</time>
+        <p>只带一台就够的照片视频双修选择</p>
+      </li>
+      <li class="transcript-row" id="transcript-200">
+        <time datetime="PT427S">07:07</time>
+        <p>这个点我倒也是没怎么担心过的</p>
+      </li>
+      <li class="transcript-row" id="transcript-201">
+        <time datetime="PT429S">07:09</time>
+        <p>L10支持镜头防抖</p>
+      </li>
+      <li class="transcript-row" id="transcript-202">
+        <time datetime="PT431S">07:11</time>
+        <p>又是M43的小底</p>
+      </li>
+      <li class="transcript-row" id="transcript-203">
+        <time datetime="PT433S">07:13</time>
+        <p>这种正常手持没有走</p>
+      </li>
+      <li class="transcript-row" id="transcript-204">
+        <time datetime="PT435S">07:15</time>
+        <p>猫步的向前运动</p>
+      </li>
+      <li class="transcript-row" id="transcript-205">
+        <time datetime="PT436S">07:16</time>
+        <p>广角端正常跨步是没有问题的</p>
+      </li>
+      <li class="transcript-row" id="transcript-206">
+        <time datetime="PT439S">07:19</time>
+        <p>长焦端占定手持也没有什么问题</p>
+      </li>
+      <li class="transcript-row" id="transcript-207">
+        <time datetime="PT442S">07:22</time>
+        <p>如果要运镜的话</p>
+      </li>
+      <li class="transcript-row" id="transcript-208">
+        <time datetime="PT443S">07:23</time>
+        <p>就需要控制下呼吸和全身的肌肉</p>
+      </li>
+      <li class="transcript-row" id="transcript-209">
+        <time datetime="PT446S">07:26</time>
+        <p>毕竟是等效七五的视角了</p>
+      </li>
+      <li class="transcript-row" id="transcript-210">
+        <time datetime="PT448S">07:28</time>
+        <p>略微可惜的是没有给机身防抖</p>
+      </li>
+      <li class="transcript-row" id="transcript-211">
+        <time datetime="PT451S">07:31</time>
+        <p>可能还是因为镜头和肌内体积的限制吧</p>
+      </li>
+      <li class="transcript-row" id="transcript-212">
+        <time datetime="PT454S">07:34</time>
+        <p>最后说回这颗镜头</p>
+      </li>
+      <li class="transcript-row" id="transcript-213">
+        <time datetime="PT456S">07:36</time>
+        <p>L10沿用了这颗相对比较成熟稳定</p>
+      </li>
+      <li class="transcript-row" id="transcript-214">
+        <time datetime="PT459S">07:39</time>
+        <p>之前评价也非常不错的</p>
+      </li>
+      <li class="transcript-row" id="transcript-215">
+        <time datetime="PT461S">07:41</time>
+        <p>等效二四七五</p>
+      </li>
+      <li class="transcript-row" id="transcript-216">
+        <time datetime="PT463S">07:43</time>
+        <p>这个胶段配合机身体积</p>
+      </li>
+      <li class="transcript-row" id="transcript-217">
+        <time datetime="PT465S">07:45</time>
+        <p>我想不到还有什么机器</p>
+      </li>
+      <li class="transcript-row" id="transcript-218">
+        <time datetime="PT467S">07:47</time>
+        <p>比它更适合进行多天的清亮化旅行记录</p>
+      </li>
+      <li class="transcript-row" id="transcript-219">
+        <time datetime="PT470S">07:50</time>
+        <p>和每日散步的灵感捕捉了</p>
+      </li>
+      <li class="transcript-row" id="transcript-220">
+        <time datetime="PT472S">07:52</time>
+        <p>五片非球面和两片双面非球面一滴</p>
+      </li>
+      <li class="transcript-row" id="transcript-221">
+        <time datetime="PT476S">07:56</time>
+        <p>在锐度 胶外 色散方面都让我非常满意</p>
+      </li>
+      <li class="transcript-row" id="transcript-222">
+        <time datetime="PT480S">08:00</time>
+        <p>特别是长焦端的胶外过度和散景</p>
+      </li>
+      <li class="transcript-row" id="transcript-223">
+        <time datetime="PT483S">08:03</time>
+        <p>M43小变焦头能有这个立体感</p>
+      </li>
+      <li class="transcript-row" id="transcript-224">
+        <time datetime="PT486S">08:06</time>
+        <p>我可太知足了</p>
+      </li>
+      <li class="transcript-row" id="transcript-225">
+        <time datetime="PT487S">08:07</time>
+        <p>当然也有美中不足的地方</p>
+      </li>
+      <li class="transcript-row" id="transcript-226">
+        <time datetime="PT489S">08:09</time>
+        <p>广角端的机变比较明显</p>
+      </li>
+      <li class="transcript-row" id="transcript-227">
+        <time datetime="PT491S">08:11</time>
+        <p>眩光光斑比较多</p>
+      </li>
+      <li class="transcript-row" id="transcript-228">
+        <time datetime="PT493S">08:13</time>
+        <p>不是很好看</p>
+      </li>
+      <li class="transcript-row" id="transcript-229">
+        <time datetime="PT494S">08:14</time>
+        <p>当然对比度还是维持的比较好的</p>
+      </li>
+      <li class="transcript-row" id="transcript-230">
+        <time datetime="PT496S">08:16</time>
+        <p>只要找下角度</p>
+      </li>
+      <li class="transcript-row" id="transcript-231">
+        <time datetime="PT497S">08:17</time>
+        <p>避开眩光光斑就行</p>
+      </li>
+      <li class="transcript-row" id="transcript-232">
+        <time datetime="PT499S">08:19</time>
+        <p>最近对焦距离广角端可以到3厘米</p>
+      </li>
+      <li class="transcript-row" id="transcript-233">
+        <time datetime="PT502S">08:22</time>
+        <p>没错不是30厘米是3厘米</p>
+      </li>
+      <li class="transcript-row" id="transcript-234">
+        <time datetime="PT505S">08:25</time>
+        <p>所以下面的画面几乎都是贴着物体的表面拍的</p>
+      </li>
+      <li class="transcript-row" id="transcript-235">
+        <time datetime="PT508S">08:28</time>
+        <p>能给人一个很独特的视觉感受</p>
+      </li>
+      <li class="transcript-row" id="transcript-236">
+        <time datetime="PT511S">08:31</time>
+        <p>如果你有耐心看到这里</p>
+      </li>
+      <li class="transcript-row" id="transcript-237">
+        <time datetime="PT513S">08:33</time>
+        <p>并且让我用一句话总结这台L10的话</p>
+      </li>
+      <li class="transcript-row" id="transcript-238">
+        <time datetime="PT516S">08:36</time>
+        <p>我认为它就是一台可以真正融入生活的机器</p>
+      </li>
+      <li class="transcript-row" id="transcript-239">
+        <time datetime="PT519S">08:39</time>
+        <p>性能和参数的下线很高</p>
+      </li>
+      <li class="transcript-row" id="transcript-240">
+        <time datetime="PT522S">08:42</time>
+        <p>把玩和体验的上线也很高</p>
+      </li>
+      <li class="transcript-row" id="transcript-241">
+        <time datetime="PT524S">08:44</time>
+        <p>不论你是旅行人文扫揭</p>
+      </li>
+      <li class="transcript-row" id="transcript-242">
+        <time datetime="PT526S">08:46</time>
+        <p>环境人像还是生活记录</p>
+      </li>
+      <li class="transcript-row" id="transcript-243">
+        <time datetime="PT529S">08:49</time>
+        <p>它都能以超过90分的水平胜任</p>
+      </li>
+      <li class="transcript-row" id="transcript-244">
+        <time datetime="PT531S">08:51</time>
+        <p>并且整个过程是充满乐趣的</p>
+      </li>
+      <li class="transcript-row" id="transcript-245">
+        <time datetime="PT534S">08:54</time>
+        <p>10月份的LUMIX25周年</p>
+      </li>
+      <li class="transcript-row" id="transcript-246">
+        <time datetime="PT536S">08:56</time>
+        <p>还会推出L10的太和金色版本</p>
+      </li>
+      <li class="transcript-row" id="transcript-247">
+        <time datetime="PT538S">08:58</time>
+        <p>等我上手了</p>
+      </li>
+      <li class="transcript-row" id="transcript-248">
+        <time datetime="PT539S">08:59</time>
+        <p>一定第一时间和大家分享</p>
+      </li>
+      <li class="transcript-row" id="transcript-249">
+        <time datetime="PT541S">09:01</time>
+        <p>记得要持续关注哦</p>
+      </li>
+      <li class="transcript-row" id="transcript-250">
+        <time datetime="PT543S">09:03</time>
+        <p>好了 以上就是我上手松下L10的初步感受了</p>
+      </li>
+      <li class="transcript-row" id="transcript-251">
+        <time datetime="PT547S">09:07</time>
+        <p>如果觉得本期视频对你有帮助的话</p>
+      </li>
+      <li class="transcript-row" id="transcript-252">
+        <time datetime="PT549S">09:09</time>
+        <p>欢迎点赞收藏转发</p>
+      </li>
+      <li class="transcript-row" id="transcript-253">
+        <time datetime="PT551S">09:11</time>
+        <p>那我们就下期再见了</p>
+      </li>
+      <li class="transcript-row" id="transcript-254">
+        <time datetime="PT553S">09:13</time>
+        <p>拜拜</p>
+      </li></ol>
+    </section>
+    <footer class="footer">视频来源：德松 Desong · 页面生成日期：2026-07-25</footer>
+  </main>
+</body>
+</html>
