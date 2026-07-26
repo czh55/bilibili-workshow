@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6579" viewBox="0 0 1320 6579">
+  <foreignObject x="0" y="0" width="1320" height="6579">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      
+<div class="container root-wrap">
+  <h1>ZARA就该这么逛，快准省。</h1>
+  <div class="meta">
+    <span class="tag tag-green">小红书</span>
+    <span class="tag tag-blue">穿搭</span>
+    <span class="tag tag-orange">买衣技巧</span>
+    <span class="tag tag-purple">ZARA</span>
+    <span class="tag tag-gray">时长 47 秒</span>
+    <span class="tag tag-gray">分析视角：领标分流决策</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/2U0sT2imj3g">原视频链接</a>
+  <div class="summary-line">核心判断：ZARA 店内效率不靠“全场扫货”，而靠领标几何/字母把货盘分成四档；先定场景再对照符号，才能快、准、省。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">抛出四档：入门 / 基础 / 质感 / 高端</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:05</div><div class="timeline-text">方法句落地：直接看领标；三角标对应 TRF</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">三角 = 入门款；年轻潮流线、尺码偏小</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:15</div><div class="timeline-text">方块 = BASIC 基础/标准款；质量更高、店内主流</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:27</div><div class="timeline-text">圆圈 = WOMAN 质感款；版型面料做工更好、职场向</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:36</div><div class="timeline-text">字母 STUDIO = 高端线；对标设计师、季出少、售完不补</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>ZARA 怎么逛才不浪费时间</div>
+      <div class="arrow">→</div>
+      <div class="node node-blue">证据<br/>领标三角/方块/圆圈/字母</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">判断<br/>四档对应场景与质量预期</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">行动<br/>先定场景再对标选档</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>误解 1：看见 ZARA 就默认同品质。纠偏：同一店内至少四档，符号不同，预期不同。</p>
+    <p>误解 2：高端一定更好穿。纠偏：STUDIO 强调面料/版型/做工与稀缺，不等于人人适合；场景不匹配仍会买错。</p>
+    <p>误解 3：尺码按平时习惯盲选。纠偏：TRF 明确提示尺码偏小，需现场试穿或对照系列。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">四档符号：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+
+    <div class="card card-orange">
+      <h3><span class="speaker speaker-host">UP 主观点</span>三角标 TRF = 入门款</h3>
+      <p><strong>在讲什么：</strong>领标后三角形代表入门档，质量一般，风格更年轻潮流，尺码偏小。</p>
+      <p><strong>关键理解：</strong>把它当作“试水/跟风/快时尚冲量”货盘，而不是职场主力。</p>
+      <p><strong>怎么用：</strong>只在明确要年轻潮流单品时进这一档；买前优先试码。</p>
+      <div class="quote">依据 [00:08–00:14] 可见字幕：三角标 TRF 系列；代表的是入门款；款式一般更年轻潮流线；尺码一般偏小。</div>
+      <div class="relation">立场分层：系列名与符号为画面可核对事实；“质量一般”为讲述者评价。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3><span class="speaker speaker-host">UP 主观点</span>方块标 BASIC = 基础 / 标准款</h3>
+      <p><strong>在讲什么：</strong>正方形对应 BASIC，整体质量高于三角标，偏日常，是店内主流，款式更多、性价比更高。</p>
+      <p><strong>关键理解：</strong>默认“日常可穿、店里量大”的中枢档，适合先扫这一区再决定要不要升档。</p>
+      <p><strong>怎么用：</strong>需要通勤与周末都能穿的基础单品时，优先在方块标里筛。</p>
+      <div class="quote">依据 [00:15–00:25]：方块标 BASIC 系列；代表基础款或者说标准款；整体质量都要高一些；也是店里的主流款。</div>
+      <div class="relation">立场分层：“性价比更高”是相对三角标的讲述者比较，非客观价格指数。</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="speaker speaker-host">UP 主观点</span>圆圈标 WOMAN = 质感款</h3>
+      <p><strong>在讲什么：</strong>圆圈代表偏质感线，版型/面料/做工更好，更多趋向职场人，偏成熟合身。</p>
+      <p><strong>关键理解：</strong>当需求从“有衣服穿”切换到“看起来更正式、更有质感”时，应把搜索重心移到圆圈标。</p>
+      <p><strong>怎么用：</strong>面试、会议、正式约会前，先在 WOMAN 区按合身款筛选。</p>
+      <div class="quote">依据 [00:27–00:35]：圆圈标 WOMAN 系列；偏质感款；版型面料做工都还不错；趋向为职场人设计的；偏成熟线，合身款居多。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3><span class="speaker speaker-host">UP 主观点</span>字母标 STUDIO = 高端线</h3>
+      <p><strong>在讲什么：</strong>领标出现 STUDIO 字母代表高端款；面料、版型、做工“全在线”，对标设计师线；每季产量少，售完不补。</p>
+      <p><strong>关键理解：</strong>稀缺与补货规则改变决策节奏——心动就要评估预算与场景，不能按“下次再来”处理。</p>
+      <p><strong>怎么用：</strong>仅在明确需要更高质感/设计感，且可接受售罄风险时进入；看到合适款立即试穿决策。</p>
+      <div class="quote">依据 [00:36–00:47]：字母标 STUDIO 系列；代表的是高端线；对标的是设计师线；每个季节出的比较少；基本上售完不补。</div>
+      <div class="highlight">推断（基于原文）：STUDIO 更适合“锁定单品”而不是“随便逛逛”。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">横向对比：四档怎么选</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>领标符号</th>
+            <th>系列（字幕）</th>
+            <th>档位定位</th>
+            <th>更适合谁 / 何时</th>
+            <th>风险与边界</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>三角形</td>
+            <td>TRF</td>
+            <td>入门款</td>
+            <td>年轻潮流、跟季试水</td>
+            <td>质量预期低；尺码偏小</td>
+          </tr>
+          <tr>
+            <td>正方形</td>
+            <td>BASIC</td>
+            <td>基础 / 标准款</td>
+            <td>日常主力、店内先扫区</td>
+            <td>未必最有设计感；是相对三角的升级</td>
+          </tr>
+          <tr>
+            <td>圆圈</td>
+            <td>WOMAN</td>
+            <td>质感款</td>
+            <td>职场、成熟合身需求</td>
+            <td>“质感更好”是讲述者评价，仍需手感核实</td>
+          </tr>
+          <tr>
+            <td>字母 STUDIO</td>
+            <td>STUDIO</td>
+            <td>高端线</td>
+            <td>设计师向、稀缺单品</td>
+            <td>季出少、售完不补；预算与时机压力大</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="insight">选择条件：先写清场景（潮流 / 日常 / 职场 / 收藏），再对符号；不要反过来“先被货架吸引再事后合理化”。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界与避坑</h2>
+    <div class="card card-red">
+      <h3>适用边界</h3>
+      <ul>
+        <li><strong>适用：</strong>实体店快速分流、同一品牌内比较、需要控制逛店时间与试错成本。</li>
+        <li><strong>上限：</strong>符号只给“档位预期”，不能替代面料手感、洗涤标签、剪裁上身与退换政策。</li>
+        <li><strong>反例：</strong>折扣区混挂、吊牌缺失、线上二次转卖时，符号体系可能失效或不完整。</li>
+        <li><strong>例外：</strong>男装/童装/家居等若标法不同，本视频证据不足以外推；结论默认落在视频展示的女装领标语境。</li>
+      </ul>
+      <div class="pitfall">避坑：别把“高端线”听成“一定更值”；售完不补提高的是决策紧迫度，不是性价比证明。</div>
+      <div class="pitfall">避坑：TRF 尺码偏小——按习惯码直买容易踩坑。</div>
+      <div class="pitfall">避坑：只看电商搜索页的 STUDIO 价格带，忽略店内实物与系列是否一致。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>ZARA 店内可按领标分成四档：三角 TRF、方块 BASIC、圆圈 WOMAN、字母 STUDIO。</li>
+      <li>四档对应的是场景与质量预期，不是单一“好坏”排序。</li>
+      <li>STUDIO 有稀缺与不补货约束，改变的是下手节奏。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>进店前先写清场景：潮流试水 / 日常基础 / 职场质感 / 高端收藏。</li>
+      <li>翻领标核对符号，只在目标档位货架停留。</li>
+      <li>碰到 TRF 必试码；不要按其他系列习惯码盲买。</li>
+      <li>BASIC 作为默认扫区，建立质量与价格锚点后再决定是否升档。</li>
+      <li>STUDIO 合适就当场试穿决策，默认“售完不补”。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从“在 ZARA 碰运气找衣服”，转到“用领标做货盘路由”：时间花在对的档位，而不是全场平均用力。</p>
+  </div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 47 秒</div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
