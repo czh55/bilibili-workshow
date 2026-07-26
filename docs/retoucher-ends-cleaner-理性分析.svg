@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6150" viewBox="0 0 1320 6150">
+  <foreignObject x="0" y="0" width="1320" height="6150">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>修图师的尽头是干保洁？</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">2 分 16 秒</span>
+    <span class="tag tag-purple">婚纱照修图</span>
+    <span class="tag tag-orange">屏录演示</span>
+    <span class="tag tag-gray">24 个转录分段（配乐误识）</span>
+  </div>
+  <div class="summary-line"><strong>核心判断：</strong>视频真正回答的不是「要不要修脸」，而是外景精修的大量工时落在清场式打扫——皮肤局部、地砖、背景车辆与小道具——高低频人像只是整条保洁流水线中的一段。</div>
+  <a class="source-link" href="http://xhslink.cn/o/AaWzhLmHbOP">原视频链接 ↗</a>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><span class="timeline-time">00:01</span><span class="timeline-text">钢笔点落腋下褶皱，开场即「打扫」皮肤局部。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">笑口特写；文件名「变色鱼——高低频」标明流程。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">钢笔框选人字纹地砖，环境保洁启动。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">中景出现电瓶车与车牌，钢笔/变换准备清场。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:50</span><span class="timeline-text">鞋跟创可贴特写，道具级瑕疵进入清单。</span></div>
+    <div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">中景验收：红门「福」、双人风车，背景更干净。</span></div>
+    <div class="timeline-item"><span class="timeline-time">01:25+</span><span class="timeline-text">鞋跟重塑、额头斑点、鼻侧与裙褶定点清理。</span></div>
+    <div class="timeline-item"><span class="timeline-time">02:00</span><span class="timeline-text">黑白预览检查光影与残留瑕疵，再回彩色终帧。</span></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">外景杂乱<br/>抢戏点多</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">分层清场<br/>皮/地/景/物</div>
+      <div class="arrow">→</div>
+      <div class="node">高低频<br/>人像收口</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">灰度验收<br/>再出成片</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解纠偏</h3>
+    <p><strong>误解：</strong>婚纱精修 = 大改脸型与磨皮。<br/>
+    <strong>画面证据：</strong>大量镜头停在地砖、车牌、创可贴、门板斑点；人像操作也偏定点而非整脸重塑。<br/>
+    <strong>更准确理解：</strong>标题把精修日常戏称为「干保洁」——优先去掉破坏叙事的脏点与杂物，再做人像收口。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">分析主题：清场式精修如何排优先级</h2>
+
+    <div class="card">
+      <h3>在讲什么：外景婚纱的「脏」主要来自环境</h3>
+      <p><strong>关键理解：</strong>巷景、红门、地砖、路边车辆会同时进入画面；观众视线先被车牌与电瓶车带走，再才看人物笑容。</p>
+      <p><strong>怎么用：</strong>先列「抢戏清单」（车辆、标识、地面污渍、临时创可贴），再决定是否进入高低频。</p>
+      <div class="quote">原文依据（画面）：00:30–00:40 电瓶车后箱与「鲁H TH3030」进入变换框；水印「颜值修图」叠在地砖。</div>
+      <div class="relation">关系：环境清场是人像精修的前置条件，而不是可有可无的附加项。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>UP 主观点：修图师日常很像干保洁</h3>
+      <p><span class="speaker speaker-host">作者立场</span>标题以反问玩笑把精修劳动命名为「保洁」——强调重复、琐碎、定点打扫，而非炫技。</p>
+      <p><strong>关键理解：</strong>这是劳动体验的自嘲，不是否定人像技术；高低频文件名仍出现在流程中。</p>
+      <p><strong>怎么用：</strong>报价与排期时把「清场工时」单独估算，避免只按「修一张脸」计价。</p>
+      <div class="quote">原文依据（标题+结构）：标题「修图师的尽头是干保洁？」；开场腋下钢笔 → 地砖 → 车辆 → 创可贴，劳动对象不断「变脏变碎」。</div>
+      <div class="highlight">立场分层：标题玩笑 = 作者观点；电瓶车/创可贴被处理 = 可验证画面事实；「尽头必然是保洁」= 基于玩笑的推断，非普适真理。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>方法：四层打扫清单</h3>
+      <p><strong>在讲什么：</strong>把操作拆成皮肤局部、地面纹理、背景物体、道具痕迹四层。</p>
+      <ul>
+        <li>皮肤：腋下红痕、牙齿/唇缘、额头斑点、鼻侧</li>
+        <li>地面：钢笔选区 + 修复/仿制清砖缝</li>
+        <li>背景：车辆、车牌、门板杂斑</li>
+        <li>道具：创可贴、风车杆、裙褶异物</li>
+      </ul>
+      <div class="action">用法：每层做完缩放到中景验收一次，再进入下一层，减少反复返工。</div>
+      <div class="quote">原文依据：00:15 地砖路径；00:50 创可贴；01:10 中景验收；其后额头/鼻侧定点。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>风险与避坑</h3>
+      <div class="pitfall">只磨脸、不清背景：车牌与电瓶车仍会毁掉「干净巷景」叙事。</div>
+      <div class="pitfall">地砖仿制笔乱扫：砖缝方向与纹理尺度不一致，会比原污渍更假。</div>
+      <div class="pitfall">忽略灰度验收：彩色下「差不多」的斑点，在黑白里更显脏。</div>
+      <div class="insight">边界：本片演示的是外景巷拍清场逻辑；影棚纯色背景或已控场的场地，保洁占比会显著下降。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：三类「脏点」怎么排</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>类型</th>
+          <th>例子（本片）</th>
+          <th>优先理由</th>
+          <th>典型工具</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>抢戏背景</td>
+          <td>电瓶车、车牌</td>
+          <td>最先夺走观众视线</td>
+          <td>钢笔选区 / 变换 / 内容填充类</td>
+        </tr>
+        <tr>
+          <td>大面积环境</td>
+          <td>地砖污渍、门板斑</td>
+          <td>影响整体干净度</td>
+          <td>路径框选 + 修复/仿制</td>
+        </tr>
+        <tr>
+          <td>人物局部</td>
+          <td>腋下、创可贴、额头斑</td>
+          <td>近看才显，但成片必需</td>
+          <td>钢笔/选区 + 高低频/修复笔</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>选择条件：若背景抢戏点 &gt; 2 处，先清场再进入高低频；若场地已干净，可直接做人像收口。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界</h2>
+    <div class="card">
+      <h3>适用 · 上限 · 例外</h3>
+      <ul>
+        <li><strong>适用：</strong>街巷、景区、居民区等不可完全控场的婚纱外景。</li>
+        <li><strong>上限：</strong>清场不能替代构图与光位；大面积生成式修补仍受边缘与透视限制。</li>
+        <li><strong>例外：</strong>客户要求保留「生活感杂物」或车牌需打码而非移除时，策略要改。</li>
+        <li><strong>证据强度：</strong>流程结构来自屏录画面（强）；「尽头=保洁」为标题修辞（观点）。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>外景精修的大量工时是清场式打扫，不只是磨皮改脸。</li>
+      <li>优先级：抢戏背景 → 大面积环境 → 人物局部 → 灰度验收。</li>
+      <li>高低频是收口手段之一，不是整条片子的全部。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>开修前列「抢戏清单」：车辆、标识、地面、临时创可贴。</li>
+      <li>每一层清场后缩放到中景验收，再进人像。</li>
+      <li>地砖仿制时对齐砖缝方向与尺度，避免假纹理。</li>
+      <li>导出前做一次黑白检查，抓彩色里不易见的脏点。</li>
+      <li>报价时单独估算清场工时，与人像精修拆开。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「精修=修脸」转向「精修=先保洁再收口」：标题玩笑背后，是外景婚纱成片对干净叙事的硬需求。</p>
+  </div>
+
+  <p class="footer">双轨产物之二 · 理性分析 · 基于屏录画面与标题；口播转录为 BGM 误识，不作论据</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
