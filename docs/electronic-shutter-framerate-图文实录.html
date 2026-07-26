@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2分44秒还原帧率与快门：动态模糊、180°快门角、172.8°/144°避频闪，并保留完整 Whisper 转录。">
+  <title>拍视频必须搞懂的：快门｜帧率｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#eef2ff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#1d4ed8}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#1e3a8a,#2563eb 55%,#60a5fa);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(30,58,138,.22)}
+.eyebrow{margin:0 0 8px;color:#dbeafe;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,42px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#eff6ff;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#dbeafe}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #bfdbfe;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 12px 12px 0;color:#1e40af;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #1e40af}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>拍视频必须搞懂的：快门｜帧率</h1>
+    <p class="dek">2 分 44 秒进阶科普：从「一帧就是一张图片」讲到动态模糊，再把帧率、快门速度上限、180° 快门角，以及为避开频闪而微调的 172.8° / 144° 串成一条线。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>2分44秒</span><span>72 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/1ts9SYMTCkq" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#frames">视频是连续播放的静止帧</a></li>
+      <li><a href="#fps">帧率决定一秒钟有多少画面</a></li>
+      <li><a href="#blur">低帧率需要动态模糊</a></li>
+      <li><a href="#limit">帧率决定快门速度上限</a></li>
+      <li><a href="#angle">180° 快门角与人眼观感</a></li>
+      <li><a href="#rotary">胶片机上的旋转快门</a></li>
+      <li><a href="#cine">172.8° / 144° 并不奇怪</a></li>
+      <li><a href="#flicker">匹配交流电，避开频闪</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="frames">
+      <span class="time-label">00:00—00:07</span>
+      <h2>开场：视频其实是一串静止帧</h2>
+      <p>深色底上，左侧叠着一串透明画框，白色小球在不同画框里位置略有偏移；右侧单独抽出一帧。旁白先把概念落稳：视频是连续播放的静止帧，一帧就是一张图片。接着用线性运动的小球作例子，后面所有帧率对比都围绕它展开。</p>
+      <blockquote class="quote">画面字幕：「一帧就是一张图片」</blockquote>
+      <p class="note">说明：Whisper 常把「静止帧」识成「竞争训练 / 竞争」，「帧」识成「真」，「帧率」识成「真率」，「快门」识成「宽门」，「每帧」识成「美真 / 美帧」，「线性」识成「现行」，「一眼」识成「一言」，「平均下来」识成「凭据闹」，「倒数」识成「到处」，「光源」识成「官员」。下文叙述以可见字幕与动画画面为准；页面末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-01.jpg" alt="叠帧示意与单帧对比，字幕写一帧就是一张图片" loading="lazy">
+        <figcaption>[00:03] 开场图：左侧叠帧轨迹，右侧单帧特写，字幕点明「一帧就是一张图片」。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="fps">
+      <span class="time-label">00:07—00:17</span>
+      <h2>四宫格：100 / 50 / 25 / 5 FPS 差在哪</h2>
+      <p>画面切成四格：100FPS、50FPS、25FPS、5FPS。同一颗小球往右跑，帧率越高，采样点越密，轨迹越像连续拖尾；帧率越低，点与点之间空隙越大。旁白说：不同帧率决定了一秒钟内小球运动路径上会产生多少个画面；把这些画面放在一起连续播放，就成了视频。</p>
+      <blockquote class="quote">画面字幕：「不同的帧率决定了在一秒钟内」</blockquote>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-02.jpg" alt="四宫格对比 100 50 25 5 FPS 下小球采样密度" loading="lazy">
+        <figcaption>[00:08] 帧率对照：100FPS 采样最密，5FPS 只剩稀疏几点。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="blur">
+      <span class="time-label">00:17—00:40</span>
+      <h2>低帧率太清晰会卡，动态模糊反而更顺</h2>
+      <p>旁白接着拆低帧率的观感问题：帧率较低时，物体每帧之间的运动跨度很大；此时画面过于清晰，人眼一眼就会感到明显卡顿。加入适当动态模糊，等于把运动轨迹也记进这一帧，看起来反而更连贯流畅。但模糊太大也会伤观感——除非你刻意拍成那种艺术拖影。</p>
+      <blockquote class="quote">画面字幕：「实际上就是增加了运动轨迹的记录」</blockquote>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-03.jpg" alt="5FPS 下带拖影的小球，字幕写增加了运动轨迹的记录" loading="lazy">
+        <figcaption>[00:27] 低帧率示意：用拖影补上帧间空隙，运动看起来更顺。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="limit">
+      <span class="time-label">00:40—00:57</span>
+      <h2>硬上限：快门再慢，也不能慢过一帧时长</h2>
+      <p>标题句直接打出：帧率决定了快门速度的上限。视频拍摄里，快门速度最长也就只能是帧率的倒数。以每秒 25 帧为例，一秒钟要装下 25 帧，平均到每一帧，最长曝光也就只有 1/25 秒。胶片条上标出单帧宽度，旁白把这个「最长也就只有 1/25 秒」钉死。</p>
+      <blockquote class="quote">画面字幕：「帧率决定了快门速度的上限」</blockquote>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-04.jpg" alt="左侧帧率 1FPS 右侧快门 1S，字幕写帧率决定快门速度上限" loading="lazy">
+        <figcaption>[00:42] 关系图：1 FPS 对应最长快门约 1 秒，强调上限由帧率决定。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-05.jpg" alt="胶片条单帧下方标注 1/25秒，字幕写最长也就只有1/25秒" loading="lazy">
+        <figcaption>[00:56] 25fps 示例：单帧最长曝光时间等于 1/25 秒。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="angle">
+      <span class="time-label">00:57—01:18</span>
+      <h2>用圆盘角度谈曝光：360° 全开，180° 一半</h2>
+      <p>旁白把时间换成圆形分布：打开 360° 等于 100% 曝光，也是单帧曝光上限（25fps 时就是 1/25 秒）。时间减半，曝光量变成 50%，也就是 1/50 秒，角度为 180°。每帧只曝光一半时长所产生的动态模糊，是一个比较符合人眼视觉感知的数值——这也是影视里常说的「180° 快门角」经验法则。</p>
+      <blockquote class="quote">画面字幕：「角度为180度」</blockquote>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-06.jpg" alt="胶片条下方 1/50秒 等于 180度开角等于 50% 曝光" loading="lazy">
+        <figcaption>[01:10] 180° 快门角：25fps 下对应 1/50 秒、50% 曝光。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="rotary">
+      <span class="time-label">01:18—01:40</span>
+      <h2>胶片摄影机：金属圆盘转速匹配帧率</h2>
+      <p>这种以角度控制曝光的快门，早期用在胶片摄影机里：一块金属圆盘，转速匹配帧率，靠改变打开角度让光线穿过，从而改变每帧胶片的曝光时长。快门角度大小决定每帧画面曝光多少；通常说的 180°，对应单帧一半的曝光时长，也就是帧率倒数的一半。如今一些电影机仍沿用快门角度标注。</p>
+      <blockquote class="quote">画面字幕：「快门开角 180 度 · 50% 曝光」</blockquote>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-07.jpg" alt="胶片摄影机模拟，半圆开角 180 度对应 50% 曝光" loading="lazy">
+        <figcaption>[01:35] 旋转快门示意：180° 开角对应单帧一半曝光。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="cine">
+      <span class="time-label">01:40—02:06</span>
+      <h2>看到 172.8°、144° 不用惊讶</h2>
+      <p>旁白提醒：如果你看到 172.8°、144° 这类奇怪数值，不必惊讶。这通常是电影 24 帧拍摄帧率下的开角选择。172.8° 开角对应每帧曝光总量是 1/24 秒的 48%，换算过来约 1/50 秒快门；144° 对应 1/24 秒的 40%，约 1/60 秒快门。用它们，是为了匹配不同国家和地区的交流电频率。</p>
+      <blockquote class="quote">画面字幕：「这通常是采用了电影24帧的拍摄帧率」</blockquote>
+    </section>
+
+    <section class="story-section" id="flicker">
+      <span class="time-label">02:06—02:44</span>
+      <h2>频闪：快门与人造光源交流电不同步</h2>
+      <p>蓝色正弦波铺满画面，标题落在「交流电频」。旁白点出要避开的大问题——频闪：通常因为快门速度设定与人造光源的交流电频率不匹配。我们国家是 50Hz；若拍 24fps 并按 180° 曝光，快门约 1/48 秒，每帧记录的电压周期不一致，亮度会跳，连续播放就可能闪烁。改用 1/50 秒快门，才能与周期匹配、亮度一致，从而避开频闪。</p>
+      <blockquote class="quote">画面字幕：「与人造光源的交流电频率不匹配而导致的」</blockquote>
+      <figure>
+        <img src="assets/electronic-shutter-framerate/shot-08.jpg" alt="青色正弦波与交流电频标题，字幕写与人造光源交流电频率不匹配" loading="lazy">
+        <figcaption>[02:10] 频闪成因：快门速度与人造光源交流电频率错位。</figcaption>
+      </figure>
+      <p>收束很干脆：在视频里，帧率既决定采样密度与动态模糊需求，也封死了快门上限；180° 是观感默认值，而为了电灯不闪，有时要故意把开角拧到 172.8° 或 144°。</p>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>我们都知道 视频实际上是连续播放的竞争训练</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT3S">00:03</time>
+    <p>一真就是一张图片</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT4S">00:04</time>
+    <p>以这个现行运动的小球为例</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT6S">00:06</time>
+    <p>不同的真率决定了</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT8S">00:08</time>
+    <p>在一秒钟内小球运动路径上会有多少个画面产生</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT12S">00:12</time>
+    <p>把这些画面放到一起</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT14S">00:14</time>
+    <p>连续播放的竞争就成了视频</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT17S">00:17</time>
+    <p>显然在真率交低的情况下</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT19S">00:19</time>
+    <p>物体美真之间的运动跨度很大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT21S">00:21</time>
+    <p>此时过于清晰的画面会使人一言产生明显的卡顿</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT25S">00:25</time>
+    <p>而加入适当的动态模糊</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT26S">00:26</time>
+    <p>实际上就是增加了运动轨迹的记录</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT29S">00:29</time>
+    <p>画面看上去自然也就更连贯 流畅</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT33S">00:33</time>
+    <p>但是这种模糊太大的话</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT34S">00:34</time>
+    <p>同样也会影响观看体验</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT36S">00:36</time>
+    <p>除非你能拍成这样</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT40S">00:40</time>
+    <p>真率决定了宽门速度的上限</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT42S">00:42</time>
+    <p>在视频拍摄中</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT43S">00:43</time>
+    <p>宽门速度最大也就只能是真率的倒数</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT46S">00:46</time>
+    <p>以每秒25帧为例</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT48S">00:48</time>
+    <p>这是一秒钟时长</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT49S">00:49</time>
+    <p>想要在这个时间内记录25帧的画面</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT51S">00:51</time>
+    <p>那么凭据闹每一帧的时间</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT54S">00:54</time>
+    <p>最长也就只有25分之一秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT56S">00:56</time>
+    <p>用一个圆形分布来对应的话</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT58S">00:58</time>
+    <p>打开360度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT60S">01:00</time>
+    <p>也就是100%曝光</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT61S">01:01</time>
+    <p>为单帧画面的曝光上限</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT63S">01:03</time>
+    <p>25分之一秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT64S">01:04</time>
+    <p>如果时间减半</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT65S">01:05</time>
+    <p>它变为50%的曝光量</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT67S">01:07</time>
+    <p>也就是50分之一秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT69S">01:09</time>
+    <p>角度为180度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT71S">01:11</time>
+    <p>每帧画面曝光一半的时长所产生的动态模糊</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT74S">01:14</time>
+    <p>是一个比较符合人眼视觉感知的数值</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT77S">01:17</time>
+    <p>这种以角度来控制曝光的宽门</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT79S">01:19</time>
+    <p>早期曾用在胶片摄影机中</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT82S">01:22</time>
+    <p>一个金属圆盘 其转速匹配真率</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT85S">01:25</time>
+    <p>通过控制打开角度让光线穿过</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT87S">01:27</time>
+    <p>从而改变美帧胶片的曝光时长</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT90S">01:30</time>
+    <p>宽门角度大小决定了美帧画面曝光的多少</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT93S">01:33</time>
+    <p>通常说的180度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT94S">01:34</time>
+    <p>对应的就是单帧画面一半的曝光时长</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT97S">01:37</time>
+    <p>也就是真率到处的一半</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT99S">01:39</time>
+    <p>如今一些电影机还会沿用这个宽门角度的标注</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT102S">01:42</time>
+    <p>如果你看到172.8度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT104S">01:44</time>
+    <p>144度等等</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT105S">01:45</time>
+    <p>奇怪的数值也不必惊讶</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT107S">01:47</time>
+    <p>这通常是采用了电影24帧的拍摄真率</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT110S">01:50</time>
+    <p>172.8度的开角</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT112S">01:52</time>
+    <p>对应的是美帧画面曝光总量</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT114S">01:54</time>
+    <p>24分之一秒的48%</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT116S">01:56</time>
+    <p>换算过来也就是50分之一秒的宽门速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT119S">01:59</time>
+    <p>而144度对应的则是24分之一秒的40%</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT123S">02:03</time>
+    <p>也就是60分之一秒的宽门速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-56">
+    <time datetime="PT125S">02:05</time>
+    <p>之所以使用50分之一秒和60分之一秒的宽门速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-57">
+    <time datetime="PT128S">02:08</time>
+    <p>是为了匹配不同国家和地区的交流电频率</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-58">
+    <time datetime="PT132S">02:12</time>
+    <p>从而来避免一个很大的问题</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-59">
+    <time datetime="PT133S">02:13</time>
+    <p>频闪</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-60">
+    <time datetime="PT135S">02:15</time>
+    <p>频闪通常是因为宽门速度的设定</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-61">
+    <time datetime="PT137S">02:17</time>
+    <p>与人造官员的交流电频率不匹配而导致的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-62">
+    <time datetime="PT140S">02:20</time>
+    <p>我们国家的交流电频率为50Hz</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-63">
+    <time datetime="PT143S">02:23</time>
+    <p>如果你想拍摄24帧的真率</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-64">
+    <time datetime="PT145S">02:25</time>
+    <p>按照180度曝光的话</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-65">
+    <time datetime="PT146S">02:26</time>
+    <p>宽门为48分之一秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-66">
+    <time datetime="PT148S">02:28</time>
+    <p>这就会导致每一帧画面记录的电压周期不一致</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-67">
+    <time datetime="PT152S">02:32</time>
+    <p>画面亮度也会不同</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-68">
+    <time datetime="PT153S">02:33</time>
+    <p>连续播放起来就有可能出现闪烁</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-69">
+    <time datetime="PT156S">02:36</time>
+    <p>而使用50分之一秒的宽门</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-70">
+    <time datetime="PT158S">02:38</time>
+    <p>只能与周期匹配</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-71">
+    <time datetime="PT159S">02:39</time>
+    <p>做到亮度一致</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-72">
+    <time datetime="PT160S">02:40</time>
+    <p>从而来避免出现频闪</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">图文实录 · 小红书 · electronic-shutter-framerate</p>
+  </main>
+</body>
+</html>
