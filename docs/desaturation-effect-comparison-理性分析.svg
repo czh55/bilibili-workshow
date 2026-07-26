@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6248" viewBox="0 0 1320 6248">
+  <foreignObject x="0" y="0" width="1320" height="6248">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body,.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.meta p{margin-top:12px;font-size:14px;color:#64748b}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:78px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 24px;text-align:center;min-width:175px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#64748b;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+</style>
+      
+<div class="svg-page">
+<div class="container">
+  <h1>高饱和人像修图：不是“拉饱和度”，而是分离色相与明度后再回收</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">1 分 22 秒</span>
+    <span class="tag tag-purple">Photoshop 修图</span>
+    <span class="tag tag-gray">51 个转录分段</span>
+    <p>分析对象：视频《同样是降饱合度，为什么效果完全不一样？》 · 展示日期 2026-07-26</p>
+  </div>
+  <div class="summary-line"><strong>核心判断：</strong>直接降低饱和度会同时削弱色相与明度关系，导致嘴唇发脏、整体仍刺眼；反向图层配合“颜色”混合模式，可让互补色只参与色相调整，再通过不透明度、曲线与红通道分步回收质感。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><span class="timeline-time">00:01</span><span class="timeline-text">高饱和人像开场；常规思路是降低饱和度或选皮肤区域去饱和。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">直接降饱和的副作用：皮肤淡了，嘴唇发脏，整体仍刺眼。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">改用反向图层，生成每种颜色的互补色。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">混合模式改为“颜色”，只改色相/饱和而不改明暗。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:36</span><span class="timeline-text">降低不透明度后画面明显变舒服，肤色质感保留更好。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:56</span><span class="timeline-text">补救发灰：高光曲线提亮、暗部加对比、红通道微量补红。</span></div>
+    <div class="timeline-item"><span class="timeline-time">01:18</span><span class="timeline-text">结论：高饱和照片别急着拉饱和度，可先试互补色方案。</span></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>高饱和人像<br/>直接降饱和副作用</div>
+      <div class="arrow">→</div>
+      <div class="node">机制<br/>反向生成互补色<br/>颜色模式只改色相</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">回收<br/>降不透明度<br/>曲线 + 红通道</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">决策<br/>先平衡过饱和<br/>再单独找回亮度</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>认知纠偏：“降饱和”不等于“让画面变舒服”</h3>
+    <p>视频对比的不是“有没有降饱和”，而是<strong>用什么机制降饱和</strong>。直接拉饱和度滑块会无差别削弱所有颜色的强度，容易破坏嘴唇、肤色与背景的相对关系；互补色 + 颜色模式则是定向中和过饱和，再分步处理明度与肤色。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">两种路径的机制差异</h2>
+
+    <div class="card card-red">
+      <h3>路径 A：直接降低饱和度（视频中的反例）</h3>
+      <p><strong>在讲什么：</strong>选中皮肤或整体后拉低饱和度，是最常见的“急救”做法。</p>
+      <p><strong>关键理解：</strong>饱和度与明度、色相在同一调整里被耦合处理，局部降饱和无法保证嘴唇、背景与高饱和色块同步协调。</p>
+      <div class="pitfall"><strong>可见后果：</strong>皮肤饱和度下降，但嘴唇发脏，整体仍刺眼（证据 [00:09]）。</div>
+      <div class="quote">原文依据：“但是嘴巴的颜色却变得很脏了，而整体的颜色还是很刺眼。”</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>路径 B：反向 → 颜色模式 → 降不透明度（视频推荐）</h3>
+      <p><strong>在讲什么：</strong>复制图层 → 反向 → 混合模式改“颜色” → 降低不透明度。</p>
+      <p><strong>关键理解：</strong>反向提供互补色；颜色模式让互补色只参与色相/饱和调整，不改变明暗结构——这是与路径 A 的本质差异。</p>
+      <div class="action"><strong>怎么用：</strong>先降到画面“明显变舒服”为止（博主认为 [00:38] 附近已可用），再进入曲线与通道补救。</div>
+      <div class="quote">原文依据：“因为我只想让互补色来参与颜色的调整，并不想改变画面的明暗关系。”</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>补救步骤：处理“变灰”副作用</h3>
+      <p><strong>在讲什么：</strong>互补色方案后画面可能变灰、丢色；需用曲线与红通道单独回收。</p>
+      <p><strong>关键理解：</strong>这不是推翻主方法，而是承认“色彩平衡”与“亮度/肤色”需要分步处理。</p>
+      <div class="insight"><strong>操作顺序：</strong>高光 + 曲线提亮 → 暗部加对比 → 红通道给皮肤微量加红（“一点点就够了”）。</div>
+      <div class="quote">原文依据：“画面难免会变灰，色彩也会丢失一些……给皮肤加一点点红色。”</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">横向对比：同样是“降饱和方向”，结果为何不同</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>直接拉饱和度</th>
+            <th>反向 + 颜色模式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>调整机制</td>
+            <td>无差别降低所有颜色强度</td>
+            <td>互补色定向中和过饱和</td>
+          </tr>
+          <tr>
+            <td>明暗关系</td>
+            <td>与饱和度耦合变化</td>
+            <td>颜色模式尽量保留原明暗</td>
+          </tr>
+          <tr>
+            <td>肤色/嘴唇</td>
+            <td>嘴唇易发脏（视频实测）</td>
+            <td>博主称质感保留更自然</td>
+          </tr>
+          <tr>
+            <td>后续步骤</td>
+            <td>常需额外蒙版修补</td>
+            <td>曲线 + 红通道回收灰感</td>
+          </tr>
+          <tr>
+            <td>适用提醒</td>
+            <td>快速但副作用大</td>
+            <td>参数因片而异，需肉眼判断</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界与立场分层</h2>
+    <div class="card card-purple">
+      <h3>可验证事实（来自视频演示）</h3>
+      <ul>
+        <li>视频时长 1 分 22 秒，在 Photoshop 中逐步演示图层操作。</li>
+        <li>直接降饱和后，博主指出嘴唇发脏、整体仍刺眼。</li>
+        <li>反向 + 颜色模式 + 降不透明度后，博主展示“之前/现在”对比并认为更舒服。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>博主观点（个人修图偏好）</h3>
+      <ul>
+        <li>遇到高饱和照片，别着急先拉饱和度，可先试互补色方案。</li>
+        <li>不透明度降到“明显变化”即可，不必追求一次到位。</li>
+        <li>红通道加红“一点点就够了”，强调微量微调。</li>
+      </ul>
+    </div>
+    <div class="card card-orange">
+      <h3>基于原文的推断（非视频明示）</h3>
+      <ul>
+        <li>该方法更适用于<strong>整体过饱和</strong>的人像，而非局部单色偏色问题。</li>
+        <li>不同软件（Lightroom、Capture One 等）可能没有完全等价的“反向 + 颜色”组合，需找相近的色彩平衡工具。</li>
+        <li>最终仍依赖显示器校准与输出用途，屏幕“舒服”不等于印刷准确。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>高饱和人像的问题不只是“颜色太浓”，而是<strong>色相、饱和与明度被错误地一起处理</strong>。</li>
+      <li>互补色 + 颜色模式的核心价值是<strong>分离色彩调整与明暗结构</strong>。</li>
+      <li>变灰是预期副作用，曲线与红通道是流程的一部分，不是失败。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>遇到高饱和人像，先复制图层试“反向 → 颜色模式 → 降不透明度”，不要第一时间拉饱和度。</li>
+      <li>对比嘴唇、肤色与背景三处，确认没有发脏或假灰后再进入曲线。</li>
+      <li>用高光曲线提亮、暗部加对比，最后在红通道给皮肤微量补红。</li>
+      <li>保留“之前/现在”快照，记录可复用的不透明度与曲线参数。</li>
+      <li>若画面只有局部过饱和，改用蒙版限制互补色图层作用范围。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从“降饱和 = 把滑块往左拉”转变为“先用互补色平衡过饱和，再分步回收亮度与肤色”。同样是让画面变舒服，机制不同，结果可以完全不同。</p>
+  </div>
+
+  <p class="footer">理性分析 · 原视频 http://xhslink.cn/o/7HUpslXaOI9 · 2026-07-26</p>
+</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
