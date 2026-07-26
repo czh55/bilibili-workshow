@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6033" viewBox="0 0 1320 6033">
+  <foreignObject x="0" y="0" width="1320" height="6033">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>蝶泳抱水</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">22秒</span>
+    <span class="tag tag-orange">蝶泳</span>
+    <span class="tag tag-purple">抱水角度</span>
+    <span class="tag tag-gray">画面证据为主</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/1qmrZzRmiMw">原视频短链 →</a>
+  <div class="summary-line">核心判断：蝶泳抱水要「多视角看角度」——侧视用 <span class="key-data">45°</span> 标定入水/前伸关系、用 <span class="key-data">90°</span> 标定高肘抱水；前视用肩肘连线与竖直参考检查对称与空间；绿勾段落把整条手部路径命名为「蝶泳手部动作」。口播不可辨，证据以叠字与机位切换为准。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">侧视前伸 +「45°」斜线——入水/前伸角度被量化</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:02</div><div class="timeline-text">流线型双手交叠前伸——抱水前的起点姿态</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:04</div><div class="timeline-text">弯肘抱水 +「90°」——高肘抓水角度落地</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">前视双臂前伸 + 左右白线追踪——检查对称</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:10</div><div class="timeline-text">肩肘圆点连线 + 竖直参考线——量化前视空间</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:14</div><div class="timeline-text">绿勾 + 黄底「蝶泳手部动作」——正确路径命名</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:18</div><div class="timeline-text">侧视外展划水推进——把抱水连进完整手部过程</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题：蝶泳划水手部难懂</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">方法：多视角角度标注</div>
+      <div class="arrow">→</div>
+      <div class="node">证据：45° / 90° / 关节线</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">行动：对表练手部路径</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解纠偏</h3>
+    <p>不要把本片当成「只看一个侧面示范就够」。笔记明确说「多个视角的蝶泳抱水角度」；侧视给肘角与入水角，前视给对称与肩肘空间，绿勾段再把片段连成过程。缺任一视角，都容易把局部角度记成全部答案。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">角度证据怎么用</h2>
+
+    <div class="card">
+      <h3>在讲什么：45° 入水/前伸</h3>
+      <p>开场侧视在手部旁叠斜线与「45°」，把难以口头描述的入水相对角度变成可视标尺。</p>
+      <div class="insight">关键理解：先占好前伸空间与入水角度，再谈抱水发力；角度是观察锚点，不是孤立玄学数字。</div>
+      <div class="action">怎么用：陆上或水下慢动作自检时，先问「前伸/入水看起来是否贴近片中 45° 参照」，再进入弯肘。</div>
+      <div class="quote">原文依据：画面叠字「45°」（约 00:00）；笔记「多个视角的蝶泳抱水角度」。</div>
+      <div class="relation">立场：可验证事实=画面出现 45° 标注；推断=该角用于提示入水/前伸关系（视频未口述定义）。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>在讲什么：90° 高肘抱水</h3>
+      <p>抱水瞬间肘关节被白线夹出「90°」，把「高肘」从感觉词落成关节角度。</p>
+      <div class="insight">关键理解：片中示范的正确抱水形态包含接近直角的肘角；这是教学叠加，不等于所有泳姿/所有阶段都必须锁死 90°。</div>
+      <div class="action">怎么用：对照自己水下或陆上抱水照片/视频，看肘是否塌、是否过度伸直；用 90° 作对照靶，而不是唯一合格线。</div>
+      <div class="quote">原文依据：画面叠字「90°」（约 00:04）。</div>
+      <div class="relation">立场分层：事实=画面标注 90°；作者观点=以此展示目标抱水形态；推断=该角对应高肘抓水教学意图。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>在讲什么：前视关节线与对称</h3>
+      <p>前视用左右竖线、肩肘圆点与下垂参考线，检查双手是否同步、手臂相对竖直方向如何张开。</p>
+      <div class="insight">关键理解：蝶泳双手同时动作，对称失误在侧视里不易察觉；前视补上「左右是否一致」这一维。</div>
+      <div class="action">怎么用：请同伴从正前方水下/池边拍一小段，检查左右手时序与张开幅度是否镜像。</div>
+      <div class="quote">原文依据：约 00:08–00:10 前视白线与肩肘几何叠加。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>在讲什么：绿勾命名整段手部路径</h3>
+      <p>约 00:14 起出现绿勾与黄底「蝶泳手部动作」，随后侧视连续展示由前伸转入外展划水。</p>
+      <div class="insight">关键理解：角度标注服务于完整过程理解；最终交付是「可连起来的手部动作」，不是三张静帧。</div>
+      <div class="pitfall">避坑：只截一张 90° 静帧当全部答案，忽略入水角、对称与后续外划推进。</div>
+      <div class="quote">原文依据：画面大字「蝶泳手部动作」+ 绿勾（约 00:14–00:20）；笔记「更好理解整个蝶泳划水过程」。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：三个观察维度</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>维度</th>
+          <th>主要机位</th>
+          <th>画面证据</th>
+          <th>训练时先问什么</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>入水/前伸角</td>
+          <td>侧视</td>
+          <td>45° 斜线</td>
+          <td>前伸是否过平/过陡？</td>
+        </tr>
+        <tr>
+          <td>抱水肘角</td>
+          <td>侧视</td>
+          <td>90° 夹角</td>
+          <td>肘是否塌或锁死伸直？</td>
+        </tr>
+        <tr>
+          <td>对称与空间</td>
+          <td>前视</td>
+          <td>肩肘点 + 竖线</td>
+          <td>左右是否同步镜像？</td>
+        </tr>
+        <tr>
+          <td>过程连贯</td>
+          <td>侧视示范段</td>
+          <td>绿勾 +「蝶泳手部动作」</td>
+          <td>能否从入水连到外划？</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界</h2>
+    <div class="card card-red">
+      <h3>适用条件与上限</h3>
+      <ul>
+        <li><strong>适用：</strong>已有基本蝶泳概念、需要用水下角度理解手部路径的学习者；适合对照短视频自检。</li>
+        <li><strong>上限：</strong>22 秒无法覆盖呼吸、波浪、腿部配合与个体柔韧性差异；未给出陆上分解次数或负荷处方。</li>
+        <li><strong>反例/例外：</strong>青少年或伤后康复可能需要更保守的肘角与活动度；竞赛技术细节因教练体系而异，片中角度是示范叠加，不是竞赛规则。</li>
+        <li><strong>证据强弱：</strong>叠字与绿勾为强画面证据；口播缺失，凡涉及「为什么必须是 45°/90°」的机制解释均为基于画面的推断，需教练复核。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>多视角看蝶泳抱水：侧视角度 + 前视对称 + 过程连贯。</li>
+      <li>两个关键数字锚点：入水/前伸约 45°，抱水肘约 90°（画面标注）。</li>
+      <li>绿勾段把静帧角度连回「蝶泳手部动作」完整路径。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>侧视慢放自检：前伸/入水是否接近片中 45° 参照。</li>
+      <li>抱水静帧对照：肘角是否塌或过度伸直，对照 90° 靶。</li>
+      <li>前视补拍 5–10 秒：检查左右手时序与张开是否对称。</li>
+      <li>把三段连看：入水 → 高肘抱水 → 外划推进，避免只练中间一帧。</li>
+      <li>口播听不清时以叠字为准；有争议处请教练当面复核，勿把短视频角度当成唯一标准。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「凭感觉划手」转向「用水下角度与多机位关系理解抱水」；数字是观察锚点，完整手部路径才是目标。</p>
+  </div>
+
+  <p class="footer">理性分析 · 证据回溯画面叠字与笔记文案 · 口播按听不清处理</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
