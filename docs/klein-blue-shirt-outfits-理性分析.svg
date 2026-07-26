@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5813" viewBox="0 0 1320 5813">
+  <foreignObject x="0" y="0" width="1320" height="5813">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body,.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}.meta p{margin-top:12px;font-size:14px;color:#64748b}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:78px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}.diagram{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 24px;text-align:center;min-width:175px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#64748b;font-size:13px;padding:32px 0 16px}.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+</style>
+      
+<div class="svg-page">
+<div class="container">
+  <h1>克莱因蓝衬衫：不是“配什么颜色”，而是怎样管理对比、轮廓与场景</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">2 分 17 秒</span>
+    <span class="tag tag-purple">一衣多穿</span>
+    <span class="tag tag-gray">77 个转录分段</span>
+    <p>分析对象：视频《夏日克莱因蓝衬衫怎么搭？ 分享来》 · 展示日期 2026-07-26</p>
+  </div>
+  <div class="summary-line"><strong>核心判断：</strong>视频真正展示的不是一张固定配色表，而是一套“先打破大面积同色与拘谨轮廓，再用黑白灰建立明度、层次和场景信号”的操作方法。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">提出两个问题：材质／颜色没选对，以及穿法太拘谨、缺少层次。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">白色牛仔裤提亮；塞衣、卷袖、黑腰带同时调整比例和细节。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:43</span><span class="timeline-text">不塞衣角时，米色西裤与错位扣法提供松弛版本。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:59</span><span class="timeline-text">黑裤偏闷，加入白背心并敞开衬衫制造中间层。</span></div>
+    <div class="timeline-item"><span class="timeline-time">01:23</span><span class="timeline-text">花纹领带与腰间花纹呼应，把风格转向复古。</span></div>
+    <div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">灰西裤加眼镜、工牌进入通勤语境，再靠解扣和移动配饰切换下班状态。</span></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>高饱和蓝占比大<br/>轮廓过于拘谨</div>
+      <div class="arrow">→</div>
+      <div class="node">调节杆<br/>明度 · 层次<br/>腰线 · 呼应</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">可见变化<br/>提亮或压暗<br/>正式或松弛</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">决策<br/>按场景选择<br/>而非照抄单品</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>认知纠偏：黑白灰不是自动成功的“万能答案”</h3>
+    <p>视频中的有效变化同时来自颜色、衬衫开合、衣摆处理、袖口、腰线和配饰。只替换裤子颜色而保持原来的拘谨穿法，并不能复现画面效果。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">三个真正可迁移的控制变量</h2>
+
+    <div class="card">
+      <h3>01 明度对比：先解决蓝色“铺满”的问题</h3>
+      <p><strong>在讲什么：</strong>白裤最直接提亮；米色降低反差；黑裤会压暗，因此需要白背心作为视觉缓冲。</p>
+      <p><strong>关键理解：</strong>下装颜色不是独立选择，它决定高饱和蓝在全身中的面积感与重量感。</p>
+      <div class="action"><strong>怎么用：</strong>站远看全身。若蓝与下装连成沉重色块，先加入白／米明度差；若反差太跳，再换低对比米色。</div>
+      <div class="quote"><strong>原文依据：</strong>“首先先来一条白色牛仔裤，明度是有了。”（00:16–00:19）</div>
+      <div class="relation"><strong>立场：</strong>“换白裤提高画面明度”为可见事实；“更好看”属于博主观点和个人审美。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>02 轮廓与露肤：颜色不变也能解除呆板</h3>
+      <p><strong>在讲什么：</strong>塞衣角、卷袖、敞开衬衫、错位扣合，分别改变腰线、手臂露出和衣摆边界。</p>
+      <p><strong>关键理解：</strong>“拘谨”不只来自正式单品，而来自所有边界都封闭且整齐；打开一两个边界就能产生层次。</p>
+      <div class="action"><strong>怎么用：</strong>一次只改一个位置：先卷袖，再试半塞／错位扣，最后决定是否敞开；避免所有技巧同时堆叠。</div>
+      <div class="quote"><strong>原文依据：</strong>“先把衬衫塞在裤子里，然后把袖子挽起来……黑色的腰带也可以强调我们的高腰线。”（00:21–00:28，转录存在同音误字）</div>
+      <div class="relation"><strong>立场：</strong>动作与画面为事实；“解除呆板”是基于前后画面的合理推断。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>03 配饰呼应：让小面积元素形成秩序</h3>
+      <p><strong>在讲什么：</strong>黑腰带、皮鞋和包统一；复古方案里领带花纹与腰间花纹呼应；眼镜、工牌提供办公语境。</p>
+      <p><strong>关键理解：</strong>配饰既能做颜色回声，也能做场景提示。它们不是单纯“加东西”，而是回答这套衣服要去哪里。</p>
+      <div class="action"><strong>怎么用：</strong>先选一个重复逻辑：同色皮具或同类花纹二选一，再添加一个场景配饰即可。</div>
+      <div class="quote"><strong>原文依据：</strong>“包包配饰、皮鞋还有皮带，这些颜色我们都是做到相统一的。”（00:28–00:32）</div>
+      <div class="relation"><strong>立场：</strong>颜色重复可由画面验证；眼镜代表“专业”是博主的主观编码，不是普遍事实。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>四条路线横向比较</h3>
+    <table>
+      <tr><th>路线</th><th>主要手段</th><th>视频给出的效果</th><th>更适合</th><th>边界／风险</th></tr>
+      <tr><td>白色提亮</td><td>白牛仔裤＋黑色皮具</td><td>明度高、腰线清楚</td><td>夏日休闲、清爽通勤</td><td>白裤透、易脏；高对比未必适合所有场合</td></tr>
+      <tr><td>米色松弛</td><td>米西裤＋错位扣法</td><td>低对比、衣摆更自由</td><td>偏休闲、低正式度</td><td>错位扣法依赖衬衫长度与扣位</td></tr>
+      <tr><td>黑色分层</td><td>黑裤＋白背心／黑针织</td><td>通勤或降温叠穿</td><td>需要稳重色块的场景</td><td>全黑下装会偏闷；叠穿受温度限制</td></tr>
+      <tr><td>灰色切换</td><td>灰西裤＋配饰增减</td><td>上班正式、下班松弛</td><td>一日多场景</td><td>“专业感”依赖组织着装文化，不能只靠眼镜工牌</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">避坑与适用边界</h2>
+    <div class="card card-orange">
+      <h3>不要把风格标签当成事实判断</h3>
+      <div class="pitfall"><strong>避坑 1：</strong>“老钱风”“男友力”“专业”都是博主对造型的主观命名，不代表穿上对应单品就获得身份或能力。</div>
+      <div class="pitfall"><strong>避坑 2：</strong>不要同时复制错位扣、卷袖、领带、花纹、多个包等所有技巧；视频每套都只突出少数变量。</div>
+      <div class="pitfall"><strong>避坑 3：</strong>不要忽略版型与材质。视频口头指出材质问题，却没有给出面料参数，因此无法从本片推出某类面料必然优越。</div>
+      <div class="highlight"><strong>方法边界：</strong>结论主要适用于画面中这件偏宽松、饱和度高的蓝衬衫与室内试穿。肤色、身材比例、衬衫长度、气候、公司着装规范都会改变结果。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>先诊断是明度、轮廓还是场景信号出了问题，不要直接购买更多单品。</li>
+      <li>黑白灰负责搭框架，卷袖、衣摆与配饰负责让框架产生层次。</li>
+      <li>视频提供的是七次示范，不是经过对照验证的普遍穿搭定律。</li>
+    </ul>
+    <h3>3–5 项行动清单</h3>
+    <ol>
+      <li>用现有白／米／黑／灰下装分别拍一张全身照，比较蓝色占比与明度。</li>
+      <li>保留最合适的下装，只测试卷袖、塞衣、敞开三种轮廓变化。</li>
+      <li>从腰带、鞋、包中选两个做同色呼应，删除其余无关配饰。</li>
+      <li>按真实场景检查活动度、温度和着装规范，而不是只看镜头效果。</li>
+      <li>最后再决定是否需要领带或花纹细节，避免风格元素过量。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从“克莱因蓝只能搭哪种颜色”，转向“我需要调节哪一个视觉变量，并为哪个场景服务”。</p>
+  </div>
+
+  <div class="footer">证据来源：原视频画面与 Whisper small / Chinese 转录 · 原链接 http://xhslink.cn/o/8rExgFzmIgO</div>
+</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
