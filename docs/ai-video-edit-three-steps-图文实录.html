@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="3 分 01 秒小红书 AI 剪辑实操：先写 Video Spec、再剪 30 秒试效果、用参考图要动效；按时间还原并保留完整 Whisper 转录。">
+  <title>AI新手村 | 掌握这三步，AI真能替你剪视频了｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#f5f2ed}
+a{color:inherit}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{background:linear-gradient(140deg,#0f172a,#1e3a5f 55%,#0b3b2e);color:#fff;border-radius:28px;padding:48px;box-shadow:0 18px 60px rgba(15,23,42,.22)}
+.eyebrow{margin:0 0 10px;color:#86efac;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,5.4vw,48px);line-height:1.18;letter-spacing:-.03em}
+.lede{max-width:740px;margin:22px 0;color:#e2e8f0;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#cbd5e1;font-size:13px}
+.source-link{display:inline-flex;margin-top:24px;color:#fff;font-weight:700;text-underline-offset:4px}
+.toc{margin:28px 0;padding:20px;background:#fff;border-radius:18px;box-shadow:0 4px 20px rgba(41,37,36,.07)}
+.toc h2{margin:0 0 12px;font-size:16px}
+.toc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.toc a{display:flex;gap:9px;padding:10px 12px;border-radius:10px;text-decoration:none;background:#fafaf9;font-size:14px}
+.toc a:hover{background:#dbeafe}
+.toc time{font-variant-numeric:tabular-nums;color:#1d4ed8;font-weight:800}
+.documentary{font-size:17px}
+.intro{margin:48px 0;padding:0 8px}
+.intro h2,.story-section h2,.transcript-section h2{margin:0 0 16px;font-size:clamp(26px,4vw,36px);line-height:1.3;color:#1c1917}
+.intro p,.story-section p{margin:0 0 16px}
+.story-section{margin:68px 0;scroll-margin-top:20px}
+.section-kicker{margin-bottom:8px;color:#047857;font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.quote{margin:22px 0;padding:16px 20px;border-left:4px solid #2563eb;background:#eff6ff;border-radius:0 12px 12px 0;color:#1e3a8a;font-size:15px}
+.note{margin:18px 0;padding:14px 16px;background:#fffbeb;border-radius:12px;color:#78350f;font-size:14px}
+.stance{margin:18px 0;padding:14px 16px;background:#f0fdf4;border-radius:12px;color:#14532d;font-size:14px}
+.step-list{margin:18px 0;padding-left:22px}
+.step-list li{margin:8px 0}
+figure{margin:28px auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(41,37,36,.12)}
+img{display:block;width:auto;max-width:100%;height:auto;max-height:760px;margin:0 auto}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.recap{margin:56px 0;padding:28px;background:#0f172a;color:#f8fafc;border-radius:20px}
+.recap h2{margin:0 0 12px;font-size:26px;color:#fff}
+.recap p{margin:0;color:#e2e8f0}
+.transcript-section{margin-top:72px;padding-top:48px;border-top:2px solid #d6d3d1;scroll-margin-top:20px}
+.transcript-note{padding:14px 16px;background:#fffbeb;border-radius:10px;color:#78350f;font-size:14px}
+.transcript-list{list-style:none;padding:0;margin:28px 0}
+.transcript-row{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #d6d3d1}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{min-width:0;margin:0;overflow-wrap:anywhere}
+.footer{margin-top:48px;text-align:center;color:#78716c;font-size:13px}
+@media(max-width:720px){
+  .container{padding:24px 16px 56px}
+  .hero{padding:30px 22px;border-radius:20px}
+  .toc-grid{grid-template-columns:1fr 1fr}
+  .story-section{margin:50px 0}
+}
+@media(max-width:420px){
+  .toc-grid{grid-template-columns:1fr}
+  .transcript-row{grid-template-columns:52px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">3 分 01 秒 · AI 剪辑实操 · 小红书</p>
+    <h1>掌握这三步<br>AI 真能替你剪视频</h1>
+    <p class="lede">讲述者先用“两个月前 vs 现在”的 Codex 成片对比开场，再把半个月的实操拆成三步：先写 Video Spec，再只剪 30 秒试效果，最后用参考图而不是“高级一点”去要动效。全程口播配信息卡、图表与动效包装。</p>
+    <div class="meta">
+      <span>原标题：AI新手村 | 掌握这三步，AI真能替你剪视频了</span>
+      <span>时长：3分01秒</span>
+      <span>视频 ID：6a6086b7000000000503af0b</span>
+      <span>日期：2026-07-26</span>
+      <span>平台：小红书</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/23BdaSX4iwY" target="_blank" rel="noopener noreferrer">打开小红书原视频 →</a>
+  </header>
+
+  <nav class="toc" aria-label="内容目录">
+    <h2>按视频顺序阅读</h2>
+    <div class="toc-grid">
+      <a href="#contrast"><time>00:00</time><span>前后对比</span></a>
+      <a href="#why-bad"><time>00:34</time><span>为何效果烂</span></a>
+      <a href="#role"><time>00:56</time><span>Codex 角色</span></a>
+      <a href="#step1"><time>01:18</time><span>第一步 Spec</span></a>
+      <a href="#step2"><time>01:39</time><span>第二步 30 秒</span></a>
+      <a href="#step3"><time>01:54</time><span>第三步动效</span></a>
+      <a href="#boundary"><time>02:12</time><span>边界与生产线</span></a>
+      <a href="#transcript"><time>全文</time><span>原始转录</span></a>
+    </div>
+  </nav>
+
+  <article class="documentary">
+    <section class="intro">
+      <h2>不是工具突然变聪明，而是方法改对了</h2>
+      <p>这是一条面向“AI 新手村”的剪辑实操视频。讲述者用 Codex（在他的流程里更像会写 Remotion 代码的剪辑助理）展示信息卡、高级感字幕和跟着口播弹出的图标动效，并声称这套方法已经能承接约 70% 的剪辑工作：气口、字幕、排版、动效全包。</p>
+      <p class="note">说明：Whisper 固定按中文识别时，把“AI 剪辑 / 口播 / 剪映 / Video Spec / Remotion / 同一个人”等词误听成“AA 剪辑 / 口薄 / 剪用 / Vidiu Spike / 惹魔神代码 / 台湾一个人”等。下文叙事以可见字幕与界面截图为准，文末转录区仍完整保留全部原始分段。</p>
+    </section>
+
+    <section class="story-section" id="contrast">
+      <div class="section-kicker">开场 · 00:00–00:34</div>
+      <h2>先看差距，再给结论</h2>
+      <p>视频一开始并排对比：两个月前用 Codex 剪的效果，和现在用 Codex 剪的效果。讲述者问“同一个人为什么差距这么大”，立刻给出结论——不是它突然变聪明，而是自己终于搞懂：AI 剪辑根本不是网上说的“一句话就能出满意成片”。</p>
+      <blockquote class="quote">“先说结论：不是它突然变聪明了，而是我终于搞懂了——AI 剪辑根本不是网上说的一句话就能出满意成片。” <small>— 约 00:06–00:11</small></blockquote>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-01.jpg" alt="口播画面叠加竖屏示例，字幕写用Codex剪出来的效果，竖屏信息卡列出AI回答退化三阶段" loading="lazy">
+        <figcaption>[00:01] 开场对比：画面叠加竖屏信息卡示例，底部字幕强调“用 Codex 剪出来的效果”。</figcaption>
+      </figure>
+      <p>他指着当前成片里的信息卡、高级感字幕，以及跟着口播蹦出来的图标动效，说这些全是改对方法之后由 Codex 自己做出来的；而这些动效包装，恰恰是传统剪辑里最难、最耗时的部分。</p>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-02.jpg" alt="讲述者双手比划，身旁浮现 Vite、Strapi、Supabase 等图标动效" loading="lazy">
+        <figcaption>[00:14] 口播同步弹出的工具图标动效，用来说明“跟着口播蹦出来的图标”。</figcaption>
+      </figure>
+      <p>随后他预告：会把最近半个月实操 AI 剪辑的完整流程一步不漏拆开，看完就知道该让 Codex 做什么、怎么调效果、怎么剪成自己的风格。</p>
+    </section>
+
+    <section class="story-section" id="why-bad">
+      <div class="section-kicker">问题诊断 · 00:34–00:56</div>
+      <h2>第一次失败：让它同时猜四件事</h2>
+      <p>讲述者复盘第一次尝试：直接把口播丢进去，说“加点高级动效，帮我剪出成片”。结果画面和口播对不上，卡片重点也完全错。他一度以为是 Codex 不行，后来才反应过来——自己等于让它同时猜四件事：内容重点、画面形式、用什么素材，以及自己的审美。</p>
+      <blockquote class="quote">“你不给剪辑师任何的信息，就让他交出成片，他也只能瞎猜，然后给你一个最普通的版本。” <small>— 约 00:50–00:55</small></blockquote>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-03.jpg" alt="讲述者面向镜头，字幕显示Codex剪出来的效果都很烂" loading="lazy">
+        <figcaption>[00:36] 进入失败复盘：字幕点出“Codex 剪出来的效果都很烂”。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="role">
+      <div class="section-kicker">关键认知 · 00:56–01:18</div>
+      <h2>它是会写 Remotion 的剪辑助理，不是读心的剪辑师</h2>
+      <p>这里给出整条视频的关键认知：Codex 不是剪映那种传统剪辑软件。在他的流程里，它更像“会写 Remotion 代码的剪辑助理”——卡片、图表、转场都可以按规则精准执行；但它不知道你心里的“高级”长什么样，也不知道哪句话该配什么画面。让它自由发挥，就等于纯抽卡。</p>
+      <p class="stance">这是讲述者基于个人工作流的角色定义，不是对所有 AI 剪辑产品的统一规格说明。</p>
+      <p>那怎么做出满意效果？他总结了三步，三步只有一个目的：把脑子里的判断，变成一张 AI 真正能看懂的“视频施工图”。</p>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-04.jpg" alt="讲述者竖起食指强调，字幕写这三步只有一个目的" loading="lazy">
+        <figcaption>[01:14] 三步总起：字幕“这三步只有一个目的”——把判断变成施工图。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="step1">
+      <div class="section-kicker">第一步 · 01:18–01:39</div>
+      <h2>先别让它剪，先要一份 Video Spec</h2>
+      <p>第一步：先别让它剪。先给它粗剪视频、完整文案和参考画面；字幕最好在剪映里导出 SRT，因为带时间线的字幕 AI 更容易理解。然后让它输出一份 Video Spec——也就是视频剪辑执行说明书：哪句真人全屏、哪句上卡片、哪句放大字、哪里要补录屏和真实素材，全部限定死。</p>
+      <ol class="step-list">
+        <li>输入：粗剪视频 + 完整文案 + 参考画面 + 剪映导出的 SRT</li>
+        <li>输出：Video Spec（语义拆解、画面布局、素材类型）</li>
+        <li>作用：这一步看着还没开剪，却直接决定后面会不会返工</li>
+      </ol>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-05.jpg" alt="Codex 对话界面显示用 Remotion 剪辑并先输出 Video Spec 的提示词，附件含粗剪视频与 SRT" loading="lazy">
+        <figcaption>[01:27] 实际提示词界面：要求先做横向口播的 Video Spec，不要直接剪全片；附件含无字幕视频、SRT 与文案。</figcaption>
+      </figure>
+      <blockquote class="quote">可见界面要求：先做 Video Spec；输出前 30 秒语义拆解、对应画面布局，以及哪些段落用真人全屏。</blockquote>
+    </section>
+
+    <section class="story-section" id="step2">
+      <div class="section-kicker">第二步 · 01:39–01:54</div>
+      <h2>只剪 30 秒，本地预览再 battle</h2>
+      <p>第二步：让它先只剪辑 30 秒，目的是测效果。打开本地预览，检查人物有没有被挡住、卡片和口播有没有对上、字幕清不清楚、节奏对不对。你只改 30 秒；如果全片都按这个逻辑走，改的就是整条片。哪里不满意直接让它改——通常 battle 两三次，效果基本就稳了。</p>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-06.jpg" alt="讲述者身后浮现 Cursor、ChatGPT、Claude 图标，标题问AI正在让你变平庸，字幕写打开本地预览" loading="lazy">
+        <figcaption>[01:41] 第二步检查点：字幕“打开本地预览”；画面同时用标题强调“不是工具问题，是使用方式问题”。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="step3">
+      <div class="section-kicker">第三步 · 01:54–02:12</div>
+      <h2>别再说“高级一点”，给参考图让它复刻</h2>
+      <p>第三步被他称作做出真正高级感动效的关键：别再跟 AI 说“高级一点、再酷一点”——这种话几乎没用。他举例：某个动效是用一张图片让 Codex 复刻出来的；需求和参考图都讲清楚了，它才真正知道你要什么。</p>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-07.jpg" alt="讲述者身旁叠加 BMS Active Cell Balancing 动态图表，大字写高级感动效" loading="lazy">
+        <figcaption>[01:56] 高级感动效示例：右侧叠加 BMS 电池均衡动态图表，字幕强调“真正高级感动效的关键”。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="boundary">
+      <div class="section-kicker">边界与收束 · 02:12–03:01</div>
+      <h2>人做判断，AI 做执行；经验要沉淀成 skill</h2>
+      <p>他补了一句实话：网上一堆人吹嘘 AI 自动做视频、自动出文案；可现实是，招个新员工都得做 SOP 培训，何况是 AI。如果你的视频需要截图、真实案例、演示片段，这些 Codex 替你补不了；但像气口压缩这种机械活，可以设定规则、先出一版再人工检查。</p>
+      <p>AI 最擅长的是信息卡、动态图表、画面排版和动效封装。说白了：人负责内容判断和审美，AI 负责把这些判断快速执行出来。</p>
+      <figure>
+        <img src="assets/ai-video-edit-three-steps/shot-08.jpg" alt="黑白黄仁勋剪影搭配 NVIDIA 信息卡，大字标注动态图表" loading="lazy">
+        <figcaption>[02:32] 动态图表示例：信息卡 + 人物剪影的视觉包装，对应“AI 最擅长信息卡与动态图表”。</figcaption>
+      </figure>
+      <blockquote class="quote">“所以我对 AI 剪辑最大的改观，不是一句话自动出片，而是你能给自己搭一条视频生产线。” <small>— 约 02:37–02:43</small></blockquote>
+      <p>满意的动效、卡片、Video Spec 规则都可以不断沉淀；一条视频调好之后，别让经验只用一次——沉淀成专属 skill，下一条就能复用结构、自动避开上一条踩过的坑。片尾他表示提示词和模板已整理好，并自称“一只专场”，只研究 AI 怎么真正帮你干活。</p>
+      <div class="recap">
+        <h2>顺着视频带走的流程</h2>
+        <p>粗剪 + SRT + 参考图 → 先出 Video Spec → 只剪 30 秒本地预览并改两三次 → 用参考图要动效 → 把稳定规则沉淀成可复用 skill。这是一条操作生产线，不是“一句话成片”的神话。</p>
+      </div>
+    </section>
+  </article>
+
+  <section class="transcript-section" id="transcript">
+    <h2>详细文字转录</h2>
+    <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含“AA/AI”“口薄/口播”“剪用/剪映”“Vidiu Spike/Video Spec”“惹魔神/Remotion”等识别误差；未擅自改写。</p>
+    <ol class="transcript-list">
+      <li class="transcript-row" id="transcript-1">
+        <time datetime="PT0S">00:00</time>
+        <p>是我两个月前用Codex剪出来的效果</p>
+      </li>
+      <li class="transcript-row" id="transcript-2">
+        <time datetime="PT2S">00:02</time>
+        <p>而这是我现在用Codex剪出来的效果</p>
+      </li>
+      <li class="transcript-row" id="transcript-3">
+        <time datetime="PT4S">00:04</time>
+        <p>台湾一个人为什么差距这么大</p>
+      </li>
+      <li class="transcript-row" id="transcript-4">
+        <time datetime="PT6S">00:06</time>
+        <p>先说结论</p>
+      </li>
+      <li class="transcript-row" id="transcript-5">
+        <time datetime="PT6S">00:06</time>
+        <p>不是他突然变聪明了</p>
+      </li>
+      <li class="transcript-row" id="transcript-6">
+        <time datetime="PT7S">00:07</time>
+        <p>而是我终于搞懂了</p>
+      </li>
+      <li class="transcript-row" id="transcript-7">
+        <time datetime="PT8S">00:08</time>
+        <p>AA剪辑根本不是网上说的</p>
+      </li>
+      <li class="transcript-row" id="transcript-8">
+        <time datetime="PT10S">00:10</time>
+        <p>一句话就能出满意成片</p>
+      </li>
+      <li class="transcript-row" id="transcript-9">
+        <time datetime="PT11S">00:11</time>
+        <p>你现在看到的这些信息卡</p>
+      </li>
+      <li class="transcript-row" id="transcript-10">
+        <time datetime="PT12S">00:12</time>
+        <p>高级感掩饰</p>
+      </li>
+      <li class="transcript-row" id="transcript-11">
+        <time datetime="PT13S">00:13</time>
+        <p>还有跟着口薄蹦出来的图标动效</p>
+      </li>
+      <li class="transcript-row" id="transcript-12">
+        <time datetime="PT15S">00:15</time>
+        <p>全是我改对方法之后</p>
+      </li>
+      <li class="transcript-row" id="transcript-13">
+        <time datetime="PT16S">00:16</time>
+        <p>Codex自己做出来的</p>
+      </li>
+      <li class="transcript-row" id="transcript-14">
+        <time datetime="PT17S">00:17</time>
+        <p>而这些动效包装</p>
+      </li>
+      <li class="transcript-row" id="transcript-15">
+        <time datetime="PT18S">00:18</time>
+        <p>恰恰是传统剪辑里最难</p>
+      </li>
+      <li class="transcript-row" id="transcript-16">
+        <time datetime="PT20S">00:20</time>
+        <p>最耗时的部分</p>
+      </li>
+      <li class="transcript-row" id="transcript-17">
+        <time datetime="PT21S">00:21</time>
+        <p>而现在它已经能接受</p>
+      </li>
+      <li class="transcript-row" id="transcript-18">
+        <time datetime="PT22S">00:22</time>
+        <p>我70%的剪辑工作</p>
+      </li>
+      <li class="transcript-row" id="transcript-19">
+        <time datetime="PT23S">00:23</time>
+        <p>气口 字幕 排版 动效 全包</p>
+      </li>
+      <li class="transcript-row" id="transcript-20">
+        <time datetime="PT26S">00:26</time>
+        <p>这套视频</p>
+      </li>
+      <li class="transcript-row" id="transcript-21">
+        <time datetime="PT26S">00:26</time>
+        <p>我会把我最近半个月</p>
+      </li>
+      <li class="transcript-row" id="transcript-22">
+        <time datetime="PT27S">00:27</time>
+        <p>使操AA剪辑的完整流程</p>
+      </li>
+      <li class="transcript-row" id="transcript-23">
+        <time datetime="PT29S">00:29</time>
+        <p>一步不守的拆给你</p>
+      </li>
+      <li class="transcript-row" id="transcript-24">
+        <time datetime="PT30S">00:30</time>
+        <p>看完你就知道</p>
+      </li>
+      <li class="transcript-row" id="transcript-25">
+        <time datetime="PT30S">00:30</time>
+        <p>这让Codex做什么</p>
+      </li>
+      <li class="transcript-row" id="transcript-26">
+        <time datetime="PT31S">00:31</time>
+        <p>怎么调效果</p>
+      </li>
+      <li class="transcript-row" id="transcript-27">
+        <time datetime="PT32S">00:32</time>
+        <p>怎么把它减收你自己的风格</p>
+      </li>
+      <li class="transcript-row" id="transcript-28">
+        <time datetime="PT34S">00:34</time>
+        <p>先说</p>
+      </li>
+      <li class="transcript-row" id="transcript-29">
+        <time datetime="PT34S">00:34</time>
+        <p>为什么大部分人用Codex</p>
+      </li>
+      <li class="transcript-row" id="transcript-30">
+        <time datetime="PT35S">00:35</time>
+        <p>剪出来的效果都很烂</p>
+      </li>
+      <li class="transcript-row" id="transcript-31">
+        <time datetime="PT37S">00:37</time>
+        <p>我第一次做的时候</p>
+      </li>
+      <li class="transcript-row" id="transcript-32">
+        <time datetime="PT38S">00:38</time>
+        <p>直接把口薄丢进去</p>
+      </li>
+      <li class="transcript-row" id="transcript-33">
+        <time datetime="PT39S">00:39</time>
+        <p>说加点高级动效</p>
+      </li>
+      <li class="transcript-row" id="transcript-34">
+        <time datetime="PT40S">00:40</time>
+        <p>帮我剪出重片</p>
+      </li>
+      <li class="transcript-row" id="transcript-35">
+        <time datetime="PT41S">00:41</time>
+        <p>结果</p>
+      </li>
+      <li class="transcript-row" id="transcript-36">
+        <time datetime="PT41S">00:41</time>
+        <p>画面和口薄完全对不上</p>
+      </li>
+      <li class="transcript-row" id="transcript-37">
+        <time datetime="PT42S">00:42</time>
+        <p>卡片重点也完全错</p>
+      </li>
+      <li class="transcript-row" id="transcript-38">
+        <time datetime="PT44S">00:44</time>
+        <p>我一对以为是Codex不行</p>
+      </li>
+      <li class="transcript-row" id="transcript-39">
+        <time datetime="PT45S">00:45</time>
+        <p>后来才反应过来</p>
+      </li>
+      <li class="transcript-row" id="transcript-40">
+        <time datetime="PT46S">00:46</time>
+        <p>我懂为让他同时猜四件事</p>
+      </li>
+      <li class="transcript-row" id="transcript-41">
+        <time datetime="PT47S">00:47</time>
+        <p>内容重点 画面形式</p>
+      </li>
+      <li class="transcript-row" id="transcript-42">
+        <time datetime="PT49S">00:49</time>
+        <p>用什么素材</p>
+      </li>
+      <li class="transcript-row" id="transcript-43">
+        <time datetime="PT49S">00:49</time>
+        <p>还有我的审美</p>
+      </li>
+      <li class="transcript-row" id="transcript-44">
+        <time datetime="PT50S">00:50</time>
+        <p>你不给剪辑师任何的信息</p>
+      </li>
+      <li class="transcript-row" id="transcript-45">
+        <time datetime="PT52S">00:52</time>
+        <p>就让他教成片</p>
+      </li>
+      <li class="transcript-row" id="transcript-46">
+        <time datetime="PT52S">00:52</time>
+        <p>他也只能瞎猜</p>
+      </li>
+      <li class="transcript-row" id="transcript-47">
+        <time datetime="PT53S">00:53</time>
+        <p>然后给你一个最普通的版本</p>
+      </li>
+      <li class="transcript-row" id="transcript-48">
+        <time datetime="PT55S">00:55</time>
+        <p>这里有个关键认知</p>
+      </li>
+      <li class="transcript-row" id="transcript-49">
+        <time datetime="PT56S">00:56</time>
+        <p>Codex不是剪用那种</p>
+      </li>
+      <li class="transcript-row" id="transcript-50">
+        <time datetime="PT57S">00:57</time>
+        <p>传统的剪辑转件</p>
+      </li>
+      <li class="transcript-row" id="transcript-51">
+        <time datetime="PT58S">00:58</time>
+        <p>在我的这套流程里</p>
+      </li>
+      <li class="transcript-row" id="transcript-52">
+        <time datetime="PT59S">00:59</time>
+        <p>它更像是一个</p>
+      </li>
+      <li class="transcript-row" id="transcript-53">
+        <time datetime="PT59S">00:59</time>
+        <p>会写惹魔神代码的剪辑助理</p>
+      </li>
+      <li class="transcript-row" id="transcript-54">
+        <time datetime="PT61S">01:01</time>
+        <p>卡片 图表 转场</p>
+      </li>
+      <li class="transcript-row" id="transcript-55">
+        <time datetime="PT62S">01:02</time>
+        <p>它都可以按照规则</p>
+      </li>
+      <li class="transcript-row" id="transcript-56">
+        <time datetime="PT63S">01:03</time>
+        <p>精准之行</p>
+      </li>
+      <li class="transcript-row" id="transcript-57">
+        <time datetime="PT64S">01:04</time>
+        <p>但它不知道你心里的高级</p>
+      </li>
+      <li class="transcript-row" id="transcript-58">
+        <time datetime="PT66S">01:06</time>
+        <p>到底找什么样</p>
+      </li>
+      <li class="transcript-row" id="transcript-59">
+        <time datetime="PT66S">01:06</time>
+        <p>也不知道哪句话</p>
+      </li>
+      <li class="transcript-row" id="transcript-60">
+        <time datetime="PT67S">01:07</time>
+        <p>改配什么画面</p>
+      </li>
+      <li class="transcript-row" id="transcript-61">
+        <time datetime="PT68S">01:08</time>
+        <p>你让它自由发挥</p>
+      </li>
+      <li class="transcript-row" id="transcript-62">
+        <time datetime="PT69S">01:09</time>
+        <p>那么就是纯抽卡</p>
+      </li>
+      <li class="transcript-row" id="transcript-63">
+        <time datetime="PT70S">01:10</time>
+        <p>那到底怎么做出满意的效果</p>
+      </li>
+      <li class="transcript-row" id="transcript-64">
+        <time datetime="PT72S">01:12</time>
+        <p>我插上了三部</p>
+      </li>
+      <li class="transcript-row" id="transcript-65">
+        <time datetime="PT73S">01:13</time>
+        <p>这三部只有一个目的</p>
+      </li>
+      <li class="transcript-row" id="transcript-66">
+        <time datetime="PT74S">01:14</time>
+        <p>把你脑子里的判断</p>
+      </li>
+      <li class="transcript-row" id="transcript-67">
+        <time datetime="PT75S">01:15</time>
+        <p>变成一张他真正能看懂的</p>
+      </li>
+      <li class="transcript-row" id="transcript-68">
+        <time datetime="PT76S">01:16</time>
+        <p>视频施工图</p>
+      </li>
+      <li class="transcript-row" id="transcript-69">
+        <time datetime="PT77S">01:17</time>
+        <p>首先一部</p>
+      </li>
+      <li class="transcript-row" id="transcript-70">
+        <time datetime="PT78S">01:18</time>
+        <p>先别让他剪</p>
+      </li>
+      <li class="transcript-row" id="transcript-71">
+        <time datetime="PT79S">01:19</time>
+        <p>先给他粗点视频</p>
+      </li>
+      <li class="transcript-row" id="transcript-72">
+        <time datetime="PT80S">01:20</time>
+        <p>弯转的文案和三个画面</p>
+      </li>
+      <li class="transcript-row" id="transcript-73">
+        <time datetime="PT81S">01:21</time>
+        <p>四部最好是在剪用里面导出SRT</p>
+      </li>
+      <li class="transcript-row" id="transcript-74">
+        <time datetime="PT83S">01:23</time>
+        <p>因为在时间线</p>
+      </li>
+      <li class="transcript-row" id="transcript-75">
+        <time datetime="PT84S">01:24</time>
+        <p>AI更容易理解</p>
+      </li>
+      <li class="transcript-row" id="transcript-76">
+        <time datetime="PT85S">01:25</time>
+        <p>然后让他输出一份</p>
+      </li>
+      <li class="transcript-row" id="transcript-77">
+        <time datetime="PT86S">01:26</time>
+        <p>Vidiu Spike</p>
+      </li>
+      <li class="transcript-row" id="transcript-78">
+        <time datetime="PT87S">01:27</time>
+        <p>也就是视频剪辑执行说明书</p>
+      </li>
+      <li class="transcript-row" id="transcript-79">
+        <time datetime="PT89S">01:29</time>
+        <p>哪句真人全评</p>
+      </li>
+      <li class="transcript-row" id="transcript-80">
+        <time datetime="PT90S">01:30</time>
+        <p>哪句上卡片</p>
+      </li>
+      <li class="transcript-row" id="transcript-81">
+        <time datetime="PT91S">01:31</time>
+        <p>哪句放大字</p>
+      </li>
+      <li class="transcript-row" id="transcript-82">
+        <time datetime="PT92S">01:32</time>
+        <p>哪里要补录屏和真实素材</p>
+      </li>
+      <li class="transcript-row" id="transcript-83">
+        <time datetime="PT93S">01:33</time>
+        <p>全部限定死</p>
+      </li>
+      <li class="transcript-row" id="transcript-84">
+        <time datetime="PT94S">01:34</time>
+        <p>这一部看着没有再剪</p>
+      </li>
+      <li class="transcript-row" id="transcript-85">
+        <time datetime="PT95S">01:35</time>
+        <p>却直接决定了后面</p>
+      </li>
+      <li class="transcript-row" id="transcript-86">
+        <time datetime="PT96S">01:36</time>
+        <p>会不会反攻</p>
+      </li>
+      <li class="transcript-row" id="transcript-87">
+        <time datetime="PT97S">01:37</time>
+        <p>第二部让他先只剪辑30秒</p>
+      </li>
+      <li class="transcript-row" id="transcript-88">
+        <time datetime="PT99S">01:39</time>
+        <p>目的是先测效果</p>
+      </li>
+      <li class="transcript-row" id="transcript-89">
+        <time datetime="PT100S">01:40</time>
+        <p>打开本地预览</p>
+      </li>
+      <li class="transcript-row" id="transcript-90">
+        <time datetime="PT101S">01:41</time>
+        <p>看人物有没有被挡住</p>
+      </li>
+      <li class="transcript-row" id="transcript-91">
+        <time datetime="PT102S">01:42</time>
+        <p>卡片和口播有没有对得上</p>
+      </li>
+      <li class="transcript-row" id="transcript-92">
+        <time datetime="PT104S">01:44</time>
+        <p>字幕清不清楚</p>
+      </li>
+      <li class="transcript-row" id="transcript-93">
+        <time datetime="PT104S">01:44</time>
+        <p>要么也不对</p>
+      </li>
+      <li class="transcript-row" id="transcript-94">
+        <time datetime="PT105S">01:45</time>
+        <p>你只改30秒</p>
+      </li>
+      <li class="transcript-row" id="transcript-95">
+        <time datetime="PT106S">01:46</time>
+        <p>如果全片都按照这个逻辑走</p>
+      </li>
+      <li class="transcript-row" id="transcript-96">
+        <time datetime="PT108S">01:48</time>
+        <p>你改的就是整条片</p>
+      </li>
+      <li class="transcript-row" id="transcript-97">
+        <time datetime="PT109S">01:49</time>
+        <p>哪里不满意</p>
+      </li>
+      <li class="transcript-row" id="transcript-98">
+        <time datetime="PT110S">01:50</time>
+        <p>直接让他改</p>
+      </li>
+      <li class="transcript-row" id="transcript-99">
+        <time datetime="PT110S">01:50</time>
+        <p>你会发现</p>
+      </li>
+      <li class="transcript-row" id="transcript-100">
+        <time datetime="PT111S">01:51</time>
+        <p>这么难会battle两三次</p>
+      </li>
+      <li class="transcript-row" id="transcript-101">
+        <time datetime="PT112S">01:52</time>
+        <p>效果基本就稳了</p>
+      </li>
+      <li class="transcript-row" id="transcript-102">
+        <time datetime="PT113S">01:53</time>
+        <p>第三部</p>
+      </li>
+      <li class="transcript-row" id="transcript-103">
+        <time datetime="PT114S">01:54</time>
+        <p>也是能做出真正</p>
+      </li>
+      <li class="transcript-row" id="transcript-104">
+        <time datetime="PT115S">01:55</time>
+        <p>高级感动效的关键</p>
+      </li>
+      <li class="transcript-row" id="transcript-105">
+        <time datetime="PT116S">01:56</time>
+        <p>别再跟AI说</p>
+      </li>
+      <li class="transcript-row" id="transcript-106">
+        <time datetime="PT117S">01:57</time>
+        <p>高级一点</p>
+      </li>
+      <li class="transcript-row" id="transcript-107">
+        <time datetime="PT117S">01:57</time>
+        <p>再酷一点</p>
+      </li>
+      <li class="transcript-row" id="transcript-108">
+        <time datetime="PT118S">01:58</time>
+        <p>这种话对他几乎没用</p>
+      </li>
+      <li class="transcript-row" id="transcript-109">
+        <time datetime="PT125S">02:05</time>
+        <p>比如这个动效</p>
+      </li>
+      <li class="transcript-row" id="transcript-110">
+        <time datetime="PT126S">02:06</time>
+        <p>就是我用一张图片</p>
+      </li>
+      <li class="transcript-row" id="transcript-111">
+        <time datetime="PT127S">02:07</time>
+        <p>让Codex给我复刻出来的</p>
+      </li>
+      <li class="transcript-row" id="transcript-112">
+        <time datetime="PT129S">02:09</time>
+        <p>需求和三口都讲清楚了</p>
+      </li>
+      <li class="transcript-row" id="transcript-113">
+        <time datetime="PT130S">02:10</time>
+        <p>他才真正知道你要什么</p>
+      </li>
+      <li class="transcript-row" id="transcript-114">
+        <time datetime="PT131S">02:11</time>
+        <p>但是这里</p>
+      </li>
+      <li class="transcript-row" id="transcript-115">
+        <time datetime="PT132S">02:12</time>
+        <p>我必须说一句实话</p>
+      </li>
+      <li class="transcript-row" id="transcript-116">
+        <time datetime="PT133S">02:13</time>
+        <p>网上一堆人处于</p>
+      </li>
+      <li class="transcript-row" id="transcript-117">
+        <time datetime="PT134S">02:14</time>
+        <p>AI自动做视频</p>
+      </li>
+      <li class="transcript-row" id="transcript-118">
+        <time datetime="PT135S">02:15</time>
+        <p>自动出文案</p>
+      </li>
+      <li class="transcript-row" id="transcript-119">
+        <time datetime="PT136S">02:16</time>
+        <p>可现实是</p>
+      </li>
+      <li class="transcript-row" id="transcript-120">
+        <time datetime="PT137S">02:17</time>
+        <p>你照个新员工</p>
+      </li>
+      <li class="transcript-row" id="transcript-121">
+        <time datetime="PT138S">02:18</time>
+        <p>都得做SOP培训</p>
+      </li>
+      <li class="transcript-row" id="transcript-122">
+        <time datetime="PT139S">02:19</time>
+        <p>何况是AI呢</p>
+      </li>
+      <li class="transcript-row" id="transcript-123">
+        <time datetime="PT140S">02:20</time>
+        <p>对吧</p>
+      </li>
+      <li class="transcript-row" id="transcript-124">
+        <time datetime="PT140S">02:20</time>
+        <p>如果你的视频需要截图</p>
+      </li>
+      <li class="transcript-row" id="transcript-125">
+        <time datetime="PT141S">02:21</time>
+        <p>真实案例</p>
+      </li>
+      <li class="transcript-row" id="transcript-126">
+        <time datetime="PT142S">02:22</time>
+        <p>演示片段</p>
+      </li>
+      <li class="transcript-row" id="transcript-127">
+        <time datetime="PT143S">02:23</time>
+        <p>这些Codex听你补不了</p>
+      </li>
+      <li class="transcript-row" id="transcript-128">
+        <time datetime="PT145S">02:25</time>
+        <p>但像气口压缩这种机械活</p>
+      </li>
+      <li class="transcript-row" id="transcript-129">
+        <time datetime="PT146S">02:26</time>
+        <p>你都完全可以给它设定好规则</p>
+      </li>
+      <li class="transcript-row" id="transcript-130">
+        <time datetime="PT148S">02:28</time>
+        <p>先出一版在人工检查</p>
+      </li>
+      <li class="transcript-row" id="transcript-131">
+        <time datetime="PT149S">02:29</time>
+        <p>AI最擅长的是信息卡</p>
+      </li>
+      <li class="transcript-row" id="transcript-132">
+        <time datetime="PT151S">02:31</time>
+        <p>动态图表</p>
+      </li>
+      <li class="transcript-row" id="transcript-133">
+        <time datetime="PT152S">02:32</time>
+        <p>画面排版和动效双层</p>
+      </li>
+      <li class="transcript-row" id="transcript-134">
+        <time datetime="PT153S">02:33</time>
+        <p>说白了</p>
+      </li>
+      <li class="transcript-row" id="transcript-135">
+        <time datetime="PT154S">02:34</time>
+        <p>人负责内容判断和审美</p>
+      </li>
+      <li class="transcript-row" id="transcript-136">
+        <time datetime="PT155S">02:35</time>
+        <p>AI负责把这些判断</p>
+      </li>
+      <li class="transcript-row" id="transcript-137">
+        <time datetime="PT156S">02:36</time>
+        <p>快速执行出来</p>
+      </li>
+      <li class="transcript-row" id="transcript-138">
+        <time datetime="PT157S">02:37</time>
+        <p>所以我对AI解极最大的改观</p>
+      </li>
+      <li class="transcript-row" id="transcript-139">
+        <time datetime="PT159S">02:39</time>
+        <p>不是一句话自动出片</p>
+      </li>
+      <li class="transcript-row" id="transcript-140">
+        <time datetime="PT160S">02:40</time>
+        <p>而是</p>
+      </li>
+      <li class="transcript-row" id="transcript-141">
+        <time datetime="PT161S">02:41</time>
+        <p>你能给自己搭一条视频生产线</p>
+      </li>
+      <li class="transcript-row" id="transcript-142">
+        <time datetime="PT163S">02:43</time>
+        <p>满意的动效</p>
+      </li>
+      <li class="transcript-row" id="transcript-143">
+        <time datetime="PT163S">02:43</time>
+        <p>卡片</p>
+      </li>
+      <li class="transcript-row" id="transcript-144">
+        <time datetime="PT164S">02:44</time>
+        <p>Vidus Pack的规则</p>
+      </li>
+      <li class="transcript-row" id="transcript-145">
+        <time datetime="PT165S">02:45</time>
+        <p>都可以不断沉淀下来</p>
+      </li>
+      <li class="transcript-row" id="transcript-146">
+        <time datetime="PT166S">02:46</time>
+        <p>一条视频调好之后</p>
+      </li>
+      <li class="transcript-row" id="transcript-147">
+        <time datetime="PT167S">02:47</time>
+        <p>并而这些经验只用一次</p>
+      </li>
+      <li class="transcript-row" id="transcript-148">
+        <time datetime="PT169S">02:49</time>
+        <p>把它沉淀成一个专属的skill</p>
+      </li>
+      <li class="transcript-row" id="transcript-149">
+        <time datetime="PT170S">02:50</time>
+        <p>下一条视频</p>
+      </li>
+      <li class="transcript-row" id="transcript-150">
+        <time datetime="PT171S">02:51</time>
+        <p>它就能复用上一条的结构</p>
+      </li>
+      <li class="transcript-row" id="transcript-151">
+        <time datetime="PT172S">02:52</time>
+        <p>你能自动避开上一条采物的空</p>
+      </li>
+      <li class="transcript-row" id="transcript-152">
+        <time datetime="PT174S">02:54</time>
+        <p>这套AI解极方法</p>
+      </li>
+      <li class="transcript-row" id="transcript-153">
+        <time datetime="PT175S">02:55</time>
+        <p>提示词和模板</p>
+      </li>
+      <li class="transcript-row" id="transcript-154">
+        <time datetime="PT176S">02:56</time>
+        <p>我已经全部整理好了</p>
+      </li>
+      <li class="transcript-row" id="transcript-155">
+        <time datetime="PT177S">02:57</time>
+        <p>直接拿去用</p>
+      </li>
+      <li class="transcript-row" id="transcript-156">
+        <time datetime="PT178S">02:58</time>
+        <p>我是一只专长</p>
+      </li>
+      <li class="transcript-row" id="transcript-157">
+        <time datetime="PT179S">02:59</time>
+        <p>只研究AI怎么真正帮你干活</p>
+      </li>
+      <li class="transcript-row" id="transcript-158">
+        <time datetime="PT181S">03:01</time>
+        <p>下期见</p>
+      </li></ol>
+  </section>
+
+  <p class="footer">双轨产物之一 · 图文实录 · 生成自小红书视频自动化工作流</p>
+
+  </main>
+</body>
+</html>
