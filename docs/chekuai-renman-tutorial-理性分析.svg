@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6789" viewBox="0 0 1320 6789">
+  <foreignObject x="0" y="0" width="1320" height="6789">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stance-item{background:#f8fafc;border-radius:12px;padding:16px;font-size:14px;line-height:1.7;color:#475569}
+.stance-item strong{display:block;color:#1e40af;margin-bottom:8px}</style>
+      
+<div class="container">
+  <h1>车快人慢教程</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">44秒</span>
+    <span class="tag tag-purple">手机摄影</span>
+    <span class="tag tag-orange">剪映 / 延时</span>
+    <span class="tag tag-gray">理性分析</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/rU0NBm5PMA">原视频：车快人慢教程</a>
+  <div class="summary-line">
+    核心判断：「车快人慢」不是单次超长曝光魔法，而是<span class="key-data">同机位双素材</span> + <span class="key-data">分层变速</span> + <span class="key-data">空间蒙版</span>：延时车流负责「快」，画中画人物降到约 0.3x 负责「慢」，线性蒙版按马路/人行道切开后再羽化融合。
+  </div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">成品抛问：车快人慢怎么拍</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:03</div><div class="timeline-text">固定手机，拍人物迎面走来</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:07</div><div class="timeline-text">机位不动，延时拍约 10 分钟车流</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:11</div><div class="timeline-text">导入两段；人物切画中画</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:15</div><div class="timeline-text">变速约 0.3x + 智能补帧</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:18</div><div class="timeline-text">线性蒙版分界 + 羽化融合</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:26</div><div class="timeline-text">配乐、删多余、导出成品</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>如何做出车快人慢</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">证据<br/>同机位双轨素材</div>
+      <div class="arrow">→</div>
+      <div class="node">判断<br/>速度差来自分层</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">行动<br/>画中画+蒙版羽化</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解纠偏</h3>
+    <p>误区一：以为必须用单反超长曝光一次成型。本片路径是手机固定机位 + 延时车流 + 后期叠层。</p>
+    <p>误区二：以为人物也要延时。作者明确先拍正常人物走位，再用剪辑把人物层降速。</p>
+    <p>误区三：只调透明度而不做空间分割。关键是线性蒙版把「马路侧快车流」与「人行道侧慢人物」切开，再羽化。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">一、拍摄层：同机位制造可对齐素材</h2>
+    <div class="card card-green">
+      <h3>在讲什么</h3>
+      <p>先固定手机拍人物迎面走来，再保持机位不动，用延时摄影拍约十分钟车流。</p>
+      <div class="quote">「固定手机，先拍一段人物迎面走来的视频……保持机位不动，用延时摄影功能，再拍一段十分钟左右的车流视频。」</div>
+      <div class="insight">关键理解：两段素材必须共享同一透视与地平线，后期蒙版才有「可对齐的空间」。机位一晃，分界线就会穿帮。</div>
+      <div class="action">怎么用：三脚架锁死构图；人物段走完整路径；车流段宁可多拍几分钟，给延时压缩留余量。</div>
+      <div class="relation">原文依据：00:03–00:11 拍摄步骤口播 + 画面字幕。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">二、剪辑层：用速度差制造「车快 / 人慢」</h2>
+    <div class="card card-purple">
+      <h3>UP 主观点（明确立场）</h3>
+      <p>把人物视频切画中画，变速到约 0.3，并勾选智能补帧。</p>
+      <div class="quote">「将人物视频切画中画……将速度调至 0.3 左右，并勾选智能补帧。」</div>
+      <div class="highlight">画面证据：变速面板显示时长约 5.7s → 18.9s，滑块停在 0.3x 附近。</div>
+      <div class="insight">关键理解：车流层继承延时「快」；人物层靠 0.3x「慢」。效果来自层间相对速度，不是单层滤镜。</div>
+      <div class="action">怎么用：先叠画中画再变速；智能补帧用于减缓卡顿，但仍属剪映功能建议，非光学必选项。</div>
+      <div class="relation">原文依据：00:11–00:18；属 UP 主操作建议。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">三、融合层：蒙版负责空间，羽化负责观感</h2>
+    <div class="card">
+      <h3>在讲什么</h3>
+      <p>给画中画加线性蒙版，把蒙版线放在人物与车流中间，再轻拉羽化使画面融合。</p>
+      <div class="quote">「调整蒙版线放在人物与车流中间，轻拉羽化使画面融合。」</div>
+      <div class="insight">关键理解：蒙版决定「哪一侧显示哪一层」；羽化决定交界是否自然。二者缺一，要么穿帮，要么硬边。</div>
+      <div class="action">怎么用：沿马路边缘/人行道分界线旋转线性蒙版；羽化从小幅度试起，避免人物脚边发虚。</div>
+      <div class="relation">原文依据：00:18–00:26；画面字幕确认「轻拉羽化」。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>风险与避坑</h3>
+      <div class="pitfall">机位不一致：人物段与车流段若轻微平移/俯仰变化，蒙版线无法同时贴合两层。</div>
+      <div class="pitfall">人物走进马路侧：若走位越过预设分界，会被车流层「切掉」或穿帮，需预留人行道安全区。</div>
+      <div class="pitfall">羽化过大：人物轮廓变糊；羽化过小：出现硬切线。</div>
+      <div class="pitfall">忽略尾部修剪：延时车流更长时，不删多余尾片会拖垮节奏。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：三种「车流+人物」做法</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>做法</th>
+          <th>速度来源</th>
+          <th>适用条件</th>
+          <th>主要上限</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>本片：双素材 + 画中画蒙版</td>
+          <td>延时车流 + 人物 0.3x</td>
+          <td>可固定机位、人物走位可控</td>
+          <td>依赖后期对齐；蒙版边界要稳</td>
+        </tr>
+        <tr>
+          <td>单次长曝光摄影（补充资料）</td>
+          <td>快门时间拉长</td>
+          <td>人物需尽量静止或多次合成</td>
+          <td>人物易糊；手机可控性弱</td>
+        </tr>
+        <tr>
+          <td>全程手持跟拍（对比）</td>
+          <td>实时相对运动</td>
+          <td>动态叙事、不要求光轨</td>
+          <td>难得到稳定「车快人慢」光轨感</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>表中「单次长曝光」标为补充资料，视频未展开；本片证据链只支撑双素材剪辑路径。</p>
+  </div>
+
+  <div class="card">
+    <h3>立场分层</h3>
+    <div class="stance-grid">
+      <div class="stance-item">
+        <strong>可验证事实</strong>
+        视频演示固定机位、延时车流、画中画、约 0.3x 变速、线性蒙版与羽化；剪映界面出现对应控件。
+      </div>
+      <div class="stance-item">
+        <strong>UP 主观点</strong>
+        「很简单」；建议车流拍约 10 分钟；速度调至 0.3 左右并勾选智能补帧。
+      </div>
+      <div class="stance-item">
+        <strong>基于原文的推断</strong>
+        效果成立的核心是「同透视双层 + 空间分割」；机位一致比设备档次更关键。
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-red">
+    <h3>方法边界</h3>
+    <p><strong>适用：</strong>夜景/车灯丰富、人行道与马路分界清晰、可架设三脚架的街头场景；剪映或同类支持画中画/蒙版/变速的 App。</p>
+    <p><strong>上限：</strong>白天车流光轨弱；人物频繁越过马路分界；强风晃动三脚架会破坏对齐。</p>
+    <p><strong>反例：</strong>两段素材机位不同、人物段本身已是延时、或不加蒙版只靠透明度硬叠——都难以稳定复现片中效果。</p>
+    <p><strong>例外：</strong>若使用带运动跟踪/深度抠像的高级工具，可不走线性蒙版，但已超出本片操作范围。</p>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>车快人慢 = 同机位双素材的相对速度差，不是单层滤镜。</li>
+      <li>拍摄锁死机位；剪辑用画中画承载「慢人物」。</li>
+      <li>线性蒙版按空间切开，羽化负责交界观感。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>选好人行道与马路分界清晰的夜景点，架稳三脚架。</li>
+      <li>先拍人物迎面完整走位；再同机位延时拍车流约 10 分钟。</li>
+      <li>导入剪映：人物切画中画 → 约 0.3x + 智能补帧。</li>
+      <li>加线性蒙版，分界落在人与车之间，轻拉羽化。</li>
+      <li>配乐、修剪多余尾片后导出，回看分界是否穿帮。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「找一个神奇快门」转向「设计可对齐的双层时间线」：先保证空间一致，再用速度差与蒙版完成视觉分工。</p>
+  </div>
+
+  <p class="footer">双轨产物 · 理性分析 · 基于同一 Whisper 转录与画面字幕</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
