@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6327" viewBox="0 0 1320 6327">
+  <foreignObject x="0" y="0" width="1320" height="6327">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+.page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}.tag-red{background:#fee2e2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#64748b;font-size:13px;padding:32px 0 16px}.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.stance-grid .card{padding:22px;margin:0}.small{font-size:14px;color:#64748b}
+</style>
+      
+<div class="page">
+  <div class="container">
+    <h1>成熟男人的穿衣搭配之道</h1>
+    <div class="meta">
+      <span class="tag tag-blue">小红书</span>
+      <span class="tag tag-green">13 秒</span>
+      <span class="tag tag-purple">男士穿搭</span>
+      <span class="tag tag-gray">理性分析视角</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/1IfjYhbOQTS">原视频：xhslink.cn/o/1IfjYhbOQTS</a>
+    <div class="summary-line"><strong>核心判断：</strong>基础色造型缺少变化时，不必同时更换全部单品；材质、结构、明暗和配饰都能作为单一“增量变量”。视频给出的是四个快速示范，不是无条件适用的穿衣定律。</div>
+
+    <div class="timeline">
+      <h3>关键证据时间轴</h3>
+      <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">米色上衣、长裤与鞋构成近似同色的起始造型。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:03</span><span class="timeline-text">画面字幕“增加纹理层次感”，叠加深棕色衬衫式外层。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">白衬衫与米白长裤旁加入棕色结构感手提包。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">藏蓝上衣、深灰长裤搭配浅米色鞋，脚下成为提亮点。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">白 T 造型叠加项链、手链、腕表、墨镜与棕色手包。</span></div>
+    </div>
+
+    <div class="map">
+      <h2>核心脉络</h2>
+      <div class="diagram">
+        <div class="node">问题<br/><span class="small">基础色造型偏平</span></div>
+        <div class="arrow">→</div>
+        <div class="node">判断<br/><span class="small">缺少可见层次</span></div>
+        <div class="arrow">→</div>
+        <div class="node node-green">四类变量<br/><span class="small">材质 · 结构 · 明暗 · 配饰</span></div>
+        <div class="arrow">→</div>
+        <div class="node node-orange">行动<br/><span class="small">每次先改一个变量</span></div>
+      </div>
+      <p class="relation">证据关系：视频通过五套前后造型展示“加入变量后的视觉差异”；它能支持造型变化的存在，但没有比较不同身材、场合或预算下的效果。</p>
+    </div>
+
+    <div class="correction">
+      <h3>认知纠偏：简单不等于必须堆满配饰</h3>
+      <p>结尾一次展示了多件配饰，但这只是示范画面。更可执行的原则是从一个视觉焦点开始，确认颜色与正式度协调后再增加，而不是复制所有单品。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">四种增量方法：讲什么、怎么理解、如何使用</h2>
+
+      <div class="card">
+        <h3>01 · 材质层次：相近颜色也能有前后关系</h3>
+        <p><strong>在讲什么：</strong>米色内搭外叠穿深棕色衬衫式外套。</p>
+        <p><strong>关键理解：</strong>层次不只来自色相；面料、开合方式和明度差也会分割轮廓。</p>
+        <div class="action"><strong>怎么用：</strong>保留内搭与裤装，先增加一件纹理明显、明度略深的开放式外层。</div>
+        <div class="quote"><strong>原文依据：</strong>[00:03] Whisper：“加一种细细的颜色”；画面中英字幕明确写“增加纹理层次感 / add a textured layer”。</div>
+        <div class="pitfall"><strong>适用边界：</strong>炎热天气、严格正装场合或本就有复杂花纹时，额外叠层可能增加闷热或视觉噪声。</div>
+      </div>
+
+      <div class="card card-green">
+        <h3>02 · 结构包袋：用轮廓建立视觉锚点</h3>
+        <p><strong>在讲什么：</strong>浅色衬衫与长裤旁加入棕色硬挺手提包。</p>
+        <p><strong>关键理解：</strong>“结构感”来自清晰边缘和稳定体积，不只是包的颜色。</p>
+        <div class="action"><strong>怎么用：</strong>造型线条柔和时，可试一只轮廓方正、颜色与腰带或鞋呼应的包。</div>
+        <div class="quote"><strong>原文依据：</strong>[00:06] 画面字幕“要拎个有结构的包做配饰 / add a structured bag”。Whisper 此段误识别为“加一种细细的颜色”。</div>
+        <div class="pitfall"><strong>适用边界：</strong>包型需符合携带需求与场合；“硬挺”并不自动等于高级，也不能替代比例和合身度。</div>
+      </div>
+
+      <div class="card card-orange">
+        <h3>03 · 浅色鞋：在深色下装末端留出亮点</h3>
+        <p><strong>在讲什么：</strong>深色上衣与长裤搭配浅米色乐福鞋。</p>
+        <p><strong>关键理解：</strong>小面积明度对比可打断从上到下的深色块，让视线有落点。</p>
+        <div class="action"><strong>怎么用：</strong>先检查鞋与裤脚的正式度，再从米白、浅棕等低饱和浅色尝试。</div>
+        <div class="quote"><strong>原文依据：</strong>[00:09] 画面字幕“请搭配浅色鞋子 / add light shoes”；Whisper：“加一种小的颜色”。</div>
+        <div class="pitfall"><strong>适用边界：</strong>正式商务、礼服规范或恶劣天气可能要求深色鞋；强对比也可能缩短腿部视觉连贯性。</div>
+      </div>
+
+      <div class="card card-purple">
+        <h3>04 · 配饰叠加：把信息集中到局部</h3>
+        <p><strong>在讲什么：</strong>白 T 与浅裤基础上加入项链、腕间配饰、墨镜和手包。</p>
+        <p><strong>关键理解：</strong>基础单品提供留白，配饰通过材质、反光和小面积色彩增加信息。</p>
+        <div class="action"><strong>怎么用：</strong>先选一个主配饰，再用一件次要配饰呼应同类金属或皮革颜色。</div>
+        <div class="quote"><strong>原文依据：</strong>[00:10–00:13] 画面字幕“如果您的服装简单，请堆叠些配饰 / stack the accessories”；Whisper：“如果你的项目是一种简单的颜色，放入手袋”。</div>
+        <div class="pitfall"><strong>适用边界：</strong>配饰数量取决于职业规范、个人气质与安全需求；多并不天然优于少。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>横向对比：先改哪个变量？</h2>
+      <table>
+        <tr><th>方法</th><th>主要改变</th><th>适合起点</th><th>主要风险</th></tr>
+        <tr><td>纹理外层</td><td>面料与前后层次</td><td>同色、平面、天气允许叠穿</td><td>闷热或显臃肿</td></tr>
+        <tr><td>结构包袋</td><td>轮廓与视觉重心</td><td>浅色、线条偏柔和</td><td>只顾造型忽略实用</td></tr>
+        <tr><td>浅色鞋</td><td>脚下明度对比</td><td>衣裤整体偏深</td><td>场合不符或对比过强</td></tr>
+        <tr><td>局部配饰</td><td>细节与材质信息</td><td>单品基础、留白较多</td><td>堆叠过量、焦点分散</td></tr>
+      </table>
+      <p class="highlight"><strong>选择规则：</strong>先判断造型缺的是“层次、轮廓、明度还是细节”，一次只引入一个主要变量，观察整体后再加第二个。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">立场分层与证据强度</h2>
+      <div class="stance-grid">
+        <div class="card card-green">
+          <h3>可验证事实</h3>
+          <p>视频时长约 13 秒；画面依次展示同色造型、纹理外层、结构包、浅色鞋和多件配饰。</p>
+        </div>
+        <div class="card card-purple">
+          <h3>创作者观点</h3>
+          <p>简单或同色穿搭可通过上述四类调整变得更有层次，属于短片给出的穿搭建议。</p>
+        </div>
+        <div class="card card-orange">
+          <h3>基于原文的推断</h3>
+          <p>“一次先改一个变量”是为提高可执行性作出的整理，并非视频逐字表达。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-red">
+      <h3>避坑总结与方法边界</h3>
+      <ul>
+        <li>不要把示范中的具体单品当成成熟感的唯一答案；合身、洁净和场合仍是前提。</li>
+        <li>不要同时叠层、换鞋、换包并堆满配饰，否则无法判断哪一项真正改善了造型。</li>
+        <li>不要把字幕中的建议包装成普遍事实：视频没有提供身材、气候、职业或文化场景对照。</li>
+        <li>Whisper 对英语口播的中文识别不稳定，关键单品应以可见双语字幕和画面为准；完整原始分段保留在配套 HTML。</li>
+      </ul>
+    </div>
+
+    <div class="conclusion">
+      <h2>总结与行动</h2>
+      <h3>核心要点</h3>
+      <p>基础色造型的问题通常不是“颜色太少”，而是可见层次不足。材质、结构、明暗和配饰是四种不同解决路径。</p>
+      <h3>行动清单</h3>
+      <ol>
+        <li>先拍下当前造型，判断最缺的是层次、轮廓、明度还是细节。</li>
+        <li>只选一个变量：纹理外层、结构包、浅色鞋或主配饰。</li>
+        <li>让新增物与现有腰带、鞋或金属件至少形成一次颜色或材质呼应。</li>
+        <li>再次拍照比较；若焦点已清晰，就停止继续堆叠。</li>
+      </ol>
+      <h3>关键认知转变</h3>
+      <p>从“多买几件单品”转向“识别造型缺失的变量”；从复制整套示范，转向在自己的场合约束下做单变量测试。</p>
+    </div>
+
+    <div class="footer">依据 2026-07-26 Webhook 原视频、画面字幕与 Whisper small 的 8 个非空分段整理</div>
+  </div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
