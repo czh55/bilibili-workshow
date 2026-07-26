@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="1分48秒还原景深公式（五）：从容许弥散圆到焦深与景深，代入F8/35mm/3m算出5.034米，并保留完整Whisper转录。">
+  <title>相机「光圈」底层逻辑科普，景深公式（五）｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#eef2ff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#1d4ed8}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#1e3a8a,#2563eb 55%,#60a5fa);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(30,58,138,.22)}
+.eyebrow{margin:0 0 8px;color:#dbeafe;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,42px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#eff6ff;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#dbeafe}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #bfdbfe;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 12px 12px 0;color:#1e40af;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #1e40af}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>相机「光圈」底层逻辑科普，景深公式（五）</h1>
+    <p class="dek">1 分 48 秒动画课：从容许弥散圆走到焦深与景深，再用 δ、F8、35mm、3m 代入景深公式，算出前/后景深与总景深 5.034 米，并留下「那跟光圈有什么关系」的钩子。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>1分48秒</span><span>49 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/4QLiFJ7BXNu" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#move">移动物点，焦点离开传感器</a></li>
+      <li><a href="#blur">弥散圆变大，像变糊</a></li>
+      <li><a href="#acceptable">小到看不见糊：容许弥散圆</a></li>
+      <li><a href="#diameter">全画幅常用 δ≈0.029mm</a></li>
+      <li><a href="#focus-depth">放大演示，得到焦深</a></li>
+      <li><a href="#dof">镜头外对应范围：景深</a></li>
+      <li><a href="#formula">引入景深公式与参数</a></li>
+      <li><a href="#result">算出 5.034m，并提出光圈问题</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="move">
+      <span class="time-label">00:00—00:05</span>
+      <h2>开场：试着前后移动这个点</h2>
+      <p>深色底上，相机剖面图已经摆好：左侧橙点是物点，光线穿过蓝色凸透镜与橙色光圈块，汇聚到传感器平面。旁白让你「试着前后移动这个点」——物点一挪，成像焦点就会离开传感器。</p>
+      <blockquote class="quote">画面字幕：「试着前后移动这个点」</blockquote>
+      <p class="note">说明：Whisper 常把「弥散圆」识成「弥散源」，「所成的像」识成「所称的像」，「辨认出模糊」识成「变成起模糊」，「演示」识成「掩饰」，「夹角」识成「假角」，「焦深」识成「焦身」，「被摄主体」识成「背摄主体」。下文叙述以可见字幕与动画画面为准；页面末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-01.jpg" alt="相机剖面动画：物点光线经透镜汇聚到传感器，右侧面板显示清晰橙点，字幕试着前后移动这个点" loading="lazy">
+        <figcaption>[00:01] 开场剖面：物点—透镜—光圈—传感器，邀请你前后移动物点。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="blur">
+      <span class="time-label">00:05—00:13</span>
+      <h2>焦点离开传感器：弥散圆逐渐扩大</h2>
+      <p>物点一移，焦点就不再落在传感器上。传感器截到的是焦点之外、逐渐扩大的光斑——旁白称其为弥散圆。于是「这个物体的点所成的像」会慢慢变模糊；右侧画面也从锐利点变成软边大橙圆。</p>
+      <blockquote class="quote">画面字幕：「因此这个物体的点所成的像就会慢慢变模糊」</blockquote>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-02.jpg" alt="焦点落在传感器后方，右侧面板显示边缘发虚的大橙圆，字幕说明像变模糊" loading="lazy">
+        <figcaption>[00:10] 失焦演示：传感器截到扩大的弥散圆，点像变糊。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="acceptable">
+      <span class="time-label">00:13—00:23</span>
+      <h2>只要弥散圆足够小，人眼就当它清晰</h2>
+      <p>旁白立刻补上阈值：只要这个弥散圆足够小，人眼就无法辨认出模糊，自然也就认为是清晰的。这个「足够小的弥散圆」，就是前面讲过的容许弥散圆——后面景深的尺子，从这里定下来。</p>
+      <blockquote class="quote">画面字幕：「这个足够小的弥散圆就是我们前面说的容许弥散圆」</blockquote>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-03.jpg" alt="传感器上只剩很小的橙点，字幕写这个足够小的弥散圆就是容许弥散圆" loading="lazy">
+        <figcaption>[00:20] 阈值落地：足够小的弥散圆 = 容许弥散圆。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="diameter">
+      <span class="time-label">00:22—00:41</span>
+      <h2>全画幅 36×24mm：δ 大约 0.029mm</h2>
+      <p>动画切到全画幅传感器示意，旁白说：以传感器大小 36mm×24mm 的全画幅相机来说，通常定义的容许弥散圆，放在手机上看差不多是这样——你可能「看不见」，「哦这很正常」，因为它的直径约为 0.029mm，只比发丝直径稍微大一点。</p>
+      <blockquote class="quote">画面字幕：「因为它的直径约为0.029mm」</blockquote>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-04.jpg" alt="深色背景上大字写直径0.029mm，字幕重复直径约为0.029mm" loading="lazy">
+        <figcaption>[00:38] 关键数字：全画幅常用容许弥散圆直径约 0.029mm。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="focus-depth">
+      <span class="time-label">00:41—01:02</span>
+      <h2>放大演示：焦点两侧的区间叫焦深</h2>
+      <p>为了方便演示，旁白把容许弥散圆放大，放到焦点两侧、与光线夹角大小吻合的位置。这个区间就是「无法辨认其模糊」的范围，称之为焦深。此时前后移动被摄主体，只要不超过这个容许弥散圆对应的区间，我们就认为它是清晰的。</p>
+      <blockquote class="quote">画面字幕：「称之为焦深」</blockquote>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-05.jpg" alt="传感器附近虚线标出焦深区间，光线在焦点前后形成可接受模糊带，字幕称之为焦深" loading="lazy">
+        <figcaption>[00:52] 机内区间：焦点两侧由容许弥散圆界定的焦深。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="dof">
+      <span class="time-label">01:02—01:10</span>
+      <h2>与焦深对应：镜头外的清晰范围叫景深</h2>
+      <p>旁白把对应关系讲清楚：与焦深对应，镜头之外物体前后相对清晰的范围，就是我们说的景深。画面左侧标出「景深 / 前景深 ΔL1 / 后景深 ΔL2」，右侧机内则是「焦深」——物方区间与像方区间一一对照。</p>
+      <blockquote class="quote">画面字幕：「就是我们说的景深」</blockquote>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-06.jpg" alt="剖面图标注景深与焦深、物距像距与对焦距离L，字幕就是我们说的景深" loading="lazy">
+        <figcaption>[01:08] 概念对照：景深（物方）↔ 焦深（像方）。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="formula">
+      <span class="time-label">01:09—01:25</span>
+      <h2>要算准景深，先引入公式与四个参数</h2>
+      <p>想要准确计算出景深范围，需要引入公式。画面给出前景深 ΔL1 与后景深 ΔL2：分子都是 F·δ·L²，分母分别是 f²±F·δ·L。旁白点名：这里的 δ 是容许弥散圆直径 0.029mm；光圈设定到 F8；焦距 35mm；对焦距离 3m（3000mm）。还是以这个画面为例，准备代入计算。</p>
+      <blockquote class="quote">画面字幕：「这里的δ是容许弥散圆的直径」</blockquote>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-07.jpg" alt="黄色公式显示前景深与后景深，右侧列出δ、F、f、L等变量含义" loading="lazy">
+        <figcaption>[01:15] 公式出场：ΔL1 / ΔL2，δ = 容许弥散圆直径。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="result">
+      <span class="time-label">01:25—01:48</span>
+      <h2>代入结果：总景深 5.034m，并留下光圈悬念</h2>
+      <p>带入设定参数后，旁白报出：整个景深范围是 5.034 米（5034mm），其中前景深约 1.087 米，后景深 3.947 米。示意图在人物两侧标出前后景深长度。讲到这里，可能有人要问——说了半天景深范围是由容许弥散圆来定义的，那跟光圈到底有什么关系呢？视频在这里收束，把下一集的钩子留在空气里。</p>
+      <blockquote class="quote">画面字幕：「是由容许弥散圆来定义的」</blockquote>
+      <figure>
+        <img src="assets/aperture-dof-formula/shot-08.jpg" alt="参数表给出ΔL1=1087mm、ΔL2=3947mm、ΔL=5034mm，场景示意标注1.087m与3.947m" loading="lazy">
+        <figcaption>[01:40] 数值落地：前 1.087m + 后 3.947m = 总景深 5.034m。</figcaption>
+      </figure>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>试着前后移动这个点</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT2S">00:02</time>
+    <p>能看到成像焦点脱离的传感器</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT4S">00:04</time>
+    <p>此时传感器上接收到的便是焦点之外</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT7S">00:07</time>
+    <p>逐渐扩大的弥散源</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT9S">00:09</time>
+    <p>因此这个物体的点所称的像就会慢慢变模糊</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT12S">00:12</time>
+    <p>当然只要这个弥散源足够小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT14S">00:14</time>
+    <p>人眼就无法变成起模糊</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT16S">00:16</time>
+    <p>自然也就认为是清晰的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT18S">00:18</time>
+    <p>这个足够小的弥散源</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT19S">00:19</time>
+    <p>就是我们前面说的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT21S">00:21</time>
+    <p>容许弥散源</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT22S">00:22</time>
+    <p>以传感器大小36毫米×24毫米的全画幅相机来说</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT26S">00:26</time>
+    <p>通常对其定义的容许弥散源大小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT29S">00:29</time>
+    <p>放在手机上来看差不多是这样</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT33S">00:33</time>
+    <p>什么 你看不见</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT35S">00:35</time>
+    <p>哦 这很正常</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT36S">00:36</time>
+    <p>因为它的直径约为0.029毫米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT38S">00:38</time>
+    <p>只比发丝直径稍微大一点</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT40S">00:40</time>
+    <p>为了方便掩饰</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT41S">00:41</time>
+    <p>我们把这个容许弥散源放大一些</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT44S">00:44</time>
+    <p>再放到焦点的两侧</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT46S">00:46</time>
+    <p>与光线假角大小吻合的位置</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT48S">00:48</time>
+    <p>那么这个区间就是我们无法辨认起模糊的范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT52S">00:52</time>
+    <p>称之为焦身</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT54S">00:54</time>
+    <p>此时前后移动这个背摄主体</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT56S">00:56</time>
+    <p>只要移动范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT57S">00:57</time>
+    <p>不超过这个容许弥散源的区间</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT60S">01:00</time>
+    <p>我们就认为它是清晰的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT62S">01:02</time>
+    <p>与焦身对应</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT63S">01:03</time>
+    <p>镜头之外物体前后相对清晰的范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT66S">01:06</time>
+    <p>就是我们说的景深</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT69S">01:09</time>
+    <p>想要准确计算出景深范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT71S">01:11</time>
+    <p>需要引入一个公式</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT73S">01:13</time>
+    <p>这里的delta是容许弥散源的直径</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT75S">01:15</time>
+    <p>0.029毫米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT77S">01:17</time>
+    <p>光圈设定到F8</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT79S">01:19</time>
+    <p>焦距为35毫米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT80S">01:20</time>
+    <p>对焦距离是3米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT82S">01:22</time>
+    <p>也就是3000毫米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT84S">01:24</time>
+    <p>还是以这个画面为例</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT85S">01:25</time>
+    <p>带入这些设定的参数</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT87S">01:27</time>
+    <p>再用景深公式计算就可以得出</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT89S">01:29</time>
+    <p>此时画面的整个景深范围是5.034米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT93S">01:33</time>
+    <p>也就是5034毫米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT95S">01:35</time>
+    <p>其中前景深约为1.087米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT98S">01:38</time>
+    <p>后景深为3.947米</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT101S">01:41</time>
+    <p>讲到这里可能有人要问</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT102S">01:42</time>
+    <p>说了半天景深范围是由容许弥散源来定义的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT106S">01:46</time>
+    <p>那跟光圈到底有什么关系呢</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">双轨产物之一 · 图文实录 · 原视频时长 1分48秒 · 49 个非空分段</p>
+  </main>
+</body>
+</html>
