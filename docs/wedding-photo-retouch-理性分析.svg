@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6575" viewBox="0 0 1320 6575">
+  <foreignObject x="0" y="0" width="1320" height="6575">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}</style>
+      
+<div class="container">
+  <h1>婚纱照修图进行🀄️还原美貌过程</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">59秒</span>
+    <span class="tag tag-purple">婚纱修图</span>
+    <span class="tag tag-orange">人像精修</span>
+    <span class="tag tag-gray">理性分析</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/5xSouysT0zU">原视频：婚纱照修图进行🀄️还原美貌过程</a>
+  <div class="summary-line">
+    <strong>核心判断：</strong>视频真正试图回答的不是「用哪个滤镜一键美貌」，而是婚纱人像精修可拆成可复用工序：先看边缘与质感 → 用液化/变形处理结构问题（如颈纹）→ 用选区/蒙版控制范围 → 高倍刷修过渡 → 100% 全身回看 → 黑白检视光影。证据以屏录工具状态为主；几乎无口播，Whisper 仅识别到 BGM「Zither Harp」，结论强度属于演示级流程观察，不构成对所有肤质、棚拍与审美的普适证明。
+  </div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:01</div><div class="timeline-text">高倍检视皮肤与椅面边界，钢笔光标落在轮廓线</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">颈部出现蓝色液化网格，局部推拉横纹</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:18</div><div class="timeline-text">侧光人像工作视图：暖光勾勒下颌与蕾丝肩线</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:25</div><div class="timeline-text">剪影选区沿头颈肩行进；水印「颜值修图」</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:36</div><div class="timeline-text">约 245% 缩放下笔刷处理颈侧阴影过渡</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:45</div><div class="timeline-text">100% 全身回看，手臂旁出现手绘标注线</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:50</div><div class="timeline-text">台灯—圆桌—沙发构图一并入画，检查氛围</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:55</div><div class="timeline-text">黑白颈肩特写再验光影过渡</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题：如何还原美貌？</div>
+      <div class="arrow">→</div>
+      <div class="node">证据：工具状态屏录</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">判断：工序可拆解</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">行动：局部→全身→灰度</div>
+    </div>
+    <p class="small">关系链：可见工具动作支撑「精修是分层工序」；不支撑「必须使用某品牌软件」或「一定保留全部痣点」等未声明主张。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p><strong>误解：</strong>婚纱修图＝一键磨皮滤镜。<br/>
+    <strong>纠偏：</strong>本片连续出现钢笔/选区、液化网格、高倍笔刷与黑白检视，说明作者把结构、范围、质感与光影分步处理。<br/>
+    <strong>误解：</strong>没有口播就等于没有信息。<br/>
+    <strong>纠偏：</strong>信息主要在界面状态（缩放百分比、蚂蚁线、网格锚点、标注线）；转录仅保留 BGM 标签，分析不得凭空补写口播。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">工序拆解：四张观点卡</h2>
+
+    <div class="card">
+      <h3>1. 先边界，后质感</h3>
+      <p><strong>在讲什么：</strong>开场不急着美化，而是把皮肤与背景（皮革椅）交界看清。</p>
+      <p><strong>关键理解：</strong>轮廓线决定主体是否「浮」在背景上；边界错了，后面磨皮再干净也像贴图。</p>
+      <p><strong>怎么用：</strong>修图前先 200%+ 巡视边缘与关键折痕，再决定路径/蒙版还是液化。</p>
+      <div class="quote">原文依据（画面）：[00:01] 钢笔光标停在皮肤轮廓；标尺显示高倍局部。</div>
+      <div class="relation">关系：边界检视 → 后续选区与液化才有锚点。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>2. 结构问题用变形，不只是磨皮</h3>
+      <p><span class="speaker speaker-host">UP 主立场（流程演示）</span>用液化网格处理颈侧横纹。</p>
+      <p><strong>关键理解：</strong>颈纹属于「几何起伏」，单靠模糊会糊成塑料皮；局部推拉可改变起伏而不抹掉全部纹理。</p>
+      <p><strong>怎么用：</strong>对颈纹、肩线、腰线等结构问题优先小范围液化，强度以离远看自然为准。</p>
+      <div class="quote">原文依据（画面）：[00:08] 蓝色 3×3 网格覆盖颈侧并略扭曲。</div>
+      <div class="highlight">立场分层：此为创作者审美流程的演示，非医学或「必须消颈纹」的普遍规范。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>3. 范围控制：选区/蒙版 + 高倍笔刷</h3>
+      <p><strong>在讲什么：</strong>剪影选区框定头颈肩；随后在 245%–350% 缩放下用小笔刷改阴影过渡。</p>
+      <p><strong>关键理解：</strong>蒙版回答「改哪里」，高倍刷回答「改多少」；二者分离可避免全身同一强度磨皮。</p>
+      <p><strong>怎么用：</strong>主体分离后，只在阴影/高光过渡带轻刷；蕾丝、发丝等纹理区降强度。</p>
+      <div class="quote">原文依据（画面）：[00:25] 蚂蚁线贴合剪影；[00:36] 缩放约 245%，笔刷在颈侧。</div>
+      <div class="action">可验证事实：界面显示缩放百分比与笔刷光标位置；「具体用了哪个图层混合模式」视频未标明。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>4. 回看两步：全身构图 + 黑白光影</h3>
+      <p><strong>在讲什么：</strong>回到 100% 看沙发—台灯—婚纱整体；再切黑白查颈肩过渡。</p>
+      <p><strong>关键理解：</strong>局部修完最容易「看得太近」。全身回看查体态与氛围；黑白回看查对比与脏斑。</p>
+      <p><strong>怎么用：</strong>每轮局部后强制 100% 与灰度各看一遍；手臂旁标注线提示可再修体态轮廓。</p>
+      <div class="quote">原文依据（画面）：[00:45] 手绘白线标手臂；[00:55] 黑白颈肩特写。</div>
+      <div class="pitfall">避坑：只在局部放大时觉得「完美」，成片缩略图却塌软或轮廓生硬。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">横向对比：工序角色</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>工序</th>
+            <th>主要解决</th>
+            <th>画面证据</th>
+            <th>误用风险</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>边缘/路径检视</td>
+            <td>主体与背景分离质量</td>
+            <td>00:01 钢笔光标</td>
+            <td>跳过边缘直接磨皮 → 贴图感</td>
+          </tr>
+          <tr>
+            <td>液化网格</td>
+            <td>颈纹等结构起伏</td>
+            <td>00:08 蓝色网格</td>
+            <td>推拉过大 → 解剖感失真</td>
+          </tr>
+          <tr>
+            <td>剪影选区</td>
+            <td>处理范围边界</td>
+            <td>00:25 蚂蚁线</td>
+            <td>选区毛边 → 背景渗色</td>
+          </tr>
+          <tr>
+            <td>高倍笔刷</td>
+            <td>皮肤过渡与瑕疵</td>
+            <td>00:36 245% 缩放</td>
+            <td>强度均一 → 塑料皮</td>
+          </tr>
+          <tr>
+            <td>全身回看</td>
+            <td>体态、服装、氛围</td>
+            <td>00:45–00:50 100% 全景</td>
+            <td>不回看 → 局部好看整体垮</td>
+          </tr>
+          <tr>
+            <td>黑白检视</td>
+            <td>光影对比与脏斑</td>
+            <td>00:55 灰度特写</td>
+            <td>只看彩色 → 忽略脏过渡</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界与立场分层</h2>
+    <div class="card">
+      <div class="stance-grid">
+        <div class="stance-item">
+          <strong>可验证事实</strong>
+          <p>时长约 59 秒；屏录含标尺、选区、液化网格、缩放百分比、水印「颜值修图」；Whisper 三段均为「Zither Harp」。</p>
+        </div>
+        <div class="stance-item">
+          <strong>UP 主观点（演示）</strong>
+          <p>以「颜值修图」审美呈现逐步还原流程；具体参数数值与图层栈未口述。</p>
+        </div>
+        <div class="stance-item">
+          <strong>基于原文的推断</strong>
+          <p>作者倾向「局部精密 + 多次回看」而非滤镜一键出片；黑白段用于光影自检。</p>
+        </div>
+      </div>
+      <div class="pitfall" style="margin-top:16px">适用边界：室内暖光棚拍、修身/抹胸婚纱、侧光人像。上限是「流程示意」，不是完整课程。反例：纪实风需保留皱纹/汗水/环境噪点时，不宜照搬消纹强度。例外：客户明确要求极致磨皮时，审美目标可能不同于本片。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>美貌还原被展示为分层工序，而不是单一滤镜。</li>
+      <li>结构（液化）与质感（笔刷）分开，范围靠选区约束。</li>
+      <li>100% 全身回看与黑白检视是防止「局部陷阱」的两道闸。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>开修前先高倍巡视边缘与关键折痕，再选工具。</li>
+      <li>颈纹等结构问题用小范围液化，强度以离远看为准。</li>
+      <li>蒙版限定范围后，仅在过渡带轻刷，保留蕾丝/发丝纹理。</li>
+      <li>每轮局部后强制做 100% 构图回看。</li>
+      <li>出片前切灰度复查脏斑与光影台阶。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「找一个美颜滑杆」转向「边界 → 结构 → 范围 → 质感 → 回看」的可复用检查单；在无口播视频里，把界面状态本身当作证据，而不是脑补旁白。</p>
+  </div>
+
+  <p class="footer">双轨产物之二 · 理性分析 · platform=xiaohongshu · 证据来自画面工具状态与 Whisper 分段</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
