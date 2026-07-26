@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7977" viewBox="0 0 1320 7977">
+  <foreignObject x="0" y="0" width="1320" height="7977">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.label{font-size:13px;font-weight:800;color:#1e40af;letter-spacing:.04em;margin-top:10px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}</style>
+      
+<div class="svg-page">
+  <div class="container">
+    <h1>分享一些大家买衣服最容易误解的高品质</h1>
+    <div class="meta">
+      <span class="tag tag-blue">小红书</span>
+      <span class="tag tag-green">1分14秒</span>
+      <span class="tag tag-purple">买衣技巧</span>
+      <span class="tag tag-orange">高品质误判</span>
+      <span class="tag tag-gray">理性分析视角</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/ALq9cllbvUB">原视频：xhslink.cn/o/ALq9cllbvUB</a>
+    <div class="summary-line"><strong>核心判断：</strong>视频真正回答的是——哪些“看起来像残次”的细节其实是工艺余量或天然材质特征。五条线索可重组为：活动量（开衩/里布）、天然纹理（牛角扣/麻结）、对花规则的例外（合体胸腰省）。“高品质”在此主要指做工意图与材质特征，不是跨品牌耐磨实验结论。</div>
+
+    <div class="timeline">
+      <h3>关键证据时间轴</h3>
+      <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">六宫格开场：质疑这些细节是否都是残次品。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:02</span><span class="timeline-text">风衣后开衩堆叠量：故意留的活动量，非没做好。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">用途：穿脱、抬手臂时避免扯裂或受限。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">扣子白条：对比其他扣子没有，易被当残品。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:19</span><span class="timeline-text">定名牛角扣纹理；每粒纹理都有出入。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">亚麻小疙瘩：误为次品；实为麻结。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:31</span><span class="timeline-text">麻结=天然纤维亚麻身份证；短粗纤维纺纱不匀。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">禁止剪麻结，否则易纤维断裂破洞。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:41</span><span class="timeline-text">条格须对齐；合体带胸腰省的不对齐属正常。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:49</span><span class="timeline-text">机制：剪开到胸后左右缝进约一厘米导致格子歪斜。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:57</span><span class="timeline-text">里布后中与下摆须有隐藏放量；不是没烫好。</span></div>
+      <div class="timeline-item"><span class="timeline-time">01:09</span><span class="timeline-text">无放量则伸胳膊抬手臂受阻。</span></div>
+    </div>
+
+    <div class="map">
+      <h2>核心脉络</h2>
+      <div class="diagram">
+        <div class="node">问题<br/><span class="small">像残次的细节<br/>是不是真差</span></div>
+        <div class="arrow">→</div>
+        <div class="node">证据<br/><span class="small">活动量 / 天然纹<br/>对花例外</span></div>
+        <div class="arrow">→</div>
+        <div class="node node-orange">判断<br/><span class="small">先分清意图<br/>再谈品质</span></div>
+        <div class="arrow">→</div>
+        <div class="node node-green">行动<br/><span class="small">店内五步<br/>误判排查</span></div>
+      </div>
+    </div>
+
+    <div class="correction">
+      <h3>常见误解与避坑总结</h3>
+      <p><strong>误解：</strong>堆叠、白条、小疙瘩、格子歪斜、里布鼓起 = 残次或没做好。</p>
+      <p><strong>视频主张：</strong>它们可能分别是活动量、牛角天然纹理、亚麻麻结、合体省道后果、里布隐藏放量。</p>
+      <p><strong>避坑：</strong>不要剪亚麻麻结；不要把省道区格子歪斜一律当对花失败；不要把里布余量一律当没烫好；但断线、抽纱、污渍、里布开裂仍要退。</p>
+      <p><strong>边界：</strong>这是“别误杀高品质工艺”的纠偏清单，不能覆盖真正的断线、抽纱、污渍或版型不合身；也未给出可量化的“高品质”评分表。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">五条细节如何理解与使用</h2>
+
+      <div class="card card-green">
+        <h3>1. 后开衩堆叠：活动量，不是熨烫失败</h3>
+        <p class="label">在讲什么</p>
+        <p>风衣后开衩上方衬里堆叠，是故意留的活动量，服务穿脱与抬臂。</p>
+        <p class="label">关键理解</p>
+        <p>可观察事实是“有堆叠/余量”；“必须这样才算高品质”是主讲人做工立场。反例：随意起皱且伴随线头开裂，仍可能是真瑕疵。</p>
+        <p class="label">怎么用</p>
+        <p>掀开后开衩：看堆叠是否对称、缝线是否完整；抬臂模拟是否被拉扯。</p>
+        <div class="quote">原文依据（校正）：“这个不是说没有做好……是故意留的活动量……抬手臂不至于扯到下方或者受限。” [00:05–00:12]</div>
+        <div class="relation">关系：外观异常 → 功能意图（活动量）</div>
+      </div>
+
+      <div class="card">
+        <h3>2. 牛角扣白条：天然纹理差异</h3>
+        <p class="label">在讲什么</p>
+        <p>扣面白色小长条与颗粒纹理差异，属于牛角扣天然纹理，找不到完全一样的两粒。</p>
+        <p class="label">关键理解</p>
+        <p>“纹理不完全一致”是材质特征主张；是否真为牛角需结合触感/标识，视频未做材料鉴定。</p>
+        <p class="label">怎么用</p>
+        <p>多粒扣并排看：若差异像天然纹路且无崩裂掉皮，可降低“残品”优先级；若开裂掉块，仍当瑕疵。</p>
+        <div class="quote">原文依据（校正）：“这种是牛角扣的纹理……找不到长得完全一样的两粒扣……每一粒的纹理都是有出入的。” [00:19–00:26]</div>
+        <div class="insight">把“不一致”从残次标签改写成材质指纹。</div>
+      </div>
+
+      <div class="card card-purple">
+        <h3>3. 麻结：亚麻身份证，禁止剪</h3>
+        <p class="label">在讲什么</p>
+        <p>亚麻布面小疙瘩叫麻结，源于短粗纤维纺纱不匀；剪掉易破洞。</p>
+        <p class="label">关键理解</p>
+        <p>“麻结=天然纤维信号”是主讲人科普立场；“不要剪”是可执行的护理禁令，证据链（剪→断裂破洞）逻辑清晰。</p>
+        <p class="label">怎么用</p>
+        <p>识别麻结后：不剪、不硬拽；购买时区分麻结与真正抽纱/脏点。</p>
+        <div class="quote">原文依据（校正）：“这个叫麻结……天然纤维亚麻的身份证……千万千万不要剪，容易导致纤维断裂破洞。” [00:30–00:41]</div>
+        <div class="pitfall">勿把所有凸起都当麻结；抽纱、接头结需另判。</div>
+      </div>
+
+      <div class="card card-orange">
+        <h3>4. 条格对齐 vs 胸腰省例外</h3>
+        <p class="label">在讲什么</p>
+        <p>条格原则上必须对齐；合体带胸腰省时，格子歪斜反而是正常结果。</p>
+        <p class="label">关键理解</p>
+        <p>规则与例外并存：宽松/平面裁对花要求高；省道收腰会改变格线。视频给出机制解释（剪到胸后左右缝进约一厘米）。</p>
+        <p class="label">怎么用</p>
+        <p>先看是否合体+有胸腰省；有则容忍省道区歪斜，转而检查袖笼/侧缝等非省道区是否胡乱对花。</p>
+        <div class="quote">原文依据（校正）：“条格的衣服必须对齐，但这种合体的是例外……带胸腰省的不对齐才是合理正常的。” [00:41–00:47]</div>
+        <div class="action">决策分叉：有省道看例外，无省道仍按对花严查。</div>
+      </div>
+
+      <div class="card card-red">
+        <h3>5. 里布隐藏放量：活动余量，不是没烫好</h3>
+        <p class="label">在讲什么</p>
+        <p>后中与下摆的里布余量是隐藏放量；没有则抬臂受阻。</p>
+        <p class="label">关键理解</p>
+        <p>可验证：里布是否比外料多一点松量、抬臂是否牵拉。将鼓起一律判为“没烫好”会被视频明确否定。</p>
+        <p class="label">怎么用</p>
+        <p>掀里布看后中/下摆；抬臂看是否被里布锁死；同时排除真正的里布开线。</p>
+        <div class="quote">原文依据（校正）：“后中……有隐藏放量……下摆也是必须要有……不是说里布没有烫好……没有这个放量……抬手臂都会受到阻碍。” [01:00–01:14]</div>
+        <div class="relation">关系：里布余量 ↔ 穿用自由度</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">横向对比：五类“像残次”信号</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>现象</th>
+              <th>视频解释</th>
+              <th>建议动作</th>
+              <th>证据强弱</th>
+              <th>适用边界</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>后开衩堆叠</td>
+              <td>故意活动量</td>
+              <td>看对称与缝线；抬臂测</td>
+              <td>强（功能逻辑）</td>
+              <td>风衣/开衩外套更相关</td>
+            </tr>
+            <tr>
+              <td>扣面白条/纹理差</td>
+              <td>牛角扣天然纹</td>
+              <td>多粒对比；排除崩裂</td>
+              <td>中（材质主张）</td>
+              <td>未做真伪鉴定</td>
+            </tr>
+            <tr>
+              <td>布面小疙瘩</td>
+              <td>麻结</td>
+              <td>不剪；区分抽纱</td>
+              <td>强（护理禁令）</td>
+              <td>主要针对亚麻</td>
+            </tr>
+            <tr>
+              <td>格子歪斜</td>
+              <td>胸腰省合体后果</td>
+              <td>先查是否有省道</td>
+              <td>强（裁剪机制）</td>
+              <td>合体格纹款；非省道区仍要对花</td>
+            </tr>
+            <tr>
+              <td>里布鼓起余量</td>
+              <td>隐藏放量</td>
+              <td>查后中/下摆；抬臂</td>
+              <td>强（结构功能）</td>
+              <td>有里布的外套/西装</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">立场分层与方法边界</h2>
+      <div class="card">
+        <div class="stance-grid">
+          <div class="stance-item">
+            <strong>可验证事实</strong>
+            画面展示后开衩堆叠、扣面白条、麻结凸起、胸腰省区格线偏移、里布余量；主讲人给出对应名称与操作禁忌（勿剪）。
+          </div>
+          <div class="stance-item">
+            <strong>主讲人观点</strong>
+            这些细节属于高品质/合理工艺；牛角扣找不到两粒完全一样；麻结是亚麻身份证。
+          </div>
+          <div class="stance-item">
+            <strong>基于原文的推断</strong>
+            买衣时应先做“误判排查”，再谈退换；规则与例外（对花）要分场景使用。
+          </div>
+        </div>
+        <div class="highlight" style="margin-top:16px">上限：不能证明面料成分真伪、染色牢度或品牌整体品控；只覆盖“别把工艺特征当残次”的认知层。</div>
+        <div class="pitfall">反例：断线、跳针、大面积污渍、里布开裂仍是真问题，不能用本清单合理化。</div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h2>总结与行动</h2>
+      <h3>核心要点</h3>
+      <ul>
+        <li>“像没做好”常落在三类：活动余量、天然材质指纹、合体裁剪副作用。</li>
+        <li>条格对齐是原则，胸腰省是明确例外；不要一刀切。</li>
+        <li>护理硬禁令只有一条被反复强调：亚麻麻结不要剪。</li>
+      </ul>
+      <h3>行动清单</h3>
+      <ol>
+        <li>风衣/开衩外套：掀后开衩，确认堆叠是否对称完整。</li>
+        <li>深色纹理扣：多粒对比天然纹，排除崩裂掉皮。</li>
+        <li>亚麻款：识别麻结，明确不剪不硬拽。</li>
+        <li>格纹合体西装：先找胸腰省，再决定是否苛责对花。</li>
+        <li>有里布外套：查后中与下摆隐藏放量，抬臂测试牵拉。</li>
+      </ol>
+      <h3>关键认知转变</h3>
+      <p>从“见到不平整就判残次”转向“先问这是功能余量、材质指纹还是裁剪后果”；把主讲人的品质叙事与可当场验证的结构动作分开记账。</p>
+    </div>
+
+    <div class="footer">双轨产物之二 · 理性分析 · 证据来自视频画面字幕与 Whisper 分段对照</div>
+  </div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
