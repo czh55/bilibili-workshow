@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="3分钟动画拆解相机动态范围：满阱容、读出噪声、曝光档与ISO如何压缩可用亮度区间，并保留完整Whisper转录。">
+  <title>你拍的画面为什么会过曝？｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#ecfeff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#0e7490}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#164e63,#0891b2 55%,#22d3ee);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(8,145,178,.22)}
+.eyebrow{margin:0 0 8px;color:#cffafe;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,42px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#ecfeff;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#cffafe}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #a5f3fc;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#cffafe;color:#0e7490;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#ecfeff;border-left:4px solid #0891b2;border-radius:0 12px 12px 0;color:#155e75;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #0e7490}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>你拍的画面为什么会过曝？</h1>
+    <p class="dek">3 分钟动画科普：从单个像素的满阱容与读出噪声讲清「动态范围」，再说明一档曝光是什么、以及提高 ISO 为何会压缩可用亮度区间。UP 主：范金子。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>3分00秒</span><span>55 个转录分段</span><span>8 张关键画面</span><span>范金子</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/35CNhE5rohm" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#pixel">像素如何感光</a></li>
+      <li><a href="#fwc">满阱容与过曝</a></li>
+      <li><a href="#noise">读出噪声与底噪</a></li>
+      <li><a href="#dr">动态范围怎么定义</a></li>
+      <li><a href="#compare">画面对比：高低动态范围</a></li>
+      <li><a href="#stop">「档」与进光量</a></li>
+      <li><a href="#calc">A7M4 算一算 13.8 档</a></li>
+      <li><a href="#iso">ISO 如何压缩动态范围</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="pixel">
+      <span class="time-label">00:00—00:12</span>
+      <h2>开场：把镜头怼进传感器，看见一颗像素</h2>
+      <p>视频一上来就是放大后的传感器马赛克：红绿蓝格子铺满画面。旁白说，这是相机传感器里几千万颗像素中的其中之一——它的最大作用就是感光。像素收到的光子越多，照片上对应的那个点就越亮。</p>
+      <blockquote class="quote">画面字幕：「几千万颗像素的其中之一」</blockquote>
+      <p class="note">说明：Whisper 常把「颗像素」识成「核像素」、「满阱容」识成「满景容」、「过曝」识成「过暴」、「读出噪声」识成「独出噪声」、「CMOS」识成「SIMOS」、「进光量」识成「金光量」、「A7M4」识成「ACM4」、「模数转换器」识成「魔术转换器」、「1伏」识成「异服」、「16-17档」识成「167档」。下文叙述以可见字幕与动画为准；页面末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-01.jpg" alt="放大后的传感器拜耳阵列红绿蓝像素格子，字幕写几千万颗像素的其中之一" loading="lazy">
+        <figcaption>[00:02] 开场：把传感器放大，先认识「一颗像素」在做什么。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="fwc">
+      <span class="time-label">00:12—00:20</span>
+      <h2>上限：满阱容装不下，就是过曝</h2>
+      <p>动画把单个像素画成一个立体「阱」，里面堆满代表电子的白点，旁边标着 FWC / 满阱容。旁白解释：单个像素能容纳电子数量的最大值叫满阱容；超出之后的部分无法记录——也就是画面过曝。右侧还配了夜景城市照片，用绿框标出被放大观察的那一颗像素。</p>
+      <blockquote class="quote">画面字幕：「单个像素能容纳电子数量的最大值为满阱容」</blockquote>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-02.jpg" alt="左侧三维满阱容示意标注FWC，右侧夜景像素放大框选" loading="lazy">
+        <figcaption>[00:15] 满阱容（FWC）：像素「水桶」装满后，多出来的光就记不住了。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="noise">
+      <span class="time-label">00:20—00:34</span>
+      <h2>下限：光子很少时，底噪成了最小值</h2>
+      <p>反过来，像素收到的光子越少，画面上那一点就越暗。旁白补充：没有信号输入时，CMOS 本身也存在噪声，也就是底噪，可以近似为读出噪声——此时就是能分辨的最小值。画面里「阱」只剩稀稀拉拉几个点，和下方满阱的对比很直观。</p>
+      <blockquote class="quote">旁白要点：底噪 ≈ 读出噪声，构成动态范围的下限。</blockquote>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-03.jpg" alt="上下两个阱示意：上方满阱容、下方仅少量电子代表读出噪声" loading="lazy">
+        <figcaption>[00:28] 最大值（满阱）与最小值（读出噪声）并置，为动态范围定义铺垫。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="dr">
+      <span class="time-label">00:34—00:44</span>
+      <h2>定义：满阱容 ÷ 读出噪声 = 动态范围</h2>
+      <p>旁白给出核心定义：最大值满阱容与最小值读出噪声的比值，就是动态范围。简单来说，就是相机能记录下最亮和最暗的一个区间。字幕几乎原样打出了这句话，动画也把上下两个阱留在同一构图里，方便理解「比值」。</p>
+      <blockquote class="quote">画面字幕：「这个最大值满阱容与最小值读出噪声的比值」</blockquote>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-04.jpg" alt="满阱容与读出噪声两个阱的比值示意，字幕解释动态范围定义" loading="lazy">
+        <figcaption>[00:36] 动态范围：不是「好看」的形容词，而是满阱与读出噪声的比值。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="compare">
+      <span class="time-label">00:45—01:03</span>
+      <h2>直观对比：高低动态范围差在哪</h2>
+      <p>视频切到三张夜景城市并排。旁白说：对比一下这几张照片，就算不了解摄影的朋友，也能看出哪张画面更好——动态范围高低对画面影响非常大。接着给出量级：目前一些主流消费级相机动态范围大约在 13 档左右，而有些电影机可以做到 16–17 档。画面上还列出 A7M4、A7S3、LUMIX S5II、EOS R5 II 等机型约 13.6–14.2 档的示意数据。</p>
+      <blockquote class="quote">画面字幕：「相信就算不了解摄影的朋友也能看出哪张画面更好」</blockquote>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-05.jpg" alt="三张夜景城市照片并排对比不同动态范围表现" loading="lazy">
+        <figcaption>[00:48] 同一场景三种影调：高光是否「死白」、暗部是否「死黑」一眼可见。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-06.jpg" alt="四台消费级相机动态范围约13到14档的对比图" loading="lazy">
+        <figcaption>[00:58] 消费级相机大致落在 13 档附近；注脚标明以 SNR=1 为测量口径。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="stop">
+      <span class="time-label">01:03—01:27</span>
+      <h2>「档」是什么：两倍进光量为一档</h2>
+      <p>旁白解释：这里的「档」指的是曝光值（EV），两倍为一档。例如快门 1/100 秒与 1/200 秒，或光圈 F1.4 与 F2，都是相差一档的进光量。通过不同参数组合可以做到曝光值相同。需要注意：ISO 能改变图像亮度，但改变不了进光量——真正决定进光量的只有光圈和快门。</p>
+      <blockquote class="quote">关键区分：ISO 调亮度 ≠ 改变到达传感器的光子数量。</blockquote>
+    </section>
+
+    <section class="story-section" id="calc">
+      <span class="time-label">01:27—01:50</span>
+      <h2>用 A7M4 算一遍：约 13.8 档</h2>
+      <p>以 A7M4 为例：最大满阱容约为 72000 个电子，基准 ISO 下读出噪声约为 5 个电子。要分辨出有效信号，就需要高于这个最小值；往上一档是 10 个电子，两档是 20 个……类推到最大 72000，差不多就是 13.8 档。画面给出公式 Log₂(FWC/RN) = Log₂(72000/5) ≈ 13.81，底部还有从 5 到 72000 的指数阶梯条。</p>
+      <blockquote class="quote">画面公式：动态范围 ≈ Log₂(满阱容 / 读出噪声)</blockquote>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-07.jpg" alt="A7M4动态范围计算公式Log2(72000/5)约等于13.81与指数阶梯图" loading="lazy">
+        <figcaption>[01:50] 硬件极限用公式落地：满阱 72000、读噪约 5 → 约 13.8 档。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="iso">
+      <span class="time-label">01:50—03:00</span>
+      <h2>转折：提高 ISO，动态范围会被压缩</h2>
+      <p>旁白说：动态范围除了由硬件决定，还会受另一个参数影响——ISO。提高 ISO，动态范围会随之降低。原因在信号链路：模数转换器（ADC）能接收的最大电压信号有上限。基准 ISO100 时 PGA 不放大，满阱 72000 个电子可转换成约 1 伏，正好贴着 ADC 上限；ISO200 时 PGA 模拟放大两倍，电压被推到 2 伏，但 ADC 上限仍是 1 伏，超出部分无法记录——相当于实际只用了约 36000 个电子的信号。</p>
+      <p>从 ADC 层面看：ISO100 时接收范围约 70 微伏至 1 伏；ISO200 时下限抬到约 140 微伏，上限仍是 1 伏——上限不变、下限提高，整体动态范围被压缩。ISO 越高，PGA 放大倍率越高，ADC 能接收的电压区间越窄，动态范围自然下降。</p>
+      <blockquote class="quote">画面字幕：「这就相当于实际接收到的只有3万6千个电子的信号」</blockquote>
+      <figure>
+        <img src="assets/camera-dynamic-range/shot-08.jpg" alt="ISO200时信号链路示意CFD标注36000电子PGA放大2倍ADC上限1伏" loading="lazy">
+        <figcaption>[02:28] ISO200 / PGA 2X：满阱等效被「砍半」，动态范围跟着收窄。</figcaption>
+      </figure>
+      <p class="note">视频收在一句实操提醒上：想保留更大动态范围，尽量靠近基准 ISO 拍摄；高 ISO 换来的是亮度，代价是可用亮度区间变窄。</p>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>这,是相机传感器里几千万核像素的其中之一</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT4S">00:04</time>
+    <p>它的最大作用就是感光</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT7S">00:07</time>
+    <p>像素接收的光子数量越多</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT9S">00:09</time>
+    <p>反映在拍摄照片上的这个点就越亮</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT12S">00:12</time>
+    <p>单个像素能容纳电子数量的最大值为满景容</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT16S">00:16</time>
+    <p>超出之后的部分都无法记录</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT18S">00:18</time>
+    <p>也就是画面过暴</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT20S">00:20</time>
+    <p>像素接收的光子数量越少</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT23S">00:23</time>
+    <p>反映在画面上的这个点就越暗</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT25S">00:25</time>
+    <p>在没有信号输入时,SIMOS本身也不存在噪声</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT29S">00:29</time>
+    <p>也就是底噪</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT30S">00:30</time>
+    <p>可以近似为独出噪声</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT32S">00:32</time>
+    <p>此时为最小值</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT34S">00:34</time>
+    <p>这个最大值满景容与最小值独出噪声的比值就是动态范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT39S">00:39</time>
+    <p>简单来说就是相机能记录下最亮和最暗的一个区间</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT45S">00:45</time>
+    <p>对比一下这几张照片</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT47S">00:47</time>
+    <p>相信就能不了解摄影的朋友,也能看出哪张画面更好</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT51S">00:51</time>
+    <p>所以动态范围的高低对于画面的影响非常大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT55S">00:55</time>
+    <p>目前一些主流消费级相机的动态范围大约在13档左右</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT60S">01:00</time>
+    <p>而有些电影机才可以做到167档</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT63S">01:03</time>
+    <p>这里的档指的是曝光指数,以为</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT66S">01:06</time>
+    <p>两倍为一档</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT67S">01:07</time>
+    <p>比如100%一秒和200%一秒的快门</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT70S">01:10</time>
+    <p>或者是光圈F1.4和F2</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT72S">01:12</time>
+    <p>都是相差一档的金光量</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT74S">01:14</time>
+    <p>通过不同的参数组合就可以做到曝光指数相同</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT78S">01:18</time>
+    <p>需要注意的是,虽然ISO能改变图像的亮度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT81S">01:21</time>
+    <p>但改变不了金光量</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT83S">01:23</time>
+    <p>真正决定金光量的只有光圈和快门</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT87S">01:27</time>
+    <p>以ACM4为例,其最大满景容有为72000个电子</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT92S">01:32</time>
+    <p>基准ISO下读书造声约为5个电子</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT95S">01:35</time>
+    <p>想要分辨出有效性好,就需要高于这个最小值</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT98S">01:38</time>
+    <p>网上一档是10个电子,两档是20个</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT102S">01:42</time>
+    <p>彼此类推到最大72000个电子,差不多就是13.8档</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT107S">01:47</time>
+    <p>当然你还可以通过这个公式计算出动态范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT110S">01:50</time>
+    <p>动态范围除了由硬件决定,还会受另一个参数的影响</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT114S">01:54</time>
+    <p>那就是ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT116S">01:56</time>
+    <p>提高ISO,动态范围会随之降低</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT121S">02:01</time>
+    <p>这是因为魔术转换器ADC能接收的最大电压信号是有上限的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT126S">02:06</time>
+    <p>假设ACM4的满景容量72000个电子</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT129S">02:09</time>
+    <p>在基准ISO100,也就是PGA不放大时,能转换成异服的电压</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT133S">02:13</time>
+    <p>以此作为ADC的接收上限</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT135S">02:15</time>
+    <p>那当PGA开始模拟放大两倍,也就是ISO200</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT139S">02:19</time>
+    <p>电压会被放大到两伏</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT141S">02:21</time>
+    <p>但ADC能接收的上限还是异服</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT144S">02:24</time>
+    <p>超出的部分无法被记录</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT146S">02:26</time>
+    <p>这就相当于实际接收到的只有36000个电子的信号</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT150S">02:30</time>
+    <p>放大倍数越高,也就相当于满景容量越小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT154S">02:34</time>
+    <p>从ADC层面来看,ISO110</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT157S">02:37</time>
+    <p>电压信号的接收范围是70微伏至1伏</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT159S">02:39</time>
+    <p>而ISO200时,ADC的接收范围变成了140微伏至1伏</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT164S">02:44</time>
+    <p>上限不变,下限提高,整体动态范围被压缩</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT169S">02:49</time>
+    <p>所以ISO越高,PGA的放大倍率就越高</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT172S">02:52</time>
+    <p>ADC能接收的电压去间就会变窄</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT175S">02:55</time>
+    <p>动态范围自然随之下降</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">双轨产物之一 · 图文实录 · 原视频见上方链接</p>
+  </main>
+</body>
+</html>
