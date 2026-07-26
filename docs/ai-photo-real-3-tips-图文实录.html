@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="1分27秒：小妖用加光源、皮肤细节与前景三类提示词去掉 AI 塑料感，并在 XL 画布演示；含关键截图与完整 Whisper 转录。">
+  <title>AI太假？3招去掉“塑料感”秒变真实照片｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#eef4ff 0%,#fafaf9 40%,#f3f0ff 100%)}
+a{color:inherit}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{background:linear-gradient(145deg,#1e3a8a 0%,#1d4ed8 45%,#312e81 100%);color:#fff;border-radius:28px;padding:48px;box-shadow:0 18px 60px rgba(30,58,138,.28)}
+.eyebrow{margin:0 0 10px;color:#bfdbfe;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,5.6vw,44px);line-height:1.18;letter-spacing:-.03em}
+.lede{max-width:760px;margin:22px 0;color:#dbeafe;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#e0e7ff;font-size:13px}
+.source-link{display:inline-flex;margin-top:24px;color:#fff;font-weight:700;text-underline-offset:4px}
+.toc{margin:28px 0;padding:20px;background:#fff;border-radius:18px;box-shadow:0 4px 20px rgba(41,37,36,.07)}
+.toc h2{margin:0 0 12px;font-size:16px}
+.toc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.toc a{display:flex;gap:9px;padding:10px 12px;border-radius:10px;text-decoration:none;background:#f8fafc;font-size:14px}
+.toc a:hover{background:#dbeafe}
+.toc time{font-variant-numeric:tabular-nums;color:#1d4ed8;font-weight:800}
+.documentary{font-size:17px}
+.intro{margin:48px 0;padding:0 8px}
+.intro h2,.story-section h2,.transcript-section h2{margin:0 0 16px;font-size:clamp(26px,4vw,36px);line-height:1.3;color:#1c1917}
+.intro p,.story-section p{margin:0 0 16px}
+.story-section{margin:68px 0;scroll-margin-top:20px}
+.section-kicker{margin-bottom:8px;color:#1d4ed8;font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.quote{margin:22px 0;padding:16px 20px;border-left:4px solid #2563eb;background:#eff6ff;border-radius:0 12px 12px 0;color:#1e3a8a;font-size:15px}
+.note{margin:18px 0;padding:14px 16px;background:#fffbeb;border-radius:12px;color:#78350f;font-size:14px}
+figure{margin:28px auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(41,37,36,.12)}
+img{display:block;width:auto;max-width:100%;height:auto;max-height:760px;margin:0 auto}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.recap{margin:56px 0;padding:28px;background:#1e3a8a;color:#f8fafc;border-radius:20px}
+.recap h2{margin:0 0 12px;font-size:26px}
+.recap p{margin:0;color:#dbeafe}
+.transcript-section{margin-top:72px;padding-top:48px;border-top:2px solid #d6d3d1;scroll-margin-top:20px}
+.transcript-note{padding:14px 16px;background:#fffbeb;border-radius:10px;color:#78350f;font-size:14px}
+.transcript-list{list-style:none;padding:0;margin:28px 0}
+.transcript-row{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #d6d3d1}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#1d4ed8;font-weight:700}
+.transcript-row p{min-width:0;margin:0;overflow-wrap:anywhere}
+.footer{margin-top:48px;text-align:center;color:#78716c;font-size:13px}
+@media(max-width:720px){
+  .container{padding:24px 16px 56px}
+  .hero{padding:30px 22px;border-radius:20px}
+  .toc-grid{grid-template-columns:1fr 1fr}
+  .story-section{margin:50px 0}
+}
+@media(max-width:420px){
+  .toc-grid{grid-template-columns:1fr}
+  .transcript-row{grid-template-columns:52px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">1 分 27 秒 · AI 写真提示词 · 小红书</p>
+    <h1>AI太假？3招去掉“塑料感”<br>秒变真实照片</h1>
+    <p class="lede">小妖用前后对比说明：AI 图假，常常不是模型不行，而是提示词太“干净”。她把真实感拆成加光源、加皮肤细节、加前景三类提示，并演示在 XL 画布上批量出图。</p>
+    <div class="meta">
+      <span>原标题：AI太假？3招去掉“塑料感”秒变真实照片</span>
+      <span>时长：1分27秒</span>
+      <span>视频 ID：6a02f9b7000000003701f0ae</span>
+      <span>讲述：小妖</span>
+      <span>日期：2026-07-26</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/5rME68lDOe8" target="_blank" rel="noopener noreferrer">打开小红书原视频 →</a>
+  </header>
+
+  <nav class="toc" aria-label="内容目录">
+    <h2>按视频顺序阅读</h2>
+    <div class="toc-grid">
+      <a href="#hook"><time>00:00</time><span>改提示词前后</span></a>
+      <a href="#tip-light"><time>00:16</time><span>技巧一 加光源</span></a>
+      <a href="#tip-skin"><time>00:34</time><span>技巧二 皮肤细节</span></a>
+      <a href="#tip-fg"><time>00:46</time><span>技巧三 加前景</span></a>
+      <a href="#tooling"><time>01:05</time><span>XL 与 Image 2</span></a>
+      <a href="#transcript"><time>全文</time><span>原始转录</span></a>
+    </div>
+  </nav>
+
+  <article class="documentary">
+    <section class="intro" id="hook">
+      <h2>开场：同样一张图，只改提示词</h2>
+      <p>视频顶部章节条写着 Intro｜技巧一｜技巧二｜技巧三｜操作｜结尾。画面先甩出“修改前”人像：阳光明媚的街头女生、手持冰淇淋，右下角是讲述者小妖的画中画。</p>
+      <p class="note">说明：Whisper 把「技巧一／廉价感／真实街拍／精准／XL／同级／内置链／每周／玩法」等误识为音近字；下文叙事以可见字幕与画面为准，文末转录区仍完整保留全部原始分段。</p>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-01.jpg" alt="修改前的 AI 人像：阳光明媚街头女生手持冰淇淋，右下角讲述者画中画" loading="lazy">
+        <figcaption>[00:02] 开场对比素材：大字“修改前”，提问为什么 AI 图一眼能看出来。</figcaption>
+      </figure>
+      <p>下一组也是“修改前”——夜色湿街、红车、女生拿报纸和冰饮。字幕打出：“今天小妖就来手把手教你”。她先定调：问题往往不在模型，而在提示词太干净；改完提示词，真实感会立刻不一样。</p>
+      <blockquote class="quote">可见字幕校正：“今天小妖就来手把手教你”“其实不是模型不行，很多时候是你的提示词太干净了。”</blockquote>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-02.jpg" alt="夜景街头 AI 人像修改前，字幕写今天小妖就来手把手教你" loading="lazy">
+        <figcaption>[00:10] Intro：宣布手把手教“让 AI 更加真实”的技巧。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="tip-light">
+      <div class="section-kicker">技巧一 · 00:16–00:34</div>
+      <h2>加光源：现实里的光一定有方向</h2>
+      <p>章节条仍在 Intro 与技巧一之间切换。画面叠出黄白大字“靠提示词去掉 AI 味”，随后进入咖啡馆侧门青年人像的前后对比，字幕先承认：“很多 AI 人物假”。</p>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-03.jpg" alt="咖啡馆青年人像修改前后对比，下方可见可灵画布与智能图片V2菜单" loading="lazy">
+        <figcaption>[00:18] 技巧一入口：左右对比显示光照均匀的“假”，并露出 XL／可灵类画布界面。</figcaption>
+      </figure>
+      <p>小妖解释：假，是因为整张脸被光照得太均匀。现实里的光有方向，有明暗、高光和阴影。左侧竖排列出可写的光源类型：自然光、侧逆光、头顶光、场景灯光。她提醒：提示词里不要只写“高清／真实／电影感”，要写清光从哪里来。</p>
+      <blockquote class="quote">可见字幕：“现实里的光一定有方向”“提示词里不要只写高清、真实和电影感”“你要加上对光影的描述。”</blockquote>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-04.jpg" alt="湖边人像左右明暗对比，左侧列出自然光侧逆光头顶光场景灯光" loading="lazy">
+        <figcaption>[00:27] 明确光源后，人物不再像贴在背景上；左侧是可写的光型清单。</figcaption>
+      </figure>
+      <p>一旦人物有了明确光源，立体感会回来——这是三类提示词里的第一类：加光源，明确光从哪里来。</p>
+    </section>
+
+    <section class="story-section" id="tip-skin">
+      <div class="section-kicker">技巧二 · 00:34–00:46</div>
+      <h2>加皮肤细节：别让人物太完美</h2>
+      <p>咖啡馆毛衣女生的左右构图之后，镜头切到喝水瓶的运动人像特写。章节条高亮“技巧二”。小妖说：AI 脸最容易假的地方，是五官和皮肤太完美，很容易有塑料感。</p>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-05.jpg" alt="咖啡馆毛衣女生左右构图人像，右下讲述者画中画" loading="lazy">
+        <figcaption>[00:36] 技巧二开场：五官皮肤过完美，会直接露出塑料感。</figcaption>
+      </figure>
+      <p>画面左侧用橙黄字标出可写细节：轻微毛孔、自然肤色不均、鼻尖高光、脸颊细小纹理、真实皮肤反光。字幕收束：“是不是一下子就摆脱了 AI 脸的廉价感。”</p>
+      <blockquote class="quote">可见字幕校正：“提示词里面可以加轻微瑕疵”“一下子就摆脱了 AI 脸的廉价感。”</blockquote>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-06.jpg" alt="喝水瓶人像特写，左侧列出毛孔肤色不均鼻尖高光等皮肤细节" loading="lazy">
+        <figcaption>[00:44] 皮肤细节清单：轻微瑕疵让面部不再像塑料。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="tip-fg">
+      <div class="section-kicker">技巧三 · 00:46–01:05</div>
+      <h2>加前景：镜头在真实空间里捕捉人物</h2>
+      <p>公园长椅女生的“修改后”画面叠出字幕：“在一个真实空间里面”。小妖区分两种构图：假的像是人物站在背景前面；真的像是镜头在空间里抓拍。于是提示词要写前景遮挡、中景人物清晰、前景虚化——书架边缘、玻璃反光都可以。</p>
+      <blockquote class="quote">可见字幕校正：“这层遮挡关系会让画面更像真实街拍，而不是 AI 生成的图片。”</blockquote>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-07.jpg" alt="公园长椅女生修改后人像，字幕写在一个真实空间里面" loading="lazy">
+        <figcaption>[00:52] 技巧三：用前景／景深让画面像被拍出来，而不是贴图。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="tooling">
+      <div class="section-kicker">操作与结尾 · 01:05–01:27</div>
+      <h2>精准提示词 + XL 画布演示</h2>
+      <p>章节进入“操作”。画面切到白色无限画布：多组人像缩略图铺开，右侧是对话式生成面板。字幕说“都能够轻松的……”，并明确：“今天的所有素材，我都是在 XL 上生成的。”她还提到新出的 Image 2 模型／智能图片 V2 同级能力，以及内置链降低门槛，并支持画布上批量图片和视频操作。</p>
+      <figure>
+        <img src="assets/ai-photo-real-3-tips/shot-08.jpg" alt="XL 画布上铺满多组 AI 人像缩略图，字幕写都能够轻松的" loading="lazy">
+        <figcaption>[01:08] 操作段：在 XL 画布上批量生成与整理素材。</figcaption>
+      </figure>
+      <p>结尾章节条高亮“结尾”。小妖用三行黄字复盘：一，加光源，明确光从哪里来；二，加皮肤和材质细节，别让人物太完美；三，加前景、景深和运镜，让画面真的像被拍出来。字幕提醒“记住这 3 类提示词”，让你的 AI 不像 AI。</p>
+      <blockquote class="quote">结尾清单（画面原文）：一，加光源，明确光从哪里来。二，加皮肤和材质细节，别让人物太完美。三，加前景、景深和运镜，让画面真的像被拍出来。</blockquote>
+    </section>
+
+    <section class="recap">
+      <h2>这一分钟多，视频实际做了什么</h2>
+      <p>它没有教你换模型玄学，而是把“塑料感”拆成三类可写进提示词的物理线索：光有方向、皮肤有瑕疵、镜头有空间层次；再用 XL 画布证明同一套提示可以批量落地。</p>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>為什麼AI做的圖總能看出來是AI</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT2S">00:02</time>
+    <p>同樣一張圖</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT3S">00:03</time>
+    <p>你看我改一下提示詞</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT4S">00:04</time>
+    <p>這個真實感是不是立馬不一樣了</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT6S">00:06</time>
+    <p>其實不是模型不行</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT7S">00:07</time>
+    <p>很多時候是你的提示詞太乾淨了</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT9S">00:09</time>
+    <p>今天小藥就來手把手教你</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT11S">00:11</time>
+    <p>讓AI更加真實的技巧</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT16S">00:16</time>
+    <p>防髮衣加光源</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT17S">00:17</time>
+    <p>很多AI人物假</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT19S">00:19</time>
+    <p>是因為整張臉被光照得太均勻了</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT21S">00:21</time>
+    <p>現實裡的光一定有方向</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT23S">00:23</time>
+    <p>有明暗 有高光 也有陰影</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT25S">00:25</time>
+    <p>所以提示詞裡不要只寫高光 真實和電影感</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT28S">00:28</time>
+    <p>你要加上對光影的描述</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT30S">00:30</time>
+    <p>人物一旦有了明確的光源</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT31S">00:31</time>
+    <p>就不會像貼在背景上一樣</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT33S">00:33</time>
+    <p>更加真實</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT34S">00:34</time>
+    <p>技巧二 加皮膚細節</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT35S">00:35</time>
+    <p>AI臉最容易假的地方</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT37S">00:37</time>
+    <p>就是五官和皮膚太完美</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT39S">00:39</time>
+    <p>很容易有塑料感</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT40S">00:40</time>
+    <p>提示詞裡面可以加輕微瑕疵</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT42S">00:42</time>
+    <p>面部細節就會更豐富</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT43S">00:43</time>
+    <p>是不是一下子就擺脫了AI臉的臉頰感</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT46S">00:46</time>
+    <p>技巧三 加前景</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT47S">00:47</time>
+    <p>一般來說真實照片</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT48S">00:48</time>
+    <p>不是人物站在背景前面</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT50S">00:50</time>
+    <p>而是鏡頭在一個真實空間裡面去捕捉人物</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT52S">00:52</time>
+    <p>所以如果加上前景遮擋</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT54S">00:54</time>
+    <p>如果加上中景人物清晰</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT56S">00:56</time>
+    <p>前景虛化</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT57S">00:57</time>
+    <p>比如書架邊緣</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT59S">00:59</time>
+    <p>還有玻璃反光</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT60S">01:00</time>
+    <p>這手遮擋關係會讓畫面更像真實接牌</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT63S">01:03</time>
+    <p>而不是AI成程的圖片</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT65S">01:05</time>
+    <p>金准提示詞</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT65S">01:05</time>
+    <p>搭配上新出的Image 2模型</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT67S">01:07</time>
+    <p>都能夠輕鬆地還原</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT68S">01:08</time>
+    <p>AI照片的真實感</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT70S">01:10</time>
+    <p>今天的所有素材</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT70S">01:10</time>
+    <p>我都是在新流上生成的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT72S">01:12</time>
+    <p>這李維爾模型</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT73S">01:13</time>
+    <p>等同於Image 2統計模型</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT75S">01:15</time>
+    <p>我內指鏈大大降低了使用門檻</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT77S">01:17</time>
+    <p>這裡還支持畫布上</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT78S">01:18</time>
+    <p>批量的圖片和視頻操作</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT80S">01:20</time>
+    <p>好了 最後再總結一下</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT81S">01:21</time>
+    <p>記住這三類提示詞</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT82S">01:22</time>
+    <p>讓你的AI不像了AI</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT84S">01:24</time>
+    <p>好了 我是小妖</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT85S">01:25</time>
+    <p>用微軟視頻帶你解鎖更多的AI想法招</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">双轨产物之一 · 图文实录 · 生成自小红书视频转录</p>
+  </main>
+</body>
+</html>
