@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2分19秒：数码ISO不是量子效率，而是转换增益与PGA模拟放大；区分基准/原生/扩展ISO，并保留完整Whisper转录。">
+  <title>终于搞懂了相机 ISO｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#ecfeff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#0e7490}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#164e63,#0e7490 55%,#22d3ee);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(14,116,144,.22)}
+.eyebrow{margin:0 0 8px;color:#cffafe;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,40px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#ecfeff;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#cffafe}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #a5f3fc;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#cffafe;color:#0e7490;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#ecfeff;border-left:4px solid #0891b2;border-radius:0 12px 12px 0;color:#155e75;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #0e7490}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#0e7490;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>终于搞懂了相机 ISO</h1>
+    <p class="dek">2 分 19 秒电路向科普：从量子效率切入，说明数码 ISO 不是「让传感器更敏感」，而是电荷→电压转换与 PGA 模拟放大（增益）；再区分基准 / 原生 / 扩展 ISO。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>2分19秒</span><span>64 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/1dOjqxMyqFB" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#qe">量子效率：光子变电子</a></li>
+      <li><a href="#iso-not-qe">ISO ≠ 量子效率</a></li>
+      <li><a href="#conversion">转换增益与基准 ISO</a></li>
+      <li><a href="#pga">调 ISO＝PGA 模拟放大</a></li>
+      <li><a href="#native">原生 ISO 区间</a></li>
+      <li><a href="#debate">「只有 Base 才是原生」争议</a></li>
+      <li><a href="#extended">扩展 ISO 与数字放大</a></li>
+      <li><a href="#gain">数码时代：ISO 更像增益</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="qe">
+      <span class="time-label">00:00—00:13</span>
+      <h2>开场：100 个光子进像素，大约一半变电子</h2>
+      <p>深灰底上，三个像素轮廓并排，中间像素里落满发光的「光子」。旁白先给数量感：当 100 个光子进入像素，大概有 50–60 个能被转换成电子。这个光电转换率叫量子效率 QE；画面右上还写着「约为：60%」。</p>
+      <blockquote class="quote">画面字幕：「这个光电转换率被称为量子效率QE」</blockquote>
+      <p class="note">说明：Whisper 常把「微伏」识成「微幅」，「浮动扩散节点」识成「不弄扩散节点」，「Base ISO」识成「BassISO」，「Native ISO」识成「NATCHYISO」，「A7M4」识成「ACM4」，「51,200」识成「51100」，「体现在」识成「提现在」，「主要指的是」识成「主要品牌的」。下文叙述以可见字幕与动画为准；页面末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-01.jpg" alt="三个像素轮廓，中间像素充满光子光点，字幕写当100个光子进入到像素中" loading="lazy">
+        <figcaption>[00:02] 开场像素示意：100 个光子进入像素，为后面的量子效率铺垫。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-02.jpg" alt="量子效率 QUANTUM EFFICIENCY 大字，约为60%" loading="lazy">
+        <figcaption>[00:08] 量子效率 QE：光电转换率约 60%，听上去很像「感光度」。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="iso-not-qe">
+      <span class="time-label">00:13—00:24</span>
+      <h2>关键纠偏：改 ISO 不能改量子效率</h2>
+      <p>旁白自问自答：改变 ISO 能不能改变这个量子效率？答案是不能。每台相机的量子效率是固定的，不会随 ISO 切换改变。画面打出大字对照：ISO ≠ QUANTUM EFFICIENCY / 量子效率。</p>
+      <blockquote class="quote">旁白：「数码相机的ISO指的并不是量子效率这个感光度」</blockquote>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-03.jpg" alt="ISO 不等于量子效率，右侧像素图标标注约为60%" loading="lazy">
+        <figcaption>[00:20] 关键对照：数码 ISO 不是量子效率意义上的「感光度」。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="conversion">
+      <span class="time-label">00:24—00:44</span>
+      <h2>电路视角：电荷到电压的转换增益 = Base ISO</h2>
+      <p>镜头切到电路层。旁白说 ISO 首先体现在电荷到电压的转换上：浮动扩散节点的电容，决定了一个电子能转换成多大电压，单位通常是微伏每电子。电荷→电压的对应关系叫转换增益（conversion gain）；而这就是常说的 Base ISO，也叫基准 ISO 或基础 ISO。</p>
+      <blockquote class="quote">画面字幕：「浮动扩散节点的电容决定了一个电子能转换成多大电压」</blockquote>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-04.jpg" alt="青色电子圆点聚集成团，背景有 CFD 字样，字幕讲浮动扩散节点电容" loading="lazy">
+        <figcaption>[00:30] 电子与浮动扩散节点：电容决定「一个电子→多大电压」。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-05.jpg" alt="电荷经转换增益箭头变为电压的示意" loading="lazy">
+        <figcaption>[00:39] 转换增益图：电荷（e）→ conversion gain → 电压信号。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="pga">
+      <span class="time-label">00:44—01:07</span>
+      <h2>调 ISO 改的是什么：PGA 把电压信号放大</h2>
+      <p>旁白收束到操作层：调整 ISO 改变的其实是电压信号强度，靠 PGA（可编程增益放大器）做模拟放大。假设基准 ISO 100 时，一个电子对应 10 微伏；ISO 200 就是 PGA 两倍放大到 20 微伏；ISO 400 就是 PGA 4 倍，10 微伏变成 40 微伏，以此类推。</p>
+      <blockquote class="quote">画面字幕：「10微伏的电压变成40微伏」</blockquote>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-06.jpg" alt="PGA 背景、ISO 400、PGA 4X，字幕10微伏变成40微伏" loading="lazy">
+        <figcaption>[01:05] PGA 4X 示例：ISO 400 时电压从 10 μV 放大到 40 μV。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="native">
+      <span class="time-label">01:07—01:24</span>
+      <h2>原生 ISO：模拟放大能覆盖的区间</h2>
+      <p>PGA 倍率有上限。以 32 倍为例，对应 ISO 3200；于是从 ISO 100 到 3200 这段，都可以称为原生 ISO。画面用从小到大的信号方块标出 100→200→400→800→1600→3200。旁白补充：技术进步后很多相机原生范围更大，例如 A7M4 从 ISO 100 到 51,200。</p>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-07.jpg" alt="原生ISO标题下 100 到 3200 逐级放大的信号方块" loading="lazy">
+        <figcaption>[01:14] 原生 ISO 阶梯示意：示例区间 ISO 100–3200 都可由 PGA 模拟放大得到。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="debate">
+      <span class="time-label">01:24—01:51</span>
+      <h2>争议：是不是只有基准 ISO 才叫「原生」</h2>
+      <p>旁白承认常见疑惑：有人认为只有基准 ISO 100 才是原生，其他都是非原生。这存在诸多争议，也没有绝对严谨的说法。但从 Native ISO 的一种定义看——不经数字放大，用基准 ISO 乘以 PGA 模拟放大得到的数值——这些都可以叫原生 ISO；差别只是有的是基准 ISO，有的是模拟放大 ISO。画面还引用 Imaging Resource 对 Sony A7 IV 的「Native ISO: 100 – 51,200」规格页做旁证。</p>
+      <blockquote class="quote">旁白：「它指的是不经数字放大，用基准ISO乘以PGA模拟放大得到的数值」</blockquote>
+    </section>
+
+    <section class="story-section" id="extended">
+      <span class="time-label">01:51—02:01</span>
+      <h2>超出模拟区间：扩展 ISO ≈ 机内数字提亮</h2>
+      <p>超出 PGA 模拟区间的数值，都是扩展 ISO：ADC 量化之后再在机内做数字放大，跟后期提亮画面没有本质差别。画面把基准 ISO、模拟放大 ISO 与扩展 ISO（如 128000、204800）排成一条增益阶梯。</p>
+      <figure>
+        <img src="assets/camera-iso-explained/shot-08.jpg" alt="ISO 阶梯：基准、模拟放大与扩展 ISO 分区" loading="lazy">
+        <figcaption>[01:55] ISO 分层：基准 / 模拟放大 / 扩展；扩展段靠 ADC 后数字放大。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="gain">
+      <span class="time-label">02:01—02:19</span>
+      <h2>收束：数码 ISO 更贴切的名字叫「增益」</h2>
+      <p>旁白收尾：在数码时代，把 ISO 理解成「传感器对光线的敏感度」并不太贴切。ISO 主要指电荷到电压的转换，以及之后 PGA 参与的模拟放大；也可以把 ISO 看作这一段电路共同协作的电信号读出——当然，它还有另一个名字：增益。</p>
+      <blockquote class="quote">旁白：「也可以把ISO看作是这一段电路共同协作的电信号读出……增益」</blockquote>
+      <p class="note">画面同期给出读出链路：TX 传输门 → FD 浮动扩散节点 / 电容 → SF 源极跟随器 → PGA 模拟放大（标注 ISO）→ ADC 模数转换器。</p>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>当100个光子进入到像素中</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT2S">00:02</time>
+    <p>大概有50-60个能被转换成电子</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT4S">00:04</time>
+    <p>这个光电转换率被称之为量子效率 QE</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT8S">00:08</time>
+    <p>这听上去很像是相机的感光度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT10S">00:10</time>
+    <p>那改变ISO是不是就能改变这个量子效率呢</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT13S">00:13</time>
+    <p>答案是不能</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT14S">00:14</time>
+    <p>每台相机的量子效率都是固定的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT17S">00:17</time>
+    <p>并不会随ISO的切换而改变</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT19S">00:19</time>
+    <p>所以很明显</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT20S">00:20</time>
+    <p>数码相机的ISO指的并不是量子效率这个感光度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT24S">00:24</time>
+    <p>从电路层面来看</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT25S">00:25</time>
+    <p>ISO首先提现在电荷到电压的转换上</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT29S">00:29</time>
+    <p>不弄扩散节点的电容</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT30S">00:30</time>
+    <p>觉得你一个电子能转换成多大电压</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT32S">00:32</time>
+    <p>通常是微幅每电子</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT34S">00:34</time>
+    <p>这个电荷到电压的对应关系称之为转换增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT38S">00:38</time>
+    <p>conversion更</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT39S">00:39</time>
+    <p>而这就是我们常说的BassISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT41S">00:41</time>
+    <p>也叫基准ISO或基础ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT44S">00:44</time>
+    <p>调整ISO改变的到底是什么</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT46S">00:46</time>
+    <p>其实就是改变电压信号的强度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT48S">00:48</time>
+    <p>通过PGA的模拟放大来实现</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT51S">00:51</time>
+    <p>假设在基准ISO100时</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT53S">00:53</time>
+    <p>一个电子能被转换成10微幅电压</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT55S">00:55</time>
+    <p>提高ISO到200</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT56S">00:56</time>
+    <p>也就是PGA执行两倍放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT58S">00:58</time>
+    <p>10微幅的电压被放大到20微幅</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT61S">01:01</time>
+    <p>ISO400就是PGA4被放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT63S">01:03</time>
+    <p>10微幅的电压变成40微幅</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT66S">01:06</time>
+    <p>以此类推</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT67S">01:07</time>
+    <p>当然PGA的放大倍率也是有限的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT69S">01:09</time>
+    <p>以32倍为例</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT70S">01:10</time>
+    <p>也就是ISO3200</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT72S">01:12</time>
+    <p>那么从ISO100到3200这个区间的数值</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT74S">01:14</time>
+    <p>都可以被称为原生ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT77S">01:17</time>
+    <p>当然得益于技术的进步</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT78S">01:18</time>
+    <p>很多相机原生的ISO范围会大很多</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT81S">01:21</time>
+    <p>例如ACM4从ISO100到51100</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT84S">01:24</time>
+    <p>可能会有人疑惑</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT86S">01:26</time>
+    <p>认为只有基准ISO100才是原生ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT89S">01:29</time>
+    <p>而其他的都是非原生</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT90S">01:30</time>
+    <p>这个确实存在著多争议</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT92S">01:32</time>
+    <p>也没有绝对严谨的教法</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT94S">01:34</time>
+    <p>不过从原生ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT95S">01:35</time>
+    <p>也就是NATCHYISO的定义来看</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT97S">01:37</time>
+    <p>它指的是不经数字放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT99S">01:39</time>
+    <p>用基准ISO乘以PGA模拟放大得到的数值</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT102S">01:42</time>
+    <p>在这样的定义下</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT104S">01:44</time>
+    <p>这些都可以叫原生ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT106S">01:46</time>
+    <p>不同的是有些是基准ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT108S">01:48</time>
+    <p>有些在是模拟放大ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT112S">01:52</time>
+    <p>超出这个模拟区间的数值</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT113S">01:53</time>
+    <p>都是扩展ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT115S">01:55</time>
+    <p>也就是ADC量化之后在机内数字放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT118S">01:58</time>
+    <p>跟后期提亮画面没有什么差别</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-56">
+    <time datetime="PT121S">02:01</time>
+    <p>看到这里你会发现</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-57">
+    <time datetime="PT122S">02:02</time>
+    <p>在数码时代把ISO理解为传感器</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-58">
+    <time datetime="PT124S">02:04</time>
+    <p>对光线的敏感度并不太贴切</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-59">
+    <time datetime="PT127S">02:07</time>
+    <p>ISO主要品牌的电荷到电压的转换</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-60">
+    <time datetime="PT129S">02:09</time>
+    <p>和之后PGA参与的模拟放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-61">
+    <time datetime="PT132S">02:12</time>
+    <p>也可以把ISO看作是</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-62">
+    <time datetime="PT133S">02:13</time>
+    <p>这一段电路共同协作的电信号读出</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-63">
+    <time datetime="PT136S">02:16</time>
+    <p>当然它有另外一个名字</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-64">
+    <time datetime="PT138S">02:18</time>
+    <p>增益</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">双轨产物之一 · 图文实录 · 原视频 http://xhslink.cn/o/1dOjqxMyqFB</p>
+  </main>
+</body>
+</html>
