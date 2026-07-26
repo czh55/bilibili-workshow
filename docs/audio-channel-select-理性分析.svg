@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6113" viewBox="0 0 1320 6113">
+  <foreignObject x="0" y="0" width="1320" height="6113">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>收藏！一个视频弄懂收音时的声道选择</h1>
+  <div class="meta">
+    <span class="tag tag-orange">小红书</span>
+    <span class="tag tag-blue">收音教程</span>
+    <span class="tag tag-green">声道选择</span>
+    <span class="tag tag-purple">大疆 Mic 3</span>
+    <span class="tag tag-gray">5分01秒</span>
+    <span class="tag tag-red">理性分析</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/A9lFnuFXGYr">原视频链接</a>
+  <div class="summary-line">核心判断：声道不是「听起来更立体」的装饰开关，而是「几路人声要不要可分轨」的录制契约——单人优先单声道铺满 L/R；需要后期分人调音量时改双声道/多声道，并用剪辑软件补齐空声道；相机链路不够时再用发射器内录做双保险。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:12</div><div class="timeline-text">单人一发一收：接收器选单声道，同声铺满左右</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:33</div><div class="timeline-text">只有一边耳机有声：多半录成了双声道/立体声</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:55</div><div class="timeline-text">剪映：声道配置「左填右」急救单边素材</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:04</div><div class="timeline-text">达芬奇：片段属性音频改选有声声道</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:22</div><div class="timeline-text">双人：单声道混录省事但不可分人；建议双声道</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:52</div><div class="timeline-text">剪映分离音频 + 双份填充，完成一人一轨</div></div>
+    <div class="timeline-item"><div class="timeline-time">02:34</div><div class="timeline-text">四人进阶：Mic 3 扩到四发射器，RX 设四声道</div></div>
+    <div class="timeline-item"><div class="timeline-time">03:36</div><div class="timeline-text">索尼 FX30 MI 音频四轨；剪映需切多音轨</div></div>
+    <div class="timeline-item"><div class="timeline-time">04:31</div><div class="timeline-text">发射器内录 32bit 浮点原文件 + 处理文件双保险</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">几个人<br/>要不要分轨</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">选单 / 双 / 四声道</div>
+      <div class="arrow">→</div>
+      <div class="node">录后补空道<br/>或切多轨</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">内录兜底</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>「双声道/立体声」在无线麦场景不等于更好听，而常表示「一路麦只占 L 或 R」。单人误开双声道会出现只有一边耳机有声；需要的是可分轨时才开双声道或多声道，并在后期把空侧补齐或拆轨。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">场景决策：单人 / 双人 / 四人</h2>
+
+    <div class="card card-green">
+      <h3>单人：接收器单声道</h3>
+      <p><strong>在讲什么：</strong>一人一发一收时，接收器选单声道，把同一路麦同时写入 L 与 R。</p>
+      <p><strong>关键理解：</strong>这是默认「可双耳正常听」的契约，不是把声音做成空间立体声。</p>
+      <p><strong>怎么用：</strong>开录前先看接收器界面是否显示「单声道」。</p>
+      <div class="quote">原文依据 [00:18–00:25]：「接入器里边咱们选择单声道……同时录进了左右两声道。」</div>
+      <div class="insight">适用边界：仅一路人声、后期不需要左右分源时。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>单边有声翻车与急救</h3>
+      <p><strong>在讲什么：</strong>单人却选双声道时，麦声只落在一侧；耳机没坏也会「半边没声」。</p>
+      <p><strong>关键理解：</strong>问题在录制分配，不在监听设备。</p>
+      <p><strong>怎么用：</strong>剪映「声道配置」做左填右/右填左；达芬奇在片段属性音频里改选有声声道。</p>
+      <div class="quote">原文依据 [00:33–00:47]：「这种情况多半是你在录音时选择了双声道……在软件里复制到另外一个声道就可以。」</div>
+      <div class="pitfall">陷阱：录完才发现单边——能救，但不如开录前确认模式。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>双人：要不要可分轨</h3>
+      <p><strong>在讲什么：</strong>两人各一发射器时，单声道会混成一条不可分人轨；若音量/声线差异大，应改双声道一人一轨，再分离音频并分别填充空侧。</p>
+      <p><strong>关键理解：</strong>「省事混录」与「后期可控」互斥，先按后期需求选型。</p>
+      <div class="quote">原文依据 [01:34–01:45]：「单声道模式下就没法调……这个时候建议选择双声道。」</div>
+      <div class="relation">立场分层：可验证操作（分离音频、声道填充）vs UP 主建议（双人优先双声道）。</div>
+    </div>
+
+    <div class="card">
+      <h3>四人四轨进阶链路</h3>
+      <p><strong>在讲什么：</strong>Mic 3 扩到四发射器 → RX 四声道 → 索尼热靴转接 + MI 音频四轨；达芬奇直接多轨，剪映需分离并切换多音轨。</p>
+      <p><strong>怎么用：</strong>仅在多嘉宾/多声源且相机支持多轨时启用；配件（热靴转接）可能需另购。</p>
+      <div class="quote">原文依据 [03:16–03:28]：「把声道选择四声道」；[03:41–03:53]：「MI音频设置……已经是四个音轨了。」</div>
+      <div class="highlight">方法边界：依赖特定麦与相机（演示为大疆 Mic 3 + 索尼 FX30），不能外推到所有机型。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：声道模式怎么选</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>场景</th>
+          <th>建议模式</th>
+          <th>后期能力</th>
+          <th>主要代价 / 风险</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>单人口播</td>
+          <td>单声道</td>
+          <td>双耳正常，一路即可</td>
+          <td>误开双声道 → 单边有声</td>
+        </tr>
+        <tr>
+          <td>双人访谈（要分人调）</td>
+          <td>双声道</td>
+          <td>一人一轨，可单独增益</td>
+          <td>需分离音频并补空侧</td>
+        </tr>
+        <tr>
+          <td>双人访谈（只求省事）</td>
+          <td>单声道混录</td>
+          <td>无法分人</td>
+          <td>音量差大时后期难救</td>
+        </tr>
+        <tr>
+          <td>三到四人 / 多声源</td>
+          <td>四声道 + 相机多轨</td>
+          <td>四轨独立</td>
+          <td>设备与配件门槛更高</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">兜底与避坑</h2>
+    <div class="card card-red">
+      <h3>发射器内录双保险</h3>
+      <p>相机链路翻车时，发射器可同步录 32 位浮点原文件与处理后文件（含降噪等）。这是风险对冲，不是替代正确声道设置。</p>
+      <div class="quote">原文依据 [04:46–04:56]：「三召唯辅典的原始音频……也给录制过程加了双保险。」（语境校正：32 位浮点原始音频 + 处理后音频）</div>
+      <div class="pitfall">避坑：别默认「立体声更专业」；别在双人混录后才想分轨；别忽略热靴转接与相机 MI 四轨菜单。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>声道模式服务「是否可分轨」，不是听感滤镜。</li>
+      <li>单人默认单声道；单边有声用剪映/达芬奇补空道。</li>
+      <li>双人要分人调音量 → 双声道 + 拆轨填充；四人走多轨硬件链路。</li>
+      <li>发射器内录是双保险，不能替代开录前的模式确认。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>开录前在接收器确认单/双/四声道与发射器数量匹配。</li>
+      <li>单人若已录成单边：立刻用「左填右/右填左」或片段属性改声道。</li>
+      <li>双人访谈：提前选双声道；剪映分离音频后各做一次填充。</li>
+      <li>四人场景：配对 TX3/TX4 → RX 四声道 → 相机 MI 四轨，再验证软件多轨。</li>
+      <li>重要场次开启发射器内录（原文件 + 处理文件）。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「声道开关随便拨」转向「按人数与后期分轨需求签契约」：模式选对，后期才有自由度；模式选错，最多只能补救听感，很难补回信息分离。</p>
+  </div>
+
+  <p class="footer">分析视角：客观结构化 · 证据来自 Whisper 分段与画面操作 · uploader_id: 5f9a236c00000000010071ea</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
