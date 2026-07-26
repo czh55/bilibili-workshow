@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6353" viewBox="0 0 1320 6353">
+  <foreignObject x="0" y="0" width="1320" height="6353">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+</style>
+      
+<div class="container">
+  <h1>终于有人把色彩讲清楚了！</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">色彩科学</span>
+    <span class="tag tag-orange">CIE / 色度学</span>
+    <span class="tag tag-purple">19分22秒</span>
+    <span class="tag tag-gray">理性分析视角</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/6kSSQtcOgAl">原视频链接 ↗</a>
+  <div class="summary-line">核心判断：颜色量化不是“背一张色度图”，而是先用闪烁量光钉住亮度灵敏度，再用三原色匹配把光谱压成三刺激值，最后经线性变换与投影得到可工程使用的 XYZ / xy；设备色域（sRGB vs Rec.2020）只是这张地图上的可表达子集。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:14</div><div class="timeline-text">主观定性描述长期主导；系统量化约在 1920–30 年代起步</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:00</div><div class="timeline-text">三维度：色调 / 亮度 / 饱和度（色度）</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:55</div><div class="timeline-text">减色法（颜料）与加色法（光、显示器）两条混合路径</div></div>
+    <div class="timeline-item"><div class="timeline-time">02:53</div><div class="timeline-text">颜色=对 SPD 的感觉，不是物体固有属性</div></div>
+    <div class="timeline-item"><div class="timeline-time">04:23</div><div class="timeline-text">约 1924 闪烁量光：17 Hz 切换匹配亮度 → 光度函数</div></div>
+    <div class="timeline-item"><div class="timeline-time">07:06</div><div class="timeline-text">CIE 1924：明视觉 vs 暗视觉；顺带解释 Bayer 多绿</div></div>
+    <div class="timeline-item"><div class="timeline-time">09:02</div><div class="timeline-text">Wright-Guild：700 / 546 / 435 nm 三原色匹配，可出现负值</div></div>
+    <div class="timeline-item"><div class="timeline-time">10:32</div><div class="timeline-text">CIE 1931 RGB 颜色匹配函数（含负值）</div></div>
+    <div class="timeline-item"><div class="timeline-time">12:05</div><div class="timeline-text">线性变换到 XYZ：全正、Y≈光度函数、等能量白点便利</div></div>
+    <div class="timeline-item"><div class="timeline-time">14:18</div><div class="timeline-text">同色异谱：SPD 不同但 XYZ 相同 → 看起来同色</div></div>
+    <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-text">xyY：亮度独立，色度落在 xy 平面（马蹄图）</div></div>
+    <div class="timeline-item"><div class="timeline-time">18:20</div><div class="timeline-text">sRGB/Rec.709（SDR）&lt; Rec.2020（HDR）；片中提及 Qoocam 3 Ultra</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>光谱如何变成颜色数？</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">证据<br/>闪烁量光 + 三刺激匹配</div>
+      <div class="arrow">→</div>
+      <div class="node">判断<br/>XYZ / xy 是感知坐标</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">行动<br/>读色域、辨同色异谱</div>
+    </div>
+    <p>论证主链：主观三属性 → 物理 SPD 与感觉脱节 → 先量化亮度灵敏度 → 再量化色匹配 → 为计算便利做 RGB→XYZ → 投影得 xy → 用色域三角形读设备上限。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p><strong>误解 1：</strong>“颜色是物体的物理属性。” → <strong>纠偏：</strong>物体有的是光谱反射/辐射；颜色是人眼+大脑对光谱的感觉。<br/>
+    <strong>误解 2：</strong>“色度图上的颜色就是显示器能显示的全部。” → <strong>纠偏：</strong>马蹄形是人眼可见；sRGB/Rec.2020 只是其中三角形子集。<br/>
+    <strong>误解 3：</strong>“负值匹配说明实验失败。” → <strong>纠偏：</strong>负值是把原色加到待测侧的记账方式，用来解释光谱色落在三原色三角形外。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">观点拆解</h2>
+
+    <div class="card">
+      <h3>1. 颜色量化的真正问题是什么</h3>
+      <p><strong>在讲什么：</strong>从主观的色调/亮度/饱和度，走到可复现的实验与函数。</p>
+      <p><strong>关键理解：</strong>三属性是画家与日常语言的坐标系；科学要回答的是 SPD→感觉 的映射如何被测量。</p>
+      <p><strong>怎么用：</strong>读任何色度图前，先问：它在描述感觉、设备还是物理光谱？</p>
+      <div class="quote">“颜色不是物理固有……而是人眼看到了物体的光谱，然后在处理完之后的一种感觉。” [02:53–03:02]</div>
+      <div class="relation">证据强度：高（片中核心命题，贯穿后文实验）</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>2. 先亮度、后颜色：实验顺序不可颠倒</h3>
+      <p><strong>在讲什么：</strong>闪烁量光建立 CIE 1924 光度函数；颜色匹配建立三刺激。</p>
+      <p><strong>关键理解：</strong>亮度匹配用闪烁消失作为判据；色匹配用“看起来一样”作为判据。二者解决不同维度。</p>
+      <p><strong>怎么用：</strong>解释相机 Bayer 多绿、Y 通道权重时，回到光度函数峰值附近（绿黄段）这一事实链。</p>
+      <div class="quote">“当这两个的亮度感知一样的时候……比较稳定……亮度如果感知不一样，你会觉得它在闪。” [04:50–04:58]</div>
+      <div class="insight">立场分层：闪烁演示是教学简化（片中用 15 Hz、红绿格）；历史实验参数以幻灯片/口述的约 17 Hz、1924 年为准。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>3. 负值与同色异谱：感知坐标的边界条件</h3>
+      <p><strong>在讲什么：</strong>三原色三角形盖不住全部光谱色 → 负值记账；不同 SPD 可共享 XYZ → 同色异谱。</p>
+      <p><strong>关键理解：</strong>XYZ 相等意味着对人眼等价，不意味着物理光谱相同。这是显示、印刷与照明设计的底层约束。</p>
+      <p><strong>怎么用：</strong>校色与选灯时，不要只看“颜色名”，要问光谱与观察者条件；宽色域能减少“混不出来”的区域，但不能消灭同色异谱。</p>
+      <div class="quote">“只要 X,Y,Z 是一样的人看起来，他的颜色就是一样的……同色异谱现象。” [14:45–14:55 附近，按幻灯片校正]</div>
+      <div class="pitfall">陷阱：把同色异谱当成“测错了”。它是三刺激压缩的必然结果。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>4. 设备色域是地图上的三角形，不是人眼边界</h3>
+      <p><strong>在讲什么：</strong>sRGB/Rec.709（SDR）与 Rec.2020（HDR）在 xy 图上的覆盖差异；片中以 Qoocam 3 Ultra 的 HDR 空间作产品例。</p>
+      <p><strong>关键理解：</strong>更大色域意味着可编码/可显示更多饱和色，尤其绿端；仍小于人眼可见全域。</p>
+      <p><strong>怎么用：</strong>比较相机/显示器时，先看工作色域与传递函数，再谈“色彩好不好看”。</p>
+            <div class="highlight">方法边界：片中产品能力对比属于主讲人陈述与营销语境，不是独立实验室测评；理性结论应停在「Rec.2020 在 xy 上覆盖大于 sRGB」这一几何事实。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：两条混合路径与两套色域</h3>
+    <table>
+      <thead>
+        <tr><th>维度</th><th>路径 / 标准 A</th><th>路径 / 标准 B</th><th>选用条件</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>混色</td>
+          <td>减色法（颜料、墨水）</td>
+          <td>加色法（光、显示）</td>
+          <td>处理反射介质用减色；处理发光成像用加色</td>
+        </tr>
+        <tr>
+          <td>视觉条件</td>
+          <td>明视觉光度函数（亮环境）</td>
+          <td>暗视觉光度函数（暗环境）</td>
+          <td>讨论亮度权重前先确认照度条件</td>
+        </tr>
+        <tr>
+          <td>匹配函数</td>
+          <td>CIE 1931 RGB（可含负值）</td>
+          <td>CIE 1931 XYZ（全正，Y≈光度）</td>
+          <td>工程积分与色度计算优先 XYZ</td>
+        </tr>
+        <tr>
+          <td>显示色域</td>
+          <td>sRGB / Rec.709（SDR）</td>
+          <td>Rec.2020（HDR 常用容器）</td>
+          <td>需要更饱和绿/宽色时看 Rec.2020；消费内容仍常落在 sRGB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card card-red">
+    <h3>避坑总结</h3>
+    <ul>
+      <li>不要把 SPD 曲线“长得像哪种颜色”当成可靠直觉——片中番茄/生菜/黄油已示范反直觉。</li>
+      <li>不要把色度图上的鲜艳填色当成设备真实可显示色；多数设备只能到三角形内部。</li>
+      <li>不要把负值匹配当成错误数据；它解释的是三角形外的光谱色。</li>
+      <li>不要把 XYZ 相同理解成光谱相同；同色异谱是常态风险。</li>
+      <li>不要把片尾产品案例直接升级为普适测评结论；保留为“宽色域相对 SDR 覆盖更大”的几何解读。</li>
+    </ul>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ol>
+      <li>颜色是感知量；SPD 是物理量；量化就是建立二者之间的可复现映射。</li>
+      <li>亮度先于色度：光度函数来自闪烁匹配，三刺激来自 Wright-Guild 类实验。</li>
+      <li>XYZ / xy 是为计算与工程表达服务的坐标，不是“颜色本质”本身。</li>
+      <li>色域三角形告诉你设备上限；同色异谱告诉你三刺激压缩的代价。</li>
+    </ol>
+    <h3>行动清单</h3>
+    <ol>
+      <li>看到颜色争议时，先问：比的是光谱、三刺激，还是显示预览？</li>
+      <li>读 xy 图时，同时标出白点与工作色域三角形，避免只看马蹄外形。</li>
+      <li>做显示/摄影选购对比时，把“HDR / Rec.2020”翻译成“可编码色域更大”，再查实拍与工作流是否吃得到。</li>
+      <li>遇到“两个光源颜色一样”时，保留同色异谱怀疑，必要时看光谱。</li>
+      <li>复习时按片中八节标题自测：描述 → 三原色 → 感觉 → 闪烁 → 匹配 → SPD→XYZ → 空间 → xy 图。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从“颜色是物体上的标签”，转向“颜色是可测量的感知坐标”；从“背色度图”，转向“理解实验如何把无限维光谱压成三维，以及压缩带来的负值与同色异谱。”</p>
+  </div>
+
+  <div class="footer">双轨产物之二：理性分析 · 基于 Whisper 转录与可见字幕校正 · 源视频 http://xhslink.cn/o/6kSSQtcOgAl</div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>

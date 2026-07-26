@@ -1,0 +1,2846 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="19分22秒色彩量化科普实录：从色调亮度饱和度、闪烁量光、Wright-Guild匹配到CIE XYZ与xy色度图。">
+  <title>终于有人把色彩讲清楚了！｜图文实录</title>
+  <style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+a{color:#b45309}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+header{padding:36px;background:linear-gradient(135deg,#eff6ff,#f8fafc);border:1px solid #bfdbfe;border-radius:24px}
+.eyebrow{margin:0 0 8px;color:#1d4ed8;font-weight:800;letter-spacing:.08em}
+h1{font-size:clamp(28px,5.4vw,48px);line-height:1.25;margin:0 0 18px;color:#0f172a}
+h2{font-size:28px;line-height:1.35;margin:0 0 16px;color:#1e293b}
+h3{font-size:20px;margin:0 0 10px;color:#334155}
+.lead{font-size:18px;color:#475569;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.meta span{padding:5px 12px;border-radius:999px;background:#fff;border:1px solid #bfdbfe;color:#1e40af;font-size:14px}
+.source{font-weight:700}
+.toc{margin:28px 0 52px;padding:24px;background:#fff;border:1px solid #e2e8f0;border-radius:16px}
+.toc strong{display:block;margin-bottom:10px}
+.toc ol{margin:0;padding-left:24px;columns:2}
+.documentary{font-size:17px}
+.story-section{margin:56px 0;scroll-margin-top:24px}
+.kicker{display:inline-block;margin-bottom:8px;color:#1d4ed8;font-size:14px;font-weight:800;letter-spacing:.05em}
+.quote{margin:22px 0;padding:18px 22px;background:#eff6ff;border-left:4px solid #3b82f6;border-radius:0 12px 12px 0;color:#1e3a8a;font-size:17px}
+.speaker{font-weight:800;color:#1d4ed8}
+.note{padding:18px 22px;border-radius:14px;background:#f1f5f9;color:#475569}
+img{display:block;max-width:100%;height:auto}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e}
+.transcript-section{margin-top:72px;padding-top:42px;border-top:4px solid #e7e5e4}
+.transcript-note{color:#78716c}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0;overflow-wrap:anywhere}
+footer{margin-top:48px;text-align:center;color:#78716c;font-size:14px}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  header{padding:24px 20px}
+  .toc ol{columns:1}
+  .transcript-row{grid-template-columns:56px 1fr;gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header>
+    <p class="eyebrow">小红书 · 色彩量化科普 · 19 分 22 秒</p>
+    <h1>终于有人把色彩讲清楚了！</h1>
+    <p class="lead">主讲人没有先甩出 CIE 色度图当结论，而是沿着 20 世纪初的实验路径，把“颜色如何从主观感觉变成可计算的三刺激值”一步步讲清楚——从色调/亮度/饱和度，走到闪烁量光、Wright-Guild 匹配，再到 XYZ、xy 色度图与 SDR/HDR 色域。</p>
+    <div class="meta">
+      <span>发布整理：2026-07-26</span>
+      <span>视频时长：19:22</span>
+      <span>平台：小红书</span>
+      <span>转录：Whisper small / Chinese</span>
+      <span>作者 ID：6253c6290000000010004333</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/6kSSQtcOgAl">打开小红书原视频 ↗</a>
+  </header>
+
+  <nav class="toc" aria-label="文章目录">
+    <strong>跟着视频往前走</strong>
+    <ol>
+      <li><a href="#opening">为何要定量描述颜色</a></li>
+      <li><a href="#spd">颜色是感觉，不是固有属性</a></li>
+      <li><a href="#flicker">闪烁量光：先量化亮度</a></li>
+      <li><a href="#match">颜色匹配与负值</a></li>
+      <li><a href="#xyz">RGB → XYZ 与同色异谱</a></li>
+      <li><a href="#xy">xy 色度图与色域对比</a></li>
+      <li><a href="#transcript">完整时间戳转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="opening">
+      <span class="kicker">00:00—02:33</span>
+      <h2>开场：别急着背结论，先走人类量化色彩的路</h2>
+      <p>视频开头，主讲人欢迎观众回到频道，说明本期是一堂色彩科普。他强调：人类对色彩的描述长期停留在主观、定性层面，系统的定量化大约要到一战前后、1920–1930 年代才真正开始。本片想带大家“走过程”，而不是直接甩出最终公式。</p>
+      <blockquote class="quote"><span class="speaker">主讲人：</span>“而不是直接把最后大家得到的最终结果告诉大家，而是探索一条人类认知的这样一条路径。” <time>[00:43]</time></blockquote>
+      <p>随即进入“对颜色的描述”。画家很早就能用三个维度说话：色调（红/黄/绿……）、亮度（暗到黑、亮到白）、饱和度/色度（有多强、有多纯）。历史经验还告诉人们：三种颜色就能混合出大量颜色；混合又分减色法（颜料、墨水越混越暗）与加色法（光、显示器越混越亮）。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-01.jpg" alt="幻灯片展示色调、亮度、饱和度三维度，右侧为 Hue Value/Chroma 图" loading="lazy">
+        <figcaption>[01:06] 开场先把日常描述钉在三个维度上：色调、亮度、饱和度/色度，右侧是 Hue–Value–Chroma 示意。</figcaption>
+      </figure>
+      <p class="note">叙述校正：Whisper 将「减色法」听成「检测法」、将「20 世纪初」听成「24 季初」；下文按可见字幕与幻灯片校正，转录区仍保留原始分段。</p>
+    </section>
+
+    <section class="story-section" id="spd">
+      <span class="kicker">02:33—04:14</span>
+      <h2>颜色不是物体的固有属性，而是光谱经人眼处理后的感觉</h2>
+      <p>进入 20 世纪，人们已经知道可见光是连续光谱。这时日常经验开始“别扭”：颜色并不是番茄或生菜固有的物理标签，而是人眼接收光谱功率分布（SPD），再经大脑处理后产生的感觉。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-02.jpg" alt="番茄、生菜、黄油三条反射光谱曲线对比图" loading="lazy">
+        <figcaption>[03:08] 番茄、生菜、黄油的反射曲线各不相同，但人眼分别读成红、绿、黄——物理 SPD 与主观色名并不一一对应。</figcaption>
+      </figure>
+      <p>主讲人用可见波段约 380–700 nm 举例：番茄曲线在长波端抬升，看起来是红；生菜在绿色波段更突出；黄油则偏黄。三条真实曲线摆在一起，却很难直观读出“红绿黄”。本片的核心问题由此抛出：一条光谱如何对应某种颜色？主观感受如何量化？</p>
+    </section>
+
+    <section class="story-section" id="flicker">
+      <span class="kicker">04:14—08:19</span>
+      <h2>闪烁量光法：先把“亮度”做成曲线</h2>
+      <p>第一个被量化的维度是亮度。视频回顾约 1924 年的思路：固定参考光源的波长与亮度，再调匹配光源的亮度，以约 17 Hz 交替切换。亮度感知一致时，闪烁减弱、颜色显得稳定；不一致时就会明显闪。</p>
+      <p>屏幕演示里，绿点强度固定、红点由暗到亮变化，在约 15 Hz 切换下，两端分别看到红闪或绿闪，中间某一档则相对稳定——那一档就是人眼感觉“一样亮”的匹配点。把整个可见光谱重复做完，就得到一条“匹配所需辐射功率”随波长变化的曲线：中间谷底说明人眼最敏感，两端趋向红外/紫外则越来越不敏感。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-03.jpg" alt="闪烁量光法幻灯片与匹配所需辐射功率随波长变化的曲线" loading="lazy">
+        <figcaption>[06:32] 闪烁量光法流程与结果曲线：谷底对应人眼最敏感的波段。</figcaption>
+      </figure>
+      <p>把曲线反过来，就得到 CIE 1924 光度函数。幻灯片同时给出明视觉（photopic，黑色曲线）与暗视觉（scotopic，绿色曲线）：亮环境与暗环境的灵敏度峰值不同。主讲人顺带提到相机 Bayer 阵列里绿色感光单元更多，是因为人对绿段更灵敏——这是工程上的附带说明，不是本片主线证明。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-04.jpg" alt="CIE 1924 明视觉与暗视觉光度函数曲线及 Bayer 阵列示意" loading="lazy">
+        <figcaption>[07:12] CIE 1924 光度函数：黑线为明视觉、绿线为暗视觉；左下角附 Bayer 阵列示意。</figcaption>
+      </figure>
+      <p class="note">叙述校正：Whisper 将「CIE 1924」听成「CIE924」、将「Bayer Pattern」听成「Bio Pattern」；按幻灯片校正。</p>
+    </section>
+
+    <section class="story-section" id="match">
+      <span class="kicker">08:19—11:54</span>
+      <h2>Wright-Guild 颜色匹配：三原色、标准观测者与负值</h2>
+      <p>亮度量化之后，下一步是颜色匹配。待测色是单一光谱，以约 1 nm 间隔扫过可见波段；比对侧用红约 700 nm、绿约 546 nm、蓝约 435 nm 三原色调到“看起来一样”。参与者被称为标准观测者。这就是 1920 年代著名的 Wright-Guild 实验。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-05.jpg" alt="Wright-Guild 颜色匹配实验示意图：待测色与红绿蓝三原色匹配" loading="lazy">
+        <figcaption>[09:12] 颜色匹配实验：棱镜分光得到待测色，右侧用 700/546/435 nm 三原色调节到视觉匹配。</figcaption>
+      </figure>
+      <p>实验中发现：有些波段无法用三种原色直接混出。做法是把某原色加到待测侧，降低纯度后再匹配，并把“加到对面”的量记为负值。大量实验汇总后，得到 CIE 1931 RGB 颜色匹配函数——曲线仍带有明确的物理波段含义，但红色曲线在部分波段为负。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-06.jpg" alt="CIE 1931 RGB 颜色匹配函数曲线，红色通道出现负值" loading="lazy">
+        <figcaption>[10:36] CIE 1931 RGB 颜色匹配函数：红色曲线在约 450–540 nm 出现负值，正是“加到待测侧”的记账方式。</figcaption>
+      </figure>
+      <p class="note">叙述校正：Whisper 将「Wright-Guild」听成「right due」、将「待测」听成「带侧」、将「纳米」听成「纳密」。</p>
+    </section>
+
+    <section class="story-section" id="xyz">
+      <span class="kicker">11:54—15:40</span>
+      <h2>从 RGB 到 XYZ：全正值、复用光度函数、同色异谱</h2>
+      <p>1931 年还没有计算器，人工计算希望系数全为正；同时绿色匹配曲线与光度函数形状相近，希望变换后 Y 尽量对齐光度函数；第三个数学便利是等能量光谱下白点落在新坐标的三分之一附近。一条线性矩阵把 RGB 匹配函数变成 XYZ 匹配函数——负值被翻正，绿色被拨到接近光度函数。</p>
+      <p>有了 XYZ，只要把物体 SPD 与三条匹配函数积分，就得到三个数。视频用两条外形完全不同的光谱举例：积分后 XYZ 完全相同，人眼就会看成同一颜色——这就是同色异谱。白点则是光源光谱积分得到的 XYZ。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-07.jpg" alt="两条不同 SPD 积分得到相同 XYZ，说明同色异谱" loading="lazy">
+        <figcaption>[14:18] 同色异谱示意：SPD1 与 SPD2 曲线差很远，但 XYZ 同为 0.2841 / 0.2989 / 0.3254。</figcaption>
+      </figure>
+      <p class="note">叙述校正：Whisper 将「X,Y,Z」常听成「X,Y,J」或「S,Y,J」、将「坐标系」听成「做标戏」、将「匹配函数」听成「底配函数」。</p>
+    </section>
+
+    <section class="story-section" id="xy">
+      <span class="kicker">15:40—19:22</span>
+      <h2>xy 色度图：丢掉亮度后的平面地图，以及 SDR/HDR 色域</h2>
+      <p>XYZ 空间是复杂三维体。为了更方便工程表达，再做一次归一化映射到 xyY：Y 继续代表亮度，x、y 只表色度。把可见色投影到 xy 平面，就得到经典的马蹄形 CIE xy 色度图。图上的三角形顶点对应 Wright-Guild 三原色；三角形外的光谱色需要“负值原色”才能解释——与前面 RGB 负值首尾呼应。</p>
+      <p>收尾对比常见显示色域：sRGB / Rec.709（SDR）只占马蹄形内一小块三角形；Rec.2020（HDR）明显更大，尤其向绿色扩展。主讲人提到 Qoocam 3 Ultra 拍摄 HDR 采用的是这类更宽色域空间，相对普通 SDR 相机能还原更多人眼可见色——这是视频末尾的产品语境说明，属于片中陈述。</p>
+      <figure>
+        <img src="assets/color-explained-clearly/shot-08.jpg" alt="CIE xy 色度图上 sRGB 与 Rec.2020 色域三角形对比" loading="lazy">
+        <figcaption>[18:38] 黄三角为 sRGB/Rec.709（SDR），紫三角为 Rec.2020（HDR）；后者能覆盖更多、尤其偏绿的颜色。</figcaption>
+      </figure>
+      <p>全片以“非常快的速度”收束：颜色量化不是天上掉下的色度图，而是亮度实验 → 三刺激匹配 → 坐标变换 → 色度投影 → 设备色域比较，一步步搭起来的。主讲人结尾自问：不知道有没有讲清楚——对读者来说，把这条路径记住，就已经抓住了本片的骨架。</p>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。专业名词请以上文叙述与幻灯片为准。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>大家好 欢迎回到 Cook &amp; Cook &amp; 技术军</p>
+  </li>
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT5S">00:05</time>
+    <p>这一期我们讲一下关于色彩的这样的一个科普</p>
+  </li>
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT10S">00:10</time>
+    <p>其实人类对色彩的描述</p>
+  </li>
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT14S">00:14</time>
+    <p>在很长的一段时间内都停留在一个主观的</p>
+  </li>
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT17S">00:17</time>
+    <p>定性化的这样一个层面</p>
+  </li>
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT19S">00:19</time>
+    <p>就没法去定量的讲这个事</p>
+  </li>
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT21S">00:21</time>
+    <p>其实对色彩进行系统的定量化的描述</p>
+  </li>
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT27S">00:27</time>
+    <p>其实是在24季初</p>
+  </li>
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT29S">00:29</time>
+    <p>也就是一战前后1920 30年代的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT33S">00:33</time>
+    <p>才开始做了这样一件事情</p>
+  </li>
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT35S">00:35</time>
+    <p>这一期我其实是想带着大家走一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT40S">00:40</time>
+    <p>这个过程是怎么过来的</p>
+  </li>
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT43S">00:43</time>
+    <p>而不是直接把最后大家得到的最终结果告诉大家</p>
+  </li>
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT46S">00:46</time>
+    <p>而是探索一条人类认知的这样一条路径</p>
+  </li>
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT51S">00:51</time>
+    <p>我们可以先看一下我们那些定量的描述</p>
+  </li>
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT54S">00:54</time>
+    <p>一开始其实我们会知道描述颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT56S">00:56</time>
+    <p>基本上现在大家会发现</p>
+  </li>
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT58S">00:58</time>
+    <p>大概是三个维度</p>
+  </li>
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT60S">01:00</time>
+    <p>就是很早以前像画家</p>
+  </li>
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT61S">01:01</time>
+    <p>他们就已经有这样子的一些认知了</p>
+  </li>
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT64S">01:04</time>
+    <p>比如说一第一个就叫色调</p>
+  </li>
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT66S">01:06</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT66S">01:06</time>
+    <p>这个颜色究竟是红色黄色还是绿色</p>
+  </li>
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT70S">01:10</time>
+    <p>还是橙色是什么样子</p>
+  </li>
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT71S">01:11</time>
+    <p>这是一个色调</p>
+  </li>
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT72S">01:12</time>
+    <p>也就是比如说这一个部分</p>
+  </li>
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT75S">01:15</time>
+    <p>这是一个颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT76S">01:16</time>
+    <p>第二个维度是一个亮度的东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT78S">01:18</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT79S">01:19</time>
+    <p>这个东西是比较暗的</p>
+  </li>
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT81S">01:21</time>
+    <p>暗到最暗是黑的</p>
+  </li>
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT82S">01:22</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT82S">01:22</time>
+    <p>还是亮的</p>
+  </li>
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT83S">01:23</time>
+    <p>亮到它很白</p>
+  </li>
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT84S">01:24</time>
+    <p>大家伙说它是很红的这样的一个情况</p>
+  </li>
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT87S">01:27</time>
+    <p>然后剩下的一个</p>
+  </li>
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT88S">01:28</time>
+    <p>就是大家可能叫做饱和度</p>
+  </li>
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT90S">01:30</time>
+    <p>或者说色度</p>
+  </li>
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT92S">01:32</time>
+    <p>就是说这个颜色有多强</p>
+  </li>
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT94S">01:34</time>
+    <p>或者有多纯</p>
+  </li>
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT95S">01:35</time>
+    <p>这个其实就是之前大家描述</p>
+  </li>
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT98S">01:38</time>
+    <p>对颜色试图去描述的</p>
+  </li>
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT100S">01:40</time>
+    <p>发现有这样的一个方式可以描述</p>
+  </li>
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT102S">01:42</time>
+    <p>而且在历史的过程中</p>
+  </li>
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT104S">01:44</time>
+    <p>大家也发现了其实有可以用三种颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT108S">01:48</time>
+    <p>就能够混合出很多种</p>
+  </li>
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT110S">01:50</time>
+    <p>我们各种各样的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT112S">01:52</time>
+    <p>而且在这个过程中</p>
+  </li>
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT113S">01:53</time>
+    <p>大家也发现其实有两种</p>
+  </li>
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT115S">01:55</time>
+    <p>所谓的混合方式</p>
+  </li>
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT116S">01:56</time>
+    <p>一种叫检测法</p>
+  </li>
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT118S">01:58</time>
+    <p>这种比如就是画画的</p>
+  </li>
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT119S">01:59</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT119S">01:59</time>
+    <p>它跟涂料色素</p>
+  </li>
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT121S">02:01</time>
+    <p>墨水都是这样是涂的</p>
+  </li>
+  <li class="transcript-row" id="transcript-56">
+    <time datetime="PT123S">02:03</time>
+    <p>你就是这种颜色很多涂在一起</p>
+  </li>
+  <li class="transcript-row" id="transcript-57">
+    <time datetime="PT125S">02:05</time>
+    <p>它就偏黑了</p>
+  </li>
+  <li class="transcript-row" id="transcript-58">
+    <time datetime="PT126S">02:06</time>
+    <p>另外一种是加色法</p>
+  </li>
+  <li class="transcript-row" id="transcript-59">
+    <time datetime="PT128S">02:08</time>
+    <p>那就是它主要是用于光这边的混合</p>
+  </li>
+  <li class="transcript-row" id="transcript-60">
+    <time datetime="PT131S">02:11</time>
+    <p>比如说像白光</p>
+  </li>
+  <li class="transcript-row" id="transcript-61">
+    <time datetime="PT132S">02:12</time>
+    <p>大家都知道所有光混在一起</p>
+  </li>
+  <li class="transcript-row" id="transcript-62">
+    <time datetime="PT134S">02:14</time>
+    <p>看起来就是白的</p>
+  </li>
+  <li class="transcript-row" id="transcript-63">
+    <time datetime="PT135S">02:15</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-64">
+    <time datetime="PT135S">02:15</time>
+    <p>或者说我们显示器</p>
+  </li>
+  <li class="transcript-row" id="transcript-65">
+    <time datetime="PT137S">02:17</time>
+    <p>电视近代的这些</p>
+  </li>
+  <li class="transcript-row" id="transcript-66">
+    <time datetime="PT138S">02:18</time>
+    <p>其实是用所谓的加色法的这个</p>
+  </li>
+  <li class="transcript-row" id="transcript-67">
+    <time datetime="PT141S">02:21</time>
+    <p>我们现在也先不讲原理</p>
+  </li>
+  <li class="transcript-row" id="transcript-68">
+    <time datetime="PT142S">02:22</time>
+    <p>为什么有些是检测</p>
+  </li>
+  <li class="transcript-row" id="transcript-69">
+    <time datetime="PT143S">02:23</time>
+    <p>有些为什么是加色</p>
+  </li>
+  <li class="transcript-row" id="transcript-70">
+    <time datetime="PT144S">02:24</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-71">
+    <time datetime="PT145S">02:25</time>
+    <p>但是历史上因为一开始</p>
+  </li>
+  <li class="transcript-row" id="transcript-72">
+    <time datetime="PT146S">02:26</time>
+    <p>我们能制造的光源不多</p>
+  </li>
+  <li class="transcript-row" id="transcript-73">
+    <time datetime="PT148S">02:28</time>
+    <p>更多的都还想画画</p>
+  </li>
+  <li class="transcript-row" id="transcript-74">
+    <time datetime="PT149S">02:29</time>
+    <p>所以检测系其实是一个</p>
+  </li>
+  <li class="transcript-row" id="transcript-75">
+    <time datetime="PT151S">02:31</time>
+    <p>比较多的这样的一个情况</p>
+  </li>
+  <li class="transcript-row" id="transcript-76">
+    <time datetime="PT153S">02:33</time>
+    <p>那到了科学技术发展到了</p>
+  </li>
+  <li class="transcript-row" id="transcript-77">
+    <time datetime="PT157S">02:37</time>
+    <p>大概1920世纪</p>
+  </li>
+  <li class="transcript-row" id="transcript-78">
+    <time datetime="PT160S">02:40</time>
+    <p>比如说2030年代的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-79">
+    <time datetime="PT162S">02:42</time>
+    <p>人已经知道了</p>
+  </li>
+  <li class="transcript-row" id="transcript-80">
+    <time datetime="PT163S">02:43</time>
+    <p>光线其实是一个连续的</p>
+  </li>
+  <li class="transcript-row" id="transcript-81">
+    <time datetime="PT166S">02:46</time>
+    <p>可见光波了</p>
+  </li>
+  <li class="transcript-row" id="transcript-82">
+    <time datetime="PT167S">02:47</time>
+    <p>这个光波是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-83">
+    <time datetime="PT168S">02:48</time>
+    <p>那那个时候就发现</p>
+  </li>
+  <li class="transcript-row" id="transcript-84">
+    <time datetime="PT170S">02:50</time>
+    <p>跟我们日常的经验</p>
+  </li>
+  <li class="transcript-row" id="transcript-85">
+    <time datetime="PT172S">02:52</time>
+    <p>好像就有点不大一样了</p>
+  </li>
+  <li class="transcript-row" id="transcript-86">
+    <time datetime="PT173S">02:53</time>
+    <p>因为颜色不是物理固有</p>
+  </li>
+  <li class="transcript-row" id="transcript-87">
+    <time datetime="PT176S">02:56</time>
+    <p>一个物体固有的物理属性</p>
+  </li>
+  <li class="transcript-row" id="transcript-88">
+    <time datetime="PT178S">02:58</time>
+    <p>而是人眼看到了物体的光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-89">
+    <time datetime="PT180S">03:00</time>
+    <p>然后在处理完之后的一种感觉</p>
+  </li>
+  <li class="transcript-row" id="transcript-90">
+    <time datetime="PT182S">03:02</time>
+    <p>就说它其实不是一个对应的说</p>
+  </li>
+  <li class="transcript-row" id="transcript-91">
+    <time datetime="PT184S">03:04</time>
+    <p>我比如说我们这样</p>
+  </li>
+  <li class="transcript-row" id="transcript-92">
+    <time datetime="PT186S">03:06</time>
+    <p>这个番茄</p>
+  </li>
+  <li class="transcript-row" id="transcript-93">
+    <time datetime="PT186S">03:06</time>
+    <p>我看这个这个屏谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-94">
+    <time datetime="PT188S">03:08</time>
+    <p>所谓光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-95">
+    <time datetime="PT190S">03:10</time>
+    <p>光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-96">
+    <time datetime="PT190S">03:10</time>
+    <p>功率分布</p>
+  </li>
+  <li class="transcript-row" id="transcript-97">
+    <time datetime="PT190S">03:10</time>
+    <p>spd</p>
+  </li>
+  <li class="transcript-row" id="transcript-98">
+    <time datetime="PT191S">03:11</time>
+    <p>special power distribution</p>
+  </li>
+  <li class="transcript-row" id="transcript-99">
+    <time datetime="PT192S">03:12</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-100">
+    <time datetime="PT193S">03:13</time>
+    <p>这是一个番茄的屏谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-101">
+    <time datetime="PT194S">03:14</time>
+    <p>我上回我们讲有可见光波段是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-102">
+    <time datetime="PT197S">03:17</time>
+    <p>从388到700多</p>
+  </li>
+  <li class="transcript-row" id="transcript-103">
+    <time datetime="PT199S">03:19</time>
+    <p>番茄是这么一样一条曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-104">
+    <time datetime="PT201S">03:21</time>
+    <p>这是真实存在的所谓物理属性</p>
+  </li>
+  <li class="transcript-row" id="transcript-105">
+    <time datetime="PT203S">03:23</time>
+    <p>但是我们看到的</p>
+  </li>
+  <li class="transcript-row" id="transcript-106">
+    <time datetime="PT204S">03:24</time>
+    <p>ok</p>
+  </li>
+  <li class="transcript-row" id="transcript-107">
+    <time datetime="PT205S">03:25</time>
+    <p>它是红红的</p>
+  </li>
+  <li class="transcript-row" id="transcript-108">
+    <time datetime="PT206S">03:26</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-109">
+    <time datetime="PT206S">03:26</time>
+    <p>这个生菜</p>
+  </li>
+  <li class="transcript-row" id="transcript-110">
+    <time datetime="PT208S">03:28</time>
+    <p>它的曲线是长这样子的</p>
+  </li>
+  <li class="transcript-row" id="transcript-111">
+    <time datetime="PT210S">03:30</time>
+    <p>就是从</p>
+  </li>
+  <li class="transcript-row" id="transcript-112">
+    <time datetime="PT211S">03:31</time>
+    <p>它其实啥都有</p>
+  </li>
+  <li class="transcript-row" id="transcript-113">
+    <time datetime="PT212S">03:32</time>
+    <p>从那个的</p>
+  </li>
+  <li class="transcript-row" id="transcript-114">
+    <time datetime="PT215S">03:35</time>
+    <p>低380的纳米的波段</p>
+  </li>
+  <li class="transcript-row" id="transcript-115">
+    <time datetime="PT217S">03:37</time>
+    <p>到了很长波的</p>
+  </li>
+  <li class="transcript-row" id="transcript-116">
+    <time datetime="PT218S">03:38</time>
+    <p>700多纳米</p>
+  </li>
+  <li class="transcript-row" id="transcript-117">
+    <time datetime="PT219S">03:39</time>
+    <p>它其实都也有</p>
+  </li>
+  <li class="transcript-row" id="transcript-118">
+    <time datetime="PT220S">03:40</time>
+    <p>但我们看起来觉得它是绿的</p>
+  </li>
+  <li class="transcript-row" id="transcript-119">
+    <time datetime="PT222S">03:42</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-120">
+    <time datetime="PT223S">03:43</time>
+    <p>然后这一颗是举了一个例子</p>
+  </li>
+  <li class="transcript-row" id="transcript-121">
+    <time datetime="PT224S">03:44</time>
+    <p>是个黄油</p>
+  </li>
+  <li class="transcript-row" id="transcript-122">
+    <time datetime="PT225S">03:45</time>
+    <p>这也是它的所谓光谱功率分布</p>
+  </li>
+  <li class="transcript-row" id="transcript-123">
+    <time datetime="PT228S">03:48</time>
+    <p>那它这时候看起来是黄的</p>
+  </li>
+  <li class="transcript-row" id="transcript-124">
+    <time datetime="PT230S">03:50</time>
+    <p>那你说我们就很不直观是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-125">
+    <time datetime="PT232S">03:52</time>
+    <p>你看着这三条曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-126">
+    <time datetime="PT233S">03:53</time>
+    <p>而且这三条曲线是真实的</p>
+  </li>
+  <li class="transcript-row" id="transcript-127">
+    <time datetime="PT235S">03:55</time>
+    <p>物理世界的存在</p>
+  </li>
+  <li class="transcript-row" id="transcript-128">
+    <time datetime="PT236S">03:56</time>
+    <p>但是我们人看出来的确实是</p>
+  </li>
+  <li class="transcript-row" id="transcript-129">
+    <time datetime="PT239S">03:59</time>
+    <p>蓝红绿</p>
+  </li>
+  <li class="transcript-row" id="transcript-130">
+    <time datetime="PT240S">04:00</time>
+    <p>那这个东西究竟是怎么来</p>
+  </li>
+  <li class="transcript-row" id="transcript-131">
+    <time datetime="PT243S">04:03</time>
+    <p>比如说这条曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-132">
+    <time datetime="PT244S">04:04</time>
+    <p>怎么对应到某种颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-133">
+    <time datetime="PT245S">04:05</time>
+    <p>或者说我们前面讲的那些主观的感受</p>
+  </li>
+  <li class="transcript-row" id="transcript-134">
+    <time datetime="PT248S">04:08</time>
+    <p>应该怎么来量化</p>
+  </li>
+  <li class="transcript-row" id="transcript-135">
+    <time datetime="PT249S">04:09</time>
+    <p>那这也就是我们这一期</p>
+  </li>
+  <li class="transcript-row" id="transcript-136">
+    <time datetime="PT251S">04:11</time>
+    <p>尝试去讲的这个事了</p>
+  </li>
+  <li class="transcript-row" id="transcript-137">
+    <time datetime="PT254S">04:14</time>
+    <p>首先量化我们前面讲的</p>
+  </li>
+  <li class="transcript-row" id="transcript-138">
+    <time datetime="PT256S">04:16</time>
+    <p>那第一个维度</p>
+  </li>
+  <li class="transcript-row" id="transcript-139">
+    <time datetime="PT257S">04:17</time>
+    <p>是大家知道有一个量度的问题</p>
+  </li>
+  <li class="transcript-row" id="transcript-140">
+    <time datetime="PT260S">04:20</time>
+    <p>那这个其实是大概是</p>
+  </li>
+  <li class="transcript-row" id="transcript-141">
+    <time datetime="PT263S">04:23</time>
+    <p>1924年时候的一个实验</p>
+  </li>
+  <li class="transcript-row" id="transcript-142">
+    <time datetime="PT265S">04:25</time>
+    <p>他们做的这个实验的过程是这样子的</p>
+  </li>
+  <li class="transcript-row" id="transcript-143">
+    <time datetime="PT268S">04:28</time>
+    <p>所以首先是有一个参考光源</p>
+  </li>
+  <li class="transcript-row" id="transcript-144">
+    <time datetime="PT271S">04:31</time>
+    <p>它参考光源是一个固定的频率或波长</p>
+  </li>
+  <li class="transcript-row" id="transcript-145">
+    <time datetime="PT273S">04:33</time>
+    <p>固定的亮度</p>
+  </li>
+  <li class="transcript-row" id="transcript-146">
+    <time datetime="PT274S">04:34</time>
+    <p>然后我们有另外一个叫匹配的光源</p>
+  </li>
+  <li class="transcript-row" id="transcript-147">
+    <time datetime="PT277S">04:37</time>
+    <p>那这个光源的那个亮度是可调的</p>
+  </li>
+  <li class="transcript-row" id="transcript-148">
+    <time datetime="PT279S">04:39</time>
+    <p>然后亮度也是可调的</p>
+  </li>
+  <li class="transcript-row" id="transcript-149">
+    <time datetime="PT281S">04:41</time>
+    <p>然后这两个光源以17赫兹</p>
+  </li>
+  <li class="transcript-row" id="transcript-150">
+    <time datetime="PT283S">04:43</time>
+    <p>就是1秒切换17次的频率</p>
+  </li>
+  <li class="transcript-row" id="transcript-151">
+    <time datetime="PT285S">04:45</time>
+    <p>再让你去切</p>
+  </li>
+  <li class="transcript-row" id="transcript-152">
+    <time datetime="PT287S">04:47</time>
+    <p>当这两个的亮度感知一样的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-153">
+    <time datetime="PT290S">04:50</time>
+    <p>你会就是觉得</p>
+  </li>
+  <li class="transcript-row" id="transcript-154">
+    <time datetime="PT291S">04:51</time>
+    <p>这个比较稳定的形成了一种新的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-155">
+    <time datetime="PT294S">04:54</time>
+    <p>但是这个亮度如果感知不一样</p>
+  </li>
+  <li class="transcript-row" id="transcript-156">
+    <time datetime="PT297S">04:57</time>
+    <p>你会觉得它在闪</p>
+  </li>
+  <li class="transcript-row" id="transcript-157">
+    <time datetime="PT298S">04:58</time>
+    <p>那我这样讲可能有点抽象</p>
+  </li>
+  <li class="transcript-row" id="transcript-158">
+    <time datetime="PT300S">05:00</time>
+    <p>所以我们就看一下一个演示</p>
+  </li>
+  <li class="transcript-row" id="transcript-159">
+    <time datetime="PT303S">05:03</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-160">
+    <time datetime="PT303S">05:03</time>
+    <p>现在可以看到</p>
+  </li>
+  <li class="transcript-row" id="transcript-161">
+    <time datetime="PT305S">05:05</time>
+    <p>我们屏幕上其实会有</p>
+  </li>
+  <li class="transcript-row" id="transcript-162">
+    <time datetime="PT308S">05:08</time>
+    <p>我们现在刚才讲就两种光</p>
+  </li>
+  <li class="transcript-row" id="transcript-163">
+    <time datetime="PT309S">05:09</time>
+    <p>所谓的标准光源</p>
+  </li>
+  <li class="transcript-row" id="transcript-164">
+    <time datetime="PT310S">05:10</time>
+    <p>刚才是一个绿色的</p>
+  </li>
+  <li class="transcript-row" id="transcript-165">
+    <time datetime="PT312S">05:12</time>
+    <p>但实验当时不是这样子</p>
+  </li>
+  <li class="transcript-row" id="transcript-166">
+    <time datetime="PT313S">05:13</time>
+    <p>这是我现在为了给大家讲清楚的一个事业</p>
+  </li>
+  <li class="transcript-row" id="transcript-167">
+    <time datetime="PT316S">05:16</time>
+    <p>这每一格的绿色</p>
+  </li>
+  <li class="transcript-row" id="transcript-168">
+    <time datetime="PT317S">05:17</time>
+    <p>它其实都是同样的亮度</p>
+  </li>
+  <li class="transcript-row" id="transcript-169">
+    <time datetime="PT319S">05:19</time>
+    <p>或者说同样的强度</p>
+  </li>
+  <li class="transcript-row" id="transcript-170">
+    <time datetime="PT321S">05:21</time>
+    <p>一样大了</p>
+  </li>
+  <li class="transcript-row" id="transcript-171">
+    <time datetime="PT322S">05:22</time>
+    <p>那我们拿它跟什么混</p>
+  </li>
+  <li class="transcript-row" id="transcript-172">
+    <time datetime="PT323S">05:23</time>
+    <p>拿它跟红色混</p>
+  </li>
+  <li class="transcript-row" id="transcript-173">
+    <time datetime="PT324S">05:24</time>
+    <p>而且大家可以看到红色</p>
+  </li>
+  <li class="transcript-row" id="transcript-174">
+    <time datetime="PT325S">05:25</time>
+    <p>我这里有一个最暗的红色</p>
+  </li>
+  <li class="transcript-row" id="transcript-175">
+    <time datetime="PT327S">05:27</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-176">
+    <time datetime="PT327S">05:27</time>
+    <p>主降变亮</p>
+  </li>
+  <li class="transcript-row" id="transcript-177">
+    <time datetime="PT329S">05:29</time>
+    <p>这里变亮</p>
+  </li>
+  <li class="transcript-row" id="transcript-178">
+    <time datetime="PT331S">05:31</time>
+    <p>这里是一个最亮的红色</p>
+  </li>
+  <li class="transcript-row" id="transcript-179">
+    <time datetime="PT333S">05:33</time>
+    <p>那刚才讲是以一个17赫兹</p>
+  </li>
+  <li class="transcript-row" id="transcript-180">
+    <time datetime="PT335S">05:35</time>
+    <p>我这里是一个15赫兹</p>
+  </li>
+  <li class="transcript-row" id="transcript-181">
+    <time datetime="PT337S">05:37</time>
+    <p>那我就放起来</p>
+  </li>
+  <li class="transcript-row" id="transcript-182">
+    <time datetime="PT337S">05:37</time>
+    <p>大家可以看到了</p>
+  </li>
+  <li class="transcript-row" id="transcript-183">
+    <time datetime="PT339S">05:39</time>
+    <p>东西在闪</p>
+  </li>
+  <li class="transcript-row" id="transcript-184">
+    <time datetime="PT340S">05:40</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-185">
+    <time datetime="PT340S">05:40</time>
+    <p>那你到后面的话</p>
+  </li>
+  <li class="transcript-row" id="transcript-186">
+    <time datetime="PT341S">05:41</time>
+    <p>因为红色是更亮</p>
+  </li>
+  <li class="transcript-row" id="transcript-187">
+    <time datetime="PT343S">05:43</time>
+    <p>但其实你刚才看到还是这两个之间在切</p>
+  </li>
+  <li class="transcript-row" id="transcript-188">
+    <time datetime="PT346S">05:46</time>
+    <p>红色绿色</p>
+  </li>
+  <li class="transcript-row" id="transcript-189">
+    <time datetime="PT347S">05:47</time>
+    <p>红色绿色在亮切</p>
+  </li>
+  <li class="transcript-row" id="transcript-190">
+    <time datetime="PT348S">05:48</time>
+    <p>这个是红色亮</p>
+  </li>
+  <li class="transcript-row" id="transcript-191">
+    <time datetime="PT349S">05:49</time>
+    <p>所以你看到的是一个红色在闪</p>
+  </li>
+  <li class="transcript-row" id="transcript-192">
+    <time datetime="PT351S">05:51</time>
+    <p>这里是绿色最亮</p>
+  </li>
+  <li class="transcript-row" id="transcript-193">
+    <time datetime="PT352S">05:52</time>
+    <p>你会看到绿色在闪</p>
+  </li>
+  <li class="transcript-row" id="transcript-194">
+    <time datetime="PT354S">05:54</time>
+    <p>但中间在这个部分</p>
+  </li>
+  <li class="transcript-row" id="transcript-195">
+    <time datetime="PT356S">05:56</time>
+    <p>大概是这个地方</p>
+  </li>
+  <li class="transcript-row" id="transcript-196">
+    <time datetime="PT357S">05:57</time>
+    <p>这颜色就比较稳定</p>
+  </li>
+  <li class="transcript-row" id="transcript-197">
+    <time datetime="PT359S">05:59</time>
+    <p>它没有在闪</p>
+  </li>
+  <li class="transcript-row" id="transcript-198">
+    <time datetime="PT360S">06:00</time>
+    <p>是一个比较稳定的</p>
+  </li>
+  <li class="transcript-row" id="transcript-199">
+    <time datetime="PT361S">06:01</time>
+    <p>混合出来的这样的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-200">
+    <time datetime="PT363S">06:03</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-201">
+    <time datetime="PT363S">06:03</time>
+    <p>就这样子</p>
+  </li>
+  <li class="transcript-row" id="transcript-202">
+    <time datetime="PT364S">06:04</time>
+    <p>看绿色都是一样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-203">
+    <time datetime="PT366S">06:06</time>
+    <p>红色是变化的</p>
+  </li>
+  <li class="transcript-row" id="transcript-204">
+    <time datetime="PT367S">06:07</time>
+    <p>然后这样闪</p>
+  </li>
+  <li class="transcript-row" id="transcript-205">
+    <time datetime="PT368S">06:08</time>
+    <p>那这样的意思就是说</p>
+  </li>
+  <li class="transcript-row" id="transcript-206">
+    <time datetime="PT370S">06:10</time>
+    <p>这个红色和这个绿色</p>
+  </li>
+  <li class="transcript-row" id="transcript-207">
+    <time datetime="PT373S">06:13</time>
+    <p>在人的感觉上</p>
+  </li>
+  <li class="transcript-row" id="transcript-208">
+    <time datetime="PT375S">06:15</time>
+    <p>它是一样亮的</p>
+  </li>
+  <li class="transcript-row" id="transcript-209">
+    <time datetime="PT377S">06:17</time>
+    <p>就是这样子的一个过程</p>
+  </li>
+  <li class="transcript-row" id="transcript-210">
+    <time datetime="PT380S">06:20</time>
+    <p>那这个实验就会重复很多次</p>
+  </li>
+  <li class="transcript-row" id="transcript-211">
+    <time datetime="PT383S">06:23</time>
+    <p>从每一个平谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-212">
+    <time datetime="PT384S">06:24</time>
+    <p>不断的做</p>
+  </li>
+  <li class="transcript-row" id="transcript-213">
+    <time datetime="PT386S">06:26</time>
+    <p>整个可见光的平谱做完</p>
+  </li>
+  <li class="transcript-row" id="transcript-214">
+    <time datetime="PT388S">06:28</time>
+    <p>之后我们就得到了这么一条曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-215">
+    <time datetime="PT390S">06:30</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-216">
+    <time datetime="PT391S">06:31</time>
+    <p>这条曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-217">
+    <time datetime="PT391S">06:31</time>
+    <p>我们可以大概讲一下这个意思是啥</p>
+  </li>
+  <li class="transcript-row" id="transcript-218">
+    <time datetime="PT393S">06:33</time>
+    <p>说比如说到这里</p>
+  </li>
+  <li class="transcript-row" id="transcript-219">
+    <time datetime="PT394S">06:34</time>
+    <p>这里有一个相当于谷底</p>
+  </li>
+  <li class="transcript-row" id="transcript-220">
+    <time datetime="PT396S">06:36</time>
+    <p>那意思就是说</p>
+  </li>
+  <li class="transcript-row" id="transcript-221">
+    <time datetime="PT397S">06:37</time>
+    <p>我需要很少的</p>
+  </li>
+  <li class="transcript-row" id="transcript-222">
+    <time datetime="PT399S">06:39</time>
+    <p>这个是你所谓匹配光源</p>
+  </li>
+  <li class="transcript-row" id="transcript-223">
+    <time datetime="PT401S">06:41</time>
+    <p>你调节的亮度</p>
+  </li>
+  <li class="transcript-row" id="transcript-224">
+    <time datetime="PT402S">06:42</time>
+    <p>我只要用很少的亮度</p>
+  </li>
+  <li class="transcript-row" id="transcript-225">
+    <time datetime="PT404S">06:44</time>
+    <p>就可以跟那个参考光源</p>
+  </li>
+  <li class="transcript-row" id="transcript-226">
+    <time datetime="PT405S">06:45</time>
+    <p>给匹配的上了</p>
+  </li>
+  <li class="transcript-row" id="transcript-227">
+    <time datetime="PT407S">06:47</time>
+    <p>这也就是说人对这一段的频率</p>
+  </li>
+  <li class="transcript-row" id="transcript-228">
+    <time datetime="PT410S">06:50</time>
+    <p>其实是最敏感</p>
+  </li>
+  <li class="transcript-row" id="transcript-229">
+    <time datetime="PT411S">06:51</time>
+    <p>然后到了两边</p>
+  </li>
+  <li class="transcript-row" id="transcript-230">
+    <time datetime="PT412S">06:52</time>
+    <p>是越来越不敏感</p>
+  </li>
+  <li class="transcript-row" id="transcript-231">
+    <time datetime="PT414S">06:54</time>
+    <p>到了红外</p>
+  </li>
+  <li class="transcript-row" id="transcript-232">
+    <time datetime="PT415S">06:55</time>
+    <p>这边是紫外</p>
+  </li>
+  <li class="transcript-row" id="transcript-233">
+    <time datetime="PT416S">06:56</time>
+    <p>后来就别人你甚至都看不到了</p>
+  </li>
+  <li class="transcript-row" id="transcript-234">
+    <time datetime="PT417S">06:57</time>
+    <p>这就是这条曲线的这样一个意思</p>
+  </li>
+  <li class="transcript-row" id="transcript-235">
+    <time datetime="PT420S">07:00</time>
+    <p>那我们把这条曲线给反过来</p>
+  </li>
+  <li class="transcript-row" id="transcript-236">
+    <time datetime="PT423S">07:03</time>
+    <p>就得到了所谓的CIE924光度函数</p>
+  </li>
+  <li class="transcript-row" id="transcript-237">
+    <time datetime="PT426S">07:06</time>
+    <p>就是这一条</p>
+  </li>
+  <li class="transcript-row" id="transcript-238">
+    <time datetime="PT427S">07:07</time>
+    <p>当然这里面我给了两条函数</p>
+  </li>
+  <li class="transcript-row" id="transcript-239">
+    <time datetime="PT429S">07:09</time>
+    <p>两条曲线了</p>
+  </li>
+  <li class="transcript-row" id="transcript-240">
+    <time datetime="PT431S">07:11</time>
+    <p>那个黑色的这一条</p>
+  </li>
+  <li class="transcript-row" id="transcript-241">
+    <time datetime="PT434S">07:14</time>
+    <p>叫做那个明视觉的曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-242">
+    <time datetime="PT436S">07:16</time>
+    <p>就是说在亮的环境下</p>
+  </li>
+  <li class="transcript-row" id="transcript-243">
+    <time datetime="PT437S">07:17</time>
+    <p>你看到的这样的一个曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-244">
+    <time datetime="PT439S">07:19</time>
+    <p>然后在暗的环境下</p>
+  </li>
+  <li class="transcript-row" id="transcript-245">
+    <time datetime="PT440S">07:20</time>
+    <p>你那条曲线是绿色的这条</p>
+  </li>
+  <li class="transcript-row" id="transcript-246">
+    <time datetime="PT442S">07:22</time>
+    <p>或者先带一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-247">
+    <time datetime="PT444S">07:24</time>
+    <p>这个其实我是在想</p>
+  </li>
+  <li class="transcript-row" id="transcript-248">
+    <time datetime="PT445S">07:25</time>
+    <p>比如下一期如果还有机会</p>
+  </li>
+  <li class="transcript-row" id="transcript-249">
+    <time datetime="PT447S">07:27</time>
+    <p>我们可以开始讲一些人眼的</p>
+  </li>
+  <li class="transcript-row" id="transcript-250">
+    <time datetime="PT449S">07:29</time>
+    <p>这样一个机制或者机构</p>
+  </li>
+  <li class="transcript-row" id="transcript-251">
+    <time datetime="PT451S">07:31</time>
+    <p>就在讲</p>
+  </li>
+  <li class="transcript-row" id="transcript-252">
+    <time datetime="PT451S">07:31</time>
+    <p>为什么会有一根绿色的</p>
+  </li>
+  <li class="transcript-row" id="transcript-253">
+    <time datetime="PT452S">07:32</time>
+    <p>这样的东西出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-254">
+    <time datetime="PT453S">07:33</time>
+    <p>但我们现在这个跳过不讲</p>
+  </li>
+  <li class="transcript-row" id="transcript-255">
+    <time datetime="PT455S">07:35</time>
+    <p>只是告诉你说</p>
+  </li>
+  <li class="transcript-row" id="transcript-256">
+    <time datetime="PT457S">07:37</time>
+    <p>在亮的环境和暗的环境</p>
+  </li>
+  <li class="transcript-row" id="transcript-257">
+    <time datetime="PT458S">07:38</time>
+    <p>人眼其实是会发生不一样的感知的</p>
+  </li>
+  <li class="transcript-row" id="transcript-258">
+    <time datetime="PT461S">07:41</time>
+    <p>这个时候我顺便可以扯一句</p>
+  </li>
+  <li class="transcript-row" id="transcript-259">
+    <time datetime="PT464S">07:44</time>
+    <p>就是刚才讲说</p>
+  </li>
+  <li class="transcript-row" id="transcript-260">
+    <time datetime="PT465S">07:45</time>
+    <p>你看大家这个是一个灵敏度</p>
+  </li>
+  <li class="transcript-row" id="transcript-261">
+    <time datetime="PT467S">07:47</time>
+    <p>把握来的</p>
+  </li>
+  <li class="transcript-row" id="transcript-262">
+    <time datetime="PT468S">07:48</time>
+    <p>就我们对绿色这一段是最灵敏</p>
+  </li>
+  <li class="transcript-row" id="transcript-263">
+    <time datetime="PT470S">07:50</time>
+    <p>这也是为什么</p>
+  </li>
+  <li class="transcript-row" id="transcript-264">
+    <time datetime="PT471S">07:51</time>
+    <p>比如我们相机里面</p>
+  </li>
+  <li class="transcript-row" id="transcript-265">
+    <time datetime="PT472S">07:52</time>
+    <p>我们所谓的Bio Pattern</p>
+  </li>
+  <li class="transcript-row" id="transcript-266">
+    <time datetime="PT474S">07:54</time>
+    <p>Bio图案</p>
+  </li>
+  <li class="transcript-row" id="transcript-267">
+    <time datetime="PT475S">07:55</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-268">
+    <time datetime="PT475S">07:55</time>
+    <p>它的RGB RGB</p>
+  </li>
+  <li class="transcript-row" id="transcript-269">
+    <time datetime="PT477S">07:57</time>
+    <p>这样子的一些颜色去捕捉</p>
+  </li>
+  <li class="transcript-row" id="transcript-270">
+    <time datetime="PT480S">08:00</time>
+    <p>它最多的是G</p>
+  </li>
+  <li class="transcript-row" id="transcript-271">
+    <time datetime="PT481S">08:01</time>
+    <p>就是绿色的这同道</p>
+  </li>
+  <li class="transcript-row" id="transcript-272">
+    <time datetime="PT483S">08:03</time>
+    <p>因为人对这个敏感</p>
+  </li>
+  <li class="transcript-row" id="transcript-273">
+    <time datetime="PT484S">08:04</time>
+    <p>我们捕捉多一点</p>
+  </li>
+  <li class="transcript-row" id="transcript-274">
+    <time datetime="PT485S">08:05</time>
+    <p>它是合算的</p>
+  </li>
+  <li class="transcript-row" id="transcript-275">
+    <time datetime="PT486S">08:06</time>
+    <p>这个就是顺便扯</p>
+  </li>
+  <li class="transcript-row" id="transcript-276">
+    <time datetime="PT488S">08:08</time>
+    <p>我们现在就把亮度</p>
+  </li>
+  <li class="transcript-row" id="transcript-277">
+    <time datetime="PT490S">08:10</time>
+    <p>这一节已经做了一个量化</p>
+  </li>
+  <li class="transcript-row" id="transcript-278">
+    <time datetime="PT492S">08:12</time>
+    <p>是说不同的波段</p>
+  </li>
+  <li class="transcript-row" id="transcript-279">
+    <time datetime="PT495S">08:15</time>
+    <p>我们对它的亮度的感知</p>
+  </li>
+  <li class="transcript-row" id="transcript-280">
+    <time datetime="PT497S">08:17</time>
+    <p>是什么样子</p>
+  </li>
+  <li class="transcript-row" id="transcript-281">
+    <time datetime="PT499S">08:19</time>
+    <p>亮度完了之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-282">
+    <time datetime="PT500S">08:20</time>
+    <p>我们其实要做颜色去做一个匹配</p>
+  </li>
+  <li class="transcript-row" id="transcript-283">
+    <time datetime="PT503S">08:23</time>
+    <p>刚才讲了</p>
+  </li>
+  <li class="transcript-row" id="transcript-284">
+    <time datetime="PT503S">08:23</time>
+    <p>自然界的光</p>
+  </li>
+  <li class="transcript-row" id="transcript-285">
+    <time datetime="PT504S">08:24</time>
+    <p>它其实都是一个连续的光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-286">
+    <time datetime="PT507S">08:27</time>
+    <p>那现在这个黄色的</p>
+  </li>
+  <li class="transcript-row" id="transcript-287">
+    <time datetime="PT508S">08:28</time>
+    <p>是一个</p>
+  </li>
+  <li class="transcript-row" id="transcript-288">
+    <time datetime="PT509S">08:29</time>
+    <p>这个就是所谓的颜色匹配实验了</p>
+  </li>
+  <li class="transcript-row" id="transcript-289">
+    <time datetime="PT512S">08:32</time>
+    <p>那带侧的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-290">
+    <time datetime="PT514S">08:34</time>
+    <p>是一个单一平谱的过来的</p>
+  </li>
+  <li class="transcript-row" id="transcript-291">
+    <time datetime="PT516S">08:36</time>
+    <p>然后就是从整个可见波段</p>
+  </li>
+  <li class="transcript-row" id="transcript-292">
+    <time datetime="PT518S">08:38</time>
+    <p>都做了这样一个实验</p>
+  </li>
+  <li class="transcript-row" id="transcript-293">
+    <time datetime="PT519S">08:39</time>
+    <p>所以这个实验其实做了很多次</p>
+  </li>
+  <li class="transcript-row" id="transcript-294">
+    <time datetime="PT521S">08:41</time>
+    <p>就是几百次这样在做</p>
+  </li>
+  <li class="transcript-row" id="transcript-295">
+    <time datetime="PT523S">08:43</time>
+    <p>然后每一个间隔</p>
+  </li>
+  <li class="transcript-row" id="transcript-296">
+    <time datetime="PT524S">08:44</time>
+    <p>大概是一个纳米</p>
+  </li>
+  <li class="transcript-row" id="transcript-297">
+    <time datetime="PT525S">08:45</time>
+    <p>所以可想在20世纪20年</p>
+  </li>
+  <li class="transcript-row" id="transcript-298">
+    <time datetime="PT528S">08:48</time>
+    <p>20、30年代的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-299">
+    <time datetime="PT530S">08:50</time>
+    <p>其实科技也已经发展到一定程度了</p>
+  </li>
+  <li class="transcript-row" id="transcript-300">
+    <time datetime="PT532S">08:52</time>
+    <p>我们已经能够把光谱一个纳米</p>
+  </li>
+  <li class="transcript-row" id="transcript-301">
+    <time datetime="PT535S">08:55</time>
+    <p>一个纳米的分出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-302">
+    <time datetime="PT536S">08:56</time>
+    <p>然后去做实验</p>
+  </li>
+  <li class="transcript-row" id="transcript-303">
+    <time datetime="PT538S">08:58</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-304">
+    <time datetime="PT538S">08:58</time>
+    <p>那比对的颜色是做它</p>
+  </li>
+  <li class="transcript-row" id="transcript-305">
+    <time datetime="PT540S">09:00</time>
+    <p>我们是选了三种颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-306">
+    <time datetime="PT542S">09:02</time>
+    <p>所谓的三原色</p>
+  </li>
+  <li class="transcript-row" id="transcript-307">
+    <time datetime="PT544S">09:04</time>
+    <p>红色大概是选了一个700纳米</p>
+  </li>
+  <li class="transcript-row" id="transcript-308">
+    <time datetime="PT546S">09:06</time>
+    <p>绿色是选了一个546纳米</p>
+  </li>
+  <li class="transcript-row" id="transcript-309">
+    <time datetime="PT549S">09:09</time>
+    <p>蓝色是选了一个435纳米的光线</p>
+  </li>
+  <li class="transcript-row" id="transcript-310">
+    <time datetime="PT553S">09:13</time>
+    <p>然后要干的事情是啥呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-311">
+    <time datetime="PT556S">09:16</time>
+    <p>这边有一个颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-312">
+    <time datetime="PT558S">09:18</time>
+    <p>那这边我们通过三个颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-313">
+    <time datetime="PT560S">09:20</time>
+    <p>这每一个我们可以去调整大小</p>
+  </li>
+  <li class="transcript-row" id="transcript-314">
+    <time datetime="PT562S">09:22</time>
+    <p>说我多少纳米可以通过这三个颜色混出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-315">
+    <time datetime="PT567S">09:27</time>
+    <p>跟它看起来是接近的</p>
+  </li>
+  <li class="transcript-row" id="transcript-316">
+    <time datetime="PT569S">09:29</time>
+    <p>所以这个就是所谓有一个叫标准观测者</p>
+  </li>
+  <li class="transcript-row" id="transcript-317">
+    <time datetime="PT572S">09:32</time>
+    <p>就反正选了一群做实验的人</p>
+  </li>
+  <li class="transcript-row" id="transcript-318">
+    <time datetime="PT574S">09:34</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-319">
+    <time datetime="PT574S">09:34</time>
+    <p>来做这个事</p>
+  </li>
+  <li class="transcript-row" id="transcript-320">
+    <time datetime="PT575S">09:35</time>
+    <p>那你就调整这三个东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-321">
+    <time datetime="PT577S">09:37</time>
+    <p>调调调调到之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-322">
+    <time datetime="PT578S">09:38</time>
+    <p>你看起来跟左边一样</p>
+  </li>
+  <li class="transcript-row" id="transcript-323">
+    <time datetime="PT579S">09:39</time>
+    <p>一样的时候你就把这东西记下来</p>
+  </li>
+  <li class="transcript-row" id="transcript-324">
+    <time datetime="PT581S">09:41</time>
+    <p>你就知道OK</p>
+  </li>
+  <li class="transcript-row" id="transcript-325">
+    <time datetime="PT582S">09:42</time>
+    <p>这个波长的光</p>
+  </li>
+  <li class="transcript-row" id="transcript-326">
+    <time datetime="PT583S">09:43</time>
+    <p>我可以用这三种光来混</p>
+  </li>
+  <li class="transcript-row" id="transcript-327">
+    <time datetime="PT585S">09:45</time>
+    <p>那就一个假前面</p>
+  </li>
+  <li class="transcript-row" id="transcript-328">
+    <time datetime="PT587S">09:47</time>
+    <p>其实因为我们发现有三原色的原理</p>
+  </li>
+  <li class="transcript-row" id="transcript-329">
+    <time datetime="PT589S">09:49</time>
+    <p>这个时候试图就去量化</p>
+  </li>
+  <li class="transcript-row" id="transcript-330">
+    <time datetime="PT591S">09:51</time>
+    <p>这个三原色的这个过程</p>
+  </li>
+  <li class="transcript-row" id="transcript-331">
+    <time datetime="PT592S">09:52</time>
+    <p>这就是非常有名的right due实验</p>
+  </li>
+  <li class="transcript-row" id="transcript-332">
+    <time datetime="PT594S">09:54</time>
+    <p>大概是1920年左右的时候做的</p>
+  </li>
+  <li class="transcript-row" id="transcript-333">
+    <time datetime="PT598S">09:58</time>
+    <p>但在实验的过程中</p>
+  </li>
+  <li class="transcript-row" id="transcript-334">
+    <time datetime="PT600S">10:00</time>
+    <p>会发现有些波段的光是不管怎么混</p>
+  </li>
+  <li class="transcript-row" id="transcript-335">
+    <time datetime="PT604S">10:04</time>
+    <p>这三种颜色是混不出来的</p>
+  </li>
+  <li class="transcript-row" id="transcript-336">
+    <time datetime="PT606S">10:06</time>
+    <p>这个时候他们就想了一个办法</p>
+  </li>
+  <li class="transcript-row" id="transcript-337">
+    <time datetime="PT609S">10:09</time>
+    <p>就说把这三种颜色随便全一种</p>
+  </li>
+  <li class="transcript-row" id="transcript-338">
+    <time datetime="PT611S">10:11</time>
+    <p>加到这边来</p>
+  </li>
+  <li class="transcript-row" id="transcript-339">
+    <time datetime="PT613S">10:13</time>
+    <p>相当于让带测光变得不那么纯</p>
+  </li>
+  <li class="transcript-row" id="transcript-340">
+    <time datetime="PT615S">10:15</time>
+    <p>加过来</p>
+  </li>
+  <li class="transcript-row" id="transcript-341">
+    <time datetime="PT616S">10:16</time>
+    <p>然后让它使</p>
+  </li>
+  <li class="transcript-row" id="transcript-342">
+    <time datetime="PT617S">10:17</time>
+    <p>最后让两边又调到一样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-343">
+    <time datetime="PT620S">10:20</time>
+    <p>这个反过来加的这个值就</p>
+  </li>
+  <li class="transcript-row" id="transcript-344">
+    <time datetime="PT622S">10:22</time>
+    <p>把它记为负的</p>
+  </li>
+  <li class="transcript-row" id="transcript-345">
+    <time datetime="PT624S">10:24</time>
+    <p>那刚才讲的就是</p>
+  </li>
+  <li class="transcript-row" id="transcript-346">
+    <time datetime="PT626S">10:26</time>
+    <p>以几百个实验做下来之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-347">
+    <time datetime="PT629S">10:29</time>
+    <p>我们就得到了这么一条曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-348">
+    <time datetime="PT632S">10:32</time>
+    <p>所谓CIE1931RGB颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-349">
+    <time datetime="PT636S">10:36</time>
+    <p>匹配函数</p>
+  </li>
+  <li class="transcript-row" id="transcript-350">
+    <time datetime="PT637S">10:37</time>
+    <p>那这个时候其实东西都还是有</p>
+  </li>
+  <li class="transcript-row" id="transcript-351">
+    <time datetime="PT639S">10:39</time>
+    <p>明显的物理规律的</p>
+  </li>
+  <li class="transcript-row" id="transcript-352">
+    <time datetime="PT640S">10:40</time>
+    <p>比如说R就刚才讲的是那个红色</p>
+  </li>
+  <li class="transcript-row" id="transcript-353">
+    <time datetime="PT643S">10:43</time>
+    <p>选择有特定波段的</p>
+  </li>
+  <li class="transcript-row" id="transcript-354">
+    <time datetime="PT644S">10:44</time>
+    <p>绿色也是绿色有特定波段</p>
+  </li>
+  <li class="transcript-row" id="transcript-355">
+    <time datetime="PT647S">10:47</time>
+    <p>B也是有特定波段的这样一个东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-356">
+    <time datetime="PT649S">10:49</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-357">
+    <time datetime="PT650S">10:50</time>
+    <p>那比如说我们随便举一个点</p>
+  </li>
+  <li class="transcript-row" id="transcript-358">
+    <time datetime="PT652S">10:52</time>
+    <p>比如说这里是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-359">
+    <time datetime="PT653S">10:53</time>
+    <p>我们读下来</p>
+  </li>
+  <li class="transcript-row" id="transcript-360">
+    <time datetime="PT654S">10:54</time>
+    <p>那500纳密我们随便讲是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-361">
+    <time datetime="PT657S">10:57</time>
+    <p>那这有我们就可以读到三个点是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-362">
+    <time datetime="PT660S">11:00</time>
+    <p>那有这么高的绿色</p>
+  </li>
+  <li class="transcript-row" id="transcript-363">
+    <time datetime="PT662S">11:02</time>
+    <p>再加上这么高的那个</p>
+  </li>
+  <li class="transcript-row" id="transcript-364">
+    <time datetime="PT666S">11:06</time>
+    <p>蓝色再加上四的红色</p>
+  </li>
+  <li class="transcript-row" id="transcript-365">
+    <time datetime="PT668S">11:08</time>
+    <p>就是要混回去</p>
+  </li>
+  <li class="transcript-row" id="transcript-366">
+    <time datetime="PT669S">11:09</time>
+    <p>因为这个绿色这一个500多纳密</p>
+  </li>
+  <li class="transcript-row" id="transcript-367">
+    <time datetime="PT671S">11:11</time>
+    <p>我们表示不出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-368">
+    <time datetime="PT672S">11:12</time>
+    <p>那比如说或者我们到了这个点</p>
+  </li>
+  <li class="transcript-row" id="transcript-369">
+    <time datetime="PT674S">11:14</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-370">
+    <time datetime="PT674S">11:14</time>
+    <p>比如说到600纳密的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-371">
+    <time datetime="PT675S">11:15</time>
+    <p>我们可以看到我们需要</p>
+  </li>
+  <li class="transcript-row" id="transcript-372">
+    <time datetime="PT677S">11:17</time>
+    <p>基本上就不需要蓝的了</p>
+  </li>
+  <li class="transcript-row" id="transcript-373">
+    <time datetime="PT679S">11:19</time>
+    <p>但我们需要一定量的0.1</p>
+  </li>
+  <li class="transcript-row" id="transcript-374">
+    <time datetime="PT681S">11:21</time>
+    <p>影像</p>
+  </li>
+  <li class="transcript-row" id="transcript-375">
+    <time datetime="PT681S">11:21</time>
+    <p>这个是一个规划的函数</p>
+  </li>
+  <li class="transcript-row" id="transcript-376">
+    <time datetime="PT683S">11:23</time>
+    <p>这个函数上的操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-377">
+    <time datetime="PT684S">11:24</time>
+    <p>我们可以先不理</p>
+  </li>
+  <li class="transcript-row" id="transcript-378">
+    <time datetime="PT685S">11:25</time>
+    <p>我们把原理讲清楚</p>
+  </li>
+  <li class="transcript-row" id="transcript-379">
+    <time datetime="PT686S">11:26</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-380">
+    <time datetime="PT687S">11:27</time>
+    <p>绿色有一部分的绿色</p>
+  </li>
+  <li class="transcript-row" id="transcript-381">
+    <time datetime="PT689S">11:29</time>
+    <p>然后有很多的蓝色</p>
+  </li>
+  <li class="transcript-row" id="transcript-382">
+    <time datetime="PT690S">11:30</time>
+    <p>这个混在一起</p>
+  </li>
+  <li class="transcript-row" id="transcript-383">
+    <time datetime="PT691S">11:31</time>
+    <p>就是可以跟600纳密的光</p>
+  </li>
+  <li class="transcript-row" id="transcript-384">
+    <time datetime="PT694S">11:34</time>
+    <p>看起来是一样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-385">
+    <time datetime="PT695S">11:35</time>
+    <p>我们也可以看到的</p>
+  </li>
+  <li class="transcript-row" id="transcript-386">
+    <time datetime="PT696S">11:36</time>
+    <p>那个红色基本是主要集中在负的这边</p>
+  </li>
+  <li class="transcript-row" id="transcript-387">
+    <time datetime="PT700S">11:40</time>
+    <p>那个这个绿色和黄色这边</p>
+  </li>
+  <li class="transcript-row" id="transcript-388">
+    <time datetime="PT703S">11:43</time>
+    <p>其实</p>
+  </li>
+  <li class="transcript-row" id="transcript-389">
+    <time datetime="PT704S">11:44</time>
+    <p>绿色和蓝色这边其实没有负质的</p>
+  </li>
+  <li class="transcript-row" id="transcript-390">
+    <time datetime="PT706S">11:46</time>
+    <p>这样的一个出现</p>
+  </li>
+  <li class="transcript-row" id="transcript-391">
+    <time datetime="PT707S">11:47</time>
+    <p>这就是1931</p>
+  </li>
+  <li class="transcript-row" id="transcript-392">
+    <time datetime="PT709S">11:49</time>
+    <p>那个RGB颜色匹配函数</p>
+  </li>
+  <li class="transcript-row" id="transcript-393">
+    <time datetime="PT711S">11:51</time>
+    <p>但是到了RGB函数之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-394">
+    <time datetime="PT714S">11:54</time>
+    <p>其实当时就会有一个麻烦</p>
+  </li>
+  <li class="transcript-row" id="transcript-395">
+    <time datetime="PT716S">11:56</time>
+    <p>当时1931年的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-396">
+    <time datetime="PT718S">11:58</time>
+    <p>其实还没有计算器</p>
+  </li>
+  <li class="transcript-row" id="transcript-397">
+    <time datetime="PT720S">12:00</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-398">
+    <time datetime="PT720S">12:00</time>
+    <p>这很多计算都是人工计算的</p>
+  </li>
+  <li class="transcript-row" id="transcript-399">
+    <time datetime="PT723S">12:03</time>
+    <p>所以大家就希望说有一个变换</p>
+  </li>
+  <li class="transcript-row" id="transcript-400">
+    <time datetime="PT725S">12:05</time>
+    <p>弄下来之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-401">
+    <time datetime="PT726S">12:06</time>
+    <p>可以把所有的细数都变成正了</p>
+  </li>
+  <li class="transcript-row" id="transcript-402">
+    <time datetime="PT728S">12:08</time>
+    <p>这样算起来好</p>
+  </li>
+  <li class="transcript-row" id="transcript-403">
+    <time datetime="PT729S">12:09</time>
+    <p>算一点</p>
+  </li>
+  <li class="transcript-row" id="transcript-404">
+    <time datetime="PT730S">12:10</time>
+    <p>而且同时大家觉得</p>
+  </li>
+  <li class="transcript-row" id="transcript-405">
+    <time datetime="PT732S">12:12</time>
+    <p>发现这个绿的</p>
+  </li>
+  <li class="transcript-row" id="transcript-406">
+    <time datetime="PT732S">12:12</time>
+    <p>跟我们前面的那个所谓光度函数</p>
+  </li>
+  <li class="transcript-row" id="transcript-407">
+    <time datetime="PT735S">12:15</time>
+    <p>长得很像</p>
+  </li>
+  <li class="transcript-row" id="transcript-408">
+    <time datetime="PT736S">12:16</time>
+    <p>我们就来想说</p>
+  </li>
+  <li class="transcript-row" id="transcript-409">
+    <time datetime="PT737S">12:17</time>
+    <p>不然通过这个变换之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-410">
+    <time datetime="PT740S">12:20</time>
+    <p>让这个绿的也变成</p>
+  </li>
+  <li class="transcript-row" id="transcript-411">
+    <time datetime="PT742S">12:22</time>
+    <p>跟光度函数是尽可能的一致</p>
+  </li>
+  <li class="transcript-row" id="transcript-412">
+    <time datetime="PT744S">12:24</time>
+    <p>这样子的话</p>
+  </li>
+  <li class="transcript-row" id="transcript-413">
+    <time datetime="PT744S">12:24</time>
+    <p>以前很多计算的东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-414">
+    <time datetime="PT746S">12:26</time>
+    <p>就可以重复利用</p>
+  </li>
+  <li class="transcript-row" id="transcript-415">
+    <time datetime="PT748S">12:28</time>
+    <p>不用再搞</p>
+  </li>
+  <li class="transcript-row" id="transcript-416">
+    <time datetime="PT749S">12:29</time>
+    <p>当然第三个要求</p>
+  </li>
+  <li class="transcript-row" id="transcript-417">
+    <time datetime="PT750S">12:30</time>
+    <p>就是说在等能量光谱下</p>
+  </li>
+  <li class="transcript-row" id="transcript-418">
+    <time datetime="PT752S">12:32</time>
+    <p>那个白点位于X,Y,J的三分之一处</p>
+  </li>
+  <li class="transcript-row" id="transcript-419">
+    <time datetime="PT755S">12:35</time>
+    <p>这个就X,Y,J是一个新的做标戏</p>
+  </li>
+  <li class="transcript-row" id="transcript-420">
+    <time datetime="PT757S">12:37</time>
+    <p>这个具体的我们就先不讲</p>
+  </li>
+  <li class="transcript-row" id="transcript-421">
+    <time datetime="PT759S">12:39</time>
+    <p>这是也是一个数学上的</p>
+  </li>
+  <li class="transcript-row" id="transcript-422">
+    <time datetime="PT761S">12:41</time>
+    <p>为了方便去做的一个变换</p>
+  </li>
+  <li class="transcript-row" id="transcript-423">
+    <time datetime="PT763S">12:43</time>
+    <p>那最后下来</p>
+  </li>
+  <li class="transcript-row" id="transcript-424">
+    <time datetime="PT765S">12:45</time>
+    <p>其实就是我们这个</p>
+  </li>
+  <li class="transcript-row" id="transcript-425">
+    <time datetime="PT766S">12:46</time>
+    <p>你就可以理解成一通操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-426">
+    <time datetime="PT767S">12:47</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-427">
+    <time datetime="PT768S">12:48</time>
+    <p>那这算一个矩阵的操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-428">
+    <time datetime="PT770S">12:50</time>
+    <p>其实是一个线性的组合</p>
+  </li>
+  <li class="transcript-row" id="transcript-429">
+    <time datetime="PT771S">12:51</time>
+    <p>这X,Y,J是通过RGB的</p>
+  </li>
+  <li class="transcript-row" id="transcript-430">
+    <time datetime="PT773S">12:53</time>
+    <p>一个线性组合做出来了</p>
+  </li>
+  <li class="transcript-row" id="transcript-431">
+    <time datetime="PT774S">12:54</time>
+    <p>我们看左边两个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-432">
+    <time datetime="PT776S">12:56</time>
+    <p>其实你可以看直观的看</p>
+  </li>
+  <li class="transcript-row" id="transcript-433">
+    <time datetime="PT778S">12:58</time>
+    <p>它其实是把这个红色的给翻过来</p>
+  </li>
+  <li class="transcript-row" id="transcript-434">
+    <time datetime="PT781S">13:01</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-435">
+    <time datetime="PT781S">13:01</time>
+    <p>然后把绿色的拨拉的</p>
+  </li>
+  <li class="transcript-row" id="transcript-436">
+    <time datetime="PT783S">13:03</time>
+    <p>跟原来差不多</p>
+  </li>
+  <li class="transcript-row" id="transcript-437">
+    <time datetime="PT783S">13:03</time>
+    <p>然后做一个组合</p>
+  </li>
+  <li class="transcript-row" id="transcript-438">
+    <time datetime="PT785S">13:05</time>
+    <p>那这时候我们就得到了一个新的做标戏</p>
+  </li>
+  <li class="transcript-row" id="transcript-439">
+    <time datetime="PT787S">13:07</time>
+    <p>叫做X,Y,J的这样的一个做标戏</p>
+  </li>
+  <li class="transcript-row" id="transcript-440">
+    <time datetime="PT789S">13:09</time>
+    <p>或者说叫色彩空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-441">
+    <time datetime="PT792S">13:12</time>
+    <p>那到了这个时候有什么好处呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-442">
+    <time datetime="PT795S">13:15</time>
+    <p>那就是有了X,Y,J颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-443">
+    <time datetime="PT798S">13:18</time>
+    <p>底配函数之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-444">
+    <time datetime="PT799S">13:19</time>
+    <p>我们只要跟一个物体的光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-445">
+    <time datetime="PT802S">13:22</time>
+    <p>这边进行积分</p>
+  </li>
+  <li class="transcript-row" id="transcript-446">
+    <time datetime="PT803S">13:23</time>
+    <p>我们就会得到X,Y,J三个值</p>
+  </li>
+  <li class="transcript-row" id="transcript-447">
+    <time datetime="PT805S">13:25</time>
+    <p>就说比如说</p>
+  </li>
+  <li class="transcript-row" id="transcript-448">
+    <time datetime="PT806S">13:26</time>
+    <p>这里有个光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-449">
+    <time datetime="PT807S">13:27</time>
+    <p>叫做光谱一</p>
+  </li>
+  <li class="transcript-row" id="transcript-450">
+    <time datetime="PT808S">13:28</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-451">
+    <time datetime="PT808S">13:28</time>
+    <p>这长得这样子的</p>
+  </li>
+  <li class="transcript-row" id="transcript-452">
+    <time datetime="PT809S">13:29</time>
+    <p>还有毛刺</p>
+  </li>
+  <li class="transcript-row" id="transcript-453">
+    <time datetime="PT810S">13:30</time>
+    <p>蓝色的这根</p>
+  </li>
+  <li class="transcript-row" id="transcript-454">
+    <time datetime="PT811S">13:31</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-455">
+    <time datetime="PT811S">13:31</time>
+    <p>那我跟这个做一个积分</p>
+  </li>
+  <li class="transcript-row" id="transcript-456">
+    <time datetime="PT813S">13:33</time>
+    <p>运算一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-457">
+    <time datetime="PT814S">13:34</time>
+    <p>我跟这条蓝的积分</p>
+  </li>
+  <li class="transcript-row" id="transcript-458">
+    <time datetime="PT816S">13:36</time>
+    <p>可以得到一个值</p>
+  </li>
+  <li class="transcript-row" id="transcript-459">
+    <time datetime="PT818S">13:38</time>
+    <p>跟绿的积分可以得到一个值</p>
+  </li>
+  <li class="transcript-row" id="transcript-460">
+    <time datetime="PT820S">13:40</time>
+    <p>跟红的积分可以得到一个值</p>
+  </li>
+  <li class="transcript-row" id="transcript-461">
+    <time datetime="PT821S">13:41</time>
+    <p>得下来比如说X,Y,J三个数</p>
+  </li>
+  <li class="transcript-row" id="transcript-462">
+    <time datetime="PT823S">13:43</time>
+    <p>就是对应这三个值</p>
+  </li>
+  <li class="transcript-row" id="transcript-463">
+    <time datetime="PT825S">13:45</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-464">
+    <time datetime="PT825S">13:45</time>
+    <p>跟红色的</p>
+  </li>
+  <li class="transcript-row" id="transcript-465">
+    <time datetime="PT826S">13:46</time>
+    <p>就是另外一个光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-466">
+    <time datetime="PT827S">13:47</time>
+    <p>我同样的操作X,Y,J去积分</p>
+  </li>
+  <li class="transcript-row" id="transcript-467">
+    <time datetime="PT830S">13:50</time>
+    <p>积分出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-468">
+    <time datetime="PT830S">13:50</time>
+    <p>现在时候也是三个值</p>
+  </li>
+  <li class="transcript-row" id="transcript-469">
+    <time datetime="PT832S">13:52</time>
+    <p>那大家去举的一个例子</p>
+  </li>
+  <li class="transcript-row" id="transcript-470">
+    <time datetime="PT835S">13:55</time>
+    <p>是三个值是完全一样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-471">
+    <time datetime="PT837S">13:57</time>
+    <p>S,Y,J的值</p>
+  </li>
+  <li class="transcript-row" id="transcript-472">
+    <time datetime="PT838S">13:58</time>
+    <p>跟这里S,Y,J的值是一样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-473">
+    <time datetime="PT839S">13:59</time>
+    <p>这个意味着是什么</p>
+  </li>
+  <li class="transcript-row" id="transcript-474">
+    <time datetime="PT840S">14:00</time>
+    <p>这个意味着是说</p>
+  </li>
+  <li class="transcript-row" id="transcript-475">
+    <time datetime="PT841S">14:01</time>
+    <p>只要X,Y,J是一样的人看起来</p>
+  </li>
+  <li class="transcript-row" id="transcript-476">
+    <time datetime="PT844S">14:04</time>
+    <p>他的颜色就是一样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-477">
+    <time datetime="PT846S">14:06</time>
+    <p>这也就是所谓的</p>
+  </li>
+  <li class="transcript-row" id="transcript-478">
+    <time datetime="PT847S">14:07</time>
+    <p>同色异谱现象</p>
+  </li>
+  <li class="transcript-row" id="transcript-479">
+    <time datetime="PT849S">14:09</time>
+    <p>我们</p>
+  </li>
+  <li class="transcript-row" id="transcript-480">
+    <time datetime="PT850S">14:10</time>
+    <p>你看这个平谱其实差别特别远</p>
+  </li>
+  <li class="transcript-row" id="transcript-481">
+    <time datetime="PT852S">14:12</time>
+    <p>但是最后因为人的感知下来</p>
+  </li>
+  <li class="transcript-row" id="transcript-482">
+    <time datetime="PT855S">14:15</time>
+    <p>其实发现是一样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-483">
+    <time datetime="PT856S">14:16</time>
+    <p>这个时候你就会发现</p>
+  </li>
+  <li class="transcript-row" id="transcript-484">
+    <time datetime="PT857S">14:17</time>
+    <p>其实我们已经能够把</p>
+  </li>
+  <li class="transcript-row" id="transcript-485">
+    <time datetime="PT859S">14:19</time>
+    <p>那个</p>
+  </li>
+  <li class="transcript-row" id="transcript-486">
+    <time datetime="PT861S">14:21</time>
+    <p>刚才这个光谱</p>
+  </li>
+  <li class="transcript-row" id="transcript-487">
+    <time datetime="PT862S">14:22</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-488">
+    <time datetime="PT863S">14:23</time>
+    <p>对应成三个人感知的这样一个变量</p>
+  </li>
+  <li class="transcript-row" id="transcript-489">
+    <time datetime="PT865S">14:25</time>
+    <p>来看</p>
+  </li>
+  <li class="transcript-row" id="transcript-490">
+    <time datetime="PT866S">14:26</time>
+    <p>大家还有提到白点</p>
+  </li>
+  <li class="transcript-row" id="transcript-491">
+    <time datetime="PT867S">14:27</time>
+    <p>白点其实就是光源的</p>
+  </li>
+  <li class="transcript-row" id="transcript-492">
+    <time datetime="PT869S">14:29</time>
+    <p>那个对应的积分</p>
+  </li>
+  <li class="transcript-row" id="transcript-493">
+    <time datetime="PT870S">14:30</time>
+    <p>一个光源对应下来的那个点</p>
+  </li>
+  <li class="transcript-row" id="transcript-494">
+    <time datetime="PT872S">14:32</time>
+    <p>就是白点</p>
+  </li>
+  <li class="transcript-row" id="transcript-495">
+    <time datetime="PT875S">14:35</time>
+    <p>那刚才讲就是</p>
+  </li>
+  <li class="transcript-row" id="transcript-496">
+    <time datetime="PT877S">14:37</time>
+    <p>那这时候我们只要把X,Y,J的这个空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-497">
+    <time datetime="PT880S">14:40</time>
+    <p>S,Y,J就表示我们能看到的</p>
+  </li>
+  <li class="transcript-row" id="transcript-498">
+    <time datetime="PT881S">14:41</time>
+    <p>所有的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-499">
+    <time datetime="PT883S">14:43</time>
+    <p>就是可见光的线性</p>
+  </li>
+  <li class="transcript-row" id="transcript-500">
+    <time datetime="PT884S">14:44</time>
+    <p>组合产生的所有颜色了</p>
+  </li>
+  <li class="transcript-row" id="transcript-501">
+    <time datetime="PT886S">14:46</time>
+    <p>那我们能够看到的这样</p>
+  </li>
+  <li class="transcript-row" id="transcript-502">
+    <time datetime="PT887S">14:47</time>
+    <p>我们只要把一个光谱算一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-503">
+    <time datetime="PT889S">14:49</time>
+    <p>只要去找这个点</p>
+  </li>
+  <li class="transcript-row" id="transcript-504">
+    <time datetime="PT890S">14:50</time>
+    <p>然后看一下这个点是什么颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-505">
+    <time datetime="PT892S">14:52</time>
+    <p>我们就知道这个人看出来是</p>
+  </li>
+  <li class="transcript-row" id="transcript-506">
+    <time datetime="PT894S">14:54</time>
+    <p>什么颜色了</p>
+  </li>
+  <li class="transcript-row" id="transcript-507">
+    <time datetime="PT895S">14:55</time>
+    <p>那这个S,Y,J的空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-508">
+    <time datetime="PT896S">14:56</time>
+    <p>其实在可见光波段下</p>
+  </li>
+  <li class="transcript-row" id="transcript-509">
+    <time datetime="PT898S">14:58</time>
+    <p>它是长这样子</p>
+  </li>
+  <li class="transcript-row" id="transcript-510">
+    <time datetime="PT899S">14:59</time>
+    <p>是一个还是比较</p>
+  </li>
+  <li class="transcript-row" id="transcript-511">
+    <time datetime="PT902S">15:02</time>
+    <p>复杂的三维体</p>
+  </li>
+  <li class="transcript-row" id="transcript-512">
+    <time datetime="PT904S">15:04</time>
+    <p>那这个三维体</p>
+  </li>
+  <li class="transcript-row" id="transcript-513">
+    <time datetime="PT905S">15:05</time>
+    <p>大家讲就觉得有点复杂</p>
+  </li>
+  <li class="transcript-row" id="transcript-514">
+    <time datetime="PT907S">15:07</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-515">
+    <time datetime="PT907S">15:07</time>
+    <p>特别三维这东西就有点抽象</p>
+  </li>
+  <li class="transcript-row" id="transcript-516">
+    <time datetime="PT909S">15:09</time>
+    <p>有没有办法让它更方便的去表示呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-517">
+    <time datetime="PT912S">15:12</time>
+    <p>那当然就又</p>
+  </li>
+  <li class="transcript-row" id="transcript-518">
+    <time datetime="PT914S">15:14</time>
+    <p>在做了另一桶操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-519">
+    <time datetime="PT915S">15:15</time>
+    <p>就把它从</p>
+  </li>
+  <li class="transcript-row" id="transcript-520">
+    <time datetime="PT917S">15:17</time>
+    <p>所谓的X,Y,J空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-521">
+    <time datetime="PT919S">15:19</time>
+    <p>映射回X,Y,Y空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-522">
+    <time datetime="PT922S">15:22</time>
+    <p>这两个是小写的</p>
+  </li>
+  <li class="transcript-row" id="transcript-523">
+    <time datetime="PT923S">15:23</time>
+    <p>X,Y,Y的颜色空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-524">
+    <time datetime="PT925S">15:25</time>
+    <p>那原来的Y刚才讲了</p>
+  </li>
+  <li class="transcript-row" id="transcript-525">
+    <time datetime="PT926S">15:26</time>
+    <p>已经是一个那个亮度的函数了</p>
+  </li>
+  <li class="transcript-row" id="transcript-526">
+    <time datetime="PT929S">15:29</time>
+    <p>那这时候呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-527">
+    <time datetime="PT930S">15:30</time>
+    <p>我们希望做的是</p>
+  </li>
+  <li class="transcript-row" id="transcript-528">
+    <time datetime="PT931S">15:31</time>
+    <p>把亮度先独立出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-529">
+    <time datetime="PT933S">15:33</time>
+    <p>剩下的用两个变量</p>
+  </li>
+  <li class="transcript-row" id="transcript-530">
+    <time datetime="PT934S">15:34</time>
+    <p>由X和Y去表色颜色空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-531">
+    <time datetime="PT937S">15:37</time>
+    <p>那这一通操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-532">
+    <time datetime="PT939S">15:39</time>
+    <p>其实做了一个规划</p>
+  </li>
+  <li class="transcript-row" id="transcript-533">
+    <time datetime="PT940S">15:40</time>
+    <p>那具体</p>
+  </li>
+  <li class="transcript-row" id="transcript-534">
+    <time datetime="PT940S">15:40</time>
+    <p>我们因为是科普</p>
+  </li>
+  <li class="transcript-row" id="transcript-535">
+    <time datetime="PT941S">15:41</time>
+    <p>我们也不讲具体的这些事情</p>
+  </li>
+  <li class="transcript-row" id="transcript-536">
+    <time datetime="PT943S">15:43</time>
+    <p>那这个空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-537">
+    <time datetime="PT944S">15:44</time>
+    <p>大家可以看出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-538">
+    <time datetime="PT945S">15:45</time>
+    <p>就是这样子的一个一个情况</p>
+  </li>
+  <li class="transcript-row" id="transcript-539">
+    <time datetime="PT948S">15:48</time>
+    <p>这个空间比刚才的</p>
+  </li>
+  <li class="transcript-row" id="transcript-540">
+    <time datetime="PT950S">15:50</time>
+    <p>刚才原来这个是有什么好处</p>
+  </li>
+  <li class="transcript-row" id="transcript-541">
+    <time datetime="PT954S">15:54</time>
+    <p>你可以看到说</p>
+  </li>
+  <li class="transcript-row" id="transcript-542">
+    <time datetime="PT956S">15:56</time>
+    <p>季节的投影</p>
+  </li>
+  <li class="transcript-row" id="transcript-543">
+    <time datetime="PT958S">15:58</time>
+    <p>它会把整个下面的这个平面</p>
+  </li>
+  <li class="transcript-row" id="transcript-544">
+    <time datetime="PT960S">16:00</time>
+    <p>站住</p>
+  </li>
+  <li class="transcript-row" id="transcript-545">
+    <time datetime="PT961S">16:01</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-546">
+    <time datetime="PT962S">16:02</time>
+    <p>所以到时候再做一些</p>
+  </li>
+  <li class="transcript-row" id="transcript-547">
+    <time datetime="PT964S">16:04</time>
+    <p>那个工程上的计算的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-548">
+    <time datetime="PT966S">16:06</time>
+    <p>会方便很多</p>
+  </li>
+  <li class="transcript-row" id="transcript-549">
+    <time datetime="PT968S">16:08</time>
+    <p>那这个投影呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-550">
+    <time datetime="PT970S">16:10</time>
+    <p>就该讲了</p>
+  </li>
+  <li class="transcript-row" id="transcript-551">
+    <time datetime="PT970S">16:10</time>
+    <p>它在X平面上</p>
+  </li>
+  <li class="transcript-row" id="transcript-552">
+    <time datetime="PT971S">16:11</time>
+    <p>我其实就这个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-553">
+    <time datetime="PT973S">16:13</time>
+    <p>我们再看一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-554">
+    <time datetime="PT973S">16:13</time>
+    <p>这个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-555">
+    <time datetime="PT974S">16:14</time>
+    <p>这个有点像</p>
+  </li>
+  <li class="transcript-row" id="transcript-556">
+    <time datetime="PT975S">16:15</time>
+    <p>所谓码题型的这个色度图</p>
+  </li>
+  <li class="transcript-row" id="transcript-557">
+    <time datetime="PT977S">16:17</time>
+    <p>其实就是我们在这个最底下的</p>
+  </li>
+  <li class="transcript-row" id="transcript-558">
+    <time datetime="PT979S">16:19</time>
+    <p>这个投影</p>
+  </li>
+  <li class="transcript-row" id="transcript-559">
+    <time datetime="PT980S">16:20</time>
+    <p>大家可以看出来吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-560">
+    <time datetime="PT981S">16:21</time>
+    <p>然后到了亮到最白</p>
+  </li>
+  <li class="transcript-row" id="transcript-561">
+    <time datetime="PT983S">16:23</time>
+    <p>因为很白的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-562">
+    <time datetime="PT984S">16:24</time>
+    <p>亮度很高的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-563">
+    <time datetime="PT985S">16:25</time>
+    <p>你看到的是白</p>
+  </li>
+  <li class="transcript-row" id="transcript-564">
+    <time datetime="PT986S">16:26</time>
+    <p>而不是说一个超级的红</p>
+  </li>
+  <li class="transcript-row" id="transcript-565">
+    <time datetime="PT987S">16:27</time>
+    <p>或者超级的蓝</p>
+  </li>
+  <li class="transcript-row" id="transcript-566">
+    <time datetime="PT989S">16:29</time>
+    <p>就是这样对应过来</p>
+  </li>
+  <li class="transcript-row" id="transcript-567">
+    <time datetime="PT990S">16:30</time>
+    <p>就刚才就做了一通印式之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-568">
+    <time datetime="PT992S">16:32</time>
+    <p>就得到了这样的一个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-569">
+    <time datetime="PT994S">16:34</time>
+    <p>那这个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-570">
+    <time datetime="PT995S">16:35</time>
+    <p>刚才讲的就是</p>
+  </li>
+  <li class="transcript-row" id="transcript-571">
+    <time datetime="PT996S">16:36</time>
+    <p>把我们能看到的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-572">
+    <time datetime="PT998S">16:38</time>
+    <p>抛离掉亮度</p>
+  </li>
+  <li class="transcript-row" id="transcript-573">
+    <time datetime="PT999S">16:39</time>
+    <p>只剩下色度</p>
+  </li>
+  <li class="transcript-row" id="transcript-574">
+    <time datetime="PT1001S">16:41</time>
+    <p>之后</p>
+  </li>
+  <li class="transcript-row" id="transcript-575">
+    <time datetime="PT1002S">16:42</time>
+    <p>在一个平面上去表现出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-576">
+    <time datetime="PT1005S">16:45</time>
+    <p>那右图这里有三个点</p>
+  </li>
+  <li class="transcript-row" id="transcript-577">
+    <time datetime="PT1007S">16:47</time>
+    <p>其实就我们刚才讲的那个</p>
+  </li>
+  <li class="transcript-row" id="transcript-578">
+    <time datetime="PT1009S">16:49</time>
+    <p>Rite View的实验</p>
+  </li>
+  <li class="transcript-row" id="transcript-579">
+    <time datetime="PT1010S">16:50</time>
+    <p>是使用的那个三个</p>
+  </li>
+  <li class="transcript-row" id="transcript-580">
+    <time datetime="PT1012S">16:52</time>
+    <p>所谓的三元色</p>
+  </li>
+  <li class="transcript-row" id="transcript-581">
+    <time datetime="PT1014S">16:54</time>
+    <p>那这里看到这个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-582">
+    <time datetime="PT1016S">16:56</time>
+    <p>我们也可以</p>
+  </li>
+  <li class="transcript-row" id="transcript-583">
+    <time datetime="PT1017S">16:57</time>
+    <p>就这三个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-584">
+    <time datetime="PT1018S">16:58</time>
+    <p>三个顶点</p>
+  </li>
+  <li class="transcript-row" id="transcript-585">
+    <time datetime="PT1019S">16:59</time>
+    <p>其实它可以混合出</p>
+  </li>
+  <li class="transcript-row" id="transcript-586">
+    <time datetime="PT1020S">17:00</time>
+    <p>这个三角形里面</p>
+  </li>
+  <li class="transcript-row" id="transcript-587">
+    <time datetime="PT1021S">17:01</time>
+    <p>所有的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-588">
+    <time datetime="PT1022S">17:02</time>
+    <p>这个是相当于白点</p>
+  </li>
+  <li class="transcript-row" id="transcript-589">
+    <time datetime="PT1024S">17:04</time>
+    <p>这个混合出所有的这些颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-590">
+    <time datetime="PT1027S">17:07</time>
+    <p>但是</p>
+  </li>
+  <li class="transcript-row" id="transcript-591">
+    <time datetime="PT1028S">17:08</time>
+    <p>是这个区域的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-592">
+    <time datetime="PT1029S">17:09</time>
+    <p>其实混不出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-593">
+    <time datetime="PT1030S">17:10</time>
+    <p>我们当时做实验</p>
+  </li>
+  <li class="transcript-row" id="transcript-594">
+    <time datetime="PT1031S">17:11</time>
+    <p>比如说五百多纳米的时候</p>
+  </li>
+  <li class="transcript-row" id="transcript-595">
+    <time datetime="PT1032S">17:12</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-596">
+    <time datetime="PT1033S">17:13</time>
+    <p>他没法去通过这里去混出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-597">
+    <time datetime="PT1036S">17:16</time>
+    <p>当时采取的做法是在这里</p>
+  </li>
+  <li class="transcript-row" id="transcript-598">
+    <time datetime="PT1038S">17:18</time>
+    <p>去加</p>
+  </li>
+  <li class="transcript-row" id="transcript-599">
+    <time datetime="PT1039S">17:19</time>
+    <p>加红色</p>
+  </li>
+  <li class="transcript-row" id="transcript-600">
+    <time datetime="PT1040S">17:20</time>
+    <p>加红色的意思</p>
+  </li>
+  <li class="transcript-row" id="transcript-601">
+    <time datetime="PT1041S">17:21</time>
+    <p>其实大概就是把这个点</p>
+  </li>
+  <li class="transcript-row" id="transcript-602">
+    <time datetime="PT1042S">17:22</time>
+    <p>拉到这里来</p>
+  </li>
+  <li class="transcript-row" id="transcript-603">
+    <time datetime="PT1044S">17:24</time>
+    <p>最后到边界上这里</p>
+  </li>
+  <li class="transcript-row" id="transcript-604">
+    <time datetime="PT1046S">17:26</time>
+    <p>你去看出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-605">
+    <time datetime="PT1048S">17:28</time>
+    <p>所以这个图</p>
+  </li>
+  <li class="transcript-row" id="transcript-606">
+    <time datetime="PT1049S">17:29</time>
+    <p>就其实可以用来解释</p>
+  </li>
+  <li class="transcript-row" id="transcript-607">
+    <time datetime="PT1051S">17:31</time>
+    <p>非常多的事情</p>
+  </li>
+  <li class="transcript-row" id="transcript-608">
+    <time datetime="PT1053S">17:33</time>
+    <p>所以应该就这个实验做下来</p>
+  </li>
+  <li class="transcript-row" id="transcript-609">
+    <time datetime="PT1055S">17:35</time>
+    <p>得到这个</p>
+  </li>
+  <li class="transcript-row" id="transcript-610">
+    <time datetime="PT1056S">17:36</time>
+    <p>然后最后通过一通操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-611">
+    <time datetime="PT1058S">17:38</time>
+    <p>得到了最后这样的一个东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-612">
+    <time datetime="PT1060S">17:40</time>
+    <p>刚才讲这个复树的这一段</p>
+  </li>
+  <li class="transcript-row" id="transcript-613">
+    <time datetime="PT1062S">17:42</time>
+    <p>我们也解释了</p>
+  </li>
+  <li class="transcript-row" id="transcript-614">
+    <time datetime="PT1062S">17:42</time>
+    <p>这些其实东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-615">
+    <time datetime="PT1064S">17:44</time>
+    <p>如果要用它原来的三个颜色来混</p>
+  </li>
+  <li class="transcript-row" id="transcript-616">
+    <time datetime="PT1066S">17:46</time>
+    <p>其实它都是复树的</p>
+  </li>
+  <li class="transcript-row" id="transcript-617">
+    <time datetime="PT1069S">17:49</time>
+    <p>我们也可以看一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-618">
+    <time datetime="PT1071S">17:51</time>
+    <p>我们另外的几个</p>
+  </li>
+  <li class="transcript-row" id="transcript-619">
+    <time datetime="PT1074S">17:54</time>
+    <p>颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-620">
+    <time datetime="PT1074S">17:54</time>
+    <p>常见的几个颜色中间</p>
+  </li>
+  <li class="transcript-row" id="transcript-621">
+    <time datetime="PT1076S">17:56</time>
+    <p>这个是SRGB的这样的一个空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-622">
+    <time datetime="PT1078S">17:58</time>
+    <p>我们比较常见</p>
+  </li>
+  <li class="transcript-row" id="transcript-623">
+    <time datetime="PT1079S">17:59</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-624">
+    <time datetime="PT1079S">17:59</time>
+    <p>一般我们SDR</p>
+  </li>
+  <li class="transcript-row" id="transcript-625">
+    <time datetime="PT1081S">18:01</time>
+    <p>或者IC709空间都是这样子</p>
+  </li>
+  <li class="transcript-row" id="transcript-626">
+    <time datetime="PT1083S">18:03</time>
+    <p>但它能表示的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-627">
+    <time datetime="PT1084S">18:04</time>
+    <p>其实就只是三角形里面的这些颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-628">
+    <time datetime="PT1087S">18:07</time>
+    <p>外面的这些颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-629">
+    <time datetime="PT1088S">18:08</time>
+    <p>其实你是看不到的</p>
+  </li>
+  <li class="transcript-row" id="transcript-630">
+    <time datetime="PT1089S">18:09</time>
+    <p>大家会得声明一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-631">
+    <time datetime="PT1091S">18:11</time>
+    <p>这里面的这些绿色</p>
+  </li>
+  <li class="transcript-row" id="transcript-632">
+    <time datetime="PT1092S">18:12</time>
+    <p>其实不是你实际看到的绿</p>
+  </li>
+  <li class="transcript-row" id="transcript-633">
+    <time datetime="PT1093S">18:13</time>
+    <p>因为大多数颜色是设备</p>
+  </li>
+  <li class="transcript-row" id="transcript-634">
+    <time datetime="PT1095S">18:15</time>
+    <p>比如说你只能看到这里</p>
+  </li>
+  <li class="transcript-row" id="transcript-635">
+    <time datetime="PT1096S">18:16</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-636">
+    <time datetime="PT1096S">18:16</time>
+    <p>即使你到了HDR</p>
+  </li>
+  <li class="transcript-row" id="transcript-637">
+    <time datetime="PT1098S">18:18</time>
+    <p>它定义的空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-638">
+    <time datetime="PT1099S">18:19</time>
+    <p>就是会更大一些</p>
+  </li>
+  <li class="transcript-row" id="transcript-639">
+    <time datetime="PT1100S">18:20</time>
+    <p>但其实依然不能够把人眼</p>
+  </li>
+  <li class="transcript-row" id="transcript-640">
+    <time datetime="PT1103S">18:23</time>
+    <p>能看到的所有颜色都表示进来</p>
+  </li>
+  <li class="transcript-row" id="transcript-641">
+    <time datetime="PT1105S">18:25</time>
+    <p>那讲回这个东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-642">
+    <time datetime="PT1107S">18:27</time>
+    <p>这个是SDR的空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-643">
+    <time datetime="PT1108S">18:28</time>
+    <p>那到了HDR</p>
+  </li>
+  <li class="transcript-row" id="transcript-644">
+    <time datetime="PT1109S">18:29</time>
+    <p>我们可以看到明显的</p>
+  </li>
+  <li class="transcript-row" id="transcript-645">
+    <time datetime="PT1111S">18:31</time>
+    <p>能表示的颜色就多了</p>
+  </li>
+  <li class="transcript-row" id="transcript-646">
+    <time datetime="PT1113S">18:33</time>
+    <p>非常多</p>
+  </li>
+  <li class="transcript-row" id="transcript-647">
+    <time datetime="PT1114S">18:34</time>
+    <p>是吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-648">
+    <time datetime="PT1115S">18:35</time>
+    <p>这个空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-649">
+    <time datetime="PT1116S">18:36</time>
+    <p>它会看得到更多的绿的东西</p>
+  </li>
+  <li class="transcript-row" id="transcript-650">
+    <time datetime="PT1119S">18:39</time>
+    <p>往绿这边去偏</p>
+  </li>
+  <li class="transcript-row" id="transcript-651">
+    <time datetime="PT1120S">18:40</time>
+    <p>蓝 红这些都也有</p>
+  </li>
+  <li class="transcript-row" id="transcript-652">
+    <time datetime="PT1123S">18:43</time>
+    <p>那这个是HDR所用的空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-653">
+    <time datetime="PT1125S">18:45</time>
+    <p>所以HDR比SDR来讲</p>
+  </li>
+  <li class="transcript-row" id="transcript-654">
+    <time datetime="PT1127S">18:47</time>
+    <p>其实可以表示更多还原</p>
+  </li>
+  <li class="transcript-row" id="transcript-655">
+    <time datetime="PT1129S">18:49</time>
+    <p>人眼能看到的更多的颜色</p>
+  </li>
+  <li class="transcript-row" id="transcript-656">
+    <time datetime="PT1131S">18:51</time>
+    <p>那我们QN3 Ultra</p>
+  </li>
+  <li class="transcript-row" id="transcript-657">
+    <time datetime="PT1133S">18:53</time>
+    <p>其实用的也就是HDR的</p>
+  </li>
+  <li class="transcript-row" id="transcript-658">
+    <time datetime="PT1136S">18:56</time>
+    <p>自带空间</p>
+  </li>
+  <li class="transcript-row" id="transcript-659">
+    <time datetime="PT1137S">18:57</time>
+    <p>也就是2020这个</p>
+  </li>
+  <li class="transcript-row" id="transcript-660">
+    <time datetime="PT1138S">18:58</time>
+    <p>那就会比普通的</p>
+  </li>
+  <li class="transcript-row" id="transcript-661">
+    <time datetime="PT1139S">18:59</time>
+    <p>比如说PySDR的相机</p>
+  </li>
+  <li class="transcript-row" id="transcript-662">
+    <time datetime="PT1142S">19:02</time>
+    <p>其实色彩还原能力会强</p>
+  </li>
+  <li class="transcript-row" id="transcript-663">
+    <time datetime="PT1144S">19:04</time>
+    <p>非常非常的多</p>
+  </li>
+  <li class="transcript-row" id="transcript-664">
+    <time datetime="PT1145S">19:05</time>
+    <p>那这一期就是我以一个非常快的速度</p>
+  </li>
+  <li class="transcript-row" id="transcript-665">
+    <time datetime="PT1149S">19:09</time>
+    <p>讲到了这里</p>
+  </li>
+  <li class="transcript-row" id="transcript-666">
+    <time datetime="PT1150S">19:10</time>
+    <p>试图去跟大家讲说</p>
+  </li>
+  <li class="transcript-row" id="transcript-667">
+    <time datetime="PT1152S">19:12</time>
+    <p>我们是一步一步的</p>
+  </li>
+  <li class="transcript-row" id="transcript-668">
+    <time datetime="PT1154S">19:14</time>
+    <p>再去把这个颜色给量化过来的</p>
+  </li>
+  <li class="transcript-row" id="transcript-669">
+    <time datetime="PT1158S">19:18</time>
+    <p>不知道跟大家讲清楚了没有</p>
+  </li></ol>
+    </section>
+    <footer>双轨产物之一：图文实录 · 源视频 http://xhslink.cn/o/6kSSQtcOgAl</footer>
+  </main>
+</body>
+</html>
