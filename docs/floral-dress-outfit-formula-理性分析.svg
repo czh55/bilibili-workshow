@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7508" viewBox="0 0 1320 7508">
+  <foreignObject x="0" y="0" width="1320" height="7508">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body,.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.label{font-size:13px;font-weight:800;color:#1e40af;letter-spacing:.04em;margin-top:10px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}
+</style>
+      
+<div class="svg-page">
+  <div class="container">
+    <h1>从图案里取色：四组穿搭如何从“安全”变得“有意”</h1>
+    <div class="meta">
+      <span class="tag tag-blue">小红书</span>
+      <span class="tag tag-green">28 秒</span>
+      <span class="tag tag-purple">印花穿搭</span>
+      <span class="tag tag-gray">理性分析</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/1kOMQ4gIFn8">原视频：碎花洋裙穿搭万能公式｜直接照搬给她</a>
+    <div class="summary-line">
+      <strong>核心判断：</strong>四组示范共享同一决策方法：基础搭配已经可用时，不必添加新颜色；从印花、条纹或格纹中提取一个已有颜色，并在上装、下装或配件中重复，能让颜色关系更明确。视频展示视觉结果，但没有证明这是唯一或普遍最优方案。
+    </div>
+
+    <div class="timeline">
+      <h3>关键证据时间轴</h3>
+      <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">印花半裙先配白上衣，再提取花纹中的最深棕色用于上装。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:07</span><span class="timeline-text">条纹上衣先配浅色牛仔，再让深靛蓝裤匹配一种条纹颜色。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">格纹裤先配黑色，再提取格纹中更柔和的米灰、灰褐。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">碎花裙先配中性色鞋包，再在配件中重复一个较深花纹色。</span></div>
+    </div>
+
+    <div class="map">
+      <h2>核心脉络</h2>
+      <div class="diagram">
+        <div class="node">观察输入<br/>图案已有色</div>
+        <div class="arrow">→</div>
+        <div class="node">按目标选择<br/>最深 / 最柔和</div>
+        <div class="arrow">→</div>
+        <div class="node node-green">重复到单品<br/>上装 / 下装 / 配件</div>
+        <div class="arrow">→</div>
+        <div class="node node-orange">试穿检查<br/>场合与个人效果</div>
+      </div>
+      <p class="small">前三步由四组画面和原声直接支持；最后的场合与个人检查是使用边界，视频本身没有展开。</p>
+    </div>
+
+    <div class="correction">
+      <h3>认知纠偏：不是“印花不能配白或黑”</h3>
+      <p>原声四次先说基础组合“looks good / works well”，再提出更有意图的替代。视频并未否定白色、黑色、牛仔或中性配饰；它比较的是“安全基础搭配”与“从图案取色后的呼应”，不是对错二分。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">四张观点卡：提取哪个颜色，放到哪里</h2>
+
+      <div class="card">
+        <h3>01 · 印花半裙：提取最深色到上装</h3>
+        <p class="label">在讲什么</p>
+        <p>浅底印花半裙先配白上衣，随后换成与花纹深色接近的棕色上衣，并让手袋做同色呼应。</p>
+        <p class="label">关键理解</p>
+        <p>裙子保持不变，改变的是上半身大色块；深棕不是外加的新色，而是放大裙中已有信息。</p>
+        <div class="action"><strong>怎么用：</strong>找出印花中面积较小但最深的颜色，先试同色或邻近色上衣；若显沉重，再缩小到手袋或鞋。</div>
+        <div class="quote"><strong>原文依据：</strong>00:00–00:07，“pull the darkest color from the print … it looks more intentional.”</div>
+      </div>
+
+      <div class="card card-green">
+        <h3>02 · 条纹上衣：让下装匹配一种条纹色</h3>
+        <p class="label">在讲什么</p>
+        <p>横条纹上衣先配浅蓝牛仔裤，之后换成深靛蓝裤，使下装接近上衣的深色条纹。</p>
+        <p class="label">关键理解</p>
+        <p>“牛仔”只是材质类别，不代表固定浅蓝；深浅变化即可把下装和条纹接起来。</p>
+        <div class="action"><strong>怎么用：</strong>条纹有多色时，只选其中一个作为下装目标色，不需要把每种颜色都重复。</div>
+        <div class="quote"><strong>原文依据：</strong>00:07–00:14，“match the bottom to one stripe color … more pulled together.”</div>
+      </div>
+
+      <div class="card card-purple">
+        <h3>03 · 格纹长裤：提取最柔和色到上装与包</h3>
+        <p class="label">在讲什么</p>
+        <p>灰褐格纹裤先配黑色上衣，随后改用米灰或灰褐上衣，并让手袋延续相近色。</p>
+        <p class="label">关键理解</p>
+        <p>取色目标不总是“最深”；格纹里较柔和的中间色可以降低黑上衣造成的强对比。</p>
+        <div class="action"><strong>怎么用：</strong>先辨认格纹底色与线条色；想柔和时取底色，想清晰时再考虑最深线条色。</div>
+        <div class="quote"><strong>原文依据：</strong>00:14–00:20，“pull the softest color from the check … more polished.”</div>
+      </div>
+
+      <div class="card card-orange">
+        <h3>04 · 碎花连衣裙：在配件中重复较深花纹色</h3>
+        <p class="label">在讲什么</p>
+        <p>浅底碎花裙先配米白、裸色鞋包，再换成酒红、深绿、棕灰等裙身已有的较深颜色。</p>
+        <p class="label">关键理解</p>
+        <p>连衣裙已占据大面积，重复色不必再做成另一件衣服；小面积配件足以建立呼应。</p>
+        <div class="action"><strong>怎么用：</strong>从花纹中选一个较深色，只放到一至两件配饰；避免同时复制所有花色。</div>
+        <div class="quote"><strong>原文依据：</strong>00:20–00:28，“repeat one darker print color in the accessories … more refined.”</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>横向对比：四次“取色”并不完全相同</h3>
+      <table>
+        <thead>
+          <tr><th>图案单品</th><th>基础搭配</th><th>提取目标</th><th>承接位置</th><th>视频评价</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>印花半裙</td><td>白上衣</td><td>印花最深色</td><td>上衣、手袋</td><td>更有意图</td></tr>
+          <tr><td>条纹上衣</td><td>浅色牛仔</td><td>一种条纹色</td><td>裤装</td><td>更完整</td></tr>
+          <tr><td>格纹长裤</td><td>黑上衣</td><td>格纹最柔和色</td><td>上衣、手袋</td><td>更精致</td></tr>
+          <tr><td>碎花连衣裙</td><td>中性鞋包</td><td>一个较深花纹色</td><td>鞋、手袋</td><td>更考究</td></tr>
+        </tbody>
+      </table>
+      <div class="relation">跨组共性：颜色来源于图案内部；差异在于选“最深”还是“最柔和”，以及把颜色放在大面积衣服还是小面积配件。</div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">证据强度、适用边界与避坑</h2>
+
+      <div class="card">
+        <h3>证据能支持什么</h3>
+        <p><span class="key-data">可见对比</span>四组前后换装能确认：创作者选择了来自图案的颜色，并主观评价后者更 intentional、pulled together、polished、refined。</p>
+        <div class="insight"><strong>不能推出：</strong>28 秒画面没有控制光线、面料、肤色、剪裁等变量，也没有观众评分或其他配色实验，因此不能证明“从图案取色”对所有人都更好。</div>
+        <div class="quote"><strong>证据范围：</strong>00:00–00:28 的四组模特画面、顶部英文标签、中文可见字幕与 Whisper 原声分段。</div>
+      </div>
+
+      <div class="card card-red">
+        <h3>方法边界与反例</h3>
+        <ul>
+          <li><strong>图案过多：</strong>多个图案同时出现时，继续重复颜色可能让信息更拥挤。</li>
+          <li><strong>场合限制：</strong>制服、婚礼着装要求或正式商务场景可能优先于取色公式。</li>
+          <li><strong>个人条件：</strong>视频未讨论肤色、发色、体型、风格偏好和已有衣橱。</li>
+          <li><strong>颜色失真：</strong>屏幕、光线与面料会改变观感，截图中的近似色不等于实物色号。</li>
+        </ul>
+        <div class="pitfall"><strong>避坑：</strong>不要把“更精致”当可验证事实；不要为追求完全同色而额外购买；不要一次重复图案中的所有颜色；不要把白、黑或中性搭配误判为错误。</div>
+        <div class="quote"><strong>原文依据：</strong>原声明确承认四种基础搭配本身“looks good / works well”。</div>
+      </div>
+
+      <div class="card">
+        <h3>立场分层</h3>
+        <div class="stance-grid">
+          <div class="stance-item">
+            <strong>可验证事实</strong>
+            <p>四组单品、前后颜色变化、出现顺序和原声措辞可直接核对。</p>
+          </div>
+          <div class="stance-item">
+            <strong>创作者观点</strong>
+            <p>取色后更有意图、更完整、更精致，是视频给出的审美评价。</p>
+          </div>
+          <div class="stance-item">
+            <strong>基于原文的推断</strong>
+            <p>“重复已有颜色能降低随机感”是对四组共同结构的解释。</p>
+          </div>
+        </div>
+        <div class="action"><strong>怎么用：</strong>先把方法当作低成本试穿实验；用镜子或照片比较前后，再由本人和场合决定，不把创作者评价当硬规则。</div>
+        <div class="quote"><strong>原文依据：</strong>四段都采用“基础组合可行，但取图案色后更……”的同一论证句式。</div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h2>总结与行动</h2>
+      <h3>核心要点</h3>
+      <ul>
+        <li>先从图案内部找颜色，不急着为搭配引入新色。</li>
+        <li>“最深色”适合加强联系，“最柔和色”适合降低对比。</li>
+        <li>颜色可放在上装、下装或配件，面积应随主单品调整。</li>
+        <li>四组示范支持试穿方法，不支持“万能”或“唯一最优”的强结论。</li>
+      </ul>
+      <h3>行动清单</h3>
+      <ol>
+        <li>选定一件印花、条纹或格纹主单品，列出其中两至三种可见颜色。</li>
+        <li>根据目标选择最深色或最柔和色，而不是默认黑白。</li>
+        <li>从现有衣橱找一件近似色上装、下装或配件，先不购买。</li>
+        <li>拍摄基础版与取色版全身照，在同一光线下比较。</li>
+        <li>最后核对场合、舒适度和个人偏好；不合适就保留基础搭配。</li>
+      </ol>
+      <h3>关键认知转变</h3>
+      <p>从“印花要配什么固定颜色”转向“图案已经提供了候选色”；从照搬结论转向进行一次可逆、低成本的前后试穿。</p>
+    </div>
+
+    <div class="footer">依据原视频画面、可见字幕与 Whisper 时间分段整理 · 2026-07-26</div>
+  </div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
