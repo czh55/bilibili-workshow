@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6296" viewBox="0 0 1320 6296">
+  <foreignObject x="0" y="0" width="1320" height="6296">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body,.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#fdf2f8,#fce7f3);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#831843,#db2777);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#831843;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #fbcfe8}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#64748b}
+.tag-pink{background:#fce7f3;color:#831843}
+.meta{margin:12px 0 20px}.meta p{margin-top:12px;font-size:14px;color:#64748b}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #db2777;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#831843;margin-bottom:12px}.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #fce7f3}
+.timeline-time{font-size:14px;font-weight:700;color:#db2777;min-width:78px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}.diagram{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#fce7f3,#fbcfe8);border:2px solid #f9a8d4;border-radius:16px;padding:20px 24px;text-align:center;min-width:175px;font-weight:700;font-size:16px;color:#831843}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#831843;margin-bottom:16px;padding-left:16px;border-left:4px solid #db2777}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #db2777}
+.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#831843;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#fce7f3;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#831843;border-left:4px solid #db2777}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#fce7f3;padding:12px 16px;text-align:left;font-weight:700;color:#831843;border-bottom:2px solid #f9a8d4}
+td{padding:12px 16px;border-bottom:1px solid #fce7f3;color:#475569;vertical-align:top}tr:nth-child(even) td{background:#fdf2f8}
+.conclusion{background:linear-gradient(135deg,#831843,#db2777);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#64748b;font-size:13px;padding:32px 0 16px}.source-link{color:#db2777;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#831843;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+</style>
+      
+<div class="svg-page">
+<div class="container">
+  <h1>粉调婚纱照：不是“加粉色”，而是先建通透与色彩秩序</h1>
+  <div class="meta">
+    <span class="tag tag-pink">小红书</span>
+    <span class="tag tag-green">1 分 16 秒</span>
+    <span class="tag tag-purple">婚纱照后期</span>
+    <span class="tag tag-gray">36 个转录分段</span>
+    <p>分析对象：视频《为什么你修的粉调婚纱照又脏又廉价？》 · 展示日期 2026-07-26</p>
+  </div>
+  <div class="summary-line"><strong>核心判断：</strong>视频真正回答的不是“用什么粉色”，而是“为什么直接加粉会脏”以及“通透 → 去杂色 → 高光加粉”这一顺序为何必要。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><span class="timeline-time">00:04</span><span class="timeline-text">提出误区：直接加粉色会让照片又闷又脏。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:11</span><span class="timeline-text">客户需求是“整体柔和的粉色调”，不是单纯粉色。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:19</span><span class="timeline-text">曲线 R/G/B 三通道提高光，建立通透基础。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:33</span><span class="timeline-text">曲线柔光模式 + 降不透明度，完成曲灰过渡。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:47</span><span class="timeline-text">可选颜色：黄、绿通道各减黄，清理杂色。</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">高光选区 + 色相/饱和度加粉并降色温。</span></div>
+    <div class="timeline-item"><span class="timeline-time">01:12</span><span class="timeline-text">结论：核心是通透与色彩统一后的柔和色调。</span></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">需求<br/>柔和粉调<br/>非单纯加粉</div>
+      <div class="arrow">→</div>
+      <div class="node">基础<br/>曲线提光<br/>通透 + 曲灰</div>
+      <div class="arrow">→</div>
+      <div class="node">清理<br/>可选颜色<br/>减黄去杂</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">落点<br/>高光加粉<br/>降色温</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p><strong>误解：</strong>客户要粉调 = 全图加一层粉色滤镜。<br/>
+    <strong>纠偏：</strong>直接加粉会压暗中间调、放大脏感；视频强调先通透、再去黄绿杂色，最后只在高光区域加粉。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">分步操作解析</h2>
+
+    <div class="card">
+      <h3>① 曲线提光：建立通透底</h3>
+      <p><strong>在讲什么：</strong>红、绿、蓝三通道分别提高光，让画面先“亮且透”。</p>
+      <p><strong>关键理解：</strong>通透是后续粉调不脏的前提；没有这一步，后面加粉只会叠在闷色上。</p>
+      <div class="action"><strong>怎么用：</strong>曲线调整层 → 分通道提高光 → 微调整体亮度。</div>
+      <div class="quote">“将红绿蓝三个通道的高光提起来，三色混合就通透了很多。”（00:19–00:27）</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>② 柔光曲线：曲灰过渡</h3>
+      <p><strong>在讲什么：</strong>第二条曲线改柔光模式，降低不透明度，做灰阶过渡。</p>
+      <p><strong>关键理解：</strong>柔光会增强对比，必须控不透明度；这一步与提光配合，形成“通透 + 曲灰”。</p>
+      <div class="action"><strong>怎么用：</strong>曲线 → 混合模式柔光 → 不透明度约 30–50% 视素材调整。</div>
+      <div class="quote">“这两步就做到了整体通透曲灰的效果。”（00:38–00:41）</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>③ 可选颜色：清理黄绿杂色</h3>
+      <p><strong>在讲什么：</strong>黄通道减黄、绿通道减黄，消除画面中的黄绿杂乱。</p>
+      <p><strong>关键理解：</strong>杂色是“脏感”来源之一；清理后画面自然偏粉，而非强行蒙粉。</p>
+      <div class="action"><strong>怎么用：</strong>可选颜色 → 黄/绿通道 → 减黄色滑块。</div>
+      <div class="quote">“这样画面就有一种偏粉的倾向了。”（00:50–00:53）</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>④ 高光加粉：博主观点（关键步骤）</h3>
+      <p><strong>在讲什么：</strong>选取高光，用色相/饱和度加粉并降色温。</p>
+      <p><strong>关键理解：</strong>这是博主认定的“关键一步”；粉只落在高光，而非全图，因此更干净。</p>
+      <div class="pitfall"><strong>风险：</strong>若跳过前三步直接在此加粉，高光粉会浮在脏底上，仍显廉价。</div>
+      <div class="quote">“这样的粉调才是干净的。”（01:00–01:02）</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>方法对比：直接加粉 vs 视频流程</h3>
+    <table>
+      <tr><th>维度</th><th>直接加粉色</th><th>视频四步流程</th></tr>
+      <tr><td>通透度</td><td>易压暗、发闷</td><td>先提光再曲灰，底图透亮</td></tr>
+      <tr><td>杂色处理</td><td>黄绿杂色被粉色掩盖</td><td>可选颜色主动减黄</td></tr>
+      <tr><td>粉色落点</td><td>全图均匀蒙层</td><td>仅高光区域加粉</td></tr>
+      <tr><td>观感</td><td>又脏又廉价（博主原话）</td><td>柔和、干净、统一</td></tr>
+    </table>
+  </div>
+
+  <div class="card card-red">
+    <h3>避坑总结</h3>
+    <ul>
+      <li>不要跳过通透直接加粉——这是视频开头就否定的路径。</li>
+      <li>柔光曲线不控不透明度，对比会过强。</li>
+      <li>全图加粉而非高光选区，粉调容易浮、显脏。</li>
+      <li>忽略黄绿杂色，即使加粉也会“脏底 + 浮粉”。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>方法边界与立场分层</h3>
+    <p><strong>可验证事实：</strong>视频演示了曲线、可选颜色、色相/饱和度等 Photoshop 工具的具体操作顺序。</p>
+    <p><strong>博主观点：</strong>“粉色婚纱照的核心从来不是粉色本身”；“这样的粉调才是干净的”。</p>
+    <p><strong>基于原文的推断：</strong>该流程适用于偏暖、有黄绿杂色的婚纱照素材；冷调或已高度偏粉的底图，各步参数需重新校准，不可机械复制数值。</p>
+    <p><strong>适用上限：</strong>1 分 16 秒的教程只覆盖一种典型场景，不同光线、肤色、妆面需单独测试。</p>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>粉调婚纱照 = 通透底 + 去杂色 + 高光加粉，不是全图粉色滤镜。</li>
+      <li>操作顺序不可颠倒：先亮透，再曲灰，再减黄，最后加粉。</li>
+      <li>“柔和粉调”与“单纯粉色”是两种完全不同的修图目标。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>拿到粉调需求时，先问清客户要的是“整体柔和粉调”还是“明显粉色调”。</li>
+      <li>新建曲线，R/G/B 三通道提高光，检查通透度后再继续。</li>
+      <li>第二条曲线柔光 + 降不透明度，完成曲灰。</li>
+      <li>可选颜色减黄（黄、绿通道），观察杂色是否清理。</li>
+      <li>高光选区 + 色相/饱和度加粉并降色温，最后微调柔度。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从“加粉色 = 粉调婚纱照”转变为“先建立色彩秩序，再让粉自然落在高光上”。</p>
+  </div>
+
+  <p class="footer">分析依据原视频转录 · 2026-07-26 · <a class="source-link" href="http://xhslink.cn/o/7eQXLyE5EeG">原视频链接</a></p>
+</div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
