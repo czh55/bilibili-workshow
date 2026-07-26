@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6923" viewBox="0 0 1320 6923">
+  <foreignObject x="0" y="0" width="1320" height="6923">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.label{font-size:13px;font-weight:800;color:#1e40af;letter-spacing:.04em;margin-top:10px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}</style>
+      
+<div class="svg-page">
+  <div class="container">
+    <h1>衣服好坏分辨真的要细心！</h1>
+    <div class="meta">
+      <span class="tag tag-blue">小红书</span>
+      <span class="tag tag-green">50秒</span>
+      <span class="tag tag-purple">买衣技巧</span>
+      <span class="tag tag-orange">版型工艺</span>
+      <span class="tag tag-gray">理性分析视角</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/7kvQ1v53PPJ">原视频：xhslink.cn/o/7kvQ1v53PPJ</a>
+    <div class="summary-line"><strong>核心判断：</strong>视频把“衣服好坏”压成两类可摸可看的细节——插肩袖是否用肩省把纱向改到肩臂转折点、腋下余量是否干净；无袖 T 是否用约一公分贴条加固而非折回锁边压线。它是店内快筛清单，不是全品类制版标准。</div>
+
+    <div class="timeline">
+      <h3>关键证据时间轴</h3>
+      <div class="timeline-item"><div class="timeline-time">00:04</div><div class="timeline-text">灰插肩袖：叠字“一看版型就有问题”</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">拉开袖子：正常应“横到肩点”再折向</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:16</div><div class="timeline-text">上身反例：腋下“量太多了”，又丑又不舒服</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:20</div><div class="timeline-text">棕蓝插肩袖：叠字“这个就是好版型”</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:24</div><div class="timeline-text">肩上捏省，改变整体纱向</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:28</div><div class="timeline-text">省尖落在肩与手臂转折点</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:32</div><div class="timeline-text">复检：“关键是腋下”，余量少更舒适美观</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:37</div><div class="timeline-text">无袖内里：约一公分贴条</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:44</div><div class="timeline-text">反例：折回＋锁边＋压线，直接屏蔽</div></div>
+      <div class="timeline-item"><div class="timeline-time">00:48</div><div class="timeline-text">用手撑几下易变形；玩笑收尾“小心被碰瓷”</div></div>
+    </div>
+
+    <div class="map">
+      <h2>核心脉络</h2>
+      <div class="diagram">
+        <div class="node">问题<br/>好坏看哪里？</div>
+        <div class="arrow">→</div>
+        <div class="node">证据<br/>版型缝线／腋下量／贴条</div>
+        <div class="arrow">→</div>
+        <div class="node node-green">判断<br/>贴合转折 vs 易变形</div>
+        <div class="arrow">→</div>
+        <div class="node node-orange">行动<br/>对照选／直接屏蔽</div>
+      </div>
+      <p class="small">两条线索并行：前半段是插肩袖版型几何；后半段是无袖边缘加固工艺。共享同一目标——上身舒适美观、耐洗不易垮。</p>
+    </div>
+
+    <div class="correction">
+      <h3>常见误解与认知纠偏</h3>
+      <p><strong>误解 1：</strong>只要是插肩袖就时髦好看。<br/><strong>纠偏：</strong>视频证据显示同样是插肩袖，斜向单方向缝 vs 肩省改纱向，上身后腋下余量差很多。</p>
+      <p><strong>误解 2：</strong>内里有锁边就等于做工好。<br/><strong>纠偏：</strong>作者把“折回锁边压线”标为屏蔽项；真正推荐的是约一公分贴条加固。</p>
+      <p><strong>误解 3：</strong>“穿到破洞都不变形”是客观保证。<br/><strong>纠偏：</strong>这是口播夸张，属作者经验立场；应理解为贴条结构的耐洗信号，而非所有面料的绝对承诺。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">观点卡片：插肩袖版型几何</h2>
+      <div class="card">
+        <h3>在讲什么</h3>
+        <p>差版插肩袖只有斜向一个方向；正常肩臂应“横到肩点再折下”。手臂日常多自然下垂，斜向缝与动作错位后，腋下会堆出过多余量。</p>
+        <div class="label">关键理解</div>
+        <p>版型好坏先看肩袖缝是否尊重身体转折，而不是只看“插肩”这个款式标签。</p>
+        <div class="label">怎么用</div>
+        <p>货架上拉开袖子，想象手臂放下；试衣时优先看腋下是否鼓、散、多量。</p>
+        <div class="quote">原文依据：[00:04–00:18] “一看版型就有问题”“横到肩点”“量太多了”“又丑又不舒服”</div>
+        <div class="relation">关系：斜向单方向缝 → 与下垂手臂不匹配 → 腋下余量失控</div>
+      </div>
+
+      <div class="card card-green">
+        <h3>在讲什么</h3>
+        <p>好版在肩上捏省，改变纱向，使省尖落在肩与手臂转折点，上身后更贴合。</p>
+        <div class="label">关键理解</div>
+        <p>“省”不是装饰，而是把面料方向改到身体需要弯折的地方；复检点仍在腋下余量。</p>
+        <div class="label">怎么用</div>
+        <p>对照肩袖折线是否落在转折点；上身后再看腋下是否“没有太多的量”。</p>
+        <div class="quote">原文依据：[00:20–00:34] “这个就是好版型”“改变了整体的这个纱向”“正好在肩和手臂的转折点上”“关键是腋下”</div>
+        <div class="insight">立场分层：可验证——画面可见肩袖结构差异与腋下余量；观点——作者认定棕蓝款为好版；推断——省尖对准转折点是贴合的关键机制。</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">观点卡片：无袖边缘加固</h2>
+      <div class="card card-purple">
+        <h3>在讲什么</h3>
+        <p>无袖 T 认准内里约一公分贴条；作者声称洗衣机随便洗、穿到破洞都不易变形。</p>
+        <div class="label">关键理解</div>
+        <p>贴条提供边缘稳定性，抗拉伸与水洗变形；比“有没有锁边”更具体。</p>
+        <div class="label">怎么用</div>
+        <p>翻开袖窿／领口内里，找窄而平整的贴条（约 1 cm），再轻拉边缘感受回弹。</p>
+        <div class="quote">原文依据：[00:35–00:41] “认准这种内里”“一公分贴条”“洗衣机里随便洗”</div>
+        <div class="highlight">边界：1 cm 是视频给出的经验值；不同面料与品牌工艺宽度可能不同，宜作对照尺度而非硬性国标。</div>
+      </div>
+
+      <div class="card card-orange">
+        <h3>在讲什么</h3>
+        <p>见到“面料折回＋锁边＋压线”直接屏蔽；用手撑几下就可能变形难看。</p>
+        <div class="label">关键理解</div>
+        <p>作者把该做法当作低稳边缘：缺少贴条类加固时，边缘更容易被拉伸拉开。</p>
+        <div class="label">怎么用</div>
+        <p>店内翻内里，若是折回锁边压线且手撑即变形，按作者建议跳过。</p>
+        <div class="quote">原文依据：[00:42–00:50] “折回锁边压线直接屏蔽”“用手撑几下可能都变形”“小心被碰瓷”</div>
+        <div class="pitfall">避坑：不要把“锁边”单独当成高品质证据；要看是否有贴条式加固与边缘抗变形表现。</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">横向对比：差版／好版与两种内里</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>观察点</th>
+              <th>作者认定差</th>
+              <th>作者认定好</th>
+              <th>店内动作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>插肩袖方向</td>
+              <td>只有斜向一个方向</td>
+              <td>肩点转折＋肩省改纱向</td>
+              <td>拉开袖缝，对照肩点</td>
+            </tr>
+            <tr>
+              <td>上身腋下</td>
+              <td>量太多，又丑又不舒服</td>
+              <td>没有太多量，更舒适美观</td>
+              <td>手臂自然放下看余量</td>
+            </tr>
+            <tr>
+              <td>省尖位置</td>
+              <td>（差版未体现有效省尖）</td>
+              <td>落在肩与手臂转折点</td>
+              <td>指认肩袖折线是否对准转折</td>
+            </tr>
+            <tr>
+              <td>无袖内里</td>
+              <td>折回＋锁边＋压线</td>
+              <td>约一公分贴条</td>
+              <td>翻开袖窿边缘，轻撑测试</td>
+            </tr>
+            <tr>
+              <td>耐洗信号</td>
+              <td>手撑即可能变形</td>
+              <td>作者称可机洗且不易变形</td>
+              <td>作筛选信号，勿当绝对保证</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">方法边界与立场分层</h2>
+      <div class="card">
+        <div class="stance-grid">
+          <div class="stance-item">
+            <strong>可验证事实</strong>
+            画面展示两种插肩袖结构差异；上身点向腋下余量；无袖内里可见贴条与折回锁边压线两种做法。
+          </div>
+          <div class="stance-item">
+            <strong>UP 主观点</strong>
+            斜向差版“又丑又不舒服”；棕蓝款“就是好版型”；贴条可机洗到破洞不变形；折回锁边压线应屏蔽。
+          </div>
+          <div class="stance-item">
+            <strong>基于原文的推断</strong>
+            省尖对准转折点是贴合机制；贴条提供边缘稳定性；“碰瓷”是玩笑警示低质货，非法律指控。
+          </div>
+        </div>
+        <div class="highlight" style="margin-top:18px">适用边界：短视频示例集中于插肩短袖与无袖 T；不宜外推到西装肩、牛仔、针织开衫等不同结构。证据强弱：视觉对比强，量化数据（面料成分、洗涤标准）无。</div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h2>总结与行动</h2>
+      <h3>核心要点</h3>
+      <ul>
+        <li>插肩袖先看肩臂是否“两方向转折”，再看腋下余量。</li>
+        <li>好版信号：肩省改纱向，省尖落在转折点。</li>
+        <li>无袖 T：认准约一公分贴条；折回锁边压线按作者建议屏蔽。</li>
+      </ul>
+      <h3>行动清单</h3>
+      <ol>
+        <li>货架拉开插肩袖，对照“横到肩点再折下”。</li>
+        <li>试衣手臂自然下垂，优先检查腋下是否堆量。</li>
+        <li>好版再确认肩袖折线／省尖是否对准转折点。</li>
+        <li>买无袖时翻内里，找约 1 cm 贴条并轻撑测试回弹。</li>
+        <li>见到折回锁边压线且一撑就变形，直接跳过。</li>
+      </ol>
+      <h3>关键认知转变</h3>
+      <p>从“凭感觉这件好看”转向“用肩臂几何＋边缘加固做快筛”；把“有锁边”升级为“有没有抗变形的贴条结构”。</p>
+    </div>
+
+    <div class="footer">双轨产物之二 · SVG 理性分析 · slug: clothes-quality-details · 时长 50 秒 · 证据来自视频字幕与画面</div>
+  </div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
