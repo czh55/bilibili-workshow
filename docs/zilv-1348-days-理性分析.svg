@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7347" viewBox="0 0 1320 7347">
+  <foreignObject x="0" y="0" width="1320" height="7347">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="page">
+<div class="container">
+  <h1>自律第1348天</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">8分13秒</span>
+    <span class="tag tag-orange">跑步技术</span>
+    <span class="tag tag-purple">理性分析</span>
+    <span class="tag tag-gray">无伤跑到老</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/ANxBM071axt">原视频短链</a>
+  <div class="summary-line">核心判断：街头纠错的主线不是「换鞋/换装备」，而是把「脚跟过度落地 + 低步频（约160）」拆成可练动作——缩步幅、勾脚尖整脚踏地、肘固定前后摆臂、头看斜下方；目标步频 <span class="key-data">180+</span>。片中现场从约160提到约166，说明短期可抬升，但肌肉记忆仍需持续跟练。本片是教练个人经验与现场口令，不是生物力学实验结论。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">搭讪开场：判断对方跑姿不对，提出交流。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:21</div><div class="timeline-text">诊断三件套：脚跟落地偏多、上身未收紧、扬头 → 跑得累。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:44</div><div class="timeline-text">情境确认：已跑 2.7 公里；背小包因无处存放。</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:04</div><div class="timeline-text">风险断言：脚跟落地 + 步频低 → 膝盖「百分百」会受伤（教练个人判断）。</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:48</div><div class="timeline-text">数据锚点：当前步频约 160，目标 180 以上。</div></div>
+    <div class="timeline-item"><div class="timeline-time">02:00</div><div class="timeline-text">落地课：小碎步；避免点脚尖/纯前掌；勾脚尖 + 整脚踏地；机器人张开手找平衡。</div></div>
+    <div class="timeline-item"><div class="timeline-time">03:55</div><div class="timeline-text">摆臂课：肘约 ≤90° 固定，前后送，禁止往下敲/乱翘。</div></div>
+    <div class="timeline-item"><div class="timeline-time">05:08</div><div class="timeline-text">头颈与躯干：挺胸、头看斜下方、慢跑勿扬头；可微前倾。</div></div>
+    <div class="timeline-item"><div class="timeline-time">05:46</div><div class="timeline-text">中途复盘：步频约提到 166–168；继续朝 180 加压。</div></div>
+    <div class="timeline-item"><div class="timeline-time">07:55</div><div class="timeline-text">结果字幕：166（刚才 160）；鼓励保持后结束。</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>脚跟落地<br/>步频≈160</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">风险判断<br/>膝盖易伤<br/>跑得更累</div>
+      <div class="arrow">→</div>
+      <div class="node">干预组合<br/>缩步幅·整脚落地<br/>摆臂·头姿</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">目标<br/>步频 180+<br/>轻松且更耐伤</div>
+    </div>
+    <p>关系链：上身/核心松 → 更容易脚跟刹；步幅偏大 + 步频偏低 → 冲击更重。纠正优先改节奏与落地方式，而不是先加跑量。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>1）「前脚掌落地=正确」→ 片中明确反对点脚尖/纯前掌，要求勾脚尖后用整脚踏地找接触感。<br/>
+    2）「摆臂越大越好」→ 肘角过大或往下敲都会费力；正确是肘相对固定、前后送。<br/>
+    3）「抬头才精神」→ 慢跑疲劳时扬头会连锁破坏姿态；应头看斜下方并收颈。<br/>
+    4）「一次跟练就能定型」→ 现场只到约 166，作者仍要求继续练到 180，说明需要重复。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">一、问题诊断：为什么会累、会伤</h2>
+    <div class="card card-red">
+      <h3>在讲什么</h3>
+      <p>把「看起来累」拆成可观察的姿态问题：脚跟落地偏多、上身没收紧、扬头；再叠加低步频，形成膝盖风险判断。</p>
+      <div class="highlight">怎么理解：这是症状组合，不是单一坏习惯。脚跟落地往往与躯干松、步幅大、步频低一起出现。</div>
+      <div class="action">怎么用：先自查三件事——落地是否偏后跟、表盘步频是否长期 &lt;170、疲劳时是否扬头。</div>
+      <div class="quote">原文依据：[00:21]「脚后跟落地偏多」；[00:25]「扬着头」；[01:04–01:10]「脚后跟落地……步频又低……膝盖肯定百分之百会受伤」。Whisper 将「步频」误识为「不平」。</div>
+      <div class="relation">立场分层：膝盖「百分百受伤」是 <span class="speaker speaker-host">UP主观点</span>，强度很高；可验证事实是片中读出的步频数字（160→166）。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">二、节奏干预：缩步幅、提步频</h2>
+    <div class="card card-green">
+      <h3>在讲什么</h3>
+      <p>解决方案的第一杠杆是节奏：步幅再降一点，步频提到 180 以上，并跟着口令练。</p>
+      <div class="highlight">怎么理解：小步高频减少单次着地冲击窗口；不是让你立刻跑更快，而是先把节拍抬上去。</div>
+      <div class="action">怎么用：慢跑时看手表步频；若长期约 160，先刻意缩小步幅跟节拍器/口令，目标 180 附近再谈提速。</div>
+      <div class="quote">原文依据：[01:34–01:36]「把步幅再降低一点」；[01:48–01:56]「才160……要180以上……把步频提到180以上」；[05:46–05:51]「168……提升到180」；字幕[07:55]「166刚才160」。</div>
+      <div class="pitfall">避坑：为了抬步频把动作做乱、步子突然放大——片中反复喊「没跟上」「步子小点」「动作慢一点」。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">三、落地体感：勾脚尖 + 整脚踏地</h2>
+    <div class="card">
+      <h3>在讲什么</h3>
+      <p>用「机器人」张开手找平衡的原地练习，建立勾脚尖后整脚踏地的接触感，再过渡到小碎步跑。</p>
+      <div class="highlight">怎么理解：纠正不是换成踮脚跑，而是避免脚跟刹车与点脚尖两个极端，找到可控的整脚接触。</div>
+      <div class="action">怎么用：1）原地双手侧平举；2）脚尖勾起；3）直上直下踏地；4）找到地面接触后再收回手臂成跑步姿。</div>
+      <div class="quote">原文依据：[02:14–02:20]「不要点脚尖……不要用前脚掌落地……用整个脚下落地」；[03:05–03:14]「把脚尖勾起来……用整个脚去踏地」；[02:40–02:43]「把手张开，这样找平衡」。</div>
+      <div class="relation">方法边界：适用于现场对「脚跟偏多」跑者的入门体感；是否适合所有足型/伤病需个体评估，片中未提供医学证据。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">四、摆臂与头姿：稳定传动链</h2>
+    <div class="card card-purple">
+      <h3>在讲什么</h3>
+      <p><span class="speaker speaker-host">代自律</span> 的观点：摆臂应肘固定前后送（约 ≤90°），禁止往下敲；头看斜下方、收颈挺胸，慢跑不要扬头；上身可微微前倾。</p>
+      <div class="highlight">怎么理解：手臂与头部是「节奏放大器」——乱摆和扬头会把好不容易缩小的步幅再搞乱。</div>
+      <div class="action">怎么用：肘贴在身体两侧前后送；视线落在斜前方地面；疲劳时优先检查头是否上扬。</div>
+      <div class="quote">原文依据：[04:08–04:27]「摆臂是错的……不是往下敲……前后送……小于90度」；[05:08–05:14]「挺胸……头看斜下方，脖子要收」；[06:13–06:17]「不要扬头……咱们是慢跑」。</div>
+      <div class="insight">推断（基于原文）：头姿与步频训练应并行——只数步频、不管扬头，疲劳后姿态会回潮。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：改前 vs 现场目标</h3>
+    <table>
+      <thead>
+        <tr><th>维度</th><th>改前（现场观察）</th><th>干预后目标 / 片中结果</th><th>选择条件</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>步频</td><td>约 160 spm</td><td>目标 180+；片中到约 166</td><td>慢跑重整节奏时优先提频</td></tr>
+        <tr><td>步幅</td><td>偏大（被要求再小）</td><td>小碎步、跟口令缩小</td><td>先求稳，再谈加大步幅提速</td></tr>
+        <tr><td>落地</td><td>脚跟落地偏多</td><td>勾脚尖 + 整脚踏地</td><td>避免点脚尖/纯前掌替代</td></tr>
+        <tr><td>摆臂</td><td>乱翘、往下敲</td><td>肘固定、前后送、约 ≤90°</td><td>与步频口令同时练</td></tr>
+        <tr><td>头颈</td><td>扬头</td><td>看斜下方、收颈；慢跑勿扬</td><td>疲劳段落优先自查</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">五、适用边界与证据强度</h2>
+    <div class="card card-orange">
+      <h3>边界说明</h3>
+      <ul>
+        <li><strong>场景上限：</strong>公园街头即时纠错 + 数分钟跟练；不是系统训练计划或伤病康复方案。</li>
+        <li><strong>人群：</strong>片中对象为年轻男跑者、已跑 2.7km、背小包；对高龄、术后、严重膝伤未讨论。</li>
+        <li><strong>配速例外：</strong>作者承认三四分配速时头可略抬；本片主场景是慢跑。</li>
+        <li><strong>证据强弱：</strong>步频数字与字幕为可核对事实；「膝盖百分百受伤」为强观点，缺少影像外的医学数据。</li>
+      </ul>
+      <div class="pitfall">不要做：把「百分百会受伤」当成普遍医学结论；也不要用踮脚尖跑去「躲开脚跟」。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>主问题 = 脚跟过度落地 + 低步频（约160）+ 扬头/松上身。</li>
+      <li>主杠杆 = 缩步幅、提步频到 180+，配合整脚落地与规范摆臂。</li>
+      <li>现场证明短期可抬升（160→166），但未达目标，需要重复练习。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>下次慢跑先看 1 分钟平均步频；低于 170 就优先缩步幅。</li>
+      <li>做 2 分钟「机器人」落地：勾脚尖、整脚踏地、直上直下。</li>
+      <li>摆臂自检：肘角是否过大、是否在往下敲；改为前后送。</li>
+      <li>疲劳时摸一下下巴位置：是否开始扬头；改回斜下方视线。</li>
+      <li>用口令「一二三四」跟脚 5–10 分钟，目标靠近 180，而不是一次到位。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「跑得累就硬撑」转向「先改节奏与落地接触」；从「前掌才专业」转向「可控的整脚落地」；从「抬头才好看」转向「慢跑优先稳定头颈」。</p>
+  </div>
+
+  <p class="footer">双轨产物 · 理性分析 · 作者：代自律 · 源：小红书 · 2026-07-26</p>
+</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
