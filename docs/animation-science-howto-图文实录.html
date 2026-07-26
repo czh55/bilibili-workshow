@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="七分钟 AE 屏幕课：关键帧、速度曲线、快门形态核心动机与伪 3D，把动画科普做成可跟做的制作思路。">
+  <title>如何制作动画科普！！！｜图文实录</title>
+  <style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#fafaf9 0%,#f5f5f4 40%,#e7e5e4 100%)}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+header{margin-bottom:36px}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#a8a29e;margin:0 0 10px}
+h1{font-size:clamp(28px,4vw,40px);line-height:1.25;margin:0 0 14px;color:#1c1917}
+.meta{display:flex;flex-wrap:wrap;gap:10px 16px;color:#78716c;font-size:14px;margin-bottom:18px}
+.meta a{color:#b45309}
+.lede{font-size:18px;color:#44403c;margin:0;padding:18px 20px;background:rgba(255,255,255,.75);border-left:4px solid #b45309;border-radius:0 12px 12px 0}
+.toc{margin:28px 0 40px;padding:20px 22px;background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(41,37,36,.08)}
+.toc h2{margin:0 0 12px;font-size:16px;color:#1c1917}
+.toc ol{margin:0;padding-left:20px}
+.toc a{color:#57534e;text-decoration:none}
+.toc a:hover{color:#b45309}
+.documentary{font-size:17px}
+.story-section{margin:48px 0}
+.story-section h2{font-size:24px;margin:0 0 12px;color:#1c1917}
+.story-section h3{font-size:18px;margin:24px 0 8px;color:#44403c}
+.story-section p{margin:0 0 14px}
+.note{font-size:14px;color:#78716c;background:#fff7ed;border-radius:10px;padding:12px 14px;margin:16px 0}
+.quote{font-style:italic;color:#57534e;border-left:3px solid #d6d3d1;padding-left:14px;margin:14px 0}
+img{display:block;max-width:100%;height:auto}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:64px;padding-top:32px;border-top:1px solid #d6d3d1}
+.transcript-section h2{margin:0 0 8px}
+.transcript-note{color:#78716c;font-size:14px;margin:0 0 20px}
+.transcript-list{list-style:none;padding:0;margin:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .transcript-row{grid-template-columns:56px 1fr;gap:10px}
+}
+</style>
+</head>
+<body>
+  <main class="container">
+    
+<header>
+  <p class="eyebrow">小红书 · 图文实录</p>
+  <h1>如何制作动画科普！！！</h1>
+  <div class="meta">
+    <span>2026-07-26</span>
+    <span>时长 7分00秒</span>
+    <span>平台 小红书</span>
+    <span>作者 ID 615d919b000000000201a7d3</span>
+    <a href="http://xhslink.cn/o/90P5jsZf7nO" rel="noopener noreferrer">原视频链接</a>
+  </div>
+  <p class="lede">UP 主用一期七分钟的 AE 屏幕演示，把「动画科普」拆成可跟做的制作思路：从关键帧让图形动起来，到速度曲线做丝滑，再到用机械快门形态找创作动机，最后点明动画只是表现形式，内容本身更重要。</p>
+</header>
+
+<nav class="toc" aria-label="目录">
+  <h2>本篇目录</h2>
+  <ol>
+    <li><a href="#s1">[00:00] MG 动画与关键帧入门</a></li>
+    <li><a href="#s2">[00:18] AE 界面上手</a></li>
+    <li><a href="#s3">[01:06] 位移关键帧实操</a></li>
+    <li><a href="#s4">[01:45] 工程量与合成套娃</a></li>
+    <li><a href="#s5">[02:16] 速度曲线与丝滑运动</a></li>
+    <li><a href="#s6">[03:17] 创作核心动机：快门形态</a></li>
+    <li><a href="#s7">[03:50] 效果叠加与路径生长</a></li>
+    <li><a href="#s8">[05:02] 伪 3D、脚本与插件</a></li>
+    <li><a href="#s9">[06:43] 收束：锦上添花，而非纸上添花</a></li>
+    <li><a href="#transcript">详细文字转录</a></li>
+  </ol>
+</nav>
+
+<article class="documentary">
+  <section class="story-section" id="s1">
+    <h2>[00:00] MG 动画与关键帧入门</h2>
+    <p>开场标题打出「如何制作动画科普」。UP 主先把本期动画类型归到 MG（Motion Graphics）：可以简单理解为让图形动起来——无论单一元素还是复合形态，都先当成图形来看。</p>
+    <p>紧接着抛出核心疑问：图形到底怎么动起来？答案很直接——靠关键帧。他也坦白，这恰恰是最容易让人头疼的部分。于是视频转入 After Effects 的上手体验；已有 AE 基础的观众可以跳过这一段。</p>
+    <figure>
+      <img src="assets/animation-science-howto/shot-01.jpg" alt="黑底标题画面：如何制作动画科普 / How to Make Animation Popular Science" loading="lazy">
+      <figcaption>[00:01] 片头标题卡，点明本期主题是动画科普的制作方法。</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="s2">
+    <h2>[00:18] AE 界面上手</h2>
+    <p>画面切到 After Effects 2022。UP 主按面板走了一圈：左侧项目面板管理文件与导入素材；右侧实时监看是合成窗口；上方工具栏执行操作；最下方时间线窗口是主操作区。</p>
+    <p>右键可新建文字、形状图层，也能从工具栏直接在合成窗口绘制；时间线同步出现对应图层。新建形状后展开变换参数，五个选项里，位置、缩放、旋转被点名为「影响运动的三个关键参数」。</p>
+    <figure>
+      <img src="assets/animation-science-howto/shot-02.jpg" alt="AE 界面高亮左侧项目面板，合成窗口显示 PART 3 动画制作" loading="lazy">
+      <figcaption>[00:26] 软件界面导览：白框圈出左侧项目面板，合成窗正显示「PART 3 动画制作」。</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/animation-science-howto/shot-03.jpg" alt="形状图层变换参数展开，字幕提示位置缩放旋转" loading="lazy">
+      <figcaption>[01:06] 变换面板展开：位置、缩放、旋转被标为运动三要素。</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="s3">
+    <h2>[01:06] 位移关键帧实操</h2>
+    <p>演示从最简单的位移动画开始：把图形放到左侧，时间线拖到起点，点击位置属性前的秒表图标，完成第一个关键帧记录；再拖到两秒处改位置，软件自动写入第二个关键帧。预览后，一个基础位移动画就成型了。</p>
+    <p class="quote">关键帧其实就是记录画面元素在不同时间下的不同状态——这也是动画最基本的运行逻辑。</p>
+    <p>同理，改缩放、旋转等参数，也会得到对应动画。UP 主强调：记住秒表，就等于抓住了「记录状态」这件事。</p>
+    <figure>
+      <img src="assets/animation-science-howto/shot-04.jpg" alt="光标指向位置属性前的秒表图标准备打关键帧" loading="lazy">
+      <figcaption>[01:20] 点击位置前的秒表图标，开始记录关键帧。</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="s4">
+    <h2>[01:45] 工程量与合成套娃</h2>
+    <p>接下来他没有继续炫技，而是把工程真实体量摊开：一个合成有时几十个图层、几百上千关键帧；合成还能嵌套合成，一期视频工程少则几个、多则几十个合成。为避免混乱，他会分开制作。</p>
+    <p>说这些不是劝退，而是让观众对「一期动画科普」的工作量有直观感受。画面里项目面板堆满「快门曝光」「快门叶片」等合成，时间线也开着多个标签。</p>
+    <figure>
+      <img src="assets/animation-science-howto/shot-05.jpg" alt="项目面板列出大量快门相关合成，字幕提到工程里合成数量" loading="lazy">
+      <figcaption>[01:55] 真实工程一瞥：多个曝光与叶片合成并列，对应「少则几个、多则几十个」。</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="s5">
+    <h2>[02:16] 速度曲线与丝滑运动</h2>
+    <p>观众已经理解关键帧驱动运动，但画面仍不够流畅——因为默认是线性运动。UP 主选中两个关键帧，打开图表编辑器里的速度图表：横轴时间、纵轴速率，直线意味着全程等速，看起来平平无奇。</p>
+    <p>退出后再次选中关键帧，按 F9，菱形关键帧变成沙漏形（Easy Ease）。回到图表，直线变曲线：高处更快、低处更慢；由快到慢可做成左高右低，由慢到快则左低右高。</p>
+    <p class="quote">关键帧只是能让画面动起来；调整好运动曲线，才是让画面看起来丝滑流畅的关键因素。</p>
+    <figure>
+      <img src="assets/animation-science-howto/shot-06.jpg" alt="图表编辑器显示钟形速度曲线，字幕直线也变成了曲线" loading="lazy">
+      <figcaption>[02:42] Easy Ease 后的速度曲线：直线变为曲线，运动有快慢起伏。</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="s6">
+    <h2>[03:17] 创作核心动机：快门形态</h2>
+    <p>有人会说软件都会，一创作却无从下手——UP 主认为，往往是还没找到「创作的核心动机」。他以自己做过的机械快门科普为例：核心动机就是快门形态本身。</p>
+    <p>做法是先拆部件，再用基础形状描绘：长方形 CMOS、圆形相机卡口、四个长方形拼出快门叶片；用关键帧记录每片叶片起止位置，预合成、复制、翻转，就能做出开合效果。这个可视母题，也就成了整期视频的创作起点。</p>
+    <p class="note">转录里 Whisper 多次把「快门」听成「宽门」、「CMOS」听成「Semos」、「AE」听成「A1」。下方实录按画面字幕与工程文件名校正叙述；文末转录区仍保留原始识别文本。</p>
+  </section>
+
+  <section class="story-section" id="s7">
+    <h2>[03:50] 效果叠加与路径生长</h2>
+    <p>形状搭好后画面仍粗糙，于是进入 AE「最重要的部分」——效果。给 CMOS 形状加四色渐变并调颜色分布，再叠网格，就更像直觉中的传感器画面。一个或多个效果叠加，能换来更丰富的视觉表现；细节可以一直加到满意为止。</p>
+    <p>核心画面定调后，后面内容都可围绕它展开。举例「相机生长动画」：找图片参考，钢笔绘制轮廓，加修剪路径（Trim Paths），关键帧从 0% 到 100%，线条依次显现，路径生长就完成了。</p>
+    <figure>
+      <img src="assets/animation-science-howto/shot-07.jpg" alt="CMOS 图层叠加四色渐变效果，效果控件显示四色点" loading="lazy">
+      <figcaption>[04:05] 给 CMOS 形状加四色渐变：效果面板与合成窗同步显示彩虹传感器面。</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="s8">
+    <h2>[05:02] 伪 3D、脚本与插件</h2>
+    <p>生长完的相机还不够生动。UP 主打开 3D 开关再旋转——结果看起来仍然扁平，于是自嘲「说好的 3D 呢？就这」。他解释：虽有插件或渲染器能做真 3D，但 AE 本质上是 2D 软件；要在二维里做出立体感，可以耍小心机。</p>
+    <p>方法是：相机转到不同形态时，准备对应轮廓线条，在轮廓变化的起始、中间、结束状态分别打关键帧，再微调，用遮罩法做出「伪 3D」效果。</p>
+    <p>接着谈拓展工具：脚本通常小巧，用代码控制 AE 现有功能，例如一键生成动画、把常用效果摆成图标点击即用；插件更复杂，用于拓展边界，例如粒子插件、3D 插件，让原本难做或做不了的效果更容易落地。</p>
+    <figure>
+      <img src="assets/animation-science-howto/shot-08.jpg" alt="相机线框开启 3D 旋转属性，字幕说好的3D呢" loading="lazy">
+      <figcaption>[05:10] 打开 3D 开关后的自嘲瞬间：强调 AE 本体仍是 2D，立体感需另想办法。</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="s9">
+    <h2>[06:43] 收束：锦上添花，而非纸上添花</h2>
+    <p>结尾回到初心：用动画做科普，是为了把晦涩文字表述变成可视化形态，优势是直观明了。但归根结底，动画只是一种表现形式，并非内容本身。</p>
+    <p class="quote">你要做的是锦上添花，而非纸上添花。</p>
+    <p>也就是说：先把科普内容做扎实，再让动画去服务它；不要本末倒置，只堆特效而空掉讲解。整期视频从操作到动机再到工具，最后落在这一句判断上。</p>
+  </section>
+</article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差（如将 AE 听成 A1、快门听成宽门、CMOS 听成 Semos、锦上添花听成紧上天花等）。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>动画类型属于MG动画</p>
+  </li>
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT2S">00:02</time>
+    <p>可以简单理解为让图形动起来</p>
+  </li>
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT4S">00:04</time>
+    <p>无论什么形状</p>
+  </li>
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT6S">00:06</time>
+    <p>我是单一元素还是符合形态</p>
+  </li>
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT8S">00:08</time>
+    <p>都可以看作是图形</p>
+  </li>
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT9S">00:09</time>
+    <p>图形不能理解</p>
+  </li>
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT10S">00:10</time>
+    <p>那它们到底是如何动起来的呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT12S">00:12</time>
+    <p>很简单</p>
+  </li>
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT13S">00:13</time>
+    <p>管简真</p>
+  </li>
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT14S">00:14</time>
+    <p>作称动画可以真</p>
+  </li>
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT15S">00:15</time>
+    <p>而这也是最容易让人偷偷的部分</p>
+  </li>
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT18S">00:18</time>
+    <p>下面先带大家来个简单的AE上手体验</p>
+  </li>
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT21S">00:21</time>
+    <p>由A技术的朋友这部分可以选择跳过</p>
+  </li>
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT24S">00:24</time>
+    <p>来到软件界面</p>
+  </li>
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT25S">00:25</time>
+    <p>左侧是项目面板</p>
+  </li>
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT27S">00:27</time>
+    <p>在这里可以管理所有的文件</p>
+  </li>
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT29S">00:29</time>
+    <p>也能导入素材</p>
+  </li>
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT30S">00:30</time>
+    <p>右侧这个是实时监看面板</p>
+  </li>
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT32S">00:32</time>
+    <p>叫做合成窗口</p>
+  </li>
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT33S">00:33</time>
+    <p>上面一旦是工具栏</p>
+  </li>
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT35S">00:35</time>
+    <p>可以利用这些工具来执行相应的操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT38S">00:38</time>
+    <p>最下面是合成的神线线窗口</p>
+  </li>
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT40S">00:40</time>
+    <p>这是最主要的操作区域</p>
+  </li>
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT42S">00:42</time>
+    <p>绝大部分的操作都可以在这里进行</p>
+  </li>
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT45S">00:45</time>
+    <p>点击鼠标右键</p>
+  </li>
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT46S">00:46</time>
+    <p>可以新建最基本的元素</p>
+  </li>
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT47S">00:47</time>
+    <p>文字形状图层</p>
+  </li>
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT49S">00:49</time>
+    <p>也可以在工具栏选择相应的工具</p>
+  </li>
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT52S">00:52</time>
+    <p>在合成窗口直接操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT54S">00:54</time>
+    <p>与此同时</p>
+  </li>
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT54S">00:54</time>
+    <p>神线窗口也会出现这个文件图层</p>
+  </li>
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT57S">00:57</time>
+    <p>我们新建一个形状</p>
+  </li>
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT58S">00:58</time>
+    <p>展开它的变换参数</p>
+  </li>
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT60S">01:00</time>
+    <p>里面有五个选项</p>
+  </li>
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT61S">01:01</time>
+    <p>试着调整一下这些参数</p>
+  </li>
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT63S">01:03</time>
+    <p>能看到图形会随之产生变化</p>
+  </li>
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT66S">01:06</time>
+    <p>其中位置缩放旋转</p>
+  </li>
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT68S">01:08</time>
+    <p>是印象运动的三个关键参数</p>
+  </li>
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT70S">01:10</time>
+    <p>还记得刚才提到的关键帧吧</p>
+  </li>
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT72S">01:12</time>
+    <p>我们先来做一个简单的未移动画</p>
+  </li>
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT74S">01:14</time>
+    <p>把图形放在左侧</p>
+  </li>
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT76S">01:16</time>
+    <p>通动时间线到起始处</p>
+  </li>
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT78S">01:18</time>
+    <p>点击位置属性前的马表图标</p>
+  </li>
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT80S">01:20</time>
+    <p>此时就完成了一个关键帧的记录</p>
+  </li>
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT82S">01:22</time>
+    <p>之后通动时间线只两秒处</p>
+  </li>
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT84S">01:24</time>
+    <p>再改变一下图形的位置</p>
+  </li>
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT87S">01:27</time>
+    <p>这样就会在当前状态</p>
+  </li>
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT88S">01:28</time>
+    <p>自动生成一个关键帧</p>
+  </li>
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT90S">01:30</time>
+    <p>预兰一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT91S">01:31</time>
+    <p>一个简单的未移动画就完成了</p>
+  </li>
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT94S">01:34</time>
+    <p>关键帧其实就是记录画面元素</p>
+  </li>
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT96S">01:36</time>
+    <p>在不同时间下的不同状态</p>
+  </li>
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT98S">01:38</time>
+    <p>这也是动画最基本的运行逻辑</p>
+  </li>
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT100S">01:40</time>
+    <p>同理改变其他参数</p>
+  </li>
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT101S">01:41</time>
+    <p>也会得到对应的动画效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-56">
+    <time datetime="PT105S">01:45</time>
+    <p>有时一个合成会有几十个图层</p>
+  </li>
+  <li class="transcript-row" id="transcript-57">
+    <time datetime="PT107S">01:47</time>
+    <p>需要记录几百上千的关键帧</p>
+  </li>
+  <li class="transcript-row" id="transcript-58">
+    <time datetime="PT109S">01:49</time>
+    <p>当然这只是一小段动画的一个合成</p>
+  </li>
+  <li class="transcript-row" id="transcript-59">
+    <time datetime="PT112S">01:52</time>
+    <p>每一个合成力还能套娃多个合成</p>
+  </li>
+  <li class="transcript-row" id="transcript-60">
+    <time datetime="PT114S">01:54</time>
+    <p>所以通常一个工程里的合成</p>
+  </li>
+  <li class="transcript-row" id="transcript-61">
+    <time datetime="PT116S">01:56</time>
+    <p>少则几个 多则几十个</p>
+  </li>
+  <li class="transcript-row" id="transcript-62">
+    <time datetime="PT118S">01:58</time>
+    <p>为了不让工程内容混乱 方便管理</p>
+  </li>
+  <li class="transcript-row" id="transcript-63">
+    <time datetime="PT120S">02:00</time>
+    <p>我会分开制作</p>
+  </li>
+  <li class="transcript-row" id="transcript-64">
+    <time datetime="PT122S">02:02</time>
+    <p>一视频的工程会有这么多</p>
+  </li>
+  <li class="transcript-row" id="transcript-65">
+    <time datetime="PT124S">02:04</time>
+    <p>当然说这些并不是要劝退各位</p>
+  </li>
+  <li class="transcript-row" id="transcript-66">
+    <time datetime="PT126S">02:06</time>
+    <p>只是想让大家对一期动画科普的工作量</p>
+  </li>
+  <li class="transcript-row" id="transcript-67">
+    <time datetime="PT129S">02:09</time>
+    <p>有一个直观的感受</p>
+  </li>
+  <li class="transcript-row" id="transcript-68">
+    <time datetime="PT131S">02:11</time>
+    <p>现在各位应该能理解关键帧影响了运动</p>
+  </li>
+  <li class="transcript-row" id="transcript-69">
+    <time datetime="PT134S">02:14</time>
+    <p>可为什么动画看起来还不够流畅呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-70">
+    <time datetime="PT136S">02:16</time>
+    <p>因为现在它还是现行运动</p>
+  </li>
+  <li class="transcript-row" id="transcript-71">
+    <time datetime="PT139S">02:19</time>
+    <p>选出这两个关键帧</p>
+  </li>
+  <li class="transcript-row" id="transcript-72">
+    <time datetime="PT140S">02:20</time>
+    <p>打开图表编辑器</p>
+  </li>
+  <li class="transcript-row" id="transcript-73">
+    <time datetime="PT141S">02:21</time>
+    <p>选择编辑速度图表</p>
+  </li>
+  <li class="transcript-row" id="transcript-74">
+    <time datetime="PT143S">02:23</time>
+    <p>这个图表的横向代表时间</p>
+  </li>
+  <li class="transcript-row" id="transcript-75">
+    <time datetime="PT145S">02:25</time>
+    <p>纵向表示速率</p>
+  </li>
+  <li class="transcript-row" id="transcript-76">
+    <time datetime="PT146S">02:26</time>
+    <p>既然能看到它还是一条直线</p>
+  </li>
+  <li class="transcript-row" id="transcript-77">
+    <time datetime="PT148S">02:28</time>
+    <p>也就说明明明的运动速度是一致的</p>
+  </li>
+  <li class="transcript-row" id="transcript-78">
+    <time datetime="PT151S">02:31</time>
+    <p>运动起来自然也就平平无奇</p>
+  </li>
+  <li class="transcript-row" id="transcript-79">
+    <time datetime="PT153S">02:33</time>
+    <p>没有变化</p>
+  </li>
+  <li class="transcript-row" id="transcript-80">
+    <time datetime="PT154S">02:34</time>
+    <p>退出后再次况且有关键帧</p>
+  </li>
+  <li class="transcript-row" id="transcript-81">
+    <time datetime="PT156S">02:36</time>
+    <p>按F9键</p>
+  </li>
+  <li class="transcript-row" id="transcript-82">
+    <time datetime="PT157S">02:37</time>
+    <p>零形关键帧变成了沙漏形状</p>
+  </li>
+  <li class="transcript-row" id="transcript-83">
+    <time datetime="PT159S">02:39</time>
+    <p>再次回到图表编辑器</p>
+  </li>
+  <li class="transcript-row" id="transcript-84">
+    <time datetime="PT161S">02:41</time>
+    <p>直线也变成了曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-85">
+    <time datetime="PT163S">02:43</time>
+    <p>能看到在不同的时间</p>
+  </li>
+  <li class="transcript-row" id="transcript-86">
+    <time datetime="PT164S">02:44</time>
+    <p>运动速率也发生了变化</p>
+  </li>
+  <li class="transcript-row" id="transcript-87">
+    <time datetime="PT166S">02:46</time>
+    <p>高的部分表示运动更快</p>
+  </li>
+  <li class="transcript-row" id="transcript-88">
+    <time datetime="PT168S">02:48</time>
+    <p>低的部分则更慢</p>
+  </li>
+  <li class="transcript-row" id="transcript-89">
+    <time datetime="PT170S">02:50</time>
+    <p>想要由快到慢</p>
+  </li>
+  <li class="transcript-row" id="transcript-90">
+    <time datetime="PT172S">02:52</time>
+    <p>就可以左高右低</p>
+  </li>
+  <li class="transcript-row" id="transcript-91">
+    <time datetime="PT174S">02:54</time>
+    <p>而用慢变快则可以左低右高</p>
+  </li>
+  <li class="transcript-row" id="transcript-92">
+    <time datetime="PT177S">02:57</time>
+    <p>通过调整这个速度曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-93">
+    <time datetime="PT179S">02:59</time>
+    <p>就可以轻松实现你想要的运动效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-94">
+    <time datetime="PT182S">03:02</time>
+    <p>关键帧只是能让画面动起来</p>
+  </li>
+  <li class="transcript-row" id="transcript-95">
+    <time datetime="PT183S">03:03</time>
+    <p>而调整好运动曲线</p>
+  </li>
+  <li class="transcript-row" id="transcript-96">
+    <time datetime="PT185S">03:05</time>
+    <p>则是能让画面看起来丝滑流畅的关键因素</p>
+  </li>
+  <li class="transcript-row" id="transcript-97">
+    <time datetime="PT189S">03:09</time>
+    <p>有些朋友可能会说软件操作我都会</p>
+  </li>
+  <li class="transcript-row" id="transcript-98">
+    <time datetime="PT191S">03:11</time>
+    <p>可是一旦开始创作就无从下手</p>
+  </li>
+  <li class="transcript-row" id="transcript-99">
+    <time datetime="PT193S">03:13</time>
+    <p>那可能是因为你还没有找到创作的核心动机</p>
+  </li>
+  <li class="transcript-row" id="transcript-100">
+    <time datetime="PT197S">03:17</time>
+    <p>以宽门这期视频为例</p>
+  </li>
+  <li class="transcript-row" id="transcript-101">
+    <time datetime="PT198S">03:18</time>
+    <p>其实核心动机就是有宽门形态</p>
+  </li>
+  <li class="transcript-row" id="transcript-102">
+    <time datetime="PT201S">03:21</time>
+    <p>我们可以先想象宽门的组成部分</p>
+  </li>
+  <li class="transcript-row" id="transcript-103">
+    <time datetime="PT203S">03:23</time>
+    <p>然后用最基础的形状把它描绘出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-104">
+    <time datetime="PT205S">03:25</time>
+    <p>一个长方形的Semos</p>
+  </li>
+  <li class="transcript-row" id="transcript-105">
+    <time datetime="PT207S">03:27</time>
+    <p>一个圆形的相机卡口</p>
+  </li>
+  <li class="transcript-row" id="transcript-106">
+    <time datetime="PT210S">03:30</time>
+    <p>再用四个长方形拼出宽门叶片</p>
+  </li>
+  <li class="transcript-row" id="transcript-107">
+    <time datetime="PT213S">03:33</time>
+    <p>想让宽门动起来</p>
+  </li>
+  <li class="transcript-row" id="transcript-108">
+    <time datetime="PT214S">03:34</time>
+    <p>就可以用关键帧记录一下每个叶片骑士和结束的位置</p>
+  </li>
+  <li class="transcript-row" id="transcript-109">
+    <time datetime="PT218S">03:38</time>
+    <p>做个预核程复制一分</p>
+  </li>
+  <li class="transcript-row" id="transcript-110">
+    <time datetime="PT220S">03:40</time>
+    <p>再翻转一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-111">
+    <time datetime="PT221S">03:41</time>
+    <p>这样你就宽门开合的效果就制作完成了</p>
+  </li>
+  <li class="transcript-row" id="transcript-112">
+    <time datetime="PT224S">03:44</time>
+    <p>而这就可以作为这期视频的核心动机</p>
+  </li>
+  <li class="transcript-row" id="transcript-113">
+    <time datetime="PT228S">03:48</time>
+    <p>当然现在的画面看上去还十分粗糙</p>
+  </li>
+  <li class="transcript-row" id="transcript-114">
+    <time datetime="PT230S">03:50</time>
+    <p>下面就要说到A1最重要的一个部分</p>
+  </li>
+  <li class="transcript-row" id="transcript-115">
+    <time datetime="PT233S">03:53</time>
+    <p>效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-116">
+    <time datetime="PT235S">03:55</time>
+    <p>形状一个图层点击右键</p>
+  </li>
+  <li class="transcript-row" id="transcript-117">
+    <time datetime="PT237S">03:57</time>
+    <p>找到效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-118">
+    <time datetime="PT238S">03:58</time>
+    <p>能看到里面有很多分类</p>
+  </li>
+  <li class="transcript-row" id="transcript-119">
+    <time datetime="PT240S">04:00</time>
+    <p>不同的分类又对应了不同的效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-120">
+    <time datetime="PT243S">04:03</time>
+    <p>给Semos形状加上一个四色界面效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-121">
+    <time datetime="PT245S">04:05</time>
+    <p>调整一下颜色分布</p>
+  </li>
+  <li class="transcript-row" id="transcript-122">
+    <time datetime="PT247S">04:07</time>
+    <p>再添加一个网格效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-123">
+    <time datetime="PT249S">04:09</time>
+    <p>调整一下参数</p>
+  </li>
+  <li class="transcript-row" id="transcript-124">
+    <time datetime="PT250S">04:10</time>
+    <p>就能得到一个看上去更符合直觉的Semos画面</p>
+  </li>
+  <li class="transcript-row" id="transcript-125">
+    <time datetime="PT254S">04:14</time>
+    <p>在A1里可以通过一个或多个效果的叠加</p>
+  </li>
+  <li class="transcript-row" id="transcript-126">
+    <time datetime="PT257S">04:17</time>
+    <p>来实现更丰富的视觉表现</p>
+  </li>
+  <li class="transcript-row" id="transcript-127">
+    <time datetime="PT259S">04:19</time>
+    <p>当然你还可以添加更多的画面细节</p>
+  </li>
+  <li class="transcript-row" id="transcript-128">
+    <time datetime="PT261S">04:21</time>
+    <p>来丰富整体的观感</p>
+  </li>
+  <li class="transcript-row" id="transcript-129">
+    <time datetime="PT263S">04:23</time>
+    <p>直到满意为止</p>
+  </li>
+  <li class="transcript-row" id="transcript-130">
+    <time datetime="PT265S">04:25</time>
+    <p>完成了这个核心的画面</p>
+  </li>
+  <li class="transcript-row" id="transcript-131">
+    <time datetime="PT266S">04:26</time>
+    <p>也就确立了一些视频的基调</p>
+  </li>
+  <li class="transcript-row" id="transcript-132">
+    <time datetime="PT269S">04:29</time>
+    <p>之后的内容都可以围绕着它来做展开</p>
+  </li>
+  <li class="transcript-row" id="transcript-133">
+    <time datetime="PT272S">04:32</time>
+    <p>了解的这些制作逻辑</p>
+  </li>
+  <li class="transcript-row" id="transcript-134">
+    <time datetime="PT273S">04:33</time>
+    <p>我们再来看看其他的片段就简单多了</p>
+  </li>
+  <li class="transcript-row" id="transcript-135">
+    <time datetime="PT276S">04:36</time>
+    <p>比如这个相机生长动画</p>
+  </li>
+  <li class="transcript-row" id="transcript-136">
+    <time datetime="PT277S">04:37</time>
+    <p>先找一个图片参考</p>
+  </li>
+  <li class="transcript-row" id="transcript-137">
+    <time datetime="PT279S">04:39</time>
+    <p>用钢笔工具进行绘制</p>
+  </li>
+  <li class="transcript-row" id="transcript-138">
+    <time datetime="PT282S">04:42</time>
+    <p>完成之后再给它添加一个修剪路径效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-139">
+    <time datetime="PT285S">04:45</time>
+    <p>打上关键针</p>
+  </li>
+  <li class="transcript-row" id="transcript-140">
+    <time datetime="PT287S">04:47</time>
+    <p>也就让这个图形的线条路径</p>
+  </li>
+  <li class="transcript-row" id="transcript-141">
+    <time datetime="PT288S">04:48</time>
+    <p>从结束的0%到最后100%</p>
+  </li>
+  <li class="transcript-row" id="transcript-142">
+    <time datetime="PT292S">04:52</time>
+    <p>依次展现</p>
+  </li>
+  <li class="transcript-row" id="transcript-143">
+    <time datetime="PT293S">04:53</time>
+    <p>这样一个路径生长动画就完成了</p>
+  </li>
+  <li class="transcript-row" id="transcript-144">
+    <time datetime="PT296S">04:56</time>
+    <p>此时的相机看上去显然还不够生动</p>
+  </li>
+  <li class="transcript-row" id="transcript-145">
+    <time datetime="PT299S">04:59</time>
+    <p>那怎么能让它动起来</p>
+  </li>
+  <li class="transcript-row" id="transcript-146">
+    <time datetime="PT300S">05:00</time>
+    <p>并且动立体一些呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-147">
+    <time datetime="PT302S">05:02</time>
+    <p>很简单</p>
+  </li>
+  <li class="transcript-row" id="transcript-148">
+    <time datetime="PT303S">05:03</time>
+    <p>只需要打开它的3D开关</p>
+  </li>
+  <li class="transcript-row" id="transcript-149">
+    <time datetime="PT305S">05:05</time>
+    <p>再旋转一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-150">
+    <time datetime="PT308S">05:08</time>
+    <p>说好的3D呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-151">
+    <time datetime="PT310S">05:10</time>
+    <p>就这</p>
+  </li>
+  <li class="transcript-row" id="transcript-152">
+    <time datetime="PT311S">05:11</time>
+    <p>没错</p>
+  </li>
+  <li class="transcript-row" id="transcript-153">
+    <time datetime="PT312S">05:12</time>
+    <p>虽然可以通过一些插件或渲染器</p>
+  </li>
+  <li class="transcript-row" id="transcript-154">
+    <time datetime="PT314S">05:14</time>
+    <p>来实现一些3D效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-155">
+    <time datetime="PT316S">05:16</time>
+    <p>但A1本质上还是一个2倍软件</p>
+  </li>
+  <li class="transcript-row" id="transcript-156">
+    <time datetime="PT318S">05:18</time>
+    <p>所以想到二维中实现3D效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-157">
+    <time datetime="PT321S">05:21</time>
+    <p>还可以耍点小心机</p>
+  </li>
+  <li class="transcript-row" id="transcript-158">
+    <time datetime="PT323S">05:23</time>
+    <p>这个动画其实就是在相机旋转到不同的形态时</p>
+  </li>
+  <li class="transcript-row" id="transcript-159">
+    <time datetime="PT327S">05:27</time>
+    <p>给它做出对应的轮廓线条</p>
+  </li>
+  <li class="transcript-row" id="transcript-160">
+    <time datetime="PT330S">05:30</time>
+    <p>在轮廓变化的骑士</p>
+  </li>
+  <li class="transcript-row" id="transcript-161">
+    <time datetime="PT332S">05:32</time>
+    <p>中间和结束状态分别打扰关键针</p>
+  </li>
+  <li class="transcript-row" id="transcript-162">
+    <time datetime="PT337S">05:37</time>
+    <p>再适当的调整一下</p>
+  </li>
+  <li class="transcript-row" id="transcript-163">
+    <time datetime="PT340S">05:40</time>
+    <p>一个障碍法的3D效果就出来了</p>
+  </li>
+  <li class="transcript-row" id="transcript-164">
+    <time datetime="PT343S">05:43</time>
+    <p>能看到这里的朋友相信对动画的制作逻辑</p>
+  </li>
+  <li class="transcript-row" id="transcript-165">
+    <time datetime="PT346S">05:46</time>
+    <p>应该也有了一定的认识</p>
+  </li>
+  <li class="transcript-row" id="transcript-166">
+    <time datetime="PT347S">05:47</time>
+    <p>不难发现</p>
+  </li>
+  <li class="transcript-row" id="transcript-167">
+    <time datetime="PT348S">05:48</time>
+    <p>想要实现一个动画效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-168">
+    <time datetime="PT349S">05:49</time>
+    <p>可以有很多种主动方法</p>
+  </li>
+  <li class="transcript-row" id="transcript-169">
+    <time datetime="PT351S">05:51</time>
+    <p>学会举一反三</p>
+  </li>
+  <li class="transcript-row" id="transcript-170">
+    <time datetime="PT352S">05:52</time>
+    <p>永远要保持一个</p>
+  </li>
+  <li class="transcript-row" id="transcript-171">
+    <time datetime="PT354S">05:54</time>
+    <p>想要去寻找更好方法的思维模式</p>
+  </li>
+  <li class="transcript-row" id="transcript-172">
+    <time datetime="PT356S">05:56</time>
+    <p>除了基础的软件操作</p>
+  </li>
+  <li class="transcript-row" id="transcript-173">
+    <time datetime="PT358S">05:58</time>
+    <p>还需要了解A1的拓展工具</p>
+  </li>
+  <li class="transcript-row" id="transcript-174">
+    <time datetime="PT360S">06:00</time>
+    <p>也就是常听到的插件脚本</p>
+  </li>
+  <li class="transcript-row" id="transcript-175">
+    <time datetime="PT363S">06:03</time>
+    <p>常规的软件布局是这样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-176">
+    <time datetime="PT365S">06:05</time>
+    <p>而我的才是这样的</p>
+  </li>
+  <li class="transcript-row" id="transcript-177">
+    <time datetime="PT367S">06:07</time>
+    <p>脚本通常体积小巧</p>
+  </li>
+  <li class="transcript-row" id="transcript-178">
+    <time datetime="PT368S">06:08</time>
+    <p>它可以通过代码来控制A1现有的功能</p>
+  </li>
+  <li class="transcript-row" id="transcript-179">
+    <time datetime="PT371S">06:11</time>
+    <p>让操作更为便捷</p>
+  </li>
+  <li class="transcript-row" id="transcript-180">
+    <time datetime="PT373S">06:13</time>
+    <p>比如这个脚本</p>
+  </li>
+  <li class="transcript-row" id="transcript-181">
+    <time datetime="PT374S">06:14</time>
+    <p>直销卷柱图层点击下图标</p>
+  </li>
+  <li class="transcript-row" id="transcript-182">
+    <time datetime="PT376S">06:16</time>
+    <p>用的自动生成一个动画</p>
+  </li>
+  <li class="transcript-row" id="transcript-183">
+    <time datetime="PT379S">06:19</time>
+    <p>还有这个脚本</p>
+  </li>
+  <li class="transcript-row" id="transcript-184">
+    <time datetime="PT380S">06:20</time>
+    <p>可以把常用的效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-185">
+    <time datetime="PT381S">06:21</time>
+    <p>以图标的形式摆放</p>
+  </li>
+  <li class="transcript-row" id="transcript-186">
+    <time datetime="PT383S">06:23</time>
+    <p>需要哪个效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-187">
+    <time datetime="PT384S">06:24</time>
+    <p>点击一下图标就OK了</p>
+  </li>
+  <li class="transcript-row" id="transcript-188">
+    <time datetime="PT385S">06:25</time>
+    <p>省去了在效果目标里</p>
+  </li>
+  <li class="transcript-row" id="transcript-189">
+    <time datetime="PT387S">06:27</time>
+    <p>反复查了的时间</p>
+  </li>
+  <li class="transcript-row" id="transcript-190">
+    <time datetime="PT390S">06:30</time>
+    <p>而插件子会更复杂一些</p>
+  </li>
+  <li class="transcript-row" id="transcript-191">
+    <time datetime="PT392S">06:32</time>
+    <p>是为了拓展A1的边界</p>
+  </li>
+  <li class="transcript-row" id="transcript-192">
+    <time datetime="PT393S">06:33</time>
+    <p>让原本实现不了</p>
+  </li>
+  <li class="transcript-row" id="transcript-193">
+    <time datetime="PT395S">06:35</time>
+    <p>或很难实现的效果</p>
+  </li>
+  <li class="transcript-row" id="transcript-194">
+    <time datetime="PT396S">06:36</time>
+    <p>能更容易制作出来</p>
+  </li>
+  <li class="transcript-row" id="transcript-195">
+    <time datetime="PT398S">06:38</time>
+    <p>比如这一类粒子插件</p>
+  </li>
+  <li class="transcript-row" id="transcript-196">
+    <time datetime="PT400S">06:40</time>
+    <p>和3D插件</p>
+  </li>
+  <li class="transcript-row" id="transcript-197">
+    <time datetime="PT403S">06:43</time>
+    <p>其实用动画来制作科普的目的</p>
+  </li>
+  <li class="transcript-row" id="transcript-198">
+    <time datetime="PT405S">06:45</time>
+    <p>就是为了让一些</p>
+  </li>
+  <li class="transcript-row" id="transcript-199">
+    <time datetime="PT406S">06:46</time>
+    <p>绘色难懂的文字表述</p>
+  </li>
+  <li class="transcript-row" id="transcript-200">
+    <time datetime="PT408S">06:48</time>
+    <p>以可实化的形态展现</p>
+  </li>
+  <li class="transcript-row" id="transcript-201">
+    <time datetime="PT409S">06:49</time>
+    <p>它的优势就是直观明了</p>
+  </li>
+  <li class="transcript-row" id="transcript-202">
+    <time datetime="PT412S">06:52</time>
+    <p>它归根结底</p>
+  </li>
+  <li class="transcript-row" id="transcript-203">
+    <time datetime="PT413S">06:53</time>
+    <p>它也只是一种表现形式</p>
+  </li>
+  <li class="transcript-row" id="transcript-204">
+    <time datetime="PT415S">06:55</time>
+    <p>而辟分内容本身</p>
+  </li>
+  <li class="transcript-row" id="transcript-205">
+    <time datetime="PT416S">06:56</time>
+    <p>你要做的是在紧上天花</p>
+  </li>
+  <li class="transcript-row" id="transcript-206">
+    <time datetime="PT418S">06:58</time>
+    <p>而非指上天花</p>
+  </li></ol>
+    </section>
+  </main>
+</body>
+</html>
