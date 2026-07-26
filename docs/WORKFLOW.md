@@ -1,6 +1,6 @@
-# B 站视频 → HTML + SVG 双轨自动化工作流
+# 视频（B 站 / 小红书）→ HTML + SVG 双轨自动化工作流
 
-当 Cursor Automation 通过 Webhook 收到 B 站视频链接后，严格按本文档逐步骤执行。**一个视频必须同时产出两种互补内容，不得只生成其中一种。**
+当 Cursor Automation 通过 Webhook 收到视频链接后，严格按本文档逐步骤执行。**先自动识别平台，再下载与双轨生成；一个视频必须同时产出两种互补内容，不得只生成其中一种。**
 
 | 产物 | 视角 | 目标 |
 |------|------|------|
@@ -11,6 +11,7 @@ HTML 不是 SVG 的加长版，SVG 也不是 HTML 的缩略图。二者共享同
 
 ```
 Task Progress:
+- [ ] 0. 自动识别平台（B 站 / 小红书）
 - [ ] 1. yt-dlp 获取元数据并下载音频、视频
 - [ ] 2. 安装依赖（ffmpeg + openai-whisper，仅首次）
 - [ ] 3. Whisper 转录（--model small --language Chinese）
@@ -37,9 +38,18 @@ Webhook payload：
 }
 ```
 
+也支持小红书分享短链或笔记页：
+
+```json
+{
+  "url": "http://xhslink.cn/o/xxxxxx",
+  "date": "2026-07-26"
+}
+```
+
 | 字段 | 必填 | 说明 |
 |------|------|------|
-| `url` | 是 | B 站链接，仅允许 `bilibili.com` 或 `b23.tv` |
+| `url` | 是 | 视频链接；支持 `bilibili.com`、`b23.tv`、`xiaohongshu.com`、`xhslink.cn` |
 | `date` | 否 | 展示日期，格式 `YYYY-MM-DD`；未提供时使用当天日期 |
 
 字段缺失、为空或域名不符合约束时，记录错误并结束。下载前检查 `docs/index.json`，相同 `url` 已存在则结束，避免重复处理。
@@ -52,7 +62,29 @@ git pull origin main
 git checkout -B "{dev-branch}"
 ```
 
-`{dev-branch}` 命名建议：`cursor/{slug}` 或 Automation 下发的分支名。后续 Step 1–9 都在开发分支上完成，不要直接在 `main` 上开发。
+`{dev-branch}` 命名建议：`cursor/{slug}` 或 Automation 下发的分支名。后续 Step 0–9 都在开发分支上完成，不要直接在 `main` 上开发。
+
+---
+
+## Step 0：自动识别平台
+
+收到 `url` 后，必须先识别平台，再进入下载：
+
+```bash
+node detect-platform.mjs "{url}"
+```
+
+| `platform` | 匹配域名 | 说明 |
+|------------|----------|------|
+| `bilibili` | `bilibili.com`、`b23.tv` | B 站长链或短链 |
+| `xiaohongshu` | `xiaohongshu.com`、`xhslink.cn`、`xhslink.com` | 小红书笔记页或分享短链 |
+
+规则：
+
+- 只看 hostname，不依赖人工标注
+- 无法识别或不支持的域名：写入含 `"error": true` 的索引条目并结束
+- 识别结果写入后续索引字段 `platform`（`bilibili` 或 `xiaohongshu`）
+- 短链允许跳转；索引 `url` 仍保留 Webhook 原始输入，便于去重
 
 ---
 
@@ -69,6 +101,8 @@ yt-dlp --print title --print duration_string --print id "{url}"
 - 只允许小写字母、数字和连字符
 - 若冲突则追加数字后缀
 
+### B 站下载
+
 下载 Whisper 音频：
 
 ```bash
@@ -83,7 +117,25 @@ yt-dlp -f "bestvideo[height<=1080][ext=mp4]/bestvideo[height<=1080]/best[height<
   -o "{slug}.source.%(ext)s" "{url}"
 ```
 
-临时网络或 403 错误最多重试 3 次。后续命令使用磁盘上的真实文件名，不假定扩展名。
+若网页 412，可回退公开 API（`x/web-interface/view` + `x/player/playurl?fnval=16`），优先低码率音频与 ≤1080p 视频的 `backupUrl`，并携带浏览器 User-Agent 与 B 站 Referer。
+
+### 小红书下载
+
+优先直接用 `yt-dlp`（内置 `XiaoHongShu` extractor）：
+
+```bash
+yt-dlp -f "bestaudio/best" -o "{slug}.%(ext)s" "{url}"
+yt-dlp -f "best[height<=1080]/best" -o "{slug}.source.%(ext)s" "{url}"
+```
+
+注意：
+
+- 小红书常只有整段 MP4，没有独立 bestaudio；若音频与画面落在同一文件，用 ffmpeg 抽出 m4a：`ffmpeg -i "{视频或混合文件}" -vn -acodec aac -b:a 128k "{slug}.m4a"`
+- 短链需允许跟随跳转；保留完整 `xsec_token` 等分享参数
+- 裸 `HEAD` 可能 404，以 `yt-dlp`/GET 结果为准
+- 作者名可能缺失，可用 uploader id 或笔记文案补全元数据，不得虚构
+
+临时网络、403 或 412 错误最多重试 3 次。后续命令使用磁盘上的真实文件名，不假定扩展名。
 
 ---
 
@@ -96,7 +148,7 @@ command -v ffmpeg >/dev/null || brew install ffmpeg
 python3 -c "import whisper" 2>/dev/null || pip3 install --user openai-whisper
 ```
 
-确认 `yt-dlp`、`ffmpeg`、`ffprobe`、`whisper` 和 `node` 均可执行。
+确认 `yt-dlp`、`ffmpeg`、`ffprobe`、`whisper`、`node` 和 `detect-platform.mjs` 均可执行。
 
 ---
 
@@ -170,7 +222,7 @@ ffmpeg -ss "HH:MM:SS.mmm" -i "{视频文件}" -frames:v 1 \
 - 静态或纯音频视频至少保留 1 张代表画面，并在图注说明画面长期不变
 - 文件按顺序命名为 `shot-01.jpg`、`shot-02.jpg`……
 - 检查黑屏、模糊、转场和字幕遮挡，必要时前后微调 0.5-2 秒
-- 使用本地相对路径，不引用 B 站远程图片，不嵌入 base64
+- 使用本地相对路径，不引用平台远程图片，不嵌入 base64
 - 每张图必须有准确 `alt` 和带时间戳的 `figcaption`
 
 ---
@@ -467,7 +519,8 @@ XML 注意事项：
   "date": "YYYY-MM-DD",
   "title": "视频标题",
   "summary": "一句话摘要，≤120字",
-  "tags": ["数码", "相机"],
+  "tags": ["影视", "视听分析"],
+  "platform": "bilibili",
   "url": "https://www.bilibili.com/video/BVxxx",
   "duration": "5分40秒",
   "outputs": {
@@ -480,6 +533,7 @@ XML 注意事项：
 }
 ```
 
+- `platform`：`bilibili` 或 `xiaohongshu`，由 Step 0 自动识别写入
 - `outputs.html`：轻松纪实、含截图与完整转录的 HTML
 - `outputs.svg`：客观结构化分析 SVG
 - `screenshot_count`：实际提交的截图数
@@ -492,7 +546,7 @@ XML 注意事项：
 
 ## Step 10：在开发分支提交推送，并主动合并到 `main`
 
-**开发在开发分支，发布在 `main`。** 收到 Webhook 后，先同步 `main` 并切换到开发分支；Step 1–9 的提交与推送都在开发分支完成。任务结束前，必须主动把开发分支合并进 `main` 并推送 `origin/main`。禁止只推送到开发分支就结束。
+**开发在开发分支，发布在 `main`。** 收到 Webhook 后，先同步 `main` 并切换到开发分支；Step 0–9 的提交与推送都在开发分支完成。任务结束前，必须主动把开发分支合并进 `main` 并推送 `origin/main`。禁止只推送到开发分支就结束。
 
 开始前确认当前分支：
 
@@ -514,7 +568,7 @@ git checkout "{dev-branch}"
 ```bash
 git add "docs/{slug}-图文实录.html" "docs/{slug}-理性分析.svg" \
   "docs/assets/{slug}" docs/index.json
-git commit -m "bilibili: add dual-view summary for {视频标题}"
+git commit -m "content: add dual-view summary for {视频标题}"
 git pull --rebase origin main
 git push -u origin "{dev-branch}"
 ```
@@ -547,7 +601,7 @@ rm -f "{音频文件}" "{视频文件}"
 
 ## 约束
 
-- 仅处理 `bilibili.com` 或 `b23.tv`
+- 仅处理 `bilibili.com`、`b23.tv`、`xiaohongshu.com`、`xhslink.cn`；必须先用 `detect-platform.mjs` 识别平台
 - 每个 URL 只处理一次，一个索引条目对应两个产物
 - HTML 必须包含本地关键截图和完整时间戳转录
 - SVG 必须使用 `svg-auto-height.mjs` 和原有分析视觉框架

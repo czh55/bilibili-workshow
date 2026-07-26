@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B 站视频总结墙</title>
+  <title>视频总结墙 · B站 / 小红书</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -321,6 +321,20 @@
       padding: 2px 10px;
       border-radius: 6px;
       font-weight: 600;
+    }
+    .card-platform { margin: 0 0 10px; }
+    .card-platform-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(59,130,246,.16);
+      color: #93c5fd;
+    }
+    .card-platform-pill.xhs {
+      background: rgba(244,63,94,.16);
+      color: #fda4af;
     }
     .tag-blue   { background: var(--tag-blue);   color: #60a5fa; }
     .tag-purple { background: var(--tag-purple); color: #a78bfa; }
@@ -641,8 +655,8 @@
 </head>
 <body>
   <div class="hero">
-    <h1>B 站视频总结墙</h1>
-    <p>一条视频，两种阅读：轻松图文实录 · 客观理性分析</p>
+    <h1>视频总结墙</h1>
+    <p>B 站与小红书 · 一条视频，两种阅读：轻松图文实录 · 客观理性分析</p>
   </div>
 
   <div class="stats-bar" id="statsBar">
@@ -712,7 +726,7 @@
     <div class="empty-state" id="emptyState">
       <span class="empty-icon">&#x1F4ED;</span>
       <h2>还没有内容</h2>
-      <p>提交 B 站视频链接，同时生成图文实录与理性分析</p>
+      <p>提交 B 站或小红书视频链接，同时生成图文实录与理性分析</p>
       <div class="empty-hint">curl -X POST &lt;webhook-url&gt; -d '{"url":"..."}'</div>
     </div>
     <div class="timeline" id="timeline" style="display:none;"></div>
@@ -1031,6 +1045,10 @@
             var htmlFile = outputs.html || (/\.html?$/i.test(legacyFilename) ? legacyFilename : '');
             var svgFile = outputs.svg || (/\.svg$/i.test(legacyFilename) ? legacyFilename : '');
 
+            var platform = item.platform || ((item.url || '').indexOf('xhslink') >= 0 || (item.url || '').indexOf('xiaohongshu') >= 0 ? 'xiaohongshu' : 'bilibili');
+            var platformLabel = platform === 'xiaohongshu' ? '小红书' : 'B站';
+            var platformHtml = '<div class="card-platform"><span class="card-platform-pill' + (platform === 'xiaohongshu' ? ' xhs' : '') + '">' + platformLabel + '</span></div>';
+
             let tagsHtml = '';
             if (item.tags && item.tags.length > 0) {
               tagsHtml = '<div class="card-tags">' +
@@ -1068,6 +1086,7 @@
               '<div class="card-header">' +
                 '<span class="card-title">' + titleText + '</span>' +
               '</div>' +
+              platformHtml +
               '<div class="card-summary">' + summaryText + '</div>' +
               tagsHtml +
               durationHtml +
