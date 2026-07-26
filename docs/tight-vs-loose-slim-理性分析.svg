@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6552" viewBox="0 0 1320 6552">
+  <foreignObject x="0" y="0" width="1320" height="6552">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}</style>
+      
+<div class="container">
+  <h1>抠抠搜搜又热又显胖，大大方方自在又显瘦</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">49秒</span>
+    <span class="tag tag-purple">买衣技巧</span>
+    <span class="tag tag-orange">领型</span>
+    <span class="tag tag-red">纱向</span>
+    <span class="tag tag-gray">理性分析视角</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/8bz12b7UZI7">原视频：xhslink.cn/o/8bz12b7UZI7</a>
+  <div class="summary-line"><strong>核心判断：</strong>别先被“基本款”骗过去——小圆领抠抠搜搜既热又显脖粗；正肩大圆领／大 V／方领露肤度更高、更凉快显瘦。牛仔裤要核对口袋上下纱向是否一致，否则洗涤后缩率方向不同容易鼓包；薄如纸、刺啦响的速干裤出汗后显示度高，慎选。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场对照：抠抠搜搜显胖 ↔ 大大方方显瘦</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:03</div><div class="timeline-text">纱向不同易鼓包／纱向相同不鼓包（预告）</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:06</div><div class="timeline-text">小圆领：露肤度低、又热、显脖子粗</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:11</div><div class="timeline-text">正肩大圆领、大 V 领、方领：露肤度高、凉快显瘦</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:18</div><div class="timeline-text">牛仔裤：现平，多次洗涤后鼓包或跑偏</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:26</div><div class="timeline-text">上下纱向不同 → 缩率方向不同 → 后期出问题</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:39</div><div class="timeline-text">速干裤慎选：薄如纸、刺啦响、出汗显示度高</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>为何又热又显胖？</div>
+      <div class="arrow">→</div>
+      <div class="node">证据<br/>领口露肤度／纱向／面料厚度</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">判断<br/>大方领型 + 同纱向</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">行动<br/>慎选薄透速干裤</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p><strong>误解：</strong>“基本款小圆领最安全。” <strong>纠偏：</strong>开口抠门会闷热并显脖粗，作者主张看露肤度而不是默认圆领。</p>
+    <p><strong>误解：</strong>“现在摸着平就没问题。” <strong>纠偏：</strong>纱向错乱的问题常在多次洗涤后才以鼓包／跑偏显现。</p>
+    <p><strong>误解：</strong>“速干=夏日最优解。” <strong>纠偏：</strong>薄如纸且刺啦响的化纤出汗后容易显形，需单独筛查显示度。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">分析主题一：领型露肤度</h2>
+    <div class="card">
+      <h3>在讲什么</h3>
+      <p>用领口开口大小与露肤度，解释为什么有的 T 恤又热又显胖，有的却凉快显瘦。</p>
+      <div class="quote">「像这种抠抠搜搜的小圆领，露肤度低，又热，还有显得脖子粗。」（字幕校正；Whisper 原为「口口酥酥／小圆链／漏幅度」）</div>
+      <p class="label">关键理解</p>
+      <p>「抠抠搜搜」不是骂人，而是面料／开口给得太抠门；露肤度低等于散热与视觉拉长都吃亏。</p>
+      <div class="action">怎么用：货架上手比领口直径，并对照正肩大圆领、大 V、方领三类更开放的裁切。</div>
+      <div class="relation">原文依据：00:06–00:18 小圆领反例 + 三类正肩大领正例。</div>
+    </div>
+    <div class="card card-purple">
+      <h3><span class="speaker speaker-host">UP 主观点</span>大方领型更显瘦</h3>
+      <p>作者明确把正肩大圆领、大 V 领、方领归为“露肤度比较高 → 凉快、显瘦”。这是穿着审美立场，不是体型测量结论。</p>
+      <div class="highlight">适用边界：对需要保暖、正装或低领不舒适的场景不适用；“显瘦”依赖个人颈肩比例，视频未给量化阈值。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">分析主题二：纱向与缩率</h2>
+    <div class="card card-green">
+      <h3>在讲什么</h3>
+      <p>牛仔裤口袋区上下纱向不一致时，洗涤后缩率方向不同，容易鼓包或跑偏。</p>
+      <div class="quote">「上面的纱向是这样的，下面的纱向它是这样的……缩率的方向就会不同，后期就必然会出现问题。」</div>
+      <p class="label">关键理解</p>
+      <p>现货摸起来平，不等于洗后仍平；要看斜纹方向是否贯通口袋上下。</p>
+      <div class="action">怎么用：在口袋口上下各找一段斜纹，用手指或虚线对齐，方向不一致就谨慎。</div>
+      <div class="relation">原文依据：00:18–00:39 洗涤后鼓包链条与“选纱向一样的”。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>风险和避坑</h3>
+      <div class="pitfall">只看当下平整度，不看纱向——问题会在多次洗涤后才爆发。</div>
+      <div class="pitfall">把“鼓包”全怪洗护方式，忽略裁片纱向错乱这一制造端原因。</div>
+      <div class="insight">立场分层：纱向不同导致缩率不同，属可观察工艺推断；“必然出问题”是作者强化语气，非绝对定律。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">分析主题三：速干裤面料</h2>
+    <div class="card card-red">
+      <h3>在讲什么</h3>
+      <p>薄如纸、摸起来刺啦响的速干面料，出汗后显示度高，作者建议慎选。</p>
+      <div class="quote">「速干裤慎选。尤其像这种面料薄如纸，你摸上去是这种刺啦啦的声音……只要你出汗，它的显示度，来看图自行感受。」</div>
+      <div class="action">怎么用：捏薄、听响、想象出汗后是否透；不确定就对照作者示意画面或换更密实面料。</div>
+      <div class="relation">原文依据：00:39–00:50。</div>
+      <div class="highlight">方法边界：不是否定所有速干裤，只针对“薄如纸 + 刺啦响 + 出汗显形”这一组合。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：三类快筛信号</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>维度</th>
+          <th>谨慎信号</th>
+          <th>相对友好信号</th>
+          <th>证据强弱</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>领型</td>
+          <td>抠抠搜搜小圆领：露肤度低、热、显脖粗</td>
+          <td>正肩大圆领／大 V／方领：露肤度高、凉快显瘦</td>
+          <td>强（画面+字幕连续对照）</td>
+        </tr>
+        <tr>
+          <td>牛仔裤纱向</td>
+          <td>口袋上下纱向不同，洗后鼓包／跑偏</td>
+          <td>纱向一致，后期更稳</td>
+          <td>中强（工艺链条清晰，样本有限）</td>
+        </tr>
+        <tr>
+          <td>速干裤</td>
+          <td>薄如纸、刺啦响、出汗显示度高</td>
+          <td>未给出正面样衣，仅要求慎选</td>
+          <td>中（作者示意，无对比样）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>立场分层</h3>
+    <div class="stance-grid">
+      <div class="stance-item">
+        <strong>可验证事实</strong>
+        <p class="small">视频展示了小圆领、大 V、方领、牛仔裤口袋纱向虚线与薄速干面料实物；时长约 49 秒。</p>
+      </div>
+      <div class="stance-item">
+        <strong>UP 主观点</strong>
+        <p class="small">大方领更显瘦凉快；纱向一致后期更不容易鼓包；薄透速干裤要慎选。</p>
+      </div>
+      <div class="stance-item">
+        <strong>基于原文的推断</strong>
+        <p class="small">露肤度与散热／视觉拉长相关；缩率方向不同是鼓包机制；出汗后显示度高等于透视风险。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>领口“抠”还是“大方”，直接决定热感与脖颈视觉。</li>
+      <li>牛仔裤要查口袋上下纱向，不只看当下是否平整。</li>
+      <li>薄、响、易透的速干裤是独立风险，不能只看功能标签。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>试衣前先手比领口开口，优先正肩大圆领／大 V／方领。</li>
+      <li>买牛仔裤时对齐口袋上下斜纹方向。</li>
+      <li>速干裤做捏薄、听响、想象出汗三步快筛。</li>
+      <li>现货平整但纱向错乱的，按“洗后风险”降权。</li>
+      <li>把作者结论当货架启发式，结合自身颈肩与场合取舍。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从“认款式名”转向“认开口、认纱向、认厚度”；问题往往不在洗坏了，而在买的时候就选错了结构信号。</p>
+  </div>
+
+  <div class="footer">双轨产物之二：理性分析 SVG · 叙述按画面字幕校正 · Whisper 原始分段见 HTML 转录区</div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
