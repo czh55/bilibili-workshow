@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6122" viewBox="0 0 1320 6122">
+  <foreignObject x="0" y="0" width="1320" height="6122">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body,.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.label{font-size:13px;font-weight:800;color:#1e40af;letter-spacing:.04em;margin-top:10px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}
+</style>
+      
+<div class="svg-page">
+  <div class="container">
+    <h1>减夹杂色，而不是盲加饱和度：44 秒调色逻辑拆解</h1>
+    <div class="meta">
+      <span class="tag tag-blue">小红书</span>
+      <span class="tag tag-green">44 秒</span>
+      <span class="tag tag-purple">调色逻辑</span>
+      <span class="tag tag-gray">理性分析</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/6DjiCccTbLc">原视频：画面脏/照片缺少氛围？</a>
+    <div class="summary-line">
+      <strong>核心判断：</strong>视频把“画面脏”和“缺氛围”归结为颜色关系问题：互补色不当叠加会发脏，减少目标色里的对立色成分可让颜色更通透；氛围则通过对冷暖色系的定向减法实现。这是方向性逻辑，未给出软件参数或普适比例。
+    </div>
+
+    <div class="timeline">
+      <h3>关键证据时间轴</h3>
+      <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">用两个反例开场：减青色中的红 → 更通透；减青/蓝 → 调出港风暖调。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">建立理论：RGB 混合得互补色；互补色叠加且一方明度非 100% 时画面变脏。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">操作化：减青色里的红、减蓝色里的黄，分别得到通透与纯净。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:29</span><span class="timeline-text">分类：红/黄/洋红为暖色，蓝/青/绿为冷色；港风属于暖调。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">给出对称配方：冷调减暖色比例，暖调减冷色比例。</span></div>
+    </div>
+
+    <div class="map">
+      <h2>核心脉络</h2>
+      <div class="diagram">
+        <div class="node">问题<br/>画面脏 / 缺氛围</div>
+        <div class="arrow">→</div>
+        <div class="node">机制<br/>互补色 + 明度叠加</div>
+        <div class="arrow">→</div>
+        <div class="node node-green">手段<br/>减少夹杂对立色</div>
+        <div class="arrow">→</div>
+        <div class="node node-orange">结果<br/>通透色 + 冷暖氛围</div>
+      </div>
+      <p class="small">机制与手段由 00:08–00:25 原声直接支持；氛围结果在 00:29–00:44 以分类和比例方向补充，未量化具体数值。</p>
+    </div>
+
+    <div class="correction">
+      <h3>认知纠偏：不是“饱和度越高越干净”</h3>
+      <p>视频强调减夹杂色，而非单纯拉高饱和度或套滤镜。若只加饱和而不处理对立色成分，互补色脏感可能更明显。港风也被定义为暖色主导，而不是任意复古 LUT 都能等价替代。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">三张观点卡：机制、操作与氛围</h2>
+
+      <div class="card">
+        <h3>01 · 互补色叠加：脏感从哪来</h3>
+        <p class="label">在讲什么</p>
+        <p>红绿蓝两两混合得青、品、黄；互补色叠加时，只要一方明度不是 100%，画面就会变脏。</p>
+        <p class="label">关键理解</p>
+        <p>“脏”被解释为颜色关系失衡，而非曝光单一因素。这为后续“做减法”提供理由。</p>
+        <div class="action"><strong>怎么用：</strong>遇到发灰发脏，先检查目标色是否混入对立色或明度被拉低，再决定是否减色而非加饱和。</div>
+        <div class="quote"><strong>原文依据：</strong>00:10–00:18，“互补色叠加时只要一方明度不是一百就会导致画面变脏。”</div>
+        <div class="relation"><strong>证据强度：</strong>理论陈述，无具体样张参数，属于概念框架。</div>
+      </div>
+
+      <div class="card card-green">
+        <h3>02 · 减夹杂色：通透与纯净</h3>
+        <p class="label">在讲什么</p>
+        <p>减少青色里的红色 → 青色更通透；减少蓝色里的黄色 → 蓝色更纯净。</p>
+        <p class="label">关键理解</p>
+        <p>同一逻辑重复应用于不同色相：去掉不该共存的成分，而不是整体提亮。</p>
+        <div class="action"><strong>怎么用：</strong>在 HSL/曲线中针对目标色向对立色方向做负向微调，小步验证，避免一次减过头。</div>
+        <div class="quote"><strong>原文依据：</strong>00:18–00:25，“减少夹杂在青色里的红色水就会变得更通透；从里减少黄色蓝色会更纯净。”</div>
+      </div>
+
+      <div class="card card-purple">
+        <h3>03 · 冷暖与港风：氛围 = 比例</h3>
+        <p class="label">在讲什么</p>
+        <p>红/黄/洋红为暖色，蓝/青/绿为冷色；港风是暖调，以红黄色为主，需减少冷色里的蓝青。</p>
+        <p class="label">关键理解</p>
+        <p>氛围被转译成冷暖对立色的取舍；冷调与暖调是对称策略。</p>
+        <div class="quote"><strong>原文依据：</strong>00:29–00:44，“港峰属于暖调…想要冷调的照片只需要减少不同比例的暖色；想要暖调的照片只需要减少不同比例的冷色。”</div>
+        <p class="label">立场说明</p>
+        <p>“港风”具体审美标准由讲述者定义，不等同于所有复古港片调色；比例需按素材试错。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>横向对比：冷调 vs 暖调路径</h3>
+      <table>
+        <tr><th>目标</th><th>色系动作</th><th>视频依据</th><th>适用边界</th></tr>
+        <tr><td>冷调照片</td><td>按不同比例减少暖色（红/黄/洋红）</td><td>00:39–00:41</td><td>需保留必要肤色与主体识别；比例未给定</td></tr>
+        <tr><td>暖调 / 港风</td><td>按不同比例减少冷色（蓝/青/绿）</td><td>00:33–00:37、00:42–00:44</td><td>港风仅为讲述者示例，不同场景暖调需求不同</td></tr>
+        <tr><td>颜色更干净</td><td>减目标色中的对立色成分</td><td>00:18–00:25</td><td>适用于色偏明显素材；全局一键可能误伤</td></tr>
+      </table>
+    </div>
+
+    <div class="card card-orange">
+      <h3>避坑总结</h3>
+      <div class="pitfall"><strong>坑 1：</strong>只加饱和度而不减对立色，脏感可能加重。</div>
+      <div class="pitfall"><strong>坑 2：</strong>把“减暖/减冷”当成固定比例；视频只给方向，未给数值。</div>
+      <div class="pitfall"><strong>坑 3：</strong>将 Whisper 误识别的词（如“岗峰”“发挥”）直接当术语，需结合语境理解。</div>
+      <div class="pitfall"><strong>坑 4：</strong>忽视肤色：大幅减暖色可能让人物发灰或偏色。</div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">立场分层</h2>
+      <div class="stance-grid">
+        <div class="stance-item"><strong>可验证事实</strong><p>视频 44 秒、19 个 Whisper 分段；讲解了 RGB/互补色、减夹杂色、冷暖分类与对称配方。</p></div>
+        <div class="stance-item"><strong>讲述者观点</strong><p>港风 = 暖调；画面脏来自互补色明度叠加；减对立色比盲加饱和更有效。</p></div>
+        <div class="stance-item"><strong>基于原文的推断</strong><p>实际操作应在 HSL/曲线中分色相微调；“不同比例”意味着需按素材迭代，而非固定预设。</p></div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h2>总结与行动</h2>
+      <h3>核心要点</h3>
+      <ul>
+        <li>脏与氛围都被归结为颜色关系，而非单一曝光问题。</li>
+        <li>减夹杂对立色是视频给出的主要操作直觉。</li>
+        <li>冷暖氛围通过对立色系的定向减法实现。</li>
+      </ul>
+      <h3>行动清单</h3>
+      <ol>
+        <li>选一张发脏样张，检查目标色是否混入对立色。</li>
+        <li>在 HSL 中对目标色做小幅度负向微调，对比通透度变化。</li>
+        <li>明确想要冷调还是暖调，再决定减暖还是减冷。</li>
+        <li>保留肤色检查图层，避免全局减法误伤人像。</li>
+      </ol>
+      <h3>关键认知转变</h3>
+      <p>从“加滤镜找氛围”转向“先理解颜色夹杂，再用减法塑色与塑调”。</p>
+    </div>
+
+    <p class="footer">理性分析 · 画面脏/照片缺少氛围？ · 2026-07-26</p>
+  </div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
