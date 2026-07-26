@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="8181" viewBox="0 0 1320 8181">
+  <foreignObject x="0" y="0" width="1320" height="8181">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body,.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.label{font-size:13px;font-weight:800;color:#1e40af;letter-spacing:.04em;margin-top:10px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}
+</style>
+      
+<div class="svg-page">
+  <div class="container">
+    <h1>情侣赴宴配色：五组示范如何做选择</h1>
+    <div class="meta">
+      <span class="tag tag-blue">小红书</span>
+      <span class="tag tag-green">31 秒</span>
+      <span class="tag tag-purple">情侣穿搭</span>
+      <span class="tag tag-gray">理性分析</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/4642tOBGRFr">原视频：穿搭公式：情侣赴宴配色</a>
+    <div class="summary-line">
+      <strong>核心判断：</strong>视频没有论证一套普遍色彩理论，而是展示五个可直接模仿的配色样例：先确定女士礼服颜色，再让男士用黑、白、米、灰等中性色回应。这个“礼服先行”的结构是基于五组画面的归纳，不应扩张成适用于所有宴会的硬规则。
+    </div>
+
+    <div class="timeline">
+      <h3>关键证据时间轴</h3>
+      <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">红色礼服 + 男士全黑；高饱和红色成为唯一主要色彩。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:07</span><span class="timeline-text">黑色礼服 + 白衬衫、黑裤；黑色呼应，白色提亮。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">白色礼服 + 浅蓝衬衫、米色西裤；整体进入浅色区。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">墨绿色礼服 + 奶油色衬衫、米色西裤；用低饱和中性色衬托深绿。</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">酒红色礼服 + 黑衬衫、炭灰西裤；以深色层次收尾。</span></div>
+    </div>
+
+    <div class="map">
+      <h2>核心脉络</h2>
+      <div class="diagram">
+        <div class="node">输入<br/>女士礼服主色</div>
+        <div class="arrow">→</div>
+        <div class="node">选择<br/>男士中性色组合</div>
+        <div class="arrow">→</div>
+        <div class="node node-green">目标<br/>协调且不抢主色</div>
+        <div class="arrow">→</div>
+        <div class="node node-orange">决策前再检查<br/>场合与现有单品</div>
+      </div>
+      <p class="small">前三个节点来自视频画面及跨组归纳；最后的场合检查属于使用边界，视频本身没有展开。</p>
+    </div>
+
+    <div class="correction">
+      <h3>先纠正一个容易发生的误读</h3>
+      <p>这不是“情侣必须穿同色”。五组中，男士都没有完整复制女士礼服颜色；画面强调的是配色关系。另一个证据限制是：按流程生成的 Whisper 中文分段存在明显音译错误，因此组合名称应以视频可见字幕为主要依据，Whisper 仅用于时间定位并原样保留。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">五张观点卡：每组到底怎么配</h2>
+
+      <div class="card">
+        <h3>01 · 红色礼服 × 全黑造型</h3>
+        <p class="label">在讲什么</p>
+        <p>女士穿红色吊带礼服；男士从衬衫、长裤到鞋均为黑色。</p>
+        <p class="label">关键理解</p>
+        <p>画面只保留一个高饱和色块，男士服装形成低干扰背景。这是对画面效果的归纳，不是视频明说的色彩原理。</p>
+        <div class="action"><strong>怎么用：</strong>礼服为鲜红且希望它成为焦点时，可先测试男士全黑组合；再检查宴会着装要求是否接受全黑。</div>
+        <div class="quote"><strong>原文依据：</strong>画面标签“red + all black”；00:00–00:07。Whisper 00:00 记录“如果她穿着红色的话”。</div>
+      </div>
+
+      <div class="card">
+        <h3>02 · 黑色礼服 × 白衬衫 + 黑裤</h3>
+        <p class="label">在讲什么</p>
+        <p>女士为黑色长礼服；男士上白下黑，并配白鞋。</p>
+        <p class="label">关键理解</p>
+        <p>男士裤装呼应礼服，白衬衫与白鞋让组合不至于成为连续的全黑块面。</p>
+        <div class="action"><strong>怎么用：</strong>若礼服为黑色，可把“白上装 + 黑下装”作为易复用起点，而非默认两人都全黑。</div>
+        <div class="quote"><strong>原文依据：</strong>画面标签“black + white / black”；00:07–00:13。Whisper 同段出现“如果她穿着黑色的话”。</div>
+      </div>
+
+      <div class="card">
+        <h3>03 · 白色礼服 × 浅蓝 + 米色</h3>
+        <p class="label">在讲什么</p>
+        <p>女士为白色长礼服；男士穿浅蓝衬衫、米色西裤，搭棕色腰带与白鞋。</p>
+        <p class="label">关键理解</p>
+        <p>男士上、下装都保持较高明度，和白色礼服放在同一轻柔色域；棕色腰带只作为小面积分隔。</p>
+        <div class="action"><strong>怎么用：</strong>白色礼服可先从浅蓝和米色中挑现有单品，再用白鞋与礼服做小面积呼应。</div>
+        <div class="quote"><strong>原文依据：</strong>画面标签“white + light blue / beige”；00:13–00:20。Whisper 00:13 记录“如果她穿着白色的话”。</div>
+      </div>
+
+      <div class="card">
+        <h3>04 · 墨绿色礼服 × 奶油色 + 米色</h3>
+        <p class="label">在讲什么</p>
+        <p>女士为墨绿色单肩礼服；男士用奶油色衬衫、米色长裤与浅色鞋搭配。</p>
+        <p class="label">关键理解</p>
+        <p>这里不复制绿色，而用两种低饱和暖中性色提供对照；女士浅色手袋又在配件层面连接男士服装。</p>
+        <div class="action"><strong>怎么用：</strong>深绿礼服旁可优先试奶油和米色；如要建立联系，可从手袋、鞋等小面积配件入手。</div>
+        <div class="quote"><strong>原文依据：</strong>画面标签“emerald green + cream / beige”；00:20–00:25。Whisper 对“emerald green”的中文识别不可靠。</div>
+      </div>
+
+      <div class="card">
+        <h3>05 · 酒红礼服 × 黑色 + 炭灰</h3>
+        <p class="label">在讲什么</p>
+        <p>女士为酒红色单肩礼服；男士穿黑衬衫、炭灰长裤和黑鞋。</p>
+        <p class="label">关键理解</p>
+        <p>酒红、黑和炭灰都处在深色范围，炭灰比全黑多出一层明度变化。视频把最终效果描述为更强势的气场。</p>
+        <div class="action"><strong>怎么用：</strong>想保持深色氛围又不希望男士全黑时，可用炭灰裤替换黑裤。</div>
+        <div class="quote"><strong>原文依据：</strong>画面标签“wine + black / charcoal”；00:25–00:31。Whisper 末句：“That’s create boss energy”。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>横向对比：先按礼服颜色定位</h3>
+      <table>
+        <thead>
+          <tr><th>女士礼服</th><th>男士上装</th><th>男士下装</th><th>画面中的关系</th><th>证据时间</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>红色</td><td>黑色</td><td>黑色</td><td>单一高饱和焦点</td><td>00:00</td></tr>
+          <tr><td>黑色</td><td>白色</td><td>黑色</td><td>同色呼应 + 白色提亮</td><td>00:07</td></tr>
+          <tr><td>白色</td><td>浅蓝</td><td>米色</td><td>高明度、柔和过渡</td><td>00:13</td></tr>
+          <tr><td>墨绿色</td><td>奶油色</td><td>米色</td><td>深主色 + 浅中性色</td><td>00:20</td></tr>
+          <tr><td>酒红色</td><td>黑色</td><td>炭灰</td><td>深色统一 + 灰度层次</td><td>00:25</td></tr>
+        </tbody>
+      </table>
+      <div class="relation">跨组共性：男士搭配只在黑、白、浅蓝、奶油、米、灰这些相对克制的颜色中变化，女士礼服始终承担主色。</div>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">如何使用，而不把示范当定律</h2>
+
+      <div class="card">
+        <h3>可迁移的方法：主色先行，搭档做减法</h3>
+        <p><span class="key-data">归纳</span>先锁定礼服主色，再为男士选择一到两个中性色；如果需要呼应，可在裤装、鞋、腰带或手袋上重复一个颜色。</p>
+        <div class="insight"><strong>为什么只是归纳：</strong>视频展示结果，没有解释色相、明度、材质或正式度，也没有做替代组合实验。方法来自五组共同结构，而非视频中的因果论证。</div>
+        <div class="quote"><strong>证据：</strong>五组上方标签都采用“女士礼服色 + 男士配色”的固定句式，见 00:00–00:31。</div>
+      </div>
+
+      <div class="card">
+        <h3>方法边界：视频没有回答的四件事</h3>
+        <ul>
+          <li><strong>场合：</strong>未说明婚礼、晚宴或派对的具体 dress code。</li>
+          <li><strong>人物：</strong>未讨论肤色、发色、体型和个人偏好。</li>
+          <li><strong>单品：</strong>未比较面料、版型、季节与鞋履正式度。</li>
+          <li><strong>替代方案：</strong>每种礼服只展示一组男士搭配，不能据此排除其他有效组合。</li>
+        </ul>
+        <div class="pitfall"><strong>避坑：</strong>不要把“视频没展示”写成“不允许”；不要把五个样例升级成普遍审美规则；不要把 Whisper 的错误音译当成颜色名称。</div>
+        <div class="quote"><strong>原文依据：</strong>31 秒内容从头到尾都是换装示范，没有出现上述变量的讨论。</div>
+      </div>
+
+      <div class="card">
+        <h3>立场分层：哪些能确认，哪些只能推断</h3>
+        <div class="stance-grid">
+          <div class="stance-item">
+            <strong>可验证事实</strong>
+            <p>五组服装颜色、画面标签、出现顺序和 31 秒时长可直接核对。</p>
+          </div>
+          <div class="stance-item">
+            <strong>创作者观点</strong>
+            <p>这些组合是推荐配法；酒红组合带来“boss energy”是视频的评价。</p>
+          </div>
+          <div class="stance-item">
+            <strong>基于原文的推断</strong>
+            <p>“让礼服成为焦点”“中性色做减法”是对五组共同结构的解释。</p>
+          </div>
+        </div>
+        <div class="action"><strong>怎么用：</strong>决策时先采用可验证的组合清单，再把解释当筛选思路；若个人条件或场合不同，允许替换，不把推断当规则。</div>
+        <div class="quote"><strong>原文依据：</strong>00:00–00:31 的五组连续画面与标签；视频没有额外口头论证。</div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <h2>总结与行动</h2>
+      <h3>核心要点</h3>
+      <ul>
+        <li>视频给出五组明确的“女士礼服主色 → 男士中性色”示范。</li>
+        <li>黑、白、米、灰承担协调作用；视觉焦点通常留在女士礼服。</li>
+        <li>这是快速参考表，不是经过比较验证的色彩定律。</li>
+      </ul>
+      <h3>行动清单</h3>
+      <ol>
+        <li>先确认礼服属于红、黑、白、墨绿、酒红中的哪一类。</li>
+        <li>从对比表取出对应上装和下装，优先用现有单品试穿。</li>
+        <li>把男士全身主色控制在一至两个，避免额外争抢视觉中心。</li>
+        <li>用鞋、腰带或手袋做小面积呼应，并拍一张双人全身照检查。</li>
+        <li>最后核对宴会着装要求；不符合时，以场合规则优先。</li>
+      </ol>
+      <h3>关键认知转变</h3>
+      <p>从“情侣要穿同色”转向“先确定主色，再设计两人之间的颜色关系”；从“记住五条规则”转向“把五组样例当作试穿起点”。</p>
+    </div>
+
+    <div class="footer">依据原视频画面、可见字幕与 Whisper 时间分段整理 · 2026-07-26</div>
+  </div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
