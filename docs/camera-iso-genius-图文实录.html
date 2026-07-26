@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2分02秒：背照式CMOS像素分层、势阱与FWC、ISO即PGA模拟增益、ADC数字化，以及拜耳滤色与去马赛克如何还原彩色照片。">
+  <title>发明相机的真是个天才📷📷📷｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#eff6ff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#1d4ed8}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#1e3a8a,#2563eb 55%,#60a5fa);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(30,58,138,.28)}
+.eyebrow{margin:0 0 8px;color:#bfdbfe;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,38px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#dbeafe;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#bfdbfe}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #93c5fd;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 12px 12px 0;color:#1e40af;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #2563eb}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#1d4ed8;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>发明相机的真是个天才📷📷📷</h1>
+    <p class="dek">2 分 02 秒：从背照式 CMOS 像素结构讲到 ISO 模拟放大与 ADC，再揭开「打开文件先看到马赛克」的原因——拜耳滤色与去马赛克。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>2分02秒</span><span>54 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/72UGbB98opc" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#cmos">背照式 CMOS 与像素分层</a></li>
+      <li><a href="#well">光子变电子，势阱与满阱容</a></li>
+      <li><a href="#readout">FD、源极跟随器到 PGA</a></li>
+      <li><a href="#iso">改 ISO = 改模拟放大倍数</a></li>
+      <li><a href="#adc">ADC：电压变成数字</a></li>
+      <li><a href="#mosaic">打开文件为何像马赛克</a></li>
+      <li><a href="#bayer">RGGB 拜耳与去马赛克</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="cmos">
+      <span class="time-label">00:00—00:16</span>
+      <h2>开场：以主流背照式 CMOS 为例</h2>
+      <p>画面先铺开一整片彩色滤色阵列，中心高亮一颗 RGGB 单元。字幕写明：以相机中主流的<strong>背照式 CMOS</strong>为例，像素主要由几层结构构成。</p>
+      <blockquote class="quote">画面字幕：「以相机中主流的背照式CMOS为例」</blockquote>
+      <p class="note">说明：Whisper 把「背照式CMOS」识成「背照是SIMS」，「几块」识成「几棵」，「微透镜」识成「仅为透镜」，「滤色片」识成「绿色片」，「光电二极管」识成「光电二级管」。下文叙述以画面字幕与动画为准；末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-01.jpg" alt="深色背景上铺满RGGB拜耳滤色阵列，中心高亮红绿绿蓝四格，字幕写以相机中主流的背照式CMOS为例" loading="lazy">
+        <figcaption>[00:02] 开场铺底：背照式 CMOS + 拜耳滤色阵列示意。</figcaption>
+      </figure>
+      <p>动画切到像素剖面：光线柱落入三颗像素。从上到下依次标注<strong>微透镜（On-chip-lens）</strong>、<strong>滤色片（Color filter）</strong>、<strong>光电二极管（Photodiode）</strong>。旁白说光线经微透镜汇集到下层滤色片，滤色片筛选出波长匹配的光，再进入光电二极管 PD。</p>
+      <blockquote class="quote">画面字幕：「经微透镜汇集到下层滤色片」</blockquote>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-02.jpg" alt="三颗像素剖面：上方光粒子柱穿过微透镜、红绿蓝滤色片进入光电二极管，右侧有中英标签" loading="lazy">
+        <figcaption>[00:09] 像素分层：微透镜 → 滤色片 → 光电二极管。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="well">
+      <span class="time-label">00:16—00:29</span>
+      <h2>光子变成电子，并在势阱里累积</h2>
+      <p>大字「PD」夹着一格装满亮点的区域：光子被光电二极管转化成电子，并在特定区域累积——这个区域叫<strong>势阱</strong>。动画随后写满阱容：势阱通常可容纳几万个电子，达到最大值即为<strong>满阱容 FWC</strong>。</p>
+      <blockquote class="quote">画面字幕：「光子被光电二极管转化成电子」「达到最大值即为满阱容FWC」</blockquote>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-03.jpg" alt="左右大字P与D夹着发光矩形，内部白青粒子，字幕写光子被光电二极管转化成电子" loading="lazy">
+        <figcaption>[00:18] 光电转换：光子 → 电子。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-04.jpg" alt="势阱与满阱容大字，中央矩形填满青色粒子，字幕写达到最大值即为满阱容FWC" loading="lazy">
+        <figcaption>[00:26] 势阱装满即满阱容（FWC）。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="readout">
+      <span class="time-label">00:31—00:48</span>
+      <h2>读出链路：FD、电容、源极跟随器</h2>
+      <p>画面展开一条读出路径：像素区经 <strong>TX 传输门</strong> 把电子转到 <strong>FD（浮动扩散节点）</strong>，电荷存进电容并转成电压；电压再由能缓冲稳定信号的<strong>源极跟随器 SF</strong> 读出，送到后面的 PGA。</p>
+      <blockquote class="quote">旁白大意：势阱中的电子被浮动扩散节点 FD 转移并储存到电容里，电荷转换成电压，再由源极跟随器读出。</blockquote>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-05.jpg" alt="读出链路图：TX传输门到FD浮动扩散节点、电容、SF源极跟随器、PGA与ADC，字幕写转移并储存到一个电容里" loading="lazy">
+        <figcaption>[00:36] 电荷转移：TX → FD/电容 → SF → PGA → ADC。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="iso">
+      <span class="time-label">00:44—00:52</span>
+      <h2>改变 ISO，其实是在改模拟放大倍数</h2>
+      <p>链路走到 PGA（可编程增益放大器）时，画面标出 <strong>ISO 6400</strong> 与「模拟放大电路」。旁白点题：改变 ISO 的数值，实际上就是改变模拟放大倍数。</p>
+      <blockquote class="quote">旁白：「改变ISO的数值，实际上就是改变模拟放大倍数」</blockquote>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-06.jpg" alt="PGA模拟放大电路上方标ISO 6400，前后连接SF与ADC，字幕写再被可编程增益放大器PGA执行模拟放大" loading="lazy">
+        <figcaption>[00:48] ISO 与 PGA：模拟增益旋钮。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="adc">
+      <span class="time-label">00:52—01:09</span>
+      <h2>ADC 把电压变成数字，景物被「记」下来</h2>
+      <p>最后进入<strong>模数转换器 ADC</strong>：电压信号转成数字信号。旁白强调 ADC 的分辨率和转换精度，决定最终画面还原的准确度。至此，现实景物就被相机以数字形式记录下来——故事似乎该结束了。</p>
+      <blockquote class="quote">旁白大意：最后进入模数转换器 ADC……ADC 的分辨率和转换精度决定最终画面还原的准确度。</blockquote>
+    </section>
+
+    <section class="story-section" id="mosaic">
+      <span class="time-label">01:10—01:24</span>
+      <h2>打开文件：先看到一帧「怪」画面</h2>
+      <p>旁白忽然反转：「此时你满怀期待地打开这个文件，会看到这样的景象」——屏幕跳出一帧绿蒙、点阵感极强的夜景塔楼。为什么？因为传感器每个像素只能记录亮度信息，无法直接记录颜色，所以才在每个像素上盖彩色滤色片。</p>
+      <blockquote class="quote">旁白大意：传感器的每个像素能记录的只有亮度信息，而无法直接记录颜色信息，所以才会在每个像素上放着一个彩色滤色片。</blockquote>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-07.jpg" alt="夜景塔楼被渲染成明亮绿色点阵马赛克样貌，字幕写会看到这样的景象" loading="lazy">
+        <figcaption>[01:12] 「打开文件」的反转画面：尚未去马赛克前的观感示意。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="bayer">
+      <span class="time-label">01:24—02:02</span>
+      <h2>RGGB 拜耳排列，再靠 ISP 去马赛克</h2>
+      <p>滤色片排列方式很多，最常见的是 <strong>RGGB 拜耳排列</strong>。有了滤色片，每个像素只记下对应颜色的亮度；之后图像信号处理器（ISP）提取邻域颜色信息来补全当前像素，混合出完整 RGB。这个处理过程叫<strong>去马赛克</strong>。片尾也提醒：信号还需要处理的部分还有很多。</p>
+      <blockquote class="quote">画面字幕：「最常见的就是RGGB的拜耳排列」；旁白：「这个处理过程叫做去马赛克」</blockquote>
+      <figure>
+        <img src="assets/camera-iso-genius/shot-08.jpg" alt="芯片边框内夜景塔楼，左侧圆形放大显示拜耳RGGB像素网格" loading="lazy">
+        <figcaption>[01:40] 放大看传感器：每个位置只「看到」一种颜色的亮度。</figcaption>
+      </figure>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>以相机中主流的背照是SIMS为例</p>
+  </li>
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT2S">00:02</time>
+    <p>其主要由这几棵构成</p>
+  </li>
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT7S">00:07</time>
+    <p>光线到达传感器</p>
+  </li>
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT8S">00:08</time>
+    <p>仅为透镜汇集到下层的绿色片</p>
+  </li>
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT11S">00:11</time>
+    <p>绿色片能闪选出一支波长匹配的光</p>
+  </li>
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT13S">00:13</time>
+    <p>进入到光电二级管PD</p>
+  </li>
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT16S">00:16</time>
+    <p>光子被光电二级管转化成电子</p>
+  </li>
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT18S">00:18</time>
+    <p>并在一个特定的区域内累积</p>
+  </li>
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT20S">00:20</time>
+    <p>这个区域被称为视景</p>
+  </li>
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT22S">00:22</time>
+    <p>通常一个视景内可以容纳几万个电子</p>
+  </li>
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT25S">00:25</time>
+    <p>达到最大值即为满景容</p>
+  </li>
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT27S">00:27</time>
+    <p>FWC</p>
+  </li>
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT31S">00:31</time>
+    <p>随后视景中的电子</p>
+  </li>
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT33S">00:33</time>
+    <p>被活动扩散节点FD</p>
+  </li>
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT34S">00:34</time>
+    <p>转移并损捉到一个电容里</p>
+  </li>
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT37S">00:37</time>
+    <p>电容里的电荷由此转换成电压信号</p>
+  </li>
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT39S">00:39</time>
+    <p>这些电压会被一个能缓冲稳定信号的</p>
+  </li>
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT42S">00:42</time>
+    <p>原机跟随器读出</p>
+  </li>
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT44S">00:44</time>
+    <p>再被一个可编程增益放大器PGA</p>
+  </li>
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT46S">00:46</time>
+    <p>执行模拟放大</p>
+  </li>
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT48S">00:48</time>
+    <p>改变ISO的数值</p>
+  </li>
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT49S">00:49</time>
+    <p>实际上就是改变模拟放大倍数</p>
+  </li>
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT52S">00:52</time>
+    <p>最后再进入魔术转换器ADC</p>
+  </li>
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT54S">00:54</time>
+    <p>把电压信号转换成数字信号</p>
+  </li>
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT57S">00:57</time>
+    <p>ADC的分辨率和转换精度</p>
+  </li>
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT59S">00:59</time>
+    <p>决定这种画面还原的准确度</p>
+  </li>
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT63S">01:03</time>
+    <p>至此</p>
+  </li>
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT64S">01:04</time>
+    <p>现实世界中的景物</p>
+  </li>
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT65S">01:05</time>
+    <p>就被相机一数字的形式</p>
+  </li>
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT67S">01:07</time>
+    <p>纪录了下来</p>
+  </li>
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT70S">01:10</time>
+    <p>此时你满怀期待的打开这个文件</p>
+  </li>
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT71S">01:11</time>
+    <p>会看到这样的景象</p>
+  </li>
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT74S">01:14</time>
+    <p>为什么会这样</p>
+  </li>
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT75S">01:15</time>
+    <p>实际上传感器的每个像素</p>
+  </li>
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT77S">01:17</time>
+    <p>能纪录的只有亮度信息</p>
+  </li>
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT79S">01:19</time>
+    <p>而无法直接纪录颜色信息</p>
+  </li>
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT81S">01:21</time>
+    <p>所以才会在每个像素上</p>
+  </li>
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT82S">01:22</time>
+    <p>放着一个彩色绿片</p>
+  </li>
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT84S">01:24</time>
+    <p>这个绿色片的排列方式有很多种</p>
+  </li>
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT87S">01:27</time>
+    <p>常见的就是RGB的bire排列</p>
+  </li>
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT90S">01:30</time>
+    <p>有了这些绿色片</p>
+  </li>
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT91S">01:31</time>
+    <p>传感器的每个像素</p>
+  </li>
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT92S">01:32</time>
+    <p>就能纪录其对应颜色的亮度信息</p>
+  </li>
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT95S">01:35</time>
+    <p>之后通过图像信号处理器</p>
+  </li>
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT97S">01:37</time>
+    <p>把这些单色RGB信号进行处理</p>
+  </li>
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT100S">01:40</time>
+    <p>讲到来说</p>
+  </li>
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT100S">01:40</time>
+    <p>就是提取每个像素周围的颜色信息</p>
+  </li>
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT103S">01:43</time>
+    <p>来补选当前像素</p>
+  </li>
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT105S">01:45</time>
+    <p>这样就能混合出这个像素</p>
+  </li>
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT106S">01:46</time>
+    <p>原本颜色的RGB信息</p>
+  </li>
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT109S">01:49</time>
+    <p>通过每个像素的计算还原</p>
+  </li>
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT111S">01:51</time>
+    <p>我们才能看到一张正常的照片</p>
+  </li>
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT113S">01:53</time>
+    <p>这个处理过程叫做驱马赛克</p>
+  </li>
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT115S">01:55</time>
+    <p>当然信号需要处理的部分还有很多</p>
+  </li></ol>
+    </section>
+    <p class="footer">图文实录 · 发明相机的真是个天才 · 2026-07-26 · 证据来自视频字幕与动画</p>
+  </main>
+</body>
+</html>
