@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="1分51秒还原弥散圆（四）：从模糊圆到容许弥散圆，再演示凸透镜光锥与焦点外弥散，并保留完整 Whisper 转录。">
+  <title>相机「光圈」底层逻辑科普，弥散圆（四）｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#eef2ff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#1d4ed8}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#1e3a8a,#2563eb 55%,#60a5fa);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(30,58,138,.22)}
+.eyebrow{margin:0 0 8px;color:#dbeafe;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,42px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#eff6ff;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#dbeafe}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #bfdbfe;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 12px 12px 0;color:#1e40af;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #1e40af}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>相机「光圈」底层逻辑科普，弥散圆（四）</h1>
+    <p class="dek">1 分 51 秒动画课：从「模糊的圆」讲到「容许弥散圆」，再把镜头简化成凸透镜 + 光圈，演示点光源如何汇聚成焦点、为何焦点外会出现无数弥散圆。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>1分51秒</span><span>39 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/82oVAQNcUTq" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#blur">先见到一个模糊的圆</a></li>
+      <li><a href="#coc">命名：弥散圆</a></li>
+      <li><a href="#phone">手机上缩小到「看不见糊」</a></li>
+      <li><a href="#acceptable">容许弥散圆</a></li>
+      <li><a href="#lens">镜头本质仍是凸透镜</a></li>
+      <li><a href="#simplify">简化成透镜 + 光圈</a></li>
+      <li><a href="#cone">光锥汇聚到焦点</a></li>
+      <li><a href="#image">清晰倒立像与焦点外弥散</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="blur">
+      <span class="time-label">00:00—00:03</span>
+      <h2>开场：先丢给你一个模糊的圆</h2>
+      <p>深色网格底上，一个边缘发虚的白色圆形亮起。旁白没有急着讲公式，只是让你先「看见」模糊本身——后面整集都在解释：这个糊圆从哪来、小到什么程度你才会觉得它清晰。</p>
+      <blockquote class="quote">画面字幕：「这个是一个圆形」</blockquote>
+      <p class="note">说明：Whisper 常把「弥散圆」识成「迷散园 / 泥散圆」，「凸透镜」识成「偷偷镜」，「光锥」识成「光追」，「倒立」识成「道立」，「汇聚点」识成「会计点」。下文叙述以可见字幕与动画画面为准；页面末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-01.jpg" alt="深色背景上一个边缘模糊的白色圆形，下方字幕写这个是一个圆形" loading="lazy">
+        <figcaption>[00:01] 开场画面：一个看上去有些模糊的圆，为「弥散圆」铺垫。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="coc">
+      <span class="time-label">00:03—00:05</span>
+      <h2>正式命名：弥散圆 / circle of confusion</h2>
+      <p>圆心里叠上橙金色大字「弥散圆」，英文副标 <em>circle of confusion</em>。旁白说「我们暂且称它为弥散圆」——后面所有「糊」的讨论，都围绕这个光学概念展开。</p>
+      <blockquote class="quote">画面字幕：「我们暂且称它为弥散圆」</blockquote>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-02.jpg" alt="白色光晕中标注弥散圆与 circle of confusion，字幕提到 6 英寸手机观看条件" loading="lazy">
+        <figcaption>[00:05] 概念落地：弥散圆 = circle of confusion，并开始引入观看条件。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="phone">
+      <span class="time-label">00:05—00:18</span>
+      <h2>假设你在 6 英寸手机、约 30 厘米处看</h2>
+      <p>动画画出手持手机轮廓，把弥散圆「放进屏幕」。旁白设定观看条件：设备大约 6 英寸，观看距离大约 30 厘米。然后把圆一缩再缩——糊感逐渐消失，很多人就察觉不到模糊了。</p>
+      <blockquote class="quote">画面字幕：「那么当把这个弥散圆缩小」</blockquote>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-03.jpg" alt="手机轮廓内有标着弥散圆的光斑，字幕说把这个弥散圆缩小" loading="lazy">
+        <figcaption>[00:12] 用手机观看场景演示：弥散圆尺寸变小，糊感随之减弱。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="acceptable">
+      <span class="time-label">00:18—00:26</span>
+      <h2>缩到「可接受」：容许弥散圆</h2>
+      <p>圆缩成屏幕中央一个几乎像点的亮斑。旁白总结：从视觉上它便是一个可接受的清晰的圆；这个可接受的弥散圆，就叫「容许弥散圆」。换句话说——绝对清晰很少见，常见的是「糊到你察觉不到」。</p>
+      <blockquote class="quote">画面字幕：「从视觉上它便是一个可接受的清晰的圆」</blockquote>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-04.jpg" alt="手机轮廓中央只剩一个极小白点，字幕称其为可接受的清晰的圆" loading="lazy">
+        <figcaption>[00:20] 缩到视觉阈值附近：可接受的清晰圆 → 容许弥散圆。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="lens">
+      <span class="time-label">00:26—00:40</span>
+      <h2>镜头再复杂，根基仍是凸透镜成像</h2>
+      <p>话题从「人眼怎么看糊」切到「镜头怎么成像」。动画先给出多组多枚镜片的剖面轮廓，再高亮部分镜片，字幕点出：根本上还是利用了凸透镜的成像原理。复杂结构是为了汇聚光线、优化成像品质，不是另起一套物理。</p>
+      <blockquote class="quote">画面字幕：「但其根本上还是利用了凸透镜的成像原理」</blockquote>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-05.jpg" alt="复杂镜头剖面中多枚镜片，部分以浅蓝高亮，字幕强调凸透镜成像原理" loading="lazy">
+        <figcaption>[00:36] 多组多枚镜片剖面：结构复杂，原理仍回到凸透镜。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="simplify">
+      <span class="time-label">00:40—01:04</span>
+      <h2>演示用简化：一枚凸透镜 + 一个光圈</h2>
+      <p>为方便演示，动画把镜头拆到最小模型：一枚凸透镜用于成像，一个光圈用于控制通光孔径。接着从小学几何切入——一个面由无数个点组成；取其中一个点对焦，理论上点可以无限小，但传感器有物理极限，最小成像单位是一个像素点。</p>
+      <blockquote class="quote">画面字幕：「一个光圈用于控制通光孔径」</blockquote>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-06.jpg" alt="简化镜头剖面：浅蓝双凸透镜与橙色光圈标记，字幕写光圈控制通光孔径" loading="lazy">
+        <figcaption>[00:45] 教学模型：凸透镜负责成像，光圈负责控制通光孔径。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="cone">
+      <span class="time-label">01:04—01:23</span>
+      <h2>点光源进镜头：折射成一束光锥</h2>
+      <p>左侧橙色物点发出锥状光线进入镜头，经凸透镜折射后汇聚，再在焦点后散开。动画用青色光线与白色椭圆环把「光锥」画出来：理想状态下，光线完美汇聚到一个交叉点——这个交叉点就是焦点。</p>
+      <blockquote class="quote">画面字幕：「经过凸透镜折射的光线会如同一束光锥」</blockquote>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-07.jpg" alt="相机剖面中点光源经凸透镜折射形成光锥并汇聚到传感器附近" loading="lazy">
+        <figcaption>[01:15] 光锥演示：折射后汇聚到交叉点（焦点），之后再分散。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="image">
+      <span class="time-label">01:23—01:51</span>
+      <h2>焦点落在传感器 → 清晰倒立像；焦点外 → 弥散圆</h2>
+      <p>当焦点与传感器重合，物体面上的那个点就能清晰呈现在画面上；平面上多个点一一对应投射，便得到清晰倒立的像。动画用真人侧影演示：左侧站立的人，右侧「模拟传感器接收画面」里出现清晰倒立像。</p>
+      <p>收尾把概念收回弥散圆：严格来说只有焦点上成像最清晰；在汇聚点之外的光锥上，可以想象成无数个扩散且模糊的圆——也就是前面定义的弥散圆。容许弥散圆，正是后面讨论景深时「多远算合焦」的尺子。</p>
+      <blockquote class="quote">画面字幕：「此时我们便能看到一个清晰倒立的像」</blockquote>
+      <figure>
+        <img src="assets/aperture-coc-part4/shot-08.jpg" alt="左侧人物经镜头成像，右侧模拟传感器框内显示清晰倒立像" loading="lazy">
+        <figcaption>[01:35] 点对点投射完成：传感器上得到清晰倒立像；焦点外的光锥截面即弥散圆。</figcaption>
+      </figure>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差（如「弥散圆」被识成「迷散园 / 泥散圆」、「凸透镜」被识成「偷偷镜」等）。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>这是一个圆形 看上去有些模糊</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT3S">00:03</time>
+    <p>我们暂且称它为迷散园</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT4S">00:04</time>
+    <p>如果此时你的观看设备是在6英寸大小的手机上</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT8S">00:08</time>
+    <p>并且观看距离差不多是30厘米的话</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT10S">00:10</time>
+    <p>那么当把这个迷散园缩小 再缩小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT13S">00:13</time>
+    <p>缩小到一定的尺寸</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT15S">00:15</time>
+    <p>此时很多人应该就察觉不到它的模糊</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT17S">00:17</time>
+    <p>从视觉上它便是一个可接受的清晰的园</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT21S">00:21</time>
+    <p>而这个可接受的迷散园</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT23S">00:23</time>
+    <p>我们就可以称之为容许迷散园</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT26S">00:26</time>
+    <p>众所周知 镜头通常由多组多媒镜片构成</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT30S">00:30</time>
+    <p>其目的是为了更好的汇聚光线 优化成像品质</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT34S">00:34</time>
+    <p>但其实根本还是利用了偷偷镜的成像原理</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT37S">00:37</time>
+    <p>这里为了方便演示 我们不妨把它简化一下</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT40S">00:40</time>
+    <p>一个偷偷镜 紧于成像</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT42S">00:42</time>
+    <p>一个光圈 用于控制通光控镜</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT46S">00:46</time>
+    <p>学过小学几何的肯定都知道</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT48S">00:48</time>
+    <p>一个面可以由无数个点组成</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT51S">00:51</time>
+    <p>取其中一个把焦点堆在上面</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT55S">00:55</time>
+    <p>理论上这个点可以无限小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT57S">00:57</time>
+    <p>不过由于传感器的物理限制</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT59S">00:59</time>
+    <p>可以成像的最小单位 也就是一个像素点</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT64S">01:04</time>
+    <p>从这一点反射出的光会有一部分进入镜头</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT68S">01:08</time>
+    <p>进由偷偷镜折射之后再汇聚到成像光屏</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT71S">01:11</time>
+    <p>也就是相机的传感器</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT73S">01:13</time>
+    <p>理想状态下 经过偷偷镜折射的光线</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT76S">01:16</time>
+    <p>会如同一束光追</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT77S">01:17</time>
+    <p>完美汇聚到一个交叉点 之后再分散开来</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT80S">01:20</time>
+    <p>这个交叉点称之为焦点</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT82S">01:22</time>
+    <p>如果焦点和传感器重合</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT84S">01:24</time>
+    <p>此时物体面的那个点</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT86S">01:26</time>
+    <p>便能清晰地呈现在画面上</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT88S">01:28</time>
+    <p>同理物体平面上的多个点都会一一对应投射在传感器上</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT93S">01:33</time>
+    <p>此时我们便能看到一个清晰道立的像</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT97S">01:37</time>
+    <p>严格来说只有光线或具的交叉点</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT99S">01:39</time>
+    <p>也就是焦点上成像才是最清晰的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT102S">01:42</time>
+    <p>而在这个会计点之外的光追上</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT104S">01:44</time>
+    <p>我们可以想象成有无数个扩散且模糊的圆</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT108S">01:48</time>
+    <p>也就是我们前面提到的泥散圆</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">图文实录 · 小红书原链接保留 webhook 短链 · slug aperture-coc-part4</p>
+  </main>
+</body>
+</html>
