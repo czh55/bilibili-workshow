@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2分48秒电子卷帘快门科普：从像素开关、逐行读出与20ms时差，讲到果冻形变、机械幕帘对照与全域快门代价。">
+  <title>学摄影需要知道的——电子快门｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#eef2ff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#1d4ed8}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#0f172a,#1e3a8a 55%,#38bdf8);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(15,23,42,.28)}
+.eyebrow{margin:0 0 8px;color:#bae6fd;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,40px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#e0f2fe;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#bae6fd}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #bfdbfe;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 12px 12px 0;color:#1e40af;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #1e40af}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>学摄影需要知道的——电子快门</h1>
+    <p class="dek">2 分 48 秒进阶科普：用动画把「电子卷帘快门」拆成像素开关、逐行读出与时差形变，再对照机械幕帘为何更稳，最后落到全域快门的同时曝光与代价。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>2分48秒</span><span>81 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/5XyOuIiBAGy" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#switch">像素开关与电子卷帘</a></li>
+      <li><a href="#photon">光子到数字信号</a></li>
+      <li><a href="#readout">逐行读出与 20ms 斜线</a></li>
+      <li><a href="#jello">时差带来的形变</a></li>
+      <li><a href="#control">两种控制办法</a></li>
+      <li><a href="#mechanical">机械幕帘为何更稳</a></li>
+      <li><a href="#global">全域快门与代价</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="switch">
+      <span class="time-label">00:00—00:14</span>
+      <h2>开场：把 CMOS 想成「每个像素都有开关」</h2>
+      <p>彩色像素阵列铺满画面，大标题直接写「电子卷帘快门」。旁白没有先甩术语，而是让你想象：CMOS 上每个像素都像一扇小门——打开就接收光线，关闭则重置。</p>
+      <blockquote class="quote">画面字幕：「可以想象CMOS的每个像素都有个开关」</blockquote>
+      <p>按下快门后，传感器清空电荷，再重新开始感光。整集后面的读出时差、果冻形变，都建立在这个「开关逐行工作」的前提上。</p>
+      <p class="note">说明：Whisper 常把 CMOS 识成「SIMOS」，「关闭则重置」识成「关闭子重置」，「读出」识成「读书」，「光电二极管」识成「光电2G网」，「模数转换器」识成「魔术转换器」，「果冻效应」识成「活动／果动效应」，「机械幕帘」识成「机械木莲」，「信噪比」识成「性造比」。下文叙述以可见字幕与动画为准；末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/electronic-shutter/shot-01.jpg" alt="彩色像素阵列上叠加电子卷帘快门标题，字幕说明 CMOS 每个像素都有开关" loading="lazy">
+        <figcaption>[00:02] 开场定调：电子卷帘快门 = 像素级开关按行滚动工作。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="photon">
+      <span class="time-label">00:14—00:31</span>
+      <h2>光子进传感器：从光到数字的一串转化</h2>
+      <p>线框立方体像一只「传感器容器」，白色粒子从上方落下——旁白说光子进入传感器。接着链路被拆开：光电二极管把光变成电子，电容变成电压，PGA 放大，再经 ADC（模数转换器）变成数字信号。</p>
+      <blockquote class="quote">画面字幕：「光子进入到传感器」</blockquote>
+      <p>这一段不是在讲构图，而是在铺「为什么后面会有读出瓶颈」：电压到数字信号，并不能整幅瞬间完成。</p>
+      <figure>
+        <img src="assets/electronic-shutter/shot-02.jpg" alt="线框立方体接收下落的光子粒子，字幕写光子进入到传感器" loading="lazy">
+        <figcaption>[00:15] 光子入传感器：后续电荷、电压、放大与 ADC 都从这里起步。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/electronic-shutter/shot-03.jpg" alt="深色画面上展示模数转换相关字幕与电路流程示意" loading="lazy">
+        <figcaption>[00:28] 模数转换环节：把放大后的电压变成可存储的数字信号。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="readout">
+      <span class="time-label">00:31—01:01</span>
+      <h2>读出只能逐行：20ms 斜线钉死时间差</h2>
+      <p>旁白强调：从电压到数字信号的读出，只能依次逐行进行。多数 CMOS 性能受限，读出速度动辄二三十毫秒。动画以 <strong>20ms</strong> 为例，在「首行—末行 × 时间」坐标上画出一条斜线。</p>
+      <blockquote class="quote">画面字幕：「可以同步读出」</blockquote>
+      <p>要想每行曝光结束时立刻同步读出，电子卷帘就只能严格沿着这条斜线（也就是读出速度）去开闭各行。快门时间怎么调，帧内首末行的时间差仍是约 20ms——远大于旁白对照的机械快门约 4ms。</p>
+      <figure>
+        <img src="assets/electronic-shutter/shot-04.jpg" alt="传感器示意图旁有首行到末行对时间的读出斜线，字幕写可以同步读出" loading="lazy">
+        <figcaption>[00:50] 读出斜线：同步读出意味着各行开启必须跟着读出速度走。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/electronic-shutter/shot-05.jpg" alt="左右对照图：左侧读出跨度标 20ms，右侧标 4ms，曝光均为 1/1000s" loading="lazy">
+        <figcaption>[01:04] 同一曝光 1/1000s，读出 20ms 与 4ms 的斜线陡峭程度差很多。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="jello">
+      <span class="time-label">01:01—01:40</span>
+      <h2>时差落地：运动物体开始「歪」</h2>
+      <p>较高时间差会带来严重问题。画面用大标题点出效应名（Whisper 作「活动效应」；后文亦说到「果冻效应」），并配字幕「存在时差」：每行记录时刻不同，运动物体在空间位移中发生形变——直线变斜、旋转变扭曲。</p>
+      <blockquote class="quote">画面字幕：「在空间位移中发生形变」</blockquote>
+      <p>旁白用约 3300 万像素的 CMOS 举例：拍一张要读出约 4672 行；按 20ms 读出算，每行时差约 4.3 微秒。听上去极短，但对高速物体已足够造成明显变形。机械快门面对高速也会有类似效应，只是比电子卷帘轻得多。</p>
+      <figure>
+        <img src="assets/electronic-shutter/shot-06.jpg" alt="像素网格上出现倾斜白色线条示意形变，字幕写在空间位移中发生形变" loading="lazy">
+        <figcaption>[01:12] 形变示意：行间时差把运动轨迹「拧」出斜线与扭曲。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="control">
+      <span class="time-label">01:40—01:48</span>
+      <h2>控制形变：只剩两条路</h2>
+      <p>旁白把对策收成两句：一是减少相对运动，二是提高读出速度。没有第三条「魔法开关」——要么让场景慢下来，要么让传感器读得更快。</p>
+      <blockquote class="quote">关键判断：电子卷帘的形变根子在读出时差，不在曝光时间本身。</blockquote>
+    </section>
+
+    <section class="story-section" id="mechanical">
+      <span class="time-label">01:48—02:06</span>
+      <h2>追问：同样要读出，机械快门为何更稳？</h2>
+      <p>有人会问：机械快门最后也要读出数据，为什么不受同样影响？旁白指向机械幕帘的物理结构——CMOS 可以先完成曝光，再逐行读出；读出空档里后幕帘遮住光线，传感器虽处在感光状态，却没有新的光进来，因此读出过程不再叠加曝光时差。</p>
+      <blockquote class="quote">画面字幕：「决定了CMOS可以先曝光」</blockquote>
+      <figure>
+        <img src="assets/electronic-shutter/shot-07.jpg" alt="标题机械快门，右侧图表显示约 4ms 的幕帘行程阴影区" loading="lazy">
+        <figcaption>[01:55] 机械快门对照：约 4ms 行程，配合后幕帘遮盖，允许先曝光后读出。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="global">
+      <span class="time-label">02:06—02:48</span>
+      <h2>能不能同时曝光？答案是全域快门——但贵</h2>
+      <p>电子快门若强行整幅同时开启感光，后读出的行会感光更久，画面曝光不均；若同时关闭，未读出信息会被重置。旁白自问：那有没有办法同时曝光？有——<strong>全域快门（Global Shutter）</strong>。</p>
+      <blockquote class="quote">画面大字：「全域快门 GLOBAL SHUTTER」</blockquote>
+      <p>全域快门可同时开电路曝光，再把电子先挪到存储单元，之后再读出，因而没有行间曝光时差，也能避免果冻效应。代价是：每像素额外存储单元会削弱收光能力，影响信噪比与画质；旁白收尾一句——最大的影响还是「贵」。</p>
+      <figure>
+        <img src="assets/electronic-shutter/shot-08.jpg" alt="传感器画面叠加全域快门与 GLOBAL SHUTTER 标题" loading="lazy">
+        <figcaption>[02:27] 全域解：全域快门用片上存储换同时曝光，换来无时差，也换来成本与画质取舍。</figcaption>
+      </figure>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>可以想象SIMOS的每个像素都有个开关</p>
+  </li>
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT4S">00:04</time>
+    <p>打开可以接收光线</p>
+  </li>
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT5S">00:05</time>
+    <p>关闭子重置</p>
+  </li>
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT9S">00:09</time>
+    <p>当按下快门后</p>
+  </li>
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT10S">00:10</time>
+    <p>SIMOS清空电荷信息</p>
+  </li>
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT12S">00:12</time>
+    <p>并开始接收光线</p>
+  </li>
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT14S">00:14</time>
+    <p>光子进入到传感器</p>
+  </li>
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT16S">00:16</time>
+    <p>被光电2G网转化成电子</p>
+  </li>
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT18S">00:18</time>
+    <p>再由电容转化成电压</p>
+  </li>
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT21S">00:21</time>
+    <p>之后通过PJA放大电路放大</p>
+  </li>
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT25S">00:25</time>
+    <p>再经由魔术转换器ADC转化成数字计划</p>
+  </li>
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT31S">00:31</time>
+    <p>从电压到数字信号的整个读书过程</p>
+  </li>
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT33S">00:33</time>
+    <p>只能依次出行进行</p>
+  </li>
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT35S">00:35</time>
+    <p>而绝大多数的SIMOS由于性能的制约</p>
+  </li>
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT37S">00:37</time>
+    <p>读书速度受限</p>
+  </li>
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT39S">00:39</time>
+    <p>动辄2,3,10毫秒</p>
+  </li>
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT40S">00:40</time>
+    <p>以20毫秒的读书速度为例</p>
+  </li>
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT42S">00:42</time>
+    <p>对应到每行像素</p>
+  </li>
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT43S">00:43</time>
+    <p>在图表上是这样一条线</p>
+  </li>
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT45S">00:45</time>
+    <p>想要做到每行像素曝光结束时</p>
+  </li>
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT48S">00:48</time>
+    <p>可以同步读书</p>
+  </li>
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT49S">00:49</time>
+    <p>电子换门就只能严格按照这条斜线</p>
+  </li>
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT52S">00:52</time>
+    <p>也就是读书速度</p>
+  </li>
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT53S">00:53</time>
+    <p>来控制每行像素的开启</p>
+  </li>
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT55S">00:55</time>
+    <p>无论快门如何调整</p>
+  </li>
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT57S">00:57</time>
+    <p>时间差都是20毫秒</p>
+  </li>
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT59S">00:59</time>
+    <p>远大于机械快门的4毫秒</p>
+  </li>
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT61S">01:01</time>
+    <p>较高的时间差会出现一个严重的问题</p>
+  </li>
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT64S">01:04</time>
+    <p>活动效应</p>
+  </li>
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT65S">01:05</time>
+    <p>由于每行像素记录的时间不同</p>
+  </li>
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT67S">01:07</time>
+    <p>存在时差</p>
+  </li>
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT68S">01:08</time>
+    <p>从而导致运动物体在空间位移中发生形变</p>
+  </li>
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT72S">01:12</time>
+    <p>值得变成鞋的</p>
+  </li>
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT73S">01:13</time>
+    <p>旋转的变扭曲</p>
+  </li>
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT75S">01:15</time>
+    <p>以这个3300万像素的SIMOS来看</p>
+  </li>
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT77S">01:17</time>
+    <p>拍摄一张照片需要读出4672毫</p>
+  </li>
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT81S">01:21</time>
+    <p>按照20毫秒的读书速度计算</p>
+  </li>
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT82S">01:22</time>
+    <p>那么每行像素的时间差约等于4.3微秒</p>
+  </li>
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT86S">01:26</time>
+    <p>这听上去几乎不可感知</p>
+  </li>
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT88S">01:28</time>
+    <p>但对于拍摄高速运动的物体来说</p>
+  </li>
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT90S">01:30</time>
+    <p>这个时间差</p>
+  </li>
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT91S">01:31</time>
+    <p>足以让画面产生明显的变形</p>
+  </li>
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT93S">01:33</time>
+    <p>面对高速运动的物体</p>
+  </li>
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT95S">01:35</time>
+    <p>使用机械快门同样会出现果动效应</p>
+  </li>
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT98S">01:38</time>
+    <p>只是相比电子快门要好很多</p>
+  </li>
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT100S">01:40</time>
+    <p>控制果动效应只有两种方法</p>
+  </li>
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT102S">01:42</time>
+    <p>一个是减少相对运动</p>
+  </li>
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT104S">01:44</time>
+    <p>一个是提高读书速度</p>
+  </li>
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT108S">01:48</time>
+    <p>可能会有人疑问</p>
+  </li>
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT109S">01:49</time>
+    <p>同样需要读出为什么机械快门不受影响</p>
+  </li>
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT113S">01:53</time>
+    <p>机械木莲的物理结构</p>
+  </li>
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT115S">01:55</time>
+    <p>决定了SIMOS可以先曝光</p>
+  </li>
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT117S">01:57</time>
+    <p>后主行读出</p>
+  </li>
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT118S">01:58</time>
+    <p>而中间这部分读出控导</p>
+  </li>
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT119S">01:59</time>
+    <p>由于后墨连的遮盖</p>
+  </li>
+  <li class="transcript-row" id="transcript-56">
+    <time datetime="PT121S">02:01</time>
+    <p>SIMOS虽然处在感光状态</p>
+  </li>
+  <li class="transcript-row" id="transcript-57">
+    <time datetime="PT122S">02:02</time>
+    <p>但不会有光线进入</p>
+  </li>
+  <li class="transcript-row" id="transcript-58">
+    <time datetime="PT124S">02:04</time>
+    <p>因此不受影响</p>
+  </li>
+  <li class="transcript-row" id="transcript-59">
+    <time datetime="PT126S">02:06</time>
+    <p>实际上电子快门可以做到</p>
+  </li>
+  <li class="transcript-row" id="transcript-60">
+    <time datetime="PT127S">02:07</time>
+    <p>同时开启并感光</p>
+  </li>
+  <li class="transcript-row" id="transcript-61">
+    <time datetime="PT129S">02:09</time>
+    <p>但这样会导致后读出的像素</p>
+  </li>
+  <li class="transcript-row" id="transcript-62">
+    <time datetime="PT131S">02:11</time>
+    <p>因为感光时间更长</p>
+  </li>
+  <li class="transcript-row" id="transcript-63">
+    <time datetime="PT133S">02:13</time>
+    <p>从而导致画面整体曝光不均匀</p>
+  </li>
+  <li class="transcript-row" id="transcript-64">
+    <time datetime="PT135S">02:15</time>
+    <p>那同时曝光之后同时关闭呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-65">
+    <time datetime="PT137S">02:17</time>
+    <p>答案自然也是不行</p>
+  </li>
+  <li class="transcript-row" id="transcript-66">
+    <time datetime="PT139S">02:19</time>
+    <p>关闭后则意味着没有被读出的信息</p>
+  </li>
+  <li class="transcript-row" id="transcript-67">
+    <time datetime="PT141S">02:21</time>
+    <p>都会被重置</p>
+  </li>
+  <li class="transcript-row" id="transcript-68">
+    <time datetime="PT142S">02:22</time>
+    <p>那有没有办法可以做到同时曝光呢</p>
+  </li>
+  <li class="transcript-row" id="transcript-69">
+    <time datetime="PT145S">02:25</time>
+    <p>有</p>
+  </li>
+  <li class="transcript-row" id="transcript-70">
+    <time datetime="PT145S">02:25</time>
+    <p>全域快门</p>
+  </li>
+  <li class="transcript-row" id="transcript-71">
+    <time datetime="PT147S">02:27</time>
+    <p>全域快门可以同时控制电路开启</p>
+  </li>
+  <li class="transcript-row" id="transcript-72">
+    <time datetime="PT149S">02:29</time>
+    <p>曝光之后把电子先转移到存储单元</p>
+  </li>
+  <li class="transcript-row" id="transcript-73">
+    <time datetime="PT152S">02:32</time>
+    <p>之后再读出数据</p>
+  </li>
+  <li class="transcript-row" id="transcript-74">
+    <time datetime="PT153S">02:33</time>
+    <p>这样就不存在曝光时间差</p>
+  </li>
+  <li class="transcript-row" id="transcript-75">
+    <time datetime="PT155S">02:35</time>
+    <p>也就能完全避免果冻效应</p>
+  </li>
+  <li class="transcript-row" id="transcript-76">
+    <time datetime="PT157S">02:37</time>
+    <p>大家就是由于给每个像素</p>
+  </li>
+  <li class="transcript-row" id="transcript-77">
+    <time datetime="PT159S">02:39</time>
+    <p>增加了额外的存储单元</p>
+  </li>
+  <li class="transcript-row" id="transcript-78">
+    <time datetime="PT161S">02:41</time>
+    <p>会降低像素接收光线的能力</p>
+  </li>
+  <li class="transcript-row" id="transcript-79">
+    <time datetime="PT163S">02:43</time>
+    <p>进而对性造比和画质产生影响</p>
+  </li>
+  <li class="transcript-row" id="transcript-80">
+    <time datetime="PT165S">02:45</time>
+    <p>当然最大的影响还是</p>
+  </li>
+  <li class="transcript-row" id="transcript-81">
+    <time datetime="PT167S">02:47</time>
+    <p>贵</p>
+  </li></ol>
+    </section>
+    <p class="footer">素材来自小红书分享短链 · 图文实录由自动化工作流生成</p>
+  </main>
+</body>
+</html>
