@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7416" viewBox="0 0 1320 7416">
+  <foreignObject x="0" y="0" width="1320" height="7416">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.small{font-size:14px;color:#64748b}
+.stance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stance-item{background:#f8fafc;border-radius:12px;padding:16px;font-size:14px;line-height:1.7;color:#475569}
+.stance-item strong{display:block;color:#1e40af;margin-bottom:8px}
+@media(max-width:900px){.stance-grid{grid-template-columns:1fr}}</style>
+      
+<div class="container">
+  <h1>脸型特征分析</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">26秒</span>
+    <span class="tag tag-purple">侧脸面型</span>
+    <span class="tag tag-orange">五官分析</span>
+    <span class="tag tag-gray">理性分析</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/1HOrUUYKMA9">原视频：脸型特征分析</a>
+  <div class="summary-line">
+    <strong>核心判断：</strong>视频真正试图回答的不是「哪种脸绝对更好看」，而是：用侧脸轮廓（鼻—唇—颏起伏）把面型粗分为 S 型、直面、微凸、凸面、微凹、凹面六档，并给每档贴上审美标签。证据是红虚线轮廓与叠字定名；全程声明「个人审美 与医美手段无关」。属于审美口诀，不是临床测量协议。
+  </div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">定型「最丑的面型 / S型早期凤姐脸」；红虚线画出 S 形起伏；观感=丑到天花板。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:04</div><div class="timeline-text">定型「直面型」；标签=立体端庄、标志大气。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">定型「微凸面型」；标签=明艳贵气、多出港风美女。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:12</div><div class="timeline-text">定型「凸面型」；标签=可爱不足、憨态有余。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:15</div><div class="timeline-text">定型「微凹面型」；断言东亚人最多；风险标签=容易出现三八脸。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:20</div><div class="timeline-text">定型「凹面型 / 月亮脸」；观感=苦相又土气、很难出美女。</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>侧脸属于哪种面型？</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">尺子<br/>红虚线轮廓起伏</div>
+      <div class="arrow">→</div>
+      <div class="node">六型分类<br/>S / 直 / 微凸 / 凸 / 微凹 / 凹</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">标签<br/>贵气 / 憨态 / 三八脸 / 苦相</div>
+    </div>
+    <p class="small">证据链：AI 人像侧脸 + 红虚线示意 → 叠字定名 → 气质口号；未提供测量点、角度标准或真人样本对照。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p><strong>误解：</strong>「S 型 / 凹面型被点名最丑，所以必须改脸。」视频右上角全程写着「个人审美 与医美手段无关」。</p>
+    <p><strong>误解：</strong>「微凹=东亚人最多」是统计事实。片中未给样本量、定义或出处，只是口播断言。</p>
+    <p><strong>纠偏：</strong>把它当侧脸对照口诀：先看轮廓是外拱还是内凹，再对照标签；不要当成手术指征或种族审美定律。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">六型框架拆解</h2>
+
+    <div class="card card-red">
+      <h3>S 型 · 在讲什么</h3>
+      <p><strong>在讲什么：</strong>侧轮廓呈 S 形大起伏，被点名为「最丑的面型 / 早期凤姐脸」。</p>
+      <p><strong>关键理解：</strong>作者把极端起伏与网络负面标签绑定，用「丑到天花板」做情绪开场。</p>
+      <p><strong>怎么用：</strong>侧脸自拍时看鼻尖—唇—颏是否连续大起大落；仅作对照，不据此做医美决策。</p>
+      <div class="quote">原文依据（可见字幕）：「这是最丑的面型」「S型早期凤姐脸」[00:00–00:04]</div>
+      <div class="pitfall">避坑：叠字「最丑」是作者排序，不是客观量表。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>直面型 · 在讲什么</h3>
+      <p><strong>在讲什么：</strong>侧轮廓接近直线，标签「立体端庄、标志大气」。</p>
+      <p><strong>关键理解：</strong>直面被放在正面评价档：端正、大气，而非「最美」。</p>
+      <p><strong>怎么用：</strong>鼻唇颏起伏很小、接近一条线时可对照此型。</p>
+      <div class="quote">原文依据：「这是直面型」「立体端庄」；口播「标志大气」[00:04–00:08]</div>
+      <div class="relation">关系：轮廓更直 → 端庄大气标签；标签是观点层。</div>
+    </div>
+
+    <div class="card">
+      <h3>微凸面型 · 在讲什么</h3>
+      <p><strong>在讲什么：</strong>轻微外拱，标签「明艳贵气」，并联想「多出港风美女」。</p>
+      <p><strong>关键理解：</strong>把微凸与港风审美绑定，是明确的主观立场。</p>
+      <p><strong>怎么用：</strong>侧脸略外凸但不夸张时可对照；气质词请保留个人审美空间。</p>
+      <div class="quote">原文依据：「这是微凸面型」「明艳贵气」「多出港风美女」[00:08–00:12]</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>凸面型 · 风险与调侃</h3>
+      <p><strong>在讲什么：</strong>外拱加大，评价变成「可爱不足、憨态有余」。</p>
+      <p><strong>关键理解：</strong>同一尺子上，从「贵气」滑到「憨态」，说明标签是连续光谱上的主观刻度。</p>
+      <p><strong>怎么用：</strong>外拱明显时可对照；不要把「憨态」听成病理。</p>
+      <div class="quote">原文依据：「这是凸面型」「可爱不足」；口播语义「憨态有余」[00:12–00:15]</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>微凹面型 · UP 主观点</h3>
+      <p><strong>在讲什么：</strong>微凹被说成「东亚人最多的面型」，并警告「容易出现三八脸」。</p>
+      <p><strong>关键理解：</strong>「最多」是未举证断言；「三八脸」把泪沟/法令纹/木偶纹焦虑挂到微凹结构上，属于观点层风险叙事。</p>
+      <p><strong>怎么用：</strong>侧脸略内凹时可对照结构；老化纹路还需看软组织与表情习惯——片中未展开。</p>
+      <div class="quote">原文依据：「东亚人最多的面型」「容易出现三八脸」；口播「这是微凹面型」[00:15–00:20]</div>
+      <div class="highlight">立场分层：叠字定名可观察；「东亚人最多」「容易三八脸」为 UP 主观点。</div>
+    </div>
+
+    <div class="card card-red">
+      <h3>凹面型 / 月亮脸 · 边界</h3>
+      <p><strong>在讲什么：</strong>内凹加深，别名月亮脸；观感「苦相又土气」「很难出美女」。</p>
+      <p><strong>关键理解：</strong>与 S 型开场对偶——两端都被负面标签封顶。</p>
+      <p><strong>怎么用：</strong>内凹明显时可对照；不要据此自行垫高或截骨。</p>
+      <div class="quote">原文依据：「这是凹面型」「很难出美女」；口播「也叫月亮脸」「苦相又土气」[00:20–00:25]</div>
+      <div class="pitfall">避坑：AI 示意图轮廓 ≠ 你的真实侧脸；仰俯角、镜头焦距、修图都会改视觉起伏。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">横向对比</h2>
+    <div class="card">
+      <h3>六型一眼对照</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>类型</th>
+            <th>轮廓要点（片中）</th>
+            <th>片中气质 / 风险标签</th>
+            <th>证据强度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S 型</td>
+            <td><span class="key-data">大起伏 S 线</span></td>
+            <td>最丑 / 早期凤姐脸 / 丑到天花板</td>
+            <td>叠字 + 红线示意</td>
+          </tr>
+          <tr>
+            <td>直面型</td>
+            <td><span class="key-data">接近直线</span></td>
+            <td>立体端庄 / 标志大气</td>
+            <td>叠字 + 红线示意</td>
+          </tr>
+          <tr>
+            <td>微凸面型</td>
+            <td><span class="key-data">轻微外拱</span></td>
+            <td>明艳贵气 / 港风美女</td>
+            <td>叠字 + 口播联想</td>
+          </tr>
+          <tr>
+            <td>凸面型</td>
+            <td><span class="key-data">明显外拱</span></td>
+            <td>可爱不足 / 憨态有余</td>
+            <td>叠字 + 口播评价</td>
+          </tr>
+          <tr>
+            <td>微凹面型</td>
+            <td><span class="key-data">轻微内凹</span></td>
+            <td>东亚人最多 / 易三八脸</td>
+            <td>口播断言，无数据</td>
+          </tr>
+          <tr>
+            <td>凹面型</td>
+            <td><span class="key-data">明显内凹</span></td>
+            <td>月亮脸 / 苦相土气 / 难出美女</td>
+            <td>叠字 + 口播评价</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">选择条件：只需粗分侧脸起伏时用此表；需要医美或化妆方案时，还须结合骨相、软组织、发型与拍摄角度——片中未展开。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界与立场分层</h2>
+    <div class="card">
+      <div class="stance-grid">
+        <div class="stance-item">
+          <strong>可验证事实</strong>
+          片中叠字出现六种定名与「最丑」「明艳贵气」「三八脸」「很难出美女」等标注；红虚线反复出现；右上角固定免责声明；部分帧有豆包AI水印；时长约 26 秒。
+        </div>
+        <div class="stance-item">
+          <strong>UP 主观点</strong>
+          把轮廓映射到贵气、憨态、苦相、港风美女等气质；断言微凹在东亚人中最多；把两端标为难看。
+        </div>
+        <div class="stance-item">
+          <strong>基于原文的推断</strong>
+          框架核心是「外拱 ↔ 内凹」连续光谱；免责声明意图阻断医美行动；未提供自测步骤，默认观众能对照示意图。
+        </div>
+      </div>
+      <div class="insight" style="margin-top:18px">适用边界：适合作为短视频侧脸审美入门口诀；不适用于手术规划、病理诊断、种族审美统计或跨个体统一排序。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>尺子只有一把：侧脸鼻—唇—颏起伏，辅以红虚线示意。</li>
+      <li>六型落在「外拱 ↔ 直线 ↔ 内凹」光谱上，两端被负面标签封顶。</li>
+      <li>气质标签是观点层，叠字定名是证据层；「东亚人最多」未举证。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>用手机侧脸平视自拍（耳线可见），标出鼻尖、唇珠、颏前点。</li>
+      <li>粗看三点连线是外拱、近似直线还是内凹，对照六型表。</li>
+      <li>只把气质词当参考，不强迫自己「必须港风或端庄」。</li>
+      <li>化妆或修图时优先调视觉轮廓（阴影、仰俯角、发型），而不是先想医美。</li>
+      <li>若要严肃评估骨相，另找专业测量或医生意见——本片明确声明与医美无关。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「猜自己是圆脸还是方脸」转向「先看侧脸轮廓是外拱还是内凹」；「最丑 / 很难出美女」被还原为作者审美排序，而不是可执行的改脸指令。</p>
+  </div>
+
+  <p class="footer">分析基于可见字幕与画面标注；Whisper 原始转录另见 HTML 实录。非医美建议。</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
