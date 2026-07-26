@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6641" viewBox="0 0 1320 6641">
+  <foreignObject x="0" y="0" width="1320" height="6641">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>夏天衣服这么挑轻松摆脱汗湿汗臭的社交尴尬</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">2分59秒</span>
+    <span class="tag tag-orange">优衣库 AIRism</span>
+    <span class="tag tag-purple">理性分析</span>
+    <span class="tag tag-gray">2026-07-26</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/1M8RfLOavJJ">原视频链接 →</a>
+  <div class="summary-line">核心判断：夏日「汗湿贴身 + 汗臭」应先选面料能力（吸湿/导汗/消臭/凉感），再按挺阔度与外衣厚度匹配 AIRism 材质与无痕内裤；本片为店内口播推荐，非盲测对比。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">痛点：贴身、腋下/后背汗湿、汗臭味</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:12</div><div class="timeline-text">成分标：推荐铜氨纤维（可见锦纶/铜氨/涤纶/氨纶组合）</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:20</div><div class="timeline-text">工艺图：棉籽绒 → 铜氨纺丝液</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:30</div><div class="timeline-text">触感：AIRism 领口 + 凉感丝滑；锦纶速干 + 氨纶弹力</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:10</div><div class="timeline-text">经典款：极细纤维≈发丝1/10、导汗蒸发、消臭；货架约79元</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:33</div><div class="timeline-text">消臭网眼：男生夏季内搭首选（UP 主张）</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:51</div><div class="timeline-text">棉混纺：加 61% 棉，厚度适中可外穿</div></div>
+    <div class="timeline-item"><div class="timeline-time">02:06</div><div class="timeline-text">无痕内裤：压胶无走线，配薄透外衣</div></div>
+    <div class="timeline-item"><div class="timeline-time">02:26</div><div class="timeline-text">收束：东丽合作 + 三大材质覆盖多场景</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">社交尴尬<br/>汗湿 / 汗臭</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">先看面料<br/>铜氨 + 导汗消臭</div>
+      <div class="arrow">→</div>
+      <div class="node">按场景选材<br/>经典 / 网眼 / 棉混</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">配套无痕内裤<br/>薄透外衣不露痕</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p><strong>误解 1：</strong>夏天只会「选短袖」就能解决尴尬。<br/>
+    <strong>纠偏：</strong>视频把问题拆成面料导湿消臭 + 版型挺阔度 + 内裤痕迹三层，短袖款式只是外层。</p>
+    <p><strong>误解 2：</strong>真丝/纯棉一定是最优夏衣。<br/>
+    <strong>纠偏：</strong>UP 认为真丝贵、纯棉排汗不足；铜氨纤维被定位为性价比更高的仿丝吸湿方案（观点，非实验室数据）。</p>
+    <p><strong>误解 3：</strong>AIRism 只有一种穿法。<br/>
+    <strong>纠偏：</strong>同一系列被拆成内搭透气、外穿挺阔、无痕内裤三条路径。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">一、面料逻辑：铜氨纤维在讲什么</h2>
+    <div class="card">
+      <h3>在讲什么</h3>
+      <p>用「棉籽绒 → 铜氨溶液纺丝」解释铜氨纤维为何兼具棉的吸湿与丝的排汗/光泽，并叠加锦纶速干、氨纶弹力。</p>
+      <div class="insight">关键理解：这是把「摸起来凉滑」翻译成可检查的成分与工艺叙事，方便在吊牌上核对铜氨/锦纶/氨纶比例。</div>
+      <div class="action">怎么用：进店先翻成分标，确认是否含铜氨纤维及再生锦纶等声明；再上手捏凉感与回弹，而不是只看颜色。</div>
+      <div class="quote">原文依据（校正）：「所以我会更推荐这种铜氨纤维……既有棉的吸湿性，又有丝的排汗性能以及光泽度。」[00:11–00:28]</div>
+      <div class="relation">立场：可验证事实 = 成分标上出现铜氨纤维等；UP 观点 = 「比真丝划算、比纯棉更排汗」；推断 = 通勤不再湿一片取决于个人出汗量与环境。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">二、三大材质与场景匹配</h2>
+    <div class="card card-green">
+      <h3>在讲什么</h3>
+      <p>AIRism 被归纳为：最凉滑经典材质、最薄消臭网眼材质、轻肤棉混纺材质；分别服务内搭干爽、拥挤场景消臭、外穿挺阔。</p>
+      <div class="insight">关键理解：不是「买一件解决所有」，而是按挺阔度与是否外穿切换材质。</div>
+      <div class="action">怎么用：通勤内搭优先经典/网眼；想直接外穿选约 61% 棉混纺；男生易出汗场景优先消臭网眼（按 UP 推荐）。</div>
+      <div class="quote">原文依据（校正）：「有三大材质：最凉滑经典材质、最薄消臭网眼材质、以及轻肤棉混纺材质。」[02:37–02:43]</div>
+      <div class="highlight">货架可见宣传：极细纤维约发丝 1/10、比 100% 棉约 1.9 倍快干、样衣约 79 元/件——属店内物料，购买以当日吊牌为准。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>UP 主观点：网眼款是男生夏季首选</h3>
+      <p>消臭网眼被强调适合上学上班与下班外出，拥挤环境也不怕汗湿汗臭。</p>
+      <div class="quote">原文依据（校正）：「像这种都是属于清凉速干体，绝对是男生夏季必买的首选。」[01:34–01:39]</div>
+      <div class="pitfall">边界：这是明确的推荐立场，视频未提供与其他品牌/材质的对照实验。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">三、配套层：无痕内裤解决的是另一类尴尬</h2>
+    <div class="card card-orange">
+      <h3>在讲什么</h3>
+      <p>同系列内裤强调压胶工艺、无走线、高弹不勒不卷边；针对夏天薄透外衣容易「有痕」的问题。</p>
+      <div class="insight">关键理解：汗湿尴尬靠导湿面料；轮廓尴尬靠无痕结构——两条线不要混为一谈。</div>
+      <div class="action">怎么用：外衣偏薄透时，优先检查内裤是否压胶无痕、是否夹臀卷边，再决定颜色是否贴近肤色。</div>
+      <div class="quote">原文依据（校正）：「它全是这种压胶工艺，没有任何的走线……穿这种无痕的内裤，就能避免有痕的尴尬。」[02:09–02:26]</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：怎么在店里做选择</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>选项</th>
+          <th>更适合</th>
+          <th>关键特征（视频主张/货架）</th>
+          <th>注意边界</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>真丝</td>
+          <td>手感党、预算充足</td>
+          <td>UP：贵</td>
+          <td>未给护理/耐用对比</td>
+        </tr>
+        <tr>
+          <td>纯棉</td>
+          <td>日常亲肤</td>
+          <td>UP：排汗「差点意思」</td>
+          <td>主观评价，非测试数据</td>
+        </tr>
+        <tr>
+          <td>铜氨/AIRism 经典</td>
+          <td>通勤内搭、要凉滑</td>
+          <td>吸湿 + 丝感光泽；极细纤维导汗消臭</td>
+          <td>功效以吊牌与体感为准</td>
+        </tr>
+        <tr>
+          <td>消臭网眼</td>
+          <td>易出汗、拥挤场景</td>
+          <td>UP：男生夏季首选内搭</td>
+          <td>推荐立场偏强</td>
+        </tr>
+        <tr>
+          <td>棉混纺（约61%棉）</td>
+          <td>想挺阔、可外穿</td>
+          <td>厚度适中，黑白蓝灰好搭</td>
+          <td>「不会透也不会太厚」因人而异</td>
+        </tr>
+        <tr>
+          <td>无痕内裤</td>
+          <td>薄透外衣</td>
+          <td>压胶无走线、高弹</td>
+          <td>不解决汗臭本身</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card card-red">
+    <h3>方法边界与证据强弱</h3>
+    <ul>
+      <li><span class="key-data">事实</span> 画面可见 AIRism 品牌、成分标含铜氨纤维、东丽合作展柜文案、样衣价签约 79 元。</li>
+      <li><span class="key-data">观点</span> 「真丝太贵」「纯棉排汗不足」「网眼款男生必买」等为 UP 立场。</li>
+      <li><span class="key-data">推断</span> 「一整天干爽、拥挤也不尴尬」取决于出汗量、通风与洗护，视频未量化。</li>
+      <li>未覆盖：敏感肌耐受、洗涤衰减曲线、与其他品牌同价位对照。</li>
+    </ul>
+    <div class="pitfall">避坑：别把货架「1.9 倍快干」当成个人实测；别以为买了 AIRism 就可以忽略清洗与换衣频率。</div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ol>
+      <li>先处理面料能力（吸湿/导汗/消臭/凉感），再谈款式。</li>
+      <li>AIRism 内部分经典、网眼、棉混纺三条路径，按内搭/外穿选择。</li>
+      <li>薄透外衣要单独解决内裤痕迹，压胶无痕是配套逻辑。</li>
+    </ol>
+    <h3>行动清单</h3>
+    <ol>
+      <li>到店先查吊牌：是否含铜氨纤维、锦纶/氨纶比例与护理说明。</li>
+      <li>用手捏凉感与回弹，对比纯棉同款厚度。</li>
+      <li>易出汗场景优先试消臭网眼内搭；要外穿试棉混纺。</li>
+      <li>薄透裙/裤搭配时，检查内裤压胶边与肤色接近度。</li>
+      <li>记录个人出汗高峰时段，评估是否需要备换装而非只靠面料。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「夏天随便穿短袖」转向「面料功能 × 挺阔度 × 无痕结构」的分层决策；把营销口号与可核对吊牌信息分开对待。</p>
+  </div>
+
+  <p class="footer">理性分析 · uniqlo-airism-sweat-tips · 基于 Whisper 转录与画面校正 · 非品牌官方测评</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
