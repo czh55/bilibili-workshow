@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2分15秒：拆解双原生ISO/双增益背后的DCG与DGO，说明电容切换与双路融合如何分别改善暗光与动态范围。">
+  <title>一个视频告诉你什么是双原生ISO｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#fff7ed 0%,#fafaf9 26%,#fafaf9 100%)}
+a{color:#c2410c}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#7c2d12,#c2410c 55%,#fb923c);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(194,65,12,.22)}
+.eyebrow{margin:0 0 8px;color:#ffedd5;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,40px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#fff7ed;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#ffedd5}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #fed7aa;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#ffedd5;color:#c2410c;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#fff7ed;border-left:4px solid #ea580c;border-radius:0 12px 12px 0;color:#9a3412;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #c2410c}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#c2410c;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>一个视频告诉你什么是双原生ISO</h1>
+    <p class="dek">2 分 15 秒电路向科普：把「双原生 ISO / 双增益」拆成 DCG（双转换增益）与 DGO（双增益融合输出）两条路径，讲清电容切换、PGA 放大与双路融合如何分别改善暗光与动态范围。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>2分15秒</span><span>59 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/A7D8lSHcDK4" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#terms">名词混战：双原生 vs 双增益</a></li>
+      <li><a href="#dcg-intro">DCG：双转换增益登场</a></li>
+      <li><a href="#two-caps">一大一小两个电容</a></li>
+      <li><a href="#low-light">暗光切小电容</a></li>
+      <li><a href="#iso800">ISO800：PGA 还是切 DCG</a></li>
+      <li><a href="#dgo">DGO：双路读出再融合</a></li>
+      <li><a href="#compare">谁更强：动态范围 vs 暗光</a></li>
+      <li><a href="#naming">到底该怎么叫</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="terms">
+      <span class="time-label">00:00—00:10</span>
+      <h2>开场：ISO 相关名词太多，歧义由此产生</h2>
+      <p>画面一上来就是一堆漂浮词：双原生 ISO、双增益、Native ISO、DCG、DGO、LOFIC……旁白先点题：与 ISO 相关的名词很多，混用和定义模糊造成了不少歧义，而争论最多的大概就是「双原生 ISO」和「双增益」这一对。</p>
+      <blockquote class="quote">画面字幕：「一些名词的混用以及定义模糊也造成了诸多歧义」</blockquote>
+      <p class="note">说明：Whisper 常把「歧义」识成「奇异」，「争论」识成「争了」，「DCG」识成「DCJ」，「DGO」识成「DJO」，「双原生」识成「双元生」，「动态范围」识成「动弹范围」，「电荷」识成「电货」，「低转换增益」识成「D转换增益」，「微伏」识成「W」，「称为/叫」识成「成为/较」，「泛指」识成「范制」，「易于传播」识成「亦于传播」。下文叙述以可见字幕与电路动画为准；页面末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/dual-native-iso/shot-01.jpg" alt="深色背景漂浮多项ISO相关名词，中央突出双原生ISO与双增益，字幕讲名词混用造成歧义" loading="lazy">
+        <figcaption>[00:02] 名词云：双原生 ISO、双增益、DCG、DGO 等挤在同一画面，开场先立「容易吵」的问题。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="dcg-intro">
+      <span class="time-label">00:10—00:22</span>
+      <h2>两条主流技术：DCG 与 DGO</h2>
+      <p>旁白收束到传感器侧：目前应用广泛的有两种。第一种是 <strong>DCG（Dual Conversion Gain，双转换增益）</strong>；第二种是 <strong>DGO（Dual Gain Output，双增益融合输出）</strong>。画面先用大字打出 DCG 标题页，背景里还隐约闪着 LCG、Native ISO 等词。</p>
+      <blockquote class="quote">旁白：「一个是DCG，双转换增益；一个是DGO，双增益融合输出」</blockquote>
+      <figure>
+        <img src="assets/dual-native-iso/shot-02.jpg" alt="大字标题 DCG 双转换增益 dual conversion gain" loading="lazy">
+        <figcaption>[00:12] DCG 标题页：双转换增益（Dual Conversion Gain）正式登场。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="two-caps">
+      <span class="time-label">00:22—00:38</span>
+      <h2>DCG 核心：浮动扩散节点上的一大一小电容</h2>
+      <p>旁白接上一段关于电容与转换增益的铺垫：浮动扩散节点的电容 CFD 决定电荷到电压的转换增益。双转换增益的做法很直接——设计两个电容，一大一小，于是就有了两个基准 ISO。</p>
+      <p>光线充足时走大电容：能接收更多电子，电荷转出的电压更小，也就是<strong>低转换增益（LCG）</strong>，既保住动态范围，又有助于画质。</p>
+      <blockquote class="quote">画面字幕与电路标注：「一大一小」——FD / 小电容 CFD / 大电容 CFD → SF → PGA → ADC</blockquote>
+      <figure>
+        <img src="assets/dual-native-iso/shot-03.jpg" alt="DCG电路：TX传输门到FD与大小电容CFD，再经SF、PGA到ADC，字幕一大一小" loading="lazy">
+        <figcaption>[00:25] DCG 全链路：TX→FD→大小 CFD→SF→PGA→ADC；字幕强调「一大一小」。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="low-light">
+      <span class="time-label">00:38—00:46</span>
+      <h2>光线不足：切到小电容，走高转换增益</h2>
+      <p>光线不够时切换小电容。小电容能接住的电子很少，但可以把电荷直接转成更高电压，也就是<strong>高转换增益（HCG）</strong>。画面用青色电子点把「小电容更密、更挤」的感觉画出来，字幕也写着「由于能接收的电子很少」。</p>
+      <figure>
+        <img src="assets/dual-native-iso/shot-04.jpg" alt="FD分出小电容与大电容两路，小电容内电子密集，字幕由于能接收的电子很少" loading="lazy">
+        <figcaption>[00:40] 小电容路径被点亮：电子容量更小，换来更高的单电子电压。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="iso800">
+      <span class="time-label">00:46—01:16</span>
+      <h2>算一笔账：ISO800 时 PGA×8，还是直接切第二档基准 ISO</h2>
+      <p>旁白用数字举例（画面与口述约在 ISO100→ISO800 量级）：大电容下，假设每个电子先转成约 10μV；抬到 ISO800 时，若仍靠 PGA 放大 8 倍，电压到约 80μV/电子，但前端读出噪声也会跟着放大 8 倍。</p>
+      <p>若在 ISO800 切换到 DCG 的小电容——也就是第二档基准 ISO——则靠高转换增益直接得到约 80μV/电子，不必再让 PGA 放大，前端读出噪声也就不会被放大，暗光画质更干净。</p>
+      <blockquote class="quote">画面字幕：「如果在ISO800时切换到DCG的小电容」</blockquote>
+      <figure>
+        <img src="assets/dual-native-iso/shot-05.jpg" alt="ISO800标注下的DCG电路，模拟放大电路显示8x，字幕切换到DCG小电容" loading="lazy">
+        <figcaption>[01:00] ISO800 对照：继续 PGA×8 会放大噪声；切小电容则用第二档基准 ISO 避开多余放大。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="dgo">
+      <span class="time-label">01:16—01:42</span>
+      <h2>DGO：电容之后拆成两条读出，再融合</h2>
+      <p>旁白转向 DGO：它和 DCG 不同，不是在 FD 上切换大小电容，而是在电容之后分成两条读出电路，把同一批电荷转成两路电压信号。例如 ISO800 时，一路做 8 倍模拟放大，一路不放大（低增益），再分别经两个 ADC 读出，后期融合——低增益保住高光细节，高增益多记暗部，从而抬高动态范围。</p>
+      <figure>
+        <img src="assets/dual-native-iso/shot-06.jpg" alt="DGO电路：FD与CFD之后分成两条SF与PGA读出通路汇入ADC" loading="lazy">
+        <figcaption>[01:20] DGO 结构：电容之后并行两条 SF→PGA 读出，再进 ADC。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/dual-native-iso/shot-07.jpg" alt="两路ADC融合示意，右侧城市夜景高低曝光对照，字幕提升动态范围" loading="lazy">
+        <figcaption>[01:40] 融合效果示意：一路偏暗部、一路偏高光，拼出更大动态范围。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="compare">
+      <span class="time-label">01:42—01:50</span>
+      <h2>优劣对照：DGO 擅长动态范围，DCG 更偏暗光</h2>
+      <p>旁白给出立场鲜明的对比：DGO 的优势在于能大幅提升动态范围；但谈到暗光场景，则是 DCG 更有优势。这不是「谁取代谁」，而是两条技术路径各自的强项。</p>
+      <blockquote class="quote">旁白（校正理解）：「DGO 的优势在于能够大幅提升动态范围，但是对比暗光场景则是 DCG 更有优势」</blockquote>
+    </section>
+
+    <section class="story-section" id="naming">
+      <span class="time-label">01:50—02:15</span>
+      <h2>收束：叫法可以吵，技术名与 ISO 符号各司其职</h2>
+      <p>有人习惯把 DCG 叫「双增益」、把 DGO 叫「双原生 ISO」。旁白提醒：两者翻译过来都可以叫双增益，只是路径不同；而 ISO 的本质又是增益，所以把两者都称作双原生 ISO 也说得通。具体讨论用技术名称，泛指时沿用 ISO——ISO 这个符号本来就是为了统一标准、便于传播。</p>
+      <figure>
+        <img src="assets/dual-native-iso/shot-08.jpg" alt="左右对照DCG双转换增益与DGO双增益融合输出两条电路，字幕只是技术路径有所不同" loading="lazy">
+        <figcaption>[02:00] 并排对照：DCG 切换大小电容；DGO 双路增益再融合——「只是技术路径有所不同」。</figcaption>
+      </figure>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>与ISO相关的名词有很多</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT2S">00:02</time>
+    <p>一些名词的混用以及定义模糊也造成了诸多奇异</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT5S">00:05</time>
+    <p>其中争了最多的可能就是这两个</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT7S">00:07</time>
+    <p>目前相机传感器中应用广泛的有两种技术</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT10S">00:10</time>
+    <p>一个是DCG</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT12S">00:12</time>
+    <p>双转换增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT13S">00:13</time>
+    <p>一个是DGO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT14S">00:14</time>
+    <p>双增益融合输出</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT17S">00:17</time>
+    <p>前面提到电容CFD决定的电货到电源的转换增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT22S">00:22</time>
+    <p>而双转换增益其实就是设计两个电容</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT24S">00:24</time>
+    <p>一大一小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT25S">00:25</time>
+    <p>这样就有了两个基准ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT28S">00:28</time>
+    <p>光线充足时用大电容能接收更多的电子</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT31S">00:31</time>
+    <p>电货转换的电压小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT33S">00:33</time>
+    <p>也就是D转换增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT34S">00:34</time>
+    <p>既保证了动态范围又能提升画质</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT37S">00:37</time>
+    <p>光线不足时切换小电容</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT39S">00:39</time>
+    <p>由于能接收的电子很少</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT41S">00:41</time>
+    <p>小电容可以让电货直接转换成更高的电压</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT44S">00:44</time>
+    <p>也就是高转换增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT46S">00:46</time>
+    <p>假设ISO110</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT47S">00:47</time>
+    <p>大电容可以把每个电子转换成10W的电压</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT51S">00:51</time>
+    <p>提升到ISO800</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT52S">00:52</time>
+    <p>自需要PGA放大8倍</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT54S">00:54</time>
+    <p>电压变成80W每电子</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT56S">00:56</time>
+    <p>这会造成前端电路的读出噪声也未放大了8倍</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT59S">00:59</time>
+    <p>如果在ISO800时切换到DCJ的小电容</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT63S">01:03</time>
+    <p>也就是第二档基准ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT64S">01:04</time>
+    <p>则能利用高转换增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT66S">01:06</time>
+    <p>让每个电子能直接转换成80W的电压</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT69S">01:09</time>
+    <p>不需要PGA再执行放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT71S">01:11</time>
+    <p>这样前端读出噪声也就不会放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT73S">01:13</time>
+    <p>可以有效提升暗光画质</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT76S">01:16</time>
+    <p>DJO与DCJ有些不同</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT78S">01:18</time>
+    <p>它是在电容之后分成两条读出电路</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT81S">01:21</time>
+    <p>把同一批电货转换出两路电压信号</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT84S">01:24</time>
+    <p>例如ISO800时</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT86S">01:26</time>
+    <p>一路信号做8倍模拟放大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT87S">01:27</time>
+    <p>一路不放大会用低增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT89S">01:29</time>
+    <p>再分别有两个ADC读出</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT92S">01:32</time>
+    <p>后期这两路信号会做融合处理</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT94S">01:34</time>
+    <p>低增益下保证的高光细节</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT96S">01:36</time>
+    <p>而高增益则能记录更多的暗部信息</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT99S">01:39</time>
+    <p>以此来有效提升动弹范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT102S">01:42</time>
+    <p>DJO的优势在于能够大幅提升动弹范围</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT105S">01:45</time>
+    <p>但是对比暗光场景则是DCJ更有优势</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT109S">01:49</time>
+    <p>可能有些人习惯把DCJ成为双增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT111S">01:51</time>
+    <p>DJO成为双元生ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT114S">01:54</time>
+    <p>仔细观察会发现</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT115S">01:55</time>
+    <p>DCJ和DJO翻译过来都可以较双增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT118S">01:58</time>
+    <p>只是技术路径有所不同</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT120S">02:00</time>
+    <p>ISO的本质又是增益</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT122S">02:02</time>
+    <p>所以称其两者为双元生ISO也合乎逻辑</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT125S">02:05</time>
+    <p>至于到底该怎么较</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT126S">02:06</time>
+    <p>其实具体讨论可以用技术名称</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-56">
+    <time datetime="PT129S">02:09</time>
+    <p>以范制则沿用ISO</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-57">
+    <time datetime="PT130S">02:10</time>
+    <p>毕竟ISO这个符号的诞生</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-58">
+    <time datetime="PT132S">02:12</time>
+    <p>就是为了统一标准</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-59">
+    <time datetime="PT134S">02:14</time>
+    <p>亦于传播</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">图文实录 · 小红书 · 双原生 ISO / DCG / DGO</p>
+  </main>
+</body>
+</html>
