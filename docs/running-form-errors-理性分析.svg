@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6698" viewBox="0 0 1320 6698">
+  <foreignObject x="0" y="0" width="1320" height="6698">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>常见错误跑姿调整！让正确姿态刻在肌肉记忆</h1>
+  <div class="meta">
+    <span class="tag tag-orange">小红书</span>
+    <span class="tag tag-blue">跑姿纠正</span>
+    <span class="tag tag-green">17秒</span>
+    <span class="tag tag-purple">训练方法</span>
+    <span class="tag tag-gray">理性分析视角</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/AaTgsUJMuyP">原视频短链 → http://xhslink.cn/o/AaTgsUJMuyP</a>
+  <div class="summary-line">核心判断：两种高发错误跑姿（趴着跑、伸腿跑）各自对应一个可练的纠正动作；最终标准收敛为「上体垂直 + 屈髋抬腿 + 脚踝稳定」。证据主要来自画面标注与笔记文案，口播不可辨。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">标题「常见错误跑姿调整」——确立问题域</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:02</div><div class="timeline-text">错误一「趴着跑」——过度前倾 / 屈髋不足（笔记）</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:05</div><div class="timeline-text">纠正「背手跑」——绿勾确认训练动作</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">错误二「伸腿跑」——小腿前伸 + 后跟着地两红叉</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:12</div><div class="timeline-text">纠正「提拉抬腿」——对症替代前甩小腿</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:14</div><div class="timeline-text">正确姿态三要点收束：上体垂直 / 屈髋抬腿 / 脚踝稳定</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题：两种错误跑姿</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">证据：画面标注 + 笔记机制</div>
+      <div class="arrow">→</div>
+      <div class="node">判断：症状驱动纠正</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">行动：专项钻 + 三标准</div>
+    </div>
+    <p>视频真正试图回答的问题：日常跑步里最常见的两种变形怎么认、怎么用简单钻练改掉，以及正确姿态最终该记住哪几条。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>误解一：纠正动作等于比赛跑姿。「背手跑」是训练钻，用来逼出直立躯干与屈髋，不是要求正式跑时一直背手。</p>
+    <p>误解二：步幅越大越快。「伸腿跑」把小腿甩到身前并以脚跟刹车，会增加膝踝压力并浪费前进动能。</p>
+    <p>误解三：口播等于全部信息。本片口播不可辨；可核验结论来自画面大字、红叉/绿勾与笔记文案，三者一致。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">错误一：趴着跑</h2>
+    <div class="card card-red">
+      <h3>在讲什么</h3>
+      <p>把过度前倾、躯干趴下去的跑法标为「1. 趴着跑」。</p>
+      <div class="highlight">关键理解：前倾过头会让屈髋变难，腿抬不起来，形成「趴着往前蹭」的代偿。</div>
+      <div class="action">怎么用：先用侧向视频或镜子检查躯干是否明显趴下；若抬膝困难并伴随前倾，优先处理躯干直立而非盲目加大步幅。</div>
+      <div class="quote">原文依据（笔记）：「趴着跑：抬不起来腿，过度前倾屈髋不足」；画面 [00:02] 标题「1. 趴着跑」。</div>
+      <p><span class="speaker speaker-host">立场</span>机制描述来自作者笔记与画面命名，属 UP 主训练观点；未提供生物力学测量数据。</p>
+    </div>
+    <div class="card card-green">
+      <h3>纠正：背手跑</h3>
+      <p>双手背于身后继续跑，绿勾标注「背手跑」。</p>
+      <div class="relation">关系：拿掉手臂摆动 → 迫使上体自行找平衡 → 抑制趴姿前倾。</div>
+      <div class="action">用法：短距离重复钻练，注意力放在「躯干立住 + 髋部抬腿」，再回到正常摆臂跑验证迁移。</div>
+      <div class="quote">原文依据：画面 [00:05]「纠正动作 / 背手跑」绿勾；笔记「纠正动作：背手跑」。</div>
+      <div class="pitfall">边界：背手跑是纠正钻，不是比赛技术；存在肩背不适或平衡风险时需降速、缩短距离。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">错误二：伸腿跑</h2>
+    <div class="card card-red">
+      <h3>在讲什么</h3>
+      <p>「2. 伸腿跑」被拆成两个可观察故障点：小腿抢到身前、后脚跟落地。</p>
+      <div class="highlight">关键理解：前伸小腿抬高膝踝压力；脚跟先触地像刹车，打断滚动前进。</div>
+      <div class="action">怎么用：慢动作回看触地点是否落在身体重心前方过远；若常见脚跟重刹，优先练提膝回收而非继续加大前伸。</div>
+      <div class="quote">原文依据：画面 [00:10] 红叉「小腿在前 膝踝压力大」「后脚跟落地 刹车制动」；笔记同义表述。</div>
+      <p><span class="speaker speaker-host">事实 / 观点分层</span>「压力大 / 刹车制动」是作者对姿态后果的解释性判断；画面可验证的是姿态外观与标注文字本身。</p>
+    </div>
+    <div class="card card-green">
+      <h3>纠正：提拉抬腿</h3>
+      <p>绿勾「提拉抬腿」，用向上提拉替代向前甩小腿。</p>
+      <div class="relation">关系：伸腿跑（前甩）↔ 提拉抬腿（上提）——方向相反的替代动作。</div>
+      <div class="action">用法：原地或慢跑中强调膝髋上提与腿的回收节奏，再逐步恢复正常步频步幅。</div>
+      <div class="quote">原文依据：画面 [00:12]「纠正动作 / 提拉抬腿」；笔记「纠正动作：提拉抬腿」。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">正确姿态与方法对比</h2>
+    <div class="card">
+      <h3>目标姿态三要素</h3>
+      <p>结尾把标准压成三条：上体垂直、屈髋抬腿、脚踝稳定。</p>
+      <div class="insight">推断（基于原文结构）：三要素分别对应躯干、推进、落地稳定，可当作自检清单，而非完整生物力学模型。</div>
+      <div class="quote">原文依据：画面 [00:14–00:16]「正确跑步姿势／姿态」三箭头标注；笔记「正确跑步姿态：上体垂直，屈髋抬腿，脚踝稳定」。</div>
+    </div>
+    <div class="card">
+      <h3>横向对比：错误 → 机制 → 纠正 → 目标</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>错误姿态</th>
+            <th>作者给出的机制</th>
+            <th>纠正钻</th>
+            <th>对应目标标准</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>趴着跑</td>
+            <td>过度前倾、屈髋不足、抬不起腿</td>
+            <td>背手跑</td>
+            <td>上体垂直 + 屈髋抬腿</td>
+          </tr>
+          <tr>
+            <td>伸腿跑</td>
+            <td>小腿前伸致膝踝压力；后跟着地刹车</td>
+            <td>提拉抬腿</td>
+            <td>屈髋抬腿 + 脚踝稳定</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">适用边界与避坑</h2>
+    <div class="card card-orange">
+      <h3>方法边界</h3>
+      <ul>
+        <li>适用：业余跑者识别高发变形、用短钻建立肌肉记忆。</li>
+        <li>上限：未涉及步频、配速、鞋款、伤病史与个体差异评估。</li>
+        <li>反例 / 例外：已有膝踝伤痛、平衡障碍者不宜盲目加大纠正钻强度；「背手跑」不适合作长时间主训练。</li>
+        <li>证据强度：短视频演示 + 文案断言，属教学观点，非临床或实验室结论。</li>
+      </ul>
+      <div class="pitfall">避坑：不要把「迈大步」当效率；不要把训练钻直接搬进比赛节奏；不要在听不清口播时脑补未出现的技术细节。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ol>
+      <li>两种错误：趴着跑（前倾/屈髋不足）、伸腿跑（前甩小腿 + 脚跟刹车）。</li>
+      <li>两种纠正钻：背手跑、提拉抬腿——症状驱动，一一对应。</li>
+      <li>三条目标：上体垂直、屈髋抬腿、脚踝稳定。</li>
+    </ol>
+    <h3>行动清单</h3>
+    <ol>
+      <li>侧向录 10–20 秒慢跑，对照是否明显趴躯干或小腿抢前。</li>
+      <li>若趴着跑：做短距离背手跑钻，只练直立与屈髋。</li>
+      <li>若伸腿跑：做提拉抬腿钻，观察触地点是否仍远在重心前。</li>
+      <li>恢复正常摆臂后，用三要素清单复检，而不是追求更大步幅。</li>
+      <li>有疼痛或不稳时停止加码，优先咨询专业教练/医疗建议（补充资料：本片未覆盖医学评估）。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「把步子迈大」转向「先立住上体、用屈髋提拉、管住脚踝」；纠正靠专项钻练肌肉记忆，而不是口头记住概念。</p>
+  </div>
+
+  <p class="footer">作者：金春萍 · 时长 17 秒 · 平台小红书 · 分析基于画面标注与笔记文案 · Whisper 口播 [听不清]</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
