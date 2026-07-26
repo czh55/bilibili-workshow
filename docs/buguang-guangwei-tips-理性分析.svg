@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7221" viewBox="0 0 1320 7221">
+  <foreignObject x="0" y="0" width="1320" height="7221">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="page">
+<div class="container">
+  <h1>布光很难？其实就这几个光位来回用！</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">38秒</span>
+    <span class="tag tag-orange">产品布光</span>
+    <span class="tag tag-purple">理性分析</span>
+    <span class="tag tag-gray">静物摄影</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/7HzbR6Mvy8K">原视频短链</a>
+  <div class="summary-line">核心判断：产品布光难，往往不是缺设备，而是不会按「问题症状」选光位；通透、玻璃高光、杂光、深色轮廓、太平、暗部，各对应一套可复用手法，单灯+反光板是默认底盘。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">症状「不通透」→ 打逆光表现层次（农夫山泉瓶背光示例）。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:03</div><div class="timeline-text">玻璃质感用双灯切高光；要求单边锋利且有过渡。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:09</div><div class="timeline-text">反光强用硫酸纸；目标表面光洁、关闭/避免杂光。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:14</div><div class="timeline-text">「黑中有黑」用轮廓光，两边各一、窄高光勾边缘。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:20</div><div class="timeline-text">黑卡纸给产品两侧描黑边，强化轮廓分离。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:23</div><div class="timeline-text">光影太平没层次 → 裸灯打硬光，明暗强烈有冲击力。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:30</div><div class="timeline-text">单灯也可：补光用反光板，操作更简单，多数产品适用。</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>布光难、不知从哪下手</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">误判<br/>堆灯具/盲目柔光</div>
+      <div class="arrow">→</div>
+      <div class="node">证据<br/>症状→光位对照表</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">行动<br/>先诊断再选光位</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>把「柔光箱全开」当成万能解，会抹平玻璃高光与轮廓；把「多灯」当成高级，不如按症状（不通透/乱反光/糊进背景/太平）换光位。画面字幕与口播强调的是可轮换的几个光位，不是一套固定灯位。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">症状驱动的光位选择</h2>
+
+    <div class="card">
+      <h3>通透与层次：逆光</h3>
+      <p><strong>在讲什么：</strong>透明/半透明产品看起来闷、不透，优先从后方打光。</p>
+      <p><strong>关键理解：</strong>逆光让光线穿过介质，把厚度与折射率变成可见层次，而不是正面把灰雾提亮。</p>
+      <p><strong>怎么用：</strong>主光后置或侧后，正面必要时再轻补；观察瓶身是否「亮起来」而非只亮标签。</p>
+      <div class="quote">原文依据 [00:00]：「不通透，打逆光，表现层次。」</div>
+      <div class="relation">关系：症状「不通透」→ 手段「逆光」→ 目标「层次」</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>玻璃质感：双灯切高光</h3>
+      <p><strong>在讲什么：</strong>玻璃需要可控高光形状，作者主张双灯切高光。</p>
+      <p><strong>关键理解：</strong>高光应「单边锋利、有过渡」——既有材质锐度，又不死硬。</p>
+      <p><strong>怎么用：</strong>一盏负责高光形状，一盏负责透射/层次；用透射布/硫酸纸调软硬。</p>
+      <div class="quote">原文依据 [00:03—00:08]：「用双灯，玻璃质感，切高光；单边锋利，有过渡。」（UP 主操作立场）</div>
+      <div class="insight">立场分层：高光美学标准属拍摄偏好；「双灯」是推荐路径，非唯一解。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>控反光：硫酸纸 + 关杂光</h3>
+      <p><strong>在讲什么：</strong>反光强时用硫酸纸，并追求表面光洁、避免杂光。</p>
+      <p><strong>关键理解：</strong>先减环境污染，再谈高光设计；杂光会毁掉刚切好的高光边。</p>
+      <div class="quote">原文依据 [00:09] + 字幕：「反光强用硫酸纸……表面光洁避免杂光。」</div>
+      <div class="action">操作：关窗/挡灯/挪道具反光面，再微调柔光材料距离。</div>
+    </div>
+
+    <div class="card">
+      <h3>深色分离：轮廓光与黑卡描边</h3>
+      <p><strong>在讲什么：</strong>「黑中有黑」时两边各上窄轮廓光；必要时用黑卡给两侧描黑边。</p>
+      <p><strong>关键理解：</strong>轮廓光负责边缘发亮分离；黑卡负责压暗两侧、制造清晰黑边（对透明瓶尤常见）。</p>
+      <div class="quote">原文依据 [00:14—00:23]：「用轮廓光，两边各一个……用黑卡纸，给产品两侧描黑边。」</div>
+      <div class="relation">关系：轮廓光=提边；黑卡=压边；二者可叠加。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>冲击力：裸灯 vs 太平光影</h3>
+      <p><strong>在讲什么：</strong>光影太平没层次时，改用裸灯打硬对比。</p>
+      <p><strong>关键理解：</strong>柔光不是默认正确；当需要戏剧性阴影时，去掉柔光附件更有效。</p>
+      <div class="quote">原文依据 [00:23—00:29]：「光影太平没层次，用裸灯打光影；明暗强烈，有冲击力。」</div>
+      <div class="pitfall">避坑：电商白底均匀照度场景勿盲目套用裸灯，容易阴影脏、曝光难控。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>默认底盘：单灯 + 反光板补光</h3>
+      <p><strong>在讲什么：</strong>单灯拍摄时补光可用反光板，操作更简单，大部分产品都能拍。</p>
+      <p><strong>关键理解：</strong>第二光源不一定是灯；反射体更便宜、更可控角度。</p>
+      <div class="quote">原文依据 [00:30—00:37]：「单灯拍……补光就用反光板，大部分产品都能拍。」</div>
+      <div class="action">先定主光方向，再挪反光板填暗部，观察是否出现多余反光。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">横向对比：症状 → 光位</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>画面症状</th>
+            <th>优先光位/工具</th>
+            <th>目标效果</th>
+            <th>边界</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>不通透、闷</td>
+            <td>逆光</td>
+            <td>介质层次</td>
+            <td>不透明哑光产品收益有限</td>
+          </tr>
+          <tr>
+            <td>玻璃没质感</td>
+            <td>双灯切高光</td>
+            <td>单边锋利+过渡</td>
+            <td>高光形状依赖灯位与遮挡</td>
+          </tr>
+          <tr>
+            <td>乱反光/脏高光</td>
+            <td>硫酸纸 + 关杂光</td>
+            <td>表面光洁</td>
+            <td>过度柔化会失去玻璃锐度</td>
+          </tr>
+          <tr>
+            <td>深色糊进背景</td>
+            <td>双边轮廓光 / 黑卡描边</td>
+            <td>边缘分离</td>
+            <td>轮廓过亮会假、像描边贴纸</td>
+          </tr>
+          <tr>
+            <td>光影太平</td>
+            <td>裸灯硬光</td>
+            <td>明暗冲击</td>
+            <td>均匀白底电商慎用</td>
+          </tr>
+          <tr>
+            <td>暗部死黑、器材少</td>
+            <td>单灯 + 反光板</td>
+            <td>简单可用</td>
+            <td>强反光体需控板角度</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界与立场</h2>
+    <div class="card card-red">
+      <h3>适用条件与例外</h3>
+      <ul>
+        <li><span class="key-data">事实</span>视频演示了逆光、双灯、硫酸纸、轮廓光、黑卡、裸灯、反光板等现场手法，时长约 38 秒，偏口诀速览。</li>
+        <li><span class="key-data">观点</span>「大部分产品都能拍」是作者立场，未给出品类覆盖数据。</li>
+        <li><span class="key-data">推断</span>可把内容理解为决策树：先诊断症状，再选光位；证据来自分段对照，非实验室验证。</li>
+      </ul>
+      <div class="pitfall">上限：未讲测光数值、色温、闪灯功率比与镜头选择；复杂场景需再细化。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>布光按症状选光位，而不是先堆灯。</li>
+      <li>玻璃看高光形状；深色看边缘分离；太平才上裸灯。</li>
+      <li>单灯+反光板是可落地的默认底盘。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>拍摄前先写清症状：不通透 / 乱反光 / 糊边 / 太平 / 暗部。</li>
+      <li>透明件优先试逆光，再决定要不要正面补。</li>
+      <li>玻璃件用双灯切高光，并检查「锋利+过渡」。</li>
+      <li>深色件双边窄轮廓，不够再加黑卡描边。</li>
+      <li>器材少时固定单灯，用反光板补暗部并扫一眼杂反光。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「布光很难、要很多灯」转向「几个光位轮换就能覆盖多数产品问题」；柔光与多灯是手段，不是默认正确答案。</p>
+  </div>
+
+  <p class="footer">双轨产物之二 · 理性分析 · 证据来自原视频转录与画面字幕</p>
+</div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
