@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6734" viewBox="0 0 1320 6734">
+  <foreignObject x="0" y="0" width="1320" height="6734">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="page">
+<div class="container">
+  <h1>全马破三选手应该怎么跑步摆臂</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">1分32秒</span>
+    <span class="tag tag-orange">跑步技术</span>
+    <span class="tag tag-purple">理性分析</span>
+    <span class="tag tag-gray">马拉松摆臂</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/1lSno7NPmp">原视频短链</a>
+  <div class="summary-line">核心判断：跑步稳定首先依赖可复现的摆臂模板——90° 屈肘、肘贴腰、前摆不过鼻尖；短跑/间歇用大摆臂驱动，马拉松长跑用同一模板缩小幅度，以躯干为轴减少左右晃动。本片是教练现场口令与体感标准，不是配速或力学实验数据。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">命题：跑要稳 → 摆臂重要；作者强调该点常被忽视。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:09</div><div class="timeline-text">站姿：一前一后、重心前腿；脚-髋-头垂直对齐。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:14</div><div class="timeline-text">预备位：屈肘约 90°、空拳拳心朝上；前摆上限=虎口到鼻尖，肘在腹前。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:36</div><div class="timeline-text">后摆规则：腕/肘角固定，只动肩肘；肘贴腰后提；过鼻尖会后仰，离腰会晃。</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:52</div><div class="timeline-text">学员集体跟练并数拍，确认大摆臂节奏。</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:04</div><div class="timeline-text">大摆臂场景：短跑、间歇、上坡、冲刺。</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:10</div><div class="timeline-text">长跑版本：同模板、小幅度；躯干为轴，前不露肘后不露手。</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:30</div><div class="timeline-text">收束：重复「摆臂很重要」，把稳定归因回摆臂控制。</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>跑不稳 / 上身晃</div>
+      <div class="arrow">→</div>
+      <div class="node">证据<br/>肘离腰、过鼻尖</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">判断<br/>固定模板控幅度</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">行动<br/>大/小摆臂切换</div>
+    </div>
+    <p>关系链：稳定需求 → 可检查的体感边界（鼻尖、肘-腰距离、90°）→ 按配速场景调节幅度，而不是另学一套动作。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>误解 1：长跑要「完全不同」的摆臂。纠偏：作者明确是同一动作，只缩小幅度。</p>
+    <p>误解 2：摆臂越大越好、或手臂乱甩增加动力。纠偏：前摆过鼻尖会后仰；肘离腰会左右晃。</p>
+    <p>误解 3：把手腕、肘角一起甩动。纠偏：腕不动、肘角保持 90°，主要动肩肘。</p>
+    <p>补充：标题含「全马破三」，但片中未给出破三配速、心率或个人成绩证据；破三在此更像受众定位，技术内容本身适用于一般跑步稳定训练。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">分析主题一：可检查的摆臂模板</h2>
+    <div class="card">
+      <h3>在讲什么</h3>
+      <p>把摆臂拆成可当场核对的检查点：站姿垂直线、屈肘 90°、握拳朝上、前摆到鼻尖、肘在腹前、颈椎腰一线。</p>
+      <div class="highlight">怎么理解：先锁「形状」，再谈前后摆动；形状不对时加幅度只会放大晃动。</div>
+      <div class="action">怎么用：原地交错站，对着镜子或手机侧拍 10 秒，逐项勾选 90° / 拳心 / 鼻尖上限。</div>
+      <div class="quote">原文依据：「小臂和大臂成 90 度……手握空拳，拳心朝上……前摆最高，虎口摆到鼻尖。」（约 00:14—00:27，结合字幕校正 Whisper「摆壁」等误识）</div>
+      <div class="relation">关系：模板是后续「大/小摆臂」共用的坐标系。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3><span class="speaker speaker-host">UP 主观点</span>肘贴腰 = 少晃动</h3>
+      <p>作者把躯干晃动直接归因到肘与腰的距离：贴腰则「没有晃动」，离腰则「就会晃了」。</p>
+      <div class="highlight">怎么理解：这是教学中的因果口令，现场用学员练习验证节奏与体感，而非实验室运动学测量。</div>
+      <div class="action">怎么用：后摆时用手背轻蹭腰侧衣物作反馈；若肘外展明显，先收回再加速。</div>
+      <div class="quote">原文依据：「肘贴近腰，就会没有晃动；离腰一远……就会晃了。」（约 00:48—00:52）</div>
+      <div class="relation">立场分层：可验证现场口令与演示；「一定减少能耗/伤病」属推断，片中未证明。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>风险与避坑</h3>
+      <div class="pitfall">前摆过鼻尖 → 身体后仰：把「开幅度」误当成「往上抡」。</div>
+      <div class="pitfall">甩手腕 / 打开肘角：动力来源错位，肩肘协同被破坏。</div>
+      <div class="pitfall">长跑仍用短跑大摆臂：可能过早抬高耗能与上身紧张（作者建议幅度收小，未量化耗能）。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">分析主题二：场景决定幅度，不决定模板</h2>
+    <div class="card card-green">
+      <h3>在讲什么</h3>
+      <p>大摆臂用于短跑、间歇、上坡、冲刺；马拉松/长跑沿用同一摆臂，但以躯干为轴，前不露肘、后不露手。</p>
+      <div class="highlight">怎么理解：决策变量只有「幅度」，检查点不变——仍要贴腰、控鼻尖、保 90°。</div>
+      <div class="action">怎么用：配速课（间歇/冲刺）刻意加大前后摆；轻松跑/长距离把肘与手收进躯干投影内。</div>
+      <div class="quote">原文依据：「大摆臂用到短跑……冲刺跑；在马拉松在长跑当中，我们也是同样的摆臂，只是幅度小了一点……以我们的身体的躯干为轴。」（约 01:04—01:16；「间歇/上坡」按语境校正 Whisper 误识）</div>
+    </div>
+
+    <div class="card">
+      <h3>横向对比：大摆臂 vs 长跑小幅摆臂</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>大摆臂</th><th>长跑小幅摆臂</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>模板</td><td>90°、肘贴腰、不过鼻尖</td><td>同一模板</td></tr>
+          <tr><td>幅度</td><td>前后大摆，驱动感更强</td><td>前不露肘、后不露手</td></tr>
+          <tr><td>典型场景</td><td>短跑、间歇、上坡、冲刺</td><td>马拉松 / 长跑稳态</td></tr>
+          <tr><td>优先目标</td><td>节奏与推进</td><td>减少晃动、可持续</td></tr>
+          <tr><td>自检口令</td><td>数拍 1-2-3-4 保持肘角</td><td>手不超出后背、肘不过肚皮</td></tr>
+        </tbody>
+      </table>
+      <div class="insight">选择条件：需要加速/爬坡时开大；稳态有氧与超长距离优先收小。切换时先减幅度，再加配速，避免「又快又抡」。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界</h2>
+    <div class="card">
+      <h3>适用条件、上限与例外</h3>
+      <ul>
+        <li><strong>适用</strong>：需要纠正甩臂、耸肩、上身晃的大众跑者；可在室内原地或慢跑中练习。</li>
+        <li><strong>上限</strong>：片中是教练经验口令与演示，未提供关节角度测量、功率或损伤率数据；「破三」非本片实证结论。</li>
+        <li><strong>例外</strong>：伤病限制肩肘活动、专项短跑技术课、或已有教练个性化方案时，不应机械套用鼻尖/肘腰口令。</li>
+        <li><strong>反例信号</strong>：跟练后肩颈更紧、手腕疼痛、或配速下降却更喘——应减小幅度并检查是否过度紧张（作者亦提「紧而不僵」类要求）。</li>
+      </ul>
+      <div class="relation">事实：视频演示与字幕检查点。观点：肘贴腰能消晃动、长短跑共用模板。推断：该模板有助于全马表现——标题暗示，证据不足。</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>稳定来自可复现的摆臂边界：90°、贴腰、不过鼻尖。</li>
+      <li>短跑/间歇开大，长跑收小；换的是幅度不是动作家族。</li>
+      <li>晃动的现场诊断优先看肘-腰距离与前摆是否越界。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>交错站姿侧拍 20 秒，核对脚-髋-头垂直与屈肘 90°。</li>
+      <li>原地摆臂 30 次：前摆虎口到鼻尖即停，肘轻贴腰后提。</li>
+      <li>轻松跑 5 分钟只用「小幅」口令；间歇组再切换大摆臂。</li>
+      <li>若出现后仰或左右晃，先收回肘再谈提速。</li>
+      <li>把「大/小摆臂」写进课表备注，避免全程同一幅度。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「手臂随便甩增加动力」转向「先固定形状与边界，再按场景调节幅度」；摆臂是稳定控制器，不只是装饰性动作。</p>
+  </div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 作者：郑辉教跑步 · 分析基于视频口播、字幕与画面，不构成运动医学建议</div>
+</div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
