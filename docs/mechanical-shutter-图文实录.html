@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2分33秒还原机械快门：纵置双幕帘、曝光时长≠幕帘速度、夹缝曝光与闪光同步上限，并保留完整 Whisper 转录。">
+  <title>学摄影需要知道的——机械快门｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:linear-gradient(180deg,#eef2ff 0%,#fafaf9 28%,#fafaf9 100%)}
+a{color:#1d4ed8}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+.hero{padding:36px;background:linear-gradient(135deg,#1e3a8a,#2563eb 55%,#60a5fa);border-radius:24px;color:#fff;box-shadow:0 18px 50px rgba(30,58,138,.22)}
+.eyebrow{margin:0 0 8px;color:#dbeafe;font-size:14px;font-weight:800;letter-spacing:.12em}
+h1{margin:0;font-size:clamp(26px,5.2vw,42px);line-height:1.25;letter-spacing:-.02em}
+.dek{max-width:780px;margin:18px 0;color:#eff6ff;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.meta span{padding:5px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px}
+.source{display:inline-block;margin-top:18px;color:#dbeafe}
+.toc{margin:28px 0 52px;padding:20px 24px;background:#fff;border:1px solid #bfdbfe;border-radius:16px}
+.toc strong{display:block;margin-bottom:8px}
+.toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin:0;padding-left:22px}
+.documentary{font-size:17px}
+.story-section{margin:52px 0;scroll-margin-top:20px}
+.time-label{display:inline-block;margin-bottom:10px;padding:3px 10px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+h2{margin:0 0 16px;color:#1c1917;font-size:28px;line-height:1.35}
+p{margin:0 0 16px}
+.quote{margin:22px 0;padding:18px 22px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 12px 12px 0;color:#1e40af;font-size:18px}
+.note{padding:16px 20px;background:#f5f5f4;border-radius:12px;color:#57534e;font-size:15px}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto;background:#1c1917}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #f5f5f4}
+.transcript-section{margin-top:76px;padding-top:40px;border-top:3px solid #1e40af}
+.transcript-note{color:#57534e}
+.transcript-list{list-style:none;padding:0;margin:24px 0 0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+.footer{margin-top:52px;color:#78716c;font-size:14px;text-align:center}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  .hero{padding:26px 22px;border-radius:18px}
+  .dek{font-size:16px}
+  .toc ol{grid-template-columns:1fr}
+  .documentary{font-size:16px}
+  .story-section{margin:42px 0}
+  .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
+}</style>
+</head>
+<body>
+  <main class="container">
+    
+  <header class="hero">
+    <p class="eyebrow">小红书视频 · 图文实录</p>
+    <h1>学摄影需要知道的——机械快门</h1>
+    <p class="dek">2 分 33 秒动画课：从纵置前后双幕帘讲起，拆开「快门速度 ≠ 幕帘运动速度」的惯性思维，再用 600 倍慢放对照图说明夹缝曝光与闪光灯同步上限。</p>
+    <div class="meta">
+      <span>2026-07-26</span><span>2分33秒</span><span>83 个转录分段</span><span>8 张关键画面</span>
+    </div>
+    <a class="source" href="http://xhslink.cn/o/47EN5M8b0n5" rel="noopener noreferrer">打开原视频</a>
+  </header>
+
+  <nav class="toc" aria-label="页面目录">
+    <strong>顺着视频往下看</strong>
+    <ol>
+      <li><a href="#structure">纵置前后双幕帘</a></li>
+      <li><a href="#front-rear">前帘打开、后帘关闭</a></li>
+      <li><a href="#exposure-cycle">一次曝光的完整动作</a></li>
+      <li><a href="#misconception">惯性思维：快门速度≠运动速度</a></li>
+      <li><a href="#constant">幕帘运动速度恒定约 4ms</a></li>
+      <li><a href="#interval">靠「间隔」精确控曝光</a></li>
+      <li><a href="#slowmo">600 倍慢放：缝宽决定明暗</a></li>
+      <li><a href="#slit">小于 4ms：夹缝滚动</a></li>
+      <li><a href="#flash">闪光同步上限与行间时差</a></li>
+      <li><a href="#transcript">详细文字转录</a></li>
+    </ol>
+  </nav>
+
+  <article class="documentary">
+    <section class="story-section" id="structure">
+      <span class="time-label">00:00—00:07</span>
+      <h2>开场：大多数机械快门长什么样</h2>
+      <p>深色底上先画出相机机身线稿，传感器窗口上下各有一条灰色幕帘。旁白直接落点：目前大多数机械快门，采用的都是纵置前后双幕帘结构。不同相机的幕帘运动次序会有差别，但「前后两帘、竖直方向走」是这集的共同骨架。</p>
+      <blockquote class="quote">画面字幕：「采用的都是纵置前后双幕帘的结构」</blockquote>
+      <p class="note">说明：Whisper 常把「快门」识成「宽门」，「幕帘」识成「幕连」，「纵置」识成「纵至」，「CMOS」识成「SIMOS」，「前帘 / 后帘」识成「前脸 / 后脸」，「恒定」识成「横定 / 衡定」，「进光量」识成「监光量」。下文叙述以可见字幕与动画画面为准；页面末尾仍完整保留全部 Whisper 分段。</p>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-01.jpg" alt="相机内部线稿，传感器上下两条灰幕帘，字幕写纵置前后双幕帘结构" loading="lazy">
+        <figcaption>[00:02] 开场结构图：纵置前后双幕帘，覆盖在传感器窗口上下。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="front-rear">
+      <span class="time-label">00:07—00:13</span>
+      <h2>命名：先打开的叫前帘，后关闭的叫后帘</h2>
+      <p>画面切到三台相机的卡口俯视：某单反、某微单、再一台微单。第三台卡口里，灰色幕帘正从下方向上遮住传感器一截。旁白给出分工：通常先打开、让传感器开始感光的，叫做前帘；之后关闭、结束感光的，叫做后帘。</p>
+      <blockquote class="quote">画面字幕：「通常先打开让传感器感光的叫做前帘」</blockquote>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-02.jpg" alt="三台相机卡口对比，右侧传感器底部被灰色幕帘遮挡，字幕定义前帘" loading="lazy">
+        <figcaption>[00:08] 对比不同机身：先打开感光的是前帘，后关闭感光的是后帘。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="exposure-cycle">
+      <span class="time-label">00:14—00:32</span>
+      <h2>按下快门后：清空电荷、逐行感光、再复位</h2>
+      <p>旁白按时间顺序演示一整次拍摄：按下快门后前帘落下，相机清空 CMOS 中的电荷并开始感光；前帘抬起后，传感器从下至上依次接触光线；到达设定时间后后帘抬起，此时 CMOS 仍处在感光状态，等所有信号逐行读出完毕，后帘复位，一次拍摄完成。</p>
+      <blockquote class="quote">画面字幕：「到达设定时间后后帘抬起」</blockquote>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-03.jpg" alt="相机线稿中央传感器窗口全亮，字幕写到达设定时间后后帘抬起" loading="lazy">
+        <figcaption>[00:24] 曝光中段：设定时间到，后帘抬起，开始结束感光。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="misconception">
+      <span class="time-label">00:32—00:42</span>
+      <h2>惯性思维：1/100、1/1000……是幕帘「跑」得有多快？</h2>
+      <p>屏幕上列出从 10s 到 1/8000s 的一串快门速度。旁白点破常见误区：惯性思维会让人以为这些数字指的是机械幕帘门的运动速度。听上去很合理——实则不然。</p>
+      <blockquote class="quote">画面字幕：「惯性思维」</blockquote>
+    </section>
+
+    <section class="story-section" id="constant">
+      <span class="time-label">00:42—00:56</span>
+      <h2>纠正：幕帘运动速度大多恒定，约为 1/250 秒（4 毫秒）</h2>
+      <p>为了方便控制曝光时长，机械幕帘的运动速度大多是恒定的，一般为 1/250 秒，也就是 4 毫秒。所以准确来说：我们常说的「快门速度」通常指的是曝光时长，而非机械快门的运动速度。</p>
+      <blockquote class="quote">画面字幕：「曝光时长 ≠ 幕帘门运动速度」</blockquote>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-04.jpg" alt="相机内部线稿，幕帘与彩色传感器，字幕写机械幕帘运动速度大都恒定" loading="lazy">
+        <figcaption>[00:46] 关键纠正：幕帘跑得有多快，通常是恒定的，不是「快门速度」本身。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-05.jpg" alt="右侧橙色大字写曝光时长不等于幕帘门运动速度，下方字幕强调而非机械快门运动速度" loading="lazy">
+        <figcaption>[00:55] 核心口号落地：曝光时长 ≠ 幕帘运动速度。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="interval">
+      <span class="time-label">00:56—01:18</span>
+      <h2>那怎么精确控制曝光？很简单：间隔</h2>
+      <p>既然幕帘运动速度恒定，精确控光就靠前后幕帘开合的<strong>间隔</strong>。动画先搭一张图：X 轴是 CMOS 的像素列，Y 轴是像素行；因为是依次逐行曝光，再加一条时间轴 Z，用来解读不同快门下每行像素的曝光时长，以及它们如何开始和结束。</p>
+      <blockquote class="quote">画面字幕：「X轴为CMOS的像素列」</blockquote>
+    </section>
+
+    <section class="story-section" id="slowmo">
+      <span class="time-label">01:18—01:42</span>
+      <h2>600 倍慢放：缝越宽越亮，缝越窄越暗</h2>
+      <p>画面标题「慢放 600 倍」，四象限对照 1/100s、1/250s、1/1000s、1/4000s：左侧是传感器被幕帘缝隙扫过的样子，右侧是「首行→末行」对时间的曝光带。旁白总结：前后幕帘开合间隔越大，CMOS 接受光线的时间越长，其他参数不变时进光量越多、画面更亮；反之间隔越小，进光量更少、画面更暗。</p>
+      <blockquote class="quote">画面字幕：「进光量更少因此画面也就越暗」</blockquote>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-06.jpg" alt="慢放600倍四象限：1/100、1/250、1/1000、1/4000 的传感器缝隙与时间图对比" loading="lazy">
+        <figcaption>[01:28] 关键对照：快门越快，幕帘缝越窄，曝光带在时间轴上也越细。</figcaption>
+      </figure>
+      <p class="note">约 01:42—01:55 一段 Whisper 反复输出「所以它们的视频也就越短」，与画面字幕和前后文不符，疑为识别幻觉。实录叙述跳过该噪声段；末尾转录仍按原始分段完整保留。</p>
+    </section>
+
+    <section class="story-section" id="slit">
+      <span class="time-label">01:55—02:14</span>
+      <h2>曝光短于 4ms：幕帘以夹缝形态滚动</h2>
+      <p>旁白回到机制：机械快门靠幕帘开合遮挡来控曝光，幕帘运动速度恒定为 4 毫秒。这意味着——当曝光时间小于这个值，幕帘门会以夹缝形态滚动，CMOS 没有机会整面同时露出；当曝光时间大于或等于 4 毫秒时，CMOS 会有一段时间整面同时露出，外界施加的光就能被整个传感器均匀捕获。</p>
+      <blockquote class="quote">画面字幕：「幕帘门会以夹缝的形态滚动」</blockquote>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-07.jpg" alt="传感器中央一条彩色夹缝，旁侧时间图标注 1/1000s，字幕写夹缝形态滚动" loading="lazy">
+        <figcaption>[02:05] 高速快门：前帘与后帘形成窄缝，整面传感器无法同时全开。</figcaption>
+      </figure>
+    </section>
+
+    <section class="story-section" id="flash">
+      <span class="time-label">02:14—02:33</span>
+      <h2>为什么闪光同步上限常是 1/250 秒？还有行间 4ms 时差</h2>
+      <p>正因为「整面同时露出」需要曝光时间 ≥ 约 4ms，多数闪光灯同步速度上限为 1/250 秒。细心观众会发现：无论快门如何调整，CMOS 上下行两端都会有约 4 毫秒的时间差；这个时间差在电子快门中尤为明显——本集在此收束，为后续电子快门话题留钩子。</p>
+      <blockquote class="quote">画面字幕：「无论快门如何调整」</blockquote>
+      <figure>
+        <img src="assets/mechanical-shutter/shot-08.jpg" alt="彩色传感器与 1/250s 时间图，曝光带从首行到末行斜移约 4 毫秒，字幕写无论快门如何调整" loading="lazy">
+        <figcaption>[02:25] 收尾提醒：行与行之间始终存在约 4ms 扫描时差，电子快门里更明显。</figcaption>
+      </figure>
+    </section>
+  </article>
+
+    <section class="transcript-section" id="transcript">
+      <h2>详细文字转录</h2>
+      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差（如宽门/幕连/SIMOS 等）。约 01:42—01:55 出现重复幻觉分段，请对照上方实录与画面理解。</p>
+      <ol class="transcript-list">
+  <li class="transcript-row" id="transcript-1">
+    <time datetime="PT0S">00:00</time>
+    <p>目前大多数机械宽门采用的都是纵至前后双幕连的结构</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-2">
+    <time datetime="PT4S">00:04</time>
+    <p>不同相机的幕连运动次序会有差别</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-3">
+    <time datetime="PT7S">00:07</time>
+    <p>通常先打开让传感器感光的叫做前脸</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-4">
+    <time datetime="PT10S">00:10</time>
+    <p>之后关闭接触感光的叫做后脸</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-5">
+    <time datetime="PT14S">00:14</time>
+    <p>当按下宽门后前脸落下</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-6">
+    <time datetime="PT16S">00:16</time>
+    <p>相机清空SIMOS中的电荷并开始感光</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-7">
+    <time datetime="PT19S">00:19</time>
+    <p>之后前脸抬起</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-8">
+    <time datetime="PT20S">00:20</time>
+    <p>传感器从下至上依次接触光线</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-9">
+    <time datetime="PT23S">00:23</time>
+    <p>到达设定时间后后脸抬起</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-10">
+    <time datetime="PT25S">00:25</time>
+    <p>此时SIMOS仍处在感光状态</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-11">
+    <time datetime="PT27S">00:27</time>
+    <p>等所有信号主航图出完毕</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-12">
+    <time datetime="PT29S">00:29</time>
+    <p>后脸复位</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-13">
+    <time datetime="PT30S">00:30</time>
+    <p>依次拍摄完成</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-14">
+    <time datetime="PT32S">00:32</time>
+    <p>我们常说的100分之1秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-15">
+    <time datetime="PT33S">00:33</time>
+    <p>1000分之1秒等等的宽门速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-16">
+    <time datetime="PT35S">00:35</time>
+    <p>惯性思维会让一些人误以为指的是机械幕连门的运动速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-17">
+    <time datetime="PT39S">00:39</time>
+    <p>这听上去很合理</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-18">
+    <time datetime="PT41S">00:41</time>
+    <p>实则不然</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-19">
+    <time datetime="PT42S">00:42</time>
+    <p>通常为了方便控制曝光时长</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-20">
+    <time datetime="PT44S">00:44</time>
+    <p>机械幕连门的运动速度大多是横定的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-21">
+    <time datetime="PT47S">00:47</time>
+    <p>一般为250分之1秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-22">
+    <time datetime="PT48S">00:48</time>
+    <p>也就是4毫秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-23">
+    <time datetime="PT50S">00:50</time>
+    <p>所以准确来说</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-24">
+    <time datetime="PT51S">00:51</time>
+    <p>宽门速度通常指的是曝光时长</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-25">
+    <time datetime="PT53S">00:53</time>
+    <p>而非机械宽门的运动速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-26">
+    <time datetime="PT55S">00:55</time>
+    <p>既然幕连门的运动速度横定</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-27">
+    <time datetime="PT57S">00:57</time>
+    <p>那它如何做到精确控制曝光呢?</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-28">
+    <time datetime="PT60S">01:00</time>
+    <p>很简单</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-29">
+    <time datetime="PT61S">01:01</time>
+    <p>间隔</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-30">
+    <time datetime="PT62S">01:02</time>
+    <p>为了更直观的呈现</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-31">
+    <time datetime="PT63S">01:03</time>
+    <p>我们先建立一个图表</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-32">
+    <time datetime="PT64S">01:04</time>
+    <p>X轴为SIMOS的像素列</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-33">
+    <time datetime="PT67S">01:07</time>
+    <p>Y轴为像素航</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-34">
+    <time datetime="PT68S">01:08</time>
+    <p>既然是依次逐航曝光</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-35">
+    <time datetime="PT70S">01:10</time>
+    <p>再增加一个时间轴</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-36">
+    <time datetime="PT72S">01:12</time>
+    <p>Z轴</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-37">
+    <time datetime="PT72S">01:12</time>
+    <p>来就读不同宽门下每航像素的曝光时长</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-38">
+    <time datetime="PT75S">01:15</time>
+    <p>以及它们是如何开始和结束的</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-39">
+    <time datetime="PT86S">01:26</time>
+    <p>不但看出前后幕连开合的间隔越大</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-40">
+    <time datetime="PT89S">01:29</time>
+    <p>SIMOS接受光线的时间也就越长</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-41">
+    <time datetime="PT92S">01:32</time>
+    <p>其他三数不变</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-42">
+    <time datetime="PT93S">01:33</time>
+    <p>整体监光量也就越多</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-43">
+    <time datetime="PT94S">01:34</time>
+    <p>画面更亮</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-44">
+    <time datetime="PT95S">01:35</time>
+    <p>反之</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-45">
+    <time datetime="PT96S">01:36</time>
+    <p>幕连开合间隔越小</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-46">
+    <time datetime="PT97S">01:37</time>
+    <p>SIMOS接收光线的时间也就越短</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-47">
+    <time datetime="PT100S">01:40</time>
+    <p>监光量更少</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-48">
+    <time datetime="PT101S">01:41</time>
+    <p>因此画面也就越暗</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-49">
+    <time datetime="PT102S">01:42</time>
+    <p>由于机械宽门的运动速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-50">
+    <time datetime="PT104S">01:44</time>
+    <p>也就越短</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-51">
+    <time datetime="PT105S">01:45</time>
+    <p>所以它们的视频</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-52">
+    <time datetime="PT106S">01:46</time>
+    <p>也就越短</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-53">
+    <time datetime="PT107S">01:47</time>
+    <p>所以它们的视频</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-54">
+    <time datetime="PT108S">01:48</time>
+    <p>也就越短</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-55">
+    <time datetime="PT109S">01:49</time>
+    <p>所以它们的视频</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-56">
+    <time datetime="PT110S">01:50</time>
+    <p>也就越短</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-57">
+    <time datetime="PT111S">01:51</time>
+    <p>所以它们的视频</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-58">
+    <time datetime="PT112S">01:52</time>
+    <p>它们的视频</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-59">
+    <time datetime="PT113S">01:53</time>
+    <p>也就越短</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-60">
+    <time datetime="PT115S">01:55</time>
+    <p>由于机械宽门</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-61">
+    <time datetime="PT116S">01:56</time>
+    <p>是依靠幕连的开合折挡</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-62">
+    <time datetime="PT118S">01:58</time>
+    <p>来控制曝光</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-63">
+    <time datetime="PT119S">01:59</time>
+    <p>幕连的运动速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-64">
+    <time datetime="PT120S">02:00</time>
+    <p>衡定为4毫秒</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-65">
+    <time datetime="PT121S">02:01</time>
+    <p>这是意味着</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-66">
+    <time datetime="PT122S">02:02</time>
+    <p>但曝光时间小于这个值</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-67">
+    <time datetime="PT124S">02:04</time>
+    <p>幕连门会以夹缝的形态滚动</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-68">
+    <time datetime="PT126S">02:06</time>
+    <p>SIMOS也就没有机会同时露出</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-69">
+    <time datetime="PT128S">02:08</time>
+    <p>当曝光时间大于或等于4毫秒时</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-70">
+    <time datetime="PT131S">02:11</time>
+    <p>SIMOS则会有一定的时间</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-71">
+    <time datetime="PT133S">02:13</time>
+    <p>同时露出</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-72">
+    <time datetime="PT134S">02:14</time>
+    <p>而在这个时间内</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-73">
+    <time datetime="PT134S">02:14</time>
+    <p>外界所施加的光</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-74">
+    <time datetime="PT136S">02:16</time>
+    <p>就能被整个SIMOS均匀捕获</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-75">
+    <time datetime="PT138S">02:18</time>
+    <p>这也是为什么</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-76">
+    <time datetime="PT139S">02:19</time>
+    <p>多数闪光灯同步速度</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-77">
+    <time datetime="PT140S">02:20</time>
+    <p>上线为250分之一秒的原因</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-78">
+    <time datetime="PT143S">02:23</time>
+    <p>细心的朋友可能会发现一个问题</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-79">
+    <time datetime="PT145S">02:25</time>
+    <p>无论宽门如何调整</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-80">
+    <time datetime="PT146S">02:26</time>
+    <p>SIMOS上下航的两端</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-81">
+    <time datetime="PT148S">02:28</time>
+    <p>都会有4毫秒的时间差</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-82">
+    <time datetime="PT150S">02:30</time>
+    <p>而这个时间差在电子宽门中</p>
+  </li>
+
+  <li class="transcript-row" id="transcript-83">
+    <time datetime="PT152S">02:32</time>
+    <p>由为明显</p>
+  </li>
+</ol>
+    </section>
+    <p class="footer">双轨产物之一 · 图文实录 · 原视频来自小红书分享链</p>
+  </main>
+</body>
+</html>
