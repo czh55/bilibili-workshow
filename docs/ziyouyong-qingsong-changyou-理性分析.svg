@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5615" viewBox="0 0 1320 5615">
+  <foreignObject x="0" y="0" width="1320" height="5615">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.card .boundary{background:#f5f3ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#5b21b6;border-left:4px solid #8b5cf6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.stance{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:8px;margin:4px 6px 4px 0}
+.stance-fact{background:#d1fae5;color:#065f46}
+.stance-opinion{background:#ede9fe;color:#6b21a8}
+.stance-infer{background:#ffedd5;color:#9a3412}</style>
+      
+<div class="container">
+  <h1>自由泳🏊如何才能游得轻松、距离游得长一些</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">1分29秒</span>
+    <span class="tag tag-orange">自由泳</span>
+    <span class="tag tag-purple">长游技巧</span>
+    <span class="tag tag-gray">口播讲解+水下对比实拍</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/AnL6YUyoExv">原视频短链 →</a>
+  <div class="summary-line">核心判断：想让自由泳游得轻松、时间和距离更长，视频给出三个可直接自查的动作细节——腿部是否贴近水面、划水行程是否足够长且节奏不过快、换气是否为侧头而非抬头，每一点都用「错误动作 vs 正确动作」的水下实拍对照来判断，而不是靠抽象的力学讲解或单纯拼体力。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">粉丝提问：自由泳怎样才能游得轻松、时间和距离更长</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:12</div><div class="timeline-text">自检法：先看自己游泳时腿是沉在水下，还是飘在水上</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:17</div><div class="timeline-text">水下实拍对照：错误动作「腿下沉」 vs 正确动作「贴近水面」</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:26</div><div class="timeline-text">划水行程要足够长，行程太短会游成「狗刨式」</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:33</div><div class="timeline-text">错误动作二：行程短、节奏过快（水下实拍示范）</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:35</div><div class="timeline-text">划水发力不扎实会非常吃力、耗氧过快，可能25/50米就游不动</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:46</div><div class="timeline-text">正确示范：手臂前伸抱水，配合箭头图形展示行程拉长的划水轨迹</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:57</div><div class="timeline-text">换气环节：很多同学自由泳换气就跟「救命」一样（抬头猛吸）</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:06</div><div class="timeline-text">错误动作：抬头换气——上半身抬太高，下半身随之下沉</div></div>
+    <div class="timeline-item"><div class="timeline-time">01:15</div><div class="timeline-text">正解：自由泳换气是侧面呼吸，水下实拍完整演示一次换气周期</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题：怎样游得轻松、游得久</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">三个自检点：腿 / 手 / 换气</div>
+      <div class="arrow">→</div>
+      <div class="node">对照常见错误动作</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">对应正解：贴面漂浮 / 前伸拉长行程 / 侧头呼吸</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p><strong>误解一：</strong>腿稍微沉一点没关系，主要靠手臂划水弥补。视频立场：腿部下沉会显著增大迎水阻力，是很多人「游不远、游不久」的第一个隐藏原因，第一步自检就是先看腿的位置。</p>
+    <p><strong>误解二：</strong>划水越快、划频越高就能游得更快更远。视频立场：行程太短、节奏过快反而会让人更快耗氧，可能到25米、50米就没力气继续，正确方向是把每一划的行程拉长、节奏放慢。</p>
+    <p><strong>误解三：</strong>换气要抬头才能吸得深、吸得安心。视频立场：抬头换气会让上半身抬太高、下半身随之下沉，破坏流线型体态，越游越费力；正确方式是侧头呼吸。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">拆解：三个自检点的具体标准与使用方法</h2>
+
+    <div class="card">
+      <h3>1. 腿部姿态：是「贴近水面」还是「压在水下」</h3>
+      <p><strong>在讲什么：</strong>判断自由泳是否费力的第一个自检信号——腿相对水面的高度。</p>
+      <p><strong>关键理解：</strong>腿部长期沉在水下会显著增大迎水阻力，是导致「游不远、游不久」的隐藏根源之一；视频没有讲力学公式，而是直接用水下实拍给出「下沉」和「贴面」两种画面的直观对照。</p>
+      <p><strong>怎么用：</strong>下水前请人从侧面或水下给自己拍一段划水视频，对照画面看腿部相对水面的高度，而不是只凭主观感觉判断。</p>
+      <div class="quote">原文依据：[00:10–00:16]「第一步，可以先看看自己游泳的时候，这个腿是沉在水下，还是飘在水上。」</div>
+      <span class="stance stance-fact">事实：画面直接展示下沉/贴面对照</span>
+      <span class="stance stance-opinion">观点：腿部下沉是长游费力的关键原因之一</span>
+    </div>
+
+    <div class="card card-purple">
+      <h3>2. 划水行程与节奏：不能太短，也不能太赶</h3>
+      <p><strong>在讲什么：</strong>手臂划水「行程」（每一划的有效延伸距离）该多长、节奏该多快才合适。</p>
+      <p><strong>关键理解：</strong>博主给出双向边界——行程太短会退化成「狗刨式」；划水发力不扎实、节奏又赶又急，会让身体过度耗氧，可能游到25米、50米就没力气继续。要拉长行程，关键在手臂前伸抱水的动作。</p>
+      <p><strong>怎么用：</strong>划水时留意手臂是否有充分前伸、抱住水再发力的过程，把每一划的行程拉满，而不是靠加快划频、缩短动作来追求「划得快」。</p>
+      <div class="quote">原文依据：[00:26–00:45]「手臂的行程要足够长，行程太短就会游出狗刨式……（划水发力）太软，会让你划水非常吃力，让你消耗过多的氧气，可能到25米、50米你就游不动了。怎么做长这个行程呢，要注意这个前伸的动作。」</div>
+      <div class="boundary">方法边界：原始录音中「太软」对应的具体发力问题表述较含糊，本分析结合博主图文文案「行程不能太短、节奏不能太快，否则消耗过多氧气」做出推断性理解，并非原文逐字明确表述。</div>
+      <span class="stance stance-fact">事实：水下实拍展示「行程短、节奏快」与「前伸拉长」两种划水画面</span>
+      <span class="stance stance-opinion">观点：行程太短/发力不扎实会导致耗氧过快</span>
+      <span class="stance stance-infer">推断：「太软」结合图文文案理解为发力不扎实、节奏过赶</span>
+    </div>
+
+    <div class="card card-orange">
+      <h3>3. 换气方式：侧头呼吸，而不是抬头「救命式」换气</h3>
+      <p><strong>在讲什么：</strong>新手最容易出问题的换气方式，以及它带来的连锁后果。</p>
+      <p><strong>关键理解：</strong>抬头/仰头式换气（视频里比喻成「跟救命一样」）会让上半身抬得过高，导致下半身随之下沉，直接破坏原本的流线型体态，换气越吃力、身体越容易疲惫；正确方式是侧头完成呼吸，头随身体自然侧转出水面。</p>
+      <p><strong>怎么用：</strong>换气时提醒自己「侧转头」而不是「抬头」，尽量让身体保持水平，减少因为换气而额外增加的阻力和体力消耗。</p>
+      <div class="quote">原文依据：[00:57–01:18]「最后一步，做好你的换气动作。很多同学自由泳换气，就跟救命一样。上半身抬太高了，你下半身就会掉下去，整个人是往下沉的……自由泳的换气是侧面呼吸，是这样子的。」</div>
+      <div class="pitfall">陷阱：把换气当成「必须先稳稳吸一大口气才安全」，于是习惯性抬头，结果反而让身体下沉、更快疲惫，形成恶性循环。</div>
+      <span class="stance stance-fact">事实：水上/水下实拍分别展示抬头换气与侧头换气的动作差异</span>
+      <span class="stance stance-opinion">观点：抬头换气是导致身体下沉、容易疲惫的直接原因</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>自检点</th><th>错误动作</th><th>正确动作 / 正解</th><th>直接后果</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>腿部姿态</td><td>腿下沉，整体压在水下</td><td>腿贴近水面，随身体漂浮</td><td>下沉增大迎水阻力，划水更费力</td></tr>
+        <tr><td>划水行程与节奏</td><td>行程太短、节奏过快，动作碎而急</td><td>手臂前伸抱水，行程拉满、节奏放慢</td><td>行程不够或节奏太急都会耗氧过快，25/50米就游不动</td></tr>
+        <tr><td>换气方式</td><td>抬头/仰头猛吸气，像「救命」一样</td><td>侧头呼吸，头随身体自然侧转</td><td>抬头换气会让身体下沉，破坏流线型、更容易疲惫</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>自由泳想游得轻松、游得久，先自检三个动作细节：腿部姿态、划水行程与节奏、换气方式。</li>
+      <li>每个细节视频都用「错误动作 vs 正确动作」的水下实拍直接对照，判断标准是可直接看、可自查的画面特征，不依赖抽象力学讲解。</li>
+      <li>「行程」和「节奏」是一体两面：行程太短会退化成狗刨式，节奏太快、发力不扎实又会耗氧过快，两端都要避免。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ul>
+      <li>下水先自检腿部：请人从侧面或水下拍一段视频，看腿是贴近水面还是明显下沉。</li>
+      <li>划水时刻意做「手臂前伸抱水」的动作，把每一划的行程拉满，而不是靠加快划频。</li>
+      <li>换气时提醒自己「侧转头」而不是「抬头」，尝试保持身体水平、下巴放松。</li>
+      <li>如果游到25米、50米就明显力竭，先检查是不是划水节奏过快、行程不够长，而不是只归咎于体力不够。</li>
+    </ul>
+    <h3>关键认知转变</h3>
+    <ul>
+      <li>从「游不远是因为体力不够」，转向「先检查腿沉、行程、换气这三个细节是不是在悄悄增加阻力和耗氧」。</li>
+      <li>从「抬头换气更安全、吸得更深」，转向「抬头换气正是让身体下沉、越游越累的直接原因」。</li>
+    </ul>
+  </div>
+
+  <p class="footer">双轨产物 · 理性分析 · 源视频保留在小红书</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
