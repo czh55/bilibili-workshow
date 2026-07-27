@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6650" viewBox="0 0 1320 6650">
+  <foreignObject x="0" y="0" width="1320" height="6650">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>新手轻松解锁蝶腿，告别“撅屁股”</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">1分03秒</span>
+    <span class="tag tag-orange">蝶泳腿</span>
+    <span class="tag tag-purple">理性分析</span>
+    <span class="tag tag-gray">笔记 68eca18c…</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/9vCEtq85BaQ">原视频短链</a>
+  <div class="summary-line">核心判断：出发蝶腿难看又慢，多半不是「腿不够狠」，而是把蝶腿理解成「撅屁股 / 下半身硬甩」；正解是全身波动——手导向，发力顺序顶胸 → 顶屁股 → 甩腿，腿只是链条末端。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">误区：蝶腿 = 撅屁股 → 动作僵、不雅、提速难</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">反例：全程下半身硬甩，上半身完全不动</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:16</div><div class="timeline-text">关键：全身配合的波动感</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:20</div><div class="timeline-text">手负责导向：上调出水 / 下潜潜游都靠手辅助控向</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:27</div><div class="timeline-text">顺序：肩胸顶出 → 顺势顶屁股 → 自然甩腿 → 立刻衔接下轮</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:47</div><div class="timeline-text">禁令：别只靠屁股上下甩腿，否则上半身僵、无美感</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:53</div><div class="timeline-text">目标：解锁全身波动蝶腿 → 水下美人鱼感 / 丝滑出片</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题<br/>蝶腿僵慢不雅</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">误区<br/>撅屁股硬甩</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">判断<br/>全身波动</div>
+      <div class="arrow">→</div>
+      <div class="node">行动<br/>胸→臀→腿</div>
+    </div>
+    <p>论证链：症状（僵/不雅/慢）← 根因（只动下半身）← 正解（波动链从肩胸启动）← 约束（手导向 + 腿不抢先）。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解纠偏</h3>
+    <p>「练蝶腿 = 用力撅屁股甩腿」是错误模型。视频立场：臀腿动作可以出现，但必须落在「顶胸之后」；若臀腿成为唯一发动机，上半身就会僵住，波动链断裂。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">观点拆解</h2>
+
+    <div class="card card-red">
+      <h3>1. 误区诊断：撅屁股硬甩</h3>
+      <p><strong>在讲什么：</strong>出发蝶腿训练里，很多人把可见的「屁股上下动」当成技术本身。</p>
+      <p><strong>关键理解：</strong>只动下半身时，上半身被动僵持，动作既难看也难加速——问题在动力分配，不只在幅度大小。</p>
+      <p><strong>怎么用：</strong>自拍或互看时先问：肩胸有没有先位移？若只有髋腿在晃，先停掉「加力甩腿」。</p>
+      <div class="quote">依据 [00:00-00:16]：「以为蝶腿就是撅屁股……全程靠下半身硬甩，上半身完全不动。」</div>
+      <div class="pitfall">陷阱：越甩越用力，越像「撅屁股表演」，离波动越远。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>2. 正解轴心：全身波动感</h3>
+      <p><strong>在讲什么：</strong>好看又快的蝶腿，关键是全身配合的波动，而不是局部爆发。</p>
+      <p><strong>关键理解：</strong>波动是一条从前向后传递的链条；任何一环缺席（尤其肩胸），末端甩腿都会变成硬甩。</p>
+      <p><strong>怎么用：</strong>陆上或浅水先慢做「胸前顶→髋跟进→腿收尾」，再下水提速。</p>
+      <div class="quote">依据 [00:16-00:20]：「关键在于全身配合的波动感。」</div>
+      <div class="insight">认知转变：从「练腿」改成「练波」。</div>
+    </div>
+
+    <div class="card">
+      <h3>3. 手不是摆设：导向系统</h3>
+      <p><strong>在讲什么：</strong>手臂负责方向控制——上浮出水或持续潜游，都要靠手辅助。</p>
+      <p><strong>关键理解：</strong>腿提供波动末端推进，手决定轨迹；两者分工不同，不能互相替代。</p>
+      <p><strong>怎么用：</strong>需要出水时慢慢把手上提；若潜游，保持前伸并维持必要的上下微调，身体垂直向前。</p>
+      <div class="quote">依据 [00:20-00:27]：「手不是摆设，它负责导向……都要靠手来辅助控制方向。」画面另注潜游时手的上下浮动需保持。</div>
+      <div class="relation">关系：手 = 舵；胸髋腿 = 波。舵失效时，波再大也会偏轨或贴不上水面节奏。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>4. 发力顺序：顶胸 → 顶屁股 → 甩腿</h3>
+      <p><strong>在讲什么：</strong>可复述的三拍节奏，从肩胸启动，髋跟随，腿最后自然甩出并立刻循环。</p>
+      <p><strong>关键理解：</strong>这是 UP 主给出的操作模板（观点层），用时间顺序强制「腿不抢先」。</p>
+      <p><strong>怎么用：</strong>口令跟练：顶胸 / 顶屁股 / 甩腿；一拍一环节，腿打完马上回胸，不要在腿上加额外停顿硬抽。</p>
+      <div class="quote">依据 [00:27-00:44]：「首先从肩胸开始，主动把胸往前顶出去……最后一步才是自然的甩腿……重复顶胸、顶屁股、甩腿的节奏。」</div>
+      <div class="highlight">立场分层：顺序口诀 = UP 主教学方法（观点）；「只甩屁股会僵」= 与画面反例一致的可观察主张；「美人鱼出片」= 体验目标，非量化成绩承诺。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>5. 避坑：别让屁股当唯一发动机</h3>
+      <p><strong>在讲什么：</strong>反复禁止「只靠屁股用力上下甩腿」。</p>
+      <p><strong>关键理解：</strong>禁的是「唯一动力源」，不是禁止髋部参与；髋应跟在胸后，而不是独立上下砸水。</p>
+      <p><strong>怎么用：</strong>若上半身发紧、镜头里只有臀腿在晃，立刻减幅，从顶胸重排节奏。</p>
+      <div class="quote">依据 [00:47-00:53]：「千万别再只靠屁股用力上下甩腿了，这样上半身会一直僵着，完全没有美感。」</div>
+      <div class="pitfall">不要做：把「顶屁股」练成连续撅臀；不要在腿段额外加力抽打。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>错误练法 vs 波动练法</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>维度</th>
+          <th>错误：撅屁股硬甩</th>
+          <th>正解：全身波动</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>启动点</td>
+          <td>髋 / 腿直接上下砸</td>
+          <td>肩胸先向前顶出</td>
+        </tr>
+        <tr>
+          <td>上半身</td>
+          <td>僵住不动</td>
+          <td>参与传导，保持波动</td>
+        </tr>
+        <tr>
+          <td>手的角色</td>
+          <td>可有可无的摆设</td>
+          <td>导向：出水上提 / 潜游控向</td>
+        </tr>
+        <tr>
+          <td>腿的位置</td>
+          <td>全程主角、越甩越用力</td>
+          <td>最后一步，自然甩出后立刻循环</td>
+        </tr>
+        <tr>
+          <td>观感 / 结果</td>
+          <td>僵、不雅、难提速</td>
+          <td>更丝滑；水下拍摄更易「出片」（体验目标）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card card-green">
+    <h3>方法边界与证据强度</h3>
+    <ul>
+      <li><strong>适用：</strong>出发后水中蝶腿 / 水下波动腿练习；目标含观感与拍摄。</li>
+      <li><strong>上限：</strong>视频未给配速、阻力或竞赛指标；「又快」是相对「硬甩」的主观对照，不是成绩证明。</li>
+      <li><strong>反例 / 例外：</strong>若课程要求纯腿打水分解，可暂时隔离上肢，但回到完整出发蝶腿时仍应按链条重组。</li>
+      <li><strong>事实：</strong>视频明确提出误区、手导向与三拍顺序，并有叠字/水下演示。</li>
+      <li><strong>观点：</strong>「美人鱼视频」「丝滑出片」属于激励性目标表述。</li>
+      <li><strong>推断：</strong>把三拍理解为「近端到远端的动力传递」是基于原文的结构化整理，非口播原词。</li>
+    </ul>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>蝶腿失败模式：撅屁股 + 下半身硬甩 + 上半身僵。</li>
+      <li>成功模型：全身波动；手导向；顶胸 → 顶屁股 → 甩腿。</li>
+      <li>腿是收尾，不是唯一发动机。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>录一段出发蝶腿，检查是否「只有臀腿在动」。</li>
+      <li>慢速口令：顶胸 → 顶屁股 → 甩腿，连续 8 个循环不抢腿。</li>
+      <li>单独练手导向：上提出水一次、潜游前伸一次，感受方向变化。</li>
+      <li>一旦上半身发紧，立刻减腿幅，从顶胸重启。</li>
+      <li>水下拍摄前先巩固波动链，再追求「出片」姿势。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「把腿甩漂亮」转向「把波传完整」——屁股可以参与，但不能单独主演。</p>
+  </div>
+
+  <p class="footer">理性分析 · 证据来自 Whisper 分段与画面叠字 · 原始短链保留于索引</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
