@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5790" viewBox="0 0 1320 5790">
+  <foreignObject x="0" y="0" width="1320" height="5790">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body,.svg-page{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.stance-item{padding:18px;border-radius:12px;background:#f8fafc}
+.stance-item strong{display:block;color:#334155;margin-bottom:8px}
+.small{font-size:13px;color:#64748b}</style>
+      
+<div class="svg-page">
+  <div class="container">
+    <h1>收紧核心：从「吸肚子」到腹横肌协同</h1>
+    <div class="meta">
+      <span class="tag tag-blue">小红书</span>
+      <span class="tag tag-green">23秒</span>
+      <span class="tag tag-purple">核心训练</span>
+      <span class="tag tag-orange">腹横肌</span>
+      <span class="tag tag-gray">理性分析</span>
+    </div>
+    <a class="source-link" href="http://xhslink.cn/o/4mI9pVxEng7">原视频：学不会收紧核心？一个视频教会你如何收紧核心</a>
+    <div class="summary-line">
+      <strong>核心判断：</strong>视频真正回答的不是「如何把肚子吸平」，而是区分<strong>表面吸腹</strong>与<strong>腹横肌主导的深层收紧</strong>，并用蜡烛吹气、咳嗽、嘶音三步把抽象概念变成可自检的体感链。
+    </div>
+
+    <div class="timeline">
+      <h3>关键证据时间轴</h3>
+      <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">反例：吸肚子时肋骨外翻，核心是散的（可见字幕「这是吸肚子」）</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:07</span><span class="timeline-text">蜡烛意象：对着蜡烛使劲吹，肋骨向前向内收</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">腹横肌提示：连续咳嗽两声</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">维持张力：继续发「嘶」的音</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">验收：整个腰腹都是硬的</span></div>
+      <div class="timeline-item"><span class="timeline-time">00:21</span><span class="timeline-text">收束：恭喜你学会收紧核心</span></div>
+    </div>
+
+    <div class="map">
+      <h2>核心脉络</h2>
+      <div class="diagram">
+        <div class="node node-orange">问题<br/>吸肚子≠核心</div>
+        <span class="arrow">→</span>
+        <div class="node">证据<br/>肋骨外翻</div>
+        <span class="arrow">→</span>
+        <div class="node node-green">三步激活<br/>吹→咳→嘶</div>
+        <span class="arrow">→</span>
+        <div class="node node-green">行动<br/>腰腹整体变硬</div>
+      </div>
+    </div>
+
+    <div class="correction">
+      <h3>常见误解与认知纠偏</h3>
+      <p><strong>误解：</strong>肚子吸进去 = 核心收紧。<strong>纠偏：</strong>视频用侧身肋骨外翻作为反证——吸腹可能只是表层皮肤与腹直肌收缩，腹横肌与肋廓并未协同内收。</p>
+      <p><strong>误解：</strong>核心训练必须上器械或做平板支撑。<strong>纠偏：</strong>本视频仅用呼吸意象与三次短动作，适合作为入门体感校准，但不能替代系统力量训练。</p>
+    </div>
+
+    <div class="section">
+      <h2 class="sec-title">概念拆解</h2>
+      <div class="card">
+        <h3>吸肚子 vs 真收紧</h3>
+        <p><strong>在讲什么：</strong>开场示范用力吸腹，但肋骨从侧面外展，说明深层稳定肌群未参与。</p>
+        <p><strong>关键理解：</strong>有效核心收紧应让肋廓内收、腹压建立，而非只追求肚脐向脊柱靠拢。</p>
+        <p><strong>怎么用：</strong>对镜侧身，观察肋骨是否仍外翻；若外翻，说明还在「吸肚子」阶段。</p>
+        <div class="quote">原文依据 [00:00]：「这是吸肚子，核心是散的，从侧面看肋骨是打开外翻的。」</div>
+      </div>
+      <div class="card card-green">
+        <h3>蜡烛吹气：建立肋廓内收</h3>
+        <p><strong>在讲什么：</strong>用「对着蜡烛使劲吹」把呼气阻力具象化，引导肋骨向前向内收。</p>
+        <p><strong>关键理解：</strong>这是呼吸驱动下的胸廓-腹压联动，比单纯憋气更接近功能性核心激活。</p>
+        <p><strong>怎么用：</strong>想象面前 20–30 cm 处有蜡烛，短促用力吹气 3–5 次，感受肋弓内收。</p>
+        <div class="quote">原文依据 [00:07]：「假装前面有个蜡烛，对着蜡烛使劲吹，肋骨向前向内收。」</div>
+      </div>
+      <div class="card card-purple">
+        <h3>咳嗽 + 嘶音：激活并维持腹横肌</h3>
+        <p><strong>在讲什么：</strong>连续咳嗽两声唤醒腹横肌，再发「嘶」音把张力延长。</p>
+        <p><strong>关键理解（UP 主观点）：</strong>咳嗽提供爆发式腹压，嘶音提供持续呼气阻力，二者组合用于「找到并保持」收紧感。</p>
+        <p><strong>怎么用：</strong>轻咳两下后立刻接 5–8 秒嘶音呼气，手触腰腹检查是否整体变硬。</p>
+        <div class="quote">原文依据 [00:12–00:16]：「腹横肌收紧，连续咳嗽两声」「继续发撕的音。」</div>
+      </div>
+      <div class="card card-orange">
+        <h3>验收标准：腰腹整体变硬</h3>
+        <p><strong>在讲什么：</strong>用手触或自我感知，确认不是局部吸腹，而是腰腹区域整体发紧。</p>
+        <p><strong>关键理解：</strong>这是本视频的完成标志，也是与开场反例的对照终点。</p>
+        <div class="pitfall"><strong>避坑：</strong>只追求腹肌线条可见、却忽视呼吸与肋廓位置，容易在训练或举铁时用憋气代替核心稳定。</div>
+        <div class="quote">原文依据 [00:18]：「整个腰腹都是硬的。」</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>横向对比：三种「收腹」方式</h3>
+      <table>
+        <tr><th>方式</th><th>可见特征</th><th>深层参与</th><th>适用场景</th></tr>
+        <tr><td>吸肚子（反例）</td><td>肚脐内收、肋骨外翻</td><td>腹横肌参与弱</td><td>仅视觉显瘦，不稳定</td></tr>
+        <tr><td>蜡烛吹气 + 咳嗽</td><td>肋廓内收、腹侧发紧</td><td>腹横肌被唤醒</td><td>入门找体感、训练前激活</td></tr>
+        <tr><td>嘶音维持</td><td>腰腹整体变硬</td><td>持续腹压建立</td><td>需要保持张力的动作前</td></tr>
+      </table>
+    </div>
+
+    <div class="card card-red">
+      <h3>方法边界与立场分层</h3>
+      <div class="stance-grid">
+        <div class="stance-item"><strong>可验证事实</strong>视频展示了吸腹时肋骨外翻、以及蜡烛/咳嗽/嘶音三步示范；Whisper 转录与烧录字幕一致。</div>
+        <div class="stance-item"><strong>UP 主观点</strong>「不信还有学不会的」属于教学口号；三步法对所有人的即时有效性未被量化证明。</div>
+        <div class="stance-item"><strong>基于原文的推断</strong>该方法更适合<strong>入门体感校准</strong>，腹直肌分离、术后或疼痛人群应咨询专业人士后再练。</div>
+      </div>
+      <p class="small" style="margin-top:12px">笔记标签含 #核心训练 #收紧核心 #瘦肚子 #腹直肌分离，但视频正文未展开腹直肌分离的专项处理。</p>
+    </div>
+
+    <div class="conclusion">
+      <h2>总结与行动</h2>
+      <h3>核心要点</h3>
+      <ul>
+        <li>吸肚子 ≠ 收紧核心；肋骨外翻是重要反证。</li>
+        <li>有效路径：蜡烛吹气（肋廓内收）→ 咳嗽两声（腹横肌）→ 嘶音（维持张力）。</li>
+        <li>验收标准：整个腰腹摸起来发硬，而非只有表面吸平。</li>
+      </ul>
+      <h3>行动清单</h3>
+      <ol>
+        <li>对镜侧身，先做一次「吸肚子」，确认肋骨是否外翻。</li>
+        <li>想象蜡烛，用力吹气 3–5 次，感受肋弓内收。</li>
+        <li>连续轻咳两声，立刻接 5–8 秒嘶音呼气。</li>
+        <li>用手掌触诊腰腹，检查是否整体变硬。</li>
+        <li>在深蹲、平板或跑步前，用此三步做 1 组激活（约 20 秒）。</li>
+      </ol>
+      <h3>关键认知转变</h3>
+      <p>从「把肚子吸平」转为「让肋廓内收 + 腹横肌建立腹压」——核心收紧是三维的桶状稳定，不是二维的肚脐位移。</p>
+    </div>
+    <p class="footer">理性分析 · hexin-shoujin-teaching · 2026-07-27</p>
+  </div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
