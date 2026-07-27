@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6311" viewBox="0 0 1320 6311">
+  <foreignObject x="0" y="0" width="1320" height="6311">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+</style>
+      
+<div class="container">
+  <h1>莫斯科🇷🇺游泳教学，蝶泳手臂与换气问题</h1>
+  <div class="meta">
+    <span class="tag tag-blue">游泳教学</span>
+    <span class="tag tag-purple">蝶泳</span>
+    <span class="tag tag-gray">小红书</span>
+    <span class="tag tag-orange">时长 1分11秒</span>
+  </div>
+  <div class="summary-line">蝶泳划臂的四个正向要点——推水发力、换气对齐、发力技巧、移臂方式——都是用来纠正开场那个"仰头耸肩式错误示范"的；四点串联起来是同一个身体线条问题的不同侧面，而非四个孤立技巧。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><span class="timeline-time">00:01</span><span class="timeline-text">反面案例：仰头耸肩式「错误的手臂与呼吸」，配俄语「ФУ!」（不行/糟糕）</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">要点一「推水发力练习」，岸上模拟推水轨迹</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">水中实拍字幕「注意推水同步打腿」</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:27</span><span class="timeline-text">字幕「推水换气保持颈肩背在一条线上」，与开场错误示范对照</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:36</span><span class="timeline-text">要点三「发力技巧」，岸上比数字「3」示范</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:46</span><span class="timeline-text">水中实拍字幕「保持身体平直向前推进」</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:57</span><span class="timeline-text">要点四「移臂方式」，字幕「肘部弯曲更有利移臂」</span></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node node-orange">反面案例<br/>仰头耸肩换气</div>
+      <div class="arrow">→</div>
+      <div class="node">要点1<br/>推水发力</div>
+      <div class="arrow">→</div>
+      <div class="node">要点2<br/>换气对齐</div>
+      <div class="arrow">→</div>
+      <div class="node">要点3<br/>发力技巧</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">要点4<br/>移臂方式</div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:14px">全片用"先给一个错误参照系，再逐点纠正"的结构组织，四个要点共同指向同一个目标：换气时身体线条不塌、动作节奏与打腿同步。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>容易把这条视频看成"四个独立的蝶泳小技巧合集"，但结合开场的反面案例看，四个要点其实都在回应同一个核心问题——换气时身体是否维持一条直线。推水发力、同步打腿、颈肩背对齐、身体平直推进、屈肘移臂，本质上都是"如何在划臂-换气这一个完整动作周期里不破坏身体流线"的不同侧面，而不是四个可以拆开单独练的孤立动作。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">要点一：推水发力练习</h2>
+    <div class="card">
+      <h3>在讲什么</h3>
+      <p>蝶泳划臂的"推水"阶段——手臂从身体下方向后下方压水、产生前进动力的那一段动作。视频先用岸上模拟单独演示这个轨迹，再切到水中实拍。</p>
+      <div class="insight">关键理解：推水必须和打腿的下压同步，字幕明确写「注意推水同步打腿」——两个动作各自发力、时机不对齐，会互相抵消而不是叠加。</div>
+      <p>怎么用：可以先在岸上（陆上）单独慢速练习推水的手臂轨迹，找到"向后下方压"的发力感觉，再下水时刻意让推水的瞬间和打腿的下压对上节拍。</p>
+      <div class="quote">画面依据：[00:06] 岸上模拟推水发力；[00:15] 水中字幕「注意推水同步打腿」。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">要点二：换气方式（颈肩背对齐）</h2>
+    <div class="card card-purple">
+      <h3>在讲什么（教练主张，与开场错误示范对照）</h3>
+      <p>换气瞬间的头部与躯干姿态。开场的反面案例是仰头、耸肩、身体后仰式换气；00:27 字幕给出的正确做法是「推水换气保持颈肩背在一条线上」。</p>
+      <div class="insight">关键理解：换气不是靠头单独往后仰，而是让颈、肩、背保持一条直线的前提下转头吸气，这样才不会让上半身脱离原本的流线姿态。</div>
+      <p>怎么用：可以对照开场错误示范自查——换气时是否出现单独抬头、耸肩或身体后仰，如果有，说明换气动作跟这里讲的"颈肩背一条线"不一致。</p>
+      <div class="quote">画面依据：[00:01] 错误示范「错误的手臂与呼吸」+「ФУ!」；[00:27] 正确示范字幕「推水换气保持颈肩背在一条线上」。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">要点三：发力技巧</h2>
+    <div class="card">
+      <h3>在讲什么</h3>
+      <p>字幕只给出「3.发力技巧」这一个标题词，配合岸上比数字「3」的模拟动作，随后切到水中游进画面并叠加字幕「保持身体平直向前推进」。</p>
+      <div class="insight">关键理解：这一点更像是要点二"颈肩背对齐"在划水推进阶段的延伸——发力时身体线条要保持平直，力量才会转化为向前推进而不是上下起伏或塌腰。</div>
+      <div class="pitfall">视频本身没有展开说明"发力技巧"具体指手臂、核心还是整体哪个环节发力，画面信息有限，这里不做超出画面的引申。</div>
+      <div class="quote">画面依据：[00:36] 岸上比「3」示范；[00:46] 水中字幕「保持身体平直向前推进」。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">要点四：移臂方式</h2>
+    <div class="card card-green">
+      <h3>在讲什么（教练主张）</h3>
+      <p>划完一次臂后，手臂离水回收（"移臂"）的方式。字幕给出的主张是「肘部弯曲更有利移臂」，配合教练屈肘、手臂贴近身体向前甩出的动作演示。</p>
+      <div class="insight">关键理解：与完全伸直手臂做大回环移臂相比，屈肘移臂路径更短、更省力，也更不容易因为手臂抡起过高而破坏平衡。</div>
+      <div class="pitfall">视频没有展示水下视角或手臂具体角度数值，"更有利"只是教练给出的结论，没有配套的对比画面（比如直臂移臂的反例），需要读者自行体会或对照其他资料验证。</div>
+      <div class="quote">画面依据：[00:51] 「4.移臂方式」标题；[00:57] 「肘部弯曲更有利移臂」屈肘示范。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>错误示范 vs 正确要点对照</h3>
+    <table>
+      <tr><th>维度</th><th>❌ 开场错误示范</th><th>✅ 视频倡导的正确方式</th></tr>
+      <tr><td>换气时头部/肩部</td><td>仰头、耸肩，身体后仰</td><td>颈肩背保持一条线上再转头换气</td></tr>
+      <tr><td>推水与打腿</td><td>视频未展示错误对照</td><td>推水节奏与打腿下压同步</td></tr>
+      <tr><td>身体线条</td><td>后仰破坏流线</td><td>保持身体平直向前推进</td></tr>
+      <tr><td>移臂手臂状态</td><td>视频未展示错误对照</td><td>肘部主动弯曲，路径更短更省力</td></tr>
+    </table>
+    <p style="font-size:13px;color:#94a3b8;margin-top:8px">说明：开场只针对"手臂与呼吸"给出了一个错误对照，推水同步打腿和移臂方式两点视频中并未提供对应的反面案例，表格中相应格标注为"未展示"。</p>
+  </div>
+
+  <div class="card card-red">
+    <h3>避坑总结</h3>
+    <div class="pitfall">陷阱一：换气时单独抬头、耸肩、身体后仰——就是开场「错误的手臂与呼吸」示范的样子，会破坏身体流线。</div>
+    <div class="pitfall">陷阱二：推水和打腿各游各的、时机不同步，力量互相抵消，达不到「推水同步打腿」的效果。</div>
+    <div class="pitfall">陷阱三：发力阶段塌腰或身体上下起伏过大，没有做到「保持身体平直向前推进」。</div>
+    <div class="pitfall">陷阱四：移臂时手臂完全伸直做大回环，路径更长、更费力，也更容易因为抡臂过高而失衡；视频主张的是「肘部弯曲更有利移臂」。</div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>视频结构是"一个反面案例 + 四个正向要点"，四点共同服务于换气时保持身体线条不塌这一个目标。</li>
+      <li>推水要和打腿同步；换气靠颈肩背对齐转头，而不是单独抬头耸肩；发力时身体保持平直；移臂时主动屈肘。</li>
+      <li>口播内容因收音质量差被 Whisper 大量识别为乱码，正文结论完全基于画面字幕与动作演示，未依赖口播猜测内容。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ul>
+      <li>岸上单独练习推水轨迹，熟悉"向后下方压水"的发力感，再下水配合打腿节奏。</li>
+      <li>换气时对照开场错误示范自查：是否出现单独抬头、耸肩、身体后仰。</li>
+      <li>划水推进阶段留意身体是否保持平直，避免塌腰或起伏过大。</li>
+      <li>移臂时主动屈肘、贴近水面回收，而不是完全伸直手臂做大回环。</li>
+    </ul>
+    <h3>关键认知转变</h3>
+    <p>不要把这条视频当成四个互不相关的蝶泳小技巧清单来记忆；更准确的理解是：开场的错误示范定义了问题（换气时身体线条被破坏），后面四个要点是从推水时机、换气姿态、发力节奏、移臂路径四个角度，回答"如何不破坏这条线条"。</p>
+  </div>
+
+  <p style="font-size:13px;color:#94a3b8;margin-top:20px">方法边界：本分析基于短视频画面字幕、教练岸上模拟动作和笔记文案，未见完整分解教学视频、水下视角或具体角度数值；"肘部弯曲更有利移臂""身体平直向前推进"等均为教练个人教学主张，未附科学原理说明或专业资质信息，读者可作为参考角度、结合专业教练水下观察进一步验证。</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
