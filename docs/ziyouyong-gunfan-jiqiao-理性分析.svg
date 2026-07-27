@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6900" viewBox="0 0 1320 6900">
+  <foreignObject x="0" y="0" width="1320" height="6900">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0e7490,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0e7490;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #0891b2;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0e7490;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0891b2;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0e7490;margin-bottom:16px;padding-left:16px;border-left:4px solid #0891b2}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #0891b2}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0e7490;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0e7490;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0e7490,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0e7490;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>教学合集｜自由泳滚翻技巧</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">11秒</span>
+    <span class="tag tag-orange">自由泳滚翻</span>
+    <span class="tag tag-purple">口播+画面双证据</span>
+    <span class="tag tag-gray">水下慢动作</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/9HgM0IkQodT">原视频短链 →</a>
+  <div class="summary-line">核心判断：这段 11 秒水下慢动作教学把自由泳滚翻拆解为<span class="key-data">五拍连贯动作</span>——收臂贴紧 → 收下巴蜷体 → 蓄力翻滚 → 腰背打直蹬壁 → 流线滑行再转体。全片最关键的技术提醒是最后一句：蹬壁时不要提前转躯干，保持流线型直接蹬出，滑行一段后再转回游进姿态。口播与画面白字高度一致，Whisper 仅在个别词（「巧尖」「膝盖」）上有误识，以画面字幕为准。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">片头定调 + 口播「最后一把水推完双臂贴紧身体不动」</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:03</div><div class="timeline-text">口播「手下把眼睛看脚尖，头去找膝盖」+ 红色箭头标翻滚轨迹</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:05</div><div class="timeline-text">口播「蓄力转身」+ 身体蜷曲成球状向前翻滚</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:07</div><div class="timeline-text">口播「腰背打直 手伸直加紧后」+ 翻滚完成进入伸展姿态</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:09</div><div class="timeline-text">口播「不要转动躯干直接登出，滑行时再转」+ 流线型蹬壁滑行</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题：滚翻转身怎么做得又快又稳</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">证据：11秒口播+水下慢动作五拍分解</div>
+      <div class="arrow">→</div>
+      <div class="node">判断：紧凑蜷体+延迟转体是效率关键</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">行动：按五拍口诀逐拍跟练</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解纠偏</h3>
+    <p>不要把「蹬壁」理解成「蹬壁的同时就侧身转回游进方向」。视频最后明确强调「不要转动躯干直接登出，滑行时再转」——蹬壁瞬间应保持流线型（双臂前伸、腰背打直），利用蹬壁推力获得最大滑行距离，等滑行一段后再开始转体恢复划水。很多初学者在蹬壁瞬间就侧身，破坏了流线型，这是本视频最想纠正的错误。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">滚翻五拍拆解：每拍在讲什么</h2>
+
+    <div class="card">
+      <h3>第一拍：收臂贴紧（00:00–00:03）</h3>
+      <p>最后一把划水完成后，双臂迅速收拢贴在躯干两侧，不再外划。这一动作减少水阻，为向前翻滚腾出旋转空间，也是从「游进」到「转身」的过渡信号。</p>
+      <div class="insight">关键理解：手臂贴紧不是「放松漂着」，而是主动夹紧躯干，让身体成为一个紧凑的整体，翻滚半径才能最小。</div>
+      <div class="action">怎么用：练习时可以在最后一次划水后刻意感受双臂「啪」地贴紧身体，再开始低头翻滚，形成肌肉记忆。</div>
+      <div class="quote">原文依据：口播「最后一把水推完双臂贴紧身体不动」[00:00]。</div>
+      <div class="relation">立场分层：事实=口播明确说出收臂要求；推断=收臂贴紧有助于减小翻滚半径（基于游泳常识的合理推断）。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>第二拍：收下巴蜷体（00:03–00:05）</h3>
+      <p>三个连续的身体 cue：手下摆、眼睛看脚尖、头去找膝盖。画面红色弧形箭头标出头部向前下方翻滚的轨迹，脚部向上翻转。身体折叠成紧凑的球状，这是翻滚半径最小的关键姿势。</p>
+      <div class="insight">关键理解：「头找膝盖」不是字面意思把头撞到膝盖，而是主动收下巴、蜷曲躯干，让头部和膝盖在空间中靠近，形成最小旋转半径。</div>
+      <div class="action">怎么用：岸上练习时可坐在池边，双手抱膝做向前翻滚，感受下巴内收、头膝靠近的紧凑感，再下水尝试。</div>
+      <div class="quote">原文依据：口播「手下把眼睛看巧尖，头去找膝盖」[00:03]；画面白字「收下巴眼睛看脚尖，头去找膝盖，蓄力转身」。</div>
+      <div class="relation">立场分层：事实=口播与画面字幕高度一致（Whisper 将「脚尖」误识为「巧尖」）；UP 主观点=这是推荐的蜷体方式。</div>
+    </div>
+
+    <div class="card">
+      <h3>第三拍：蓄力转身（00:05–00:07）</h3>
+      <p>身体从蜷曲球状开始向前下方翻滚旋转，白色标记线叠加在躯干上强调折叠轴心。翻滚动量在此刻积累，为触壁蹬出做准备。</p>
+      <div class="insight">关键理解：翻滚不是「翻过去就行」，而是要在翻滚过程中保持紧凑，翻滚完成后身体已经面朝池壁、双脚准备触壁。</div>
+      <div class="action">怎么用：可录制自己翻滚的水下视频，检查翻滚过程中身体是否始终保持紧凑球状，有没有中途「散开」。</div>
+      <div class="quote">原文依据：口播「蓄力转身」[00:05]；画面显示翻滚中期躯干折叠轴心。</div>
+    </div>
+
+    <div class="card card-green">
+      <h3>第四拍：腰背打直伸展（00:07–00:09）</h3>
+      <p>翻滚完成后，身体迅速从蜷曲状态伸展：腰背绷直、双臂向前伸直并夹紧在头部两侧，进入蹬壁前的流线型预备姿态。双脚触壁或即将触壁。</p>
+      <div class="insight">关键理解：从蜷曲到伸展的转换要干脆，「手伸直夹紧后」意味着双臂已经到位，接下来只需要蹬壁发力。</div>
+      <div class="action">怎么用：练习蹬壁时可先只做「伸展+蹬壁」两个动作，感受腰背打直、双臂夹紧的流线型体感，再串联完整翻滚。</div>
+      <div class="quote">原文依据：口播「腰背打直 手伸直加紧后」[00:07]。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>第五拍：流线蹬出、滑行再转（00:09–00:11）— 全片最关键</h3>
+      <p>蹬壁离墙后保持流线型直接向前滑行，不要提前转躯干。画面白字明确写「注意这个时候不要转动躯干直接登出 / 滑行时再转」，口播对应「不要转动膝盖直接登出，滑行实在转」（Whisper 将「躯干」误识为「膝盖」）。红色实线箭头指向前进方向，虚线箭头标出蹬壁发力方向。</p>
+      <div class="pitfall">避坑：蹬壁瞬间就侧身转回游进方向，会破坏流线型、损失推进距离。正确做法是：蹬壁 → 流线滑行 → 滑行一段后再转体恢复划水。</div>
+      <div class="action">怎么用：蹬壁后刻意数「一、二」再开始转体，用延迟转体的节奏感培养肌肉记忆。</div>
+      <div class="quote">原文依据：口播「注意这个时候不要转动膝盖直接登出，滑行实在转」[00:09]；画面白字「不要转动躯干直接登出，滑行时再转」。</div>
+      <div class="relation">立场分层：事实=画面字幕明确写「躯干」；推断=口播「膝盖」为 Whisper 误识，应以画面字幕为准。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：滚翻各阶段身体状态</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>阶段</th>
+          <th>身体状态</th>
+          <th>关键 cue</th>
+          <th>常见错误</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>收臂（00:00）</td>
+          <td>双臂贴紧躯干两侧</td>
+          <td>最后一把水推完</td>
+          <td>手臂还在外划就开始翻滚</td>
+        </tr>
+        <tr>
+          <td>蜷体（00:03）</td>
+          <td>收下巴、头找膝盖、身体成球</td>
+          <td>眼看脚尖</td>
+          <td>身体展开幅度大，翻滚半径大</td>
+        </tr>
+        <tr>
+          <td>翻滚（00:05）</td>
+          <td>紧凑向前下方旋转</td>
+          <td>蓄力转身</td>
+          <td>翻滚中途身体散开</td>
+        </tr>
+        <tr>
+          <td>伸展（00:07）</td>
+          <td>腰背打直、双臂前伸夹紧</td>
+          <td>手伸直夹紧后</td>
+          <td>伸展不及时，蹬壁姿势松散</td>
+        </tr>
+        <tr>
+          <td>蹬壁滑行（00:09）</td>
+          <td>流线型直接蹬出</td>
+          <td>不要转躯干，滑行再转</td>
+          <td>蹬壁瞬间就侧身转体</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界</h2>
+    <div class="card card-red">
+      <h3>适用条件与上限</h3>
+      <ul>
+        <li><strong>适用：</strong>已掌握自由泳基本划水、正在学习或打磨池边翻滚转身（tumble turn）的泳者，可用五拍口诀对照检查自己的动作顺序。</li>
+        <li><strong>上限：</strong>视频仅 11 秒、无分步慢放每个阶段的独立练习方法，也没有说明触壁距离判断、翻滚速度控制等进阶细节。内容标注「来源于国外网站」，非原创教学。</li>
+        <li><strong>反例/例外：</strong>初学者若尚未掌握基本闭气收腹翻滚，直接模仿紧凑蜷体可能造成呛水；建议先在浅水区或有教练陪同下分步练习翻滚，再衔接蹬壁。</li>
+        <li><strong>证据强弱：</strong>五拍动作顺序和「延迟转体」是口播+画面字幕双重确认的强证据；各阶段具体身体角度和翻滚半径的量化标准，视频未给出，属于基于画面和游泳常识的推断。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>自由泳滚翻 = 收臂贴紧 → 收下巴蜷体 → 蓄力翻滚 → 腰背打直蹬壁 → 流线滑行再转体</li>
+      <li>全片最关键提醒：蹬壁时不要提前转躯干，保持流线型直接蹬出</li>
+      <li>紧凑蜷体（头找膝盖）是减小翻滚半径、加快转身速度的核心</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>岸上先练「双手抱膝向前翻滚」，感受收下巴、头膝靠近的紧凑感</li>
+      <li>水下练习时按五拍口诀逐拍跟练，每拍停 2 秒确认姿态</li>
+      <li>录制自己翻滚视频，重点检查蹬壁瞬间是否保持了流线型（没有提前转体）</li>
+      <li>蹬壁后刻意延迟 1–2 秒再转体，培养「滑行再转」的节奏感</li>
+      <li>对照本视频红色箭头标注的翻滚轨迹，检查自己的翻滚方向是否一致</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「蹬壁 = 立刻转回游进方向」转变为「蹬壁 = 流线滑行一段 → 再转体恢复划水」。这一认知转变可能是本 11 秒视频最有价值的单点提醒。</p>
+  </div>
+
+  <p class="footer">理性分析 · 自由泳滚翻技巧 · 2026-07-27</p>
+</div>
+    </div>
+  </foreignObject>
+</svg>
