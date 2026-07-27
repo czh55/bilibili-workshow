@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="4724" viewBox="0 0 1320 4724">
+  <foreignObject x="0" y="0" width="1320" height="4724">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+</style>
+      
+<div class="container">
+  <h1>你能看出这两种开放式游泳转身有什么不同🧐</h1>
+  <div class="meta">
+    <span class="tag tag-red">小红书</span>
+    <span class="tag tag-blue">游泳技术</span>
+    <span class="tag tag-gray">时长 16秒</span>
+    <span class="tag tag-gray">深圳游泳教练</span>
+  </div>
+  <div class="summary-line">核心判断：开放式转身（触壁转身）的速度差距不在蹬壁力量大小，而在触壁、蜷体、蹬壁、流线展开这四个动作衔接的<b>时间差</b>——高手每一步都更快切入下一个姿态，从而把速度保留下来；初学者哪怕每个动作都做了，也会因为衔接慢半拍而整体落后。</div>
+
+  <a class="source-link" href="http://xhslink.cn/o/8IE9K50Ra8S" target="_blank" rel="noopener">查看原视频 →</a>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">分屏对照开始，高手（上格）与初学者（下格）几乎并排冲向池壁，起始条件一致</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:02</span><span class="timeline-text">高手率先单手触壁并开始屈膝，初学者触壁与收腿慢半拍</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">高手已贴壁蓄力，初学者刚触壁进入屈膝阶段</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">蹬壁瞬间：高手蜷体更紧凑，初学者团身相对松散</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">高手蹬离池壁后立刻展开流线型，初学者仍保持蜷缩</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">高手完全展开流线并开始划水加速，初学者才刚展开身体，落后一个身位以上</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">结尾：高手持续加速远远领先，初学者仍在追赶展开阶段</span></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">触壁快慢<br/><span style="font-size:13px;font-weight:400">谁先摸墙</span></div>
+      <div class="arrow">→</div>
+      <div class="node node-green">蜷体紧凑度<br/><span style="font-size:13px;font-weight:400">团身是否扎实</span></div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">蹬壁时机<br/><span style="font-size:13px;font-weight:400">发力是否同步</span></div>
+      <div class="arrow">→</div>
+      <div class="node">流线展开速度<br/><span style="font-size:13px;font-weight:400">决定后续速度</span></div>
+    </div>
+    <p style="text-align:center;margin-top:8px;color:#64748b">四步环环相扣：前一步慢半拍，后一步的时间差就会累积放大，最终体现为可见的身位差距。</p>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解与认知纠偏</h3>
+    <p>很多人以为转身速度差距来自"蹬壁力量大小"，即谁腿更有力谁就转身更快。但这段对比视频显示：两人蹬壁力度看起来相近，真正拉开差距的是<b>转身各阶段之间的衔接速度</b>——尤其是"从蜷体到流线展开"这一步的切换快慢，这是肉眼最容易忽略、但对速度影响最大的环节。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">开放式转身（触壁转身）的技术拆解</h2>
+
+    <div class="card">
+      <h3>什么是开放式转身</h3>
+      <p>开放式转身（open turn / 触壁转身）是自由泳、蛙泳等泳姿常用的转身方式：游到池壁时单手（或双手）触壁，不做翻滚，头部始终露出水面完成转身动作，随后屈膝收腿、贴壁蹬出，再展开成流线型继续游进。它与"燕式转身/翻滚转身（flip turn）"是两种不同的转身技术路线，开放式转身对水感和节奏的要求更直接体现在"衔接速度"上。</p>
+      <div class="relation">画面证据：视频全程可见触壁→屈膝→蜷体→蹬壁→展开流线的完整链条，两位泳者做的是同一套动作，差距完全来自节奏快慢，而非动作种类不同。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>作者观点（笔记文案）</h3>
+      <p>视频描述原文写道：<span class="quote">「剧透：这位顶级游泳选手在进出转弯时都更快地进入流线，这让她保持了速度，以便顺利高效地转弯！」</span>这是作者对视频要点的主观提炼，指出"进"（触壁蜷体）和"出"（蹬壁展开）两个阶段的流线切入速度，是转身效率的关键变量。</p>
+      <div class="highlight">立场说明：该结论来自作者笔记文案，并非视频中的口播讲解（本视频音频为背景音乐，无真实口播）。画面动作与该文案描述一致，可作为互相印证的证据。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>初学者常见的衔接慢点</h3>
+      <p>结合画面动作，初学者在两个环节最容易慢半拍：一是触壁时机（手臂前伸拖延，没有第一时间完成触壁收腿），二是蜷体到流线的切换（蹬壁后仍保持团身姿态一小段时间，没有立刻伸展手臂拉长身体）。这两个慢点叠加，就是视频中看到的身位差距来源。</p>
+      <div class="pitfall">避坑：单纯加大蹬壁力量并不能弥补衔接慢的问题；如果蹬壁后展开流线的时机不提前，速度红利会在展开的瞬间被打折。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead><tr><th>转身阶段</th><th>高手（上格）表现</th><th>初学者（下格）表现</th></tr></thead>
+      <tbody>
+        <tr><td>触壁</td><td>动作提前，单手快速触壁并同步屈膝</td><td>手臂前伸时间偏长，触壁与屈膝慢半拍</td></tr>
+        <tr><td>蜷体</td><td>团身紧凑，贴壁角度稳定</td><td>团身相对松散，姿态耗时略久</td></tr>
+        <tr><td>蹬壁</td><td>发力干脆，与蜷体衔接紧密</td><td>发力时机跟随高手但整体滞后</td></tr>
+        <tr><td>流线展开</td><td>蹬壁后立刻伸展手臂拉长身体</td><td>蹬壁后仍保持蜷缩片刻才展开</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界</h2>
+    <div class="card">
+      <p>本视频样本量为1次对比，且未展示两位泳者的正式训练背景、泳龄或身体条件，因此"高手/初学者"标签本身是视频给定的分类，而非可验证的客观身份认证。视频也只覆盖了开放式转身（非翻滚转身），结论不能直接套用到翻滚转身（flip turn）的效率评估上。此外，16秒的片段无法体现长期训练中转身节奏的稳定性，仅能作为单次动作对比的直观示范。</p>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>转身速度差距的根源不是蹬壁力量，而是触壁、蜷体、蹬壁、流线展开四步之间的<b>衔接时间差</b></li>
+      <li>"蹬壁后立刻展开流线"是本视频中差距最明显的环节，比蜷体紧凑度更直观地拉开了身位</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ul>
+      <li>练习触壁反应：游到池壁前提前判断距离，减少手臂前伸的犹豫时间</li>
+      <li>专项练习"蹬壁—展开"衔接：可用陆地或扶壁蹬腿练习强化蹬壁后立刻伸展手臂的肌肉记忆</li>
+      <li>录制自己的转身视频并逐帧回放，对照本视频的四个阶段找出自己的慢点</li>
+    </ul>
+    <h3>关键认知转变</h3>
+    <p>从"转身快慢看蹬壁力量"，转变为"转身快慢看动作衔接的时间差"——这是本视频对比给出的最直接的启示。</p>
+  </div>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
