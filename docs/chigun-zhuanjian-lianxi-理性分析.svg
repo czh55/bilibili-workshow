@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5772" viewBox="0 0 1320 5772">
+  <foreignObject x="0" y="0" width="1320" height="5772">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+.speaker-guest{background:#ede9fe;color:#6b21a8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}</style>
+      
+<div class="container">
+  <h1>仰泳·自由泳陆上持棍转肩练习</h1>
+  <div class="meta">
+    <span class="tag tag-blue">小红书</span>
+    <span class="tag tag-green">9秒</span>
+    <span class="tag tag-orange">陆上训练</span>
+    <span class="tag tag-purple">转肩/移臂</span>
+    <span class="tag tag-gray">画面证据为主</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/6k2RG3QjjIs">原视频短链 →</a>
+  <div class="summary-line">核心判断：用一根短棍分屏对比仰泳与自由泳的陆上转肩轨迹——<span class="key-data">上格</span> 身体站直，棍子贴身画一条竖向大弧线模拟仰泳移臂；<span class="key-data">下格</span> 上身前倾俯身，棍子在身前来回摆动模拟自由泳的入水抓水与高肘出水。笔记给出训练量「各100次x3组」，但视频本身无口播讲解，仅靠画面动作与配乐传达。</div>
+
+  <div class="timeline">
+    <h3>关键证据时间轴</h3>
+    <div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">分屏开场——上格站直持棍高举，下格俯身持棍前伸</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:01</div><div class="timeline-text">下格棍身前伸下探——模拟自由泳入水抓水最远点</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:04</div><div class="timeline-text">上格棍身放平呈「一字」——弧线行至肩线中段</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:06</div><div class="timeline-text">下格棍身后摆、肘部抬高——模拟高肘出水与移臂</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:07</div><div class="timeline-text">上格棍端再次高举贴墙——完成一次弧线循环</div></div>
+    <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">两格同步逼近循环末尾，动作持续重复无口播报数</div></div>
+  </div>
+
+  <div class="map">
+    <h2>核心脉络</h2>
+    <div class="diagram">
+      <div class="node">问题：下水前难体会转肩幅度</div>
+      <div class="arrow">→</div>
+      <div class="node node-orange">方法：陆上持棍强制画出大弧线</div>
+      <div class="arrow">→</div>
+      <div class="node">证据：分屏对比两种轨迹与体姿</div>
+      <div class="arrow">→</div>
+      <div class="node node-green">行动：各100次x3组分开练习</div>
+    </div>
+  </div>
+
+  <div class="correction">
+    <h3>常见误解纠偏</h3>
+    <p>不要把这 9 秒当成「一个动作练两种泳姿」。画面清楚区分了两套独立动作：上格身体站直、棍子贴身走体侧弧线，对应仰泳移臂；下格上身前倾俯身、棍子在身前来回，对应自由泳抓水与移臂。二者身体姿态（站直 vs 俯身）和棍子路径（体侧弧线 vs 身前来回）都不同，不能混为一谈或只练其中一个当作「都练到了」。</p>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">两套动作分别在讲什么</h2>
+
+    <div class="card">
+      <h3>在讲什么：仰泳持棍——贴身画竖向大弧</h3>
+      <p>上格男孩身体基本站直、背靠衣柜方向，双手持棍两端，棍子随手臂从高举过头，摆到水平一字，再摆到体侧偏后下方，然后循环回到高举位。整条轨迹贴近身体侧面，接近半圆弧。</p>
+      <div class="insight">关键理解：这条弧线在陆上把仰泳移臂「入水—划水—出水」的连续路径可视化，重点是肩关节的活动幅度是否打得开，而不是发力大小。</div>
+      <div class="action">怎么用：面对镜子或让人从侧面拍摄，检查棍端是否能贴近身体走完整条弧线，而不是绕开身体走一个「外飘」的大圈。</div>
+      <div class="quote">原文依据：00:00、00:04、00:07 三帧上格画面；棍身轨迹与身体贴合程度可直接观察。</div>
+      <div class="relation">立场分层：事实=画面显示上格身体直立、棍子贴身画弧；推断=该姿态用于模拟仰泳移臂幅度（视频未口述训练目的，此为基于画面与笔记标题的推断）。</div>
+    </div>
+
+    <div class="card card-purple">
+      <h3>在讲什么：自由泳持棍——俯身做身前来回摆动</h3>
+      <p>下格男孩上身明显前倾，接近俯身姿态，双手持棍在身前完成「前伸下探」与「后摆抬肘」两个交替动作，没有像上格那样贴身走整圈弧线，而是集中在身体前方小范围往返。</p>
+      <div class="insight">关键理解：俯身姿态本身就是自由泳划水时躯干前倾、头部低于髋部的常见体态提示；棍子前伸对应入水摸远点，后摆抬肘对应移臂前的高肘出水。</div>
+      <div class="action">怎么用：练习时留意躯干是否保持前倾而不是站直挥棍，前伸要探到最远再折返，避免棍子只在胸前小幅晃动。</div>
+      <div class="quote">原文依据：00:01（前伸下探）、00:06（后摆抬肘）两帧下格画面。</div>
+      <div class="relation">立场分层：事实=画面显示下格躯干前倾、棍子身前往返；推断=对应自由泳入水抓水与高肘移臂阶段（基于笔记标题与画面动作的推断，非口播讲解）。</div>
+    </div>
+
+    <div class="card card-orange">
+      <h3>在讲什么：训练量文案「各100次x3组」</h3>
+      <p>视频画面没有出现计数或倒计时字幕，训练量信息完全来自笔记文字：仰泳、自由泳两个持棍动作各做 100 次，共 3 组。</p>
+      <div class="pitfall">避坑：不要因为视频只有 9 秒就误以为动作总量很小；文案给出的实际训练量（单组100次、共3组）对初学者或儿童可能偏大，需结合自身情况调整，不宜照搬数字硬练。</div>
+      <div class="quote">原文依据：笔记文案「仰.自各100次x3组」。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>横向对比：仰泳组 vs 自由泳组持棍动作</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>维度</th>
+          <th>上格·仰泳持棍</th>
+          <th>下格·自由泳持棍</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>身体姿态</td>
+          <td>基本站直</td>
+          <td>上身前倾、接近俯身</td>
+        </tr>
+        <tr>
+          <td>棍子轨迹</td>
+          <td>贴身走竖向大弧线（近半圆）</td>
+          <td>身前小范围来回摆动</td>
+        </tr>
+        <tr>
+          <td>模拟阶段</td>
+          <td>移臂全程（入水→划水→出水）</td>
+          <td>入水抓水 + 高肘出水两个节点</td>
+        </tr>
+        <tr>
+          <td>训练重点</td>
+          <td>肩关节打开幅度</td>
+          <td>躯干前倾姿态 + 前伸远度</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="sec-title">方法边界</h2>
+    <div class="card card-red">
+      <h3>适用条件与上限</h3>
+      <ul>
+        <li><strong>适用：</strong>已有基础游泳动作概念、想在陆上增加转肩/移臂活动度练习的青少年或业余爱好者；适合家中无器械时的辅助热身。</li>
+        <li><strong>上限：</strong>9 秒短视频只展示动作外形，未说明棍子重量/长度选择、呼吸配合、动作节奏或纠错要点；无口播讲解，观众只能靠模仿画面自行揣摩标准。</li>
+        <li><strong>反例/例外：</strong>肩关节有伤病史或活动度受限者，贴身画大弧线可能超出安全活动范围，不宜直接照搬儿童演示的幅度；棍子选材、粗细也可能因人而异。</li>
+        <li><strong>证据强弱：</strong>身体姿态与棍子轨迹是可直接观察的强画面证据；「各100次x3组」为笔记文案明确给出的训练量，但动作是否标准、是否适合特定人群均为基于画面的推断，建议教练面对面指导确认。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与行动</h2>
+    <h3>核心要点</h3>
+    <ul>
+      <li>一根短棍，两套独立动作：仰泳组站直贴身画弧，自由泳组俯身身前来回。</li>
+      <li>棍子轨迹把「肩关节活动幅度」和「入水/移臂节点」变成可看见的路径，而非抽象口令。</li>
+      <li>训练量来自笔记文案（各100次x3组），画面本身不含计数或讲解。</li>
+    </ul>
+    <h3>行动清单</h3>
+    <ol>
+      <li>先分开练：站直做仰泳持棍弧线，确认棍端能贴身走完整圈再加量。</li>
+      <li>俯身练自由泳持棍时，留意躯干前倾角度，前伸探到最远点再折返。</li>
+      <li>初次尝试从少量次数开始，逐步接近笔记给出的「各100次x3组」，避免一次性照搬数字。</li>
+      <li>肩部有旧伤或活动度受限，先咨询教练或康复师再确定弧线幅度。</li>
+      <li>视频无口播讲解，若需要动作纠错，建议对照专业教练示范或请人现场检查姿态。</li>
+    </ol>
+    <h3>关键认知转变</h3>
+    <p>从「随手甩棍子活动一下肩膀」转向「用棍子轨迹分别对照仰泳、自由泳两种不同的移臂路径与身体姿态」，让陆上练习和下水动作之间建立更清晰的对应关系。</p>
+  </div>
+
+  <p class="footer">理性分析 · 证据回溯画面动作与笔记文案 · 背景配乐非口播讲解</p>
+</div>
+
+    </div>
+  </foreignObject>
+</svg>
