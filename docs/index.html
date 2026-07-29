@@ -557,6 +557,38 @@
       margin-top: 4px;
     }
 
+    /* ====== 分类标签栏 ====== */
+    .category-bar {
+      max-width: 860px;
+      margin: 0 auto 20px;
+      padding: 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .category-btn {
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .category-btn:hover {
+      background: rgba(96,165,250,0.1);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .category-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
     /* ====== 搜索 ====== */
     .search-bar {
       max-width: 860px;
@@ -650,6 +682,8 @@
       .search-bar { padding: 0 12px; }
       .search-input { padding: 12px 16px 12px 40px; }
       .search-icon { left: 28px; }
+      .category-bar { padding: 0 12px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .category-bar::-webkit-scrollbar { display: none; }
     }
   </style>
 </head>
@@ -715,6 +749,9 @@
     <button class="cal-today-btn" id="calToday">回到今天</button>
   </div>
 
+  <!-- 分类标签栏 -->
+  <div class="category-bar" id="categoryBar"></div>
+
   <!-- 搜索 -->
   <div class="search-bar" id="searchBar">
     <span class="search-icon">&#x1F50D;</span>
@@ -739,6 +776,24 @@
       let allTopics = [];
       let dateMap = {};
       let calYear, calMonth;
+
+      const CATEGORIES = [
+        { key: null, label: '全部', match: [] },
+        { key: '摄影', label: '摄影', match: ['摄影', '拍摄技巧', '旅拍', '构图', '光圈', '快门', 'ISO', '运镜', '相机', '摄影教程'] },
+        { key: '穿搭', label: '穿搭', match: ['穿搭', '买衣技巧', '方圆脸', '做工细节'] },
+        { key: '游泳', label: '游泳', match: ['游泳', '自由泳', '蛙泳', '打腿', '动作纠正', '动作对比', '移臂'] },
+        { key: '跑步', label: '跑步', match: ['跑步', '送髋'] },
+        { key: '影视', label: '影视', match: ['影视', '视听分析', '周星驰', '拉片'] },
+        { key: '数码', label: '数码', match: ['数码'] },
+        { key: '咖啡', label: '咖啡', match: ['咖啡', '拉花'] },
+        { key: '修图', label: '修图', match: ['修图', 'vlog', '调色'] },
+        { key: '动作教学', label: '动作教学', match: ['动作教学'] },
+        { key: '光学科普', label: '光学科普', match: ['光学科普', '曝光三要素', '感光度'] },
+        { key: '动画', label: '动画', match: ['动画'] },
+        { key: '其他', label: '其他', match: [] }
+      ];
+
+      let activeCategory = null;
 
       const $ = id => document.getElementById(id);
 
@@ -838,6 +893,32 @@
         });
       }
 
+      function itemHasCategory(item, catKey) {
+        if (catKey === '其他') {
+          const otherCats = CATEGORIES.filter(c => c.key && c.key !== '其他');
+          return !otherCats.some(function(c) { return itemHasCategory(item, c.key); });
+        }
+        const cat = CATEGORIES.find(c => c.key === catKey);
+        if (!cat || cat.match.length === 0) return false;
+        const tags = item.tags || [];
+        return cat.match.some(m => tags.includes(m));
+      }
+
+      function buildCategoryBar() {
+        const bar = $('categoryBar');
+        bar.innerHTML = '';
+        CATEGORIES.forEach(function(cat) {
+          const btn = document.createElement('button');
+          btn.className = 'category-btn' + (activeCategory === cat.key ? ' active' : '');
+          btn.textContent = cat.label;
+          btn.addEventListener('click', function() {
+            activeCategory = cat.key;
+            render();
+          });
+          bar.appendChild(btn);
+        });
+      }
+
       function render() {
         const hasPodcasts = allData.length > 0;
         const hasTopics = allTopics.length > 0;
@@ -845,6 +926,7 @@
 
         $('searchBar').style.display = hasData ? 'block' : 'none';
         $('calendarWrapper').style.display = hasPodcasts ? 'block' : 'none';
+        $('categoryBar').style.display = hasPodcasts ? 'flex' : 'none';
         $('topicsSection').style.display = hasTopics ? 'block' : 'none';
         $('podcastHeading').style.display = hasPodcasts ? 'block' : 'none';
 
@@ -859,6 +941,7 @@
         $('emptyState').style.display = 'none';
 
         const query = $('searchInput').value.trim().toLowerCase();
+        buildCategoryBar();
         buildTopics(query);
 
         if (hasPodcasts) {
@@ -977,29 +1060,31 @@
         let filteredDays = days;
         let visibleCount = 0;
 
-        if (query) {
-          filteredDays = days.filter(function(d) {
-            const items = dateMap[d].filter(function(item) {
-              return (item.title || '').toLowerCase().includes(query) ||
-                (item.summary || '').toLowerCase().includes(query) ||
-                (item.url || '').toLowerCase().includes(query) ||
-                (item.error_message || '').toLowerCase().includes(query);
-            });
-            dateMap[d]._filtered = items;
-            if (items.length > 0) visibleCount++;
-            return items.length > 0;
-          });
-        } else {
-          days.forEach(function(d) { dateMap[d]._filtered = dateMap[d]; });
+        function matchesItem(item) {
+          if (query && !(
+            (item.title || '').toLowerCase().includes(query) ||
+            (item.summary || '').toLowerCase().includes(query) ||
+            (item.url || '').toLowerCase().includes(query) ||
+            (item.error_message || '').toLowerCase().includes(query)
+          )) return false;
+          if (activeCategory && !itemHasCategory(item, activeCategory)) return false;
+          return true;
         }
 
-        if (query && visibleCount === 0 && !topicMatchesQuery(query)) {
+        filteredDays = days.filter(function(d) {
+          const items = dateMap[d].filter(matchesItem);
+          dateMap[d]._filtered = items;
+          if (items.length > 0) visibleCount++;
+          return items.length > 0;
+        });
+
+        if ((query || activeCategory) && visibleCount === 0 && !topicMatchesQuery(query)) {
           $('timeline').style.display = 'none';
           $('searchEmpty').style.display = '';
         } else {
-          $('timeline').style.display = query && visibleCount === 0 ? 'none' : '';
+          $('timeline').style.display = (query || activeCategory) && visibleCount === 0 ? 'none' : '';
           $('searchEmpty').style.display = 'none';
-          if (!query || visibleCount > 0) buildTimeline(filteredDays);
+          if (visibleCount > 0) buildTimeline(filteredDays);
         }
 
         buildCalendar();
