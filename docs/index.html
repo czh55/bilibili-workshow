@@ -750,7 +750,7 @@
 
       const TAG_COLORS = ['tag-blue','tag-purple','tag-green','tag-orange'];
 
-      const DISPLAY_SPREAD_THRESHOLD = 3;
+      const DISPLAY_SPREAD_THRESHOLD = 10;
       const DISPLAY_RANGE_DAYS = 7;
 
       function hashString(str) {
@@ -785,11 +785,6 @@
           return;
         }
 
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const startDate = new Date(today);
-        startDate.setDate(startDate.getDate() - (DISPLAY_RANGE_DAYS - 1));
-
         const keptOnDate = {};
 
         items.forEach(item => {
@@ -807,8 +802,9 @@
           const outputs = item.outputs || {};
           const seed = hashString(item.url || outputs.html || outputs.svg || item.filename || item.title || '');
           const dayOffset = seed % DISPLAY_RANGE_DAYS;
-          const disp = new Date(startDate);
-          disp.setDate(disp.getDate() + dayOffset);
+          const articleDate = new Date(d + 'T00:00:00');
+          const disp = new Date(articleDate);
+          disp.setDate(disp.getDate() - dayOffset);
           item.displayDate = toDateKey(disp);
         });
       }
