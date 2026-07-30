@@ -172,11 +172,17 @@ whisper "{音频文件}" --model small --language Chinese --output_dir .
 
 写作语气自然、轻松、偏纪实，保留视频的推进感：
 
-1. **开场背景**：UP 主为什么谈这个主题，当时面对什么场景
-2. **章节实录**：按时间顺序讲清每一段发生了什么
-3. **人物与语气**：区分说话人；争议观点明确标注为个人立场
-4. **关键画面**：把界面、产品、图表、操作或对比截图放在对应叙述旁
-5. **完整转录**：页面末尾逐段呈现全部非空 Whisper segments 和时间戳
+1. **内容要点（提炼总结，严禁逐段罗列）**：阅读全部转录后，将视频内容归纳为一段开场导语 + 按主题分组的要点列表。每组必须包含：
+   - 主题标签（如"原理说明""操作步骤""避坑提醒"等，而非原文关键词拼接）
+   - 该主题涉及的起止时间范围
+   - 用自然语言概括的核心信息（选最具代表性的 1-2 句原话或归纳表述）
+   
+   **硬约束：不得**把 Whisper segments 逐条罗列为内容要点。如果转录有 100 段，内容要点最多 8 个主题组，每组一段概括，不是 100 行时间标记。内容要点和"详细文字转录"的功能必须明确分离——前者是归纳，后者是原文逐段存档。
+2. **开场背景**：UP 主为什么谈这个主题，当时面对什么场景
+3. **章节实录**：按时间顺序讲清每一段发生了什么
+4. **人物与语气**：区分说话人；争议观点明确标注为个人立场
+5. **关键画面**：把界面、产品、图表、操作或对比截图放在对应叙述旁
+6. **完整转录**：页面末尾逐段呈现全部非空 Whisper segments 和时间戳
 
 HTML 可以解释必要背景，但不应把叙事切碎成大量分析卡片。它回答的是：“视频具体说了什么、展示了什么、前后如何发展？”
 
@@ -305,15 +311,31 @@ console.log('Generated:', OUT, 'segments:', segments.length);
 ```html
 <main class="container">
   <header><!-- 标题、元数据、纪实导语、原视频链接 --></header>
-  <nav class="toc"><!-- 时间章节、关键画面、完整转录 --></nav>
   <article class="documentary">
-    <section class="story-section"><!-- 按时间推进的叙述 --></section>
+    <!-- 内容要点：提炼总结，不是逐段转录！ -->
+    <h2>内容要点</h2>
+    <p>{开场导语：一句话概括视频类型和核心主题}</p>
+    <h3>知识结构</h3>
+    <div class="summary-row">
+      <span class="time-marker">[MM:SS→MM:SS]</span>
+      <div>
+        <strong>{主题标签，如「原理说明」「操作步骤」}</strong>
+        <p>{用自然语言概括的核心信息，选 1-2 句最具代表性的话}</p>
+      </div>
+    </div>
+    <!-- 重复最多 8 个 summary-row -->
+    <div class="takeaway-box">
+      <strong>总结</strong>
+      <p>{核心结论或要点（一两句话）}</p>
+    </div>
+
+    <section class="story-section"><!-- 按时间推进的详细叙述 --></section>
     <figure>
       <img src="assets/{slug}/shot-01.jpg" alt="{准确描述}" loading="lazy">
       <figcaption>[01:23] {画面内容及上下文}</figcaption>
     </figure>
   </article>
-  <section class="transcript-section"><!-- 全部分段 --></section>
+  <section class="transcript-section"><!-- 逐段完整转录 --></section>
 </main>
 ```
 
@@ -333,6 +355,14 @@ figcaption{padding:14px 18px;color:#57534e}
 .transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
 .transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
 .transcript-row p{margin:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+h3{font-size:20px;font-weight:700;color:#1c1917;margin:28px 0 14px}
 @media(max-width:640px){
   .container{padding:28px 18px 56px}
   .transcript-row{grid-template-columns:56px 1fr;gap:10px}
@@ -487,6 +517,7 @@ XML 注意事项：
 
 - [ ] 包含 `<!DOCTYPE html>`、`lang="zh-CN"` 和 viewport
 - [ ] 所有非空 Whisper segments 均按原顺序和时间戳出现
+- [ ] **「内容要点」是真正的提炼总结**，不是逐段时间标记堆砌：长视频按 ≤8 个主题分组并标注时间范围，短视频为单段概括
 - [ ] 内容主要按视频时间顺序展开，语气自然，不写成分析卡片堆叠
 - [ ] 一般视频有 3-8 张有效截图，每张都有准确 alt 和时间戳图注
 - [ ] 桌面端与 375px 宽度均无横向溢出
