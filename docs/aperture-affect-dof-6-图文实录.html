@@ -45,7 +45,7 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .documentary{font-size:16px}
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
-}</style>
+}.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
 </head>
 <body>
   <main class="container">
@@ -161,8 +161,7 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </section>
   </article>
 
-    <section class="transcript-section" id="transcript">
-      <h2>详细文字转录</h2>
+    <section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>详细文字转录</summary><div class="transcript-body">
       <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。常见误识对照画面字幕：入童径→入瞳径；入童假角/光线假角→入瞳夹角/光线夹角；光追→光锥；迷散园/迷散原→弥散圆；胶身→焦深；背摄→被摄；胶外→焦外；光录→光路；眼射→衍射；原→圆；景深变→景深便。</p>
       <ol class="transcript-list">
   <li class="transcript-row" id="transcript-1">
@@ -373,8 +372,8 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     <time datetime="PT114S">01:54</time>
     <p>我们才能走的更远一些</p>
   </li></ol>
-    </section>
+    </div></details></section>
     <p class="footer">图文实录 · aperture-affect-dof-6 · 2026-07-26 · 平台：小红书</p>
   </main>
-</body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
 </html>

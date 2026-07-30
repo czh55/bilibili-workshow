@@ -53,7 +53,7 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
 @media(max-width:420px){
   .toc-grid{grid-template-columns:1fr}
   .transcript-row{grid-template-columns:52px minmax(0,1fr);gap:10px}
-}</style>
+}.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
 </head>
 <body>
   <main class="container">
@@ -159,8 +159,7 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </section>
   </article>
 
-    <section class="transcript-section" id="transcript">
-      <h2>详细文字转录</h2>
+    <section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>详细文字转录</summary><div class="transcript-body">
       <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现（繁体识别结果已转换为简体，未改写措辞），可能包含识别误差，如「自由用→自由泳」「郵→游」「滑手→划手」「狗袍式→狗刨式」「有甲→划水」「前身→前伸」等，已在正文中结合画面字幕与博主图文文案对照还原；末段「I'll be」为收尾处听不清内容，未做主观补写。</p>
       <ol class="transcript-list">
   <li class="transcript-row" id="transcript-1">
@@ -238,8 +237,8 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     <p>I&#039;ll be</p>
   </li>
 </ol>
-    </section>
+    </div></details></section>
     <p class="footer">双轨产物 · 图文实录 · 源视频保留在小红书</p>
   </main>
-</body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
 </html>
