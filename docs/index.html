@@ -779,14 +779,16 @@
 
       const CATEGORIES = [
         { key: null, label: '全部', match: [] },
-        { key: '摄影', label: '摄影', match: ['摄影', '拍摄技巧', '旅拍', '构图', '光圈', '快门', 'ISO', '运镜', '相机', '摄影教程'] },
+        { key: '摄影', label: '摄影', match: ['摄影', '摄影技巧', '拍摄技巧', '人像拍照', '灯光', '器材', '旅拍', '构图', '光圈', '快门', 'ISO', '运镜', '相机', '摄影教程'] },
+        { key: '视频制作', label: '视频制作', match: ['视频制作', '后期', '剪辑干货', '视频剪辑', 'vlog'] },
+        { key: '化妆', label: '化妆', match: ['化妆', '眉毛', '脸型分析'] },
         { key: '穿搭', label: '穿搭', match: ['穿搭', '买衣技巧', '方圆脸', '做工细节'] },
         { key: '游泳', label: '游泳', match: ['游泳', '自由泳', '蛙泳', '打腿', '动作纠正', '动作对比', '移臂'] },
         { key: '跑步', label: '跑步', match: ['跑步', '送髋'] },
         { key: '影视', label: '影视', match: ['影视', '视听分析', '周星驰', '拉片'] },
         { key: '数码', label: '数码', match: ['数码'] },
         { key: '咖啡', label: '咖啡', match: ['咖啡', '拉花'] },
-        { key: '修图', label: '修图', match: ['修图', 'vlog', '调色'] },
+        { key: '修图', label: '修图', match: ['修图', '调色', '婚纱照', '精修', '修图过程'] },
         { key: '动作教学', label: '动作教学', match: ['动作教学'] },
         { key: '光学科普', label: '光学科普', match: ['光学科普', '曝光三要素', '感光度'] },
         { key: '动画', label: '动画', match: ['动画'] },
@@ -801,6 +803,16 @@
         const d = document.createElement('div');
         d.textContent = s || '';
         return d.innerHTML;
+      }
+
+      function decodeHtmlEntities(s) {
+        const d = document.createElement('textarea');
+        d.innerHTML = s || '';
+        return d.value;
+      }
+
+      function displayText(s) {
+        return escapeHtml(decodeHtmlEntities(s));
       }
 
       const TAG_COLORS = ['tag-blue','tag-purple','tag-green','tag-orange'];
@@ -823,7 +835,7 @@
           String(date.getDate()).padStart(2, '0');
       }
 
-      /** 同一天条目过多时，仅将超出阈值的条目用稳定哈希分散到过去 7 天内展示 */
+      /** 同一天条目过多时，仅将超出阈值的条目用稳定哈希分散到过去 15 天内展示 */
       function applyDisplayDates(items) {
         const counts = {};
         items.forEach(item => {
@@ -1142,8 +1154,8 @@
               : escapeHtml(item.title || htmlFile.replace(/\.[^.]+$/, '') || svgFile.replace(/\.[^.]+$/, ''));
 
             var summaryText = isError
-              ? escapeHtml(item.error_message || '未能成功生成总结')
-              : escapeHtml(item.summary || '');
+              ? displayText(item.error_message || '未能成功生成总结')
+              : displayText(item.summary || '');
 
             var durationHtml = (item.duration && !isError)
               ? '<span class="card-duration">⏱ ' + escapeHtml(item.duration) + '</span>'
