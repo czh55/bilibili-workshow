@@ -25,7 +25,7 @@ async function acquireLock() {
   }
 }
 
-const lock = await acquireLock();
+const lockFd = await acquireLock();
 try {
   const lastRequest = Number(
     fs.existsSync(stateFile) ? fs.readFileSync(stateFile, 'utf8') : 0
@@ -39,6 +39,6 @@ try {
   // Reserve the slot while holding the lock. The following request must start now.
   fs.writeFileSync(stateFile, String(Date.now()));
 } finally {
-  lock.close();
+  fs.closeSync(lockFd);
   fs.unlinkSync(lockFile);
 }
