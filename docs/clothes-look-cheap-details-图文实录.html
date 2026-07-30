@@ -42,7 +42,7 @@ footer{margin-top:44px;color:#64748b;font-size:13px;text-align:center}
   .toc{margin-bottom:34px}
   .story-section{margin:40px 0}
   .transcript-row{grid-template-columns:52px 1fr;gap:10px}
-}</style>
+}.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
 </head>
 <body>
   <main class="container">
@@ -131,8 +131,7 @@ footer{margin-top:44px;color:#64748b;font-size:13px;text-align:center}
     </section>
   </article>
 
-    <section class="transcript-section" id="transcript">
-      <h2>详细文字转录</h2>
+    <section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>详细文字转录</summary><div class="transcript-body">
       <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。叙述正文已依据可见字幕校正关键术语。</p>
       <ol class="transcript-list">
   <li class="transcript-row" id="transcript-1">
@@ -270,8 +269,8 @@ footer{margin-top:44px;color:#64748b;font-size:13px;text-align:center}
     <p>你手工在这块缝两下不行吗</p>
   </li>
 </ol>
-    </section>
+    </div></details></section>
     <footer>双轨产物之一 · 图文实录 · 原视频链接见页首</footer>
   </main>
-</body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
 </html>

@@ -60,7 +60,7 @@
     .transcript-row{grid-template-columns:58px 1fr;gap:10px}
     .transcript-row p{font-size:14px}
   }
-</style>
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
 </head>
 <body>
   <main class="container">
@@ -5347,5 +5347,5 @@
     </section>
     <footer class="footer">内容依据原视频与本地 Whisper 转录整理 · 原视频：BV1cq7A64EnW</footer>
   </main>
-</body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
 </html>

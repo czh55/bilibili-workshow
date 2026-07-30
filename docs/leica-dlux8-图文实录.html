@@ -128,7 +128,7 @@ figcaption b { color: var(--ink); }
   .turning-point, .ending { padding: 25px 21px; }
   .transcript-row { grid-template-columns: 54px 1fr; gap: 10px; }
 }
-</style>
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
 </head>
 <body>
   <main class="container">
@@ -273,8 +273,7 @@ figcaption b { color: var(--ink); }
   </section>
 </article>
 
-<section class="transcript-section" id="transcript">
-  <h2>详细文字转录</h2>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>详细文字转录</summary><div class="transcript-body">
   <p>以下为 Whisper small 按原始时间分段生成的完整转录，共 164 段。为保留可追溯性，这里没有删减口语和重复，也没有悄悄改写识别结果；“LiCa、李光、绿镜”等专有名词可能存在语音识别误差，应结合上方图文与原视频理解。</p>
   <div class="transcript-meta">
     <span>语言：中文</span>
@@ -1103,9 +1102,9 @@ figcaption b { color: var(--ink); }
     <p>我们下次再见拜拜</p>
   </li>
 </ol>
-</section>
+</div></details></section>
 
 <footer class="footer">图文实录根据 B 站视频《徕卡D-Lux8！对比富士理光该怎么么选》整理 · 2026-07-24</footer>
 </main>
-</body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
 </html>

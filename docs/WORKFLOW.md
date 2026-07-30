@@ -344,11 +344,16 @@ const html = `<!DOCTYPE html>
   <main class="container">
     ${documentaryBody}
     <section class="transcript-section" id="transcript">
-      <h2>详细文字转录</h2>
-      <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
-      <ol class="transcript-list">${transcript}</ol>
+      <details class="transcript-collapsible">
+        <summary>详细文字转录</summary>
+        <div class="transcript-body">
+          <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p>
+          <ol class="transcript-list">${transcript}</ol>
+        </div>
+      </details>
     </section>
   </main>
+  <script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script>
 </body>
 </html>`;
 
@@ -385,7 +390,15 @@ console.log('Generated:', OUT, 'segments:', segments.length);
       <figcaption>[01:23] {画面内容及上下文}</figcaption>
     </figure>
   </article>
-  <section class="transcript-section"><!-- 逐段完整转录 --></section>
+  <section class="transcript-section" id="transcript">
+    <details class="transcript-collapsible">
+      <summary>详细文字转录</summary>
+      <div class="transcript-body">
+        <p class="transcript-note">…</p>
+        <ol class="transcript-list">…</ol>
+      </div>
+    </details>
+  </section>
 </main>
 ```
 
@@ -405,6 +418,13 @@ figcaption{padding:14px 18px;color:#57534e}
 .transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
 .transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
 .transcript-row p{margin:0}
+.transcript-collapsible{border:none;margin:0;padding:0}
+.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}
+.transcript-collapsible[open] summary{margin-bottom:16px}
+.transcript-collapsible .transcript-body{margin-top:0}
 .summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
 .summary-row .time-marker{flex-shrink:0;margin-top:2px}
 .summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
