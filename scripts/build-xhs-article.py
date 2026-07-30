@@ -6,6 +6,19 @@ import re
 import sys
 from pathlib import Path
 
+try:
+    import opencc
+
+    _T2S = opencc.OpenCC("t2s")
+except ImportError:
+    _T2S = None
+
+
+def to_simplified(text: str) -> str:
+    if not text or _T2S is None:
+        return text or ""
+    return _T2S.convert(text)
+
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 
@@ -74,7 +87,7 @@ def fmt_time(sec: float) -> str:
 def build_transcript_rows(segments):
     rows = []
     for seg in segments:
-        text = (seg.get("text") or "").strip()
+        text = to_simplified((seg.get("text") or "").strip())
         if not text:
             continue
         rows.append(
