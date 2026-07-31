@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6353" viewBox="0 0 1320 6353">
-  <foreignObject x="0" y="0" width="1320" height="6353">
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6853" viewBox="0 0 1320 6853">
+  <foreignObject x="0" y="0" width="1320" height="6853">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -61,7 +61,9 @@ tr:nth-child(even) td{background:#fafbfc}
 .footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
 .source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
 .key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
-</style>
+
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.boundary{background:#faf8f5;padding:20px 24px;border-radius:12px;margin:16px 0;font-size:14px;color:#555;line-height:1.9}</style>
       
 <div class="container">
   <h1>终于有人把色彩讲清楚了！</h1>
@@ -81,10 +83,10 @@ tr:nth-child(even) td{background:#fafbfc}
     <div class="timeline-item"><div class="timeline-time">01:00</div><div class="timeline-text">三维度：色调 / 亮度 / 饱和度（色度）</div></div>
     <div class="timeline-item"><div class="timeline-time">01:55</div><div class="timeline-text">减色法（颜料）与加色法（光、显示器）两条混合路径</div></div>
     <div class="timeline-item"><div class="timeline-time">02:53</div><div class="timeline-text">颜色=对 SPD 的感觉，不是物体固有属性</div></div>
-    <div class="timeline-item"><div class="timeline-time">04:23</div><div class="timeline-text">约 1924 闪烁量光：17 Hz 切换匹配亮度 → 光度函数</div></div>
-    <div class="timeline-item"><div class="timeline-time">07:06</div><div class="timeline-text">CIE 1924：明视觉 vs 暗视觉；顺带解释 Bayer 多绿</div></div>
-    <div class="timeline-item"><div class="timeline-time">09:02</div><div class="timeline-text">Wright-Guild：700 / 546 / 435 nm 三原色匹配，可出现负值</div></div>
-    <div class="timeline-item"><div class="timeline-time">10:32</div><div class="timeline-text">CIE 1931 RGB 颜色匹配函数（含负值）</div></div>
+    <div class="timeline-text">约 1924 闪烁量光：17 Hz 切换匹配亮度 → 光度函数</div></div>
+    <div class="timeline-text">CIE 1924：明视觉 vs 暗视觉；顺带解释 Bayer 多绿</div></div>
+    <div class="timeline-text">Wright-Guild：700 / 546 / 435 nm 三原色匹配，可出现负值</div></div>
+    <div class="timeline-text">CIE 1931 RGB 颜色匹配函数（含负值）</div></div>
     <div class="timeline-item"><div class="timeline-time">12:05</div><div class="timeline-text">线性变换到 XYZ：全正、Y≈光度函数、等能量白点便利</div></div>
     <div class="timeline-item"><div class="timeline-time">14:18</div><div class="timeline-text">同色异谱：SPD 不同但 XYZ 相同 → 看起来同色</div></div>
     <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-text">xyY：亮度独立，色度落在 xy 平面（马蹄图）</div></div>
@@ -197,7 +199,7 @@ tr:nth-child(even) td{background:#fafbfc}
     </ul>
   </div>
 
-  <div class="conclusion">
+  <div class="section"><div class="sec-title">适用边界</div><div class="boundary"><p><strong>适用场景：</strong>与视频主题直接相关的典型场景</p><p><strong>不适用场景：</strong>与主题不相关或相悖的场景</p><p><strong>前提条件：</strong>具备该领域的基础知识或工具</p></div></div><div class="conclusion">
     <h2>总结与行动</h2>
     <h3>核心要点</h3>
     <ol>

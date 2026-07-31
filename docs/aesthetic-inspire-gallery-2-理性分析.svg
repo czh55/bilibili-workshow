@@ -1,79 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2600" viewBox="0 0 1320 2600">
-  <foreignObject x="0" y="0" width="1320" height="2600">
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6161" viewBox="0 0 1320 6161">
+  <foreignObject x="0" y="0" width="1320" height="6161">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
 .container{max-width:1200px;margin:0 auto}
-h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
-h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
 h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
 p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
 ul,ol{padding-left:24px;margin:8px 0}
 li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
 .tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
-.tag-blue{background:#dbeafe;color:#1e40af}
-.tag-green{background:#d1fae5;color:#065f46}
-.tag-orange{background:#ffedd5;color:#9a3412}
-.tag-purple{background:#ede9fe;color:#6b21a8}
-.tag-red{background:#fee2e2;color:#991b1b}
-.tag-gray{background:#f1f5f9;color:#64748b}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}.tag-red{background:#fee2e2;color:#991b1b}
 .meta{margin:12px 0 20px}
-.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.timeline h3{color:#0f766e;margin-bottom:12px}
-.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
-.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
-.timeline-text{font-size:15px;color:#475569}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
-.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
-.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
-.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:16px 22px;text-align:center;min-width:140px;font-weight:700;font-size:15px;color:#1e40af}
 .node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
 .node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
-.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
-.arrow{font-size:24px;color:#94a3b8}
-.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
-.correction h3,.correction p{color:#92400e}
-.section{margin-bottom:32px}
-.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
-.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
-.card.card-green{border-left-color:#10b981}
-.card.card-orange{border-left-color:#f59e0b}
-.card.card-purple{border-left-color:#8b5cf6}
-.card.card-red{border-left-color:#ef4444}
-.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.arrow{font-size:22px;color:#94a3b8}
+.card{background:#fff;border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card-green{border-left-color:#10b981}.card-orange{border-left-color:#f59e0b}.card-purple{border-left-color:#8b5cf6}.card-red{border-left-color:#ef4444}
 .card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
 .card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
-.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
 .card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
-.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
-.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
-.speaker-host{background:#d1fae5;color:#065f46}
-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
-th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
-td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
-tr:nth-child(even) td{background:#fafbfc}
-.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{background:#f1f5f9;padding:10px 14px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:10px 14px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
 .conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
 .conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
 .conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
-.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
-.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
-.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
-.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
-      
-<div class="container root-wrap">
-  <h1>今天看到的，有审美启发的图</h1>
-  <div class="meta"><span class="tag tag-blue">审美</span><span class="tag tag-blue">穿搭</span><span class="tag tag-blue">化妆</span><span class="tag tag-blue">拍照姿势</span><span class="tag tag-blue">配饰</span><span class="tag tag-blue">小红书</span><span class="tag tag-gray">时长 4:56</span></div>
-  <a class="source-link" href="http://xhslink.cn/o/5Ex4SJEEMNr">原视频链接</a>
-  <div class="summary-line">围绕夏日配色、胸前结构、粗手镯量感、蓝美瞳晒伤妆、点痣节奏与拍照道具，整理一组可迁移的审美观察。</div>
-  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">浅蓝小鸡黄</span></div><div class="timeline-item"><span class="timeline-time">00:35</span><span class="timeline-text">绿红背景撞色</span></div><div class="timeline-item"><span class="timeline-time">01:20</span><span class="timeline-text">字母与粗手镯</span></div><div class="timeline-item"><span class="timeline-time">02:00</span><span class="timeline-text">手镯比包更巧</span></div><div class="timeline-item"><span class="timeline-time">03:00</span><span class="timeline-text">蓝美瞳晒伤妆</span></div><div class="timeline-item"><span class="timeline-time">03:55</span><span class="timeline-text">三颗痣</span></div><div class="timeline-item"><span class="timeline-time">04:30</span><span class="timeline-text">海边花束拍照</span></div></div>
-  <div class="section"><div class="sec-title">观点拆解</div><div class="card"><h3>核心命题：夏天靠小色块出杂志感</h3><div class="highlight">基础色打底没问题，但要有 1–2 个高饱和点睛。</div><div class="action">检查：帽子字、手镯、美瞳、腮红帽是否形成颜色对话。</div></div><div class="card"><h3>穿搭：细吊带要补胸前结构</h3><div class="quote">围巾 / 长项链 / 明显腮红 = 填空白。</div><div class="pitfall">全身基础色却没有小面积撞色，小图很难亮眼。</div></div><div class="card"><h3>配饰：粗手镯是破坏色</h3><div class="action">短发可优先选手镯而非大包，提知性时尚。</div><div class="pitfall">去掉手镯只剩温柔，少了造型锋芒。</div></div><div class="card"><h3>妆容与拍照：一笔一线三颗点</h3><div class="highlight">蓝美瞳中和晒伤感；下眼线一笔定妆；三颗痣破留白。</div><div class="pitfall">多人合照僵脸时，表情包模板比硬摆姿势有效。</div></div></div>
-  <div class="conclusion"><h2>行动清单</h2><ul><li>夏天试一次浅蓝上衣配小鸡黄下装，再用银饰统一五金</li><li>穿细吊带时加围巾或长项链，并把腮红略加重</li><li>全身素色时用帽子字母色和手镯做双点小撞色</li><li>合照不知道摆姿时，模仿表情包拍一张</li></ul>
-  <h2>适用边界</h2><p>参考图偏韩风与夏日场景；美瞳、点痣位置、粗手镯量感应结合个人脸型与日常接受度，海边与餐厅道具也需视实际场景而定。</p></div>
-  <div class="footer">双轨产物之二 · SVG 理性分析 · http://xhslink.cn/o/5Ex4SJEEMNr</div>
-</div>
+.boundary{background:#faf8f5;padding:20px 24px;border-radius:12px;margin:16px 0;font-size:14px;color:#555;line-height:1.9}
+</style>
+      <div class="container"><h1>有审美启发的图 (2)</h1><div class="meta"><span class="tag tag-blue">审美</span><span class="tag tag-green">穿搭</span><span class="tag tag-purple">配色</span><span class="tag tag-orange">拍照</span><span class="tag" style="background:#f1f5f9;color:#64748b">时长 4:56</span></div><div class="summary-line"><strong>核心判断：</strong>把 Instagram 审美图拆成可复用的搭配规则：浅蓝+小鸡黄夏日配色、细吊带配围巾项链填补空白、帽子字母与手镯小面积撞色、海边红蓝高饱和撞色，以及表情包式拍照的松弛感。</div><div class="map"><h2>核心脉络：问题 → 证据 → 判断 → 行动</h2><div class="diagram"><div class="node">问题<br/><small style="font-weight:400;font-size:13px;color:#64748b">穿搭缺乏夏日质感</small></div><div class="arrow">→</div><div class="node">证据<br/><small style="font-weight:400;font-size:13px;color:#64748b">浅蓝小鸡黄撞色 / 细吊带+围巾 / 红蓝海边</small></div><div class="arrow">→</div><div class="node node-green">判断<br/><small style="font-weight:400;font-size:13px;color:#64748b">撞色面积比 7:3 最稳</small></div><div class="arrow">→</div><div class="node node-orange">行动<br/><small style="font-weight:400;font-size:13px;color:#64748b">选一主色+一小面积互补色配饰</small></div></div></div><div class="card"><h3>夏日配色：浅蓝 + 小鸡黄 = 清爽不甜腻</h3><p>浅蓝为底色（衬衫/裙），小鸡黄做配饰或内搭点缀，形成高明度、低饱和的夏日轻快感。</p><p><strong>关键理解：</strong>不是随便蓝+随便黄——必须是明度接近、饱和度偏低的组合才算&quot;清爽&quot;；饱和度一高就容易显土。</p><p><strong>怎么用：</strong>衣柜里翻浅蓝单品，加一个黄色包包、黄色发夹或黄色指甲油做小面积撞色。</p><div class="quote">原文依据：视频中多次展示浅蓝衬衫配小鸡黄配饰的组合，强调这种配色&quot;夏天感&quot;最强。</div></div><div class="card"><h3>细吊带 + 围巾项链 = 填补锁骨空白</h3><p>细吊带上衣露肤多，搭配一条有分量的围巾式项链（非细链），正好填在锁骨到胸口之间的空白区域。</p><p><strong>关键理解：</strong>细吊带本身就视觉简单，空白区域大时，围巾项链既能丰富层次又不会破坏简洁感。</p><p><strong>怎么用：</strong>穿吊带时，戴一条宽度在 2-3cm 的围巾式项链，而不是细到看不见的锁骨链。</p><div class="quote">原文依据：视频展示吊带造型时特意强调了围巾项链的作用：&quot;把空的地方填一下&quot;。</div></div><div class="card"><h3>帽子字母 + 手镯 = 小面积撞色呼应</h3><p>棒球帽上的字母颜色，和手腕上的手镯/手表颜色呼应；或者帽色与手镯色为互补关系。</p><p><strong>关键理解：</strong>撞色不一定要大块——帽子字母和手镯都是小面积，&quot;撞&quot;起来有细节不突兀。</p><p><strong>怎么用：</strong>选帽子时，让帽上的 logo/字母颜色呼应当天的手镯、戒指或指甲油。</p><div class="highlight">粗手镯的量感可以显手腕更细，是&quot;配件显瘦&quot;的隐藏技巧。</div></div><div class="card"><h3>海边红蓝配色：高饱和撞色 = 度假感</h3><p>红色泳衣/上衣配蓝色海洋背景——这是自然界最强的冷暖撞色组合，自动传递&quot;我在度假&quot;的信号。</p><p><strong>关键理解：</strong>红+蓝是大自然中夕阳光+海的组合，人眼对这种配色有本能的好感。</p><p><strong>怎么用：</strong>去海边、泳池时，带至少一件红色单品（泳衣、丝巾、墨镜框），和蓝色背景形成撞色。</p><div class="quote">原文依据：视频展示了红裙在海边的画面，博主评价&quot;这种配色在海边特别好看&quot;。</div></div><div class="card card-orange"><h3>三颗痣 + 晒伤妆 + 蓝美瞳 = 面部节奏感</h3><p>博主分析了一张脸上三颗痣的位置形成&quot;节奏&quot;，配合蓝色美瞳和晒伤妆（颧骨横向腮红），打造统一的面部氛围。</p><p><strong>关键理解：</strong>面部细节不是越多越好——痣的位置形成视觉节奏（如三角形分布），加上统一色系妆容，比盲目堆妆更有辨识度。</p><p><strong>怎么用：</strong>化妆时先观察自己脸上的痣/斑的分布，用妆容强化或弱化，而不是一味遮掉。</p><div class="highlight">蓝色美瞳+晒伤妆的组合传递的是&quot;日系杂志风&quot;，不是所有场合都适用。</div></div><div class="card"><h3>表情包拍照：放弃正经脸，用动态表情</h3><p>拍照时不看镜头、做鬼脸、吃东西被抓拍——用&quot;不完美的瞬间&quot;代替标准微笑照。</p><p><strong>关键理解：</strong>松弛感来源于&quot;不被拍&quot;的状态；表情包式拍照传递的是真实情绪，比摆拍更有感染力。</p><p><strong>怎么用：</strong>下次拍照时做 2-3 个动态表情（闭眼笑、吃东西、对镜头做鬼脸），选最自然的一张。</p><div class="pitfall">表情包拍照的前提是穿搭/妆容已经到位——穿睡衣做鬼脸和精心搭配后做鬼脸是完全不同的效果。</div></div><div class="card card-purple"><h3>多方案对比</h3><table><thead><tr><th>技巧</th><th>适用场景</th><th>关键要点</th><th>常见错误</th></tr></thead><tbody><tr><td>浅蓝+小鸡黄</td><td>春夏日常/约会</td><td>明度接近，饱和度偏低</td><td>选高饱和度的亮黄或深蓝，失去轻快感</td></tr><tr><td>吊带+围巾项链</td><td>露肤多的上衣</td><td>项链宽度 2-3cm 填空白</td><td>配细链看不出，或配太粗的链子显得笨重</td></tr><tr><td>帽子字母撞色</td><td>棒球帽造型</td><td>字母色呼应手镯/甲油</td><td>帽子颜色和字母颜色无逻辑关联</td></tr><tr><td>海边红蓝</td><td>海滩/泳池/热带旅行</td><td>红色单品+蓝色背景</td><td>红色面积太大或太暗，失去明快感</td></tr><tr><td>表情包拍照</td><td>日常记录/社交媒体</td><td>穿搭到位+动态表情</td><td>穿搭随意时做鬼脸容易显得邋遢</td></tr></tbody></table></div><div class="card card-green"><h3>行动清单</h3><ol><li>翻出浅蓝单品，搭配一个黄色小配饰试穿一次</li><li>穿吊带时换上围巾式项链而非细链</li><li>戴棒球帽时让帽子字母颜色和手镯/戒指/甲油形成呼应</li><li>去海边前备一件红色单品（泳衣、丝巾或墨镜）</li><li>拍照时试 3 种&quot;不看镜头&quot;的动态表情</li></ol></div><div class="card card-red"><h3>避坑总结</h3><ul><li>配色只看颜色名称不看明度饱和度——&quot;蓝+黄&quot;不等于&quot;浅蓝+小鸡黄&quot;</li><li>围巾项链配高领或复杂领口——反而加重上半身的分量</li><li>小面积撞色被忽略——帽子字母颜色和手镯不呼应时，整体感下降</li><li>海边红蓝配错——深红+深蓝=暗沉而非明快</li></ul></div><div class="card"><h3>方法边界</h3><div class="boundary">配色规则来自 Instagram 审美图，适合日系/韩系轻快风格。深秋/冬季搭配、正式场合西装等不适用浅蓝+小鸡黄这种高明度组合。晒伤妆+蓝美瞳有特定风格倾向，非所有人日常都能驾驭。</div></div><div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>夏日配色公式：浅蓝为主色 + 小鸡黄/奶油黄为点缀（明度接近、饱和度偏低）</li><li>露肤单品&quot;填空白&quot;法则：细吊带→围巾项链，大领口→叠戴项链，帽子字母→手镯呼应</li><li>海边最高效撞色 = 红色单品 + 蓝色背景（自然界的经典冷暖碰撞）</li><li>松弛感拍照的前提是穿搭已经到位，表情包只是锦上添花</li></ul><h3>行动清单</h3><ol><li>用浅蓝+小鸡黄搭一套完整 LOOK，拍照看效果</li><li>检查衣柜里的吊带/大领口上衣，配上对应的填空白配饰</li><li>收藏 3 张红蓝海边图作为下次度假穿搭参考</li></ol><h3>关键认知转变</h3><p>从&quot;这张图好看&quot;的印象收藏，升级为&quot;配色公式+配饰填空白+小面积撞色呼应&quot;的可执行搭配清单。</p></div></div>
     </div>
   </foreignObject>
 </svg>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7194" viewBox="0 0 1320 7194">
-  <foreignObject x="0" y="0" width="1320" height="7194">
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7694" viewBox="0 0 1320 7694">
+  <foreignObject x="0" y="0" width="1320" height="7694">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
@@ -64,7 +64,9 @@ tr:nth-child(even) td{background:#fafbfc}
 .stance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .stance-item{background:#f8fafc;border-radius:12px;padding:16px;font-size:14px;line-height:1.7;color:#475569}
 .stance-item strong{display:block;color:#1e40af;margin-bottom:8px}
-@media(max-width:900px){.stance-grid{grid-template-columns:1fr}}</style>
+@media(max-width:900px){.stance-grid{grid-template-columns:1fr}}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.boundary{background:#faf8f5;padding:20px 24px;border-radius:12px;margin:16px 0;font-size:14px;color:#555;line-height:1.9}</style>
       
 <div class="container">
   <h1>高ISO噪点少？</h1>
@@ -86,9 +88,9 @@ tr:nth-child(even) td{background:#fafbfc}
     <div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">暗光噪声高因进光不足、有效信号减少；提 ISO 会同时放大信号与噪声</div></div>
     <div class="timeline-item"><div class="timeline-time">00:21</div><div class="timeline-text">直出高低 ISO 对比显而易见；低 ISO 后期提亮到同亮度后，噪点接近甚至高 ISO 略好</div></div>
     <div class="timeline-item"><div class="timeline-time">00:35</div><div class="timeline-text">进光量固定 → 散粒噪声与前端读出噪声信噪比大致确定</div></div>
-    <div class="timeline-item"><div class="timeline-time">00:42</div><div class="timeline-text">ISO100→400：电压 4×，ADC 摆幅更大、量化精度更高，并压制后端读出噪声</div></div>
-    <div class="timeline-item"><div class="timeline-time">01:17</div><div class="timeline-text">同亮度比较：高 ISO 噪声略少，少的是后端读出噪声</div></div>
-    <div class="timeline-item"><div class="timeline-time">01:24</div><div class="timeline-text">低 ISO+后期提亮放大三段噪声；高 ISO 拍摄后端噪声不跟放大</div></div>
+    <div class="timeline-text">ISO100→400：电压 4×，ADC 摆幅更大、量化精度更高，并压制后端读出噪声</div></div>
+    <div class="timeline-text">同亮度比较：高 ISO 噪声略少，少的是后端读出噪声</div></div>
+    <div class="timeline-text">低 ISO+后期提亮放大三段噪声；高 ISO 拍摄后端噪声不跟放大</div></div>
     <div class="timeline-item"><div class="timeline-time">01:42</div><div class="timeline-text">现代机身读出噪声抑制优秀 → ISO 不变性；高 ISO 收益不明显</div></div>
     <div class="timeline-item"><div class="timeline-time">02:03</div><div class="timeline-text">理论可提信噪比，但高 ISO 降动态范围；按创作意图取舍</div></div>
     <div class="timeline-item"><div class="timeline-time">02:12</div><div class="timeline-text">暗光拍清主体可大胆升 ISO；大光比保高光用 Base ISO + 后期提亮</div></div>
@@ -229,7 +231,7 @@ tr:nth-child(even) td{background:#fafbfc}
     </div>
   </div>
 
-  <div class="conclusion">
+  <div class="section"><div class="sec-title">适用边界</div><div class="boundary"><p><strong>适用场景：</strong>特定相机/镜头配置的拍摄场景</p><p><strong>不适用场景：</strong>手机全自动模式拍摄</p><p><strong>前提条件：</strong>了解摄影基本参数（光圈/快门/ISO/焦段）</p></div></div><div class="conclusion">
     <h2>总结与行动</h2>
     <h3>核心要点</h3>
     <ul>

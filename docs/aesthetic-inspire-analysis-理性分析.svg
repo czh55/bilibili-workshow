@@ -1,79 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2600" viewBox="0 0 1320 2600">
-  <foreignObject x="0" y="0" width="1320" height="2600">
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6377" viewBox="0 0 1320 6377">
+  <foreignObject x="0" y="0" width="1320" height="6377">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
 .container{max-width:1200px;margin:0 auto}
-h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
-h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
 h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
 p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
 ul,ol{padding-left:24px;margin:8px 0}
 li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
 .tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
-.tag-blue{background:#dbeafe;color:#1e40af}
-.tag-green{background:#d1fae5;color:#065f46}
-.tag-orange{background:#ffedd5;color:#9a3412}
-.tag-purple{background:#ede9fe;color:#6b21a8}
-.tag-red{background:#fee2e2;color:#991b1b}
-.tag-gray{background:#f1f5f9;color:#64748b}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}.tag-red{background:#fee2e2;color:#991b1b}
 .meta{margin:12px 0 20px}
-.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.timeline h3{color:#0f766e;margin-bottom:12px}
-.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
-.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
-.timeline-text{font-size:15px;color:#475569}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
-.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
-.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
-.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:16px 22px;text-align:center;min-width:140px;font-weight:700;font-size:15px;color:#1e40af}
 .node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
 .node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
-.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
-.arrow{font-size:24px;color:#94a3b8}
-.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
-.correction h3,.correction p{color:#92400e}
-.section{margin-bottom:32px}
-.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
-.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
-.card.card-green{border-left-color:#10b981}
-.card.card-orange{border-left-color:#f59e0b}
-.card.card-purple{border-left-color:#8b5cf6}
-.card.card-red{border-left-color:#ef4444}
-.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.arrow{font-size:22px;color:#94a3b8}
+.card{background:#fff;border-radius:16px;padding:28px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card-green{border-left-color:#10b981}.card-orange{border-left-color:#f59e0b}.card-purple{border-left-color:#8b5cf6}.card-red{border-left-color:#ef4444}
 .card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
 .card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
-.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
 .card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
-.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
-.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
-.speaker-host{background:#d1fae5;color:#065f46}
-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
-th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
-td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
-tr:nth-child(even) td{background:#fafbfc}
-.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{background:#f1f5f9;padding:10px 14px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:10px 14px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
 .conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
 .conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
 .conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
-.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
-.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
-.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
-.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
-      
-<div class="container root-wrap">
-  <h1>分享一些审美灵感➕我的分析～</h1>
-  <div class="meta"><span class="tag tag-blue">审美</span><span class="tag tag-blue">穿搭</span><span class="tag tag-blue">化妆</span><span class="tag tag-blue">家居</span><span class="tag tag-blue">配饰</span><span class="tag tag-blue">小红书</span><span class="tag tag-gray">时长 4:25</span></div>
-  <a class="source-link" href="http://xhslink.cn/o/6DJKZmKwwYY">原视频链接</a>
-  <div class="summary-line">把审美参考图拆成耳饰、软装、修容、发型、配色、叠戴与光影等可记录的观察点。</div>
-  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">耳廓夹位置</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">镜子需纹理墙</span></div><div class="timeline-item"><span class="timeline-time">01:05</span><span class="timeline-text">鼻小柱阴影</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">鸭舌帽耳后括弧</span></div><div class="timeline-item"><span class="timeline-time">02:10</span><span class="timeline-text">全身颜色呼应</span></div><div class="timeline-item"><span class="timeline-time">02:45</span><span class="timeline-text">叠链与波点甲</span></div><div class="timeline-item"><span class="timeline-time">03:30</span><span class="timeline-text">发丝光与冷白色</span></div></div>
-  <div class="section"><div class="sec-title">观点拆解</div><div class="card"><h3>核心命题：审美分析 = 拆局部机制</h3><div class="highlight">每张图回答「它靠什么成立」，而不是「我想买同款」。</div><div class="action">记录时写：焦点部位 / 墙面或背景 / 颜色呼应链。</div></div><div class="card"><h3>配饰：位置改变存在感</h3><div class="quote">耳廓高位耳饰 &gt; 只戴耳垂款。</div><div class="pitfall">可爱镜子挂大白墙，容易显得空且廉价。</div></div><div class="card"><h3>脸型服务：帽型要配发型结构</h3><div class="action">鸭舌帽试耳后括弧；肉鼻可试鼻小柱阴影线。</div></div><div class="card"><h3>配色与补完：叠戴和光都是工具</h3><div class="highlight">两条项链可分别呼应不同颜色；发丝光能补棕色包。</div><div class="pitfall">冷白和暖白硬凑一套，不如把冷白当独立色块。</div></div></div>
-  <div class="conclusion"><h2>行动清单</h2><ul><li>收藏图时标注「启发部位」：耳饰/鼻型/发型/配色/墙面</li><li>试一次耳廓夹或耳骨夹，看正面耳朵存在感是否提升</li><li>全身基础色时，用两条不同色项链补层次</li><li>穿冷白色上衣时，先把它当「一个颜色」再配其他单品</li></ul>
-  <h2>适用边界</h2><p>观点来自博主个人刷图经验；耳饰、鼻型修容、帽型与发型需结合耳型、脸型与日常舒适度，不必照搬每张参考图。</p></div>
-  <div class="footer">双轨产物之二 · SVG 理性分析 · http://xhslink.cn/o/6DJKZmKwwYY</div>
-</div>
+.boundary{background:#faf8f5;padding:20px 24px;border-radius:12px;margin:16px 0;font-size:14px;color:#555;line-height:1.9}
+</style>
+      <div class="container"><h1>审美灵感+分析——从脸到全身的系统性审美升级</h1><div class="meta"><span class="tag tag-blue">审美</span><span class="tag tag-purple">化妆</span><span class="tag tag-green">穿搭</span><span class="tag tag-orange">配色</span><span class="tag" style="background:#f1f5f9;color:#64748b">时长 4:25</span></div><div class="summary-line"><strong>核心判断：</strong>系统性审美分析：从脸部（耳廓夹提高耳朵存在感、鼻小柱阴影线修容、鸭舌帽配耳后括弧发型显脸小）到全身（层层呼应配色从美甲到咖啡），再到细节（叠戴项链两色呼应、波点美甲左右不同色、发丝光与包色呼应）。配色法则：&quot;冷白色当独立色块搭配&quot;是最反直觉但最好用的技巧。</div><div class="map"><h2>核心脉络：问题 → 证据 → 判断 → 行动</h2><div class="diagram"><div class="node">问题<br/><small style="font-weight:400;font-size:13px;color:#64748b">穿搭缺乏系统协调感</small></div><div class="arrow">→</div><div class="node">证据<br/><small style="font-weight:400;font-size:13px;color:#64748b">耳夹/阴影/发型/层层呼应配色</small></div><div class="arrow">→</div><div class="node node-green">判断<br/><small style="font-weight:400;font-size:13px;color:#64748b">从头到脚的呼应体系</small></div><div class="arrow">→</div><div class="node node-orange">行动<br/><small style="font-weight:400;font-size:13px;color:#64748b">先定 2-3 色，全身上色块</small></div></div></div><div class="card"><h3>耳廓夹：提高耳朵存在感 = 改变面部比例</h3><p>在耳廓上夹一个金属耳夹，可以把耳朵的视觉位置&quot;提起来&quot;，同时增加侧面轮廓的层次。</p><p><strong>关键理解：</strong>耳朵的存在感影响脸部宽窄的判断——耳朵越明显，脸部视觉上越集中、越小。耳廓夹不疼、不用打耳洞，但效果立竿见影。</p><p><strong>怎么用：</strong>扎头发或戴帽子时，在耳廓上方的软骨处夹一个有存在感的金属夹。</p><div class="quote">原文依据：博主多次强调&quot;耳廓夹是我最推荐的单品之一，比耳环更显脸小&quot;。</div></div><div class="card"><h3>鼻小柱阴影线 + 布边镜子配纹理墙</h3><p>化妆时在鼻小柱（两鼻孔之间的柱子）下方画一条细阴影线，让鼻头有&quot;抬起&quot;的立体感。布边镜子不如普通镜子好用，但配一面有纹理的墙就变成了装饰品。</p><p><strong>关键理解：</strong>鼻小柱阴影的本质是在面部制造&quot;底面&quot;，让鼻子不再是一个平面。布边镜子的审美价值不在镜子本身，而在于&quot;镜子+背景墙&quot;的组合。</p><p><strong>怎么用：</strong>修容时在鼻小柱下方 1-2mm 处画短线；有布边镜子的话靠一面纹理墙放。</p><div class="quote">原文依据：博主展示了布边镜配纹理墙的前后对比，说&quot;单独的布边镜不好看，靠墙就对了&quot;。</div><div class="highlight">鼻小柱阴影线只适合拍正面或稍低角度——侧面看不出来，高角度反而显脏。</div></div><div class="card"><h3>鸭舌帽 + 耳后括弧发型 = 显脸小组合</h3><p>戴鸭舌帽时，把两侧头发从耳后翻出呈&quot;括弧状&quot;，既能遮颧骨又能形成纵向线条，把注意力从脸部宽度转移到头发弧度上。</p><p><strong>关键理解：</strong>帽子压低后脸显得更短；如果头发全部塞耳后，脸型完全暴露——括弧发型是用头发弧度做&quot;脸部外围框架&quot;，视觉上脸小了但头发是自然的。</p><p><strong>怎么用：</strong>戴鸭舌帽时，耳前留一小撮头发，耳后头发翻出来形成弧度。</p><div class="pitfall">括弧发型不适合圆脸/方脸发量少的人——头发塌下来反而显脸大。发量不够可以先喷蓬松喷雾。</div></div><div class="card"><h3>全身配色层层呼应：美甲→上衣，包→项链，咖啡→头发</h3><p>博主的审美体系核心——从头到脚的颜色是一套呼应系统：美甲颜色和上衣呼应，包包颜色和叠戴项链的颜色呼应，手上拿的咖啡颜色和发色呼应。</p><p><strong>关键理解：</strong>普通人配色只考虑衣服，博主考虑的是一套&quot;视觉点&quot;的连线——美甲是手的焦点、包是身体的焦点、咖啡是场景的焦点，每个焦点都需要在穿搭中找到颜色对应。</p><p><strong>怎么用：</strong>出门前检查：美甲颜色是否和上衣/妆容有一处呼应？包的颜色是否和配饰呼应？</p><div class="highlight">叠戴项链有两色时，让包的颜色呼应其中一色，另一色呼应鞋子或袖口——这样&quot;两色都有出处&quot;。</div></div><div class="card"><h3>波点美甲左右不同色 + 发丝光呼应棕色包</h3><p>两只手的美甲做不同颜色（如左手白底黑波点、右手黑底白波点），形成&quot;镜像对比&quot;的趣味。发丝光（阳光下头发的自然光泽）如果偏棕色，可以用一个棕色包包来呼应。</p><p><strong>关键理解：</strong>波点美甲不同色的本质是&quot;同元素不同分布&quot;——图案相同但底色反色，既有统一又有变化。发丝光是一种&quot;环境中自然存在的颜色&quot;，用它来选包的颜色是最自然的呼应法。</p><p><strong>怎么用：</strong>下次做美甲可以试试两只手不同的底色和相同图案。阳光下看自己发丝反光是什么颜色，下次买包可以参考。</p></div><div class="card card-orange"><h3>冷白色当独立色块搭配——最反直觉的配色技巧</h3><p>不要把白色当成&quot;没颜色/百搭&quot;，而是把它当成一个独立色块来对待——冷白配冷色系（蓝/灰/银），暖白配暖色系（米/棕/金），不能互换。</p><p><strong>关键理解：</strong>绝大多数人穿白色是&quot;因为好搭&quot;，但没人告诉你要分冷暖——冷白+暖色=白色显脏/泛黄，暖白+冷色=白色显突兀。把白色当独立色块，就和选其他颜色一样思考冷暖。</p><p><strong>怎么用：</strong>区分自己的白色单品是冷白（偏蓝底）还是暖白（偏黄/米底），然后严格按冷暖配对。</p><div class="highlight">这是被博主称为&quot;最重要也最容易被忽略的配色法则&quot;——因为大家潜意识里把白色当&quot;无色&quot;。</div></div><div class="card card-purple"><h3>多方案对比</h3><table><thead><tr><th>层次</th><th>呼应对象</th><th>呼应方式</th><th>核心原则</th></tr></thead><tbody><tr><td>脸部</td><td>耳廓夹+发型</td><td>耳夹提高耳朵存在感；括弧发型做面部框架</td><td>从外向内收窄脸型</td></tr><tr><td>头部</td><td>帽子+发型</td><td>鸭舌帽+耳后括弧发</td><td>压低帽子 + 两侧头发弧度</td></tr><tr><td>上装</td><td>美甲→上衣</td><td>美甲颜色和上衣颜色一致</td><td>手部出镜时色彩不孤立</td></tr><tr><td>全身</td><td>包→项链(其中一色), 咖啡→发色</td><td>包色呼应项链两色之一；咖啡色呼应发色</td><td>每个视觉焦点都有颜色出处</td></tr><tr><td>色彩基础</td><td>冷白/暖白</td><td>白色单品分冷暖，严格按色系搭配</td><td>把白色当作独立色块而非&quot;无色&quot;</td></tr></tbody></table></div><div class="card card-green"><h3>行动清单</h3><ol><li>买一副耳廓夹，下次扎发/戴帽时试戴</li><li>化妆时尝试在鼻小柱下方画一条细阴影线</li><li>出门前做&quot;全身呼应检查&quot;：美甲→上衣、包→项链、咖啡→发色</li><li>区分衣柜里所有白色单品的冷暖，分开存放</li><li>做一次波点美甲，两只手不同底色</li></ol></div><div class="card card-red"><h3>避坑总结</h3><ul><li>耳廓夹选太小的——太小在照片里看不见，对显脸小无帮助</li><li>鼻小柱阴影画太重——变成&quot;两道黑&quot;而非自然阴影</li><li>鸭舌帽压低但头发完全塞耳后——脸型完全暴露，帽子显脸小的作用打折扣</li><li>全身呼应做到&quot;每件配饰都呼应&quot;但颜色超过 3 种——呼应不等于堆颜色，2-3 色循环即可</li></ul></div><div class="card"><h3>方法边界</h3><div class="boundary">耳廓夹对耳朵贴面/耳朵极小的人效果有限。鼻小柱阴影线适合正面拍照，日常生活和侧脸角度效果不明显。全身配色呼应体系适合白天/室内光，强光下颜色还原有偏差。冷白/暖白区分是原则性指导，具体面料的冷暖可能受材质和光线影响。</div></div><div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>脸部显小三步：耳廓夹提高耳朵存在感 → 鼻小柱阴影增加鼻立体度 → 鸭舌帽+括弧发做面部框架</li><li>全身配色呼应法则：美甲呼应上衣、包呼应项链（叠戴取一色）、咖啡呼应发色</li><li>波点美甲左右不同色 = 同元素不同分布，比纯色更有趣但不过度</li><li>白色是独立色块，不是万能色——冷白 vs 暖白不可互换</li></ul><h3>行动清单</h3><ol><li>按&quot;脸→头→上装→全身→基础&quot;五层检查自己的审美体系</li><li>用 2-3 个颜色做一次&quot;全身呼应&quot;穿搭实验</li><li>下次买白色单品前先判断是冷白还是暖白</li></ol><h3>关键认知转变</h3><p>从&quot;这件好看装这件&quot;的点状审美，升级为&quot;从头到脚每个视觉焦点都有颜色出处&quot;的系统化审美体系。</p></div></div>
     </div>
   </foreignObject>
 </svg>
