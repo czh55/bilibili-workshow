@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大语言模型数据准备阶段：资料收集清洗、分词Token化、嵌入Embedding，通俗讲解AI如何将文字变成数字">
+  <title>大语言模型原理（1）数据准备｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}
+.tag-duration{background:#f1f5f9;color:#64748b}
+.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}
+.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}
+.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}
+.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}
+.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+.quote-block{background:#f0fdf4;border-left:4px solid #10b981;padding:12px 16px;border-radius:8px;margin:14px 0;font-size:15px;color:#166534;font-style:italic}
+img{display:block;max-width:100%;height:auto}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}
+.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}
+.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  header h1{font-size:24px}
+  .transcript-row{grid-template-columns:56px 1fr;gap:10px}
+}.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+</head>
+<body>
+  <main class="container">
+    
+<header>
+  <h1>大语言模型原理（1）数据准备：把文字变成AI能懂的数字</h1>
+  <div class="meta-row">
+    <span class="meta-tag tag-platform">小红书</span>
+    <span class="meta-tag tag-duration">6:54</span>
+    <span class="meta-tag tag-topic">AI 大语言模型 数据准备</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/5FSQXbAvARN" target="_blank" rel="noopener">→ 原视频链接</a>
+</header>
+
+<nav class="toc">
+  <h3>内容导航</h3>
+  <a href="#intro">开场：大语言模型的三大阶段</a>
+  <a href="#step1">第一步：资料收集与清洗</a>
+  <a href="#step2">第二步：分词（Token化）</a>
+  <a href="#insight">插播：为什么AI不能精确控制字数？</a>
+  <a href="#step3">第三步：嵌入（Embedding）</a>
+  <a href="#summary">总结：数据准备全流程</a>
+  <a href="#transcript">完整转录</a>
+</nav>
+
+<article class="documentary">
+
+<section class="story-section" id="intro">
+  <h2>开场：大语言模型的三大阶段</h2>
+  <p><span class="time-marker">00:00</span>AI到底是怎么学会说话的？这个过程既神奇又复杂。博主用费曼学习法，把学到的知识用自己的话讲出来。像豆包、DeepSeek、ChatGPT这些可以直接对话的AI，本质上都属于大语言模型。大语言模型的诞生分为三大阶段：<strong>数据准备、预训练、对齐训练</strong>。今天主要讲数据准备这一阶段。</p>
+  <figure>
+    <img src="assets/llm-data-prep/shot-01.jpg" alt="开场：大语言模型的三大阶段" loading="lazy">
+    <figcaption><span class="time-badge">[00:02]</span> 开场定调：大语言模型的诞生分为数据准备、预训练、对齐训练三大阶段</figcaption>
+  </figure>
+  <div class="quote-block">
+    一句话概括数据准备阶段的目的：<strong>把大量的文本，转换为AI能处理的数字。</strong>
+  </div>
+</section>
+
+<section class="story-section" id="step1">
+  <h2>第一步：资料收集与清洗</h2>
+  <p><span class="time-marker">00:39</span>要想让AI学会说话，首先需要庞大的知识库给它学习。这些知识包括海量的网页、书籍、论文、代码等等。但从全网收集来的数据并不能直接使用。</p>
+  <figure>
+    <img src="assets/llm-data-prep/shot-02.jpg" alt="资料收集：网页、书籍、论文、代码" loading="lazy">
+    <figcaption><span class="time-badge">[00:42]</span> 数据来源：网页、书籍、论文、代码等海量文本</figcaption>
+  </figure>
+  <p><span class="time-marker">00:59</span>收集到数据后，需要进一步清洗：</p>
+  <ul>
+    <li><strong>去重</strong>：删除重复的数据</li>
+    <li><strong>去噪</strong>：删除没有含义的垃圾数据</li>
+    <li><strong>过滤</strong>：过滤掉敏感与违规的信息</li>
+  </ul>
+  <p>经过清洗后，我们就能得到一个干净的文本库，这是第一个步骤。</p>
+</section>
+
+<section class="story-section" id="step2">
+  <h2>第二步：分词（Token化）</h2>
+  <p><span class="time-marker">01:15</span>第二步叫分词，也称之为Token化。Token是AI处理文字时的<strong>最小单位</strong>。对于人而言，一个单独的字是我们阅读的最小单位；但AI不是，它的最小单位叫Token。一个Token可能是一个字，也可能是好几个字。</p>
+  <figure>
+    <img src="assets/llm-data-prep/shot-03.jpg" alt="分词Token化示例" loading="lazy">
+    <figcaption><span class="time-badge">[01:20]</span> Token化：将"我喜欢金毛"分为"我"、"喜欢"、"金毛"三个Token</figcaption>
+  </figure>
+  <p><span class="time-marker">01:37</span>以"我喜欢金毛"为例，分词后可能被分成<strong>我、喜欢、金毛</strong>三个Token。每个Token都有一个数字编号（ID），比如"我"是1025、"喜欢"是2578、"金毛"是10871。</p>
+  <p><span class="time-marker">02:04</span>在分词之前，需要先训练一个<strong>分词器</strong>（Tokenizer）。分词器做了两件事：</p>
+  <ol>
+    <li><strong>建立合并规则</strong>：通过阅读大量文本，发现哪些字经常一起出现（如"喜欢"），就把它们合并成一个Token。</li>
+    <li><strong>建立词表</strong>：包含所有常见字词和搭配，每个Token都有一个ID编号。像GPT这样的大模型，词表通常有数十万个词条。</li>
+  </ol>
+  <p>为什么需要给每个Token一个ID？因为计算机只认识数字。以后计算机见到ID为1025，它就知道对应的是"我"这个字。</p>
+</section>
+
+<section class="story-section" id="insight">
+  <h2>插播：为什么AI不能精确控制字数？</h2>
+  <p><span class="time-marker">03:23</span>博主分享了一个学完分词后的恍然大悟：当你让AI严格生成具体字数（比如写一个100字的短文），它通常做不到——总是"大约100个字"。</p>
+  <figure>
+    <img src="assets/llm-data-prep/shot-04.jpg" alt="为什么AI不能精确控制字数" loading="lazy">
+    <figcaption><span class="time-badge">[03:50]</span> AI按Token生成，无法精确知道每个Token对应几个字</figcaption>
+  </figure>
+  <div class="quote-block">
+    AI处理文字的最小单位是Token，而不是一个字一个字。它在生成回答时按Token生成，而每个Token具体对应几个字它也不知道。所以它只能估计一下"100个字大概需要多少个Token"，最后的字数自然是不确定的。
+  </div>
+  <p>这个例子体现了普通人了解AI底层原理的意义：我们不是要像科学家一样研究复杂的技术，而是为了知道<strong>AI为什么可以做某些事情，又为什么做不好另外一些事情</strong>，从而更准确高效地使用它。</p>
+</section>
+
+<section class="story-section" id="step3">
+  <h2>第三步：嵌入（Embedding）</h2>
+  <p><span class="time-marker">04:25</span>第三步叫嵌入，英文是Embedding。一句话概括：<strong>把每个Token转换为一个高维向量</strong>。</p>
+  <p>向量其实不复杂——它就是一组按顺序排列的数字集合，比如0.72、0.56、0.43……这样一组数就代表一个向量。向量里有多少个数字，就是多少维。</p>
+  <figure>
+    <img src="assets/llm-data-prep/shot-05.jpg" alt="嵌入Embedding：Token转高维向量" loading="lazy">
+    <figcaption><span class="time-badge">[04:40]</span> 嵌入过程：每个Token转换为包含上万个小数的高维向量</figcaption>
+  </figure>
+  <p><span class="time-marker">05:01</span>像GPT这样的大模型，可能把每个Token（比如"我"这个字）生成一个由<strong>上万个小数</strong>组成的向量来表示它。这些向量在建立时是随机的。</p>
+  <p>为什么要把Token对应成上万维的向量？因为计算机不能像人一样直接理解文字，只能进行数字计算。一个词有非常多含义和联系——"喜欢"包含丰富的情感，还和很多词有关联——这些含义和联系就用一堆数字来量化和表示。</p>
+  <p><span class="time-marker">06:06</span>最初这些数字是随机的，但经过训练后会变得有意义：</p>
+  <ul>
+    <li>"再见"和"拜拜"含义接近 → 训练后它们的向量在数字上也比较接近</li>
+    <li>"小猫"和"小狗"都和动物有关 → 它们的向量在某个维度上也接近</li>
+  </ul>
+</section>
+
+<section class="story-section" id="summary">
+  <h2>总结：数据准备全流程</h2>
+  <p><span class="time-marker">06:32</span>数据准备阶段的三步流程：</p>
+  <ol>
+    <li><strong>全网搜集大量知识</strong>，并进行清洗，得到干净的文本库</li>
+    <li><strong>把文本分成一个个带有编号的Token</strong>（分词/Token化）</li>
+    <li><strong>把每个Token转换成一个随机的高维向量</strong>（嵌入/Embedding）</li>
+  </ol>
+  <p>这就是整个数据准备的过程。下一节将讲解预训练（Pre-training）的过程。</p>
+</section>
+
+</article>
+
+<section class="transcript-section" id="transcript">
+  <details class="transcript-collapsible" open>
+    <summary>完整转录（273段）</summary>
+    <div class="transcript-body">
+      <p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+      <div class="transcript-list">
+        <div class="transcript-row"><time>00:00</time><p>AI到底是怎么学会说话的</p></div>
+        <div class="transcript-row"><time>00:02</time><p>这个过程既神奇又复杂</p></div>
+        <div class="transcript-row"><time>00:04</time><p>在我学习了解之后</p></div>
+        <div class="transcript-row"><time>00:05</time><p>为了检验自己是不是真的理解了</p></div>
+        <div class="transcript-row"><time>00:07</time><p>我想用飞腕学习法</p></div>
+        <div class="transcript-row"><time>00:08</time><p>也就是把我学到的知识</p></div>
+        <div class="transcript-row"><time>00:09</time><p>用自己的话通俗易懂的</p></div>
+        <div class="transcript-row"><time>00:11</time><p>讲给大家听</p></div>
+        <div class="transcript-row"><time>00:12</time><p>能让大家理解了</p></div>
+        <div class="transcript-row"><time>00:13</time><p>那我才是真的理解了</p></div>
+        <div class="transcript-row"><time>00:14</time><p>像豆包DBSIC</p></div>
+        <div class="transcript-row"><time>00:15</time><p>国外的小的GPT</p></div>
+        <div class="transcript-row"><time>00:17</time><p>这些可以直接对话的AI</p></div>
+        <div class="transcript-row"><time>00:18</time><p>在本质上都属于大元模型</p></div>
+        <div class="transcript-row"><time>00:20</time><p>而大元模型的诞生</p></div>
+        <div class="transcript-row"><time>00:21</time><p>我把它分为三大阶段</p></div>
+        <div class="transcript-row"><time>00:24</time><p>分别为</p></div>
+        <div class="transcript-row"><time>00:24</time><p>1 数据准备</p></div>
+        <div class="transcript-row"><time>00:25</time><p>2 余训练</p></div>
+        <div class="transcript-row"><time>00:26</time><p>3 对齐训练</p></div>
+        <div class="transcript-row"><time>00:27</time><p>今天我们就主要讲</p></div>
+        <div class="transcript-row"><time>00:28</time><p>数据准备这一阶段</p></div>
+        <div class="transcript-row"><time>00:31</time><p>那么数据准备这一阶段</p></div>
+        <div class="transcript-row"><time>00:32</time><p>它的目的是干什么呢</p></div>
+        <div class="transcript-row"><time>00:33</time><p>一句话表示</p></div>
+        <div class="transcript-row"><time>00:34</time><p>数据准备阶段</p></div>
+        <div class="transcript-row"><time>00:34</time><p>就是把大量的文本</p></div>
+        <div class="transcript-row"><time>00:36</time><p>转换为AI能处理的数字</p></div>
+        <div class="transcript-row"><time>00:37</time><p>我们首先需要做的</p></div>
+        <div class="transcript-row"><time>00:38</time><p>第一个步骤</p></div>
+        <div class="transcript-row"><time>00:39</time><p>叫做资料收集与清洗</p></div>
+        <div class="transcript-row"><time>00:40</time><p>要想让AI学会说话</p></div>
+        <div class="transcript-row"><time>00:41</time><p>我们肯定需要有</p></div>
+        <div class="transcript-row"><time>00:42</time><p>庞大的知识库</p></div>
+        <div class="transcript-row"><time>00:43</time><p>来给它学习</p></div>
+        <div class="transcript-row"><time>00:44</time><p>而这些知识</p></div>
+        <div class="transcript-row"><time>00:45</time><p>就包括海量的网页</p></div>
+        <div class="transcript-row"><time>00:47</time><p>书籍</p></div>
+        <div class="transcript-row"><time>00:48</time><p>论文</p></div>
+        <div class="transcript-row"><time>00:49</time><p>代码等等</p></div>
+        <div class="transcript-row"><time>00:50</time><p>那么我们从全网</p></div>
+        <div class="transcript-row"><time>00:51</time><p>收集来的这些数据</p></div>
+        <div class="transcript-row"><time>00:52</time><p>并不是能直接可以用的</p></div>
+        <div class="transcript-row"><time>00:54</time><p>得到这些之后</p></div>
+        <div class="transcript-row"><time>00:54</time><p>我们需要进一步的</p></div>
+        <div class="transcript-row"><time>00:55</time><p>对这些资料</p></div>
+        <div class="transcript-row"><time>00:56</time><p>进行一个清洗的操作</p></div>
+        <div class="transcript-row"><time>00:59</time><p>清洗就是说</p></div>
+        <div class="transcript-row"><time>01:00</time><p>储蓄里面</p></div>
+        <div class="transcript-row"><time>01:01</time><p>有一些重复的数据</p></div>
+        <div class="transcript-row"><time>01:02</time><p>储蓄里面有一些</p></div>
+        <div class="transcript-row"><time>01:03</time><p>没有含义</p></div>
+        <div class="transcript-row"><time>01:04</time><p>没有用的垃圾数据</p></div>
+        <div class="transcript-row"><time>01:05</time><p>当然这些里面</p></div>
+        <div class="transcript-row"><time>01:06</time><p>还包括一些</p></div>
+        <div class="transcript-row"><time>01:07</time><p>敏感与违规的信息</p></div>
+        <div class="transcript-row"><time>01:08</time><p>我们也要把它给过滤掉</p></div>
+        <div class="transcript-row"><time>01:10</time><p>那么经过清洗之后</p></div>
+        <div class="transcript-row"><time>01:12</time><p>我们就能得到一个</p></div>
+        <div class="transcript-row"><time>01:12</time><p>干净的文本</p></div>
+        <div class="transcript-row"><time>01:13</time><p>这是第一个步骤</p></div>
+        <div class="transcript-row"><time>01:14</time><p>第二个步骤</p></div>
+        <div class="transcript-row"><time>01:15</time><p>它就是叫分词</p></div>
+        <div class="transcript-row"><time>01:16</time><p>也称之为偷啃化</p></div>
+        <div class="transcript-row"><time>01:17</time><p>偷啃是我们耳熟能详的词</p></div>
+        <div class="transcript-row"><time>01:20</time><p>一句话就是偷啃</p></div>
+        <div class="transcript-row"><time>01:21</time><p>偷啃它就是</p></div>
+        <div class="transcript-row"><time>01:21</time><p>AI处理文字式的最小单位</p></div>
+        <div class="transcript-row"><time>01:23</time><p>对于我们人而言</p></div>
+        <div class="transcript-row"><time>01:24</time><p>一个单独的字</p></div>
+        <div class="transcript-row"><time>01:25</time><p>是我们阅读的最小单位</p></div>
+        <div class="transcript-row"><time>01:26</time><p>而AI字不是</p></div>
+        <div class="transcript-row"><time>01:27</time><p>它的最小单位</p></div>
+        <div class="transcript-row"><time>01:28</time><p>就叫做偷啃</p></div>
+        <div class="transcript-row"><time>01:29</time><p>而这个偷啃可能是一个字</p></div>
+        <div class="transcript-row"><time>01:30</time><p>也可能是好几个字</p></div>
+        <div class="transcript-row"><time>01:32</time><p>那么对整个分词的过程中</p></div>
+        <div class="transcript-row"><time>01:34</time><p>到底是做了什么呢</p></div>
+        <div class="transcript-row"><time>01:35</time><p>直接举A字</p></div>
+        <div class="transcript-row"><time>01:36</time><p>例如</p></div>
+        <div class="transcript-row"><time>01:37</time><p>我喜欢金毛这句话</p></div>
+        <div class="transcript-row"><time>01:38</time><p>这句话在金毛分词之后</p></div>
+        <div class="transcript-row"><time>01:39</time><p>它可能就会被分成了</p></div>
+        <div class="transcript-row"><time>01:41</time><p>我喜欢金毛这三个字</p></div>
+        <div class="transcript-row"><time>01:44</time><p>或者说是三个偷啃</p></div>
+        <div class="transcript-row"><time>01:45</time><p>而且对这三个偷啃</p></div>
+        <div class="transcript-row"><time>01:46</time><p>都有一个数字编号</p></div>
+        <div class="transcript-row"><time>01:48</time><p>我先写的</p></div>
+        <div class="transcript-row"><time>01:49</time><p>比如我是1025</p></div>
+        <div class="transcript-row"><time>01:50</time><p>喜欢是2578</p></div>
+        <div class="transcript-row"><time>01:52</time><p>金毛是10871</p></div>
+        <div class="transcript-row"><time>01:55</time><p>那么这个是怎么做的呢</p></div>
+        <div class="transcript-row"><time>01:57</time><p>为什么要进行这样做呢</p></div>
+        <div class="transcript-row"><time>01:58</time><p>其实在这个分词之前</p></div>
+        <div class="transcript-row"><time>02:00</time><p>我们先是训练好了一个东西</p></div>
+        <div class="transcript-row"><time>02:02</time><p>叫做分词器</p></div>
+        <div class="transcript-row"><time>02:04</time><p>这个分词器它做了两个事情</p></div>
+        <div class="transcript-row"><time>02:06</time><p>第一个就是</p></div>
+        <div class="transcript-row"><time>02:06</time><p>建立一个合并的规则</p></div>
+        <div class="transcript-row"><time>02:08</time><p>在我们训练这个分词器的时候</p></div>
+        <div class="transcript-row"><time>02:10</time><p>让它阅读了大量的支付铺</p></div>
+        <div class="transcript-row"><time>02:11</time><p>它就发现</p></div>
+        <div class="transcript-row"><time>02:12</time><p>喜欢这两个字</p></div>
+        <div class="transcript-row"><time>02:13</time><p>经常是一起出现的</p></div>
+        <div class="transcript-row"><time>02:15</time><p>那么它就学到了</p></div>
+        <div class="transcript-row"><time>02:16</time><p>以后出现这两个字</p></div>
+        <div class="transcript-row"><time>02:17</time><p>在一起的时候</p></div>
+        <div class="transcript-row"><time>02:18</time><p>我们就把它合并成一个偷啃</p></div>
+        <div class="transcript-row"><time>02:21</time><p>它就像这样</p></div>
+        <div class="transcript-row"><time>02:22</time><p>学到了一套合并的规则</p></div>
+        <div class="transcript-row"><time>02:25</time><p>另外做到的第二个事情</p></div>
+        <div class="transcript-row"><time>02:26</time><p>就是建立一个词表</p></div>
+        <div class="transcript-row"><time>02:28</time><p>这个词表里</p></div>
+        <div class="transcript-row"><time>02:29</time><p>就包含了几乎所有呈现的</p></div>
+        <div class="transcript-row"><time>02:31</time><p>字词和搭配等等</p></div>
+        <div class="transcript-row"><time>02:33</time><p>这个词表里具体包含了两个内容</p></div>
+        <div class="transcript-row"><time>02:35</time><p>一个是偷啃</p></div>
+        <div class="transcript-row"><time>02:36</time><p>一个是IT编号</p></div>
+        <div class="transcript-row"><time>02:38</time><p>例如它里面可能有</p></div>
+        <div class="transcript-row"><time>02:40</time><p>我、巴杜尔、人工、智能等等</p></div>
+        <div class="transcript-row"><time>02:43</time><p>其他GPD这种大模型的</p></div>
+        <div class="transcript-row"><time>02:46</time><p>我们走到这个词表</p></div>
+        <div class="transcript-row"><time>02:47</time><p>一般可能会达到数十万个</p></div>
+        <div class="transcript-row"><time>02:50</time><p>同时给它分配一个IT编号</p></div>
+        <div class="transcript-row"><time>02:52</time><p>我也随便写</p></div>
+        <div class="transcript-row"><time>02:53</time><p>好,那我们还是用1025</p></div>
+        <div class="transcript-row"><time>02:56</time><p>巴杜尔随便写个2181</p></div>
+        <div class="transcript-row"><time>02:58</time><p>能够准设GPD服务</p></div>
+        <div class="transcript-row"><time>02:59</time><p>那么我们为什么要给它一个IT呢</p></div>
+        <div class="transcript-row"><time>03:02</time><p>因为计算机它只认识数字</p></div>
+        <div class="transcript-row"><time>03:04</time><p>我们给它一个IT之后</p></div>
+        <div class="transcript-row"><time>03:06</time><p>把以后计算机建了IT为1025</p></div>
+        <div class="transcript-row"><time>03:08</time><p>它就知道原来对立的是我这个字</p></div>
+        <div class="transcript-row"><time>03:10</time><p>将来所有的资料</p></div>
+        <div class="transcript-row"><time>03:11</time><p>就按照这个合并规则和这个词表</p></div>
+        <div class="transcript-row"><time>03:13</time><p>来进行切分处理</p></div>
+        <div class="transcript-row"><time>03:15</time><p>让它变成一个个Token</p></div>
+        <div class="transcript-row"><time>03:16</time><p>并对它根据词表</p></div>
+        <div class="transcript-row"><time>03:18</time><p>以建立词表的这个IT编号</p></div>
+        <div class="transcript-row"><time>03:20</time><p>给它加上IT</p></div>
+        <div class="transcript-row"><time>03:21</time><p>那么这就是分词的这个过程</p></div>
+        <div class="transcript-row"><time>03:23</time><p>其实讲完这一点</p></div>
+        <div class="transcript-row"><time>03:24</time><p>我想插一句</p></div>
+        <div class="transcript-row"><time>03:25</time><p>在了解这个之后</p></div>
+        <div class="transcript-row"><time>03:26</time><p>我想通了之前遇到的</p></div>
+        <div class="transcript-row"><time>03:28</time><p>使用AI的一个问题</p></div>
+        <div class="transcript-row"><time>03:29</time><p>当我让AI严格的生成具体的字数</p></div>
+        <div class="transcript-row"><time>03:32</time><p>例如我让它写一个100字的短文时</p></div>
+        <div class="transcript-row"><time>03:35</time><p>它通常就做不到</p></div>
+        <div class="transcript-row"><time>03:36</time><p>最后它总是大约100个</p></div>
+        <div class="transcript-row"><time>03:38</time><p>无论我怎么严肃的教训它</p></div>
+        <div class="transcript-row"><time>03:40</time><p>我就是要100个字</p></div>
+        <div class="transcript-row"><time>03:41</time><p>但它还是不能每次精准的做到</p></div>
+        <div class="transcript-row"><time>03:43</time><p>那么学完这个之后</p></div>
+        <div class="transcript-row"><time>03:45</time><p>我们就知道</p></div>
+        <div class="transcript-row"><time>03:45</time><p>那这是为什么呢</p></div>
+        <div class="transcript-row"><time>03:47</time><p>因为AI它处理文字式的最小单位</p></div>
+        <div class="transcript-row"><time>03:49</time><p>是叫Token</p></div>
+        <div class="transcript-row"><time>03:50</time><p>而不是一个一个的字</p></div>
+        <div class="transcript-row"><time>03:51</time><p>它在生成回答的时候</p></div>
+        <div class="transcript-row"><time>03:53</time><p>是按照一个个的Token进行回答的</p></div>
+        <div class="transcript-row"><time>03:55</time><p>而每个Token具体对应的是几个字呢</p></div>
+        <div class="transcript-row"><time>03:56</time><p>它也不知道</p></div>
+        <div class="transcript-row"><time>03:57</time><p>所以说它只能估计一下</p></div>
+        <div class="transcript-row"><time>03:59</time><p>100个字可能大概需要多少个Token</p></div>
+        <div class="transcript-row"><time>04:01</time><p>所以说它最后生出来的字数</p></div>
+        <div class="transcript-row"><time>04:03</time><p>它就是不确定的</p></div>
+        <div class="transcript-row"><time>04:03</time><p>它是算不出来的</p></div>
+        <div class="transcript-row"><time>04:05</time><p>所以是这样一个原因</p></div>
+        <div class="transcript-row"><time>04:07</time><p>其实这个例子</p></div>
+        <div class="transcript-row"><time>04:08</time><p>也体现了我们普通人了解</p></div>
+        <div class="transcript-row"><time>04:10</time><p>AI道理和模型的</p></div>
+        <div class="transcript-row"><time>04:11</time><p>底层原理的意义</p></div>
+        <div class="transcript-row"><time>04:12</time><p>我们不是为了像科学家一样</p></div>
+        <div class="transcript-row"><time>04:14</time><p>要研究里面的复杂的技术</p></div>
+        <div class="transcript-row"><time>04:16</time><p>而是为了知道</p></div>
+        <div class="transcript-row"><time>04:17</time><p>AI为什么可以做一些事情</p></div>
+        <div class="transcript-row"><time>04:19</time><p>但又为什么做不好另外一些事情</p></div>
+        <div class="transcript-row"><time>04:21</time><p>从而更加准确高效的使用它</p></div>
+        <div class="transcript-row"><time>04:23</time><p>这是题外话</p></div>
+        <div class="transcript-row"><time>04:25</time><p>现在我们接着讲第三步</p></div>
+        <div class="transcript-row"><time>04:27</time><p>叫嵌入</p></div>
+        <div class="transcript-row"><time>04:27</time><p>它的英文也叫Invalid</p></div>
+        <div class="transcript-row"><time>04:29</time><p>初看这个词的时候</p></div>
+        <div class="transcript-row"><time>04:30</time><p>感觉很懵</p></div>
+        <div class="transcript-row"><time>04:32</time><p>嵌入是什么呢</p></div>
+        <div class="transcript-row"><time>04:32</time><p>其实没有那么高大上</p></div>
+        <div class="transcript-row"><time>04:34</time><p>一句话来表示</p></div>
+        <div class="transcript-row"><time>04:35</time><p>它就是把刚才得到的每一个Token</p></div>
+        <div class="transcript-row"><time>04:37</time><p>转换为一个高位项量</p></div>
+        <div class="transcript-row"><time>04:39</time><p>那么项量又是什么呢</p></div>
+        <div class="transcript-row"><time>04:39</time><p>也没有那么复杂</p></div>
+        <div class="transcript-row"><time>04:40</time><p>项量其实它就是</p></div>
+        <div class="transcript-row"><time>04:41</time><p>一组按照分语排列的数字集合</p></div>
+        <div class="transcript-row"><time>04:43</time><p>例如</p></div>
+        <div class="transcript-row"><time>04:44</time><p>0.72</p></div>
+        <div class="transcript-row"><time>04:46</time><p>0.56</p></div>
+        <div class="transcript-row"><time>04:48</time><p>0.43</p></div>
+        <div class="transcript-row"><time>04:49</time><p>等等等等</p></div>
+        <div class="transcript-row"><time>04:50</time><p>这样一组数把它框起来</p></div>
+        <div class="transcript-row"><time>04:52</time><p>这样一组数就代表一个项量</p></div>
+        <div class="transcript-row"><time>04:54</time><p>而里面有多少个数字</p></div>
+        <div class="transcript-row"><time>04:55</time><p>我就把它叫做多少维</p></div>
+        <div class="transcript-row"><time>04:57</time><p>它高维就是说有很多个数字</p></div>
+        <div class="transcript-row"><time>04:59</time><p>这样的意思</p></div>
+        <div class="transcript-row"><time>05:00</time><p>例如像前的GBT</p></div>
+        <div class="transcript-row"><time>05:01</time><p>这样的大模型里面</p></div>
+        <div class="transcript-row"><time>05:03</time><p>它可能就把每个Token</p></div>
+        <div class="transcript-row"><time>05:04</time><p>就比如说这个Token</p></div>
+        <div class="transcript-row"><time>05:05</time><p>它可能就是对应ID为1025的这个我</p></div>
+        <div class="transcript-row"><time>05:08</time><p>它光把我这个字</p></div>
+        <div class="transcript-row"><time>05:09</time><p>它生成了一个上万个小数</p></div>
+        <div class="transcript-row"><time>05:12</time><p>组成的项量</p></div>
+        <div class="transcript-row"><time>05:13</time><p>用这个项量来表示它</p></div>
+        <div class="transcript-row"><time>05:15</time><p>这个项量在出</p></div>
+        <div class="transcript-row"><time>05:17</time><p>建立的时候它是随机的</p></div>
+        <div class="transcript-row"><time>05:19</time><p>那么我们为什么要把Token</p></div>
+        <div class="transcript-row"><time>05:20</time><p>一一对应这样一个上万维的</p></div>
+        <div class="transcript-row"><time>05:23</time><p>这样的高维项量呢</p></div>
+        <div class="transcript-row"><time>05:24</time><p>其实这是理解AI如何学会说话的</p></div>
+        <div class="transcript-row"><time>05:26</time><p>一个关键问题</p></div>
+        <div class="transcript-row"><time>05:27</time><p>还是刚才说的</p></div>
+        <div class="transcript-row"><time>05:28</time><p>计算机它不能像人一样</p></div>
+        <div class="transcript-row"><time>05:29</time><p>直接理解我喜欢这些文字</p></div>
+        <div class="transcript-row"><time>05:31</time><p>它只能进行数字计算</p></div>
+        <div class="transcript-row"><time>05:33</time><p>也就是说我们只能通过数字</p></div>
+        <div class="transcript-row"><time>05:35</time><p>来表达这些词的含义</p></div>
+        <div class="transcript-row"><time>05:37</time><p>能让它学会</p></div>
+        <div class="transcript-row"><time>05:38</time><p>而一个词就拿喜欢这个词来说</p></div>
+        <div class="transcript-row"><time>05:40</time><p>它其实有非常多</p></div>
+        <div class="transcript-row"><time>05:41</time><p>数不清道不明的含义</p></div>
+        <div class="transcript-row"><time>05:43</time><p>它包含了非常多的情感</p></div>
+        <div class="transcript-row"><time>05:45</time><p>它还和非常多的词有一些联系</p></div>
+        <div class="transcript-row"><time>05:47</time><p>那么这些所有的含义与联系</p></div>
+        <div class="transcript-row"><time>05:49</time><p>我们就用一堆数字来量化</p></div>
+        <div class="transcript-row"><time>05:51</time><p>来表示它</p></div>
+        <div class="transcript-row"><time>05:52</time><p>也就是这些上万的数字</p></div>
+        <div class="transcript-row"><time>05:54</time><p>来表示一个词</p></div>
+        <div class="transcript-row"><time>05:56</time><p>这些数字现在是随机上的</p></div>
+        <div class="transcript-row"><time>05:57</time><p>但是经过我们训练之后</p></div>
+        <div class="transcript-row"><time>06:00</time><p>这是我们后面的内容</p></div>
+        <div class="transcript-row"><time>06:02</time><p>经过训练之后</p></div>
+        <div class="transcript-row"><time>06:03</time><p>它就突然有了含义</p></div>
+        <div class="transcript-row"><time>06:04</time><p>打个简单点个比方</p></div>
+        <div class="transcript-row"><time>06:06</time><p>例如</p></div>
+        <div class="transcript-row"><time>06:07</time><p>再见</p></div>
+        <div class="transcript-row"><time>06:08</time><p>拜拜</p></div>
+        <div class="transcript-row"><time>06:08</time><p>这两词的含义比较接近</p></div>
+        <div class="transcript-row"><time>06:10</time><p>那么经过训练之后</p></div>
+        <div class="transcript-row"><time>06:11</time><p>这些数字就变化</p></div>
+        <div class="transcript-row"><time>06:12</time><p>那它们两个</p></div>
+        <div class="transcript-row"><time>06:14</time><p>Token它们两个词对应的高为像样</p></div>
+        <div class="transcript-row"><time>06:15</time><p>它们在数字上可能就比较接近</p></div>
+        <div class="transcript-row"><time>06:18</time><p>比较相似</p></div>
+        <div class="transcript-row"><time>06:20</time><p>再例如像小猫小狗</p></div>
+        <div class="transcript-row"><time>06:21</time><p>它们俩虽然说不一样</p></div>
+        <div class="transcript-row"><time>06:23</time><p>但是都和动物有关</p></div>
+        <div class="transcript-row"><time>06:25</time><p>那么它们的像样在某些方面</p></div>
+        <div class="transcript-row"><time>06:26</time><p>或者说在某一部分</p></div>
+        <div class="transcript-row"><time>06:27</time><p>它可能也比较接近</p></div>
+        <div class="transcript-row"><time>06:29</time><p>这就是嵌入的一个过程</p></div>
+        <div class="transcript-row"><time>06:32</time><p>总结一下</p></div>
+        <div class="transcript-row"><time>06:32</time><p>今天我们是学习数据准备</p></div>
+        <div class="transcript-row"><time>06:35</time><p>这一阶段的内容</p></div>
+        <div class="transcript-row"><time>06:36</time><p>我们首先要在全网来搜集大量的知识</p></div>
+        <div class="transcript-row"><time>06:38</time><p>并对它进行清洗</p></div>
+        <div class="transcript-row"><time>06:39</time><p>读到一个单字的文本</p></div>
+        <div class="transcript-row"><time>06:40</time><p>接着把这些文本</p></div>
+        <div class="transcript-row"><time>06:42</time><p>分成一个个带有编号的Token</p></div>
+        <div class="transcript-row"><time>06:45</time><p>最后我们把每一个Token</p></div>
+        <div class="transcript-row"><time>06:47</time><p>又转换成一个随机的高为像样</p></div>
+        <div class="transcript-row"><time>06:49</time><p>这就是整个数据准备的过程</p></div>
+        <div class="transcript-row"><time>06:52</time><p>下一节我们就可以讲预讯链的过程</p></div>
+      </div>
+    </div>
+  </details>
+</section>
+
+</main>
+</body>
+</html>
