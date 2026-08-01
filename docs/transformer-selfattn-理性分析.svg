@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5000" viewBox="0 0 1320 5000">
+  <foreignObject x="0" y="0" width="1320" height="5000">
+    <div xmlns="http://www.w3.org/1999/xhtml"><style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:140px;font-weight:700;font-size:15px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-purple{background:linear-gradient(135deg,#faf5ff,#ede9fe);border-color:#c4b5fd;color:#6b21a8}
+.arrow{font-size:22px;color:#94a3b8}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .formula{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;margin:12px 0;font-size:17px;font-family:"SF Mono","Menlo",monospace;text-align:center}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .example{background:#f0fdf4;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #10b981}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}</style><div class="container">
+<h1>手推Transformer（1）自注意力机制</h1>
+<div class="meta">
+<span class="tag tag-blue">Transformer</span><span class="tag tag-green">自注意力</span><span class="tag tag-orange">QKV</span><span class="tag tag-purple">Softmax</span><span class="tag tag-gray">6:22</span>
+</div>
+<div class="summary-line"><strong>核心目标：</strong>以"女生撩刘海"为例，一步一步演算自注意力机制的完整计算流程。从Token化到最终输出，<strong>公式 = softmax(QK^T/√d)·V</strong> 不是黑箱，而是具体的矩阵乘法。</div>
+
+<div class="timeline"><h3>演算步骤时间线</h3>
+<div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场："女生撩刘海"为例手推全部公式</span></div>
+<div class="timeline-item"><span class="timeline-time">00:24</span><span class="timeline-text"><strong>第1步</strong>：Token化→ID编号→查Embedding矩阵</span></div>
+<div class="timeline-item"><span class="timeline-time">01:09</span><span class="timeline-text"><strong>第2步</strong>：位置编码（正弦/余弦函数）+ 得到输入X</span></div>
+<div class="timeline-item"><span class="timeline-time">02:56</span><span class="timeline-text"><strong>第3步</strong>：X × W_Q/W_K/W_V → Q（查询）、K（键）、V（值）</span></div>
+<div class="timeline-item"><span class="timeline-time">04:02</span><span class="timeline-text"><strong>第4步</strong>：Q×K^T → 注意力分数 → ÷√d 缩放</span></div>
+<div class="timeline-item"><span class="timeline-time">05:00</span><span class="timeline-text"><strong>第5步</strong>：Softmax → 注意力权重矩阵A（每行=1）</span></div>
+<div class="timeline-item"><span class="timeline-time">05:44</span><span class="timeline-text"><strong>第6步</strong>：A×V → 输出矩阵Z → 缩放点积注意力公式</span></div>
+</div>
+
+<div class="map"><h2>公式总览：缩放点积注意力</h2>
+<div style="text-align:center;padding:20px">
+<div class="node" style="display:inline-block;font-size:24px;min-width:500px;background:linear-gradient(135deg,#1e293b,#334155);color:#e2e8f0;font-family:'SF Mono',Menlo,monospace;border-color:#64748b">Attention(Q,K,V) = softmax(QK^T / √d_k) · V</div>
+</div>
+<div class="diagram">
+<div class="node">Token化+嵌入<br/><small>"女生撩刘海"</small></div><span class="arrow">→</span>
+<div class="node node-green">+位置编码<br/><small>sin(pos), cos(pos)</small></div><span class="arrow">→</span>
+<div class="node node-orange">Q×K^T<br/><small>注意力分数</small></div><span class="arrow">→</span>
+<div class="node node-purple">Softmax<br/><small>权重归一化</small></div><span class="arrow">→</span>
+<div class="node" style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#f59e0b;color:#92400e">A×V = Z<br/><small>融合所有Token信息</small></div>
+</div>
+</div>
+
+<div class="section"><div class="sec-title">六步算法详解</div>
+
+<div class="card"><h3>第1步：Token化 + Embedding</h3>
+<p>"女生撩刘海" → 三个Token → ID编号（1258, 875, 9527）→ 查Embedding矩阵</p>
+<div class="highlight">Embedding矩阵是训练开始前<strong>随机生成的</strong>，后续训练会调整。实际维度通常是<strong>成千上万</strong>的小数，示例简化为二维整数。</div>
+</div>
+
+<div class="card card-green" style="margin:12px 0"><h3>第2步：位置编码</h3>
+<p>输入X = <strong>词嵌入E + 位置编码P</strong></p>
+<table><tr><th>维度</th><th>公式</th></tr>
+<tr><td>偶数维（2i）</td><td class="formula" style="background:transparent;color:#1e40af;font-family:inherit;padding:0;text-align:left">PE(pos,2i) = sin(pos / 10000^(2i/d))</td></tr>
+<tr><td>奇数维（2i+1）</td><td class="formula" style="background:transparent;color:#1e40af;font-family:inherit;padding:0;text-align:left">PE(pos,2i+1) = cos(pos / 10000^(2i/d))</td></tr></table>
+<div class="example"><strong>关键细节：</strong>计算机从0开始计数——女生=位置0、撩=位置1、刘海=位置2。二维时只需计算sin(pos)和cos(pos)。</div>
+</div>
+
+<div class="card card-orange"><h3>第3步：Q、K、V 计算</h3>
+<p>Q = X × W_Q，K = X × W_K，V = X × W_V</p>
+<div class="pitfall">W_Q/W_K/W_V是随机初始化的参数矩阵，会随训练更新（"调参"的主要对象之一）。</div>
+<table><tr><th>矩阵</th><th>语义</th><th>"女生"的例子</th></tr>
+<tr><td><strong>Q（Query）</strong></td><td>它想找什么</td><td>"想知道和我有关的动作是什么"</td></tr>
+<tr><td><strong>K（Key）</strong></td><td>它有什么信息</td><td>"我是人物、女性、动作的执行者"</td></tr>
+<tr><td><strong>V（Value）</strong></td><td>它真正的含义</td><td>"女孩"这个人物及其完整含义</td></tr></table>
+</div>
+
+<div class="card card-purple"><h3>第4+5步：注意力分数 → Softmax权重</h3>
+<p><strong>Q×K^T</strong> → 每个Token对其他Token的"关注分数"（如27.4 = "撩"对"刘海"的关注度）</p>
+<p>÷ √d <strong>缩放</strong>（防止高维向量导致极端值）→ <strong>Softmax归一化</strong>（每行之和=1）</p>
+<div class="highlight"><strong>示例：</strong>Softmax后"女生"行："刘海"列=0.8，"撩"列=0.2 → 女生把<strong>80%注意力</strong>放在"刘海"上，20%放在"撩"上。</div>
+</div>
+
+<div class="card card-green"><h3>第6步：加权求和</h3>
+<p><strong>A × V = Z</strong>（输出矩阵）</p>
+<div class="example"><strong>结果含义：</strong>"女生"的新向量在保留自身信息的基础上，融合了"女生""撩""刘海"三个Token传递过来的内容。每个词被"看过"了上下文中的所有词。</div>
+</div>
+</div>
+
+<div class="section"><div class="sec-title">Q/K/V 与传统检索类比</div>
+<table><tr><th>概念</th><th>Transformer</th><th>类比：图书馆查书</th></tr>
+<tr><td><strong>Query</strong></td><td>Token想找什么信息</td><td>你想查什么书（查询词）</td></tr>
+<tr><td><strong>Key</strong></td><td>Token有什么信息（标签）</td><td>每本书的目录/标签</td></tr>
+<tr><td><strong>Value</strong></td><td>Token的真正内容</td><td>书的内容本身</td></tr>
+<tr><td><strong>Q×K^T</strong></td><td>查询和标签的匹配度</td><td>你的查询和每本书的相关性分数</td></tr>
+<tr><td><strong>Softmax</strong></td><td>归一化为权重分布</td><td>各书的关注百分比</td></tr>
+<tr><td><strong>×V</strong></td><td>按权重提取内容</td><td>按关注比例综合各书的内容</td></tr></table>
+</div>
+
+<div class="conclusion"><h2>总结：自注意力六步法</h2>
+<h3>完整流程</h3>
+<ol>
+<li><strong>Token化+嵌入</strong>：文本→Token→ID→查Embedding矩阵</li>
+<li><strong>位置编码</strong>：E + sin/cos位置编码 → 输入矩阵 X</li>
+<li><strong>QKV</strong>：X × W_Q/W_K/W_V → Q、K、V三个矩阵</li>
+<li><strong>注意力分数</strong>：Q×K^T → 分组 ÷√d</li>
+<li><strong>Softmax</strong>：每行归一化为概率分布（∑=1）</li>
+<li><strong>加权求和</strong>：A(权重) × V(值) = Z(融合了全文信息的输出)</li>
+</ol>
+<h3>关键认知</h3>
+<ul>
+<li><strong>自注意力就是"让每个词看见其他所有词"</strong>——不是独立理解，而是在上下文关系中理解</li>
+<li><strong>QKV说的是一回事</strong>：每个词同时代表三种角色（想找什么、有什么、是什么）</li>
+<li><strong>√d缩放很重要</strong>：防止高维导致Softmax极端化（某词注意力=99.99%，其他=0）</li>
+</ul>
+<p style="margin-top:16px;opacity:0.7">下一期：前馈网络、残差连接、归一化</p>
+</div>
+<a class="source-link" href="http://xhslink.cn/o/8MSwJFrC9QZ" target="_blank" rel="noopener">→ 原视频链接（小红书）</a>
+</div></div>
+  </foreignObject>
+</svg>
