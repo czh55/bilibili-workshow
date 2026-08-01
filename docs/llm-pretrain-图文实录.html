@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大语言模型预训练：Transformer自注意力机制、前馈神经网络、反向传播、参数优化，AI如何学会接龙预测">
+  <title>大语言模型原理（2）预训练｜图文实录</title>
+  <style>*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}
+.tag-duration{background:#f1f5f9;color:#64748b}
+.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}
+.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}
+.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}
+.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}
+.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+.quote-block{background:#f0fdf4;border-left:4px solid #10b981;padding:12px 16px;border-radius:8px;margin:14px 0;font-size:15px;color:#166534;font-style:italic}
+img{display:block;max-width:100%;height:auto}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}
+.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}
+.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0}
+@media(max-width:640px){
+  .container{padding:28px 18px 56px}
+  header h1{font-size:24px}
+  .transcript-row{grid-template-columns:56px 1fr;gap:10px}
+}.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+</head>
+<body>
+  <main class="container">
+    
+<header>
+  <h1>大语言模型原理（2）预训练：从随机数字到"接龙大师"</h1>
+  <div class="meta-row">
+    <span class="meta-tag tag-platform">小红书</span>
+    <span class="meta-tag tag-duration">6:33</span>
+    <span class="meta-tag tag-topic">AI 大语言模型 预训练 Transformer</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/8rVHZRvp5nD" target="_blank" rel="noopener">→ 原视频链接</a>
+</header>
+
+<nav class="toc">
+  <h3>内容导航</h3>
+  <a href="#review">回顾：数据准备的产物</a>
+  <a href="#transformer">Transformer：自注意力 + 前馈神经网络</a>
+  <a href="#stack">多层堆叠：从语法到逻辑</a>
+  <a href="#predict">预测下一个Token</a>
+  <a href="#backprop">反向传播与参数</a>
+  <a href="#result">结果：接龙大师（基座模型）</a>
+  <a href="#transcript">完整转录</a>
+</nav>
+
+<article class="documentary">
+
+<section class="story-section" id="review">
+  <h2>回顾：数据准备的产物</h2>
+  <p><span class="time-marker">00:00</span>上期讲了数据准备：收集清洗 → 分词Token化 → 嵌入随机高维向量。关键前提：<strong>这些向量里的数字都是随机生成的，它们现在还没有真正的语言含义。</strong>那么原本随机生成的数字，是怎么逐渐学会表达文字含义的呢？这就是预训练要解决的问题。</p>
+  <figure>
+    <img src="assets/llm-pretrain/shot-01.jpg" alt="回顾数据准备，引出预训练" loading="lazy">
+    <figcaption><span class="time-badge">[00:02]</span> 回顾：上期讲数据准备，本期讲预训练——随机数字如何变得有意义？</figcaption>
+  </figure>
+  <div class="quote-block">
+    <strong>一句话概括预训练的目的</strong>：预训练就是要把模型训练成一个<strong>接龙大师</strong>。
+  </div>
+</section>
+
+<section class="story-section" id="transformer">
+  <h2>Transformer：AI的大脑 — 自注意力 + 前馈神经网络</h2>
+  <p><span class="time-marker">00:40</span>上一步我们得到了处理后的数据（高维向量）。把这些向量放进<strong>Transformer</strong>中处理。Transformer是大语言模型最核心的网络结构，可以暂时理解为<strong>AI的大脑</strong>。</p>
+  
+  <p><span class="time-marker">01:13</span>Transformer的核心是<strong>自注意力机制</strong>。它可以让每个Token计算出对其它Token的"关注程度"。</p>
+  <p>以"我喜欢金毛，因为它很温顺"为例：当这句话经过自注意力机制处理后，<strong>温顺</strong>这个词的向量就发生了变化——它知道了"很"在修饰它，温顺是描述金毛的，温顺是表达原因……它与其他Token之间发生了关注程度的计算。</p>
+  <figure>
+    <img src="assets/llm-pretrain/shot-02.jpg" alt="Transformer自注意力机制" loading="lazy">
+    <figcaption><span class="time-badge">[00:48]</span> 自注意力机制：每个Token感知到与其他词的关系程度</figcaption>
+  </figure>
+  
+  <p><span class="time-marker">02:18</span>接着向量还要经过<strong>前馈神经网络</strong>，对每个Token得到的信息进行进一步加工。还是"温顺"这个词——它知道了温顺通常是形容动物的，会增强"描述动物性格"的特征，甚至推断出"金毛温顺是被人喜欢的原因"，"金毛是狗的一个品种"等等。</p>
+
+  <p><span class="time-marker">02:57</span>还有<strong>残差连接</strong>（帮助模型保留原来的信息，避免一层层计算后前面内容完全丢失）和<strong>归一化</strong>（让训练过程更稳定）。这四个结构共同组成<strong>一层Transformer</strong>。</p>
+</section>
+
+<section class="story-section" id="stack">
+  <h2>多层堆叠：从语法到逻辑的层层递进</h2>
+  <p><span class="time-marker">03:23</span>一个大语言模型通常会<strong>堆叠几十层甚至上百层Transformer</strong>。为什么需要那么多层？因为一层只完成一次信息的联系与加工，而语言中复杂的含义需要一步一步形成：</p>
+  <ul>
+    <li><strong>前面的层</strong>：更关注字词搭配和基础语法</li>
+    <li><strong>中间的层</strong>：逐渐理解上下文和词语的关系</li>
+    <li><strong>后面的层</strong>：进一步整合整句话的语意和逻辑</li>
+  </ul>
+  <p>经过几十层甚至上百层之后，最初随机的向量已经变成了<strong>融合了整段上下文信息的高维向量</strong>。</p>
+  <figure>
+    <img src="assets/llm-pretrain/shot-03.jpg" alt="多层Transformer堆叠" loading="lazy">
+    <figcaption><span class="time-badge">[02:00]</span> 数十层到上百层Transformer堆叠：从字词语法到语意逻辑</figcaption>
+  </figure>
+</section>
+
+<section class="story-section" id="predict">
+  <h2>预测下一个Token：接龙的核心</h2>
+  <p><span class="time-marker">03:54</span>经过所有Transformer层后，就要进行<strong>预测下一个Token</strong>。输入"我喜欢"，模型就计算词表中每个Token可能出现的概率：吃（12%）、金毛（35%）、虫子（0.01%）……预测得到的金毛概率最大，说明预测对了。</p>
+  <p>注意：不是只对一句话结尾的词预测，而是<strong>对每一个词都预测下一个</strong>：输入"我"→预测"喜欢"；输入"我喜欢"→预测"金毛"；输入"我喜欢金毛"→预测"因为"……</p>
+  <figure>
+    <img src="assets/llm-pretrain/shot-04.jpg" alt="预测下一个Token" loading="lazy">
+    <figcaption><span class="time-badge">[03:40]</span> 接龙预测：输入前面的文本，预测下一个最可能出现的Token</figcaption>
+  </figure>
+</section>
+
+<section class="story-section" id="backprop">
+  <h2>反向传播与参数：让数字"学会"语言</h2>
+  <p><span class="time-marker">04:35</span>如果预测错了怎么办？进行<strong>反向传播</strong>：计算预测错误的损失，然后<strong>调整参数</strong>，让它将来更好地靠近正确答案。</p>
+  <p>参数就是AI大脑中可以不断调整的数字——包括每个Token对应的高维向量，也包括Transformer计算中使用的大量数字。GPT-3的参数量是<strong>175B</strong>，即<strong>1750亿</strong>个可以被训练和调整的数字。</p>
+  <p><span class="time-marker">05:17</span>博主感叹：模型从海量文本中学到的所有语言规律、知识联系、表达方式、逻辑……全部被压缩进了这些参数里面。那些冰冷的数字，经过无数次训练和调整后，居然能承载如此丰富的语言含义。</p>
+  <figure>
+    <img src="assets/llm-pretrain/shot-05.jpg" alt="反向传播与参数量" loading="lazy">
+    <figcaption><span class="time-badge">[05:00]</span> GPT-3参数量1750亿——所有语言规律压缩在可调整的数字里</figcaption>
+  </figure>
+  <p><span class="time-marker">05:31</span>更新完参数后，这批数据就算训练完成。接着输入下批数据，继续训练并更新参数，<strong>直至所有数据训练完</strong>。</p>
+</section>
+
+<section class="story-section" id="result">
+  <h2>结果：接龙大师（基座模型）</h2>
+  <p><span class="time-marker">05:41</span>此时最终得到一个<strong>基座大模型</strong>。但此时的AI还不是我们平时用的那个AI——它只能称为一个<strong>接龙大师</strong>。它听不懂人的命令，只会机械地在你输入的问题后面输出"最可能出现的内容"。</p>
+  <div class="quote-block">
+    举例：输入"我是不是应该好好学习"，AI回答的不是"是应该"，而是<strong>"天天向上"</strong>。因为它不知道人类是在向它提问，也不一定能按照指令要求回答。
+  </div>
+  <p>下一节将讲：<strong>对齐训练</strong>（后训练）——如何让接龙大师学会说"人话"。</p>
+</section>
+
+</article>
+
+<section class="transcript-section" id="transcript">
+  <details class="transcript-collapsible" open>
+    <summary>完整转录（273段）</summary>
+    <div class="transcript-body">
+      <p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+      <div class="transcript-list">
+        <div class="transcript-row"><time>00:00</time><p>AI到底是怎么学会说话的</p></div>
+        <div class="transcript-row"><time>00:01</time><p>上一期我们讲了大元模型诞生的第一个阶段</p></div>
+        <div class="transcript-row"><time>00:03</time><p>数据准备</p></div>
+        <div class="transcript-row"><time>00:04</time><p>我们快速回顾一下</p></div>
+        <div class="transcript-row"><time>00:05</time><p>首先我们在全网书籍、网页书籍、论文代码等等</p></div>
+        <div class="transcript-row"><time>00:07</time><p>对这些进行去虫去垃圾、去违规等一些清晰操作之后</p></div>
+        <div class="transcript-row"><time>00:10</time><p>得到一个干净的文本</p></div>
+        <div class="transcript-row"><time>00:12</time><p>接着对这个文本通过一个叫分次器的东西</p></div>
+        <div class="transcript-row"><time>00:14</time><p>把它的语句分成一个个的token</p></div>
+        <div class="transcript-row"><time>00:15</time><p>并对这些token都进行一个ID标号</p></div>
+        <div class="transcript-row"><time>00:18</time><p>最后我们通过已经提前生成好的embedding曲镇</p></div>
+        <div class="transcript-row"><time>00:20</time><p>让每一个token都能通过ID</p></div>
+        <div class="transcript-row"><time>00:22</time><p>能找到一个它所对应的随机生成的高约向量</p></div>
+        <div class="transcript-row"><time>00:25</time><p>这就是我们整个数据准备的过程</p></div>
+        <div class="transcript-row"><time>00:27</time><p>但是现在需要注意的是</p></div>
+        <div class="transcript-row"><time>00:28</time><p>这些向量里的数字都是随机生成的</p></div>
+        <div class="transcript-row"><time>00:30</time><p>它们现在还没有真正的语言含义</p></div>
+        <div class="transcript-row"><time>00:32</time><p>那么原本随机生成的数字</p></div>
+        <div class="transcript-row"><time>00:34</time><p>是怎么逐渐学会表达文字的含义的呢</p></div>
+        <div class="transcript-row"><time>00:36</time><p>这就是我们今天要讲的大元模型的第二个阶段</p></div>
+        <div class="transcript-row"><time>00:38</time><p>预训练</p></div>
+        <div class="transcript-row"><time>00:39</time><p>二 预训练</p></div>
+        <div class="transcript-row"><time>00:40</time><p>一句话概括预训练的目的</p></div>
+        <div class="transcript-row"><time>00:41</time><p>预训练就是要把模型训练成一个接龙堂师</p></div>
+        <div class="transcript-row"><time>00:44</time><p>在上一步我们得到了处理后的数据</p></div>
+        <div class="transcript-row"><time>00:46</time><p>我们现在取出一部分</p></div>
+        <div class="transcript-row"><time>00:47</time><p>也就是一部分高为向量</p></div>
+        <div class="transcript-row"><time>00:48</time><p>我举个实在的例子</p></div>
+        <div class="transcript-row"><time>00:50</time><p>例如0.21</p></div>
+        <div class="transcript-row"><time>00:51</time><p>0.58</p></div>
+        <div class="transcript-row"><time>00:53</time><p>0.13</p></div>
+        <div class="transcript-row"><time>00:55</time><p>等等等等</p></div>
+        <div class="transcript-row"><time>00:56</time><p>我们接下来进行的一步</p></div>
+        <div class="transcript-row"><time>00:58</time><p>就是要把这批数据放到Transformer里面进行处理</p></div>
+        <div class="transcript-row"><time>01:01</time><p>Transformer是什么呢</p></div>
+        <div class="transcript-row"><time>01:02</time><p>Transformer是现在大元模型最核心的网络结构</p></div>
+        <div class="transcript-row"><time>01:04</time><p>大家可以暂时把它理解成AI的大脑</p></div>
+        <div class="transcript-row"><time>01:07</time><p>那么这个大脑它现在是什么都不懂的</p></div>
+        <div class="transcript-row"><time>01:09</time><p>我们要做的就是给这个大脑灌输知识</p></div>
+        <div class="transcript-row"><time>01:11</time><p>并让它看懂</p></div>
+        <div class="transcript-row"><time>01:12</time><p>在Transformer里面最核心的部分</p></div>
+        <div class="transcript-row"><time>01:13</time><p>叫做自主义力机制</p></div>
+        <div class="transcript-row"><time>01:14</time><p>自主义力机制可以让每一个Token</p></div>
+        <div class="transcript-row"><time>01:16</time><p>计算出对其他Token的灌输程度</p></div>
+        <div class="transcript-row"><time>01:19</time><p>那这是什么意思呢</p></div>
+        <div class="transcript-row"><time>01:20</time><p>举个例子</p></div>
+        <div class="transcript-row"><time>01:21</time><p>我喜欢金毛</p></div>
+        <div class="transcript-row"><time>01:21</time><p>因为它很温顺</p></div>
+        <div class="transcript-row"><time>01:22</time><p>这句话在Token化后</p></div>
+        <div class="transcript-row"><time>01:23</time><p>可能会被切分成</p></div>
+        <div class="transcript-row"><time>01:25</time><p>我喜欢金毛</p></div>
+        <div class="transcript-row"><time>01:26</time><p>因为它很温顺</p></div>
+        <div class="transcript-row"><time>01:29</time><p>这几个Token</p></div>
+        <div class="transcript-row"><time>01:29</time><p>那么当这句话经过自主义力机制处理之后</p></div>
+        <div class="transcript-row"><time>01:32</time><p>例如温顺这个词</p></div>
+        <div class="transcript-row"><time>01:33</time><p>它所对应的高为向量就产生了变化</p></div>
+        <div class="transcript-row"><time>01:36</time><p>而这个数字变化里面</p></div>
+        <div class="transcript-row"><time>01:37</time><p>就增加了很多温顺对其他词的理解</p></div>
+        <div class="transcript-row"><time>01:39</time><p>例如它知道了</p></div>
+        <div class="transcript-row"><time>01:41</time><p>很是在修饰它</p></div>
+        <div class="transcript-row"><time>01:42</time><p>它知道了温顺是描述它的</p></div>
+        <div class="transcript-row"><time>01:46</time><p>它也知道温顺是表达的一种原因</p></div>
+        <div class="transcript-row"><time>01:49</time><p>等等</p></div>
+        <div class="transcript-row"><time>01:49</time><p>它与其他Token之间</p></div>
+        <div class="transcript-row"><time>01:50</time><p>发生了一些关注程度的计算</p></div>
+        <div class="transcript-row"><time>01:52</time><p>也就是说</p></div>
+        <div class="transcript-row"><time>01:53</time><p>注意力机制让它知道了</p></div>
+        <div class="transcript-row"><time>01:54</time><p>自己和每个词之间的关系程度</p></div>
+        <div class="transcript-row"><time>01:55</time><p>或者说关注程度</p></div>
+        <div class="transcript-row"><time>01:57</time><p>那么这个具体是怎么做到的呢</p></div>
+        <div class="transcript-row"><time>01:58</time><p>这里面就牵扯到了一些数学运算</p></div>
+        <div class="transcript-row"><time>01:59</time><p>例如局限程法</p></div>
+        <div class="transcript-row"><time>02:00</time><p>规划等等的</p></div>
+        <div class="transcript-row"><time>02:01</time><p>还是那句话</p></div>
+        <div class="transcript-row"><time>02:02</time><p>我们绝大多数普通人</p></div>
+        <div class="transcript-row"><time>02:03</time><p>不必深究里面复杂的数学计算</p></div>
+        <div class="transcript-row"><time>02:05</time><p>只需要知道每一步</p></div>
+        <div class="transcript-row"><time>02:05</time><p>大概是干什么即可</p></div>
+        <div class="transcript-row"><time>02:06</time><p>不过如果有很多人感兴趣</p></div>
+        <div class="transcript-row"><time>02:08</time><p>我后面也可以单独出一期</p></div>
+        <div class="transcript-row"><time>02:09</time><p>Transformer里面</p></div>
+        <div class="transcript-row"><time>02:09</time><p>涉及的所有数学运算</p></div>
+        <div class="transcript-row"><time>02:11</time><p>在完成自助力计算之后</p></div>
+        <div class="transcript-row"><time>02:13</time><p>每个Token的高位项量</p></div>
+        <div class="transcript-row"><time>02:14</time><p>就已经更新了一次</p></div>
+        <div class="transcript-row"><time>02:15</time><p>而这些含义就已经量化了</p></div>
+        <div class="transcript-row"><time>02:16</time><p>起先在了改变后的数字大小里面</p></div>
+        <div class="transcript-row"><time>02:18</time><p>接下来这些项量</p></div>
+        <div class="transcript-row"><time>02:19</time><p>还会经过一个叫</p></div>
+        <div class="transcript-row"><time>02:20</time><p>潜溃神经网络的部分</p></div>
+        <div class="transcript-row"><time>02:21</time><p>潜溃神经网络的作用</p></div>
+        <div class="transcript-row"><time>02:22</time><p>它准备对每一个Token得到的信息</p></div>
+        <div class="transcript-row"><time>02:24</time><p>进行进一步的加工</p></div>
+        <div class="transcript-row"><time>02:25</time><p>咱们还是拿温顺这个词举例</p></div>
+        <div class="transcript-row"><time>02:27</time><p>在温顺这个词</p></div>
+        <div class="transcript-row"><time>02:28</time><p>经过潜溃神经网络处理之后</p></div>
+        <div class="transcript-row"><time>02:29</time><p>它又得到了一部分信息</p></div>
+        <div class="transcript-row"><time>02:31</time><p>例如它知道了温顺这个词</p></div>
+        <div class="transcript-row"><time>02:32</time><p>在大部分情况下</p></div>
+        <div class="transcript-row"><time>02:33</time><p>它是来形容动物的</p></div>
+        <div class="transcript-row"><time>02:34</time><p>于是它会增强</p></div>
+        <div class="transcript-row"><time>02:35</time><p>这个词是描述动物性格的特征</p></div>
+        <div class="transcript-row"><time>02:38</time><p>而且若是描述其他人的特征</p></div>
+        <div class="transcript-row"><time>02:39</time><p>进一步加工它还可能得到一个结论</p></div>
+        <div class="transcript-row"><time>02:42</time><p>金毛温顺是被人喜欢的一个原因</p></div>
+        <div class="transcript-row"><time>02:44</time><p>它甚至还可以推断出</p></div>
+        <div class="transcript-row"><time>02:46</time><p>金毛是狗的一个品种</p></div>
+        <div class="transcript-row"><time>02:47</time><p>而它具有温顺的性格</p></div>
+        <div class="transcript-row"><time>02:49</time><p>像这样等等等等</p></div>
+        <div class="transcript-row"><time>02:50</time><p>温顺这个词在经过潜溃神经网络之后</p></div>
+        <div class="transcript-row"><time>02:52</time><p>给它赋予了更多的含义</p></div>
+        <div class="transcript-row"><time>02:54</time><p>这是潜溃神经网络的部分</p></div>
+        <div class="transcript-row"><time>02:55</time><p>但是除了自助力机制和潜溃神经网络外</p></div>
+        <div class="transcript-row"><time>02:58</time><p>Token里面还包括</p></div>
+        <div class="transcript-row"><time>02:59</time><p>3. 残差连接和4. 规划</p></div>
+        <div class="transcript-row"><time>03:02</time><p>这两个结构同样涉及一些复杂的计算</p></div>
+        <div class="transcript-row"><time>03:04</time><p>而且不是我们理解大元模型原理的重点</p></div>
+        <div class="transcript-row"><time>03:06</time><p>所以这里不需要展开</p></div>
+        <div class="transcript-row"><time>03:07</time><p>大家只需要知道</p></div>
+        <div class="transcript-row"><time>03:07</time><p>残差连接它可以帮助模型保留原来的信息</p></div>
+        <div class="transcript-row"><time>03:10</time><p>避免一层一层计算之后</p></div>
+        <div class="transcript-row"><time>03:11</time><p>前面的内容完全的丢失</p></div>
+        <div class="transcript-row"><time>03:12</time><p>而规划可以让训练的过程更加的稳定</p></div>
+        <div class="transcript-row"><time>03:15</time><p>自助力机制</p></div>
+        <div class="transcript-row"><time>03:16</time><p>潜溃神经网络</p></div>
+        <div class="transcript-row"><time>03:16</time><p>残差连接</p></div>
+        <div class="transcript-row"><time>03:17</time><p>规划</p></div>
+        <div class="transcript-row"><time>03:17</time><p>这四个共同组成了一层Transformer</p></div>
+        <div class="transcript-row"><time>03:23</time><p>而一个大元模型的内部</p></div>
+        <div class="transcript-row"><time>03:24</time><p>通常会堆叠几十层</p></div>
+        <div class="transcript-row"><time>03:25</time><p>甚至上百层的Transformer</p></div>
+        <div class="transcript-row"><time>03:27</time><p>那么为什么需要那么多层呢</p></div>
+        <div class="transcript-row"><time>03:28</time><p>因为一层Transformer</p></div>
+        <div class="transcript-row"><time>03:29</time><p>它只完成一次信息的联系与加工</p></div>
+        <div class="transcript-row"><time>03:32</time><p>而语言中复杂的含义</p></div>
+        <div class="transcript-row"><time>03:33</time><p>往往需要一步一步的形成</p></div>
+        <div class="transcript-row"><time>03:35</time><p>咱们可以大致理解为</p></div>
+        <div class="transcript-row"><time>03:36</time><p>前面的层更关注字词搭配和基础语法</p></div>
+        <div class="transcript-row"><time>03:38</time><p>中间的层又逐渐理解了</p></div>
+        <div class="transcript-row"><time>03:39</time><p>上下文和词语的关系</p></div>
+        <div class="transcript-row"><time>03:41</time><p>而后面的层和进一步整合</p></div>
+        <div class="transcript-row"><time>03:43</time><p>整句话的语意和逻辑</p></div>
+        <div class="transcript-row"><time>03:44</time><p>经过几十层</p></div>
+        <div class="transcript-row"><time>03:45</time><p>甚至上百层的Transformer之后</p></div>
+        <div class="transcript-row"><time>03:46</time><p>模型最终得到的</p></div>
+        <div class="transcript-row"><time>03:47</time><p>已经不再是之前</p></div>
+        <div class="transcript-row"><time>03:48</time><p>开始随机的向量</p></div>
+        <div class="transcript-row"><time>03:49</time><p>而是融合了整段的</p></div>
+        <div class="transcript-row"><time>03:50</time><p>上下文信息的高位向量</p></div>
+        <div class="transcript-row"><time>03:52</time><p>这个就是Transformer这部分的内容</p></div>
+        <div class="transcript-row"><time>03:54</time><p>在Token经过所有Transformer层之后</p></div>
+        <div class="transcript-row"><time>03:56</time><p>下一步要进行的就是预测</p></div>
+        <div class="transcript-row"><time>03:57</time><p>下一个Token</p></div>
+        <div class="transcript-row"><time>03:57</time><p>那么具体是怎么做的呢</p></div>
+        <div class="transcript-row"><time>03:58</time><p>还是举例子</p></div>
+        <div class="transcript-row"><time>03:59</time><p>例如我输入一个我喜欢</p></div>
+        <div class="transcript-row"><time>04:01</time><p>输入之后就让模型来计算</p></div>
+        <div class="transcript-row"><time>04:02</time><p>所有的Token词表中</p></div>
+        <div class="transcript-row"><time>04:04</time><p>每一个Token可能出现的概率</p></div>
+        <div class="transcript-row"><time>04:05</time><p>例如可能出现</p></div>
+        <div class="transcript-row"><time>04:07</time><p>虫子0.01%的概率</p></div>
+        <div class="transcript-row"><time>04:09</time><p>还可能出现吃12%的概率</p></div>
+        <div class="transcript-row"><time>04:12</time><p>还可能出现金毛35%的概率</p></div>
+        <div class="transcript-row"><time>04:14</time><p>等等等等等等</p></div>
+        <div class="transcript-row"><time>04:15</time><p>那么如果预测得到的金毛</p></div>
+        <div class="transcript-row"><time>04:17</time><p>是概率最大的那个</p></div>
+        <div class="transcript-row"><time>04:18</time><p>那么说明它预测的就是对的</p></div>
+        <div class="transcript-row"><time>04:20</time><p>当然我们并不是</p></div>
+        <div class="transcript-row"><time>04:21</time><p>只是对一句话的结尾的词</p></div>
+        <div class="transcript-row"><time>04:23</time><p>进行预测</p></div>
+        <div class="transcript-row"><time>04:23</time><p>我们是对每一个词进行预测</p></div>
+        <div class="transcript-row"><time>04:25</time><p>例如输入我</p></div>
+        <div class="transcript-row"><time>04:25</time><p>最后我是希望它能预测出</p></div>
+        <div class="transcript-row"><time>04:26</time><p>下一个词是喜欢</p></div>
+        <div class="transcript-row"><time>04:27</time><p>输入我喜欢</p></div>
+        <div class="transcript-row"><time>04:28</time><p>我希望它预测出来的是金毛</p></div>
+        <div class="transcript-row"><time>04:30</time><p>输入我喜欢金毛</p></div>
+        <div class="transcript-row"><time>04:31</time><p>我希望它预测出</p></div>
+        <div class="transcript-row"><time>04:31</time><p>下一个词是因为</p></div>
+        <div class="transcript-row"><time>04:32</time><p>这是打个比方</p></div>
+        <div class="transcript-row"><time>04:33</time><p>那么如果它预测的不对呢</p></div>
+        <div class="transcript-row"><time>04:35</time><p>那我们就要进行下一个步骤</p></div>
+        <div class="transcript-row"><time>04:36</time><p>反向传播</p></div>
+        <div class="transcript-row"><time>04:37</time><p>在我们发现我们预测错误的时候</p></div>
+        <div class="transcript-row"><time>04:38</time><p>我们会对这个预测的错误</p></div>
+        <div class="transcript-row"><time>04:40</time><p>进行一个损失计算</p></div>
+        <div class="transcript-row"><time>04:41</time><p>接着通过这个计算的结果</p></div>
+        <div class="transcript-row"><time>04:42</time><p>来调整参数</p></div>
+        <div class="transcript-row"><time>04:43</time><p>调整参数的目的</p></div>
+        <div class="transcript-row"><time>04:44</time><p>就是为了让它将来更好地</p></div>
+        <div class="transcript-row"><time>04:45</time><p>靠近正确的答案</p></div>
+        <div class="transcript-row"><time>04:46</time><p>那么这个参数到底是什么呢</p></div>
+        <div class="transcript-row"><time>04:47</time><p>其实参数就是</p></div>
+        <div class="transcript-row"><time>04:48</time><p>AI大道里面可以不断调整的数字</p></div>
+        <div class="transcript-row"><time>04:50</time><p>它既包括每一个Token</p></div>
+        <div class="transcript-row"><time>04:52</time><p>对应的高位项量</p></div>
+        <div class="transcript-row"><time>04:53</time><p>也包括Transformer计算师</p></div>
+        <div class="transcript-row"><time>04:54</time><p>使用了一些大量的数字</p></div>
+        <div class="transcript-row"><time>04:56</time><p>例如我们已知</p></div>
+        <div class="transcript-row"><time>04:57</time><p>TedGPD3它的参数量是175B</p></div>
+        <div class="transcript-row"><time>05:02</time><p>这个B是英文billing</p></div>
+        <div class="transcript-row"><time>05:03</time><p>是10亿的意思</p></div>
+        <div class="transcript-row"><time>05:04</time><p>也就是说GPD3</p></div>
+        <div class="transcript-row"><time>05:05</time><p>它是有1750一个</p></div>
+        <div class="transcript-row"><time>05:07</time><p>可以被训练和调整的数字</p></div>
+        <div class="transcript-row"><time>05:09</time><p>而模型</p></div>
+        <div class="transcript-row"><time>05:09</time><p>它从海量的文本中</p></div>
+        <div class="transcript-row"><time>05:10</time><p>学到的所有的语言规律</p></div>
+        <div class="transcript-row"><time>05:12</time><p>知识联系</p></div>
+        <div class="transcript-row"><time>05:13</time><p>表达方式</p></div>
+        <div class="transcript-row"><time>05:14</time><p>逻辑等等</p></div>
+        <div class="transcript-row"><time>05:15</time><p>全部都是被压缩进了</p></div>
+        <div class="transcript-row"><time>05:16</time><p>这些参数里面</p></div>
+        <div class="transcript-row"><time>05:17</time><p>每次我想到这里</p></div>
+        <div class="transcript-row"><time>05:18</time><p>我都会不由得感叹数学的魅力</p></div>
+        <div class="transcript-row"><time>05:19</time><p>那些冰冷的数字</p></div>
+        <div class="transcript-row"><time>05:20</time><p>居然在经过无数次的</p></div>
+        <div class="transcript-row"><time>05:22</time><p>训练和调整之后</p></div>
+        <div class="transcript-row"><time>05:23</time><p>竟然能变得承载</p></div>
+        <div class="transcript-row"><time>05:24</time><p>很多语言的含义</p></div>
+        <div class="transcript-row"><time>05:25</time><p>能让计算机逐渐学会</p></div>
+        <div class="transcript-row"><time>05:26</time><p>词语之间的联系</p></div>
+        <div class="transcript-row"><time>05:27</time><p>能够理解剩下的文</p></div>
+        <div class="transcript-row"><time>05:28</time><p>并最终生成自然流畅的语言</p></div>
+        <div class="transcript-row"><time>05:30</time><p>真是让人惊叹不已</p></div>
+        <div class="transcript-row"><time>05:31</time><p>在更新完参数之后</p></div>
+        <div class="transcript-row"><time>05:32</time><p>我们这一批数据</p></div>
+        <div class="transcript-row"><time>05:33</time><p>就算训练完成了</p></div>
+        <div class="transcript-row"><time>05:34</time><p>接着就输入下批数据</p></div>
+        <div class="transcript-row"><time>05:35</time><p>还是这样</p></div>
+        <div class="transcript-row"><time>05:36</time><p>训练并更新参数</p></div>
+        <div class="transcript-row"><time>05:37</time><p>直至所有的数据训练完</p></div>
+        <div class="transcript-row"><time>05:38</time><p>此时最终我们就得到一个</p></div>
+        <div class="transcript-row"><time>05:40</time><p>基座大恶性</p></div>
+        <div class="transcript-row"><time>05:41</time><p>此时的AI</p></div>
+        <div class="transcript-row"><time>05:42</time><p>它还不是我们平常用的那个AI</p></div>
+        <div class="transcript-row"><time>05:44</time><p>它这个时候只能称为</p></div>
+        <div class="transcript-row"><time>05:45</time><p>叫做一个接通大师</p></div>
+        <div class="transcript-row"><time>05:47</time><p>它听不懂人的命令</p></div>
+        <div class="transcript-row"><time>05:48</time><p>只会极为的</p></div>
+        <div class="transcript-row"><time>05:49</time><p>在你输入的问题后面输出</p></div>
+        <div class="transcript-row"><time>05:50</time><p>最可能出现的内容</p></div>
+        <div class="transcript-row"><time>05:52</time><p>我举一个例子</p></div>
+        <div class="transcript-row"><time>05:53</time><p>大家就懂了</p></div>
+        <div class="transcript-row"><time>05:54</time><p>例如输入</p></div>
+        <div class="transcript-row"><time>05:55</time><p>我是不是应该好好学习</p></div>
+        <div class="transcript-row"><time>05:57</time><p>此时AI回答的是</p></div>
+        <div class="transcript-row"><time>05:58</time><p>天天向上</p></div>
+        <div class="transcript-row"><time>06:00</time><p>它回答的不是</p></div>
+        <div class="transcript-row"><time>06:00</time><p>是应该</p></div>
+        <div class="transcript-row"><time>06:01</time><p>它回答的是天天向上</p></div>
+        <div class="transcript-row"><time>06:04</time><p>因为它不知道人类是在向它提问</p></div>
+        <div class="transcript-row"><time>06:05</time><p>也不一定能按照我们的指令</p></div>
+        <div class="transcript-row"><time>06:07</time><p>和要求进行回答</p></div>
+        <div class="transcript-row"><time>06:08</time><p>它只是一味的输出</p></div>
+        <div class="transcript-row"><time>06:09</time><p>后面最可能出现的内容</p></div>
+        <div class="transcript-row"><time>06:10</time><p>当然这里我还要提一嘴</p></div>
+        <div class="transcript-row"><time>06:11</time><p>基座大恶性</p></div>
+        <div class="transcript-row"><time>06:12</time><p>它回答的并不一定是</p></div>
+        <div class="transcript-row"><time>06:13</time><p>概率最高的那个词</p></div>
+        <div class="transcript-row"><time>06:15</time><p>或者说那个token</p></div>
+        <div class="transcript-row"><time>06:15</time><p>它在回答的里面进行了一些设置</p></div>
+        <div class="transcript-row"><time>06:17</time><p>它可以取出预测概率最高的</p></div>
+        <div class="transcript-row"><time>06:18</time><p>几个词中</p></div>
+        <div class="transcript-row"><time>06:19</time><p>随机选取一个</p></div>
+        <div class="transcript-row"><time>06:20</time><p>所以我们AI回答的问题</p></div>
+        <div class="transcript-row"><time>06:21</time><p>并不是一成不变的</p></div>
+        <div class="transcript-row"><time>06:22</time><p>它是都得有变化的</p></div>
+        <div class="transcript-row"><time>06:23</time><p>那么这个就是我们整个</p></div>
+        <div class="transcript-row"><time>06:24</time><p>预训练的过程</p></div>
+        <div class="transcript-row"><time>06:25</time><p>此时AI只是变成了一个</p></div>
+        <div class="transcript-row"><time>06:31</time><p>这是我们下一期的内容</p></div>
+        <div class="transcript-row"><time>06:33</time><p>大家再见</p></div>
+      </div>
+    </div>
+  </details>
+</section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5200" viewBox="0 0 1320 5200">
+  <foreignObject x="0" y="0" width="1320" height="5200">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fef2f2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:140px;font-weight:700;font-size:15px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-purple{background:linear-gradient(135deg,#faf5ff,#ede9fe);border-color:#c4b5fd;color:#6b21a8}
+.node-red{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fca5a5;color:#991b1b}
+.arrow{font-size:22px;color:#94a3b8}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.card .example{background:#f0fdf4;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #10b981}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}</style>
+            
+<div class="container">
+  <h1>大语言模型原理（2）预训练</h1>
+  <div class="meta">
+    <span class="tag tag-blue">大语言模型</span>
+    <span class="tag tag-green">预训练</span>
+    <span class="tag tag-orange">Transformer</span>
+    <span class="tag tag-purple">自注意力</span>
+    <span class="tag tag-red">反向传播</span>
+    <span class="tag tag-gray">6:33</span>
+  </div>
+
+  <div class="summary-line">
+    <strong>一句话核心：</strong>预训练把随机的高维向量，通过<strong>Transformer（自注意力+前馈）→ 预测下一个Token → 反向传播更新参数</strong>的循环迭代，训练成能&quot;接龙&quot;的基座大模型。
+  </div>
+
+  <div class="timeline">
+    <h3>内容时间线</h3>
+    <div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">回顾：数据准备的随机向量还没有语言含义</span></div>
+    <div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text"><strong>Transformer四件套</strong>：自注意力 → 前馈网络 → 残差连接 → 归一化</span></div>
+    <div class="timeline-item"><span class="timeline-time">03:23</span><span class="timeline-text"><strong>多层堆叠</strong>：几十到上百层，前层学语法→中层学关系→后层学逻辑</span></div>
+    <div class="timeline-item"><span class="timeline-time">03:54</span><span class="timeline-text"><strong>预测下一个Token</strong>：输入前面文本，输出词表概率分布，完成&quot;接龙&quot;</span></div>
+    <div class="timeline-item"><span class="timeline-time">04:35</span><span class="timeline-text"><strong>反向传播</strong>：计算损失 → 调整参数（GPT-3有1750亿参数）</span></div>
+    <div class="timeline-item"><span class="timeline-time">05:41</span><span class="timeline-text"><strong>基座模型</strong>：只会&quot;接龙&quot;，听不懂命令 → 需对齐训练</span></div>
+  </div>
+
+  <div class="map">
+    <h2>预训练循环：核心计算流程</h2>
+    <div class="diagram">
+      <div class="node">随机高维向量<br/><small>（数据准备产出）</small></div>
+      <span class="arrow">→</span>
+      <div class="node node-green">Transformer<br/><small>自注意力+前馈</small></div>
+      <span class="arrow">→</span>
+      <div class="node node-orange">预测下个Token<br/><small>输出概率分布</small></div>
+      <span class="arrow">→</span>
+      <div class="node node-red">计算损失<br/><small>对比正确答案</small></div>
+    </div>
+    <div style="text-align:center;margin-top:16px">
+      <span class="node node-red" style="display:inline-block;min-width:240px"><small>反向传播：调整1750亿参数</small></span>
+      <span style="font-size:22px;color:#94a3b8"> ↺ </span>
+      <span class="node" style="display:inline-block;min-width:120px"><small>循环迭代</small></span>
+    </div>
+    <p style="text-align:center;color:#94a3b8;font-size:14px;margin-top:16px">重复数十亿次，直到所有数据训练完 → 得到基座大模型</p>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Transformer 四件套</div>
+
+    <div class="card">
+      <h3>1. 自注意力机制（Self-Attention）</h3>
+      <p>每个Token计算出对其他Token的&quot;关注程度&quot;。词不再是孤立的，而是知道自己与上下文中每个词的关系强度。</p>
+      <div class="example">
+        <strong>举例：</strong>&quot;我喜欢金毛，因为它很温顺&quot; → 处理&quot;温顺&quot;时，它知道&quot;很&quot;修饰它、温顺描述金毛、温顺是原因……关系都量化进了向量。
+      </div>
+      <div class="highlight">核心价值：把词与词之间的&quot;关联程度&quot;变成可以计算的数字</div>
+    </div>
+
+    <div class="card card-green" style="margin:12px 0">
+      <h3>2. 前馈神经网络（Feed-Forward）</h3>
+      <p>对自注意力信息进行<strong>进一步加工和提炼</strong>，不只是知道关系，还&quot;理解&quot;更深含义。</p>
+      <div class="example">
+        处理&quot;温顺&quot;时 → 温顺形容动物 → 增强动物性格特征 → 金毛温顺是被人喜欢的原因 → 金毛是狗品种且具温顺性格
+      </div>
+    </div>
+
+    <div class="card card-orange" style="margin:12px 0">
+      <h3>3. 残差连接（Residual Connection）</h3>
+      <p>帮助模型<strong>保留原来信息</strong>，避免层层计算后前面内容完全丢失。类似于&quot;记住前面的，同时加上新理解&quot;。</p>
+    </div>
+
+    <div class="card card-purple">
+      <h3>4. 归一化（Normalization）</h3>
+      <p>让训练过程更加<strong>稳定</strong>，防止数字过大或过小导致训练崩溃。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">多层堆叠：从语法到逻辑</div>
+    <div class="card">
+      <h3>为什么需要几十到上百层？</h3>
+      <p>一层Transformer只完成一次信息联系与加工，语言中复杂含义需要<strong>层层递进</strong>。</p>
+      <table>
+        <tr><th>层级位置</th><th>关注内容</th><th>示例</th></tr>
+        <tr><td><strong>前层</strong></td><td>字词搭配、基础语法</td><td>识别结构助词用法、词性</td></tr>
+        <tr><td><strong>中层</strong></td><td>上下文、词语关系</td><td>理解代词指代、修饰关系</td></tr>
+        <tr><td><strong>后层</strong></td><td>整句话语义、逻辑</td><td>因果推理、情感判断、主旨归纳</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">预测 + 反向传播 = 学习</div>
+    <div class="card card-green">
+      <h3>接龙预测</h3>
+      <p>输入&quot;我喜欢&quot; → 模型计算词表中每个Token的概率 → 金毛35%、吃12%、虫子0.01%……预测&quot;金毛&quot;。</p>
+      <div class="highlight">关键：<strong>对每个位置都预测下一个词</strong>。输入&quot;我&quot;预测&quot;喜欢&quot;，输入&quot;我喜欢&quot;预测&quot;金毛&quot;，依次预测全文所有Token。</div>
+    </div>
+
+    <div class="card card-red" style="margin-top:16px">
+      <h3>反向传播（Backpropagation）</h3>
+      <p>预测错误时：<strong>计算损失 → 调整参数 → 靠近正确答案</strong></p>
+      <table>
+        <tr><th>模型</th><th>参数量</th></tr>
+        <tr><td>GPT-3</td><td>175B = <strong>1750亿</strong></td></tr>
+        <tr><td>GPT-4</td><td>估计 <strong>~1.8万亿</strong></td></tr>
+      </table>
+      <div class="quote">
+        &quot;模型从海量文本中学到的所有语言规律、知识联系、表达方式、逻辑……全部被压缩进了这些参数里面。冰冷的数字，经过无数次训练调整后，居然承载了语言含义。&quot;
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">最终产物：接龙大师（基座模型）</div>
+    <div class="card card-orange">
+      <h3>训练完成 ≠ 可以聊天</h3>
+      <ul>
+        <li>此时的AI只是<strong>接龙大师</strong>：在输入后面输出&quot;最可能的内容&quot;</li>
+        <li><strong>听不懂</strong>人类的命令和提问意图</li>
+        <li>不一定能按<strong>指令</strong>回答</li>
+      </ul>
+      <div class="highlight">
+        <strong>例：</strong>输入&quot;我是不是应该好好学习？&quot; → AI回答&quot;天天向上&quot;（续写而非回答）
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">数据准备 vs 预训练 vs 对齐训练</div>
+    <table>
+      <tr><th>阶段</th><th>输入</th><th>核心操作</th><th>产出</th></tr>
+      <tr><td><strong>数据准备</strong></td><td>原始文本</td><td>清洗 → 分词 → 嵌入随机向量</td><td>带位置的随机高维向量</td></tr>
+      <tr><td><strong>预训练</strong></td><td>随机向量</td><td>Transformer → 预测 → 反向传播</td><td>基座大模型（接龙大师）</td></tr>
+      <tr><td><strong>对齐训练</strong></td><td>基座模型</td><td>指令微调 + RLHF</td><td>可对话的聊天AI</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">常见误解与澄清</div>
+    <div class="card card-red">
+      <h3>误解1：预训练完就能聊天了</h3>
+      <div class="pitfall">预训练只让模型学会&quot;续写&quot;，还不会回答问题</div>
+      <div class="action">还需要对齐训练（指令微调 + RLHF），模型才能听懂人类的提问意图并按要求回答</div>
+    </div>
+    <div class="card card-red" style="margin:12px 0">
+      <h3>误解2：Transformer一层就够了</h3>
+      <div class="pitfall">一层只能完成一次信息加工，远不够理解复杂语言</div>
+      <div class="action">GPT-3有96层，GPT-4可能上百层。层层递进才能从字词理解到逻辑推理</div>
+    </div>
+    <div class="card card-red">
+      <h3>误解3：参数越多越聪明</h3>
+      <div class="pitfall">参数量大是必要条件，但不是充分条件</div>
+      <div class="action">数据质量、训练方法、对齐策略同样关键。参数是&quot;容量&quot;，不是&quot;智商&quot;</div>
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <h2>总结与关键概念</h2>
+
+    <h3>预训练的本质</h3>
+    <ol>
+      <li><strong>输入</strong>：数据准备产出的随机高维向量</li>
+      <li><strong>处理</strong>：Transformer（自注意力+前馈+残差+归一化）× 几十到上百层</li>
+      <li><strong>目标</strong>：预测下一个Token（接龙游戏）</li>
+      <li><strong>学习</strong>：预测错 → 反向传播 → 调整1750亿参数 → 继续训练</li>
+      <li><strong>产出</strong>：基座大模型 — 一个几十到上百层Transformer堆叠的参数矩阵</li>
+    </ol>
+
+    <h3>对理解AI行为的意义</h3>
+    <ul>
+      <li><strong>接龙本质</strong>：AI生成文字时并非&quot;思考后回答&quot;，而是不断预测下一个最可能的词</li>
+      <li><strong>上下文依赖</strong>：Transformer的自注意力让每个词都&quot;看过&quot;上下文后才输出</li>
+      <li><strong>参数即知识</strong>：AI的&quot;学问&quot;不在文件里，而在那上千亿个可调的数字里</li>
+    </ul>
+
+    <p style="margin-top:16px;opacity:0.7">下一阶段：对齐训练（后训练）—— 如何让接龙大师学会对话？</p>
+  </div>
+
+  <a class="source-link" href="http://xhslink.cn/o/8rVHZRvp5nD" target="_blank" rel="noopener">→ 原视频链接（小红书）</a>
+</div>
+    </div>
+  </foreignObject>
+</svg>
