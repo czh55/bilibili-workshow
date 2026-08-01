@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大语言模型后训练（对齐训练）：监督微调SFT、偏好对齐RLHF/DPO，如何让接龙大师学会对话">
+  <title>大语言模型原理（3）后训练｜图文实录</title>
+  <style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+header{margin-bottom:40px}header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+.quote-block{background:#f0fdf4;border-left:4px solid #10b981;padding:12px 16px;border-radius:8px;margin:14px 0;font-size:15px;color:#166534;font-style:italic}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+</head>
+<body><main class="container">
+<header>
+  <h1>大语言模型原理（3）后训练：从接龙大师到对话助手</h1>
+  <div class="meta-row">
+    <span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">6:23</span><span class="meta-tag tag-topic">AI 后训练 对齐训练 SFT RLHF</span>
+  </div>
+  <a class="source-link" href="http://xhslink.cn/o/88IJFAOpNmK" target="_blank" rel="noopener">→ 原视频链接</a>
+</header>
+<nav class="toc">
+  <h3>内容导航</h3>
+  <a href="#review">回顾：数据准备+预训练的产物</a>
+  <a href="#intro">后训练概述：监督微调+偏好对齐</a>
+  <a href="#sft">监督微调SFT：给示范学回答</a>
+  <a href="#tuning">调参比喻：炒菜·全参数微调vs PEFT</a>
+  <a href="#pref">偏好对齐：RLHF vs DPO</a>
+  <a href="#summary">总结：三个阶段全流程</a>
+  <a href="#transcript">完整转录</a>
+</nav>
+<article class="documentary">
+
+<section class="story-section" id="review"><h2>回顾：数据准备+预训练的产物</h2>
+<p><span class="time-marker">00:00</span>前两节回顾：数据准备把文本变成带ID的Token和随机高维向量；预训练通过Transformer处理、预测下一个Token、反向传播调整参数，最终得到一个<strong>基座大模型</strong>。但此时的大模型只是一个<strong>接龙大师</strong>——用户问"我应不应该好好学习"，它回答"天天向上"，因为"好好学习天天向上"是常见文本组合，它并没有真正理解用户想咨询什么。</p>
+<figure><img src="assets/llm-posttrain/shot-01.jpg" alt="回顾前两节，引出后训练" loading="lazy"><figcaption><span class="time-badge">[00:02]</span> 基座模型只会续写，不会回答问题</figcaption></figure>
+</section>
+
+<section class="story-section" id="intro"><h2>后训练概述：让AI学会听懂人话</h2>
+<p><span class="time-marker">01:04</span>第三阶段：<strong>后训练（对齐训练）</strong>，目的就是让模型的回答逐渐与人类的要求和偏好对齐。后训练主要包括两个内容：<strong>监督微调（SFT）和偏好对齐</strong>。</p>
+<div class="quote-block">后训练 = 监督微调（SFT，给示范学回答）+ 偏好对齐（RLHF/DPO，比答案学好坏）</div>
+</section>
+
+<section class="story-section" id="sft"><h2>监督微调（SFT）：给示范学回答</h2>
+<p><span class="time-marker">01:18</span>SFT全称Supervised Fine-Tuning。用六个字概括：<strong>给示范，学回答</strong>。就是给模型大量标准的问答示范，让模型学会听懂任务并按人的要求回答。</p>
+<p><span class="time-marker">01:32</span>训练数据叫<strong>SFT数据</strong>，最简单的形式：用户问"什么是token" → 助手答"token是大模型处理文本时的最小单位"。但实际SFT数据不止这一种形式：</p>
+<ul>
+<li><strong>基础问答</strong>：用户提问 + 助手理想回答</li>
+<li><strong>带系统指令的对话</strong>：设定模型角色（如"你是一名小学教师"）、回答风格、输出格式、可调用工具等，让模型根据不同情境作答</li>
+<li><strong>多轮对话</strong>：用户-助手-用户-助手不断交替，模拟真实追问场景</li>
+</ul>
+<figure><img src="assets/llm-posttrain/shot-02.jpg" alt="SFT监督微调的三种数据形式" loading="lazy"><figcaption><span class="time-badge">[00:48]</span> SFT数据三种形式：基础问答、带系统指令、多轮对话</figcaption></figure>
+<p><span class="time-marker">02:30</span>SFT并不是在模型内部安装了一个"听话模块"，而是通过训练<strong>继续调整模型原有参数</strong>，让模型生成符合指令的答案的概率变得更高。本质还是<strong>调参</strong>。</p>
+</section>
+
+<section class="story-section" id="tuning"><h2>调参比喻：炒菜</h2>
+<p><span class="time-marker">02:47</span>博主用炒菜比喻调参：做饭需要把握火候大小、炖煮时间、油盐比例。尝一口太咸→下次少放盐→继续调整→直到满意。</p>
+<figure><img src="assets/llm-posttrain/shot-03.jpg" alt="调参比喻：炒菜" loading="lazy"><figcaption><span class="time-badge">[01:30]</span> 调参如炒菜：不断调整各种"配料"比例直到味道满意</figcaption></figure>
+<p><span class="time-marker">03:04</span>SFT中调参分两大类：</p>
+<ul>
+<li><strong>全参数微调（Full Fine-Tuning）</strong>：模型所有参数（embedding + Transformer各层）都参与调整。效果好但成本高。</li>
+<li><strong>参数高效微调（PEFT）</strong>：原模型大多数参数不变，额外加入少量可训练参数。好比在原有调料基础上加一种新配料（如十三香），只调整这种新配料的用量。主流技术包括<strong>LoRA和QLoRA</strong>。成本低且效果可能接近全参数微调。</li>
+</ul>
+</section>
+
+<section class="story-section" id="pref"><h2>偏好对齐：比答案学好坏</h2>
+<p><span class="time-marker">04:03</span>偏好对齐要解决两个痛点：<strong>好答案很难直接定义</strong>（同一问题可能有成千上万种回答，哪个更好？）和<strong>模型可能踩红线</strong>（不管用户问什么，不会判断是否危险和该回答到什么程度）。</p>
+<p>真正需要的是<strong>有用、诚实且无害</strong>（3H原则：Helpful、Honest、Harmless，由Anthropic提出并推广）。</p>
+<figure><img src="assets/llm-posttrain/shot-04.jpg" alt="偏好对齐：RLHF与DPO" loading="lazy"><figcaption><span class="time-badge">[03:30]</span> RLHF：训练奖励模型打分 → 主模型按分数优化；DPO：直接对比好答案和差答案</figcaption></figure>
+<p><span class="time-marker">04:47</span>两种主要方法：</p>
+<p><strong>RLHF（基于人类反馈的强化学习）</strong>：</p>
+<ol>
+<li>模型针对同一问题生成多个答案 → 人类比较排序，判断哪个更好</li>
+<li>用排序数据训练一个<strong>奖励模型</strong>（像一位老师，负责给答案打分）</li>
+<li>主模型不断生成新答案 → 奖励模型按人类偏好打分 → 主模型根据分数调整参数 → 逐渐提高好答案概率、降低差答案概率</li>
+</ol>
+<p><strong>DPO（直接偏好优化）</strong>：更直接。训练数据中直接给出一个问题 + 一个更好答案 + 一个较差答案，模型直接对比学习。<br/>简单说：RLHF先训练一位老师打分，DPO直接告诉模型哪个更好。</p>
+<figure><img src="assets/llm-posttrain/shot-05.jpg" alt="三阶段总结" loading="lazy"><figcaption><span class="time-badge">[05:10]</span> 三阶段总结：数据准备→预训练→后训练，从接龙到对话</figcaption></figure>
+</section>
+
+<section class="story-section" id="summary"><h2>总结：三个阶段全流程</h2>
+<p><span class="time-marker">05:50</span>三个阶段让一个最初只会预测下一个Token的模型，逐步变成了可以正常交流、回答问题、完成任务的AI：</p>
+<ol>
+<li><strong>数据准备</strong>：文本资料 → 清洗 Token化 → 随机高维向量（文本→数字）</li>
+<li><strong>预训练</strong>：Transformer处理 → 预测下一个Token → 反向传播 → 基座大模型（学会语言规律和知识）</li>
+<li><strong>后训练</strong>：SFT（给示范学回答）+ 偏好对齐RLHF/DPO（比答案学好坏）→ 可以对话的AI助手</li>
+</ol>
+</section>
+
+</article>
+
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible" open><summary>完整转录（233段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>大家好 今天我们来讲AI诞生的第三个阶段 候询链</p></div>
+<div class="transcript-row"><time>00:03</time><p>在讲候询链之前 我们先快速的回顾一下前两节的知识</p></div>
+<div class="transcript-row"><time>00:06</time><p>第一节是数据准备 我们首先进行资料收集与清晰</p></div>
+<div class="transcript-row"><time>00:09</time><p>得到一些相对干净的文本数据</p></div>
+<div class="transcript-row"><time>00:11</time><p>然后把文本切分成一个一个的token</p></div>
+<div class="transcript-row"><time>00:13</time><p>并把每个token都转换成对应的高维项量</p></div>
+<div class="transcript-row"><time>00:16</time><p>到这里就完成了文本到数字的转换</p></div>
+<div class="transcript-row"><time>00:18</time><p>第二节是预讯链 我们把刚才得到的高维项量</p></div>
+<div class="transcript-row"><time>00:21</time><p>输入到transformer中</p></div>
+<div class="transcript-row"><time>00:23</time><p>经过自注意力机制和钱贵神经网络的处理之后</p></div>
+<div class="transcript-row"><time>00:25</time><p>让每一个token都能够结合上下文的信息</p></div>
+<div class="transcript-row"><time>00:28</time><p>得到更加丰富的表示</p></div>
+<div class="transcript-row"><time>00:29</time><p>此时的高维项量已经有了含义</p></div>
+<div class="transcript-row"><time>00:31</time><p>接着我们让模型不断的预测下一个token</p></div>
+<div class="transcript-row"><time>00:34</time><p>并根据预测结果来调整参数</p></div>
+<div class="transcript-row"><time>00:36</time><p>提高下一次预测成功的概率</p></div>
+<div class="transcript-row"><time>00:37</time><p>当所有的数据都像这样子</p></div>
+<div class="transcript-row"><time>00:39</time><p>一批一批的训练完成之后</p></div>
+<div class="transcript-row"><time>00:40</time><p>我们就得到一个基座大模型</p></div>
+<div class="transcript-row"><time>00:42</time><p>但此时的大模型还只是一个结容大师</p></div>
+<div class="transcript-row"><time>00:44</time><p>它并不能像现在的AI一样和人类正常沟通</p></div>
+<div class="transcript-row"><time>00:47</time><p>例如用户问模型</p></div>
+<div class="transcript-row"><time>00:48</time><p>我应不应该好好学习啊</p></div>
+<div class="transcript-row"><time>00:49</time><p>模型可能回答</p></div>
+<div class="transcript-row"><time>00:50</time><p>天天向上</p></div>
+<div class="transcript-row"><time>00:51</time><p>因为在他看来</p></div>
+<div class="transcript-row"><time>00:52</time><p>好好学习天天向上是一个非常常见的文本组合</p></div>
+<div class="transcript-row"><time>00:55</time><p>此时的大模型并没有真正理解用户想要咨询什么</p></div>
+<div class="transcript-row"><time>00:57</time><p>只是在根据前面的内容进行结论</p></div>
+<div class="transcript-row"><time>00:59</time><p>要想让他真正的学会</p></div>
+<div class="transcript-row"><time>01:01</time><p>听懂人的要求</p></div>
+<div class="transcript-row"><time>01:01</time><p>按照人的方式进行回答</p></div>
+<div class="transcript-row"><time>01:02</time><p>接下来我们就要进行第三个阶段</p></div>
+<div class="transcript-row"><time>01:04</time><p>叫做后训练</p></div>
+<div class="transcript-row"><time>01:06</time><p>后训练也可以叫做对齐训练</p></div>
+<div class="transcript-row"><time>01:08</time><p>因为这个阶段的目的</p></div>
+<div class="transcript-row"><time>01:09</time><p>就是让模型的回答</p></div>
+<div class="transcript-row"><time>01:10</time><p>逐渐与人类的要求和偏好进行对齐</p></div>
+<div class="transcript-row"><time>01:13</time><p>后训练主要包括两个内容</p></div>
+<div class="transcript-row"><time>01:14</time><p>一个是监督微调</p></div>
+<div class="transcript-row"><time>01:15</time><p>一个是偏好对齐</p></div>
+<div class="transcript-row"><time>01:16</time><p>我们先来讲监督微调</p></div>
+<div class="transcript-row"><time>01:18</time><p>监督微调对应的英文是Supervised Funtunity</p></div>
+<div class="transcript-row"><time>01:21</time><p>所以简称SFT</p></div>
+<div class="transcript-row"><time>01:23</time><p>监督微调到底是做什么呢</p></div>
+<div class="transcript-row"><time>01:24</time><p>我用六个字概括</p></div>
+<div class="transcript-row"><time>01:25</time><p>那就是给示范学回答</p></div>
+<div class="transcript-row"><time>01:27</time><p>简单来说</p></div>
+<div class="transcript-row"><time>01:28</time><p>就是给模型大量标准的问答示范</p></div>
+<div class="transcript-row"><time>01:30</time><p>让模型学会听懂任务</p></div>
+<div class="transcript-row"><time>01:31</time><p>并按照人的要求进行回答</p></div>
+<div class="transcript-row"><time>01:32</time><p>我们把这个训练数据称之为SFT数据</p></div>
+<div class="transcript-row"><time>01:35</time><p>例如用户问什么是token</p></div>
+<div class="transcript-row"><time>01:36</time><p>助手回答token是大模型处理文本时的最小单位</p></div>
+<div class="transcript-row"><time>01:39</time><p>这就是一条最基础的SFT数据</p></div>
+<div class="transcript-row"><time>01:41</time><p>由用户提出的问题或者说指令</p></div>
+<div class="transcript-row"><time>01:43</time><p>以及助手应该给出怎样的理想回答组成</p></div>
+<div class="transcript-row"><time>01:45</time><p>当然在真实的大模型训练中</p></div>
+<div class="transcript-row"><time>01:47</time><p>SFT数据的形式可不止这一种</p></div>
+<div class="transcript-row"><time>01:49</time><p>有时候数据中还会多出一个角色叫做系统</p></div>
+<div class="transcript-row"><time>01:51</time><p>例如系统中可能会写</p></div>
+<div class="transcript-row"><time>01:52</time><p>你是一名专业的人工智能教师</p></div>
+<div class="transcript-row"><time>01:54</time><p>为什么要有系统这个角色呢</p></div>
+<div class="transcript-row"><time>01:55</time><p>因为对于同一个问题</p></div>
+<div class="transcript-row"><time>01:56</time><p>我们可以采用完全不同的回答方式</p></div>
+<div class="transcript-row"><time>01:58</time><p>比如如果这个系统这规定是</p></div>
+<div class="transcript-row"><time>02:00</time><p>你是一名小学教师</p></div>
+<div class="transcript-row"><time>02:01</time><p>我们用户在问什么是token的时候</p></div>
+<div class="transcript-row"><time>02:03</time><p>AI就应该使用小学生能够听懂的语言</p></div>
+<div class="transcript-row"><time>02:05</time><p>进行回答</p></div>
+<div class="transcript-row"><time>02:06</time><p>也就是说</p></div>
+<div class="transcript-row"><time>02:06</time><p>我们可以在系统中设定模型的角色</p></div>
+<div class="transcript-row"><time>02:09</time><p>回答风格</p></div>
+<div class="transcript-row"><time>02:10</time><p>输出格式</p></div>
+<div class="transcript-row"><time>02:10</time><p>以及可以调用的工具等等</p></div>
+<div class="transcript-row"><time>02:12</time><p>让模型学会根据不同的情景和要求</p></div>
+<div class="transcript-row"><time>02:14</time><p>作出回答</p></div>
+<div class="transcript-row"><time>02:14</time><p>另外在真实的交流过程中</p></div>
+<div class="transcript-row"><time>02:16</time><p>用户往往还会连续的进行追问</p></div>
+<div class="transcript-row"><time>02:18</time><p>所以SFT数据中还会出现多轮对话的形式</p></div>
+<div class="transcript-row"><time>02:21</time><p>也就是用户助手</p></div>
+<div class="transcript-row"><time>02:22</time><p>用户助手不断的进行交替</p></div>
+<div class="transcript-row"><time>02:23</time><p>因此常见的SFT数据主要有三种形式</p></div>
+<div class="transcript-row"><time>02:26</time><p>一个是基础的问答</p></div>
+<div class="transcript-row"><time>02:27</time><p>一个是带有系统指令的对话</p></div>
+<div class="transcript-row"><time>02:29</time><p>以及多轮的对话</p></div>
+<div class="transcript-row"><time>02:30</time><p>那么SFT究竟让模型学到了什么呢</p></div>
+<div class="transcript-row"><time>02:32</time><p>它并不是在模型内部安装了一个新的听话模块</p></div>
+<div class="transcript-row"><time>02:35</time><p>而是通过训练继续调整模型原有的参数</p></div>
+<div class="transcript-row"><time>02:38</time><p>让模型生成符合指令的答案的概率变得更高</p></div>
+<div class="transcript-row"><time>02:40</time><p>也就是说它的本质是调餐</p></div>
+<div class="transcript-row"><time>02:42</time><p>那么这个调餐到底是在干什么呢</p></div>
+<div class="transcript-row"><time>02:44</time><p>我感觉网上很多的解释都不够通俗</p></div>
+<div class="transcript-row"><time>02:46</time><p>让我来讲的话</p></div>
+<div class="transcript-row"><time>02:47</time><p>我就直接把调餐比喻成炒菜</p></div>
+<div class="transcript-row"><time>02:49</time><p>我们在做饭的时候</p></div>
+<div class="transcript-row"><time>02:50</time><p>需要把握火候的大小</p></div>
+<div class="transcript-row"><time>02:51</time><p>炖煮的时间以及油盐等调料的比例</p></div>
+<div class="transcript-row"><time>02:54</time><p>做完一道菜以后我们尝一下</p></div>
+<div class="transcript-row"><time>02:55</time><p>发现太咸了</p></div>
+<div class="transcript-row"><time>02:56</time><p>那么下次就少放一点盐</p></div>
+<div class="transcript-row"><time>02:57</time><p>再次品尝以后</p></div>
+<div class="transcript-row"><time>02:58</time><p>如果味道还是不够好</p></div>
+<div class="transcript-row"><time>02:59</time><p>那就继续调整做法</p></div>
+<div class="transcript-row"><time>03:00</time><p>直到做出自己满意的味道</p></div>
+<div class="transcript-row"><time>03:02</time><p>不断调整炒菜过程中的各种细节</p></div>
+<div class="transcript-row"><time>03:03</time><p>它就是调餐</p></div>
+<div class="transcript-row"><time>03:04</time><p>而监督微调中的调餐方法主要分为两大类</p></div>
+<div class="transcript-row"><time>03:07</time><p>一种是全参数微调</p></div>
+<div class="transcript-row"><time>03:08</time><p>另一种是参数高效微调</p></div>
+<div class="transcript-row"><time>03:10</time><p>全参数微调顾名思义</p></div>
+<div class="transcript-row"><time>03:11</time><p>就是模型中的所有参数</p></div>
+<div class="transcript-row"><time>03:12</time><p>都可以参与调整</p></div>
+<div class="transcript-row"><time>03:13</time><p>其中就包括</p></div>
+<div class="transcript-row"><time>03:14</time><p>invading中的参数</p></div>
+<div class="transcript-row"><time>03:15</time><p>以及transformer各个网络层面中的大量参数</p></div>
+<div class="transcript-row"><time>03:17</time><p>这种方式通常能够取得较好的效果</p></div>
+<div class="transcript-row"><time>03:19</time><p>但是成本也比较高</p></div>
+<div class="transcript-row"><time>03:20</time><p>需要大量的算力和显存</p></div>
+<div class="transcript-row"><time>03:22</time><p>另一种更加常见的方式</p></div>
+<div class="transcript-row"><time>03:23</time><p>叫做参数高效微调</p></div>
+<div class="transcript-row"><time>03:24</time><p>英文缩写是PFT</p></div>
+<div class="transcript-row"><time>03:26</time><p>它会把原模型中的大多数参数保持不变</p></div>
+<div class="transcript-row"><time>03:28</time><p>不直接修改</p></div>
+<div class="transcript-row"><time>03:29</time><p>而是在模型中额外加入</p></div>
+<div class="transcript-row"><time>03:30</time><p>少量可以训练和调整的参数</p></div>
+<div class="transcript-row"><time>03:32</time><p>怎么理解呢</p></div>
+<div class="transcript-row"><time>03:32</time><p>我们还是把它给想象成炒菜</p></div>
+<div class="transcript-row"><time>03:34</time><p>全参数微调</p></div>
+<div class="transcript-row"><time>03:35</time><p>就像在炒菜的过程中</p></div>
+<div class="transcript-row"><time>03:36</time><p>油盐生抽料酒等所有配料的用量</p></div>
+<div class="transcript-row"><time>03:38</time><p>我们都可以重新调整</p></div>
+<div class="transcript-row"><time>03:40</time><p>而参数高效微调</p></div>
+<div class="transcript-row"><time>03:41</time><p>则是像在原有调料的比例</p></div>
+<div class="transcript-row"><time>03:42</time><p>保持不变的技术之上</p></div>
+<div class="transcript-row"><time>03:44</time><p>额外的加入一种新的配料</p></div>
+<div class="transcript-row"><time>03:45</time><p>例如13香</p></div>
+<div class="transcript-row"><time>03:46</time><p>然后通过调整13香的用量</p></div>
+<div class="transcript-row"><time>03:48</time><p>让这道菜更符合我们想要的味道</p></div>
+<div class="transcript-row"><time>03:49</time><p>这就是参数高效微调</p></div>
+<div class="transcript-row"><time>03:51</time><p>和全参数微调相比</p></div>
+<div class="transcript-row"><time>03:52</time><p>它是需要训练少量的参数</p></div>
+<div class="transcript-row"><time>03:54</time><p>但是它有机会达到接近全参数微调的效果</p></div>
+<div class="transcript-row"><time>03:56</time><p>而且它的训练成本更低</p></div>
+<div class="transcript-row"><time>03:58</time><p>目前主流的PFT技术</p></div>
+<div class="transcript-row"><time>03:59</time><p>包括Laura和QLaura等等</p></div>
+<div class="transcript-row"><time>04:01</time><p>以上就是监督微调的主要内容</p></div>
+<div class="transcript-row"><time>04:03</time><p>接下来我们再讲偏好对齐</p></div>
+<div class="transcript-row"><time>04:05</time><p>偏好对齐是在干什么</p></div>
+<div class="transcript-row"><time>04:06</time><p>我同样用6个字来概括</p></div>
+<div class="transcript-row"><time>04:07</time><p>比答案学好坏</p></div>
+<div class="transcript-row"><time>04:09</time><p>经过监督微调之后</p></div>
+<div class="transcript-row"><time>04:10</time><p>模型已经在一定程度上学会了对话</p></div>
+<div class="transcript-row"><time>04:12</time><p>但它仍然面临两个痛点问题</p></div>
+<div class="transcript-row"><time>04:15</time><p>第一个问题是好答案很难直接定义</p></div>
+<div class="transcript-row"><time>04:17</time><p>对于同一个问题</p></div>
+<div class="transcript-row"><time>04:18</time><p>可能存在成千上万中不同的回答</p></div>
+<div class="transcript-row"><time>04:20</time><p>那么这些人答案中哪个更好</p></div>
+<div class="transcript-row"><time>04:21</time><p>哪个更符合人类的需求呢</p></div>
+<div class="transcript-row"><time>04:22</time><p>模型本身并不知道</p></div>
+<div class="transcript-row"><time>04:23</time><p>第二个问题是模型可能会踩红线</p></div>
+<div class="transcript-row"><time>04:25</time><p>如果只进行监督微调</p></div>
+<div class="transcript-row"><time>04:27</time><p>模型可能不管用户问的什么问题</p></div>
+<div class="transcript-row"><time>04:28</time><p>都直接回答</p></div>
+<div class="transcript-row"><time>04:29</time><p>却不会主动判断这个问题是否危险</p></div>
+<div class="transcript-row"><time>04:31</time><p>是否应该回答</p></div>
+<div class="transcript-row"><time>04:31</time><p>以及应该回答到什么程度</p></div>
+<div class="transcript-row"><time>04:33</time><p>我相信我们国家的导模型</p></div>
+<div class="transcript-row"><time>04:34</time><p>在这一方面肯定付出了很多的精力</p></div>
+<div class="transcript-row"><time>04:36</time><p>我们真正需要的是有用</p></div>
+<div class="transcript-row"><time>04:38</time><p>诚实且无害的回答</p></div>
+<div class="transcript-row"><time>04:39</time><p>这里是由Ansoropic公司</p></div>
+<div class="transcript-row"><time>04:40</time><p>提出并推广的3H原则</p></div>
+<div class="transcript-row"><time>04:42</time><p>分别对应三个英文单词</p></div>
+<div class="transcript-row"><time>04:45</time><p>而偏好对齐要解决的就是这个问题</p></div>
+<div class="transcript-row"><time>04:47</time><p>偏好对齐主要有两种常见的方法</p></div>
+<div class="transcript-row"><time>04:49</time><p>一种是基于人类反馈的强化学习</p></div>
+<div class="transcript-row"><time>04:51</time><p>英文缩写是RALHF</p></div>
+<div class="transcript-row"><time>04:53</time><p>另外一种是直接偏好优化</p></div>
+<div class="transcript-row"><time>04:54</time><p>也就是DPO</p></div>
+<div class="transcript-row"><time>04:55</time><p>我们先来看第一个</p></div>
+<div class="transcript-row"><time>04:57</time><p>基于人类反馈的强化学习</p></div>
+<div class="transcript-row"><time>04:58</time><p>首先会让模型针对同一个问题</p></div>
+<div class="transcript-row"><time>05:00</time><p>生成多个不同的答案</p></div>
+<div class="transcript-row"><time>05:01</time><p>再由人类对这些答案进行比较和排序</p></div>
+<div class="transcript-row"><time>05:03</time><p>判断哪个答案更好</p></div>
+<div class="transcript-row"><time>05:04</time><p>哪个答案更差</p></div>
+<div class="transcript-row"><time>05:06</time><p>接着研究人员会利用这些排序好的数据</p></div>
+<div class="transcript-row"><time>05:08</time><p>训练出一个奖励模型</p></div>
+<div class="transcript-row"><time>05:10</time><p>这个奖励模型它就像一位老师</p></div>
+<div class="transcript-row"><time>05:12</time><p>专门负责给这个模型生成的答案进行打分</p></div>
+<div class="transcript-row"><time>05:15</time><p>之后主模型会不断地生成新的答案</p></div>
+<div class="transcript-row"><time>05:17</time><p>而奖励模型再根据人类的偏好</p></div>
+<div class="transcript-row"><time>05:19</time><p>给出相应的分数</p></div>
+<div class="transcript-row"><time>05:20</time><p>主模型会根据它打的分数继续调整参数</p></div>
+<div class="transcript-row"><time>05:22</time><p>逐渐提高好答案出现的概率</p></div>
+<div class="transcript-row"><time>05:24</time><p>降低差答案出现的概率</p></div>
+<div class="transcript-row"><time>05:26</time><p>而DPO的做法更加的直接</p></div>
+<div class="transcript-row"><time>05:27</time><p>在训练数据中会直接给出一个问题</p></div>
+<div class="transcript-row"><time>05:29</time><p>一个更好的答案</p></div>
+<div class="transcript-row"><time>05:30</time><p>以及一个相对较差的答案</p></div>
+<div class="transcript-row"><time>05:36</time><p>提高好答案生成的概率</p></div>
+<div class="transcript-row"><time>05:38</time><p>降低差答案生成的概率</p></div>
+<div class="transcript-row"><time>05:39</time><p>所以简单来说</p></div>
+<div class="transcript-row"><time>05:40</time><p>RLHF就是先训练出一位老师</p></div>
+<div class="transcript-row"><time>05:43</time><p>再由这位老师给模型的答案进行打分</p></div>
+<div class="transcript-row"><time>05:45</time><p>而DPO则是直接告诉模型</p></div>
+<div class="transcript-row"><time>05:46</time><p>两个答案中哪一个更好</p></div>
+<div class="transcript-row"><time>05:48</time><p>这就是偏好对齐的主要内容</p></div>
+<div class="transcript-row"><time>05:50</time><p>至此我们已经把大元模型</p></div>
+<div class="transcript-row"><time>05:51</time><p>答案上的基本过程讲完了</p></div>
+<div class="transcript-row"><time>05:52</time><p>第一阶段是数据准备</p></div>
+<div class="transcript-row"><time>05:53</time><p>把人类的文本资料</p></div>
+<div class="transcript-row"><time>05:54</time><p>转换成模型能够处理的数字</p></div>
+<div class="transcript-row"><time>05:56</time><p>第二阶段绿训练</p></div>
+<div class="transcript-row"><time>05:57</time><p>让模型通过预测下一个头坑</p></div>
+<div class="transcript-row"><time>05:58</time><p>学习语言的规律和大量的知识</p></div>
+<div class="transcript-row"><time>06:00</time><p>而第三阶段就是我们今天讲的后续念</p></div>
+<div class="transcript-row"><time>06:02</time><p>通过监督微调和偏好对齐</p></div>
+<div class="transcript-row"><time>06:04</time><p>让模型学会听懂人的命令</p></div>
+<div class="transcript-row"><time>06:05</time><p>按照人类的要求进行回答</p></div>
+<div class="transcript-row"><time>06:06</time><p>并生成更加有用诚实</p></div>
+<div class="transcript-row"><time>06:08</time><p>且无害的内容</p></div>
+<div class="transcript-row"><time>06:09</time><p>经过这三个阶段</p></div>
+<div class="transcript-row"><time>06:10</time><p>一个最初只会预测下一个头坑的模型</p></div>
+<div class="transcript-row"><time>06:12</time><p>才逐渐变成了我们现在可以正常交流</p></div>
+<div class="transcript-row"><time>06:13</time><p>回答问题</p></div>
+<div class="transcript-row"><time>06:14</time><p>完成任务的大元模型</p></div>
+<div class="transcript-row"><time>06:15</time><p>往后我会继续把AI的一些</p></div>
+<div class="transcript-row"><time>06:17</time><p>技术知识通俗的给大家讲清楚</p></div>
+<div class="transcript-row"><time>06:19</time><p>同时也会加上一些AI的实操教学</p></div>
+<div class="transcript-row"><time>06:21</time><p>把我学会的统统教给大家</p></div>
+<div class="transcript-row"><time>06:22</time><p>再见</p></div>
+</div></div></details></section>
+
+</main></body></html>
