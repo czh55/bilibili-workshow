@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="4600" viewBox="0 0 1320 4600">
+  <foreignObject x="0" y="0" width="1320" height="4600">
+    <div xmlns="http://www.w3.org/1999/xhtml"><style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fef2f2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:140px;font-weight:700;font-size:15px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-purple{background:linear-gradient(135deg,#faf5ff,#ede9fe);border-color:#c4b5fd;color:#6b21a8}
+.node-red{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fca5a5;color:#991b1b}
+.arrow{font-size:22px;color:#94a3b8}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .formula{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;margin:12px 0;font-size:17px;font-family:"SF Mono","Menlo",monospace;text-align:center}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .example{background:#f0fdf4;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #10b981}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}</style><div class="container">
+<h1>这里是世界第一城！！纽约！</h1>
+<div class="meta">
+<span class="tag tag-blue">Vlog</span><span class="tag tag-green">纽约</span><span class="tag tag-red">2026世界杯</span><span class="tag tag-orange">老友记</span><span class="tag tag-purple">荣耀RoboPhone</span>
+</div>
+<div class="summary-line"><strong>一句话核心：</strong>带着价值8万人民币的世界杯门票飞越太平洋看2026世界杯决赛。纽约是一座被压缩的地球：Katz's百年烟熏牛肉三明治、逃生梯变穷人阳台、4亿人民币俯瞰中央公园的平层、舒适年薪门槛56万。走进老友记体验馆看那张橘色沙发差点落泪；荣耀RoboPhone像WALL-E会转头追踪，阿莱LogC3电影模式。足球是文明的战争，伊朗队抵达赛场就是文明底线。</div>
+<div class="timeline"><h3>内容时间线</h3><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">世界上只有两种城市：纽约和纽约以外</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">8万元世界杯门票涨到1.2万刀</span></div><div class="timeline-item"><span class="timeline-time">03:00</span><span class="timeline-text">把纽约想象成北京：上城=北城下城=南城</span></div><div class="timeline-item"><span class="timeline-time">05:00</span><span class="timeline-text">Katz's Deli：1888年百年烟熏牛肉三明治</span></div><div class="timeline-item"><span class="timeline-time">07:00</span><span class="timeline-text">逃生梯=穷人阳台，赫本唱Moon River的地方</span></div><div class="timeline-item"><span class="timeline-time">08:30</span><span class="timeline-text">纽约物价：全美+74%，房租3倍</span></div><div class="timeline-item"><span class="timeline-time">10:30</span><span class="timeline-text">老友记体验馆：橘色沙发差点落泪</span></div><div class="timeline-item"><span class="timeline-time">15:30</span><span class="timeline-text">荣耀RoboPhone：手机里长出了WALL-E</span></div><div class="timeline-item"><span class="timeline-time">17:30</span><span class="timeline-text">中央公园：曼哈顿房价的锚点</span></div><div class="timeline-item"><span class="timeline-time">20:30</span><span class="timeline-text">阿莱电影模式：LogC3+14档动态范围</span></div><div class="timeline-item"><span class="timeline-time">24:00</span><span class="timeline-text">《Begin Again》：城市把杂音变成音乐</span></div><div class="timeline-item"><span class="timeline-time">28:00</span><span class="timeline-text">世界杯决赛：文明的战争</span></div><div class="timeline-item"><span class="timeline-time">33:00</span><span class="timeline-text">下一期美国往事：西西里移民</span></div></div>
+
+<h2>🗽 纽约：一座被压缩过的地球</h2>
+<div class="map"><h3>不足60平方公里的曼哈顿岛</h3>
+<div class="diagram">
+  <div class="node node-blue">金钱</div>
+  <div class="node node-green">权力</div>
+  <div class="node node-orange">艺术</div>
+  <div class="node node-red">罪恶</div>
+  <div class="node node-purple">梦想</div>
+</div>
+<p style="text-align:center;margin-top:10px">所有能在人间燃烧的东西，日夜在曼哈顿岛上燃烧</p></div>
+
+<h2>💸 纽约物价：世界之巅的价签</h2>
+<div class="card card-red">
+<h3>每个数字都在提醒你：请支付世界之巅的价格</h3>
+<table>
+<tr><th>项目</th><th>数字</th></tr>
+<tr><td>物价水平</td><td>比全美平均高出 74%</td></tr>
+<tr><td>平均房租</td><td>4950美元/月（≈3万人民币），全美3倍</td></tr>
+<tr><td>舒适年薪门槛</td><td>5.83万美元（≈56万人民币）</td></tr>
+<tr><td>俯瞰中央公园的平层</td><td>6000-7000万美元（约4亿人民币）</td></tr>
+<tr><td>Katz's烟熏牛肉三明治</td><td>30-50刀/盘</td></tr>
+<tr><td>龙虾+海鲜+雪蟹腿</td><td>150刀+（1000+人民币）</td></tr>
+<tr><td>担担面</td><td>16刀（约120人民币）</td></tr>
+</table>
+<div class="pitfall">小费文化18%-20%起跳：时代广场酒吧70多刀的消费，付款机上一按瞬间100+。</div>
+</div>
+
+<h2>🏙️ 把纽约想象成北京</h2>
+<div class="card card-green">
+<h3>理解纽约地理的北京坐标系</h3>
+<table>
+<tr><th>纽约</th><th>北京</th><th>含义</th></tr>
+<tr><td>Uptown（上城）</td><td>北城</td><td>上风上水，富人区聚集</td></tr>
+<tr><td>Downtown（下城）</td><td>南城</td><td>最早发源地：唐人街/小意大利/华尔街</td></tr>
+<tr><td>中央公园</td><td>朝阳公园</td><td>房价最贵的锚点</td></tr>
+</table>
+<div class="highlight">共同点：四季分明、机会多、竞争多、房价高、通勤长——北京人抱怨堵车，纽约人抱怨地铁。</div>
+</div>
+
+<h2>🥪 Katz's Deli：1888年的味道</h2>
+<div class="card card-orange">
+<h3>全美历史上最早的Deli，排队一个多小时</h3>
+<ul>
+<li>1888年开业至今100多年，全美最早的Deli</li>
+<li>现点现切，只留最嫩的肉，外部全弃</li>
+<li>每一块肉手工腌制30天以上</li>
+<li>烟熏味冲上脑壳，像驴肉火烧</li>
+<li>店内连'噎着怎么急救'的告示都有</li>
+</ul>
+</div>
+
+<h2>🪜 逃生梯：纽约的'穷人阳台'</h2>
+<div class="card card-purple">
+<h3>火灾法案催生的城市符号</h3>
+<p>19世纪纽约大火频发，政府立法要求高层公寓必须配室外防火逃生梯。曼哈顿寸土寸金没有阳台，逃生梯就成了'穷人阳台'——赫本在《蒂凡尼的早餐》里唱《Moon River》，六人行的故事也发生在逃生梯上。</p>
+</div>
+
+<h2>🛋️ 老友记体验馆：65刀买一场眼泪</h2>
+<div class="card card-green">
+<h3>那张被圈起来的橘色沙发</h3>
+<p>走进老友记体验馆看到那张熟悉的橘色沙发，'我差点掉眼泪'。六人聚会的沙发被单独圈起，四周却是真实营业的咖啡厅——来来往往的人真的会过来坐、点咖啡。走进去的那一刻，感觉自己就是主角。</p>
+<div class="highlight">细节：Gunther的演员已经去世了，做咖啡的已经不是剧中人；65刀/人（四五百人民币），但'影迷真的很值得一来'。</div>
+</div>
+
+<h2>🤖 荣耀RoboPhone：手机里长出了WALL-E</h2>
+<div class="card card-purple">
+<h3>可折叠云台的AI交互手机</h3>
+<ul>
+<li><strong>形态</strong>：折叠式三轴云台，60%场景当普通手机用，展开后像口袋云台</li>
+<li><strong>交互</strong>：摄像头像WALL-E会转头，支持脸部追踪；AI（悠悠）可语音交互点评穿搭、预测球赛</li>
+<li><strong>影像</strong>：阿莱电影模式，LogC3曲线，14档动态范围+10bit宽容度</li>
+<li><strong>肤色</strong>：阿莱LogC3肤色好——国内90%以上TVC/电视剧在用，'不费调色'</li>
+<li><strong>芯片</strong>：骁龙旗舰，支持无网本地运算，高强度拍摄稳定</li>
+</ul>
+<div class="action">判断：'拍照只是它的一部分，而是说在手机上长出了一个WALL-E'——AI交互感是它与普通手机最不同的点。</div>
+</div>
+
+<h2>🌳 中央公园：曼哈顿房价的锚点</h2>
+<div class="card card-blue">
+<h3>150万美元预算，最终花了1000万+</h3>
+<p>能否俯瞰中央公园、能否到达看见日落的高度，是曼哈顿房子价格最重要的锚点。中央公园最初预算150万美元，1876年开放时成本已达1000多万美元——'这不就跟我们装修一样吗？要不干票大的'。</p>
+</div>
+
+<h2>🎬 《Begin Again》：城市把杂音变成音乐</h2>
+<div class="card card-orange">
+<h3>他们两人看过的第一部电影</h3>
+<p>在《Begin Again》里，他们在纽约街头、天台、公园录歌——没有昂贵录音棚，没有保证成功的未来，却把城市的杂音（风声、地铁声、脚步声）全部变成音乐的一部分。</p>
+<div class="quote">'纽约真正迷人的地方也许就在这里：它不会承诺你成功，它只会给你一个足够大的舞台，让你带着自己的不甘心、热爱和一点点天真继续往前走。'</div>
+</div>
+
+<h2>⚽ 世界杯决赛：一场文明的战争</h2>
+<div class="card card-red">
+<h3>22个人为了一颗球奔跑</h3>
+<p>足球赛的本质或许是人类发明的文明战争——所有野心、暴力、愤怒、荣誉、不甘都被锁进90分钟和17条规则里。</p>
+<ul>
+<li>阿根廷 vs 西班牙，加时赛下半场突然进球</li>
+<li>梅西（巴萨出身）+ 西班牙的巴萨系球员，'很难打起来，都是队友'</li>
+<li>阿根廷门将马丁内斯表现无敌</li>
+</ul>
+<div class="highlight">最深的意义：当一个非球迷看到伊朗队顺利抵达美国赛场——'当战争让许多对话失去出口，足球却依然留了一块草坪。只要球还在草地上滚动，人类就还愿意把冲突交给规则。'</div>
+</div>
+
+<h2>📷 为什么记录？</h2>
+<div class="card card-blue">
+<h3>技术让镜头更像人，但替代不了记录的理由</h3>
+<p>'技术正在让镜头更像人，但它替代不了的，始终是我们为什么记录。纽约不会记住我，但它会永远留在我的镜头里。'</p>
+</div>
+
+<div class="conclusion">
+<h2>纽约给我留下的五句话</h2>
+
+<h3>🥇 两种城市</h3>
+<p>世界上只有两种城市：纽约和纽约以外的地方——所有能在人间燃烧的东西，都在这座被压缩的地球上燃烧。</p>
+<h3>🥈 价格锚点</h3>
+<p>房子、景观、时间、世界杯，纽约把一切都标上价码——热爱与情怀也有清晰的价签。</p>
+<h3>🥉 舞台理论</h3>
+<p>纽约不承诺成功，只给足够大的舞台——带着不甘心、热爱和一点点天真继续往前走。</p>
+<h3>⚽ 文明的底线</h3>
+<p>当战争让对话失去出口，足球仍留一块草坪——只要球还在滚动，人类就还愿意把冲突交给规则。</p>
+<h3>📷 记录的答案</h3>
+<p>纽约不会记住我，但它会永远留在我的镜头里——技术让镜头更像人，替代不了的是我们为什么记录。</p>
+
+</div>
+<a class="source-link" href="https://b23.tv/tZpLAHL" target="_blank" rel="noopener">→ 原视频链接（小红书）</a>
+</div></div>
+  </foreignObject>
+</svg>
