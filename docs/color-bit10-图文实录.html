@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="8bit420、10bit422这些影像专业名词：①色深决定色彩分级数量——8bit每通道256灰度约1670万色，10bit每通道1024灰度约10.7亿色，相差64倍，色深越高渐变越自然、少断层；②色度采样决定色度信息保留量——420每行像素共享色度，422每行记录2个色度，444全记录（电影机规格），日常420够用，但二级调色和抠像时高采样避免颜色溢出和边缘发糊。">
+<title>10bit422和8bit420究竟是个啥？差别大吗？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+.quote-block{background:#f0fdf4;border-left:4px solid #10b981;padding:12px 16px;border-radius:8px;margin:14px 0;font-size:15px;color:#166534;font-style:italic}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style></head>
+<body><main class="container">
+<header><h1>色深与色度采样：8bit420 vs 10bit422</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">2:47</span><span class="meta-tag tag-topic">摄影 视频 色深 色度采样</span></div>
+<a class="source-link" href="http://xhslink.cn/o/4mDaPhgUfxZ" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#bitdepth">色深：色彩分级数量</a>
+  <a href="#bitapply">色深的影响与 log 模式</a>
+  <a href="#sampling">色度采样：420 / 422 / 444</a>
+  <a href="#when">什么时候需要高采样</a>
+<a href="#transcript">完整转录</a></nav>
+<article class="documentary">
+<section class="story-section" id="bitdepth"><h2>色深：色彩分级数量</h2><p><span class='time-marker'>00:05</span>想象你是画家：给你一套<strong>128色马克笔</strong>，能画出丝滑的城市晚霞；换成<strong>12色马克笔</strong>，天空就出现了<strong>明显的分界线</strong>——这就是<strong>色彩断层</strong>。</p><p><span class='time-marker'>00:26</span>决定颜色细分数量的是<strong>色深</strong>，用 bit 形容。</p><p><span class='time-marker'>00:36</span><strong>8bit</strong>：红绿蓝每通道 256 灰度（2^8），共约 <strong>1670 万色</strong>。</p><p><span class='time-marker'>00:48</span><strong>10bit</strong>：每通道 1024 灰度（2^10），共约 <strong>10.7 亿色</strong>——二者相差 <strong>64 倍</strong>。</p><figure><img src="assets/color-bit10/shot-01.jpg" alt="128色马克笔：丝滑晚霞渐变" loading="lazy"><figcaption><span class="time-badge">[00:09]</span> 128色马克笔：丝滑晚霞渐变</figcaption></figure><figure><img src="assets/color-bit10/shot-02.jpg" alt="12色马克笔：色彩断层出现" loading="lazy"><figcaption><span class="time-badge">[00:14]</span> 12色马克笔：色彩断层出现</figcaption></figure><figure><img src="assets/color-bit10/shot-03.jpg" alt="色彩断层：颜色分级不够" loading="lazy"><figcaption><span class="time-badge">[00:20]</span> 色彩断层：颜色分级不够</figcaption></figure></section>
+<section class="story-section" id="bitapply"><h2>色深的影响与 log 模式</h2><p><span class='time-marker'>01:02</span>相机支持 10bit，<strong>渐变更自然的画面</strong>，尤其在面对颜色渐变时，<strong>后期调整后更明显</strong>。</p><p><span class='time-marker'>01:10</span>这就是为什么 log 模式视频<strong>不要用 8bit 拍</strong>——有限色彩空间放进大量信息，后期重新拉伸时<strong>颜色分级不够，很容易看到画面断层</strong>。</p><figure><img src="assets/color-bit10/shot-04.jpg" alt="10bit 渐变自然：10.7亿色 vs 1670万色" loading="lazy"><figcaption><span class="time-badge">[00:40]</span> 10bit 渐变自然：10.7亿色 vs 1670万色</figcaption></figure></section>
+<section class="story-section" id="sampling"><h2>色度采样：420 / 422 / 444</h2><p><span class='time-marker'>01:26</span>人眼对<strong>亮度明暗极其敏感</strong>，但对色彩细微变化<strong>没那么挑剔</strong>。</p><p><span class='time-marker'>01:39</span>每个像素必须保留<strong>明度信息</strong>，但可以让<strong>多个像素共享一个色度值</strong>——大大减少存储数据量。</p><p><span class='time-marker'>01:48</span><strong>4:2:0</strong>：每行4像素，第一行记录2个色度，第二行继承第一行。</p><p><span class='time-marker'>02:05</span><strong>4:2:2</strong>：第一行、第二行各记录2个色度。<strong>4:4:4</strong>：色彩全记录，专业电影机规格。</p><figure><img src="assets/color-bit10/shot-05.jpg" alt="4:2:0：第二行继承第一行色度" loading="lazy"><figcaption><span class="time-badge">[01:49]</span> 4:2:0：第二行继承第一行色度</figcaption></figure><figure><img src="assets/color-bit10/shot-06.jpg" alt="4:4:4：色彩全记录，电影机规格" loading="lazy"><figcaption><span class="time-badge">[02:15]</span> 4:4:4：色彩全记录，电影机规格</figcaption></figure></section>
+<section class="story-section" id="when"><h2>什么时候需要高采样</h2><p><span class='time-marker'>02:26</span>日常拍摄即便用 <strong>4:2:0</strong> 依旧能得到不错的画面。</p><p><span class='time-marker'>02:31</span>但要做<strong>更精细专业的二级调色和抠像</strong>时，由于许多像素没有自己的色度值，就会出现<strong>颜色溢出、边缘发糊</strong>等问题。</p><div class="quote-block">色深管“颜色细不细”，色度采样管“信息留多少”——日常 8bit 420 够用，拍 log、重调色、抠像就上 10bit 422+。</div></section>
+</article>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible" open><summary>完整转录（92段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>8比特420 10比特422</p></div>
+<div class="transcript-row"><time>00:02</time><p>这些常听到的影像专业名词到底是什么意思</p></div>
+<div class="transcript-row"><time>00:04</time><p>想象你是一名画家</p></div>
+<div class="transcript-row"><time>00:05</time><p>给你一套128色的马克笔套装</p></div>
+<div class="transcript-row"><time>00:08</time><p>你就能画出这样的城市晚霞</p></div>
+<div class="transcript-row"><time>00:09</time><p>现在将128色马克笔</p></div>
+<div class="transcript-row"><time>00:11</time><p>换成12色马克笔</p></div>
+<div class="transcript-row"><time>00:12</time><p>你大概率只能画出这样的城市晚霞</p></div>
+<div class="transcript-row"><time>00:15</time><p>原本应该丝滑渐变的天空出现了明显的分界线</p></div>
+<div class="transcript-row"><time>00:18</time><p>这种颜色与颜色之间的明显分界线就叫做色彩断层</p></div>
+<div class="transcript-row"><time>00:21</time><p>色彩断层出现的原因是颜色分析不够</p></div>
+<div class="transcript-row"><time>00:23</time><p>不同颜色之间如果能加入更多的颜色细分</p></div>
+<div class="transcript-row"><time>00:26</time><p>过度看上去就会顺滑许多</p></div>
+<div class="transcript-row"><time>00:27</time><p>决定颜色细分数量的就称之为色深</p></div>
+<div class="transcript-row"><time>00:30</time><p>通常用多少位或者多少比特来形容</p></div>
+<div class="transcript-row"><time>00:32</time><p>我们常听到的8比特和10比特就是不同色深的称呼</p></div>
+<div class="transcript-row"><time>00:36</time><p>在最常见的8比特色深下</p></div>
+<div class="transcript-row"><time>00:37</time><p>红 绿 蓝三个色彩通道</p></div>
+<div class="transcript-row"><time>00:39</time><p>分别具有256个灰度</p></div>
+<div class="transcript-row"><time>00:41</time><p>也就是2的八字方</p></div>
+<div class="transcript-row"><time>00:42</time><p>当你把它们成在一起的时候</p></div>
+<div class="transcript-row"><time>00:44</time><p>就是8比特能呈现的所有色彩</p></div>
+<div class="transcript-row"><time>00:46</time><p>大概是1670万色</p></div>
+<div class="transcript-row"><time>00:48</time><p>而10比特具有2的十四方的灰度值</p></div>
+<div class="transcript-row"><time>00:50</time><p>每个通道为1024个灰度</p></div>
+<div class="transcript-row"><time>00:52</time><p>总共大约为10.7亿色</p></div>
+<div class="transcript-row"><time>00:54</time><p>二者相差64倍</p></div>
+<div class="transcript-row"><time>00:56</time><p>你可以把色深理解成色彩的阶梯</p></div>
+<div class="transcript-row"><time>00:58</time><p>阶梯越多 色彩过度就越自然</p></div>
+<div class="transcript-row"><time>01:00</time><p>阶梯越少 画面就越粗糙 断层</p></div>
+<div class="transcript-row"><time>01:02</time><p>所以当你的相机支持10比特时</p></div>
+<div class="transcript-row"><time>01:04</time><p>就可以拍出颜色过度更加自然的画面</p></div>
+<div class="transcript-row"><time>01:06</time><p>尤其是在面对画面中有颜色渐变时</p></div>
+<div class="transcript-row"><time>01:08</time><p>后期调整后会更加明显</p></div>
+<div class="transcript-row"><time>01:10</time><p>这也是为什么我们之前在log模式视频中</p></div>
+<div class="transcript-row"><time>01:12</time><p>建议大家不要用8比特来拍手绘片的原因</p></div>
+<div class="transcript-row"><time>01:15</time><p>因为你在有限的色彩空间内</p></div>
+<div class="transcript-row"><time>01:17</time><p>放入了更大量的信息</p></div>
+<div class="transcript-row"><time>01:18</time><p>当你在后期重新拉伸这些信息时</p></div>
+<div class="transcript-row"><time>01:20</time><p>由于颜色分析不够</p></div>
+<div class="transcript-row"><time>01:21</time><p>就会很容易看到画面断层</p></div>
+<div class="transcript-row"><time>01:23</time><p>那色深后面紧跟着的420和422</p></div>
+<div class="transcript-row"><time>01:25</time><p>又是什么意思呢</p></div>
+<div class="transcript-row"><time>01:26</time><p>首先我们需要知道人眼有一个特点</p></div>
+<div class="transcript-row"><time>01:28</time><p>对画面的亮度明暗极其敏感</p></div>
+<div class="transcript-row"><time>01:30</time><p>但对色彩的细微变化却没那么挑剔</p></div>
+<div class="transcript-row"><time>01:32</time><p>结合每一个像素都具有明度值和色度值</p></div>
+<div class="transcript-row"><time>01:35</time><p>这两个信息的理论</p></div>
+<div class="transcript-row"><time>01:36</time><p>工程师们发现</p></div>
+<div class="transcript-row"><time>01:37</time><p>每个像素都必须保留明度信息</p></div>
+<div class="transcript-row"><time>01:39</time><p>但并不一定要保留色度信息</p></div>
+<div class="transcript-row"><time>01:41</time><p>可以由多个像素来共享一个色度值</p></div>
+<div class="transcript-row"><time>01:43</time><p>这样可以大大减少视频存储的数据量</p></div>
+<div class="transcript-row"><time>01:45</time><p>同时画面看上去依旧很正常</p></div>
+<div class="transcript-row"><time>01:47</time><p>现在这里有两行格子</p></div>
+<div class="transcript-row"><time>01:48</time><p>每个格子代表一个像素的色度值</p></div>
+<div class="transcript-row"><time>01:51</time><p>每行四个格子就是第一个数字4</p></div>
+<div class="transcript-row"><time>01:53</time><p>第一行记录两个格子的色度信息</p></div>
+<div class="transcript-row"><time>01:55</time><p>边上的像素沿用这两个像素的色度值</p></div>
+<div class="transcript-row"><time>01:57</time><p>这是第二个数字2</p></div>
+<div class="transcript-row"><time>01:58</time><p>第二行记录零个格子的色度信息</p></div>
+<div class="transcript-row"><time>02:01</time><p>直接继承第一行的色度值</p></div>
+<div class="transcript-row"><time>02:02</time><p>这是第三个数字0</p></div>
+<div class="transcript-row"><time>02:03</time><p>这就是420</p></div>
+<div class="transcript-row"><time>02:04</time><p>422共铭思义</p></div>
+<div class="transcript-row"><time>02:05</time><p>就是第一行和第二行</p></div>
+<div class="transcript-row"><time>02:07</time><p>各记录两个格子的色度信息</p></div>
+<div class="transcript-row"><time>02:08</time><p>边上的继续沿用他们的色度值</p></div>
+<div class="transcript-row"><time>02:10</time><p>也就是两个格子共享一个色度信息</p></div>
+<div class="transcript-row"><time>02:13</time><p>那么我们举一反三</p></div>
+<div class="transcript-row"><time>02:14</time><p>444就很好理解</p></div>
+<div class="transcript-row"><time>02:15</time><p>上下两行四个格子</p></div>
+<div class="transcript-row"><time>02:16</time><p>第一行记录四个色度信息</p></div>
+<div class="transcript-row"><time>02:18</time><p>第二行也记录四个色度信息</p></div>
+<div class="transcript-row"><time>02:20</time><p>色彩全记录</p></div>
+<div class="transcript-row"><time>02:21</time><p>这是专业电影机才会有的规格</p></div>
+<div class="transcript-row"><time>02:23</time><p>这些数字就被称之为</p></div>
+<div class="transcript-row"><time>02:24</time><p>色度彩样</p></div>
+<div class="transcript-row"><time>02:25</time><p>在我们日常拍摄中</p></div>
+<div class="transcript-row"><time>02:26</time><p>即便使用420色度彩样</p></div>
+<div class="transcript-row"><time>02:27</time><p>依旧能获得一个看上去不错的画面</p></div>
+<div class="transcript-row"><time>02:29</time><p>但当你要进行更加精细</p></div>
+<div class="transcript-row"><time>02:31</time><p>专业的二级调色和抠像时</p></div>
+<div class="transcript-row"><time>02:33</time><p>由于许多像素没有自己的色度值</p></div>
+<div class="transcript-row"><time>02:35</time><p>就会出现颜色溢出</p></div>
+<div class="transcript-row"><time>02:36</time><p>边缘发糊等问题</p></div>
+<div class="transcript-row"><time>02:37</time><p>好了</p></div>
+<div class="transcript-row"><time>02:38</time><p>这就是关于色深和色度彩样</p></div>
+<div class="transcript-row"><time>02:40</time><p>讲解的全部内容了</p></div>
+<div class="transcript-row"><time>02:41</time><p>希望这期视频对你有所帮助</p></div>
+<div class="transcript-row"><time>02:42</time><p>关注我带你学习更多摄影知识</p></div>
+<div class="transcript-row"><time>02:44</time><p>那么我们下期再见</p></div>
+</div></div></details></section>
+</main></body></html>
