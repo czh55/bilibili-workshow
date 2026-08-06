@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="4600" viewBox="0 0 1320 4600">
+  <foreignObject x="0" y="0" width="1320" height="4600">
+    <div xmlns="http://www.w3.org/1999/xhtml"><style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fef2f2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:140px;font-weight:700;font-size:15px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-purple{background:linear-gradient(135deg,#faf5ff,#ede9fe);border-color:#c4b5fd;color:#6b21a8}
+.node-red{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fca5a5;color:#991b1b}
+.arrow{font-size:22px;color:#94a3b8}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .formula{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;margin:12px 0;font-size:17px;font-family:"SF Mono","Menlo",monospace;text-align:center}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .example{background:#f0fdf4;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #10b981}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}</style><div class="container">
+<h1>Tossa + Blanes Vlog｜漫游西班牙08</h1>
+<div class="meta">
+<span class="tag tag-blue">Vlog</span><span class="tag tag-green">西班牙</span><span class="tag tag-orange">布拉内斯植物园</span><span class="tag tag-purple">中世纪海堡</span><span class="tag tag-red">果冻海</span>
+</div>
+<div class="summary-line"><strong>一句话核心：</strong>西班牙海岸线一组'极端反差'：滨海托萨的中世纪海盗防御海堡 + 布拉内斯悬崖植物园让仙人掌和热带雨林植物做邻居。揭秘靠悬崖排水、海风湿气、岩石温室、树林挡风四大自然机制养活的4000种植物，顺路打卡爆火果冻海机位，在地中海边吃一顿海鲜饭。</div>
+<div class="timeline"><h3>内容时间线</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">滨海托萨中世纪防御海堡 + 布拉内斯植物园</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">仙人掌与热带植物共存：4000种植物的悬崖花园</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">四大自然机制：排水/海风/岩石温室/挡风</span></div><div class="timeline-item"><span class="timeline-time">01:50</span><span class="timeline-text">中世纪北非海盗与假大炮防御</span></div><div class="timeline-item"><span class="timeline-time">02:10</span><span class="timeline-text">爆火果冻海机位大排队</span></div><div class="timeline-item"><span class="timeline-time">02:40</span><span class="timeline-text">地中海海鲜饭 + 蒜虾午餐</span></div></div>
+
+<h2>🧗 一组'看似不可能'的共存</h2>
+<div class="map"><h3>同一座悬崖花园，两种极端的生态需求</h3>
+<div class="diagram">
+  <div class="node node-orange">🌵 仙人掌<br/>干旱地区·喜晒·怕积水</div>
+  <div class="arrow">＋</div>
+  <div class="node node-green">🌿 热带雨林植物<br/>喜湿·怕干</div>
+  <div class="arrow">→</div>
+  <div class="node node-blue">同一座悬崖花园<br/>五大洲4000多种植物</div>
+</div></div>
+
+<h2>⚙️ 悬崖花园的四大自然机制</h2>
+<div class="card card-green">
+<h3>为什么两种极端能共存？</h3>
+<ul>
+<li><strong>悬崖斜坡排水</strong>：雨水沿坡快速流走，土壤偏干不积水——满足仙人掌</li>
+<li><strong>地中海海风</strong>：悬崖下方就是海，湿空气补足水分——满足热带植物</li>
+<li><strong>岩石天然温室</strong>：白天吸收太阳能量，夜间缓慢释放，维持温度</li>
+<li><strong>山坡+树林+石墙</strong>：削弱强风，防止植物吹折或吹干</li>
+</ul>
+<div class="highlight">核心洞察：花园设计不是'均匀浇水'，而是让每种植物的'干渴来源'和'水分来源'在同一地形上同时成立。</div>
+</div>
+
+<h2>🏰 中世纪的海盗防御史</h2>
+<div class="card card-orange">
+<h3>为什么海岸线上要建海堡？</h3>
+<p>中世纪北非海盗猖狂，频繁到加泰罗尼亚海岸烧杀抢掠，当地人民因此修建防御海堡。今天的假大炮只是模拟当年的防御场景。</p>
+<div class="pitfall">看果冻海别去葡萄牙：作者在葡萄牙几乎天天大夕阳（阴天），而地中海的晴天才是果冻海的最佳打开方式。</div>
+</div>
+
+<h2>🍽️ 地中海午餐手记</h2>
+<div class="card card-purple">
+<h3>海鲜饭与蒜虾</h3>
+<ul>
+<li>妈妈每次来地中海必点海鲜饭（paella）</li>
+<li>要开车→全程坚持无酒精，连服务员都反复确认三遍</li>
+<li>蒜虾有点像我们的一道家常做法；意大利面这次吃得好腻</li>
+</ul>
+<div class="action">给旅行者的提示：西班牙餐厅对酒精很谨慎，主动说明要开车，服务生会特别上心地帮你规避酒精。</div>
+</div>
+
+<div class="conclusion">
+<h2>这趟海岸线的三个记忆点</h2>
+
+<h3>🥇 反差即看点</h3>
+<p>科尔多瓦把两种宗教装进一座建筑，布拉内斯把两种生态装进一座花园——西班牙的看点常常藏在对立的缝合处。</p>
+<h3>🥈 好设计是顺势而为</h3>
+<p>植物园没有对抗自然，而是顺着悬崖的排水、海风、岩石热容、山体挡风，让 4000 种植物各取所需。</p>
+<h3>🥉 旅行彩蛋</h3>
+<p>爆火机位人太多就果断放弃；想拍果冻海，认准地中海的晴天。</p>
+
+</div>
+<a class="source-link" href="https://b23.tv/5Z4Y1uX" target="_blank" rel="noopener">→ 原视频链接（小红书）</a>
+</div></div>
+  </foreignObject>
+</svg>
