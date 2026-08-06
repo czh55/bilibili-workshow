@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="4600" viewBox="0 0 1320 4600">
+  <foreignObject x="0" y="0" width="1320" height="4600">
+    <div xmlns="http://www.w3.org/1999/xhtml"><style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fef2f2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:140px;font-weight:700;font-size:15px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-purple{background:linear-gradient(135deg,#faf5ff,#ede9fe);border-color:#c4b5fd;color:#6b21a8}
+.node-red{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fca5a5;color:#991b1b}
+.arrow{font-size:22px;color:#94a3b8}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .formula{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:10px;margin:12px 0;font-size:17px;font-family:"SF Mono","Menlo",monospace;text-align:center}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .example{background:#f0fdf4;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #10b981}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}</style><div class="container">
+<h1>独一份伊斯兰与基督文明的交融｜科尔多瓦Vlog｜漫游西班牙05</h1>
+<div class="meta">
+<span class="tag tag-blue">Vlog</span><span class="tag tag-green">科尔多瓦</span><span class="tag tag-orange">清真寺教堂</span><span class="tag tag-purple">文明交融</span><span class="tag tag-red">哈里发时代</span>
+</div>
+<div class="summary-line"><strong>一句话核心：</strong>十世纪伊斯兰世界中心科尔多瓦：当巴黎伦敦只有几万人口时它已有几十万人口与华丽宫殿。大清真寺里嵌入而非取而代之的天主教堂是世界唯一，主教因尊重清真寺对哈里发王国的重要性而选择艰难融合；伊斯兰几何与基督教十字架极致反差，远古宫廷城麦地那·阿沙哈拉因内战被毁、上个世纪才重见天日。</div>
+<div class="timeline"><h3>内容时间线</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">到达科尔多瓦，清真寺教堂初见</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">十世纪伊斯兰世界中心：哈里发都城</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">世界上唯一嵌入式的清真寺教堂</span></div><div class="timeline-item"><span class="timeline-time">02:35</span><span class="timeline-text">主教为何选择融合而非取代</span></div><div class="timeline-item"><span class="timeline-time">02:50</span><span class="timeline-text">几何之狼：任何角度看都是直线</span></div><div class="timeline-item"><span class="timeline-time">03:10</span><span class="timeline-text">城堡关门，地图骗人插曲</span></div><div class="timeline-item"><span class="timeline-time">03:45</span><span class="timeline-text">麦地那·阿沙哈拉宫廷城兴衰</span></div></div>
+
+<h2>🏛️ 两个文明的极致融合</h2>
+<div class="map"><h3>别人的城市：取代。科尔多瓦：嵌入</h3>
+<div class="diagram">
+  <div class="node node-green">🕌 伊斯兰大清真寺<br/>十世纪哈里发都城<br/>几十万人口</div>
+  <div class="arrow">＋</div>
+  <div class="node node-orange">⛪ 天主教堂<br/>嵌入清真寺内部<br/>世界唯一</div>
+  <div class="arrow">=</div>
+  <div class="node node-purple">科尔多瓦清真寺-大教堂<br/>两种文明同时存在</div>
+</div></div>
+
+<h2>📜 为什么只有科尔多瓦选择'嵌入'？</h2>
+<div class="card card-green">
+<h3>三种对待异教建筑的方式</h3>
+<table>
+<tr><th>方式</th><th>做法</th><th>例子</th></tr>
+<tr><td>改造</td><td>保留一点点元素，完全改造成基督教堂</td><td>许多西班牙城市</td></tr>
+<tr><td>摧毁</td><td>把清真寺整个毁掉，在原址重建</td><td>许多西班牙城市</td></tr>
+<tr><td><strong>嵌入</strong></td><td>把教堂嵌进清真寺内部，两教共存</td><td>科尔多瓦（世界唯一）</td></tr>
+</table>
+<div class="highlight">关键人物：当时的主教深知这座清真寺对哈里发王国的重要性——这里曾是伊斯兰世界的中心，于是选择艰难的融合，而非粗暴的取代。</div>
+</div>
+
+<h2>📐 几何之狼：把数学玩到极致</h2>
+<div class="card card-purple">
+<h3>极致的反差与几何美学</h3>
+<p>耶稣钉在十字架的圣像旁边就是清真寺的拱廊。伊斯兰建筑把几何玩到极致——那匹'狼'（拱廊的兽形装饰？），从任何一个点看过去都是一条直线，无论你站在哪个角度。</p>
+<div class="example">伊斯兰建筑的几何美学：不依赖具象图案，而是用抽象几何与重复结构创造出无限延伸的秩序感。</div>
+</div>
+
+<h2>🏜️ 麦地那·阿沙哈拉：被遗忘千年的宫廷城</h2>
+<div class="card card-orange">
+<h3>一座为炫耀国力而建的远郊城市</h3>
+<ul>
+<li><strong>鼎盛</strong>：十世纪为彰显哈里发能力，在远离科尔多瓦处专门建造一整座宫廷城</li>
+<li><strong>崩塌</strong>：十一世纪伊斯兰内战爆发，宫廷城在战火中被摧毁</li>
+<li><strong>遗忘</strong>：随科尔多瓦衰落被尘封数百年</li>
+<li><strong>重光</strong>：直到上个世纪才被重新挖掘，让世人记起这里的辉煌</li>
+</ul>
+<div class="pitfall">旅行的教训：地图说'营业中'不代表开门——城堡关门、收费员跑路，旅行中的小失望也是故事的一部分。</div>
+</div>
+
+<div class="conclusion">
+<h2>科尔多瓦给我的三点思考</h2>
+
+<h3>🥇 融合比取代更难</h3>
+<p>毁掉一座建筑很容易，难的是让两种文明的最高成就共用一片屋顶——科尔多瓦做到了，于是它独一无二。</p>
+<h3>🥈 曾经的'世界中心'</h3>
+<p>当欧洲还在几万人口的小城时，这里已是几十万人口的华丽都城。历史的天平，从来都是流动的。</p>
+<h3>🥉 辉煌可以回来</h3>
+<p>被内战摧毁、被遗忘千年的宫廷城，最终还是在上个世纪被重新挖掘——历史不会被真正抹去。</p>
+
+</div>
+<a class="source-link" href="https://b23.tv/aionHFD" target="_blank" rel="noopener">→ 原视频链接（小红书）</a>
+</div></div>
+  </foreignObject>
+</svg>
