@@ -211,7 +211,7 @@
 
     <section class="transcript-section" id="transcript">
       <p class="chapter">证据附录</p>
-      <h2>详细文字转录</h2>
+      <details class="transcript-collapsible"><summary>详细文字转录</summary><div class="transcript-body">
       <p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，共 712 段，保留起始时间与识别结果。视频含英语、德语和中文；约 15:07 后语言漂移明显，可能出现菜名、地名和人物归属错误。</p>
       <ol class="transcript-list">
       <li class="transcript-row" id="transcript-1">
@@ -3062,7 +3062,8 @@
         <time datetime="PT1102S">18:22</time>
         <p>YA</p>
       </li></ol>
-    </section>
+      </div></details>
+    
     <footer class="footer">根据视频与本地 Whisper 转录整理 · 2026-07-24</footer>
   </main>
 <script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">

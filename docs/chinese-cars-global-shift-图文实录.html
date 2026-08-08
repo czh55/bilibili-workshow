@@ -212,7 +212,7 @@
 
     <section class="transcript-section" id="transcript">
       <span class="chapter">完整证据底稿</span>
-      <h2>详细文字转录</h2>
+      <details class="transcript-collapsible"><summary>详细文字转录</summary><div class="transcript-body">
       <p class="transcript-note">以下 1291 段按 Whisper small 的强制中文任务原始分段、原始顺序与时间戳完整呈现，未去重、未改写。中英混合段落存在识别误差；正文已用同模型自动语种结果交叉校对，但不替换这份规定底稿。</p>
       <ol class="transcript-list">
       <li class="transcript-row" id="transcript-1">
@@ -5379,7 +5379,8 @@
         <time datetime="PT2278S">37:58</time>
         <p>Bye bye.</p>
       </li></ol>
-    </section>
+      </div></details>
+    
     <footer class="footer">内容依据原视频与本地 Whisper 转录整理 · 原视频：BV1cq7A64EnW</footer>
   </main>
 <script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
