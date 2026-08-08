@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "slug": "aperture-calc-part2",
+    "title": "相机“光圈” 底层逻辑科普，光圈计算（二）",
+    "title_en": "Aperture Decoded, Part 2: The Math",
+    "duration": "1分08秒",
+    "scenes": 2,
+    "sentences": 6,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/aperture-calc-part2",
+    "topic": "摄影 · 光圈"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "入瞳直径计算",
+      "title_en": "Computing the Pupil Diameter",
+      "time": "00:00",
+      "context": "这是一颗50毫米的定焦镜头，当光圈值为最大的F1.2，根据公式我们可以算出此时的入瞳直径大约是42毫米；而把光圈值调到F16，此时的入瞳直径仅约为3毫米。明白了这些我们就不难理解，光圈是如何控制曝光的：当调大光圈，入瞳径随之变大，光通面积自然也就更大，相应的相机传感器接收到的光线照度就会变强，因此呈现出来的画面看起来更亮；如果光圈调小，画面就会更暗。",
+      "sentences": [
+        [
+          "50mm镜头F1.2时，入瞳直径约42毫米。",
+          "At f/1.2 the 50mm lens has a 42mm entrance pupil.",
+          "entrance pupil（入瞳）"
+        ],
+        [
+          "F16时入瞳直径只剩约3毫米。",
+          "At f/16 it shrinks to about 3mm.",
+          "shrink（缩小）"
+        ],
+        [
+          "入瞳径越大，进光越多，画面越亮。",
+          "Bigger pupil, more light, brighter image.",
+          "brighter（更亮）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "entrance pupil（入瞳",
+          "entrance pupil（入瞳"
+        ],
+        [
+          "shrink（缩小",
+          "shrink（缩小"
+        ]
+      ],
+      "speak": "At f/1.2 the 50mm lens has a 42mm entrance pupil. At f/16 it shrinks to about 3mm. Bigger pupil, more light, brighter image."
+    },
+    {
+      "id": "s2",
+      "title_cn": "F值与照度的平方反比",
+      "title_en": "Inverse-Square Law of f-Numbers",
+      "time": "00:41",
+      "context": "实际上光圈的F值与成像面照度是近似平方反比的关系，也就是F值每改变1.4倍，成像面照度便会相应的成两倍变化。虽然成像面照度跟光通面积不能混为一谈，但在不同的F值下得出的入瞳直径，既然按算术来看其光通面积，同样也是符合这个规律的。光圈除了能控制曝光，还会影响一个非常重要的成像特性：景深。",
+      "sentences": [
+        [
+          "F值与成像面照度近似平方反比。",
+          "Illuminance is roughly the inverse square of the f-number.",
+          "inverse square（平方反比）"
+        ],
+        [
+          "F值每改变1.4倍，照度变化2倍。",
+          "Each 1.4x in f-number doubles or halves the light.",
+          "double（加倍）"
+        ],
+        [
+          "光圈还影响另一个重要特性：景深。",
+          "Aperture also shapes depth of field.",
+          "depth of field（景深）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "inverse square（平方反比",
+          "inverse square（平方反比"
+        ],
+        [
+          "double（加倍",
+          "double（加倍"
+        ]
+      ],
+      "speak": "Illuminance is roughly the inverse square of the f-number. Each 1.4x in f-number doubles or halves the light. Aperture also shapes depth of field."
+    }
+  ],
+  "practice": [
+    [
+      "说入瞳直径计算",
+      "At f/1.2 the 50mm lens opens to a 42mm entrance pupil."
+    ],
+    [
+      "说光圈控光原理",
+      "A wider pupil admits more light, brightening the image."
+    ],
+    [
+      "说平方反比规律",
+      "Each 1.4x in f-number doubles or halves the light."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Think f-number equals aperture size.",
+      "It's a ratio of focal length to entrance pupil.",
+      "F值是焦距与入瞳径的比值。"
+    ],
+    [
+      "Forget the inverse-square law.",
+      "Illuminance follows the square, not the number.",
+      "照度是平方反比关系。"
+    ],
+    [
+      "Expect doubling the f-number to halve brightness.",
+      "A 1.4x change in f-number is one stop.",
+      "F值变1.4倍才是一档。"
+    ],
+    [
+      "Assume the pupil is the blade opening.",
+      "Front optics can enlarge the apparent pupil.",
+      "前组镜片能放大入瞳径。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说光圈只说光圈",
+      "用 entrance pupil（入瞳）、illuminance（照度）、light area（光通面积）"
+    ],
+    [
+      "说档位只说档位",
+      "用 inverse square（平方反比）、1.4x（1.4倍）、one stop（一档）"
+    ]
+  ],
+  "difficult_words": [
+    "entrance",
+    "shrinks",
+    "bigger",
+    "brighter",
+    "illuminance",
+    "roughly",
+    "inverse",
+    "square",
+    "f-number",
+    "doubles",
+    "halves",
+    "aperture",
+    "shapes",
+    "exposure",
+    "sensor",
+    "pixel",
+    "shutter",
+    "signal",
+    "noise",
+    "dynamic"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：这是一颗50毫米定焦镜头、光圈值最大F1.2时根据公式算出此时的入瞳直径大约是42毫米、把光圈值调到F16此时的入瞳直径仅约为3毫米、明白了这些就不难理解光圈如何控制曝光、调大光圈入瞳径随之变大光通面积自然更大、相机传感器接收到的光线照度变强、呈现出来的画面看起来更亮、把光圈调小入瞳径变小光通面积更小、传感器接收到的光线照度变弱、画面就会更暗、实际上光圈F值与成像面照度近似平方反比关系、F值每改变1.4倍成像面照度便相应成两倍变化、成像面照度跟光通面积不能混为一谈、但在不同F值下得出的入瞳直径按算术看光通面积同样符合这个规律、光圈除了能控制曝光还会影响一个非常重要的成像特性景深。"
+}

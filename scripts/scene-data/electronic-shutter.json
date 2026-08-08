@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "slug": "electronic-shutter",
+    "title": "学摄影需要知道的——电子快门",
+    "title_en": "The Electronic Shutter, Explained",
+    "duration": "2分48秒",
+    "scenes": 5,
+    "sentences": 15,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/electronic-shutter",
+    "topic": "摄影 · 相机知识"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "电子快门的基础",
+      "title_en": "Electronic Shutter Basics",
+      "time": "00:00",
+      "context": "可以想象CMOS的每个像素都有个开关：打开可以接收光线，关闭则重置。当按下快门后，CMOS清空电荷信息，并开始接收光线，光子进入到传感器，被光电二极管转化成电子，再由电容转化成电压，之后通过PGA放大电路放大，再经由模数转换器ADC转化成数字信号。从电压到数字信号的整个读出过程，只能依次逐行进行。",
+      "sentences": [
+        [
+          "CMOS的每个像素都有个开关，打开接收光线。",
+          "Every CMOS pixel is a switch: open to catch light.",
+          "pixel（像素）"
+        ],
+        [
+          "光子被光电二极管转化成电子，再变成电压。",
+          "Photons become electrons, then voltage, then digital.",
+          "photodiode（光电二极管）"
+        ],
+        [
+          "读出过程只能依次逐行进行。",
+          "Readout can only happen row by row.",
+          "readout（读出）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "pixel（像素",
+          "pixel（像素"
+        ],
+        [
+          "photodiode（光电二极管",
+          "photodiode（光电二极管"
+        ]
+      ],
+      "speak": "Every CMOS pixel is a switch: open to catch light. Photons become electrons, then voltage, then digital. Readout can only happen row by row."
+    },
+    {
+      "id": "s2",
+      "title_cn": "读出速度与时间差",
+      "title_en": "Readout Speed and Time Gap",
+      "time": "00:35",
+      "context": "绝大多数CMOS由于性能制约，读出速度受限，动辄2、3、10毫秒。以20毫秒的读出速度为例，对应到每行像素，在图表上是一条斜线。想要做到每行像素曝光结束时可以同步读出，电子快门就只能严格按照这条斜线也就是读出速度，来控制每行像素的开启。无论快门如何调整，时间差都是20毫秒，远大于机械快门的4毫秒。",
+      "sentences": [
+        [
+          "读出速度受限，动辄2、3、10毫秒。",
+          "Readout often takes 2, 3, or 10 milliseconds.",
+          "millisecond（毫秒）"
+        ],
+        [
+          "电子快门按读出速度的斜线逐行控制曝光。",
+          "It follows that diagonal to expose row by row.",
+          "diagonal（斜线）"
+        ],
+        [
+          "时间差固定20毫秒，远大于机械快门的4毫秒。",
+          "The gap stays 20ms—far worse than the 4ms mechanical.",
+          "time gap（时间差）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "millisecond（毫秒",
+          "millisecond（毫秒"
+        ],
+        [
+          "diagonal（斜线",
+          "diagonal（斜线"
+        ]
+      ],
+      "speak": "Readout often takes 2, 3, or 10 milliseconds. It follows that diagonal to expose row by row. The gap stays 20ms—far worse than the 4ms mechanical."
+    },
+    {
+      "id": "s3",
+      "title_cn": "果冻效应",
+      "title_en": "Rolling Shutter Distortion",
+      "time": "01:01",
+      "context": "较高的时间差会出现一个严重的问题——果冻效应。由于每行像素记录的时间不同、存在时差，从而导致运动物体在空间位移中发生形变：直线变成斜的、旋转的变扭曲。以这个3300万像素的CMOS来看，拍摄一张照片需要读出4672行，按照20毫秒的读出速度计算，那么每行像素的时间差约等于4.3微秒。这听上去几乎不可感知，但对于拍摄高速运动的物体来说，这个时间差足以让画面产生明显的变形。面对高速运动的物体，使用机械快门同样会出现果冻效应，只是相比电子快门要好很多。",
+      "sentences": [
+        [
+          "每行像素记录时间不同，运动物体会变形。",
+          "Rows record at different times, so motion distorts.",
+          "distort（变形）"
+        ],
+        [
+          "3300万像素按20毫秒读出，每行差4.3微秒。",
+          "At 33MP and 20ms, each row lags ~4.3 microseconds.",
+          "microsecond（微秒）"
+        ],
+        [
+          "拍高速物体时，机械快门果冻效应好很多。",
+          "For fast subjects, mechanical rolling is far milder.",
+          "milder（更轻微）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "distort（变形",
+          "distort（变形"
+        ],
+        [
+          "microsecond（微秒",
+          "microsecond（微秒"
+        ]
+      ],
+      "speak": "Rows record at different times, so motion distorts. At 33MP and 20ms, each row lags ~4.3 microseconds. For fast subjects, mechanical rolling is far milder."
+    },
+    {
+      "id": "s4",
+      "title_cn": "为什么机械快门不读出受影响",
+      "title_en": "Why Mechanical Readout Is Safe",
+      "time": "01:42",
+      "context": "控制果冻效应只有两种方法：一个是减少相对运动，一个是提高读出速度。有人会疑问，同样需要读出为什么机械快门不受影响。机械前帘的物理结构决定了CMOS可以先曝光、后逐行读出，而中间这部分读出期间，由于后帘的遮盖，CMOS虽然处在感光状态，但不会有光线进入，因此不受影响。",
+      "sentences": [
+        [
+          "控制果冻效应：减少相对运动或提高读出速度。",
+          "Fight rolling shutter by slowing motion or speeding readout.",
+          "reduce（减少）"
+        ],
+        [
+          "机械快门先曝光、后逐行读出。",
+          "Mechanical shutters expose first, read out later.",
+          "expose first（先曝光）"
+        ],
+        [
+          "读出期间后帘遮盖，没有光线进入。",
+          "The rear curtain blocks light during readout.",
+          "rear curtain（后帘）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "reduce（减少",
+          "reduce（减少"
+        ],
+        [
+          "expose first（先曝光",
+          "expose first（先曝光"
+        ]
+      ],
+      "speak": "Fight rolling shutter by slowing motion or speeding readout. Mechanical shutters expose first, read out later. The rear curtain blocks light during readout."
+    },
+    {
+      "id": "s5",
+      "title_cn": "全域快门",
+      "title_en": "Global Shutter",
+      "time": "02:06",
+      "context": "电子快门可以做到同时开启并感光，但这样会导致后读出的像素因为感光时间更长，从而让画面整体曝光不均匀。同时曝光之后同时关闭也不行，关闭后意味着没有被读出的信息都会被重置。有没有办法做到同时曝光呢？有——全域快门。全域快门可以同时控制电路开启，曝光之后把电子先转移到存储单元，之后再读出数据，这样就不存在曝光时间差，也就能完全避免果冻效应。代价就是由于给每个像素增加了额外的存储单元，会降低像素接收光线的能力，进而对信噪比和画质产生影响。当然最大的影响还是——贵。",
+      "sentences": [
+        [
+          "同时开但逐行读，会曝光不均匀。",
+          "Expose all at once and late rows overexpose.",
+          "uneven（不均匀）"
+        ],
+        [
+          "全域快门把电子先转移到存储单元再读出。",
+          "A global shutter stores electrons first, then reads out.",
+          "global shutter（全域快门）"
+        ],
+        [
+          "代价：像素接收光线能力下降，影响画质。",
+          "The cost: reduced light capture, worse signal and image quality.",
+          "signal-to-noise（信噪比）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "uneven（不均匀",
+          "uneven（不均匀"
+        ],
+        [
+          "global shutter（全域快门",
+          "global shutter（全域快门"
+        ]
+      ],
+      "speak": "Expose all at once and late rows overexpose. A global shutter stores electrons first, then reads out. The cost: reduced light capture, worse signal and image quality."
+    }
+  ],
+  "practice": [
+    [
+      "说电子快门读出",
+      "The sensor reads rows one at a time, not all at once."
+    ],
+    [
+      "说果冻效应",
+      "Staggered row timing bends fast-moving subjects."
+    ],
+    [
+      "说机械快门的优势",
+      "A rear curtain blocks light while rows read out."
+    ],
+    [
+      "说全域快门",
+      "Electrons park in storage cells before readout."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Think all sensors read at once.",
+      "Readout is row by row—that's the root of rolling shutter.",
+      "读出只能逐行进行。"
+    ],
+    [
+      "Blame every distortion on the lens.",
+      "At 20ms readout, a 33MP frame lags 4.3µs per row.",
+      "果冻效应来自逐行读出时差。"
+    ],
+    [
+      "Assume mechanical shutters never distort.",
+      "They do roll, just far less than electronic ones.",
+      "机械快门也有果冻效应，只是更轻。"
+    ],
+    [
+      "Buy a global shutter and expect no trade-off.",
+      "Extra storage cells cut light capture and raise the price.",
+      "全域快门牺牲进光和画质，还贵。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说电子快门只说电子快门",
+      "用 row-by-row readout（逐行读出）、readout speed（读出速度）、time gap（时间差）"
+    ],
+    [
+      "说果冻只说果冻",
+      "用 rolling shutter（果冻效应）、distortion（变形）、skew（倾斜扭曲）"
+    ],
+    [
+      "说快门只说快门",
+      "用 mechanical curtain（机械帘幕）、global shutter（全域快门）、storage cell（存储单元）"
+    ]
+  ],
+  "difficult_words": [
+    "switch",
+    "photons",
+    "become",
+    "electrons",
+    "voltage",
+    "digital",
+    "readout",
+    "happen",
+    "milliseconds",
+    "follows",
+    "diagonal",
+    "expose",
+    "mechanical",
+    "record",
+    "different",
+    "motion",
+    "distorts",
+    "microseconds",
+    "subjects",
+    "rolling",
+    "milder",
+    "shutter",
+    "slowing",
+    "speeding",
+    "shutters",
+    "curtain",
+    "blocks",
+    "during",
+    "overexpose",
+    "global"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：CMOS每个像素都有开关、打开接收光线关闭则重置、按下快门后CMOS清空电荷信息开始接收光线、光子进入传感器被光电二极管转化成电子、再由电容转化成电压、之后通过PGA放大电路放大、再经由模数转换器ADC转化成数字信号、从电压到数字信号的整个读出过程只能依次逐行进行、绝大多数CMOS由于性能制约读出速度受限动辄2、3、10毫秒、以20毫秒读出速度为例对应到每行像素在图表上是一条斜线、想做到每行像素曝光结束时同步读出、电子快门只能严格按照这条斜线即读出速度来控制每行像素的开启、无论快门如何调整时间差都是20毫秒远大于机械快门的4毫秒、较高时间差会出现严重问题果冻效应、由于每行像素记录时间不同存在时差、导致运动物体在空间位移中发生形变、直线变斜的旋转的变扭曲、3300万像素CMOS拍摄一张照片需要读出4672行、按20毫秒读出速度每行像素时间差约等于4.3微秒、听上去几乎不可感知但对高速运动物体足以产生明显变形、机械快门同样会出现果冻效应只是比电子快门好很多、控制果冻效应只有两种方法、减少相对运动或提高读出速度、机械前帘物理结构决定CMOS可以先曝光后逐行读出、中间读出期间后帘遮盖没有光线进入因此不受影响、电子快门可以同时开启感光但会导致后读出像素感光时间更长曝光不均匀、同时曝光后同时关闭也不行关闭后没被读出的信息都会重置、全域快门可以同时控制电路开启、曝光后把电子先转移到存储单元再读出数据、不存在曝光时间差完全避免果冻效应、代价是给每个像素增加额外存储单元降低接收光线能力、对信噪比和画质产生影响、当然最大的影响还是贵。"
+}

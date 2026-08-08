@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "slug": "aperture-dof-formula",
+    "title": "相机“光圈”底层逻辑科普，景深公式（五）",
+    "title_en": "Aperture Decoded, Part 5: The DoF Formula",
+    "duration": "1分48秒",
+    "scenes": 3,
+    "sentences": 9,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/aperture-dof-formula",
+    "topic": "摄影 · 光圈"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "容许弥散圆定义景深",
+      "title_en": "The Circle of Confusion Sets Depth",
+      "time": "00:00",
+      "context": "前后移动焦点，能看到成像焦点脱离传感器，此时传感器上接收到的便是焦点之外逐渐扩大的弥散圆，因此这个物体点的成像就会慢慢变模糊。当然只要这个弥散圆足够小，人眼就无法辨别出模糊，自然也就认为是清晰的。这个足够小的弥散圆，就是我们前面说的容许弥散圆。",
+      "sentences": [
+        [
+          "焦点脱离传感器，成像开始变模糊。",
+          "As focus slips off the sensor, the image blurs.",
+          "slip off（脱离）"
+        ],
+        [
+          "弥散圆足够小，人眼就无法辨别模糊。",
+          "Small enough, the blur becomes invisible to the eye.",
+          "indistinguishable（无法辨别）"
+        ],
+        [
+          "这个可接受的弥散圆叫容许弥散圆。",
+          "That acceptable blur is the circle of confusion.",
+          "circle of confusion（容许弥散圆）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "slip off（脱离",
+          "slip off（脱离"
+        ],
+        [
+          "indistinguishable（无法辨别",
+          "indistinguishable（无法辨别"
+        ]
+      ],
+      "speak": "As focus slips off the sensor, the image blurs. Small enough, the blur becomes invisible to the eye. That acceptable blur is the circle of confusion."
+    },
+    {
+      "id": "s2",
+      "title_cn": "0.029毫米",
+      "title_en": "0.029 Millimeters",
+      "time": "00:22",
+      "context": "以传感器大小36毫米×24毫米的全画幅相机来说，通常对其定义的容许弥散圆大小，放在手机上看差不多是这样。它的直径约为0.029毫米，只比发丝直径稍微大一点。为了方便演示，我们把这个容许弥散圆放大一些，再放到焦点的两侧与光线夹角大小吻合的位置，那么这个区间就是我们无法辨认出模糊的范围，称之为焦深。",
+      "sentences": [
+        [
+          "全画幅的容许弥散圆直径约0.029毫米。",
+          "On full frame, the circle of confusion is about 0.029mm.",
+          "full frame（全画幅）"
+        ],
+        [
+          "它只比发丝直径稍微大一点。",
+          "That's barely wider than a hair.",
+          "hair（发丝）"
+        ],
+        [
+          "焦点两侧无法辨认模糊的区间叫焦深。",
+          "The blur-free span around focus is the depth of focus.",
+          "depth of focus（焦深）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "full frame（全画幅",
+          "full frame（全画幅"
+        ],
+        [
+          "hair（发丝",
+          "hair（发丝"
+        ]
+      ],
+      "speak": "On full frame, the circle of confusion is about 0.029mm. That's barely wider than a hair. The blur-free span around focus is the depth of focus."
+    },
+    {
+      "id": "s3",
+      "title_cn": "景深公式计算",
+      "title_en": "Computing Depth of Field",
+      "time": "00:52",
+      "context": "与焦深对应，镜头之外物体前后相对清晰的范围，就是我们说的景深。想要准确计算出景深范围需要引入一个公式：这里的delta是容许弥散圆的直径0.029毫米，光圈设定到F8，焦距为35毫米，对焦距离是3米也就是3000毫米。带入这些设定的参数，再用景深公式计算就可以得出，此时画面的整个景深范围是5.034米也就是5034毫米，其中前景深约为1.087米，后景深为3.947米。",
+      "sentences": [
+        [
+          "景深是镜头外物体前后相对清晰的范围。",
+          "Depth of field is the acceptably sharp span beyond the lens.",
+          "depth of field（景深）"
+        ],
+        [
+          "公式带入容许弥散圆0.029毫米、F8、35mm、3米。",
+          "Plug in 0.029mm CoC, f/8, 35mm, and 3 meters.",
+          "plug in（代入）"
+        ],
+        [
+          "算得总景深5.034米，前景深1.087米、后景深3.947米。",
+          "That yields 5.034m total—1.087m front, 3.947m back.",
+          "total（总）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "depth of field（景深",
+          "depth of field（景深"
+        ],
+        [
+          "plug in（代入",
+          "plug in（代入"
+        ]
+      ],
+      "speak": "Depth of field is the acceptably sharp span beyond the lens. Plug in 0.029mm CoC, f/8, 35mm, and 3 meters. That yields 5.034m total—1.087m front, 3.947m back."
+    }
+  ],
+  "practice": [
+    [
+      "说容许弥散圆",
+      "A blur circle small enough to look sharp is the circle of confusion."
+    ],
+    [
+      "说0.029毫米",
+      "On full frame the accepted blur is just 0.029mm across."
+    ],
+    [
+      "说景深公式",
+      "Plug in CoC, aperture, focal length, and focus distance."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Treat sharpness as absolute.",
+      "It's defined by how small the blur looks to the eye.",
+      "清晰是相对人眼的感知。"
+    ],
+    [
+      "Assume CoC is the same for every sensor.",
+      "Full frame uses ~0.029mm, but smaller sensors differ.",
+      "不同画幅的容许弥散圆不同。"
+    ],
+    [
+      "Skip the formula and guess.",
+      "The numbers—5.034m total—come straight from the math.",
+      "用公式才能算准景深。"
+    ],
+    [
+      "Confuse depth of focus with depth of field.",
+      "One lives at the sensor, the other in the scene.",
+      "焦深在传感器侧，景深在场景侧。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说模糊只说模糊",
+      "用 circle of confusion（弥散圆）、acceptable blur（可接受的模糊）、CoC（容许弥散圆）"
+    ],
+    [
+      "说景深只说景深",
+      "用 depth of field（景深）、front/back depth（前/后景深）、total（总景深）"
+    ]
+  ],
+  "difficult_words": [
+    "sensor",
+    "enough",
+    "becomes",
+    "invisible",
+    "acceptable",
+    "circle",
+    "confusion",
+    "that's",
+    "barely",
+    "blur-free",
+    "around",
+    "acceptably",
+    "beyond",
+    "meters",
+    "yields",
+    "exposure",
+    "sensor",
+    "pixel",
+    "shutter",
+    "signal"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：前后移动焦点成像焦点脱离传感器、传感器上接收到的便是焦点之外逐渐扩大的弥散圆、物体点的成像慢慢变模糊、只要弥散圆足够小人眼无法辨别模糊自然认为清晰、这个足够小的弥散圆叫容许弥散圆、以36毫米×24毫米全画幅相机来说通常定义的容许弥散圆大小、直径约为0.029毫米只比发丝直径稍微大一点、为方便演示把容许弥散圆放大一些、放到焦点两侧与光线夹角大小吻合的位置、这个区间就是无法辨认出模糊的范围称之为焦深、前后移动被摄主体只要移动范围不超过容许弥散圆区间就认为是清晰的、与焦深对应镜头之外物体前后相对清晰的范围就是景深、准确计算景深范围需要引入公式、delta是容许弥散圆直径0.029毫米、光圈设定F8焦距35毫米对焦距离3米即3000毫米、带入这些设定参数用景深公式计算得出整个景深范围5.034米即5034毫米、前景深约1.087米后景深3.947米。"
+}

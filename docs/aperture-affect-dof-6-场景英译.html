@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="相机“光圈”底层逻辑科普，如何影响景深（六）视频场景英译学习卡" />
+  <title>相机“光圈”底层逻辑科普，如何影响景深（六）｜场景英译</title>
+  <style>:root {
+  --teal-950:#073f42; --teal-800:#0d686c; --teal-700:#0f7c80; --teal-600:#14919b;
+  --mint-100:#dff4ec; --mint-50:#f0faf6; --ink:#183536; --muted:#607879;
+  --line:#d7e8e2; --paper:#fff; --amber:#a85d08; --shadow:0 12px 32px rgba(7,63,66,.08);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:24px; }
+body { margin:0; color:var(--ink); background:#edf7f2; font-family:Inter,"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif; line-height:1.65; }
+button, select { font:inherit; }
+a { color:inherit; }
+.hero { color:#fff; background:radial-gradient(circle at 85% 10%,rgba(129,230,196,.24),transparent 30%),linear-gradient(125deg,#073f42,#0d7377 56%,#14919b); }
+.hero-inner { width:min(1440px,100%); margin:auto; padding:48px clamp(20px,5vw,72px) 42px; }
+.hero-flex { display:flex; gap:clamp(18px,3vw,40px); align-items:flex-start; }
+.hero-cover { width:min(240px,42vw); height:auto; max-height:320px; object-fit:contain; object-position:center; border-radius:16px; border:1px solid rgba(255,255,255,.28); box-shadow:0 18px 44px rgba(0,0,0,.32); flex-shrink:0; }
+.hero-text { min-width:0; flex:1; }
+.eyebrow { margin:0 0 12px; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.8; }
+h1 { max-width:1020px; margin:0; font-size:clamp(1.8rem,3.8vw,3.2rem); line-height:1.13; letter-spacing:-.04em; }
+.hero-en { margin:12px 0 24px; font-size:clamp(1rem,2vw,1.3rem); opacity:.82; }
+.hero-meta { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+.chip { border:1px solid rgba(255,255,255,.28); border-radius:99px; padding:5px 11px; font-size:.82rem; background:rgba(255,255,255,.08); }
+.source-link { font-weight:750; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.5); }
+.lang-switch { margin-left:12px; font-size:.8rem; font-weight:700; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:24px; }
+.toolbar label { font-size:.82rem; opacity:.82; }
+.toolbar select { color:#fff; background:#0a5d61; border:1px solid rgba(255,255,255,.3); border-radius:8px; padding:7px 9px; }
+.stop-btn { display:none; color:#fff; background:#8c3b2a; border:0; border-radius:8px; padding:8px 12px; cursor:pointer; }
+.stop-btn.visible { display:inline-flex; }
+.speech-status { min-height:1.4em; font-size:.82rem; opacity:.88; }
+.narration-player { margin-top:18px; padding:16px 18px; background:rgba(255,255,255,.1); border-radius:12px; border:1px solid rgba(255,255,255,.15); }
+.audio-label { color:rgba(255,255,255,.88); font-size:.82rem; font-weight:700; margin:0 0 8px; }
+.page { width:min(1440px,100%); margin:auto; padding:28px clamp(16px,3vw,44px) 64px; display:grid; grid-template-columns:minmax(230px,280px) minmax(0,1fr); gap:30px; align-items:start; }
+.sidebar { position:sticky; top:20px; min-width:0; }
+.sidebar-box { background:rgba(255,255,255,.8); border:1px solid var(--line); border-radius:16px; padding:17px; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+.sidebar h2 { margin:0 0 13px; font-size:.9rem; letter-spacing:.08em; color:var(--teal-800); }
+.map-link { display:grid; grid-template-columns:34px minmax(0,1fr); gap:9px; padding:10px 6px; text-decoration:none; border-top:1px solid var(--line); }
+.map-link:hover b { color:var(--teal-700); }
+.map-id { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; color:#fff; background:var(--teal-700); font-size:.72rem; font-weight:800; }
+.map-link b { display:block; font-size:.78rem; line-height:1.4; }
+.map-link small { display:block; color:var(--muted); font-size:.67rem; line-height:1.4; margin-top:2px; overflow-wrap:anywhere; }
+.content { min-width:0; }
+.scene-card { background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:clamp(20px,3vw,34px); margin-bottom:24px; box-shadow:var(--shadow); overflow:hidden; }
+.scene-frame { display:block; width:100%; max-height:480px; object-fit:contain; object-position:center; background:rgba(7,63,66,.04); border-radius:14px; margin:16px 0 4px; border:1px solid var(--line); box-shadow:0 10px 28px rgba(7,63,66,.1); }
+.scene-topline { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.scene-id { display:inline-grid; place-items:center; min-width:42px; height:30px; padding:0 10px; color:#fff; background:var(--teal-700); border-radius:8px; font-size:.78rem; font-weight:850; }
+.time { margin-left:10px; color:var(--muted); font-size:.82rem; font-variant-numeric:tabular-nums; }
+.scene-card h2 { margin:18px 0 2px; font-size:clamp(1.35rem,2.4vw,2rem); line-height:1.25; color:var(--teal-950); }
+.scene-title-en { margin:0 0 18px; color:var(--teal-600); font-weight:700; font-size:.98rem; }
+.context { margin:0 0 20px; padding:12px 15px; color:#496566; background:var(--mint-50); border-left:3px solid var(--teal-600); border-radius:0 10px 10px 0; font-size:.88rem; }
+.context b { margin-right:10px; color:var(--teal-800); }
+.sentence-list { display:grid; gap:12px; }
+.sentence { position:relative; display:grid; grid-template-columns:38px minmax(0,1fr); gap:12px; padding:16px; border:1px solid #e2ece8; border-radius:14px; background:#fcfefd; min-width:0; }
+.sentence-no { color:var(--teal-600); font-size:.76rem; font-weight:850; font-variant-numeric:tabular-nums; padding-top:4px; }
+.bilingual { min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(14px,2vw,28px); }
+.lang-block { min-width:0; }
+.lang-block p { margin:5px 0 0; overflow-wrap:anywhere; }
+.en-block { padding-left:clamp(14px,2vw,28px); border-left:1px solid var(--line); }
+.en-block p { color:#0b5c60; font-weight:650; }
+.lang-tag { display:inline-block; color:var(--muted); font-size:.66rem; font-weight:850; letter-spacing:.12em; }
+.en-head { display:flex; justify-content:space-between; gap:10px; align-items:center; min-height:30px; }
+.note { grid-column:2; margin:1px 0 0; color:#708182; font-size:.78rem; }
+.note span { margin-right:7px; color:var(--amber); font-weight:750; }
+.speak-btn { display:inline-flex; align-items:center; gap:7px; border:1px solid #b8d9d1; border-radius:9px; padding:7px 11px; color:var(--teal-800); background:#f5fbf8; cursor:pointer; white-space:nowrap; font-size:.78rem; font-weight:750; transition:.15s ease; }
+.speak-btn:hover { color:#fff; background:var(--teal-700); border-color:var(--teal-700); transform:translateY(-1px); }
+.speak-btn.playing { color:#fff; background:var(--teal-700); border-color:var(--teal-700); }
+.speak-btn.compact { padding:4px 8px; font-size:.7rem; }
+.speak-btn.icon-only { padding:3px 7px; margin-left:6px; }
+.speak-btn.icon-only span:last-child { display:none; }
+.pronounce-word { display:inline; margin:0; padding:0 2px; color:inherit; background:rgba(20,145,155,.08); border:0; border-bottom:1px dashed var(--teal-600); border-radius:3px; font:inherit; font-weight:inherit; line-height:inherit; cursor:pointer; }
+.pronounce-word:hover, .pronounce-word:focus { color:var(--teal-950); background:#cceee4; border-bottom-style:solid; outline:3px solid rgba(20,145,155,.42); outline-offset:2px; }
+.pronounce-word.playing { color:#fff; background:var(--teal-700); border-bottom-color:var(--teal-700); }
+.paraphrase { margin-top:18px; border-top:1px solid var(--line); }
+.paraphrase summary { padding:16px 0 3px; color:var(--teal-800); cursor:pointer; font-weight:800; }
+.paraphrase summary span { color:var(--muted); font-size:.75rem; font-weight:500; margin-left:8px; }
+.paraphrase ol { margin:12px 0 0; padding-left:22px; }
+.paraphrase li { padding:7px 0 9px 5px; }
+.paraphrase li p { margin:0; font-size:.9rem; font-weight:650; }
+.chunks { margin-top:4px; color:var(--teal-700); font-size:.78rem; }
+.study-section { margin:38px 0 0; }
+.section-heading { display:flex; align-items:baseline; gap:10px; margin:0 0 15px; color:var(--teal-950); font-size:1.35rem; }
+.section-heading small { color:var(--teal-600); font-size:.78rem; letter-spacing:.05em; }
+.study-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.study-grid article { padding:17px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 6px 18px rgba(7,63,66,.05); min-width:0; }
+.study-grid p { margin:0; }
+.practice-en { margin-top:9px; color:var(--teal-700); font-weight:650; overflow-wrap:anywhere; }
+.wrong { color:#a24831; text-decoration:line-through; overflow-wrap:anywhere; }
+.right { color:var(--teal-700); font-weight:750; margin:5px 0; overflow-wrap:anywhere; }
+.pitfalls p { color:var(--muted); font-size:.82rem; }
+.shifts article { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr); gap:12px; align-items:center; }
+.shifts b { color:var(--teal-600); font-size:1.2rem; }
+.shifts strong { color:var(--teal-800); }
+footer { margin-top:38px; color:var(--muted); font-size:.78rem; text-align:center; }
+@media (max-width:900px) { .page { grid-template-columns:1fr; } .sidebar { position:static; } .sidebar-box { overflow-x:auto; padding:12px; } .sidebar h2 { padding-left:5px; } .map-nav { display:flex; width:max-content; gap:8px; } .map-link { width:220px; border:1px solid var(--line); border-radius:10px; padding:8px; } .bilingual { grid-template-columns:1fr; } .en-block { padding:12px 0 0; border-left:0; border-top:1px dashed var(--line); } }
+@media (max-width:620px) { .hero-inner { padding-top:32px; } .hero-flex { flex-direction:column; align-items:center; } .hero-cover { width:100%; max-width:360px; } .hero-text { text-align:center; } .page { padding-inline:10px; gap:18px; } .scene-card { border-radius:14px; padding:17px 13px; } .scene-topline { align-items:flex-start; } .scene-speak span:last-child { display:none; } .sentence { grid-template-columns:26px minmax(0,1fr); padding:13px 10px; gap:6px; } .note { grid-column:2; } .study-grid { grid-template-columns:1fr; } .shifts article { grid-template-columns:1fr; gap:5px; } .shifts b { transform:rotate(90deg); justify-self:start; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .speak-btn { transition:none; } }</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-flex">
+        <img class="hero-cover" src="assets/aperture-affect-dof-6/shot-01.jpg" alt="相机“光圈”底层逻辑科普，如何影响景深（六） 封面" loading="lazy">
+        <div class="hero-text">
+          <p class="eyebrow">Scene English · 摄影 · 光圈</p>
+          <h1>相机“光圈”底层逻辑科普，如何影响景深（六）</h1>
+          <p class="hero-en">Aperture Decoded, Part 6: What Shapes DoF</p>
+          <div class="hero-meta"><span class="chip">2026-08-08</span><span class="chip">xiaohongshu</span><span class="chip">2分19秒</span><span class="chip">3 个场景</span><span class="chip">点下划线单词听发音</span><a class="source-link" href="http://xhslink.cn/o/aperture-affect-dof-6" target="_blank" rel="noopener">查看原视频 ↗</a><a class="source-link lang-switch" href="aperture-affect-dof-6-图文实录.html" hreflang="zh" style="margin-left:12px;font-size:.8rem">中文图文实录版 ↗</a></div>
+        </div>
+      </div>
+      <div class="toolbar"><label for="speech-rate">朗读速度</label><select id="speech-rate"><option value="0.85">慢速 0.85×</option><option value="1" selected>正常 1×</option><option value="1.15">快速 1.15×</option></select><button id="stop-speech" class="stop-btn" type="button">■ 停止朗读</button><span id="speech-status" class="speech-status" role="status" aria-live="polite"></span></div>
+      <div class="narration-player"><p class="audio-label">🎧 语音讲解</p><button class="speak-btn" type="button" data-audio="audio/aperture-affect-dof-6/narration.mp3" aria-label="播放语音讲解"><span aria-hidden="true">▶</span><span>播放语音讲解</span></button></div>
+    </div>
+  </header>
+  <main class="page">
+    <aside class="sidebar" aria-label="场景地图"><div class="sidebar-box"><h2>场景地图 · SCENE MAP</h2><nav class="map-nav"><a class="map-link" href="#s1"><span class="map-id">S1</span><span><b>入瞳径决定景深</b><small>00:00 · The Entrance Pupil Decides</small></span></a><a class="map-link" href="#s2"><span class="map-id">S2</span><span><b>光圈大小与景深</b><small>00:36 · Aperture Size vs Depth</small></span></a><a class="map-link" href="#s3"><span class="map-id">S3</span><span><b>光圈的别的影响</b><small>01:33 · Aperture's Other Effects</small></span></a></nav></div></aside>
+    <div class="content">
+      <section class="scene-card" id="s1" data-scene><div class="scene-topline"><div><span class="scene-id">S1</span><span class="time">00:00</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/aperture-affect-dof-6/s1.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/aperture-affect-dof-6/shot-01.jpg" alt="入瞳径决定景深 场景截图" loading="lazy"><h2>入瞳径决定景深</h2><p class="scene-title-en">The Entrance Pupil Decides</p><p class="context"><b>情境</b>在控制其他变量的前提下，我们只缩小光圈，这时会发现入瞳径随之变小，光线夹角也同样变小，原来的光束变窄了，但容许弥散圆的直径是固定不变的。此时想要对应在光束上，就要把容许弥散圆向两侧延伸，这样一来焦深明显增大，对应的景深自然也就变大了。本质上影响景深变化的是入瞳径，而非物理光圈，但从另一面来说，入瞳径很大程度上受物理光圈的控制，所以大家通常也都会说光圈影响景深。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>缩小光圈，入瞳径和光线夹角变小。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s1-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Stopping down shrinks the pupil and the light cone.</p></div></div><p class="note"><span>表达提示</span>light cone（光锥）</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>容许弥散圆固定，向两侧延伸焦深变大。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s1-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">The fixed CoC stretches out, widening the depth of focus.</p></div></div><p class="note"><span>表达提示</span>stretch（延伸）</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>本质上是入瞳径影响景深，不是物理光圈。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s1-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">It's the entrance pupil, not the blades, that rules DoF.</p></div></div><p class="note"><span>表达提示</span>essentially（本质上）</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>light cone（光锥</p><div class="chunks">light cone（光锥</div></li><li><p>stretch（延伸</p><div class="chunks">stretch（延伸</div></li></ol></details></section><section class="scene-card" id="s2" data-scene><div class="scene-topline"><div><span class="scene-id">S2</span><span class="time">00:36</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/aperture-affect-dof-6/s2.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/aperture-affect-dof-6/shot-02.jpg" alt="光圈大小与景深 场景截图" loading="lazy"><h2>光圈大小与景深</h2><p class="scene-title-en">Aperture Size vs Depth</p><p class="context"><b>情境</b>当调小光圈，入瞳直径缩短，光线夹角随之变小，景深范围相应增大，景深更深；当光圈放大，入瞳直径增长，光线夹角随之变大，景深范围也就会减小，因此景深更浅。另一个影响景深很重要的因素，就是被摄物体与相机的距离，其原因同样是距离的改变影响了入射光线夹角的大小，那自然也会改变容许弥散圆所定义的区间，景深便随之产生变化。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>光圈小、景深深；光圈大、景深浅。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s2-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Small aperture, deep field; large aperture, shallow field.</p></div></div><p class="note"><span>表达提示</span>shallow（浅）</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>拍摄距离也影响景深，因为它改变光线夹角。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s2-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Subject distance matters too—it changes the light cone.</p></div></div><p class="note"><span>表达提示</span>subject distance（拍摄距离）</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>shallow（浅</p><div class="chunks">shallow（浅</div></li><li><p>subject distance（拍摄距离</p><div class="chunks">subject distance（拍摄距离</div></li></ol></details></section><section class="scene-card" id="s3" data-scene><div class="scene-topline"><div><span class="scene-id">S3</span><span class="time">01:33</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/aperture-affect-dof-6/s3.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/aperture-affect-dof-6/shot-03.jpg" alt="光圈的别的影响 场景截图" loading="lazy"><h2>光圈的别的影响</h2><p class="scene-title-en">Aperture's Other Effects</p><p class="context"><b>情境</b>除了曝光和景深之外，光圈还会有一些别的影响：例如光圈叶片的数量和形状影响着焦外光斑是否圆润；还有光圈缩小到一定程度，由于光路狭小造成的衍射，会对成像质量有所限制。当然也会有人专门利用这些特性去制作镜头，来拍摄例如星芒效果的风格化影像。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>叶片数量和形状影响焦外光斑是否圆润。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s3-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Blade count and shape round out the bokeh.</p></div></div><p class="note"><span>表达提示</span>bokeh（焦外）</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>光圈过小产生衍射，限制成像质量。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s3-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Tiny apertures diffract and soften the image.</p></div></div><p class="note"><span>表达提示</span>diffraction（衍射）</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>也有人利用衍射特性拍星芒。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/aperture-affect-dof-6/s3-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Some use it on purpose to shoot starbursts.</p></div></div><p class="note"><span>表达提示</span>starburst（星芒）</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>bokeh（焦外</p><div class="chunks">bokeh（焦外</div></li><li><p>diffraction（衍射</p><div class="chunks">diffraction（衍射</div></li></ol></details></section>
+      <section class="study-section" id="practice"><h2 class="section-heading">今日可练 <small>PRACTICE TODAY</small></h2><div class="study-grid"><article><p>说入瞳径影响景深</p><div class="practice-en">The entrance pupil's size sets the light cone, which sets depth. <button class="speak-btn icon-only" type="button" data-audio="audio/aperture-affect-dof-6/practice-0.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>说光圈与景深的关系</p><div class="practice-en">Stop down for deeper focus; open up for creamy shallow depth. <button class="speak-btn icon-only" type="button" data-audio="audio/aperture-affect-dof-6/practice-1.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>说拍摄距离</p><div class="practice-en">Closer subjects get shallower depth of field. <button class="speak-btn icon-only" type="button" data-audio="audio/aperture-affect-dof-6/practice-2.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>说光圈的另类影响</p><div class="practice-en">Blade shape rounds bokeh; tiny apertures diffract and star. <button class="speak-btn icon-only" type="button" data-audio="audio/aperture-affect-dof-6/practice-3.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article></div></section>
+      <section class="study-section pitfalls" id="pitfalls"><h2 class="section-heading">避坑 <small>PITFALLS</small></h2><div class="study-grid"><article><div class="wrong">✕ Blame the blades for depth of field.</div><div class="right">✓ It's the entrance pupil and light cone that really rule.</div><p>本质是入瞳径决定景深。</p></article><article><div class="wrong">✕ Forget subject distance.</div><div class="right">✓ Distance shifts the light cone, so depth changes too.</div><p>距离也会改变景深。</p></article><article><div class="wrong">✕ Expect a perfectly round bokeh from every lens.</div><div class="right">✓ Blade count and shape decide whether circles stay round.</div><p>叶片数量形状决定光斑圆润度。</p></article><article><div class="wrong">✕ Assume smaller is always sharper.</div><div class="right">✓ Diffraction softens the image past a certain point.</div><p>过小光圈会因衍射变软。</p></article></div></section>
+      <section class="study-section shifts" id="mindset"><h2 class="section-heading">认知转变 <small>MINDSET SHIFTS</small></h2><div class="study-grid"><article><span>说景深只说景深</span><b aria-hidden="true">→</b><strong>用 entrance pupil（入瞳径）、light cone（光锥）、angle（夹角）</strong></article><article><span>说光圈效果只说光圈</span><b aria-hidden="true">→</b><strong>用 bokeh（焦外）、diffraction（衍射）、starburst（星芒）</strong></article></div></section>
+      <footer>转录基于图文实录完整口播。已校正：控制其他变量只缩小光圈、入瞳径随之变小、光线夹角也变小、原来的光束变窄、但容许弥散圆直径固定不变、想要对应在光束上就要把容许弥散圆向两侧延伸、焦深明显增大景深自然变大、本质上影响景深变化的是入瞳径而非物理光圈、但从另一面来说入瞳径很大程度上受物理光圈控制、所以大家通常也说光圈影响景深、调小光圈入瞳直径缩短光线夹角变小景深范围增大景深更深、光圈放大入瞳直径增长光线夹角变大景深范围减小景深更浅、另一个影响景深很重要的因素是被摄物体与相机距离、原因是距离改变影响入射光线夹角大小、自然也会改变容许弥散圆所定义的区间景深随之变化、光圈除了曝光和景深还有一些别的影响、光圈叶片数量和形状影响着焦外光斑是否圆润、光圈缩小到一定程度由于光路狭小造成的衍射对成像质量有所限制、也有人专门利用这些特性制作镜头拍摄例如星芒效果的风格化影像、整期视频围绕着一个元素原来讨论的、影像从来都没有标准答案、就如同算不尽的圆周率、了解这些知识未必会提高拍摄水平、但就像科学家对圆的执念一样、了解的更深一点才能走的更远一些。 · 场景/句子朗读使用 edge-tts 神经网络语音 · 单词发音使用浏览器 Web Speech API</footer>
+    </div>
+  </main>
+  <script>(() => {
+    let activeAudio = null;
+    let activeBtn = null;
+    const status = document.getElementById('speech-status');
+    const stopBtn = document.getElementById('stop-speech');
+    const rateSel = document.getElementById('speech-rate');
+    const reset = () => { if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn = null; stopBtn.classList.remove('visible'); status.textContent = ''; };
+    const playAudio = (url, btn) => { reset(); const a = new Audio(url); a.playbackRate = Number(rateSel.value); activeAudio = a; activeBtn = btn; btn.classList.add('playing'); stopBtn.classList.add('visible'); status.textContent = btn.classList.contains('scene-speak') ? '正在朗读整个场景…' : btn.classList.contains('speak-btn') && btn.dataset.audio.includes('narration') ? '正在播放语音讲解…' : '正在朗读…'; a.onended = () => { if (activeAudio === a) reset(); }; a.onerror = () => { status.textContent = '音频加载失败'; if (activeAudio === a) reset(); }; a.play().catch(() => { status.textContent = '播放失败'; if (activeAudio === a) reset(); }); };
+    document.addEventListener('click', e => { const btn = e.target.closest('[data-audio]'); if (!btn) return; e.preventDefault(); if (btn === activeBtn && activeAudio) { reset(); return; } playAudio(btn.dataset.audio, btn); });
+    stopBtn.addEventListener('click', reset);
+    const synth = window.speechSynthesis;
+    const getEnglishVoice = () => { const v = synth.getVoices(); return v.find(x => /^en-(US|GB)/i.test(x.lang)) || v.find(x => /^en/i.test(x.lang)) || null; };
+    const difficultWords = new Set(['stopping', 'shrinks', 'stretches', 'widening', 'entrance', 'blades', 'aperture', 'shallow', 'subject', 'distance', 'matters', 'changes', 'apertures', 'diffract', 'soften', 'purpose', 'starbursts', 'exposure', 'sensor', 'pixel']);
+    const shouldPronounce = w => { const n = w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,''); return n.replace(/[^a-z]/g,'').length >= 8 || difficultWords.has(n); };
+    const mark = root => { const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const ns = []; while (w.nextNode()) ns.push(w.currentNode); ns.forEach(n => { if (n.parentElement?.closest('button,script,style')) return; let m,l=0,ch=false; const fg = document.createDocumentFragment(); const re = /[A-Za-z]+(?:[-'’][A-Za-z]+)*/g; while ((m = re.exec(n.nodeValue))) { if (!shouldPronounce(m[0])) continue; ch=true; fg.append(n.nodeValue.slice(l,m.index)); const b=document.createElement('button');b.type='button';b.className='pronounce-word';b.dataset.speak=m[0];b.setAttribute('aria-label','朗读单词 '+m[0]);b.title='点击听 '+m[0]+' 发音';b.textContent=m[0];fg.append(b);l=m.index+m[0].length;} if(!ch)return;fg.append(n.nodeValue.slice(l));n.replaceWith(fg);}); };
+    document.querySelectorAll('.english,.scene-title-en,.paraphrase li p,.chunks,.practice-en,.wrong,.right').forEach(mark);
+    document.addEventListener('click', e => { const wb = e.target.closest('.pronounce-word'); if (!wb) return; e.preventDefault(); if (!synth) return; synth.cancel(); if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn=wb; wb.classList.add('playing'); const u=new SpeechSynthesisUtterance(wb.dataset.speak);u.lang='en-US';u.rate=0.88;const v=getEnglishVoice();if(v)u.voice=v;u.onend=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};u.onerror=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};synth.speak(u); });
+  })();</script>
+</body>
+</html>
