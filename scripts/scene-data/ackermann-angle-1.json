@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "slug": "ackermann-angle-1",
+    "title": "阿克曼角（上）：转向几何与完美阿克曼",
+    "title_en": "Ackermann Angle (1): Steering Geometry and the Perfect Setup",
+    "duration": "08:06",
+    "scenes": 8,
+    "sentences": 25,
+    "date": "2026-08-08",
+    "platform": "bilibili",
+    "source_url": "https://www.bilibili.com/video/ackermann-angle-1",
+    "topic": "汽车 · 转向几何"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06",
+    "shot-07",
+    "shot-08"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "齿条齿轮转向",
+      "title_en": "Rack-and-Pinion Steering",
+      "time": "00:00",
+      "context": "绝大多数乘用车用的是齿条齿轮转向机构，它把方向盘左右旋转的动作转化成齿条横向移动，齿条往哪边移，轮子就往对应方向转。",
+      "sentences": [
+        [
+          "绝大多数乘用车的转向机构都是齿条齿轮传动。",
+          "Most passenger cars use rack-and-pinion steering.",
+          "rack-and-pinion（齿条齿轮）"
+        ],
+        [
+          "它把方向盘左右旋转的动作转化成这根齿条左右横向的移动。",
+          "It turns the wheel's rotation into a left-right rack motion.",
+          "rack（齿条）"
+        ],
+        [
+          "齿条往左边移动，两个轮子就往右边转，反过来也一样。",
+          "Move the rack left and the wheels turn right—and vice versa.",
+          "vice versa（反之亦然）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "rack-and-pinion（齿条齿轮",
+          "rack-and-pinion（齿条齿轮"
+        ],
+        [
+          "rack（齿条",
+          "rack（齿条"
+        ]
+      ],
+      "speak": "Most passenger cars use rack-and-pinion steering. It turns the wheel's rotation into a left-right rack motion. Move the rack left and the wheels turn right—and vice versa."
+    },
+    {
+      "id": "s2",
+      "title_cn": "平行转向的问题",
+      "title_en": "The Problem with Parallel Wheels",
+      "time": "01:57",
+      "context": "如果转向机构几何设计成两条前轮永远平行，那转弯时内侧轮转过的圈比外侧小，内侧轮需要转更大的角度才能走更小的圈；而且四个轮子各自的转动垂直线永远不可能在一个点会合，做不到绕着同一个圆心转动，转弯就不顺畅。",
+      "sentences": [
+        [
+          "如果两个前轮永远平行，转弯时内侧轮转过的圈就要比外侧轮小。",
+          "If the front wheels stay parallel, the inside wheel's circle is smaller than the outside's.",
+          "inside wheel（内侧轮）"
+        ],
+        [
+          "内侧轮要转更大的角度，才能走更小的圈。",
+          "The inside wheel must turn farther to trace the tighter circle.",
+          "tighter circle（更小的圈）"
+        ],
+        [
+          "三根垂直线永远不可能在一个点会合，四个轮子做不到绕着同一个圆心转动。",
+          "The three perpendiculars never meet at one point—the wheels can't share a center.",
+          "common center（共同圆心）"
+        ],
+        [
+          "这一部分不协调就会以轮胎打滑脱载的形式表现出来，说人话就是转弯转得不顺畅。",
+          "That mismatch shows as scrubbing—in plain words, corners feel rough.",
+          "scrubbing（轮胎滑动）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "inside wheel（内侧轮",
+          "inside wheel（内侧轮"
+        ],
+        [
+          "tighter circle（更小的圈",
+          "tighter circle（更小的圈"
+        ]
+      ],
+      "speak": "If the front wheels stay parallel, the inside wheel's circle is smaller than the outside's. The inside wheel must turn farther to trace the tighter circle. The three perpendiculars never meet at one point—the wheels can't share a center. That mismatch shows as scrubbing—in plain words, corners feel rough."
+    },
+    {
+      "id": "s3",
+      "title_cn": "三轮车类比",
+      "title_en": "The Tricycle Analogy",
+      "time": "03:56",
+      "context": "把左前轮挡住，当它是台三轮车：黑色线和绿色线交于一点，三个轮子都绕着这个共同圆心转动，非常和谐顺畅；把第四个轮子放回来就显得格格不入。",
+      "sentences": [
+        [
+          "把左前轮挡住，就当它是一台三轮车，那就没问题了。",
+          "Cover the left-front wheel and treat it as a tricycle—no problem.",
+          "tricycle（三轮车）"
+        ],
+        [
+          "三根线交于一点，三个轮子都绕着这一个共同圆心转动，非常顺畅。",
+          "Three lines meet at one point and all wheels share that center—smooth.",
+          "smooth（顺畅）"
+        ],
+        [
+          "把第四个轮子放回来，它就显得格格不入了。",
+          "Add the fourth wheel back and it simply doesn't fit in.",
+          "doesn't fit（格格不入）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "tricycle（三轮车",
+          "tricycle（三轮车"
+        ],
+        [
+          "smooth（顺畅",
+          "smooth（顺畅"
+        ]
+      ],
+      "speak": "Cover the left-front wheel and treat it as a tricycle—no problem. Three lines meet at one point and all wheels share that center—smooth. Add the fourth wheel back and it simply doesn't fit in."
+    },
+    {
+      "id": "s4",
+      "title_cn": "兰肯斯伯格的梯形",
+      "title_en": "Lankensperger's Trapezoid",
+      "time": "04:29",
+      "context": "德国车轮匠兰肯斯伯格1817年发现：把长方形的悬挂几何改成梯形，齿条左右移动时两个轮子转过的角度就不同，内侧轮比外侧轮转更大的角度，让三线会合的目标更进一步。",
+      "sentences": [
+        [
+          "兰肯斯伯格在1817年发现，把长方形悬挂几何改成梯形，两个轮子转过的角度就会不同。",
+          "In 1817 Lankensperger found that a trapezoid makes the two wheels turn unequal angles.",
+          "trapezoid（梯形）"
+        ],
+        [
+          "内侧的轮子会比外侧的转更大的角度。",
+          "The inside wheel turns more than the outside one.",
+          "turn more（转更多）"
+        ],
+        [
+          "这样离四个轮子绕着同一个圆心转的目标就更进了一步。",
+          "That gets the wheels closer to sharing one turning center.",
+          "turning center（转向圆心）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "trapezoid（梯形",
+          "trapezoid（梯形"
+        ],
+        [
+          "turn more（转更多",
+          "turn more（转更多"
+        ]
+      ],
+      "speak": "In 1817 Lankensperger found that a trapezoid makes the two wheels turn unequal angles. The inside wheel turns more than the outside one. That gets the wheels closer to sharing one turning center."
+    },
+    {
+      "id": "s5",
+      "title_cn": "完美几何的诞生",
+      "title_en": "The Perfect Geometry Emerges",
+      "time": "05:24",
+      "context": "兰肯斯伯格发现当梯形两条腰的延长线焦点正好位于后轴中心时，不管往哪边打多少方向，三根线永远交于一点，四个轮子都可以非常顺畅地绕着同一个点转动，互不干涉，完美的转向几何诞生了。",
+      "sentences": [
+        [
+          "当梯形两条腰的延长线焦点正好位于后轴中心时，问题就解决了。",
+          "When the trapezoid's extended lines meet at the rear-axle center, the problem is solved.",
+          "rear-axle center（后轴中心）"
+        ],
+        [
+          "不管往哪边打方向、打多少方向，这三根线永远是交于一点的。",
+          "No matter how you steer, the three lines always meet at one point.",
+          "always meet（永远相交）"
+        ],
+        [
+          "四个轮子都能非常顺畅地绕着同一个点在转动，互相也不干涉了。",
+          "All four wheels spin smoothly around one center without fighting.",
+          "without fighting（互不干涉）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "rear-axle center（后轴中心",
+          "rear-axle center（后轴中心"
+        ],
+        [
+          "always meet（永远相交",
+          "always meet（永远相交"
+        ]
+      ],
+      "speak": "When the trapezoid's extended lines meet at the rear-axle center, the problem is solved. No matter how you steer, the three lines always meet at one point. All four wheels spin smoothly around one center without fighting."
+    },
+    {
+      "id": "s6",
+      "title_cn": "阿克曼名字的由来",
+      "title_en": "How It Got the Name Ackermann",
+      "time": "05:59",
+      "context": "兰肯斯伯格很高兴，找到律师朋友鲁道夫·阿克曼委托注册专利，结果阿克曼自己从德国跑到英国，用他自己的名字完成了注册。这就是阿克曼转向几何名字的由来。",
+      "sentences": [
+        [
+          "兰肯斯伯格找到了他的律师朋友鲁道夫·阿克曼，委托他帮忙注册专利。",
+          "Lankensperger asked his lawyer, Rudolph Ackermann, to patent it.",
+          "patent（专利）"
+        ],
+        [
+          "阿克曼很机智，自己跑到英国，用他自己的名字完成了注册。",
+          "The clever lawyer registered it in Britain under his own name.",
+          "register（注册）"
+        ],
+        [
+          "这就是阿克曼转向几何这个名字的由来。",
+          "And that's how 'Ackermann steering geometry' got its name.",
+          "steering geometry（转向几何）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "patent（专利",
+          "patent（专利"
+        ],
+        [
+          "register（注册",
+          "register（注册"
+        ]
+      ],
+      "speak": "Lankensperger asked his lawyer, Rudolph Ackermann, to patent it. The clever lawyer registered it in Britain under his own name. And that's how 'Ackermann steering geometry' got its name."
+    },
+    {
+      "id": "s7",
+      "title_cn": "数学表达",
+      "title_en": "The Math",
+      "time": "06:24",
+      "context": "设两前轮转向角为A和B，转向半径R，轴距L，胎距T，可得两个三角函数方程，相减得：cotB减去cotA等于胎距比上轴距。任何时刻前轮转向角度完美满足这个方程，就称这车100%符合阿克曼转向几何。",
+      "sentences": [
+        [
+          "设两个前轮的转向角度为A和B，转向半径为R，轴距为L，胎距为T。",
+          "Let the two front steer angles be A and B, radius R, wheelbase L, track T.",
+          "wheelbase（轴距）"
+        ],
+        [
+          "通过三角函数方程相减得到：cotB减cotA等于胎距比轴距。",
+          "Subtracting the trig equations gives: cot B − cot A = track ÷ wheelbase.",
+          "trig equations（三角函数方程）"
+        ],
+        [
+          "前轮转向角度任何时候都满足这个方程，就是100%符合阿克曼转向几何。",
+          "Whenever the steer angles satisfy it, the car is 100% Ackermann.",
+          "100% Ackermann（完美阿克曼）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "wheelbase（轴距",
+          "wheelbase（轴距"
+        ],
+        [
+          "trig equations（三角函数方程",
+          "trig equations（三角函数方程"
+        ]
+      ],
+      "speak": "Let the two front steer angles be A and B, radius R, wheelbase L, track T. Subtracting the trig equations gives: cot B − cot A = track ÷ wheelbase. Whenever the steer angles satisfy it, the car is 100% Ackermann."
+    },
+    {
+      "id": "s8",
+      "title_cn": "阿克曼角与百分比",
+      "title_en": "The Angle and the Percentage",
+      "time": "07:26",
+      "context": "大家常说的阿克曼角指的就是两个转向角之间的差，角A减角B。实际应用中很少讲阿克曼角，因为它随打方向不断变化，更多用正反阿克曼和阿克曼百分比来表述交流。",
+      "sentences": [
+        [
+          "所谓的阿克曼角，指的就是两个转向角之间的差，角A减角B。",
+          "The 'Ackermann angle' is simply the difference between the two steer angles.",
+          "angle difference（角度差）"
+        ],
+        [
+          "实际应用中很少讲阿克曼角，因为它是随打方向不停变化的。",
+          "In practice the raw angle is rarely quoted—it changes constantly.",
+          "constantly changing（不断变化）"
+        ],
+        [
+          "更多的是用正反阿克曼和阿克曼的百分比来表述和交流。",
+          "People use positive/anti-Ackermann and the percentage instead.",
+          "percentage（百分比）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "angle difference（角度差",
+          "angle difference（角度差"
+        ],
+        [
+          "constantly changing（不断变化",
+          "constantly changing（不断变化"
+        ]
+      ],
+      "speak": "The 'Ackermann angle' is simply the difference between the two steer angles. In practice the raw angle is rarely quoted—it changes constantly. People use positive/anti-Ackermann and the percentage instead."
+    }
+  ],
+  "practice": [
+    [
+      "说转向机构",
+      "Rack-and-pinion turns wheel rotation into rack motion."
+    ],
+    [
+      "说平行转向问题",
+      "Parallel wheels can't share one turning center."
+    ],
+    [
+      "说梯形几何",
+      "A trapezoid makes the inside wheel steer more."
+    ],
+    [
+      "说完美几何",
+      "Trapezoid lines meeting at the rear axle = perfect steering."
+    ],
+    [
+      "说数学表达",
+      "cot B − cot A equals track over wheelbase."
+    ],
+    [
+      "说阿克曼角",
+      "It's the difference between the two steer angles."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Think parallel front wheels are fine.",
+      "They can't turn around one center—the car scrubs.",
+      "平行转向转不顺畅。"
+    ],
+    [
+      "Expect perfect Ackermann to be universally used.",
+      "Real tires deform, so real cars tune away from it.",
+      "完美阿克曼只在黑板。"
+    ],
+    [
+      "Confuse the angle with the geometry.",
+      "The percentage and anti-Ackermann matter more in practice.",
+      "实际更多用百分比表述。"
+    ],
+    [
+      "Forget who invented it.",
+      "The lawyer Ackermann registered Lankensperger's idea in his own name.",
+      "名字来自抢注专利的律师。"
+    ],
+    [
+      "Ignore the trig relation.",
+      "cotB−cotA=track/wheelbase defines 100% Ackermann.",
+      "记住cot差等于胎距比轴距。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说转向只说 steering",
+      "用 rack-and-pinion（齿条齿轮）、steering geometry（转向几何）、steer angle（转向角）"
+    ],
+    [
+      "说几何只说 geometry",
+      "用 trapezoid（梯形）、turning center（转向圆心）、perpendicular（垂直线）"
+    ],
+    [
+      "说比例只说 ratio",
+      "用 wheelbase（轴距）、track（胎距）、percentage（百分比）"
+    ]
+  ],
+  "difficult_words": [
+    "passenger",
+    "rack-and-pinion",
+    "steering",
+    "wheel's",
+    "rotation",
+    "left-right",
+    "motion",
+    "wheels",
+    "parallel",
+    "inside",
+    "circle",
+    "smaller",
+    "outside's",
+    "farther",
+    "tighter",
+    "perpendiculars",
+    "center",
+    "mismatch",
+    "scrubbing",
+    "corners",
+    "left-front",
+    "tricycle",
+    "problem",
+    "smooth",
+    "fourth",
+    "simply",
+    "doesn't",
+    "lankensperger",
+    "trapezoid",
+    "unequal"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：绝大多数乘用车用齿条齿轮转向、把方向盘旋转转化为齿条横向移动、齿条往左移轮子往右转、如果转向几何设计成两前轮永远平行、转弯时内侧轮转过的圈比外侧小、内侧轮要转更大角度走更小的圈、三根垂直线永远不可能在一个点会合、四个轮子做不到绕同一圆心转动、就会以轮胎打滑脱载形式表现、说人话就是转弯转得不顺畅、挡住左前轮当它是三轮车就和谐顺畅、放回来就格格不入、德国车轮匠兰肯斯伯格1817年发现把长方形悬挂几何改成梯形、内侧轮比外侧转更大角度、当梯形两条腰延长线焦点正好位于后轴中心、不管打多少方向三根线永远交于一点、四个轮子顺畅绕同一个点转动、完美的转向几何诞生、兰肯斯伯格委托律师鲁道夫阿克曼注册专利、阿克曼自己跑到英国用自己名字注册、这就是阿克曼转向几何名字由来、设两前轮转向角A和B半径R轴距L胎距T、得两个三角函数方程相减得cotB减cotA等于胎距比轴距、任何时候满足此方程就称100%符合阿克曼转向几何、常说的阿克曼角指两个转向角之差角A减角B、实际应用很少讲阿克曼角因为它随打方向不断变化、更多用正反阿克曼和阿克曼百分比表述交流等。"
+}

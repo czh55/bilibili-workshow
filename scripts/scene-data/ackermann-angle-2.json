@@ -1,0 +1,451 @@
+{
+  "meta": {
+    "slug": "ackermann-angle-2",
+    "title": "阿克曼角（下）：滑移角与反阿克曼",
+    "title_en": "Ackermann Angle (2): Slip Angle and Anti-Ackermann",
+    "duration": "11:26",
+    "scenes": 9,
+    "sentences": 29,
+    "date": "2026-08-08",
+    "platform": "bilibili",
+    "source_url": "https://www.bilibili.com/video/ackermann-angle-2",
+    "topic": "汽车 · 转向几何"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06",
+    "shot-07",
+    "shot-08"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "滑移角",
+      "title_en": "The Slip Angle",
+      "time": "00:00",
+      "context": "现实世界里轮胎是橡胶做的，橡胶会形变。打方向转弯时，轮胎指向已经转过来，但和地面接触的橡胶还拧着一股劲，实际行进方向总会打一点折扣。轮胎指向和实际行进方向之间的夹角就是滑移角。理论上完美的阿克曼不好用，就是因为有这个滑移角的存在。",
+      "sentences": [
+        [
+          "现实世界里轮胎是橡胶做的，橡胶是会形变的。",
+          "In the real world tires are rubber, and rubber deforms.",
+          "deform（形变）"
+        ],
+        [
+          "打方向时轮胎指向已转过来，但接触地面的橡胶还拧着劲，实际行进方向总要打折扣。",
+          "The tire points one way, but the contact patch lags—actual travel falls short.",
+          "contact patch（接地面积）"
+        ],
+        [
+          "轮胎指向和实际行进方向的夹角就是滑移角。",
+          "The angle between tire heading and actual travel is the slip angle.",
+          "slip angle（滑移角）"
+        ],
+        [
+          "理论上完美的阿克曼不好用，就是因为有这个滑移角的存在。",
+          "Perfect theoretical Ackermann fails because of the slip angle.",
+          "slip（滑动）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "deform（形变",
+          "deform（形变"
+        ],
+        [
+          "contact patch（接地面积",
+          "contact patch（接地面积"
+        ]
+      ],
+      "speak": "In the real world tires are rubber, and rubber deforms. The tire points one way, but the contact patch lags—actual travel falls short. The angle between tire heading and actual travel is the slip angle. Perfect theoretical Ackermann fails because of the slip angle."
+    },
+    {
+      "id": "s2",
+      "title_cn": "F1的极端场景",
+      "title_en": "F1: The Extreme Case",
+      "time": "02:12",
+      "context": "用F1举例是因为它是汽车工业里最极端的例子：转弯速度最快，快速转弯势必带来重心转移。以150公里时速转弯时绝大多数重心都压到外侧轮上，内侧轮承受压力非常小，极限情况下内侧轮甚至轻微离地。",
+      "sentences": [
+        [
+          "用F1来举例，因为它是汽车工业中最极端的例子。",
+          "F1 is the industry's most extreme example.",
+          "extreme（极端的）"
+        ],
+        [
+          "F1转弯速度最快，快速转弯势必带来重心的转移。",
+          "Its cornering speeds are the highest, forcing big weight transfer.",
+          "weight transfer（重心转移）"
+        ],
+        [
+          "150公里时速转弯时，绝大多数重心压到外侧轮上，内侧轮承受的压力非常小。",
+          "At 150 km/h in a corner, most load rides the outside tire; the inside barely loads.",
+          "outside tire（外侧轮）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "extreme（极端的",
+          "extreme（极端的"
+        ],
+        [
+          "weight transfer（重心转移",
+          "weight transfer（重心转移"
+        ]
+      ],
+      "speak": "F1 is the industry's most extreme example. Its cornering speeds are the highest, forcing big weight transfer. At 150 km/h in a corner, most load rides the outside tire; the inside barely loads."
+    },
+    {
+      "id": "s3",
+      "title_cn": "外侧轮需要多转",
+      "title_en": "The Outside Wheel Needs More",
+      "time": "03:14",
+      "context": "压得越大力气转向，轮胎橡胶越拧巴、滑移角越大；不施加压力就几乎没有滑移角。F1过弯压力基本都在外侧轮，所以外侧轮的滑移角远大于内侧轮。为了让实际行进方向接近完美箭头，外侧轮胎的指向上要向左多转更多的角度。",
+      "sentences": [
+        [
+          "压得越大力气转向，轮胎橡胶越是拧巴着，滑移角就越大。",
+          "More vertical load means more rubber twist—and a bigger slip angle.",
+          "vertical load（垂直载荷）"
+        ],
+        [
+          "外侧轮承受压力大，它的滑移角远远大于内侧轮的滑移角。",
+          "The loaded outside tire develops a far larger slip angle than the inside.",
+          "far larger（远大于）"
+        ],
+        [
+          "要减去滑移角之后实际行进方向才接近完美，所以外侧轮胎要向左多转更多角度。",
+          "After the slip-angle discount, the outside tire must steer farther left.",
+          "discount（折减）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "vertical load（垂直载荷",
+          "vertical load（垂直载荷"
+        ],
+        [
+          "far larger（远大于",
+          "far larger（远大于"
+        ]
+      ],
+      "speak": "More vertical load means more rubber twist—and a bigger slip angle. The loaded outside tire develops a far larger slip angle than the inside. After the slip-angle discount, the outside tire must steer farther left."
+    },
+    {
+      "id": "s4",
+      "title_cn": "反阿克曼",
+      "title_en": "Anti-Ackermann",
+      "time": "03:42",
+      "context": "这就是F1赛车上的反阿克曼转向几何设定：外侧轮转向角度明显大于内侧轮。F1转向设定还会根据赛道单独调校：高速弯多的赛道用激进的反阿克曼；蒙特卡洛这类低速弯、调头弯多的赛道，激进的反阿克曼就不合适了。",
+      "sentences": [
+        [
+          "F1赛车上就是这种反阿克曼的设定：外侧轮转的角度明显大于内侧轮。",
+          "F1 runs anti-Ackermann: the outside wheel visibly turns more than the inside.",
+          "anti-Ackermann（反阿克曼）"
+        ],
+        [
+          "绝大多数的赛道都是高速弯比较多，会设计成比较激进的反阿克曼。",
+          "Most tracks are fast-corner heavy, calling for aggressive anti-Ackermann.",
+          "aggressive（激进的）"
+        ],
+        [
+          "蒙特卡洛有很多低速弯、调头弯，激进的反阿克曼设定就不合适了。",
+          "Monaco's slow hairpins make aggressive anti-Ackermann unsuitable.",
+          "hairpin（调头弯）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "anti-Ackermann（反阿克曼",
+          "anti-Ackermann（反阿克曼"
+        ],
+        [
+          "aggressive（激进的",
+          "aggressive（激进的"
+        ]
+      ],
+      "speak": "F1 runs anti-Ackermann: the outside wheel visibly turns more than the inside. Most tracks are fast-corner heavy, calling for aggressive anti-Ackermann. Monaco's slow hairpins make aggressive anti-Ackermann unsuitable."
+    },
+    {
+      "id": "s5",
+      "title_cn": "向心力靠滑移角",
+      "title_en": "Cornering Force from Slip",
+      "time": "04:26",
+      "context": "快速过弯靠的不是前轮打的方向，而是轮胎和地面摩擦产生的指向圆心的力，用来克服巨大的离心力。这个向心力只有在有了滑移角时才会产生，就是橡胶拧巴的劲。滑移角越大产生的摩擦力越大，大约5.5度时力达到最大值，这就是外侧转向轮的极限滑移角，此时能产生最大向心力，完成更高速度的过弯。",
+      "sentences": [
+        [
+          "快速过弯看似靠前轮打的方向，其实靠的是轮胎和地面摩擦产生的指向圆心的力。",
+          "Fast cornering isn't about steering angle—it's the friction force pointing to the circle's center.",
+          "centripetal force（向心力）"
+        ],
+        [
+          "这个指向圆心的力只有在有了滑移角的时候才会产生，就是橡胶拧巴的那股劲。",
+          "That force only exists with a slip angle—it's the rubber's twist.",
+          "rubber twist（橡胶拧劲）"
+        ],
+        [
+          "滑移角大概5.5度时力达到最大值，这就是外侧转向轮的极限滑移角。",
+          "The force peaks around 5.5°, the outside tire's ideal slip angle.",
+          "peak（峰值）"
+        ],
+        [
+          "在这个角度上能产生最大向心力，才能完成更高速度的过弯。",
+          "Max cornering force at this angle allows the fastest turns.",
+          "cornering force（过弯力）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "centripetal force（向心力",
+          "centripetal force（向心力"
+        ],
+        [
+          "rubber twist（橡胶拧劲",
+          "rubber twist（橡胶拧劲"
+        ]
+      ],
+      "speak": "Fast cornering isn't about steering angle—it's the friction force pointing to the circle's center. That force only exists with a slip angle—it's the rubber's twist. The force peaks around 5.5°, the outside tire's ideal slip angle. Max cornering force at this angle allows the fastest turns."
+    },
+    {
+      "id": "s6",
+      "title_cn": "民用车的设定",
+      "title_en": "Street Car Setups",
+      "time": "05:43",
+      "context": "越家用的车设定越接近完美的100%阿克曼，因为家用车慢慢悠悠转弯不会产生多大滑移角，日常驾驶的顺畅才是第一位，硬开去赛道会体验到转向不足（推头）。偏运动的车型会往反阿克曼方向靠一靠，但不会疯狂到F1那样，也不会设计成0%平行的，一般介于两者之间，让外侧轮多转的角度正好和滑移角综合，达到指哪打哪，代价是低速大幅度转弯（如侧方停车）时轮胎可能打滑跳胎。",
+      "sentences": [
+        [
+          "越家用的车设定越接近完美的100%阿克曼，因为日常顺畅的转弯才是第一位的。",
+          "Daily drivers lean toward 100% Ackermann for smooth, fuss-free turns.",
+          "daily driver（家用车）"
+        ],
+        [
+          "偏运动的车型会往反阿克曼方向靠一靠，但一般介于两者之间。",
+          "Sportier cars lean toward anti-Ackermann but stay between the extremes.",
+          "in between（介于之间）"
+        ],
+        [
+          "外侧轮多转的角度正好和滑移角综合，轮胎实际行进方向就和想要的方向完美契合，指哪打哪。",
+          "Extra outside steering cancels the slip angle—the car goes exactly where you point it.",
+          "point-and-shoot（指哪打哪）"
+        ],
+        [
+          "代价是低速大幅度转弯时轮胎可能打滑跳胎，特别是冷车冷胎的情况下。",
+          "The price: scrubbing in slow, tight turns—especially on cold tires.",
+          "scrubbing（打滑跳胎）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "daily driver（家用车",
+          "daily driver（家用车"
+        ],
+        [
+          "in between（介于之间",
+          "in between（介于之间"
+        ]
+      ],
+      "speak": "Daily drivers lean toward 100% Ackermann for smooth, fuss-free turns. Sportier cars lean toward anti-Ackermann but stay between the extremes. Extra outside steering cancels the slip angle—the car goes exactly where you point it. The price: scrubbing in slow, tight turns—especially on cold tires."
+    },
+    {
+      "id": "s7",
+      "title_cn": "怎么改装阿克曼",
+      "title_en": "How to Adjust Ackermann",
+      "time": "08:01",
+      "context": "改装阿克曼其实很简单：黄色部分就是羊角，在羊角上重新钻一个洞，把蓝色转向拉杆的球头从原来的洞接到前面那个洞里。因为在一台轴距胎距固定的车上，阿克曼调整就是两个点的调整：轮子转动的轴心点和羊角与转向球头连接点，两点定了腰的方向就定了，会合点也就定了。",
+      "sentences": [
+        [
+          "改装阿克曼非常简单：在羊角上重新钻一个洞，把转向拉杆的球头接到新的洞里。",
+          "It's simple: drill a new hole in the knuckle and move the tie-rod ball joint into it.",
+          "knuckle（羊角）"
+        ],
+        [
+          "在轴距胎距固定的车上，阿克曼调整实际上就是两个点的调整。",
+          "With fixed wheelbase and track, Ackermann tuning is really about two points.",
+          "two points（两个点）"
+        ],
+        [
+          "两个点定了，两条腰的方向就定了，延长线在哪里会合也就定了。",
+          "Fix the two points, and the two arms' directions—and their meeting point—are set.",
+          "meeting point（会合点）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "knuckle（羊角",
+          "knuckle（羊角"
+        ],
+        [
+          "two points（两个点",
+          "two points（两个点"
+        ]
+      ],
+      "speak": "It's simple: drill a new hole in the knuckle and move the tie-rod ball joint into it. With fixed wheelbase and track, Ackermann tuning is really about two points. Fix the two points, and the two arms' directions—and their meeting point—are set."
+    },
+    {
+      "id": "s8",
+      "title_cn": "法兰盘破坏标定",
+      "title_en": "Spacers Ruin the Calibration",
+      "time": "09:15",
+      "context": "加装法兰盘把轮子向外平移，本质就是改变了胎距参数。原来100%阿克曼的三条线交于一点，加法兰盘后红绿线各往两边平移，那个点就不存在了，原厂设计的阿克曼标定被完全破坏。实际汽车悬挂转向涉及的变量比想象的要多得多，乱改轮毂影响的东西很多。",
+      "sentences": [
+        [
+          "加装法兰盘把两个前轮向外横移，本质上就是改变了胎距的参数。",
+          "Bolt-on spacers push the wheels outward—in effect changing the track.",
+          "spacers（法兰盘）"
+        ],
+        [
+          "原来交于一点的三条线，经法兰盘一加那个点就不存在了，阿克曼标定完全被破坏。",
+          "The three lines once met at one point; with spacers the point vanishes and the calibration is ruined.",
+          "calibration（标定）"
+        ],
+        [
+          "乱改轮毂所影响的悬挂变量，肯定比你想象的要来得多。",
+          "Messing with wheels touches far more suspension variables than you'd expect.",
+          "variables（变量）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "spacers（法兰盘",
+          "spacers（法兰盘"
+        ],
+        [
+          "calibration（标定",
+          "calibration（标定"
+        ]
+      ],
+      "speak": "Bolt-on spacers push the wheels outward—in effect changing the track. The three lines once met at one point; with spacers the point vanishes and the calibration is ruined. Messing with wheels touches far more suspension variables than you'd expect."
+    },
+    {
+      "id": "s9",
+      "title_cn": "后轮也有滑移角",
+      "title_en": "Rear Slip and Four-Wheel Steering",
+      "time": "10:41",
+      "context": "这里只讨论了前轮的转向和前轮的滑移角，其实后轮也存在滑移角，因为转弯靠的指向圆心的向心力一定要借助滑移角才能形成。四轮转向车型后轮也能左右打方向，相当于把图再复杂化一点，但本质原理一样。",
+      "sentences": [
+        [
+          "其实后轮也是存在滑移角的，向心力的产生一定要借助滑移角才能形成。",
+          "The rear tires have slip angles too—cornering force requires it.",
+          "rear tires（后轮）"
+        ],
+        [
+          "有些车型带四轮转向，后轮也可以左右打方向，本质的原理是一样的。",
+          "Four-wheel steering lets the rear turn too—same underlying physics.",
+          "four-wheel steering（四轮转向）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "rear tires（后轮",
+          "rear tires（后轮"
+        ],
+        [
+          "four-wheel steering（四轮转向",
+          "four-wheel steering（四轮转向"
+        ]
+      ],
+      "speak": "The rear tires have slip angles too—cornering force requires it. Four-wheel steering lets the rear turn too—same underlying physics."
+    }
+  ],
+  "practice": [
+    [
+      "说滑移角",
+      "Rubber deforms, so actual travel lags the tire's heading."
+    ],
+    [
+      "说重心转移",
+      "Fast corners pile load on the outside tire."
+    ],
+    [
+      "说反阿克曼",
+      "The outside wheel steers more to beat its own slip."
+    ],
+    [
+      "说向心力",
+      "Cornering force peaks at a ~5.5° slip angle."
+    ],
+    [
+      "说民用设定",
+      "Daily drivers stay near 100%; sporty cars lean anti."
+    ],
+    [
+      "说改阿克曼",
+      "It's two points on the knuckle—drill and move."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Ignore the slip angle.",
+      "Perfect theory Ackermann fails because of tire deformation.",
+      "滑移角让完美阿克曼失效。"
+    ],
+    [
+      "Assume F1 uses the same setup everywhere.",
+      "Slow-corner tracks like Monaco need a milder setup.",
+      "赛道不同调校不同。"
+    ],
+    [
+      "Add spacers and expect calibration to hold.",
+      "Spacers change the track—breaking the geometry.",
+      "法兰盘破坏标定。"
+    ],
+    [
+      "Think four-wheel steering changes the physics.",
+      "It only adds complexity; the principle is the same.",
+      "四轮转向原理相同。"
+    ],
+    [
+      "Overlook cold-tire scrubbing.",
+      "Anti-Ackermann costs grip in slow turns on cold tires.",
+      "低速冷胎会跳胎。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说轮胎只说 tire",
+      "用 slip angle（滑移角）、deform（形变）、contact patch（接地面积）"
+    ],
+    [
+      "说设定只说 setup",
+      "用 anti-Ackermann（反阿克曼）、100% Ackermann（完美阿克曼）、aggressive（激进的）"
+    ],
+    [
+      "说改装只说 modify",
+      "用 knuckle（羊角）、spacers（法兰盘）、ball joint（球头）"
+    ]
+  ],
+  "difficult_words": [
+    "rubber",
+    "deforms",
+    "points",
+    "contact",
+    "actual",
+    "travel",
+    "between",
+    "heading",
+    "perfect",
+    "theoretical",
+    "ackermann",
+    "because",
+    "industry's",
+    "extreme",
+    "example",
+    "cornering",
+    "speeds",
+    "highest",
+    "forcing",
+    "weight",
+    "transfer",
+    "corner",
+    "outside",
+    "inside",
+    "barely",
+    "vertical",
+    "bigger",
+    "loaded",
+    "develops",
+    "larger"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：现实世界轮胎是橡胶做的会形变、打方向时轮胎指向已转过但接触地面橡胶还拧着劲、实际行进方向打折扣、轮胎指向和实际行进方向夹角就是滑移角、完美阿克曼不好用就是因为滑移角存在、用F1举例因为是最极端例子、150公里时速转弯绝大多数重心压到外侧轮、内侧轮压力非常小极限时轻微离地、压得越大力气转向橡胶越拧巴滑移角越大、不施加压力几乎没有滑移角、外侧轮滑移角远大于内侧轮、所以外侧轮胎指向上要向左多转更多角度、减去滑移角后实际行进方向才接近完美箭头、F1赛车就是反阿克曼设定外侧轮转向角度明显大于内侧轮、F1转向设定根据赛道单独调校、高速弯多设计激进反阿克曼、蒙特卡洛低速弯调头弯多就不合适、快速过弯靠轮胎和地面摩擦产生的指向圆心的力克服离心力、这个力只有有了滑移角才产生就是橡胶拧巴的劲、滑移角大概5.5度时力达到最大值、这是外侧转向轮的极限滑移角能产生最大向心力、越家用的车设定越接近完美100%阿克曼、家用车慢慢悠悠转弯不需要多大滑移角对抗离心力、日常驾驶顺畅第一、硬开去赛道会体验到转向不足推头、偏运动的车型往反阿克曼方向靠一靠但不会像F1那么疯狂也不会设计成0%平行、介于两者之间、外侧轮多转角度正好和滑移角综合、轮胎实际行进方向和想要方向完美契合指哪打哪、代价是低速大幅度转弯如侧方停车时轮胎打滑跳胎特别是冷车冷胎、改装阿克曼很简单在羊角上重新钻一个洞把转向拉杆球头接过去、在一台轴距胎距固定的车上阿克曼调整就是两个点的调整、加装法兰盘改变胎距参数整个方程不成立、原厂阿克曼标定被完全破坏、乱改轮毂影响的东西比想象的多得多、后轮也存在滑移角、四轮转向本质原理一样等。"
+}
