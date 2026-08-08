@@ -14,6 +14,7 @@ HTML 不是 SVG 的加长版，SVG 也不是 HTML 的缩略图。二者共享同
 ### 简体中文
 
 - 所有面向读者的编辑内容必须使用**简体中文**：标题、导语、章节标题、内容要点、图注、`index.json` 摘要、SVG 文案、标签与错误说明均包括在内。
+- 图注的中文行是主文案；英文翻译行（`.cap-en`）只是朗读辅助，**不得替代中文图注**，也不得把整段正文替换为英文。
 - 不得直接把繁体中文、粤语转写、英文 Whisper 片段或机械直译作为摘要、章节叙述或结论发布。原始转录是证据，可保留原语言；若在正文引用非简体中文原话，必须紧随简体中文释义。
 - 生成后用 OpenCC（繁体转简体）或等效工具检查编辑文案；同时人工抽查标题、导语、每个章节标题和每张卡片。转换后仍须通读，避免把专有名词、术语或引用误改。
 
@@ -387,7 +388,14 @@ console.log('Generated:', OUT, 'segments:', segments.length);
     <section class="story-section"><!-- 按时间推进的详细叙述 --></section>
     <figure>
       <img src="assets/{slug}/shot-01.jpg" alt="{准确描述}" loading="lazy">
-      <figcaption>[01:23] {画面内容及上下文}</figcaption>
+      <figcaption class="cap-bilingual">
+        <div class="cap-zh">[01:23] {画面内容及上下文}</div>
+        <div class="cap-en">
+          <button class="cap-speak" data-audio="audio/{图注md5前12位}.mp3" type="button" aria-label="Play English audio">🔊</button>
+          <span>{图注英文翻译}</span>
+        </div>
+        <audio class="cap-audio" src="audio/{图注md5前12位}.mp3" preload="none"></audio>
+      </figcaption>
     </figure>
   </article>
   <section class="transcript-section" id="transcript">
@@ -414,6 +422,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height
 img{display:block;max-width:100%;height:auto}
 figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
 figcaption{padding:14px 18px;color:#57534e}
+.cap-bilingual .cap-zh{font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
 .transcript-list{list-style:none;padding:0}
 .transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
 .transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
@@ -444,6 +453,56 @@ h3{font-size:20px;font-weight:700;color:#1c1917;margin:28px 0 14px}
 ```bash
 node "generate-{slug}-html.mjs"
 ```
+
+### 图注双语与朗读音频（强制）
+
+每个 `figcaption` 必须是中英对照结构（见上方 HTML 页面结构），中文图注为主文案，英文行为其翻译，并配 🔊 朗读按钮播放英文。这是发布标准，不允许生成只有中文的单语图注。
+
+翻译与音频按全站共享资产处理：
+
+- **翻译表 `translations.json`**：`{中文图注: 英文翻译}`，按图注文本精确匹配，跨视频复用。新图注先查表：命中直接复用，未命中翻译后追加进表。
+- **音频 `docs/audio/{md5(中文图注)[:12]}.mp3`**：用 `edge-tts`（`en-US-JennyNeural`）按英文翻译合成，按图注哈希命名实现全局去重；同一图注的多个视频共用一份音频。
+- **增强脚本**（幂等、可全量重跑）：
+  - `scripts/extract-captions.py`：从全部 HTML 提取图注，重建 `caption-extract.json` 翻译清单
+  - `scripts/gen-caption-audio.py`：读取 `translations.json`，对缺音频的图注用 edge-tts 批量生成，已存在则跳过（可续跑）
+  - `scripts/enhance-captions-html.py`：把 HTML 中的单语 `figcaption` 重写为中英对照，并注入 `cap-en-style` 样式与 `cap-en-script` 播放脚本
+
+页面底部还需注入图注播放脚本（与转录展开脚本并存于 `</body>` 前）：
+
+```html
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){if(a!==except){a.pause();a.currentTime=0;}});
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}});
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){stopOthers(au);btn.classList.add('playing');au.play();}
+    else{au.pause();au.currentTime=0;btn.classList.remove('playing');}
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+```
+
+发布注意：
+
+- 默认用 `python3 scripts/enhance-captions-html.py` 对已生成 HTML 做后处理，保证图注双语结构统一，不必手写。
+- `docs/audio/` 与 `translations.json` 必须随文章一起提交（`.gitignore` 已放行 `docs/audio/*.mp3` 与 `translations.json`）；不提交则 GitHub Pages 上无法播放朗读。
+- 转录区必须使用 `<details class="transcript-collapsible">` 且**默认不带 `open` 属性**（折叠），由导航点击或 `#transcript` 锚点展开；防止整页转录平铺。
 
 ---
 
@@ -593,6 +652,8 @@ XML 注意事项：
 - [ ] 每个章节有具体标题、时间范围和完整叙述；不存在关键词拼贴、模板空话、未完成句、`...`/`…` 截断或重复的泛化标题
 - [ ] 内容主要按视频时间顺序展开，语气自然，不写成分析卡片堆叠
 - [ ] 一般视频有 3-8 张有效截图，每张都有准确 alt 和时间戳图注
+- [ ] 每个图注都是中英对照（`.cap-bilingual`）：中文图注 + 英文翻译行 + 🔊 朗读按钮
+- [ ] 每个朗读按钮的 `data-audio` 都对应 `docs/audio/` 下真实存在且已提交的 MP3；`translations.json` 已更新并提交
 - [ ] 桌面端与 375px 宽度均无横向溢出
 - [ ] 所有图片、页内锚点和原视频链接有效
 
@@ -676,13 +737,15 @@ git checkout "{dev-branch}"
 - `docs/{slug}-图文实录.html`
 - `docs/{slug}-理性分析.svg`
 - `docs/assets/{slug}/shot-*.jpg`
+- `docs/audio/`（本视频图注对应的 MP3，哈希命名，可复用已有文件）
+- `translations.json`（若新增图注翻译）
 - `docs/index.json`
 
 先在开发分支提交并推送：
 
 ```bash
 git add "docs/{slug}-图文实录.html" "docs/{slug}-理性分析.svg" \
-  "docs/assets/{slug}" docs/index.json
+  "docs/assets/{slug}" "docs/audio" translations.json docs/index.json
 git commit -m "content: add dual-view summary for {视频标题}"
 git pull --rebase origin main
 git push -u origin "{dev-branch}"
@@ -719,7 +782,8 @@ rm -f "{音频文件}" "{视频文件}"
 - 仅处理 `bilibili.com`、`b23.tv`、`xiaohongshu.com`、`xhslink.cn`；必须先用 `detect-platform.mjs` 识别平台
 - 每个 URL 只处理一次，一个索引条目对应两个产物
 - 小红书请求必须在每次网络访问前执行仓库根目录的 `xhs-rate-limit.mjs`，并保持至少 60 秒间隔；修复既有文章默认不得访问小红书
-- HTML 必须包含本地关键截图和完整时间戳转录
+- HTML 必须包含本地关键截图、完整时间戳转录、图注英文翻译与朗读音频；转录默认折叠（`<details>` 不带 `open`），图注为中英对照（`.cap-bilingual`）
+- 图注翻译写入 `translations.json`，朗读音频写入 `docs/audio/`（按图注哈希去重）；二者为发布必需资产，必须随文章提交，`.gitignore` 已放行
 - SVG 必须使用 `svg-auto-height.mjs` 和原有分析视觉框架
 - 所有面向读者的编辑文案必须为简体中文，且不得包含截断内容、关键词拼贴或模板套话
 - 不使用 `rsvg-convert` 或 Inkscape 渲染 SVG
