@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "slug": "transformer-selfattn",
+    "title": "手推Transformer（1）自注意力机制",
+    "title_en": "Hand-Computing Transformer (1) | Self-Attention",
+    "duration": "6:22",
+    "scenes": 4,
+    "sentences": 12,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/8MSwJFrC9QZ",
+    "topic": "AI原理 · Transformer自注意力"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "开场：手推全部公式",
+      "title_en": "Opening: Computing Every Formula by Hand",
+      "time": "00:00–00:23",
+      "context": "今天手推 transformer 的全部公式，通过实实在在的例子弄清 transformer 里如何计算。例句：女生撩刘海。撩指手的动作，刘海指额前的头发。语域：技术讲解，示例引入。",
+      "sentences": [
+        [
+          "今天我们来手推 transformer 的全部公式。",
+          "Today we'll compute every Transformer formula by hand.",
+          "compute by hand（手推）"
+        ],
+        [
+          "用一个实实在在的例子，弄清如何计算。",
+          "A concrete example shows exactly how the math works.",
+          "concrete example（实实在在的例子）"
+        ],
+        [
+          "例句：女生撩刘海。",
+          "Our sample sentence: the girl flicks her bangs.",
+          "flicks her bangs（撩刘海）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "手推 → compute by hand / walk through step by step",
+          "compute by hand · walk through"
+        ],
+        [
+          "例子 → concrete example / a worked example",
+          "concrete example · worked example"
+        ]
+      ],
+      "speak": "Today we'll compute every Transformer formula by hand. A concrete example shows exactly how the math works. Our sample sentence: the girl flicks her bangs."
+    },
+    {
+      "id": "s2",
+      "title_cn": "第一步：分词与词嵌入",
+      "title_en": "Step One: Tokenize and Embed",
+      "time": "00:24–00:53",
+      "context": "第一步数据处理：通过分词器把句子分成三个token，每个token在词表中找到ID编号——女生1258、撩875、刘海9527。确定ID后，在随机生成的embedding矩阵中查找对应向量。实际维度成千上万且为小数，这里用二维整数简化。语域：技术讲解，数据处理。",
+      "sentences": [
+        [
+          "分词器把句子分成一个个token。",
+          "A tokenizer splits the sentence into tokens.",
+          "tokenizer（分词器）"
+        ],
+        [
+          "每个token在词表中找到自己的ID编号。",
+          "Each token finds its ID number in the vocabulary.",
+          "vocabulary（词表）"
+        ],
+        [
+          "在embedding矩阵中查找对应的向量。",
+          "Look up the matching vector in the embedding matrix.",
+          "embedding matrix（嵌入矩阵）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "分词 → tokenize / split into tokens",
+          "tokenize · split into tokens"
+        ],
+        [
+          "词嵌入 → word embedding / the vector lookup",
+          "word embedding · vector lookup"
+        ]
+      ],
+      "speak": "A tokenizer splits the sentence into tokens. Each token finds its ID number in the vocabulary. Look up the matching vector in the embedding matrix."
+    },
+    {
+      "id": "s3",
+      "title_cn": "第二步：位置编码",
+      "title_en": "Step Two: Positional Encoding",
+      "time": "00:53–02:56",
+      "context": "词嵌入矩阵不能直接输入，要加入位置信息。计算机从0开始数：女生第0位、撩第1位、刘海第2位。输入矩阵X = 词嵌入矩阵E + 位置编码矩阵P。原始transformer用正弦余弦函数生成位置编码。语域：技术讲解，公式推导。",
+      "sentences": [
+        [
+          "加入位置信息，让模型知道词的顺序。",
+          "Add positional info so the model knows word order.",
+          "positional info（位置信息）"
+        ],
+        [
+          "计算机数数，是从0开始的。",
+          "Computers count starting from zero.",
+          "starting from zero（从0开始）"
+        ],
+        [
+          "输入矩阵X等于嵌入矩阵E加位置编码P。",
+          "Input X equals embedding E plus positional encoding P.",
+          "positional encoding（位置编码）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "位置编码 → positional encoding / position information",
+          "positional encoding · position info"
+        ],
+        [
+          "输入矩阵 → the input matrix / X",
+          "input matrix · X"
+        ]
+      ],
+      "speak": "Add positional info so the model knows word order. Computers count starting from zero. Input X equals embedding E plus positional encoding P."
+    },
+    {
+      "id": "s4",
+      "title_cn": "第三步：计算QKV",
+      "title_en": "Step Three: Compute Q, K, V",
+      "time": "02:56–06:22",
+      "context": "第三步计算QKV：Q、K、V都是通过X乘以对应的参数矩阵得到的。三个参数矩阵Wq、Wk、Wv在输出过程中随机生成，后面训练时的调参也包含这些参数。语域：技术讲解，机制引入。",
+      "sentences": [
+        [
+          "第三步，计算QKV。",
+          "Step three: compute Q, K, V.",
+          "compute QKV（计算QKV）"
+        ],
+        [
+          "QKV都是X乘以参数矩阵得到的。",
+          "Q, K, V all come from X times their weight matrices.",
+          "weight matrices（参数矩阵）"
+        ],
+        [
+          "调参，也包括这三个参数。",
+          "Tuning the model includes these very weights.",
+          "tuning the model（调参）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "参数矩阵 → weight matrices / learned projections",
+          "weight matrices · projections"
+        ],
+        [
+          "调参 → tuning / adjusting weights",
+          "tuning · adjusting weights"
+        ]
+      ],
+      "speak": "Step three: compute Q, K, V. Q, K, V all come from X times their weight matrices. Tuning the model includes these very weights."
+    }
+  ],
+  "practice": [
+    [
+      "说开场",
+      "Today we'll compute every Transformer formula by hand."
+    ],
+    [
+      "说分词嵌入",
+      "Each token finds its ID number in the vocabulary."
+    ],
+    [
+      "说位置编码",
+      "Input X equals embedding E plus positional encoding P."
+    ],
+    [
+      "说QKV",
+      "Q, K, V all come from X times their weight matrices."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Push the formula by hand.",
+      "We'll compute every Transformer formula by hand.",
+      "「手推」用 compute by hand，不是 push。"
+    ],
+    [
+      "Cut the sentence.",
+      "A tokenizer splits the sentence into tokens.",
+      "「分词」用 split into tokens / tokenize。"
+    ],
+    [
+      "The position information.",
+      "Add positional info so the model knows word order.",
+      "「位置信息」用 positional info。"
+    ],
+    [
+      "The numbers are random.",
+      "Q, K, V come from X times their weight matrices.",
+      "QKV由X乘参数矩阵得到，用 weight matrices。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说AI只会 AI",
+      "用 tokenizer（分词器）、vocabulary（词表）、embedding matrix（嵌入矩阵）"
+    ],
+    [
+      "说模型只会 model",
+      "用 positional encoding（位置编码）、weight matrices（参数矩阵）、tuning（调参）"
+    ],
+    [
+      "说计算只会 calculate",
+      "用 compute by hand（手推）、look up the vector（查向量）、multiply by weights（乘权重）"
+    ]
+  ],
+  "difficult_words": [
+    "compute",
+    "Transformer",
+    "formula",
+    "concrete",
+    "example",
+    "flicks",
+    "bangs",
+    "tokenizer",
+    "splits",
+    "tokens",
+    "vocabulary",
+    "embedding",
+    "matrix",
+    "vector",
+    "positional",
+    "encoding",
+    "information",
+    "order",
+    "zero",
+    "QKV",
+    "weight",
+    "tuning",
+    "adjusting",
+    "projections",
+    "step",
+    "hand",
+    "lookup"
+  ],
+  "footer_notes": "ASR 已校正：首推→手推、分次器→分词器、次表→词表、embedding局站→embedding矩阵、项量→向量、头感→token、势力→示例、正弦余弦、参数矩阵、调参、自注意力机制、前馈神经网络等。"
+}

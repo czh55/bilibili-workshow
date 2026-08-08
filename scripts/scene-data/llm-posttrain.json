@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "slug": "llm-posttrain",
+    "title": "大语言模型原理（3）后训练",
+    "title_en": "How LLMs Work (3) | Post-Training",
+    "duration": "6:23",
+    "scenes": 4,
+    "sentences": 12,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/88IJFAOpNmK",
+    "topic": "AI原理 · 大模型后训练"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "回顾：前两个阶段",
+      "title_en": "Review: The First Two Stages",
+      "time": "00:00–00:42",
+      "context": "AI诞生的第三个阶段：后训练（对齐训练）。先快速回顾前两节：数据准备（收集清洗、分词、转向量）和预训练（输入transformer，自注意力+前馈网络，预测下一个token调参，得到基座大模型）。语域：技术讲解，回顾。",
+      "sentences": [
+        [
+          "今天我们讲AI诞生的第三个阶段：后训练。",
+          "Today: the third stage of AI's birth — post-training.",
+          "post-training（后训练）"
+        ],
+        [
+          "数据准备完成文本到数字的转换。",
+          "Data prep turns text into numbers.",
+          "turns text into numbers（文本转数字）"
+        ],
+        [
+          "预训练得到一个基座大模型。",
+          "Pre-training yields a base large model.",
+          "a base large model（基座大模型）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "后训练 → post-training / alignment training",
+          "post-training · alignment"
+        ],
+        [
+          "基座大模型 → base large model / the foundation model",
+          "base model · foundation"
+        ]
+      ],
+      "speak": "Today: the third stage of AI's birth — post-training. Data prep turns text into numbers. Pre-training yields a base large model."
+    },
+    {
+      "id": "s2",
+      "title_cn": "问题：基座模型不会聊天",
+      "title_en": "The Problem: The Base Model Can't Chat",
+      "time": "00:42–01:13",
+      "context": "基座大模型只是接龙大师，不能像现在AI一样正常沟通。用户问「我应不应该好好学习」，模型可能回答「天天向上」，因为这是常见文本组合。它没有真正理解，只是根据前文接龙。要让模型学会听懂人的要求，就要进行后训练。语域：技术讲解，问题引入。",
+      "sentences": [
+        [
+          "基座模型只是一个接龙大师。",
+          "The base model is just a text-connection master.",
+          "text-connection master（接龙大师）"
+        ],
+        [
+          "它没有真正理解，只是在接龙。",
+          "It doesn't truly understand — it just continues text.",
+          "continues text（接龙）"
+        ],
+        [
+          "后训练让回答与人的偏好对齐。",
+          "Post-training aligns answers with human preferences.",
+          "aligns with human preferences（与人类偏好对齐）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "接龙 → text continuation / continue the sequence",
+          "text continuation · sequence"
+        ],
+        [
+          "对齐 → align / match",
+          "align · match"
+        ]
+      ],
+      "speak": "The base model is just a text-connection master. It doesn't truly understand — it just continues text. Post-training aligns answers with human preferences."
+    },
+    {
+      "id": "s3",
+      "title_cn": "内容一：监督微调SFT",
+      "title_en": "Part One: Supervised Fine-Tuning (SFT)",
+      "time": "01:13–02:05",
+      "context": "后训练主要包括监督微调和偏好对齐。监督微调英文Supervised Fine-Tuning，简称SFT。六个字概括：给示范学回答。给模型大量标准问答示范，让它学会听懂任务、按人要求回答。例如：用户问什么是token，助手回答token是大模型处理文本的最小单位。语域：技术讲解，概念讲解。",
+      "sentences": [
+        [
+          "后训练包括监督微调和偏好对齐。",
+          "Post-training covers SFT and preference alignment.",
+          "preference alignment（偏好对齐）"
+        ],
+        [
+          "监督微调就是给示范、学回答。",
+          "SFT means giving demonstrations and learning answers.",
+          "giving demonstrations（给示范）"
+        ],
+        [
+          "SFT数据由指令和理想回答组成。",
+          "SFT data pairs an instruction with an ideal answer.",
+          "an ideal answer（理想回答）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "监督微调 → supervised fine-tuning / SFT",
+          "supervised fine-tuning · SFT"
+        ],
+        [
+          "问答示范 → Q&A demonstrations / instruction-response pairs",
+          "Q&A demos · instruction-response pairs"
+        ]
+      ],
+      "speak": "Post-training covers SFT and preference alignment. SFT means giving demonstrations and learning answers. SFT data pairs an instruction with an ideal answer."
+    },
+    {
+      "id": "s4",
+      "title_cn": "补充：系统角色",
+      "title_en": "Bonus: The System Role",
+      "time": "02:05–06:23",
+      "context": "真实训练中SFT数据不只有一种形式，还会多出一个角色——系统。例如系统里写「你是一名专业的人工智能教师」。同一个问题，可以采取完全不同的回答方式。如果系统规定你是小学教师，用户问什么是token时，AI就用小学生能听懂的语言回答。语域：技术讲解，进阶概念。",
+      "sentences": [
+        [
+          "SFT数据中，还会多出一个系统角色。",
+          "SFT data often adds a third role: the system.",
+          "the system role（系统角色）"
+        ],
+        [
+          "同一个问题，可以有完全不同的回答方式。",
+          "The same question allows completely different answer styles.",
+          "answer styles（回答方式）"
+        ],
+        [
+          "系统规定你是小学教师，就用小学生的语言回答。",
+          "If the system casts you as a teacher, explain like a teacher.",
+          "cast as（设定为）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "系统角色 → the system role / the persona",
+          "system role · persona"
+        ],
+        [
+          "回答方式 → answer style / tone and register",
+          "answer style · tone register"
+        ]
+      ],
+      "speak": "SFT data often adds a third role: the system. The same question allows completely different answer styles. If the system casts you as a teacher, explain like a teacher."
+    }
+  ],
+  "practice": [
+    [
+      "说回顾",
+      "Pre-training yields a base large model."
+    ],
+    [
+      "说问题",
+      "It doesn't truly understand — it just continues text."
+    ],
+    [
+      "说SFT",
+      "SFT data pairs an instruction with an ideal answer."
+    ],
+    [
+      "说系统角色",
+      "The same question allows completely different answer styles."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "The base model can't talk.",
+      "It doesn't truly understand — it just continues text.",
+      "「接龙」用 continues text，不是 talk。"
+    ],
+    [
+      "Align the answer with the user.",
+      "Post-training aligns answers with human preferences.",
+      "「对齐」用 align with preferences。"
+    ],
+    [
+      "Give examples and learn.",
+      "SFT means giving demonstrations and learning answers.",
+      "「给示范学回答」用 giving demonstrations and learning answers。"
+    ],
+    [
+      "The system says you're a teacher.",
+      "If the system casts you as a teacher, explain like a teacher.",
+      "「设定角色」用 cast as。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说训练只会 train",
+      "用 post-training（后训练）、pre-training（预训练）、fine-tuning（微调）"
+    ],
+    [
+      "说AI只会 AI",
+      "用 base large model（基座大模型）、text continuation（接龙）、preference alignment（偏好对齐）"
+    ],
+    [
+      "说数据只会 data",
+      "用 SFT data（微调数据）、instruction-response pairs（指令-回答对）、the system role（系统角色）"
+    ]
+  ],
+  "difficult_words": [
+    "post-training",
+    "pre-training",
+    "alignment",
+    "preferences",
+    "base",
+    "large",
+    "foundation",
+    "text-connection",
+    "continues",
+    "sequence",
+    "truly",
+    "understand",
+    "supervised",
+    "fine-tuning",
+    "SFT",
+    "demonstrations",
+    "instruction",
+    "ideal",
+    "response",
+    "pairs",
+    "system",
+    "role",
+    "persona",
+    "styles",
+    "tone",
+    "register",
+    "casts"
+  ],
+  "footer_notes": "ASR 已校正：候询链→后训练、预讯链→预训练、清晰→清洗、钱贵神经网络→前馈神经网络、基座大模型、接龙大师、结论→接龙、监督微调、偏好对齐、SFT数据、系统角色、结容大师→接龙大师等。"
+}

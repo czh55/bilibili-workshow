@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "slug": "llm-data-prep",
+    "title": "大语言模型原理（1）数据准备",
+    "title_en": "How LLMs Work (1) | Data Preparation",
+    "duration": "6:54",
+    "scenes": 4,
+    "sentences": 12,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/5FSQXbAvARN",
+    "topic": "AI原理 · 大模型数据准备"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "开场：用费曼学习法讲AI",
+      "title_en": "Opening: Explaining AI the Feynman Way",
+      "time": "00:00–00:30",
+      "context": "AI是怎么学会说话的？为了检验自己是否真的理解，用费曼学习法——把学到的知识用自己的话通俗易懂地讲给大家听。豆包、DeepSeek、ChatGPT这些可以直接对话的AI，本质上都属于大语言模型。大模型诞生分三大阶段：数据准备、预训练、对齐训练。语域：技术讲解，开场引入。",
+      "sentences": [
+        [
+          "AI到底是怎么学会说话的？",
+          "How on earth do AIs learn to speak?",
+          "learn to speak（学会说话）"
+        ],
+        [
+          "用费曼学习法，把知识讲给大家听。",
+          "Use the Feynman method: explain it so others get it.",
+          "the Feynman method（费曼学习法）"
+        ],
+        [
+          "大模型诞生分三大阶段。",
+          "A large model is born in three stages.",
+          "born in three stages（诞生分三阶段）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "费曼学习法 → the Feynman method / teach to test yourself",
+          "Feynman method · teach to test"
+        ],
+        [
+          "三大阶段 → three stages / three-phase birth",
+          "three stages · three-phase"
+        ]
+      ],
+      "speak": "How on earth do AIs learn to speak? Use the Feynman method: explain it so others get it. A large model is born in three stages."
+    },
+    {
+      "id": "s2",
+      "title_cn": "第一步：资料收集与清洗",
+      "title_en": "Step One: Collect and Clean Data",
+      "time": "00:31–01:13",
+      "context": "数据准备的目的：把大量的文本转换为AI能处理的数字。第一步资料收集与清洗：需要庞大的知识库，包括海量网页、书籍、论文、代码。从全网收集的数据不能直接用，需要清洗——去除重复数据、没有含义的垃圾数据，过滤敏感与违规信息，得到干净文本。语域：技术讲解，数据处理。",
+      "sentences": [
+        [
+          "数据准备，就是把文本变成数字。",
+          "Data prep turns text into numbers.",
+          "turns text into numbers（文本变数字）"
+        ],
+        [
+          "需要庞大的知识库供AI学习。",
+          "The AI needs a massive knowledge base to learn from.",
+          "knowledge base（知识库）"
+        ],
+        [
+          "清洗：去重、去垃圾、过滤违规。",
+          "Cleaning: dedupe, remove junk, filter violations.",
+          "dedupe（去重）；filter violations（过滤违规）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "清洗 → cleaning / dedupe and filter",
+          "cleaning · dedupe and filter"
+        ],
+        [
+          "知识库 → knowledge base / the learning corpus",
+          "knowledge base · corpus"
+        ]
+      ],
+      "speak": "Data prep turns text into numbers. The AI needs a massive knowledge base to learn from. Cleaning: dedupe, remove junk, filter violations."
+    },
+    {
+      "id": "s3",
+      "title_cn": "第二步：分词与ID编号",
+      "title_en": "Step Two: Tokenize and Assign IDs",
+      "time": "01:14–02:10",
+      "context": "第二步叫分词，也称之为token化。token是大模型处理文字时的最小单位。对于人而言，一个单独的字大概就对应一个token。每个token都有对应的ID编号。语域：技术讲解，概念讲解。",
+      "sentences": [
+        [
+          "第二步叫分词，也叫token化。",
+          "Step two is tokenization.",
+          "tokenization（分词/token化）"
+        ],
+        [
+          "token是AI处理文字时的最小单位。",
+          "A token is the smallest unit of text for AI.",
+          "the smallest unit（最小单位）"
+        ],
+        [
+          "每个token都有对应的ID编号。",
+          "Every token gets its own ID number.",
+          "ID number（ID编号）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "token化 → tokenization / splitting into tokens",
+          "tokenization · splitting into tokens"
+        ],
+        [
+          "最小单位 → the smallest unit / the atomic unit",
+          "smallest unit · atomic unit"
+        ]
+      ],
+      "speak": "Step two is tokenization. A token is the smallest unit of text for AI. Every token gets its own ID number."
+    },
+    {
+      "id": "s4",
+      "title_cn": "第三步：embedding转向量",
+      "title_en": "Step Three: Embedding Into Vectors",
+      "time": "02:10–06:54",
+      "context": "通过提前生成好的embedding矩阵，让每个token通过ID找到一个随机生成的高维向量。这些数字目前没有语言含义，是随机的。整个数据准备完成文本到数字的转换。语域：技术讲解，收尾。",
+      "sentences": [
+        [
+          "通过embedding矩阵找到高维向量。",
+          "Find the high-dimensional vector via the embedding matrix.",
+          "high-dimensional vector（高维向量）"
+        ],
+        [
+          "这些向量是随机生成的。",
+          "These vectors are randomly generated.",
+          "randomly generated（随机生成）"
+        ],
+        [
+          "到这里，完成了文本到数字的转换。",
+          "And that completes the text-to-number conversion.",
+          "text-to-number conversion（文本到数字的转换）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "高维向量 → high-dimensional vector / the token's coordinates",
+          "high-dimensional vector · coordinates"
+        ],
+        [
+          "文本转数字 → text-to-number / words into math",
+          "text-to-number · words into math"
+        ]
+      ],
+      "speak": "Find the high-dimensional vector via the embedding matrix. These vectors are randomly generated. And that completes the text-to-number conversion."
+    }
+  ],
+  "practice": [
+    [
+      "说开场",
+      "Use the Feynman method: explain it so others get it."
+    ],
+    [
+      "说收集清洗",
+      "Cleaning: dedupe, remove junk, filter violations."
+    ],
+    [
+      "说分词",
+      "A token is the smallest unit of text for AI."
+    ],
+    [
+      "说embedding",
+      "That completes the text-to-number conversion."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "AI learns to talk.",
+      "How on earth do AIs learn to speak?",
+      "「学会说话」用 learn to speak，不是 talk。"
+    ],
+    [
+      "Clean the data to remove junk.",
+      "Cleaning: dedupe, remove junk, filter violations.",
+      "「去重」用 dedupe。"
+    ],
+    [
+      "Token is the smallest part.",
+      "A token is the smallest unit of text for AI.",
+      "「最小单位」用 the smallest unit。"
+    ],
+    [
+      "Change text to numbers.",
+      "That completes the text-to-number conversion.",
+      "「文本转数字」用 text-to-number conversion。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说AI只会 AI",
+      "用 the Feynman method（费曼学习法）、learn to speak（学会说话）、large model（大模型）"
+    ],
+    [
+      "说数据只会 data",
+      "用 clean text（干净文本）、dedupe（去重）、knowledge base（知识库）、junk（垃圾数据）"
+    ],
+    [
+      "说处理只会 process",
+      "用 tokenization（分词）、embedding matrix（嵌入矩阵）、text-to-number conversion（文本转数字）"
+    ]
+  ],
+  "difficult_words": [
+    "Feynman",
+    "method",
+    "explain",
+    "stages",
+    "born",
+    "prep",
+    "turns",
+    "massive",
+    "knowledge",
+    "base",
+    "corpus",
+    "cleaning",
+    "dedupe",
+    "remove",
+    "junk",
+    "filter",
+    "violations",
+    "tokenization",
+    "token",
+    "smallest",
+    "unit",
+    "atomic",
+    "embedding",
+    "matrix",
+    "high-dimensional",
+    "vector",
+    "randomly",
+    "generated",
+    "conversion",
+    "coordinates"
+  ],
+  "footer_notes": "ASR 已校正：大元模型→大语言模型、飞腕学习法→费曼学习法、DBSIC→DeepSeek、余训练→预训练、偷啃→token、曲镇→矩阵、高约向量→高维向量、清洗、去虫→去重、去垃圾、敏感违规、过滤等。"
+}

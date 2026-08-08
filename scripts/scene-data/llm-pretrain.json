@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "slug": "llm-pretrain",
+    "title": "大语言模型原理（2）预训练",
+    "title_en": "How LLMs Work (2) | Pre-Training",
+    "duration": "6:33",
+    "scenes": 4,
+    "sentences": 12,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/8rVHZRvp5nD",
+    "topic": "AI原理 · 大模型预训练"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "回顾：数据准备",
+      "title_en": "Review: Data Preparation",
+      "time": "00:00–00:38",
+      "context": "上一期讲了第一阶段数据准备：全网书籍、网页、论文、代码，去重去垃圾去违规得到干净文本；用分词器分成token并标ID；通过embedding矩阵，每个token找到随机生成的高维向量。但注意：这些向量里的数字都是随机生成的，还没有真正的语言含义。语域：技术讲解，回顾。",
+      "sentences": [
+        [
+          "收集书籍、网页、论文、代码，得到干净文本。",
+          "Collect books, web pages, papers, and code into clean text.",
+          "clean text（干净文本）"
+        ],
+        [
+          "分词器把语句分成一个个token。",
+          "A tokenizer splits the text into tokens.",
+          "splits into tokens（分成token）"
+        ],
+        [
+          "向量里的数字是随机的，还没有含义。",
+          "The vector numbers are random — no real meaning yet.",
+          "no real meaning yet（还没有含义）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "数据准备 → data preparation / data prep",
+          "data preparation · data prep"
+        ],
+        [
+          "清洗 → cleaning / dedupe and filter",
+          "cleaning · dedupe and filter"
+        ]
+      ],
+      "speak": "Collect books, web pages, papers, and code into clean text. A tokenizer splits the text into tokens. The vector numbers are random — no real meaning yet."
+    },
+    {
+      "id": "s2",
+      "title_cn": "目标：训练成接龙大师",
+      "title_en": "The Goal: Train a Text-Continuation Master",
+      "time": "00:36–01:19",
+      "context": "随机生成的数字怎么学会表达文字含义？这就是预训练。一句话概括：预训练就是把模型训练成一个接龙大师。取出处理后的高维向量，放到Transformer里处理。语域：技术讲解，目标定义。",
+      "sentences": [
+        [
+          "预训练就是训练一个接龙大师。",
+          "Pre-training trains a text-continuation master.",
+          "text-continuation master（接龙大师）"
+        ],
+        [
+          "把这批数据放到Transformer里面处理。",
+          "Feed this batch of data into the Transformer.",
+          "feed into（放入）"
+        ],
+        [
+          "Transformer可以理解成AI的大脑。",
+          "Think of the Transformer as AI's brain.",
+          "AI's brain（AI的大脑）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "接龙大师 → text-continuation master / next-word guesser",
+          "continuation · next-word guesser"
+        ],
+        [
+          "放入处理 → feed into / pass through",
+          "feed into · pass through"
+        ]
+      ],
+      "speak": "Pre-training trains a text-continuation master. Feed this batch of data into the Transformer. Think of the Transformer as AI's brain."
+    },
+    {
+      "id": "s3",
+      "title_cn": "核心：自注意力机制",
+      "title_en": "The Core: Self-Attention",
+      "time": "01:12–01:57",
+      "context": "Transformer里最核心的部分叫自注意力机制，让每个token计算出对其他token的关注程度。例子：我喜欢金毛，因为它很温顺。经过自注意力处理后，温顺这个词的向量产生变化，增加了对其他词的理解——知道「很」在修饰它、「温顺」是描述它的、「温顺」是表达原因。语域：技术讲解，机制讲解。",
+      "sentences": [
+        [
+          "自注意力让每个token算出对其他词的影响。",
+          "Self-attention lets each token weigh its ties to others.",
+          "weigh its ties（计算关注程度）"
+        ],
+        [
+          "温顺这个词，向量产生了变化。",
+          "The vector for 'gentle' gets reshaped.",
+          "gets reshaped（产生变化）"
+        ],
+        [
+          "它知道了自己与每个词的关系程度。",
+          "It learns how related it is to every other word.",
+          "how related（关系程度）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "自注意力 → self-attention / attend to each other",
+          "self-attention · attend"
+        ],
+        [
+          "关系程度 → the degree of relation / how related",
+          "degree of relation · how related"
+        ]
+      ],
+      "speak": "Self-attention lets each token weigh its ties to others. The vector for 'gentle' gets reshaped. It learns how related it is to every other word."
+    },
+    {
+      "id": "s4",
+      "title_cn": "过程：预测下一个token",
+      "title_en": "The Process: Predict the Next Token",
+      "time": "01:57–06:33",
+      "context": "带着上下文信息的向量，让模型不断预测下一个token，根据预测结果调整参数，提高下一次预测成功的概率。所有数据一批一批训练完成后，就得到一个基座大模型。语域：技术讲解，训练收尾。",
+      "sentences": [
+        [
+          "让模型不断预测下一个token。",
+          "The model keeps predicting the next token.",
+          "predicting the next token（预测下一个token）"
+        ],
+        [
+          "根据预测结果，调整参数。",
+          "Adjust the parameters based on prediction results.",
+          "adjust the parameters（调整参数）"
+        ],
+        [
+          "一批一批训练完，得到基座大模型。",
+          "After training batch by batch, you get a base model.",
+          "batch by batch（一批一批）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "调整参数 → adjust parameters / update weights",
+          "adjust parameters · update weights"
+        ],
+        [
+          "基座大模型 → base large model / foundation model",
+          "base large model · foundation"
+        ]
+      ],
+      "speak": "The model keeps predicting the next token. Adjust the parameters based on prediction results. After training batch by batch, you get a base model."
+    }
+  ],
+  "practice": [
+    [
+      "说回顾",
+      "The vector numbers are random — no real meaning yet."
+    ],
+    [
+      "说目标",
+      "Pre-training trains a text-continuation master."
+    ],
+    [
+      "说自注意力",
+      "Self-attention lets each token weigh its ties to others."
+    ],
+    [
+      "说训练过程",
+      "Adjust the parameters based on prediction results."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "The vector has no means.",
+      "The vector numbers are random — no real meaning yet.",
+      "「含义」用 meaning，不是 means。"
+    ],
+    [
+      "Transformer is the brain.",
+      "Think of the Transformer as AI's brain.",
+      "「把...理解成」用 think of ... as。"
+    ],
+    [
+      "Attention lets words know each other.",
+      "Self-attention lets each token weigh its ties to others.",
+      "「关注程度」用 weigh its ties to others。"
+    ],
+    [
+      "Train one by one.",
+      "After training batch by batch, you get a base model.",
+      "「一批一批」用 batch by batch。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说训练只会 train",
+      "用 pre-training（预训练）、predict the next token（预测下一个token）、update weights（更新权重）"
+    ],
+    [
+      "说AI只会 AI",
+      "用 text-continuation master（接龙大师）、base large model（基座大模型）、foundation model（底座模型）"
+    ],
+    [
+      "说机制只会 system",
+      "用 self-attention（自注意力）、weigh its ties（计算关联）、token（词元）"
+    ]
+  ],
+  "difficult_words": [
+    "pre-training",
+    "preparation",
+    "collect",
+    "papers",
+    "clean",
+    "tokenizer",
+    "splits",
+    "tokens",
+    "vector",
+    "random",
+    "meaning",
+    "continuation",
+    "master",
+    "guesser",
+    "feed",
+    "Transformer",
+    "brain",
+    "self-attention",
+    "weigh",
+    "ties",
+    "reshaped",
+    "related",
+    "predicting",
+    "next",
+    "adjust",
+    "parameters",
+    "batch",
+    "foundation"
+  ],
+  "footer_notes": "ASR 已校正：大元模型→大语言模型、曲镇→矩阵、高约向量→高维向量、自主义力机制→自注意力机制、灌输程度→关注程度、修饰、描述、原因、接龙堂师→接龙大师、token等。"
+}
