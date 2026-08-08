@@ -171,7 +171,7 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
 </article>
 
 <section class="transcript-section" id="transcript">
-  <details class="transcript-collapsible" open>
+  <details class="transcript-collapsible">
     <summary>完整转录（273段）</summary>
     <div class="transcript-body">
       <p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
@@ -490,5 +490,5 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   });
 })();
 </script>
-</body>
+<script id="transcript-open-script">(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function o(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",o)});if(location.hash==="#transcript")o()})();</script></body>
 </html>
