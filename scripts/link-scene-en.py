@@ -16,10 +16,12 @@ SLUGS = ["seville-vlog", "paris-vlog", "vietnam-lazy", "bali-crab", "hupao-park"
 
 
 def main() -> None:
+    # 支持命令行传 slug：python3 scripts/link-scene-en.py slug1 slug2 ...
+    slugs = sys.argv[1:] or SLUGS
     data = json.loads(INDEX.read_text(encoding="utf-8"))
     by_html = {e["outputs"]["html"]: e for e in data if isinstance(e.get("outputs"), dict)} if isinstance(data, list) else data
 
-    for slug in SLUGS:
+    for slug in slugs:
         zh_file = DOCS / f"{slug}-图文实录.html"
         if not zh_file.exists():
             print(f"  ✗ 缺中文页 {zh_file.name}")
