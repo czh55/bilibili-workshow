@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -82,7 +85,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 后文偶发把「清晰度」识成「轻视度/轻稀度」、「口播」识成「口薄」、「虚实对比」识成「叙时对比」。叙述按语境与字幕校正；末尾转录区仍完整保留原始分段。</p>
       <figure>
         <img src="assets/video-clarity-tips/shot-01.jpg" alt="粉红短发作者在暖冷对比布景中口播，字幕写而这是手机拍的画面" loading="lazy">
-        <figcaption>[00:03] 开场对照：作者以口播画面引出「相机不如手机清晰」的错觉。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:03] 开场对照：作者以口播画面引出「相机不如手机清晰」的错觉。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4e5b0d857005.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening comparison: the author&#x27;s talking-head opens with the illusion that “cameras aren&#x27;t as sharp as phones.”</span></div>
+<audio class="cap-audio" src="audio/4e5b0d857005.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -93,11 +100,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">「所以光是表层原因，而光所带来的明暗对比，才是最底层的原因。」</blockquote>
       <figure>
         <img src="assets/video-clarity-tips/shot-02.jpg" alt="昏暗环境下浴缸玩偶特写，噪点明显，字幕写光线太暗会导致画面噪点严重" loading="lazy">
-        <figcaption>[00:20] 示范：光线太暗时，玩偶特写出现明显噪点与细节损失。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:20] 示范：光线太暗时，玩偶特写出现明显噪点与细节损失。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a497df6f46fa.mp3" type="button" aria-label="Play English audio">🔊</button><span>Demo: in dim light, a doll close-up shows obvious noise and detail loss.</span></div>
+<audio class="cap-audio" src="audio/a497df6f46fa.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/video-clarity-tips/shot-03.jpg" alt="作者被白描边从暗背景中分离，字幕写当主体从环境中凸显出来" loading="lazy">
-        <figcaption>[00:35] 主体被强调后从环境中跳出来，观感上的「清晰」随之上升。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:35] 主体被强调后从环境中跳出来，观感上的「清晰」随之上升。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7ee306f0af1b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Once the subject is emphasized and pops from the environment, perceived “sharpness” rises.</span></div>
+<audio class="cap-audio" src="audio/7ee306f0af1b.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -108,17 +123,29 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p><strong>第一步，构建主光：</strong>主光放在人物正前方，从上往下约 45 度。脸上形成蝴蝶形高光，脸颊两侧阴影更显瘦、更立体——早期好莱坞女演员常用的蝴蝶光，也叫美人光。</p>
       <figure>
         <img src="assets/video-clarity-tips/shot-04.jpg" alt="侧拍布光示意：蜂巢格主灯被虚线圈出，标题 Step1 构建主光" loading="lazy">
-        <figcaption>[00:52] Step 1：主光高位俯打，机位与人物侧位示意。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:52] Step 1：主光高位俯打，机位与人物侧位示意。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b902ce48d2ea.mp3" type="button" aria-label="Play English audio">🔊</button><span>Step 1: key light high above, with camera and subject positions shown from the side.</span></div>
+<audio class="cap-audio" src="audio/b902ce48d2ea.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p><strong>第二步，添加辅光：</strong>用灯棒或反光板给阴影补一点光，暗部不要死黑，但辅光必须弱于主光。</p>
       <figure>
         <img src="assets/video-clarity-tips/shot-05.jpg" alt="作者正面口播，字幕提醒光线要比主光弱一点" loading="lazy">
-        <figcaption>[01:10] 辅光原则：补亮阴影，但强度压在主光之下。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:10] 辅光原则：补亮阴影，但强度压在主光之下。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/713d2da4a818.mp3" type="button" aria-label="Play English audio">🔊</button><span>Fill-light rule: brighten shadows, but keep it below the key light&#x27;s strength.</span></div>
+<audio class="cap-audio" src="audio/713d2da4a818.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p><strong>第三步，背景光点缀：</strong>在背景放小台灯、落地灯等，让人物边缘与背景分离，氛围感更强。</p>
       <figure>
         <img src="assets/video-clarity-tips/shot-06.jpg" alt="黄色圆环台灯与暖红背景墙，标题 Step3 增加背景光点缀" loading="lazy">
-        <figcaption>[01:22] Step 3：家用小灯做背景点缀，拉开人物与背景层次。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:22] Step 3：家用小灯做背景点缀，拉开人物与背景层次。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ced7cac9c96b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Step 3: a small household lamp as background accent, separating subject from backdrop.</span></div>
+<audio class="cap-audio" src="audio/ced7cac9c96b.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -129,7 +156,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">「让主体颜色和背景形成强烈的对比，来塑造人物形象。」</blockquote>
       <figure>
         <img src="assets/video-clarity-tips/shot-07.jpg" alt="电影德州巴黎截帧：红衣父子与蓝色自由女神壁画形成冷暖对比" loading="lazy">
-        <figcaption>[01:40] 电影例证：主体暖红与背景冷蓝强对比，强化形象记忆。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:40] 电影例证：主体暖红与背景冷蓝强对比，强化形象记忆。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ace9874938de.mp3" type="button" aria-label="Play English audio">🔊</button><span>Film example: a strong warm-red subject vs cool-blue backdrop, sharpening character memory.</span></div>
+<audio class="cap-audio" src="audio/ace9874938de.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -145,7 +176,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>前期之外，也可在后期手动拉曝光、对比度和饱和度来增加画面对比。作者演示剪辑软件调整面板（如自然饱和度、亮度、对比度），并称做完这一步，视频清晰度已经能「打到 90% 的人」——这是她的经验性判断，不是可核验的统计。</p>
       <figure>
         <img src="assets/video-clarity-tips/shot-08.jpg" alt="左侧人像预览与右侧后期调整滑块面板，标题后期调整" loading="lazy">
-        <figcaption>[02:10] 后期面板：通过曝光、对比度、饱和度等滑块拉高画面对比。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:10] 后期面板：通过曝光、对比度、饱和度等滑块拉高画面对比。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5247352d10a3.mp3" type="button" aria-label="Play English audio">🔊</button><span>The post panel: raising contrast via sliders like exposure, contrast and saturation.</span></div>
+<audio class="cap-audio" src="audio/5247352d10a3.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>但导出参数不对也会伤画质：前期尽量拍 4K，方便二次构图；导出选 H.264、最高码率。收尾欢迎评论，下期再见。</p>
       <blockquote class="quote">「这些做完后，你就可以收获一支清晰有质感的视频啦。」</blockquote>
@@ -573,5 +608,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">图文实录 · 小红书 · 2026-07-26 · 83 段转录</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

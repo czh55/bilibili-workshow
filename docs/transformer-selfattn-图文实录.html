@@ -28,7 +28,10 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 .transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
 .transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
 .transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
-.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style></head>
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style><style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
 <body><main class="container">
 <header><h1>手推Transformer（1）自注意力机制：全公式演算</h1>
 <div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">6:22</span><span class="meta-tag tag-topic">Transformer 自注意力 数学演算</span></div>
@@ -46,7 +49,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 
 <section class="story-section" id="intro"><h2>开场：手推全部公式</h2>
 <p><span class="time-marker">00:00</span>本期通过一个实实在在的例子——"女生撩刘海"——来演算Transformer中自注意力机制的完整计算过程。选用这个例子是因为主播名字就叫刘海（笑）。</p>
-<figure><img src="assets/transformer-selfattn/shot-01.jpg" alt="开场：手推Transformer" loading="lazy"><figcaption><span class="time-badge">[00:03]</span> 用"女生撩刘海"的例子手推Transformer全部公式</figcaption></figure>
+<figure><img src="assets/transformer-selfattn/shot-01.jpg" alt="开场：手推Transformer" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:03]</span> 用"女生撩刘海"的例子手推Transformer全部公式</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/42c056ac3c8d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Using the “girl brushing her fringe” example to derive every Transformer formula</span></div>
+<audio class="cap-audio" src="audio/42c056ac3c8d.mp3" preload="none"></audio>
+</figcaption></figure>
 </section>
 
 <section class="story-section" id="step1"><h2>第一步：数据处理 — Token化+嵌入</h2>
@@ -56,7 +63,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 
 <section class="story-section" id="step2"><h2>第二步：位置编码（Positional Encoding）</h2>
 <p><span class="time-marker">01:09</span>词嵌入矩阵不能直接放入Transformer，必须<strong>加入位置信息</strong>。关键知识点：<strong>计算机数数从0开始</strong>——"女生"是位置0、"撩"是位置1、"刘海"是位置2。</p>
-<figure><img src="assets/transformer-selfattn/shot-02.jpg" alt="位置编码公式" loading="lazy"><figcaption><span class="time-badge">[01:00]</span> 位置编码：正弦函数计算偶数维，余弦函数计算奇数维</figcaption></figure>
+<figure><img src="assets/transformer-selfattn/shot-02.jpg" alt="位置编码公式" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:00]</span> 位置编码：正弦函数计算偶数维，余弦函数计算奇数维</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/95491ce460ad.mp3" type="button" aria-label="Play English audio">🔊</button><span>Positional encoding: sine for even dimensions, cosine for odd dimensions</span></div>
+<audio class="cap-audio" src="audio/95491ce460ad.mp3" preload="none"></audio>
+</figcaption></figure>
 <p><span class="time-marker">01:49</span>原始Transformer使用<strong>正弦和余弦函数</strong>生成位置编码：</p>
 <ul>
 <li><strong>偶数维（2i）</strong>：PE(pos,2i) = sin(pos / 10000^(2i/d))</li>
@@ -68,7 +79,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 
 <section class="story-section" id="step3"><h2>第三步：计算Q、K、V</h2>
 <p><span class="time-marker">02:56</span>Q、K、V都是通过X乘以对应的<strong>参数矩阵（W_Q、W_K、W_V）</strong>得到的。这三个参数矩阵在训练开始时随机生成，后续训练"调参"就包括调整它们。</p>
-<figure><img src="assets/transformer-selfattn/shot-03.jpg" alt="QKV计算" loading="lazy"><figcaption><span class="time-badge">[02:10]</span> Q=查询（想找什么）、K=键（有什么信息）、V=值（真正含义）</figcaption></figure>
+<figure><img src="assets/transformer-selfattn/shot-03.jpg" alt="QKV计算" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:10]</span> Q=查询（想找什么）、K=键（有什么信息）、V=值（真正含义）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d0b1e8709faf.mp3" type="button" aria-label="Play English audio">🔊</button><span>Q=Query (what you&#x27;re looking for), K=Key (what info is there), V=Value (the real meaning)</span></div>
+<audio class="cap-audio" src="audio/d0b1e8709faf.mp3" preload="none"></audio>
+</figcaption></figure>
 <p><span class="time-marker">03:21</span>Q、K、V的语义含义：</p>
 <ul>
 <li><strong>Q（Query，查询）</strong>：这个Token"想找什么信息"。比如"女生"的Q可能表达"想知道和我有关的动作是什么"</li>
@@ -85,12 +100,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 <section class="story-section" id="step5"><h2>第五步：Softmax — 把分数变成比例</h2>
 <p><span class="time-marker">05:00</span>通过Softmax计算，把注意力分数<strong>变成占比例的权重</strong>，每行之和为1。例如：0.8在第一行（"女生"）、第三列（"刘海"），表示</p>
 <div class="quote-block">对于"女生"这个词而言，<strong>80%的注意力</strong>放在了"刘海"上，另外20%放在了"撩"上。</div>
-<figure><img src="assets/transformer-selfattn/shot-04.jpg" alt="Softmax获得注意力权重" loading="lazy"><figcaption><span class="time-badge">[03:30]</span> Softmax：每行变成概率分布，所有Token注意力之和=1</figcaption></figure>
+<figure><img src="assets/transformer-selfattn/shot-04.jpg" alt="Softmax获得注意力权重" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:30]</span> Softmax：每行变成概率分布，所有Token注意力之和=1</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/eed569358749.mp3" type="button" aria-label="Play English audio">🔊</button><span>Softmax: each row becomes a probability distribution, all token attention sums to 1</span></div>
+<audio class="cap-audio" src="audio/eed569358749.mp3" preload="none"></audio>
+</figcaption></figure>
 </section>
 
 <section class="story-section" id="step6"><h2>第六步：加权求和 — 输出Z = A × V</h2>
 <p><span class="time-marker">05:44</span>注意力权重矩阵A与值矩阵V相乘，得到<strong>输出矩阵Z</strong>。每个Token的新向量融合了上下文中其他Token的信息：例如"女生"的新向量在保留自身信息的基础上，融合了"女生"、"撩"、"刘海"三个Token传递过来的内容。</p>
-<figure><img src="assets/transformer-selfattn/shot-05.jpg" alt="输出Z矩阵和总结公式" loading="lazy"><figcaption><span class="time-badge">[05:10]</span> 最终输出：每个词融合了所有词的信息 → 这就是注意力机制</figcaption></figure>
+<figure><img src="assets/transformer-selfattn/shot-05.jpg" alt="输出Z矩阵和总结公式" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:10]</span> 最终输出：每个词融合了所有词的信息 → 这就是注意力机制</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2b5c96a1b232.mp3" type="button" aria-label="Play English audio">🔊</button><span>Final output: every word fuses information from all words → that&#x27;s the attention mechanism</span></div>
+<audio class="cap-audio" src="audio/2b5c96a1b232.mp3" preload="none"></audio>
+</figcaption></figure>
 <p><span class="time-marker">06:06</span>整个计算可以写成一个著名的公式——<strong>缩放点积注意力（Scaled Dot-Product Attention）</strong>：</p>
 <div class="quote-block"><strong>Attention(Q,K,V) = softmax(QK^T / √d_k) × V</strong></div>
 <p>下期预告：Transformer后续的计算过程（前馈网络、残差连接等）。</p>
@@ -262,4 +285,39 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 <div class="transcript-row"><time>06:20</time><p>统统的都教给大家,大家还有什么想听的吗</p></div>
 <div class="transcript-row"><time>06:22</time><p>欢迎在评论区留言</p></div>
 </div></div></details></section>
-</main></body></html>
+</main><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

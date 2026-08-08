@@ -28,7 +28,10 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 .transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
 .transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
 .transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
-.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style></head>
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style><style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
 <body><main class="container">
 <header><h1>色深与色度采样：8bit420 vs 10bit422</h1>
 <div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">2:47</span><span class="meta-tag tag-topic">摄影 视频 色深 色度采样</span></div>
@@ -40,9 +43,33 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
   <a href="#when">什么时候需要高采样</a>
 <a href="#transcript">完整转录</a></nav>
 <article class="documentary">
-<section class="story-section" id="bitdepth"><h2>色深：色彩分级数量</h2><p><span class='time-marker'>00:05</span>想象你是画家：给你一套<strong>128色马克笔</strong>，能画出丝滑的城市晚霞；换成<strong>12色马克笔</strong>，天空就出现了<strong>明显的分界线</strong>——这就是<strong>色彩断层</strong>。</p><p><span class='time-marker'>00:26</span>决定颜色细分数量的是<strong>色深</strong>，用 bit 形容。</p><p><span class='time-marker'>00:36</span><strong>8bit</strong>：红绿蓝每通道 256 灰度（2^8），共约 <strong>1670 万色</strong>。</p><p><span class='time-marker'>00:48</span><strong>10bit</strong>：每通道 1024 灰度（2^10），共约 <strong>10.7 亿色</strong>——二者相差 <strong>64 倍</strong>。</p><figure><img src="assets/color-bit10/shot-01.jpg" alt="128色马克笔：丝滑晚霞渐变" loading="lazy"><figcaption><span class="time-badge">[00:09]</span> 128色马克笔：丝滑晚霞渐变</figcaption></figure><figure><img src="assets/color-bit10/shot-02.jpg" alt="12色马克笔：色彩断层出现" loading="lazy"><figcaption><span class="time-badge">[00:14]</span> 12色马克笔：色彩断层出现</figcaption></figure><figure><img src="assets/color-bit10/shot-03.jpg" alt="色彩断层：颜色分级不够" loading="lazy"><figcaption><span class="time-badge">[00:20]</span> 色彩断层：颜色分级不够</figcaption></figure></section>
-<section class="story-section" id="bitapply"><h2>色深的影响与 log 模式</h2><p><span class='time-marker'>01:02</span>相机支持 10bit，<strong>渐变更自然的画面</strong>，尤其在面对颜色渐变时，<strong>后期调整后更明显</strong>。</p><p><span class='time-marker'>01:10</span>这就是为什么 log 模式视频<strong>不要用 8bit 拍</strong>——有限色彩空间放进大量信息，后期重新拉伸时<strong>颜色分级不够，很容易看到画面断层</strong>。</p><figure><img src="assets/color-bit10/shot-04.jpg" alt="10bit 渐变自然：10.7亿色 vs 1670万色" loading="lazy"><figcaption><span class="time-badge">[00:40]</span> 10bit 渐变自然：10.7亿色 vs 1670万色</figcaption></figure></section>
-<section class="story-section" id="sampling"><h2>色度采样：420 / 422 / 444</h2><p><span class='time-marker'>01:26</span>人眼对<strong>亮度明暗极其敏感</strong>，但对色彩细微变化<strong>没那么挑剔</strong>。</p><p><span class='time-marker'>01:39</span>每个像素必须保留<strong>明度信息</strong>，但可以让<strong>多个像素共享一个色度值</strong>——大大减少存储数据量。</p><p><span class='time-marker'>01:48</span><strong>4:2:0</strong>：每行4像素，第一行记录2个色度，第二行继承第一行。</p><p><span class='time-marker'>02:05</span><strong>4:2:2</strong>：第一行、第二行各记录2个色度。<strong>4:4:4</strong>：色彩全记录，专业电影机规格。</p><figure><img src="assets/color-bit10/shot-05.jpg" alt="4:2:0：第二行继承第一行色度" loading="lazy"><figcaption><span class="time-badge">[01:49]</span> 4:2:0：第二行继承第一行色度</figcaption></figure><figure><img src="assets/color-bit10/shot-06.jpg" alt="4:4:4：色彩全记录，电影机规格" loading="lazy"><figcaption><span class="time-badge">[02:15]</span> 4:4:4：色彩全记录，电影机规格</figcaption></figure></section>
+<section class="story-section" id="bitdepth"><h2>色深：色彩分级数量</h2><p><span class='time-marker'>00:05</span>想象你是画家：给你一套<strong>128色马克笔</strong>，能画出丝滑的城市晚霞；换成<strong>12色马克笔</strong>，天空就出现了<strong>明显的分界线</strong>——这就是<strong>色彩断层</strong>。</p><p><span class='time-marker'>00:26</span>决定颜色细分数量的是<strong>色深</strong>，用 bit 形容。</p><p><span class='time-marker'>00:36</span><strong>8bit</strong>：红绿蓝每通道 256 灰度（2^8），共约 <strong>1670 万色</strong>。</p><p><span class='time-marker'>00:48</span><strong>10bit</strong>：每通道 1024 灰度（2^10），共约 <strong>10.7 亿色</strong>——二者相差 <strong>64 倍</strong>。</p><figure><img src="assets/color-bit10/shot-01.jpg" alt="128色马克笔：丝滑晚霞渐变" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:09]</span> 128色马克笔：丝滑晚霞渐变</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6057e443374b.mp3" type="button" aria-label="Play English audio">🔊</button><span>128-color markers: silky sunset gradient</span></div>
+<audio class="cap-audio" src="audio/6057e443374b.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-bit10/shot-02.jpg" alt="12色马克笔：色彩断层出现" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:14]</span> 12色马克笔：色彩断层出现</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9e2aef7a08e7.mp3" type="button" aria-label="Play English audio">🔊</button><span>12-color markers: visible color banding</span></div>
+<audio class="cap-audio" src="audio/9e2aef7a08e7.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-bit10/shot-03.jpg" alt="色彩断层：颜色分级不够" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:20]</span> 色彩断层：颜色分级不够</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/262949764980.mp3" type="button" aria-label="Play English audio">🔊</button><span>Color banding: not enough color gradation</span></div>
+<audio class="cap-audio" src="audio/262949764980.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="bitapply"><h2>色深的影响与 log 模式</h2><p><span class='time-marker'>01:02</span>相机支持 10bit，<strong>渐变更自然的画面</strong>，尤其在面对颜色渐变时，<strong>后期调整后更明显</strong>。</p><p><span class='time-marker'>01:10</span>这就是为什么 log 模式视频<strong>不要用 8bit 拍</strong>——有限色彩空间放进大量信息，后期重新拉伸时<strong>颜色分级不够，很容易看到画面断层</strong>。</p><figure><img src="assets/color-bit10/shot-04.jpg" alt="10bit 渐变自然：10.7亿色 vs 1670万色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:40]</span> 10bit 渐变自然：10.7亿色 vs 1670万色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1c0ec6bc1caa.mp3" type="button" aria-label="Play English audio">🔊</button><span>Natural 10-bit gradients: 1.07 billion colors vs 16.7 million colors</span></div>
+<audio class="cap-audio" src="audio/1c0ec6bc1caa.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="sampling"><h2>色度采样：420 / 422 / 444</h2><p><span class='time-marker'>01:26</span>人眼对<strong>亮度明暗极其敏感</strong>，但对色彩细微变化<strong>没那么挑剔</strong>。</p><p><span class='time-marker'>01:39</span>每个像素必须保留<strong>明度信息</strong>，但可以让<strong>多个像素共享一个色度值</strong>——大大减少存储数据量。</p><p><span class='time-marker'>01:48</span><strong>4:2:0</strong>：每行4像素，第一行记录2个色度，第二行继承第一行。</p><p><span class='time-marker'>02:05</span><strong>4:2:2</strong>：第一行、第二行各记录2个色度。<strong>4:4:4</strong>：色彩全记录，专业电影机规格。</p><figure><img src="assets/color-bit10/shot-05.jpg" alt="4:2:0：第二行继承第一行色度" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:49]</span> 4:2:0：第二行继承第一行色度</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2792a1e1f866.mp3" type="button" aria-label="Play English audio">🔊</button><span>4:2:0: the second row inherits chroma from the first</span></div>
+<audio class="cap-audio" src="audio/2792a1e1f866.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-bit10/shot-06.jpg" alt="4:4:4：色彩全记录，电影机规格" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:15]</span> 4:4:4：色彩全记录，电影机规格</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e57c58edf941.mp3" type="button" aria-label="Play English audio">🔊</button><span>4:4:4: full color capture, cinema-camera grade</span></div>
+<audio class="cap-audio" src="audio/e57c58edf941.mp3" preload="none"></audio>
+</figcaption></figure></section>
 <section class="story-section" id="when"><h2>什么时候需要高采样</h2><p><span class='time-marker'>02:26</span>日常拍摄即便用 <strong>4:2:0</strong> 依旧能得到不错的画面。</p><p><span class='time-marker'>02:31</span>但要做<strong>更精细专业的二级调色和抠像</strong>时，由于许多像素没有自己的色度值，就会出现<strong>颜色溢出、边缘发糊</strong>等问题。</p><div class="quote-block">色深管“颜色细不细”，色度采样管“信息留多少”——日常 8bit 420 够用，拍 log、重调色、抠像就上 10bit 422+。</div></section>
 </article>
 <section class="transcript-section" id="transcript"><details class="transcript-collapsible" open><summary>完整转录（92段）</summary>
@@ -141,4 +168,39 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 <div class="transcript-row"><time>02:42</time><p>关注我带你学习更多摄影知识</p></div>
 <div class="transcript-row"><time>02:44</time><p>那么我们下期再见</p></div>
 </div></div></details></section>
-</main></body></html>
+</main><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

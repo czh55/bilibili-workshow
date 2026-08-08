@@ -31,6 +31,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 .transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
 .transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
 .transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body><main class="container">
 <header>
@@ -54,7 +57,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 
 <section class="story-section" id="review"><h2>回顾：数据准备+预训练的产物</h2>
 <p><span class="time-marker">00:00</span>前两节回顾：数据准备把文本变成带ID的Token和随机高维向量；预训练通过Transformer处理、预测下一个Token、反向传播调整参数，最终得到一个<strong>基座大模型</strong>。但此时的大模型只是一个<strong>接龙大师</strong>——用户问"我应不应该好好学习"，它回答"天天向上"，因为"好好学习天天向上"是常见文本组合，它并没有真正理解用户想咨询什么。</p>
-<figure><img src="assets/llm-posttrain/shot-01.jpg" alt="回顾前两节，引出后训练" loading="lazy"><figcaption><span class="time-badge">[00:02]</span> 基座模型只会续写，不会回答问题</figcaption></figure>
+<figure><img src="assets/llm-posttrain/shot-01.jpg" alt="回顾前两节，引出后训练" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:02]</span> 基座模型只会续写，不会回答问题</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c1ebff43d365.mp3" type="button" aria-label="Play English audio">🔊</button><span>A base model can only continue text — it can&#x27;t answer questions</span></div>
+<audio class="cap-audio" src="audio/c1ebff43d365.mp3" preload="none"></audio>
+</figcaption></figure>
 </section>
 
 <section class="story-section" id="intro"><h2>后训练概述：让AI学会听懂人话</h2>
@@ -70,13 +77,21 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 <li><strong>带系统指令的对话</strong>：设定模型角色（如"你是一名小学教师"）、回答风格、输出格式、可调用工具等，让模型根据不同情境作答</li>
 <li><strong>多轮对话</strong>：用户-助手-用户-助手不断交替，模拟真实追问场景</li>
 </ul>
-<figure><img src="assets/llm-posttrain/shot-02.jpg" alt="SFT监督微调的三种数据形式" loading="lazy"><figcaption><span class="time-badge">[00:48]</span> SFT数据三种形式：基础问答、带系统指令、多轮对话</figcaption></figure>
+<figure><img src="assets/llm-posttrain/shot-02.jpg" alt="SFT监督微调的三种数据形式" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:48]</span> SFT数据三种形式：基础问答、带系统指令、多轮对话</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b4a2f8548cb3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Three SFT data forms: basic Q&amp;A, with system instructions, and multi-turn dialogue</span></div>
+<audio class="cap-audio" src="audio/b4a2f8548cb3.mp3" preload="none"></audio>
+</figcaption></figure>
 <p><span class="time-marker">02:30</span>SFT并不是在模型内部安装了一个"听话模块"，而是通过训练<strong>继续调整模型原有参数</strong>，让模型生成符合指令的答案的概率变得更高。本质还是<strong>调参</strong>。</p>
 </section>
 
 <section class="story-section" id="tuning"><h2>调参比喻：炒菜</h2>
 <p><span class="time-marker">02:47</span>博主用炒菜比喻调参：做饭需要把握火候大小、炖煮时间、油盐比例。尝一口太咸→下次少放盐→继续调整→直到满意。</p>
-<figure><img src="assets/llm-posttrain/shot-03.jpg" alt="调参比喻：炒菜" loading="lazy"><figcaption><span class="time-badge">[01:30]</span> 调参如炒菜：不断调整各种"配料"比例直到味道满意</figcaption></figure>
+<figure><img src="assets/llm-posttrain/shot-03.jpg" alt="调参比喻：炒菜" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:30]</span> 调参如炒菜：不断调整各种"配料"比例直到味道满意</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/149ea2a75b28.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tuning is like cooking: keep adjusting the “ingredients” until the taste is right</span></div>
+<audio class="cap-audio" src="audio/149ea2a75b28.mp3" preload="none"></audio>
+</figcaption></figure>
 <p><span class="time-marker">03:04</span>SFT中调参分两大类：</p>
 <ul>
 <li><strong>全参数微调（Full Fine-Tuning）</strong>：模型所有参数（embedding + Transformer各层）都参与调整。效果好但成本高。</li>
@@ -87,7 +102,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 <section class="story-section" id="pref"><h2>偏好对齐：比答案学好坏</h2>
 <p><span class="time-marker">04:03</span>偏好对齐要解决两个痛点：<strong>好答案很难直接定义</strong>（同一问题可能有成千上万种回答，哪个更好？）和<strong>模型可能踩红线</strong>（不管用户问什么，不会判断是否危险和该回答到什么程度）。</p>
 <p>真正需要的是<strong>有用、诚实且无害</strong>（3H原则：Helpful、Honest、Harmless，由Anthropic提出并推广）。</p>
-<figure><img src="assets/llm-posttrain/shot-04.jpg" alt="偏好对齐：RLHF与DPO" loading="lazy"><figcaption><span class="time-badge">[03:30]</span> RLHF：训练奖励模型打分 → 主模型按分数优化；DPO：直接对比好答案和差答案</figcaption></figure>
+<figure><img src="assets/llm-posttrain/shot-04.jpg" alt="偏好对齐：RLHF与DPO" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:30]</span> RLHF：训练奖励模型打分 → 主模型按分数优化；DPO：直接对比好答案和差答案</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e7403c8e7169.mp3" type="button" aria-label="Play English audio">🔊</button><span>RLHF: train a reward model to score → the main model optimizes on scores; DPO: directly compare good and bad answers</span></div>
+<audio class="cap-audio" src="audio/e7403c8e7169.mp3" preload="none"></audio>
+</figcaption></figure>
 <p><span class="time-marker">04:47</span>两种主要方法：</p>
 <p><strong>RLHF（基于人类反馈的强化学习）</strong>：</p>
 <ol>
@@ -96,7 +115,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 <li>主模型不断生成新答案 → 奖励模型按人类偏好打分 → 主模型根据分数调整参数 → 逐渐提高好答案概率、降低差答案概率</li>
 </ol>
 <p><strong>DPO（直接偏好优化）</strong>：更直接。训练数据中直接给出一个问题 + 一个更好答案 + 一个较差答案，模型直接对比学习。<br/>简单说：RLHF先训练一位老师打分，DPO直接告诉模型哪个更好。</p>
-<figure><img src="assets/llm-posttrain/shot-05.jpg" alt="三阶段总结" loading="lazy"><figcaption><span class="time-badge">[05:10]</span> 三阶段总结：数据准备→预训练→后训练，从接龙到对话</figcaption></figure>
+<figure><img src="assets/llm-posttrain/shot-05.jpg" alt="三阶段总结" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:10]</span> 三阶段总结：数据准备→预训练→后训练，从接龙到对话</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/071710271e25.mp3" type="button" aria-label="Play English audio">🔊</button><span>Three-stage summary: data prep → pretraining → post-training, from text-completion to conversation</span></div>
+<audio class="cap-audio" src="audio/071710271e25.mp3" preload="none"></audio>
+</figcaption></figure>
 </section>
 
 <section class="story-section" id="summary"><h2>总结：三个阶段全流程</h2>
@@ -348,4 +371,39 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge
 <div class="transcript-row"><time>06:22</time><p>再见</p></div>
 </div></div></details></section>
 
-</main></body></html>
+</main><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

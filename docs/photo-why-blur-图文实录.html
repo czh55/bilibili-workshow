@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -83,11 +86,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 把「快门」识成「关门 / 宽门」，「位移」识成「胃移」，「被摄」识成「背摄」，「恒定」识成「横定」，「多数」识成「多时」。下文叙述以画面字幕与动画为准；末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/photo-why-blur/shot-01.jpg" alt="相机对着光柱中的人影示意，标注焦距70mm快门1/10秒，字幕写在相对完全静止的拍摄中" loading="lazy">
-        <figcaption>[00:01] 静止场景示意：70mm、1/10s，为后面讲「光如何累积」铺垫。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:01] 静止场景示意：70mm、1/10s，为后面讲「光如何累积」铺垫。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/20d6f7ff8812.mp3" type="button" aria-label="Play English audio">🔊</button><span>Still-scene example: 70mm, 1/10s — setting up the later “how light accumulates” point.</span></div>
+<audio class="cap-audio" src="audio/20d6f7ff8812.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/photo-why-blur/shot-02.jpg" alt="光线粒子从人影场景进入镜头并在传感器成像，字幕写会由镜头进入相机的传感器" loading="lazy">
-        <figcaption>[00:08] 光线经镜头落入传感器固定位置，LCD 上回显清晰人影。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:08] 光线经镜头落入传感器固定位置，LCD 上回显清晰人影。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2a58fd020ac3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Light lands on a fixed sensor position through the lens, with a clear human figure echoed on the LCD.</span></div>
+<audio class="cap-audio" src="audio/2a58fd020ac3.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -98,7 +109,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「运动物体反射的光会随之发生位移」</blockquote>
       <figure>
         <img src="assets/photo-why-blur/shot-03.jpg" alt="人影旁出现篮球，光线路径示意，字幕写运动物体反射的光会随之发生位移" loading="lazy">
-        <figcaption>[00:16] 运动介入后，反射光在曝光期间「搬家」，拖影由此产生。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:16] 运动介入后，反射光在曝光期间「搬家」，拖影由此产生。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6d291fbe4a90.mp3" type="button" aria-label="Play English audio">🔊</button><span>With motion involved, reflected light “moves house” during the exposure — and blur results.</span></div>
+<audio class="cap-audio" src="audio/6d291fbe4a90.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -109,7 +124,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">旁白大意：这种由相对运动位移产生的模糊，就是动态模糊。</blockquote>
       <figure>
         <img src="assets/photo-why-blur/shot-04.jpg" alt="深色背景上大标题动态模糊，底部字幕写就是动态模糊" loading="lazy">
-        <figcaption>[00:24] 术语落点：动态模糊。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:24] 术语落点：动态模糊。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ba9f8b53101c.mp3" type="button" aria-label="Play English audio">🔊</button><span>The term lands: motion blur.</span></div>
+<audio class="cap-audio" src="audio/ba9f8b53101c.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -120,7 +139,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">旁白大意：影响动态模糊最大的两个因素，一个是曝光时长，一个是相对运动……不管是被摄物体的运动，或是相机本身的抖动。</blockquote>
       <figure>
         <img src="assets/photo-why-blur/shot-05.jpg" alt="动态模糊标题下展示模糊光斑，标注距离刻度与时间轴" loading="lazy">
-        <figcaption>[00:30] 用距离与时间两条轴，把「糊多少」可视化。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 用距离与时间两条轴，把「糊多少」可视化。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b320e297315c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Using distance and time as two axes to visualize “how much blur.”</span></div>
+<audio class="cap-audio" src="audio/b320e297315c.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -131,7 +154,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「只能通过改变快门来控制这种模糊」</blockquote>
       <figure>
         <img src="assets/photo-why-blur/shot-06.jpg" alt="动态模糊示意图标注距离与时间，字幕写只能通过改变快门来控制这种模糊" loading="lazy">
-        <figcaption>[00:38] 操作结论：可控变量主要是快门。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:38] 操作结论：可控变量主要是快门。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7eb3092164cd.mp3" type="button" aria-label="Play English audio">🔊</button><span>Operational conclusion: the controllable variable is mainly the shutter.</span></div>
+<audio class="cap-audio" src="audio/7eb3092164cd.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -142,7 +169,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「曝光短　位移小」「运动物体的空间位移就越小」</blockquote>
       <figure>
         <img src="assets/photo-why-blur/shot-07.jpg" alt="曝光短位移小示意，快门1/50秒，距离刻度与时间轴对照" loading="lazy">
-        <figcaption>[00:45] 短曝光对照：1/50s，位移被压小，利于清晰。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:45] 短曝光对照：1/50s，位移被压小，利于清晰。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/676a3c67632a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Short-exposure comparison: at 1/50s the displacement shrinks, favoring sharpness.</span></div>
+<audio class="cap-audio" src="audio/676a3c67632a.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -153,7 +184,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「例如光绘」「风格化影像」</blockquote>
       <figure>
         <img src="assets/photo-why-blur/shot-08.jpg" alt="风格化影像标题与光绘弧线示意，字幕写例如光绘" loading="lazy">
-        <figcaption>[00:56] 创作向利用：光绘等风格化影像主动保留运动轨迹。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:56] 创作向利用：光绘等风格化影像主动保留运动轨迹。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/893bd23b3eb3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Creative use: stylized images like light painting deliberately keep motion trails.</span></div>
+<audio class="cap-audio" src="audio/893bd23b3eb3.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>整段视频从「为什么会糊」走到「糊能不能用」：先讲清物理机制，再把快门当成控制旋钮，最后提醒用途取决于拍摄目标。</p>
     </section>
@@ -335,5 +370,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">图文实录 · 照片为什么会拍“糊”？？ · 2026-07-26 · 截图取自原视频本地帧</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

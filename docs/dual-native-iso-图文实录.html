@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -84,7 +87,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 常把「歧义」识成「奇异」，「争论」识成「争了」，「DCG」识成「DCJ」，「DGO」识成「DJO」，「双原生」识成「双元生」，「动态范围」识成「动弹范围」，「电荷」识成「电货」，「低转换增益」识成「D转换增益」，「微伏」识成「W」，「称为/叫」识成「成为/较」，「泛指」识成「范制」，「易于传播」识成「亦于传播」。下文叙述以可见字幕与电路动画为准；页面末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/dual-native-iso/shot-01.jpg" alt="深色背景漂浮多项ISO相关名词，中央突出双原生ISO与双增益，字幕讲名词混用造成歧义" loading="lazy">
-        <figcaption>[00:02] 名词云：双原生 ISO、双增益、DCG、DGO 等挤在同一画面，开场先立「容易吵」的问题。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:02] 名词云：双原生 ISO、双增益、DCG、DGO 等挤在同一画面，开场先立「容易吵」的问题。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4ad9540e90e4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Term cloud: dual-native ISO, dual gain, DCG, DGO all crowded into one frame — the opening sets up the “easy to argue about” question.</span></div>
+<audio class="cap-audio" src="audio/4ad9540e90e4.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -95,7 +102,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">旁白：「一个是DCG，双转换增益；一个是DGO，双增益融合输出」</blockquote>
       <figure>
         <img src="assets/dual-native-iso/shot-02.jpg" alt="大字标题 DCG 双转换增益 dual conversion gain" loading="lazy">
-        <figcaption>[00:12] DCG 标题页：双转换增益（Dual Conversion Gain）正式登场。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:12] DCG 标题页：双转换增益（Dual Conversion Gain）正式登场。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/09cb6c33b99f.mp3" type="button" aria-label="Play English audio">🔊</button><span>DCG title card: Dual Conversion Gain officially introduced.</span></div>
+<audio class="cap-audio" src="audio/09cb6c33b99f.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -107,7 +118,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕与电路标注：「一大一小」——FD / 小电容 CFD / 大电容 CFD → SF → PGA → ADC</blockquote>
       <figure>
         <img src="assets/dual-native-iso/shot-03.jpg" alt="DCG电路：TX传输门到FD与大小电容CFD，再经SF、PGA到ADC，字幕一大一小" loading="lazy">
-        <figcaption>[00:25] DCG 全链路：TX→FD→大小 CFD→SF→PGA→ADC；字幕强调「一大一小」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:25] DCG 全链路：TX→FD→大小 CFD→SF→PGA→ADC；字幕强调「一大一小」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0eb20bc12a77.mp3" type="button" aria-label="Play English audio">🔊</button><span>DCG full chain: TX→FD→large/small CFD→SF→PGA→ADC; the subtitle emphasizes “one big, one small.”</span></div>
+<audio class="cap-audio" src="audio/0eb20bc12a77.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -117,7 +132,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>光线不够时切换小电容。小电容能接住的电子很少，但可以把电荷直接转成更高电压，也就是<strong>高转换增益（HCG）</strong>。画面用青色电子点把「小电容更密、更挤」的感觉画出来，字幕也写着「由于能接收的电子很少」。</p>
       <figure>
         <img src="assets/dual-native-iso/shot-04.jpg" alt="FD分出小电容与大电容两路，小电容内电子密集，字幕由于能接收的电子很少" loading="lazy">
-        <figcaption>[00:40] 小电容路径被点亮：电子容量更小，换来更高的单电子电压。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:40] 小电容路径被点亮：电子容量更小，换来更高的单电子电压。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f440c1809869.mp3" type="button" aria-label="Play English audio">🔊</button><span>The small-capacitor path lights up: less electron capacity in exchange for higher voltage per electron.</span></div>
+<audio class="cap-audio" src="audio/f440c1809869.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -129,7 +148,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「如果在ISO800时切换到DCG的小电容」</blockquote>
       <figure>
         <img src="assets/dual-native-iso/shot-05.jpg" alt="ISO800标注下的DCG电路，模拟放大电路显示8x，字幕切换到DCG小电容" loading="lazy">
-        <figcaption>[01:00] ISO800 对照：继续 PGA×8 会放大噪声；切小电容则用第二档基准 ISO 避开多余放大。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:00] ISO800 对照：继续 PGA×8 会放大噪声；切小电容则用第二档基准 ISO 避开多余放大。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d12a0fc68b4d.mp3" type="button" aria-label="Play English audio">🔊</button><span>ISO800 comparison: PGA×8 keeps amplifying noise; switching to the small capacitor uses a second base ISO to avoid extra gain.</span></div>
+<audio class="cap-audio" src="audio/d12a0fc68b4d.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -139,11 +162,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>旁白转向 DGO：它和 DCG 不同，不是在 FD 上切换大小电容，而是在电容之后分成两条读出电路，把同一批电荷转成两路电压信号。例如 ISO800 时，一路做 8 倍模拟放大，一路不放大（低增益），再分别经两个 ADC 读出，后期融合——低增益保住高光细节，高增益多记暗部，从而抬高动态范围。</p>
       <figure>
         <img src="assets/dual-native-iso/shot-06.jpg" alt="DGO电路：FD与CFD之后分成两条SF与PGA读出通路汇入ADC" loading="lazy">
-        <figcaption>[01:20] DGO 结构：电容之后并行两条 SF→PGA 读出，再进 ADC。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] DGO 结构：电容之后并行两条 SF→PGA 读出，再进 ADC。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a1c367dc4d3f.mp3" type="button" aria-label="Play English audio">🔊</button><span>DGO structure: two parallel SF→PGA readout paths after the capacitor, then into ADC.</span></div>
+<audio class="cap-audio" src="audio/a1c367dc4d3f.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/dual-native-iso/shot-07.jpg" alt="两路ADC融合示意，右侧城市夜景高低曝光对照，字幕提升动态范围" loading="lazy">
-        <figcaption>[01:40] 融合效果示意：一路偏暗部、一路偏高光，拼出更大动态范围。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:40] 融合效果示意：一路偏暗部、一路偏高光，拼出更大动态范围。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/667cc00a3afa.mp3" type="button" aria-label="Play English audio">🔊</button><span>Fusion illustration: one path favors shadows, the other highlights — stitching a wider dynamic range.</span></div>
+<audio class="cap-audio" src="audio/667cc00a3afa.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -160,7 +191,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>有人习惯把 DCG 叫「双增益」、把 DGO 叫「双原生 ISO」。旁白提醒：两者翻译过来都可以叫双增益，只是路径不同；而 ISO 的本质又是增益，所以把两者都称作双原生 ISO 也说得通。具体讨论用技术名称，泛指时沿用 ISO——ISO 这个符号本来就是为了统一标准、便于传播。</p>
       <figure>
         <img src="assets/dual-native-iso/shot-08.jpg" alt="左右对照DCG双转换增益与DGO双增益融合输出两条电路，字幕只是技术路径有所不同" loading="lazy">
-        <figcaption>[02:00] 并排对照：DCG 切换大小电容；DGO 双路增益再融合——「只是技术路径有所不同」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:00] 并排对照：DCG 切换大小电容；DGO 双路增益再融合——「只是技术路径有所不同」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/51f531154948.mp3" type="button" aria-label="Play English audio">🔊</button><span>Side by side: DCG switches between large/small capacitors; DGO fuses dual gain paths — “just different technical paths.”</span></div>
+<audio class="cap-audio" src="audio/51f531154948.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
   </article>
@@ -466,5 +501,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">图文实录 · 小红书 · 双原生 ISO / DCG / DGO</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

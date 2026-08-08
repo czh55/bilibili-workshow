@@ -53,6 +53,9 @@
     .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px;font-size:15px}
   }
 .transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -96,7 +99,11 @@
       <p>视频从 3 月 16 日的 GTC 会场开场。黄仁勋穿着标志性的皮夹克走上舞台，面对来自许多国家的现场观众。镜头很快切到市场反应：一项消息让股价短暂跳涨，随后又回落。UP 主小李借这个反差定下全片的疑问——英伟达仍握着极赚钱的生意，资本市场看它的目光为什么已经从膜拜变成审视？</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-01.jpg" alt="黄仁勋穿着黑色皮夹克走过 GTC 主舞台" loading="lazy">
-        <figcaption>[00:06] 黄仁勋身穿皮夹克走上 GTC 舞台，视频由此引出“英伟达一边赚钱、一边焦虑”的主问题。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:06] 黄仁勋身穿皮夹克走上 GTC 舞台，视频由此引出“英伟达一边赚钱、一边焦虑”的主问题。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/70760c582a54.mp3" type="button" aria-label="Play English audio">🔊</button><span>Jensen Huang walks onstage in a leather jacket at GTC, setting up the video&#x27;s central question: “NVIDIA makes money and worries at the same time.”</span></div>
+<audio class="cap-audio" src="audio/70760c582a54.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>小李在 00:51 自报姓名，说明接下来会先解释 AI 行业规则如何改变，再看 GTC 上打出的牌。开头 00:15–00:19 的订单金额没有被 Whisper 识别出来，因此本文不补写该数字。</p>
       <blockquote class="quote">“老黄的焦虑其实来源于 A.I. 的游戏规则已经彻底改变。”<cite>UP 主小李，01:16</cite></blockquote>
@@ -117,7 +124,11 @@
       <p>第一路压力来自大客户。视频依次提到谷歌、亚马逊、微软和 OpenAI 的自研芯片计划。小李的表述很形象：英伟达最大的客户正在“后院建厨房”。这不等于它们已经完全停止采购 GPU，却意味着供应安全、议价和特定负载的效率，都多了一条选择。</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-02.jpg" alt="视频展示云服务商自研 ASIC 与 GPU 出货增速的文字对比图" loading="lazy">
-        <figcaption>[04:27] 视频引用 TrendForce 画面，称 2026 年云服务商自研 ASIC 出货增速预计为 44.6%，GPU 为 16.1%；该预测未由本文独立核验。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[04:27] 视频引用 TrendForce 画面，称 2026 年云服务商自研 ASIC 出货增速预计为 44.6%，GPU 为 16.1%；该预测未由本文独立核验。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f0ac88266eca.mp3" type="button" aria-label="Play English audio">🔊</button><span>The video cites a TrendForce frame: 2026 growth for cloud self-developed ASIC shipments forecast at 44.6% vs 16.1% for GPUs; this forecast wasn&#x27;t independently verified here.</span></div>
+<audio class="cap-audio" src="audio/f0ac88266eca.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>第二路压力来自 AMD。视频把它的策略概括为不追求全方位碾压，而是用“够用、便宜、开放互联”切入，首先冲击英伟达的价格和利润空间。这是 UP 主替竞争策略所作的拟人化总结，并非本文确认的 AMD 官方原话。</p>
       <blockquote class="quote">“我不需要全方位碾压你，我只主打一个够用而且极度便宜。”<cite>UP 主对 AMD 策略的概括，05:08</cite></blockquote>
@@ -130,7 +141,11 @@
       <p>接下来出现一段“循环融资”的风险叙述。画面以英伟达投资 CoreWeave、后者借债并继续购买 GPU 为例，展示资金如何在投资、贷款和采购间流动。视频进一步推演：如果 AI 需求放缓，抵押债务、GPU 贬值和二手设备抛售可能互相放大。</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-03.jpg" alt="NVIDIA 投资 CoreWeave、CoreWeave 向银行融资的关系示意图" loading="lazy">
-        <figcaption>[06:38] 视频中的资金关系示意：NVIDIA 投资 CoreWeave，CoreWeave 再通过银行融资购买 GPU。后续风险链是 UP 主提出的情景，不代表已经发生系统性危机。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[06:38] 视频中的资金关系示意：NVIDIA 投资 CoreWeave，CoreWeave 再通过银行融资购买 GPU。后续风险链是 UP 主提出的情景，不代表已经发生系统性危机。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/af001afa9790.mp3" type="button" aria-label="Play English audio">🔊</button><span>The video&#x27;s capital diagram: NVIDIA invests in CoreWeave, which then bank-finances GPU purchases. The risk chain that follows is the creator&#x27;s scenario, not a realized systemic crisis.</span></div>
+<audio class="cap-audio" src="audio/af001afa9790.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>小李也主动补了一层限定：相关投资与英伟达整体订单相比只占一部分，核心营收仍来自大型客户。真正让市场敏感的，是下一年能否继续增长。视频用财报后股价下跌说明，赚钱只是底线，资本还要求持续超预期。</p>
       <blockquote class="quote">“但他不是停不下来，而是不能停。”<cite>UP 主小李，07:40</cite></blockquote>
@@ -142,7 +157,11 @@
       <p>在进入 GTC 的三张牌之前，视频先铺陈黄仁勋反复讲述的“五层”框架：最底层是能源，向上依次是芯片、基础设施、模型和应用。小李认为，这个框架同时回应两件事。</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-04.jpg" alt="UP 主身旁显示能源、芯片、基础设施、模型和应用五层结构图" loading="lazy">
-        <figcaption>[08:50] 视频中的 AI 五层结构：能源层、芯片层、基础设施层、模型层和应用层。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[08:50] 视频中的 AI 五层结构：能源层、芯片层、基础设施层、模型层和应用层。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cdd6c0d79e23.mp3" type="button" aria-label="Play English audio">🔊</button><span>The video&#x27;s five-layer AI stack: energy, chips, infrastructure, models and applications.</span></div>
+<audio class="cap-audio" src="audio/cdd6c0d79e23.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>其一，它用底层电力、工厂和基础设施仍在扩张，回应“应用未起量，所以 AI 是泡沫”的质疑；其二，它把英伟达的竞争范围从芯片扩展到供电规划、集群互联、软件生态、模型服务和机器人等应用。视频用一句玩笑收束：“我早就在大气层了。”</p>
     </section>
@@ -153,12 +172,20 @@
       <p>GTC 的第一项重磅内容是 Vera Rubin。视频将它描述为由七款芯片共同设计的一整套计算平台，覆盖计算、调度、通信、安全、网络和推理。画面展示的不只是一颗 GPU，而是一台从一开始就为协作而设计的超级计算机。</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-05.jpg" alt="Vera Rubin 平台七款芯片与机架组成示意图" loading="lazy">
-        <figcaption>[10:06] 视频展示 Vera Rubin 平台：七款芯片及其对应模块被组合到同一系统中。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[10:06] 视频展示 Vera Rubin 平台：七款芯片及其对应模块被组合到同一系统中。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1f0be558f0b4.mp3" type="button" aria-label="Play English audio">🔊</button><span>The video shows the Vera Rubin platform: seven chips and their modules combined into one system.</span></div>
+<audio class="cap-audio" src="audio/1f0be558f0b4.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>小李把真正的“杀招”放在超节点：竞争焦点从单颗芯片多强，转到成千上万颗芯片如何连接、调度和散热。视频称 NVLink、交换芯片、通信协议与背板形成一整套成熟方案，客户买入 GPU 后也会同时进入这套互联体系。</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-06.jpg" alt="芯片与互联硬件展示画面，字幕写有 260TB 每秒总带宽" loading="lazy">
-        <figcaption>[11:19] 视频称 72 颗 GPU 可通过 NVLink 6 以 260TB/s 总带宽协同；性能数字为视频陈述，未由本文独立核验。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[11:19] 视频称 72 颗 GPU 可通过 NVLink 6 以 260TB/s 总带宽协同；性能数字为视频陈述，未由本文独立核验。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f7c107a1148c.mp3" type="button" aria-label="Play English audio">🔊</button><span>The video claims 72 GPUs can work together over NVLink 6 at 260TB/s total bandwidth; these numbers are the video&#x27;s claim, not independently verified here.</span></div>
+<audio class="cap-audio" src="audio/f7c107a1148c.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <blockquote class="quote">“不是单颗芯片多强，而是几千颗芯片怎么连成一个系统。”<cite>UP 主小李，10:57–11:03</cite></blockquote>
       <p>视频也没有说对手毫无路线：AMD 的开放互联、谷歌的光交换、华为的大规模 NPU 互联都被提到。小李的判断是，这些替代方案与现有成熟系统之间仍有时间差，而时间差本身会继续累积迁移成本。</p>
@@ -178,7 +205,11 @@
       <p>前两张牌更多是在守住现有阵地，第三张牌则试图给资本市场一个增长故事。视频转述黄仁勋的设想：未来每位工程师可能都有年度 Token 预算，企业不仅给人发工资，也持续为 AI 工作付费。</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-07.jpg" alt="黄仁勋在 GTC 舞台演讲，中文字幕为相当于工资的一半" loading="lazy">
-        <figcaption>[14:32] 黄仁勋在舞台上讲述工程师 Token 预算，视频字幕概括为“相当于工资的一半”。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[14:32] 黄仁勋在舞台上讲述工程师 Token 预算，视频字幕概括为“相当于工资的一半”。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c62f47d26b61.mp3" type="button" aria-label="Play English audio">🔊</button><span>On stage, Jensen Huang discusses engineers&#x27; token budgets, which the subtitle summarizes as “about half the salary.”</span></div>
+<audio class="cap-audio" src="audio/c62f47d26b61.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>随后，视频把数字员工部署服务接到这个故事上：如果每家公司都部署持续工作的 AI 员工，每一个 Token 都意味着长期算力消耗。小李将它概括成“高速上了、车门焊死、以后按公里收费”。这是一套需求叙事，是否成立仍取决于数字员工能否创造超过其推理成本的业务价值。</p>
       <blockquote class="quote">“如果说 Token 是这个 AI 时代的水和电，而我英伟达就是水电厂。”<cite>据 UP 主转述，14:42–14:47</cite></blockquote>
@@ -197,7 +228,11 @@
       <p>前面刚讲完云巨头自研芯片，视频随后展示 Vera Rubin 的首批部署客户：AWS、Google Cloud、Azure、OpenAI 等名称陆续出现。正是那些想自建硬件的客户，又出现在合作名单里。</p>
       <figure>
         <img src="assets/gtc2026-nvidia-ai-stack/shot-08.jpg" alt="UP 主身旁显示 AWS 和 Google Cloud 标志，介绍 Vera Rubin 客户名单" loading="lazy">
-        <figcaption>[16:15] 视频逐项展示 Vera Rubin 合作客户，画面此刻出现 AWS 与 Google Cloud 标志；名单和部署性质仍以视频陈述为准。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[16:15] 视频逐项展示 Vera Rubin 合作客户，画面此刻出现 AWS 与 Google Cloud 标志；名单和部署性质仍以视频陈述为准。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1e349b9e23d5.mp3" type="button" aria-label="Play English audio">🔊</button><span>The video lists Vera Rubin customers one by one; AWS and Google Cloud logos appear now — the roster and deployment nature rely on the video&#x27;s account.</span></div>
+<audio class="cap-audio" src="audio/1e349b9e23d5.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>小李给出三点解释：专用芯片适配面较窄，模型架构变化可能快于芯片研发周期；CUDA 与 NVLink 叠加出的迁移成本很高；新一代系统用更低成本回应了客户“太贵”的顾虑。因此，自研芯片既能承担固定负载，也能作为分散风险和压价的筹码，却未必会让通用 GPU 从牌桌上消失。</p>
       <blockquote class="quote">“老板们确实在后院建了厨房，但简单的家常菜可以自己做……还是得回饭店。”<cite>UP 主小李，17:31–17:37；个别词受转录误差影响</cite></blockquote>
@@ -2763,5 +2798,40 @@
     </div></details></section>
     <footer>本页为视频内容的自动转录与编辑整理，不构成投资建议。来源：B 站视频 BV1d3wyz6Eyp。</footer>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

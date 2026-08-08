@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -84,7 +87,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 常把 CMOS 识成「SIMOS」，「关闭则重置」识成「关闭子重置」，「读出」识成「读书」，「光电二极管」识成「光电2G网」，「模数转换器」识成「魔术转换器」，「果冻效应」识成「活动／果动效应」，「机械幕帘」识成「机械木莲」，「信噪比」识成「性造比」。下文叙述以可见字幕与动画为准；末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/electronic-shutter/shot-01.jpg" alt="彩色像素阵列上叠加电子卷帘快门标题，字幕说明 CMOS 每个像素都有开关" loading="lazy">
-        <figcaption>[00:02] 开场定调：电子卷帘快门 = 像素级开关按行滚动工作。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:02] 开场定调：电子卷帘快门 = 像素级开关按行滚动工作。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d839817d6b69.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening tone-set: the electronic rolling shutter is row-by-row pixel-level exposure.</span></div>
+<audio class="cap-audio" src="audio/d839817d6b69.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -96,11 +103,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>这一段不是在讲构图，而是在铺「为什么后面会有读出瓶颈」：电压到数字信号，并不能整幅瞬间完成。</p>
       <figure>
         <img src="assets/electronic-shutter/shot-02.jpg" alt="线框立方体接收下落的光子粒子，字幕写光子进入到传感器" loading="lazy">
-        <figcaption>[00:15] 光子入传感器：后续电荷、电压、放大与 ADC 都从这里起步。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:15] 光子入传感器：后续电荷、电压、放大与 ADC 都从这里起步。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8718b1e385dc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Photons enter the sensor: the charge, voltage, gain and ADC chain all start here.</span></div>
+<audio class="cap-audio" src="audio/8718b1e385dc.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/electronic-shutter/shot-03.jpg" alt="深色画面上展示模数转换相关字幕与电路流程示意" loading="lazy">
-        <figcaption>[00:28] 模数转换环节：把放大后的电压变成可存储的数字信号。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:28] 模数转换环节：把放大后的电压变成可存储的数字信号。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/30a8c3cd692c.mp3" type="button" aria-label="Play English audio">🔊</button><span>The ADC stage: turning the amplified voltage into storable digital signals.</span></div>
+<audio class="cap-audio" src="audio/30a8c3cd692c.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -112,11 +127,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>要想每行曝光结束时立刻同步读出，电子卷帘就只能严格沿着这条斜线（也就是读出速度）去开闭各行。快门时间怎么调，帧内首末行的时间差仍是约 20ms——远大于旁白对照的机械快门约 4ms。</p>
       <figure>
         <img src="assets/electronic-shutter/shot-04.jpg" alt="传感器示意图旁有首行到末行对时间的读出斜线，字幕写可以同步读出" loading="lazy">
-        <figcaption>[00:50] 读出斜线：同步读出意味着各行开启必须跟着读出速度走。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] 读出斜线：同步读出意味着各行开启必须跟着读出速度走。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/eada7217b075.mp3" type="button" aria-label="Play English audio">🔊</button><span>Readout slant: with synchronous readout, each row&#x27;s exposure must follow the readout speed.</span></div>
+<audio class="cap-audio" src="audio/eada7217b075.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/electronic-shutter/shot-05.jpg" alt="左右对照图：左侧读出跨度标 20ms，右侧标 4ms，曝光均为 1/1000s" loading="lazy">
-        <figcaption>[01:04] 同一曝光 1/1000s，读出 20ms 与 4ms 的斜线陡峭程度差很多。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:04] 同一曝光 1/1000s，读出 20ms 与 4ms 的斜线陡峭程度差很多。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/10c9753f0b91.mp3" type="button" aria-label="Play English audio">🔊</button><span>At the same 1/1000s exposure, a 20ms vs 4ms readout shows very different diagonal steepness.</span></div>
+<audio class="cap-audio" src="audio/10c9753f0b91.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -128,7 +151,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>旁白用约 3300 万像素的 CMOS 举例：拍一张要读出约 4672 行；按 20ms 读出算，每行时差约 4.3 微秒。听上去极短，但对高速物体已足够造成明显变形。机械快门面对高速也会有类似效应，只是比电子卷帘轻得多。</p>
       <figure>
         <img src="assets/electronic-shutter/shot-06.jpg" alt="像素网格上出现倾斜白色线条示意形变，字幕写在空间位移中发生形变" loading="lazy">
-        <figcaption>[01:12] 形变示意：行间时差把运动轨迹「拧」出斜线与扭曲。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:12] 形变示意：行间时差把运动轨迹「拧」出斜线与扭曲。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cd9dd3e800af.mp3" type="button" aria-label="Play English audio">🔊</button><span>Distortion diagram: rolling skew “twists” motion paths into slants and warps.</span></div>
+<audio class="cap-audio" src="audio/cd9dd3e800af.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -146,7 +173,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「决定了CMOS可以先曝光」</blockquote>
       <figure>
         <img src="assets/electronic-shutter/shot-07.jpg" alt="标题机械快门，右侧图表显示约 4ms 的幕帘行程阴影区" loading="lazy">
-        <figcaption>[01:55] 机械快门对照：约 4ms 行程，配合后幕帘遮盖，允许先曝光后读出。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:55] 机械快门对照：约 4ms 行程，配合后幕帘遮盖，允许先曝光后读出。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/835e124aaf38.mp3" type="button" aria-label="Play English audio">🔊</button><span>Mechanical shutter comparison: an ~4ms travel, with the rear curtain covering — allowing expose-then-readout.</span></div>
+<audio class="cap-audio" src="audio/835e124aaf38.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -158,7 +189,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>全域快门可同时开电路曝光，再把电子先挪到存储单元，之后再读出，因而没有行间曝光时差，也能避免果冻效应。代价是：每像素额外存储单元会削弱收光能力，影响信噪比与画质；旁白收尾一句——最大的影响还是「贵」。</p>
       <figure>
         <img src="assets/electronic-shutter/shot-08.jpg" alt="传感器画面叠加全域快门与 GLOBAL SHUTTER 标题" loading="lazy">
-        <figcaption>[02:27] 全域解：全域快门用片上存储换同时曝光，换来无时差，也换来成本与画质取舍。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:27] 全域解：全域快门用片上存储换同时曝光，换来无时差，也换来成本与画质取舍。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b37554ca44e9.mp3" type="button" aria-label="Play English audio">🔊</button><span>The global solution: a global shutter trades on-chip storage for simultaneous exposure — no skew, at the cost of price and image quality.</span></div>
+<audio class="cap-audio" src="audio/b37554ca44e9.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
   </article>
@@ -493,5 +528,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">素材来自小红书分享短链 · 图文实录由自动化工作流生成</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

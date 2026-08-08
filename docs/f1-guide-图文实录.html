@@ -54,6 +54,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
   .transcript-row{grid-template-columns:54px minmax(0,1fr);gap:9px;font-size:14px}
 }
 .transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -103,12 +106,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
       <p>桌上出现一辆红色 SF-24 模型。视频用一组直观参数建立尺度：一辆典型 F1 赛车造价约 1700 万美元，1.6 升 V6 混动动力、约 1000 马力、车重约 800 千克。零到一百公里约 2.4 秒，看起来未必胜过某些超跑或电车；但一百到两百公里只要约 1.8 秒，并能长期保持三百公里以上的速度。</p>
       <figure>
         <img src="assets/f1-guide/shot-01.jpg" alt="UP 主在桌前展示红色法拉利 SF-24 赛车模型" loading="lazy">
-        <figcaption>[00:47] UP 主以法拉利 SF-24 模型介绍典型 F1 赛车；画面字幕称其为法拉利 2024 年获得亚军的赛车。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:47] UP 主以法拉利 SF-24 模型介绍典型 F1 赛车；画面字幕称其为法拉利 2024 年获得亚军的赛车。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ba0ab7c99468.mp3" type="button" aria-label="Play English audio">🔊</button><span>The creator uses a Ferrari SF-24 model to introduce a typical F1 car; the subtitle calls it Ferrari&#x27;s 2024 runner-up car.</span></div>
+<audio class="cap-audio" src="audio/ba0ab7c99468.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>但视频真正想强调的是弯道。那些复杂翼片和车身线条都在服务同一个物理属性：下压力。UP 主把赛车比作倒置机翼——飞机用气压差向上飞，F1 的前翼、车底和尾翼则把车牢牢压向地面，让轮胎在高速弯仍有抓地力。</p>
       <figure>
         <img src="assets/f1-guide/shot-02.jpg" alt="一辆红牛 F1 赛车在赛道上高速通过弯道" loading="lazy">
-        <figcaption>[01:29] 赛道画面配合讲解 F1 的核心物理属性：下压力让赛车在高速过弯时维持抓地。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:29] 赛道画面配合讲解 F1 的核心物理属性：下压力让赛车在高速过弯时维持抓地。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/647337521cda.mp3" type="button" aria-label="Play English audio">🔊</button><span>Track footage accompanies the core F1 physics: downforce keeps grip through high-speed corners.</span></div>
+<audio class="cap-audio" src="audio/647337521cda.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <blockquote class="quote">“轮子上的飞机。”<cite>01:37—01:39，视频引用的比喻</cite></blockquote>
       <p>视频又给出两个夸张例子：时速超过 240 公里时，下压力可能超过车重，理论上足以让赛车倒着开在足够长的隧道天花板上；2023 年拉斯维加斯大奖赛的法拉利赛车还遭遇了松动井盖事故。后一个片段的 Whisper 误识别较重，因此这里只保留事故与底部气流吸力之间的叙述，不补写听不清的细节。</p>
@@ -121,7 +132,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
       <p>视频用迈凯伦 F-duct 讲了一个经典故事。弯道需要下压力，直线却希望降低阻力；规则又不允许直接移动翼片。迈凯伦在驾驶舱前设置气流入口，车手用腿遮住入口后，气流改道并扰乱尾翼，降低阻力。空气动力组件本身没有移动，结构因此一度被判合法，并引来其他车队仿制。</p>
       <figure>
         <img src="assets/f1-guide/shot-03.jpg" alt="F1 赛车尾翼周围的蓝色气流示意图" loading="lazy">
-        <figcaption>[04:25] 动画展示气流到达尾翼后被扰乱，尾翼失去部分下压力，从而降低直线阻力。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[04:25] 动画展示气流到达尾翼后被扰乱，尾翼失去部分下压力，从而降低直线阻力。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cc4bace09ad7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Animation shows airflow being disturbed at the rear wing, which loses downforce and thereby cuts straight-line drag.</span></div>
+<audio class="cap-audio" src="audio/cc4bace09ad7.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <blockquote class="quote">“上有政策，下有对策。”<cite>04:00—04:02，UP 主对规则博弈的概括</cite></blockquote>
       <p>下一年，规则允许可动空气动力组件，DRS 阻力削减系统登场。UP 主把这种“规则变化—寻找漏洞—吸收方案”的循环比作进化：F1 的科技演进，不只是造更快的车，也是工程师和规则持续斗智斗勇。</p>
@@ -135,7 +150,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
       <p>轮胎把这种取舍变得具体。它不是一味追求又快又耐用，而是会衰减的比赛资源。车手进攻会耗胎，超车成功也可能换来更早进站。比对手先换新胎、用圈速建立时间优势叫 Undercut；延后进站、继续用旧胎争取赛道位置则叫 Overcut。</p>
       <figure>
         <img src="assets/f1-guide/shot-04.jpg" alt="红牛车队为维斯塔潘赛车执行进站换胎，画面显示计时与圈数" loading="lazy">
-        <figcaption>[07:51] 进站换胎画面对应 Undercut 讲解：提前换上新胎，尝试先建立圈速与时间优势。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[07:51] 进站换胎画面对应 Undercut 讲解：提前换上新胎，尝试先建立圈速与时间优势。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7c6604af0956.mp3" type="button" aria-label="Play English audio">🔊</button><span>The pit-stop tire change matches the undercut explanation: pitting early for fresh tires to build a lap-time and track-position advantage.</span></div>
+<audio class="cap-audio" src="audio/7c6604af0956.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>资源平衡还延伸到车队研发。视频介绍了 2021 年起的预算帽，以及空气动力学测试时间反向分配：上赛季成绩靠后的车队能得到更多测试资源。UP 主把它们比作统一金币上限和追赶机制，最后把 F1 归纳成车队、车手与数百名工程师共同参与的策略游戏。</p>
     </section>
@@ -146,7 +165,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
       <p>商业章节的转折点是 2017 年。视频称，Liberty Media 以约 80 亿美元取得 F1 商业运营权，随后放开社交媒体、推动 Netflix 拍摄《Drive to Survive》，并加强美国市场布局。UP 主把变化形容为：F1 从“欧洲有钱老头的私人俱乐部”，变成全球年轻人的内容产品。</p>
       <figure>
         <img src="assets/f1-guide/shot-05.jpg" alt="视频中的 F1 年收入柱状图，对比 2016 年与 2025 年" loading="lazy">
-        <figcaption>[10:01] 视频展示的收入对比：2016 年约 15 亿美元，2025 年接近 40 亿美元；图中标注来源为 arthnova.com 与 libertymedia.com。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[10:01] 视频展示的收入对比：2016 年约 15 亿美元，2025 年接近 40 亿美元；图中标注来源为 arthnova.com 与 libertymedia.com。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/35a56411d16b.mp3" type="button" aria-label="Play English audio">🔊</button><span>The video shows a revenue comparison: ~$1.5B in 2016 to nearly $4B in 2025; sources labeled arthnova.com and libertymedia.com.</span></div>
+<audio class="cap-audio" src="audio/35a56411d16b.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>收入不只来自转播权与赞助。视频还讲到城市支付的举办费、高价现场款待，以及赛事收入按公式分给车队。赛事分成、车队赞助和预算帽共同作用，视频据此判断当前车队大多能盈利。这里的收购价、收入、举办费和票价均是视频所述，年份与口径并未在片中完整展开。</p>
       <p>品牌参赛也不只是为了分成。法拉利把赛事与品牌核心绑定；红牛通过 F1 塑造极限运动生活方式；凯迪拉克、奥迪等厂商还希望把混动、空气动力、碳纤维制造和数据分析能力带回量产车。UP 主称 Liberty 的收购可能是体育史上极划算的一笔，这是她的评价，不是投资结论。</p>
@@ -158,7 +181,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
       <p>汉密尔顿、勒克莱尔、塞恩斯、维斯塔潘依次登场。每支车队只有两位正式车手，他们使用相近的赛车，于是队友成了最直接也最残酷的参照：谁开得好，谁开得不好，很难全都归因于车。</p>
       <figure>
         <img src="assets/f1-guide/shot-06.jpg" alt="卡洛斯·塞恩斯的新加坡大奖赛转播人物卡" loading="lazy">
-        <figcaption>[12:20] 明星车手段落中的卡洛斯·塞恩斯人物卡；视频用车手与队友竞争解释 F1 的人物吸引力。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[12:20] 明星车手段落中的卡洛斯·塞恩斯人物卡；视频用车手与队友竞争解释 F1 的人物吸引力。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f695b2a05dc4.mp3" type="button" aria-label="Play English audio">🔊</button><span>A Carlos Sainz character card in the celebrity-driver segment; the video explains F1&#x27;s human appeal through driver-versus-teammate rivalry.</span></div>
+<audio class="cap-audio" src="audio/f695b2a05dc4.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>对完全不了解 F1 的观众，UP 主推荐 Netflix 纪录片《Drive to Survive》。它不负责系统讲技术和战术，而是把车手的挣扎、成长、竞争与车队矛盾剪成易进入的故事。她给出的入门办法很简单：先选一个顺眼的车手或车队，跟着看几场。</p>
       <blockquote class="quote">“它是地球上科技含量最高的运动，是时速 300 公里的策略游戏……但说到底，它好看，是因为里面的人和他们发生的故事。”<cite>13:17—13:32，省略一处未核验的商业概括</cite></blockquote>
@@ -170,7 +197,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
       <p>片尾前，叙述回到视频的起因：一汽奥迪的邀请。UP 主说，做了再多调研也替代不了现场。赛车从面前经过时，不只是用眼睛看到，而是能用胸腔感到冲击。她还进入奥迪 pit 车库，看到动力单元、工程师整备车辆，以及前翼安装后用胶带减少细微阻力的做法。</p>
       <figure>
         <img src="assets/f1-guide/shot-07.jpg" alt="奥迪车库中赛车部件螺丝边缘贴有胶带的近景，黄色箭头指向胶带" loading="lazy">
-        <figcaption>[14:21] 奥迪车库细节：前翼模块用螺丝安装后，边缘再贴胶带，以减少细微空气阻力。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[14:21] 奥迪车库细节：前翼模块用螺丝安装后，边缘再贴胶带，以减少细微空气阻力。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9c19972f6afb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Audi garage detail: after bolting on the front-wing module, tape is applied to the edges to shave off subtle aerodynamic drag.</span></div>
+<audio class="cap-audio" src="audio/9c19972f6afb.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>随后是一支车队的重启故事。视频介绍，奥迪接手拥有三十多年历史的 Sauber，组建厂队并自造动力单元；车手由经验丰富的尼科·霍肯伯格和新人加布里埃尔·博托莱托搭档。上海站换胎失误让 UP 主在车库上方看得揪心，但她根据现场参观仍认为团队专业、前景值得期待。</p>
       <p class="stance">对奥迪团队“很有希望”的判断来自受邀现场体验，属于 UP 主个人立场。口播在 15:47.76 结束，视频余下约 24 秒没有 Whisper 分段，本文不补写对白。</p>
@@ -2734,5 +2765,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
     </div></details></section>
     <footer class="footer">内容整理自 B 站视频《F1 到底在看什么？》 · 原视频时长 16:12</footer>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

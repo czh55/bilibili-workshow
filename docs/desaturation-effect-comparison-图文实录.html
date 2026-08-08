@@ -55,6 +55,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .toc-grid{grid-template-columns:1fr}
   .transcript-row{grid-template-columns:52px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -98,11 +101,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">原话依据 [00:08]：“但是嘴巴的颜色却变得很脏了，而整体的颜色还是很刺眼。”</blockquote>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-01.jpg" alt="高饱和人像原片与修图界面，博主指出直接降饱和后面部仍刺眼" loading="lazy">
-        <figcaption>[00:01] 开场：高饱和人像与常规降饱和思路。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:01] 开场：高饱和人像与常规降饱和思路。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0bd87ac60ede.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: a high-saturation portrait vs the usual desaturation approach.</span></div>
+<audio class="cap-audio" src="audio/0bd87ac60ede.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-02.jpg" alt="放大皮肤区域后，嘴唇颜色发脏而整体仍刺眼的对比画面" loading="lazy">
-        <figcaption>[00:09] 放大可见：皮肤降饱和后，嘴唇发脏、整体仍刺眼。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:09] 放大可见：皮肤降饱和后，嘴唇发脏、整体仍刺眼。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/dae71c222ce7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Visible when enlarged: after desaturating the skin, the lips look dirty and the whole image still stings.</span></div>
+<audio class="cap-audio" src="audio/dae71c222ce7.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -113,11 +124,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">原话依据 [00:18]：“因为反向能生成画面里每一种颜色对应的互补色。” · [00:29]：“因为我只想让互补色来参与颜色的调整，并不想改变画面的明暗关系。”</blockquote>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-03.jpg" alt="Photoshop 图层面板中选择反向命令，准备生成互补色图层" loading="lazy">
-        <figcaption>[00:16] 复制图层并执行“反向”，生成互补色。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:16] 复制图层并执行“反向”，生成互补色。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/04920785ff91.mp3" type="button" aria-label="Play English audio">🔊</button><span>Duplicate the layer and apply “invert” to produce complementary colors.</span></div>
+<audio class="cap-audio" src="audio/04920785ff91.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-04.jpg" alt="混合模式改为颜色，只影响色相饱和度而不改明暗" loading="lazy">
-        <figcaption>[00:27] 混合模式改为“颜色”，互补色只参与色彩而不改明暗。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:27] 混合模式改为“颜色”，互补色只参与色彩而不改明暗。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e32c7fb57f48.mp3" type="button" aria-label="Play English audio">🔊</button><span>Setting the blend mode to “color”: the complement only affects color, not light and dark.</span></div>
+<audio class="cap-audio" src="audio/e32c7fb57f48.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -128,11 +147,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">原话依据 [00:39]：“你看这个颜色是不是比刚才那个要舒服很多。” · [00:47]：“肤色还能保留原来的质感，颜色也更加的自然。”</blockquote>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-05.jpg" alt="降低不透明度后画面色彩明显缓和，博主认为这一步已足够" loading="lazy">
-        <figcaption>[00:38] 回收不透明度后，色彩变化立即可见。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:38] 回收不透明度后，色彩变化立即可见。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c39eeb41f32d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Restoring opacity makes the color change immediately visible.</span></div>
+<audio class="cap-audio" src="audio/c39eeb41f32d.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-06.jpg" alt="之前与现在的并排对比，新方法下肤色更自然" loading="lazy">
-        <figcaption>[00:45] “之前 / 现在”对比：同样是降饱和方向，质感保留更好。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:45] “之前 / 现在”对比：同样是降饱和方向，质感保留更好。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e2d63d25c807.mp3" type="button" aria-label="Play English audio">🔊</button><span>“Before / Now” comparison: same desaturation direction, but texture is preserved better.</span></div>
+<audio class="cap-audio" src="audio/e2d63d25c807.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -143,7 +170,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">原话依据 [00:52]：“画面难免会变灰，色彩也会丢失一些。” · [01:07]：“给皮肤加一点点红色，加一点点就够了。”</blockquote>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-07.jpg" alt="曲线调整面板，高光提亮并给暗部增加对比" loading="lazy">
-        <figcaption>[00:59] 曲线：提亮高光区，暗部补对比，缓解发灰。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:59] 曲线：提亮高光区，暗部补对比，缓解发灰。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7c1324cd2d2e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Curves: brighten highlights, add contrast in shadows, ease the gray cast.</span></div>
+<audio class="cap-audio" src="audio/7c1324cd2d2e.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -154,7 +185,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">原话依据 [01:18]：“别着急调整饱盒度，可以先试试这个方法，画面真的会舒服很多。”（Whisper 将“饱和度”误识为“饱盒度”。）</blockquote>
       <figure>
         <img src="assets/desaturation-effect-comparison/shot-08.jpg" alt="整图最终前后对比，新方法下色彩更自然舒适" loading="lazy">
-        <figcaption>[01:15] 整图最终前后对比。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:15] 整图最终前后对比。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0b34fd6cd574.mp3" type="button" aria-label="Play English audio">🔊</button><span>The final full-image before/after.</span></div>
+<audio class="cap-audio" src="audio/0b34fd6cd574.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -373,5 +408,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <footer class="footer">图文实录依据原视频画面与 Whisper 时间分段整理 · 2026-07-26</footer>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

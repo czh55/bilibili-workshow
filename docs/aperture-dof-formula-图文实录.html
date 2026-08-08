@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -84,7 +87,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 常把「弥散圆」识成「弥散源」，「所成的像」识成「所称的像」，「辨认出模糊」识成「变成起模糊」，「演示」识成「掩饰」，「夹角」识成「假角」，「焦深」识成「焦身」，「被摄主体」识成「背摄主体」。下文叙述以可见字幕与动画画面为准；页面末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/aperture-dof-formula/shot-01.jpg" alt="相机剖面动画：物点光线经透镜汇聚到传感器，右侧面板显示清晰橙点，字幕试着前后移动这个点" loading="lazy">
-        <figcaption>[00:01] 开场剖面：物点—透镜—光圈—传感器，邀请你前后移动物点。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:01] 开场剖面：物点—透镜—光圈—传感器，邀请你前后移动物点。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8653ea717737.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening cross-section: object point—lens—aperture—sensor, inviting you to move the object point back and forth.</span></div>
+<audio class="cap-audio" src="audio/8653ea717737.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -95,7 +102,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「因此这个物体的点所成的像就会慢慢变模糊」</blockquote>
       <figure>
         <img src="assets/aperture-dof-formula/shot-02.jpg" alt="焦点落在传感器后方，右侧面板显示边缘发虚的大橙圆，字幕说明像变模糊" loading="lazy">
-        <figcaption>[00:10] 失焦演示：传感器截到扩大的弥散圆，点像变糊。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:10] 失焦演示：传感器截到扩大的弥散圆，点像变糊。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3d53cc748d53.mp3" type="button" aria-label="Play English audio">🔊</button><span>Defocus demo: the sensor catches an enlarged circle of confusion, blurring the point image.</span></div>
+<audio class="cap-audio" src="audio/3d53cc748d53.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -106,7 +117,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「这个足够小的弥散圆就是我们前面说的容许弥散圆」</blockquote>
       <figure>
         <img src="assets/aperture-dof-formula/shot-03.jpg" alt="传感器上只剩很小的橙点，字幕写这个足够小的弥散圆就是容许弥散圆" loading="lazy">
-        <figcaption>[00:20] 阈值落地：足够小的弥散圆 = 容许弥散圆。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:20] 阈值落地：足够小的弥散圆 = 容许弥散圆。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c15181010f18.mp3" type="button" aria-label="Play English audio">🔊</button><span>The threshold lands: a small-enough circle of confusion = the permissible one.</span></div>
+<audio class="cap-audio" src="audio/c15181010f18.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -117,7 +132,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「因为它的直径约为0.029mm」</blockquote>
       <figure>
         <img src="assets/aperture-dof-formula/shot-04.jpg" alt="深色背景上大字写直径0.029mm，字幕重复直径约为0.029mm" loading="lazy">
-        <figcaption>[00:38] 关键数字：全画幅常用容许弥散圆直径约 0.029mm。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:38] 关键数字：全画幅常用容许弥散圆直径约 0.029mm。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7a5ca8c31723.mp3" type="button" aria-label="Play English audio">🔊</button><span>Key number: full-frame commonly uses a permissible circle of confusion of about 0.029mm.</span></div>
+<audio class="cap-audio" src="audio/7a5ca8c31723.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -128,7 +147,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「称之为焦深」</blockquote>
       <figure>
         <img src="assets/aperture-dof-formula/shot-05.jpg" alt="传感器附近虚线标出焦深区间，光线在焦点前后形成可接受模糊带，字幕称之为焦深" loading="lazy">
-        <figcaption>[00:52] 机内区间：焦点两侧由容许弥散圆界定的焦深。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:52] 机内区间：焦点两侧由容许弥散圆界定的焦深。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f26333714245.mp3" type="button" aria-label="Play English audio">🔊</button><span>In-camera zone: the depth of focus on both sides of the focus point, bounded by the permissible circle of confusion.</span></div>
+<audio class="cap-audio" src="audio/f26333714245.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -139,7 +162,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「就是我们说的景深」</blockquote>
       <figure>
         <img src="assets/aperture-dof-formula/shot-06.jpg" alt="剖面图标注景深与焦深、物距像距与对焦距离L，字幕就是我们说的景深" loading="lazy">
-        <figcaption>[01:08] 概念对照：景深（物方）↔ 焦深（像方）。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:08] 概念对照：景深（物方）↔ 焦深（像方）。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3cd8c6167584.mp3" type="button" aria-label="Play English audio">🔊</button><span>Concept comparison: depth of field (object side) ↔ depth of focus (image side).</span></div>
+<audio class="cap-audio" src="audio/3cd8c6167584.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -150,7 +177,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「这里的δ是容许弥散圆的直径」</blockquote>
       <figure>
         <img src="assets/aperture-dof-formula/shot-07.jpg" alt="黄色公式显示前景深与后景深，右侧列出δ、F、f、L等变量含义" loading="lazy">
-        <figcaption>[01:15] 公式出场：ΔL1 / ΔL2，δ = 容许弥散圆直径。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:15] 公式出场：ΔL1 / ΔL2，δ = 容许弥散圆直径。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d375b8549c27.mp3" type="button" aria-label="Play English audio">🔊</button><span>The formula appears: ΔL1 / ΔL2, with δ = permissible circle of confusion diameter.</span></div>
+<audio class="cap-audio" src="audio/d375b8549c27.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -161,7 +192,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「是由容许弥散圆来定义的」</blockquote>
       <figure>
         <img src="assets/aperture-dof-formula/shot-08.jpg" alt="参数表给出ΔL1=1087mm、ΔL2=3947mm、ΔL=5034mm，场景示意标注1.087m与3.947m" loading="lazy">
-        <figcaption>[01:40] 数值落地：前 1.087m + 后 3.947m = 总景深 5.034m。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:40] 数值落地：前 1.087m + 后 3.947m = 总景深 5.034m。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3aa2aea4a2b7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Numbers land: front 1.087m + back 3.947m = total depth of field 5.034m.</span></div>
+<audio class="cap-audio" src="audio/3aa2aea4a2b7.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
   </article>
@@ -417,5 +452,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物之一 · 图文实录 · 原视频时长 1分48秒 · 49 个非空分段</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

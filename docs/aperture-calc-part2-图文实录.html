@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -84,7 +87,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 把「入瞳直径」识成「入桶直径」、把「每改变」识成「没改变」等。下文叙述以可见字幕与画面公式为准；页面末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/aperture-calc-part2/shot-01.jpg" alt="深色背景上展示 F 等于焦距除以入瞳直径的公式，下方字幕介绍 50mm 定焦" loading="lazy">
-        <figcaption>[00:01] 开场公式卡：F = 焦距 / 入瞳直径，示例镜头为 50mm 定焦。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:01] 开场公式卡：F = 焦距 / 入瞳直径，示例镜头为 50mm 定焦。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f7856b7e67e8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening formula card: F = focal length / entrance-pupil diameter, exemplified by a 50mm prime.</span></div>
+<audio class="cap-audio" src="audio/f7856b7e67e8.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -95,7 +102,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「此时的入瞳直径大约是42mm」</blockquote>
       <figure>
         <img src="assets/aperture-calc-part2/shot-02.jpg" alt="F1.2 等于 50mm 除以 42mm 的动画公式卡，字幕写入瞳直径约 42mm" loading="lazy">
-        <figcaption>[00:08] f/1.2 时用公式反推入瞳：50mm ÷ 1.2 ≈ 42mm。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:08] f/1.2 时用公式反推入瞳：50mm ÷ 1.2 ≈ 42mm。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4a927be8252e.mp3" type="button" aria-label="Play English audio">🔊</button><span>At f/1.2, back-calculate the entrance pupil: 50mm ÷ 1.2 ≈ 42mm.</span></div>
+<audio class="cap-audio" src="audio/4a927be8252e.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -106,7 +117,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「此时的入瞳直径仅约为3mm」</blockquote>
       <figure>
         <img src="assets/aperture-calc-part2/shot-03.jpg" alt="F16 公式卡对比同一支 50mm 镜头，字幕写入瞳直径仅约 3mm" loading="lazy">
-        <figcaption>[00:14] f/16 时入瞳缩到约 3mm，和 f/1.2 形成强烈反差。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:14] f/16 时入瞳缩到约 3mm，和 f/1.2 形成强烈反差。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ac14115548ba.mp3" type="button" aria-label="Play English audio">🔊</button><span>At f/16 the entrance pupil shrinks to about 3mm — a stark contrast to f/1.2.</span></div>
+<audio class="cap-audio" src="audio/ac14115548ba.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -117,11 +132,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「因此呈现出来的画面看起来更亮」</blockquote>
       <figure>
         <img src="assets/aperture-calc-part2/shot-04.jpg" alt="F1.2 相机剖面动画，大量光线进入传感器，字幕说照度变强" loading="lazy">
-        <figcaption>[00:26] 大光圈路径：入瞳变大 → 光通面积更大 → 传感器照度变强。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:26] 大光圈路径：入瞳变大 → 光通面积更大 → 传感器照度变强。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2fb77777d801.mp3" type="button" aria-label="Play English audio">🔊</button><span>Large-aperture path: bigger entrance pupil → larger light-collecting area → stronger sensor illuminance.</span></div>
+<audio class="cap-audio" src="audio/2fb77777d801.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/aperture-calc-part2/shot-05.jpg" alt="F1.2 相机剖面并显示更亮的样张预览，字幕说画面更亮" loading="lazy">
-        <figcaption>[00:30] 结果对照：同样场景在大光圈下预览更亮。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 结果对照：同样场景在大光圈下预览更亮。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/76f4ae8876fb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Result comparison: the same scene previews brighter at a wide aperture.</span></div>
+<audio class="cap-audio" src="audio/76f4ae8876fb.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -132,7 +155,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「因此呈现出来的画面就会更暗」</blockquote>
       <figure>
         <img src="assets/aperture-calc-part2/shot-06.jpg" alt="较小光圈 F8 的相机剖面，光线变少，字幕说照度变弱" loading="lazy">
-        <figcaption>[00:37] 小光圈路径：入瞳变小 → 光通面积更小 → 成像更暗。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:37] 小光圈路径：入瞳变小 → 光通面积更小 → 成像更暗。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5bcb5b9f4ccc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Small-aperture path: smaller entrance pupil → less light-collecting area → dimmer image.</span></div>
+<audio class="cap-audio" src="audio/5bcb5b9f4ccc.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -143,7 +170,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「也就是F值每改变约1.4倍」</blockquote>
       <figure>
         <img src="assets/aperture-calc-part2/shot-07.jpg" alt="F 值序列 1、1.4、2、2.8 与字幕说明每改变约 1.4 倍" loading="lazy">
-        <figcaption>[00:48] 标准光圈序列：相邻全档约 ×√2，对应照度约翻倍/减半。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:48] 标准光圈序列：相邻全档约 ×√2，对应照度约翻倍/减半。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/27ec948966f1.mp3" type="button" aria-label="Play English audio">🔊</button><span>Standard aperture sequence: each full stop is roughly ×√2, roughly doubling/halving the light.</span></div>
+<audio class="cap-audio" src="audio/27ec948966f1.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -161,7 +192,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「还会影响一个非常重要的成像特性」</blockquote>
       <figure>
         <img src="assets/aperture-calc-part2/shot-08.jpg" alt="F 值、照度与面积对照表，字幕提示还会影响重要成像特性" loading="lazy">
-        <figcaption>[01:04] 收束表 + 伏笔：曝光讲完，下一题是景深。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:04] 收束表 + 伏笔：曝光讲完，下一题是景深。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/59f05a7f948e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Closing table + teaser: exposure done — next up, depth of field.</span></div>
+<audio class="cap-audio" src="audio/59f05a7f948e.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
   </article>
@@ -284,5 +319,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物之一 · 图文实录 · 原视频见页首链接</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

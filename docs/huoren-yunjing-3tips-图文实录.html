@@ -54,6 +54,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .toc-grid{grid-template-columns:1fr}
   .transcript-row{grid-template-columns:52px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -90,7 +93,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>视频以情侣旅拍小剧场开场：作者说这是和女朋友第一次出来旅行的第三天，但她已经不太理他——棘手问题只有两个字：出片。女朋友嫌他拍得笨：既要和背景一起进画，又要「有人又有景」，还要有活人感。</p>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-01.jpg" alt="悉尼海港边，女子以手遮额，背景可见悉尼歌剧院，字幕显示她现在已经不太理我了" loading="lazy">
-        <figcaption>[00:03] 开场痛点：字幕「但她现在已经不太理我了」；场景在悉尼海港，歌剧院入画。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:03] 开场痛点：字幕「但她现在已经不太理我了」；场景在悉尼海港，歌剧院入画。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7b7e6bbbf14e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening pain point: subtitle “but she doesn&#x27;t really talk to me anymore,” set at Sydney Harbour with the Opera House in frame.</span></div>
+<audio class="cap-audio" src="audio/7b7e6bbbf14e.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p class="note">说明：笔记文案写明设备为索尼 ZV-E1｜大疆 RS5。作者昵称元数据缺失。Whisper 多处误识（见各段注与文末），叙事以可见字幕、画面与文案为准；下方「详细文字转录」仍保留全部原始分段，不做改写。</p>
       <blockquote class="quote">口播语义 [00:00–00:22]：第一次旅行第三天 → 女朋友不太理我 → 问题是「出片」→ 要人、要景、还要活人感 → 「你这也太笨了」→ 想到运镜。</blockquote>
@@ -102,16 +109,28 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>作者先给出「活人感」的快速解法：先从人物开始运镜，再自然过渡到身后场景，人与景同时被看见。细一点还可以先拍建筑，再让人物走进画面——很适合当 vlog 开场；或者走路时跟着拍，对方抬头看景时镜头也跟着抬上去，旅游探索感就出来了。</p>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-02.jpg" alt="女子微笑站在悉尼歌剧院前，字幕提示自然过渡到身后场景，左上角标注 SHOT ON DJI RS 5" loading="lazy">
-        <figcaption>[00:27] 推镜示范：字幕「然后自然的过渡到身后的场景」；水印 SHOT ON DJI RS 5。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:27] 推镜示范：字幕「然后自然的过渡到身后的场景」；水印 SHOT ON DJI RS 5。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5ad0ee16acd5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Push-in demo: subtitle “then naturally transition to the scene behind”; watermark SHOT ON DJI RS 5.</span></div>
+<audio class="cap-audio" src="audio/5ad0ee16acd5.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-03.jpg" alt="女子走在海港步道上，背景为城市天际线与海港大桥方向，旅拍跟拍构图" loading="lazy">
-        <figcaption>[00:36] 跟走与看景：走路跟随，抬头时镜头同步上抬，体现探索感。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:36] 跟走与看景：走路跟随，抬头时镜头同步上抬，体现探索感。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ae44e29efdc0.mp3" type="button" aria-label="Play English audio">🔊</button><span>Follow-walk and sightseeing: walking behind, the camera lifts in sync with the head raise, conveying exploration.</span></div>
+<audio class="cap-audio" src="audio/ae44e29efdc0.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>他总结：这些画面本质都是简单推镜头——拉近与人物的物理和内心距离，也增强期待感。旅行时多拍推镜，因为它符合视觉逻辑；拿稳相机慢慢往前走即可，不需要复杂技巧。</p>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-04.jpg" alt="女子站在石栏后微笑，背景是悉尼天际线与海港大桥，字幕讲推镜头增强期待感" loading="lazy">
-        <figcaption>[00:50] 推镜效果说明：字幕谈「增强了一种」期待感；人景同框的旅拍画面。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] 推镜效果说明：字幕谈「增强了一种」期待感；人景同框的旅拍画面。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f434451f47ed.mp3" type="button" aria-label="Play English audio">🔊</button><span>Push-in effect: the subtitle talks about “enhancing a sense of” anticipation; a travel frame with person and scenery together.</span></div>
+<audio class="cap-audio" src="audio/f434451f47ed.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <blockquote class="quote">口播语义 [00:23–01:13]：「先从人物开始运镜，然后自然地过渡到身后的场景」「先拍到建筑，然后再让人物走进画面」「走路的时候就跟着她拍……镜头也跟着拍过去」「推镜头可以拉近你和人物之间物理和内心的距离」「把相机拿稳，然后慢慢往前走就可以了」。</blockquote>
       <p class="note">Whisper「一生一出来 / 背脚 / 有人又有脚 / 过度 / 推镜」对照字幕/语义 ≈「第一次出来 / 背景 / 有人又有景 / 过渡 / 推进」。</p>
@@ -123,12 +142,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>下一种和推镜头完全相反——拉镜头。作者先用户外单杠计数（九十九、一百、一百零一）做示范：镜头不断后拉，画面越来越广阔；人物动作未必特别有趣，但镜头一直在动，片段就有趣起来。</p>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-05.jpg" alt="公园中女子手持横杆做引体向上姿势的近景，字幕显示一百，水印 SHOT ON DJI RS 5" loading="lazy">
-        <figcaption>[01:20] 拉镜示范开场：单杠计数片段，字幕「一百」；随后镜头后拉展宽场景。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] 拉镜示范开场：单杠计数片段，字幕「一百」；随后镜头后拉展宽场景。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/79f65cbccb4d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Pull-back demo opening: a pull-up counting clip, subtitle “one hundred”; then the lens widens the scene.</span></div>
+<audio class="cap-audio" src="audio/79f65cbccb4d.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>旅拍里，拉镜头能随着景别变化让观众看到更多信息。来到好看场景时，别急着让人先站进去拍一张；用拉镜从细节过渡到整个场景，氛围感更强；再让人物离开画面，就是很好的 vlog 结尾。</p>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-06.jpg" alt="女子侧脸微笑，背景为悉尼海港大桥与绿树，字幕写如果用拉镜头来拍的话" loading="lazy">
-        <figcaption>[01:50] 拉镜氛围用法：字幕「如果用拉镜头来拍的话」；从细节过渡到场景。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:50] 拉镜氛围用法：字幕「如果用拉镜头来拍的话」；从细节过渡到场景。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/32c1eb679419.mp3" type="button" aria-label="Play English audio">🔊</button><span>Pull-back mood use: subtitle “if you shoot with a pull-back”; transitioning from detail to scene.</span></div>
+<audio class="cap-audio" src="audio/32c1eb679419.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <blockquote class="quote">口播语义 [01:13–02:03]：「和推镜头完全相反的就是拉镜头」「镜头不断后拉……画面也会变得越来越广阔」「观众可以看到的信息也会越来越多」「从细节开始再去过渡到整个场景」「再让人物去离开画面，就是一个很好的 vlog 结尾」。</blockquote>
       <p class="note">Whisper「破绝路了 / 但镜头不但后拉 / 过度 / 拍丑招」≈「破纪录了 / 当镜头不断后拉 / 过渡 / 出招（语境）」。</p>
@@ -140,7 +167,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>女朋友还觉得不够特别，作者再拍环绕：先与人物保持距离，从远景开始，慢慢环绕到侧脸。秘诀是环绕时人物目光一点点跟着镜头方向移动；这招不挑场景，走廊或空旷场地都能「无脑拍」。</p>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-07.jpg" alt="女子沿石墙与棕榈树步道行走，字幕强调目光要跟着镜头方向一起移动" loading="lazy">
-        <figcaption>[02:15] 环绕秘诀：字幕「一定要跟着镜头的方向一起移动」；人物注视随镜头走。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:15] 环绕秘诀：字幕「一定要跟着镜头的方向一起移动」；人物注视随镜头走。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/dc19abab4885.mp3" type="button" aria-label="Play English audio">🔊</button><span>Orbit secret: subtitle “always move along with the camera&#x27;s direction”; the subject&#x27;s gaze follows the lens.</span></div>
+<audio class="cap-audio" src="audio/dc19abab4885.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>他也承认：很多人反馈小幅度还好，大幅度环绕构图容易跑偏。于是转入「一招拯救」——用追踪模块帮忙。</p>
       <blockquote class="quote">口播语义 [02:03–02:41]：「再来拍一个环绕运镜」「从远景开始拍，然后慢慢环绕……侧脸」「人物能目光一点点跟着镜头的方向一起移动」「完全不挑场景」「大幅度运镜……画面还是尽量会跑偏」。</blockquote>
@@ -153,7 +184,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>如果不想花时间练稳定器运镜，作者说也完全没问题：最简单的方法是用追踪模块。他展示旅拍设备——索尼 ZV-E1 架在大疆 RS5 上；增强智能追踪只需在屏幕上框选即可开启，能追人、物体和小动物，几乎可以「闭着眼睛运镜」。</p>
       <figure>
         <img src="assets/huoren-yunjing-3tips/shot-08.jpg" alt="室内双人出镜，前景为索尼相机架在大疆 RS5 稳定器上，字幕称用 RS5 追踪很方便" loading="lazy">
-        <figcaption>[02:55] 设备与追踪：字幕「我觉得用RS5来追踪真的好方便啊」；前景为 ZV-E1 + RS5。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:55] 设备与追踪：字幕「我觉得用RS5来追踪真的好方便啊」；前景为 ZV-E1 + RS5。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5343730747de.mp3" type="button" aria-label="Play English audio">🔊</button><span>Gear and tracking: subtitle “I find tracking with the RS5 so convenient”; foreground is a ZV-E1 + RS5.</span></div>
+<audio class="cap-audio" src="audio/5343730747de.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>稳定器模式也重要：档位调对，画面更稳。同一水平线的环绕或跟随可调 PF；要加上下摇则调 PTF。RS5 还有 Z 轴稳定指示器——抖动厉害变红，步伐稳定变绿；作者说这会让他不自觉地走得更稳。结尾仍是情侣拌嘴式收场：「我觉得可以啊 / 那我觉得不行」。</p>
       <blockquote class="quote">口播语义 [02:41–03:48]：「利用追踪模块去帮助你运镜」「索尼 ZV-E1 架在大疆 RS5」「增强智能追踪模块……屏幕上框选」「不仅可以追踪人，还可以追踪物体」「档位调对……更稳定」「水平线……调 PF」「上下摇……调 PTF」「Z 轴稳定指示器……红/绿」。</blockquote>
@@ -852,5 +887,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物 · 图文实录 · 源链接保留 Webhook 原始短链以便去重</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

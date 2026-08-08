@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -82,12 +85,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 把「烦人的噪点」识成「凡人的造点」，「像点」识成「向点」，「过渡不均」识成「过度不均」。下文叙述以画面字幕与动画为准；末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/image-noise-snr/shot-01.jpg" alt="两根蜡烛的暗光特写，画面布满明显颗粒噪点，字幕写你肯定见过画面中这些烦人的噪点" loading="lazy">
-        <figcaption>[00:01] 开场夜景蜡烛：用肉眼可见的颗粒感引出「噪点」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:01] 开场夜景蜡烛：用肉眼可见的颗粒感引出「噪点」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/396e3a3199ae.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening night candle: visibly grainy, introducing “noise.”</span></div>
+<audio class="cap-audio" src="audio/396e3a3199ae.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>旁白接着解释：噪声出现，是因为信号在采集、传输、转换和量化过程中总会有误差，无法完全规避。这些误差让画面里的一些<strong>像点</strong>不能精确显示原本的亮度与色度，像素之间出现波动、过渡不均；又因为噪声随机分布，在动态画面里更容易被察觉。</p>
       <figure>
         <img src="assets/image-noise-snr/shot-02.jpg" alt="夜景楼宇被放大成像素块，中央暗带对比明显，字幕写这些误差会导致画面中一些像点" loading="lazy">
-        <figcaption>[00:16] 像点示意：误差如何让像素亮度/色度偏离原本值。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:16] 像点示意：误差如何让像素亮度/色度偏离原本值。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8ed465a724a5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Image-point diagram: how error pushes a pixel&#x27;s brightness/chroma off its true value.</span></div>
+<audio class="cap-audio" src="audio/8ed465a724a5.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -99,7 +110,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">Whisper 把「硅基材料因热激发」识成「内规及材料因热机发」，「非均匀响应噪声」识成「非均影响营造声」。</p>
       <figure>
         <img src="assets/image-noise-snr/shot-03.jpg" alt="黑底上列出读出噪声暗电流热噪声散粒噪声固定模式噪声等标签，右侧为像素阵列示意，字幕写传感器内硅基材料因热激发" loading="lazy">
-        <figcaption>[00:32] 噪声类型一览：暗电流、散粒噪声、读出噪声等并列出现。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:32] 噪声类型一览：暗电流、散粒噪声、读出噪声等并列出现。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e33cf0ad5ed6.mp3" type="button" aria-label="Play English audio">🔊</button><span>A noise-type lineup: dark current, shot noise, readout noise and more side by side.</span></div>
+<audio class="cap-audio" src="audio/e33cf0ad5ed6.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>不过视频很快安抚观众：就算你不了解这些名字也没关系——大部分噪声在日常拍摄里影响很小，真正存在感强的，是接下来要展开的两类。</p>
     </section>
@@ -110,13 +125,21 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>当定量的光进入传感器，理想情况是每个像素接到相同数量的光子。但现实中光子传播并非规整有序，而是<strong>离散、随机波动</strong>的，所以相同曝光时间内各像素收到的光子数并不完全一致。由此引发的误差，就是<strong>散粒噪声</strong>（画面大字也写作「散射噪声」，英文对应 Photon Shot Noise）。</p>
       <figure>
         <img src="assets/image-noise-snr/shot-04.jpg" alt="黑底上白色光子粒子随机分布，底部字幕写当定量的光进入传感器" loading="lazy">
-        <figcaption>[00:58] 光子到达的随机性：为散粒噪声做铺垫。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:58] 光子到达的随机性：为散粒噪声做铺垫。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/febe8611e880.mp3" type="button" aria-label="Play English audio">🔊</button><span>The randomness of photon arrival sets up shot noise.</span></div>
+<audio class="cap-audio" src="audio/febe8611e880.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>暗光环境光子很少，哪怕微小波动也会在信号里占很高比例，于是<strong>信噪比低、画质下降</strong>。动画用信号均值 36、标准差 6 的五块光子网格，把「计数偏差」画得很直观，旁边还塞进那对蜡烛夜景作对照。</p>
       <blockquote class="quote">画面字幕：「暗光环境由于光子数量很少」</blockquote>
       <figure>
         <img src="assets/image-noise-snr/shot-05.jpg" alt="标题散射噪声，信号均值36标准差6，五块光子计数网格与蜡烛夜景对照，字幕写暗光环境由于光子数量很少" loading="lazy">
-        <figcaption>[01:10] 暗光下散粒噪声：均值低时相对波动更刺眼。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:10] 暗光下散粒噪声：均值低时相对波动更刺眼。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/13cc146103e2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Shot noise in low light: with a low mean, the relative fluctuation stings more.</span></div>
+<audio class="cap-audio" src="audio/13cc146103e2.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>反过来，随着光子数量增加，散粒噪声的绝对值也会上升，但有效信号涨得更快，信噪比显著提升，画面更干净。</p>
     </section>
@@ -129,7 +152,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">Whisper 把「信噪比」识成「新噪比」，「不过曝」识成「不过爆」。</p>
       <figure>
         <img src="assets/image-noise-snr/shot-06.jpg" alt="高光子计数网格信号均值约36119标准差188，右侧直方图，字幕写在不过曝的前提下增加进光量" loading="lazy">
-        <figcaption>[01:32] 进光量上来后：信号均值大幅抬升，相对噪声感下降。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:32] 进光量上来后：信号均值大幅抬升，相对噪声感下降。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/11afe1876063.mp3" type="button" aria-label="Play English audio">🔊</button><span>With more light: the signal mean rises sharply and the relative noise feel drops.</span></div>
+<audio class="cap-audio" src="audio/11afe1876063.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -141,7 +168,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">Whisper 把「读出」识成「读书」，「源极跟随器」识成「原机跟随器」，「下限」识成「下线」；把「PGA」识成「TG」。</p>
       <figure>
         <img src="assets/image-noise-snr/shot-07.jpg" alt="读出链路框图：TX到FD浮动扩散节点、电容、SF源极跟随器、ISO PGA模拟放大、ADC，字幕写制约动态范围下限" loading="lazy">
-        <figcaption>[01:48] 读出链路：FD / SF 固定噪声卡住动态范围下限。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:48] 读出链路：FD / SF 固定噪声卡住动态范围下限。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6fab6e58a824.mp3" type="button" aria-label="Play English audio">🔊</button><span>Readout chain: FD/SF fixed noise pins the dynamic-range floor.</span></div>
+<audio class="cap-audio" src="audio/6fab6e58a824.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>提高 ISO 时，PGA 会对电压信号做模拟放大，于是这一段电路的读出噪声也被同步放大——叫<strong>前端读出噪声</strong>。而 PGA 与 ADC 本身还会引入另一部分噪声，它不随 ISO 提高而改变，叫<strong>后端读出噪声</strong>。</p>
     </section>
@@ -153,7 +184,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「把它们放在一起」</blockquote>
       <figure>
         <img src="assets/image-noise-snr/shot-08.jpg" alt="上方发光白球代表信号，下方带噪声二字的图标，字幕写把它们放在一起" loading="lazy">
-        <figcaption>[02:08] 信号与噪声并置：引出信噪比这一最终判据。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:08] 信号与噪声并置：引出信噪比这一最终判据。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/91fb1da00f45.mp3" type="button" aria-label="Play English audio">🔊</button><span>Signal and noise side by side, leading to SNR as the final criterion.</span></div>
+<audio class="cap-audio" src="audio/91fb1da00f45.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
   </article>
@@ -444,5 +479,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产出 · 图文实录｜原视频来自小红书分享链</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

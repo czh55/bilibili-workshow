@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -84,11 +87,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 常把「微伏」识成「微幅」，「浮动扩散节点」识成「不弄扩散节点」，「Base ISO」识成「BassISO」，「Native ISO」识成「NATCHYISO」，「A7M4」识成「ACM4」，「51,200」识成「51100」，「体现在」识成「提现在」，「主要指的是」识成「主要品牌的」。下文叙述以可见字幕与动画为准；页面末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/camera-iso-explained/shot-01.jpg" alt="三个像素轮廓，中间像素充满光子光点，字幕写当100个光子进入到像素中" loading="lazy">
-        <figcaption>[00:02] 开场像素示意：100 个光子进入像素，为后面的量子效率铺垫。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:02] 开场像素示意：100 个光子进入像素，为后面的量子效率铺垫。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/24572f3f0cd9.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening pixel diagram: 100 photons enter the pixel, setting up quantum efficiency later.</span></div>
+<audio class="cap-audio" src="audio/24572f3f0cd9.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/camera-iso-explained/shot-02.jpg" alt="量子效率 QUANTUM EFFICIENCY 大字，约为60%" loading="lazy">
-        <figcaption>[00:08] 量子效率 QE：光电转换率约 60%，听上去很像「感光度」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:08] 量子效率 QE：光电转换率约 60%，听上去很像「感光度」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/136de095b421.mp3" type="button" aria-label="Play English audio">🔊</button><span>Quantum efficiency QE: a ~60% photoelectric rate that sounds a lot like “sensitivity.”</span></div>
+<audio class="cap-audio" src="audio/136de095b421.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -99,7 +110,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">旁白：「数码相机的ISO指的并不是量子效率这个感光度」</blockquote>
       <figure>
         <img src="assets/camera-iso-explained/shot-03.jpg" alt="ISO 不等于量子效率，右侧像素图标标注约为60%" loading="lazy">
-        <figcaption>[00:20] 关键对照：数码 ISO 不是量子效率意义上的「感光度」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:20] 关键对照：数码 ISO 不是量子效率意义上的「感光度」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ff219eb937cf.mp3" type="button" aria-label="Play English audio">🔊</button><span>Key comparison: digital ISO isn&#x27;t “sensitivity” in the quantum-efficiency sense.</span></div>
+<audio class="cap-audio" src="audio/ff219eb937cf.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -110,11 +125,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「浮动扩散节点的电容决定了一个电子能转换成多大电压」</blockquote>
       <figure>
         <img src="assets/camera-iso-explained/shot-04.jpg" alt="青色电子圆点聚集成团，背景有 CFD 字样，字幕讲浮动扩散节点电容" loading="lazy">
-        <figcaption>[00:30] 电子与浮动扩散节点：电容决定「一个电子→多大电压」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 电子与浮动扩散节点：电容决定「一个电子→多大电压」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/53e1aac70150.mp3" type="button" aria-label="Play English audio">🔊</button><span>Electrons and the floating-diffusion node: the capacitor decides “one electron → how much voltage.”</span></div>
+<audio class="cap-audio" src="audio/53e1aac70150.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/camera-iso-explained/shot-05.jpg" alt="电荷经转换增益箭头变为电压的示意" loading="lazy">
-        <figcaption>[00:39] 转换增益图：电荷（e）→ conversion gain → 电压信号。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:39] 转换增益图：电荷（e）→ conversion gain → 电压信号。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/12e79605c0cc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Conversion-gain diagram: charge (e) → conversion gain → voltage signal.</span></div>
+<audio class="cap-audio" src="audio/12e79605c0cc.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -125,7 +148,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「10微伏的电压变成40微伏」</blockquote>
       <figure>
         <img src="assets/camera-iso-explained/shot-06.jpg" alt="PGA 背景、ISO 400、PGA 4X，字幕10微伏变成40微伏" loading="lazy">
-        <figcaption>[01:05] PGA 4X 示例：ISO 400 时电压从 10 μV 放大到 40 μV。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:05] PGA 4X 示例：ISO 400 时电压从 10 μV 放大到 40 μV。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9190a6cf75fb.mp3" type="button" aria-label="Play English audio">🔊</button><span>PGA 4X example: at ISO 400, voltage amplifies from 10 μV to 40 μV.</span></div>
+<audio class="cap-audio" src="audio/9190a6cf75fb.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -135,7 +162,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>PGA 倍率有上限。以 32 倍为例，对应 ISO 3200；于是从 ISO 100 到 3200 这段，都可以称为原生 ISO。画面用从小到大的信号方块标出 100→200→400→800→1600→3200。旁白补充：技术进步后很多相机原生范围更大，例如 A7M4 从 ISO 100 到 51,200。</p>
       <figure>
         <img src="assets/camera-iso-explained/shot-07.jpg" alt="原生ISO标题下 100 到 3200 逐级放大的信号方块" loading="lazy">
-        <figcaption>[01:14] 原生 ISO 阶梯示意：示例区间 ISO 100–3200 都可由 PGA 模拟放大得到。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:14] 原生 ISO 阶梯示意：示例区间 ISO 100–3200 都可由 PGA 模拟放大得到。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8061ca54bad2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Native ISO ladder: the example range ISO 100–3200 can all be produced by PGA analog gain.</span></div>
+<audio class="cap-audio" src="audio/8061ca54bad2.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -152,7 +183,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>超出 PGA 模拟区间的数值，都是扩展 ISO：ADC 量化之后再在机内做数字放大，跟后期提亮画面没有本质差别。画面把基准 ISO、模拟放大 ISO 与扩展 ISO（如 128000、204800）排成一条增益阶梯。</p>
       <figure>
         <img src="assets/camera-iso-explained/shot-08.jpg" alt="ISO 阶梯：基准、模拟放大与扩展 ISO 分区" loading="lazy">
-        <figcaption>[01:55] ISO 分层：基准 / 模拟放大 / 扩展；扩展段靠 ADC 后数字放大。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:55] ISO 分层：基准 / 模拟放大 / 扩展；扩展段靠 ADC 后数字放大。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/319040ea9975.mp3" type="button" aria-label="Play English audio">🔊</button><span>ISO layers: base / analog gain / extended; the extended range relies on post-ADC digital gain.</span></div>
+<audio class="cap-audio" src="audio/319040ea9975.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -491,5 +526,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物之一 · 图文实录 · 原视频 http://xhslink.cn/o/1dOjqxMyqFB</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

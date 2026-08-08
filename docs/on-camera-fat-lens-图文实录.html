@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -83,7 +86,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 将「镜头畸变」误识为「镜头机变」。下文叙述以可见字幕与画面为准；页面末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-01.jpg" alt="人像两侧叠字上镜与显胖，字幕说明显胖不是因为本来就胖" loading="lazy">
-        <figcaption>[00:01] 开场人像：叠字「上镜／显胖」，先否定「本来就胖」的归因。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:01] 开场人像：叠字「上镜／显胖」，先否定「本来就胖」的归因。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fdb57600db97.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening portrait: overlay “photogenic / looks fat,” first rejecting the “born fat” attribution.</span></div>
+<audio class="cap-audio" src="audio/fdb57600db97.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -95,11 +102,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 将「近大远小」误识为「尽大原小」。</p>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-02.jpg" alt="1.5米50毫米与4米135毫米人像对比，标注透视强弱" loading="lazy">
-        <figcaption>[00:04] 距离对比卡：近距强透视 vs 远距弱透视，字幕否定畸变／长焦归因。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:04] 距离对比卡：近距强透视 vs 远距弱透视，字幕否定畸变／长焦归因。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/debc650c59e2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Distance comparison card: strong near perspective vs weak far perspective — the subtitle rejects distortion/telephoto attribution.</span></div>
+<audio class="cap-audio" src="audio/debc650c59e2.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-03.jpg" alt="红色背景上近大远小透视关系图解" loading="lazy">
-        <figcaption>[00:12] 概念图：近大远小的透视关系，用来解释面部比例如何被重塑。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:12] 概念图：近大远小的透视关系，用来解释面部比例如何被重塑。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e316e800920e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Concept diagram: near-big-far-small perspective, used to explain how facial proportions get reshaped.</span></div>
+<audio class="cap-audio" src="audio/e316e800920e.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -111,7 +126,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 将「做一个」误识为「作为一个」；「画面拍摄放大」按语音与后文「数码裁切」语境，叙述按「裁切放大」理解，转录区保留原文。</p>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-04.jpg" alt="同一场景上下对比135毫米与35毫米焦距实验" loading="lazy">
-        <figcaption>[00:16] 距离不变的焦段实验：135mm 与 35mm 分屏对照。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:16] 距离不变的焦段实验：135mm 与 35mm 分屏对照。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c40ca1070171.mp3" type="button" aria-label="Play English audio">🔊</button><span>A same-distance focal-length experiment: 135mm vs 35mm on split screens.</span></div>
+<audio class="cap-audio" src="audio/c40ca1070171.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -123,7 +142,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 将「变扁平」误识为「变变平」。</p>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-05.jpg" alt="黑底大字近大远小与背景压缩，字幕称压缩不属于焦段" loading="lazy">
-        <figcaption>[00:28] 概念卡：近大远小／背景压缩，强调压缩不属于焦段。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:28] 概念卡：近大远小／背景压缩，强调压缩不属于焦段。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d7ca2f3e83fa.mp3" type="button" aria-label="Play English audio">🔊</button><span>Concept card: near-big-far-small / background compression — stressing compression isn&#x27;t a focal-length trait.</span></div>
+<audio class="cap-audio" src="audio/d7ca2f3e83fa.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -134,7 +157,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「长焦镜头的本质是无损的光学放大镜」；「推到20米开外时」；「人脸上的五官的深度也悄然消失了」</blockquote>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-06.jpg" alt="35毫米数码裁切与135毫米光学放大的夜景人像对比" loading="lazy">
-        <figcaption>[00:36] 光学放大 vs 数码裁切：说明长焦本质与画质差异。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:36] 光学放大 vs 数码裁切：说明长焦本质与画质差异。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6291a287c528.mp3" type="button" aria-label="Play English audio">🔊</button><span>Optical zoom vs digital crop: explaining the essence of telephoto and quality differences.</span></div>
+<audio class="cap-audio" src="audio/6291a287c528.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -146,11 +173,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 将「压缩感／立体显瘦／下颌线」误识为「压缩改／立体享受／下河线」。</p>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-07.jpg" alt="暖色背景人像，字幕称答案只有三个字拍侧脸" loading="lazy">
-        <figcaption>[00:52] 抛出版本答案：答案只有三个字——拍侧脸。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:52] 抛出版本答案：答案只有三个字——拍侧脸。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/bfb58c1ee8ad.mp3" type="button" aria-label="Play English audio">🔊</button><span>The version-answer drops: three words — shoot the profile.</span></div>
+<audio class="cap-audio" src="audio/bfb58c1ee8ad.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/on-camera-fat-lens/shot-08.jpg" alt="侧后机位人像，字幕说明用下颌线物理边缘切出立体感" loading="lazy">
-        <figcaption>[01:00] 侧转示范：用下颌线边缘在压平空间里重新切出立体感。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:00] 侧转示范：用下颌线边缘在压平空间里重新切出立体感。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f48cc16a1cc8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Side-turn demo: using the jawline edge to carve depth back into a flattened space.</span></div>
+<audio class="cap-audio" src="audio/f48cc16a1cc8.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -339,5 +374,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物之一 · 图文实录 · 证据来自视频画面字幕与 Whisper 分段</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

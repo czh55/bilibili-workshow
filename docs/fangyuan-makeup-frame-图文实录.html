@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -83,11 +86,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 将「开智 / 后置 / 画在 / 挑度」误识为「开着 / 后肢腻 / 化在 / 调度」。下文以可见字幕与叠字为准；末尾转录区仍保留原始分段。</p>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-01.jpg" alt="前置视角口播，UP 主举手强调，叠字显示前置" loading="lazy">
-        <figcaption>[00:02] 开场前置口播：先立「看清脸型」这个前提。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:02] 开场前置口播：先立「看清脸型」这个前提。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cc37c4e664f2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening pre-narration: establishing “know your face shape” as the premise.</span></div>
+<audio class="cap-audio" src="audio/cc37c4e664f2.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-02.jpg" alt="后置视角用白色化妆笔指出眉尾位置，脸侧有虚线辅助" loading="lazy">
-        <figcaption>[00:10] 后置演示：眉毛要画在外轮廓中间；字幕写明「它需要画在我的外轮廓的中间」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:10] 后置演示：眉毛要画在外轮廓中间；字幕写明「它需要画在我的外轮廓的中间」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f1f1a210ebbb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Rear-camera demo: the brow should be drawn within the middle of the outer contour; the subtitle states “it needs to be drawn in the middle of my outer contour.”</span></div>
+<audio class="cap-audio" src="audio/f1f1a210ebbb.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -98,7 +109,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「而应该选择一个收缩色的腮红」</blockquote>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-03.jpg" alt="手持粉扑靠近下颌，叠字方圆脸改妆总结与浮汀06色号" loading="lazy">
-        <figcaption>[00:18] 腮红段落：收缩色修外轮廓；叠字可见浮汀#06。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:18] 腮红段落：收缩色修外轮廓；叠字可见浮汀#06。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/559328a1b375.mp3" type="button" aria-label="Play English audio">🔊</button><span>Blush segment: a shrinking tone contours the outer edge; the overlay shows Full Ding #06.</span></div>
+<audio class="cap-audio" src="audio/559328a1b375.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -109,7 +124,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「只会让别人的视觉重心」；口播接着落到「下半张脸……更宽」。</blockquote>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-04.jpg" alt="用纸巾擦去口红边缘，示范生硬唇线的问题" loading="lazy">
-        <figcaption>[00:30] 唇妆反例：擦掉硬边，说明生硬唇线会把重心拽到下庭。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 唇妆反例：擦掉硬边，说明生硬唇线会把重心拽到下庭。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/198f8aa2b444.mp3" type="button" aria-label="Play English audio">🔊</button><span>Lip counter-example: wiping off the hard edge — a stiff lip line drags focus to the lower face.</span></div>
+<audio class="cap-audio" src="audio/198f8aa2b444.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -121,7 +140,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">Whisper 将「眼眶骨 / 骨相 / 二维·三维」误识为「眼框骨 / 骨像 / 二地·三地」。</p>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-05.jpg" alt="近景低头展示眼妆结构，字幕强调塑造眼眶骨骨相感" loading="lazy">
-        <figcaption>[00:44] 框架收束到眼部：眼眶骨修容优先于眼线长度与眼影深度。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:44] 框架收束到眼部：眼眶骨修容优先于眼线长度与眼影深度。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/29adb05726aa.mp3" type="button" aria-label="Play English audio">🔊</button><span>The frame narrows to the eyes: orbital-bone contouring outranks liner length and shadow depth.</span></div>
+<audio class="cap-audio" src="audio/29adb05726aa.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -132,7 +155,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">口播大意：「我的眼眶骨它就应该在我的眉毛到我的眼角的范围……看到没它就是一个小鱼钩。」</blockquote>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-06.jpg" alt="用散粉刷在外眼角眼眶骨区域晕开修容，叠字提问眼眶骨修容位置" loading="lazy">
-        <figcaption>[01:20] 眼眶骨示范：刷子晕开后定妆；字幕「再定一下妆」，标题问「眼眶骨修容位置？」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] 眼眶骨示范：刷子晕开后定妆；字幕「再定一下妆」，标题问「眼眶骨修容位置？」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/363695796c9f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Orbital-bone demo: blend with a brush then set; subtitle “set it again,” title asks “where&#x27;s the orbital-bone contour?”</span></div>
+<audio class="cap-audio" src="audio/363695796c9f.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -143,11 +170,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「它才能够比较立体不生硬」；「跟你眼睛睁开的1/2大」。</blockquote>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-07.jpg" alt="手指点在卧蚕区域说明要画成面而不是线" loading="lazy">
-        <figcaption>[01:50] 卧蚕段落开场：叠字「卧蚕画不自然？」；强调立体面而非硬线。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:50] 卧蚕段落开场：叠字「卧蚕画不自然？」；强调立体面而非硬线。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fb8dd4635d88.mp3" type="button" aria-label="Play English audio">🔊</button><span>Aegyo-sal section opening: overlay asks “drawn aegyosal looking unnatural?” — emphasizing a dimensional plane over hard lines.</span></div>
+<audio class="cap-audio" src="audio/fb8dd4635d88.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/fangyuan-makeup-frame/shot-08.jpg" alt="用细刷在下眼睑按二分之一眼高画卧蚕" loading="lazy">
-        <figcaption>[02:22] 尺寸示范：卧蚕高度约等于睁眼高度的 1/2；刷子垂直于脸。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:22] 尺寸示范：卧蚕高度约等于睁眼高度的 1/2；刷子垂直于脸。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/654ab62074fd.mp3" type="button" aria-label="Play English audio">🔊</button><span>Size demo: aegyo-sal height about half the open-eye height; brush perpendicular to the face.</span></div>
+<audio class="cap-audio" src="audio/654ab62074fd.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -534,5 +569,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物之一 · 图文实录 · 原始链接保留 Webhook 输入以便去重</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

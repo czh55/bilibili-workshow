@@ -43,6 +43,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
   .transcript-row{grid-template-columns:56px 1fr;gap:10px}
 }
 .transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -78,7 +81,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
   <p class="note">口播说明：本视频口播收音质量很差，Whisper 在前 25.7 秒内只识别出零散的拉丁字母、日文假名、阿拉伯字母等无关内容（如 "moving"、"lot 000"、片假名与阿拉伯字符），判定为识别失败，按工作流标注为 <code>[听不清]</code>，不作为叙事依据。全文的技术要点均以画面大字幕、示范动作和笔记文案为准。</p>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-01.jpg" alt="教练仰头耸肩做错误的手臂与呼吸示范，背景大字'错误的手臂与呼吸'与俄语'ФУ!'" loading="lazy">
-    <figcaption>[00:01] 开场反面案例：「错误的手臂与呼吸」，配俄语感叹词「ФУ!」（不行/糟糕）</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:01] 开场反面案例：「错误的手臂与呼吸」，配俄语感叹词「ФУ!」（不行/糟糕）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f1417fbe2f1c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening counter-example: “wrong arms and breathing,” with the Russian exclamation “ФУ!” (no/ugh)</span></div>
+<audio class="cap-audio" src="audio/f1417fbe2f1c.mp3" preload="none"></audio>
+</figcaption>
   </figure>
 </section>
 
@@ -87,11 +94,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
   <p>字幕切到「1.推水发力练习」，教练先在岸上做手臂高举、向下向后推压的模拟动作，把蝶泳划臂中"推水"这一段单独拎出来慢速演示。紧接着镜头切入泳池，教练实际游一段蝶泳，画面上叠加提示「注意推水同步打腿」——强调推水的时机必须和打腿的下压同步，两个动作不能各游各的。</p>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-02.jpg" alt="教练在泳池边双臂高举，示范推水发力练习，字幕'1.推水发力练习'" loading="lazy">
-    <figcaption>[00:06] 岸上模拟：推水发力练习</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:06] 岸上模拟：推水发力练习</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1dce99c26295.mp3" type="button" aria-label="Play English audio">🔊</button><span>On-deck simulation: pulling-power drill</span></div>
+<audio class="cap-audio" src="audio/1dce99c26295.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-03.jpg" alt="教练在泳池中游蝶泳换气瞬间，字幕'注意推水同步打腿'" loading="lazy">
-    <figcaption>[00:15] 水中实拍：换气瞬间，字幕提示「注意推水同步打腿」</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:15] 水中实拍：换气瞬间，字幕提示「注意推水同步打腿」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/80bf3eb01a05.mp3" type="button" aria-label="Play English audio">🔊</button><span>Underwater footage: the breathing moment, subtitle “sync the kick with the pull.”</span></div>
+<audio class="cap-audio" src="audio/80bf3eb01a05.mp3" preload="none"></audio>
+</figcaption>
   </figure>
 </section>
 
@@ -100,7 +115,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
   <p>接下来教练回到岸上，重复类似开场的抬手换气姿势，但这次动作更收敛、更平稳，与开场"仰头耸肩"的错误示范形成对照。画面在 00:27 打出完整字幕「推水换气保持颈肩背在一条线上」——也就是说，换气那一下，头不能单独往后仰、肩膀也不能耸起来，颈、肩、背要保持在同一条直线上再转头吸气，这样才不会破坏身体的流线。</p>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-04.jpg" alt="教练前倾示范正确换气姿势，字幕'推水换气保持颈肩背在一条线上'" loading="lazy">
-    <figcaption>[00:27] 岸上模拟：正确换气姿态，字幕「推水换气保持颈肩背在一条线上」</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:27] 岸上模拟：正确换气姿态，字幕「推水换气保持颈肩背在一条线上」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b32c8b48dbc0.mp3" type="button" aria-label="Play English audio">🔊</button><span>On-deck simulation: correct breathing posture, subtitle “keep neck, shoulders and back in one line while pulling and breathing”</span></div>
+<audio class="cap-audio" src="audio/b32c8b48dbc0.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <p class="quote">与开场「错误的手臂与呼吸」对照着看：错误示范是仰头、耸肩、身体后仰；这里强调的是颈肩背对齐、不额外抬头。</p>
 </section>
@@ -110,11 +129,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
   <p>教练比出「3」的手势，字幕显示「3.发力技巧」，做了一段类似整体发力的模拟动作。随后切回水中游泳画面，字幕提示「保持身体平直向前推进」，呼应前一段"颈肩背对齐"的要求——发力的同时，身体线条要保持平直，不能塌腰或翘臀，力量才会真正用在向前推进上，而不是上下起伏。</p>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-05.jpg" alt="教练竖起三根手指，字幕'3.发力技巧'" loading="lazy">
-    <figcaption>[00:36] 岸上模拟：发力技巧（比出数字「3」）</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:36] 岸上模拟：发力技巧（比出数字「3」）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cb24eb25efb8.mp3" type="button" aria-label="Play English audio">🔊</button><span>On-deck simulation: power technique (holding up “3”)</span></div>
+<audio class="cap-audio" src="audio/cb24eb25efb8.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-06.jpg" alt="水中蝶泳游进画面叠加岸上示范，字幕'保持身体平直向前推进'" loading="lazy">
-    <figcaption>[00:46] 水中实拍叠加岸上示范，字幕「保持身体平直向前推进」</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:46] 水中实拍叠加岸上示范，字幕「保持身体平直向前推进」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7b45c0dccea5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Underwater footage overlaid with an on-deck demo, subtitle “keep the body flat and drive forward.”</span></div>
+<audio class="cap-audio" src="audio/7b45c0dccea5.mp3" preload="none"></audio>
+</figcaption>
   </figure>
 </section>
 
@@ -123,11 +150,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
   <p>最后一个要点，教练比出「4」，字幕显示「4.移臂方式」。他在岸上做出手臂从水中回收、向前甩出的动作，字幕随后打出「肘部弯曲更有利移臂」——即划完一次臂后，手臂离水回收（"移臂"）时，肘部主动弯曲会比完全伸直大回环更顺畅省力。视频最后再切回一段水中蝶泳游进画面收尾，全片到 01:11 结束。</p>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-07.jpg" alt="教练侧身伸展手臂，字幕'4.移臂方式'" loading="lazy">
-    <figcaption>[00:51] 岸上模拟：移臂方式（比出数字「4」）</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:51] 岸上模拟：移臂方式（比出数字「4」）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/035d9ee286a6.mp3" type="button" aria-label="Play English audio">🔊</button><span>On-deck simulation: recovery style (holding up “4”)</span></div>
+<audio class="cap-audio" src="audio/035d9ee286a6.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <figure>
     <img src="assets/mosike-dieyong-huanqi/shot-08.jpg" alt="教练屈肘做移臂动作，字幕'肘部弯曲更有利移臂'" loading="lazy">
-    <figcaption>[00:57] 岸上模拟：屈肘移臂，字幕「肘部弯曲更有利移臂」</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:57] 岸上模拟：屈肘移臂，字幕「肘部弯曲更有利移臂」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/956cb97a8b84.mp3" type="button" aria-label="Play English audio">🔊</button><span>On-deck simulation: bent-elbow recovery, subtitle “bending the elbow helps the recovery”</span></div>
+<audio class="cap-audio" src="audio/956cb97a8b84.mp3" preload="none"></audio>
+</figcaption>
   </figure>
 </section>
 
@@ -287,5 +322,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px}
 </ol>
     </div></details></section>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

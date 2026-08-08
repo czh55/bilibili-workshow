@@ -44,6 +44,9 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   header h1{font-size:24px}
   .transcript-row{grid-template-columns:56px 1fr;gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -76,7 +79,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p><span class="time-marker">00:00</span>AI到底是怎么学会说话的？这个过程既神奇又复杂。博主用费曼学习法，把学到的知识用自己的话讲出来。像豆包、DeepSeek、ChatGPT这些可以直接对话的AI，本质上都属于大语言模型。大语言模型的诞生分为三大阶段：<strong>数据准备、预训练、对齐训练</strong>。今天主要讲数据准备这一阶段。</p>
   <figure>
     <img src="assets/llm-data-prep/shot-01.jpg" alt="开场：大语言模型的三大阶段" loading="lazy">
-    <figcaption><span class="time-badge">[00:02]</span> 开场定调：大语言模型的诞生分为数据准备、预训练、对齐训练三大阶段</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:02]</span> 开场定调：大语言模型的诞生分为数据准备、预训练、对齐训练三大阶段</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1838989eac4b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening tone-set: an LLM&#x27;s birth has three stages — data prep, pretraining and alignment training</span></div>
+<audio class="cap-audio" src="audio/1838989eac4b.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <div class="quote-block">
     一句话概括数据准备阶段的目的：<strong>把大量的文本，转换为AI能处理的数字。</strong>
@@ -88,7 +95,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p><span class="time-marker">00:39</span>要想让AI学会说话，首先需要庞大的知识库给它学习。这些知识包括海量的网页、书籍、论文、代码等等。但从全网收集来的数据并不能直接使用。</p>
   <figure>
     <img src="assets/llm-data-prep/shot-02.jpg" alt="资料收集：网页、书籍、论文、代码" loading="lazy">
-    <figcaption><span class="time-badge">[00:42]</span> 数据来源：网页、书籍、论文、代码等海量文本</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:42]</span> 数据来源：网页、书籍、论文、代码等海量文本</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9497c8c27ba5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Data sources: massive text from web pages, books, papers and code</span></div>
+<audio class="cap-audio" src="audio/9497c8c27ba5.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <p><span class="time-marker">00:59</span>收集到数据后，需要进一步清洗：</p>
   <ul>
@@ -104,7 +115,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p><span class="time-marker">01:15</span>第二步叫分词，也称之为Token化。Token是AI处理文字时的<strong>最小单位</strong>。对于人而言，一个单独的字是我们阅读的最小单位；但AI不是，它的最小单位叫Token。一个Token可能是一个字，也可能是好几个字。</p>
   <figure>
     <img src="assets/llm-data-prep/shot-03.jpg" alt="分词Token化示例" loading="lazy">
-    <figcaption><span class="time-badge">[01:20]</span> Token化：将"我喜欢金毛"分为"我"、"喜欢"、"金毛"三个Token</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:20]</span> Token化：将"我喜欢金毛"分为"我"、"喜欢"、"金毛"三个Token</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e252e6f7ed56.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tokenization: “我喜欢金毛” splits into three tokens: “我”, “喜欢”, “金毛”</span></div>
+<audio class="cap-audio" src="audio/e252e6f7ed56.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <p><span class="time-marker">01:37</span>以"我喜欢金毛"为例，分词后可能被分成<strong>我、喜欢、金毛</strong>三个Token。每个Token都有一个数字编号（ID），比如"我"是1025、"喜欢"是2578、"金毛"是10871。</p>
   <p><span class="time-marker">02:04</span>在分词之前，需要先训练一个<strong>分词器</strong>（Tokenizer）。分词器做了两件事：</p>
@@ -120,7 +135,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p><span class="time-marker">03:23</span>博主分享了一个学完分词后的恍然大悟：当你让AI严格生成具体字数（比如写一个100字的短文），它通常做不到——总是"大约100个字"。</p>
   <figure>
     <img src="assets/llm-data-prep/shot-04.jpg" alt="为什么AI不能精确控制字数" loading="lazy">
-    <figcaption><span class="time-badge">[03:50]</span> AI按Token生成，无法精确知道每个Token对应几个字</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:50]</span> AI按Token生成，无法精确知道每个Token对应几个字</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cd4da8fffcee.mp3" type="button" aria-label="Play English audio">🔊</button><span>AI generates by tokens; it can&#x27;t know exactly how many characters each token maps to</span></div>
+<audio class="cap-audio" src="audio/cd4da8fffcee.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <div class="quote-block">
     AI处理文字的最小单位是Token，而不是一个字一个字。它在生成回答时按Token生成，而每个Token具体对应几个字它也不知道。所以它只能估计一下"100个字大概需要多少个Token"，最后的字数自然是不确定的。
@@ -134,7 +153,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p>向量其实不复杂——它就是一组按顺序排列的数字集合，比如0.72、0.56、0.43……这样一组数就代表一个向量。向量里有多少个数字，就是多少维。</p>
   <figure>
     <img src="assets/llm-data-prep/shot-05.jpg" alt="嵌入Embedding：Token转高维向量" loading="lazy">
-    <figcaption><span class="time-badge">[04:40]</span> 嵌入过程：每个Token转换为包含上万个小数的高维向量</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:40]</span> 嵌入过程：每个Token转换为包含上万个小数的高维向量</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f64b172cfd0e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Embedding: each token becomes a high-dimensional vector of tens of thousands of decimals</span></div>
+<audio class="cap-audio" src="audio/f64b172cfd0e.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <p><span class="time-marker">05:01</span>像GPT这样的大模型，可能把每个Token（比如"我"这个字）生成一个由<strong>上万个小数</strong>组成的向量来表示它。这些向量在建立时是随机的。</p>
   <p>为什么要把Token对应成上万维的向量？因为计算机不能像人一样直接理解文字，只能进行数字计算。一个词有非常多含义和联系——"喜欢"包含丰富的情感，还和很多词有关联——这些含义和联系就用一堆数字来量化和表示。</p>
@@ -443,5 +466,40 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
 </section>
 
 </main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
 </body>
 </html>

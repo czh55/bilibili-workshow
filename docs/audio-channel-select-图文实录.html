@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -90,7 +93,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">「接入器里边咱们选择单声道，它相当于把一个麦克风的声音同时录进了左右两声道。」</blockquote>
       <figure>
         <img src="assets/audio-channel-select/shot-01.jpg" alt="大疆接收器屏幕显示单声道与 L/R、TX1，字幕写接收器里边" loading="lazy">
-        <figcaption>[00:19] 接收器界面已切到「单声道」，右侧显示 L/R 与 TX1。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:19] 接收器界面已切到「单声道」，右侧显示 L/R 与 TX1。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/970d7ca102f5.mp3" type="button" aria-label="Play English audio">🔊</button><span>The receiver UI has switched to “mono,” with L/R and TX1 shown on the right.</span></div>
+<audio class="cap-audio" src="audio/970d7ca102f5.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -100,18 +107,30 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>作者设问：有没有遇到声音只在左耳或只在右耳，耳机却没坏？答案多半是录音时选了<strong>双声道</strong>（有时也叫立体声）——一支麦的声音只落在左右声道中的一个。</p>
       <figure>
         <img src="assets/audio-channel-select/shot-02.jpg" alt="口播说明单边耳机有声问题，画面叠加声道示意" loading="lazy">
-        <figcaption>[00:35] 讲解「只有一边有声」的常见翻车：录音选了双声道/立体声。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:35] 讲解「只有一边有声」的常见翻车：录音选了双声道/立体声。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e3637d7dc296.mp3" type="button" aria-label="Play English audio">🔊</button><span>Explaining the common “sound only on one side” blunder: recording was set to dual-mono/stereo.</span></div>
+<audio class="cap-audio" src="audio/e3637d7dc296.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>急救也不用慌：在软件里把有声那一侧复制到另一侧即可。演示素材只有左声道有声音。</p>
       <p><strong>剪映专业版：</strong>打开音频最后一项「声道配置」，选择「把左声道填充至右声道」，两声道立刻都有声音。</p>
       <figure>
         <img src="assets/audio-channel-select/shot-03.jpg" alt="剪映专业版声道配置下拉菜单，光标指向将左声道填充至右声道" loading="lazy">
-        <figcaption>[00:58] 剪映专业版：声道配置 → 将左声道填充至右声道。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:58] 剪映专业版：声道配置 → 将左声道填充至右声道。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a7915630ae71.mp3" type="button" aria-label="Play English audio">🔊</button><span>CapCut Pro: audio channel config → fill the right channel from the left.</span></div>
+<audio class="cap-audio" src="audio/a7915630ae71.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p><strong>达芬奇：</strong>选中素材 → 右键「片段属性」→ 音频，把没有声音的一侧改成有声音的那个声道，点 OK。</p>
       <figure>
         <img src="assets/audio-channel-select/shot-04.jpg" alt="达芬奇片段属性音频面板，选择有声音的声道" loading="lazy">
-        <figcaption>[01:06] 达芬奇：片段属性 → 音频，把空声道改成有声那一侧。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:06] 达芬奇：片段属性 → 音频，把空声道改成有声那一侧。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8e05fa9c7f30.mp3" type="button" aria-label="Play English audio">🔊</button><span>DaVinci: clip attributes → audio, remapping the silent channel to the one with sound.</span></div>
+<audio class="cap-audio" src="audio/8e05fa9c7f30.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -123,12 +142,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p><strong>建议双声道：</strong>一人一个声道，后期可单独控制。作者说「乐乐的效果大概是这样」，结合前后语境应理解为「录制的效果」——一人一轨。</p>
       <figure>
         <img src="assets/audio-channel-select/shot-05.jpg" alt="双人双声道波形示意，说明一人一个声道" loading="lazy">
-        <figcaption>[01:45] 建议双人用双声道：一个嘉宾一个声道，便于后期分轨处理。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:45] 建议双人用双声道：一个嘉宾一个声道，便于后期分轨处理。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4fdd5c6a1d67.mp3" type="button" aria-label="Play English audio">🔊</button><span>For two people, use dual mono: one guest per channel, making post-editing track separation easier.</span></div>
+<audio class="cap-audio" src="audio/4fdd5c6a1d67.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>剪映专业版处理分两步：选中素材 → 分离音频 → 再复制一份；一条做「左填右」，另一条做「右填左」，两人听感就都正常，且可单独调。</p>
       <figure>
         <img src="assets/audio-channel-select/shot-06.jpg" alt="剪映时间线分离并复制音频轨道进行声道填充" loading="lazy">
-        <figcaption>[02:00] 分离音频后复制一份，分别做左右声道填充，完成双人拆轨。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:00] 分离音频后复制一份，分别做左右声道填充，完成双人拆轨。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0e7edd85e284.mp3" type="button" aria-label="Play English audio">🔊</button><span>After separating audio, duplicate it and fill the left/right channels separately to split two voices onto tracks.</span></div>
+<audio class="cap-audio" src="audio/0e7edd85e284.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>达芬奇操作类似：取消链接 → 复制一段音频 → 各自在片段属性里只保留对应声道。</p>
     </section>
@@ -140,12 +167,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>大疆 Mic 3 默认一拖二，再准备两个发射器：长按链接按钮到红蓝闪烁，在接收器「设备配对」里依次配对 TX3、TX4。完成后主界面可见四个麦克风图标；进入 RX 设置，把声道选成<strong>四声道</strong>。</p>
       <figure>
         <img src="assets/audio-channel-select/shot-07.jpg" alt="接收器屏幕显示四声道与 CH1 CH2 TX1 TX2" loading="lazy">
-        <figcaption>[03:20] RX 设置为四声道，屏幕显示四声道模式。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[03:20] RX 设置为四声道，屏幕显示四声道模式。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/24f419bb1cf5.mp3" type="button" aria-label="Play English audio">🔊</button><span>RX set to four channels; the screen shows quad-channel mode.</span></div>
+<audio class="cap-audio" src="audio/24f419bb1cf5.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>相机端：索尼相机搭配大疆 Mic 3 的<strong>热靴转接</strong>（单独购买）。作者用索尼 FX30，菜单 → 录制 → 录音 → MI 音频设置 → 选择四轨。画面左上角出现四条音量表，标注已是四个音轨。</p>
       <figure>
         <img src="assets/audio-channel-select/shot-08.jpg" alt="索尼相机监看屏左上角四条音轨电平，字幕写已经是四个音轨了" loading="lazy">
-        <figcaption>[03:52] 索尼 FX30 已显示四条音轨电平（48kHz/24bit 4ch）。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[03:52] 索尼 FX30 已显示四条音轨电平（48kHz/24bit 4ch）。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/49a13192fec5.mp3" type="button" aria-label="Play English audio">🔊</button><span>The Sony FX30 shows four audio-track levels (48kHz/24bit, 4ch).</span></div>
+<audio class="cap-audio" src="audio/49a13192fec5.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>拖进达芬奇可直接看到四条可单独控制的音轨。剪映专业版默认只显示一条：分离音频后复制三份，再分别切换多音轨到音轨二/三/四，即可单独控制。</p>
       <p>一拖多适合多嘉宾或多声源；四个轨道各自可调，后期自由度更大。</p>
@@ -866,5 +901,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">平台：小红书 · 原始链接保留 Webhook 输入以便去重 · slug: audio-channel-select</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

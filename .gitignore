@@ -1,11 +1,14 @@
 # Audio source files (large)
 *.m4a
-*.mp3
 *.wav
 *.flac
 *.webm
 *.mp4
 *.mkv
+*.mp3
+# Generated caption speech (needed for GitHub Pages playback)
+!docs/audio/
+!docs/audio/*.mp3
 
 # Generated intermediate files
 *.srt
@@ -16,6 +19,8 @@
 !docs/index.json
 !docs/topics.json
 !meta/*.json
+# Keep merged caption translation table for incremental updates
+!translations.json
 
 # Node modules
 node_modules/

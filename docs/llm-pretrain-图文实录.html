@@ -44,6 +44,9 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   header h1{font-size:24px}
   .transcript-row{grid-template-columns:56px 1fr;gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -76,7 +79,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p><span class="time-marker">00:00</span>上期讲了数据准备：收集清洗 → 分词Token化 → 嵌入随机高维向量。关键前提：<strong>这些向量里的数字都是随机生成的，它们现在还没有真正的语言含义。</strong>那么原本随机生成的数字，是怎么逐渐学会表达文字含义的呢？这就是预训练要解决的问题。</p>
   <figure>
     <img src="assets/llm-pretrain/shot-01.jpg" alt="回顾数据准备，引出预训练" loading="lazy">
-    <figcaption><span class="time-badge">[00:02]</span> 回顾：上期讲数据准备，本期讲预训练——随机数字如何变得有意义？</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:02]</span> 回顾：上期讲数据准备，本期讲预训练——随机数字如何变得有意义？</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/856c992fb836.mp3" type="button" aria-label="Play English audio">🔊</button><span>Recap: last episode covered data prep; this one covers pretraining — how do random numbers become meaningful?</span></div>
+<audio class="cap-audio" src="audio/856c992fb836.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <div class="quote-block">
     <strong>一句话概括预训练的目的</strong>：预训练就是要把模型训练成一个<strong>接龙大师</strong>。
@@ -91,7 +98,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p>以"我喜欢金毛，因为它很温顺"为例：当这句话经过自注意力机制处理后，<strong>温顺</strong>这个词的向量就发生了变化——它知道了"很"在修饰它，温顺是描述金毛的，温顺是表达原因……它与其他Token之间发生了关注程度的计算。</p>
   <figure>
     <img src="assets/llm-pretrain/shot-02.jpg" alt="Transformer自注意力机制" loading="lazy">
-    <figcaption><span class="time-badge">[00:48]</span> 自注意力机制：每个Token感知到与其他词的关系程度</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:48]</span> 自注意力机制：每个Token感知到与其他词的关系程度</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1486b780a419.mp3" type="button" aria-label="Play English audio">🔊</button><span>Self-attention: each token senses how strongly it relates to every other word</span></div>
+<audio class="cap-audio" src="audio/1486b780a419.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   
   <p><span class="time-marker">02:18</span>接着向量还要经过<strong>前馈神经网络</strong>，对每个Token得到的信息进行进一步加工。还是"温顺"这个词——它知道了温顺通常是形容动物的，会增强"描述动物性格"的特征，甚至推断出"金毛温顺是被人喜欢的原因"，"金毛是狗的一个品种"等等。</p>
@@ -110,7 +121,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p>经过几十层甚至上百层之后，最初随机的向量已经变成了<strong>融合了整段上下文信息的高维向量</strong>。</p>
   <figure>
     <img src="assets/llm-pretrain/shot-03.jpg" alt="多层Transformer堆叠" loading="lazy">
-    <figcaption><span class="time-badge">[02:00]</span> 数十层到上百层Transformer堆叠：从字词语法到语意逻辑</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:00]</span> 数十层到上百层Transformer堆叠：从字词语法到语意逻辑</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ba77024624f5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tens to hundreds of stacked Transformer layers: from word grammar to semantic logic</span></div>
+<audio class="cap-audio" src="audio/ba77024624f5.mp3" preload="none"></audio>
+</figcaption>
   </figure>
 </section>
 
@@ -120,7 +135,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p>注意：不是只对一句话结尾的词预测，而是<strong>对每一个词都预测下一个</strong>：输入"我"→预测"喜欢"；输入"我喜欢"→预测"金毛"；输入"我喜欢金毛"→预测"因为"……</p>
   <figure>
     <img src="assets/llm-pretrain/shot-04.jpg" alt="预测下一个Token" loading="lazy">
-    <figcaption><span class="time-badge">[03:40]</span> 接龙预测：输入前面的文本，预测下一个最可能出现的Token</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:40]</span> 接龙预测：输入前面的文本，预测下一个最可能出现的Token</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ff9d2f385df7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Continuation prediction: given preceding text, predict the next most likely token</span></div>
+<audio class="cap-audio" src="audio/ff9d2f385df7.mp3" preload="none"></audio>
+</figcaption>
   </figure>
 </section>
 
@@ -131,7 +150,11 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
   <p><span class="time-marker">05:17</span>博主感叹：模型从海量文本中学到的所有语言规律、知识联系、表达方式、逻辑……全部被压缩进了这些参数里面。那些冰冷的数字，经过无数次训练和调整后，居然能承载如此丰富的语言含义。</p>
   <figure>
     <img src="assets/llm-pretrain/shot-05.jpg" alt="反向传播与参数量" loading="lazy">
-    <figcaption><span class="time-badge">[05:00]</span> GPT-3参数量1750亿——所有语言规律压缩在可调整的数字里</figcaption>
+    <figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:00]</span> GPT-3参数量1750亿——所有语言规律压缩在可调整的数字里</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0ec66e6659e8.mp3" type="button" aria-label="Play English audio">🔊</button><span>GPT-3 has 175 billion parameters — all linguistic rules compressed into adjustable numbers</span></div>
+<audio class="cap-audio" src="audio/0ec66e6659e8.mp3" preload="none"></audio>
+</figcaption>
   </figure>
   <p><span class="time-marker">05:31</span>更新完参数后，这批数据就算训练完成。接着输入下批数据，继续训练并更新参数，<strong>直至所有数据训练完</strong>。</p>
 </section>
@@ -432,5 +455,40 @@ figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
 </section>
 
 </main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
 </body>
 </html>

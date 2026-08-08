@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -84,7 +87,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 常把「静止帧」识成「竞争训练 / 竞争」，「帧」识成「真」，「帧率」识成「真率」，「快门」识成「宽门」，「每帧」识成「美真 / 美帧」，「线性」识成「现行」，「一眼」识成「一言」，「平均下来」识成「凭据闹」，「倒数」识成「到处」，「光源」识成「官员」。下文叙述以可见字幕与动画画面为准；页面末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-01.jpg" alt="叠帧示意与单帧对比，字幕写一帧就是一张图片" loading="lazy">
-        <figcaption>[00:03] 开场图：左侧叠帧轨迹，右侧单帧特写，字幕点明「一帧就是一张图片」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:03] 开场图：左侧叠帧轨迹，右侧单帧特写，字幕点明「一帧就是一张图片」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c1677f9b043a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening graphic: stacked-frame trails on the left, a single-frame close-up on the right, subtitle “one frame is one image.”</span></div>
+<audio class="cap-audio" src="audio/c1677f9b043a.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -95,7 +102,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「不同的帧率决定了在一秒钟内」</blockquote>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-02.jpg" alt="四宫格对比 100 50 25 5 FPS 下小球采样密度" loading="lazy">
-        <figcaption>[00:08] 帧率对照：100FPS 采样最密，5FPS 只剩稀疏几点。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:08] 帧率对照：100FPS 采样最密，5FPS 只剩稀疏几点。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/429c9d95d233.mp3" type="button" aria-label="Play English audio">🔊</button><span>Framerate comparison: 100FPS samples most densely; 5FPS leaves only sparse points.</span></div>
+<audio class="cap-audio" src="audio/429c9d95d233.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -106,7 +117,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「实际上就是增加了运动轨迹的记录」</blockquote>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-03.jpg" alt="5FPS 下带拖影的小球，字幕写增加了运动轨迹的记录" loading="lazy">
-        <figcaption>[00:27] 低帧率示意：用拖影补上帧间空隙，运动看起来更顺。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:27] 低帧率示意：用拖影补上帧间空隙，运动看起来更顺。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d95c7cf24e28.mp3" type="button" aria-label="Play English audio">🔊</button><span>Low-framerate illustration: motion blur fills the gaps between frames, making motion look smoother.</span></div>
+<audio class="cap-audio" src="audio/d95c7cf24e28.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -117,11 +132,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「帧率决定了快门速度的上限」</blockquote>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-04.jpg" alt="左侧帧率 1FPS 右侧快门 1S，字幕写帧率决定快门速度上限" loading="lazy">
-        <figcaption>[00:42] 关系图：1 FPS 对应最长快门约 1 秒，强调上限由帧率决定。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:42] 关系图：1 FPS 对应最长快门约 1 秒，强调上限由帧率决定。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a3bfb3a19adb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Relationship diagram: 1 FPS caps the longest shutter at about 1 second — the limit is set by framerate.</span></div>
+<audio class="cap-audio" src="audio/a3bfb3a19adb.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-05.jpg" alt="胶片条单帧下方标注 1/25秒，字幕写最长也就只有1/25秒" loading="lazy">
-        <figcaption>[00:56] 25fps 示例：单帧最长曝光时间等于 1/25 秒。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:56] 25fps 示例：单帧最长曝光时间等于 1/25 秒。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e69f3c458025.mp3" type="button" aria-label="Play English audio">🔊</button><span>25fps example: the longest exposure per frame equals 1/25s.</span></div>
+<audio class="cap-audio" src="audio/e69f3c458025.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -132,7 +155,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「角度为180度」</blockquote>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-06.jpg" alt="胶片条下方 1/50秒 等于 180度开角等于 50% 曝光" loading="lazy">
-        <figcaption>[01:10] 180° 快门角：25fps 下对应 1/50 秒、50% 曝光。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:10] 180° 快门角：25fps 下对应 1/50 秒、50% 曝光。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1834079f4812.mp3" type="button" aria-label="Play English audio">🔊</button><span>180° shutter angle: at 25fps this equals 1/50s and 50% exposure.</span></div>
+<audio class="cap-audio" src="audio/1834079f4812.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -143,7 +170,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「快门开角 180 度 · 50% 曝光」</blockquote>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-07.jpg" alt="胶片摄影机模拟，半圆开角 180 度对应 50% 曝光" loading="lazy">
-        <figcaption>[01:35] 旋转快门示意：180° 开角对应单帧一半曝光。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:35] 旋转快门示意：180° 开角对应单帧一半曝光。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f3d625b8e031.mp3" type="button" aria-label="Play English audio">🔊</button><span>Rotating-shutter diagram: a 180° opening angle equals half the frame&#x27;s exposure.</span></div>
+<audio class="cap-audio" src="audio/f3d625b8e031.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -161,7 +192,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「与人造光源的交流电频率不匹配而导致的」</blockquote>
       <figure>
         <img src="assets/electronic-shutter-framerate/shot-08.jpg" alt="青色正弦波与交流电频标题，字幕写与人造光源交流电频率不匹配" loading="lazy">
-        <figcaption>[02:10] 频闪成因：快门速度与人造光源交流电频率错位。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:10] 频闪成因：快门速度与人造光源交流电频率错位。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8aa13db94a52.mp3" type="button" aria-label="Play English audio">🔊</button><span>Flicker cause: shutter speed misaligned with the artificial light&#x27;s AC frequency.</span></div>
+<audio class="cap-audio" src="audio/8aa13db94a52.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>收束很干脆：在视频里，帧率既决定采样密度与动态模糊需求，也封死了快门上限；180° 是观感默认值，而为了电灯不闪，有时要故意把开角拧到 172.8° 或 144°。</p>
     </section>
@@ -533,5 +568,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">图文实录 · 小红书 · electronic-shutter-framerate</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

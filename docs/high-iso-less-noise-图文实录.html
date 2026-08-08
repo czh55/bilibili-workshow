@@ -46,6 +46,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .story-section{margin:42px 0}
   .transcript-row{grid-template-columns:56px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -82,12 +85,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p class="note">说明：Whisper 常把「噪点」识成「造点」，「进光量」识成「近光量」，「散粒噪声」识成「散立噪声」，「信噪比」识成「新造比 / 新脑比」，「电压摆幅」识成「电压百幅」，「量化精度 / 量化噪声」识成「亮画精度 / 亮画噪声」，「低 ISO」识成「DISO」，「抑制」识成「意志」，「降动态范围」识成「将动态范围」，「Base ISO」识成「BassISO」。下文叙述以可见字幕与动画为准；页面末尾仍完整保留全部 Whisper 分段。</p>
       <figure>
         <img src="assets/high-iso-less-noise/shot-01.jpg" alt="高ISO标题下放大噪点画面，字幕写很多人的印象就是噪点多" loading="lazy">
-        <figcaption>[00:02] 开场印象：高 ISO 与「噪点多」绑在一起，背景大字 NOISE。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:02] 开场印象：高 ISO 与「噪点多」绑在一起，背景大字 NOISE。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d0174d540e40.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening impression: high ISO tied to “lots of noise,” with NOISE in big letters behind.</span></div>
+<audio class="cap-audio" src="audio/d0174d540e40.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>动画先落到暗光 ISO 100：玩偶主体几乎沉在黑里，旁边画出读出链路 TX→FD→电容→SF→PGA→ADC。旁白点明根因——进光量不足导致有效信号减少；这时再靠提高 ISO 强行提亮，信号和噪声会被一起放大，噪声也就更显眼。</p>
       <figure>
         <img src="assets/high-iso-less-noise/shot-02.jpg" alt="暗光ISO100两张暗图与读出电路示意，字幕讲进光量不足导致有效信号减少" loading="lazy">
-        <figcaption>[00:10] 暗光 ISO 100：进光不够 → 有效信号变少，再提亮就会把噪声一起放大。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:10] 暗光 ISO 100：进光不够 → 有效信号变少，再提亮就会把噪声一起放大。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4e7ab3ff999e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Low-light ISO 100: too little light → fewer real signal; brightening then amplifies noise along with it.</span></div>
+<audio class="cap-audio" src="audio/4e7ab3ff999e.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -98,11 +109,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">旁白：「甚至高ISO的画面还要稍微好一点」</blockquote>
       <figure>
         <img src="assets/high-iso-less-noise/shot-03.jpg" alt="低ISO100几乎全黑与ISO800提亮后噪点画面对比" loading="lazy">
-        <figcaption>[00:22] 不公平的对比：直出高低 ISO，高 ISO 看起来「更噪」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:22] 不公平的对比：直出高低 ISO，高 ISO 看起来「更噪」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9553c9b80ace.mp3" type="button" aria-label="Play English audio">🔊</button><span>An unfair comparison: straight-out-of-camera high vs low ISO — high ISO looks “noisier.”</span></div>
+<audio class="cap-audio" src="audio/9553c9b80ace.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/high-iso-less-noise/shot-04.jpg" alt="低ISO100加后期提亮与ISO800并排，噪点接近" loading="lazy">
-        <figcaption>[00:28] 对齐到同一亮度后：低 ISO + 后期提亮 vs ISO 800，噪点表现接近。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:28] 对齐到同一亮度后：低 ISO + 后期提亮 vs ISO 800，噪点表现接近。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4ad8f199036a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Matched to the same brightness: low ISO + post brightening vs ISO 800 — the noise is comparable.</span></div>
+<audio class="cap-audio" src="audio/4ad8f199036a.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -114,7 +133,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「信号的量化精度也就更高」</blockquote>
       <figure>
         <img src="assets/high-iso-less-noise/shot-05.jpg" alt="读出链路标注散粒噪声前端读出噪声后端读出噪声，PGA处ISO400" loading="lazy">
-        <figcaption>[00:50] ISO 400 时 PGA 放大：量化精度更高，并压制后端读出噪声。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] ISO 400 时 PGA 放大：量化精度更高，并压制后端读出噪声。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/bbec787d3a39.mp3" type="button" aria-label="Play English audio">🔊</button><span>PGA amplification at ISO 400: higher quantization precision and suppressed readout noise.</span></div>
+<audio class="cap-audio" src="audio/bbec787d3a39.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -126,11 +149,19 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「高ISO画面的噪声反而会比低ISO的要少一点」</blockquote>
       <figure>
         <img src="assets/high-iso-less-noise/shot-06.jpg" alt="ISO100与ISO400同亮度对比，两侧噪声倍率标注" loading="lazy">
-        <figcaption>[01:20] 同亮度对照：高 ISO 一侧后端噪声相对更可控。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] 同亮度对照：高 ISO 一侧后端噪声相对更可控。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0d602da26e6d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Same-brightness comparison: the high-ISO side keeps back-end noise relatively more controlled.</span></div>
+<audio class="cap-audio" src="audio/0d602da26e6d.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <figure>
         <img src="assets/high-iso-less-noise/shot-07.jpg" alt="低ISO加后期提亮与高ISO拍摄对比，后者后端读出噪声未标4x" loading="lazy">
-        <figcaption>[01:35] 机制差：低 ISO + 后期提亮会 4× 后端噪声；高 ISO 拍摄时后端噪声不跟放大。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:35] 机制差：低 ISO + 后期提亮会 4× 后端噪声；高 ISO 拍摄时后端噪声不跟放大。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e3879ec2ffd7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Mechanism difference: low ISO + post-brightening quadruples back-end noise; shooting at high ISO doesn&#x27;t amplify it.</span></div>
+<audio class="cap-audio" src="audio/e3879ec2ffd7.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -142,7 +173,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <blockquote class="quote">画面字幕：「但实际应用中高ISO降动态范围」</blockquote>
       <figure>
         <img src="assets/high-iso-less-noise/shot-08.jpg" alt="高ISO提升信噪比与ISO不变性对照，字幕提高ISO降动态范围" loading="lazy">
-        <figcaption>[02:05] 理论收益 vs 现实约束：信噪比微升，但动态范围与 ISO 不变性要一起权衡。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[02:05] 理论收益 vs 现实约束：信噪比微升，但动态范围与 ISO 不变性要一起权衡。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7830a4f81ff9.mp3" type="button" aria-label="Play English audio">🔊</button><span>Theoretical gain vs real constraints: SNR rises slightly, but dynamic range and ISO invariance must be weighed together.</span></div>
+<audio class="cap-audio" src="audio/7830a4f81ff9.mp3" preload="none"></audio>
+</figcaption>
       </figure>
     </section>
 
@@ -477,5 +512,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物之一 · 图文实录 · 与理性分析共享同一转录证据</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>

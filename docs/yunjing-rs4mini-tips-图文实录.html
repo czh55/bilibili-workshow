@@ -54,6 +54,9 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
   .toc-grid{grid-template-columns:1fr}
   .transcript-row{grid-template-columns:52px minmax(0,1fr);gap:10px}
 }.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
 </head>
 <body>
   <main class="container">
@@ -92,7 +95,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>视频从旅行痛点切入：好不容易出门想拍点视频，脑子里第一个念头往往是把相机固定住，按下快门再左右走走。拍一会儿就会意识到——这种画面多了就没意思。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-01.jpg" alt="黄昏时分 Cremorne Point 候船亭前，人物从左走过，背景可见悉尼歌剧院与海港大桥" loading="lazy">
-        <figcaption>[00:09] 对比开场：固定机位下的水岸场景，字幕提示「你看还是固定的场景」一类语义；Whisper 误识为「投放的场景」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:09] 对比开场：固定机位下的水岸场景，字幕提示「你看还是固定的场景」一类语义；Whisper 误识为「投放的场景」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b5844272e658.mp3" type="button" aria-label="Play English audio">🔊</button><span>Comparison opening: a fixed-camera waterfront scene, subtitle roughly “see, the scene stays fixed”; Whisper mis-heard it as “scene placement.”</span></div>
+<audio class="cap-audio" src="audio/b5844272e658.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p class="note">说明：笔记文案写明设备为大疆 RS4 Mini，主题是旅拍运镜小 Tips。作者昵称元数据缺失。Whisper 多处误识（见各段注与文末），叙事以可见字幕与画面为准；下方「详细文字转录」仍保留全部原始分段，不做改写。</p>
       <blockquote class="quote">口播语义 [00:00–00:09]：出门旅游想拍视频 → 固定相机左右走 → 画面拍多了没意思。</blockquote>
@@ -104,7 +111,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>作者立刻给对照方案：让相机跟随人物同时移动。哪怕只是最简单的运镜，画面也会丰富起来，多拍一会儿也不容易无聊。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-02.jpg" alt="手持白色稳定器的操作画面或人物跟随运镜的旅拍场景" loading="lazy">
-        <figcaption>[00:18] 引入器材：用 RS4 Mini 分享运镜小 Tips；字幕/口播强调「小小的改变，画面就会完全不一样」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:18] 引入器材：用 RS4 Mini 分享运镜小 Tips；字幕/口播强调「小小的改变，画面就会完全不一样」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3ff9a3b4066e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Gear intro: sharing camera-move tips with the RS4 Mini; subtitle/voice-over stresses “tiny changes make the shot completely different.”</span></div>
+<audio class="cap-audio" src="audio/3ff9a3b4066e.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <blockquote class="quote">口播 [00:10–00:23]：「现在我们把相机跟随人物同时移动」「用最简单的运镜就可以让画面丰富起来」「现在用大家的 RS4 mini 给大家分享这个运镜小 Tips」。</blockquote>
       <p class="note">Whisper「运镜小 taps」对照字幕/文案 ≈「运镜小 Tips」。</p>
@@ -117,12 +128,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p><strong>套路 A：前推运镜。</strong> 先推镜头拍景色，再让人物出场，这样拍到人的同时还能展现环境。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-03.jpg" alt="海边草地夕阳中，手持稳定器前推拍摄景色，画中画显示更广构图" loading="lazy">
-        <figcaption>[00:30] 前推示范：字幕「先前推运镜去拍到景色」；先景后人，把环境塞进人物出场。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 前推示范：字幕「先前推运镜去拍到景色」；先景后人，把环境塞进人物出场。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8d06d2f52b61.mp3" type="button" aria-label="Play English audio">🔊</button><span>Push-in demo: subtitle “push the camera forward to capture the view first” — scenery before person, folding the environment into the subject&#x27;s entrance.</span></div>
+<audio class="cap-audio" src="audio/8d06d2f52b61.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p><strong>套路 B：后拉运镜。</strong> 镜头向后拉，先拍到环境，再后拉带出人物。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-04.jpg" alt="后拉运镜带出人物与环境的旅拍画面" loading="lazy">
-        <figcaption>[00:37] 后拉示范：先环境、再带出人物；进阶还可在开头加入上摇或下摇。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:37] 后拉示范：先环境、再带出人物；进阶还可在开头加入上摇或下摇。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8b2ebfe3c04d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Pull-back demo: environment first, then reveal the person; as an upgrade, add a tilt up or down at the start.</span></div>
+<audio class="cap-audio" src="audio/8b2ebfe3c04d.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>再进阶一点：一开始就加入上摇或下摇。作者说这套思路特别适合放在视频开场或结尾，非常有电影感。</p>
       <blockquote class="quote">口播语义 [00:23–00:46]：「我知道你很想把人拍好看，但是你可以先拍风景」「先前推运镜去拍景色，然后向人物出场」「或者把镜头向后拉……再后拉带出人物」「加入上摇或者下摇……开场或结尾，非常有电影感」。</blockquote>
@@ -135,12 +154,20 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>第二步：出门旅游一定要记得拍一个环绕镜头。让人物靠在某个地方，从全景环绕人物拍到近景；人物注视方向可以跟摄影师一起移动，拍起来更自然。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-05.jpg" alt="人物在雕像前微笑伸手，阳光公园场景，字幕写从全景环绕人物拍摄到近景" loading="lazy">
-        <figcaption>[00:51] 环绕运镜：字幕「从全景环绕人物拍摄到近景」；Whisper 误识「镜景」应为「近景」。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[00:51] 环绕运镜：字幕「从全景环绕人物拍摄到近景」；Whisper 误识「镜景」应为「近景」。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e4d1f9b00e82.mp3" type="button" aria-label="Play English audio">🔊</button><span>Orbiting move: subtitle “orbit from a wide shot of the person into a close-up”; Whisper mis-heard “close-up” as “mirror view.”</span></div>
+<audio class="cap-audio" src="audio/e4d1f9b00e82.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>接着她补了一招「格莱美运镜」：每年都会火、谁拍谁火——不是说你真的走红毯，而是把技巧挪到自己的视频里。秘诀是人物转身时，镜头往相反方向向人物运镜，一个画面里就能造出张力与氛围感。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-06.jpg" alt="人物转身与镜头反向环绕制造张力的运镜画面" loading="lazy">
-        <figcaption>[01:09] 「格莱美式」反向：人物转身时镜头反向跟进，制造张力。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:09] 「格莱美式」反向：人物转身时镜头反向跟进，制造张力。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/90163b7be143.mp3" type="button" aria-label="Play English audio">🔊</button><span>“Grammy-style” reverse: the camera tracks backward as the person turns, building tension.</span></div>
+<audio class="cap-audio" src="audio/90163b7be143.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <blockquote class="quote">口播语义 [00:46–01:14]：「出门旅游一定要记得拍一个环绕镜头」「人物注视的方向可以跟摄影师一起移动」「当人物转身的时候，镜头就需要往相反的方向向人物运镜……创造出一种张力」。</blockquote>
     </section>
@@ -152,7 +179,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>她最爱的是「万物皆可加摇镜头」：摇镜头本身有视觉张力；用下摇加前推，可以从天空拍到人物的样子，比单纯前推更有层次；也可以先跟随人物再加入上摇，把目光自然从人物转移到景色。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-07.jpg" alt="下摇加前推或跟随加上升摇的组合运镜画面" loading="lazy">
-        <figcaption>[01:28] 组合运镜：下摇 + 前推（天到人）或跟随 + 上摇（人到景）。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:28] 组合运镜：下摇 + 前推（天到人）或跟随 + 上摇（人到景）。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5f0a6a8a9942.mp3" type="button" aria-label="Play English audio">🔊</button><span>Combined moves: tilt down + push in (sky to person) or follow + tilt up (person to scenery).</span></div>
+<audio class="cap-audio" src="audio/5f0a6a8a9942.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>一个人自拍时，还可以把稳定器当成「可以自动摇镜头的三脚架」。</p>
       <blockquote class="quote">口播语义 [01:14–01:43]：「所有的运镜都是建立在推拉摇移这四种移动」「万物皆可加摇镜头」「下摇再前推……更有层次」「先跟随人物然后加入上摇」。</blockquote>
@@ -165,7 +196,11 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
       <p>她说手里这条 RS4 Mini 用了快一年：侧带智能追踪模块，一个人自拍时，本来只能出固定镜头，也能变成像有摄影师跟拍的摇镜头——比个手势就能锁定人物自动跟拍运镜。</p>
       <figure>
         <img src="assets/yunjing-rs4mini-tips/shot-08.jpg" alt="公园中人物行走被稳定器锁定追踪，右上角画中画显示稳定器放在木椅上" loading="lazy">
-        <figcaption>[01:55] 智能追踪：字幕「它就可以锁定人物」；画中画为稳定器固定在椅上自动跟拍。</figcaption>
+        <figcaption class="cap-bilingual">
+<div class="cap-zh">[01:55] 智能追踪：字幕「它就可以锁定人物」；画中画为稳定器固定在椅上自动跟拍。</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ac96a221d4f2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Smart tracking: subtitle “it can lock onto the person”; picture-in-picture shows the stabilizer fixed on a chair auto-tracking.</span></div>
+<audio class="cap-audio" src="audio/ac96a221d4f2.mp3" preload="none"></audio>
+</figcaption>
       </figure>
       <p>环绕运镜本身不好掌控，构图容易歪；先让人物做手势锁定追踪，再环绕，就能轻松锁住目标。只要人物在十米之内，都可以保持追踪。</p>
       <blockquote class="quote">口播语义 [01:43–02:14]：「这一带有一个智能追踪模块」「只要跟它比个手势，它就可以锁定人物自动跟拍运镜」「让人物先做一个手势去锁定追踪，然后再去做环绕」「只要人物在十米之内，它都可以保持追踪」。</blockquote>
@@ -540,5 +575,40 @@ figcaption{padding:14px 18px;color:#57534e;font-size:14px;border-top:1px solid #
     </div></details></section>
     <p class="footer">双轨产物之一 · 图文实录 · slug: yunjing-rs4mini-tips · 分段数 87</p>
   </main>
-<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body>
+<script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script><script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body>
 </html>
