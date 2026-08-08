@@ -501,8 +501,50 @@ node "generate-{slug}-html.mjs"
 发布注意：
 
 - 默认用 `python3 scripts/enhance-captions-html.py` 对已生成 HTML 做后处理，保证图注双语结构统一，不必手写。
-- `docs/audio/` 与 `translations.json` 必须随文章一起提交（`.gitignore` 已放行 `docs/audio/*.mp3` 与 `translations.json`）；不提交则 GitHub Pages 上无法播放朗读。
+- `docs/audio/` 与 `translations.json` 必须随文章一起提交（`.gitignore` 已放行 `docs/audio/*.mp3`、`docs/audio/{slug}/*.mp3` 与 `translations.json`）；不提交则 GitHub Pages 上无法播放朗读。
 - 转录区必须使用 `<details class="transcript-collapsible">` 且**默认不带 `open` 属性**（折叠），由导航点击或 `#transcript` 锚点展开；防止整页转录平铺。
+
+---
+
+## Step 6.5：可选产出「场景英译」英文学习卡（`html_en`）
+
+当用户对简单英文翻译版不满意、或明确要求按 `language_paraphrase` 方式学习时，可额外产出 `docs/{slug}-场景英译.html` 作为 `outputs.html_en`，覆盖（或替代）旧的纯翻译英文页。参考实现：`docs/makeup-class-prep-场景英译.html` 与生成脚本 `scripts/gen-scene-en-makeup.py`。
+
+页面为交互式场景英译学习卡，必须包含：
+
+1. **Hero 头部**：封面图 + 中文标题 + 英文副标题 + meta chips（日期/平台/时长/场景数/单词点读提示）+ 朗读速度选择 + 停止朗读 + 中文语音讲解按钮（`data-audio` 指向 `audio/{slug}/narration.mp3`）
+2. **侧边栏场景地图**：每个场景有编号徽章、中文标题、时间范围和英文标题，可点击跳转
+3. **场景卡片**（4–12 个，按口播/步骤/活动切分）：
+   - 顶部 S 编号 + 时间范围 + 「朗读整个场景」按钮
+   - 场景截图（复用 `docs/assets/{slug}/shot-XX.jpg` 或按需抽帧）
+   - 中文场景标题 + 英文场景标题
+   - 情境说明 `context`（谁在哪、要完成什么 + 语域标注）
+   - 逐句中英对照：中文原文（ASR 已校正）→ 地道英文 + 每句「朗读本句」按钮 + **必填表达提示**（`<p class="note">`：关键词 → 英文对照 + 语境说明）
+   - `Paraphrase & Chunks` 可折叠：每组「中文意图 → 英文替换说法」+ chunk 拆解，每场景 ≥2 组
+4. **今日可练**：4 个口头替换练习（中文意图 + 英文例句 + 朗读按钮）
+5. **避坑**：4 组 `✕ 直译腔 → ✓ 地道说法 + 解释`
+6. **认知转变**：3 组「以前 → 新」三列对照
+7. **单词点读**：英文长词（≥8 字母）与硬词表自动标记为下划线可点按钮，用 Web Speech API 发音；硬词表按主题定制 ≥20 词
+8. **页脚**标注「ASR 专有名词已按语境校正 · 场景/句子朗读使用 edge-tts · 单词发音使用浏览器 Web Speech API」
+
+音频统一用 `edge-tts` 预生成到 `docs/audio/{slug}/`：
+
+| 文件 | 语音 | 用途 |
+|------|------|------|
+| `narration.mp3` + `narration.txt` | `zh-CN-XiaoxiaoNeural` | 中文讲解旁白 |
+| `s{N}.mp3` | `en-US-JennyNeural` | 「朗读整个场景」 |
+| `s{N}-{idx:02d}.mp3` | 同上 | 逐句朗读 |
+| `practice-{idx}.mp3` | 同上 | 练习句朗读 |
+| `manifest.json` | — | 音频清单 |
+
+**禁止静态 `<audio>` 元素**：统一用 `data-audio` 按钮 + JS `new Audio()` 按需加载，避免整文件预加载卡死页面。
+
+编辑约束：
+
+- 中文原文必须基于已校正转录，不得凭空编造；ASR 同音错字（如「鼓球→琢磨」）在页脚注明
+- 英文翻译为地道口语，不是逐字直译；主目标是从视频里学「场景式英文表达」，不是视频内容总结
+- 删除被替换的旧英文页（如 `*-图文实录-en.html`），并更新 `index.json` 的 `outputs.html_en`，中文图文实录页的英文链接同步指向新页
+- 更新 `index.json` 时建议增加 `"html_en_type": "scene-english"` 便于前端识别
 
 ---
 
@@ -738,7 +780,9 @@ git checkout "{dev-branch}"
 - `docs/{slug}-理性分析.svg`
 - `docs/assets/{slug}/shot-*.jpg`
 - `docs/audio/`（本视频图注对应的 MP3，哈希命名，可复用已有文件）
+- `docs/audio/{slug}/`（若产出场景英译页：`narration.mp3` + `s{N}.mp3` + `s{N}-{idx}.mp3` + `practice-{idx}.mp3` + `manifest.json`）
 - `translations.json`（若新增图注翻译）
+- `docs/{slug}-场景英译.html`（若产出 `html_en`）
 - `docs/index.json`
 
 先在开发分支提交并推送：
@@ -783,7 +827,7 @@ rm -f "{音频文件}" "{视频文件}"
 - 每个 URL 只处理一次，一个索引条目对应两个产物
 - 小红书请求必须在每次网络访问前执行仓库根目录的 `xhs-rate-limit.mjs`，并保持至少 60 秒间隔；修复既有文章默认不得访问小红书
 - HTML 必须包含本地关键截图、完整时间戳转录、图注英文翻译与朗读音频；转录默认折叠（`<details>` 不带 `open`），图注为中英对照（`.cap-bilingual`）
-- 图注翻译写入 `translations.json`，朗读音频写入 `docs/audio/`（按图注哈希去重）；二者为发布必需资产，必须随文章提交，`.gitignore` 已放行
+- 图注翻译写入 `translations.json`，朗读音频写入 `docs/audio/`（按图注哈希去重；场景英译音频按 `docs/audio/{slug}/` 组织）；二者为发布必需资产，必须随文章提交，`.gitignore` 已放行
 - SVG 必须使用 `svg-auto-height.mjs` 和原有分析视觉框架
 - 所有面向读者的编辑文案必须为简体中文，且不得包含截断内容、关键词拼贴或模板套话
 - 不使用 `rsvg-convert` 或 Inkscape 渲染 SVG
