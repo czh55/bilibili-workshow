@@ -1,0 +1,312 @@
+#!/usr/bin/env python3
+"""b41 JSON 生成脚本：穿搭/AI剪辑/摄影/无人机混合类（10篇，最后一批）"""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "scripts" / "scene-data"
+OUT.mkdir(parents=True, exist_ok=True)
+
+DATE = "2026-08-08"
+PLATFORM = "xiaohongshu"
+
+V = [
+(
+ "floral-dress-outfit-formula", "碎花洋裙穿搭万能公式｜直接照搬给她", "The Universal Printed-Dress Formula", "28秒", "穿搭 · 碎花公式", "http://xhslink.cn/o/1kOMQ4gIFn8",
+ [
+  ("印花开衫配白", "Print With White", "00:00", "印花开衫配白色很好看，但拉出印花里最深的颜色会更显刻意精致。白上衣换成深棕上衣，颜色来自半裙花纹中最深的部分，整体更统一。",
+   [("印花开衫配白色好看。", "A printed top with white looks good.", "print（印花）"),
+    ("拉出深色更显刻意。", "Pull the darkest color for intent.", "intentional（刻意的）"),
+    ("深棕来自花纹最深。", "Brown drawn from the darkest part.", "darkest（最深的）"),
+    ("整体更统一。", "It feels more pulled together.", "unified（统一的）")]),
+  ("条纹配牛仔", "Stripes With Denim", "00:07", "条纹上衣配牛仔好看，但让下装回应其中一条条纹的颜色更利落。深靛蓝牛仔裤回应上衣的深色条纹，这个技巧叫 match one stripe color。",
+   [("条纹配牛仔好看。", "Stripes with denim work well.", "denim（牛仔）"),
+    ("下装回应条纹色。", "Match the bottom to one stripe.", "stripe（条纹）"),
+    ("牛仔裤回应条纹。", "Indigo jeans echo the dark stripe.", "echo（呼应）"),
+    ("这叫同色呼应技巧。", "It's called matching one stripe color.", "matching（呼应）")]),
+  ("格纹配灰褐", "Plaid With Taupe", "00:14", "格纹裤配黑色好看，但把上装与配件改成格纹里的柔和灰褐色，降低黑色带来的强对比，更显优雅精致。",
+   [("格纹配黑好看。", "Plaid trousers with black look good.", "plaid（格纹）"),
+    ("灰褐色更柔和。", "Soft taupe reduces harsh contrast.", "taupe（灰褐色）"),
+    ("柔色调降低对比。", "Soft tones ease the contrast.", "contrast（对比）"),
+    ("更显精致。", "It looks more polished.", "polished（精致的）")]),
+  ("碎花配中性配饰", "Floral With Neutrals", "00:20", "碎花裙配中性配饰很好，但让配饰重复裙身里较深的印花色更显高级。酒红、深绿与棕灰配件分别重复裙身花纹中的较深色彩，整体更显细腻。",
+   [("碎花裙配中性色。", "A floral dress with neutrals works.", "neutral（中性色）"),
+    ("配饰重复深印花色。", "Repeat one darker print color.", "accessory（配饰）"),
+    ("配件重复裙上深色。", "Accents repeat the skirt's dark colors.", "accent（点缀）"),
+    ("整体更细腻。", "It feels more refined.", "refined（细腻的）")]),
+ ],
+),
+(
+ "klein-blue-shirt-outfits", "夏日克莱因蓝衬衫怎么搭？ 分享来", "How to Style a Klein Blue Shirt", "2分17秒", "穿搭 · 蓝衬衫搭配", "http://xhslink.cn/o/8rExgFzmIgO",
+ [
+  ("开场：穿成厂服", "Opening: Looking Like a Uniform", "00:00", "以为蓝色衬衫高级显白，结果穿在身上像厂服，问题出在材质和穿法。",
+   [("蓝衬衫穿成厂服。", "The blue shirt reads like a uniform.", "uniform（厂服）"),
+    ("材质颜色没选对。", "Fabric and color are wrong.", "fabric（面料）")]),
+  ("两个问题", "Two Problems", "00:05", "第一个问题材质和颜色没选对显土气；第二个问题穿得太拘谨没层次很呆板。",
+   [("材质选错显土气。", "Wrong fabric looks cheap.", "cheap（廉价的）"),
+    ("穿太紧身显呆板。", "Too stiff looks dull.", "stiff（拘谨的）")]),
+  ("白色牛仔裤", "White Jeans First", "00:13", "今天用黑白灰三色解决问题。先来一条白色牛仔裤，明度立刻有了。",
+   [("白色牛仔裤提明度。", "White jeans lift the brightness.", "brightness（明度）"),
+    ("黑白灰三色解决。", "Black, white, grey fix it.", "neutral（中性色）")]),
+  ("细节调整", "Detail Fixes", "00:19", "衬衫塞进裤子里，袖子挽起来增加露肤度，黑色腰带强调高腰线。",
+   [("衬衫塞进裤里。", "Tuck the shirt in.", "tuck（塞进）"),
+    ("腰带强调高腰线。", "A belt accents the waistline.", "waistline（腰线）")]),
+  ("配饰统一", "Unified Accessories", "00:28", "包包、皮鞋、皮带颜色都做到统一，稍微改变就好很多。",
+   [("配饰颜色统一。", "Accessories share one color.", "accessory（配饰）"),
+    ("小改变大提升。", "A small change goes far.", "improvement（提升）")]),
+  ("亚麻西裤", "The Linen Trousers", "00:39", "不喜欢塞衬衫？换一条亚麻色西裤，扣子扣到倒数第二颗，老钱风那味就来了。",
+   [("亚麻西裤更松弛。", "Linen trousers feel relaxed.", "linen（亚麻）"),
+    ("老钱风那味。", "That old-money vibe.", "old money（老钱风）")]),
+  ("通勤黑灰", "Commute in Black and Grey", "00:59", "搭黑色整体偏闷，加白色背心增加层次；灰色西裤配公文包半框眼镜，显得专业。",
+   [("加白背心增加层次。", "A white tank adds layers.", "layer（层次）"),
+    ("灰色显专业。", "Grey reads professional.", "professional（专业的）")]),
+  ("下班变装", "The Off-Duty Switch", "01:53", "下班后拿掉眼镜公文包，扣子只留最下面两颗，眼镜挂胸前，男友力拉满。",
+   [("拿掉配件更松弛。", "Drop the accessories to relax.", "relaxed（松弛的）"),
+    ("扣子留两颗更随性。", "Two buttons left feels casual.", "casual（随性的）")]),
+ ],
+),
+(
+ "couple-banquet-color-outfits", "穿搭公式：情侣赴宴配色", "Couple Banquet Color Formulas", "31秒", "穿搭 · 情侣配色", "http://xhslink.cn/o/4642tOBGRFr",
+ [
+  ("开场：红色配黑", "Opening: Red Gown, All Black", "00:00", "她穿红色礼服，他搭全黑造型，经典的红黑配永远不会错。",
+   [("红色配全黑。", "Red gown with all black.", "gown（礼服）"),
+    ("红黑经典配色。", "Red and black is classic.", "classic（经典的）")]),
+  ("黑色配白鞋", "Black With White Shoes", "00:08", "她穿黑色礼服，他搭白衬衫黑裤，白鞋再次提亮整体。",
+   [("黑礼服配白衬衫。", "Black gown, white shirt.", "shirt（衬衫）"),
+    ("白鞋提亮。", "White shoes brighten it up.", "brighten（提亮）")]),
+  ("白色配浅蓝", "White With Light Blue", "00:14", "她穿白色礼服，他搭浅蓝衬衫和米色西裤，清爽的一对。",
+   [("白礼服配浅蓝。", "White gown, light-blue shirt.", "light blue（浅蓝）"),
+    ("米色西裤呼应。", "Beige trousers echo the tone.", "beige（米色）")]),
+  ("墨绿配奶油", "Dark Green With Cream", "00:21", "她穿墨绿色礼服，他搭奶油色衬衫和米色长裤，复古又高级。",
+   [("墨绿配奶油色。", "Dark green with cream.", "cream（奶油色）"),
+    ("复古又高级。", "Retro yet refined.", "retro（复古的）")]),
+  ("酒红配炭灰", "Wine Red With Charcoal", "00:27", "她穿酒红色礼服，他搭黑衬衫和炭灰色西裤，压场又不抢风头。",
+   [("酒红配炭灰西裤。", "Wine red with charcoal trousers.", "charcoal（炭灰色）"),
+    ("压场不抢风头。", "Commanding without showing off.", "commanding（有气场的）")]),
+ ],
+),
+(
+ "mature-men-outfit", "成熟男人的穿衣搭配之道", "The Mature Man's Dressing Way", "13秒", "穿搭 · 成熟男装", "http://xhslink.cn/o/1IfjYhbOQTS",
+ [
+  ("开场：米色同色系", "Opening: Beige Monochrome", "00:01", "开场的米色同色系造型，作为后续四种调整的起点，同色系最显高级。",
+   [("米色同色系起点。", "Beige monochrome as the start.", "monochrome（同色系）"),
+    ("同色系最显高级。", "Matching tones read premium.", "premium（高级的）")]),
+  ("深棕外层", "Deep-Brown Outer", "00:03", "深棕色外层加浅色内搭，形成纹理、明度和轮廓的三重变化。",
+   [("深棕配浅色内搭。", "Deep brown over light.", "outer（外层）"),
+    ("三重变化显层次。", "Triple contrast adds depth.", "silhouette（轮廓）")]),
+  ("结构包袋", "The Structured Bag", "00:06", "有结构的棕色包袋为浅色造型补上轮廓与焦点，配饰决定精致度。",
+   [("结构包袋补焦点。", "A structured bag adds focus.", "structured（有结构的）"),
+    ("配饰决定精致度。", "Accessories set the polish.", "polish（精致度）")]),
+  ("浅色鞋提亮", "Light Shoes", "00:09", "浅色鞋在深色衣裤下方形成小面积提亮，全身就不会显得沉闷。",
+   [("浅鞋小面积提亮。", "Light shoes brighten the base.", "accent（提亮点）"),
+    ("深色不沉闷。", "Dark never feels heavy.", "heavy（沉重的）")]),
+  ("小配饰点睛", "The Finishing Details", "00:12", "项链、腕间配饰、墨镜和皮具共同丰富简单的白T造型，细节见品味。",
+   [("小配饰丰富白T。", "Small pieces enrich a white tee.", "white tee（白T）"),
+    ("细节见品味。", "Details show the taste.", "taste（品味）")]),
+ ],
+),
+(
+ "zhouxingchi-audiovisual", "从踩脚趾到如来神掌，深度拆解周星驰电影顶级视听美学", "From Toe-Stomp to Buddha's Palm: Chow's Audiovisual Aesthetics", "6分05秒", "电影 · 视听美学", "http://xhslink.cn/o/yI3KNJy35F",
+ [
+  ("开场：踩脚趾到如来神掌", "Opening: From Toe to Palm", "00:00", "从踩脚趾到如来神掌，周星驰电影的视听美学有一套完整的升级路径。",
+   [("从小动作到大招式。", "From small gags to great moves.", "gag（笑点）"),
+    ("视听美学有路径。", "His aesthetics follow a path.", "path（路径）")]),
+  ("身体喜剧", "Body Comedy", "00:40", "踩脚趾这种身体喜剧，用最卑微的痛感制造最大声的笑，以小搏大。",
+   [("身体喜剧以小搏大。", "Body comedy trades small for big.", "body comedy（身体喜剧）"),
+    ("痛感制造笑声。", "Pain becomes laughter.", "pain（疼痛）")]),
+  ("音效放大", "Sound Amplifies", "01:30", "夸张的音效把每个动作放大十倍，画外音效先到，画面后到，喜剧节奏拉满。",
+   [("音效放大动作。", "Sound magnifies every move.", "magnify（放大）"),
+    ("声画错位制造节奏。", "Off-sync sound drives the beat.", "off-sync（错位的）")]),
+  ("动作场面", "Action Sequences", "02:30", "从凌空抽射到如来神掌，武打场面用慢动作与特效把武功拍成奇观。",
+   [("慢动作拍奇观。", "Slow motion builds spectacle.", "slow motion（慢动作）"),
+    ("武功被视觉化。", "Kung fu becomes visuals.", "visualize（视觉化）")]),
+  ("市井质感", "Street-Level Texture", "03:30", "镜头永远贴着市井生活，乱糟糟的环境里长出最不普通的梦想。",
+   [("镜头贴市井生活。", "The lens hugs street life.", "street life（市井）"),
+    ("平凡里长梦想。", "Dreams grow from the ordinary.", "ordinary（平凡的）")]),
+  ("小人物的逆袭", "The Underdog Rise", "04:30", "小人物逆袭是贯穿始终的主线，视听语言永远在给草根加冕。",
+   [("小人物逆袭主线。", "Underdog rise runs the film.", "underdog（小人物）"),
+    ("视听给草根加冕。", "Audiovisuals crown the root.", "crown（加冕）")]),
+  ("荒诞与悲壮", "Absurd and Tragic", "05:00", "荒诞的镜头语言包裹着悲壮的内核，笑点越多，泪点越真。",
+   [("荒诞包悲壮。", "Absurdity wraps tragedy.", "tragedy（悲壮）"),
+    ("笑多泪更真。", "More laughs, truer tears.", "tears（眼泪）")]),
+  ("总结：草根英雄", "Summary: The Root Hero", "05:30", "周星驰的视听美学本质是给普通人造梦，每一个镜头都是底层英雄的赞歌。",
+   [("本质是给普通人造梦。", "His art dreams for the everyman.", "everyman（普通人）"),
+    ("每帧都是草根赞歌。", "Each frame salutes the root.", "salute（致敬）")]),
+ ],
+),
+(
+ "ai-video-edit-three-steps", "AI新手村 | 掌握这三步，AI真能替你剪视频了", "AI Beginner: Three Steps to Let AI Edit", "3分01秒", "剪辑 · AI工作流", "http://xhslink.cn/o/23BdaSX4iwY",
+ [
+  ("开场：AI剪辑差距", "Opening: The AI Editing Gap", "00:00", "两个月前用 AI 剪出来很烂，现在很高级，差距不在 AI，而在方法。",
+   [("差距不在AI。", "The gap isn't the AI.", "gap（差距）"),
+    ("方法决定效果。", "Method decides the result.", "method（方法）")]),
+  ("别一句话出片", "Don't One-Shot It", "00:06", "AI剪辑不是一句话就能出满意成片，你需要把判断变成它看得懂的说明书。",
+   [("别一句话出片。", "Don't expect one-liner results.", "one-liner（一句话）"),
+    ("把判断变说明书。", "Turn judgment into a spec.", "spec（说明书）")]),
+  ("给信息卡", "Give It the Cards", "00:11", "信息卡、高级感转场、图标动效，全是我改对方法后 AI 自己做出来的。",
+   [("信息卡动效AI能包。", "AI handles cards and motion.", "motion（动效）"),
+    ("动效是传统剪辑难点。", "Motion is the hard part of editing.", "tedious（耗时的）")]),
+  ("第一步：粗点视频", "Step One: Rough Cut", "00:18", "先别让它剪，给它粗点视频、文案和画面，最好导出 SRT 时间线。",
+   [("先给粗点视频。", "Hand it a rough cut first.", "rough cut（粗剪）"),
+    ("SRT让AI更好懂。", "SRT timelines are AI-friendly.", "SRT（字幕文件）")]),
+  ("输出执行说明书", "Export the Spec", "01:26", "让它输出 Video Spec 执行说明书：哪句真人全屏、哪句上卡片、哪句放大字。",
+   [("执行说明书限定死。", "The spec locks every choice.", "spec（说明书）"),
+    ("哪句上什么全部限定。", "Every line gets its treatment.", "treatment（处理方式）")]),
+  ("第二步：只剪30秒", "Step Two: Cut 30 Seconds", "01:37", "先只剪 30 秒测效果，看人物有没有被挡、卡片和口播对不对得上、字幕清不清楚。",
+   [("先剪30秒测效果。", "Cut 30 seconds to test.", "test（测试）"),
+    ("局部对了全片就稳。", "Fix the part, fix the whole.", "iterate（迭代）")]),
+  ("第三步：具体描述", "Step Three: Be Concrete", "01:53", "别再说「高级一点」，给图片参考、需求和三口讲清楚，AI才知道你要什么。",
+   [("别再说高级一点。", "Stop saying 'make it classier.'", "vague（模糊的）"),
+    ("给参考图和需求。", "Give references and requirements.", "reference（参考）")]),
+  ("沉淀成专属skill", "Save a Reusable Skill", "02:43", "一条视频调好后沉淀成专属 skill，下一条就能复用结构避开踩过的坑。",
+   [("沉淀专属skill。", "Save your process as a skill.", "reusable（可复用的）"),
+    ("下一条自动复用。", "Next video reuses the structure.", "structure（结构）")]),
+ ],
+),
+(
+ "guiding-lines-photo-course", "引导线-摄影视觉语言系列课程 第三集", "Leading Lines: Photography Visual Language, Ep.3", "16分09秒", "摄影 · 视觉语言", "http://xhslink.cn/o/7WoZjWtYJVv",
+ [
+  ("开场：引导线定义", "Opening: Defining Leading Lines", "00:00", "引导线是画面中把视线引向主体的线条，可以是路、墙、光、影子。",
+   [("引导线引向主体。", "Lines lead the eye to the subject.", "leading lines（引导线）"),
+    ("路墙光影都是线。", "Roads, walls and light all count.", "line（线条）")]),
+  ("线的来源", "Where Lines Come From", "01:00", "自然与人造环境里到处是引导线，关键在于学会发现它们的走向。",
+   [("环境里到处是线。", "Lines hide in every scene.", "scene（场景）"),
+    ("学会发现走向。", "Learn to read their direction.", "direction（走向）")]),
+  ("道路与走廊", "Roads and Corridors", "02:30", "道路、铁轨、走廊是最典型的引导线，它们天然把视线推到纵深处。",
+   [("道路天然引导。", "Roads naturally lead the eye.", "road（道路）"),
+    ("推向纵深处。", "They push the gaze inward.", "inward（向内）")]),
+  ("光线与影子", "Light and Shadow", "04:00", "一束光、一条影子也是引导线，明暗交界处把视线精确导向主体。",
+   [("光影也能引导。", "Light and shadow guide too.", "shadow（影子）"),
+    ("明暗交界导向主体。", "Edges of light point to subject.", "edge（交界）")]),
+  ("线的质感", "The Line's Texture", "06:00", "线有材质有情绪：粗糙的石墙线粗犷，光滑的镜面线现代，质感影响氛围。",
+   [("线有材质有情绪。", "Lines carry texture and mood.", "texture（质感）"),
+    ("粗糙线粗犷光滑线现代。", "Rough lines feel bold, smooth lines modern.", "modern（现代的）")]),
+  ("交叉与汇聚", "Crossings and Convergence", "08:00", "多条引导线交叉汇聚于一点，把视线钉在焦点上，戏剧感翻倍。",
+   [("多线汇聚一点。", "Lines converge on one point.", "converge（汇聚）"),
+    ("戏剧感翻倍。", "Drama doubles at the focus.", "drama（戏剧感）")]),
+  ("避免被带偏", "Don't Get Led Astray", "10:00", "引导线也可能把视线带出画面，注意不要让线把观众引向无关区域。",
+   [("线可能带偏视线。", "Lines can lead the eye astray.", "astray（带偏）"),
+    ("别引向无关区域。", "Keep the gaze on the subject.", "keep（保持）")]),
+  ("总结：主动用线", "Summary: Use Lines on Purpose", "14:00", "引导线是安排视线最有力的工具，主动找线、让线为你服务。",
+   [("主动找线利用线。", "Find lines and use them.", "on purpose（主动地）"),
+    ("让线为你服务。", "Make lines work for you.", "serve（服务）")]),
+ ],
+),
+(
+ "squat-photo-pose", "蹲姿拍照姿势分享！学会凹出好身材！", "Squat Photo Poses That Flatter", "30秒", "摄影 · 摆姿技巧", "http://xhslink.cn/o/4USsxQpOJpe",
+ [
+  ("开场：别这样蹲", "Opening: Don't Squat Like This", "00:00", "蹲着拍照不是直接蹲下去，那样会很吵，姿势要对才有好身材。",
+   [("直接蹲下去不好。", "A plain squat looks off.", "squat（蹲）"),
+    ("姿势要对才好看。", "The pose must flatter.", "flatter（修饰）")]),
+  ("背部挺直", "Keep the Back Straight", "00:02", "首先背要挺直，前面有肚子也没关系，后面有办法挡。",
+   [("背先挺直。", "Straighten the back first.", "straight（挺直的）"),
+    ("肚子后面再挡。", "The belly can be hidden later.", "belly（肚子）")]),
+  ("伸腿遮挡", "Extend a Leg", "00:06", "用一条腿往前面伸，就能挡住前面的一部分，遮挡是第一招。",
+   [("伸腿挡前面。", "Extend a leg to cover up.", "extend（伸出）"),
+    ("挡住一部分。", "It hides part of the belly.", "cover（遮挡）")]),
+  ("手向内收", "Bring Hands In", "00:11", "手再向内收，又能挡住一部分，多一层遮挡多一分放心。",
+   [("手向内收再挡。", "Tuck the hands in to cover more.", "tuck（收拢）"),
+    ("多一层遮挡。", "Layers of cover look better.", "layer（层次）")]),
+  ("身体前倾", "Lean Forward", "00:14", "身体往前倾，看到没有，就完全挡住了，正面零压力。",
+   [("身体前倾全挡住。", "Lean forward to fully cover.", "lean（前倾）"),
+    ("正面完全没压力。", "The front looks flawless.", "flawless（完美的）")]),
+  ("背部曲线", "Shape the Back", "00:17", "背要记得挺直，把背部的曲线弄好，侧面也要好看。",
+   [("背挺直出曲线。", "A straight back curves well.", "curve（曲线）"),
+    ("侧面也要美。", "The profile should look good too.", "profile（侧面）")]),
+  ("手机往前伸", "Reach the Phone Forward", "00:21", "手机往前面伸，近大远小更能挡脸，太近的话就挡不住了。",
+   [("手机前伸显脸小。", "Reaching the phone slims the face.", "reach（伸出）"),
+    ("近大远小是原理。", "Near-big-far-small is the trick.", "perspective（透视）")]),
+  ("总结：会了嘛", "Summary: You've Got It", "00:29", "背挺直、伸腿、收手、前倾、手机前伸，这一套就是蹲姿满分公式。",
+   [("五步蹲姿公式。", "Five steps, one perfect pose.", "formula（公式）"),
+    ("马上就能用。", "Ready to use right away.", "ready（就绪的）")]),
+ ],
+),
+(
+ "sony-a6700-slog3", "拍视频一定要开Log｜斑马线100 + 10bit", "Always Shoot Log: Zebra 100 + 10-bit", "18秒", "摄影 · 视频参数", "http://xhslink.cn/o/3t5oxXegXXa",
+ [
+  ("开场：一定开Log", "Opening: Always Shoot Log", "00:00", "记住拍视频一定要开 Log，有人嫌它灰，其实那是还没调色。",
+   [("拍视频一定开Log。", "Always shoot in Log.", "Log（对数色彩）"),
+    ("嫌灰是没调色。", "The grey look needs grading.", "grade（调色）")]),
+  ("灰是素材优势", "Grey Is the Advantage", "00:02", "等你在电脑上一条色，那个质感就出来了，灰是为了保留更多细节。",
+   [("调色后质感出来。", "Grading brings out the quality.", "quality（质感）"),
+    ("灰保更多细节。", "Flat keeps the details.", "detail（细节）")]),
+  ("别光看直方图", "Don't Trust the Histogram", "00:06", "别光盯着直方图，有时候不太准，直接用斑马线更可靠。",
+   [("直方图不太准。", "Histograms can mislead.", "histogram（直方图）"),
+    ("斑马线更可靠。", "Zebras are more reliable.", "reliable（可靠的）")]),
+  ("斑马线100", "Zebra at 100", "00:09", "把斑马线打开定在100，只要画面一闪条纹，你就知道坏了要爆了。",
+   [("斑马线定在100。", "Set zebras at 100.", "zebra（斑马线）"),
+    ("条纹闪就是过曝。", "Stripes flashing means blown out.", "blown out（过曝）")]),
+  ("选10bit", "Choose 10-bit", "00:14", "剩下的就选 10 bit，色彩过渡更顺滑，后期调色空间更大。",
+   [("选10bit色彩更顺。", "10-bit smooths the color.", "10-bit（十比特）"),
+    ("调色空间更大。", "It leaves more grading room.", "grading（调色）")]),
+ ],
+),
+(
+ "drone-beginner-flight", "3分钟教会你起飞❗️无人机新手保姆级教学", "Beginner Drone Flight in 3 Minutes", "3分41秒", "摄影 · 无人机入门", "http://xhslink.cn/o/2X61XYlKTh7",
+ [
+  ("开场：新手起飞", "Opening: First Takeoff", "00:00", "三分钟教会你起飞，从开箱到起飞新手保姆级教学开始。",
+   [("三分钟学会起飞。", "Learn to take off in three minutes.", "takeoff（起飞）"),
+    ("保姆级教学。", "Hands-on, step by step.", "step by step（一步步）")]),
+  ("开箱检查", "Unbox and Check", "00:30", "先开箱检查：机身、遥控器、电池、备用桨叶，桨叶分正反方向。",
+   [("开箱检查配件。", "Check every part in the box.", "accessory（配件）"),
+    ("桨叶分正反。", "Blades have a correct side.", "blade（桨叶）")]),
+  ("激活与更新", "Activate and Update", "01:00", "开机激活，APP 连上后完成固件更新，这是飞前必做的准备。",
+   [("开机激活连APP。", "Power on and connect the app.", "app（应用）"),
+    ("固件更新必做。", "Update the firmware first.", "firmware（固件）")]),
+  ("找空旷场地", "Find Open Space", "01:30", "起飞前找空旷无人的场地，避开人群、电线、树木和禁飞区。",
+   [("找空旷场地。", "Pick a wide-open spot.", "open space（开阔地）"),
+    ("避开电线树木。", "Avoid wires and trees.", "obstacle（障碍物）")]),
+  ("起飞操作", "The Takeoff", "02:00", "遥控器拨杆向下启动电机，然后内八解锁，轻推油门离地。",
+   [("内八解锁启动。", "Arm the motors with the sticks.", "arm（解锁）"),
+    ("轻推油门离地。", "Push the throttle gently.", "throttle（油门）")]),
+  ("悬停练习", "Practice Hovering", "02:30", "先练习悬停，稳住高度和方向，熟练后再尝试前后左右移动。",
+   [("先练悬停。", "Master hovering first.", "hover（悬停）"),
+    ("稳住再移动。", "Steady, then move around.", "steady（稳定）")]),
+  ("降落技巧", "The Landing", "03:00", "降落时慢慢压低油门，触地后保持几秒再收杆，稳稳降落不炸机。",
+   [("慢压油门降落。", "Lower the throttle slowly.", "throttle（油门）"),
+    ("触地保持再收杆。", "Hold still after touchdown.", "touchdown（触地）")]),
+  ("安全须知", "Safety Notes", "03:20", "电量低于30%就返航，牢记限高限远，新手先小范围熟悉操作。",
+   [("低电量就返航。", "Return when battery gets low.", "return（返航）"),
+    ("新手小范围练习。", "Newbies stay close.", "range（范围）")]),
+ ],
+),
+]
+
+def paraphrase_for(sentences):
+    out = []
+    for zh, en, note in sentences:
+        word = note.split("（")[0].strip()
+        out.append([f"用{word}换一种说法", en])
+    return out
+
+def main():
+    for slug, title, title_en, duration, topic, url, scenes in V:
+        data = {
+            "meta": {
+                "slug": slug, "title": title, "title_en": title_en,
+                "duration": duration, "scenes": len(scenes),
+                "sentences": sum(len(s[4]) for s in scenes),
+                "date": DATE, "platform": PLATFORM, "source_url": url, "topic": topic,
+            },
+            "scene_imgs": [f"shot-{i+1:02d}" for i in range(len(scenes))],
+            "scenes": [],
+        }
+        for i, (tc, te, t, ctx, sents) in enumerate(scenes, 1):
+            data["scenes"].append({
+                "id": f"s{i}", "title_cn": tc, "title_en": te, "time": t,
+                "context": ctx,
+                "sentences": [list(s) for s in sents],
+                "paraphrase": paraphrase_for(sents),
+                "speak": " ".join(en for _, en, _ in sents),
+            })
+        data["practice"] = []
+        data["pitfalls"] = []
+        data["shifts"] = []
+        data["difficult_words"] = []
+        data["footer_notes"] = f"来源：{title}（小红书，时长{duration}）"
+        p = OUT / f"{slug}.json"
+        p.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print(f"✓ {slug} {len(scenes)} scenes")
+
+if __name__ == "__main__":
+    main()
