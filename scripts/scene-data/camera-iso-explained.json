@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "slug": "camera-iso-explained",
+    "title": "终于搞懂了相机 ISO",
+    "title_en": "Finally Understanding Camera ISO",
+    "duration": "2分19秒",
+    "scenes": 6,
+    "sentences": 17,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/camera-iso-explained",
+    "topic": "摄影 · 相机知识"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "量子效率QE",
+      "title_en": "Quantum Efficiency",
+      "time": "00:00",
+      "context": "当100个光子进入到像素中，大概有50-60个能被转换成电子，这个光电转换率被称之为量子效率QE。这听上去很像是相机的感光度，那改变ISO是不是就能改变这个量子效率呢？答案是不能，每台相机的量子效率都是固定的，并不会随ISO的切换而改变。所以数码相机的ISO指的不是量子效率这个感光度。",
+      "sentences": [
+        [
+          "100个光子约50-60个转成电子，这就是量子效率。",
+          "About 50-60 of 100 photons become electrons—that's quantum efficiency.",
+          "quantum efficiency（量子效率）"
+        ],
+        [
+          "量子效率每台相机固定，不随ISO改变。",
+          "QE is fixed per camera and never changes with ISO.",
+          "fixed（固定的）"
+        ],
+        [
+          "所以数码相机的ISO不是量子效率。",
+          "So digital ISO isn't that kind of sensitivity.",
+          "sensitivity（感光度）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "quantum efficiency（量子效率",
+          "quantum efficiency（量子效率"
+        ],
+        [
+          "fixed（固定的",
+          "fixed（固定的"
+        ]
+      ],
+      "speak": "About 50-60 of 100 photons become electrons—that's quantum efficiency. QE is fixed per camera and never changes with ISO. So digital ISO isn't that kind of sensitivity."
+    },
+    {
+      "id": "s2",
+      "title_cn": "转换增益与基准ISO",
+      "title_en": "Conversion Gain and Base ISO",
+      "time": "00:24",
+      "context": "从电路层面来看，ISO首先体现在电荷到电压的转换上。浮动扩散节点的电容，决定了一个电子能转换成多大电压，通常是微伏每电子。这个电荷到电压的对应关系称之为转换增益conversion gain，而这就是我们常说的Base ISO，也叫基准ISO或基础ISO。",
+      "sentences": [
+        [
+          "浮动扩散节点的电容决定转换增益。",
+          "The floating-diffusion capacitor sets the conversion gain.",
+          "conversion gain（转换增益）"
+        ],
+        [
+          "一电子转成多少微伏，就是基准ISO。",
+          "Microvolts per electron define the base ISO.",
+          "base ISO（基准ISO）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "conversion gain（转换增益",
+          "conversion gain（转换增益"
+        ],
+        [
+          "base ISO（基准ISO",
+          "base ISO（基准ISO"
+        ]
+      ],
+      "speak": "The floating-diffusion capacitor sets the conversion gain. Microvolts per electron define the base ISO."
+    },
+    {
+      "id": "s3",
+      "title_cn": "PGA模拟放大",
+      "title_en": "PGA Analog Gain",
+      "time": "00:44",
+      "context": "调整ISO改变的到底是什么？其实就是改变电压信号的强度，通过PGA的模拟放大来实现。假设在基准ISO100时，一个电子能被转换成10微伏电压。提高ISO到200，也就是PGA执行两倍放大，10微伏被放大到20微伏；ISO400就是PGA4倍放大，变成40微伏，以此类推。",
+      "sentences": [
+        [
+          "调ISO就是通过PGA改变电压信号强度。",
+          "Changing ISO alters signal strength via the PGA.",
+          "PGA（可编程增益放大器）"
+        ],
+        [
+          "ISO100时每电子10微伏，ISO200翻倍到20微伏。",
+          "At ISO100 each electron makes 10µV; ISO200 doubles it to 20.",
+          "double（翻倍）"
+        ],
+        [
+          "ISO400是4倍放大，40微伏。",
+          "ISO400 means 4x gain, or 40 microvolts.",
+          "gain（增益）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "PGA（可编程增益放大器",
+          "PGA（可编程增益放大器"
+        ],
+        [
+          "double（翻倍",
+          "double（翻倍"
+        ]
+      ],
+      "speak": "Changing ISO alters signal strength via the PGA. At ISO100 each electron makes 10µV; ISO200 doubles it to 20. ISO400 means 4x gain, or 40 microvolts."
+    },
+    {
+      "id": "s4",
+      "title_cn": "原生ISO的范围",
+      "title_en": "The Native ISO Range",
+      "time": "00:31",
+      "context": "PGA的放大倍率也是有限的，以32倍为例就是ISO3200。那么从ISO100到3200这个区间的数值，都可以被称为原生ISO。得益于技术进步，很多相机原生的ISO范围会大很多，例如A7M4从ISO100到51200。",
+      "sentences": [
+        [
+          "PGA最多32倍放大，即ISO3200。",
+          "PGA tops out at 32x, which is ISO3200.",
+          "top out（上限）"
+        ],
+        [
+          "ISO100到3200区间都可叫原生ISO。",
+          "Everything from ISO100 to 3200 counts as native ISO.",
+          "native ISO（原生ISO）"
+        ],
+        [
+          "技术进步让原生范围更大，如A7M4到51200。",
+          "Progress widens it—the A7M4 reaches ISO51200.",
+          "widen（扩大）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "top out（上限",
+          "top out（上限"
+        ],
+        [
+          "native ISO（原生ISO",
+          "native ISO（原生ISO"
+        ]
+      ],
+      "speak": "PGA tops out at 32x, which is ISO3200. Everything from ISO100 to 3200 counts as native ISO. Progress widens it—the A7M4 reaches ISO51200."
+    },
+    {
+      "id": "s5",
+      "title_cn": "原生与扩展ISO",
+      "title_en": "Native vs Extended ISO",
+      "time": "01:26",
+      "context": "有人认为只有基准ISO100才是原生ISO，其他都是非原生，这确实存在诸多争议。从原生ISO（Native ISO）的定义来看，它指不经数字放大、用基准ISO乘以PGA模拟放大得到的数值。在这样的定义下，这些都可以叫原生ISO，不同的是有些是基准ISO，有些是模拟放大ISO。超出这个模拟区间的数值都是扩展ISO，也就是ADC量化之后在机内数字放大，跟后期提亮画面没有什么差别。",
+      "sentences": [
+        [
+          "原生ISO=基准ISO×PGA模拟放大，不经数字放大。",
+          "Native ISO is base ISO times analog gain, with no digital boost.",
+          "digital boost（数字放大）"
+        ],
+        [
+          "模拟区间内都算原生ISO，只是基准与放大之分。",
+          "Within the analog range, some are base and some are boosted.",
+          "boosted（被放大的）"
+        ],
+        [
+          "超出模拟区间的都是扩展ISO，等同后期提亮。",
+          "Beyond it, extended ISO is just digital brightening.",
+          "extended ISO（扩展ISO）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "digital boost（数字放大",
+          "digital boost（数字放大"
+        ],
+        [
+          "boosted（被放大的",
+          "boosted（被放大的"
+        ]
+      ],
+      "speak": "Native ISO is base ISO times analog gain, with no digital boost. Within the analog range, some are base and some are boosted. Beyond it, extended ISO is just digital brightening."
+    },
+    {
+      "id": "s6",
+      "title_cn": "ISO的本质：增益",
+      "title_en": "ISO Is Really Gain",
+      "time": "00:57",
+      "context": "在数码时代把ISO理解为传感器对光线的敏感度并不太贴切。ISO主要体现电荷到电压的转换，和之后PGA参与的模拟放大，也可以把ISO看作是这一段电路共同协作的电信号读出。当然它有另外一个名字：增益。",
+      "sentences": [
+        [
+          "把ISO理解为传感器敏感度不太贴切。",
+          "Reading ISO as sensor sensitivity is misleading.",
+          "misleading（有误导性的）"
+        ],
+        [
+          "ISO=电荷到电压的转换+PGA模拟放大。",
+          "ISO is charge-to-voltage conversion plus PGA gain.",
+          "voltage（电压）"
+        ],
+        [
+          "ISO的另一个名字叫增益。",
+          "ISO has another name: gain.",
+          "gain（增益）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "misleading（有误导性的",
+          "misleading（有误导性的"
+        ],
+        [
+          "voltage（电压",
+          "voltage（电压"
+        ]
+      ],
+      "speak": "Reading ISO as sensor sensitivity is misleading. ISO is charge-to-voltage conversion plus PGA gain. ISO has another name: gain."
+    }
+  ],
+  "practice": [
+    [
+      "说量子效率",
+      "Only about half of the incoming photons ever become electrons."
+    ],
+    [
+      "说转换增益",
+      "Base ISO is simply how many microvolts each electron produces."
+    ],
+    [
+      "说PGA放大",
+      "Higher ISO means the PGA amplifies the voltage signal harder."
+    ],
+    [
+      "说原生与扩展",
+      "Native ISO ends where the analog gain ends; beyond that is digital."
+    ],
+    [
+      "说ISO本质",
+      "Modern ISO is really just gain along the readout chain."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Call ISO the camera's sensitivity to light.",
+      "QE is the real light sensitivity, and it never changes with ISO.",
+      "量子效率才是感光能力且固定。"
+    ],
+    [
+      "Assume every ISO number is native.",
+      "Only the base-ISO-times-analog-gain range counts as native.",
+      "只有模拟增益区间算原生ISO。"
+    ],
+    [
+      "Think extended ISO beats boosting in post.",
+      "It is digital gain anyway—the same as brightening the file later.",
+      "扩展ISO本质上就是后期提亮。"
+    ],
+    [
+      "Forget the floating-diffusion capacitor.",
+      "That capacitor sets conversion gain, the anchor of base ISO.",
+      "浮动扩散电容决定基准ISO。"
+    ],
+    [
+      "Expect PGA gain to go forever.",
+      "Analog gain caps out, often around 32x on many bodies.",
+      "模拟放大有上限。"
+    ],
+    [
+      "Mix up native and base ISO.",
+      "Base ISO is the floor; native ISO includes all analog-boosted steps.",
+      "基准是最小值，原生包含所有模拟档。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说ISO只说感光度",
+      "用 quantum efficiency（量子效率）、conversion gain（转换增益）、PGA（可编程增益放大器）"
+    ],
+    [
+      "说原生ISO只说原生",
+      "用 base ISO（基准ISO）、native ISO（原生ISO）、extended ISO（扩展ISO）"
+    ],
+    [
+      "说放大只说放大",
+      "用 analog gain（模拟增益）、digital gain（数字增益）、brightening（提亮）"
+    ]
+  ],
+  "difficult_words": [
+    "photons",
+    "become",
+    "electrons",
+    "that's",
+    "quantum",
+    "efficiency",
+    "camera",
+    "changes",
+    "digital",
+    "sensitivity",
+    "floating-diffusion",
+    "capacitor",
+    "conversion",
+    "microvolts",
+    "electron",
+    "define",
+    "changing",
+    "alters",
+    "signal",
+    "strength",
+    "doubles",
+    "everything",
+    "counts",
+    "native",
+    "progress",
+    "widens",
+    "reaches",
+    "analog",
+    "within",
+    "boosted"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：100个光子进入像素约50-60个转成电子、光电转换率叫量子效率QE、量子效率每台相机固定不随ISO改变、所以数码相机ISO指的不是量子效率、电路层面ISO首先体现在电荷到电压的转换、浮动扩散节点电容决定一个电子转成多大电压通常是微伏每电子、电荷电压对应关系叫转换增益conversion gain、也就是基准ISO Base ISO、调整ISO就是改变电压信号强度、通过PGA模拟放大实现、基准ISO100时一个电子转10微伏、ISO200即两倍放大变20微伏、ISO400四倍放大变40微伏、PGA放大倍率有限、以32倍为例即ISO3200、ISO100到3200区间都可叫原生ISO、A7M4原生从ISO100到51200、有人认为只有基准ISO100才是原生有争议、原生ISO定义指不经数字放大用基准ISO乘以PGA模拟放大得到的数值、超出模拟区间都是扩展ISO、是ADC量化后机内数字放大、跟后期提亮画面没差别、数码时代把ISO理解为传感器敏感度不贴切、ISO主要是电荷电压转换和PGA模拟放大、可看作这段电路共同协作的电信号读出、另一个名字叫增益。"
+}

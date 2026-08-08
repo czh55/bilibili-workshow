@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "slug": "camera-dynamic-range",
+    "title": "你拍的画面为什么会过曝？",
+    "title_en": "Why Does Your Image Overexpose?",
+    "duration": "3分00秒",
+    "scenes": 6,
+    "sentences": 18,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/camera-dynamic-range",
+    "topic": "摄影 · 相机知识"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "过曝的本质：满阱容量",
+      "title_en": "Overexposure: Hitting Full-Well Capacity",
+      "time": "00:00",
+      "context": "这是相机传感器里几千万个像素的其中之一，它的最大作用就是感光。像素接收的光子数量越多，反映在照片上的这个点就越亮。单个像素能容纳电子数量的最大值为满阱容量，超出之后的部分都无法记录，也就是画面过曝。",
+      "sentences": [
+        [
+          "像素接收的光子越多，画面就越亮。",
+          "More photons captured by a pixel make it brighter.",
+          "photon（光子）"
+        ],
+        [
+          "单个像素容纳电子的最大值叫满阱容量。",
+          "The max electrons a pixel holds is the full-well capacity.",
+          "full-well capacity（满阱容量）"
+        ],
+        [
+          "超出满阱的部分无法记录，就是过曝。",
+          "Everything beyond the well is lost—that's overexposure.",
+          "overexposure（过曝）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "photon（光子",
+          "photon（光子"
+        ],
+        [
+          "full-well capacity（满阱容量",
+          "full-well capacity（满阱容量"
+        ]
+      ],
+      "speak": "More photons captured by a pixel make it brighter. The max electrons a pixel holds is the full-well capacity. Everything beyond the well is lost—that's overexposure."
+    },
+    {
+      "id": "s2",
+      "title_cn": "动态范围的定义",
+      "title_en": "Defining Dynamic Range",
+      "time": "00:25",
+      "context": "像素接收的光子越少，画面就越暗。在没有信号输入时，CMOS本身也存在噪声，也就是底噪，可以近似为读出噪声，此时为最小值。这个最大值满阱容量与最小值读出噪声的比值就是动态范围。简单来说就是相机能记录下最亮和最暗的一个区间。",
+      "sentences": [
+        [
+          "没有信号时CMOS也有底噪，近似读出噪声。",
+          "Even with no signal, CMOS has a floor—the read noise.",
+          "read noise（读出噪声）"
+        ],
+        [
+          "满阱容量除以读出噪声，就是动态范围。",
+          "Full-well capacity over read noise defines dynamic range.",
+          "dynamic range（动态范围）"
+        ],
+        [
+          "动态范围=能记录的最亮到最暗区间。",
+          "It's the span from the brightest to the darkest you can record.",
+          "span（区间）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "read noise（读出噪声",
+          "read noise（读出噪声"
+        ],
+        [
+          "dynamic range（动态范围",
+          "dynamic range（动态范围"
+        ]
+      ],
+      "speak": "Even with no signal, CMOS has a floor—the read noise. Full-well capacity over read noise defines dynamic range. It's the span from the brightest to the darkest you can record."
+    },
+    {
+      "id": "s3",
+      "title_cn": "动态范围的档位",
+      "title_en": "Dynamic Range in Stops",
+      "time": "00:51",
+      "context": "动态范围的高低对于画面的影响非常大。目前一些主流消费级相机的动态范围大约在13档左右，而有些电影机才可以做到16.7档。这里的档指的是曝光指数，两倍为一档。比如1/100秒和1/200秒的快门，或者是光圈F1.4和F2，都是相差一档的进光量。",
+      "sentences": [
+        [
+          "主流消费级相机约13档，电影机可到16.7档。",
+          "Consumer cameras hit ~13 stops; cinema cameras reach 16.7.",
+          "stop（档位）"
+        ],
+        [
+          "两倍进光量就是一档。",
+          "Doubling the light equals one stop.",
+          "doubling（加倍）"
+        ],
+        [
+          "1/100秒到1/200秒，或F1.4到F2，都差一档。",
+          "1/100s to 1/200s, or f/1.4 to f/2, are each one stop.",
+          "one stop（一档）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "stop（档位",
+          "stop（档位"
+        ],
+        [
+          "doubling（加倍",
+          "doubling（加倍"
+        ]
+      ],
+      "speak": "Consumer cameras hit ~13 stops; cinema cameras reach 16.7. Doubling the light equals one stop. 1/100s to 1/200s, or f/1.4 to f/2, are each one stop."
+    },
+    {
+      "id": "s4",
+      "title_cn": "ISO改变不了进光量",
+      "title_en": "ISO Doesn't Change the Light",
+      "time": "01:18",
+      "context": "虽然ISO能改变图像的亮度，但改变不了进光量，真正决定进光量的只有光圈和快门。以A7M4为例，其最大满阱容量有72000个电子，基准ISO下读出噪声约为5个电子。想要分辨出有效信号，就需要高于这个最小值。往上推一档是10个电子，两档是20个，以此类推到最大72000个电子，差不多就是13.8档。",
+      "sentences": [
+        [
+          "ISO改变亮度，但改变不了进光量。",
+          "ISO shifts brightness but not the light captured.",
+          "captured light（进光量）"
+        ],
+        [
+          "真正决定进光量的只有光圈和快门。",
+          "Only aperture and shutter set how much light lands.",
+          "aperture（光圈）"
+        ],
+        [
+          "A7M4满阱72000电子，基准ISO读出噪声约5个电子。",
+          "The A7M4 holds 72,000 electrons with ~5 read noise.",
+          "electron（电子）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "captured light（进光量",
+          "captured light（进光量"
+        ],
+        [
+          "aperture（光圈",
+          "aperture（光圈"
+        ]
+      ],
+      "speak": "ISO shifts brightness but not the light captured. Only aperture and shutter set how much light lands. The A7M4 holds 72,000 electrons with ~5 read noise."
+    },
+    {
+      "id": "s5",
+      "title_cn": "高ISO压缩动态范围",
+      "title_en": "High ISO Compresses Dynamic Range",
+      "time": "01:54",
+      "context": "动态范围除了由硬件决定，还会受ISO的影响：提高ISO，动态范围会随之降低。这是因为模数转换器ADC能接收的最大电压信号是有上限的。当PGA开始模拟放大两倍即ISO200，电压被放大到两伏，但ADC能接收的上限还是1伏，超出的部分无法被记录，相当于实际接收到的只有36000个电子的信号。放大倍数越高，也就相当于满阱容量越小。",
+      "sentences": [
+        [
+          "提高ISO，动态范围会随之降低。",
+          "Raising ISO shrinks the dynamic range.",
+          "shrink（压缩）"
+        ],
+        [
+          "ADC能接收的最大电压有上限。",
+          "The ADC's max voltage is capped.",
+          "ADC（模数转换器）"
+        ],
+        [
+          "放大两倍后超出上限，等效满阱容量减半。",
+          "Beyond the cap after 2x gain, the effective well halves.",
+          "effective well（等效满阱）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "shrink（压缩",
+          "shrink（压缩"
+        ],
+        [
+          "ADC（模数转换器",
+          "ADC（模数转换器"
+        ]
+      ],
+      "speak": "Raising ISO shrinks the dynamic range. The ADC's max voltage is capped. Beyond the cap after 2x gain, the effective well halves."
+    },
+    {
+      "id": "s6",
+      "title_cn": "ADC接收窗口被压缩",
+      "title_en": "The ADC Window Narrows",
+      "time": "02:34",
+      "context": "从ADC层面来看，ISO100时电压信号的接收范围是70微伏至1伏，而ISO200时ADC的接收范围变成140微伏至1伏。上限不变、下限提高，整体动态范围被压缩。所以ISO越高，PGA的放大倍率越高，ADC能接收的电压区间就会变窄，动态范围自然随之下降。",
+      "sentences": [
+        [
+          "ISO200时，ADC下限从70升到140微伏。",
+          "At ISO200 the ADC floor rises from 70 to 140 microvolts.",
+          "microvolt（微伏）"
+        ],
+        [
+          "上限不变、下限提高，动态范围被压缩。",
+          "The ceiling stays, the floor rises—range compresses.",
+          "ceiling（上限）"
+        ],
+        [
+          "ISO越高，ADC电压区间越窄，动态范围越小。",
+          "Higher ISO narrows the ADC window and shrinks the range.",
+          "narrow（变窄）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "microvolt（微伏",
+          "microvolt（微伏"
+        ],
+        [
+          "ceiling（上限",
+          "ceiling（上限"
+        ]
+      ],
+      "speak": "At ISO200 the ADC floor rises from 70 to 140 microvolts. The ceiling stays, the floor rises—range compresses. Higher ISO narrows the ADC window and shrinks the range."
+    }
+  ],
+  "practice": [
+    [
+      "说过曝的本质",
+      "Pixels that pass their full-well capacity just lose the extra photons."
+    ],
+    [
+      "说动态范围定义",
+      "Dynamic range is the brightest over the darkest you can record."
+    ],
+    [
+      "说档位换算",
+      "Doubling the light coming in is exactly one stop."
+    ],
+    [
+      "说高ISO的代价",
+      "Cranking ISO narrows the ADC window, so the dynamic range shrinks."
+    ],
+    [
+      "说基准ISO读出噪声",
+      "At base ISO the read noise is only a few electrons."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Blame ISO for adding the light.",
+      "ISO only brightens the signal—the aperture and shutter decide the light.",
+      "ISO不改变进光量。"
+    ],
+    [
+      "Think every stop is fixed forever.",
+      "A stop is always a doubling, but a sensor's range changes with ISO.",
+      "一档永远是加倍，但动态范围随ISO变化。"
+    ],
+    [
+      "Expect consumer cameras to match cinema.",
+      "Most consumer bodies top out around 13 stops, cinema closer to 17.",
+      "消费级相机一般只有13档左右。"
+    ],
+    [
+      "Forget read noise exists at base ISO.",
+      "Even with no light the sensor reads a few electrons of floor noise.",
+      "没有光也有底噪。"
+    ],
+    [
+      "Crank ISO to make a dark shot safe.",
+      "You trade away highlight room—the effective well capacity drops.",
+      "提ISO会压缩高光保留能力。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说过曝只说过曝",
+      "用 full-well capacity（满阱容量）、clipping（裁切）、losing highlights（丢失高光）"
+    ],
+    [
+      "说动态范围只说动态范围",
+      "用 brightest vs darkest（最亮与最暗）、read noise（读出噪声）、stops（档位）"
+    ],
+    [
+      "说ISO只说ISO",
+      "用 PGA gain（PGA增益）、ADC window（ADC窗口）、base ISO（基准ISO）"
+    ]
+  ],
+  "difficult_words": [
+    "photons",
+    "captured",
+    "brighter",
+    "electrons",
+    "full-well",
+    "capacity",
+    "everything",
+    "beyond",
+    "that's",
+    "overexposure",
+    "signal",
+    "defines",
+    "dynamic",
+    "brightest",
+    "darkest",
+    "record",
+    "consumer",
+    "cameras",
+    "cinema",
+    "doubling",
+    "equals",
+    "shifts",
+    "brightness",
+    "aperture",
+    "shutter",
+    "raising",
+    "shrinks",
+    "voltage",
+    "capped",
+    "effective"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：传感器里几千万个像素用来感光、光子越多像素越亮、单个像素容纳电子最大值为满阱容量、超出部分无法记录就是过曝、没有信号时CMOS也有底噪近似读出噪声、满阱容量与读出噪声的比值就是动态范围、主流消费级相机约13档、电影机能到16.7档、档指曝光指数两倍为一档、1/100秒与1/200秒或F1.4与F2都差一档、ISO改变亮度但不改变进光量、真正决定进光量只有光圈快门、A7M4满阱72000电子基准ISO读出噪声约5个电子、往上推一档10个两档20个直到最大72000差不多13.8档、提高ISO动态范围会降低、ADC能接收最大电压有上限、PGA模拟放大两倍即ISO200、电压放大到两伏但ADC上限还是1伏、超出部分无法记录、等效只接收到36000电子信号、放大倍数越高满阱越小、ISO100接收范围70微伏至1伏、ISO200变成140微伏至1伏、上限不变下限提高整体动态范围被压缩。"
+}

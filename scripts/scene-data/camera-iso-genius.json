@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "slug": "camera-iso-genius",
+    "title": "发明相机的真是个天才",
+    "title_en": "The Genius Who Invented the Camera",
+    "duration": "2分02秒",
+    "scenes": 4,
+    "sentences": 13,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/camera-iso-genius",
+    "topic": "摄影 · 相机知识"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "CMOS的信号链",
+      "title_en": "The CMOS Signal Chain",
+      "time": "00:00",
+      "context": "以相机中主流的背照式CMOS为例，其主要由这几部分构成。光线到达传感器，先经透镜汇集到下层的滤色片，滤色片能筛选出一支波长匹配的光，进入到光电二极管PD，光子被光电二极管转化成电子，并在一个特定的区域内累积，这个区域被称为势阱。通常一个势阱内可以容纳几万个电子，达到最大值即为满阱容量FWC。",
+      "sentences": [
+        [
+          "光线经微透镜汇集到滤色片。",
+          "Light is gathered by the microlens onto the color filter.",
+          "microlens（微透镜）"
+        ],
+        [
+          "滤色片筛选出波长匹配的光进入光电二极管。",
+          "The filter passes matched wavelengths into the photodiode.",
+          "photodiode（光电二极管）"
+        ],
+        [
+          "电子在势阱累积，最大即满阱容量。",
+          "Electrons pool in the well—its max is the full-well capacity.",
+          "well（势阱）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "microlens（微透镜",
+          "microlens（微透镜"
+        ],
+        [
+          "photodiode（光电二极管",
+          "photodiode（光电二极管"
+        ]
+      ],
+      "speak": "Light is gathered by the microlens onto the color filter. The filter passes matched wavelengths into the photodiode. Electrons pool in the well—its max is the full-well capacity."
+    },
+    {
+      "id": "s2",
+      "title_cn": "读出与放大",
+      "title_en": "Readout and Amplification",
+      "time": "00:31",
+      "context": "随后势阱中的电子被浮动扩散节点FD转移并捕捉到一个电容里，电容里的电荷由此转换成电压信号。这些电压会被一个能缓冲稳定信号的源极跟随器读出，再被一个可编程增益放大器PGA执行模拟放大。改变ISO的数值，实际上就是改变模拟放大倍数。最后再进入模数转换器ADC，把电压信号转换成数字信号。",
+      "sentences": [
+        [
+          "电子转移到浮动扩散节点，转换成电压。",
+          "Electrons move to the floating diffusion and become voltage.",
+          "floating diffusion（浮动扩散）"
+        ],
+        [
+          "源极跟随器缓冲读出，PGA做模拟放大。",
+          "The source follower buffers; the PGA amplifies.",
+          "source follower（源极跟随器）"
+        ],
+        [
+          "改变ISO就是改变模拟放大倍数。",
+          "Changing ISO changes the analog gain.",
+          "analog gain（模拟增益）"
+        ],
+        [
+          "ADC把电压转成数字信号。",
+          "The ADC converts voltage to digital.",
+          "digital（数字）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "floating diffusion（浮动扩散",
+          "floating diffusion（浮动扩散"
+        ],
+        [
+          "source follower（源极跟随器",
+          "source follower（源极跟随器"
+        ]
+      ],
+      "speak": "Electrons move to the floating diffusion and become voltage. The source follower buffers; the PGA amplifies. Changing ISO changes the analog gain. The ADC converts voltage to digital."
+    },
+    {
+      "id": "s3",
+      "title_cn": "为什么是灰蒙蒙的",
+      "title_en": "Why It Looks Gray",
+      "time": "01:10",
+      "context": "打开文件看到灰蒙蒙的画面，为什么会这样？传感器的每个像素能记录的只有亮度信息，而无法直接记录颜色信息，所以才会在每个像素上放着一个彩色滤色片。常见的就是RGB的拜耳排列。有了这些滤色片，传感器的每个像素就能记录其对应颜色的亮度信息。",
+      "sentences": [
+        [
+          "每个像素只能记录亮度，不能直接记录颜色。",
+          "Each pixel records brightness, not color directly.",
+          "brightness（亮度）"
+        ],
+        [
+          "每个像素上放彩色滤色片，常见是拜耳排列。",
+          "A color filter sits on each pixel—usually the Bayer array.",
+          "Bayer array（拜耳排列）"
+        ],
+        [
+          "这样像素就能记录对应颜色的亮度。",
+          "Now each pixel logs the brightness of its color.",
+          "color filter（滤色片）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "brightness（亮度",
+          "brightness（亮度"
+        ],
+        [
+          "Bayer array（拜耳排列",
+          "Bayer array（拜耳排列"
+        ]
+      ],
+      "speak": "Each pixel records brightness, not color directly. A color filter sits on each pixel—usually the Bayer array. Now each pixel logs the brightness of its color."
+    },
+    {
+      "id": "s4",
+      "title_cn": "去马赛克",
+      "title_en": "Demosaicing",
+      "time": "01:35",
+      "context": "之后通过图像信号处理器把这些单色RGB信号进行处理。简单来说就是提取每个像素周围的颜色信息，来补全当前像素，这样就能混合出这个像素原本颜色的RGB信息。通过每个像素的计算还原，我们才能看到一张正常的照片。这个处理过程叫做去马赛克。",
+      "sentences": [
+        [
+          "ISP提取周围像素颜色来补全当前像素。",
+          "The ISP borrows neighbors' color to fill each pixel.",
+          "ISP（图像信号处理器）"
+        ],
+        [
+          "混合出像素原本的RGB信息。",
+          "It blends out the pixel's true RGB values.",
+          "blend（混合）"
+        ],
+        [
+          "这个还原过程叫去马赛克。",
+          "That process is demosaicing.",
+          "demosaicing（去马赛克）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "ISP（图像信号处理器",
+          "ISP（图像信号处理器"
+        ],
+        [
+          "blend（混合",
+          "blend（混合"
+        ]
+      ],
+      "speak": "The ISP borrows neighbors' color to fill each pixel. It blends out the pixel's true RGB values. That process is demosaicing."
+    }
+  ],
+  "practice": [
+    [
+      "说传感器信号链",
+      "Lens, filter, photodiode, well, and readout—the CMOS chain in one sentence."
+    ],
+    [
+      "说满阱容量",
+      "A single well can pool tens of thousands of electrons before it's full."
+    ],
+    [
+      "说ISO与放大",
+      "Dialing in an ISO is just picking the analog gain number."
+    ],
+    [
+      "说拜耳排列",
+      "Color filters in a Bayer array let each pixel see one color."
+    ],
+    [
+      "说去马赛克",
+      "Demosaicing borrows the neighbors to rebuild every pixel's true color."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Think the sensor records color directly.",
+      "Sensors only see brightness; filters fake the color.",
+      "传感器只记录亮度。"
+    ],
+    [
+      "Expect a raw file to look finished.",
+      "A gray-looking frame is just the sensor data before demosaicing.",
+      "RAW灰蒙蒙是正常的。"
+    ],
+    [
+      "Blame the microlens for focus.",
+      "It gathers light, not focus—focus is the lens's job.",
+      "微透镜只管收光。"
+    ],
+    [
+      "Skip the ADC in your mental model.",
+      "The whole analog path funnels into the ADC's voltage cap.",
+      "ADC是电压上限的关键。"
+    ],
+    [
+      "Assume the well is bottomless.",
+      "Hit the full-well capacity and extra light is just clipped.",
+      "满阱后多出的光子被丢弃。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说成像只说拍照",
+      "用 photodiode（光电二极管）、full-well capacity（满阱容量）、floating diffusion（浮动扩散）"
+    ],
+    [
+      "说颜色只说颜色",
+      "用 color filter（滤色片）、Bayer array（拜耳排列）、demosaicing（去马赛克）"
+    ],
+    [
+      "说ISO只说ISO",
+      "用 PGA gain（PGA增益）、ADC（模数转换器）、signal chain（信号链）"
+    ]
+  ],
+  "difficult_words": [
+    "gathered",
+    "microlens",
+    "filter",
+    "passes",
+    "matched",
+    "wavelengths",
+    "photodiode",
+    "electrons",
+    "full-well",
+    "capacity",
+    "floating",
+    "diffusion",
+    "become",
+    "voltage",
+    "source",
+    "follower",
+    "buffers",
+    "amplifies",
+    "changing",
+    "changes",
+    "analog",
+    "converts",
+    "digital",
+    "records",
+    "brightness",
+    "directly",
+    "usually",
+    "borrows",
+    "neighbors",
+    "blends"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：主流的背照式CMOS由几部分构成、光线到达传感器先经微透镜汇集到下层的滤色片、滤色片筛选出波长匹配的光进入光电二极管PD、光子被转成电子在特定区域累积叫势阱、一个势阱可容纳几万个电子、最大值为满阱容量FWC、随后电子被浮动扩散节点FD转移捕捉到电容里、电容里的电荷转换成电压信号、源极跟随器缓冲稳定信号后被可编程增益放大器PGA模拟放大、改变ISO数值就是改变模拟放大倍数、最后进入模数转换器ADC把电压转成数字信号、打开文件看到灰蒙蒙画面、因为每个像素只能记录亮度无法直接记录颜色、所以每个像素上放彩色滤色片、常见RGB拜耳排列、每个像素能记录对应颜色的亮度信息、之后图像信号处理器ISP提取每个像素周围的颜色信息补全当前像素、混合出原本颜色的RGB信息、通过每个像素计算还原看到正常照片、这个处理过程叫去马赛克。"
+}
