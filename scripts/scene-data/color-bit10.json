@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "slug": "color-bit10",
+    "title": "10bit422和8bit420究竟是个啥？差别大吗？",
+    "title_en": "10-Bit 4:2:2 vs. 8-Bit 4:2:0 — What Are They, and Does It Matter?",
+    "duration": "02:47",
+    "scenes": 6,
+    "sentences": 18,
+    "date": "2026-08-08",
+    "platform": "小红书",
+    "source_url": "http://xhslink.cn/o/4mDaPhgUfxZ",
+    "topic": "摄影科普 · 色深与色度采样"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "马克笔比喻：色彩断层",
+      "title_en": "The Marker Metaphor: Color Banding",
+      "time": "00:00–00:18",
+      "context": "想象你是画家：128色马克笔能画出丝滑渐变的城市晚霞，换成12色就只能画出带明显分界线的晚霞。这种颜色与颜色之间的明显分界线，就叫做色彩断层。语域：科普教学，比喻引入。",
+      "sentences": [
+        [
+          "想象你是一名画家，给你一套128色的马克笔套装。",
+          "Imagine you're a painter, and you're handed a 128-color marker set.",
+          "a marker set（马克笔套装）"
+        ],
+        [
+          "你大概率只能画出这样的城市晚霞。",
+          "You'll most likely only be able to paint a sunset like this.",
+          "most likely（大概率）；paint a sunset（画晚霞）"
+        ],
+        [
+          "这种颜色与颜色之间的明显分界线，就叫做色彩断层。",
+          "That obvious boundary between colors is called color banding.",
+          "color banding（色彩断层）；boundary（分界线）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "明显分界线 → an obvious boundary / a visible line",
+          "obvious boundary · visible line"
+        ],
+        [
+          "色彩断层 → color banding / banding artifacts",
+          "color banding · banding artifacts"
+        ]
+      ],
+      "speak": "Imagine you're a painter, and you're handed a 128-color marker set. You'll most likely only be able to paint a sunset like this. That obvious boundary between colors is called color banding."
+    },
+    {
+      "id": "s2",
+      "title_cn": "色深：8bit vs 10bit",
+      "title_en": "Color Depth: 8-Bit vs. 10-Bit",
+      "time": "00:18–00:54",
+      "context": "色彩断层源于颜色细分不够。决定颜色细分数量的就是色深，通常用多少比特形容。8比特每个通道256个灰度，约1670万色；10比特每通道1024个灰度，约10.7亿色，二者相差64倍。语域：科普教学，概念定义+数字对比。",
+      "sentences": [
+        [
+          "决定颜色细分数量的，就称之为色深。",
+          "What determines the number of color gradations is called color depth.",
+          "color depth（色深）；gradations（细分等级）"
+        ],
+        [
+          "8比特大概是1670万色。",
+          "8-bit gives you about 16.7 million colors.",
+          "16.7 million colors（1670万色）"
+        ],
+        [
+          "10比特总共大约为10.7亿色，二者相差64倍。",
+          "10-bit adds up to about 1.07 billion colors — a 64x difference.",
+          "1.07 billion（10.7亿）；a 64x difference（64倍差距）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "颜色细分 → color gradations / shades of color",
+          "color gradations · shades"
+        ],
+        [
+          "64倍差距 → a 64x difference / 64 times more",
+          "64x difference · 64 times more"
+        ]
+      ],
+      "speak": "What determines the number of color gradations is called color depth. 8-bit gives you about 16.7 million colors. 10-bit adds up to about 1.07 billion colors — a 64x difference."
+    },
+    {
+      "id": "s3",
+      "title_cn": "阶梯比喻：为什么后期会断层",
+      "title_en": "The Staircase Metaphor: Why Grading Breaks Down",
+      "time": "00:54–01:23",
+      "context": "可以把色深理解成色彩的阶梯：阶梯越多色彩过渡越自然。相机支持10bit就能拍出过渡更自然的画面，尤其是面对渐变画面时后期调整更明显。这也解释了为什么之前建议用log模式拍视频时不要用8bit——在有限色彩空间塞进大量信息，后期重新拉伸时容易断层。语域：科普教学，比喻深化+原因解释。",
+      "sentences": [
+        [
+          "你可以把色深理解成色彩的阶梯，阶梯越多，色彩过渡就越自然。",
+          "Think of color depth as a staircase — more steps mean smoother color transitions.",
+          "a staircase（阶梯）；smooth transitions（平滑过渡）"
+        ],
+        [
+          "当你的相机支持10bit时，就可以拍出颜色过渡更加自然的画面。",
+          "When your camera supports 10-bit, you can capture footage with much smoother color transitions.",
+          "capture footage（拍摄画面）"
+        ],
+        [
+          "由于颜色细分不够，就会很容易看到画面断层。",
+          "Because the color gradations aren't fine enough, banding becomes easy to spot.",
+          "banding becomes easy to spot（容易看到断层）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "色彩过渡 → color transitions / smooth gradients",
+          "color transitions · gradients"
+        ],
+        [
+          "容易看到断层 → banding becomes easy to spot / banding shows up",
+          "easy to spot · banding shows up"
+        ]
+      ],
+      "speak": "Think of color depth as a staircase — more steps mean smoother color transitions. When your camera supports 10-bit, you can capture footage with much smoother color transitions. Because the color gradations aren't fine enough, banding becomes easy to spot."
+    },
+    {
+      "id": "s4",
+      "title_cn": "420/422：人眼的秘密",
+      "title_en": "4:2:0 / 4:2:2: The Secret of the Human Eye",
+      "time": "01:23–01:45",
+      "context": "人眼有一个特点：对画面亮度明暗极其敏感，但对色彩细微变化没那么挑剔。每个像素都有明度值和色度值，工程师发现每个像素必须保留明度信息，但不一定要保留色度信息，可以由多个像素共享一个色度值，大幅减少视频存储数据量，同时画面看上去依旧正常。语域：科普教学，原理讲解。",
+      "sentences": [
+        [
+          "人眼对画面的亮度明暗极其敏感，但对色彩的细微变化却没那么挑剔。",
+          "The human eye is extremely sensitive to brightness but much less picky about subtle color shifts.",
+          "sensitive to brightness（对亮度敏感）；subtle color shifts（色彩细微变化）"
+        ],
+        [
+          "每个像素都具有明度值和色度值。",
+          "Every pixel has both a luma value and a chroma value.",
+          "luma（明度）；chroma（色度）"
+        ],
+        [
+          "多个像素共享一个色度值，可以大大减少视频存储的数据量。",
+          "Having multiple pixels share one chroma value slashes the amount of video data stored.",
+          "share one chroma value（共享色度值）；slash the data（大幅减少数据量）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "明度/色度 → luma and chroma / brightness and color info",
+          "luma · chroma"
+        ],
+        [
+          "大幅减少 → slash the data / cut the file size dramatically",
+          "slash the data · cut the size"
+        ]
+      ],
+      "speak": "The human eye is extremely sensitive to brightness but much less picky about subtle color shifts. Every pixel has both a luma value and a chroma value. Having multiple pixels share one chroma value slashes the amount of video data stored."
+    },
+    {
+      "id": "s5",
+      "title_cn": "4:2:0 / 4:2:2 / 4:4:4 的含义",
+      "title_en": "What 4:2:0, 4:2:2, and 4:4:4 Actually Mean",
+      "time": "01:45–02:24",
+      "context": "用格子图解释：每行四个格子是第一个数字4。420指第一行记录两个格子的色度信息、第二行记录零个（继承第一行）；422指两行各记录两个色度信息；444指两行四格全记录，是专业电影机才有的规格。这些数字被称之为色度采样。语域：科普教学，图解演示。",
+      "sentences": [
+        [
+          "每行四个格子，就是第一个数字4。",
+          "Four squares per row is what the first digit, 4, stands for.",
+          "stands for（代表）"
+        ],
+        [
+          "第一行记录两个格子的色度信息，这是第二个数字2。",
+          "The first row records chroma for two squares — that's the second digit, 2.",
+          "records chroma（记录色度信息）"
+        ],
+        [
+          "4:4:4 色彩全记录，这是专业电影机才会有的规格。",
+          "4:4:4 keeps all the color — a spec you only find on professional cinema cameras.",
+          "cinema cameras（电影机）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "代表 → stands for / refers to",
+          "stands for · refers to"
+        ],
+        [
+          "色彩全记录 → keeps all the color / captures full color",
+          "keeps all the color · full color"
+        ]
+      ],
+      "speak": "Four squares per row is what the first digit, 4, stands for. The first row records chroma for two squares — that's the second digit, 2. 4:4:4 keeps all the color — a spec you only find on professional cinema cameras."
+    },
+    {
+      "id": "s6",
+      "title_cn": "总结：什么时候需要更高规格",
+      "title_en": "Summary: When You Need the Higher Spec",
+      "time": "02:24–02:47",
+      "context": "日常拍摄即便用4:2:0依旧能获得不错的画面。但当你要进行更精细的二级调色和抠像时，由于许多像素没有自己的色度值，就会出现颜色溢出、边缘发糊等问题。语域：科普教学，总结建议。",
+      "sentences": [
+        [
+          "即便使用4:2:0色度采样，依旧能获得一个看上去不错的画面。",
+          "Even with 4:2:0 chroma subsampling, you can still get a perfectly good-looking image.",
+          "chroma subsampling（色度采样）"
+        ],
+        [
+          "当你要进行更加精细的二级调色和抠像时。",
+          "When you need more precise secondary color grading and keying.",
+          "secondary grading（二级调色）；keying（抠像）"
+        ],
+        [
+          "由于许多像素没有自己的色度值，就会出现颜色溢出、边缘发糊等问题。",
+          "Because many pixels lack their own chroma value, you'll run into color bleed and soft edges.",
+          "color bleed（颜色溢出）；soft edges（边缘发糊）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "色度采样 → chroma subsampling / color sampling",
+          "chroma subsampling · color sampling"
+        ],
+        [
+          "颜色溢出 → color bleed / fringing",
+          "color bleed · fringing"
+        ]
+      ],
+      "speak": "Even with 4:2:0 chroma subsampling, you can still get a perfectly good-looking image. When you need more precise secondary color grading and keying. Because many pixels lack their own chroma value, you'll run into color bleed and soft edges."
+    }
+  ],
+  "practice": [
+    [
+      "解释色彩断层",
+      "That obvious boundary between colors is called color banding."
+    ],
+    [
+      "对比8bit和10bit色数",
+      "8-bit gives about 16.7 million colors; 10-bit gives about 1.07 billion."
+    ],
+    [
+      "用人眼特点解释采样",
+      "The human eye is sensitive to brightness but picky about color shifts."
+    ],
+    [
+      "说何时需要高规格",
+      "For secondary grading and keying, 4:2:0 causes color bleed and soft edges."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "The line between colors is called color breaking.",
+      "The boundary between colors is called color banding.",
+      "「色彩断层」是 color banding，不是 color breaking。"
+    ],
+    [
+      "8-bit has 1670 ten thousand colors.",
+      "8-bit gives you about 16.7 million colors.",
+      "英文用 million 表达万级数字：16.7 million（1670万）。"
+    ],
+    [
+      "The human eye is not careful to colors.",
+      "The human eye is much less picky about subtle color shifts.",
+      "「没那么挑剔」用 be picky about（挑剔），不是 careful。"
+    ],
+    [
+      "4:4:4 records all colors, used by film machine.",
+      "4:4:4 keeps all the color — a spec found on professional cinema cameras.",
+      "电影机是 cinema camera，不是 film machine。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说颜色多只会 many colors",
+      "用 16.7 million（1670万）、1.07 billion（10.7亿）、64x difference（64倍差距）量化"
+    ],
+    [
+      "说画面不自然只会 not smooth",
+      "用 color banding（色彩断层）、banding artifacts（断层伪影）、gradients（渐变）"
+    ],
+    [
+      "说压缩只会 compress",
+      "用 chroma subsampling（色度采样）、share one chroma value（共享色度值）、luma/chroma（明度色度）"
+    ]
+  ],
+  "difficult_words": [
+    "gradation",
+    "banding",
+    "depth",
+    "million",
+    "billion",
+    "staircase",
+    "transition",
+    "footage",
+    "spot",
+    "sensitive",
+    "subtle",
+    "pixel",
+    "luma",
+    "chroma",
+    "subsampling",
+    "shares",
+    "spec",
+    "cinema",
+    "secondary",
+    "grading",
+    "keying",
+    "bleed",
+    "fringe",
+    "digit",
+    "recording",
+    "compressed"
+  ],
+  "footer_notes": "ASR 专有名词已校正：马克笔、8比特/10比特、2的八字方→2的8次方、14方→10次方、1670万色、10.7亿色、色度彩样→色度采样、Log模式、手绘片→灰片、纯线→唇线等。"
+}

@@ -16,9 +16,9 @@ DOCS = ROOT / "docs"
 
 def extract(slug: str) -> str:
     html = (DOCS / f"{slug}-图文实录.html").read_text(encoding="utf-8")
-    # 解析 <li class="transcript-row"><time>MM:SS</time><p>text</p></li>
+    # 解析 <div/li class="transcript-row"><time>MM:SS</time><p>text</p></div/li>
     rows = re.findall(
-        r'<li class="transcript-row"[^>]*>\s*<time[^>]*>(\d+:\d+)</time>\s*<p>(.*?)</p>',
+        r'<(?:li|div) class="transcript-row"[^>]*>\s*<time[^>]*>(\d+:\d+)</time>\s*<p>(.*?)</p>',
         html,
         re.S,
     )
