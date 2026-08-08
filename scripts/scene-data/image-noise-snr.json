@@ -1,0 +1,326 @@
+{
+  "meta": {
+    "slug": "image-noise-snr",
+    "title": "画面为什么有噪点？",
+    "title_en": "Why Does Your Image Have Noise?",
+    "duration": "2分25秒",
+    "scenes": 6,
+    "sentences": 19,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/image-noise-snr",
+    "topic": "摄影 · 相机知识"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "噪点的本质",
+      "title_en": "What Noise Is",
+      "time": "00:00",
+      "context": "画面中烦人的噪点在电子信号处理领域被称为噪声。噪声的出现是因为信号在采集、传输、转换和量化过程中都存在一定误差，无法完全规避。这些误差导致像素不能精确显示原本的亮度和色度值，造成像素之间波动、过度不均。",
+      "sentences": [
+        [
+          "画面中烦人的噪点，在信号处理领域叫噪声。",
+          "Those annoying specks are called noise in signal processing.",
+          "noise（噪声）"
+        ],
+        [
+          "信号在采集、传输、转换和量化中都有误差。",
+          "Every stage—capture, transfer, convert, quantize—adds error.",
+          "quantize（量化）"
+        ],
+        [
+          "误差导致像素之间的亮度色度波动。",
+          "Errors make pixels fluctuate in brightness and color.",
+          "fluctuate（波动）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "noise（噪声",
+          "noise（噪声"
+        ],
+        [
+          "quantize（量化",
+          "quantize（量化"
+        ]
+      ],
+      "speak": "Those annoying specks are called noise in signal processing. Every stage—capture, transfer, convert, quantize—adds error. Errors make pixels fluctuate in brightness and color."
+    },
+    {
+      "id": "s2",
+      "title_cn": "噪声的类型",
+      "title_en": "Types of Noise",
+      "time": "00:27",
+      "context": "噪声的类型有很多：传感器内硅基材料因热激发形成的自由电子汇聚成暗电流；制造公差导致的像素个体光敏差异引发非均匀性噪声。但大部分噪声在日常拍摄中影响都很小，存在感较强的是散粒噪声和读出噪声。",
+      "sentences": [
+        [
+          "热激发的自由电子汇聚成暗电流。",
+          "Thermally excited electrons pool into dark current.",
+          "dark current（暗电流）"
+        ],
+        [
+          "制造公差导致像素个体光敏差异。",
+          "Manufacturing tolerances make pixels differ in sensitivity.",
+          "tolerance（公差）"
+        ],
+        [
+          "日常影响大的主要是散粒噪声和读出噪声。",
+          "The big two in practice are shot noise and read noise.",
+          "shot noise（散粒噪声）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "dark current（暗电流",
+          "dark current（暗电流"
+        ],
+        [
+          "tolerance（公差",
+          "tolerance（公差"
+        ]
+      ],
+      "speak": "Thermally excited electrons pool into dark current. Manufacturing tolerances make pixels differ in sensitivity. The big two in practice are shot noise and read noise."
+    },
+    {
+      "id": "s3",
+      "title_cn": "散粒噪声",
+      "title_en": "Shot Noise Explained",
+      "time": "00:49",
+      "context": "理想情况下每个像素接受相同数量的光子，但现实中光子传播离散随机波动，导致每个像素在相同时间内接受的光子数量并不完全一致，由此引发的误差就是散粒噪声。暗光环境光子很少，微小误差在信号中占比很高，信噪比低、画质下降。",
+      "sentences": [
+        [
+          "光子的传播离散随机，每个像素接到的光子数不完全一致。",
+          "Photons arrive randomly, so pixels catch uneven numbers of them.",
+          "photon（光子）"
+        ],
+        [
+          "由此引发的误差就是散粒噪声。",
+          "That fluctuation is shot noise.",
+          "shot noise（散粒噪声）"
+        ],
+        [
+          "暗光下光子少，信噪比低，画质下降。",
+          "Few photons in the dark mean a low SNR and worse quality.",
+          "signal-to-noise ratio（信噪比）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "photon（光子",
+          "photon（光子"
+        ],
+        [
+          "shot noise（散粒噪声",
+          "shot noise（散粒噪声"
+        ]
+      ],
+      "speak": "Photons arrive randomly, so pixels catch uneven numbers of them. That fluctuation is shot noise. Few photons in the dark mean a low SNR and worse quality."
+    },
+    {
+      "id": "s4",
+      "title_cn": "提升信噪比：向右曝光",
+      "title_en": "Raise SNR: Expose to the Right",
+      "time": "01:19",
+      "context": "随着光子数量增加，散粒噪声也增加，但有效信号的增加比率更大，信噪比显著提升。所以提升信噪比的最优点是在不过曝的前提下增加进光量，这也是为什么要向右曝光的根本原因。",
+      "sentences": [
+        [
+          "光子增多时，信号增加比率大于噪声。",
+          "More photons grow the signal faster than the noise.",
+          "signal grows faster（信号增加更快）"
+        ],
+        [
+          "信噪比显著提升，画质更好。",
+          "SNR rises sharply and quality improves.",
+          "SNR（信噪比）"
+        ],
+        [
+          "提升信噪比最优点：不过曝的前提下增加进光量。",
+          "The best SNR boost is more light without clipping.",
+          "without clipping（不过曝）"
+        ],
+        [
+          "这就是为什么向右曝光。",
+          "That's exactly why you expose to the right.",
+          "expose to the right（向右曝光）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "SNR（信噪比",
+          "SNR（信噪比"
+        ],
+        [
+          "without clipping（不过曝",
+          "without clipping（不过曝"
+        ]
+      ],
+      "speak": "More photons grow the signal faster than the noise. SNR rises sharply and quality improves. The best SNR boost is more light without clipping. That's exactly why you expose to the right."
+    },
+    {
+      "id": "s5",
+      "title_cn": "前端与后端读出噪声",
+      "title_en": "Front-End and Back-End Read Noise",
+      "time": "01:36",
+      "context": "信号在读出链路各环节都会引入噪声。浮动扩散节点和源极跟随器的噪声相对固定，与信号强弱和曝光时长无关，是制约动态范围下限的关键因素。提高ISO时TG对电压信号进行模拟放大，同步放大前端读出噪声；PGA和ADC本身引发的噪声不随ISO改变，叫后端读出噪声。",
+      "sentences": [
+        [
+          "浮动扩散节点和源极跟随器的噪声相对固定。",
+          "Floating diffusion and source-follower noise is fairly fixed.",
+          "floating diffusion（浮动扩散）"
+        ],
+        [
+          "提高ISO会同步放大前端读出噪声。",
+          "Raising ISO amplifies front-end read noise too.",
+          "front-end read noise（前端读出噪声）"
+        ],
+        [
+          "PGA和ADC的噪声不随ISO改变，叫后端读出噪声。",
+          "PGA/ADC noise is ISO-independent—that's back-end read noise.",
+          "back-end（后端）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "floating diffusion（浮动扩散",
+          "floating diffusion（浮动扩散"
+        ],
+        [
+          "back-end（后端",
+          "back-end（后端"
+        ]
+      ],
+      "speak": "Floating diffusion and source-follower noise is fairly fixed. Raising ISO amplifies front-end read noise too. PGA/ADC noise is ISO-independent—that's back-end read noise."
+    },
+    {
+      "id": "s6",
+      "title_cn": "信噪比的意义",
+      "title_en": "What SNR Means",
+      "time": "02:07",
+      "context": "不管什么类型的噪声都没人喜欢，我们想要的是纯净的信号也就是光。把它们放在一起就有了信噪比，这个比值越高表示有效信号越强，画面纯净观感舒适；反之画质粗糙观感下降。",
+      "sentences": [
+        [
+          "我们想要的只是纯净的信号，也就是光。",
+          "All we want is clean signal—the light itself.",
+          "clean signal（纯净信号）"
+        ],
+        [
+          "信噪比越高，有效信号越强。",
+          "A higher SNR means stronger signal.",
+          "stronger（更强）"
+        ],
+        [
+          "画面纯净观感舒适，反之画质粗糙。",
+          "Clean images feel great; low SNR looks rough.",
+          "rough（粗糙）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "clean signal（纯净信号",
+          "clean signal（纯净信号"
+        ],
+        [
+          "stronger（更强",
+          "stronger（更强"
+        ]
+      ],
+      "speak": "All we want is clean signal—the light itself. A higher SNR means stronger signal. Clean images feel great; low SNR looks rough."
+    }
+  ],
+  "practice": [
+    [
+      "说噪声的本质",
+      "Every stage—capture, transfer, convert, quantize—adds error."
+    ],
+    [
+      "说散粒噪声",
+      "Photons arrive randomly, so pixels catch uneven numbers of them."
+    ],
+    [
+      "说向右曝光",
+      "The best SNR boost is more light without clipping."
+    ],
+    [
+      "说读出噪声",
+      "Raising ISO amplifies front-end read noise too."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Blaming the sensor size",
+      "Blaming photon randomness",
+      "散粒噪声源于光子随机性而非像素大小"
+    ],
+    [
+      "Exposing to the right blindly",
+      "Stopping before clipping",
+      "向右曝光过头会丢失高光"
+    ],
+    [
+      "Only denoising in post",
+      "Adding light at capture time",
+      "后期降噪治标，进光量才治本"
+    ],
+    [
+      "Treating noise as one thing",
+      "Separating shot and read noise",
+      "散粒噪声与读出噪声机制不同"
+    ]
+  ],
+  "shifts": [
+    [
+      "以前噪点是玄学",
+      "现在两种机制都能量化"
+    ],
+    [
+      "以前ISO越低越好",
+      "现在信噪比由光子数量决定，曝光优先"
+    ],
+    [
+      "以前拼命后期降噪",
+      "现在拍摄时增加进光量才是治本"
+    ]
+  ],
+  "difficult_words": [
+    "annoying",
+    "specks",
+    "called",
+    "signal",
+    "processing",
+    "capture",
+    "transfer",
+    "convert",
+    "quantize",
+    "errors",
+    "pixels",
+    "fluctuate",
+    "brightness",
+    "thermally",
+    "excited",
+    "electrons",
+    "current",
+    "manufacturing",
+    "tolerances",
+    "differ",
+    "sensitivity",
+    "practice",
+    "photons",
+    "arrive",
+    "randomly",
+    "uneven",
+    "numbers",
+    "fluctuation",
+    "quality",
+    "faster"
+  ],
+  "footer_notes": "噪点=信号采集传输量化误差的累积。散粒噪声靠进光量改善（向右曝光），读出噪声靠 ISO 模拟放大压制后端部分。理解信噪比，噪点就不可怕。"
+}
