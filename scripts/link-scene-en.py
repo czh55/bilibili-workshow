@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 INDEX = DOCS / "index.json"
 
-SLUGS = ["motuo", "nyc-vlog", "citywalk-sh", "granada-vlog", "ronda-vlog",
-         "cordoba-vlog", "barcelona-stolen", "tossa-blanes", "salamanca-vlog", "middle-east"]
+SLUGS = ["seville-vlog", "paris-vlog", "vietnam-lazy", "bali-crab", "hupao-park",
+         "jingmai-photo", "toronto-animal-shelter"]
 
 
 def main() -> None:
