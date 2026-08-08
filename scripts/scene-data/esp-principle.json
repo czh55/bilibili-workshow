@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "slug": "esp-principle",
+    "title": "ESP车身稳定系统工作原理",
+    "title_en": "How ESP Electronic Stability Works",
+    "duration": "14:21",
+    "scenes": 6,
+    "sentences": 25,
+    "date": "2026-08-08",
+    "platform": "xiaohongshu",
+    "source_url": "http://xhslink.cn/o/esp-principle",
+    "topic": "汽车 · ESP"
+  },
+  "scene_imgs": [
+    "shot-01",
+    "shot-02",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "ESP是什么",
+      "title_en": "What ESP Is",
+      "time": "00:00",
+      "context": "ESP是Electronic Stability Program的缩写，即电子稳定程序；也叫ESC，还有很多厂商各自的叫法，本质都是车身稳定系统。",
+      "sentences": [
+        [
+          "ESP是英文Electronic Stability Program的首字母缩写。",
+          "ESP stands for Electronic Stability Program.",
+          "stand for（缩写为）"
+        ],
+        [
+          "直接翻译就是电子稳定程序的意思，也有车叫它ESC。",
+          "Literally 'electronic stability program'; some brands call it ESC.",
+          "Electronic Stability Control（电子稳定控制）"
+        ],
+        [
+          "本田叫VSA，丰田叫VSC，日产斯巴鲁叫VDC，宝马捷豹路虎叫DSC，本质都是车身稳定系统。",
+          "Honda calls it VSA, Toyota VSC, Nissan VDC, BMW DSC—same thing underneath.",
+          "same thing（同一回事）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "stand for（缩写为",
+          "stand for（缩写为"
+        ],
+        [
+          "same thing（同一回事",
+          "same thing（同一回事"
+        ]
+      ],
+      "speak": "ESP stands for Electronic Stability Program. Literally 'electronic stability program'; some brands call it ESC. Honda calls it VSA, Toyota VSC, Nissan VDC, BMW DSC—same thing underneath."
+    },
+    {
+      "id": "s2",
+      "title_cn": "如何监测打滑",
+      "title_en": "How It Detects Slip",
+      "time": "01:50",
+      "context": "ESP靠几类传感器监测车身：方向盘角度传感器告诉电脑驾驶员想去的方向，横摆传感器测车身摆动，轮速传感器测打滑，加速度传感器确认姿态。",
+      "sentences": [
+        [
+          "首先要靠传感器监测车身状态：方向盘角度传感器告诉电脑驾驶员想往哪个方向去。",
+          "First, sensors read the car: the steering-angle sensor reports the driver's intent.",
+          "steering-angle sensor（方向盘角度传感器）"
+        ],
+        [
+          "横摆传感器实时监测车身摆动的幅度，摆动大就说明要失控甚至翻车了。",
+          "A yaw sensor tracks the body's rotation; big swings mean imminent loss of control.",
+          "yaw sensor（横摆传感器）"
+        ],
+        [
+          "四个轮子上的速度传感器（也就是ABS传感器）检测每个轮子的转速，哪个轮子转得不一样就说明打滑了。",
+          "Wheel-speed (ABS) sensors spot a wheel spinning out of sync—that's slip.",
+          "wheel-speed sensor（轮速传感器）"
+        ],
+        [
+          "加速度传感器配合横摆传感器，让电脑知道车身是侧翻、前倾还是后仰。",
+          "Accelerometers refine whether the body is rolling, diving, or pitching.",
+          "accelerometer（加速度传感器）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "yaw sensor（横摆传感器",
+          "yaw sensor（横摆传感器"
+        ],
+        [
+          "wheel-speed sensor（轮速传感器",
+          "wheel-speed sensor（轮速传感器"
+        ]
+      ],
+      "speak": "First, sensors read the car: the steering-angle sensor reports the driver's intent. A yaw sensor tracks the body's rotation; big swings mean imminent loss of control. Wheel-speed (ABS) sensors spot a wheel spinning out of sync—that's slip. Accelerometers refine whether the body is rolling, diving, or pitching."
+    },
+    {
+      "id": "s3",
+      "title_cn": "紧急避障的介入",
+      "title_en": "Intervention in an Emergency Swerve",
+      "time": "05:11",
+      "context": "高速上突然遇到前车急停，没有ESP会出现转向不足追尾或回打方向转向过度甩出；有ESP时电脑单独给某个轮子刹车修正车身。",
+      "sentences": [
+        [
+          "高速120公里时前方有车紧急停在超车道，刹车来不及，只能一把方向往右打。",
+          "At 120 km/h a car stops ahead; no time to brake, so you yank right.",
+          "yank the wheel（急打方向）"
+        ],
+        [
+          "没有ESP很可能出现转向不足：实际转过的幅度小于方向盘打的幅度。",
+          "Without ESP comes understeer: the car turns less than you asked.",
+          "understeer（转向不足）"
+        ],
+        [
+          "回打方向时车身晃动最厉害，最容易产生转向过度然后彻底失控。",
+          "The counter-steer wobble invites oversteer and a full spin.",
+          "oversteer（转向过度）"
+        ],
+        [
+          "有ESP时，电脑通过ABS只对右后轮制动，让车绕这个点向右转动，修正转向不足。",
+          "With ESP, the computer brakes just the right-rear wheel, yawing the car into the turn.",
+          "brake one wheel（单轮制动）"
+        ],
+        [
+          "回打方向时电脑又只对右前轮制动，产生向右摆动的趋势，抵消转向过度。",
+          "On counter-steer it brakes the right-front, countering the oversteer.",
+          "counter（抵消）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "yank the wheel（急打方向",
+          "yank the wheel（急打方向"
+        ],
+        [
+          "understeer（转向不足",
+          "understeer（转向不足"
+        ]
+      ],
+      "speak": "At 120 km/h a car stops ahead; no time to brake, so you yank right. Without ESP comes understeer: the car turns less than you asked. The counter-steer wobble invites oversteer and a full spin. With ESP, the computer brakes just the right-rear wheel, yawing the car into the turn. On counter-steer it brakes the right-front, countering the oversteer."
+    },
+    {
+      "id": "s4",
+      "title_cn": "日常打滑与电子限滑",
+      "title_en": "Everyday Slip and Electronic LSD",
+      "time": "08:47",
+      "context": "雨天压水坑、压冰、过砂石路面会抢方向盘，ESP可以刹慢有抓地力的轮子把车身修正回来，还能刹停打滑轮让动力给到有抓地力的轮子，即电子限滑。",
+      "sentences": [
+        [
+          "雨天高速压过水坑，水把轮胎和路面隔开，压水那一侧的轮子瞬间失去抓地力。",
+          "Hit a puddle and the water lifts the tire—that side loses grip instantly.",
+          "lose grip（失去抓地力）"
+        ],
+        [
+          "方向盘会向压水那一侧被抢了一下，手没握紧方向盘又没ESP就很容易失控。",
+          "The wheel gets yanked toward the water; loose hands and no ESP spell trouble.",
+          "yanked（被抢）"
+        ],
+        [
+          "ESP能刹慢有抓地力的轮子，把车身修正回安全方向。",
+          "ESP brakes the gripping wheels to steer the body back to safety.",
+          "gripping wheels（有抓地力的轮子）"
+        ],
+        [
+          "它还能刹停打滑的空转轮，让动力更有效给到有抓地力的轮子，这就是电子限滑。",
+          "It can also brake a spinning wheel, sending power to the gripping one—electronic LSD.",
+          "electronic LSD（电子限滑）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "lose grip（失去抓地力",
+          "lose grip（失去抓地力"
+        ],
+        [
+          "yanked（被抢",
+          "yanked（被抢"
+        ]
+      ],
+      "speak": "Hit a puddle and the water lifts the tire—that side loses grip instantly. The wheel gets yanked toward the water; loose hands and no ESP spell trouble. ESP brakes the gripping wheels to steer the body back to safety. It can also brake a spinning wheel, sending power to the gripping one—electronic LSD."
+    },
+    {
+      "id": "s5",
+      "title_cn": "什么时候要关ESP",
+      "title_en": "When to Turn ESP Off",
+      "time": "09:57",
+      "context": "漂移需要驱动轮打滑、方向盘指向与车身运动方向不一致，ESP会干预；陷车需要驱动轮持续打滑冲出来；修车空转判断异响也要关ESP。",
+      "sentences": [
+        [
+          "有些特殊情况下ESP介入反而帮倒忙，最典型的就是想玩漂移。",
+          "In a few cases ESP hinders—most famously drifting.",
+          "hinders（帮倒忙）"
+        ],
+        [
+          "漂移的两个特征就是驱动轮打滑和方向盘指向与车身运动方向不一致，开着ESP永远飘不起来。",
+          "Drifting needs wheelspin and mismatched wheel angle—ESP blocks it all.",
+          "wheelspin（打滑）"
+        ],
+        [
+          "陷在雪坑泥坑里，必须依靠驱动轮一个劲打滑靠惯性冲出来，也需要关闭ESP。",
+          "Stuck in snow or mud, you need wheels spinning to rock out—so ESP off.",
+          "rock out（靠惯性冲出来）"
+        ],
+        [
+          "修车师傅把车顶到架子上让轮子空转判断异响，也需要关闭ESP，不然电脑会限制发动机输出还踩刹车。",
+          "On a lift, spinning wheels make ESP cut power and brake—so turn it off.",
+          "on a lift（顶到架子上）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "hinders（帮倒忙",
+          "hinders（帮倒忙"
+        ],
+        [
+          "wheelspin（打滑",
+          "wheelspin（打滑"
+        ]
+      ],
+      "speak": "In a few cases ESP hinders—most famously drifting. Drifting needs wheelspin and mismatched wheel angle—ESP blocks it all. Stuck in snow or mud, you need wheels spinning to rock out—so ESP off. On a lift, spinning wheels make ESP cut power and brake—so turn it off."
+    },
+    {
+      "id": "s6",
+      "title_cn": "ESP的边界与价值",
+      "title_en": "The Limits and Value of ESP",
+      "time": "12:02",
+      "context": "安全驾驶主要靠人，ESP只是辅助；ESP不能提高转弯性能，只能降低失控概率；美国NHTSA数据：同条件下降低撞车概率35%，SUV车型降67%。",
+      "sentences": [
+        [
+          "安全驾驶最主要的因素还是人，ESP再好也只是辅助，只有在你好好开车的前提下才能帮到你。",
+          "The driver comes first; ESP only helps if you drive sensibly.",
+          "sensibly（理智地）"
+        ],
+        [
+          "每一次ESP介入仪表盘指示灯都会闪烁，它是在告诉你系统正在保护你。",
+          "The ESP light flashes on intervention—it's telling you it's saving you.",
+          "intervention（介入）"
+        ],
+        [
+          "车辆的最终极限取决于轮胎的抓地极限，ESP只能在抓地极限内尽量控制车身。",
+          "Grip limits the car; ESP can only work within them.",
+          "grip limit（抓地极限）"
+        ],
+        [
+          "ESP不属于提高转弯性能的功能，它只能降低车辆失控的概率。",
+          "It doesn't boost cornering—it lowers the odds of losing control.",
+          "lower the odds（降低概率）"
+        ],
+        [
+          "美国NHTSA公布：同等条件下ESP能降低撞车概率35%，在SUV车型中带ESP的事故比不带少67%。",
+          "NHTSA: ESP cuts crash probability 35%, and SUV crashes by 67%.",
+          "NHTSA（美国国家高速安全部门）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "sensibly（理智地",
+          "sensibly（理智地"
+        ],
+        [
+          "intervention（介入",
+          "intervention（介入"
+        ]
+      ],
+      "speak": "The driver comes first; ESP only helps if you drive sensibly. The ESP light flashes on intervention—it's telling you it's saving you. Grip limits the car; ESP can only work within them. It doesn't boost cornering—it lowers the odds of losing control. NHTSA: ESP cuts crash probability 35%, and SUV crashes by 67%."
+    }
+  ],
+  "practice": [
+    [
+      "说ESP是什么",
+      "Electronic Stability Program—many names, one system."
+    ],
+    [
+      "说传感器",
+      "Steering, yaw, wheel-speed, and acceleration sensors."
+    ],
+    [
+      "说紧急介入",
+      "Brake one wheel to counter understeer or oversteer."
+    ],
+    [
+      "说电子限滑",
+      "Brake the spinning wheel, feed power to the gripping one."
+    ],
+    [
+      "说关ESP时机",
+      "Drifting, getting unstuck, and wheel-spin diagnosis."
+    ],
+    [
+      "说ESP边界",
+      "Within grip limits only—it lowers crash odds by 35%."
+    ]
+  ],
+  "pitfalls": [
+    [
+      "Think ESP boosts cornering.",
+      "It only lowers the odds of losing control.",
+      "ESP不提高转弯性能。"
+    ],
+    [
+      "Rely on ESP beyond grip limits.",
+      "Physics wins—no system saves you past the tires.",
+      "超出抓地极限谁也救不了。"
+    ],
+    [
+      "Turn ESP off for daily driving.",
+      "Keep it on; it's a proven lifesaver.",
+      "平时别关ESP。"
+    ],
+    [
+      "Miss the sensors' story.",
+      "They compare intent with actual motion to catch loss of control.",
+      "传感器对比意图与实态。"
+    ],
+    [
+      "Ignore the flashing light.",
+      "It's ESP telling you it just saved you.",
+      "指示灯闪就是ESP在救你。"
+    ]
+  ],
+  "shifts": [
+    [
+      "说ESP只会说 stability",
+      "用 Electronic Stability Program（电子稳定程序）、yaw sensor（横摆传感器）、understeer（转向不足）"
+    ],
+    [
+      "说制动只说 brake",
+      "用 brake one wheel（单轮制动）、electronic LSD（电子限滑）、spin（打滑）"
+    ],
+    [
+      "说安全只说 safety",
+      "用 loss of control（失控）、grip limit（抓地极限）、crash probability（撞车概率）"
+    ]
+  ],
+  "difficult_words": [
+    "stands",
+    "electronic",
+    "stability",
+    "program",
+    "literally",
+    "brands",
+    "toyota",
+    "nissan",
+    "underneath",
+    "sensors",
+    "steering-angle",
+    "sensor",
+    "reports",
+    "driver's",
+    "intent",
+    "tracks",
+    "body's",
+    "rotation",
+    "swings",
+    "imminent",
+    "control",
+    "wheel-speed",
+    "spinning",
+    "that's",
+    "accelerometers",
+    "refine",
+    "whether",
+    "rolling",
+    "diving",
+    "pitching"
+  ],
+  "footer_notes": "转录基于图文实录完整口播。已校正：越来越多的车标配车身稳定系统英文大多叫ESP、ESP是Electronic Stability Program首字母缩写翻译就是电子稳定程序、也有车叫ESC Electronic Stability Control、本田现代叫VSA丰田叫VSC日产斯巴鲁叫VDC宝马捷豹路虎叫DSC保时捷叫PSM名字五花八门实质都是车身稳定系统、ESP就是基于行车电脑通过监测打滑和车身动态实现限制打滑和失控的系统、监测主要靠传感器：方向盘角度传感器告诉电脑驾驶员想要的方向、横摆传感器实时监测车身摆动幅度摆动大就说明要失控甚至翻车、四个轮子上的速度传感器也就是ABS传感器检测每个轮子转速、哪个轮子突然打滑转得比其它轮子快很多电脑就知道哪个轮子打滑、还有若干个加速度传感器配合横摆传感器让电脑知道车身是侧翻前倾还是后仰、稳定车身主要依靠ABS系统另外有时电脑会通过限制发动机动力输出配合ABS制动、ABS泵在刹车油管路径上可以对任意一条管路单独控制给哪个轮子踩刹车就单独给哪个轮子踩刹车不需要驾驶员介入、高速120遇到前车急停刹车来不及一把方向往右打、没有ESP很大可能出现转向不足实际转过的幅度小于方向盘打的幅度、回打方向车身晃动最厉害最容易产生转向过度然后彻底失控甩出去、有ESP时第一把方向电脑知道你想去右边但横摆传感器说车身还在直冲、电脑通过ABS只对右后轮制动其他三个轮子正常转车子绕这个点向右转动修正转向不足、回打方向时电脑只对右前轮制动产生向右摆动趋势抵消转向过度、成功避开一场事故、雨天压水坑水把轮胎和路面接触隔离压水一侧轮胎瞬间失去抓地力、方向盘被抢一下手没握紧又没有ESP很容易失控、ESP既能刹慢有抓地力的轮子把车身修正回安全方向、也能刹慢甚至刹停失去抓地力打滑的车轮让动力更有效给到有抓地力的轮子这就是电子限滑、特殊情况需要关闭ESP：玩漂移驱动轮打滑方向盘指向与车身运动方向不一致开着ESP永远飘不起来、陷雪坑泥坑必须依靠驱动轮一个劲打滑靠惯性冲出来要关闭ESP、修车师傅顶到架子让轮子空转判断异响也要关闭ESP不然电脑检测四个轮子都在打滑会限制发动机油门输出还踩刹车、平时不要按关闭按钮ESP是保障日常行车安全非常重要的功能、安全驾驶最主要的因素还是人ESP只是辅助、ESP指示灯闪烁就是告诉你系统正在保护你、车辆最终极限取决于轮胎抓地极限ESP只能在抓地极限内控制车身、超出抓地极限谁也救不了你、ESP不属于提高转弯性能的功能只能降低车辆失控的概率、NHTSA公布同等条件下ESP降低撞车概率35%、SUV车型中带ESP的事故比不带少67%、加拿大2011年强制标配美国2012欧盟2014、我国还不是强制标配一些低端或低配车型可能没有、买车时强烈推荐考虑ESP功能等。"
+}
