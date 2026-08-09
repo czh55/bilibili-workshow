@@ -546,6 +546,35 @@ node "generate-{slug}-html.mjs"
 - 删除被替换的旧英文页（如 `*-图文实录-en.html`），并更新 `index.json` 的 `outputs.html_en`，中文图文实录页的英文链接同步指向新页
 - 更新 `index.json` 时建议增加 `"html_en_type": "scene-english"` 便于前端识别
 
+### 批量场景英译流水线（10 篇一批）
+
+一次处理多篇时，固定按以下 5 步推进，每步都是独立脚本、幂等可续跑：
+
+1. **提取转录**（不重新下载/转写，避免限流）：从已发布的中文图文实录页提取带时间戳文本，作为场景切分的证据源：
+
+   ```bash
+   python3 scripts/html-transcript-to-text.py {slug} > /tmp/bXX/{slug}.txt
+   ```
+
+   同时对照 `docs/index.json` 取 URL、时长、`docs/assets/{slug}/` 的截图文件数。
+2. **建 JSON**：编写一次性脚本 `scripts/create-bXX-json.py`，生成 `scripts/scene-data/{slug}.json`。scene 结构与 Step 6.5 定义一致（含 `sentences` 三元组、`paraphrase`、`speak` 等）。
+3. **补全**：编写一次性脚本 `scripts/fix-bXX-json.py` 为 JSON 填充 `practice`（4 组）、`pitfalls`（4 组）、`shifts`（3 组）、`difficult_words`（≥20）、`footer_notes`。
+4. **生成音频 + HTML**：
+
+   ```bash
+   python3 scripts/gen-scene-en.py --slug={slug}      # 音频 + HTML
+   python3 scripts/validate-scene-json.py {slug}      # JSON 语法兜底校验
+   ```
+
+5. **链接 + 索引**：`python3 scripts/link-scene-en.py {slug1} {slug2} ...`，自动给中文图文实录页注入 `English Version` 链接，并写入 `index.json` 的 `outputs.html_en` 与 `outputs.html_en_type: "scene-english"`。
+
+批量硬约束（443 篇执行中验证的经验）：
+
+- **场景数必须 ≤ 该视频截图数**：`scene_imgs` 与 `scenes` 等长，复用 `docs/assets/{slug}/` 的截图。截图不够时压缩场景（合并相邻内容），不得复用同一张图。
+- **转录太短或纯歌词/配乐时，用图文实录页的 `figcaption`（图注）重建场景**，而不是臆造口播；页脚注明「ASR 专有名词已按语境校正」。
+- `shifts` 必须为二元组 `["以前", "新"]`（`gen-scene-en.py` 会解包失败）；`sentences` 为 `["中文", "英文", "提示"]` 三元组。
+- 音频按 `docs/audio/{slug}/` 组织（`narration.mp3` + `s{N}.mp3` + `s{N}-{idx:02d}.mp3` + `practice-{idx}.mp3` + `manifest.json`），`gen-scene-en.py` 已存在则跳过、可续跑。
+
 ---
 
 ## Step 7：生成 SVG 理性分析
@@ -743,7 +772,9 @@ XML 注意事项：
   "duration": "5分40秒",
   "outputs": {
     "html": "slug-图文实录.html",
-    "svg": "slug-理性分析.svg"
+    "svg": "slug-理性分析.svg",
+    "html_en": "slug-场景英译.html",
+    "html_en_type": "scene-english"
   },
   "screenshot_count": 5,
   "transcript_segments": 86,
@@ -754,6 +785,8 @@ XML 注意事项：
 - `platform`：`bilibili` 或 `xiaohongshu`，由 Step 0 自动识别写入
 - `outputs.html`：轻松纪实、含截图与完整转录的 HTML
 - `outputs.svg`：客观结构化分析 SVG
+- `outputs.html_en`：可选，场景英译学习卡页面（`{slug}-场景英译.html`）
+- `outputs.html_en_type`：`"scene-english"`，供前端识别英文学习卡类型
 - `screenshot_count`：实际提交的截图数
 - `transcript_segments`：HTML 呈现的非空 Whisper 分段数
 - `svg_height`：`buildSvg()` 返回的最终高度
@@ -807,6 +840,45 @@ git push -u origin main
 **最终发布目标是 `origin/main`。** 所有 webhook/trigger 完成后，变更必须已经出现在 `main` 上；GitHub Pages 从 `main` 的 `docs/` 部署。开发分支可以保留，也可以后续清理，但不得以“已推送到开发分支”代替合并。
 
 网络失败按 4、8、16、32 秒退避重试。`git pull --rebase origin main` 或 `git merge` 出现冲突时，解决冲突、重新自检后再继续推送。若已创建 Pull Request，可在合并到 `main` 后关闭。
+
+### Git 推送网络故障处理（高频，443 篇实战经验）
+
+默认 `git push` 遇到 `Empty reply from server`、`HTTP 408`、`Couldn't connect to github.com port 443`、`Connection reset` 时，**普通退避重试往往无效**，按以下顺序处理：
+
+1. **确认是否其实已推送成功**：408 后显示 `Everything up-to-date` 可能是误导（服务端已接收但响应超时）。用远端 HEAD 对比本地：
+
+   ```bash
+   git ls-remote origin main
+   git rev-parse HEAD   # 两侧相同即已推送成功，无需重复操作
+   ```
+
+2. **批量测试 GitHub 可达 IP**：国内网络环境下常只有部分 IP 通，逐个探测（返回 `200` 即可达，`000` 不通）：
+
+   ```bash
+   for ip in 20.205.243.166 140.82.114.3 140.82.113.3 140.82.121.3 140.82.112.3; do
+     echo -n "$ip "; curl -sk -o /dev/null -w "%{http_code}\n" --resolve github.com:443:$ip https://github.com/ 2>/dev/null
+   done
+   ```
+
+3. **强制走可达 IP 推送**（IP 随网络波动需多次尝试）：
+
+   ```bash
+   git -c http.curloptResolve="github.com:443:20.205.243.166" \
+       -c http.postBuffer=524288000 \
+       -c http.version=HTTP/1.1 \
+       push origin main
+   ```
+
+   - 命中可达 IP 后把该 IP 固化到当前仓库，减少后续失败：
+
+     ```bash
+     git config http.curloptResolve "github.com:443:20.205.243.166"
+     git config http.version HTTP/1.1
+     git config http.postBuffer 524288000
+     ```
+
+   - 大提交（每批含多张截图 + 音频）建议同时设 `http.lowSpeedLimit=1000`、`http.lowSpeedTime=300`，避免慢速被判超时。
+4. 推送失败的重试间隔远大于网络退避（可达 1–3 分钟以上），且每次重试都换用 curl 探测到的最新可达 IP；不要对着同一失效 IP 反复重试。
 
 ---
 
