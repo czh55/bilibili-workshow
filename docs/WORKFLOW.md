@@ -40,14 +40,14 @@ HTML 不是 SVG 的加长版，SVG 也不是 HTML 的缩略图。二者共享同
 ### 小红书访问限流
 
 - 对 `xiaohongshu.com`、`xhslink.cn`、`xhslink.com` 的**任何网络请求**（含短链解析、元数据读取、下载、重试）实行全局限流：两次请求的开始时间必须相隔至少 **60 秒**。
-- 一个视频的元数据和下载必须合并为一次 `yt-dlp` 调用，禁止先探测、再分别请求音频和视频。不得使用 `HEAD`、页面抓取、额外探测或并发请求。
+- 一个视频的元数据和下载必须合并为一次下载调用，禁止先探测、再分别请求音频和视频。不得使用 `HEAD`、额外探测或并发请求。默认使用新方式 `python3 scripts/xhs-fetch.py`（脚本内部已执行限流、短链展开、页面解析并产出 meta.json）；若新方式失效，可退回备选方式：执行 `node xhs-rate-limit.mjs` 后单次 `yt-dlp -f "best[height<=1080]/best"` 下载混合文件。
 - 出现 403、412、429、网络错误或下载失败时，不得立即重试；每次重试同样等待至少 60 秒，最多 3 次。达到上限后记录失败并停止。
 - 修复既有小红书文章时，优先且默认只使用仓库中已有的 HTML、截图、SVG 和本地转录；**不得**为润色、补全、转简体或重建摘要重新访问小红书。只有本地源文件确实缺失、且用户明确要求重新抓取时，才可按上述限流规则单独排队。
 
 ```
 Task Progress:
 - [ ] 0. 自动识别平台（B 站 / 小红书）
-- [ ] 1. yt-dlp 获取元数据并下载音频、视频
+- [ ] 1. 获取元数据并下载音频、视频（小红书用 `scripts/xhs-fetch.py`，见 Step 1）
 - [ ] 2. 安装依赖（ffmpeg + openai-whisper，仅首次）
 - [ ] 3. Whisper 转录（优先 `medium` 或更高质量模型，`--language Chinese`）
 - [ ] 4. 基于同一转录进行双轨编辑
@@ -156,10 +156,25 @@ yt-dlp -f "bestvideo[height<=1080][ext=mp4]/bestvideo[height<=1080]/best[height<
 
 ### 小红书下载
 
-小红书请求必须先通过全局节流器，保证与上一条小红书网络请求相隔至少 60 秒。一次处理仅允许一个 `yt-dlp` 请求；先下载一个可用的 ≤1080p 混合视频文件，再从本地文件抽取音频，禁止为同一笔记分别请求音频和视频：
+**主路径（推荐，2026-08 起）**：`yt-dlp` 的小红书提取器已因小红书页面改版失效（报 403 或 "No video formats found"），改用仓库内脚本 `scripts/xhs-fetch.py`，它负责短链展开、页面解析、提取视频直链、下载与抽音频，一次调用产出全部所需文件：
 
 ```bash
-# 该脚本使用文件锁，跨本机并发任务串行化小红书请求。
+# 脚本内部已执行 xhs-rate-limit.mjs 限流；产出 {slug}.source.mp4 + {slug}.m4a + {slug}.meta.json
+python3 scripts/xhs-fetch.py "{url}" "{slug}"
+```
+
+脚本工作原理与注意事项：
+
+- 用 `curl -L` 展开短链并抓取笔记页（iPhone UA + `Referer: https://www.xiaohongshu.com/`）
+- 解析页面 `window.__INITIAL_STATE__`：优先读新版路径 `noteData.data.noteData`，旧路径 `note.noteDetailMap` 作为兜底；JSON 解析失败时用 `yt_dlp.utils.js_to_json` 修复非标准 JSON
+- 从 `video.media.stream.h264/h265` 中取第一个 `masterUrl` 作为视频直链，再 `curl` 下载（视频本体在 CDN，**下载视频不占限流额度**）
+- `meta.json` 包含笔记 id / 标题 / 时长 / 作者 / master_url，可直接作为后续图文实录的元数据来源
+- 需要 `curl` 和能 `import yt_dlp.utils` 的 Python 环境；若 `yt-dlp` 后续修复了提取器，可自行判断是否退回备选方式
+
+**备选方式（yt-dlp 提取器恢复有效时，或新方式失效时退回）**：
+
+```bash
+# 请求前必须手动过限流器，保证与上一条小红书网络请求相隔至少 60 秒
 node xhs-rate-limit.mjs
 yt-dlp -f "best[height<=1080]/best" -o "{slug}.source.%(ext)s" "{url}"
 ffmpeg -i "{slug}.source.{实际扩展名}" -vn -acodec aac -b:a 128k "{slug}.m4a"
@@ -167,10 +182,9 @@ ffmpeg -i "{slug}.source.{实际扩展名}" -vn -acodec aac -b:a 128k "{slug}.m4
 
 注意：
 
-- 上述节流器必须在每一次小红书重试前执行；不得并发处理多个小红书 URL。
+- 主路径脚本已内置限流；若改用备选方式，上述节流器必须在每一次小红书重试前执行；不得并发处理多个小红书 URL。
 - 小红书常只有整段 MP4，没有独立 bestaudio；只从已下载的本地混合文件抽出 m4a，不再发起第二个下载请求。
-- 短链需允许跟随跳转；保留完整 `xsec_token` 等分享参数
-- 禁止裸 `HEAD`、页面抓取或额外探测；只以该次 `yt-dlp` 结果为准
+- 备选方式中，短链需允许跟随跳转；保留完整 `xsec_token` 等分享参数
 - 作者名可能缺失，可用 uploader id 或笔记文案补全元数据，不得虚构
 - 若任务是修复既有文章，严禁调用本小节；只处理仓库中的本地文件
 
@@ -187,7 +201,7 @@ command -v ffmpeg >/dev/null || brew install ffmpeg
 python3 -c "import whisper" 2>/dev/null || pip3 install --user openai-whisper
 ```
 
-确认 `yt-dlp`、`ffmpeg`、`ffprobe`、`whisper`、`node` 和 `detect-platform.mjs` 均可执行。
+确认 `ffmpeg`、`ffprobe`、`whisper`、`node`、`curl`、`detect-platform.mjs` 和 `xhs-rate-limit.mjs` 均可执行；确认 `python3` 已安装且环境内有 `yt-dlp`（`scripts/xhs-fetch.py` 依赖其 `yt_dlp.utils.js_to_json` 解析小红书非标准 JSON）。
 
 ---
 
@@ -240,7 +254,7 @@ whisper "{音频文件}" --model medium --language Chinese --output_dir .
 
 判定要点：
 
-- 时长以 Step 1 `yt-dlp --print duration_string` 为准；`segments ≤3` 指 Whisper 转录后非空分段数不超过 3。
+- 时长以 Step 1 的 `yt-dlp --print duration_string`（B 站）或 `meta.json` 中的 `duration`（小红书，由 `xhs-fetch.py` 产出）为准；`segments ≤3` 指 Whisper 转录后非空分段数不超过 3。
 - 与表格冲突时以较高要求为准；教程/科普类在「章节数」列上取高值（如 10–30 分钟教程按 ≥6 章执行）。
 - 视觉型短视频（8–30 秒的动图、对比、卡点、纯画面无口播）转录结果可能为空，属正常现象，不作为质量缺陷；其内容来源是画面事实与图注，而非臆造口播。
 - 表格中的配图数为常规区间，增强版可突破上限（见「完整版 / 增强版 HTML」）；源资产缺失时允许少于下限，但必须在正文写明「本地截图缺失」。
