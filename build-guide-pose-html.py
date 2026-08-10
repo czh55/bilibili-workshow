@@ -308,6 +308,12 @@ parts.append('</div></details></section>')
 parts.append('</main><script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll(\'a[href="#transcript"]\').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body></html>')
 
 html_out = "\n".join(parts)
+# 统一 figcaption 为单时间戳格式（与全站一致），保证 enhance-captions-html.py 能提取纯中文 key
+html_out = re.sub(
+    r'<figcaption><span class="time-badge">(\[\d{1,2}:\d{2}(?::\d{2})?\])</span>\1',
+    r"<figcaption>\1",
+    html_out,
+)
 with open(OUT, "w", encoding="utf-8") as f:
     f.write(html_out)
 

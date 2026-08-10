@@ -25,6 +25,18 @@ HTML 不是 SVG 的加长版，SVG 也不是 HTML 的缩略图。二者共享同
 - 优先参照已发布的优质样例 [`absurd-wuxia-cinematography-图文实录.html`](absurd-wuxia-cinematography-图文实录.html)：它以有信息量的导语、完整时间线章节、准确截图图注、可追溯引文和完整转录共同构成文章。新文章无需复制其措辞或视觉风格，但必须达到同等的叙事完整度。
 - 禁止发布以下内容：`要点详解` 等泛化标题反复出现、仅罗列关键词、以 `...`/`…` 截断的摘要、无上下文的原文碎片、把“视频围绕相关技巧展开”等模板句当作内容。
 
+### 完整版 / 增强版 HTML（内容极其丰富的视频）
+
+当用户要求对既有文章“出非常完整的版本”“每个模特/每个演示都要有”时，适用下列增强版规则（与常规版互补，常规版规则仍全部有效）：
+
+- **增强版不等于放宽标准**：图注仍必须中英对照（`.cap-bilingual`）+ 朗读音频（见「图注双语与朗读音频（强制）」），必须运行 `scripts/gen-caption-audio.py`（在增强前）与 `scripts/enhance-captions-html.py`（在增强后）。
+- **截图数量可以突破 3–8 张常规上限**：增强版按知识点配图，可到 15–20 张甚至更多；每张仍须有准确 `alt` 和带时间戳的图注。文件名可用语义化命名（如 `pose-foot-circle.jpg`、`pose-squat-back.jpg`）而非强制 `shot-NN.jpg`，但要整篇统一。
+- **“大屏幕/示例照片”时刻优先配图**：教学类视频常以“请看大屏幕”展示示例照片，这些时刻是最高价值的配图素材。用 `ffmpeg -ss` 精确定位大屏幕展示瞬间并抽取全尺寸帧；配图应选画面中照片/演示内容清晰、构图完整的帧。
+- **中间帧与拼图是过程文件，不进仓库**：预览帧、密集抽帧、拼图网格（`_work/` 下所有产物）都只用于选图，不得提交；最终只提交精选后的 `docs/assets/{slug}/` 图片。
+- **增强版发布后必须同步 `index.json`**：`screenshot_count` 更新为实际提交的截图数，`transcript_segments` 如有变化同步更新。
+- **生成脚本保留规则**：增强版专用的构建脚本（如 `build-{slug}-html.py`）可保留在仓库根目录或 `scripts/`，但必须在文档或脚本注释中说明用途；若是一次性脚本，任务结束即清理（见 Step 11）。
+- **figcaption 格式必须与全站统一**：图注一律写成 `<figcaption>[MM:SS] 中文图注</figcaption>` 的单时间戳形式，**不要**使用 `<span class="time-badge">[MM:SS]</span>[MM:SS] …` 的重复时间戳写法。否则 `extract-captions.py` / `gen-caption-audio.py` / `enhance-captions-html.py` 提取出的翻译 key 会带 `[MM:SS]` 前缀，无法命中 `translations.json` 的纯中文 key，导致图注无法增强。
+
 ### 小红书访问限流
 
 - 对 `xiaohongshu.com`、`xhslink.cn`、`xhslink.com` 的**任何网络请求**（含短链解析、元数据读取、下载、重试）实行全局限流：两次请求的开始时间必须相隔至少 **60 秒**。
@@ -282,6 +294,13 @@ ffmpeg -ss "HH:MM:SS.mmm" -i "{视频文件}" -frames:v 1 \
 - 使用本地相对路径，不引用平台远程图片，不嵌入 base64
 - 每张图必须有准确 `alt` 和带时间戳的 `figcaption`
 
+### 提取与选图建议
+
+- **预览 → 抽帧 → 拼图 → 精选**：先抽低分辨率全片预览帧，再用拼图（`ffmpeg` `hstack`/`vstack`）批量审阅，确认画面内容后，再对选定时刻提取全尺寸帧。避免反复单帧读取浪费时间。
+- **“大屏幕/示例照片”时刻优先**：教学类视频的“请看大屏幕”瞬间是最高价值配图素材，应精确定位并抽取全尺寸帧。
+- **中间产物一律放 `_work/`**：预览帧、密集抽帧、拼图网格等过程文件统一放在仓库根目录 `_work/`（已被 `.gitignore` 忽略，不会误提交）。最终只把精选后的图片复制进 `docs/assets/{slug}/`。
+- **增强版配图可突破 8 张上限**：完整版/增强版文章按知识点配图，可到 15–20 张甚至更多，文件名可用语义化命名（`pose-squat-back.jpg` 等），但仍须逐张有准确 `alt` 和带时间戳图注。
+
 ---
 
 ## Step 6：生成 HTML 图文实录
@@ -466,6 +485,8 @@ node "generate-{slug}-html.mjs"
   - `scripts/extract-captions.py`：从全部 HTML 提取图注，重建 `caption-extract.json` 翻译清单
   - `scripts/gen-caption-audio.py`：读取 `translations.json`，对缺音频的图注用 edge-tts 批量生成，已存在则跳过（可续跑）
   - `scripts/enhance-captions-html.py`：把 HTML 中的单语 `figcaption` 重写为中英对照，并注入 `cap-en-style` 样式与 `cap-en-script` 播放脚本
+
+**执行顺序（不可颠倒）**：`gen-caption-audio.py` 用 `<figcaption>` 正则匹配单语图注，无法识别已增强的 `class="cap-bilingual"`。因此必须**先在未增强 HTML 上运行 `gen-caption-audio.py` 生成音频，再运行 `enhance-captions-html.py` 增强图注**。若顺序颠倒导致音频缺失，先重新生成 HTML（或还原未增强版本），再按正确顺序执行。
 
 页面底部还需注入图注播放脚本（与转录展开脚本并存于 `</body>` 前）：
 
@@ -755,6 +776,16 @@ XML 注意事项：
 4. 修复 HTML 标签与样式后，实际检查生成页面，确认 `<article>`、`<section class="transcript-section">`、图片与所有闭合标签结构正确。
 5. 只有用户明确要求且本地证据无法修复时，才将该 URL 加入小红书重新抓取队列；队列必须通过 `xhs-rate-limit.mjs` 串行执行。
 
+### 增强版替换既有文章（“出完整版”）
+
+当用户要求替换既有 HTML 为“非常完整”的版本时，在既有文章基础上执行，注意：
+
+1. **本地素材优先，不重新抓取**：复用本地视频文件（如 `{slug}.source.mp4`）、已有 `docs/assets/` 截图和本地转录 JSON；若本地视频缺失，才考虑按限流规则单独重新下载。
+2. **新图注必须走完整双语流程**：新增截图后，把每条新图注中文追加进 `translations.json`，然后**先 `gen-caption-audio.py` 再 `enhance-captions-html.py`**（顺序不可颠倒，见「图注双语与朗读音频」）。
+3. **替换后同步 `index.json`**：更新 `screenshot_count`、`transcript_segments` 等字段，保持索引与产物一致。
+4. **保留/清理生成脚本**：若使用可复用的构建脚本，保留并注明用途；一次性脚本在任务完成后清理（见 Step 11）。
+5. **替换后可删除被覆盖的旧图注翻译**：若旧版本图注被全部替换且不再被任何 HTML 引用，可从 `translations.json` 移除对应 key（可选，避免表膨胀）。
+
 ---
 
 ## Step 9：更新 index.json
@@ -791,6 +822,8 @@ XML 注意事项：
 - `transcript_segments`：HTML 呈现的非空 Whisper 分段数
 - `svg_height`：`buildSvg()` 返回的最终高度
 
+**增强/替换既有文章后必须同步索引**：若只是增强或替换某个既有条目（如新增大量截图），必须同步更新该条目的 `screenshot_count`（以及变化了的 `transcript_segments`、`svg_height` 等字段），保持索引与实际产物一致；不要只更新 HTML 而留下过期的元数据。
+
 首页必须在同一卡片中展示“图文实录”和“理性分析”两个入口。失败时写入含 `"error": true` 和 `error_message` 的条目；缺少任一产物均视为失败。
 
 ---
@@ -817,6 +850,8 @@ git checkout "{dev-branch}"
 - `translations.json`（若新增图注翻译）
 - `docs/{slug}-场景英译.html`（若产出 `html_en`）
 - `docs/index.json`
+
+`_work/` 目录（抽帧、预览、拼图等过程文件）已被 `.gitignore` 忽略，不得 `git add -A` 全量暂存后再手动排除；只暂存上述产物文件。
 
 先在开发分支提交并推送：
 
@@ -890,6 +925,8 @@ rm -f "{音频文件}" "{视频文件}"
 ```
 
 转录中间文件可按调试需要保留，但不提交到仓库。
+
+临时工作目录统一放 `_work/`（`.gitignore` 已忽略）；任务结束后建议清空 `_work/` 下的抽帧、预览、拼图产物，避免占用磁盘。可复用的构建脚本（如 `build-{slug}-html.py`）可保留在仓库根目录或 `scripts/` 并注明用途；一次性脚本必须清理。
 
 ---
 
