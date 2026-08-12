@@ -37,6 +37,8 @@ def main() -> None:
         raise SystemExit(__doc__)
     no_rate_limit = "--no-rate-limit" in args
     args = [a for a in args if a != "--no-rate-limit"]
+    no_audio = "--no-audio" in args
+    args = [a for a in args if a != "--no-audio"]
     short_url, prefix_str = args[0], args[1]
     prefix = Path(prefix_str)
 
@@ -113,12 +115,13 @@ def main() -> None:
         raise SystemExit(f"视频下载失败 rc={dl.returncode}")
     print(f"视频: {src.name} {src.stat().st_size/1e6:.1f} MB")
 
-    # 3. 抽音频
+    # 3. 抽音频（--no-audio 时跳过，便于外部脚本手动处理）
     m4a = prefix.with_name(prefix.name + ".m4a")
-    subprocess.run(["ffmpeg", "-y", "-i", str(src), "-vn", "-acodec", "aac",
-                    "-b:a", "128k", str(m4a)], check=True,
-                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print(f"音频: {m4a.name} 完成")
+    if not no_audio:
+        subprocess.run(["ffmpeg", "-y", "-i", str(src), "-vn", "-acodec", "aac",
+                        "-b:a", "128k", str(m4a)], check=True,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        print(f"音频: {m4a.name} 完成")
 
 
 if __name__ == "__main__":
