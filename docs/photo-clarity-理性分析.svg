@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6605" viewBox="0 0 1320 6605">
+  <foreignObject x="0" y="0" width="1320" height="6605">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>照片通透只需两点：去灰 + 颜色干净</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">摄影</span><span class="tag tag-blue">调色</span><span class="tag tag-blue">通透</span><span class="tag tag-gray">时长 36秒</span><span class="tag tag-gray">分析视角：通透的最小判定</span></div>
+  <a class="source-link" href="http://xhslink.cn/o/3bZGd47sE3f">原视频链接</a>
+  <div class="summary-line">核心判断：36 秒讲透「照片通透」的本质——两点：一去灰，二颜色干净。去灰靠直方图两端：缺少暗部亮部、信息堆在灰部就不通透，压暗暗部增亮亮部即可；画面显脏则查暗部与中性色：可选颜色里调中性色，脏灰就变干净。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">点出本质：通透就两点，一去灰、二颜色干净</div></div><div class="timeline-item"><div class="timeline-time">00:05</div><div class="timeline-text">直方图缺少暗部亮部、信息集中在灰部→不通透</div></div><div class="timeline-item"><div class="timeline-time">00:11</div><div class="timeline-text">压暗暗部、增亮亮部，画面就通透了</div></div><div class="timeline-item"><div class="timeline-time">00:14</div><div class="timeline-text">换个场景同样办法还是脏：信息集中在暗部</div></div><div class="timeline-item"><div class="timeline-time">00:22</div><div class="timeline-text">可选颜色不调红色而调中性色，加夕阳红与邻近色黄</div></div><div class="timeline-item"><div class="timeline-time">00:30</div><div class="timeline-text">水面脏：中性色加青色和邻近色蓝色，颜色变纯</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>照片不通透</div><div class="arrow">→</div><div class="node node-blue">证据<br/>两种直方图诊断+两组修正</div><div class="arrow">→</div><div class="node node-green">判断<br/>通透=去灰（两端拉开）+颜色干净（中性色修）</div><div class="arrow">→</div><div class="node node-orange">行动<br/>先看直方图分布，再对症调整</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：通透靠提高亮度。纠偏：单纯加亮度反而更灰，关键在于拉开直方图两端——压暗增亮。</p><p>误解 2：画面脏就是暗部太多。纠偏：脏的另一半原因是颜色不纯，要修中性色而不是只调亮度。</p><p>误解 3：可选颜色要调主体颜色。纠偏：画面显脏时调的是中性色（灰），不是主体色。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>问题定义：通透就是两点</h3><p>在讲什么：「怎么让照片变通透？」答案极简——通透的本质就两点：一去灰，二颜色干净。关键理解：把「通透」这个模糊感受拆成两个可操作项，是 36 秒讲清全部内容的前提。怎么用：判断照片是否通透，先分别检查「灰不灰」和「脏不脏」。</p><div class="quote">依据 [00:00–00:04]：通透的本质就两点：一，去灰；二，颜色干净。</div><div class="relation">立场分层：两分法为博主的核心主张；后文两组操作均围绕它展开。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>去灰：拉开直方图两端</h3><p>在讲什么：直方图缺少暗部和亮部、信息主要集中在灰部，所以看起来不通透；只需要压暗暗部、增亮亮部，画面就通透了。关键理解：灰=直方图信息挤在中间，去灰的本质是「重新分布」，让两端有内容。怎么用：不通透先看直方图是否「两头空」，是则压暗增亮。</p><div class="quote">依据 [00:05–00:13]：照片的直方图缺少暗部和亮部，信息主要集中在灰部，所以看起来不通透；只需要压暗暗部、增亮亮部，画面就通透了。</div><div class="relation">立场分层：直方图诊断与操作均可由软件核对；结论为标准后期常识。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>显脏的第二种情况：颜色不纯</h3><p>在讲什么：换个场景用同样的办法，照片看起来还是显脏；看直方图发现信息主要集中在暗部；还有可能是颜色不够纯——在可选颜色中不调红色而是中性色，加夕阳的红和邻近色黄色，灰就变干净。关键理解：亮度手段失效时，问题在「颜色纯度」，修中性色而非主体色。怎么用：压暗增亮无效时切到可选颜色，选中性色通道修灰。</p><div class="quote">依据 [00:14–00:29]：换个场景用同样的办法，照片看起来还是显脏；在可选颜色中不是调红色而是中性色，也就是灰色加夕阳的红和邻近色黄色，颜色中的灰就变干净了。</div><div class="relation">立场分层：诊断流程为博主方法；修正效果可成片核对。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>水面案例：一组对应一组修正</h3><p>在讲什么：同理，水面颜色脏，选择中性色加青色和邻近色蓝色，颜色就变纯了，画面也就干净了。关键理解：脏色由什么邻近色污染，就用对应的相反邻近色修正——每个场景是一组独立的「颜色方程」。怎么用：记住「脏什么色→中性色里加它的相反邻近色」。</p><div class="quote">依据 [00:30–00:36]：水面颜色脏，选择中性色加青色和邻近色蓝色，颜色就变纯了，画面也就干净了。</div><div class="relation">立场分层：水面案例为演示事实；修正逻辑与前面的颜色原理一致。</div></div><div class="card card-green"><h3>结论：诊断先行，对症下药</h3><p>在讲什么：两条通路——灰则两端拉开，脏则修中性色；先看直方图信息集中在哪，再决定走哪条。关键理解：通透不是单一操作，而是一套「先诊断再处理」的最小流程。怎么用：面对不通透照片，依次检查直方图两端、颜色纯度，命中哪条走哪条。</p><div class="highlight">推断（基于原文）：「去灰+颜色干净」两点，分别对应直方图分布与颜色纯度两个诊断维度，可迁移到所有通透明亮的后期。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">两种不通透的诊断与修正对照</h2><div class="card"><table><thead><tr><th>现象</th><th>直方图特征</th><th>根因</th><th>修正操作</th></tr></thead><tbody><tr><td>发灰</td><td>缺暗部亮部、信息集中灰部</td><td>对比度不足</td><td>压暗暗部+增亮亮部</td></tr><tr><td>显脏</td><td>信息集中暗部</td><td>颜色不纯</td><td>可选颜色中修中性色</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：后期快速提升画面质感、手机修图、直方图基础理解。</li><li>上限：两点解决「通透」，不解决影调风格、色彩美学的整体设计。</li><li>反例：胶片感、暗调情绪片会刻意保留灰调或暗部，不能套用同一标准。</li><li>例外：博主以修图软件为例，不同软件的中性色位置与名称可能不同。</li></ul><div class="pitfall">避坑：压暗增亮不是盲目拉最大，以直方图不出现断层为准。</div><div class="pitfall">避坑：可选颜色修中性色要小步微调，幅度过大会整体偏色。</div><div class="pitfall">避坑：先确认「灰」还是「脏」再动手，两者手段不同，混用会互相干扰。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>通透=去灰+颜色干净，只有两点。</li><li>去灰：压暗暗部、增亮亮部，拉开直方图两端。</li><li>显脏：可选颜色修中性色，加对应的邻近色。</li></ul><h3>行动清单</h3><ol><li>遇到不通透先看直方图：信息集中灰部→两端拉开。</li><li>压暗增亮无效→切可选颜色，修中性色。</li><li>用「脏什么色→加相反邻近色」处理水面、天空等场景。</li></ol><h3>关键认知转变</h3><p>从「通透靠感觉调」转到「两点诊断法」：先查直方图分布，再决定去灰还是修色，每次都有依据。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 36秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

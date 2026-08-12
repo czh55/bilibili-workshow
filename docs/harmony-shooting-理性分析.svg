@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7242" viewBox="0 0 1320 7242">
+  <foreignObject x="0" y="0" width="1320" height="7242">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>审美的第一课：帮相机找到那颗黄豆</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">摄影</span><span class="tag tag-blue">审美</span><span class="tag tag-blue">构图</span><span class="tag tag-gray">时长 1分43秒</span><span class="tag tag-gray">分析视角：审美的可教学化</span></div>
+  <a class="source-link" href="http://xhslink.cn/o/2k1fCkClN7q">原视频链接</a>
+  <div class="summary-line">核心判断：审美不是天赋，而是「找重点」的能力——人天生会看最突出的事物（黄豆），相机却会把一切全拍进去；所以拍照的第一步，是帮相机找到那颗黄豆。从拍照延伸到穿搭、化妆、海报设计，最后落脚到基本功。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场：你信吗？其实你天生就有审美</div></div><div class="timeline-item"><div class="timeline-time">00:09</div><div class="timeline-text">现场实验：红豆这么多，你看的却总是那颗黄豆</div></div><div class="timeline-item"><div class="timeline-time">00:25</div><div class="timeline-text">三种画面：只有红豆没重点、黄豆太多杂乱、一颗黄豆刚好</div></div><div class="timeline-item"><div class="timeline-time">00:42</div><div class="timeline-text">为什么好风景拍出来丑：眼睛会找黄豆，相机不会</div></div><div class="timeline-item"><div class="timeline-time">00:59</div><div class="timeline-text">第一步就是帮相机找到那颗黄豆</div></div><div class="timeline-item"><div class="timeline-time">00:67</div><div class="timeline-text">生活处处有黄豆：穿搭、化妆、海报设计</div></div><div class="timeline-item"><div class="timeline-time">00:84</div><div class="timeline-text">只有先拍好一颗黄豆，才可能拍好更多颗黄豆</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>觉得自己审美太差</div><div class="arrow">→</div><div class="node node-blue">证据<br/>红豆黄豆实验与照片对比</div><div class="arrow">→</div><div class="node node-green">判断<br/>审美=找到画面重点的能力</div><div class="arrow">→</div><div class="node node-orange">行动<br/>拍照前先帮相机找到那颗黄豆</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：审美是天赋，学不会。纠偏：你能轻易看到最突出的事物，这就是天生就有的审美。</p><p>误解 2：画面元素越多越丰富。纠偏：黄豆太多会杂乱，只有一颗黄豆才既有重点又舒服。</p><p>误解 3：拍得丑是因为相机差。纠偏：相机不懂美，它把看到的一切全拍进去，责任在拍摄者没有先找重点。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>问题定义：审美不是天赋</h3><p>在讲什么：视频以「我总觉得我审美太差了」开场，回应是「其实你天生就有审美」——因为你能轻易看到最突出的事物。关键理解：把「审美」从不可学的天赋，重新定义为「识别重点」这一人人具备的能力。怎么用：对自己说「我会找重点」，就具备讨论审美的基础。</p><div class="quote">依据 [00:00–00:24]：怎么办，我总觉得我审美太差了；你信吗？其实你天生就有审美；能轻易看到最突出的事物，这不就是你天生就有的审美吗？</div><div class="relation">立场分层：「天生有审美」为博主主张；红豆黄豆实验为现场验证。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>三幅画面：重点的正确密度</h3><p>在讲什么：一个画面只有红豆就没有重点，观众不知道该看哪里；黄豆太多又杂乱，观众不知道该看谁；只有一颗黄豆，既有重点又很舒服。关键理解：重点不是「越多越好」也不是「没有」，而是「唯一且突出」。怎么用：构图时自检画面里是否有且只有一个焦点。</p><div class="quote">依据 [00:25–00:41]：一个画面如果只有红豆就没有重点，观众不知道该看哪里；黄豆太多呢又变得很杂乱，观众不知道该看谁；那如果只有一颗黄豆呢？既有重点又很舒服。</div><div class="relation">立场分层：三种画面为直观实验；结论为博主归纳。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>相机与眼睛的差异：丑的根源</h3><p>在讲什么：为什么很美的风景拍出来很丑？因为眼睛会找黄豆，但相机不会，它只是一台机器，不懂美，把看到的一切全拍进去。关键理解：拍摄的本质是「把眼睛的美翻译给相机」，翻译失败就得到杂乱。怎么用：按快门之前，先在画面里圈出那颗「黄豆」。</p><div class="quote">依据 [00:42–00:66]：为什么明明很美的风景，但拍出来就很丑？因为你的眼睛会找黄豆，但相机不会，它只是把它看到的一切全拍进去；所以我们要做的第一步，就是帮相机找到那颗黄豆。</div><div class="relation">立场分层：相机机制为客观事实；「帮相机找黄豆」为博主方法。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>生活处处有黄豆：概念迁移</h3><p>在讲什么：不止拍照，生活其实处处有黄豆——穿搭需要亮点、化妆需要重点、海报设计需要主标题，每一处都有一个让视线落脚的重点。关键理解：同一个「重点」概念跨领域复用，说明它是通用审美规律。怎么用：用「黄豆」视角检查穿搭、设计、布置，先找唯一焦点。</p><div class="quote">依据 [00:67–00:83]：不止拍照，生活其实处处有黄豆；穿搭中有重点，化妆、海报设计中同样存在黄豆。</div><div class="relation">立场分层：跨领域举例为博主论证；对应实例可核对。</div></div><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>结论：基本功先于创造力</h3><p>在讲什么：面对「只想拍更多更复杂的画面」的想法，博主提醒——只有先能拍好一颗黄豆，才可能拍好更多颗黄豆；创造的自由建立在扎实的基本功上。关键理解：复杂构图不是跳过基础，而是「无数个黄豆的协同」，基础不牢则自由无从谈起。怎么用：练习时先专攻单焦点的画面，再逐步叠加。</p><div class="quote">依据 [00:84–01:43]：只有先能拍好一颗黄豆，你才有可能能拍好更多颗黄豆；创造的自由，建立在扎实的基本功上。</div><div class="relation">立场分层：递进逻辑为博主教学主张；「创造的自由」为总结升华。</div></div><div class="card card-orange"><h3>延伸：一条可教的审美公式</h3><p>在讲什么：整片把审美压缩为「找黄豆」一个动作，再以「一颗黄豆」为最小单元讨论。关键理解：这是审美的最小可教学单元——比谈「和谐」「美感」更具体、可操作、可检验。怎么用：教别人构图时，从「找黄豆」开始，而不是空谈感觉。</p><div class="highlight">推断（基于原文）：「找黄豆」把审美拆成可执行的一步，是审美教育从玄学走向工程的关键。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">三种画面状态对照</h2><div class="card"><table><thead><tr><th>状态</th><th>画面特征</th><th>观众感受</th><th>结论</th></tr></thead><tbody><tr><td>只有红豆</td><td>无重点</td><td>不知道看哪里</td><td>没焦点</td></tr><tr><td>黄豆太多</td><td>多而杂乱</td><td>不知道该看谁</td><td>没秩序</td></tr><tr><td>一颗黄豆</td><td>唯一且突出</td><td>既有重点又舒服</td><td>正确的重点密度</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：摄影构图入门、审美训练、任何需要「视觉重点」的创作场景。</li><li>上限：找黄豆解决「重点」，不解决光线、色彩、情绪等更复杂的审美维度。</li><li>反例：纪实、极简风格或多元叙事画面可能刻意弱化单一焦点。</li><li>例外：博主以静物与人物为例，动态视频、舞台场景的重点往往是运动的而非静止的。</li></ul><div class="pitfall">避坑：一颗黄豆不等于画面单调，焦点之外可以有呼应，但主次要分明。</div><div class="pitfall">避坑：别把「找重点」做成一成不变的中心构图，重点也可以在三分线上。</div><div class="pitfall">避坑：穿搭的黄豆要统一风格，乱堆亮色反而变成「黄豆太多」。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>审美=识别重点的能力，人人天生具备。</li><li>重点的正确密度是「一颗黄豆」：唯一且突出。</li><li>相机不懂美，拍摄的第一步是帮相机找到黄豆。</li></ul><h3>行动清单</h3><ol><li>按快门前，先在画面里圈出唯一的焦点。</li><li>用三种画面自测：无重点、多重点、单重点分别是什么感受。</li><li>把「找黄豆」迁移到穿搭、设计、布置，先找唯一亮点。</li></ol><h3>关键认知转变</h3><p>从「我审美差」转到「我会找重点」：把玄学般的审美变成可执行的第一步，然后扎扎实实练基本功。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 1分43秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

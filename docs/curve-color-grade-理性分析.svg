@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7443" viewBox="0 0 1320 7443">
+  <foreignObject x="0" y="0" width="1320" height="7443">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>曲线调色从直方图讲起</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">摄影</span><span class="tag tag-blue">调色</span><span class="tag tag-blue">曲线</span><span class="tag tag-gray">时长 1分44秒</span><span class="tag tag-gray">分析视角：曲线工具的认知框架</span></div>
+  <a class="source-link" href="http://xhslink.cn/o/8KywZvpaNFR">原视频链接</a>
+  <div class="summary-line">核心判断：曲线调色并不玄，它建立在直方图之上——左暗右亮读明暗，打点拉曲线提亮与加对比，四根曲线（亮度+红绿蓝）分工明确，再用相反色校准偏色。一张直方图，就是读懂曲线全部用法的钥匙。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场：修图软件里这个曲线调色是啥呀</div></div><div class="timeline-item"><div class="timeline-time">00:08</div><div class="timeline-text">照片扔进软件，得到一个直方图</div></div><div class="timeline-item"><div class="timeline-time">00:14</div><div class="timeline-text">直方图从左到右代表照片从暗到亮</div></div><div class="timeline-item"><div class="timeline-time">00:28</div><div class="timeline-text">判断：靠右面积大说明整体偏亮</div></div><div class="timeline-item"><div class="timeline-time">00:37</div><div class="timeline-text">打三个点，把右侧亮部往上拉，天空变亮</div></div><div class="timeline-item"><div class="timeline-time">00:50</div><div class="timeline-text">亮部拉高暗部拉低，形成 S 形曲线提高对比度</div></div><div class="timeline-item"><div class="timeline-time">00:59</div><div class="timeline-text">四根曲线：亮度+红绿蓝三根色彩曲线</div></div><div class="timeline-item"><div class="timeline-time">00:78</div><div class="timeline-text">演练：照片偏黄→加蓝再降红</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>曲线调色看不懂</div><div class="arrow">→</div><div class="node node-blue">证据<br/>直方图读法+三组操作演示</div><div class="arrow">→</div><div class="node node-green">判断<br/>曲线=直方图上的可拖拽编辑</div><div class="arrow">→</div><div class="node node-orange">行动<br/>先读直方图，再打点拉曲线</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：曲线是一堆看不懂的图形。纠偏：直方图只是从左到右代表从暗到亮，靠右面积大就是偏亮。</p><p>误解 2：曲线只有一根。纠偏：一共四根——亮度曲线加红、绿、蓝三根色彩曲线，分工明确。</p><p>误解 3：调色靠感觉瞎拉。纠偏：提亮拉右侧、对比度拉 S 形、偏色往相反色调，都是可推理的操作。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>问题定义：曲线调色是啥</h3><p>在讲什么：「修图软件里这个曲线调色是啥呀？」——把一张照片扔进软件，会得到一个直方图。关键理解：曲线调色不是独立的玄学功能，它是建立在直方图之上的编辑器。怎么用：学习曲线前先弄懂直方图，它是所有调整的坐标系。</p><div class="quote">依据 [00:00–00:13]：这个曲线调色是啥呀？这是一张照片，把它扔到修图软件里，我们就会得到一个直方图。</div><div class="relation">立场分层：直方图由软件生成，为客观事实；「不难」为博主教学定位。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>读直方图：左暗右亮</h3><p>在讲什么：直方图从左到右分别代表照片从暗到亮；左边面积更大说明整体偏暗，靠右面积大则偏亮。关键理解：直方图是照片明暗的「统计图表」，读它等于读照片的曝光构成。怎么用：任何照片先看直方图分布，判断偏亮还是偏暗，再决定往哪个方向调。</p><div class="quote">依据 [00:14–00:36]：其实就是从左到右呢，分别代表着照片从暗到亮；它左边的面积更大，就说明这个照片整体偏暗；靠右的面积大，整体偏亮吧。</div><div class="relation">立场分层：直方图读法为标准常识；判断练习为教学验证。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>打点拉曲线：提亮与对比</h3><p>在讲什么：曲线调色基于直方图做调整——想提高天空亮度，就在直线上打三个点、把右侧（亮部）往上拉；想提高对比度，就把亮部拉高、暗部拉低，形成 S 形曲线。关键理解：拉曲线的本质是「在直方图上重映射亮度」，哪里拉高哪里变亮。怎么用：记住方向——右侧管亮部、左侧管暗部、S 形管对比度。</p><div class="quote">依据 [00:37–00:58]：咱们先在这个直线上打三个点，想把右侧往上拉一点，天空就变亮了；把亮部拉高同时把暗部拉低，形成一个 S 形的曲线，你看效果明显吧。</div><div class="relation">立场分层：操作与效果均为画面演示；方向规律为博主讲解。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>四根曲线：亮度+三色</h3><p>在讲什么：曲线调色一共有四根——刚才讲的是亮度曲线，另外还有红、绿、蓝三根色彩曲线，它们可以单独控制画面中这三个颜色的多少。关键理解：亮度曲线管明暗，色彩曲线管色偏，四个自由度覆盖了全部调色需求。怎么用：调色前先判断要动「亮度」还是「颜色」，再选对应的曲线。</p><div class="quote">依据 [00:59–00:77]：曲线调色一共有四根曲线，刚才讲的是亮度曲线，另外还有三根色彩曲线，分别代表红色、绿色和蓝色；它们可以单独地去控制画面当中这三个颜色的多少。</div><div class="relation">立场分层：四根曲线的划分为软件事实；功能解释为博主讲解。</div></div><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>演练：校准偏黄的照片</h3><p>在讲什么：照片不想让它这么黄，就往黄色的相反色调去调——加蓝色；加蓝后画面偏红，再去降低红色，颜色就调过来了。关键理解：颜色曲线用「相反色相减」逻辑修正色偏，可推演而非凭感觉。怎么用：修偏色先找目标色的相反色，在对应色彩曲线加减。</p><div class="quote">依据 [00:78–01:44]：这张照片不想让它这么黄，应该往黄色的相反色去调，我们应该加蓝色；加蓝色之后画面偏红，我们再去降低红色，颜色就调过来了。</div><div class="relation">立场分层：调色方向为可推演逻辑；成片效果可核对。</div></div><div class="card card-orange"><h3>结论：一张图就是全部捷径</h3><p>在讲什么：博主给出入门捷径——刚开始用的时候，看这张总结版色彩关系图就够了。关键理解：色彩曲线的学习可以压缩为一张「相反色关系图」，避免被复杂界面吓退。怎么用：把色彩关系图存为桌面参考，边用边查，快速建立手感。</p><div class="highlight">推断（基于原文）：曲线调色用「直方图+四根曲线+相反色」三件事即可入门，其余都是这三件事的排列组合。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">四根曲线分工对照</h2><div class="card"><table><thead><tr><th>曲线</th><th>控制对象</th><th>典型操作</th><th>效果</th></tr></thead><tbody><tr><td>亮度曲线</td><td>整体明暗</td><td>右侧上拉/S 形</td><td>提亮、加对比</td></tr><tr><td>红色曲线</td><td>画面红色量</td><td>加红/减红</td><td>偏红修正、暖调</td></tr><tr><td>绿色曲线</td><td>画面绿色量</td><td>加绿/减绿</td><td>偏绿修正、肤色</td></tr><tr><td>蓝色曲线</td><td>画面蓝色量</td><td>加蓝/减蓝</td><td>偏蓝修正、冷调</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：调色入门、想系统理解曲线工具、人像与风光后期基础。</li><li>上限：曲线解决「明暗与色偏」，不解决构图、磨皮、光影重塑等其它后期环节。</li><li>反例：大幅度的极端拉曲线会断阶、噪点，商业出图需谨慎。</li><li>例外：博主以亮部提亮为例，暗部、中间调的分区调整（如蒙版）未展开。</li></ul><div class="pitfall">避坑：打点别只打两端，固定中间点能保护中间调不偏。</div><div class="pitfall">避坑：S 形对比度拉过头会断层，幅度以直方图不断阶为准。</div><div class="pitfall">避坑：色彩曲线加减要看整体，只加蓝不降红可能引入新的偏色。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>曲线是直方图上的可拖拽编辑器，先读懂直方图。</li><li>四根曲线分工：亮度管明暗，红绿蓝管色偏。</li><li>偏色修正用相反色相减，可推演而非凭感觉。</li></ul><h3>行动清单</h3><ol><li>任何照片先看直方图，判断偏暗还是偏亮。</li><li>提亮拉右侧、对比度拉 S 形，固定中间点。</li><li>修偏色先找相反色，在对应色彩曲线加减。</li></ol><h3>关键认知转变</h3><p>从「曲线看着就头大」转到「曲线=直方图编辑」：读得懂直方图，就掌握了曲线全部用法的入口。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 1分44秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

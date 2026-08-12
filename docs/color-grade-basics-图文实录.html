@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 1 分 47 秒的调色原理课：从「夕阳想调更红却越调越怪」的困惑出发，用光学三原色讲清对立色（互补色）的关系。核心是颠覆直觉的一句话——调色不是做加法而是做减法：照片发灰不是颜色不够，而是对立色混进来了，把对立色抽走，你要的颜色自然透出来。最后用「近少远多」教你把世界调成任">
+<title>小小调色，拿捏啦🫴！！｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+.quote-block{background:#f0fdf4;border-left:4px solid #10b981;padding:12px 16px;border-radius:8px;margin:14px 0;font-size:15px;color:#166534;font-style:italic}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>调色不是做加法，是做减法</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">1:47</span><span class="meta-tag tag-topic">摄影 调色 三原色 原理</span></div>
+<a class="source-link" href="http://xhslink.cn/o/7K4F5QCUxGV" target="_blank" rel="noopener">→ 原视频链接</a>
+<a class="source-link lang-switch" href="color-grade-basics-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">越调越怪的红色</a><a href="#ch2">光学三原色与对立色</a><a href="#ch3">调色是做减法</a><a href="#ch4">夕阳更红：减去蓝和绿</a><a href="#ch5">近少远多：调出任意颜色</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 1 分 47 秒的调色原理课：从「夕阳想调更红却越调越怪」的困惑出发，用光学三原色讲清对立色（互补色）的关系。核心是颠覆直觉的一句话——调色不是做加法而是做减法：照片发灰不是颜色不够，而是对立色混进来了，把对立色抽走，你要的颜色自然透出来。最后用「近少远多」教你把世界调成任意颜色。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:17]</span><div><strong>问题演示</strong><p>夕阳想调更红，直接把红色拉到最高特别怪异；再把绿色蓝色也拉到最高，反而白了。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:17→00:35]</span><div><strong>三原色原理</strong><p>光学三原色两两叠加得到三个颜色，共六个互为对立的颜色。神奇的是对立色混在一起反而变成白色。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:35→00:51]</span><div><strong>减法原理</strong><p>照片发白发灰不显色，不是你想要的颜色不够，而是它的对立色混进来了。调色不是做加法，而是做减法。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:51→00:66]</span><div><strong>夕阳应用</strong><p>夕阳想更红，其实不是加红色，而是减去它的对立色——青色（蓝和绿混合得到）。比起加红，更重要的是减去蓝和绿。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:66→01:47]</span><div><strong>近少远多</strong><p>调橙色看距离：离红色最近少减，离蓝色最远多减。明白这一点，就能把世界调成任意想要的颜色，甚至还原被舞台灯干扰的肤色。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>调色的底层是颜色对立关系：对立色混合变白。所以调色做减法而非加法——照片发灰是混进了对立色，抽走它，目标颜色自然显现；按「近少远多」控制各色增减量。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:17</span>越调越怪的红色</h2><p>视频从一个调色困境开始：「我想把这个夕阳调得更红，可是调完红色咋这么怪啊？」</p><p>「那我给你看个神奇的。」主讲人现场演示：「我们直接把红色拉到最高——特别怪异，对吧？但这个时候我们把绿色和蓝色也拉到最高——啊，怎么反而白了？」这个反直觉的现象，正是整堂课的引子。</p><figure><img src="assets/color-grade-basics/shot-01.jpg" alt="把红色拉到最高，画面特别怪异" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:06]</span>把红色拉到最高，画面特别怪异</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2ac1ee4336fc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Crank the red all the way up — the shot looks so weird.</span></div>
+<audio class="cap-audio" src="audio/2ac1ee4336fc.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-basics/shot-02.jpg" alt="再把绿色和蓝色也拉到最高，反而白了" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:12]</span>再把绿色和蓝色也拉到最高，反而白了</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a349a70b9d79.mp3" type="button" aria-label="Play English audio">🔊</button><span>Max out green and blue too — now it turns white instead.</span></div>
+<audio class="cap-audio" src="audio/a349a70b9d79.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:17-00:35</span>光学三原色与对立色</h2><p>「来，今天我给你讲讲调色原理。这是光学三原色，把它们两两叠加，我们又得到了三个颜色。」听者嫌复杂：「你别闹了，我就想调个图，这也太复杂了。」</p><p>「哎，不难。你看，其实不就是六个互为对立的颜色吗？」主讲人把图简化，「神奇之处在于，当对立色混在一块的时候，反而变成了白色。」三对颜色：红对青、绿对品红、蓝对黄——对立色混合，彼此抵消归于白。</p><figure><img src="assets/color-grade-basics/shot-03.jpg" alt="光学三原色讲解" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:18]</span>光学三原色讲解</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9b6bb676c908.mp3" type="button" aria-label="Play English audio">🔊</button><span>Explaining the optical primary colors.</span></div>
+<audio class="cap-audio" src="audio/9b6bb676c908.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-basics/shot-04.jpg" alt="三原色两两叠加得到三个颜色，共六个互为对立的颜色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:24]</span>三原色两两叠加得到三个颜色，共六个互为对立的颜色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/67349da42c9e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Pairing the primaries yields three more colors — six that oppose one another.</span></div>
+<audio class="cap-audio" src="audio/67349da42c9e.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-basics/shot-05.jpg" alt="对立色混在一块反而变成白色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:30]</span>对立色混在一块反而变成白色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/088798c96757.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opposing colors mixed together turn white.</span></div>
+<audio class="cap-audio" src="audio/088798c96757.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:35-00:51</span>调色是做减法</h2><p>「这代表啥？」主讲人讲透关键：「有的时候我们的照片发白发灰不显色，并不是因为你想要的那种颜色不够多，而是它的对立色混进来了。」</p><p>「把这个对立色抽走，你要的颜色自然而然就会透出来。意思就是，调色不是做加法，而是做减法。」一句话颠覆了「颜色不够就加颜色」的直觉。</p><figure><img src="assets/color-grade-basics/shot-06.jpg" alt="照片发白发灰不显色，是它的对立色混进来了" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:40]</span>照片发白发灰不显色，是它的对立色混进来了</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/bfbe3ee0090d.mp3" type="button" aria-label="Play English audio">🔊</button><span>A washed-out photo means its opposite color has mixed in.</span></div>
+<audio class="cap-audio" src="audio/bfbe3ee0090d.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-basics/shot-07.jpg" alt="调色不是做加法而是做减法" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:45]</span>调色不是做加法而是做减法</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/110e814504bc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Grading is about subtraction, not addition.</span></div>
+<audio class="cap-audio" src="audio/110e814504bc.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">00:51-00:66</span>夕阳更红：减去蓝和绿</h2><p>「比如我想把夕阳调得更红，其实不是要加红色，而是要减去它的对立色。」「红色的对立色是青色，而青色是蓝和绿混合得到的。」</p><p>「所以比起加红，更重要的是减去蓝和绿。」听者夸「聪明」——看似是在增加红色，真正的做法反而是把混进来的蓝绿抽掉，让红自己透出来。</p><figure><img src="assets/color-grade-basics/shot-08.jpg" alt="夕阳想更红：减去对立色青色（蓝+绿混合得到）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:56]</span>夕阳想更红：减去对立色青色（蓝+绿混合得到）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/544ea23958a3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Want a redder sunset: subtract cyan, its opposite, made from blue plus green.</span></div>
+<audio class="cap-audio" src="audio/544ea23958a3.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-basics/shot-09.jpg" alt="比起加红更重要的是减去蓝和绿" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:02]</span>比起加红更重要的是减去蓝和绿</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9e5b58b78ea3.mp3" type="button" aria-label="Play English audio">🔊</button><span>More important than adding red is cutting the blue and green.</span></div>
+<audio class="cap-audio" src="audio/9e5b58b78ea3.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">00:66-01:47</span>近少远多：调出任意颜色</h2><p>「哎，可是如果我想调的是橙色，而不是那种纯红的颜色呢？」「好问题，就看距离。你看这张图——橙色离红色最近，离绿色稍微远点，离蓝色最远。」</p><p>「你就记住：近少远多。」主讲人给出实操：「比如你想调橙色，咱们就以橙色为原点，把离得最近的红色稍微减去一点点，绿色稍远就多减去一点，而蓝色最远，减去的最多。这样调出来就是橙色。」</p><p>「明白了这一点，你就可以把世界调成任意一种你想要的颜色，甚至可以还原被舞台灯干扰的肤色、把照片调成电影海报。」收尾依旧轻松：「好，今天先讲这么多，不懂的再问我。」</p><figure><img src="assets/color-grade-basics/shot-10.jpg" alt="想调橙色看距离：离红色最近、离蓝色最远" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:13]</span>想调橙色看距离：离红色最近、离蓝色最远</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/952117a026eb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Want orange? It&#x27;s about distance: closest to red, farthest from blue.</span></div>
+<audio class="cap-audio" src="audio/952117a026eb.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-basics/shot-11.jpg" alt="「近少远多」：以橙色为原点，减红最少、减蓝最多" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:26]</span>「近少远多」：以橙色为原点，减红最少、减蓝最多</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8721a0ef5266.mp3" type="button" aria-label="Play English audio">🔊</button><span>Near, less; far, more: from orange&#x27;s origin, cut red least and blue most.</span></div>
+<audio class="cap-audio" src="audio/8721a0ef5266.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（64段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>我想把这个夕阳调得更红</p></div>
+<div class="transcript-row"><time>00:01</time><p>可是调完红色咋这么怪啊</p></div>
+<div class="transcript-row"><time>00:03</time><p>那我给你看个神奇的</p></div>
+<div class="transcript-row"><time>00:05</time><p>我们直接把红色拉到最高</p></div>
+<div class="transcript-row"><time>00:07</time><p>特别怪异</p></div>
+<div class="transcript-row"><time>00:08</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:08</time><p>但这个时候我们把绿色和蓝色也拉到最高</p></div>
+<div class="transcript-row"><time>00:12</time><p>啊 怎么反而白了</p></div>
+<div class="transcript-row"><time>00:14</time><p>来 今天我给你讲讲调色原理</p></div>
+<div class="transcript-row"><time>00:17</time><p>这是光学三原色（保留）</p></div>
+<div class="transcript-row"><time>00:19</time><p>把它们两两叠加</p></div>
+<div class="transcript-row"><time>00:20</time><p>我们又得到了三个颜色</p></div>
+<div class="transcript-row"><time>00:22</time><p>你别闹了</p></div>
+<div class="transcript-row"><time>00:22</time><p>我就想调个图</p></div>
+<div class="transcript-row"><time>00:23</time><p>这也太复杂了</p></div>
+<div class="transcript-row"><time>00:24</time><p>哎 不难</p></div>
+<div class="transcript-row"><time>00:25</time><p>你看</p></div>
+<div class="transcript-row"><time>00:25</time><p>其实不就是六个互为对立的颜色吗</p></div>
+<div class="transcript-row"><time>00:28</time><p>神奇之处在于</p></div>
+<div class="transcript-row"><time>00:29</time><p>当对立色（保留）混在一块的时候</p></div>
+<div class="transcript-row"><time>00:31</time><p>反而变成了白色</p></div>
+<div class="transcript-row"><time>00:33</time><p>这代表啥</p></div>
+<div class="transcript-row"><time>00:34</time><p>这代表着</p></div>
+<div class="transcript-row"><time>00:35</time><p>有的时候我们的照片发白发灰不显色</p></div>
+<div class="transcript-row"><time>00:38</time><p>并不是因为你想要的那种颜色不够多</p></div>
+<div class="transcript-row"><time>00:41</time><p>而是它的对立色（保留）混进来了</p></div>
+<div class="transcript-row"><time>00:43</time><p>把这个对立色（保留）抽走</p></div>
+<div class="transcript-row"><time>00:45</time><p>你要的颜色自然而然就会透出来</p></div>
+<div class="transcript-row"><time>00:47</time><p>意思就是调色不是做加法</p></div>
+<div class="transcript-row"><time>00:50</time><p>而是做减法</p></div>
+<div class="transcript-row"><time>00:51</time><p>比如我想把夕阳调得更红</p></div>
+<div class="transcript-row"><time>00:52</time><p>其实不是要加红色</p></div>
+<div class="transcript-row"><time>00:54</time><p>而是要减去它的对立色（保留）</p></div>
+<div class="transcript-row"><time>00:56</time><p>红色的对立色（保留）是青色</p></div>
+<div class="transcript-row"><time>00:58</time><p>而青色是蓝和绿混合得到的</p></div>
+<div class="transcript-row"><time>01:00</time><p>所以比起加红</p></div>
+<div class="transcript-row"><time>01:02</time><p>更重要的是减去蓝和绿</p></div>
+<div class="transcript-row"><time>01:04</time><p>聪明</p></div>
+<div class="transcript-row"><time>01:05</time><p>哎 可是如果我想调的是橙色</p></div>
+<div class="transcript-row"><time>01:07</time><p>而不是那种纯红的颜色呢</p></div>
+<div class="transcript-row"><time>01:09</time><p>好问题</p></div>
+<div class="transcript-row"><time>01:10</time><p>就看距离</p></div>
+<div class="transcript-row"><time>01:11</time><p>你看这张图</p></div>
+<div class="transcript-row"><time>01:12</time><p>橙色离红色最近</p></div>
+<div class="transcript-row"><time>01:14</time><p>离绿色稍微远点</p></div>
+<div class="transcript-row"><time>01:15</time><p>离蓝色最远</p></div>
+<div class="transcript-row"><time>01:17</time><p>你就记住</p></div>
+<div class="transcript-row"><time>01:17</time><p>近少远多（保留）</p></div>
+<div class="transcript-row"><time>01:19</time><p>比如你想调橙色</p></div>
+<div class="transcript-row"><time>01:20</time><p>那么咱们就以橙色为原点</p></div>
+<div class="transcript-row"><time>01:22</time><p>把离的最近的红色稍微减去一点点</p></div>
+<div class="transcript-row"><time>01:26</time><p>绿色稍远</p></div>
+<div class="transcript-row"><time>01:27</time><p>那就多减去一点</p></div>
+<div class="transcript-row"><time>01:29</time><p>而蓝色最远</p></div>
+<div class="transcript-row"><time>01:30</time><p>减去的最多</p></div>
+<div class="transcript-row"><time>01:32</time><p>这样调出来就是橙色</p></div>
+<div class="transcript-row"><time>01:34</time><p>明白了这一点</p></div>
+<div class="transcript-row"><time>01:35</time><p>你就可以把世界调成任意一种</p></div>
+<div class="transcript-row"><time>01:37</time><p>你想要的颜色</p></div>
+<div class="transcript-row"><time>01:38</time><p>甚至可以还原被舞台灯干扰的肤色</p></div>
+<div class="transcript-row"><time>01:41</time><p>把照片调成电影海报</p></div>
+<div class="transcript-row"><time>01:44</time><p>好</p></div>
+<div class="transcript-row"><time>01:44</time><p>今天先讲这么多</p></div>
+<div class="transcript-row"><time>01:45</time><p>不懂得再问我</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

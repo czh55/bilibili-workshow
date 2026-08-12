@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7304" viewBox="0 0 1320 7304">
+  <foreignObject x="0" y="0" width="1320" height="7304">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>蒙版到底怎么用？白加黑减，五步讲透</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">摄影</span><span class="tag tag-blue">修图</span><span class="tag tag-blue">蒙版</span><span class="tag tag-gray">时长 1分51秒</span><span class="tag tag-gray">分析视角：蒙版的功能链路</span></div>
+  <a class="source-link" href="http://xhslink.cn/o/2NnOyOfdlo3">原视频链接</a>
+  <div class="summary-line">核心判断：蒙版之所以是修图与剪辑的核心功能，是因为它把「修改」与「原图」解耦——白加黑减控制显示与隐藏，从换天、局部提亮到视频过渡，一个原理贯穿照片、调色、视频三种场景。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场：「蒙版到底是啥」——修图和剪辑中都特别重要</div></div><div class="timeline-item"><div class="timeline-time">00:07</div><div class="timeline-text">白加黑减原理：不想要天空就擦掉；蒙版=一块板子，白显示黑隐藏</div></div><div class="timeline-item"><div class="timeline-time">00:32</div><div class="timeline-text">不破坏原图：所有修改都在蒙版上，换天、改变画面形状都这么做</div></div><div class="timeline-item"><div class="timeline-time">00:43</div><div class="timeline-text">局部调整：人脸太暗时，在亮度涂层上蒙版只涂白脸部</div></div><div class="timeline-item"><div class="timeline-time">00:67</div><div class="timeline-text">视频过渡：A 段后半随电线杆边界逐渐隐藏，下一层 B 段露出</div></div><div class="timeline-item"><div class="timeline-time">00:95</div><div class="timeline-text">线性蒙版：直线一边显示一边隐藏，贴合电线杆向左移动即实现过渡</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>擦多了只能重来，调亮会全画面变亮</div><div class="arrow">→</div><div class="node node-blue">证据<br/>换天、局部提亮、视频过渡三处演示</div><div class="arrow">→</div><div class="node node-green">判断<br/>蒙版=白显示黑隐藏，修改与原图解耦</div><div class="arrow">→</div><div class="node node-orange">行动<br/>蒙版上操作：想显示涂白、想隐藏涂黑</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：蒙版是复杂的专业工具。纠偏：口诀只有四个字「白加黑减」，想显示哪儿涂白、想隐藏哪儿涂黑。</p><p>误解 2：蒙版只用于修照片。纠偏：调色、文字、视频都能用，原理一致。</p><p>误解 3：视频过渡是特效软件的专利。纠偏：用线性蒙版贴合物体边界移动，A 段隐藏 B 段露出即可实现。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>从擦掉天空讲起：问题定义</h3><p>在讲什么：不想要天空就把它擦掉，但不小心擦多了怎么办？没有蒙版只能重来。关键理解：问题根源是「修改直接作用于像素，不可逆」。怎么用：识别到「修改不可逆」的痛点，才能理解蒙版「在原图之上叠加控制层」的价值。</p><div class="quote">依据 [00:07–00:31]：如果我们不想要这个天空把它擦掉了……不小心擦多了怎么办？……有蒙版就不用这么麻烦了；想显示哪儿就在蒙版上涂白色，想隐藏哪儿就涂黑色。</div><div class="relation">立场分层：擦天空为演示事实；「白加黑减」为博主总结的口诀。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>蒙版的核心：修改与原图解耦</h3><p>在讲什么：蒙版相当于给照片叠加一块板子，板子控制画面哪里显示、哪里隐藏；所有操作在蒙版上完成，不破坏照片本身，可随意修改。关键理解：把「修改」搬到独立的图层上，原图永远完好，这是可逆性的来源。怎么用：任何需要反复试错的调整（换天、改形状）都优先用蒙版。</p><div class="quote">依据 [00:32–00:42]：在蒙版上操作，不破坏照片本身，可以随意修改；那像换天、改变画面形状，都是这么做的。</div><div class="relation">立场分层：可逆性与随意修改为操作事实；对应换天/改形状为演示验证。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>局部调整：把效果限定在脸部</h3><p>在讲什么：背景正常但人脸太暗，直接调亮度整个画面都变亮；在亮度涂层上加蒙版，把脸部涂白其余涂黑，亮度调整就只作用于脸部。关键理解：蒙版的本质是「效果的作用域」——用黑白画布划定调整生效的范围。怎么用：调色、局部提亮、选择性改动，都在效果图层上先加蒙版再涂选区。</p><div class="quote">依据 [00:43–00:66]：直接调亮度呢，整个画面都变亮了……在亮度涂层上加上一个蒙版，把其他部分涂黑，只把脸部涂白，那这个亮度调整就只在脸部才有了。</div><div class="relation">立场分层：操作步骤可由画面核对；「局部调整」的归类为博主总结。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>视频过渡：隐藏与露出的叠加</h3><p>在讲什么：一段视频其实只有 A、B 两段，重点在 A 段后半部分——随着电线杆的边界逐渐隐藏，下一层 B 段随之露出。关键理解：过渡不是「切」，而是「按边界隐藏上层露出下层」，与照片蒙版是同一逻辑。怎么用：分析复杂转场时先拆层，找到「隐藏的边界」在哪。</p><div class="quote">依据 [00:67–00:94]：它其实只有两段视频，A 段是这样，B 段是这样；重点在 A 段的后半部分，随着电线杆的边界，逐渐隐藏了，下一层的视频就会随着露出来。</div><div class="relation">立场分层：两层视频拆解可由画面核对；过渡原理为讲解内容。</div></div><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>线性蒙版：过渡的工程实现</h3><p>在讲什么：线性蒙版的效果是直线的一边显示、另一边隐藏；在 A 段加上它，调整位置贴合电线杆向左移动，过渡就轻松实现。关键理解：线性蒙版把「沿边界隐藏」工程化为一条可拖动、可动画的直线。怎么用：做推镜/横移类过渡时，用线性蒙版贴合画面中的结构边界移动。</p><div class="quote">依据 [00:95–01:50]：这有一个线性蒙版，它的效果是直线的一边显示、另一边隐藏；在 A 段视频上加上它，调整位置贴合电线杆向左移动，就轻松实现了。</div><div class="relation">立场分层：线性蒙版效果可由演示核对；「贴合边界移动」为博主方法。</div></div><div class="card card-orange"><h3>结论：一个原理，三种场景</h3><p>在讲什么：从一张照片到一段视频，蒙版的原理始终一致——白显示、黑隐藏，板子移动到哪里，哪里就发生变化。关键理解：蒙版不是某一款软件的功能，而是一种「控制作用域」的通用思维，可迁移到任何带图层的工具。怎么用：先建立「图层+蒙版」思维，遇到不可逆操作先想能否拆成独立图层。</p><div class="highlight">推断（基于原文）：蒙版价值的本质是把「修改」变成可撤销、可局部化的操作，这正是后期工作流的基石。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">三种场景下蒙版的用法对比</h2><div class="card"><table><thead><tr><th>场景</th><th>问题</th><th>蒙版操作</th><th>原理落点</th></tr></thead><tbody><tr><td>换天</td><td>擦掉天空但容易擦多</td><td>在原图层上加蒙版重涂选区</td><td>修改与原图解耦</td></tr><tr><td>局部提亮</td><td>整体调亮会全画面变亮</td><td>亮度涂层+蒙版只涂白脸部</td><td>效果作用域</td></tr><tr><td>视频过渡</td><td>两段视频之间生硬切换</td><td>线性蒙版贴合边界移动</td><td>隐藏上层露出下层</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：修图、剪辑入门；任何需要局部调整或不可逆修改的后期场景。</li><li>上限：蒙版解决「作用域控制」，不解决光影判断、色彩选择等审美问题。</li><li>反例：纯手动涂抹的蒙版对毛发、边缘要求高，复杂抠像仍需通道/AI 工具。</li><li>例外：博主以照片与短视频为例，蒙版在专业剪辑中同样适用但操作层级更复杂。</li></ul><div class="pitfall">避坑：别用黑/白以外的灰色画蒙版边缘——半透明区域会发灰发脏。</div><div class="pitfall">避坑：视频过渡的线性蒙版必须贴合画面中的真实边界（如电线杆），否则穿帮。</div><div class="pitfall">避坑：涂错别删蒙版重做，切换画笔黑白两色反复涂即可，这就是可逆性的意义。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>蒙版=白显示黑隐藏，把修改与原图解耦，操作可逆。</li><li>换天、局部提亮、视频过渡背后是同一个原理。</li><li>建立「图层+蒙版」思维，任何带图层的工具都可迁移。</li></ul><h3>行动清单</h3><ol><li>先把蒙版理解成一块板子：白显示、黑隐藏。</li><li>局部调整先加效果图层，再蒙版涂选区，而不是直接调全局。</li><li>看复杂转场时拆层找边界，用线性蒙版复现。</li></ol><h3>关键认知转变</h3><p>从「改坏了就重来」转到「在蒙版上改，原图永远完好」：蒙版把后期从不可逆的冒险变成可随意试探的创作。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 1分51秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

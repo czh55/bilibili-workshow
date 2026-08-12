@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 1 分 44 秒的曲线调色入门课：从一张照片扔进软件得到的直方图讲起，教你看懂暗部亮部、用打点拉曲线提亮天空、用 S 曲线提高对比度；再延伸到四根曲线（亮度 + 红绿蓝），最后演示如何用相反色把偏黄照片调回来。">
+<title>小小曲线调色，拿捏啦🫴！！｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+.quote-block{background:#f0fdf4;border-left:4px solid #10b981;padding:12px 16px;border-radius:8px;margin:14px 0;font-size:15px;color:#166534;font-style:italic}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>曲线调色从直方图讲起</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">1:44</span><span class="meta-tag tag-topic">摄影 调色 曲线 后期</span></div>
+<a class="source-link" href="http://xhslink.cn/o/8KywZvpaNFR" target="_blank" rel="noopener">→ 原视频链接</a>
+<a class="source-link lang-switch" href="curve-color-grade-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">曲线调色是啥</a><a href="#ch2">看懂直方图：左暗右亮</a><a href="#ch3">打点拉曲线：提亮与对比度</a><a href="#ch4">四根曲线：亮度加三色</a><a href="#ch5">演练：把偏黄的照片调回来</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 1 分 44 秒的曲线调色入门课：从一张照片扔进软件得到的直方图讲起，教你看懂暗部亮部、用打点拉曲线提亮天空、用 S 曲线提高对比度；再延伸到四根曲线（亮度 + 红绿蓝），最后演示如何用相反色把偏黄照片调回来。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:14]</span><div><strong>引入直方图</strong><p>照片扔进修图软件，会得到一个直方图。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:14→00:37]</span><div><strong>读懂直方图</strong><p>从左到右分别代表照片从暗到亮。左边面积大说明整体偏暗，靠右面积大则偏亮。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:37→00:59]</span><div><strong>曲线操作</strong><p>曲线调色基于直方图：想提高天空亮度就把右侧亮部往上拉；想提高对比度就把亮部拉高、暗部拉低，形成 S 形曲线。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:59→00:78]</span><div><strong>四根曲线</strong><p>曲线调色一共四根：亮度曲线，加上红、绿、蓝三根色彩曲线，可单独控制画面中三个颜色的多少。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:78→01:44]</span><div><strong>调色演练</strong><p>照片偏黄就往黄色的相反色调——加蓝色，再降低红色，颜色就调过来了。还能控制亮暗部颜色、拯救偏色、还原肤色。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>曲线调色的基础是看懂直方图：左暗右亮。亮度曲线调明暗（S 曲线加对比度），红绿蓝三根色彩曲线调颜色，相反色相加减即可校准偏色。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:14</span>曲线调色是啥</h2><p>视频以常见的困惑开场：「修图软件里这个曲线调色是啥呀？」主讲人回应：「这个功能可好用了，我看好多软件里都有。」</p><p>「来，我教你。」他从一张照片讲起：「这是一张照片，把它扔到修图软件里，我们就会得到一个直方图。」看着复杂的一堆图形，听者想溜：「这个图一看就好复杂，我先走了。」主讲人拦住他：「别跑呀，不难。」</p><figure><img src="assets/curve-color-grade/shot-01.jpg" alt="把一张照片扔进修图软件" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:08]</span>把一张照片扔进修图软件</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b5d2813f8755.mp3" type="button" aria-label="Play English audio">🔊</button><span>Drop a photo into the photo editor.</span></div>
+<audio class="cap-audio" src="audio/b5d2813f8755.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/curve-color-grade/shot-02.jpg" alt="得到一张直方图" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:12]</span>得到一张直方图</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/eeafe3009dfa.mp3" type="button" aria-label="Play English audio">🔊</button><span>Up pops a histogram.</span></div>
+<audio class="cap-audio" src="audio/eeafe3009dfa.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:14-00:37</span>看懂直方图：左暗右亮</h2><p>「其实就是从左到右呢，分别代表着照片从暗到亮。」主讲人用一个直观的例子讲解：「比如你看这个直方图，它左边的面积更大，就说明这个照片整体偏暗。」</p><p>「同样啊，再给你一个直方图，先不给你看照片，你猜它大概是个什么亮度？」听者回答：「靠右的面积大，整体偏亮吧。」「你看这不会了吗？」——读懂直方图的分布，就等于读懂了照片的明暗构成。</p><figure><img src="assets/curve-color-grade/shot-03.jpg" alt="直方图从左到右代表照片从暗到亮" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:18]</span>直方图从左到右代表照片从暗到亮</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3874f2e80bb9.mp3" type="button" aria-label="Play English audio">🔊</button><span>The histogram maps dark to bright from left to right.</span></div>
+<audio class="cap-audio" src="audio/3874f2e80bb9.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/curve-color-grade/shot-04.jpg" alt="判断：直方图靠右面积大说明整体偏亮" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:28]</span>判断：直方图靠右面积大说明整体偏亮</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ac66004434de.mp3" type="button" aria-label="Play English audio">🔊</button><span>Judging: more mass on the right means the photo is brighter overall.</span></div>
+<audio class="cap-audio" src="audio/ac66004434de.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:37-00:59</span>打点拉曲线：提亮与对比度</h2><p>「曲线调色其实就是基于这个直方图做调整。」主讲人演示第一个操作：「咱们先在这个直线上打三个点，比如说现在你想提高天空的亮度——天空是照片中的亮部，亮部在直方图的右侧，所以我们要把右侧往上拉一点。」画面中天空随即变亮。</p><p>「那如果你想提高对比度，就把照片的亮部拉高，同时把暗部拉低，形成一个 S 形的曲线。」效果立竿见影，「你看效果明显吧」。</p><figure><img src="assets/curve-color-grade/shot-05.jpg" alt="在曲线上打三个点，把右侧（亮部）往上拉提高天空亮度" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:39]</span>在曲线上打三个点，把右侧（亮部）往上拉提高天空亮度</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3fdde4bdec38.mp3" type="button" aria-label="Play English audio">🔊</button><span>Set three points and pull the right side (highlights) up to brighten the sky.</span></div>
+<audio class="cap-audio" src="audio/3fdde4bdec38.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/curve-color-grade/shot-06.jpg" alt="效果演示：天空变亮" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:45]</span>效果演示：天空变亮</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a82b01974b48.mp3" type="button" aria-label="Play English audio">🔊</button><span>The result: the sky becomes brighter.</span></div>
+<audio class="cap-audio" src="audio/a82b01974b48.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/curve-color-grade/shot-07.jpg" alt="提高对比度：亮部拉高暗部拉低形成S形曲线" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:50]</span>提高对比度：亮部拉高暗部拉低形成S形曲线</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c305cfa24b9d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Boost contrast: lift highlights, lower shadows, forming an S-shaped curve.</span></div>
+<audio class="cap-audio" src="audio/c305cfa24b9d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">00:59-00:78</span>四根曲线：亮度加三色</h2><p>「那曲线能调颜色吗？」「可以啊。」主讲人引出完整体系：「曲线调色一共有四根曲线，刚才讲的是亮度曲线，另外呢，还有三根色彩曲线，分别代表红色、绿色和蓝色。」</p><p>「简单来说呢，它们可以单独地去控制画面当中这三个颜色的多少。刚开始用的时候，看这张图就够了，这是总结版本。」一张色彩关系图，成了入门的全部捷径。</p><figure><img src="assets/curve-color-grade/shot-08.jpg" alt="曲线调色共四根：亮度+红绿蓝三根色彩曲线" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:06]</span>曲线调色共四根：亮度+红绿蓝三根色彩曲线</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1ca1e4e77809.mp3" type="button" aria-label="Play English audio">🔊</button><span>There are four curves: brightness plus red, green, and blue.</span></div>
+<audio class="cap-audio" src="audio/1ca1e4e77809.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/curve-color-grade/shot-09.jpg" alt="总结版示意图：色彩曲线控制画面中三色多少" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:13]</span>总结版示意图：色彩曲线控制画面中三色多少</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/594cd8d483eb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Summary chart: each color curve controls the amount of its color.</span></div>
+<audio class="cap-audio" src="audio/594cd8d483eb.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">00:78-01:44</span>演练：把偏黄的照片调回来</h2><p>「那咱们来演练一下，这张照片不想让它这么黄，怎么办？」主讲人给出调色方向：「应该往黄色的相反色去调，从这个图片上看，我们应该加蓝色。」</p><p>「加蓝色之后画面偏红，我们再去降低红色，颜色就调过来了。」听者感叹「这很方便啊」。「是啊，它还有很多用法，比如分别控制亮部和暗部的颜色、拯救偏色的照片还原肤色，或者这种戏剧性的海报风格。」最后留下一句：「行了，先讲这么多，不懂的再问我。」</p><figure><img src="assets/curve-color-grade/shot-10.jpg" alt="演练：照片偏黄，往黄色相反色调、加蓝色再降红色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:20]</span>演练：照片偏黄，往黄色相反色调、加蓝色再降红色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2be24441b71d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Practice: a yellowish photo — move toward yellow&#x27;s opposite, add blue, then lower red.</span></div>
+<audio class="cap-audio" src="audio/2be24441b71d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（69段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>哎 修图软件里这个曲线调色（保留）是啥呀</p></div>
+<div class="transcript-row"><time>00:02</time><p>这个功能可好用了</p></div>
+<div class="transcript-row"><time>00:04</time><p>我看好多软件里都有</p></div>
+<div class="transcript-row"><time>00:05</time><p>但是我一直都不会用</p></div>
+<div class="transcript-row"><time>00:06</time><p>来我教你</p></div>
+<div class="transcript-row"><time>00:07</time><p>这是一张照片</p></div>
+<div class="transcript-row"><time>00:08</time><p>把它扔到修图软件里</p></div>
+<div class="transcript-row"><time>00:09</time><p>我们就会得到一个直方图（保留）</p></div>
+<div class="transcript-row"><time>00:11</time><p>这个图一看就好复杂</p></div>
+<div class="transcript-row"><time>00:13</time><p>我先走了</p></div>
+<div class="transcript-row"><time>00:14</time><p>别跑呀</p></div>
+<div class="transcript-row"><time>00:15</time><p>不难</p></div>
+<div class="transcript-row"><time>00:15</time><p>其实就是从左到右呢</p></div>
+<div class="transcript-row"><time>00:17</time><p>分别代表着照片从暗到亮</p></div>
+<div class="transcript-row"><time>00:19</time><p>比如你看这个直方图（保留）</p></div>
+<div class="transcript-row"><time>00:21</time><p>它左边的面积更大</p></div>
+<div class="transcript-row"><time>00:22</time><p>就说明这个照片整体偏暗</p></div>
+<div class="transcript-row"><time>00:24</time><p>同样啊</p></div>
+<div class="transcript-row"><time>00:25</time><p>再给你一个直方图（保留）</p></div>
+<div class="transcript-row"><time>00:26</time><p>先不给你看照片</p></div>
+<div class="transcript-row"><time>00:27</time><p>你猜它大概是个什么亮度</p></div>
+<div class="transcript-row"><time>00:29</time><p>靠右的面积大</p></div>
+<div class="transcript-row"><time>00:30</time><p>整体偏亮吧</p></div>
+<div class="transcript-row"><time>00:31</time><p>你看这不会了吗</p></div>
+<div class="transcript-row"><time>00:33</time><p>然后呢</p></div>
+<div class="transcript-row"><time>00:33</time><p>曲线调色（保留）其实就是基于这个直方图（保留）做调整</p></div>
+<div class="transcript-row"><time>00:36</time><p>那咱们先在这个直线上打三个点（保留）</p></div>
+<div class="transcript-row"><time>00:38</time><p>比如说现在你想提高天空的亮度</p></div>
+<div class="transcript-row"><time>00:41</time><p>那天空是照片中的亮部</p></div>
+<div class="transcript-row"><time>00:43</time><p>亮部在直方图（保留）的右侧</p></div>
+<div class="transcript-row"><time>00:45</time><p>所以我们要把右侧往上拉一点</p></div>
+<div class="transcript-row"><time>00:47</time><p>你看天空是不是变亮了</p></div>
+<div class="transcript-row"><time>00:49</time><p>那如果你想提高对比度（保留）</p></div>
+<div class="transcript-row"><time>00:51</time><p>就把照片的亮部拉高</p></div>
+<div class="transcript-row"><time>00:52</time><p>同时把暗部拉低</p></div>
+<div class="transcript-row"><time>00:54</time><p>形成一个S形的曲线</p></div>
+<div class="transcript-row"><time>00:56</time><p>你看效果明显吧</p></div>
+<div class="transcript-row"><time>00:57</time><p>哦 明白了</p></div>
+<div class="transcript-row"><time>00:58</time><p>那曲线能调颜色吗</p></div>
+<div class="transcript-row"><time>01:00</time><p>可以啊</p></div>
+<div class="transcript-row"><time>01:00</time><p>曲线调色（保留）一共有四根曲线</p></div>
+<div class="transcript-row"><time>01:02</time><p>刚才讲的是亮度曲线</p></div>
+<div class="transcript-row"><time>01:04</time><p>另外呢</p></div>
+<div class="transcript-row"><time>01:04</time><p>还有三根色彩曲线（保留）</p></div>
+<div class="transcript-row"><time>01:06</time><p>分别代表红色</p></div>
+<div class="transcript-row"><time>01:07</time><p>绿色和蓝色</p></div>
+<div class="transcript-row"><time>01:09</time><p>简单来说呢</p></div>
+<div class="transcript-row"><time>01:09</time><p>它们可以单独的去控制</p></div>
+<div class="transcript-row"><time>01:11</time><p>画面当中这三个颜色的多少</p></div>
+<div class="transcript-row"><time>01:13</time><p>刚开始用的时候</p></div>
+<div class="transcript-row"><time>01:14</time><p>看这张图就够了</p></div>
+<div class="transcript-row"><time>01:15</time><p>这是总结版本</p></div>
+<div class="transcript-row"><time>01:16</time><p>那咱们来演练一下</p></div>
+<div class="transcript-row"><time>01:18</time><p>这张照片不想让它这么黄</p></div>
+<div class="transcript-row"><time>01:19</time><p>怎么办</p></div>
+<div class="transcript-row"><time>01:20</time><p>应该往黄色的相反色去调</p></div>
+<div class="transcript-row"><time>01:23</time><p>从这个图片上看</p></div>
+<div class="transcript-row"><time>01:24</time><p>我们应该加蓝色</p></div>
+<div class="transcript-row"><time>01:26</time><p>加蓝色之后画面偏红</p></div>
+<div class="transcript-row"><time>01:28</time><p>我们再去降低红色</p></div>
+<div class="transcript-row"><time>01:29</time><p>颜色就调过来了</p></div>
+<div class="transcript-row"><time>01:31</time><p>这很方便啊这个</p></div>
+<div class="transcript-row"><time>01:33</time><p>是啊</p></div>
+<div class="transcript-row"><time>01:33</time><p>它还有很多用法</p></div>
+<div class="transcript-row"><time>01:34</time><p>比如分别控制亮部和暗部的颜色</p></div>
+<div class="transcript-row"><time>01:37</time><p>拯救偏色的照片还原肤色</p></div>
+<div class="transcript-row"><time>01:39</time><p>或者这种戏剧性的海报风格</p></div>
+<div class="transcript-row"><time>01:42</time><p>行了 先讲这么多</p></div>
+<div class="transcript-row"><time>01:43</time><p>不懂得再问我</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

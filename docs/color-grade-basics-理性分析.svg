@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7550" viewBox="0 0 1320 7550">
+  <foreignObject x="0" y="0" width="1320" height="7550">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>调色不是做加法，是做减法</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">摄影</span><span class="tag tag-blue">调色</span><span class="tag tag-blue">三原色</span><span class="tag tag-gray">时长 1分47秒</span><span class="tag tag-gray">分析视角：颜色的底层原理</span></div>
+  <a class="source-link" href="http://xhslink.cn/o/7K4F5QCUxGV">原视频链接</a>
+  <div class="summary-line">核心判断：调色反复翻车的根源是「颜色不够就加色」的直觉错了——光学三原色两两叠加出三对对立色，对立色混合反而变白；照片发灰不显色是混进了对立色。所以调色做减法：减去对立色，目标颜色自然透出；按「近少远多」控制增减量，就能把世界调成任意颜色。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">问题演示：夕阳想调更红，把红色拉满却特别怪异</div></div><div class="timeline-item"><div class="timeline-time">00:06</div><div class="timeline-text">再把绿蓝也拉满，反而白了</div></div><div class="timeline-item"><div class="timeline-time">00:17</div><div class="timeline-text">光学三原色：两两叠加得到三对对立色</div></div><div class="timeline-item"><div class="timeline-time">00:30</div><div class="timeline-text">神奇之处：对立色混在一块反而变成白色</div></div><div class="timeline-item"><div class="timeline-time">00:40</div><div class="timeline-text">照片发白发灰不显色，是对立色混进来了</div></div><div class="timeline-item"><div class="timeline-time">00:45</div><div class="timeline-text">调色不是做加法，而是做减法</div></div><div class="timeline-item"><div class="timeline-time">00:56</div><div class="timeline-text">夕阳更红=减青色（蓝+绿）；比起加红更重要的是减蓝绿</div></div><div class="timeline-item"><div class="timeline-time">00:73</div><div class="timeline-text">近少远多：橙色离红最近少减、离蓝最远多减</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>越调越怪，颜色不对</div><div class="arrow">→</div><div class="node node-blue">证据<br/>拉满红绿蓝反而变白</div><div class="arrow">→</div><div class="node node-green">判断<br/>调色做减法：抽走对立色</div><div class="arrow">→</div><div class="node node-orange">行动<br/>按近少远多控制各色增减</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：调色是加法，颜色不够就加。纠偏：照片发灰不是颜色不够，而是对立色混进来了，抽走它颜色自然透出。</p><p>误解 2：想调红就拉红色。纠偏：夕阳更红反而要减青色（蓝+绿），加红是副作用最大的操作。</p><p>误解 3：调出目标色靠多次试错。纠偏：看目标色在色环上的距离，近的少动、远的多动，「近少远多」可直接推演。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>问题定义：越调越怪的红</h3><p>在讲什么：「我想把这个夕阳调得更红，可调完红色咋这么怪啊？」——直接把红色拉到最高特别怪异；把绿色和蓝色也拉到最高，反而白了。关键理解：这个反直觉现象说明颜色并非「加得多就够」，背后有更深的对立关系。怎么用：遇到越调越怪时停下来，回到色相原理分析而不是继续加。</p><div class="quote">依据 [00:00–00:16]：我们把红色直接拉到最高——特别怪异，对吧？但这个时候把绿色和蓝色也拉到最高——啊，怎么反而白了？</div><div class="relation">立场分层：拉满变白为软件演示事实；引子地位为博主设计。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>三原色与对立色：六色体系</h3><p>在讲什么：光学三原色两两叠加又得到三个颜色，共六个互为对立的颜色；神奇之处在于，对立色混在一块的时候反而变成白色。关键理解：红对青、绿对品红、蓝对黄——三对对立色是调色的坐标系。怎么用：把六色关系图记成参考，所有调色问题都在这个坐标系里找答案。</p><div class="quote">依据 [00:17–00:34]：这是光学三原色，把它们两两叠加我们又得到了三个颜色；其实不就是六个互为对立的颜色吗；当对立色混在一块的时候，反而变成了白色。</div><div class="relation">立场分层：三原色叠加为光学常识；「六个对立色」为博主简化模型。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>减法原理：抽走对立色</h3><p>在讲什么：照片发白发灰不显色，并不是想要的颜色不够多，而是它的对立色混进来了；把这个对立色抽走，要的颜色自然透出来——调色不是做加法，而是做减法。关键理解：发灰=颜色之间在「互相抵消」，要还原颜色先清除污染源。怎么用：照片显灰时先找「混进来的对立色」，再抽走它。</p><div class="quote">依据 [00:35–00:50]：照片发白发灰不显色，并不是因为你想要的那种颜色不够多，而是它的对立色混进来了；把这个对立色抽走，你要的颜色自然而然就会透出来；调色不是做加法，而是做减法。</div><div class="relation">立场分层：减法原理为博主核心主张；发灰成因有物理依据。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>夕阳应用：减蓝减绿</h3><p>在讲什么：想把夕阳调得更红，其实不是要加红色，而是要减去它的对立色——青色，而青色是蓝和绿混合得到的；所以比起加红，更重要的是减去蓝和绿。关键理解：操作对象是「目标色的对立色」，而非目标色本身——方向反了才会越调越怪。怎么用：想要 X 色，先减 X 色的对立色，而不是加 X。</p><div class="quote">依据 [00:51–00:65]：把夕阳调得更红，其实不是要加红色，而是要减去它的对立色；红色的对立色是青色，而青色是蓝和绿混合得到的；所以比起加红，更重要的是减去蓝和绿。</div><div class="relation">立场分层：对立色推演为可验证逻辑；夕阳成片可核对。</div></div><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>近少远多：距离即增减量</h3><p>在讲什么：想调橙色就看距离——橙色离红色最近、离绿色稍远、离蓝色最远；以橙色为原点，离得最近的红少减一点、绿色多减一点、蓝色最远减得最多。关键理解：「近少远多」把调色从试错变成按距离计算的确定操作。怎么用：调任何目标色，先在六色环上量距离，再分配各色增减量。</p><div class="quote">依据 [00:66–01:47]：橙色离红色最近，离绿色稍微远点，离蓝色最远；以橙色为原点，把离得最近的红色稍微减去一点点，绿色稍远就多减去一点，而蓝色最远减去的最多。</div><div class="relation">立场分层：距离映射增减量为博主方法论；结果可复现验证。</div></div><div class="card card-orange"><h3>结论：可推演的调色系统</h3><p>在讲什么：明白了这一点，就可以把世界调成任意想要的颜色，甚至可以还原被舞台灯干扰的肤色、把照片调成电影海报。关键理解：减法+距离构成了完整的调色决策系统，把「凭感觉」升级为「可计算」。怎么用：把每次调色当成一次「减法运算」，先写目标色，再写各色增减量。</p><div class="highlight">推断（基于原文）：调色的核心能力不是手稳，而是理解颜色如何互相抵消；减法思维是所有高级调色的底层。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">三对对立色对照</h2><div class="card"><table><thead><tr><th>颜色</th><th>对立色</th><th>混合结果</th><th>典型应用</th></tr></thead><tbody><tr><td>红</td><td>青（蓝+绿）</td><td>白</td><td>夕阳更红→减青</td></tr><tr><td>绿</td><td>品红（红+蓝）</td><td>白</td><td>草地更正→减品红</td></tr><tr><td>蓝</td><td>黄（红+绿）</td><td>白</td><td>天空更蓝→减黄</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：调色原理入门、偏色修正、想要摆脱试错式调色的后期用户。</li><li>上限：对立色原理解决「颜色互扰」，不解决曝光、对比度、色彩和谐等整体设计。</li><li>反例：叠加效果、风格化创作会刻意保留甚至利用色彩互扰，不能一律减法。</li><li>例外：博主以数字调色为例，印刷、显示器的色彩管理另有一套规则。</li></ul><div class="pitfall">避坑：减色要适度，减过头会引入新的色偏，分步微调。</div><div class="pitfall">避坑：「近少远多」的前提是颜色纯正，先校准白平衡再做减法。</div><div class="pitfall">避坑：肤色还原要同时看红黄比例，只减蓝可能把肤色调成土色。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>颜色不够不是加色，而是对立色混进来了，减法才是正道。</li><li>三对对立色：红-青、绿-品红、蓝-黄，混合即白。</li><li>「近少远多」把调色从试错变成按距离计算。</li></ul><h3>行动清单</h3><ol><li>想要 X 色，先减 X 色的对立色，而不是加 X。</li><li>调任何目标色先在六色环上量距离，再分配增减量。</li><li>照片发灰时先找混进来的对立色，抽走它。</li></ol><h3>关键认知转变</h3><p>从「调色=加颜色」转到「调色=减对立色」：理解颜色如何抵消，比加多少次颜色都更接近目标。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 1分47秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
