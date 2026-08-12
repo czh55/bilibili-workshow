@@ -43,6 +43,7 @@ HTML 不是 SVG 的加长版，SVG 也不是 HTML 的缩略图。二者共享同
 - 一个视频的元数据和下载必须合并为一次下载调用，禁止先探测、再分别请求音频和视频。不得使用 `HEAD`、额外探测或并发请求。默认使用新方式 `python3 scripts/xhs-fetch.py`（脚本内部已执行限流、短链展开、页面解析并产出 meta.json）；若新方式失效，可退回备选方式：执行 `node xhs-rate-limit.mjs` 后单次 `yt-dlp -f "best[height<=1080]/best"` 下载混合文件。
 - 出现 403、412、429、网络错误或下载失败时，不得立即重试；每次重试同样等待至少 60 秒，最多 3 次。达到上限后记录失败并停止。
 - 修复既有小红书文章时，优先且默认只使用仓库中已有的 HTML、截图、SVG 和本地转录；**不得**为润色、补全、转简体或重建摘要重新访问小红书。只有本地源文件确实缺失、且用户明确要求重新抓取时，才可按上述限流规则单独排队。
+- **限流器锁文件死锁恢复（2026-08 b45 批次实战）**：`xhs-rate-limit.mjs` 用 `os.tmpdir()` 下的 `bilibili-workshop-xhs-last-request*` 状态/锁文件串行化请求。进程被中断（Ctrl-C、超时 kill、沙箱终止）会留下孤儿锁文件，导致后续请求被误判为“间隔不足”而无限等待。症状：脚本长时间停留在「等待 N 秒」不前进。恢复：先 `pkill -f xhs-fetch.py; pkill -f xhs-rate-limit`，再删除锁文件 `rm -f "$(node -e 'console.log(require("os").tmpdir())')"/bilibili-workshop-xhs-last-request*` 后重试。
 
 ```
 Task Progress:
@@ -234,7 +235,7 @@ whisper "{音频文件}" --model medium --language Chinese --output_dir .
 
 1. **证据表 `evidence-{slug}.json`**：每个章节的时间范围、对应原始 segment 编号、可核验原话、可见操作/画面、不能确定的内容。所有非空转录区间必须恰好归入一个章节或被明确标为配乐、无口播或听不清。
 2. **术语表 `terms-{slug}.json`**：`原始转录`、`候选校正`、`证据来源（画面/上下文/无法确认）`、`采用与否`。没有画面或上下文佐证的候选校正必须保留为“无法确认”，禁止写入正文。
-3. **截图映射 `shots-{slug}.json`**：每张已提交截图的文件名、视频时间、画面事实描述、对应章节。图注只允许使用这份映射中的事实；“相关画面”“操作画面”“示意图”等泛化图注视为不合格。
+3. **截图映射 `shots-{slug}.json`**：每张已提交截图的文件名、视频时间、画面事实描述、对应章节。图注只允许使用这份映射中的事实；“相关画面”“操作画面”“示意图”等泛化图注视为不合格。**`time` 字段必须为合法 `MM:SS`（秒 00–59），禁止 `00:70` 这类秒数越界值**（2026-08 b45 批次出现 23 处此类非法时间，直接污染 HTML 图注徽章）；从 Whisper/`ffmpeg` 拿到的原始秒数必须先转成 `M:SS` 并进位，再写入 JSON。
 4. **发布摘要草案**：必须由证据表中的章节结论组合而成；禁止取第一句转录、关键词拼接或截断文本作为摘要。
 
 生成器必须先验证这些 JSON 可解析、章节时间无空洞、截图文件存在，才可写 HTML/SVG。若任何中间产物缺失，任务只能产出草稿并标记待复核，不能写入 `index.json` 的成功条目。
@@ -527,6 +528,8 @@ node "generate-{slug}-html.mjs"
   - `scripts/gen-caption-audio.py`：读取 `translations.json`，对缺音频的图注用 edge-tts 批量生成，已存在则跳过（可续跑）
   - `scripts/enhance-captions-html.py`：把 HTML 中的单语 `figcaption` 重写为中英对照，并注入 `cap-en-style` 样式与 `cap-en-script` 播放脚本
 
+**全量扫描副作用（2026-08 b45 批次实战）**：三个脚本都按 `docs/*-图文实录.html` 全量扫描，`enhance-captions-html.py` 会把缺少增强块的旧文章（其他批次）也注入样式与脚本，产生无关 git diff（b45 批次一次误改 14 个 b42 旧文件，需逐个还原）。批处理运行后必须用 `git status` 核对并还原无关改动（`git checkout -- <无关文件>`）；只处理单篇时可临时给脚本加 slug 白名单过滤。
+
 **执行顺序（不可颠倒）**：`gen-caption-audio.py` 用 `<figcaption>` 正则匹配单语图注，无法识别已增强的 `class="cap-bilingual"`。因此必须**先在未增强 HTML 上运行 `gen-caption-audio.py` 生成音频，再运行 `enhance-captions-html.py` 增强图注**。若顺序颠倒导致音频缺失，先重新生成 HTML（或还原未增强版本），再按正确顺序执行。
 
 页面底部还需注入图注播放脚本（与转录展开脚本并存于 `</body>` 前）：
@@ -634,7 +637,8 @@ node "generate-{slug}-html.mjs"
 
 - **场景数必须 ≤ 该视频截图数**：`scene_imgs` 与 `scenes` 等长，复用 `docs/assets/{slug}/` 的截图。截图不够时压缩场景（合并相邻内容），不得复用同一张图。
 - **转录太短或纯歌词/配乐时，用图文实录页的 `figcaption`（图注）重建场景**，而不是臆造口播；页脚注明「ASR 专有名词已按语境校正」。
-- `shifts` 必须为二元组 `["以前", "新"]`（`gen-scene-en.py` 会解包失败）；`sentences` 为 `["中文", "英文", "提示"]` 三元组。
+- `shifts` 必须为二元组 `["以前", "新"]`，`paraphrase` 必须为二元组 `["中文意图", "英文替换说法"]`，`sentences` 为 `["中文", "英文", "提示"]` 三元组——三者长度不符都会让 `gen-scene-en.py` 解包失败（2026-08 b45 批次 4 篇因 `paraphrase` 混入第三元素而中断）。
+- **批量生成前先全量校验，再逐篇生成**：逐篇跑 `validate-scene-json.py` 会留下“前一篇崩了导致后续没跑”的静默缺口。批量时先对全部 `scripts/scene-data/{slug}.json` 连续校验（无报错才进入生成），再逐篇 `gen-scene-en.py --slug={slug}`，最后用「每篇三类产物齐全 + HTML 内音频/图片引用存在」的脚本兜底检查。
 - 音频按 `docs/audio/{slug}/` 组织（`narration.mp3` + `s{N}.mp3` + `s{N}-{idx:02d}.mp3` + `practice-{idx}.mp3` + `manifest.json`），`gen-scene-en.py` 已存在则跳过、可续跑。
 
 ---
@@ -785,6 +789,7 @@ XML 注意事项：
 - [ ] 每个章节有具体标题、时间范围和完整叙述；不存在关键词拼贴、模板空话、未完成句、`...`/`…` 截断或重复的泛化标题
 - [ ] 内容主要按视频时间顺序展开，语气自然，不写成分析卡片堆叠
 - [ ] 截图数量参考「视频时长分档」表并与内容相称，每张都有准确 alt 和时间戳图注；知识章节必须有对应配图，不因数字而取舍
+- [ ] 所有图注时间徽章均为合法 `MM:SS`（秒 00–59），不存在 `00:70` 这类越界值（可对 `shots-*.json` 的 `time` 批量校验）
 - [ ] 每个图注都是中英对照（`.cap-bilingual`）：中文图注 + 英文翻译行 + 🔊 朗读按钮
 - [ ] 每个朗读按钮的 `data-audio` 都对应 `docs/audio/` 下真实存在且已提交的 MP3；`translations.json` 已更新并提交
 - [ ] 桌面端与 375px 宽度均无横向溢出
@@ -806,6 +811,12 @@ XML 注意事项：
 - [ ] 同一观点没有相互矛盾的归因、数字或结论
 - [ ] 两个文件均生成成功后，才写入成功的索引条目
 - [ ] `index.json` 摘要为简体中文、≤120 字、语义完整且不含 HTML 实体、转录碎片或截断省略号
+
+### 批次完整性（多篇一起处理时）
+
+- [ ] 批次内每篇三类产物齐全：`{slug}-图文实录.html`、`{slug}-理性分析.svg`、`{slug}-场景英译.html`（若产出 `html_en`）；用脚本核对，不要只数文件个数
+- [ ] 每篇的 HTML 图注音频引用、场景英译的音频/图片引用都在 `docs/` 下真实存在且已加入提交
+- [ ] `enhance-captions-html.py` / `gen-caption-audio.py` 全量运行造成的无关批次改动已还原，`git status` 中只包含本批次产物与 `WORKFLOW.md` 等预期文件
 
 ### 修复既有文章
 
