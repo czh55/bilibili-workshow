@@ -145,6 +145,10 @@ def process_file(path: Path) -> tuple[int, int]:
 
 def main() -> None:
     files = sorted(DOCS.glob("*-图文实录.html"))
+    args = sys.argv[1:]
+    if args:
+        allowed = {a if a.endswith("-图文实录.html") else f"{a}-图文实录.html" for a in args}
+        files = [f for f in files if f.name in allowed]
     total_done = total_all = 0
     for f in files:
         done, all_n = process_file(f)

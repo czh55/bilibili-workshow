@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7196" viewBox="0 0 1320 7196">
+  <foreignObject x="0" y="0" width="1320" height="7196">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>自我介绍别写工具人属性标签</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">个人品牌</span><span class="tag tag-orange">自我介绍</span><span class="tag tag-gray">时长 2分00秒</span><span class="tag tag-gray">分析视角：自我介绍的内部评价与外部标签</span></div>
+  <a class="source-link" href="local:01e4982f483bfb530103710388f27ab2aa_258.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：网络时代没有名号就等于不存在，而建账号的第一步是写自我介绍。但绝大多数人写的都是外部评价、工具人属性的标签——公司、职位、擅长的方法论——这些是饭碗标签，不是个人标签。贴工具人标签，粉丝只会在需要时来用你、用完即走；真正的自我介绍应该用内部评价：我是谁、我从哪里来、我要到哪里去。你写清楚你是谁，才能吸引想和你交朋友的人，而不是招来一批来取工具的用户。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">元宇宙世代：如果你在网络上没有名号，就等于你不存在</span></div><div class="timeline-item"><span class="timeline-time">00:04</span><span class="timeline-text">不管在哪个平台都要建一个输出观点的账号，第一步是写自我介绍</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">问自己：除了简历，你为自己写过非求职的自我介绍吗</span></div><div class="timeline-item"><span class="timeline-time">00:19</span><span class="timeline-text">做过十几个版本，每次写完都觉得不像自己，又说不出哪不对</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">想明白了：以前的自我介绍长这样——一线德国公司的职业经理人、擅长工作方法论</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">这些都是外部评价、工具人属性的标签，屏幕前的你大概也只会写这些</span></div><div class="timeline-item"><span class="timeline-time">00:48</span><span class="timeline-text">一线德国公司职业经理人是饭碗标签，不是个人标签</span></div><div class="timeline-item"><span class="timeline-time">00:53</span><span class="timeline-text">工具人属性最好贴：假定贴上「我很擅长工作逻辑推理」</span></div><div class="timeline-item"><span class="timeline-time">00:58</span><span class="timeline-text">后果：所有粉丝只会在需要逻辑推理时来看你，随后用完就走</span></div><div class="timeline-item"><span class="timeline-time">01:04</span><span class="timeline-text">更希望的是聊聊对商业和人生问题的看法，和粉丝们交个朋友</span></div><div class="timeline-item"><span class="timeline-time">01:08</span><span class="timeline-text">自我介绍是自己给自己贴标签：你是谁、想让别人记住什么，更重要的是你怎么看自己</span></div><div class="timeline-item"><span class="timeline-time">01:15</span><span class="timeline-text">真正的标签用内部评价：经典的哲学三问——我是谁、我从哪里来、我要到哪里去</span></div><div class="timeline-item"><span class="timeline-time">01:21</span><span class="timeline-text">已删掉外部标签版，改用内部评价版，怎么看怎么喜欢，以后不改了</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">若向陌生人只用外部标签介绍，说明你没想清楚自己英雄之旅到底要用来干嘛</span></div><div class="timeline-item"><span class="timeline-time">01:43</span><span class="timeline-text">别人是「出走半生归来仍是少年」，你是还没碰到使命召唤；写内部评价，职场辉煌在「你是谁」面前不值一提</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>为什么自我介绍的自己不是自己</div><span class="arrow">→</span><div class="node-green">证据<br/>十几个版本都不对劲 + 粉丝用完即走</div><span class="arrow">→</span><div class="node-orange">判断<br/>外部标签是饭碗标签，内部评价才是个人标签</div><span class="arrow">→</span><div class="node-blue">行动<br/>用哲学三问写非求职的自我介绍</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：自我介绍就是个人简历，把公司、职位写清楚就很体面。纠偏：那些是饭碗标签、外部评价，不是个人标签，所以越写越觉得不像自己。</p><p>误解 2：自我介绍要突出工具属性（擅长什么方法论），显得专业。纠偏：贴工具人标签，别人只会在需要这个工具时来用你，用完即走，交不到朋友。</p><p>误解 3：自我介绍是给 HR 看的，随便写写就行。纠偏：非求职的自我介绍是给自己贴标签、回答你是谁，是陪你的账号走一生的东西。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-blue">
+      <h3>没有名号等于不存在：自我介绍是第一步</h3>
+      <p>在讲什么：元宇宙世代，网络上没有名号就等于不存在，不管哪个平台都要建立一个输出观点的账号，而建账号的第一步就是写自我介绍。关键理解：自我介绍不是简历，是你在网络世界立起的个人名片。怎么用：把自我介绍当个人品牌的基建，别草率。</p>
+      <div class="quote">依据 [00:00–00:09]：元宇宙世代，如果你在网络上没有名号，就等于你不存在。不管在哪个平台，你都要建立一个输出自己观点的账号，而建账号的第一步，是写一段自我介绍。</div>
+      <div class="relation">立场分层：时代判断为讲者的观点前提；「建账号第一步写自我介绍」为推导步骤。</div>
+    </div>
+    <div class="card card-green">
+      <h3>外部标签是饭碗标签，不是个人标签</h3>
+      <p>在讲什么：旧版自我介绍「一线德国公司的职业经理人、擅长工作方法论」全是外部评价、工具人属性。仔细想来，公司头衔是饭碗标签，不是个人标签。关键理解：写公司职位是在替「饭碗」代言，没回答你自己是谁。怎么用：写完后逐条划掉，剩下的才是你。</p>
+      <div class="quote">依据 [00:32–00:51]：一线德国公司的职业经理人，擅长工作方法论、系统思考、工作推演等等。仔细想来，一线德国公司职业经理人是我的饭碗标签，不是我的个人标签。</div>
+      <div class="relation">立场分层：旧版自我介绍为讲者真实案例；饭碗标签与个人标签的区分为其概念判断。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>工具人标签：招来的全是「用完即走」的用户</h3>
+      <p>在讲什么：贴上「我很擅长工作逻辑推理」，所有粉丝就只会在需要推理时来看你，随后用完就走。工具人属性最好贴，也最坑自己——它把关注变成临时取用。关键理解：工具标签引来的关系是交易性的，没有情感和认同。怎么用：贴标签前先想，这会让粉丝在什么时刻想起你。</p>
+      <div class="quote">依据 [00:53–01:07]：假定这个标签给自己贴上了，所有粉丝就只会在需要工作逻辑推理时，来看看我是怎么说的，随后用完就走。而我更希望的是聊聊对商业和人生问题的看法，和粉丝们交个朋友。</div>
+      <div class="relation">立场分层：标签副作用的推演为讲者逻辑；「希望交朋友」为个人诉求。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>内部评价 = 哲学三问：我是谁、从哪来、到哪去</h3>
+      <p>在讲什么：真正的标签应该用内部评价，就是经典的哲学三问。讲者删掉所有外部标签版，改用内部评价版，越看越喜欢、以后不改了。关键理解：内部评价逼你诚实地回答「你是谁」，而不是报出你的雇主和技能。怎么用：用哲学三问打草稿，写一版非求职的自我介绍。</p>
+      <div class="quote">依据 [01:15–01:27]：真正的标签应该是用内部评价，就是经典的哲学三问：我是谁？我从哪里来？我要到哪里去？现在我把外部标签和工具人属性的自我介绍都删了，用了内部评价的自我介绍，怎么看怎么喜欢，以后就不改了。</div>
+      <div class="relation">立场分层：内部评价为讲者核心主张；哲学三问为经典框架支撑。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">外部评价标签 vs 内部评价标签</h2><div class="card"><table><thead><tr><th>维度</th><th>外部评价标签</th><th>内部评价标签</th></tr></thead><tbody><tr><td>典型写法</td><td>一线德国公司的职业经理人</td><td>我是谁、从哪来、到哪去</td></tr><tr><td>标签性质</td><td>饭碗标签、工具人属性</td><td>个人标签、自我认知</td></tr><tr><td>粉丝互动</td><td>需要时才来，用完即走</td><td>价值观相投、交个朋友</td></tr><tr><td>写作感受</td><td>常改常新、总不对劲</td><td>越看越喜欢、不再改</td></tr><tr><td>思考深度</td><td>随大流、不用动脑</td><td>逼你回答自己是谁</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：建立个人账号、做个人品牌、想搞清楚「自己是谁」的人。</li><li>上限：内部评价是自媒体表达的理想态，求职投简历时仍要按岗位写匹配度。</li><li>反例：只谈情怀、不写任何专业背景，也会让人难以快速信任你。</li><li>例外：垂直工具型账号（如修图教程、Excel技巧）反而要突出工具标签，因为用户就是冲着工具来的。</li></ul><div class="pitfall">避坑：别把「写得好听」当目标，自我介绍的检验标准是它像不像你。</div><div class="pitfall">避坑：别指望一稿定型，讲者本人也写了十几个版本才想明白。</div><div class="pitfall">避坑：贴标签前先想清楚，你希望粉丝记住你的是什么——用完即走的工具，还是想交的朋友。</div><div class="pitfall">避坑：写「我是谁」不是编人设，是诚实地回答哲学三问，越坦诚越经得起时间。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>网络时代没有名号就等于不存在，自我介绍是建账号的第一步。</li><li>外部评价、工具人属性的标签是饭碗标签，不是个人标签。</li><li>真正的标签用内部评价：我是谁、我从哪里来、我要到哪里去。</li></ul><h3>行动清单</h3><ol><li>写一版「非求职」的自我介绍，删掉公司、职位、擅长方法论。</li><li>用哲学三问逐一回答：你是谁？你从哪里来？你要到哪里去？</li><li>贴标签前先问：粉丝会在什么时刻想起你？用完即走，还是交个朋友？</li></ol><h3>关键认知转变</h3><p>从「自我介绍 = 展示我的饭碗」转到「自我介绍 = 回答我是谁」：贴工具人标签，别人只会在需要时来用你；写内部评价，才能吸引真正想与你为友的人。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分00秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="8171" viewBox="0 0 1320 8171">
+  <foreignObject x="0" y="0" width="1320" height="8171">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>成年人不要做选择｜全都要的职场策略</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">跳槽</span><span class="tag tag-orange">职业规划</span><span class="tag tag-purple">契约精神</span><span class="tag tag-gray">时长 3分53秒</span><span class="tag tag-gray">分析视角：职业流动的策略思维</span></div>
+  <a class="source-link" href="local:01e48825f4f7dc630103710388b44d68e0_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：跳槽是加薪最多最快的方法，但跳槽有成本（要过面试）。成年人不要做选择，成年人全都要——在公司里100%努力拿A拿涨薪，同时每隔一两年在外面看新机会；和猎头保持开放关系是为了知道市场对自己的定价与稀缺性。忠诚靠契约精神（签了合同就全力以赴），但公司别拦着你看外面。跳槽要看税后和阶段，别被恶意高薪绑架。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">成年人不要做选择，全都要</span></div><div class="timeline-item"><span class="timeline-time">00:03</span><span class="timeline-text">跳槽才是加薪最多最快的方法</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">为什么不第一选择跳槽：有成本要过面试</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">就算服务员也得面试</span></div><div class="timeline-item"><span class="timeline-time">00:22</span><span class="timeline-text">如果我能拿清华北大毕业证干嘛不去</span></div><div class="timeline-item"><span class="timeline-time">00:29</span><span class="timeline-text">因为考不上</span></div><div class="timeline-item"><span class="timeline-time">00:32</span><span class="timeline-text">全都要：在公司100%努力拿A拿涨薪</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">同时每隔一两年在外面试看新机会</span></div><div class="timeline-item"><span class="timeline-time">00:49</span><span class="timeline-text">跟猎头高管保持好关系</span></div><div class="timeline-item"><span class="timeline-time">00:56</span><span class="timeline-text">聊一聊不代表会去</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">要知道市场对我的定价、影响、稀缺性</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">不怕公司觉得我要走，所有高管都干这个事</span></div><div class="timeline-item"><span class="timeline-time">01:17</span><span class="timeline-text">所有高管都跟猎头聊过</span></div><div class="timeline-item"><span class="timeline-time">01:20</span><span class="timeline-text">我只是职业经理人，去哪都能打工</span></div><div class="timeline-item"><span class="timeline-time">01:29</span><span class="timeline-text">想留我就给股份给期权给高薪，我拼命打</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">职业精神：100%到120%努力</span></div><div class="timeline-item"><span class="timeline-time">01:42</span><span class="timeline-text">做公司为了成就：增长盈利发展上市</span></div><div class="timeline-item"><span class="timeline-time">01:51</span><span class="timeline-text">什么都没做到大家很忠诚也是一滩烂泥</span></div><div class="timeline-item"><span class="timeline-time">01:57</span><span class="timeline-text">遵守契约精神：签了合同全力以赴</span></div><div class="timeline-item"><span class="timeline-time">02:04</span><span class="timeline-text">但别拦着我看外面的机会</span></div><div class="timeline-item"><span class="timeline-time">02:08</span><span class="timeline-text">这叫既要又要，两个我都要</span></div><div class="timeline-item"><span class="timeline-time">02:12</span><span class="timeline-text">其他公司加50%高薪我都不一定去</span></div><div class="timeline-item"><span class="timeline-time">02:16</span><span class="timeline-text">税一算你也没多少</span></div><div class="timeline-item"><span class="timeline-time">02:20</span><span class="timeline-text">别看到加两千块就觉得要去</span></div><div class="timeline-item"><span class="timeline-time">02:26</span><span class="timeline-text">考虑未来发展的阶段，不是当时薪酬</span></div><div class="timeline-item"><span class="timeline-time">02:34</span><span class="timeline-text">小公司恶意开高薪从大厂挖人</span></div><div class="timeline-item"><span class="timeline-time">02:43</span><span class="timeline-text">激进赚快钱的公司最多干半年一年就没了</span></div><div class="timeline-item"><span class="timeline-time">02:53</span><span class="timeline-text">不是哪钱高就去哪，最多拿两个月就掉地上</span></div><div class="timeline-item"><span class="timeline-time">02:56</span><span class="timeline-text">去下一家你要按那个薪酬要求，其他公司不接</span></div><div class="timeline-item"><span class="timeline-time">03:07</span><span class="timeline-text">你不愿意降价就掉地上</span></div><div class="timeline-item"><span class="timeline-time">03:10</span><span class="timeline-text">对职场公司招聘求职职业操守要有深入思考</span></div><div class="timeline-item"><span class="timeline-time">03:25</span><span class="timeline-text">想清楚再做选择，不是简单二选一</span></div><div class="timeline-item"><span class="timeline-time">03:31</span><span class="timeline-text">留不知道为何留、走不知道为何走</span></div><div class="timeline-item"><span class="timeline-time">03:40</span><span class="timeline-text">跳了又后悔</span></div><div class="timeline-item"><span class="timeline-time">03:45</span><span class="timeline-text">静下心把事情弄明白，按部就班一步步做</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>跳槽还是留在公司</div><span class="arrow">→</span><div class="node-green">证据<br/>跳槽有成本 + 全都要策略</div><span class="arrow">→</span><div class="node-orange">判断<br/>成年人全都要：两头都要经营</div><span class="arrow">→</span><div class="node-blue">行动<br/>想清楚定价与阶段再决策</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：跳槽和留守是二选一。纠偏：成年人全都要——公司内全力+外面看机会。</p><p>误解 2：跟猎头聊=要跳槽。纠偏：是了解市场定价和稀缺性，所有高管都这么干。</p><p>误解 3：哪钱高去哪。纠偏：要算税、看阶段，恶意高薪的公司半年就没了。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-blue">
+      <h3>跳槽是加薪最快的方法</h3>
+      <p>在讲什么：跳槽才是加薪最多最快的方法，所有人都知道。为什么不第一选择跳槽？因为跳槽有成本，要过面试。如果能拿到清华北大的毕业证我干嘛不去？因为你考不上。关键理解：收益存在，门槛也在。怎么用：理性评估跳槽的真实成本。</p>
+      <div class="quote">依据 [00:03–00:29]：跳槽才是加薪涨得最多最快的方法，但是为什么大家不会第一选择跳槽？跳槽没成本吗？就算你当服务员，你得经过面试。</div>
+      <div class="relation">立场分层：跳槽收益为普遍认知，属常识确认。</div>
+    </div>
+    <div class="card card-green">
+      <h3>全都要的双轨策略</h3>
+      <p>在讲什么：在公司里100%努力拿A拿涨薪，同时每隔一两年在外面试看新机会。跟猎头高管保持好关系，聊一聊不代表会去，是要知道市场对我的定价、影响和稀缺性。关键理解：双轨并行不是背叛。怎么用：每年安排1-2次外部机会的了解。</p>
+      <div class="quote">依据 [00:32–01:09]：我在公司里100%努力工作，我要拿A、要拿涨薪，同时每隔一两年都在外面试……聊一聊只是说我要知道这个市场对我的定价。</div>
+      <div class="relation">立场分层：双轨策略为讲者核心方法论，属职业策略。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>职业经理人的契约精神</h3>
+      <p>在讲什么：所有高管都跟猎头聊过。我只是职业经理人，去哪家公司都能打工。想留我就给股份、给期权、给高薪酬，我100%-120%为你工作；签了合同就全力以赴，但别拦着我看外面。关键理解：忠诚靠契约不靠禁闭。怎么用：用契约界定忠诚的边界。</p>
+      <div class="quote">依据 [01:17–02:07]：你给股份、给期权、给高薪酬，我就给你拼命打……就是我在你公司签了合同，我就一定会全力以赴为你工作，但你不要拦着我。</div>
+      <div class="relation">立场分层：契约精神为讲者职业观，属价值立场。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>高薪陷阱与阶段思考</h3>
+      <p>在讲什么：其他公司加50%我都不一定去，税一算没多少。小公司恶意开高薪从大厂挖人，激进赚快钱的公司最多干半年一年就没了。不是哪钱高就去哪——最多拿两个月就掉地上，因为去下一家你要按那个薪酬要求、其他公司不接。关键理解：高薪可能是毒药。怎么用：算税后、看阶段、看可持续。</p>
+      <div class="quote">依据 [02:12–03:07]：有一些激进赚快钱的公司会故意开高薪吸引人，那个公司最多干半年一年没了……你去下一家公司的时候就要求按那个薪酬来，其他公司都不愿意接，你自己又不愿意降价，就掉地上。</div>
+      <div class="relation">立场分层：高薪陷阱为经验警告，属风险提示。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">职场决策对照</h2><div class="card"><table><thead><tr><th>维度</th><th>表面</th><th>本质</th></tr></thead><tbody><tr><td>跳槽</td><td>加薪最快</td><td>有面试成本</td></tr><tr><td>猎头关系</td><td>要跳槽</td><td>了解市场定价</td></tr><tr><td>忠诚</td><td>死守一家</td><td>契约精神+双轨</td></tr><tr><td>高薪offer</td><td>钱高就去</td><td>算税看阶段</td></tr><tr><td>选择</td><td>二选一</td><td>想清楚再动</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：纠结跳槽与留守的职场人。</li><li>上限：双轨策略需要精力与谈判筹码。</li><li>反例：初入职场者优先练能力，不必过早经营市场关系。</li><li>例外：体制内等场景市场流动性不同。</li></ul><div class="pitfall">避坑：别只看薪数字，先算税。</div><div class="pitfall">避坑：别被恶意高薪吸引，看公司可持续性。</div><div class="pitfall">避坑：别意气用事，留不知道为何留、走不知道为何走。</div><div class="pitfall">避坑：跳槽后别坚持特殊高薪，会被市场抛弃。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>成年人全都要：公司内全力表现+对外保持市场感知。</li><li>跟猎头保持开放，知道自己的定价。</li><li>忠诚靠契约，不靠禁闭。</li><li>跳槽要看阶段和税后，不只看数字。</li></ul><h3>行动清单</h3><ol><li>每年安排1-2次外部机会的了解。</li><li>算清offer的税后实际到手。</li><li>想清楚「留/走/跳」各自的理由再决定。</li></ol><h3>关键认知转变</h3><p>从「跳槽还是留守的二选一」转到「两个都要经营」：把求职当作长期市场感知，而不是一次性的赌注。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 3分53秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

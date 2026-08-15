@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5969" viewBox="0 0 1320 5969">
+  <foreignObject x="0" y="0" width="1320" height="5969">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>凭什么没本事的人能当领导｜风险下注论</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">管理</span><span class="tag tag-orange">领导力</span><span class="tag tag-gray">时长 2分24秒</span><span class="tag tag-gray">分析视角：领导力的风险本质</span></div>
+  <a class="source-link" href="local:01e46df464b9f77001037103884d854821_258.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：当领导的本质是「承担最大风险」，技能只是执行层的优势。刘邦不如张良萧何韩信却当老大，因为只有他拿命下注；球队成绩不好先换教练不换球员；49 岁「自愿退休」的 CEO 实则是做不成的退场。技能不如你的人敢担责，所以他坐那个位置。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">问题：那个技能不如你的人凭什么当领导</span></div><div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">你各个地方都比下去，最后发现只有穿小鞋比他强</span></div><div class="timeline-item"><span class="timeline-time">00:32</span><span class="timeline-text">类比一：刘邦说不如张良萧何韩信，却当老大</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">秦末时没人知道刘邦能否成功，挑头的人必死</span></div><div class="timeline-item"><span class="timeline-time">01:12</span><span class="timeline-text">萧何韩信张良没下注，刘邦拿命下注</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">类比二：股评家不下注，预测都是扯淡</span></div><div class="timeline-item"><span class="timeline-time">01:33</span><span class="timeline-text">结论：领导者承担被干掉、被换人、被退休的风险</span></div><div class="timeline-item"><span class="timeline-time">01:47</span><span class="timeline-text">类比三：球队成绩不好先换主教练，不换球员</span></div><div class="timeline-item"><span class="timeline-time">02:00</span><span class="timeline-text">49 岁自愿退休的 CEO：做不成就是自愿退休</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>技能不如你的人凭什么当领导</div><span class="arrow">→</span><div class="node-green">证据<br/>刘邦/股评家/换教练三个类比</div><span class="arrow">→</span><div class="node-orange">判断<br/>领导者承担最大风险</div><span class="arrow">→</span><div class="node-blue">行动<br/>敢担责是坐上位置的通行证</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：领导必须能力最强。纠偏：领导者是「下注」的人，技能是执行层优势，风险承担才是决策层资格。</p><p>误解 2：当领导很爽，责任都是下属扛。纠偏：责任越大风险越大，业绩差先被换掉的是领导。</p><p>误解 3：自愿退休是真自愿。纠偏：49 岁退休多半是「做不成」的体面退场。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>刘邦类比：没下注的人不配当老大</h3>
+      <p>在讲什么：刘邦承认自己不如张良（运筹）、萧何（治国）、韩信（带兵），却当了老大。关键理解：张萧韩三人的优势是「技能」，刘邦承担的是「拿命下注」的风险。怎么用：审视自己愿不愿意为结果承担最大风险。</p>
+      <div class="quote">依据 [00:32–01:24]：他们三个没下注、不冒风险，而刘邦是拿自己的命下注的。</div>
+      <div class="relation">立场分层：历史类比为讲者论据；「下注决定领导资格」为其核心观点。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>股评家：不下注的预测都是扯淡</h3>
+      <p>在讲什么：股评家预测股市却不用自己的钱下注，所以预测无分量。关键理解：判断力只有在「自己承担后果」时才有价值。怎么用：听人建议时先问「他自己承担什么风险」。</p>
+      <div class="quote">依据 [01:25–01:32]：不下注的预测都是扯淡，股评家分析师不会用自己的钱去冒险下注，不敢冒风险的人都不是真正的玩家。</div>
+      <div class="relation">立场分层：股评家观点为讲者论据；「下注才有分量」为其观点。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>换教练不换球员：责任与风险在领导</h3>
+      <p>在讲什么：球队成绩不好先换主教练，不换球员——因为风险承担者在领导。49 岁自愿退休的 CEO 同理。关键理解：责任集中导致风险集中在领导身上。怎么用：做决策前想清楚「成绩差时谁先被换」。</p>
+      <div class="quote">依据 [01:47–02:24]：风险越大做成了才是手里对打，做不成就是自愿退休。</div>
+      <div class="relation">立场分层：换教练/退休为讲者论据；「责任越大风险越大」为其观点。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">技能优势 vs 风险承担</h2><div class="card"><table><thead><tr><th>维度</th><th>技能优势者（张萧韩）</th><th>风险承担者（刘邦）</th></tr></thead><tbody><tr><td>角色</td><td>执行层高手</td><td>决策层扛责者</td></tr><tr><td>风险</td><td>顶多充军坐牢</td><td>拿命下注</td></tr><tr><td>收益</td><td>被封赏</td><td>得天下</td></tr><tr><td>失败代价</td><td>可重来</td><td>斩立决</td></tr><tr><td>领导资格</td><td>不够</td><td>够</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：想理解「为什么领导是那个人」、纠结是否该担责的人。</li><li>上限：风险承担是领导资格的必要条件，不充分——还叠加战略、资源、团队等因素。</li><li>反例：乱冒险、赌性强的「莽夫」不等于好领导。</li><li>例外：现代企业领导的风险多是职业风险（被换），未必是身家性命。</li></ul><div class="pitfall">避坑：别把「敢背锅」理解为「乱接活」，风险要和决策权匹配。</div><div class="pitfall">避坑：别因为「领导不如我」就轻视对方——他可能扛着你看不见的风险。</div><div class="pitfall">避坑：想晋升的人，先从承担一个小项目的完整责任练起。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>领导资格 = 承担最大风险。</li><li>技能优势在执行层，风险承担在决策层。</li><li>责任越大，风险越大；做成了是手里对打。</li></ul><h3>行动清单</h3><ol><li>找出你身边「不如你却上位」的人，分析他扛了什么风险。</li><li>主动申请负责一个结果要自己承担的小项目。</li><li>评估新机会时，先看清它把什么风险压在你头上。</li></ol><h3>关键认知转变</h3><p>从「领导必须能力最强」转到「领导是承担最大风险的人」：想上位，先练敢担责。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分24秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

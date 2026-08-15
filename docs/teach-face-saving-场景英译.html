@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="给同事上课照顾面子｜先找亮点再补充视频场景英译学习卡" />
+  <title>给同事上课照顾面子｜先找亮点再补充｜场景英译</title>
+  <style>:root {
+  --teal-950:#073f42; --teal-800:#0d686c; --teal-700:#0f7c80; --teal-600:#14919b;
+  --mint-100:#dff4ec; --mint-50:#f0faf6; --ink:#183536; --muted:#607879;
+  --line:#d7e8e2; --paper:#fff; --amber:#a85d08; --shadow:0 12px 32px rgba(7,63,66,.08);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:24px; }
+body { margin:0; color:var(--ink); background:#edf7f2; font-family:Inter,"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif; line-height:1.65; }
+button, select { font:inherit; }
+a { color:inherit; }
+.hero { color:#fff; background:radial-gradient(circle at 85% 10%,rgba(129,230,196,.24),transparent 30%),linear-gradient(125deg,#073f42,#0d7377 56%,#14919b); }
+.hero-inner { width:min(1440px,100%); margin:auto; padding:48px clamp(20px,5vw,72px) 42px; }
+.hero-flex { display:flex; gap:clamp(18px,3vw,40px); align-items:flex-start; }
+.hero-cover { width:min(240px,42vw); height:auto; max-height:320px; object-fit:contain; object-position:center; border-radius:16px; border:1px solid rgba(255,255,255,.28); box-shadow:0 18px 44px rgba(0,0,0,.32); flex-shrink:0; }
+.hero-text { min-width:0; flex:1; }
+.eyebrow { margin:0 0 12px; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.8; }
+h1 { max-width:1020px; margin:0; font-size:clamp(1.8rem,3.8vw,3.2rem); line-height:1.13; letter-spacing:-.04em; }
+.hero-en { margin:12px 0 24px; font-size:clamp(1rem,2vw,1.3rem); opacity:.82; }
+.hero-meta { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+.chip { border:1px solid rgba(255,255,255,.28); border-radius:99px; padding:5px 11px; font-size:.82rem; background:rgba(255,255,255,.08); }
+.source-link { font-weight:750; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.5); }
+.lang-switch { margin-left:12px; font-size:.8rem; font-weight:700; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:24px; }
+.toolbar label { font-size:.82rem; opacity:.82; }
+.toolbar select { color:#fff; background:#0a5d61; border:1px solid rgba(255,255,255,.3); border-radius:8px; padding:7px 9px; }
+.stop-btn { display:none; color:#fff; background:#8c3b2a; border:0; border-radius:8px; padding:8px 12px; cursor:pointer; }
+.stop-btn.visible { display:inline-flex; }
+.speech-status { min-height:1.4em; font-size:.82rem; opacity:.88; }
+.narration-player { margin-top:18px; padding:16px 18px; background:rgba(255,255,255,.1); border-radius:12px; border:1px solid rgba(255,255,255,.15); }
+.audio-label { color:rgba(255,255,255,.88); font-size:.82rem; font-weight:700; margin:0 0 8px; }
+.page { width:min(1440px,100%); margin:auto; padding:28px clamp(16px,3vw,44px) 64px; display:grid; grid-template-columns:minmax(230px,280px) minmax(0,1fr); gap:30px; align-items:start; }
+.sidebar { position:sticky; top:20px; min-width:0; }
+.sidebar-box { background:rgba(255,255,255,.8); border:1px solid var(--line); border-radius:16px; padding:17px; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+.sidebar h2 { margin:0 0 13px; font-size:.9rem; letter-spacing:.08em; color:var(--teal-800); }
+.map-link { display:grid; grid-template-columns:34px minmax(0,1fr); gap:9px; padding:10px 6px; text-decoration:none; border-top:1px solid var(--line); }
+.map-link:hover b { color:var(--teal-700); }
+.map-id { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; color:#fff; background:var(--teal-700); font-size:.72rem; font-weight:800; }
+.map-link b { display:block; font-size:.78rem; line-height:1.4; }
+.map-link small { display:block; color:var(--muted); font-size:.67rem; line-height:1.4; margin-top:2px; overflow-wrap:anywhere; }
+.content { min-width:0; }
+.scene-card { background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:clamp(20px,3vw,34px); margin-bottom:24px; box-shadow:var(--shadow); overflow:hidden; }
+.scene-frame { display:block; width:100%; max-height:480px; object-fit:contain; object-position:center; background:rgba(7,63,66,.04); border-radius:14px; margin:16px 0 4px; border:1px solid var(--line); box-shadow:0 10px 28px rgba(7,63,66,.1); }
+.scene-topline { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.scene-id { display:inline-grid; place-items:center; min-width:42px; height:30px; padding:0 10px; color:#fff; background:var(--teal-700); border-radius:8px; font-size:.78rem; font-weight:850; }
+.time { margin-left:10px; color:var(--muted); font-size:.82rem; font-variant-numeric:tabular-nums; }
+.scene-card h2 { margin:18px 0 2px; font-size:clamp(1.35rem,2.4vw,2rem); line-height:1.25; color:var(--teal-950); }
+.scene-title-en { margin:0 0 18px; color:var(--teal-600); font-weight:700; font-size:.98rem; }
+.context { margin:0 0 20px; padding:12px 15px; color:#496566; background:var(--mint-50); border-left:3px solid var(--teal-600); border-radius:0 10px 10px 0; font-size:.88rem; }
+.context b { margin-right:10px; color:var(--teal-800); }
+.sentence-list { display:grid; gap:12px; }
+.sentence { position:relative; display:grid; grid-template-columns:38px minmax(0,1fr); gap:12px; padding:16px; border:1px solid #e2ece8; border-radius:14px; background:#fcfefd; min-width:0; }
+.sentence-no { color:var(--teal-600); font-size:.76rem; font-weight:850; font-variant-numeric:tabular-nums; padding-top:4px; }
+.bilingual { min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(14px,2vw,28px); }
+.lang-block { min-width:0; }
+.lang-block p { margin:5px 0 0; overflow-wrap:anywhere; }
+.en-block { padding-left:clamp(14px,2vw,28px); border-left:1px solid var(--line); }
+.en-block p { color:#0b5c60; font-weight:650; }
+.lang-tag { display:inline-block; color:var(--muted); font-size:.66rem; font-weight:850; letter-spacing:.12em; }
+.en-head { display:flex; justify-content:space-between; gap:10px; align-items:center; min-height:30px; }
+.note { grid-column:2; margin:1px 0 0; color:#708182; font-size:.78rem; }
+.note span { margin-right:7px; color:var(--amber); font-weight:750; }
+.speak-btn { display:inline-flex; align-items:center; gap:7px; border:1px solid #b8d9d1; border-radius:9px; padding:7px 11px; color:var(--teal-800); background:#f5fbf8; cursor:pointer; white-space:nowrap; font-size:.78rem; font-weight:750; transition:.15s ease; }
+.speak-btn:hover { color:#fff; background:var(--teal-700); border-color:var(--teal-700); transform:translateY(-1px); }
+.speak-btn.playing { color:#fff; background:var(--teal-700); border-color:var(--teal-700); }
+.speak-btn.compact { padding:4px 8px; font-size:.7rem; }
+.speak-btn.icon-only { padding:3px 7px; margin-left:6px; }
+.speak-btn.icon-only span:last-child { display:none; }
+.pronounce-word { display:inline; margin:0; padding:0 2px; color:inherit; background:rgba(20,145,155,.08); border:0; border-bottom:1px dashed var(--teal-600); border-radius:3px; font:inherit; font-weight:inherit; line-height:inherit; cursor:pointer; }
+.pronounce-word:hover, .pronounce-word:focus { color:var(--teal-950); background:#cceee4; border-bottom-style:solid; outline:3px solid rgba(20,145,155,.42); outline-offset:2px; }
+.pronounce-word.playing { color:#fff; background:var(--teal-700); border-bottom-color:var(--teal-700); }
+.paraphrase { margin-top:18px; border-top:1px solid var(--line); }
+.paraphrase summary { padding:16px 0 3px; color:var(--teal-800); cursor:pointer; font-weight:800; }
+.paraphrase summary span { color:var(--muted); font-size:.75rem; font-weight:500; margin-left:8px; }
+.paraphrase ol { margin:12px 0 0; padding-left:22px; }
+.paraphrase li { padding:7px 0 9px 5px; }
+.paraphrase li p { margin:0; font-size:.9rem; font-weight:650; }
+.chunks { margin-top:4px; color:var(--teal-700); font-size:.78rem; }
+.study-section { margin:38px 0 0; }
+.section-heading { display:flex; align-items:baseline; gap:10px; margin:0 0 15px; color:var(--teal-950); font-size:1.35rem; }
+.section-heading small { color:var(--teal-600); font-size:.78rem; letter-spacing:.05em; }
+.study-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.study-grid article { padding:17px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 6px 18px rgba(7,63,66,.05); min-width:0; }
+.study-grid p { margin:0; }
+.practice-en { margin-top:9px; color:var(--teal-700); font-weight:650; overflow-wrap:anywhere; }
+.wrong { color:#a24831; text-decoration:line-through; overflow-wrap:anywhere; }
+.right { color:var(--teal-700); font-weight:750; margin:5px 0; overflow-wrap:anywhere; }
+.pitfalls p { color:var(--muted); font-size:.82rem; }
+.shifts article { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr); gap:12px; align-items:center; }
+.shifts b { color:var(--teal-600); font-size:1.2rem; }
+.shifts strong { color:var(--teal-800); }
+footer { margin-top:38px; color:var(--muted); font-size:.78rem; text-align:center; }
+@media (max-width:900px) { .page { grid-template-columns:1fr; } .sidebar { position:static; } .sidebar-box { overflow-x:auto; padding:12px; } .sidebar h2 { padding-left:5px; } .map-nav { display:flex; width:max-content; gap:8px; } .map-link { width:220px; border:1px solid var(--line); border-radius:10px; padding:8px; } .bilingual { grid-template-columns:1fr; } .en-block { padding:12px 0 0; border-left:0; border-top:1px dashed var(--line); } }
+@media (max-width:620px) { .hero-inner { padding-top:32px; } .hero-flex { flex-direction:column; align-items:center; } .hero-cover { width:100%; max-width:360px; } .hero-text { text-align:center; } .page { padding-inline:10px; gap:18px; } .scene-card { border-radius:14px; padding:17px 13px; } .scene-topline { align-items:flex-start; } .scene-speak span:last-child { display:none; } .sentence { grid-template-columns:26px minmax(0,1fr); padding:13px 10px; gap:6px; } .note { grid-column:2; } .study-grid { grid-template-columns:1fr; } .shifts article { grid-template-columns:1fr; gap:5px; } .shifts b { transform:rotate(90deg); justify-self:start; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .speak-btn { transition:none; } }</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-flex">
+        <img class="hero-cover" src="assets/teach-face-saving/shot-01.jpg" alt="给同事上课照顾面子｜先找亮点再补充 封面" loading="lazy">
+        <div class="hero-text">
+          <p class="eyebrow">Scene English · 视频学习</p>
+          <h1>给同事上课照顾面子｜先找亮点再补充</h1>
+          <p class="hero-en">Saving Face When Training Colleagues</p>
+          <div class="hero-meta"><span class="chip">2026-08-15</span><span class="chip">local</span><span class="chip">1分49秒</span><span class="chip">3 个场景</span><span class="chip">点下划线单词听发音</span><a class="source-link" href="local:01e46dcd5503455801037103884d854dd3_4610.mp4video.MP4" target="_blank" rel="noopener">查看原视频 ↗</a><a class="source-link lang-switch" href="teach-face-saving-图文实录.html" hreflang="zh" style="margin-left:12px;font-size:.8rem">中文图文实录版 ↗</a></div>
+        </div>
+      </div>
+      <div class="toolbar"><label for="speech-rate">朗读速度</label><select id="speech-rate"><option value="0.85">慢速 0.85×</option><option value="1" selected>正常 1×</option><option value="1.15">快速 1.15×</option></select><button id="stop-speech" class="stop-btn" type="button">■ 停止朗读</button><span id="speech-status" class="speech-status" role="status" aria-live="polite"></span></div>
+      <div class="narration-player"><p class="audio-label">🎧 语音讲解</p><button class="speak-btn" type="button" data-audio="audio/teach-face-saving/narration.mp3" aria-label="播放语音讲解"><span aria-hidden="true">▶</span><span>播放语音讲解</span></button></div>
+    </div>
+  </header>
+  <main class="page">
+    <aside class="sidebar" aria-label="场景地图"><div class="sidebar-box"><h2>场景地图 · SCENE MAP</h2><nav class="map-nav"><a class="map-link" href="#s1"><span class="map-id">S1</span><span><b>场景：给同事讲课的尴尬</b><small>00:00–00:41 · The awkward training session</small></span></a><a class="map-link" href="#s2"><span class="map-id">S2</span><span><b>原则：成年人以鼓励为主</b><small>00:42–01:18 · Principle: encourage adults, don't negate</small></span></a><a class="map-link" href="#s3"><span class="map-id">S3</span><span><b>技巧：先找亮点再补充</b><small>01:19–01:49 · The trick: find the bright spot first</small></span></a></nav></div></aside>
+    <div class="content">
+      <section class="scene-card" id="s1" data-scene><div class="scene-topline"><div><span class="scene-id">S1</span><span class="time">00:00–00:41</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/teach-face-saving/s1.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/teach-face-saving/shot-01.jpg" alt="场景：给同事讲课的尴尬 场景截图" loading="lazy"><h2>场景：给同事讲课的尴尬</h2><p class="scene-title-en">The awkward training session</p><p class="context"><b>情境</b>老板发现你客户开发比所有销售同事都厉害，让你给全队讲怎么拜访客户。结果台下没人配合，你不停说「不对、不是」，坐在最后的杨若实冷眼记录你讲的每一句话。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>老板发现你在客户开发方面比所有销售同事都厉害，有一天让你给大家讲一讲怎么拜访客户。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s1-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">The boss noticed you're the best at client development, so one day he asked you to teach the whole sales team how to make sales calls.</p></div></div><p class="note"><span>表达提示</span>客户开发：client development；拜访客户：make sales calls</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>培训上课时你发现，坐在下面的销售同事都很「菜」，你提的问题没人回答。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s1-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">When the training started, you realized the sales reps in front of you were total rookies — no one answered your questions.</p></div></div><p class="note"><span>表达提示</span>很菜：total rookies；提问题：ask / pose a question</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>你很郁闷，不停地重复「不对、不是、但是、可是」，坐在最后的杨若实一边听你讲课，一边用冷峻又无奈的目光记录你讲的每一句话。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s1-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Frustrated, you kept repeating "no, that's not right, but, however," while Yang Ruoshi, sitting in the back, watched with a cold and helpless look and wrote down every word you said.</p></div></div><p class="note"><span>表达提示</span>郁闷：frustrated / fed up；冷峻又无奈的目光：a cold and helpless look</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>老板赏识 → 委以培训重任</p><div class="chunks">Getting picked by the boss means being handed a big training task.</div></li><li><p>台下不配合 → 越纠正越尴尬</p><div class="chunks">When the audience won't engage, constant correction only makes it more awkward.</div></li></ol></details></section><section class="scene-card" id="s2" data-scene><div class="scene-topline"><div><span class="scene-id">S2</span><span class="time">00:42–01:18</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/teach-face-saving/s2.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/teach-face-saving/shot-02.jpg" alt="原则：成年人以鼓励为主 场景截图" loading="lazy"><h2>原则：成年人以鼓励为主</h2><p class="scene-title-en">Principle: encourage adults, don't negate</p><p class="context"><b>情境</b>老板课后反馈：成年人学习不能被否定，要以鼓励为主。你不是学校老师，面对的是抬头不见低头见的成年人，否定会让彼此面子上难看。上课的真正目标是建立信任、让人愿意跟你干。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>我来给你反馈：成年人学习，不应该也不能够被否定，应该是以鼓励为主。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s2-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Here's my feedback: adults should never — and can never — be put down when they're learning. It's all about encouragement.</p></div></div><p class="note"><span>表达提示</span>反馈：feedback；否定：put down / negate；以鼓励为主：it's all about encouragement</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>学校里的老师面对的是未成年人，批评学生、指出他们的错误无可厚非；但你面对的是成年人，大家抬头不见低头见，面子上难看。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s2-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">School teachers deal with minors, so criticizing students and pointing out their mistakes is perfectly fair. But you're dealing with adults — you bump into each other in the office every day, and calling them out would make them lose face.</p></div></div><p class="note"><span>表达提示</span>未成年人：minors；无可厚非：perfectly fair / understandable；丢面子：lose face</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>哪怕他们没有掌握你讲的内容，但只要听完课愿意相信你、跟着你干，那你的课就是成功的。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s2-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Even if they don't master a thing you taught, as long as they walk away trusting you and willing to follow you, your class is a success.</p></div></div><p class="note"><span>表达提示</span>掌握：master；跟着你干：follow you / work with you</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>成年人学习 → 鼓励为主而非否定</p><div class="chunks">Adults learn through encouragement, not through being negated.</div></li><li><p>上课目的 → 不是灌输内容而是建立信任</p><div class="chunks">The real goal isn't to cram content, but to build trust.</div></li></ol></details></section><section class="scene-card" id="s3" data-scene><div class="scene-topline"><div><span class="scene-id">S3</span><span class="time">01:19–01:49</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/teach-face-saving/s3.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/teach-face-saving/shot-05.jpg" alt="技巧：先找亮点再补充 场景截图" loading="lazy"><h2>技巧：先找亮点再补充</h2><p class="scene-title-en">The trick: find the bright spot first</p><p class="context"><b>情境</b>有人问：学员真的错了又不能否定，怎么办？讲者给出第一个办法：找出回答中值得肯定的点先表扬，再补充改进建议——先找亮点再补充，是锦上添花而非否定批评；另外两招留到付费课程。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>学员如果真的错了，你又不能否定人家，那应该怎么办呢？</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s3-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">So what if a trainee is genuinely wrong, and you can't just shoot them down?</p></div></div><p class="note"><span>表达提示</span>否定人家：shoot someone down；学员：trainee</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>第一个办法：找出学员回答中值得肯定的点，比如「你的出发点非常好，你考虑到了A、B、C三点」。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s3-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Method one: find something in their answer worth praising — for example, "your thinking is spot on, and you've covered points A, B, and C."</p></div></div><p class="note"><span>表达提示</span>值得肯定的点：something worth praising；出发点：your thinking / your intention</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>然后再补充——如果能有几点改进，那结果就更完美了。先找亮点再补充，你是帮人家锦上添花，而不是否定批评。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/teach-face-saving/s3-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Then add your suggestions: "with a few tweaks, it would be even better." Find the bright spot first, then build on it — you're icing the cake, not raining on their parade.</p></div></div><p class="note"><span>表达提示</span>先找亮点再补充：lead with the bright spot, then add on；锦上添花：icing on the cake</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>三个办法 → 视频只揭晓第一个</p><div class="chunks">The video only reveals the first of three methods.</div></li><li><p>先找亮点再补充 → 先肯定后建议</p><div class="chunks">Praise what's good before you suggest what could change.</div></li></ol></details></section>
+      <section class="study-section" id="practice"><h2 class="section-heading">今日可练 <small>PRACTICE TODAY</small></h2><div class="study-grid"><article><p>表达「照顾面子」</p><div class="practice-en">We should save face for our colleagues when we give feedback. <button class="speak-btn icon-only" type="button" data-audio="audio/teach-face-saving/practice-0.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>说「成年人以鼓励为主」</p><div class="practice-en">Adults learn best through encouragement, not constant correction. <button class="speak-btn icon-only" type="button" data-audio="audio/teach-face-saving/practice-1.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>说「先找亮点再补充」</p><div class="practice-en">Find the bright spot in their answer first, then add your suggestions. <button class="speak-btn icon-only" type="button" data-audio="audio/teach-face-saving/practice-2.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>表达「锦上添花」</p><div class="practice-en">I'm adding icing to the cake, not picking holes in their work. <button class="speak-btn icon-only" type="button" data-audio="audio/teach-face-saving/practice-3.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article></div></section>
+      <section class="study-section pitfalls" id="pitfalls"><h2 class="section-heading">避坑 <small>PITFALLS</small></h2><div class="study-grid"><article><div class="wrong">✕ ✕ 直译腔：give face to my colleague.</div><div class="right">✓ ✓ 地道说法：save face for my colleague.</div><p>「照顾面子」用 save face；give face 虽偶见，但 save face 是最标准表达。</p></article><article><div class="wrong">✕ ✕ 直译腔：Don't negate the other person.</div><div class="right">✓ ✓ 地道说法：Don't shoot them down.</div><p>「否定/驳倒别人」→ shoot down 更口语地道。</p></article><article><div class="wrong">✕ ✕ 直译腔：The sales colleagues are very vegetable.（菜）</div><div class="right">✓ ✓ 地道说法：The sales reps are total rookies.</div><p>「很菜」= 菜鸟 → rookie / greenhorn，别字面译成 vegetable。</p></article><article><div class="wrong">✕ ✕ 直译腔：You add flowers to the cake.（锦上添花）</div><div class="right">✓ ✓ 地道说法：It's icing on the cake.</div><p>锦上添花 → icing on the cake 是地道固定表达。</p></article></div></section>
+      <section class="study-section shifts" id="mindset"><h2 class="section-heading">认知转变 <small>MINDSET SHIFTS</small></h2><div class="study-grid"><article><span>给同事上课 = 不停指出错误</span><b aria-hidden="true">→</b><strong>给同事上课 = 先肯定再引导</strong></article><article><span>成年人学习 = 靠批评督促</span><b aria-hidden="true">→</b><strong>成年人学习 = 靠鼓励建立信心</strong></article><article><span>反馈 = 说出哪里不对</span><b aria-hidden="true">→</b><strong>反馈 = 让人愿意跟着你干</strong></article></div></section>
+      <footer>ASR 专有名词已按语境校正（如「菜牛」校正为「很菜」、「謹上添花」校正为「錦上添花」、「無可後備」校正为「无可厚非」）。场景/句子朗读使用 edge-tts，单词发音使用浏览器 Web Speech API。 · 场景/句子朗读使用 edge-tts 神经网络语音 · 单词发音使用浏览器 Web Speech API</footer>
+    </div>
+  </main>
+  <script>(() => {
+    let activeAudio = null;
+    let activeBtn = null;
+    const status = document.getElementById('speech-status');
+    const stopBtn = document.getElementById('stop-speech');
+    const rateSel = document.getElementById('speech-rate');
+    const reset = () => { if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn = null; stopBtn.classList.remove('visible'); status.textContent = ''; };
+    const playAudio = (url, btn) => { reset(); const a = new Audio(url); a.playbackRate = Number(rateSel.value); activeAudio = a; activeBtn = btn; btn.classList.add('playing'); stopBtn.classList.add('visible'); status.textContent = btn.classList.contains('scene-speak') ? '正在朗读整个场景…' : btn.classList.contains('speak-btn') && btn.dataset.audio.includes('narration') ? '正在播放语音讲解…' : '正在朗读…'; a.onended = () => { if (activeAudio === a) reset(); }; a.onerror = () => { status.textContent = '音频加载失败'; if (activeAudio === a) reset(); }; a.play().catch(() => { status.textContent = '播放失败'; if (activeAudio === a) reset(); }); };
+    document.addEventListener('click', e => { const btn = e.target.closest('[data-audio]'); if (!btn) return; e.preventDefault(); if (btn === activeBtn && activeAudio) { reset(); return; } playAudio(btn.dataset.audio, btn); });
+    stopBtn.addEventListener('click', reset);
+    const synth = window.speechSynthesis;
+    const getEnglishVoice = () => { const v = synth.getVoices(); return v.find(x => /^en-(US|GB)/i.test(x.lang)) || v.find(x => /^en/i.test(x.lang)) || null; };
+    const difficultWords = new Set(['feedback', 'praise', 'face', 'adult learning', 'encourage', 'encouragement', 'negate', 'shoot down', 'criticize', 'point out', 'mistake', 'trust', 'follower', 'bright spot', 'icing on the cake', 'rookie', 'greenhorn', 'acknowledge', 'improvement', 'success', 'colleague', 'workplace', 'awkward', 'compliment', 'suggestion']);
+    const shouldPronounce = w => { const n = w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,''); return n.replace(/[^a-z]/g,'').length >= 8 || difficultWords.has(n); };
+    const mark = root => { const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const ns = []; while (w.nextNode()) ns.push(w.currentNode); ns.forEach(n => { if (n.parentElement?.closest('button,script,style')) return; let m,l=0,ch=false; const fg = document.createDocumentFragment(); const re = /[A-Za-z]+(?:[-'’][A-Za-z]+)*/g; while ((m = re.exec(n.nodeValue))) { if (!shouldPronounce(m[0])) continue; ch=true; fg.append(n.nodeValue.slice(l,m.index)); const b=document.createElement('button');b.type='button';b.className='pronounce-word';b.dataset.speak=m[0];b.setAttribute('aria-label','朗读单词 '+m[0]);b.title='点击听 '+m[0]+' 发音';b.textContent=m[0];fg.append(b);l=m.index+m[0].length;} if(!ch)return;fg.append(n.nodeValue.slice(l));n.replaceWith(fg);}); };
+    document.querySelectorAll('.english,.scene-title-en,.paraphrase li p,.chunks,.practice-en,.wrong,.right').forEach(mark);
+    document.addEventListener('click', e => { const wb = e.target.closest('.pronounce-word'); if (!wb) return; e.preventDefault(); if (!synth) return; synth.cancel(); if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn=wb; wb.classList.add('playing'); const u=new SpeechSynthesisUtterance(wb.dataset.speak);u.lang='en-US';u.rate=0.88;const v=getEnglishVoice();if(v)u.voice=v;u.onend=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};u.onerror=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};synth.speak(u); });
+  })();</script>
+</body>
+</html>

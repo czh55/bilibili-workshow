@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5991" viewBox="0 0 1320 5991">
+  <foreignObject x="0" y="0" width="1320" height="5991">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>给同事上课照顾面子｜先找亮点再补充</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">培训</span><span class="tag tag-orange">沟通</span><span class="tag tag-purple">反馈</span><span class="tag tag-gray">时长 1分49秒</span><span class="tag tag-gray">分析视角：成人反馈的鼓励优先原则</span></div>
+  <a class="source-link" href="local:01e46dcd5503455801037103884d854dd3_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：给同事上课/反馈，照顾面子比展示正确更重要。成年人学习不能被否定，应以鼓励为主。目标不是让学员掌握你那套东西，而是收获粉丝、建立信任。具体技巧：先找学员回答中值得肯定的点，再补充改进建议——先找亮点再补充。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">场景：老板让你给销售同事讲拜访客户，你想好好表现</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">上课时发现同事都「菜」，你不停否定：不对、不是、But However</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">老板冷眼记录，A4纸翻面都记不完</span></div><div class="timeline-item"><span class="timeline-time">00:42</span><span class="timeline-text">反馈：成年人学习不能被否定，应鼓励为主</span></div><div class="timeline-item"><span class="timeline-time">00:48</span><span class="timeline-text">你面对的是抬头不见低头见的成年人</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">深一层：目标是收获粉丝、建立信任，让大家愿意跟着你干</span></div><div class="timeline-item"><span class="timeline-time">01:18</span><span class="timeline-text">技巧：先找值得肯定的点（出发点好、考虑周全）</span></div><div class="timeline-item"><span class="timeline-time">01:31</span><span class="timeline-text">再补充：如果能改进几点就更完美</span></div><div class="timeline-item"><span class="timeline-time">01:38</span><span class="timeline-text">先找亮点再补充，人家听了很高兴</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>给同事反馈怎么照顾面子</div><span class="arrow">→</span><div class="node-green">证据<br/>反面示范 + 成人学习原则</div><span class="arrow">→</span><div class="node-orange">判断<br/>目标是信任而非证明自己</div><span class="arrow">→</span><div class="node-blue">行动<br/>先找亮点再补充</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：上课就是要指出错误，越严格越好。纠偏：你面对的是成年人同事，不是学生，否定会伤人伤己。</p><p>误解 2：反馈的目的让对方掌握内容。纠偏：更深的目标是收获信任、让同事愿意跟着你干。</p><p>误解 3：找亮点是虚伪。纠偏：找亮点 + 真诚补充建议，比纯否定更能促进行为改变。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>反面示范：全场否定</h3>
+      <p>在讲什么：给销售同事讲拜访客户，发现台下都「菜」，你不停说不对、不是、但是、But However，老板在最后一排冷眼记录，A4纸翻面都记不完。关键理解：否定式教学在成人职场场景会彻底翻车。怎么用：对照检查自己在反馈时是否也在「不停否定」。</p>
+      <div class="quote">依据 [00:13–00:41]：你提的问题下面又没人回答，回答都是敷衍潦草胡说八道……老板一边用冷峻且无奈的目光注视着，一边记录你上课所有的口风，一张A4纸根本记不下来。</div>
+      <div class="relation">立场分层：场景为讲者编排的教学案例，夸张但典型。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>原则：成年人学习以鼓励为主</h3>
+      <p>在讲什么：成年人学习不应该也不能够被否定，应以鼓励为主。你面对的是抬头不见低头见的同事；更深一层，你的目标是收获粉丝、建立信任，让大家愿意跟着你干。哪怕学员没掌握内容，只要相信你、愿意跟着你干，课就是成功的。关键理解：反馈服务于关系而非对错。怎么用：把「教对」的目标换成「建立信任」的目标。</p>
+      <div class="quote">依据 [00:42–01:18]：你的目标是收获粉丝、建立信任，让大家愿意跟着你干。哪怕你上完课，人家对你讲的内容没有掌握，但人家听完课以后相信你、愿意跟着你干，那你的课就是成功的。</div>
+      <div class="relation">立场分层：成人学习原则为培训领域共识；「目标是信任」为讲者观点。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>技巧：先找亮点再补充</h3>
+      <p>在讲什么：学员真错了又不能否定怎么办？先找出回答中值得肯定的点——你的出发点非常好、你考虑到A点B点C点非常好；然后再补充：如果能改进几点，结果就更完美。关键理解：先肯定后建议，让改变成为「锦上添花」而非「被纠错」。怎么用：每次反馈至少先列一个真实亮点。</p>
+      <div class="quote">依据 [01:19–01:42]：第一，找出学员回答中值得肯定的点……你看没有否定人家，对吗？先找亮点再补充，人家听了以后会很高兴，你帮人家锦上添花，不是否定批评。</div>
+      <div class="relation">立场分层：技巧为讲者方法论；先肯定后建议为通用沟通原则。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">否定式 vs 鼓励式反馈</h2><div class="card"><table><thead><tr><th>维度</th><th>否定式</th><th>鼓励式（先亮点再补充）</th></tr></thead><tbody><tr><td>开场</td><td>不对，不是</td><td>你的出发点非常好</td></tr><tr><td>目标</td><td>证明我比你懂</td><td>建立信任、带出成长</td></tr><tr><td>对方感受</td><td>丢面子、抵触</td><td>高兴、愿意改进</td></tr><tr><td>结果</td><td>关系破裂</td><td>粉丝+追随者</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：给同事/下属反馈、做内训分享的职场人。</li><li>上限：鼓励优先不排除必要的严肃，涉及红线问题要直接指出。</li><li>反例：只夸不批是另一种失真，学员得不到真实改进。</li><li>例外：质量/安全等硬性错误仍需清晰纠正，但可先肯定再纠正。</li></ul><div class="pitfall">避坑：亮点要真实，别为夸而夸。</div><div class="pitfall">避坑：补充建议要具体可执行，别只说「更完美」。</div><div class="pitfall">避坑：别在公开场合纠正，私下反馈更护面子。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>给同事反馈 = 先找亮点，再补充建议。</li><li>成人学习以鼓励为主，不能被否定。</li><li>目标不是教对，而是建立信任与追随。</li></ul><h3>行动清单</h3><ol><li>下次反馈前，先想出一个对方真实的亮点。</li><li>把「不对」换成「你的思路里有一个点很好，如果……」</li><li>公开场合只表扬，具体建议放到一对一。</li></ol><h3>关键认知转变</h3><p>从「我要讲对」转到「我要带人」：反馈的终点不是你的正确，而是对方的行动改变。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分49秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

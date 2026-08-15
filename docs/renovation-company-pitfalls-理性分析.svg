@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7719" viewBox="0 0 1320 7719">
+  <foreignObject x="0" y="0" width="1320" height="7719">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>装修公司怎么坑你｜三点商业思考</h1>
+  <div class="meta"><span class="tag tag-blue">装修</span><span class="tag tag-green">避坑</span><span class="tag tag-orange">商业思维</span><span class="tag tag-purple">博弈论</span><span class="tag tag-gray">时长 3分46秒</span><span class="tag tag-gray">分析视角：装修消费的信息不对称</span></div>
+  <a class="source-link" href="local:01e48825f4b8ee730103710388b44d68c3_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：40万装修、擅长逻辑思考的职业经理人还是中招3万。三点原创思考：一、选装修公司不能看广告和点评（专人盯好评），门店多是「浪费的炫耀」、资产很重，真正的反向指标是去法院网站查起诉数量，越少越好；二、增项多是囚徒困境——报价时所有公司故意漏报压低价格，不是公司单方面坏；三、选熟人介绍的、刚开始独立、正在做口碑阶段的工长，口碑好了订单多了就不能用了。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场：40万装修，职业经理人还是中招3万</span></div><div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">三点原创商业思考</span></div><div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">第一点：不能看任何形式的广告</span></div><div class="timeline-item"><span class="timeline-time">00:24</span><span class="timeline-text">点评网站好评不可信：专人盯好评</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">不写好评？房子以后出问题你懂的</span></div><div class="timeline-item"><span class="timeline-time">00:48</span><span class="timeline-text">线下门店数量：补充博弈论「浪费是炫耀」</span></div><div class="timeline-item"><span class="timeline-time">00:53</span><span class="timeline-text">孔雀开屏长尾巴是炫耀：负担得起大尾巴</span></div><div class="timeline-item"><span class="timeline-time">01:11</span><span class="timeline-text">门店多=资产重，房租水电像水龙头哗哗流</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">门店多≠可信</span></div><div class="timeline-item"><span class="timeline-time">01:27</span><span class="timeline-text">反向指标：去法院网站查起诉数量</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">律师朋友手里有三件起诉某公司的案子</span></div><div class="timeline-item"><span class="timeline-time">01:45</span><span class="timeline-text">起诉数量越小越好</span></div><div class="timeline-item"><span class="timeline-time">01:47</span><span class="timeline-text">第二点：投诉最多的是增项多</span></div><div class="timeline-item"><span class="timeline-time">01:52</span><span class="timeline-text">不是增项多，是你家装修本来就要很多钱</span></div><div class="timeline-item"><span class="timeline-time">01:57</span><span class="timeline-text">想象你是装修公司老板：报真实30万客户就走</span></div><div class="timeline-item"><span class="timeline-time">02:06</span><span class="timeline-text">客户刚才那家报25万</span></div><div class="timeline-item"><span class="timeline-time">02:12</span><span class="timeline-text">所有公司都故意漏报增项做低价格</span></div><div class="timeline-item"><span class="timeline-time">02:19</span><span class="timeline-text">囚徒困境：对方坦白我不坦白就没订单</span></div><div class="timeline-item"><span class="timeline-time">02:28</span><span class="timeline-text">第三点：怎么选装修公司</span></div><div class="timeline-item"><span class="timeline-time">02:30</span><span class="timeline-text">找熟人介绍的工长</span></div><div class="timeline-item"><span class="timeline-time">02:32</span><span class="timeline-text">营销费用最终用增项或次充好让你买单</span></div><div class="timeline-item"><span class="timeline-time">02:42</span><span class="timeline-text">悖论：找刚开始独立跳出来的工长</span></div><div class="timeline-item"><span class="timeline-time">02:47</span><span class="timeline-text">单子不多、正在做口碑阶段</span></div><div class="timeline-item"><span class="timeline-time">02:55</span><span class="timeline-text">口碑好起来订单做不过来就不能用了</span></div><div class="timeline-item"><span class="timeline-time">03:02</span><span class="timeline-text">订单多就找外包人员</span></div><div class="timeline-item"><span class="timeline-time">03:07</span><span class="timeline-text">外包工没意愿精工细作，做一单拿一单</span></div><div class="timeline-item"><span class="timeline-time">03:22</span><span class="timeline-text">总结：三句话</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>装修怎么避免被坑</div><span class="arrow">→</span><div class="node-green">证据<br/>广告点评不可信 + 增项是囚徒困境</div><span class="arrow">→</span><div class="node-orange">判断<br/>用反向指标 + 找口碑期工长</div><span class="arrow">→</span><div class="node-blue">行动<br/>查起诉数量、选熟人介绍的独立工长</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：门店多=实力强。纠偏：门店多是资产重，就像孔雀炫耀尾巴；真正要看起诉数量。</p><p>误解 2：投诉增项多是装修公司坏。纠偏：是囚徒困境，你本来就要花很多钱。</p><p>误解 3：大装修公司更靠谱。纠偏：营销费用最终用增项/以次充好让你买单。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-orange">
+      <h3>广告和点评都不靠谱</h3>
+      <p>在讲什么：选装修公司不能看任何形式的广告。点评网站会派专人盯用户写好评，房子装修好以后能确保永远不出问题吗？不可能，所以「你懂的」。关键理解：好评是可控的表演。怎么用：广告越多越要谨慎。</p>
+      <div class="quote">依据 [00:16–00:47]：他们会让用户明明对装修不满意，还是在点评网站上写好评打满分……房子装修好以后能确保永远不出问题吗？所以你懂的。</div>
+      <div class="relation">立场分层：点评操控为行业常见现象，属消费警示。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>反向指标：起诉数量</h3>
+      <p>在讲什么：线下门店多、资产很重，房租水电即便没有收入也像水龙头哗哗流——用投行的话叫资产很重。门店多是「浪费的炫耀」（孔雀开屏），不一定是实力。真正要看反向指标：去法院网站或找律师朋友查起诉这家公司的数量，越小越好。关键理解：真实风险藏在法律记录里。怎么用：装修前先查起诉数量。</p>
+      <div class="quote">依据 [01:11–01:45]：去法院网站或者找律师朋友看他们内网数据，起诉这家公司的数量有多少，反向指标越小越好。</div>
+      <div class="relation">立场分层：反向指标为讲者原创方法，属可验证技巧。</div>
+    </div>
+    <div class="card card-blue">
+      <h3>增项多是囚徒困境</h3>
+      <p>在讲什么：对装修公司投诉最多的是增项多，但这不是因为增项多，而是你家装修本来就需要很多钱。如果你是老板，报真实价格30万客户立马走人——客户刚才那家报25万。所以所有公司都故意漏报增项做低价格，这是囚徒困境。关键理解：整个行业的价格机制逼出来的。怎么用：对增项预期有数，谈判留预算。</p>
+      <div class="quote">依据 [01:47–02:27]：报价时所有装修公司都会故意漏掉报增项、做低价格……这是一个囚徒困境，对方坦白我不坦白，我就没订单。</div>
+      <div class="relation">立场分层：囚徒困境分析为经济学视角，属结构性解释。</div>
+    </div>
+    <div class="card card-green">
+      <h3>选口碑期的独立工长</h3>
+      <p>在讲什么：选熟人介绍的工长，最好选刚开始从公司独立跳出来的——单子不多、正在做口碑阶段，必须用好口碑让你转介绍。口碑好起来、订单做不过来就不能用了，因为会找外包人员，外包工没意愿精工细作。关键理解：激励决定质量。怎么用：挑「正在证明自己」的人。</p>
+      <div class="quote">依据 [02:30–03:21]：你找的工长最好是刚开始从公司独立跳出来的，因为单子不多，正在做口碑的阶段……订单多了就一定会找外包人员，外包工是没有意愿替用户精工细作做好的。</div>
+      <div class="relation">立场分层：选工长策略为可执行建议，属激励分析。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">装修避坑要点</h2><div class="card"><table><thead><tr><th>维度</th><th>误区</th><th>正确做法</th></tr></thead><tbody><tr><td>广告点评</td><td>看广告和好评</td><td>查起诉数量</td></tr><tr><td>门店数量</td><td>多=实力强</td><td>资产重是负担</td></tr><tr><td>增项</td><td>都是装修公司坏</td><td>囚徒困境要理解</td></tr><tr><td>工长</td><td>找大公司</td><td>找口碑期独立工长</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：准备装修或正在装修的业主。</li><li>上限：熟人工长也非绝对安全，仍需监督。</li><li>反例：部分高端公司重口碑、管控强。</li><li>例外：全包/半包模式下的坑点不同。</li></ul><div class="pitfall">避坑：别迷信广告和点评高分。</div><div class="pitfall">避坑：别被「门店多」迷惑。</div><div class="pitfall">避坑：别对增项一概愤怒，先理解结构。</div><div class="pitfall">避坑：别用「已经火了」的工长。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>广告和点评都不可信，用反向指标。</li><li>增项多是囚徒困境，不是公司单方面坏。</li><li>选刚开始独立、正在做口碑的工长。</li></ul><h3>行动清单</h3><ol><li>装修前查目标公司起诉数量。</li><li>向熟人圈要工长转介绍。</li><li>优先约谈单子不多、需要口碑的工长。</li></ol><h3>关键认知转变</h3><p>从「看广告比价格挑公司」转到「用反向指标挑人」：装修避坑的核心不是挑最亮眼的，而是挑最经得起查的。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 3分46秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

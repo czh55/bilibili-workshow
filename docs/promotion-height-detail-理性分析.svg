@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6270" viewBox="0 0 1320 6270">
+  <foreignObject x="0" y="0" width="1320" height="6270">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>晋升答辩：细节、高度、复盘与未来</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">晋升</span><span class="tag tag-orange">答辩</span><span class="tag tag-purple">方法论</span><span class="tag tag-gray">时长 4分20秒</span><span class="tag tag-gray">分析视角：晋升答辩的四个考察维度</span></div>
+  <a class="source-link" href="local:01e46dcd4808434d01037103884d854d11_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：优秀晋升答辩 = 有细节 + 有高度 + 有复盘 + 有数据 + 有未来构想。评委真正考察三点：事情是否真的是你做的（细节）、你对事情的认知深度（决定决策力）、你对未来的构想（决定能否操盘更大）。用「房子/小区/城市规划」类比讲透抽象的「高度」。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">评委标准：有细节、有高度、有复盘、有数据，下一问未来怎么做</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">什么叫高度：既在事内看细节，也能抽身事上看脉络</span></div><div class="timeline-item"><span class="timeline-time">00:49</span><span class="timeline-text">房子类比：站在房间俯视，看到花园、旁边的楼</span></div><div class="timeline-item"><span class="timeline-time">01:01</span><span class="timeline-text">为什么看这些：决定房子好坏的不只是房间，还有环境安保</span></div><div class="timeline-item"><span class="timeline-time">01:16</span><span class="timeline-text">最高境界：细节+高度，思考上游下游、行业竞品、战略</span></div><div class="timeline-item"><span class="timeline-time">01:46</span><span class="timeline-text">再升维：小区规划、城市规划，房价决定房子的价值</span></div><div class="timeline-item"><span class="timeline-time">01:54</span><span class="timeline-text">复盘：入住后才发现的隐性问题的体检</span></div><div class="timeline-item"><span class="timeline-time">02:13</span><span class="timeline-text">未来构想：经验可复制吗？抽象成方法论就能带人</span></div><div class="timeline-item"><span class="timeline-time">03:00</span><span class="timeline-text">评委考察点一：有细节证明事真是你做的</span></div><div class="timeline-item"><span class="timeline-time">03:20</span><span class="timeline-text">考察点二：认知深度决定思考维度与决策力</span></div><div class="timeline-item"><span class="timeline-time">03:40</span><span class="timeline-text">考察点三：未来构想（2万/平如何变10万/平）+ 气场自信</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>晋升答辩评委想看什么</div><span class="arrow">→</span><div class="node-green">证据<br/>房子类比 + 三个考察点</div><span class="arrow">→</span><div class="node-orange">判断<br/>晋升考察可复制性而非单点能力</div><span class="arrow">→</span><div class="node-blue">行动<br/>按细节/高度/复盘/未来四维准备</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：晋升答辩 = 罗列业绩数字。纠偏：评委要的是细节证明真实、高度体现认知。</p><p>误解 2：「高度」就是宏大口号。纠偏：高度是能抽身事上看脉络、看联系，像俯视花园。</p><p>误解 3：晋升靠上级决定，答辩只是走形式。纠偏：评委通过提问考察你的决策力、眼界与可复制性。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>「高度」：身在事中，俯瞰全局</h3>
+      <p>在讲什么：高度 = 既能在事情里面看细节，也能抽象到事情上面看脉络、性质和联系。房子类比：站在房间里只能看到房间；俯视时能看到花园、旁边的房间和楼。决定房子好不好的是环境、安保、空气、停车位。关键理解：评价事情好坏要站在更高维度。怎么用：答辩时展示你对外延（上下游、竞品、公司战略）的思考。</p>
+      <div class="quote">依据 [00:26–01:15]：我在事情上面看，会看到整个事情的脉络……我站在房间上面往下俯视的时候，可以看到花园，可以看到旁边的房间，看到这个楼旁边的楼。</div>
+      <div class="relation">立场分层：高度定义为讲者方法论；房子类比为教学工具。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>复盘与未来：可复制才能晋升</h3>
+      <p>在讲什么：复盘像入住后才发现天花板滴水声——隐性问题的体检。未来构想的核心是「经验和做法可复制吗」：抽象成方法论后能带人、指导所有人，就能晋升；或者把 2 万/平的房子做成 10 万/平，拉高价值。关键理解：晋升是让你操盘更大，看的是可复制性与上限。怎么用：答辩前把经验抽象成可复制的流程。</p>
+      <div class="quote">依据 [02:13–02:59]：经验和你的做法可复制吗？我把它抽象方法论以后，我就可以带人，我让其他人按照我的方式去做。</div>
+      <div class="relation">立场分层：复盘/未来构想为讲者观点；「可复制性=晋升资格」为其核心判断。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>评委的三个考察点</h3>
+      <p>在讲什么：一、有细节证明事情真是你做的（还是忽悠评委）；二、认知深度决定思考维度，维度越多决策力越强；三、未来构想证明你能操盘更大，加上表达的气场与自信。关键理解：晋升答辩是决策力的面试。怎么用：三个问题各准备证据链——我的产出、我的思考框架、我的规划。</p>
+      <div class="quote">依据 [03:00–04:19]：你思考维度越深、越多，我们认为你的决策力越强……晋升了以后我就希望你能操盘更大的。</div>
+      <div class="relation">立场分层：三个考察点为讲者作为评委的经验总结，属观点。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">晋升答辩四维准备</h2><div class="card"><table><thead><tr><th>维度</th><th>含义</th><th>答辩要点</th></tr></thead><tbody><tr><td>细节</td><td>事真是你做的</td><td>证据链、数据、具体案例</td></tr><tr><td>高度</td><td>能看到脉络与联系</td><td>外延思考：上下游/竞品/战略</td></tr><tr><td>复盘</td><td>隐性问题的沉淀</td><td>讲清踩过的坑与改进</td></tr><tr><td>未来</td><td>可复制、可操盘更大</td><td>方法论抽象 + 规划愿景</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：准备晋升答辩、想向上发展的职场人。</li><li>上限：四维是表达框架，实际晋升还叠加绩效、职级名额等因素。</li><li>反例：只练表达不涨真实能力，答辩会被追问击穿。</li><li>例外：技术专家通道可能更看重深度而非操盘广度。</li></ul><div class="pitfall">避坑：别只讲做了什么，忘了讲「为什么这样做」的思考。</div><div class="pitfall">避坑：未来构想要落地方案，别只说空话。</div><div class="pitfall">避坑：数据别临时编造，评委连环追问会露馅。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>晋升答辩 = 细节 + 高度 + 复盘 + 数据 + 未来构想。</li><li>「高度」= 抽身事上看脉络与联系。</li><li>晋升的本质是证明你的经验可复制、可操盘更大。</li></ul><h3>行动清单</h3><ol><li>把年度项目按「细节/高度/复盘/未来」四栏整理成答辩稿。</li><li>为每个项目补一句外延思考：它对公司战略意味着什么？</li><li>准备一个「可复制方法论」的抽象总结，答辩时主动抛出。</li></ol><h3>关键认知转变</h3><p>从「罗列我做了什么」转到「证明我能复制并操盘更大」：评委买的不是过去，是你的上限。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 4分20秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

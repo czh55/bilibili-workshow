@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6048" viewBox="0 0 1320 6048">
+  <foreignObject x="0" y="0" width="1320" height="6048">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>烂业绩数据也能讲出亮点｜六步法</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">汇报</span><span class="tag tag-orange">数据分析</span><span class="tag tag-purple">演讲</span><span class="tag tag-gray">时长 2分35秒</span><span class="tag tag-gray">分析视角：负面数据汇报的叙事策略</span></div>
+  <a class="source-link" href="local:01e46df2dabb3543010371038af0f5def2_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：汇报烂数据的技巧不是粉饰，而是「换角度找亮点」——环比→同比→拆业务→拆财务→创造指标→定义口径，六步层层加码，从概率上提高找到可讲亮点的可能。每一步都在增加「有亮点」的概率。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">场景：糟糕业绩数据如何讲出亮点鼓舞人心</span></div><div class="timeline-item"><span class="timeline-time">00:07</span><span class="timeline-text">动机：开大会不能只说「我们要完蛋了」</span></div><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">总纲：六步，每一步累进增加概率</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">第一步：看环比（本月 vs 上月）</span></div><div class="timeline-item"><span class="timeline-time">00:33</span><span class="timeline-text">第二步：环比不行看同比（今年 vs 去年，剔除季节）</span></div><div class="timeline-item"><span class="timeline-time">00:53</span><span class="timeline-text">第三步：拆业务线，拆得越细越好</span></div><div class="timeline-item"><span class="timeline-time">01:16</span><span class="timeline-text">第四步：换财务角度，毛利率/库存周转率</span></div><div class="timeline-item"><span class="timeline-time">01:28</span><span class="timeline-text">第五步：创造指标（物流效率、人均产能）</span></div><div class="timeline-item"><span class="timeline-time">01:43</span><span class="timeline-text">第六步：定义异向客户数量（自己定口径）</span></div><div class="timeline-item"><span class="timeline-time">02:35</span><span class="timeline-text">收尾：六步送给想当老板的你</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>糟糕数据怎么讲出亮点</div><span class="arrow">→</span><div class="node-green">证据<br/>六步操作序列</div><span class="arrow">→</span><div class="node-orange">判断<br/>换角度拆分 = 概率性找亮点</div><span class="arrow">→</span><div class="node-blue">行动<br/>从环比到定义口径逐级下探</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：汇报烂数据只能承认失败。纠偏：可以找亮点，但要基于真实数据拆角度，不是编数据。</p><p>误解 2：亮点 = 把坏事说成好事。纠偏：亮点是「换个合法口径后的局部增长」，比如细分业务线里确有上升。</p><p>误解 3：创造指标 = 造假。纠偏：人均产能、物流效率是合规口径，但「裁人提产能」这类操作要诚实披露背景。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>前两步：环比与同比</h3>
+      <p>在讲什么：先看环比（本月比上月），环比不行看同比（今年这月比去年这月）。关键理解：同比剔除了季节因素，是更公平的对照。怎么用：汇报前先把「环比、同比」两个数字都算出来。</p>
+      <div class="quote">依据 [00:25–00:52]：第一看环比数据，这个月跟上个月比……第二如果环比没有上涨，那就不看环比看同比。</div>
+      <div class="relation">立场分层：环比/同比定义是财务常识，为事实；「先环比后同比」顺序为讲者方法。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>第三步拆业务、第四步换财务角度</h3>
+      <p>在讲什么：把销售拆成多条业务线（产品/备件/服务），拆得越细越容易找出上升点；不行再从财务角度拆（毛利率、库存周转率）。关键理解：拆解 = 把「全局很差」变成「局部有亮点」的放大镜。怎么用：汇报前把整体数据拆到能找到增长的最小口径。</p>
+      <div class="quote">依据 [00:53–01:27]：把总体的销售业务拆成多条业务线……拆得越细越好……有没有毛利率上升，有没有库存周转率上升。</div>
+      <div class="relation">立场分层：拆分方法与财务指标解读为讲者方法；「拆越细概率越高」为其观点。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>第五步造指标、第六步定口径</h3>
+      <p>在讲什么：真没亮点就创造一个指标（物流费占比、人均产能），或者定义「异向客户数量」这类口径，老板总能从虚空中召唤出亮点。关键理解：指标口径本质是「叙事视角」的选择。怎么用：定义指标时想清楚它讲了个什么故事。</p>
+      <div class="quote">依据 [01:28–02:34]：就创造一个指标，比如物流费占总体成本的比例……异向客户数量，你可以自己定义。</div>
+      <div class="relation">立场分层：造指标/定口径是讲者传授的汇报技巧，属观点；是否用于粉饰需要读者自己把握边界。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">六步找亮点法一览</h2><div class="card"><table><thead><tr><th>步骤</th><th>动作</th><th>目的</th></tr></thead><tbody><tr><td>第一步</td><td>看环比（本月 vs 上月）</td><td>找短期趋势</td></tr><tr><td>第二步</td><td>看同比（今年 vs 去年）</td><td>剔除季节因素</td></tr><tr><td>第三步</td><td>拆业务线</td><td>放大局部增长</td></tr><tr><td>第四步</td><td>换财务角度</td><td>找效率亮点</td></tr><tr><td>第五步</td><td>创造指标</td><td>换叙事口径</td></tr><tr><td>第六步</td><td>定义异向客户</td><td>终极兜底</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：需要向团队/老板汇报阶段性经营数据的职场人。</li><li>上限：技巧解决「怎么说」，不解决「数据真实与否」；数据本身造假会翻车。</li><li>反例：长期用「裁人提产能」「自定口径」粉饰，会失去团队信任。</li><li>例外：监管、审计场景下口径必须合规，不能自由定义。</li></ul><div class="pitfall">避坑：别为了亮点编数据——亮点要从真实数据里拆出来。</div><div class="pitfall">避坑：创造指标要能自圆其说，口径含糊会被当场拆穿。</div><div class="pitfall">避坑：人均产能这类指标要说明背景（是否裁员），否则是误导。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>汇报烂数据 = 换角度找局部亮点。</li><li>六步顺序：环比 → 同比 → 拆业务 → 拆财务 → 造指标 → 定口径。</li><li>每一步都在增加「有亮点」的概率。</li></ul><h3>行动清单</h3><ol><li>下次汇报前先把环比、同比两个数算出来。</li><li>把整体数据拆到能找到增长的最细业务口径。</li><li>若仍无亮点，选一个真实可解释的指标讲「效率」故事。</li></ol><h3>关键认知转变</h3><p>从「数据差就低头认错」转到「换角度把真实数据里的亮点找出来」：会汇报的人，把坏消息讲成可行动的方向。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分35秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

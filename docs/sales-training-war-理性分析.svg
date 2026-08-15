@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6032" viewBox="0 0 1320 6032">
+  <foreignObject x="0" y="0" width="1320" height="6032">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>销售培训怎么搞才有效｜攻守部队法</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">培训</span><span class="tag tag-orange">销售</span><span class="tag tag-purple">方法</span><span class="tag tag-gray">时长 1分49秒</span><span class="tag tag-gray">分析视角：游戏化对抗式培训设计</span></div>
+  <a class="source-link" href="local:01e46dcd5688cc5d01037103884d85503e_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：销售培训请谁讲不重要，有没有「设计」才重要。外部专家同行才可信、真有干货的高手像茶壶倒饺子倒不出来；真正有效的是调动学员自主性——杨老师原创「攻守部队」法：请三个互相不买账的高手带组，学员互相挑漏洞、限时想对策，把培训变成真实演练。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场：内部高手还是外部专家？没有设计效果都不会好</span></div><div class="timeline-item"><span class="timeline-time">00:03</span><span class="timeline-text">外部专家：同行可参考，非同行随便听听</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">茶壶里倒饺子：真有干货的高手不会全倒出来</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">原理：充分发挥学员自主性——挑逗群众斗群众</span></div><div class="timeline-item"><span class="timeline-time">00:34</span><span class="timeline-text">核心经验：请三个互相不买账的高手</span></div><div class="timeline-item"><span class="timeline-time">00:48</span><span class="timeline-text">分组：ABC三组各发销售痛点问题</span></div><div class="timeline-item"><span class="timeline-time">01:02</span><span class="timeline-text">挂白板：高手带组把方案写下来</span></div><div class="timeline-item"><span class="timeline-time">01:08</span><span class="timeline-text">玩法：进攻组挑漏洞，每挑一个揍一拳</span></div><div class="timeline-item"><span class="timeline-time">01:22</span><span class="timeline-text">防守组：5秒内想对策，否则判点数</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">打鸡血：有怨报怨有仇报仇</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>销售培训怎么搞才有效</div><span class="arrow">→</span><div class="node-green">证据<br/>外部专家局限 + 攻守部队</div><span class="arrow">→</span><div class="node-orange">判断<br/>学员自主对抗 &gt; 单向灌输</div><span class="arrow">→</span><div class="node-blue">行动<br/>请三个不买账的高手，分组互攻</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：请大牌专家讲课就有用。纠偏：非本行业专家只是混口饭吃，效果有限。</p><p>误解 2：高手一定有干货能讲出来。纠偏：干货像茶壶倒饺子，真材实料反而倒不出来。</p><p>误解 3：培训就是老师讲学员听。纠偏：有效的培训要调动学员自主性，让学员互相挑战。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>外部专家的现实：同行才可信</h3>
+      <p>在讲什么：请外部专家要分辨——如果以前是你们这个行业的，可以参考；不是的话随便听听，人家也是混口饭吃。真有干货的高手像茶壶倒饺子，皮薄肉多但倒不出来。关键理解：培训效果不在讲者名气，在于内容适配与形式设计。怎么用：筛选讲师先看行业背景，别被头衔唬住。</p>
+      <div class="quote">依据 [00:03–00:25]：如果这位外部专家以前是你们这个行业，那你可以参考相信一下；如果不是你们这个行业的，那你就随便听听吧。</div>
+      <div class="relation">立场分层：外部专家评价为讲者观察，略带调侃但符合培训行业现实。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>原理：充分调动学员自主性</h3>
+      <p>在讲什么：书中原理「充分发挥学员的自主性」，翻译成人话就是挑逗群众斗群众。关键理解：成人学习的动力来自参与和对抗，不是听讲。怎么用：任何培训先想「学员做什么」，再想「老师讲什么」。</p>
+      <div class="quote">依据 [00:26–00:33]：原文是充分发挥学员的自主性，翻译成人话就是挑逗群众斗群众。</div>
+      <div class="relation">立场分层：自主性原理为培训理论共识；翻译为讲者戏谑表达。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>攻守部队：把培训变成实战</h3>
+      <p>在讲什么：请三个互相不买账的高手各带一组，ABC三组写销售痛点方案挂白板；进攻组挑漏洞（每挑一个揍一拳），防守组5秒内想对策否则判点数；打鸡血「有怨报怨有仇报仇」。关键理解：对抗制造真实投入，挑战暴露真实盲区。怎么用：培训中设计互攻环节，让学员在防守中暴露短板、在进攻中强化方法。</p>
+      <div class="quote">依据 [01:08–01:49]：你们去挑C组写在白板纸上的漏洞，每挑出一个漏洞就相当于揍了对方一拳……五秒钟之内如果没有想出对策，就判对方一个点数。</div>
+      <div class="relation">立场分层：攻守部队为讲者原创方法；对抗式学习符合游戏化培训趋势。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">传统培训 vs 攻守部队</h2><div class="card"><table><thead><tr><th>维度</th><th>传统培训</th><th>攻守部队</th></tr></thead><tbody><tr><td>老师</td><td>专家讲课</td><td>三个不买账的高手带组</td></tr><tr><td>学员</td><td>听讲</td><td>进攻/防守对抗</td></tr><tr><td>内容</td><td>理论灌输</td><td>真实痛点方案互攻</td></tr><tr><td>反馈</td><td>课后问卷</td><td>即时挑漏洞、限时对策</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：企业内训设计者、培训经理、销售团队管理者。</li><li>上限：游戏化对抗适合方法论训练，不适合技能基础教学。</li><li>反例：对抗过火会变成吵架，需要主持人控场。</li><li>例外：新手销售连基础话术都没有时，先教学再对抗。</li></ul><div class="pitfall">避坑：三个高手必须真的「不买账」，否则对抗形同虚设。</div><div class="pitfall">避坑：判点数规则要透明，主持人要中立。</div><div class="pitfall">避坑：别让对抗变成人身攻击，聚焦方案漏洞。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>培训效果的关键是「设计」，不是讲师名气。</li><li>高手干货像茶壶倒饺子，真货倒不出来。</li><li>攻守部队 = 让学员在对抗中暴露与强化。</li></ul><h3>行动清单</h3><ol><li>下次内训请三个有分歧的高手，而不是一个大牌。</li><li>把培训内容改造成「写方案→互攻→限时对策」三段。</li><li>设计一个公平的判点数规则和控场主持人。</li></ol><h3>关键认知转变</h3><p>从「请讲师讲课」转到「设计学员互攻」：培训的主角从来不是老师，是学员。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分49秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

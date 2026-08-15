@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5523" viewBox="0 0 1320 5523">
+  <foreignObject x="0" y="0" width="1320" height="5523">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>领导布置任务只说好的不够｜复述确认法</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">向上管理</span><span class="tag tag-orange">沟通</span><span class="tag tag-gray">时长 1分20秒</span><span class="tag tag-gray">分析视角：任务复述的沟通价值</span></div>
+  <a class="source-link" href="local:01e46dcd3f76743501037103884d854ac7_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：领导布置任务时，只说「好的」是危险的。正确做法是用自己的话复述一遍并补充细节，让领导确认。这对领导是尊重与掌控感的来源，对自己是知情权、决策权与免责保障——万一搞砸，锅没那么容易甩过来。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">新员工培训的职场经验：没人提过就可能中招</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">注意事项一：领导布置任务，只说「好的」不够</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">要复述确认，重点在补充细节</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">示例：准备会议室接待大客户签合同</span></div><div class="timeline-item"><span class="timeline-time">00:29</span><span class="timeline-text">正确复述：定最大会议室3-5点、合同一式两份、茶水糕点</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">这叫补充细节，是你的职责</span></div><div class="timeline-item"><span class="timeline-time">00:42</span><span class="timeline-text">进阶：领导微信补充细节（日本客户、摆国旗、换新工作服）</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">领导视角：复述=尊重，一切尽在掌握</span></div><div class="timeline-item"><span class="timeline-time">01:01</span><span class="timeline-text">自我视角：对结果负责，锅没那么容易甩过来</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>领导布置任务怎么回应</div><span class="arrow">→</span><div class="node-green">证据<br/>会议室示例 + 双向视角</div><span class="arrow">→</span><div class="node-orange">判断<br/>复述=尊重+负责+免责</div><span class="arrow">→</span><div class="node-blue">行动<br/>养成复述确认细节的习惯</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：回复「好的」「OK」就是执行到位。纠偏：只说 OK 会遗漏细节，任务落空的风险极高。</p><p>误解 2：复述是拍马屁、浪费时间。纠偏：复述是责任心的体现，领导会因此更信任你。</p><p>误解 3：复述会显得我不懂。纠偏：补充细节恰恰证明你听懂了，且拿到了知情权和决策权。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>为什么只说「好的」不够</h3>
+      <p>在讲什么：领导布置任务只说 OK 是不够的，要复述确认并补充细节。示例：领导说准备会议室，明天大客户来签合同。正确复述：定最大会议室3-5点，合同打印一式两份，备茶水糕点，然后问「这样做可以吗？」关键理解：复述是把模糊指令变成可执行清单。怎么用：每次接任务，用三句话复述：做什么、什么时候、注意什么。</p>
+      <div class="quote">依据 [00:18–00:40]：把会议室准备下，明天有个大客户要来参观和签合同……好的，我要做的是定最大的会议室时间3点到5点，让行政部把法务部门确认过的合同打印出来一式两份，再准备些茶水糕点。</div>
+      <div class="relation">立场分层：示例为讲者教学设计；复述法为通用职场沟通技巧。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>双向价值：领导放心，自己免责</h3>
+      <p>在讲什么：从领导视角看，复述细节是下属表达尊重，让领导一切尽在掌握，所以领导喜欢能复述的下属；从自我视角看，复述让我对结果负责，万一搞砸，锅没那么容易甩过来。关键理解：同一动作满足领导安全感与自己职业保护。怎么用：接任务后主动复述，把确认过程留痕（微信/邮件）。</p>
+      <div class="quote">依据 [00:55–01:16]：复述细节是下属表达尊重，而自己获得知情权和决策权……万一考砸了，领导的锅没那么容易甩过来。</div>
+      <div class="relation">立场分层：双向价值分析为讲者观点，逻辑自洽可验证。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">复述确认法</h2><div class="card"><table><thead><tr><th>视角</th><th>复述的价值</th></tr></thead><tbody><tr><td>领导视角</td><td>表达尊重，一切尽在掌握</td></tr><tr><td>自我视角</td><td>知情权+决策权，对结果负责</td></tr><tr><td>免责视角</td><td>确认过细节，锅甩不过来</td></tr><tr><td>成长视角</td><td>养成闭环习惯，职业加分</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：职场新人、任务执行者、向上管理场景。</li><li>上限：复述不能替代思考与交付，只是第一步。</li><li>反例：每件事都长篇复述会烦扰领导，要抓关键细节。</li><li>例外：紧急场景可简短确认，但关键事项必须留痕。</li></ul><div class="pitfall">避坑：别复述得比领导还啰嗦，提炼关键点即可。</div><div class="pitfall">避坑：复述完要等领导确认，别自说自话。</div><div class="pitfall">避坑：别把免责当目的——核心还是把事做好。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>接任务只说「好的」不够，要复述确认细节。</li><li>复述 = 让领导放心 + 让自己免责。</li><li>把复述变成习惯，是职业化的第一课。</li></ul><h3>行动清单</h3><ol><li>下次接任务时，用三句话复述：做什么、何时、注意什么。</li><li>重要任务通过微信/邮件留痕确认。</li><li>复盘一次因「没确认」而翻车的任务，找出漏掉的细节。</li></ol><h3>关键认知转变</h3><p>从「收到就干」转到「复述确认再干」：一次 30 秒的确认，省下的是整条执行链的返工。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分20秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

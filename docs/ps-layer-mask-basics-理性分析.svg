@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5993" viewBox="0 0 1320 5993">
+  <foreignObject x="0" y="0" width="1320" height="5993">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>PS基础：什么是图层与蒙版</h1>
+  <div class="meta"><span class="tag tag-blue">设计</span><span class="tag tag-green">PS</span><span class="tag tag-orange">图层</span><span class="tag tag-purple">蒙版</span><span class="tag tag-gray">时长 1分08秒</span><span class="tag tag-gray">分析视角：图层与蒙版的概念解构</span></div>
+  <a class="source-link" href="local:01e45f8642bb0a2901037303881534f127_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：PS 的两大核心概念可以用生活类比秒懂——图层是「图片的堆叠」（像楼层），蒙版的唯一功能是「隐藏图层的局部」（用黑白画笔控制）。二者组合，就构成了海报合成、平面设计与局部调色的底层能力。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">提问开场：什么是图层，什么是蒙版</span></div><div class="timeline-item"><span class="timeline-time">00:03</span><span class="timeline-text">类比：很多房子叠在一起叫楼层，很多图片叠在一起叫图层</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">图层类型：照片、字体、形状、调色图层</span></div><div class="timeline-item"><span class="timeline-time">00:19</span><span class="timeline-text">调整顺序可改变显示内容：想显示什么就把它的图层放最上面</span></div><div class="timeline-item"><span class="timeline-time">00:23</span><span class="timeline-text">所有图层都可以加蒙版，蒙版功能只有一个：隐藏图层局部区域</span></div><div class="timeline-item"><span class="timeline-time">00:31</span><span class="timeline-text">黑色画笔隐藏、白色画笔还原，两画面拼凑成新画面</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">曲线调色演示：曲线上提变亮，蒙版涂黑限制影响范围</span></div><div class="timeline-item"><span class="timeline-time">00:54</span><span class="timeline-text">应用：海报合成、平面设计、摄影局部调色</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>图层与蒙版是什么、怎么用</div><span class="arrow">→</span><div class="node-green">证据<br/>楼层类比 + 黑白画笔演示</div><span class="arrow">→</span><div class="node-orange">判断<br/>图层管顺序，蒙版管局部显隐</div><span class="arrow">→</span><div class="node-blue">行动<br/>用组合想象做合成与局部调色</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：图层就是把图片拼在一起。纠偏：图层不仅是拼接，关键是「顺序决定显示」，堆叠顺序本身就是可操作的显示逻辑。</p><p>误解 2：蒙版像橡皮擦，会破坏原图。纠偏：蒙版是非破坏性操作，黑色只是「暂时隐藏」，白色能随时还原，橡皮擦则不可逆。</p><p>误解 3：蒙版只用于抠图。纠偏：蒙版可以作用于任何图层类型（包括调色图层），用来「限制影响范围」，这正是局部调色的基础。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>图层：图片的堆叠与顺序</h3>
+      <p>在讲什么：很多图片叠在一起叫图层，类型有照片、字体、形状、调色图层；移动图层的顺序可以调整显示内容。关键理解：图层是一个「顺序栈」，越靠上的显示越靠前。怎么用：想让什么显示在前面，就把它的图层放到最上面。</p>
+      <div class="quote">依据 [00:03–00:22]：很多房子叠在一起叫楼层，很多图片叠在一起叫图层……你想让什么物体显示在前面，就把它的图层放在最上面。</div>
+      <div class="relation">立场分层：类比与操作步骤为教学内容，可由画面核对。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>蒙版：唯一的职责是隐藏局部</h3>
+      <p>在讲什么：所有图层都可以加蒙版，而蒙版的功能只有一个——隐藏图层的局部区域。选中蒙版后，黑色画笔隐藏不想要的部分，白色画笔还原想保留的部分。关键理解：蒙版是「非破坏性的显隐开关」，比橡皮擦高级在可逆。怎么用：两个画面各自用蒙版遮一部分，拼凑形成新画面。</p>
+      <div class="quote">依据 [00:23–00:39]：蒙版的功能只有一个，就是用来隐藏图层的局部区域……黑色画笔可以隐藏你不想要的部分，白色画笔可以还原你想保留的部分。</div>
+      <div class="relation">立场分层：蒙版「只能隐藏局部」为功能事实；黑隐白还的操作规则可由画面核对。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>实战演示：曲线调色 + 蒙版限定范围</h3>
+      <p>在讲什么：用曲线调色图层演示——曲线往上提，整个画面变亮；如果不想让某个部分受提亮影响，就在蒙版对应区域涂黑。关键理解：蒙版把「全局调整」变成「局部调整」，这是摄影局部调色的核心手法。怎么用：调色图层上总是配套一个蒙版，控制哪些区域生效。</p>
+      <div class="quote">依据 [00:40–00:53]：曲线往上提，整个画面会变亮。如果不想让某个部分受它的影响，那么你可以在蒙版里对应的这部分涂上黑色。</div>
+      <div class="relation">立场分层：演示操作为事实；「蒙版配调色图层」为通用工作流。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">图层与蒙版对比表</h2><div class="card"><table><thead><tr><th>维度</th><th>图层</th><th>蒙版</th></tr></thead><tbody><tr><td>类比</td><td>楼层：图片的堆叠</td><td>「遮盖板」：控制某图层的局部显示</td></tr><tr><td>核心职责</td><td>管显示顺序</td><td>管局部显隐</td></tr><tr><td>操作</td><td>拖动排序</td><td>黑色隐藏 / 白色还原</td></tr><tr><td>是否破坏原图</td><td>否</td><td>否（非破坏性，可随时还原）</td></tr><tr><td>典型应用</td><td>海报合成、排版</td><td>局部调色、合成抠图、限制调整范围</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：PS 零基础入门，建立图层与蒙版的心智模型。</li><li>上限：只讲概念与基础操作，不覆盖选区、通道、混合模式等进阶手段。</li><li>反例：复杂合成（发丝抠图等）单靠黑白画笔蒙版并不够，需结合选区与通道。</li><li>例外：蒙版隐藏的是「图层的局部」，若想隐藏整个图层，直接关掉图层眼睛更简单。</li></ul><div class="pitfall">避坑：别把蒙版当橡皮擦——蒙版不删像素，涂黑后还能涂白还原。</div><div class="pitfall">避坑：选中蒙版后再涂色，否则黑色画笔会直接画在图片上。</div><div class="pitfall">避坑：调整曲线前先想好「要影响哪部分」，再决定是否配蒙版，避免反复返工。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>图层 = 图片的堆叠，顺序决定显示优先级。</li><li>蒙版 = 只做一件事：隐藏图层的局部，黑隐白还。</li><li>图层 + 蒙版 = 海报合成与局部调色的底层工具。</li></ul><h3>行动清单</h3><ol><li>打开任意图片，把主体复制到新图层，练习用蒙版隐藏背景。</li><li>建一个曲线调整图层，用黑色画笔把某区域恢复原亮度，体会「限制影响范围」。</li><li>用两个图层 + 蒙版各遮一半，拼出一张「新画面」。</li></ol><h3>关键认知转变</h3><p>从「蒙版 = 高级橡皮擦」转到「蒙版 = 局部显隐开关」：可逆的非破坏操作，才是设计里敢反复试错的基础。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分08秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

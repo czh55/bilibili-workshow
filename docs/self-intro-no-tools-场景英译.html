@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="自我介绍别写工具人属性标签视频场景英译学习卡" />
+  <title>自我介绍别写工具人属性标签｜场景英译</title>
+  <style>:root {
+  --teal-950:#073f42; --teal-800:#0d686c; --teal-700:#0f7c80; --teal-600:#14919b;
+  --mint-100:#dff4ec; --mint-50:#f0faf6; --ink:#183536; --muted:#607879;
+  --line:#d7e8e2; --paper:#fff; --amber:#a85d08; --shadow:0 12px 32px rgba(7,63,66,.08);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:24px; }
+body { margin:0; color:var(--ink); background:#edf7f2; font-family:Inter,"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif; line-height:1.65; }
+button, select { font:inherit; }
+a { color:inherit; }
+.hero { color:#fff; background:radial-gradient(circle at 85% 10%,rgba(129,230,196,.24),transparent 30%),linear-gradient(125deg,#073f42,#0d7377 56%,#14919b); }
+.hero-inner { width:min(1440px,100%); margin:auto; padding:48px clamp(20px,5vw,72px) 42px; }
+.hero-flex { display:flex; gap:clamp(18px,3vw,40px); align-items:flex-start; }
+.hero-cover { width:min(240px,42vw); height:auto; max-height:320px; object-fit:contain; object-position:center; border-radius:16px; border:1px solid rgba(255,255,255,.28); box-shadow:0 18px 44px rgba(0,0,0,.32); flex-shrink:0; }
+.hero-text { min-width:0; flex:1; }
+.eyebrow { margin:0 0 12px; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.8; }
+h1 { max-width:1020px; margin:0; font-size:clamp(1.8rem,3.8vw,3.2rem); line-height:1.13; letter-spacing:-.04em; }
+.hero-en { margin:12px 0 24px; font-size:clamp(1rem,2vw,1.3rem); opacity:.82; }
+.hero-meta { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+.chip { border:1px solid rgba(255,255,255,.28); border-radius:99px; padding:5px 11px; font-size:.82rem; background:rgba(255,255,255,.08); }
+.source-link { font-weight:750; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.5); }
+.lang-switch { margin-left:12px; font-size:.8rem; font-weight:700; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:24px; }
+.toolbar label { font-size:.82rem; opacity:.82; }
+.toolbar select { color:#fff; background:#0a5d61; border:1px solid rgba(255,255,255,.3); border-radius:8px; padding:7px 9px; }
+.stop-btn { display:none; color:#fff; background:#8c3b2a; border:0; border-radius:8px; padding:8px 12px; cursor:pointer; }
+.stop-btn.visible { display:inline-flex; }
+.speech-status { min-height:1.4em; font-size:.82rem; opacity:.88; }
+.narration-player { margin-top:18px; padding:16px 18px; background:rgba(255,255,255,.1); border-radius:12px; border:1px solid rgba(255,255,255,.15); }
+.audio-label { color:rgba(255,255,255,.88); font-size:.82rem; font-weight:700; margin:0 0 8px; }
+.page { width:min(1440px,100%); margin:auto; padding:28px clamp(16px,3vw,44px) 64px; display:grid; grid-template-columns:minmax(230px,280px) minmax(0,1fr); gap:30px; align-items:start; }
+.sidebar { position:sticky; top:20px; min-width:0; }
+.sidebar-box { background:rgba(255,255,255,.8); border:1px solid var(--line); border-radius:16px; padding:17px; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+.sidebar h2 { margin:0 0 13px; font-size:.9rem; letter-spacing:.08em; color:var(--teal-800); }
+.map-link { display:grid; grid-template-columns:34px minmax(0,1fr); gap:9px; padding:10px 6px; text-decoration:none; border-top:1px solid var(--line); }
+.map-link:hover b { color:var(--teal-700); }
+.map-id { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; color:#fff; background:var(--teal-700); font-size:.72rem; font-weight:800; }
+.map-link b { display:block; font-size:.78rem; line-height:1.4; }
+.map-link small { display:block; color:var(--muted); font-size:.67rem; line-height:1.4; margin-top:2px; overflow-wrap:anywhere; }
+.content { min-width:0; }
+.scene-card { background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:clamp(20px,3vw,34px); margin-bottom:24px; box-shadow:var(--shadow); overflow:hidden; }
+.scene-frame { display:block; width:100%; max-height:480px; object-fit:contain; object-position:center; background:rgba(7,63,66,.04); border-radius:14px; margin:16px 0 4px; border:1px solid var(--line); box-shadow:0 10px 28px rgba(7,63,66,.1); }
+.scene-topline { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.scene-id { display:inline-grid; place-items:center; min-width:42px; height:30px; padding:0 10px; color:#fff; background:var(--teal-700); border-radius:8px; font-size:.78rem; font-weight:850; }
+.time { margin-left:10px; color:var(--muted); font-size:.82rem; font-variant-numeric:tabular-nums; }
+.scene-card h2 { margin:18px 0 2px; font-size:clamp(1.35rem,2.4vw,2rem); line-height:1.25; color:var(--teal-950); }
+.scene-title-en { margin:0 0 18px; color:var(--teal-600); font-weight:700; font-size:.98rem; }
+.context { margin:0 0 20px; padding:12px 15px; color:#496566; background:var(--mint-50); border-left:3px solid var(--teal-600); border-radius:0 10px 10px 0; font-size:.88rem; }
+.context b { margin-right:10px; color:var(--teal-800); }
+.sentence-list { display:grid; gap:12px; }
+.sentence { position:relative; display:grid; grid-template-columns:38px minmax(0,1fr); gap:12px; padding:16px; border:1px solid #e2ece8; border-radius:14px; background:#fcfefd; min-width:0; }
+.sentence-no { color:var(--teal-600); font-size:.76rem; font-weight:850; font-variant-numeric:tabular-nums; padding-top:4px; }
+.bilingual { min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(14px,2vw,28px); }
+.lang-block { min-width:0; }
+.lang-block p { margin:5px 0 0; overflow-wrap:anywhere; }
+.en-block { padding-left:clamp(14px,2vw,28px); border-left:1px solid var(--line); }
+.en-block p { color:#0b5c60; font-weight:650; }
+.lang-tag { display:inline-block; color:var(--muted); font-size:.66rem; font-weight:850; letter-spacing:.12em; }
+.en-head { display:flex; justify-content:space-between; gap:10px; align-items:center; min-height:30px; }
+.note { grid-column:2; margin:1px 0 0; color:#708182; font-size:.78rem; }
+.note span { margin-right:7px; color:var(--amber); font-weight:750; }
+.speak-btn { display:inline-flex; align-items:center; gap:7px; border:1px solid #b8d9d1; border-radius:9px; padding:7px 11px; color:var(--teal-800); background:#f5fbf8; cursor:pointer; white-space:nowrap; font-size:.78rem; font-weight:750; transition:.15s ease; }
+.speak-btn:hover { color:#fff; background:var(--teal-700); border-color:var(--teal-700); transform:translateY(-1px); }
+.speak-btn.playing { color:#fff; background:var(--teal-700); border-color:var(--teal-700); }
+.speak-btn.compact { padding:4px 8px; font-size:.7rem; }
+.speak-btn.icon-only { padding:3px 7px; margin-left:6px; }
+.speak-btn.icon-only span:last-child { display:none; }
+.pronounce-word { display:inline; margin:0; padding:0 2px; color:inherit; background:rgba(20,145,155,.08); border:0; border-bottom:1px dashed var(--teal-600); border-radius:3px; font:inherit; font-weight:inherit; line-height:inherit; cursor:pointer; }
+.pronounce-word:hover, .pronounce-word:focus { color:var(--teal-950); background:#cceee4; border-bottom-style:solid; outline:3px solid rgba(20,145,155,.42); outline-offset:2px; }
+.pronounce-word.playing { color:#fff; background:var(--teal-700); border-bottom-color:var(--teal-700); }
+.paraphrase { margin-top:18px; border-top:1px solid var(--line); }
+.paraphrase summary { padding:16px 0 3px; color:var(--teal-800); cursor:pointer; font-weight:800; }
+.paraphrase summary span { color:var(--muted); font-size:.75rem; font-weight:500; margin-left:8px; }
+.paraphrase ol { margin:12px 0 0; padding-left:22px; }
+.paraphrase li { padding:7px 0 9px 5px; }
+.paraphrase li p { margin:0; font-size:.9rem; font-weight:650; }
+.chunks { margin-top:4px; color:var(--teal-700); font-size:.78rem; }
+.study-section { margin:38px 0 0; }
+.section-heading { display:flex; align-items:baseline; gap:10px; margin:0 0 15px; color:var(--teal-950); font-size:1.35rem; }
+.section-heading small { color:var(--teal-600); font-size:.78rem; letter-spacing:.05em; }
+.study-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.study-grid article { padding:17px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 6px 18px rgba(7,63,66,.05); min-width:0; }
+.study-grid p { margin:0; }
+.practice-en { margin-top:9px; color:var(--teal-700); font-weight:650; overflow-wrap:anywhere; }
+.wrong { color:#a24831; text-decoration:line-through; overflow-wrap:anywhere; }
+.right { color:var(--teal-700); font-weight:750; margin:5px 0; overflow-wrap:anywhere; }
+.pitfalls p { color:var(--muted); font-size:.82rem; }
+.shifts article { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr); gap:12px; align-items:center; }
+.shifts b { color:var(--teal-600); font-size:1.2rem; }
+.shifts strong { color:var(--teal-800); }
+footer { margin-top:38px; color:var(--muted); font-size:.78rem; text-align:center; }
+@media (max-width:900px) { .page { grid-template-columns:1fr; } .sidebar { position:static; } .sidebar-box { overflow-x:auto; padding:12px; } .sidebar h2 { padding-left:5px; } .map-nav { display:flex; width:max-content; gap:8px; } .map-link { width:220px; border:1px solid var(--line); border-radius:10px; padding:8px; } .bilingual { grid-template-columns:1fr; } .en-block { padding:12px 0 0; border-left:0; border-top:1px dashed var(--line); } }
+@media (max-width:620px) { .hero-inner { padding-top:32px; } .hero-flex { flex-direction:column; align-items:center; } .hero-cover { width:100%; max-width:360px; } .hero-text { text-align:center; } .page { padding-inline:10px; gap:18px; } .scene-card { border-radius:14px; padding:17px 13px; } .scene-topline { align-items:flex-start; } .scene-speak span:last-child { display:none; } .sentence { grid-template-columns:26px minmax(0,1fr); padding:13px 10px; gap:6px; } .note { grid-column:2; } .study-grid { grid-template-columns:1fr; } .shifts article { grid-template-columns:1fr; gap:5px; } .shifts b { transform:rotate(90deg); justify-self:start; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .speak-btn { transition:none; } }</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-flex">
+        <img class="hero-cover" src="assets/self-intro-no-tools/shot-01.jpg" alt="自我介绍别写工具人属性标签 封面" loading="lazy">
+        <div class="hero-text">
+          <p class="eyebrow">Scene English · 视频学习</p>
+          <h1>自我介绍别写工具人属性标签</h1>
+          <p class="hero-en">Stop Labeling Yourself as a Tool in Your Self-Introduction</p>
+          <div class="hero-meta"><span class="chip">2026-08-15</span><span class="chip">local</span><span class="chip">2分00秒</span><span class="chip">3 个场景</span><span class="chip">点下划线单词听发音</span><a class="source-link" href="local:01e4982f483bfb530103710388f27ab2aa_258.MP4" target="_blank" rel="noopener">查看原视频 ↗</a><a class="source-link lang-switch" href="self-intro-no-tools-图文实录.html" hreflang="zh" style="margin-left:12px;font-size:.8rem">中文图文实录版 ↗</a></div>
+        </div>
+      </div>
+      <div class="toolbar"><label for="speech-rate">朗读速度</label><select id="speech-rate"><option value="0.85">慢速 0.85×</option><option value="1" selected>正常 1×</option><option value="1.15">快速 1.15×</option></select><button id="stop-speech" class="stop-btn" type="button">■ 停止朗读</button><span id="speech-status" class="speech-status" role="status" aria-live="polite"></span></div>
+      <div class="narration-player"><p class="audio-label">🎧 语音讲解</p><button class="speak-btn" type="button" data-audio="audio/self-intro-no-tools/narration.mp3" aria-label="播放语音讲解"><span aria-hidden="true">▶</span><span>播放语音讲解</span></button></div>
+    </div>
+  </header>
+  <main class="page">
+    <aside class="sidebar" aria-label="场景地图"><div class="sidebar-box"><h2>场景地图 · SCENE MAP</h2><nav class="map-nav"><a class="map-link" href="#s1"><span class="map-id">S1</span><span><b>建立账号先写自我介绍</b><small>00:00–00:40 · Start your account with a self-introduction</small></span></a><a class="map-link" href="#s2"><span class="map-id">S2</span><span><b>工具人属性标签的代价</b><small>00:41–01:40 · The cost of tool-person labels</small></span></a><a class="map-link" href="#s3"><span class="map-id">S3</span><span><b>内部评价：我是谁</b><small>01:41–02:00 · Internal evaluation: who am I</small></span></a></nav></div></aside>
+    <div class="content">
+      <section class="scene-card" id="s1" data-scene><div class="scene-topline"><div><span class="scene-id">S1</span><span class="time">00:00–00:40</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/self-intro-no-tools/s1.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/self-intro-no-tools/shot-01.jpg" alt="建立账号先写自我介绍 场景截图" loading="lazy"><h2>建立账号先写自我介绍</h2><p class="scene-title-en">Start your account with a self-introduction</p><p class="context"><b>情境</b>讲者开场：元宇宙世代，网络上没有名号就等于不存在，不管哪个平台都要建立输出观点的账号，而第一步是写一段自我介绍。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>如果你在网络上没有名号，就等于你不存在。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s1-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">If you have no identity online, you might as well not exist.</p></div></div><p class="note"><span>表达提示</span>名号：identity / presence</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>不管在哪个平台，你都要建立一个输出自己观点的账号。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s1-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">On any platform, you need an account that voices your views.</p></div></div><p class="note"><span>表达提示</span>输出观点：voice your views</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>建账号的第一步，是写一段自我介绍。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s1-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">The first step of building an account is writing a self-introduction.</p></div></div><p class="note"><span>表达提示</span>第一步：the first step</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>网络无名号 → 等于不存在</p><div class="chunks">No online identity means no presence at all.</div></li><li><p>建立账号 → 先写自我介绍</p><div class="chunks">An account starts with a self-introduction.</div></li></ol></details></section><section class="scene-card" id="s2" data-scene><div class="scene-topline"><div><span class="scene-id">S2</span><span class="time">00:41–01:40</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/self-intro-no-tools/s2.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/self-intro-no-tools/shot-03.jpg" alt="工具人属性标签的代价 场景截图" loading="lazy"><h2>工具人属性标签的代价</h2><p class="scene-title-en">The cost of tool-person labels</p><p class="context"><b>情境</b>讲者反思自己写过的十几个自我介绍版本：一线德国公司职业经理人、擅长工作方法论——这些是外部评价、工具人属性的标签，粉丝用完就走。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>以前的自我介绍：一线德国公司的职业经理人，擅长工作方法论。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s2-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">My old intro: a professional manager at a top German company, good at work methodologies.</p></div></div><p class="note"><span>表达提示</span>擅长：good at</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>这些是外部评价、工具人属性的标签。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s2-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">These are externally-given, tool-person labels.</p></div></div><p class="note"><span>表达提示</span>工具人属性：tool-person labels</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>粉丝只会在需要工作逻辑推理时来看你，用完就走。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s2-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Followers only drop by when they need work logic, then leave once used.</p></div></div><p class="note"><span>表达提示</span>用完就走：leave once used</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>饭碗标签 → 不是个人标签</p><div class="chunks">A job title is a label for the job, not for you.</div></li><li><p>工具人标签 → 粉丝用完就走</p><div class="chunks">Tool labels attract users, not friends.</div></li></ol></details></section><section class="scene-card" id="s3" data-scene><div class="scene-topline"><div><span class="scene-id">S3</span><span class="time">01:41–02:00</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/self-intro-no-tools/s3.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/self-intro-no-tools/shot-05.jpg" alt="内部评价：我是谁 场景截图" loading="lazy"><h2>内部评价：我是谁</h2><p class="scene-title-en">Internal evaluation: who am I</p><p class="context"><b>情境</b>讲者给出正解：自我介绍是自己给自己贴标签，真正的标签是内部评价，即经典的哲学三问——我是谁、我从哪里来、我要到哪里去。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>自我介绍是自己给自己贴标签。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s3-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">A self-introduction is a label you give yourself.</p></div></div><p class="note"><span>表达提示</span>给自己贴标签：label yourself</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>你是谁，你有什么想让别人记住的，更重要的是你怎么看自己。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s3-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Who you are, what you want to be remembered for — and above all, how you see yourself.</p></div></div><p class="note"><span>表达提示</span>更重要的是：above all</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>真正的标签是内部评价：我是谁、我从哪里来、我要到哪里去。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/self-intro-no-tools/s3-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">True labels come from internal evaluation: who am I, where do I come from, where am I going.</p></div></div><p class="note"><span>表达提示</span>内部评价：internal evaluation</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>外部标签 → 饭碗标签</p><div class="chunks">External labels belong to the job, not the person.</div></li><li><p>内部评价 → 哲学三问</p><div class="chunks">Self-definition answers three philosophical questions.</div></li></ol></details></section>
+      <section class="study-section" id="practice"><h2 class="section-heading">今日可练 <small>PRACTICE TODAY</small></h2><div class="study-grid"><article><p>表达「建立账号」</p><div class="practice-en">On any platform, build an account that voices your views. <button class="speak-btn icon-only" type="button" data-audio="audio/self-intro-no-tools/practice-0.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>说「外部标签」</p><div class="practice-en">Those are externally-given, tool-person labels. <button class="speak-btn icon-only" type="button" data-audio="audio/self-intro-no-tools/practice-1.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>表达「内部评价」</p><div class="practice-en">True labels come from internal evaluation. <button class="speak-btn icon-only" type="button" data-audio="audio/self-intro-no-tools/practice-2.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>说「哲学三问」</p><div class="practice-en">Who am I, where do I come from, where am I going? <button class="speak-btn icon-only" type="button" data-audio="audio/self-intro-no-tools/practice-3.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article></div></section>
+      <section class="study-section pitfalls" id="pitfalls"><h2 class="section-heading">避坑 <small>PITFALLS</small></h2><div class="study-grid"><article><div class="wrong">✕ ✕ 直译腔：My name on the internet doesn't exist.</div><div class="right">✓ ✓ 地道说法：If you have no identity online, you might as well not exist.</div><p>might as well not exist 更地道。</p></article><article><div class="wrong">✕ ✕ 直译腔：I am good at work methods.</div><div class="right">✓ ✓ 地道说法：I'm good at work methodologies.</div><p>methodology 比 methods 更符合讲者语义。</p></article><article><div class="wrong">✕ ✕ 直译腔：Tool person attribute label.</div><div class="right">✓ ✓ 地道说法：Tool-person labels.</div><p>工具人属性标签是中式表达，用 tool-person labels 简化。</p></article><article><div class="wrong">✕ ✕ 直译腔：The most important is how you look at yourself.</div><div class="right">✓ ✓ 地道说法：Above all, how you see yourself.</div><p>above all 更精炼。</p></article></div></section>
+      <section class="study-section shifts" id="mindset"><h2 class="section-heading">认知转变 <small>MINDSET SHIFTS</small></h2><div class="study-grid"><article><span>把自我介绍写成「简历复述」</span><b aria-hidden="true">→</b><strong>把自我介绍写成「自我定义」</strong></article><article><span>用饭碗、公司名给自己贴标签</span><b aria-hidden="true">→</b><strong>用哲学三问做内部评价</strong></article><article><span>吸引「需要工具」的粉丝</span><b aria-hidden="true">→</b><strong>吸引「想认识你」的朋友</strong></article></div></section>
+      <footer>ASR 专有名词已按语境校正。场景/句子朗读使用 edge-tts，单词发音使用浏览器 Web Speech API。 · 场景/句子朗读使用 edge-tts 神经网络语音 · 单词发音使用浏览器 Web Speech API</footer>
+    </div>
+  </main>
+  <script>(() => {
+    let activeAudio = null;
+    let activeBtn = null;
+    const status = document.getElementById('speech-status');
+    const stopBtn = document.getElementById('stop-speech');
+    const rateSel = document.getElementById('speech-rate');
+    const reset = () => { if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn = null; stopBtn.classList.remove('visible'); status.textContent = ''; };
+    const playAudio = (url, btn) => { reset(); const a = new Audio(url); a.playbackRate = Number(rateSel.value); activeAudio = a; activeBtn = btn; btn.classList.add('playing'); stopBtn.classList.add('visible'); status.textContent = btn.classList.contains('scene-speak') ? '正在朗读整个场景…' : btn.classList.contains('speak-btn') && btn.dataset.audio.includes('narration') ? '正在播放语音讲解…' : '正在朗读…'; a.onended = () => { if (activeAudio === a) reset(); }; a.onerror = () => { status.textContent = '音频加载失败'; if (activeAudio === a) reset(); }; a.play().catch(() => { status.textContent = '播放失败'; if (activeAudio === a) reset(); }); };
+    document.addEventListener('click', e => { const btn = e.target.closest('[data-audio]'); if (!btn) return; e.preventDefault(); if (btn === activeBtn && activeAudio) { reset(); return; } playAudio(btn.dataset.audio, btn); });
+    stopBtn.addEventListener('click', reset);
+    const synth = window.speechSynthesis;
+    const getEnglishVoice = () => { const v = synth.getVoices(); return v.find(x => /^en-(US|GB)/i.test(x.lang)) || v.find(x => /^en/i.test(x.lang)) || null; };
+    const difficultWords = new Set(['identity', 'presence', 'platform', 'account', 'voice', 'introduction', 'professional', 'manager', 'methodology', 'systematic', 'reasoning', 'external', 'evaluation', 'label', 'tool', 'follower', 'logic', 'friend', 'internal', 'philosophical', 'origin', 'destination', 'purpose', 'define', 'authentic', 'personal', 'brand']);
+    const shouldPronounce = w => { const n = w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,''); return n.replace(/[^a-z]/g,'').length >= 8 || difficultWords.has(n); };
+    const mark = root => { const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const ns = []; while (w.nextNode()) ns.push(w.currentNode); ns.forEach(n => { if (n.parentElement?.closest('button,script,style')) return; let m,l=0,ch=false; const fg = document.createDocumentFragment(); const re = /[A-Za-z]+(?:[-'’][A-Za-z]+)*/g; while ((m = re.exec(n.nodeValue))) { if (!shouldPronounce(m[0])) continue; ch=true; fg.append(n.nodeValue.slice(l,m.index)); const b=document.createElement('button');b.type='button';b.className='pronounce-word';b.dataset.speak=m[0];b.setAttribute('aria-label','朗读单词 '+m[0]);b.title='点击听 '+m[0]+' 发音';b.textContent=m[0];fg.append(b);l=m.index+m[0].length;} if(!ch)return;fg.append(n.nodeValue.slice(l));n.replaceWith(fg);}); };
+    document.querySelectorAll('.english,.scene-title-en,.paraphrase li p,.chunks,.practice-en,.wrong,.right').forEach(mark);
+    document.addEventListener('click', e => { const wb = e.target.closest('.pronounce-word'); if (!wb) return; e.preventDefault(); if (!synth) return; synth.cancel(); if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn=wb; wb.classList.add('playing'); const u=new SpeechSynthesisUtterance(wb.dataset.speak);u.lang='en-US';u.rate=0.88;const v=getEnglishVoice();if(v)u.voice=v;u.onend=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};u.onerror=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};synth.speak(u); });
+  })();</script>
+</body>
+</html>

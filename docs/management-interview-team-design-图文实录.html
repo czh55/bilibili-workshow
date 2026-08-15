@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 4 分半的高阶面试课：站在面试官视角拆解「最后一轮管理面试」到底考什么——不再是专业问题，而是组织设计。核心关注点包括：像排兵布阵一样把人放在不同位置、看能力的互补性（一加一大于二）、测试行业与市场洞察力、以及区分「熟练」与「可平移的思考抽象能力」。">
+<title>高阶管理面试：排兵布阵的组织设计｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>高阶管理面试到底面什么｜排兵布阵、互补性与可平移的能力</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">本地视频</span><span class="meta-tag tag-duration">4分20秒</span><span class="meta-tag tag-topic">职场 面试 管理 组织设计</span></div>
+<a class="source-link" href="local:01e48d2cf52aa6920103700388c7d1cd38_4610.mp4video.MP4" target="_blank" rel="noopener">→ 原视频（本地文件）</a>
+<a class="source-link lang-switch" href="management-interview-team-design-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">组织设计：排兵布阵</a><a href="#ch2">互补性决定你是主力还是备选</a><a href="#ch3">洞察力：换一个场景，能力能复用吗</a><a href="#ch4">可平移的综合能力</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 4 分半的高阶面试课：站在面试官视角拆解「最后一轮管理面试」到底考什么——不再是专业问题，而是组织设计。核心关注点包括：像排兵布阵一样把人放在不同位置、看能力的互补性（一加一大于二）、测试行业与市场洞察力、以及区分「熟练」与「可平移的思考抽象能力」。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:30]</span><div><strong>高阶面试不问专业</strong><p>前几轮已把背景和专业能力摸得差不多，最后一轮在意的是你在我的组织下怎么排兵布阵。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:30→01:20]</span><div><strong>排兵布阵：人放对位置</strong><p>团队管理其实是组织设计——不同性格（冲打型/守稳型）放不同位置，看合作面、融入面、配合面能否一加一大于二。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:20→02:10]</span><div><strong>互补性决定去留</strong><p>你能力很强，但我已有同质能力强的人，需要别的面的东西——没有互补性，你只是备选。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:10→03:30]</span><div><strong>洞察力测试</strong><p>问行业性、市场方向性——砍柴再熟练能上战场吗？能力能否在换场景时复用。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:30→04:20]</span><div><strong>看重可平移的综合能力</strong><p>不是熟练的结果，而是在不断训练中还有思考、抽象和可平移的能力——组织变革时需要这种可塑的人。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>高阶管理面试面的是组织设计思维：把人放对位置、看互补性、测洞察力、找可平移的能力——不是专业熟练度。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:20</span>组织设计：排兵布阵</h2><p>「如果你有这种能力，对我来讲就 surprise 了，我捡到宝了。我理解你其实就是可能会面到一些高阶的人员，因为前面的几轮面试已经把你的一些背景、一些专业能力差不多的摸得稀巴烂了，然后才会到他们面前。」</p><p>「我们一般来讲也不会问太多专业问题了，我们更多在意的其实是你在我的组织下——因为我们在做的叫做团队管理，其实是叫组织设计。我们在设计一个组织的框架和结构，有点像军队里面排兵布阵的感觉。然后我们这一块放哪些人比较好，这些人的秉性，比如说他是冲打比较强，还是守稳强，这些东西上我们会有一些看法。那不同的人要放在不同位置，合作面怎么样、融入面怎么样、配合面怎么样，是不是能发挥一加一大于二，这个结果、能力、秉性、侧重点上有没有互补性，我们都要看。」</p><figure><img src="assets/management-interview-team-design/shot-01.jpg" alt="高阶面试场景：前几轮已摸清专业背景，最后一轮不问专业，在意组织设计" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:10]</span>高阶面试场景：前几轮已摸清专业背景，最后一轮不问专业，在意组织设计</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e440c58eb0fe.mp3" type="button" aria-label="Play English audio">🔊</button><span>Senior interview scene: earlier rounds covered expertise — the final round skips technicals and focuses on organization design</span></div>
+<audio class="cap-audio" src="audio/e440c58eb0fe.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/management-interview-team-design/shot-02.jpg" alt="核心：团队管理=排兵布阵——不同性格（冲打型/守稳型）放不同位置" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:50]</span>核心：团队管理=排兵布阵——不同性格（冲打型/守稳型）放不同位置</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/55b7b30ad7de.mp3" type="button" aria-label="Play English audio">🔊</button><span>Core: team management = positioning troops — different temperaments (aggressive/steady) go in different slots</span></div>
+<audio class="cap-audio" src="audio/55b7b30ad7de.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:20-02:10</span>互补性决定你是主力还是备选</h2><p>「有时候你能力是强，但是我已经有个跟你差不多能力强的了，我需要一些别的面的东西，你又没有，就变成可能你只是个备选了。所以这个是第一个比较大的问题。」</p><figure><img src="assets/management-interview-team-design/shot-02.jpg" alt="核心：团队管理=排兵布阵——不同性格（冲打型/守稳型）放不同位置" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:50]</span>核心：团队管理=排兵布阵——不同性格（冲打型/守稳型）放不同位置</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/55b7b30ad7de.mp3" type="button" aria-label="Play English audio">🔊</button><span>Core: team management = positioning troops — different temperaments (aggressive/steady) go in different slots</span></div>
+<audio class="cap-audio" src="audio/55b7b30ad7de.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/management-interview-team-design/shot-03.jpg" alt="关注互补性：能力强的人若与现有团队同质，可能只是备选" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:30]</span>关注互补性：能力强的人若与现有团队同质，可能只是备选</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/913f9e5cc89c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Watch for complementarity: if a strong candidate duplicates your team, they may be just a backup</span></div>
+<audio class="cap-audio" src="audio/913f9e5cc89c.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:10-03:30</span>洞察力：换一个场景，能力能复用吗</h2><p>「下一个问题，就是想听听你对我讲的那个东西的认知和理解，比如说行业性的、市场方向性的，我会稍微的问你几句，看看你有没有那方面的秉性，就是对事情的洞察能力。」</p><p>「因为很多人他专业，是在一个重复训练和重复加深的过程中，不断地练习了一个技术。比如说我砍柴，每天都砍，手能伸脚儿，以后我不用看那个木头，我只要一削就能把它砍动。但是问题是你砍柴特别牛逼，你能上战场吗？这个难度就比较大。我要把你换到另外一个场景下也是挥刀的话，你能挥刀好吗？不一定，它不一定能复用。」</p><figure><img src="assets/management-interview-team-design/shot-04.jpg" alt="洞察力测试：行业性、市场方向性——砍柴再熟练，能上战场吗？能力能否复用" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:10]</span>洞察力测试：行业性、市场方向性——砍柴再熟练，能上战场吗？能力能否复用</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f5b5874ea5f0.mp3" type="button" aria-label="Play English audio">🔊</button><span>Insight test: industry and market direction — expert chopper, can you fight on the battlefield? Does skill transfer?</span></div>
+<audio class="cap-audio" src="audio/f5b5874ea5f0.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:30-04:20</span>可平移的综合能力</h2><p>「所以我更希望看到的是，他的能力不是一种只是熟练带来的结果，他的能力是在不断的训练的情况下，自己还有思考和抽象，以及可以平移，它是一个综合面的素质。而这种素质是我们看中的。」</p><p>「为什么我们喜欢这种人？当我的组织需要变革的时候，就像你打篮球，你这个阵型上多少个前锋、多少个后卫、多少个中锋，根据战术可以不一样的。但是如果……」</p><figure><img src="assets/management-interview-team-design/shot-05.jpg" alt="看重「可平移的综合能力」：不只是熟练的结果，而是能思考、抽象、平移" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:10]</span>看重「可平移的综合能力」：不只是熟练的结果，而是能思考、抽象、平移</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4301ae71f645.mp3" type="button" aria-label="Play English audio">🔊</button><span>They value transferable integrated ability: not just skilled results, but thinking, abstraction, and portability</span></div>
+<audio class="cap-audio" src="audio/4301ae71f645.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（168段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>如果你有这种能力</p></div>
+<div class="transcript-row"><time>00:01</time><p>对我来讲就surprise了</p></div>
+<div class="transcript-row"><time>00:03</time><p>我捡到宝了</p></div>
+<div class="transcript-row"><time>00:03</time><p>我理解你其实就是</p></div>
+<div class="transcript-row"><time>00:05</time><p>中面可能会面到一些高阶的人员</p></div>
+<div class="transcript-row"><time>00:08</time><p>因为前面的几轮面试</p></div>
+<div class="transcript-row"><time>00:10</time><p>已经把你的一些背景</p></div>
+<div class="transcript-row"><time>00:13</time><p>一些专业能力</p></div>
+<div class="transcript-row"><time>00:14</time><p>差不多的摸得稀巴巴了</p></div>
+<div class="transcript-row"><time>00:15</time><p>然后才会到他们面前</p></div>
+<div class="transcript-row"><time>00:17</time><p>我们一般来讲</p></div>
+<div class="transcript-row"><time>00:18</time><p>也不会问太多专业问题了</p></div>
+<div class="transcript-row"><time>00:20</time><p>我们更多在意的其实是</p></div>
+<div class="transcript-row"><time>00:22</time><p>你在我的组织下</p></div>
+<div class="transcript-row"><time>00:24</time><p>因为我们在做的是叫做团队管理</p></div>
+<div class="transcript-row"><time>00:26</time><p>其实是叫组织设计</p></div>
+<div class="transcript-row"><time>00:27</time><p>我们在设计一个组织的框架</p></div>
+<div class="transcript-row"><time>00:29</time><p>和结构</p></div>
+<div class="transcript-row"><time>00:30</time><p>有点像那个军队里面</p></div>
+<div class="transcript-row"><time>00:31</time><p>那个排兵布阵的感觉</p></div>
+<div class="transcript-row"><time>00:33</time><p>然后我们这一块放哪些人比较好</p></div>
+<div class="transcript-row"><time>00:35</time><p>这些放的人比较好</p></div>
+<div class="transcript-row"><time>00:36</time><p>这些人的秉负</p></div>
+<div class="transcript-row"><time>00:38</time><p>比如说他是冲打这种强</p></div>
+<div class="transcript-row"><time>00:41</time><p>还是守稳强</p></div>
+<div class="transcript-row"><time>00:44</time><p>这些东西上我们会有一些看法</p></div>
+<div class="transcript-row"><time>00:46</time><p>那不同的人要放在不同位置</p></div>
+<div class="transcript-row"><time>00:47</time><p>合作面怎么样</p></div>
+<div class="transcript-row"><time>00:48</time><p>融入面怎么样</p></div>
+<div class="transcript-row"><time>00:50</time><p>配合面怎么样</p></div>
+<div class="transcript-row"><time>00:51</time><p>是不是能发挥一加一大约二</p></div>
+<div class="transcript-row"><time>00:52</time><p>这个结果能力秉负测众上</p></div>
+<div class="transcript-row"><time>00:56</time><p>有没有互补性</p></div>
+<div class="transcript-row"><time>00:56</time><p>我们都要看这个</p></div>
+<div class="transcript-row"><time>00:58</time><p>有时候你能力是强</p></div>
+<div class="transcript-row"><time>00:59</time><p>但是我已经有个跟你差不多能力强的了</p></div>
+<div class="transcript-row"><time>01:02</time><p>我需要一些别的面的东西</p></div>
+<div class="transcript-row"><time>01:03</time><p>你又没有</p></div>
+<div class="transcript-row"><time>01:03</time><p>就变成可能你只是个备选了</p></div>
+<div class="transcript-row"><time>01:05</time><p>所以这个是第一个比较大的问题</p></div>
+<div class="transcript-row"><time>01:07</time><p>下一个问题</p></div>
+<div class="transcript-row"><time>01:08</time><p>就是想听听你对我讲的那个东西的认知和理解</p></div>
+<div class="transcript-row"><time>01:12</time><p>比如说行业性的</p></div>
+<div class="transcript-row"><time>01:13</time><p>比如说市场的方向性的</p></div>
+<div class="transcript-row"><time>01:15</time><p>我会稍微的问你几句</p></div>
+<div class="transcript-row"><time>01:17</time><p>看看你有没有那方面的秉负</p></div>
+<div class="transcript-row"><time>01:20</time><p>就是对事情的洞察能力</p></div>
+<div class="transcript-row"><time>01:21</time><p>因为很多人他专业</p></div>
+<div class="transcript-row"><time>01:23</time><p>他是在一个重复训练和重复加深的过程中</p></div>
+<div class="transcript-row"><time>01:26</time><p>不断的练习了一个技术</p></div>
+<div class="transcript-row"><time>01:28</time><p>比如说我砍柴</p></div>
+<div class="transcript-row"><time>01:30</time><p>每天都砍</p></div>
+<div class="transcript-row"><time>01:30</time><p>手能伸脚耳</p></div>
+<div class="transcript-row"><time>01:32</time><p>以后我不用看那个木头</p></div>
+<div class="transcript-row"><time>01:34</time><p>我只要一削就能把它砍动</p></div>
+<div class="transcript-row"><time>01:36</time><p>但是问题是你砍柴特别牛逼</p></div>
+<div class="transcript-row"><time>01:38</time><p>你能上战场吗</p></div>
+<div class="transcript-row"><time>01:40</time><p>就这个难度比较大</p></div>
+<div class="transcript-row"><time>01:41</time><p>我要把你换到另外一个场景下</p></div>
+<div class="transcript-row"><time>01:43</time><p>也是挥刀的话</p></div>
+<div class="transcript-row"><time>01:44</time><p>你能挥刀好吗</p></div>
+<div class="transcript-row"><time>01:45</time><p>不一定</p></div>
+<div class="transcript-row"><time>01:46</time><p>它不一定能复用</p></div>
+<div class="transcript-row"><time>01:47</time><p>所以我更希望看到的是说</p></div>
+<div class="transcript-row"><time>01:49</time><p>好像他的能力不是一种只是熟练带来的结果</p></div>
+<div class="transcript-row"><time>01:53</time><p>他的能力是在不断的训练的情况下</p></div>
+<div class="transcript-row"><time>01:55</time><p>自己还有思考和一个抽象</p></div>
+<div class="transcript-row"><time>01:57</time><p>以及可以平移</p></div>
+<div class="transcript-row"><time>01:58</time><p>它是一个综合面的数字</p></div>
+<div class="transcript-row"><time>02:00</time><p>而这种数字是我们看中的</p></div>
+<div class="transcript-row"><time>02:01</time><p>为什么我们喜欢这种人</p></div>
+<div class="transcript-row"><time>02:02</time><p>当我的组织需要辩证的时候</p></div>
+<div class="transcript-row"><time>02:05</time><p>就像你打篮球是吧</p></div>
+<div class="transcript-row"><time>02:06</time><p>你这个阵型上多少个前锋</p></div>
+<div class="transcript-row"><time>02:08</time><p>多少个后卫</p></div>
+<div class="transcript-row"><time>02:08</time><p>多少个中锋</p></div>
+<div class="transcript-row"><time>02:09</time><p>根据战术可以不一样的</p></div>
+<div class="transcript-row"><time>02:11</time><p>但是如果有一个人</p></div>
+<div class="transcript-row"><time>02:12</time><p>他既能打前锋</p></div>
+<div class="transcript-row"><time>02:14</time><p>也能打后卫</p></div>
+<div class="transcript-row"><time>02:15</time><p>甚至有时候能客串一下中锋</p></div>
+<div class="transcript-row"><time>02:17</time><p>屌不屌</p></div>
+<div class="transcript-row"><time>02:18</time><p>那在我的阵型里面是多面手</p></div>
+<div class="transcript-row"><time>02:19</time><p>他用处更广</p></div>
+<div class="transcript-row"><time>02:20</time><p>当然很难有这种人</p></div>
+<div class="transcript-row"><time>02:22</time><p>所以我只希望你说打中锋和打大前锋的时候</p></div>
+<div class="transcript-row"><time>02:25</time><p>都可以打</p></div>
+<div class="transcript-row"><time>02:25</time><p>那对我来讲我辩证更容易</p></div>
+<div class="transcript-row"><time>02:27</time><p>所以你这个人</p></div>
+<div class="transcript-row"><time>02:28</time><p>如果能把你的能力和东西</p></div>
+<div class="transcript-row"><time>02:30</time><p>思考和平移到其他地方</p></div>
+<div class="transcript-row"><time>02:31</time><p>对我来讲我的阵型更好弄</p></div>
+<div class="transcript-row"><time>02:33</time><p>这是第一</p></div>
+<div class="transcript-row"><time>02:34</time><p>第二</p></div>
+<div class="transcript-row"><time>02:35</time><p>你有思考</p></div>
+<div class="transcript-row"><time>02:36</time><p>说明你比起那帮只是熟练功的人</p></div>
+<div class="transcript-row"><time>02:39</time><p>要强太多了</p></div>
+<div class="transcript-row"><time>02:39</time><p>我们不是不招熟练功</p></div>
+<div class="transcript-row"><time>02:41</time><p>熟练功对公司也很重要</p></div>
+<div class="transcript-row"><time>02:43</time><p>如果我只是做这一个行业</p></div>
+<div class="transcript-row"><time>02:44</time><p>做这一个事儿的话</p></div>
+<div class="transcript-row"><time>02:45</time><p>但是如果你有这种能力</p></div>
+<div class="transcript-row"><time>02:47</time><p>对我来讲就surprise了</p></div>
+<div class="transcript-row"><time>02:49</time><p>我捡到宝了</p></div>
+<div class="transcript-row"><time>02:50</time><p>所以你如果有这个跟没那个</p></div>
+<div class="transcript-row"><time>02:51</time><p>刚好有两个人在竞争的话</p></div>
+<div class="transcript-row"><time>02:53</time><p>我肯定要这个有的</p></div>
+<div class="transcript-row"><time>02:55</time><p>成本差不多</p></div>
+<div class="transcript-row"><time>02:56</time><p>但是性价比不同</p></div>
+<div class="transcript-row"><time>02:57</time><p>对不对</p></div>
+<div class="transcript-row"><time>02:58</time><p>然后第三个我会审视什么呢</p></div>
+<div class="transcript-row"><time>03:00</time><p>也是从组织角度考虑的</p></div>
+<div class="transcript-row"><time>03:01</time><p>发展性和稳定性</p></div>
+<div class="transcript-row"><time>03:02</time><p>稳定性就是说</p></div>
+<div class="transcript-row"><time>03:03</time><p>我们好不容易花了很多精力</p></div>
+<div class="transcript-row"><time>03:05</time><p>又把我的时间付出了</p></div>
+<div class="transcript-row"><time>03:07</time><p>我们招来的这个人</p></div>
+<div class="transcript-row"><time>03:08</time><p>能不能够长期的在我们团队发展</p></div>
+<div class="transcript-row"><time>03:10</time><p>长期发展有两个</p></div>
+<div class="transcript-row"><time>03:12</time><p>一个是他自己的稳定性</p></div>
+<div class="transcript-row"><time>03:14</time><p>比如说他住的远啊</p></div>
+<div class="transcript-row"><time>03:15</time><p>住的近啊</p></div>
+<div class="transcript-row"><time>03:16</time><p>你能不能在这个团队里</p></div>
+<div class="transcript-row"><time>03:17</time><p>踏踏实实的干两三天</p></div>
+<div class="transcript-row"><time>03:18</time><p>我这个我们也很关心</p></div>
+<div class="transcript-row"><time>03:20</time><p>我们布完局以后</p></div>
+<div class="transcript-row"><time>03:21</time><p>我不希望中间的兵自己就跑了嘛</p></div>
+<div class="transcript-row"><time>03:23</time><p>然后第二个呢</p></div>
+<div class="transcript-row"><time>03:24</time><p>是从公司角度</p></div>
+<div class="transcript-row"><time>03:25</time><p>对他造成的稳定性</p></div>
+<div class="transcript-row"><time>03:26</time><p>比如说我们现在这个岗位</p></div>
+<div class="transcript-row"><time>03:28</time><p>本身稳不稳</p></div>
+<div class="transcript-row"><time>03:29</time><p>这个人进来以后</p></div>
+<div class="transcript-row"><time>03:30</time><p>他能不能适应变化</p></div>
+<div class="transcript-row"><time>03:31</time><p>或者是我们承诺他的一些东西</p></div>
+<div class="transcript-row"><time>03:33</time><p>如果发生变化</p></div>
+<div class="transcript-row"><time>03:34</time><p>他会怎么应对</p></div>
+<div class="transcript-row"><time>03:35</time><p>我肯定会问他一些问题</p></div>
+<div class="transcript-row"><time>03:36</time><p>我说你之前的公司里面</p></div>
+<div class="transcript-row"><time>03:38</time><p>万一如果有一些工作调整了</p></div>
+<div class="transcript-row"><time>03:40</time><p>你会怎么解决</p></div>
+<div class="transcript-row"><time>03:41</time><p>其实这个问题就试探他嘛</p></div>
+<div class="transcript-row"><time>03:43</time><p>就看他接不接受被调整</p></div>
+<div class="transcript-row"><time>03:45</time><p>改变一些他的工作发展的内容</p></div>
+<div class="transcript-row"><time>03:47</time><p>如果他比较宽</p></div>
+<div class="transcript-row"><time>03:49</time><p>他本身那个能力上</p></div>
+<div class="transcript-row"><time>03:50</time><p>也确实能够复用</p></div>
+<div class="transcript-row"><time>03:51</time><p>方法论形成了</p></div>
+<div class="transcript-row"><time>03:53</time><p>所以让他换一个方向</p></div>
+<div class="transcript-row"><time>03:54</time><p>他自己也没问题</p></div>
+<div class="transcript-row"><time>03:55</time><p>这种人就好用</p></div>
+<div class="transcript-row"><time>03:56</time><p>那如果说他不行</p></div>
+<div class="transcript-row"><time>03:57</time><p>我来这就是为了做这个事儿的</p></div>
+<div class="transcript-row"><time>03:59</time><p>那你们如果不让我做这个事儿</p></div>
+<div class="transcript-row"><time>04:00</time><p>我就不来了</p></div>
+<div class="transcript-row"><time>04:01</time><p>如果是这种人呢</p></div>
+<div class="transcript-row"><time>04:03</time><p>我们就要看情况了</p></div>
+<div class="transcript-row"><time>04:03</time><p>如果我保证不了这种人</p></div>
+<div class="transcript-row"><time>04:05</time><p>我也不要了</p></div>
+<div class="transcript-row"><time>04:05</time><p>为什么</p></div>
+<div class="transcript-row"><time>04:06</time><p>我满足不了你的期望</p></div>
+<div class="transcript-row"><time>04:08</time><p>职场就是一个互相选择</p></div>
+<div class="transcript-row"><time>04:10</time><p>我满足不了你的期望</p></div>
+<div class="transcript-row"><time>04:11</time><p>是我的问题</p></div>
+<div class="transcript-row"><time>04:11</time><p>所以我就不要了</p></div>
+<div class="transcript-row"><time>04:12</time><p>其实所有的东西</p></div>
+<div class="transcript-row"><time>04:13</time><p>都是在组织思想</p></div>
+<div class="transcript-row"><time>04:14</time><p>和这个团队思想上的</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

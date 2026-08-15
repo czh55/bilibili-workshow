@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7311" viewBox="0 0 1320 7311">
+  <foreignObject x="0" y="0" width="1320" height="7311">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>机会要主动争取，但先理解对方诉求</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">机会</span><span class="tag tag-orange">沟通</span><span class="tag tag-gray">时长 2分56秒</span><span class="tag tag-gray">分析视角：争取机会的本质是解决对方诉求</span></div>
+  <a class="source-link" href="local:01e49678297547c20103700388eed71a69_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：机会不会自己找上门——「我是块石头，正好那个地方需要块石头」的幻想很幼稚。要主动大胆争取，但有方法：先理解对方在担心什么、思考什么，再去聊你能解决什么问题、帮别人得到什么。机会的本质是解决对方诉求，不是证明「我自己可以」。还要想清楚岗位需要什么样的人、为什么之前的人走、你的老板会不会放你、谁接手你的部门；备好plan A和plan B再行动，并打通HR这一关——老板点头、HR不点头一样过不去。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">要天时地利人和，机会靠自己做局，别幻想自己是那块正合适的石头</span></div><div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">你不说老板只能猜，而老板选择多又有权利；所以要主动大胆、积极争取</span></div><div class="timeline-item"><span class="timeline-time">00:23</span><span class="timeline-text">但争取有方法：先理解对方在担心什么、思考什么，再聊</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">你能解决什么问题、帮别人得到什么，才会获得机会</span></div><div class="timeline-item"><span class="timeline-time">00:36</span><span class="timeline-text">别打「我觉得我自己可以」这张牌，这解决不了问题</span></div><div class="timeline-item"><span class="timeline-time">00:51</span><span class="timeline-text">第一个问题：那个岗位需要什么样的人、解决什么样的问题</span></div><div class="timeline-item"><span class="timeline-time">01:03</span><span class="timeline-text">为什么之前的人走：老板不开心、被干走、理念不合、没发展空间</span></div><div class="timeline-item"><span class="timeline-time">01:11</span><span class="timeline-text">第二个问题：你走了，自己部门怎么办，你的老板会放吗</span></div><div class="timeline-item"><span class="timeline-time">01:21</span><span class="timeline-text">不是重要事情的负责人，你根本没有机会</span></div><div class="timeline-item"><span class="timeline-time">01:31</span><span class="timeline-text">老板放你的意义：形成合力让大家更好 + 有人能接不掉地上</span></div><div class="timeline-item"><span class="timeline-time">01:48</span><span class="timeline-text">想清楚每种情况、备好plan A和plan B，再主动试探沟通</span></div><div class="timeline-item"><span class="timeline-time">01:56</span><span class="timeline-text">可以请老板帮忙争取，公司有竞聘就自己竞聘</span></div><div class="timeline-item"><span class="timeline-time">02:04</span><span class="timeline-text">学员案例：公司有公开竞聘，但直属老大不放，照样没用</span></div><div class="timeline-item"><span class="timeline-time">02:10</span><span class="timeline-text">跟HR打好交道：老板点头、HR不点头一样过不去</span></div><div class="timeline-item"><span class="timeline-time">02:28</span><span class="timeline-text">收尾：天下石头多的是，先想清楚再谈怎么动作</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>主动争取机会，为什么还是拿不到</div><span class="arrow">→</span><div class="node-green">证据<br/>「石头」幻想 + 学员竞聘被老大拦 + 老板/HR双关卡</div><span class="arrow">→</span><div class="node-orange">判断<br/>机会的本质是解决对方诉求，不是证明自己行</div><span class="arrow">→</span><div class="node-blue">行动<br/>想清楚岗位问题和我走了谁接，备好方案再行动</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：主动争取就是直接去跟老板说「我行」。纠偏：太直接解决不了问题，先理解对方在担心什么，再聊你能解决什么。</p><p>误解 2：机会是等来的，全看缘分。纠偏：机会要主动大胆争取，天时地利人和也要自己做局。</p><p>误解 3：搞定老板就够了。纠偏：老板点头、HR不点头一样过不去，人事任命和组织管理HR最了解。</p><p>误解 4：公司有公开竞聘就能上。纠偏：直属老大不放人，竞聘也没用——先解决「我走了谁接」的问题。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-blue">
+      <h3>别当「石头」：机会要主动争取</h3>
+      <p>在讲什么：很多人幻想「我是块石头，那个地方正好需要石头，我就能去」，这个想法很幼稚——天下石头多的是，外面还有一堆，老板没必要非找你。你不说，老板只能猜，可老板选择多、有权利，你让他猜就是吃亏。关键理解：机会不是被需要的巧合，是你主动做局的结果。怎么用：主动大胆表达意愿，别等着被看见。</p>
+      <div class="quote">依据 [00:00–00:08]：很多东西要天时地利人和，你自己要做局，你不要幻想好像就是说，我是个石头，那个地方好像需要块石头，我就可以去，这想法贼幼稚。</div>
+      <div class="relation">立场分层：「石头」比喻为讲者的形象类比；做局主张为讲者方法论。</div>
+    </div>
+    <div class="card card-green">
+      <h3>争取前先读懂对方的诉求</h3>
+      <p>在讲什么：积极争取有方法——先理解对方在担心什么、思考什么，再聊你能解决什么问题、帮助别人得到什么。而不是张口就来「我觉得我自己可以」。你可以有能力，但机会是不是你的，取决于你能不能解决别人的诉求。关键理解：机会的钥匙在对方手里，不在你简历里。怎么用：聊之前先做功课，想清楚对方真正的难处。</p>
+      <div class="quote">依据 [00:23–00:50]：你太直接了其实解决不了，你先得理解对方到底在担心什么、思考什么，你再去聊，你能解决什么问题，和帮助别人得到什么，你才会获得那些机会。</div>
+      <div class="relation">立场分层：诉求先行观点为讲者沟通方法论；「你自己可以≠机会归你」为逻辑推理。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>两个关键问题：岗位缺什么、老板放不放</h3>
+      <p>在讲什么：争取前要回答两个问题——第一，那个岗位需要什么样的人、解决什么问题（为什么之前的人走：老板不开心、被干走、理念不合、没发展空间）；第二，你走了，你自己部门怎么办，你的老板会不会放。关键理解：不是重要事情的负责人，你根本没机会；但你是重要负责人，老板凭什么成全你——除非你能跟他形成合力，且这边有人能接、不掉地上。怎么用：把这两个问题想清楚，每个都准备应对方案。</p>
+      <div class="quote">依据 [00:51–01:45]：你的老板他对那个总监或者那个岗位的人，他需要什么样的人，以及解决什么样的问题呢？……他成全你的意义是在于说，如果你去负责那个事，跟他之间能形成合力，如果这边也有人能接、不会掉地上。</div>
+      <div class="relation">立场分层：两问题框架为讲者方法论；前任离职原因分析为常见组织现象。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>备好方案再行动，打通HR那一关</h3>
+      <p>在讲什么：把各种情况想清楚、备好plan A和plan B，再主动试探沟通，甚至可以请老板帮忙争取；公司有竞聘就自己竞聘。但案例提醒：学员公司有公开竞聘，直属老大不放，照样没用。同时要跟HR打好交道——老板说「可以让这小子试试」，HR一句「组织上盘点过，人才模型不合适」就没了。关键理解：争取机会是多角色博弈，老板和HR都要过关。怎么用：提前和HR建立关系，方案要覆盖「老大不放」这种最坏情况。</p>
+      <div class="quote">依据 [02:04–02:27]：我上次遇到一个学员跟我说，公司有公开竞聘，可是老大不放能有啥用呢？……老板点头HR不点头一样过不去。</div>
+      <div class="relation">立场分层：竞聘案例为讲者真实经历；HR一票否决为组织流程现实。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">争取机会：常见做法 vs 正确做法</h2><div class="card"><table><thead><tr><th>维度</th><th>常见做法</th><th>正确做法</th></tr></thead><tbody><tr><td>心态</td><td>我是石头，正好需要我</td><td>主动做局，大胆争取</td></tr><tr><td>话术</td><td>我觉得我自己可以</td><td>我能帮你解决什么问题</td></tr><tr><td>调研</td><td>我适合这个岗位</td><td>岗位为什么缺人、前任为什么走</td></tr><tr><td>顾虑</td><td>不管我走了部门怎么办</td><td>备好人选方案，证明不会掉地上</td></tr><tr><td>关卡</td><td>搞定老板就行</td><td>老板 + HR 双过关</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：想转岗、竞聘、争取重要机会的职场人。</li><li>上限：这套方法适用于内部机会流动，外部跳槽的逻辑不同。</li><li>反例：诉求想清楚了却迟迟不行动，等于白想。</li><li>例外：还没成为「重要事情的负责人」时，先积累筹码，机会来了才接得住。</li></ul><div class="pitfall">避坑：别只顾「我觉得我行」，要讲对方能得到什么。</div><div class="pitfall">避坑：别只攻略老板，HR一票否决照样白搭。</div><div class="pitfall">避坑：别只准备一个方案，plan A和plan B都备好再开口。</div><div class="pitfall">避坑：没想清楚「我走了谁接」就提转岗，老板不可能放人。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>机会要主动争取，别幻想自己是那块正合适的石头。</li><li>争取的本质是解决对方诉求，不是证明自己行。</li><li>想清楚岗位缺什么、老板放不放、HR认不认，再行动。</li></ul><h3>行动清单</h3><ol><li>盘点目标岗位：需要解决什么问题，前任为什么走。</li><li>想清楚「我走了谁接」，准备plan A和plan B。</li><li>先试探沟通，必要时请老板帮忙争取，同时维护好HR关系。</li></ol><h3>关键认知转变</h3><p>从「我值得这个机会」转到「我能解决你的问题」：真正拿到机会的人，是把对方的诉求当成了自己的考题，而不是急着证明自己。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分56秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

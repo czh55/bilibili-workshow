@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 1 分 45 秒的逻辑课：用「一只鸡和一只蛋有几种关系」开场，拆穿分析报告里最常见的错误——把相关关系当成因果关系。鸡生蛋、蛋生鸡之外还有第三种关系（都是另一只鸡生的），类比「喝高价红酒的人身体健康」其实共享「很有钱」这个共同原因。">
+<title>因果与相关：鸡生蛋还是蛋生鸡｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>鸡生蛋还是蛋生鸡？因果与相关的四种关系｜逻辑思维课</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">本地视频</span><span class="meta-tag tag-duration">1分47秒</span><span class="meta-tag tag-topic">逻辑思维 数据分析 职场</span></div>
+<a class="source-link" href="local:01e46df3d1be610201037103884d82ba97_258.MP4" target="_blank" rel="noopener">→ 原视频（本地文件）</a>
+<a class="source-link lang-switch" href="causality-vs-correlation-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">鸡和蛋的三种关系</a><a href="#ch2">相关关系不是因果关系</a><a href="#ch3">应用：拆台与挑战</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 1 分 45 秒的逻辑课：用「一只鸡和一只蛋有几种关系」开场，拆穿分析报告里最常见的错误——把相关关系当成因果关系。鸡生蛋、蛋生鸡之外还有第三种关系（都是另一只鸡生的），类比「喝高价红酒的人身体健康」其实共享「很有钱」这个共同原因。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:25]</span><div><strong>拆台开场：鸡和蛋有几种关系</strong><p>提问「一只鸡跟一只蛋有几种关系的可能性」：鸡生蛋、蛋生鸡——但还有第三种：这只鸡和蛋都是另外一只鸡生的。用来在闲聊时拆穿喜欢炫耀的人。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:26→01:10]</span><div><strong>分析报告里最常见的错误</strong><p>销售下滑的分析报告列出的原因往往不是因果关系而是相关关系。用「蛋大所以鸡大」证明不了必然因果；喝高价红酒的人健康，共同原因是有钱。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:11→01:47]</span><div><strong>怎么用：拆台 + 挑战题</strong><p>去参加台喜欢炫耀的人；挑战篇——判断分析报告里是因果还是相关、如何证明；用鸡和蛋或红酒与健康的例子讲给他人听。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>相关 ≠ 因果：两个变量一起变化，可能共享第三个「共同原因」。分析报告没找到共同原因前，都不能宣称找到了根因。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:25</span>鸡和蛋的三种关系</h2><p>视频开头说：「你身边有没有这样一个人，他们其实并不这么聪明，但很喜欢炫耀？有的的话今天跟你分享一个很 nice 的拆人家台的方法。」方法是闲聊时问：「请问一只鸡跟一只蛋有几种关系的可能性？」</p><p>「两种可能性对吧？鸡生蛋、蛋生鸡。不对，还有另外一种可能性——这只鸡跟这只蛋都是另外一只鸡生的。」</p><figure><img src="assets/causality-vs-correlation/shot-01.jpg" alt="开篇问题：一只鸡和一只蛋有几种关系可能性" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:10]</span>开篇问题：一只鸡和一只蛋有几种关系可能性</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3ceef13378d6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening question: how many possible relationships are there between a chicken and an egg?</span></div>
+<audio class="cap-audio" src="audio/3ceef13378d6.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/causality-vs-correlation/shot-02.jpg" alt="答案：鸡生蛋、蛋生鸡、或者鸡和蛋都是另一只鸡生的" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:40]</span>答案：鸡生蛋、蛋生鸡、或者鸡和蛋都是另一只鸡生的</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a2e01c7e0c5d.mp3" type="button" aria-label="Play English audio">🔊</button><span>The answer: the chicken lays the egg, the egg hatches the chicken, or both come from another chicken</span></div>
+<audio class="cap-audio" src="audio/a2e01c7e0c5d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:26-01:10</span>相关关系不是因果关系</h2><p>讲者交代问题来源：「你可以近似地把鸡生蛋、蛋生鸡类比成因果关系。有一次给一个销售部门评估分析报告，分析销售下滑的原因。所谓分析报告就是要找出因跟果，而且要证明它们之间存在必然的因果关系。」</p><p>「而实际情况是销售部门列出来的原因都不是因果关系，而是相关关系。如果是相关关系，说明没有找到根本的原因，要继续找。」他举例：「因为蛋大所以鸡大，能不能证明鸡跟蛋之间存在必然因果关系？不能，更有可能是相关关系。」</p><p>再举一例：「调查研究发现，喝高价红酒的人身体都很健康。那你能不能证明高价红酒和身体健康之间存在必然因果关系？也不能。它们有个共同的原因——叫做很有钱。因为很有钱所以买得起高价红酒，因为很有钱所以花钱投资自己的身体。」</p><figure><img src="assets/causality-vs-correlation/shot-03.jpg" alt="类比：喝高价红酒的人身体健康，是因有共同原因——很有钱" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:10]</span>类比：喝高价红酒的人身体健康，是因有共同原因——很有钱</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8423590eeaa8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Analogy: people who drink expensive wine are healthy because of a shared cause — they are rich</span></div>
+<audio class="cap-audio" src="audio/8423590eeaa8.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:11-01:47</span>应用：拆台与挑战</h2><p>结尾给出两个用法：「第一，可以去参加台喜欢炫耀的某某人；第二，挑战篇——这个分析报告里是因果关系还是相关关系？怎么证明？然后你可以用鸡跟蛋或者红酒与健康的例子说给他们听。」</p><p>最后补了一个彩蛋：「鸡跟蛋的关系，鸡生蛋、蛋生鸡，鸡和蛋都是另外一只鸡生的，三种对吧？不对，是四种——还有一种是，家里冰箱里的那只鸡蛋和菜场里的那只鸡之间没有任何关系。」</p><figure><img src="assets/causality-vs-correlation/shot-04.jpg" alt="应用：用鸡和蛋的故事拆穿喜欢炫耀的人" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:35]</span>应用：用鸡和蛋的故事拆穿喜欢炫耀的人</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/23b179274bff.mp3" type="button" aria-label="Play English audio">🔊</button><span>Use it: deflate show-offs with the chicken-and-egg story</span></div>
+<audio class="cap-audio" src="audio/23b179274bff.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（59段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>你身边有没有这样一个人,他们其实并不这么聪明,但很喜欢显牌炫耀</p></div>
+<div class="transcript-row"><time>00:04</time><p>有的话今天跟你分享一个很nice的拆人家台的方法</p></div>
+<div class="transcript-row"><time>00:07</time><p>你可以在茶余饭后闲聊时这么问的</p></div>
+<div class="transcript-row"><time>00:09</time><p>请问一只鸡跟一只蛋有几种关系的可能性?</p></div>
+<div class="transcript-row"><time>00:12</time><p>两种可能性对吧?</p></div>
+<div class="transcript-row"><time>00:13</time><p>鸡生蛋、蛋生鸡</p></div>
+<div class="transcript-row"><time>00:15</time><p>不对,还有另外一种可能性</p></div>
+<div class="transcript-row"><time>00:16</time><p>这只鸡跟这只蛋都是另外一只鸡生的</p></div>
+<div class="transcript-row"><time>00:19</time><p>这个问题是怎么来的呢?</p></div>
+<div class="transcript-row"><time>00:20</time><p>你可以近似地把鸡生蛋、蛋生鸡类比成因果关系</p></div>
+<div class="transcript-row"><time>00:23</time><p>有一次给一个销售部门评估分析报告PBT</p></div>
+<div class="transcript-row"><time>00:26</time><p>分析下销售下滑的原因</p></div>
+<div class="transcript-row"><time>00:28</time><p>所谓分析报告就是要找出因跟果</p></div>
+<div class="transcript-row"><time>00:30</time><p>而且要证明它们之间存在的必然因果关系</p></div>
+<div class="transcript-row"><time>00:33</time><p>而实际情况时销售部门列出来的原因都不是因果关系</p></div>
+<div class="transcript-row"><time>00:36</time><p>而是相关关系</p></div>
+<div class="transcript-row"><time>00:37</time><p>如果是相关关系,说明没有找到根本的原因,要继续找</p></div>
+<div class="transcript-row"><time>00:41</time><p>为了讲清楚因果关系跟相关关系的区别</p></div>
+<div class="transcript-row"><time>00:43</time><p>我跟他们讲了鸡跟蛋的故事</p></div>
+<div class="transcript-row"><time>00:45</time><p>因为蛋大所以鸡大</p></div>
+<div class="transcript-row"><time>00:46</time><p>能不能证明鸡跟蛋之间存在的必然因果关系?</p></div>
+<div class="transcript-row"><time>00:49</time><p>不能</p></div>
+<div class="transcript-row"><time>00:49</time><p>更有可能是相关关系</p></div>
+<div class="transcript-row"><time>00:51</time><p>什么叫相关关系?</p></div>
+<div class="transcript-row"><time>00:52</time><p>就是这只鸡跟这只蛋都是另外一只鸡生的</p></div>
+<div class="transcript-row"><time>00:54</time><p>再举个例子</p></div>
+<div class="transcript-row"><time>00:55</time><p>调查研究发现</p></div>
+<div class="transcript-row"><time>00:56</time><p>喝高价红酒的人身体都很健康</p></div>
+<div class="transcript-row"><time>00:58</time><p>那你能不能证明高价红酒和身体健康之间存在的必然因果关系?</p></div>
+<div class="transcript-row"><time>01:02</time><p>也不能</p></div>
+<div class="transcript-row"><time>01:03</time><p>喝得起高价红酒和身体健康之间更有可能是相关关系</p></div>
+<div class="transcript-row"><time>01:06</time><p>因为它们有个共同的原因</p></div>
+<div class="transcript-row"><time>01:07</time><p>叫做很有钱</p></div>
+<div class="transcript-row"><time>01:08</time><p>因为很有钱所以买得起高价红酒</p></div>
+<div class="transcript-row"><time>01:10</time><p>因为很有钱所以花钱投资自己的身体健康</p></div>
+<div class="transcript-row"><time>01:13</time><p>类似于鸡跟蛋都是另外一只鸡生的</p></div>
+<div class="transcript-row"><time>01:15</time><p>好了</p></div>
+<div class="transcript-row"><time>01:15</time><p>今天听了杨老师的这条视频</p></div>
+<div class="transcript-row"><time>01:17</time><p>你可以怎么用呢?</p></div>
+<div class="transcript-row"><time>01:18</time><p>第一</p></div>
+<div class="transcript-row"><time>01:18</time><p>可以去参加台喜欢炫耀的某某人</p></div>
+<div class="transcript-row"><time>01:21</time><p>第二</p></div>
+<div class="transcript-row"><time>01:21</time><p>挑战篇</p></div>
+<div class="transcript-row"><time>01:22</time><p>这个分析报告里是因果关系还是相关关系?</p></div>
+<div class="transcript-row"><time>01:24</time><p>怎么证明?</p></div>
+<div class="transcript-row"><time>01:25</time><p>然后你可以用鸡跟蛋或者红酒与健康的例子说给他们听</p></div>
+<div class="transcript-row"><time>01:28</time><p>最后</p></div>
+<div class="transcript-row"><time>01:29</time><p>鸡跟蛋的关系</p></div>
+<div class="transcript-row"><time>01:30</time><p>鸡生蛋</p></div>
+<div class="transcript-row"><time>01:30</time><p>蛋生鸡</p></div>
+<div class="transcript-row"><time>01:31</time><p>鸡和蛋都是另外一只鸡生的</p></div>
+<div class="transcript-row"><time>01:33</time><p>三种对吧?</p></div>
+<div class="transcript-row"><time>01:34</time><p>不对</p></div>
+<div class="transcript-row"><time>01:34</time><p>是四种</p></div>
+<div class="transcript-row"><time>01:35</time><p>还有一种</p></div>
+<div class="transcript-row"><time>01:36</time><p>家里冰箱的那只鸡蛋和菜场里的那只鸡之间没有任何关系</p></div>
+<div class="transcript-row"><time>01:40</time><p>其实是四种关系</p></div>
+<div class="transcript-row"><time>01:41</time><p>关注杨老师</p></div>
+<div class="transcript-row"><time>01:41</time><p>以后继续跟你讲类似鸡和蛋的职场故事</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

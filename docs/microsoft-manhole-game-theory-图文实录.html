@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 2 分钟的思维课：解析微软经典面试题「马路上的井盖为什么是圆的」为什么用了十几年还在考。答案网上随便搜就有，但面试官真正考的是博弈论——看似考 A 其实考 B。三层用意：博弈论的后手考验诚信、工程问题要从多角度解释、以及判断面试者的思维深度。">
+<title>微软面试为什么考井盖｜博弈论｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>微软面试为什么还考「井盖为什么是圆的」｜内嵌博弈论的三层用意</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">本地视频</span><span class="meta-tag tag-duration">1分52秒</span><span class="meta-tag tag-topic">面试 博弈论 诚信 思维</span></div>
+<a class="source-link" href="local:01e4845bc6755e0d0103700388a5092596_258.MP4" target="_blank" rel="noopener">→ 原视频（本地文件）</a>
+<a class="source-link lang-switch" href="microsoft-manhole-game-theory-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">一道网上有答案的面试题</a><a href="#ch2">博弈论的后手：考验诚信</a><a href="#ch3">多角度解释与三层用意</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 2 分钟的思维课：解析微软经典面试题「马路上的井盖为什么是圆的」为什么用了十几年还在考。答案网上随便搜就有，但面试官真正考的是博弈论——看似考 A 其实考 B。三层用意：博弈论的后手考验诚信、工程问题要从多角度解释、以及判断面试者的思维深度。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:22]</span><div><strong>为什么微软还在考井盖题</strong><p>答案网上随便搜就有，面试官一定知道——为什么还用？答案是博弈论。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:22→00:38]</span><div><strong>博弈论的三步推理</strong><p>A猜B会怎么做并留后手，B猜A及A的后手，A继续猜B可能猜到——后手背后还有后手。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:38→00:55]</span><div><strong>微软的后手：诚信</strong><p>面试官会说「知道答案就直说，我们跳过下一题」——背过答案却说不知道的，诚信亮黄牌。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:55→01:52]</span><div><strong>三层用意与彩蛋</strong><p>第一考诚信；第二考多角度解释（产品设计/机械制造/建筑工程）；彩蛋：坚持说方盖好的哥们被录进销售部。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>好的面试题内嵌博弈论——看似考 A 其实考 B。井盖题的答案是诚信、多角度思维与工程素养的试探。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:22</span>一道网上有答案的面试题</h2><p>开场设问：「为什么微软在十几年后依然用这道题来面试工程师——马路上的井盖为什么是圆的？答案你一定知道，网上随便搜一下就有。」</p><p>「可问题是，微软出面试考题的人，难道不知道网上有这道题的答案吗？他们一定知道的。那为什么还会用这道题来面试呢？答案是博弈论。」</p><figure><img src="assets/microsoft-manhole-game-theory/shot-01.jpg" alt="开场提问：为什么微软十多年后还用「马路上的井盖为什么是圆的」来面试工程师" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:05]</span>开场提问：为什么微软十多年后还用「马路上的井盖为什么是圆的」来面试工程师</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/42f4a739aa7b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening question: why does Microsoft still ask &#x27;why are manhole covers round?&#x27; after all these years</span></div>
+<audio class="cap-audio" src="audio/42f4a739aa7b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:22-00:55</span>博弈论的后手：考验诚信</h2><p>不讲数学公式地解释博弈论：第一步，A 猜 B 会怎么做，然后事先留好后手；第二步，B 猜 A 会怎么做，以及 A 可能的后手是什么；第三步，A 继续猜 B 可能会猜到 A 的后手是什么——所以后手背后还有后手，以此类推。</p><p>「那微软这道题的后手是什么？是诚信。」微软当然知道面试者已经知道答案，所以面试官会先说：如果你知道某道题的答案，请如实跟我说，我们直接跳过看下一题。</p><p>而如果面试者被问到「马路上的井盖为什么是圆的」，想都没想直接就说「方的容易掉下去」——此时面试官就会对面试者的诚信亮出一个黄牌。他只要接着再问一句「很好，还有吗」，面试者如果只是背过刷题答案就会立刻懵掉。</p><figure><img src="assets/microsoft-manhole-game-theory/shot-02.jpg" alt="博弈论解释：A猜B会怎么做并留后手，B猜A的猜测与后手，后手背后还有后手" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:25]</span>博弈论解释：A猜B会怎么做并留后手，B猜A的猜测与后手，后手背后还有后手</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e95b308088f5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Game-theory reading: A predicts B and prepares a countermove, B predicts A&#x27;s prediction and countermove — moves beneath moves</span></div>
+<audio class="cap-audio" src="audio/e95b308088f5.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/microsoft-manhole-game-theory/shot-03.jpg" alt="微软的「后手」是诚信：面试官会先声明「知道答案就直说，我们跳过下一题」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:40]</span>微软的「后手」是诚信：面试官会先声明「知道答案就直说，我们跳过下一题」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ae8b337e1e07.mp3" type="button" aria-label="Play English audio">🔊</button><span>Microsoft&#x27;s hidden move is honesty: interviewers first say &#x27;if you know the answer, say so and we&#x27;ll move on&#x27;</span></div>
+<audio class="cap-audio" src="audio/ae8b337e1e07.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:55-01:52</span>多角度解释与三层用意</h2><p>网上答案只有一条，但工程学上还有其他解释：比如生产环节中圆形的井盖比方形的更容易生产——圆形只有一个半径尺寸，方形有长和宽两个尺寸；另外挖一个圆形的洞，要比挖方形的洞简单。</p><p>所以微软到现在还考「马路上的井盖为什么是圆的」有三层用意：第一，博弈论的后手考验面试者的诚信；第二，工程问题要从多个角度来解释——刚才说的三个理由分别是从产品设计、机械制造和建筑工程三个角度，这是微软需要的工程师素质。</p><p>彩蛋：「在微软的朋友告诉我，真的有人坚持说方井盖比圆的好，而且讲出来有理有据，后来这哥们居然被录用了，然后被送到销售部门去了。」</p><p>总结：「好的面试题就应该是这样，内嵌博弈论，看起来是考 A，其实是考 B。我根据这个原则也创作过类似的面试题。」</p><figure><img src="assets/microsoft-manhole-game-theory/shot-04.jpg" alt="多角度工程解释：圆形井盖更好生产（只有一个半径尺寸）、挖圆洞更简单" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:55]</span>多角度工程解释：圆形井盖更好生产（只有一个半径尺寸）、挖圆洞更简单</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7116e71fdbf1.mp3" type="button" aria-label="Play English audio">🔊</button><span>Multi-angle engineering: round covers are easier to manufacture (one radius) and circular holes are simpler to dig</span></div>
+<audio class="cap-audio" src="audio/7116e71fdbf1.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/microsoft-manhole-game-theory/shot-05.jpg" alt="彩蛋：真有人坚持说方盖比圆盖好且有理有据，结果被录进销售部门——好的面试题是内嵌博弈论，看似考A其实考B" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:15]</span>彩蛋：真有人坚持说方盖比圆盖好且有理有据，结果被录进销售部门——好的面试题是内嵌博弈论，看似考A其实考B</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/705c40214ff6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Bonus: someone insisted square covers were better with solid reasoning — and got hired into sales; a good interview question hides game theory, testing B while asking A</span></div>
+<audio class="cap-audio" src="audio/705c40214ff6.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（60段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>為什麼微軟在十幾年後依然用這道題來面試工程師</p></div>
+<div class="transcript-row"><time>00:04</time><p>馬路上的陰莖該為什麼是圓的</p></div>
+<div class="transcript-row"><time>00:06</time><p>答案你一定知道</p></div>
+<div class="transcript-row"><time>00:07</time><p>網上隨便搜一下就有</p></div>
+<div class="transcript-row"><time>00:08</time><p>可問題是微軟出面試考題的人</p></div>
+<div class="transcript-row"><time>00:10</time><p>難道不知道網上有這道題的答案嗎</p></div>
+<div class="transcript-row"><time>00:12</time><p>他們一定知道的</p></div>
+<div class="transcript-row"><time>00:13</time><p>那為什麼還會用這道題來面試呢</p></div>
+<div class="transcript-row"><time>00:15</time><p>答案是博弈論</p></div>
+<div class="transcript-row"><time>00:16</time><p>如果不用複雜的數學公式</p></div>
+<div class="transcript-row"><time>00:18</time><p>可以這麼解釋博弈論</p></div>
+<div class="transcript-row"><time>00:19</time><p>第一步A猜B會怎麼做</p></div>
+<div class="transcript-row"><time>00:20</time><p>然後事先留好後手</p></div>
+<div class="transcript-row"><time>00:22</time><p>第二B猜A會怎麼做</p></div>
+<div class="transcript-row"><time>00:23</time><p>以及A可能的後手是什麼</p></div>
+<div class="transcript-row"><time>00:25</time><p>第三步A繼續猜</p></div>
+<div class="transcript-row"><time>00:27</time><p>B可能會猜到A的後手是什麼</p></div>
+<div class="transcript-row"><time>00:29</time><p>所以後手背後還有後手</p></div>
+<div class="transcript-row"><time>00:30</time><p>以此類推</p></div>
+<div class="transcript-row"><time>00:31</time><p>那微軟這道題的後手是什麼</p></div>
+<div class="transcript-row"><time>00:33</time><p>是誠信</p></div>
+<div class="transcript-row"><time>00:34</time><p>微軟當然知道面試者已經知道這道題的答案</p></div>
+<div class="transcript-row"><time>00:36</time><p>所以在面試前面試官會跟面試者說</p></div>
+<div class="transcript-row"><time>00:39</time><p>如果你知道某道題的答案</p></div>
+<div class="transcript-row"><time>00:40</time><p>請如實跟我說</p></div>
+<div class="transcript-row"><time>00:41</time><p>我們直接跳過看下一集</p></div>
+<div class="transcript-row"><time>00:43</time><p>而如果面試者在被問到馬路上陰莖該為什麼是圓的</p></div>
+<div class="transcript-row"><time>00:47</time><p>想都沒想直接就說</p></div>
+<div class="transcript-row"><time>00:48</time><p>方的容易掉下去</p></div>
+<div class="transcript-row"><time>00:49</time><p>此時面試官就會對面試者的誠信亮出一個黃牌</p></div>
+<div class="transcript-row"><time>00:53</time><p>他只要接著再問一句話就能確定了</p></div>
+<div class="transcript-row"><time>00:56</time><p>嗯很好還有嗎</p></div>
+<div class="transcript-row"><time>00:57</time><p>此時面試者如果只是網上背過刷題答案就會立刻懵掉</p></div>
+<div class="transcript-row"><time>01:01</time><p>怎麼回事網上答案就只有一條</p></div>
+<div class="transcript-row"><time>01:03</time><p>不對工程學上還有其他解釋</p></div>
+<div class="transcript-row"><time>01:06</time><p>比如生產環節中圓形的莖蓋比方形的更容易生產</p></div>
+<div class="transcript-row"><time>01:09</time><p>因為圓形只有個半形尺寸</p></div>
+<div class="transcript-row"><time>01:11</time><p>方形有長和寬兩個尺寸</p></div>
+<div class="transcript-row"><time>01:12</time><p>另外挖一個圓形的洞</p></div>
+<div class="transcript-row"><time>01:14</time><p>圓比要挖一個方形的洞要簡單</p></div>
+<div class="transcript-row"><time>01:16</time><p>所以微軟到現在還是考馬路上的陰莖該</p></div>
+<div class="transcript-row"><time>01:18</time><p>為什麼是圓的有三層容易</p></div>
+<div class="transcript-row"><time>01:20</time><p>第一博弈論的後手考驗面試者的誠信</p></div>
+<div class="transcript-row"><time>01:22</time><p>第二工程問題要從多個角度來解釋</p></div>
+<div class="transcript-row"><time>01:25</time><p>剛才說的三個理由分別是從產品設計</p></div>
+<div class="transcript-row"><time>01:27</time><p>機械製造和建築工程三個角度來解釋</p></div>
+<div class="transcript-row"><time>01:29</time><p>是微軟需要的工程師素質</p></div>
+<div class="transcript-row"><time>01:31</time><p>第三你可能想不到</p></div>
+<div class="transcript-row"><time>01:32</time><p>在微軟的朋友告訴我</p></div>
+<div class="transcript-row"><time>01:34</time><p>真的有人堅持說</p></div>
+<div class="transcript-row"><time>01:35</time><p>陰莖蓋放的就是比圓的好</p></div>
+<div class="transcript-row"><time>01:37</time><p>而且講出來有理有據</p></div>
+<div class="transcript-row"><time>01:38</time><p>後來這哥們居然被錄取了</p></div>
+<div class="transcript-row"><time>01:39</time><p>然後送到銷售部門去了</p></div>
+<div class="transcript-row"><time>01:41</time><p>這是真事情</p></div>
+<div class="transcript-row"><time>01:41</time><p>好的面試題就應該是這樣</p></div>
+<div class="transcript-row"><time>01:43</time><p>內嵌博弈論看起來是考A</p></div>
+<div class="transcript-row"><time>01:45</time><p>其實是考B</p></div>
+<div class="transcript-row"><time>01:46</time><p>我根據這個原則也創作過類似的面試題</p></div>
+<div class="transcript-row"><time>01:49</time><p>以後跟你分享</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

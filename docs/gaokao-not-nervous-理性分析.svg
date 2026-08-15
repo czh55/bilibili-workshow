@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5438" viewBox="0 0 1320 5438">
+  <foreignObject x="0" y="0" width="1320" height="5438">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>高考不紧张：人生才刚刚开始</h1>
+  <div class="meta"><span class="tag tag-blue">教育</span><span class="tag tag-green">高考</span><span class="tag tag-orange">心态</span><span class="tag tag-gray">时长 1分55秒</span><span class="tag tag-gray">分析视角：考前焦虑的认知调整</span></div>
+  <a class="source-link" href="local:01e46dcd56e4b8f301037103884d8551bb_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：高考只是人生的开始，不是一锤定音。不紧张的两个理由——招生比例提高、大学好坏只是排行的一个维度；同时澄清不紧张不等于放任——人生是严肃的，要尽力而为但不执着于「必须最好」。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">高考只是人生的开始，未来好坏不由它决定</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">理由一：招生比例比以前大很多，考上概率很大</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">不必与同学比、非要考最好的大学</span></div><div class="timeline-item"><span class="timeline-time">00:35</span><span class="timeline-text">尽力复习做到最好，考一般大学也能做伟大的事</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">讲者自述：当年在最好中学、班里前几名，所以坦然</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">大学好坏只是排行的一个维度，普通大学压力小自信更大</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">澄清：不紧张不等于放任</span></div><div class="timeline-item"><span class="timeline-time">01:32</span><span class="timeline-text">人生是严肃的，认真对待每一件事</span></div><div class="timeline-item"><span class="timeline-time">01:45</span><span class="timeline-text">高考是重要的一件事，尽最大力量复习准备</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>高考怎么不紧张</div><span class="arrow">→</span><div class="node-green">证据<br/>概率、维度、人生意义三层论证</div><span class="arrow">→</span><div class="node-orange">判断<br/>紧张源于「必须最好」的执念</div><span class="arrow">→</span><div class="node-blue">行动<br/>放下执念，尽力而为</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：考不上好大学人生就完了。纠偏：高考只是开始，大学好坏对人生影响不是定乾坤的。</p><p>误解 2：不紧张 = 不上进、放任自己。纠偏：不紧张是放下执念，不是放松努力。</p><p>误解 3：必须考最高分才够优秀。纠偏：大学好坏只是排行的一个维度，普通大学也能激发兴趣与自信。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>两个不紧张的理由</h3>
+      <p>在讲什么：理由一，招生比例比以前大很多，考上概率很大；理由二，大学好坏只是排行的一个维度，普通大学竞争压力小，兴趣和自信反而更大。关键理解：焦虑多源于对「唯一标准」的执念。怎么用：考前默念这两点，把「必须最好」放下。</p>
+      <div class="quote">依据 [00:10–01:20]：现在招生比例比以前大了很多，考上大学的概率几乎是很大的……大学的好坏也是排行的一个维度，有的大学不一定不好。</div>
+      <div class="relation">立场分层：招生比例提高为事实；「排行只是维度」为讲者观点。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>不紧张不等于放任</h3>
+      <p>在讲什么：放下「必须最高分最好大学」的执念，不等于一天到晚玩。人生是严肃的，每一件事都要认真去做；高考是其中重要的一件，要尽最大力量复习准备。关键理解：真正的松弛是「尽力 + 不执着结果」。怎么用：把注意力从「考多少分」转到「还能做对哪道题」。</p>
+      <div class="quote">依据 [01:25–01:55]：人生其实是很严肃的，我们如何有意义的度过这个人生，那个是很重要的……从人生的意义和做事情的态度上，要勤奋的、尽最大的力量去复习、去准备。</div>
+      <div class="relation">立场分层：严肃认真的人生态度为普遍价值；考前应用为讲者建议。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">两种考前心态</h2><div class="card"><table><thead><tr><th>维度</th><th>紧张心态</th><th>松弛心态</th></tr></thead><tbody><tr><td>关注点</td><td>必须考最高分/最好大学</td><td>尽力复习，接受多种结果</td></tr><tr><td>比较对象</td><td>同学排名</td><td>自己是否尽力</td></tr><tr><td>结果归因</td><td>考试定人生</td><td>人生才刚开始，机会很多</td></tr><tr><td>行动</td><td>焦虑内耗</td><td>专注复习本身</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：高考考生、家长、教师。</li><li>上限：心态调整是辅助，复习质量仍是基础。</li><li>反例：过度松弛导致完全不复习，一样出问题。</li><li>例外：严重考前焦虑可能需专业心理支持，不只是认知调整。</li></ul><div class="pitfall">避坑：别把「放下执念」听成「放下努力」。</div><div class="pitfall">避坑：家长别用「考不上就完了」制造焦虑。</div><div class="pitfall">避坑：考前最后几天别猛刷难题，回归基础更稳。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>高考只是人生的开始，不是一锤定音。</li><li>紧张源于「必须最好」，放下执念即松弛。</li><li>不紧张 ≠ 放任：尽力而为才是正解。</li></ul><h3>行动清单</h3><ol><li>考前默念：招生比例高了，大学只是维度之一。</li><li>把「我要考多少分」换成「我今天复习什么」。</li><li>每天认真完成复习计划，就是最好的心态。</li></ol><h3>关键认知转变</h3><p>从「高考定乾坤」转到「高考是人生一个环节」：尽力去考，然后继续你的人生。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分55秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
