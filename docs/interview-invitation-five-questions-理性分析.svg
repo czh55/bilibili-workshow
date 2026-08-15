@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6228" viewBox="0 0 1320 6228">
+  <foreignObject x="0" y="0" width="1320" height="6228">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试10分钟就结束？邀约时先问清这5问</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">面试</span><span class="tag tag-orange">避坑</span><span class="tag tag-gray">时长 1分50秒</span><span class="tag tag-gray">分析视角：无效面试可前置过滤，五问是把筛选搬到邀约环节</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686670286(1).mov">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：面试十几分钟就结束，说明岗位明显不匹配，而根子在 HR 不专业、邀约环节没做筛选。求职者不该被动等一场「白跑」，而应在面试邀约时主动问清五问——公司、岗位、匹配度、业务主管、福利，把「这公司靠不靠谱」「我匹不匹配」「待遇对不对得上」三个判断全部前置到出发之前。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">现象：出席2小时，面试10分钟</span></div><div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">正常面试30分钟到一个半小时</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">十几分钟结束＝岗位明显不匹配</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">根因：HR不专业，记不清用人要求</span></div><div class="timeline-item"><span class="timeline-time">00:24</span><span class="timeline-text">无效面试本可在邀约环节避免</span></div><div class="timeline-item"><span class="timeline-time">00:31</span><span class="timeline-text">第一问：公司属于什么行业、什么业务、规模多大</span></div><div class="timeline-item"><span class="timeline-time">00:46</span><span class="timeline-text">第二问：招什么岗位、为什么招、内容与要求</span></div><div class="timeline-item"><span class="timeline-time">00:58</span><span class="timeline-text">第三问：我的简历哪些方面和岗位匹配</span></div><div class="timeline-item"><span class="timeline-time">01:15</span><span class="timeline-text">第四问：业务主管看过我的简历吗</span></div><div class="timeline-item"><span class="timeline-time">01:30</span><span class="timeline-text">第五问：地点、双休、薪资期望能否满足</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>面试10分钟就结束，怎么在源头避免</div><span class="arrow">→</span><div class="node-green">证据<br/>十几分钟结束＝不匹配；根因是HR不专业</div><span class="arrow">→</span><div class="node-orange">判断<br/>无效面试本可在邀约环节过滤掉</div><span class="arrow">→</span><div class="node-blue">行动<br/>邀约时问清五问：公司、岗位、匹配度、主管、福利</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：面试时间短是我自己发挥不好。纠偏：十几分钟结束基本说明岗位不匹配，问题出在 HR 邀约环节没筛好。</p><p>误解 2：面试前多搜公司信息就够了。纠偏：信息不对称要在邀约环节用五问补齐，搜来的公开信息代替不了直接问。</p><p>误解 3：问太多会被 HR 嫌烦、丢机会。纠偏：合理的五问是专业表现，反而能筛选掉不靠谱的机会。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>10分钟面试=岗位不匹配</h3>
+      <p>在讲什么：正常面试 30 分钟到一个半小时，十几分钟就结束只能说明你与岗位明显不匹配；根因多半是 HR 不专业，既记不清用人要求也缺乏基本判断。关键理解：时间短不是你能力问题，是邀约筛选环节失守。怎么用：把面试时长当成信号，遇到「10 分钟面试」不必自我怀疑。</p>
+      <div class="quote">依据 [00:06-00:24]：正常的面试通常是30分钟到一个半小时之间，如果说你的面试十几分钟就结束掉，那只能说明你跟应聘的岗位是明显不匹配的。</div>
+      <div class="relation">立场分层：「10分钟=不匹配」为经验判断；「HR不专业」为对根因的归因。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>五问前置：把筛选搬进邀约</h3>
+      <p>在讲什么：邀约时问公司（行业业务规模官网）、问岗位（招什么、为什么、内容要求）、问匹配度（我的简历哪里匹配）、问主管（业务主管看过简历吗）、问福利（地点、双休、薪资）。关键理解：五问回答你三件事——公司靠不靠谱、我匹不匹配、待遇对不对得上。怎么用：接到邀约电话先别急着答应，把五问在电话里过一遍。</p>
+      <div class="quote">依据 [00:31-01:50]：第一问问公司……第二问问岗位……第三问问匹配度……第四问问主管……第五问问福利。</div>
+      <div class="relation">立场分层：五问为具体操作清单；「判断公司靠不靠谱与匹配度」为五问背后的筛选逻辑。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>技术岗必问：业务主管看过简历吗</h3>
+      <p>在讲什么：第四问专门针对技术门槛高的岗位——不是资深的 HR 很难看懂你的简历，所以保险起见要确认业务主管是否已经评估过。关键理解：HR 不专业漏掉的，要靠你自己确认补上。怎么用：遇到技术岗邀约，主动问「业务主管或者团队负责人有看过我的简历吗」。</p>
+      <div class="quote">依据 [01:11-01:20]：基于一些有技术门槛的岗位，通常不是资深的HR是很难看懂你的简历的，保险起见还是要确认一下业务主管是不是已经评估过自己的简历了。</div>
+      <div class="relation">立场分层：「HR看不懂技术简历」为现状；「确认主管看过」为针对性的补漏动作。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">面试邀约「五问」清单</h2><div class="card"><table><thead><tr><th>问什么</th><th>具体问题</th><th>解决什么问题</th></tr></thead><tbody><tr><td>问公司</td><td>行业、业务、规模、成立时间、官网</td><td>公司做什么、做得怎么样、有没有前景</td></tr><tr><td>问岗位</td><td>招什么、为什么招、内容、要求</td><td>岗位靠不靠谱、我匹不匹配</td></tr><tr><td>问匹配度</td><td>我简历哪些方面和岗位匹配</td><td>HR 有没有认真看简历、我有没有机会</td></tr><tr><td>问主管</td><td>业务主管看过简历吗</td><td>技术岗不会被 HR 的看不懂耽误</td></tr><tr><td>问福利</td><td>地点、是否双休、薪资期望</td><td>避免现场才发现单休等落差</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：HR 电话邀约/线上沟通环节的前置筛选。</li><li>上限：五问替代不了对岗位与团队的真实体验，入职前还需多方验证。</li><li>反例：机会很少、投递无果时，不该因五问答不齐就放弃一切机会。</li><li>例外：熟人内推、猎头背书的岗位，信息更充分，五问可酌情精简。</li></ul><div class="pitfall">避坑：别把五问一次性机关枪式抛出，先听后问、挑关键问。</div><div class="pitfall">避坑：问福利别只盯双休，薪资结构和加班文化也要一并确认。</div><div class="pitfall">避坑：HR 含糊其辞答不出公司信息时，说明公司招聘流程本身就不规范，警惕。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>面试10分钟就结束＝岗位不匹配，根子在HR不专业。</li><li>无效面试本可在邀约环节避免，筛选要前置。</li><li>五问：公司、岗位、匹配度、主管、福利，问清再出发。</li></ul><h3>行动清单</h3><ol><li>把五问清单存进手机，接到邀约电话照着问。</li><li>技术岗邀约主动确认业务主管是否看过简历。</li><li>对方答不上来或含糊时，把该公司标记为高不确定机会。</li></ol><h3>关键认知转变</h3><p>从「有面试就跑，跑完才发现不合适」转到「邀约时就把坑筛掉」：把判断公司靠不靠谱、匹配不匹配、待遇对不对得上，全部前置到出发之前。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分50秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

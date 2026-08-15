@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6038" viewBox="0 0 1320 6038">
+  <foreignObject x="0" y="0" width="1320" height="6038">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试感觉很好却被拒？四个原因解读</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">面试</span><span class="tag tag-orange">求职</span><span class="tag tag-gray">时长 0分45秒</span><span class="tag tag-gray">分析视角：把「感觉很好却被拒」拆成能力验证、竞争、薪资、需求四个变量</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686669569(1).MOV">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：面试感觉好却被拒，多数情况下与你的表现无关，而是四个外部或验证性变量：能力未经实际工作验证、存在更优候选人、期望薪资超预算、岗位需求变化（取消或内部消化）。被拒不等于你不优秀，更多是匹配环节失效。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">现象：自我感觉非常好，面试官反馈也正面</span></div><div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">最后却收到拒信，有四个可能原因</span></div><div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">原因一：面试是想象，能力未被真正验证</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">面试表现好，实际工作中未必能用</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">原因二：竞争激烈，有更优秀的候选人</span></div><div class="timeline-item"><span class="timeline-time">00:22</span><span class="timeline-text">公司择优录取</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">原因三：期望薪资超出对方预算</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">HR 谈薪谈不拢，只能拒绝</span></div><div class="timeline-item"><span class="timeline-time">00:34</span><span class="timeline-text">原因四：岗位需求发生变化</span></div><div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">岗位被取消或被内部转岗消化</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>为什么面试感觉很好却被拒绝</div><span class="arrow">→</span><div class="node-green">证据<br/>能力验证、竞争、薪资、需求四个变量</div><span class="arrow">→</span><div class="node-orange">判断<br/>被拒常是匹配环节失效，非能力问题</div><span class="arrow">→</span><div class="node-blue">行动<br/>从四个原因复盘，针对性调整</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：面试感觉好就该被录用。纠偏：录用取决于验证、竞争、薪资、需求四个因素，感觉好只是其中之一。</p><p>误解 2：被拒说明自己表现差。纠偏：被拒可能因为更优候选人或岗位需求变化，与表现无关。</p><p>误解 3：面试表现好就代表能力强。纠偏：面试是想象，能力要到实际工作中才被真正验证。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>原因一：能力未被验证</h3>
+      <p>在讲什么：面试是想象，能力没有被真正验证，面试表现好但实际工作中未必能用。关键理解：面试评价是预测不是证明。怎么用：别把面试顺利当作能力结论，保持谨慎乐观。</p>
+      <div class="quote">依据 [00:09-00:17]：面试是想象，你的能力没有被真正的验证，你在面试中表现得好，但到了实际工作当中，未必能用到你的这些能力。</div>
+      <div class="relation">立场分层：能力未验证为机制解释；「面试是预测」是概念提炼。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>原因二三：竞争与薪资</h3>
+      <p>在讲什么：竞争激烈时会有更优秀的候选人，公司择优录取；期望薪资超出预算时，HR 谈薪谈不拢只能拒绝。关键理解：两件事都是比较与预算问题，不是你的缺陷。怎么用：复盘时了解对手的定价与自身溢价空间。</p>
+      <div class="quote">依据 [00:18-00:33]：竞争比较激烈，可能有比你更优秀的候选人……你的期望薪资超出了对方的预算，这种情况下 HR 谈薪谈不拢，最终只能拒绝。</div>
+      <div class="relation">立场分层：竞争与薪资为外部因素；「择优与预算」是决策规则。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>原因四：岗位需求变化</h3>
+      <p>在讲什么：岗位需求发生了变化，比如岗位被取消，或者被内部转岗消化掉了，公司不再对外招这个岗位。关键理解：需求变化完全不受你控制，是最「冤枉」的被拒原因。怎么用：被拒后礼貌询问岗位状态，若已取消则无需自我怀疑。</p>
+      <div class="quote">依据 [00:34-00:45]：岗位需求发生了变化，比如说岗位被取消，或者岗位被内部转岗消化掉了，公司都不再需要对外招这个岗位了。</div>
+      <div class="relation">立场分层：需求变化为组织变量；「无需自我怀疑」是心态建议。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">感觉很好却被拒：四个原因</h2><div class="card"><table><thead><tr><th>原因</th><th>性质</th><th>应对</th></tr></thead><tbody><tr><td>能力未被验证</td><td>评估机制</td><td>用项目成果持续证明自己</td></tr><tr><td>竞争激烈</td><td>外部比较</td><td>差异化定位，强化独特价值</td></tr><tr><td>期望薪资超预算</td><td>定价问题</td><td>了解市场价，合理开价</td></tr><tr><td>岗位需求变化</td><td>组织变动</td><td>礼貌确认，不必自我怀疑</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：面试过程顺利却被拒、想找原因的求职者。</li><li>上限：不适用于面试中存在明显失误或岗位硬伤却自我感觉良好的情况。</li><li>反例：多次「感觉好却被拒」，要检查是否评估能力与岗位错配。</li><li>例外：被拒后礼貌追问原因，很多 HR 会给出真实反馈。</li></ul><div class="pitfall">避坑：别把「感觉好」当铁律，面试顺利也要准备 B 计划。</div><div class="pitfall">避坑：追问被拒原因要注意方式，避免给 HR 留下负面印象。</div><div class="pitfall">避坑：薪资超预算被拒后，若仍想进这家公司，可重新谈方案。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>被拒常是匹配环节失效，而非能力问题。</li><li>四个原因：未验证、竞争、预算、需求变化。</li><li>感觉好不等于录用，被拒不等于不优秀。</li></ul><h3>行动清单</h3><ol><li>对照四个原因复盘每次被拒。</li><li>被拒后礼貌询问真实原因。</li><li>差异化定位，持续用成果证明能力。</li></ol><h3>关键认知转变</h3><p>从「感觉好就该成、被拒就是我不行」转到「匹配视角」：录用是多变量决策，被拒不一定与你有关。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 0分45秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

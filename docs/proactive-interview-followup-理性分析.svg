@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6116" viewBox="0 0 1320 6116">
+  <foreignObject x="0" y="0" width="1320" height="6116">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>好工作是等不来的｜面试后要主动出击</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">求职</span><span class="tag tag-orange">面试技巧</span><span class="tag tag-gray">时长 1分06秒</span><span class="tag tag-gray">分析视角：把「面试后等待」转成「主动争取」的行动清单</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686667719(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：好工作是主动出击争取来的，不是等来的。很多求职者因担心「主动问会掉价」而被动等待，反而让十拿九稳的机会溜走。正确的做法是三个主动：远程面试主动表明准备状态、面试结束主动致谢并争取反馈与联系方式、面试后两三天主动问结果。主动追问不是在掉价，而是在传递重视。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场：心仪公司迟迟没给反馈</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">越被动等待，好机会离你越远</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">学员通病：很矜持，担心主动问掉价</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">好工作不是等来的，要主动出击</span></div><div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">方法一：远程面试主动表明准备状态</span></div><div class="timeline-item"><span class="timeline-time">00:27</span><span class="timeline-text">方法二：面试结束主动感谢面试官</span></div><div class="timeline-item"><span class="timeline-time">00:34</span><span class="timeline-text">特别重视的话，再次表达并希望尽快有反馈</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">互动不错时，抓住机会加联系方式</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">方法三：面试后两三天主动问结果</span></div><div class="timeline-item"><span class="timeline-time">00:56</span><span class="timeline-text">主动追问=告诉对方我很重视这个机会</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>面试后纠结要不要主动问，怕掉价</div><span class="arrow">→</span><div class="node-green">证据<br/>被动等待让十拿九稳的机会越来越远</div><span class="arrow">→</span><div class="node-orange">判断<br/>主动不是在掉价，是在传递重视</div><span class="arrow">→</span><div class="node-blue">行动<br/>三个主动：准备状态、致谢反馈、追问结果</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：面试后主动问结果会显得掉价、没面子。纠偏：与机会失之交臂才是最大损失，主动追问恰恰在传递对机会的重视。</p><p>误解 2：面试结束就等着 HR 通知，等着就行。纠偏：好工作不是等来的，面试前中后都要主动出击。</p><p>误解 3：加面试官联系方式太冒昧。纠偏：在互动不错的前提下主动加联系方式是争取机会的正当方法。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>被动等待是最大的坑</h3>
+      <p>在讲什么：很多求职者很矜持，十拿九稳的面试迟迟没下文也不问，担心主动问会掉价，在纠结徘徊中错过机会。关键理解：等待消耗的不是时间，是机会。怎么用：把「等结果」改成「推进结果」，主动掌握节奏。</p>
+      <div class="quote">依据 [00:05-00:15]：你越被动等待，好机会离你会越远……好工作一定不是等来的，需要我们主动出击。</div>
+      <div class="relation">立场分层：「被动等待会错过机会」为观察结论；「要主动出击」是行动主张。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>前中段主动：准备与致谢</h3>
+      <p>在讲什么：远程面试主动表明准备状态，让面试官感到你非常重视这场面试；面试快结束时主动感谢面试官，特别重视还可再次表达并希望尽快有反馈，互动不错时主动加联系方式。关键理解：主动要让对方「感知到重视」。怎么用：把感谢与反馈请求提前准备成固定话术。</p>
+      <div class="quote">依据 [00:16-00:44]：通过主动向面试官表明你的准备状态，让面试官能够感受到其实你是非常重视这场面试……主动的去询问面试官方便加一下他的联系方式。</div>
+      <div class="relation">立场分层：三个动作为操作清单；「让面试官感受到重视」是底层逻辑。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>主动追问=传递重视</h3>
+      <p>在讲什么：面试后两三天没反馈要主动问结果，别觉得掉价，错失机会才是最大损失；恰当时候主动追问就是在告诉对方我很重视这场面试和这个机会。关键理解：面试官眼中，跟进是加分项不是骚扰。怎么用：设一个明确节点（如两天后），到点礼貌跟进一次。</p>
+      <div class="quote">依据 [00:45-01:06]：一定要主动去问结果，不要觉得主动去问会自己掉价……在恰当的时候主动去追问结果，其实就是在告诉对方我很重视咱们这场面试。</div>
+      <div class="relation">立场分层：「跟进=传递重视」为核心观点；「两三天后追问」为具体时间建议。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">面试三阶段主动清单</h2><div class="card"><table><thead><tr><th>阶段</th><th>主动动作</th><th>目的</th></tr></thead><tbody><tr><td>远程面试中</td><td>主动表明准备状态</td><td>让面试官感受到重视</td></tr><tr><td>面试快结束时</td><td>主动感谢+请求反馈</td><td>留下积极印象、推动反馈</td></tr><tr><td>面试互动不错时</td><td>加面试官联系方式</td><td>保持后续沟通通道</td></tr><tr><td>面试后两三天</td><td>主动询问结果</td><td>避免机会被拖延消耗</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：面试后没有收到反馈、担心错失机会的求职者。</li><li>上限：不适用于面试官明确表示「等通知即可」且公司流程特别缓慢的场景。</li><li>反例：频繁追问（每天一次）会变成骚扰，反而适得其反。</li><li>例外：加联系方式要基于互动不错的前提，冷场时强加会尴尬。</li></ul><div class="pitfall">避坑：追问要有节制，一两次即可，不要天天问。</div><div class="pitfall">避坑：主动表明准备状态要自然，避免变成刻意表忠心。</div><div class="pitfall">避坑：加联系方式被委婉拒绝很正常，不必玻璃心。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>好工作是主动出击争取来的，不是等来的。</li><li>主动不是在掉价，而是在传递对机会的重视。</li><li>面试前中后各有一个主动动作可以执行。</li></ul><h3>行动清单</h3><ol><li>远程面试前主动告知面试官你的准备状态。</li><li>面试结束时备好感谢话术，争取反馈与联系方式。</li><li>面试后第 2-3 天设提醒，礼貌跟进一次结果。</li></ol><h3>关键认知转变</h3><p>从「矜持等待、怕问掉价」转到「主动推进、传递重视」：好机会靠争取，不靠等待。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分06秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

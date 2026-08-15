@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6332" viewBox="0 0 1320 6332">
+  <foreignObject x="0" y="0" width="1320" height="6332">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>三色光混色实验：数码影像的色彩原理</h1>
+  <div class="meta"><span class="tag tag-blue">摄影</span><span class="tag tag-green">色彩</span><span class="tag tag-orange">原理</span><span class="tag tag-gray">时长 2分09秒</span><span class="tag tag-gray">分析视角：从物理混色实验到数码成像，用RGB加法混色讲透色彩原理</span></div>
+  <a class="source-link" href="local:a5287425b40b4d0c94bf373cb14d7ceb_vsvideo.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：红、绿、蓝三种色光按不同比例混合，就能还原人眼看到的所有颜色——这是数码影像的底层原理。实验路线从暗室三灯出发：两两混色得黄、青、品红（共六色），加强度调节可得橙、青蓝、黄绿、蓝紫、青绿、紫红；把彩色方块缩小排列就是数码照片的成像方式。理解色相、饱和度、明度三大属性后，后期调色就有了方向：万物皆可调。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">实验开始：白色墙壁、伸手不见五指的夜、关灯</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">打开红、绿、蓝三盏灯，得到三原色光</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">红+绿=黄，绿+蓝=青，蓝+红=洋红（品）</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">得到六色：红绿蓝青品黄</span></div><div class="timeline-item"><span class="timeline-time">00:52</span><span class="timeline-text">加一个强度调节开关</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">降绿光→橙和青蓝；降红光→黄绿和蓝紫；降蓝光→青绿和紫红</span></div><div class="timeline-item"><span class="timeline-time">01:20</span><span class="timeline-text">三色不同比例可混合出人眼所有颜色</span></div><div class="timeline-item"><span class="timeline-time">01:30</span><span class="timeline-text">正方形色块缩小排列=数码照片成像原理</span></div><div class="timeline-item"><span class="timeline-time">01:45</span><span class="timeline-text">修改色相即可改变物体颜色</span></div><div class="timeline-item"><span class="timeline-time">01:55</span><span class="timeline-text">色相=相貌、饱和度=鲜艳、明度=深浅，三大属性</span></div><div class="timeline-item"><span class="timeline-time">02:05</span><span class="timeline-text">调色软件：水果、草木、衣服、皮肤，万物皆可调</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>数码照片的颜色从哪来，怎么随意调色</div><span class="arrow">→</span><div class="node-green">证据<br/>三色光按比例混合可还原人眼所有颜色；色块缩小即成照片</div><span class="arrow">→</span><div class="node-orange">判断<br/>RGB加法混色是数码影像的底层原理</div><span class="arrow">→</span><div class="node-blue">行动<br/>用色相/饱和度/明度三大属性指导后期调色</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：颜色是「画」出来的，和光无关。纠偏：三色光按不同比例混合就能还原人眼看到的所有颜色，照片是光被记录的结果。</p><p>误解 2：调色就是乱调滤镜。纠偏：理解色相、饱和度、明度三大属性后，调色是有章法的精确操作。</p><p>误解 3：红绿蓝混色和颜料混色一样。纠偏：这是加法混色（光），红+绿=黄；颜料是减法混色，规则不同。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>三原色光：两两相加得六色</h3>
+      <p>在讲什么：暗室里打开红、绿、蓝三盏灯；红+绿=黄，绿+蓝=青，蓝+红=洋红（品），加上三原色共得红绿蓝青品黄六色。关键理解：这是加法混色——光越多颜色越亮，两两混合就能扩展色板。怎么用：拍夜景、做灯光设计时，用 RGB 加法去预判混合后的颜色。</p>
+      <div class="quote">依据 [00:26-00:44]：当红色灯光与绿色混合在一起就有了黄色……此时我们有了六种颜色，分别为红、绿、蓝、青、品、黄。</div>
+      <div class="relation">立场分层：「两两混合得三新色」为实验事实；「六色体系」为对结果的归纳。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>调光比例：混合出所有颜色</h3>
+      <p>在讲什么：加一个强度调节开关，降低某一路灯光的强度，黄青会偏向红蓝，形成橙、青蓝、黄绿、蓝紫、青绿、紫红；三色不同比例可以混合出人眼看到的所有颜色。关键理解：颜色不是固定值，是三个变量比例的连续谱。怎么用：后期看到「偏色」，本质就是某个通道比例失衡，按通道修正即可。</p>
+      <div class="quote">依据 [01:00-01:26]：通过这三种颜色灯光不同比例的变化，能混合出人眼可以看到的所有颜色。</div>
+      <div class="relation">立场分层：「降某色出偏色」为实验规律；「任意比例混合出所有颜色」为由此推广的结论。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>色彩三属性：调色的地图</h3>
+      <p>在讲什么：色相＝颜色的相貌，饱和度＝鲜艳程度，明度＝深浅程度，合称色彩三大属性；修改色相即可把物体变成别的颜色。关键理解：三大属性把「调色」拆成了三个可独立操作的维度。怎么用：调水果、草木、衣服、皮肤前，先想清楚要动色相、饱和度还是明度。</p>
+      <div class="quote">依据 [01:45-02:09]：色相表示的是颜色的相貌……饱和度表示的是颜色的鲜艳程度，明度表示的是颜色的深浅程度。总之，万物皆可调。</div>
+      <div class="relation">立场分层：「三大属性」为概念定义；「万物皆可调」为概念在后期软件中的应用。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">三色光混色速查</h2><div class="card"><table><thead><tr><th>混色组合</th><th>得到颜色</th><th>说明</th></tr></thead><tbody><tr><td>红 + 绿</td><td>黄</td><td>加法混色，光越强越亮</td></tr><tr><td>绿 + 蓝</td><td>青</td><td>青色系</td></tr><tr><td>蓝 + 红</td><td>洋红（品）</td><td>也称品红，简称品</td></tr><tr><td>降绿光</td><td>橙、青蓝</td><td>黄青偏向红蓝</td></tr><tr><td>降红光</td><td>黄绿、蓝紫</td><td>降低红能达到</td></tr><tr><td>降蓝光</td><td>青绿、紫红</td><td>降低蓝能达到</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：理解数码影像成色原理、入门后期调色的基础。</li><li>上限：实际相机还涉及白平衡、色彩空间、伽马等更多机制。</li><li>反例：打印与印刷用的是 CMYK 减法混色，不能套用 RGB 加法规则。</li><li>例外：人眼对色彩的感知存在个体差异，三属性是标准化的近似模型。</li></ul><div class="pitfall">避坑：别把屏幕 RGB 与印刷 CMYK 混为一谈，混色规则相反。</div><div class="pitfall">避坑：别只动色相不动饱和度，三种属性要配合调整。</div><div class="pitfall">避坑：别以为调色只能调整体，分区遮罩才能做到「水果变、背景不变」。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>三色光按比例混合可还原人眼所有颜色。</li><li>彩色方块缩小排列就是数码照片的成像原理。</li><li>色相、饱和度、明度三大属性是调色的地图。</li></ul><h3>行动清单</h3><ol><li>用 RGB 加法逻辑预判灯光混合与屏幕偏色。</li><li>调色前先问：要动色相、饱和度还是明度。</li><li>把「万物皆可调」落到实处前，先学会分区调整。</li></ol><h3>关键认知转变</h3><p>从「颜色是天生的，调色靠瞎试」转到「颜色由三色光比例决定，调色有三大属性地图」：理解 RGB 加法混色与色相饱和度明度，数码调色就不再是玄学。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分09秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

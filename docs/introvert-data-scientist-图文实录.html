@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一位工作多年的 INFP 数据科学家现身说法：i人逻辑能力虽好，但在职场中完全不懂如何外化自己的想法，做 Presentation 会讲得枯燥，遇到难题喜欢自己硬扛，业务要什么数据就给什么——结果越干越像「取数工具人」。视频把 i人做数据分析的三个能力短板一次讲透：Storyte">
+<title>「i人」做数据分析为什么总吃亏？三个能力短板｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>「i人」做数据分析总吃亏｜三个能力短板一次补齐</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">本地视频</span><span class="meta-tag tag-duration">3分02秒</span><span class="meta-tag tag-topic">职场 数据分析 i人 向上管理</span></div>
+<a class="source-link" href="local:01e4f65a502402cd010370038a77c5048d_4610.mp4video.MP4" target="_blank" rel="noopener">→ 原视频（本地文件）</a>
+<a class="source-link lang-switch" href="introvert-data-scientist-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">短板一：缺乏Storytelling能力</a><a href="#ch2">短板二：缺乏向上管理能力</a><a href="#ch3">短板三：缺乏主人翁意识</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一位工作多年的 INFP 数据科学家现身说法：i人逻辑能力虽好，但在职场中完全不懂如何外化自己的想法，做 Presentation 会讲得枯燥，遇到难题喜欢自己硬扛，业务要什么数据就给什么——结果越干越像「取数工具人」。视频把 i人做数据分析的三个能力短板一次讲透：Storytelling、向上管理、主人翁意识，每一条都配了可落地的做法。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00-00:55]</span><div><strong>短板一：缺乏Storytelling能力</strong><p>技术强不等于会讲故事。第一次跨部门 Presentation，整场技术流，非技术听众没在听，结论也无人采纳，只收到一大堆质疑。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:56-02:05]</span><div><strong>短板二：缺乏向上管理能力</strong><p>i人喜欢自己硬扛，不借领导力量；要和领导建立互相反馈机制，汇报时让领导做选择题而不是开放式问答。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:06-03:02]</span><div><strong>短板三：缺乏主人翁意识</strong><p>业务要什么数据就给什么，是把自己当被动接需求的机器。应站在公司全局，帮业务判断优先级，给出数据视角的专业建议。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>i人做数据分析总吃亏，根因不是技术，而是外化能力的三重缺失：不会讲故事、不懂向上管理、缺乏主人翁意识；补齐这三个短板，才不会被当成取数工具人。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:55</span>短板一：缺乏Storytelling能力</h2><p>开场抛观点：i人真的不适合做Data？因为i人在职场中完全不懂如何外化自己的想法。作为 INFP、工作多年的 Data Scientist，讲者因为不懂外化、又害怕被领导说能力不行，吃了不少亏，也看到同事因此产生许多不必要的内耗。</p><p>第一点：i人普遍缺乏 Storytelling 能力。虽然逻辑能力好，但逻辑好并不等于会讲故事；技术背景的 i人做 Presentation，一不小心就会把整场项目会议变得非常枯燥。</p><p>讲者刚入职时觉得这不是大问题——技术岗位，只要你技术牛，合作方就会信任你的分析结论。直到第一次在跨部门项目会议上做 Presentation，才真正理解 Storytelling 的重要性。</p><p>原以为技术风格、强调技术理论的 Presentation 会得到运营产品同事的专业认可、进而采纳分析建议；结果整场下来大家都没在认真听。非技术背景的人更关心：结论推导符不符合他们认知上的逻辑，结论能否有可落地的建议。</p><figure><img src="assets/introvert-data-scientist/shot-01.jpg" alt="开场：i人不适合做Data，缺乏外化想法，容易沦为取数工具人" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:15]</span>开场：i人不适合做Data，缺乏外化想法，容易沦为取数工具人</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/440792506af2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: introverts aren&#x27;t cut out for Data — without externalizing their ideas, they easily become nothing more than data-pulling tools.</span></div>
+<audio class="cap-audio" src="audio/440792506af2.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/introvert-data-scientist/shot-02.jpg" alt="短板一：第一次跨部门Presentation技术流翻车，只收到质疑" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:50]</span>短板一：第一次跨部门Presentation技术流翻车，只收到质疑</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b5512d9e318d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Weakness one: my first cross-department Presentation flopped on a pure technical deep-dive, earning nothing but skepticism.</span></div>
+<audio class="cap-audio" src="audio/b5512d9e318d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:56-02:05</span>短板二：缺乏向上管理能力</h2><p>第二点：i人普遍缺乏向上管理能力。经常要分析非常复杂的业务问题，i人却喜欢自己去硬扛，不懂如何借助领导的力量，既让自己在重要节点得到领导帮助，又让领导觉得你能力强且靠谱。</p><p>讲者刚工作时急于表现，没和领导对齐分析思路，就靠自己不成熟的经验开展了重要项目分析，结果拆解维度根本不是业务方向要看的。所以i人一定要主动和领导建立互相反馈的机制：汇报自己的工作内容与进度，也获得领导对工作的反馈。</p><p>在获得反馈的方式上，尽量让领导做选择题而不是开放式问答：不要傻傻地问「这个活动效果怎么复盘」，而应问「我是对比历史做同期群分析，还是和没有参与活动的用户做对比」——既得到领导对分析方向的大方向把控，又显得专业。</p><figure><img src="assets/introvert-data-scientist/shot-03.jpg" alt="短板二：向上管理，让领导做选择题而不是开放式问答" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:25]</span>短板二：向上管理，让领导做选择题而不是开放式问答</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/43c5a7eddbb8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Weakness two: upward management — give your boss multiple-choice questions instead of open-ended ones.</span></div>
+<audio class="cap-audio" src="audio/43c5a7eddbb8.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:06-03:02</span>短板三：缺乏主人翁意识</h2><p>第三点：i人普遍缺乏主人翁意识。运营或产品想看什么数据，i人就尽力满足，看似尽职尽责，其实把自己当成被动的接需求机器，只会让工作越来越杂、越来越低级。</p><p>一个公司数据需求越来越杂、越来越低级，说明业务团队没有聚焦在重要且紧急的事情上。作为数据分析师，视角应该比具体做项目的业务同学更广、维度更高，帮他们明确某件具体的事情是否和当前排期任务强相关，如果不是，优先级就往后排。</p><p>收尾叮嘱：i人要记住，你不从属于任何一个业务同学，要站在客观立场看待公司的所有经营活动，给出数据视角的专业分析结论和建议。这就是 Francis 总结的 i人做数据分析师必须提升的三个能力。</p><figure><img src="assets/introvert-data-scientist/shot-04.jpg" alt="短板三：主人翁意识，不做被动接需求的机器" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:15]</span>短板三：主人翁意识，不做被动接需求的机器</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/91ede6066070.mp3" type="button" aria-label="Play English audio">🔊</button><span>Weakness three: a sense of ownership — refuse to be a machine that passively takes orders.</span></div>
+<audio class="cap-audio" src="audio/91ede6066070.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/introvert-data-scientist/shot-05.jpg" alt="总结：i人做数据分析必须提升的三个能力" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:50]</span>总结：i人做数据分析必须提升的三个能力</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8a07506edf36.mp3" type="button" aria-label="Play English audio">🔊</button><span>Summary: the three abilities introverts doing data analysis must level up.</span></div>
+<audio class="cap-audio" src="audio/8a07506edf36.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（122段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>同学们呀 爱人真的不适合做Data</p></div>
+<div class="transcript-row"><time>00:02</time><p>因为爱人在职场中</p></div>
+<div class="transcript-row"><time>00:03</time><p>完全不懂如何外化自己的想法</p></div>
+<div class="transcript-row"><time>00:05</time><p>作为一个RNFP工作多年的Data Scientist</p></div>
+<div class="transcript-row"><time>00:07</time><p>在职场中我因为不懂得外化</p></div>
+<div class="transcript-row"><time>00:09</time><p>又害怕领导说自己能力不行</p></div>
+<div class="transcript-row"><time>00:11</time><p>吃了不少亏</p></div>
+<div class="transcript-row"><time>00:12</time><p>也看到身边同事因为不懂外化</p></div>
+<div class="transcript-row"><time>00:14</time><p>反正许多不必要的内行</p></div>
+<div class="transcript-row"><time>00:15</time><p>那么今天就跟大家聊一聊</p></div>
+<div class="transcript-row"><time>00:16</time><p>为什么爱人不适合做Data</p></div>
+<div class="transcript-row"><time>00:18</time><p>再这样爱下去</p></div>
+<div class="transcript-row"><time>00:19</time><p>你就永远只是一个取数工具人</p></div>
+<div class="transcript-row"><time>00:20</time><p>那么第一点</p></div>
+<div class="transcript-row"><time>00:21</time><p>我想说的是爱人</p></div>
+<div class="transcript-row"><time>00:22</time><p>普遍缺乏Storytelling的能力</p></div>
+<div class="transcript-row"><time>00:23</time><p>作为一个数据科学家</p></div>
+<div class="transcript-row"><time>00:24</time><p>爱人虽然逻辑能力好</p></div>
+<div class="transcript-row"><time>00:26</time><p>但是这并不等于会讲故事</p></div>
+<div class="transcript-row"><time>00:27</time><p>技术背景的爱人做Presentation</p></div>
+<div class="transcript-row"><time>00:28</time><p>一不小心就会将整场项目会议</p></div>
+<div class="transcript-row"><time>00:30</time><p>变得非常枯燥</p></div>
+<div class="transcript-row"><time>00:31</time><p>那么当年我刚入职的时候</p></div>
+<div class="transcript-row"><time>00:32</time><p>也觉得这不是什么大问题</p></div>
+<div class="transcript-row"><time>00:34</time><p>毕竟我们属于一片技术的岗位</p></div>
+<div class="transcript-row"><time>00:35</time><p>如果你技术很牛</p></div>
+<div class="transcript-row"><time>00:36</time><p>合作方就会信任你的分析结论</p></div>
+<div class="transcript-row"><time>00:38</time><p>直到我有机会第一次</p></div>
+<div class="transcript-row"><time>00:39</time><p>在一个跨部门的项目会议上</p></div>
+<div class="transcript-row"><time>00:40</time><p>去做Presentation</p></div>
+<div class="transcript-row"><time>00:41</time><p>我才真正的理解了</p></div>
+<div class="transcript-row"><time>00:42</time><p>Storytelling的重要性</p></div>
+<div class="transcript-row"><time>00:43</time><p>我原本以为我整场片技术风格</p></div>
+<div class="transcript-row"><time>00:45</time><p>强调技术理论的Presentation</p></div>
+<div class="transcript-row"><time>00:46</time><p>会得到运营</p></div>
+<div class="transcript-row"><time>00:47</time><p>产品同事们在专业度上的认可</p></div>
+<div class="transcript-row"><time>00:49</time><p>总而会采纳我的分析建议</p></div>
+<div class="transcript-row"><time>00:50</time><p>但是整场下来比较尴尬时</p></div>
+<div class="transcript-row"><time>00:52</time><p>大家好像都没有在认真听我的分析过程</p></div>
+<div class="transcript-row"><time>00:54</time><p>非技术背景的他们</p></div>
+<div class="transcript-row"><time>00:55</time><p>其实更关心的是</p></div>
+<div class="transcript-row"><time>00:56</time><p>这个结论这么推倒</p></div>
+<div class="transcript-row"><time>00:57</time><p>符不符合他们认知上的逻辑</p></div>
+<div class="transcript-row"><time>00:59</time><p>这个分析的结论能否有一些可落地的建议</p></div>
+<div class="transcript-row"><time>01:01</time><p>Presentation结束后</p></div>
+<div class="transcript-row"><time>01:02</time><p>我收到的不是肯定</p></div>
+<div class="transcript-row"><time>01:03</time><p>而是一大堆质疑的来信</p></div>
+<div class="transcript-row"><time>01:05</time><p>所以身为爱人</p></div>
+<div class="transcript-row"><time>01:06</time><p>想要发挥自己的影响力</p></div>
+<div class="transcript-row"><time>01:07</time><p>做汇报的时候</p></div>
+<div class="transcript-row"><time>01:08</time><p>一定要明确沟通的人群以及级别</p></div>
+<div class="transcript-row"><time>01:10</time><p>更重要的是他们关心什么问题</p></div>
+<div class="transcript-row"><time>01:12</time><p>第二</p></div>
+<div class="transcript-row"><time>01:13</time><p>爱人普遍缺乏向上管理的能力</p></div>
+<div class="transcript-row"><time>01:15</time><p>作为一个数据科学家</p></div>
+<div class="transcript-row"><time>01:16</time><p>经常要分析非常复杂的业务问题</p></div>
+<div class="transcript-row"><time>01:18</time><p>而爱人经常喜欢自己去应抗</p></div>
+<div class="transcript-row"><time>01:20</time><p>而不懂如何借助领导的力量</p></div>
+<div class="transcript-row"><time>01:21</time><p>让自己既能在重要节点上得到领导的帮助</p></div>
+<div class="transcript-row"><time>01:24</time><p>又能让领导觉得你工作能力强且靠谱</p></div>
+<div class="transcript-row"><time>01:26</time><p>我自己在刚工作时</p></div>
+<div class="transcript-row"><time>01:27</time><p>也是急于表现自己工作能力强</p></div>
+<div class="transcript-row"><time>01:29</time><p>能够独立展开分析工作</p></div>
+<div class="transcript-row"><time>01:30</time><p>所以在没有和领导对其分析思路的情况下</p></div>
+<div class="transcript-row"><time>01:33</time><p>就靠自己不成熟的经验</p></div>
+<div class="transcript-row"><time>01:34</time><p>去开展了一个重要项目的分析工作</p></div>
+<div class="transcript-row"><time>01:36</time><p>导致后面拆解的维度</p></div>
+<div class="transcript-row"><time>01:37</time><p>完全不是业务方向要去看的</p></div>
+<div class="transcript-row"><time>01:39</time><p>所以爱人一定要主动和领导</p></div>
+<div class="transcript-row"><time>01:40</time><p>建立一个互相反馈的机制</p></div>
+<div class="transcript-row"><time>01:41</time><p>把自己的工作内容进度和领导去汇报</p></div>
+<div class="transcript-row"><time>01:43</time><p>也要获得领导对自己工作内容上的反馈</p></div>
+<div class="transcript-row"><time>01:45</time><p>第二</p></div>
+<div class="transcript-row"><time>01:46</time><p>在获得领导反馈的方法上</p></div>
+<div class="transcript-row"><time>01:47</time><p>要尽量让领导做选择体</p></div>
+<div class="transcript-row"><time>01:49</time><p>而不是开放式问答</p></div>
+<div class="transcript-row"><time>01:50</time><p>比如不要傻傻地问领导</p></div>
+<div class="transcript-row"><time>01:51</time><p>这个活动效果怎么复盘</p></div>
+<div class="transcript-row"><time>01:52</time><p>而说问领导</p></div>
+<div class="transcript-row"><time>01:53</time><p>我是对比历史做同期群分析</p></div>
+<div class="transcript-row"><time>01:54</time><p>还是和没有参与活动的用户做对比</p></div>
+<div class="transcript-row"><time>01:56</time><p>那么这样</p></div>
+<div class="transcript-row"><time>01:57</time><p>既能得到领导对分析思路上大方向的把控</p></div>
+<div class="transcript-row"><time>02:00</time><p>第三</p></div>
+<div class="transcript-row"><time>02:01</time><p>爱人普遍缺乏主人工意识</p></div>
+<div class="transcript-row"><time>02:02</time><p>运营或者产品中学想看什么数据</p></div>
+<div class="transcript-row"><time>02:04</time><p>爱人就会尽力去满足他们的需求</p></div>
+<div class="transcript-row"><time>02:06</time><p>那么这个看似是你工作上尽职尽责</p></div>
+<div class="transcript-row"><time>02:08</time><p>但其实是你在工作上没有主人工意识</p></div>
+<div class="transcript-row"><time>02:10</time><p>是把自己当作一个被动的接需求机器</p></div>
+<div class="transcript-row"><time>02:12</time><p>那么这样只会导致你的工作</p></div>
+<div class="transcript-row"><time>02:14</time><p>越来越杂 越来越低级</p></div>
+<div class="transcript-row"><time>02:15</time><p>如果一个公司数据需求越来越杂</p></div>
+<div class="transcript-row"><time>02:17</time><p>越来越低级</p></div>
+<div class="transcript-row"><time>02:18</time><p>意味着这个业务团队</p></div>
+<div class="transcript-row"><time>02:19</time><p>没有聚焦在重要且紧急的事情上</p></div>
+<div class="transcript-row"><time>02:21</time><p>那么作为一个业务团队</p></div>
+<div class="transcript-row"><time>02:22</time><p>你会在一个公司的工作上</p></div>
+<div class="transcript-row"><time>02:23</time><p>做出一个非常重要的工作</p></div>
+<div class="transcript-row"><time>02:24</time><p>如果一个公司数据需求越来越杂</p></div>
+<div class="transcript-row"><time>02:26</time><p>越来越低级</p></div>
+<div class="transcript-row"><time>02:27</time><p>意味着这个业务团队</p></div>
+<div class="transcript-row"><time>02:28</time><p>没有聚焦在重要且紧急的事情上</p></div>
+<div class="transcript-row"><time>02:30</time><p>那么作为一个数据分析师</p></div>
+<div class="transcript-row"><time>02:31</time><p>你的视角应该比具体做某个项目的业务同学</p></div>
+<div class="transcript-row"><time>02:33</time><p>视角更广 维度更高</p></div>
+<div class="transcript-row"><time>02:35</time><p>你应该帮他们明确某件具体的事情</p></div>
+<div class="transcript-row"><time>02:37</time><p>是否和当前批凌任务有强相关</p></div>
+<div class="transcript-row"><time>02:39</time><p>如果不是</p></div>
+<div class="transcript-row"><time>02:40</time><p>优先级排到后面</p></div>
+<div class="transcript-row"><time>02:41</time><p>爱人们要记住</p></div>
+<div class="transcript-row"><time>02:42</time><p>你们不从属于任何一个业务同学</p></div>
+<div class="transcript-row"><time>02:43</time><p>你们是站在客观的立场</p></div>
+<div class="transcript-row"><time>02:44</time><p>看待公司的所有经营活动</p></div>
+<div class="transcript-row"><time>02:46</time><p>给出你数据视角的专业分析结论和建议</p></div>
+<div class="transcript-row"><time>02:48</time><p>OK</p></div>
+<div class="transcript-row"><time>02:49</time><p>那么以上就是Francis总结的</p></div>
+<div class="transcript-row"><time>02:50</time><p>爱人做数据分析师必须要提升的三个能够</p></div>
+<div class="transcript-row"><time>02:53</time><p>如果大家觉得我们爱人在职场</p></div>
+<div class="transcript-row"><time>02:54</time><p>还有那些问题需要及时认清的</p></div>
+<div class="transcript-row"><time>02:56</time><p>直接写在评论区</p></div>
+<div class="transcript-row"><time>02:57</time><p>可以帮助更多的爱人在职场中</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

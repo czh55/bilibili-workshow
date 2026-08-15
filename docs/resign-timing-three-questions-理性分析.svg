@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6113" viewBox="0 0 1320 6113">
+  <foreignObject x="0" y="0" width="1320" height="6113">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>金三银四别乱跳槽｜三个问题定去留</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">跳槽</span><span class="tag tag-orange">职业规划</span><span class="tag tag-gray">时长 1分03秒</span><span class="tag tag-gray">分析视角：用三个问题做跳槽前的「准入门槛」检查</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686668587(1).MOV">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：金三银四不是跳槽的万能理由，跳槽时机要看三个问题：跳槽原因是否客观理性（感性跳槽=逃避现实）、履历是否经得起筛选（频繁跳槽过不了初筛）、自身是否有可迁移的优势（没优势时跳槽是低概率赌博）。三关不过，先沉淀再走。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">背景：金三银四，都想抓住机会找好工作</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">有些学员被劝退：因为跳槽时机不对</span></div><div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">跳槽前先理清三个问题，才能越跳越好</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">问题一：客观分析跳槽原因，拨开表象看本质</span></div><div class="timeline-item"><span class="timeline-time">00:22</span><span class="timeline-text">感性跳槽：领导无能/团队紧张/氛围不喜欢</span></div><div class="timeline-item"><span class="timeline-time">00:29</span><span class="timeline-text">感性跳槽=逃避现实，没从根本上解决问题</span></div><div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">问题二：不做盲目跳槽，一年一跳难过初筛</span></div><div class="timeline-item"><span class="timeline-time">00:47</span><span class="timeline-text">在职不足两年：空杯心态沉淀，深度挖掘</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">问题三：跳槽前复盘自己的优势与竞争力</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">优势平平或没发现优势=不是好时机，再沉淀</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>金三银四要不要跳槽</div><span class="arrow">→</span><div class="node-green">证据<br/>感性跳槽、频繁跳槽、无优势三种硬伤</div><span class="arrow">→</span><div class="node-orange">判断<br/>跳槽时机由三个问题共同决定</div><span class="arrow">→</span><div class="node-blue">行动<br/>先客观分析原因，再查履历，再复盘优势</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：金三银四就是跳槽的好时机。纠偏：时机不由季节决定，而由原因、履历、优势三个问题决定。</p><p>误解 2：想跳槽就是对公司不满的理性判断。纠偏：领导无能、氛围不喜欢等常是感性情绪，属于逃避现实。</p><p>误解 3：跳槽越多代表越有能力。纠偏：一年一跳、五年三跳的履历很难过简历初筛。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>原因三问：感性与理性的分野</h3>
+      <p>在讲什么：跳槽前要拨开表象分析根本原因是否理性客观；觉得领导无能、团队关系紧张、单纯不喜欢氛围就想跳，是在逃避现实。关键理解：情绪化理由跳槽，问题会跟着你到下家。怎么用：把跳槽原因写下来，逐条问「换个环境能解决吗」。</p>
+      <div class="quote">依据 [00:14-00:38]：一定要拨开表象去看问题的本质……有些同学跳槽经常是感性的……这其实是在逃避现实，没有从根本上解决问题。</div>
+      <div class="relation">立场分层：「感性跳槽=逃避现实」为判断；「拨开表象看本质」是分析方法。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>履历筛选：跳槽频率是硬门槛</h3>
+      <p>在讲什么：一年一跳、五年三跳这类履历很难过简历初筛；在职不足两年，先沉淀下来，空杯心态深挖技能知识。关键理解：简历稳定性是企业筛选的第一道关。怎么用：盘点自己在当前平台还没学到的技能，先补齐再谈跳槽。</p>
+      <div class="quote">依据 [00:39-00:54]：对于一年一跳或者五年三跳这类型的履历很难过简历初筛这一关……尽可能先在这个平台沉淀下来，保持空杯心态去深度挖掘一下。</div>
+      <div class="relation">立场分层：初筛门槛为招聘经验观察；「先沉淀」是操作建议。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>优势复盘：筹码决定时机</h3>
+      <p>在讲什么：跳槽的筹码来自前几家公司积累的知识、经验与提升；跳槽前复盘梳理自己的优势与竞争力，梳理完发现优势平平或没发现优势，说明不是跳槽好时机，要再蛰伏再沉淀。关键理解：跳槽是拿存量优势换增量机会。怎么用：用一页纸写下「我能带走的能力清单」，写不满就暂缓跳槽。</p>
+      <div class="quote">依据 [00:55-01:03]：跳槽的筹码更多来源于你上家公司以及前几家公司里面所学到的知识积累的经验以及得到的提升……如果梳理完发现竞争力很一般，那大概说明这时候你跳槽并不是一个很好的时机。</div>
+      <div class="relation">立场分层：筹码来源为经验总结；「没优势就暂缓跳槽」是决策建议。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">跳槽三问自查表</h2><div class="card"><table><thead><tr><th>问题</th><th>危险信号</th><th>安全信号</th></tr></thead><tbody><tr><td>跳槽原因客观吗</td><td>领导无能、氛围不喜欢等感性理由</td><td>理性分析后的明确发展诉求</td></tr><tr><td>履历经得起筛吗</td><td>一年一跳、五年三跳</td><td>每段在职2年以上、有沉淀</td></tr><tr><td>有可迁移优势吗</td><td>梳理不出优势、竞争力一般</td><td>有清晰的技能与成果清单</td></tr><tr><td>结论</td><td>先蛰伏沉淀，别急着跳</td><td>可以认真准备跳槽</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：金三银四考虑跳槽、拿不定主意的职场人。</li><li>上限：不适用于职场新人或从未积累任何行业经验的求职者。</li><li>反例：遇到公司违法用工、严重内卷损害健康等红线，应果断离开而非沉淀。</li><li>例外：跳槽频率高但每段都有重大业绩的，面试时可主动解释沉淀逻辑。</li></ul><div class="pitfall">避坑：沉淀不等于温水煮青蛙，要设定学习目标与时间节点。</div><div class="pitfall">避坑：别把「先沉淀」当逃避跳槽决策的借口，要持续复盘。</div><div class="pitfall">避坑：复盘优势时别只写经历，要写可迁移的技能与成果。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>金三银四不是跳槽的万能理由。</li><li>感性跳槽是逃避现实，频繁跳槽难过简历初筛。</li><li>跳槽筹码来自存量优势，没优势先沉淀。</li></ul><h3>行动清单</h3><ol><li>把跳槽原因写下来，逐条做「换环境能解决吗」检查。</li><li>盘点当前平台没学到的技能，设沉淀时间节点。</li><li>写一页「可带走的能力清单」，写不满就暂缓跳槽。</li></ol><h3>关键认知转变</h3><p>从「金三银四就想跳」转到「三问过关再跳」：原因客观、履历稳定、优势清晰，才是越跳越好的前提。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分03秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

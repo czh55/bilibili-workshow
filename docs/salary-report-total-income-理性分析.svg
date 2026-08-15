@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6015" viewBox="0 0 1320 6015">
+  <foreignObject x="0" y="0" width="1320" height="6015">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试报薪资别只报底薪｜总收入这样算</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">求职</span><span class="tag tag-orange">薪资谈判</span><span class="tag tag-gray">时长 0分46秒</span><span class="tag tag-gray">分析视角：用「收入构成 + 口径对齐 + 社保公积金」三点把报薪算明白</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686669052(1).MOV">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：报上份工作收入的关键是报总收入而不是只报底薪。总收入=固定月薪+浮动收入（绩效奖金、项目提成、年终奖、补贴）+股权期权；同时要提前与HR对齐税前税后、年薪月薪口径；公司按全额和最高比例12%缴纳社保公积金这一块更要说出来，公积金是真金白银的隐藏收入。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">案例：月收入平均30k，底薪只有9k</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">其余全是项目提成，担心报30k吓跑面试官</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">报上份收入注意三点，尤其第三点</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">第一：工资不只固定月薪，还有浮动收入</span></div><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">绩效奖金、项目提成、年终奖、补贴、股权期权</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">例：固定12k+浮动3k，应报15k不是12k</span></div><div class="timeline-item"><span class="timeline-time">00:31</span><span class="timeline-text">第二：税前还是税后、年薪还是月薪，提前讲清楚</span></div><div class="timeline-item"><span class="timeline-time">00:37</span><span class="timeline-text">第三：社保公积金按全额、最高比例12%缴纳</span></div><div class="timeline-item"><span class="timeline-time">00:42</span><span class="timeline-text">尤其是公积金，真金白银等同收入</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">一定要主动提，别让收入少算</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>上份工作收入报多少合适</div><span class="arrow">→</span><div class="node-green">证据<br/>底薪之外还有大量浮动收入与福利</div><span class="arrow">→</span><div class="node-orange">判断<br/>报总收入而非底薪，口径先对齐</div><span class="arrow">→</span><div class="node-blue">行动<br/>三点自查：浮动收入、税口径、公积金</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：报薪资只报每月到手的固定月薪。纠偏：还包括绩效奖金、项目提成、年终奖、补贴及股权期权等浮动收入。</p><p>误解 2：报一个数就行，不用管口径。纠偏：税前税后、年薪月薪要提前跟HR讲清楚。</p><p>误解 3：社保公积金是公司的事，与报薪无关。纠偏：按全额、最高比例12%缴纳的公积金是真金白银，面试时一定要主动提。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>总收入 = 固定月薪 + 浮动收入</h3>
+      <p>在讲什么：工资不只是每月到手的固定月薪，还包括绩效奖金、项目提成、年终奖、各种补贴；有股权或期权也算收入一部分。例：固定月薪12k加浮动3k，应报15k而不是12k。关键理解：报薪报的是总收入，不是底薪。怎么用：把近一年的浮动收入平均到月，加总后报价。</p>
+      <div class="quote">依据 [00:13-00:30]：工资不只是每月到手的这个固定月薪，还包括了其他浮动的收入……你的总收入就应该报的是15k，而不是12k。</div>
+      <div class="relation">立场分层：收入构成是计算规则；「报总收入而非底薪」是结论。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>口径：税前税后、年薪月薪</h3>
+      <p>在讲什么：所报的收入是税前还是税后、是年薪制还是月薪制，一定要跟HR提前讲清楚。关键理解：口径不一对齐，报价就会失真甚至后续起纠纷。怎么用：谈判时主动说明口径，把「税前月薪」这类说法写进沟通记录。</p>
+      <div class="quote">依据 [00:31-00:36]：所报的这个收入是税前还是税后的，是年薪制还是月薪制的，这个一定要跟HR提前讲清楚。</div>
+      <div class="relation">立场分层：口径对称为报价前提；「避免失真纠纷」是其价值。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>公积金：被忽略的隐藏收入</h3>
+      <p>在讲什么：公司按薪资全额、最高比例12%缴纳社保公积金时，面试一定要提到，尤其是公积金，真金白银等同收入。关键理解：正规缴纳的公积金是实打实的到手权益。怎么用：把公积金缴纳基数与比例作为加分项讲给面试官，计入你的综合待遇。</p>
+      <div class="quote">依据 [00:37-00:46]：按照你薪资的全额、按照最高的缴纳比例12%来缴，那你面试的时候一定要提到这一块，尤其是公积金，真金白银等同于收入。</div>
+      <div class="relation">立场分层：公积金为待遇观察；「真金白银等同收入」是价值判断。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">报上份收入：三点自查表</h2><div class="card"><table><thead><tr><th>要点</th><th>内容</th><th>例子</th></tr></thead><tbody><tr><td>收入构成</td><td>月薪+浮动收入+股权期权</td><td>12k固定+3k浮动=报15k</td></tr><tr><td>口径对齐</td><td>税前/税后、年薪/月薪</td><td>提前与HR确认</td></tr><tr><td>社保公积金</td><td>全额+最高比例12%</td><td>公积金真金白银主动提</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：面试谈薪被问上份工作收入的求职者。</li><li>上限：不适用于收入本身造假或口径无据可依的场景。</li><li>反例：浮动收入波动大时，可报区间并说明计算依据。</li><li>例外：部分公司公积金比例低于12%，按实际缴纳情况说明即可。</li></ul><div class="pitfall">避坑：报总收入的前提是每一项都有依据，经得起对方追问。</div><div class="pitfall">避坑：别把税后当税前报，口径要先与HR对齐。</div><div class="pitfall">避坑：股权期权尚未兑现时要说明状态，避免夸大。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>报薪报的是总收入，不是底薪。</li><li>总收入=固定月薪+浮动收入+股权期权。</li><li>税前税后口径先对齐，公积金要主动提。</li></ul><h3>行动清单</h3><ol><li>把近一年浮动收入平均到月，算清总收入。</li><li>报价前与HR确认税前税后、年薪月薪口径。</li><li>社保公积金按全额最高比例12%缴纳的，主动说。</li></ol><h3>关键认知转变</h3><p>从「报底薪怕说多」转到「算清总收入再报价」：把每笔浮动收入与福利都算进去，坦荡又不吃亏。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 0分46秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

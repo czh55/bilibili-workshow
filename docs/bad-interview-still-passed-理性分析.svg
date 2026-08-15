@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5880" viewBox="0 0 1320 5880">
+  <foreignObject x="0" y="0" width="1320" height="5880">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试表现一般却通过了？面试官视角解读</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">面试</span><span class="tag tag-orange">求职</span><span class="tag tag-gray">时长 0分42秒</span><span class="tag tag-gray">分析视角：从面试官决策逻辑拆解「表现一般却通过」的三种解释</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686669502(1).MOV">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：面试自我感觉一般却通过，背后是面试官视角的三种逻辑——招人难导致门槛降低、自我感觉与真实表现错位、表现恰好匹配岗位需求。别用自己的感觉否定自己，通过与否取决于对方需求与你的匹配度。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">现象：面试表现一般般，最后却通过了</span></div><div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">面试官可能也觉得一般，但通过了</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">原因一：现在招人非常难</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">公司求贤若渴，只要不太差基本通过</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">原因二：自我感觉差≠真实表现差</span></div><div class="timeline-item"><span class="timeline-time">00:23</span><span class="timeline-text">面试官看到的可能不一样</span></div><div class="timeline-item"><span class="timeline-time">00:27</span><span class="timeline-text">原因三：表现正对应岗位需求</span></div><div class="timeline-item"><span class="timeline-time">00:34</span><span class="timeline-text">你觉得一般的部分，恰是公司看重的</span></div><div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">别因自我感觉一般就否定自己</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>为什么面试表现一般却通过了</div><span class="arrow">→</span><div class="node-green">证据<br/>招人难、感觉错位、需求匹配三个观察</div><span class="arrow">→</span><div class="node-orange">判断<br/>通过与否取决于对方需求与匹配度</div><span class="arrow">→</span><div class="node-blue">行动<br/>别用自我感觉否定自己</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：面试通过说明自己表现一定很好。纠偏：也可能是招人难，只要不太差就通过。</p><p>误解 2：自我感觉差就是表现差。纠偏：感觉差不一定代表真实表现差，面试官看到的可能不一样。</p><p>误解 3：面试要看表现全能优秀才行。纠偏：表现恰好匹配岗位需求更重要，你觉得一般的部分可能正是对方看重的。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>原因一：招人难的现实</h3>
+      <p>在讲什么：现在招人真的非常难，公司处于求贤若渴的状态，只要你不是特别差，基本上就会通过。关键理解：市场供需影响通过标准，是结构性原因。怎么用：把「通过」放回市场语境，别全归因于自己的运气或能力。</p>
+      <div class="quote">依据 [00:10-00:17]：现在招人真的非常难，公司是求贤若渴的状态，这种情况下，只要你不是特别差，基本上就会通过。</div>
+      <div class="relation">立场分层：招人难为市场观察；「标准降低」是其推论。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>原因二：感觉与真实错位</h3>
+      <p>在讲什么：面试过程中自我感觉特别差，但面试官看到的可能不一样，感觉差不一定代表真实表现就差。关键理解：面试评价的主权在面试官，不在你的自我感受。怎么用：复盘面试时以面试官反馈为准，别被当下紧张感误导。</p>
+      <div class="quote">依据 [00:18-00:26]：在面试的过程中你自我感觉特别差，但是面试官看到的可能是不一样的，你的感觉差，不一定代表你真实表现就差。</div>
+      <div class="relation">立场分层：感觉错位为心理观察；「以面试官反馈为准」是执行建议。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>原因三：需求匹配</h3>
+      <p>在讲什么：面试表现可能正好对应岗位需求，你觉得表现一般的部分，可能恰恰是公司看重的。关键理解：面试是匹配游戏，不是全能竞赛。怎么用：复盘岗位 JD，把你觉得「一般」但踩中需求的表现标出来。</p>
+      <div class="quote">依据 [00:27-00:42]：你面试中的表现可能正好对应这个岗位的需求，你觉得表现一般的那些部分，可能恰恰是公司所看重的。</div>
+      <div class="relation">立场分层：需求匹配为评价逻辑；「匹配游戏」是概念重构。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">表现一般却通过：三种解释</h2><div class="card"><table><thead><tr><th>原因</th><th>机制</th><th>对你的启示</th></tr></thead><tbody><tr><td>招人非常难</td><td>求贤若渴，标准放低</td><td>把通过放回市场语境</td></tr><tr><td>感觉≠真实</td><td>面试官视角不同</td><td>以面试官反馈为准</td></tr><tr><td>恰好匹配需求</td><td>你的优点正被需要</td><td>别用感觉否定自己</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：面试后自我感觉一般、担心结果的求职者。</li><li>上限：不适用于明显答错或岗位硬伤仍通过的反常情况（需再评估公司质量）。</li><li>反例：通过只意味着匹配，不等于能力被完全验证，入职后仍需证明。</li><li>例外：长期面试都「感觉一般却通过」，要警惕公司招人标准是否异常。</li></ul><div class="pitfall">避坑：别把「通过」当作能力已验证，入职后仍要认真表现。</div><div class="pitfall">避坑：自我感觉差时别当场破罐破摔，把流程走完。</div><div class="pitfall">避坑：通过原因不确定时，可在 HR 面环节礼貌询问录用亮点。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>通过与否取决于对方需求与匹配度。</li><li>招人难、感觉错位、需求匹配是三种解释。</li><li>别因自我感觉一般就否定自己。</li></ul><h3>行动清单</h3><ol><li>复盘面试时以面试官反馈为准。</li><li>对照 JD 标出踩中需求的回答。</li><li>把通过当作匹配信号，继续准备入职。</li></ol><h3>关键认知转变</h3><p>从「感觉一般=表现差=没希望」转到「匹配思维」：通过与否由需求匹配决定，不由你的感觉决定。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 0分42秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

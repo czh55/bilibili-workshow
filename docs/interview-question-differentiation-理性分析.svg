@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6072" viewBox="0 0 1320 6072">
+  <foreignObject x="0" y="0" width="1320" height="6072">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试反问「看碟下菜」，面试官抢着加分</h1>
+  <div class="meta"><span class="tag tag-blue">面试</span><span class="tag tag-green">求职</span><span class="tag tag-orange">沟通</span><span class="tag tag-gray">时长 1分25秒</span><span class="tag tag-gray">分析视角：按面试官角色差异化设计反问问题</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686666006(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：面试反问是必考题，有水平的关键是「看碟下菜」——初试官关注岗位本身，反问围绕策略、考核指标、空缺原因；复试官（部门负责人）关注业务与团队，反问要有高度、谈模式与协同；HR 关注组织与人才发展，反问围绕文化价值观、成长晋升与培训。问对了人，同一道题就是加分题。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">「你还有什么要问我的吗」是必考题</span></div><div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">有水平的反问直接拉高面试得分</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">四个字：看碟下菜</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">初试官、复试官、HR 考察重点各不相同</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">初试官关注岗位本身：策略、考核指标</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">岗位最大困难挑战、空缺原因、对候选人的期待</span></div><div class="timeline-item"><span class="timeline-time">00:50</span><span class="timeline-text">复试官是部门负责人：业务、团队、人才、跨部门协同</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">反问要有高度：业务模式、目标、痛点、组织架构</span></div><div class="timeline-item"><span class="timeline-time">01:06</span><span class="timeline-text">气氛融洽可问：他理想中的人选什么样</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">HR面：组织发展与人才发展</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">问文化价值观、成长晋升、培训、汇报对象</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">现象<br/>被问「你还有什么要问的」，只会说没有了</div><span class="arrow">→</span><div class="node-green">拆穿<br/>面试官考察重点不同，反问要差异化</div><span class="arrow">→</span><div class="node-orange">真相<br/>看碟下菜：初试问岗位、复试问高度、HR问文化</div><span class="arrow">→</span><div class="node-blue">行动<br/>按面试官角色准备三套反问问题</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解1：面试反问随便问两句就行。纠偏：反问是必考题，有水平的反问能直接拉高面试得分。</p><p>误解2：反问问题对谁都能用。纠偏：要「看碟下菜」——初试问岗位细节、复试问业务高度、HR问文化成长。</p><p>误解3：反问是单向提问。纠偏：反问是在向面试官传递你的思考层次和匹配意愿。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>初试官：反问围绕岗位本身</h3>
+      <p>在讲什么：初试官更关注岗位，可问工作主要策略、岗位关键考核指标、当前最大困难与挑战、岗位空缺原因、对候选人的期待。关键理解：初试面是在验证「你适不适合这个岗位」。怎么用：把反问当成一次岗位尽职调查。</p>
+      <div class="quote">依据 [00:26-00:50]：这个岗位关键的考核指标有哪些？岗位当前最大的困难跟挑战是什么？岗位空缺的原因是什么？</div>
+      <div class="relation">立场分层：岗位问题是清单；「验证适岗」是目的。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>复试官：反问要有高度</h3>
+      <p>在讲什么：复试官通常是部门负责人，关注部门整体业务、团队管理、人才发展和跨部门协同；可问业务模式、业务目标、当前痛点、同部门情况、组织架构。关键理解：这一轮在验证「你能不能看懂更大的盘子」。怎么用：追问理想人选画像，显示你的格局。</p>
+      <div class="quote">依据 [00:50-01:06]：在这一轮面试我们反问一定要有高度，不要去究细节……业务模式是什么？业务目标是什么？当前痛点有哪些？</div>
+      <div class="relation">立场分层：「有高度」是原则；「六角度」是清单。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>HR面：反问文化与成长</h3>
+      <p>在讲什么：HR 关注组织发展与人才发展，可问文化价值观、成长与晋升通道、培训、组织架构、汇报对象。关键理解：HR 面在验证「你能不能长期留下并成长」。怎么用：让反问体现你的长期主义与稳定性。</p>
+      <div class="quote">依据 [01:10-01:25]：HR的特征是在组织发展跟人才发展这一块……围绕企业的文化价值观、成长跟晋升通道、代值培训、组织架构、汇报对象等等这些角度去展开来问。</div>
+      <div class="relation">立场分层：「组织与人才」是HR视角；「文化成长问题」是对应提问。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">看碟下菜：三类面试官的反问策略</h2><div class="card"><table><thead><tr><th>面试官</th><th>关注点</th><th>反问方向</th></tr></thead><tbody><tr><td>初试官</td><td>岗位本身</td><td>策略、考核指标、困难挑战、空缺原因</td></tr><tr><td>复试官</td><td>部门业务与团队</td><td>业务模式、目标、痛点、组织架构、理想人选</td></tr><tr><td>HR</td><td>组织与人才发展</td><td>文化价值观、晋升通道、培训、汇报对象</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：多轮面试中反问环节的差异化准备。</li><li>上限：反问不能替代对岗位的真实兴趣与了解。</li><li>反例：不要为了问而问，套模板问题会被看穿。</li><li>例外：初试复试合并进行时，按更高级别面试官的关注点为主。</li></ul><div class="pitfall">避坑：反问问题背模板、不对应现场信息，反而减分。</div><div class="pitfall">避坑：追问细节要看气氛，复试阶段究细节显得格局小。</div><div class="pitfall">避坑：问薪资待遇可以，但要在合适的轮次与时机。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>面试反问是必考题，看碟下菜是核心。</li><li>初试问岗位、复试问高度、HR问文化成长。</li><li>反问要向面试官传递你的思考层次与匹配意愿。</li></ul><h3>行动清单</h3><ol><li>面试前按初试/复试/HR准备三套反问清单。</li><li>现场从面试官提问中抓关键词，顺势追问。</li><li>反问后简短说明为什么问这个，展示思考。</li></ol><h3>关键认知转变</h3><p>从「反问=客套提问」转到「反问=差异化展示」：对什么人问什么问题，同一道必考题就成了你的加分题。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分25秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

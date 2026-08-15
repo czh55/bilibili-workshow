@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="口说无凭，文字落地：周报是你的保命符视频场景英译学习卡" />
+  <title>口说无凭，文字落地：周报是你的保命符｜场景英译</title>
+  <style>:root {
+  --teal-950:#073f42; --teal-800:#0d686c; --teal-700:#0f7c80; --teal-600:#14919b;
+  --mint-100:#dff4ec; --mint-50:#f0faf6; --ink:#183536; --muted:#607879;
+  --line:#d7e8e2; --paper:#fff; --amber:#a85d08; --shadow:0 12px 32px rgba(7,63,66,.08);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:24px; }
+body { margin:0; color:var(--ink); background:#edf7f2; font-family:Inter,"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif; line-height:1.65; }
+button, select { font:inherit; }
+a { color:inherit; }
+.hero { color:#fff; background:radial-gradient(circle at 85% 10%,rgba(129,230,196,.24),transparent 30%),linear-gradient(125deg,#073f42,#0d7377 56%,#14919b); }
+.hero-inner { width:min(1440px,100%); margin:auto; padding:48px clamp(20px,5vw,72px) 42px; }
+.hero-flex { display:flex; gap:clamp(18px,3vw,40px); align-items:flex-start; }
+.hero-cover { width:min(240px,42vw); height:auto; max-height:320px; object-fit:contain; object-position:center; border-radius:16px; border:1px solid rgba(255,255,255,.28); box-shadow:0 18px 44px rgba(0,0,0,.32); flex-shrink:0; }
+.hero-text { min-width:0; flex:1; }
+.eyebrow { margin:0 0 12px; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.8; }
+h1 { max-width:1020px; margin:0; font-size:clamp(1.8rem,3.8vw,3.2rem); line-height:1.13; letter-spacing:-.04em; }
+.hero-en { margin:12px 0 24px; font-size:clamp(1rem,2vw,1.3rem); opacity:.82; }
+.hero-meta { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+.chip { border:1px solid rgba(255,255,255,.28); border-radius:99px; padding:5px 11px; font-size:.82rem; background:rgba(255,255,255,.08); }
+.source-link { font-weight:750; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.5); }
+.lang-switch { margin-left:12px; font-size:.8rem; font-weight:700; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:24px; }
+.toolbar label { font-size:.82rem; opacity:.82; }
+.toolbar select { color:#fff; background:#0a5d61; border:1px solid rgba(255,255,255,.3); border-radius:8px; padding:7px 9px; }
+.stop-btn { display:none; color:#fff; background:#8c3b2a; border:0; border-radius:8px; padding:8px 12px; cursor:pointer; }
+.stop-btn.visible { display:inline-flex; }
+.speech-status { min-height:1.4em; font-size:.82rem; opacity:.88; }
+.narration-player { margin-top:18px; padding:16px 18px; background:rgba(255,255,255,.1); border-radius:12px; border:1px solid rgba(255,255,255,.15); }
+.audio-label { color:rgba(255,255,255,.88); font-size:.82rem; font-weight:700; margin:0 0 8px; }
+.page { width:min(1440px,100%); margin:auto; padding:28px clamp(16px,3vw,44px) 64px; display:grid; grid-template-columns:minmax(230px,280px) minmax(0,1fr); gap:30px; align-items:start; }
+.sidebar { position:sticky; top:20px; min-width:0; }
+.sidebar-box { background:rgba(255,255,255,.8); border:1px solid var(--line); border-radius:16px; padding:17px; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+.sidebar h2 { margin:0 0 13px; font-size:.9rem; letter-spacing:.08em; color:var(--teal-800); }
+.map-link { display:grid; grid-template-columns:34px minmax(0,1fr); gap:9px; padding:10px 6px; text-decoration:none; border-top:1px solid var(--line); }
+.map-link:hover b { color:var(--teal-700); }
+.map-id { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; color:#fff; background:var(--teal-700); font-size:.72rem; font-weight:800; }
+.map-link b { display:block; font-size:.78rem; line-height:1.4; }
+.map-link small { display:block; color:var(--muted); font-size:.67rem; line-height:1.4; margin-top:2px; overflow-wrap:anywhere; }
+.content { min-width:0; }
+.scene-card { background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:clamp(20px,3vw,34px); margin-bottom:24px; box-shadow:var(--shadow); overflow:hidden; }
+.scene-frame { display:block; width:100%; max-height:480px; object-fit:contain; object-position:center; background:rgba(7,63,66,.04); border-radius:14px; margin:16px 0 4px; border:1px solid var(--line); box-shadow:0 10px 28px rgba(7,63,66,.1); }
+.scene-topline { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.scene-id { display:inline-grid; place-items:center; min-width:42px; height:30px; padding:0 10px; color:#fff; background:var(--teal-700); border-radius:8px; font-size:.78rem; font-weight:850; }
+.time { margin-left:10px; color:var(--muted); font-size:.82rem; font-variant-numeric:tabular-nums; }
+.scene-card h2 { margin:18px 0 2px; font-size:clamp(1.35rem,2.4vw,2rem); line-height:1.25; color:var(--teal-950); }
+.scene-title-en { margin:0 0 18px; color:var(--teal-600); font-weight:700; font-size:.98rem; }
+.context { margin:0 0 20px; padding:12px 15px; color:#496566; background:var(--mint-50); border-left:3px solid var(--teal-600); border-radius:0 10px 10px 0; font-size:.88rem; }
+.context b { margin-right:10px; color:var(--teal-800); }
+.sentence-list { display:grid; gap:12px; }
+.sentence { position:relative; display:grid; grid-template-columns:38px minmax(0,1fr); gap:12px; padding:16px; border:1px solid #e2ece8; border-radius:14px; background:#fcfefd; min-width:0; }
+.sentence-no { color:var(--teal-600); font-size:.76rem; font-weight:850; font-variant-numeric:tabular-nums; padding-top:4px; }
+.bilingual { min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(14px,2vw,28px); }
+.lang-block { min-width:0; }
+.lang-block p { margin:5px 0 0; overflow-wrap:anywhere; }
+.en-block { padding-left:clamp(14px,2vw,28px); border-left:1px solid var(--line); }
+.en-block p { color:#0b5c60; font-weight:650; }
+.lang-tag { display:inline-block; color:var(--muted); font-size:.66rem; font-weight:850; letter-spacing:.12em; }
+.en-head { display:flex; justify-content:space-between; gap:10px; align-items:center; min-height:30px; }
+.note { grid-column:2; margin:1px 0 0; color:#708182; font-size:.78rem; }
+.note span { margin-right:7px; color:var(--amber); font-weight:750; }
+.speak-btn { display:inline-flex; align-items:center; gap:7px; border:1px solid #b8d9d1; border-radius:9px; padding:7px 11px; color:var(--teal-800); background:#f5fbf8; cursor:pointer; white-space:nowrap; font-size:.78rem; font-weight:750; transition:.15s ease; }
+.speak-btn:hover { color:#fff; background:var(--teal-700); border-color:var(--teal-700); transform:translateY(-1px); }
+.speak-btn.playing { color:#fff; background:var(--teal-700); border-color:var(--teal-700); }
+.speak-btn.compact { padding:4px 8px; font-size:.7rem; }
+.speak-btn.icon-only { padding:3px 7px; margin-left:6px; }
+.speak-btn.icon-only span:last-child { display:none; }
+.pronounce-word { display:inline; margin:0; padding:0 2px; color:inherit; background:rgba(20,145,155,.08); border:0; border-bottom:1px dashed var(--teal-600); border-radius:3px; font:inherit; font-weight:inherit; line-height:inherit; cursor:pointer; }
+.pronounce-word:hover, .pronounce-word:focus { color:var(--teal-950); background:#cceee4; border-bottom-style:solid; outline:3px solid rgba(20,145,155,.42); outline-offset:2px; }
+.pronounce-word.playing { color:#fff; background:var(--teal-700); border-bottom-color:var(--teal-700); }
+.paraphrase { margin-top:18px; border-top:1px solid var(--line); }
+.paraphrase summary { padding:16px 0 3px; color:var(--teal-800); cursor:pointer; font-weight:800; }
+.paraphrase summary span { color:var(--muted); font-size:.75rem; font-weight:500; margin-left:8px; }
+.paraphrase ol { margin:12px 0 0; padding-left:22px; }
+.paraphrase li { padding:7px 0 9px 5px; }
+.paraphrase li p { margin:0; font-size:.9rem; font-weight:650; }
+.chunks { margin-top:4px; color:var(--teal-700); font-size:.78rem; }
+.study-section { margin:38px 0 0; }
+.section-heading { display:flex; align-items:baseline; gap:10px; margin:0 0 15px; color:var(--teal-950); font-size:1.35rem; }
+.section-heading small { color:var(--teal-600); font-size:.78rem; letter-spacing:.05em; }
+.study-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.study-grid article { padding:17px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 6px 18px rgba(7,63,66,.05); min-width:0; }
+.study-grid p { margin:0; }
+.practice-en { margin-top:9px; color:var(--teal-700); font-weight:650; overflow-wrap:anywhere; }
+.wrong { color:#a24831; text-decoration:line-through; overflow-wrap:anywhere; }
+.right { color:var(--teal-700); font-weight:750; margin:5px 0; overflow-wrap:anywhere; }
+.pitfalls p { color:var(--muted); font-size:.82rem; }
+.shifts article { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr); gap:12px; align-items:center; }
+.shifts b { color:var(--teal-600); font-size:1.2rem; }
+.shifts strong { color:var(--teal-800); }
+footer { margin-top:38px; color:var(--muted); font-size:.78rem; text-align:center; }
+@media (max-width:900px) { .page { grid-template-columns:1fr; } .sidebar { position:static; } .sidebar-box { overflow-x:auto; padding:12px; } .sidebar h2 { padding-left:5px; } .map-nav { display:flex; width:max-content; gap:8px; } .map-link { width:220px; border:1px solid var(--line); border-radius:10px; padding:8px; } .bilingual { grid-template-columns:1fr; } .en-block { padding:12px 0 0; border-left:0; border-top:1px dashed var(--line); } }
+@media (max-width:620px) { .hero-inner { padding-top:32px; } .hero-flex { flex-direction:column; align-items:center; } .hero-cover { width:100%; max-width:360px; } .hero-text { text-align:center; } .page { padding-inline:10px; gap:18px; } .scene-card { border-radius:14px; padding:17px 13px; } .scene-topline { align-items:flex-start; } .scene-speak span:last-child { display:none; } .sentence { grid-template-columns:26px minmax(0,1fr); padding:13px 10px; gap:6px; } .note { grid-column:2; } .study-grid { grid-template-columns:1fr; } .shifts article { grid-template-columns:1fr; gap:5px; } .shifts b { transform:rotate(90deg); justify-self:start; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .speak-btn { transition:none; } }</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-flex">
+        <img class="hero-cover" src="assets/written-record-protection/shot-01.jpg" alt="口说无凭，文字落地：周报是你的保命符 封面" loading="lazy">
+        <div class="hero-text">
+          <p class="eyebrow">Scene English · 视频学习</p>
+          <h1>口说无凭，文字落地：周报是你的保命符</h1>
+          <p class="hero-en">Put It in Writing: The Weekly Report Is Your Safety Net</p>
+          <div class="hero-meta"><span class="chip">2026-08-15</span><span class="chip">local</span><span class="chip">3分31秒</span><span class="chip">3 个场景</span><span class="chip">点下划线单词听发音</span><a class="source-link" href="local:IMG_6358_20230610095528.MP4" target="_blank" rel="noopener">查看原视频 ↗</a><a class="source-link lang-switch" href="written-record-protection-图文实录.html" hreflang="zh" style="margin-left:12px;font-size:.8rem">中文图文实录版 ↗</a></div>
+        </div>
+      </div>
+      <div class="toolbar"><label for="speech-rate">朗读速度</label><select id="speech-rate"><option value="0.85">慢速 0.85×</option><option value="1" selected>正常 1×</option><option value="1.15">快速 1.15×</option></select><button id="stop-speech" class="stop-btn" type="button">■ 停止朗读</button><span id="speech-status" class="speech-status" role="status" aria-live="polite"></span></div>
+      <div class="narration-player"><p class="audio-label">🎧 语音讲解</p><button class="speak-btn" type="button" data-audio="audio/written-record-protection/narration.mp3" aria-label="播放语音讲解"><span aria-hidden="true">▶</span><span>播放语音讲解</span></button></div>
+    </div>
+  </header>
+  <main class="page">
+    <aside class="sidebar" aria-label="场景地图"><div class="sidebar-box"><h2>场景地图 · SCENE MAP</h2><nav class="map-nav"><a class="map-link" href="#s1"><span class="map-id">S1</span><span><b>约定周报</b><small>00:00-00:50 · Setting up a weekly update</small></span></a><a class="map-link" href="#s2"><span class="map-id">S2</span><span><b>带证据汇报</b><small>00:51-02:10 · Reporting with written evidence</small></span></a><a class="map-link" href="#s3"><span class="map-id">S3</span><span><b>预警升级，保护自己</b><small>02:11-03:31 · Escalating alerts to protect yourself</small></span></a></nav></div></aside>
+    <div class="content">
+      <section class="scene-card" id="s1" data-scene><div class="scene-topline"><div><span class="scene-id">S1</span><span class="time">00:00-00:50</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/written-record-protection/s1.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/written-record-protection/shot-01.jpg" alt="约定周报 场景截图" loading="lazy"><h2>约定周报</h2><p class="scene-title-en">Setting up a weekly update</p><p class="context"><b>情境</b>老板说只要结果，讲者建议主动约定每周发进度表，风险类问题才当面汇报。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>有的上级说，我更关心这个事情的结果，不要什么事都来找我。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s1-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Some managers say: I only care about results — don't come to me with everything.</p></div></div><p class="note"><span>表达提示</span>目标导向：results-driven</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>遇到你自己解决不了的问题，比如风险、资源，你肯定要跟他讲。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s1-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">When you hit something you can't solve — a risk or missing resources — you have to tell him.</p></div></div><p class="note"><span>表达提示</span>风险/资源：risks and resources</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>我每周把项目的进度写成项目管理表发给你。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s1-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">I'll send you a weekly project status table.</p></div></div><p class="note"><span>表达提示</span>项目管理表：project status table</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>只要结果 ≠ 不用汇报</p><div class="chunks">Results-only doesn't mean no updates.</div></li><li><p>汇报边界自己约清楚</p><div class="chunks">Set the reporting boundaries yourself.</div></li></ol></details></section><section class="scene-card" id="s2" data-scene><div class="scene-topline"><div><span class="scene-id">S2</span><span class="time">00:51-02:10</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/written-record-protection/s2.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/written-record-protection/shot-03.jpg" alt="带证据汇报 场景截图" loading="lazy"><h2>带证据汇报</h2><p class="scene-title-en">Reporting with written evidence</p><p class="context"><b>情境</b>遇到搞不定的风险要简明汇报并拿老板表态，被反问就出示沟通记录与会议纪要。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>如果这个问题不解决，有可能会延迟个四五天，你那边觉得OK吗？</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s2-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">If we don't fix this, it may slip four or five days — are you okay with that?</p></div></div><p class="note"><span>表达提示</span>延迟四五天：slip four or five days</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>我已经跟他们沟通了两次，会议纪要我已经发给你了。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s2-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">I've talked to them twice, and I've already sent you the meeting notes.</p></div></div><p class="note"><span>表达提示</span>会议纪要：meeting notes</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>他们那边老板说必须您出面才行，我的影响力太小，搞不定。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s2-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Their manager said only you can step in — my influence is too small to handle it.</p></div></div><p class="note"><span>表达提示</span>影响力太小：not enough influence</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>汇报让决策留痕</p><div class="chunks">Updates leave a paper trail for decisions.</div></li><li><p>把「他说过」变成「记录里写着」</p><div class="chunks">Turn 'he said so' into 'it's on record.'</div></li></ol></details></section><section class="scene-card" id="s3" data-scene><div class="scene-topline"><div><span class="scene-id">S3</span><span class="time">02:11-03:31</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/written-record-protection/s3.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/written-record-protection/shot-05.jpg" alt="预警升级，保护自己 场景截图" loading="lazy"><h2>预警升级，保护自己</h2><p class="scene-title-en">Escalating alerts to protect yourself</p><p class="context"><b>情境</b>讲者用颜色预警机制和周报的合法性，讲如何让责任透明、保护自己。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>这个项目本来是绿色，然后变黄了，黄的意思就是这是个风险。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s3-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">The project was green, then turned yellow — meaning it's now flagged as a risk.</p></div></div><p class="note"><span>表达提示</span>黄色预警：flag as a risk</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>一周不管变红，再一周不管就超期爆雷。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s3-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Leave it a week and it turns red; another week and it blows past the deadline.</p></div></div><p class="note"><span>表达提示</span>超期爆雷：blow the deadline</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>周报就是保护你们的，每周都要发预警给你老板。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/written-record-protection/s3-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Weekly reports protect you — send the alerts to your boss every week.</p></div></div><p class="note"><span>表达提示</span>保护你：protect you</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>让责任透明化</p><div class="chunks">Make responsibility visible.</div></li><li><p>预警=自保工具</p><div class="chunks">Alerts are your self-protection tool.</div></li></ol></details></section>
+      <section class="study-section" id="practice"><h2 class="section-heading">今日可练 <small>PRACTICE TODAY</small></h2><div class="study-grid"><article><p>表达「约定周报」</p><div class="practice-en">I'll send you a weekly status update. <button class="speak-btn icon-only" type="button" data-audio="audio/written-record-protection/practice-0.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>表达「带证据汇报」</p><div class="practice-en">The meeting notes are already in your inbox. <button class="speak-btn icon-only" type="button" data-audio="audio/written-record-protection/practice-1.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>表达「风险预警」</p><div class="practice-en">I'm flagging this as a risk before it blows up. <button class="speak-btn icon-only" type="button" data-audio="audio/written-record-protection/practice-2.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>表达「文字落地」</p><div class="practice-en">Let's put it in writing so it's on record. <button class="speak-btn icon-only" type="button" data-audio="audio/written-record-protection/practice-3.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article></div></section>
+      <section class="study-section pitfalls" id="pitfalls"><h2 class="section-heading">避坑 <small>PITFALLS</small></h2><div class="study-grid"><article><div class="wrong">✕ ✕ 直译腔：The project turns yellow.</div><div class="right">✓ ✓ 地道说法：The project is now flagged as a risk.</div><p>变黄→被标记为风险，英文用 flagged。</p></article><article><div class="wrong">✕ ✕ 直译腔：The meeting record has been sent to you.</div><div class="right">✓ ✓ 地道说法：The meeting notes are already in your inbox.</div><p>会议纪要→meeting notes / minutes。</p></article><article><div class="wrong">✕ ✕ 直译腔：I want to protect my back.</div><div class="right">✓ ✓ 地道说法：Cover yourself with a paper trail.</div><p>保护自己→cover yourself / paper trail。</p></article><article><div class="wrong">✕ ✕ 直译腔：Don't do anything else when one thing is stuck.</div><div class="right">✓ ✓ 地道说法：Don't put everything on hold over one blocker.</div><p>一件事卡住≠所有事停摆。</p></article></div></section>
+      <section class="study-section shifts" id="mindset"><h2 class="section-heading">认知转变 <small>MINDSET SHIFTS</small></h2><div class="study-grid"><article><span>把口头汇报当汇报</span><b aria-hidden="true">→</b><strong>把文字落地当唯一有效汇报</strong></article><article><span>老板说放一放就摸鱼</span><b aria-hidden="true">→</b><strong>追问下一步，保住自己的业绩</strong></article><article><span>把周报当负担</span><b aria-hidden="true">→</b><strong>把周报当保命符</strong></article></div></section>
+      <footer>ASR 校正：「目标倒向」校正为「目标导向」、「完全受权」校正为「完全授权」、「帅子」校正为「碎事」、「抵律」校正为「延迟」、「会议机要」校正为「会议纪要」、「打低机票」校正为「打低绩效」、「不知可否」校正为「不置可否」、「超全员」校正为「超期爆雷」；口播重复句已合并。 · 场景/句子朗读使用 edge-tts 神经网络语音 · 单词发音使用浏览器 Web Speech API</footer>
+    </div>
+  </main>
+  <script>(() => {
+    let activeAudio = null;
+    let activeBtn = null;
+    const status = document.getElementById('speech-status');
+    const stopBtn = document.getElementById('stop-speech');
+    const rateSel = document.getElementById('speech-rate');
+    const reset = () => { if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn = null; stopBtn.classList.remove('visible'); status.textContent = ''; };
+    const playAudio = (url, btn) => { reset(); const a = new Audio(url); a.playbackRate = Number(rateSel.value); activeAudio = a; activeBtn = btn; btn.classList.add('playing'); stopBtn.classList.add('visible'); status.textContent = btn.classList.contains('scene-speak') ? '正在朗读整个场景…' : btn.classList.contains('speak-btn') && btn.dataset.audio.includes('narration') ? '正在播放语音讲解…' : '正在朗读…'; a.onended = () => { if (activeAudio === a) reset(); }; a.onerror = () => { status.textContent = '音频加载失败'; if (activeAudio === a) reset(); }; a.play().catch(() => { status.textContent = '播放失败'; if (activeAudio === a) reset(); }); };
+    document.addEventListener('click', e => { const btn = e.target.closest('[data-audio]'); if (!btn) return; e.preventDefault(); if (btn === activeBtn && activeAudio) { reset(); return; } playAudio(btn.dataset.audio, btn); });
+    stopBtn.addEventListener('click', reset);
+    const synth = window.speechSynthesis;
+    const getEnglishVoice = () => { const v = synth.getVoices(); return v.find(x => /^en-(US|GB)/i.test(x.lang)) || v.find(x => /^en/i.test(x.lang)) || null; };
+    const difficultWords = new Set(['results-driven', 'status table', 'risk', 'resource', 'escalate', 'meeting notes', 'minutes', 'slip', 'deadline', 'influence', 'evidence', 'paper trail', 'flag', 'alert', 'yellow', 'red', 'weekly report', 'protection', 'responsibility', 'follow up', 'check in', 'commitment', 'cover yourself', 'performance']);
+    const shouldPronounce = w => { const n = w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,''); return n.replace(/[^a-z]/g,'').length >= 8 || difficultWords.has(n); };
+    const mark = root => { const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const ns = []; while (w.nextNode()) ns.push(w.currentNode); ns.forEach(n => { if (n.parentElement?.closest('button,script,style')) return; let m,l=0,ch=false; const fg = document.createDocumentFragment(); const re = /[A-Za-z]+(?:[-'’][A-Za-z]+)*/g; while ((m = re.exec(n.nodeValue))) { if (!shouldPronounce(m[0])) continue; ch=true; fg.append(n.nodeValue.slice(l,m.index)); const b=document.createElement('button');b.type='button';b.className='pronounce-word';b.dataset.speak=m[0];b.setAttribute('aria-label','朗读单词 '+m[0]);b.title='点击听 '+m[0]+' 发音';b.textContent=m[0];fg.append(b);l=m.index+m[0].length;} if(!ch)return;fg.append(n.nodeValue.slice(l));n.replaceWith(fg);}); };
+    document.querySelectorAll('.english,.scene-title-en,.paraphrase li p,.chunks,.practice-en,.wrong,.right').forEach(mark);
+    document.addEventListener('click', e => { const wb = e.target.closest('.pronounce-word'); if (!wb) return; e.preventDefault(); if (!synth) return; synth.cancel(); if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn=wb; wb.classList.add('playing'); const u=new SpeechSynthesisUtterance(wb.dataset.speak);u.lang='en-US';u.rate=0.88;const v=getEnglishVoice();if(v)u.voice=v;u.onend=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};u.onerror=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};synth.speak(u); });
+  })();</script>
+</body>
+</html>

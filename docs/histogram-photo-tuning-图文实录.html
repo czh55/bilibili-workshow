@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一张普通的数码照片，做像素分阶处理，把最暗到最亮的过渡分成 11 份，就得到了直方图——这是看懂照片影调的钥匙。视频用极简动画式的讲解，把直方图原理、曝光/黑色/阴影/高光/白色五组参数对像素分布的影响、对比度的中性灰基准一次讲清，看完就能随手调整照片的影调风格。">
+<title>一张图看懂直方图：摄影影调的秘密｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>一张图看懂直方图｜摄影影调的底层原理</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">本地视频</span><span class="meta-tag tag-duration">1分04秒</span><span class="meta-tag tag-topic">摄影 后期 直方图</span></div>
+<a class="source-link" href="local:01e52001c028a02f010373038b050da63b_4610.mp4video.MP4" target="_blank" rel="noopener">→ 原视频（本地文件）</a>
+<a class="source-link lang-switch" href="histogram-photo-tuning-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">直方图的显示原理</a><a href="#ch2">五组参数与像素分布</a><a href="#ch3">对比度与影调风格</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一张普通的数码照片，做像素分阶处理，把最暗到最亮的过渡分成 11 份，就得到了直方图——这是看懂照片影调的钥匙。视频用极简动画式的讲解，把直方图原理、曝光/黑色/阴影/高光/白色五组参数对像素分布的影响、对比度的中性灰基准一次讲清，看完就能随手调整照片的影调风格。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00-00:25]</span><div><strong>直方图的显示原理</strong><p>把照片从最暗到最亮分成11份，中间为中性灰，往暗为暗部、往亮为亮部；每个像素块按亮度从左到右排列就是直方图。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:26-00:50]</span><div><strong>五组参数与像素分布</strong><p>降低/提高曝光，所有像素向暗部或亮部靠近；修改黑色、阴影、高光、白色，对应最暗、暗部、亮部、最亮部分改变最多。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:51-01:04]</span><div><strong>对比度：以中性灰为界限</strong><p>提高对比度让亮部更亮、暗部更暗，降低对比度反过来；基于以上概念随意调整影调风格。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>直方图是把照片所有像素按亮度排布的一张「影调地图」：曝光、黑色、阴影、高光、白色五组参数分别拉动不同亮度区间，对比度则以中性灰为轴——理解了它，调色就不再靠感觉。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:25</span>直方图的显示原理</h2><p>这是一张普通的数码照片，给它做一个像素分阶处理：把从最暗到最亮的过渡分成 11 份。</p><p>从最暗到最亮的中间部分为中性灰；从中性灰到最暗的部分为照片的暗部；从中性灰到最亮的部分为照片的亮部。</p><p>把照片的每个像素块，从最暗到最亮、从左到右依次排开——这就是直方图的显示原理。</p><figure><img src="assets/histogram-photo-tuning/shot-01.jpg" alt="普通数码照片做像素分阶，最暗到最亮分11份" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:10]</span>普通数码照片做像素分阶，最暗到最亮分11份</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f3a2eb7d700b.mp3" type="button" aria-label="Play English audio">🔊</button><span>A normal digital photo splits its pixels into levels, 11 steps from darkest to brightest.</span></div>
+<audio class="cap-audio" src="audio/f3a2eb7d700b.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/histogram-photo-tuning/shot-02.jpg" alt="像素从暗到亮从左到右排列，就是直方图" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:22]</span>像素从暗到亮从左到右排列，就是直方图</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/bc983e18d6de.mp3" type="button" aria-label="Play English audio">🔊</button><span>Pixels laid out dark-to-bright, left-to-right — that&#x27;s a histogram.</span></div>
+<audio class="cap-audio" src="audio/bc983e18d6de.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:26-00:50</span>五组参数与像素分布</h2><p>降低曝光，所有像素向暗部靠近；提高曝光，所有像素向亮部靠近。</p><p>修改黑色参数，最暗的部分改变最多；修改阴影参数，暗部改变最多；修改高光，亮部改变最多；修改白色，最亮的部分改变最多。</p><figure><img src="assets/histogram-photo-tuning/shot-03.jpg" alt="曝光：降曝光像素向暗部靠近，提曝光向亮部靠近" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:35]</span>曝光：降曝光像素向暗部靠近，提曝光向亮部靠近</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f747a9bad408.mp3" type="button" aria-label="Play English audio">🔊</button><span>Exposure: dropping it pushes pixels toward the shadows; raising it pulls them toward the highlights.</span></div>
+<audio class="cap-audio" src="audio/f747a9bad408.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:51-01:04</span>对比度与影调风格</h2><p>对比度是以中性灰作为界限：提高对比度，让亮部更亮、暗部更暗；降低对比度，让暗部变亮、让亮部变暗。</p><p>根据以上的概念，你就可以随意给照片调整影调风格。</p><figure><img src="assets/histogram-photo-tuning/shot-04.jpg" alt="对比度以中性灰为界限：提对比亮更亮暗更暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:52]</span>对比度以中性灰为界限：提对比亮更亮暗更暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d93d2c909144.mp3" type="button" aria-label="Play English audio">🔊</button><span>Contrast pivots on neutral gray: more contrast makes brights brighter and darks darker.</span></div>
+<audio class="cap-audio" src="audio/d93d2c909144.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/histogram-photo-tuning/shot-05.jpg" alt="基于概念随意调整影调风格" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:00]</span>基于概念随意调整影调风格</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8dec20ec9f3d.mp3" type="button" aria-label="Play English audio">🔊</button><span>With these concepts, you can freely style the tonality of any photo.</span></div>
+<audio class="cap-audio" src="audio/8dec20ec9f3d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（19段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>这是一张普通的数码照片</p></div>
+<div class="transcript-row"><time>00:02</time><p>给它做一个像素号分割处理</p></div>
+<div class="transcript-row"><time>00:04</time><p>把最暗到最亮的过渡分成11份</p></div>
+<div class="transcript-row"><time>00:07</time><p>从最暗到最亮的中间部分为中性灰</p></div>
+<div class="transcript-row"><time>00:10</time><p>从中性灰到最暗的部分为照片的暗部</p></div>
+<div class="transcript-row"><time>00:13</time><p>从中性灰到最亮的部分为照片的亮部</p></div>
+<div class="transcript-row"><time>00:16</time><p>把照片的每个像素块从最暗到最亮从左到右依次排开</p></div>
+<div class="transcript-row"><time>00:20</time><p>这就是指方图的显示原理</p></div>
+<div class="transcript-row"><time>00:23</time><p>降低曝光,所有像素向暗部靠近</p></div>
+<div class="transcript-row"><time>00:26</time><p>提高曝光,所有像素向亮部靠近</p></div>
+<div class="transcript-row"><time>00:29</time><p>修改黑色参数,最暗的部分改变最多</p></div>
+<div class="transcript-row"><time>00:33</time><p>修改阴影参数,暗部改变最多</p></div>
+<div class="transcript-row"><time>00:36</time><p>修改高光,亮部改变最多</p></div>
+<div class="transcript-row"><time>00:39</time><p>修改白色,最亮的部分改变最多</p></div>
+<div class="transcript-row"><time>00:42</time><p>对比度是从中性灰作为界限</p></div>
+<div class="transcript-row"><time>00:45</time><p>提高对比度,让亮部更亮,暗部更暗</p></div>
+<div class="transcript-row"><time>00:49</time><p>降低对比度,让暗部变亮,让亮部变暗</p></div>
+<div class="transcript-row"><time>00:53</time><p>根据以上的概念,随意给照片调整影调风格</p></div>
+<div class="transcript-row"><time>00:57</time><p>小红书</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

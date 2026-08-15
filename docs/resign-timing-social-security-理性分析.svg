@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6038" viewBox="0 0 1320 6038">
+  <foreignObject x="0" y="0" width="1320" height="6038">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>离职选月中还是月末？社保断缴差几千块</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">离职</span><span class="tag tag-orange">社保</span><span class="tag tag-gray">时长 0分43秒</span><span class="tag tag-gray">分析视角：用真实案例讲清离职时机与社保断缴的关系</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686667460(1).MOV">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：离职时机直接决定当月社保是否断缴。多数公司以当月 15 号或 20 号为社保缴纳时间线，15 号之后离职当月社保才稳；15 号之前离职又没接上新公司，就得自己补缴甚至倒贴。社保连续性关系当地福利与资格申请，断缴影响很大。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场：离职选月中还是月末大有讲究</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">选错时间不光少拿几千块，甚至倒贴一两千</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">粉丝案例：上月10号从原公司离职</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">入职新公司才发现上个月社保没交</span></div><div class="timeline-item"><span class="timeline-time">00:17</span><span class="timeline-text">找原公司补缴被拒，自己掏1500补上</span></div><div class="timeline-item"><span class="timeline-time">00:21</span><span class="timeline-text">对策：先弄清公司社保缴纳时间线</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">一般公司以当月15号或20号为时间线</span></div><div class="timeline-item"><span class="timeline-time">00:29</span><span class="timeline-text">15号之后离职，当月社保原公司给交</span></div><div class="timeline-item"><span class="timeline-time">00:34</span><span class="timeline-text">15号之前离职或新公司晚入职，当月断缴</span></div><div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">社保连续性与福利政策、资格申请紧密相关</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>离职时机选不好，社保断缴倒贴钱</div><span class="arrow">→</span><div class="node-green">证据<br/>粉丝 10 号离职被拒补缴，自掏 1500</div><span class="arrow">→</span><div class="node-orange">判断<br/>公司多以 15/20 号为社保缴纳时间线</div><span class="arrow">→</span><div class="node-blue">行动<br/>15 号之后离职，接好新公司再走</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：离职选月初月末没差别，反正下家会交。纠偏：公司以 15 号或 20 号为缴纳时间线，15 号前离职又没接上新公司，当月社保必然断缴。</p><p>误解 2：社保断了以后补缴就行。纠偏：粉丝案例里原公司拒绝补缴，最后只能自己掏一千五。</p><p>误解 3：社保断缴影响很小。纠偏：社保连续性与当地福利政策、购房购车、落户等资格申请紧密相关。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>真实案例：离职时机=钱</h3>
+      <p>在讲什么：粉丝上月 10 号离职，原公司没交当月社保，补缴被拒，最后自掏 1500。关键理解：离职时间选错，不光是少拿几千块，甚至要倒贴。怎么用：把离职日当财务决策来规划，而不是随手选一天。</p>
+      <div class="quote">依据 [00:08-00:20]：他是上月10号从原公司离职的……最后只能是他自己掏了一千五去补了上个月的社保。</div>
+      <div class="relation">立场分层：案例为真实个例；「离职选错时间=损失几千块」是讲者的核心判断。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>看懂公司社保时间线</h3>
+      <p>在讲什么：离职前先了解公司缴纳社保的时间，一般公司以当月 15 号或 20 号为时间线；15 号之后离职当月社保原公司会交，良心公司还交当月公积金。关键理解：15/20 号是「当月社保是否属于你」的分界线。怎么用：离职前先问 HR 或查规定，确认公司社保缴纳时点。</p>
+      <div class="quote">依据 [00:21-00:32]：一般公司会以当月的15号或者20号为时间线，那么你选择15号之后离职是比较稳妥的，这样当月社保原公司是会给你交的。</div>
+      <div class="relation">立场分层：15/20 号时间线为行业通行做法；「15 号后离职更稳」是基于该做法的操作建议。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>断缴的连锁影响</h3>
+      <p>在讲什么：15 号之前离职、又没及时接上新公司（15/20 号后入职），当月社保会断缴；社保连续性与当地福利政策、资格申请紧密相关，断缴影响很大。关键理解：断缴的代价不只是钱，还有资格与福利。怎么用：离职与入职衔接时，把社保连续作为硬约束来排期。</p>
+      <div class="quote">依据 [00:33-00:43]：当月的社保你就会断缴……社保连续性跟当地的一些福利政策或者说相应的一些资格申请等等是紧密相关的一断缴的话这个影响还是蛮大的。</div>
+      <div class="relation">立场分层：「断缴影响大」为常识性判断；「做好衔接排期」为操作建议。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">离职时机与社保结果对照</h2><div class="card"><table><thead><tr><th>情况</th><th>当月社保</th><th>结果</th></tr></thead><tbody><tr><td>15号之后离职</td><td>原公司给交（良心公司还交公积金）</td><td>不断缴，最稳妥</td></tr><tr><td>15号之前离职，且已入职新公司</td><td>看新公司缴纳时间点衔接</td><td>可能不断缴，需确认</td></tr><tr><td>15号之前离职，新公司晚入职</td><td>当月断缴</td><td>影响福利与资格申请</td></tr><tr><td>断缴后找原公司补缴</td><td>大概率被拒</td><td>只能自掏腰包（如案例 1500 元）</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：跳槽衔接期，想避免社保断缴的职场人。</li><li>上限：具体缴纳时间线以各公司制度与当地社保政策为准，15/20 号不是全国统一标准。</li><li>反例：特殊职业或灵活就业、跨城市跳槽的社保规则不同。</li><li>例外：若新公司能接受提前入职、或可通过个人灵活缴纳过渡，断缴风险可控。</li></ul><div class="pitfall">避坑：不要只看离职日，要同步确认新公司的社保缴纳时间点与入职时间。</div><div class="pitfall">避坑：别以为原公司一定会配合补缴，案例里就吃了闭门羹。</div><div class="pitfall">避坑：社保断缴对购房、落户等资格的影响有地方差异，动身前先查当地政策。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>离职时机选错，少拿几千块甚至倒贴一两千。</li><li>公司多以当月 15 号或 20 号为社保缴纳时间线。</li><li>社保连续性与福利政策、资格申请紧密相关。</li></ul><h3>行动清单</h3><ol><li>离职前先确认公司社保缴纳时间线。</li><li>尽量 15 号之后离职，确保当月社保在保。</li><li>入职新公司前核对社保衔接，必要时与 HR 提前沟通。</li></ol><h3>关键认知转变</h3><p>从「离职日期随手选」转到「离职日期是财务决策」：算清社保断缴账，再定离职日。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 0分43秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

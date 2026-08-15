@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6098" viewBox="0 0 1320 6098">
+  <foreignObject x="0" y="0" width="1320" height="6098">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>管理是管人还是管事？不同层级答案不一样</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">管理</span><span class="tag tag-orange">战略</span><span class="tag tag-purple">组织</span><span class="tag tag-gray">时长 4分07秒</span><span class="tag tag-gray">分析视角：管理「事与人的层次论」——按层级与资源分而治之</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686364327(1).MOV">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：「管人还是管事」是伪问题。真正的管理目标导向、以事为先，但「事」分层次——高层管宏观方向、中层管战略落地目标、一线管具体事，错位就陷入概念聊天。人手路径按资源选：有钱招精英就靠筛选和授权，没钱培养普通人就靠 SOP 与培训。中层还要向上管理、建信息管道、上下打通，带着大家打胜仗。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">天天打败仗的团队，天天都是管理问题</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">管人还是管事？事没做好，光管好人结果拿不到</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">真正的管理：目标导向，以事的优先考虑</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">公司是为了做事：商业目标是非常具体的事</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">建议写大O：这样拆KPI才拆得出来</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">乔布斯：为消费者提供最好的产品，怎么量化</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">乔布斯量化法：每个产品比前一个更好、销量更好、满意度更好</span></div><div class="timeline-item"><span class="timeline-time">02:00</span><span class="timeline-text">不同层级管不同的事：方向/目标/具体事</span></div><div class="timeline-item"><span class="timeline-time">02:20</span><span class="timeline-text">船长比喻：招募水手厨师，或只招最优秀的</span></div><div class="timeline-item"><span class="timeline-time">03:00</span><span class="timeline-text">精英要高回报、授权和关注，否则留不住</span></div><div class="timeline-item"><span class="timeline-time">03:20</span><span class="timeline-text">中层向上管理：建立信息管道，上下打通</span></div><div class="timeline-item"><span class="timeline-time">04:07</span><span class="timeline-text">结论：别用大主管思维，层级不同答案不同</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">现象<br/>团队天天打败仗，管理者只会问管人还是管事</div><span class="arrow">→</span><div class="node-green">拆穿<br/>目标导向、以事为先，但「事」分层次</div><span class="arrow">→</span><div class="node-orange">真相<br/>高层管方向、中层管目标、一线管具体事</div><span class="arrow">→</span><div class="node-blue">行动<br/>按资源选人路径，中层向上管理上下打通</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解1：管理就是把人管好。纠偏：事没做好，光管好人拿不到结果；管理以事为先、目标导向。</p><p>误解2：管「事」就是事无巨细地盯。纠偏：不同层级管的「事」不同——高层管方向、中层管目标、一线管具体事，错位就是概念聊天。</p><p>误解3：管人管事二选一。纠偏：按资源和层级分而治之：有钱招精英靠筛选，没钱培养普通人靠流程，中层还要向上管理。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>目标导向：组织建立在事之上</h3>
+      <p>在讲什么：公司成立是为了做事，商业目标是非常具体的事；组织是关于人的，但一定建立在事情之上。关键理解：管人还是管事之争是伪问题，事情的结果才是检验标准。怎么用：管理动作从目标出发，再设计组织与人的配合。</p>
+      <div class="quote">依据 [00:10-00:55]：你事没做好，只是把人管好了，这个结果你拿到了吗？……组织是关于人的，但是一定是建立在事情之上。</div>
+      <div class="relation">立场分层：「以事为先」是前提；「结果检验」是标准。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>事的层次：方向、目标、具体事</h3>
+      <p>在讲什么：不同级别管理者对「事」的认定不同——高层管宏观方向、中层管战略落地目标、一线管具体事；写大目标才能拆KPI，乔布斯有量化方式。关键理解：管的「事」要和层级匹配，错位就变成概念聊天。怎么用：先确认自己所在的层级，再认领对应层次的事。</p>
+      <div class="quote">依据 [01:10-02:20]：我推出的每一个产品都应该比我之前的产品更好，我的销量要更好，我的用户满意度要更好——人家是有量化的方式的。</div>
+      <div class="relation">立场分层：「层级分事」是框架；「乔布斯量化」是示例。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>船长比喻与中层向上管理</h3>
+      <p>在讲什么：有钱招精英就靠筛选授权，没钱就培养普通人；中层要建信息管道、上下打通、带着大家打胜仗。关键理解：管人的方式取决于资源与阶段，但目标始终是打胜仗。怎么用：中层主动向上沟通、向下传方向，把战术和战略对齐。</p>
+      <div class="quote">依据 [02:20-04:07]：管理就是带领团队一直打胜仗……你要跟你的老板之间建立信息管道、管好信息，然后同船跟下面的人指示方向。</div>
+      <div class="relation">立场分层：「资源决定人手策略」是原则；「中层上下打通」是组织要求。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">不同层级「管什么」对照表</h2><div class="card"><table><thead><tr><th>层级</th><th>管的「事」</th><th>对人的侧重</th></tr></thead><tbody><tr><td>高层大老板</td><td>宏观方向、公司走向</td><td>定目标、做指挥</td></tr><tr><td>中层管理者</td><td>战略落地目标</td><td>向上管理、信息管道、带兵打胜仗</td></tr><tr><td>一线管理者</td><td>具体的事</td><td>SOP执行、现场协调</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：组织管理、团队建设、目标拆解的一般原则。</li><li>上限：不替代具体行业的管理方法论与制度设计。</li><li>反例：以事为先不等于忽略人心，人心散了一样做不成。</li><li>例外：初创与成熟公司的资源不同，管人策略要因地制宜。</li></ul><div class="pitfall">避坑：写大目标不等于空目标，要像乔布斯那样准备量化口径。</div><div class="pitfall">避坑：把「培养普通人」当成无限期容忍低绩效，要配考核与淘汰。</div><div class="pitfall">避坑：中层只向上不向下，或只向下不向上，都会失联。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>管理不是管人管事的二选一，而是目标导向、以事为先。</li><li>「事」分层次：方向、目标、具体事，按层级认领。</li><li>人手路径按资源选：招精英靠筛选，普通人靠培养。</li></ul><h3>行动清单</h3><ol><li>写目标时同步写下量化口径，像乔布斯一样可检验。</li><li>确认你所在层级该管的事，别越级聊天。</li><li>中层每周和老板互通信息，向团队传递清晰方向。</li></ol><h3>关键认知转变</h3><p>从「管人还是管事的二选一」转到「按层级和资源分层治理」：目标定准、事分层次、人按资源选，管理才能真正带着团队打胜仗。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 4分07秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

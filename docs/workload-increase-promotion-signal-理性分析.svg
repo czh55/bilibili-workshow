@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6314" viewBox="0 0 1320 6314">
+  <foreignObject x="0" y="0" width="1320" height="6314">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>工作量突增是提拔信号还是被当工具人</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">晋升</span><span class="tag tag-orange">管理</span><span class="tag tag-gray">时长 3分45秒</span><span class="tag tag-gray">分析视角：用「是否重要的事＋成果是否被看见」识别提拔与工具人</span></div>
+  <a class="source-link" href="local:RPReplay_Final1687933187(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：提拔前老板一定会给你加重要工作，所以工作量突增不是判断依据；真正的信号是「工作的重要性」和「成果有没有被看见」。脑海里出现「没给我加钱」就不该被提拔——回报看结果不看时长。识别工具人的方法是看工作内容：全是杂活、战略没有、汇报不被关心，就是工具人赶紧换；但老业务维护作为公司底子被托付，可能是专家型老板在提拔你。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">提拔前一定安排更多工作，三个原因</span></div><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">原因一：不是最重要或最多的，凭什么提拔你</span></div><div class="timeline-item"><span class="timeline-time">00:32</span><span class="timeline-text">原因二：提拔你是节省我的时间和精力</span></div><div class="timeline-item"><span class="timeline-time">00:44</span><span class="timeline-text">原因三：不在难事上历练，怎么知道没看错人</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">脑海里出现「没给我加钱」＝不该被提拔</span></div><div class="timeline-item"><span class="timeline-time">01:22</span><span class="timeline-text">回报看结果，不是看工作时长</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">一百件事只做最重要的三件，做老板觉得重要的</span></div><div class="timeline-item"><span class="timeline-time">02:00</span><span class="timeline-text">让努力被看见，顺水推舟让提拔顺理成章</span></div><div class="timeline-item"><span class="timeline-time">02:25</span><span class="timeline-text">识别工具人：全是杂活＋战略没有＋汇报不被理</span></div><div class="timeline-item"><span class="timeline-time">03:00</span><span class="timeline-text">赶紧换：工具人陷阱别混</span></div><div class="timeline-item"><span class="timeline-time">03:10</span><span class="timeline-text">例外：老业务是底子，专家老板把命脉交给你</span></div><div class="timeline-item"><span class="timeline-time">03:40</span><span class="timeline-text">这种情况也可能被提拔，但要很确定</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>工作量突增，是提拔还是工具人</div><span class="arrow">→</span><div class="node-green">证据<br/>提拔前必给重要工作；工具人=杂活＋不被关注</div><span class="arrow">→</span><div class="node-orange">判断<br/>看工作重要性＋成果是否被看见，不看量</div><span class="arrow">→</span><div class="node-blue">行动<br/>做重要的事、让成果可见；杂活加冷漠就换</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：工作量增加=马上要提拔。纠偏：提拔前必加工作，但加工作不等于提拔，要看工作的性质。</p><p>误解 2：老板没加钱就是画饼。纠偏：回报看最终结果不看时长，先做重要的事，结果会说话。</p><p>误解 3：被安排老业务就是边缘化。纠偏：老业务是公司底子，专家型老板把命脉交给你也可能是提拔。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>提拔前必加工作：三个原因</h3>
+      <p>在讲什么：提拔前老板一定会给你安排更多工作——否则凭什么提拔（大家不服）；提拔你是为了节省老板的时间和精力；不历练怎么验证没看错人。关键理解：工作量突增是必要条件不是充分条件。怎么用：接到增量工作别急着兴奋或抱怨，先判断工作性质。</p>
+      <div class="quote">依据 [00:00-00:56]：老板如果要提拔一个人，他肯定是要给你安排更多的工作的……所以这个工作量的增加都是很正常的（情况）。</div>
+      <div class="relation">立场分层：「提拔前必加工作」为管理逻辑；「三个原因」为对该逻辑的推导。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>别想「没加钱」：成果要被看见</h3>
+      <p>在讲什么：脑海里出现「没给我加钱」就不该被提拔；回报以最终结果判定不以时长；一百件事做最重要的三件；还要让别人看见你的努力，让提拔顺理成章。关键理解：提拔是结果交换，不是工时交易，闷头干活反而堵死自己。怎么用：每周把关键成果同步给老板，让价值可见。</p>
+      <div class="quote">依据 [01:10-02:20]：所有的这些回报我们是以最终的结果来判定的，不是以工作时长来判定的。……老板最烦的就是你永远不让大家都看到你的努力和你的价值。</div>
+      <div class="relation">立场分层：「回报看结果」为判断标准；「让成果被看见」为实现该标准的动作。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>工具人陷阱与老业务例外</h3>
+      <p>在讲什么：全是杂活、战略工作没有、做完汇报老板不理不睬＝工具人，赶紧换；但被托付老业务维护（旧核心业务、系统、关系）可能是例外——那是公司底子，专家型老板信任你才会交给你。关键理解：判断标准是「这活儿是不是公司安身立命的底子」。怎么用：用「战略相关性」和「底子属性」两个维度给工作量做体检。</p>
+      <div class="quote">依据 [02:25-03:45]：那就是直接把你当工具人用了，那这种情况你还在那混干嘛，赶紧换吧。……那些东西不是不重要，只是在这个阶段没有那些东西出彩……是因为有你。</div>
+      <div class="relation">立场分层：「杂活+冷漠=工具人」为判断；「老业务托付=潜在提拔」为识别例外的补充。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">工作量突增：三种识别</h2><div class="card"><table><thead><tr><th>类型</th><th>特征</th><th>应对</th></tr></thead><tbody><tr><td>提拔信号</td><td>重要的事＋成果被看见</td><td>做最核心的三件事，让价值可见</td></tr><tr><td>工具人陷阱</td><td>全是杂活＋战略没有＋汇报被冷落</td><td>赶紧换，别耗</td></tr><tr><td>老业务托付</td><td>旧核心业务/系统/关系维护，老板信任</td><td>确认底子属性，可能是潜在提拔</td></tr><tr><td>心态</td><td>盯着「没加钱」</td><td>回报看结果，先出成绩</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：员工识别工作量增加信号、规划晋升路径的场景。</li><li>上限：判断标准是经验框架，具体还要结合公司文化与老板风格。</li><li>反例：老业务托付也可能真的是边缘化，需要结合老板动向与公司节奏确认。</li><li>例外：部分公司晋升靠资历与轮岗，不适用「重要工作」单一标准。</li></ul><div class="pitfall">避坑：别只看工作量大小，要拆开看里面有没有战略与核心的事。</div><div class="pitfall">避坑：别只闷头干活不展示成果，努力不可见等于没发生。</div><div class="pitfall">避坑：别把所有老业务都当工具人活，先确认它是不是公司的底子。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>提拔前必加工作，但加工作不等于提拔。</li><li>回报看结果不看时长，努力要被看见。</li><li>杂活加冷漠是工具人，老业务托付可能是提拔。</li></ul><h3>行动清单</h3><ol><li>用「战略相关性＋底子属性」给现有工作量做一次体检。</li><li>每周同步关键成果给老板，让价值可见。</li><li>确认是工具人陷阱后，主动提出调整或尽早换环境。</li></ol><h3>关键认知转变</h3><p>从「工作量突增=要提拔」转到「看工作性质＋成果可见度做判断」：重要的事加可见的结果是提拔，杂活加冷漠是工具人，老业务托付要看它是不是公司的底子。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 3分45秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

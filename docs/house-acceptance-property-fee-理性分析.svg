@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6167" viewBox="0 0 1320 6167">
+  <foreignObject x="0" y="0" width="1320" height="6167">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>收房被物业卡物业费？一条法规直接拿捏</h1>
+  <div class="meta"><span class="tag tag-blue">买房</span><span class="tag tag-green">物业</span><span class="tag tag-orange">维权</span><span class="tag tag-purple">法律</span><span class="tag tag-gray">时长 1分55秒</span><span class="tag tag-gray">分析视角：收房维权的情境剧拆解（法规+证据+谈判）</span></div>
+  <a class="source-link" href="local:31120.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：收房时物业用「物业费」卡你验房，关键不是争吵，而是依法切割责任。依据《物业服务收费管理办法》第16条，因开发建设单位原因未按时交付的物业，物业费由开发商全额承担；再亮出合同逾期交房违约金条款（每日万分之三、90天可退房），并明确「过程已录音、将反映到住建部门」，物业当场服软。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">业主：我20年买的房子，你怎么不让我看一眼</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">物业：交了物业费，立马带你去现房</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">业主：正常流程是产证办完、双方签交接单</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">业主：现在交了，待会儿验收发现问题怎么办</span></div><div class="timeline-item"><span class="timeline-time">00:31</span><span class="timeline-text">业主：物业收费管理办法第16条，开发商全额交物业费</span></div><div class="timeline-item"><span class="timeline-time">00:48</span><span class="timeline-text">争议延迟接收，物业费按解决问题后时间算</span></div><div class="timeline-item"><span class="timeline-time">01:01</span><span class="timeline-text">物业：不交物业费，大门你都不该进</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">业主：我不交物业费，你就阻止我验收房？</span></div><div class="timeline-item"><span class="timeline-time">01:20</span><span class="timeline-text">业主：过程已记录，我先去住建部门反映</span></div><div class="timeline-item"><span class="timeline-time">01:30</span><span class="timeline-text">亮出逾期交房违约金：每日万分之三，150万房每月13500</span></div><div class="timeline-item"><span class="timeline-time">01:45</span><span class="timeline-text">90天后可取消购买全额退款，白赚4万多违约金</span></div><div class="timeline-item"><span class="timeline-time">01:55</span><span class="timeline-text">物业服软：钥匙给你，握个手</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">现象<br/>收房被物业拦：不交物业费不让验房</div><span class="arrow">→</span><div class="node-green">拆穿<br/>因开发商原因未交付，物业费由开发商交</div><span class="arrow">→</span><div class="node-orange">真相<br/>物业无权用物业费卡验房，交接与物业费是两件事</div><span class="arrow">→</span><div class="node-blue">行动<br/>搬法规+留证据+亮违约金条款，必要时找住建部门</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解1：收房必须先交物业费。纠偏：因开发商原因未按时交付的物业，物业费由开发商全额承担（收费管理办法第16条）。</p><p>误解2：物业不让看房就没办法。纠偏：验房是业主法定权利，物业无权以物业费为由阻止；保留证据并可向住建部门反映。</p><p>误解3：违约金只是吓唬人。纠偏：合同约定的逾期交房违约金（每日万分之三）真实可主张，90天逾期还可要求解除合同并退款。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>先分清：交接单与物业费是两件事</h3>
+      <p>在讲什么：正常流程是产证办完、双方签署交接单后再谈物业费；物业以「今天来收房就得交钱」捆绑，是混淆了流程。关键理解：先验房、后交接、再谈费用，顺序不能倒。怎么用：收房时坚持先签交接单、完成验收，费用按约定另行处理。</p>
+      <div class="quote">依据 [00:18-00:30]：正常流程不是产证办完、双方签交接单嘛？办好交接，这物业费跟我也没关系啊。</div>
+      <div class="relation">立场分层：「先交接后费用」是流程主张；物业捆绑收费是冲突点。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>法规底牌：《物业服务收费管理办法》第16条</h3>
+      <p>在讲什么：纳入物业管理范围但已竣工尚未出售，或因开发建设单位原因未按时交给买受人的物业，物业服务费用由开发建设单位全额交纳。关键理解：开发商原因导致的未交付，物业费不该业主掏。怎么用：被卡时直接背诵条文出处，把责任引回开发商。</p>
+      <div class="quote">依据 [00:31-00:48]：按照物业服务收费管理办法第16条，因开发建设单位原因未按时交给买受人的物业，物业服务费用由开发建设单位全额交纳。</div>
+      <div class="relation">立场分层：条文是法理依据；「整改期物业费白交」是损失量化。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>反杀组合：证据+违约金+退房权</h3>
+      <p>在讲什么：业主亮出三张牌——全程已记录（证据）、合同逾期交房违约金每日万分之三（150万房每月13500）、90天逾期可解除合同全额退款（白赚4万违约金）。关键理解：物业阻碍验房反而坐实开发商逾期交房。怎么用：收房全程录音录像，谈判时把违约责任算给物业听。</p>
+      <div class="quote">依据 [01:20-01:50]：合同逾期交房违约责任每天是万分之三，我这150万的房子每个月就13500块；90天之后我就可以要求取消购买全额退款。</div>
+      <div class="relation">立场分层：「证据留存」是前提；「违约金+退房权」是谈判筹码。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">收房物业费之争：责任切割对照</h2><div class="card"><table><thead><tr><th>情形</th><th>物业费该谁交</th><th>依据</th></tr></thead><tbody><tr><td>已竣工未出售的物业</td><td>开发商全额交纳</td><td>收费管理办法第16条</td></tr><tr><td>开发商原因未按时交付</td><td>开发商全额交纳</td><td>收费管理办法第16条</td></tr><tr><td>整改/争议期间延迟接收</td><td>按解决问题后时间计算</td><td>实际交付时点</td></tr><tr><td>正常交付并交接后</td><td>业主按约定缴纳</td><td>物业服务合同</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：因开发商原因导致逾期交房、被物业捆绑收费的验房场景。</li><li>上限：正常交付后业主的物业费仍应按时缴纳，不能套用第16条。</li><li>反例：不要以维权为名拒交正当费用，反而失理。</li><li>例外：各地对物业费起算时间可能有细化规定，维权前先核本地规则。</li></ul><div class="pitfall">避坑：谈判要留证据（录音录像），空口无凭到住建部门难落地。</div><div class="pitfall">避坑：违约金条款以合同原文为准，先翻合同再亮数字。</div><div class="pitfall">避坑：别和物业现场冲突，理性话术+明确下一步行动更有效。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>物业无权用物业费卡验房：交接与费用是两件事。</li><li>开发商原因未交付，物业费由开发商全额交（第16条）。</li><li>证据+违约金条款+退房权，是谈判的三张牌。</li></ul><h3>行动清单</h3><ol><li>收房全程录音录像，记录物业阻挠过程。</li><li>被卡时背诵第16条，把物业费责任引回开发商。</li><li>翻合同核对逾期交房违约金，必要时向住建部门反映。</li></ol><h3>关键认知转变</h3><p>从「被物业拿捏着交钱」转到「拿法规和合同拿捏对方」：先切割责任、再亮条款、最后上升渠道，收房维权有章法。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分55秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

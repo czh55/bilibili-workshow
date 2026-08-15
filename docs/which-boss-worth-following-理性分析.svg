@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6167" viewBox="0 0 1320 6167">
+  <foreignObject x="0" y="0" width="1320" height="6167">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>什么样的老板不值得跟？重点看他给不给你分钱</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">管理</span><span class="tag tag-orange">老板</span><span class="tag tag-purple">职业发展</span><span class="tag tag-gray">时长 2分27秒</span><span class="tag tag-gray">分析视角：老板评估标准与主动争取心态的转变</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686363811(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：判断老板值不值得跟，只看一条：给不给你分钱、给不给你机会。但世界是动态的，别急着下结论——要主动推着老板给钱给机会，你有什么需求就说什么（坦诚沟通）；「言出法随」，你天天想老板不给你钱，他就真的不给。贵人相助多半是意识点拨，机会靠争取；与其等完美老板，不如自己变强、管理好老板让他为你服务。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">打你骂你、PUA你都不是重点</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">重点是给不给你分钱：出来工作就是挣钱</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">别用静态眼光看老板：过去两个月没给，不代表以后</span></div><div class="timeline-item"><span class="timeline-time">00:41</span><span class="timeline-text">你要主动推着他给你钱、给你机会</span></div><div class="timeline-item"><span class="timeline-time">00:50</span><span class="timeline-text">你不伸手要，别人凭什么给你</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">坦诚沟通：有什么需求就说出来</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">言出法随：你天天想老板不给你钱，他就真的不给</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">行动：老板我经济压力大，外面有猎头挖我</span></div><div class="timeline-item"><span class="timeline-time">01:45</span><span class="timeline-text">坚持一点点，世界就往你倾斜一点点</span></div><div class="timeline-item"><span class="timeline-time">02:00</span><span class="timeline-text">贵人相助多半是意识点拨，机会靠争取</span></div><div class="timeline-item"><span class="timeline-time">02:15</span><span class="timeline-text">自己强比什么都重要，管理好老板让他为你服务</span></div><div class="timeline-item"><span class="timeline-time">02:27</span><span class="timeline-text">收尾：别寄希望于什么都好的完美老板</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">现象<br/>被老板PUA、不给钱不给机会就离职</div><span class="arrow">→</span><div class="node-green">拆穿<br/>重点只有一条：给不给你分钱和机会</div><span class="arrow">→</span><div class="node-orange">真相<br/>言出法随：你要什么就要说出来</div><span class="arrow">→</span><div class="node-blue">行动<br/>主动争取+管理老板，让老板为你服务</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解1：老板打骂PUA就是坏老板，必须走。纠偏：态度不是重点，重点是他给不给你分钱和机会。</p><p>误解2：默默做事，老板自然会看见、会给我回报。纠偏：你不伸手要，别人凭什么给你？坦诚沟通，有什么需求就说出来。</p><p>误解3：贵人会主动提携我。纠偏：贵人相助多半是意识点拨，机会要你自己去争取、去要来。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>判断标准只有一条：分不分钱</h3>
+      <p>在讲什么：打骂、PUA、嬉皮笑脸、日常光环都不是重点，重点是给不给你钱、给不给你机会。关键理解：别用态度当标准，要用资源分配当标准。怎么用：评估老板时先看他的钱和机会流向。</p>
+      <div class="quote">依据 [00:00-00:20]：打你骂你不是重点，PUA你也不是重点……重点是给不给你分钱，因为你出来工作干嘛的？挣钱的对吧。</div>
+      <div class="relation">立场分层：「分钱」是硬标准；「态度」是干扰项。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>主动要：坦诚沟通，言出法随</h3>
+      <p>在讲什么：世界是动态的，别用静态眼光给老板贴标签；要主动推着他给你钱给机会。关键理解：「言出法随」——你天天想老板不给你钱，他就真的不给，因为你要的。怎么用：把你的需求直接说出来，奔共同目标。</p>
+      <div class="quote">依据 [00:41-01:20]：你不伸手要，别人为什么要给你呢？你有什么需求你就要说出来……你想老板不给你钱，老板就真的不会给你钱。</div>
+      <div class="relation">立场分层：「坦诚沟通」是方法；「言出法随」是心念机制。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>贵人意识+管理老板</h3>
+      <p>在讲什么：贵人相助多半是意识点拨，给你机会；机会是你争取来的。与其等完美老板，不如自己变强，管理好老板让他为你服务。关键理解：你的成长由自己驱动，不是被老板施舍。怎么用：主动谈薪、争取核心工作，扩大能力与交际范围。</p>
+      <div class="quote">依据 [01:45-02:27]：你只要坚持一点点，这个世界就会往你倾斜一点点……你自己强，不是比所有东西更重要吗？你去管理好他，让他为你服务。</div>
+      <div class="relation">立场分层：「贵人=机会+点拨」是认知；「管理老板」是操作。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">「等靠老板」 vs 「主动争取」对照</h2><div class="card"><table><thead><tr><th>维度</th><th>等靠心态</th><th>主动心态</th></tr></thead><tbody><tr><td>对老板的判断</td><td>静态贴标签，直接走人</td><td>动态看趋势，主动推着走</td></tr><tr><td>需求表达</td><td>默默做事，指望被发现</td><td>坦诚沟通，直接说出来</td></tr><tr><td>念头方向</td><td>想老板是傻叉、不给我钱</td><td>想老板会对我好、给我机会</td></tr><tr><td>贵人期待</td><td>等贵人主动提携</td><td>扩大能力圈，让贵人对接上</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：对现有老板的评估与向上管理的自我调整。</li><li>上限：恶意压榨、违法用工等红线问题不适用，该走就走。</li><li>反例：坦诚沟通不等于无边界索取，要给出交换价值。</li><li>例外：老板确实毫无资源可分时，主动也换不来结果。</li></ul><div class="pitfall">避坑：别把「主动要」变成「只会要」，要有业绩和贡献打底。</div><div class="pitfall">避坑：「言出法随」不等于自我暗示，行动才是硬变量。</div><div class="pitfall">避坑：管理老板的前提是你真有实力，否则只是空谈。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>判断老板只看一条：给不给你分钱和机会。</li><li>世界是动态的：主动要，坦诚沟通，言出法随。</li><li>贵人机会靠争取，自己强比什么都重要。</li></ul><h3>行动清单</h3><ol><li>评估老板前，先列出他给过你什么钱和机会。</li><li>把需求直接说出口：谈收入、争取核心工作。</li><li>每月扩大一次能力圈或交际圈，让贵人有机会对接上你。</li></ol><h3>关键认知转变</h3><p>从「等一个完美老板带我飞」转到「自己强+管理好老板」：主动要、持续争、自己成长，老板只是你前进路上的资源。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分27秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

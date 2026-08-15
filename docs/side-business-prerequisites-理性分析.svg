@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5984" viewBox="0 0 1320 5984">
+  <foreignObject x="0" y="0" width="1320" height="5984">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>搞副业前先问自己：三个前提都满足了吗</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">副业</span><span class="tag tag-orange">方法论</span><span class="tag tag-gray">时长 1分52秒</span><span class="tag tag-gray">分析视角：副业启动前的三个前提条件检验</span></div>
+  <a class="source-link" href="local:01e50971131b1cf5010371038aace395b6_258.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：副业不是「想搞就能搞」，启动前必须过三关——主业无敌（主业已无可难到你）、时间复用（副业时间直接反哺主业）、激励相容（副业与主业互相促进成飞轮）。三关都能在纸面上推导成闭环，才谈得上开始；否则副业大概率演变成把主业一起搞没的悲剧。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">副业悲剧开场：还没赚钱，主业先没了</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">就业环境差，先感恩、端好饭碗</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">三个前提，仔细听完再动手</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">前提一：主业无敌才能搞副业</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">别低估羡慕嫉妒的破坏力，会有人打小报告</span></div><div class="timeline-item"><span class="timeline-time">00:52</span><span class="timeline-text">前提二：时间复用，等于下班还在为公司工作</span></div><div class="timeline-item"><span class="timeline-time">01:02</span><span class="timeline-text">前提三：激励相容，互相促进成飞轮</span></div><div class="timeline-item"><span class="timeline-time">01:11</span><span class="timeline-text">个人例子：一个人拍视频，就是一支队伍</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">主业的坑和苦，都是副业变现的资产</span></div><div class="timeline-item"><span class="timeline-time">01:52</span><span class="timeline-text">纸面推导无逻辑漏洞，才能开始</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">现象<br/>副业搞着搞着，把主业搞没了</div><span class="arrow">→</span><div class="node-green">拆穿<br/>副业比想象中难，占用时间藏不住</div><span class="arrow">→</span><div class="node-orange">真相<br/>需要主业无敌、时间复用、激励相容</div><span class="arrow">→</span><div class="node-blue">行动<br/>纸面推导出逻辑闭环后再开始</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解1：搞副业要趁早、先干起来再说。纠偏：动手前先检验三个前提，否则有把主业搞丢的风险。</p><p>误解2：副业偷偷做就行，不影响主业。纠偏：副业必占时间、藏不住，要时间复用，让副业时间反哺主业。</p><p>误解3：副业和主业是竞争关系。纠偏：好的副业与主业激励相容、互相促进，形成飞轮效应。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>前提一：主业无敌，才不怕打小报告</h3>
+      <p>在讲什么：主业已经没什么能难到你，同事的业务难题你马上能给方案，所有人都服气。关键理解：主业不硬，副业很容易被有心人举报，你低估了羡慕嫉妒的破坏力。怎么用：把主业打磨到无可挑剔，再谈副业。</p>
+      <div class="quote">依据 [00:26-00:45]：如果不满足，你搞的副业总会有人知道，别人会对你不服气打小报告，你不能低估羡慕嫉妒的破坏力。</div>
+      <div class="relation">立场分层：「主业无敌」是前提；「防打小报告」是现实理由。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>前提二：时间复用，反哺主业</h3>
+      <p>在讲什么：你花在副业上的时间，都可以给主业带来直接结果和好处，等于下班后还在为公司工作。关键理解：时间复用让副业不消耗主业，反而增值。怎么用：选择与主业技能相关、能互相借力的副业方向。</p>
+      <div class="quote">依据 [00:52-01:01]：你花在副业上的所有时间，都是可以给你主业带来直接的结果和好处的。</div>
+      <div class="relation">立场分层：「时间复用」是定义；「选择相关副业」是落地选择。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>前提三：激励相容，形成飞轮</h3>
+      <p>在讲什么：副业搞好了促进主业，主业搞好了反过来促进副业，互相促进形成飞轮效应。关键理解：副业与主业应是正循环，而不是零和博弈。怎么用：用例子检验——公司要拍宣传片，一个人就能搞定，省下的成本就是副业反哺主业的证据。</p>
+      <div class="quote">依据 [01:02-01:38]：副业搞好了就能促进主业，主业搞好了又能反过来促进副业，互相促进，形成飞轮效应。</div>
+      <div class="relation">立场分层：「激励相容」是抽象原则；「一人团队拍视频」是具体例证。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">搞副业的三前提对照表</h2><div class="card"><table><thead><tr><th>前提</th><th>含义</th><th>检验问题</th></tr></thead><tbody><tr><td>主业无敌</td><td>主业已无可难到你，同事都服气</td><td>我的主业还有解决不了的难题吗？</td></tr><tr><td>时间复用</td><td>副业时间直接反哺主业</td><td>副业时间能给主业带来结果吗？</td></tr><tr><td>激励相容</td><td>副业与主业互相促进</td><td>两者能形成正循环飞轮吗？</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：有稳定主业、想发展副业的职场人启动前的自检清单。</li><li>上限：不保证副业成功，只排除把主业搞丢的显性风险。</li><li>反例：主业不稳定、还靠补贴维持时，先别谈副业。</li><li>例外：极少数人的副业与主业完全无关也能成立，但仍需时间与精力自洽。</li></ul><div class="pitfall">避坑：把「主业无敌」当成自我感觉良好，要用同事真的来请教验证。</div><div class="pitfall">避坑：时间复用不等于下班继续干活，要量化副业时间的主业产出。</div><div class="pitfall">避坑：飞轮效应不会自然发生，要先设计主副业之间的输入输出关系。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>搞副业前先过三关：主业无敌、时间复用、激励相容。</li><li>副业必占时间、藏不住，要让时间反哺主业。</li><li>先在纸面上推导成逻辑闭环，再开始搞。</li></ul><h3>行动清单</h3><ol><li>自检主业：还有没有同事来请教的难题？</li><li>为副业设计一条「反哺主业」的时间路径。</li><li>把主副业的互相促进关系写成一张逻辑图再评估。</li></ol><h3>关键认知转变</h3><p>从「副业=另一份赚钱的事」转到「副业=与主业互相赋能的系统」：先论证逻辑闭环，再投入时间，避免副业与主业双输。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分52秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

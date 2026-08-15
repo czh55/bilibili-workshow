@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6297" viewBox="0 0 1320 6297">
+  <foreignObject x="0" y="0" width="1320" height="6297">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试必考题：你对公司了解多少</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">面试</span><span class="tag tag-orange">准备</span><span class="tag tag-gray">时长 1分18秒</span><span class="tag tag-gray">分析视角：公司调研是开卷题，用3基础+3加分框架做到有的放矢</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686670391(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：「你对公司了解多少」是必考题，答「不了解」等于亮出三个负面信号——不重视面试、兴趣一般、没认真对待找工作。解题框架是三基础加三加分：基础项解决「这家公司是什么、做什么、产品有什么特点」，加分项解决「做得好不好、对手是谁、凭什么赢」，最后再补一句「为什么我对这家公司感兴趣」，把开卷题答成加分题。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">必考题：你对公司了解多少</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">回答不好直接影响面试结果，虽然算开卷考</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">「我不太了解你们公司」＝三个丢分信号</span></div><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">不重视面试／兴趣一般／没认真对待找工作</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">基础一：行业、业务、盈利模式、成立时长、规模</span></div><div class="timeline-item"><span class="timeline-time">00:38</span><span class="timeline-text">基础二：有哪些产品和服务、类型有哪些</span></div><div class="timeline-item"><span class="timeline-time">00:46</span><span class="timeline-text">基础三：产品和服务的特点是什么</span></div><div class="timeline-item"><span class="timeline-time">00:56</span><span class="timeline-text">加分一：业绩怎么样、口碑怎么样</span></div><div class="timeline-item"><span class="timeline-time">01:03</span><span class="timeline-text">加分二：竞争对手有哪些</span></div><div class="timeline-item"><span class="timeline-time">01:10</span><span class="timeline-text">加分三：相对竞品的优势劣势＋兴趣点收尾</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>被问「你对公司了解多少」怎么答才加分</div><span class="arrow">→</span><div class="node-green">证据<br/>答不了解＝亮出三个负面信号，直接丢分</div><span class="arrow">→</span><div class="node-orange">判断<br/>公司调研可结构化：3基础项+3加分项</div><span class="arrow">→</span><div class="node-blue">行动<br/>面试前按框架做调研，最后回答为什么对公司有兴趣</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：公司调研就是记住官网上的公司简介。纠偏：面试官要的是你对业务、产品、竞对的理解，不是背简介。</p><p>误解 2：公开信息少的小公司没法调研。纠偏：基础项可以从行业报告、招聘 JD、创始人访谈中补齐。</p><p>误解 3：面试官问了解多少，就只答了解多少。纠偏：问题的潜台词是「你对我们公司哪些方面感兴趣」，要用兴趣点收尾。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>「不了解」=三个丢分信号</h3>
+      <p>在讲什么：被问到却说「我不太了解你们公司，你们约我面试我就过来了」，等于直白告诉面试官：你不重视这场面试、对这家公司兴趣很一般、没认真对待找工作。关键理解：这题回答不好不是扣一分，是直接给人负面印象。怎么用：接到邀约就启动调研，别把「不了解」说出口。</p>
+      <div class="quote">依据 [00:12-00:20]：这就等于很直白地告诉面试官三个信息：你不重视这场面试，你对这家公司兴趣很一般，你没有很认真地对待自己找工作这件事。</div>
+      <div class="relation">立场分层：「不了解=三个信号」为面试观感推断；「答不好直接影响结果」为重要性的判断。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>三个基础项：先搞清公司是什么</h3>
+      <p>在讲什么：基础一搞清行业、业务、盈利模式、成立时长、规模；基础二搞清产品/服务类型；基础三搞清产品/服务特点。关键理解：三个基础项回答同一件事——这家公司靠什么活、拿什么见人。怎么用：面试前一晚按这三条把调研结果写成一页纸。</p>
+      <div class="quote">依据 [00:25-00:45]：基础项的第一问就是要搞清楚公司它是属于什么行业、做什么业务、它的盈利模式是什么样子的、成立多长时间了、现在规模怎么样。</div>
+      <div class="relation">立场分层：「三基础项」为调研清单；「这家公司靠什么活」为三者的共同指向。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>三个加分项＋兴趣点收尾</h3>
+      <p>在讲什么：加分项回答三件事——业绩口碑怎么样、竞争对手有哪些、相对竞品优劣势如何；最后明确自己为什么对这家公司有兴趣。关键理解：基础项是及格线，加分项是区分度，兴趣点是把答案落到「我」。怎么用：把竞对和优劣势做成对比表，再写一句「为什么选这家」的理由。</p>
+      <div class="quote">依据 [00:56-01:18]：往往面试官问你了解公司多少，这才（其实是）另外一个问题——你对我们公司哪些方面是有兴趣的。</div>
+      <div class="relation">立场分层：「三加分项」为进阶清单；「面试官想问你的兴趣点」为问题的潜台词。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">公司调研「3+3」框架</h2><div class="card"><table><thead><tr><th>层级</th><th>问什么</th><th>答出什么</th></tr></thead><tbody><tr><td>基础一</td><td>行业、业务、盈利模式、成立时长、规模</td><td>公司靠什么活</td></tr><tr><td>基础二</td><td>有哪些产品/服务、类型有哪些</td><td>公司拿什么见人</td></tr><tr><td>基础三</td><td>产品/服务的特点是什么</td><td>凭什么被记住</td></tr><tr><td>加分一</td><td>业绩怎么样、口碑怎么样</td><td>做得怎么样</td></tr><tr><td>加分二</td><td>竞争对手有哪些</td><td>和谁竞争</td></tr><tr><td>加分三</td><td>相对竞品的优势劣势＋我的兴趣点</td><td>凭什么赢＋我为什么来</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：求职面试前的公司调研与自我介绍环节的准备。</li><li>上限：框架给到的是信息收集清单，深度理解仍要靠行业积累。</li><li>反例：应届生面试基础岗时，不必做到投资分析师级别的行业分析。</li><li>例外：面试战略/BD/市场类岗位时，加分项的权重会更高，需加深。</li></ul><div class="pitfall">避坑：别把官网简介背一遍当调研，面试官要的是你的理解和判断。</div><div class="pitfall">避坑：别只做基础项不做加分项，问竞对时答不上来就露馅。</div><div class="pitfall">避坑：别光谈公司不谈自己，最后一句一定要落到「为什么我感兴趣」。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>「不了解你们公司」=三个负面信号，直接丢分。</li><li>基础三项：行业业务、产品类型、产品特点。</li><li>加分三项：业绩口碑、竞对、相对优劣势＋兴趣点收尾。</li></ul><h3>行动清单</h3><ol><li>面试前一晚按 3+3 框架写一页公司调研笔记。</li><li>把竞对与优劣势做成一张对比表。</li><li>准备一句「为什么我对这家公司感兴趣」的真实理由。</li></ol><h3>关键认知转变</h3><p>从「公司调研=背简介」转到「公司调研=3+3 结构化理解」：基础项拿及格，加分项拉区分度，兴趣点让答案落在自己身上。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分18秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

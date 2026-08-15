@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6116" viewBox="0 0 1320 6116">
+  <foreignObject x="0" y="0" width="1320" height="6116">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试时四看，判断未来领导靠不靠谱</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">面试</span><span class="tag tag-orange">领导力</span><span class="tag tag-gray">时长 1分07秒</span><span class="tag tag-gray">分析视角：把面试当双向评估，用四个维度考察未来领导</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686667887(1).MOV">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：工作没劲、成长停滞，往往是因为跟错了领导。面试既是公司面你，也是你面公司——用「尊重、专业、开放、激情」四把尺子量未来领导：尊重看面试体验，专业看观点深度，开放看是否接纳建议，激情看讲业务时眼睛是否放光。四点越齐全，越值得跟随。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">痛点开场：工作没劲、看不到成长=跟错领导</span></div><div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">好领导是好导师：既磨砺又提拔</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">评估未来上级的四点：尊重、专业、开放、激情</span></div><div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">看尊重：面试体验好、热情解答问题</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">趾高气扬的面试官不会是好领导</span></div><div class="timeline-item"><span class="timeline-time">00:29</span><span class="timeline-text">看专业：观点和解答是否专业</span></div><div class="timeline-item"><span class="timeline-time">00:38</span><span class="timeline-text">面试官专业不如你，成长会很有限</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">看开放：是否开放接纳合理建议</span></div><div class="timeline-item"><span class="timeline-time">00:53</span><span class="timeline-text">一味否定打击你，被PUA概率高</span></div><div class="timeline-item"><span class="timeline-time">01:00</span><span class="timeline-text">看激情：讲业务讲团队时眼睛放光</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>怎么在面试时判断未来领导靠不靠谱</div><span class="arrow">→</span><div class="node-green">证据<br/>尊重、专业、开放、激情四个可观察信号</div><span class="arrow">→</span><div class="node-orange">判断<br/>好领导是导师，四点越全越值得跟随</div><span class="arrow">→</span><div class="node-blue">行动<br/>面试中主动设置问题考察这四点</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：面试是单向的，面试官考察我，我只需表现好。纠偏：面试是双向评估，你也要用四把尺子考察未来领导。</p><p>误解 2：面试官热情、氛围轻松就等于好领导。纠偏：热情只是「尊重」一项，还要看专业、开放与激情。</p><p>误解 3：领导比我专业水平低就果断拒绝。纠偏：专业不如你确实成长有限，但还要综合开放与激情判断。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>好领导是好导师</h3>
+      <p>在讲什么：工作没劲、看不到成长，可能因为跟错领导。好领导身体力行教你引导你，既磨砺你又恰当提拔你。关键理解：领导力直接决定你的成长上限。怎么用：把「跟对人」纳入求职决策，而不是只看薪资岗位。</p>
+      <div class="quote">依据 [00:00-00:12]：好领导就是一位好导师，他会身体力行地去教你去引导你……在恰当的时候也会去提拔你。</div>
+      <div class="relation">立场分层：「跟错领导导致没成长」为经验判断；「好领导=导师」是定义性主张。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>尊重与专业：两个硬指标</h3>
+      <p>在讲什么：尊重看面试体验与热情解答，趾高气扬的不是好领导；专业看观点与解答的深度，面试官专业不如你则成长有限。关键理解：尊重是态度，专业是水位，两者决定你未来能不能学到东西。怎么用：面试时主动抛出专业话题测试面试官水位。</p>
+      <div class="quote">依据 [00:16-00:44]：好的领导会给你良好的面试体验，热情解答你的问题……如果你评估下来面试官的专业水平还不如你，那未来加入之后你的个人成长其实非常有限。</div>
+      <div class="relation">立场分层：「尊重与专业」为评估维度；「专业不如你就成长有限」为推论。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>开放与激情：识别PUA与值得跟随</h3>
+      <p>在讲什么：开放看是否愿意接纳合理建议，一味否定打击你则被 PUA 概率高；激情看讲业务讲团队时是否眼睛放光。关键理解：开放程度决定相处模式，激情决定团队氛围与方向感。怎么用：面试中提一两个建议观察反应，引导对方讲团队故事看眼神。</p>
+      <div class="quote">依据 [00:45-01:07]：如果说你碰到面试官他一味地否定你甚至是在打击你，那你被PUA的概率是非常高的……好的领导在讲到他的业务讲到他的团队的时候眼睛是放光的。</div>
+      <div class="relation">立场分层：开放、激情为评估维度；「被 PUA 概率高」「值得跟随」为推论。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">考察未来领导的四个维度</h2><div class="card"><table><thead><tr><th>维度</th><th>正面信号</th><th>危险信号</th></tr></thead><tbody><tr><td>尊重</td><td>面试体验好、热情解答问题</td><td>趾高气扬、居高临下</td></tr><tr><td>专业</td><td>观点与解答有专业性</td><td>专业水平还不如你</td></tr><tr><td>开放</td><td>开放接纳合理建议</td><td>一味否定、甚至打击你</td></tr><tr><td>激情</td><td>讲业务讲团队眼睛放光</td><td>聊业务毫无热情</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：中高潜质岗位、希望评估直属领导的求职者。</li><li>上限：四点只是信号，不能替代背调与入职后的实际体验。</li><li>反例：面试官的专业性与其职位层级有关，跨层级比较要谨慎。</li><li>例外：个别技术型人才性格内敛但不代表不尊重人，判断要结合多轮面试。</li></ul><div class="pitfall">避坑：别因面试官热情就放弃其他三维度考察。</div><div class="pitfall">避坑：以「面试官不如我」直接否掉，可能误伤风格差异。</div><div class="pitfall">避坑：把「讲得激情」等同于「干得好」，还要看落地能力。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>工作没劲、看不到成长，常常是跟错了领导。</li><li>面试时用尊重、专业、开放、激情四看评估领导。</li><li>四点越齐全越值得跟随，缺失越多越要谨慎。</li></ul><h3>行动清单</h3><ol><li>面试时主动抛出专业问题测试面试官的水位。</li><li>提一两个合理建议，观察面试官是接纳还是否定。</li><li>引导面试官讲他的业务与团队，看是否眼睛放光。</li></ol><h3>关键认知转变</h3><p>从「面试只是被考察」转到「面试是双向评估」：你也在用四把尺子选领导。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分07秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

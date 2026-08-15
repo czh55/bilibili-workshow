@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6104" viewBox="0 0 1320 6104">
+  <foreignObject x="0" y="0" width="1320" height="6104">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>被辞退的离职原因怎么说？分三种情况</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">面试</span><span class="tag tag-orange">被辞退</span><span class="tag tag-purple">离职原因</span><span class="tag tag-gray">时长 0分58秒</span><span class="tag tag-gray">分析视角：按辞退责任方与背调支持度建立三分法决策树</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686668864(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：被辞退要不要对面试官坦白，取决于辞退责任与背调支持度。公司原因（结构性/经济性裁员）与个人表现无关，可直接坦白；个人原因被辞退时，主管愿意配合背调就用主动离职原因绕开；主管不支持背调，就弱化原因、聚焦教训与弥补。三分法让你在诚实与策略之间找到平衡。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">背景：连续有人咨询离职原因怎么说</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">被辞退这块的解释最有代表性</span></div><div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">核心问题：被辞退要不要坦白？分三种情况</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">情况一：公司原因（结构性/经济性裁员）</span></div><div class="timeline-item"><span class="timeline-time">00:19</span><span class="timeline-text">裁员与工作表现无关，可以实话实说</span></div><div class="timeline-item"><span class="timeline-time">00:22</span><span class="timeline-text">情况二：个人原因被辞退</span></div><div class="timeline-item"><span class="timeline-time">00:27</span><span class="timeline-text">主管愿配合背调：可提主动辞职原因</span></div><div class="timeline-item"><span class="timeline-time">00:33</span><span class="timeline-text">主管因愧疚愿意做背书</span></div><div class="timeline-item"><span class="timeline-time">00:41</span><span class="timeline-text">情况三：主管不支持背调</span></div><div class="timeline-item"><span class="timeline-time">00:47</span><span class="timeline-text">实话实说但有选择性：弱化原因，聚焦教训与弥补</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">强调培训充电后已有的进步</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>被辞退要不要跟面试官坦白</div><span class="arrow">→</span><div class="node-green">证据<br/>责任方（公司/个人）× 背调支持度决定答案</div><span class="arrow">→</span><div class="node-orange">判断<br/>三分法：可直说、可绕开、有选择地说</div><span class="arrow">→</span><div class="node-blue">行动<br/>先判断辞退责任，再确认背调支持度</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：被辞退必须全部坦白细节。纠偏：公司原因裁员可直说；个人原因且有背调支持时可不提辞退。</p><p>误解 2：所有被辞退都只能实话实说。纠偏：在有主管背调支持时，可以用恰当的主动辞职原因。</p><p>误解 3：实话实说就是把所有细节都说出来。纠偏：实话实说也可以有选择性，弱化原因、聚焦教训与弥补。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>情况一：公司原因，可直说</h3>
+      <p>在讲什么：如果因公司结构性裁员或经济性裁员被辞退，裁员本身与工作表现无关，可以实话实说。关键理解：责任在公司、与表现无关时，坦白是安全选项。怎么用：回答时带上裁员背景与自己的正面表现，坦荡但不自辩。</p>
+      <div class="quote">依据 [00:13-00:21]：如果是因为公司的原因导致被辞退，比如公司结构性裁员或者经济性裁员等等，裁员本身跟你工作表现无关，那么这种情况你就可以实话实说。</div>
+      <div class="relation">立场分层：「公司裁员可直说」为决策规则；「与表现无关」是判断依据。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>情况二：个人原因，争取背调换说辞</h3>
+      <p>在讲什么：个人原因被辞退时，主管愿配合背调就不提辞退，选恰当主动辞职原因（个人发展/家庭因素）；很多主管因辞退愧疚愿替下属做背书。关键理解：背调支持是把「辞退」转成「主动离职」的关键。怎么用：离职前经营好与主管的关系，争取体面背书。</p>
+      <div class="quote">依据 [00:22-00:40]：如果你能请上家公司的主管支持你配合你的入职背调，那么这时候你可以不提被辞退的事，而是选择一个恰当的主动辞职的原因。</div>
+      <div class="relation">立场分层：换说辞为策略建议；「主管因愧疚愿背书」是经验观察。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>情况三：无背调支持，有选择地说</h3>
+      <p>在讲什么：主管不支持背调就只能实话实说，但要有选择性：弱化被辞退的原因，把重点放在教训、弥补措施（培训充电）与目前的进步上。关键理解：诚实是底线，叙事是策略。怎么用：把回答重心放在「我如何从失败中走出来」。</p>
+      <div class="quote">依据 [00:41-00:58]：只能实话实说，但是要有选择性的说，尽量弱化被辞退的原因，把重点放在自己通过这件事得到什么样的教训。</div>
+      <div class="relation">立场分层：「实话实说+有选择」为沟通原则；「弱化原因、聚焦成长」是内容策略。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">被辞退坦白：三种情况决策表</h2><div class="card"><table><thead><tr><th>情况</th><th>判断依据</th><th>应对策略</th></tr></thead><tbody><tr><td>公司原因（裁员）</td><td>结构性/经济性裁员，与表现无关</td><td>实话实说，带背景与正面表现</td></tr><tr><td>个人原因 + 主管背调支持</td><td>主管愿意配合背调</td><td>不提辞退，用主动离职原因</td></tr><tr><td>个人原因 + 无背调支持</td><td>主管不支持背调</td><td>实话实说但弱化，聚焦教训与弥补</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：因各种原因被辞退、需向面试官解释离职原因的求职者。</li><li>上限：不适用于涉及违法、诚信造假等不能含糊的红线场景。</li><li>反例：背调方直接核实辞退事实时，回避或口径不一反而减分。</li><li>例外：公司原因与个人原因混合时，按主要责任方向选用策略。</li></ul><div class="pitfall">避坑：绕开辞退的前提是口径一致、经得起背调追问。</div><div class="pitfall">避坑：弱化原因不等于掩盖教训，面试官更看重反思与改进。</div><div class="pitfall">避坑：情况一实话实说也要控制篇幅，别抱怨裁员政策。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>被辞退要不要坦白，取决于责任方与背调支持度。</li><li>公司原因可直说，个人原因争取背调换说辞。</li><li>无背调支持就有选择地说，弱化原因、聚焦成长。</li></ul><h3>行动清单</h3><ol><li>先判断辞退责任方，再确认背调支持度。</li><li>离职前与主管建立良好关系，争取背书。</li><li>把「教训+弥补+进步」准备成标准回答。</li></ol><h3>关键认知转变</h3><p>从「被辞退就害怕坦白」转到「三分法决策」：按责任与背调支持度，选最合适的解释策略。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 0分58秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

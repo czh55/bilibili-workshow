@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6093" viewBox="0 0 1320 6093">
+  <foreignObject x="0" y="0" width="1320" height="6093">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>每个人的使命不一样：不必都当妈妈</h1>
+  <div class="meta"><span class="tag tag-blue">人生</span><span class="tag tag-green">价值观</span><span class="tag tag-orange">认知</span><span class="tag tag-gray">时长 0分59秒</span><span class="tag tag-gray">分析视角：人生选择没有标准答案，使命与舒适区的匹配才是关键</span></div>
+  <a class="source-link" href="local:RPReplay_Final1687177300(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：面对「投资、自我价值、还是亲密关系」的选择，讲者的答案是先承认使命不同——老天给她的使命是做事，而有的人的使命是当好妈妈，都挺好，无所谓谁更好。判断自己使命的方法不是想象，而是看你的舒适区：她能对工作极度专注，却受不了围着孩子的吃喝拉撒和选学校；既然当妈妈会是个「不负责的妈妈」，那就走成现在这条做事的道路。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">经济学角度：投资、自我价值实现、亲密关系选哪个</span></div><div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">每个人到世界上来的使命是不一样的</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">老天给我的使命大概是让我做这些事情的</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">有的人使命就是当好妈妈、照顾好孩子，都挺好</span></div><div class="timeline-item"><span class="timeline-time">00:24</span><span class="timeline-text">无所谓谁更好的问题</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">做工作可以非常专注</span></div><div class="timeline-item"><span class="timeline-time">00:36</span><span class="timeline-text">但长期保持专注、天天围着吃喝拉撒，接受不了</span></div><div class="timeline-item"><span class="timeline-time">00:46</span><span class="timeline-text">工作跟人接触愿意，天天找老师找学校不愿意</span></div><div class="timeline-item"><span class="timeline-time">00:54</span><span class="timeline-text">如果是妈妈，在别人眼里恐怕不负责</span></div><div class="timeline-item"><span class="timeline-time">00:57</span><span class="timeline-text">所以走着走着，就做成这样了</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>投资、自我价值、亲密关系该选哪个</div><span class="arrow">→</span><div class="node-green">证据<br/>她能对工作极度专注，受不了天天琐碎与选校</div><span class="arrow">→</span><div class="node-orange">判断<br/>使命不同、无所谓谁更好，选择要与舒适区匹配</div><span class="arrow">→</span><div class="node-blue">行动<br/>用「你真正受得了什么」来识别自己的使命</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：当妈妈是女性的统一使命。纠偏：有的人使命是当好妈妈，有的人使命是做事，无所谓谁更好。</p><p>误解 2：选亲密关系还是选事业，是个二选一的统一答案。纠偏：答案因人而异，取决于各自的使命与舒适区。</p><p>误解 3：不擅长带娃就是不负责。纠偏：讲者正是意识到自己当妈妈会「不负责」，才选择了更适合自己的路，这是负责。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>使命不同，无所谓谁更好</h3>
+      <p>在讲什么：面对投资、自我价值、亲密关系的选择题，先别急着选，每个人的使命不一样——有的人的使命是当好妈妈，有的人的使命是做事，都挺好。关键理解：评价人生选择不该用统一标尺。怎么用：把「别人怎么选」放一边，先问自己「我的使命是什么」。</p>
+      <div class="quote">依据 [00:06-00:24]：每个人到世界上来的使命是不一样的……有的人的使命就是当好妈妈、照顾好孩子，都挺好，无所谓谁更好的问题。</div>
+      <div class="relation">立场分层：「使命不同」为价值观判断；「都挺好」为对不同选择的平等承认。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>用舒适区识别使命</h3>
+      <p>在讲什么：她能对工作极度专注，但让她长期保持专注、天天围着孩子的吃喝拉撒、今天找老师明天找学校，她接受不了。关键理解：使命不是想出来的，是你的舒适区告诉你的。怎么用：列出「我真正受得了什么、受不了什么」，用它们校准方向。</p>
+      <div class="quote">依据 [00:30-00:50]：我做工作可以非常专注，但你让我长期保持这个专注，然后天天吃喝拉撒，恐怕我不是太接受得了。</div>
+      <div class="relation">立场分层：「专注工作受得了、琐碎带娃受不了」为自我观察；「由此判断使命」为方法论。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>不负责的妈妈 vs 负责的自己</h3>
+      <p>在讲什么：如果她当妈妈，在别人眼里恐怕不是个负责任的妈妈，所以她走着走着就做成了现在这样。关键理解：承认自己不适合某个角色，不是逃避，而是对自己和对他人负责。怎么用：在不适合的角色上硬撑才是真的不负责，允许自己走适合自己的路。</p>
+      <div class="quote">依据 [00:52-00:59]：如果我是一个妈妈的话，在别人眼里恐怕不是一个太负责任的妈妈。所以我就坐着坐着（走着走着），我就做成这样了。</div>
+      <div class="relation">立场分层：「当妈妈会不负责」为自我评估；「走成现在这样」为由此选择的路径。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">两种使命的对照</h2><div class="card"><table><thead><tr><th>维度</th><th>当妈妈</th><th>做事的使命</th></tr></thead><tbody><tr><td>核心内容</td><td>照顾孩子、选学校、日常琐碎</td><td>工作、与人接触、专业专注</td></tr><tr><td>讲者的舒适度</td><td>受不了长期琐碎与选校</td><td>做工作可以非常专注</td></tr><tr><td>外部评价</td><td>恐怕被认为不负责</td><td>是她自己认定的使命</td></tr><tr><td>结论</td><td>不一定适合每个人</td><td>无所谓谁更好</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：在事业与家庭、不同人生路径之间纠结的人群。</li><li>上限：使命判断是自我认知过程，别把「舒适区」当成逃避改变的借口。</li><li>反例：舒适区也可能源于习惯而非真实意愿，需要区分惰性与天性。</li><li>例外：有些人可以在多种角色间切换，不必把自己限定为单一使命。</li></ul><div class="pitfall">避坑：别把「我的使命是做事」当成拒绝成长的挡箭牌，使命需要验证。</div><div class="pitfall">避坑：别用别人的使命标准评判自己，也别用自己的标准评判别人。</div><div class="pitfall">避坑：别只凭「受得了/受不了」做决定，还要看长远价值和现实条件。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>每个人的使命不一样，无所谓谁更好。</li><li>使命靠舒适区识别：受得了什么，受不了什么。</li><li>承认不适合某个角色，才是对人对己负责。</li></ul><h3>行动清单</h3><ol><li>把「我真正受得了什么、受不了什么」各写三条。</li><li>别急着回答「选哪个」，先问「我的使命是什么」。</li><li>用一段时间的尝试验证自己的舒适区判断。</li></ol><h3>关键认知转变</h3><p>从「人生选择有标准答案，女性就该当妈妈」转到「使命不同、无所谓谁更好」：用舒适区而不是别人的期待来识别使命，走成与自己的天性相匹配的样子。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 0分59秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

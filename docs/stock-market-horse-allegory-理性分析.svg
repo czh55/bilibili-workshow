@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6251" viewBox="0 0 1320 6251">
+  <foreignObject x="0" y="0" width="1320" height="6251">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>炒股谁在赚钱？养马村的割韭菜寓言</h1>
+  <div class="meta"><span class="tag tag-blue">理财</span><span class="tag tag-green">炒股</span><span class="tag tag-orange">认知</span><span class="tag tag-gray">时长 3分50秒</span><span class="tag tag-gray">分析视角：用养马村寓言讲透股市的资金流向与接盘结构</span></div>
+  <a class="source-link" href="local:RPReplay_Final1692546503.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：炒股游戏里真正赚到钱的，是收税方（村长）、信息与筹码的操盘者（商人）和管住手没进场的少数人；追涨杀跌、在顶部借钱接盘的普通人是最后的输家。寓言的关键结构是：买卖双方都在交税、价格由商人主导、翻倍诱惑引发借钱追高、最后筹码没人接——股市里「谁在赚钱」的答案，就藏在这四个环节里。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">有人问：炒股到底是谁在赚钱，为什么我总赚不到</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">话比较敏感，不好直说——讲个养马村的故事</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">村长收税：卖马交千分之一，村民敢怒不敢言</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">商人进村收马，开口十万一匹，村民卖掉大部分</span></div><div class="timeline-item"><span class="timeline-time">01:15</span><span class="timeline-text">商人抬价三十万一匹，村民把手里全部卖掉</span></div><div class="timeline-item"><span class="timeline-time">01:30</span><span class="timeline-text">涨到六十万，村民后悔卖早了</span></div><div class="timeline-item"><span class="timeline-time">01:50</span><span class="timeline-text">夜里助理拉马回村卖三十万：三十万买、明天六十万卖</span></div><div class="timeline-item"><span class="timeline-time">02:10</span><span class="timeline-text">村民拿出积蓄甚至借钱买马，一天翻倍的诱惑</span></div><div class="timeline-item"><span class="timeline-time">02:40</span><span class="timeline-text">一小部分理智的人没买，观望</span></div><div class="timeline-item"><span class="timeline-time">03:00</span><span class="timeline-text">第二天商人不见了，大家才知道上当</span></div><div class="timeline-item"><span class="timeline-time">03:20</span><span class="timeline-text">赚的是村长、眼尖的少数、商人</span></div><div class="timeline-item"><span class="timeline-time">03:40</span><span class="timeline-text">谁最惨？高位接盘、借钱买马的村民</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>炒股到底是谁在赚钱，为什么我总亏</div><span class="arrow">→</span><div class="node-green">证据<br/>买卖交税、商人定价、翻倍诱惑、借钱追高、筹码消失</div><span class="arrow">→</span><div class="node-orange">判断<br/>赚钱的是组织者与少数理智者，追高者是接盘方</div><span class="arrow">→</span><div class="node-blue">行动<br/>别追涨别上杠杆，警惕「明天还能涨」的翻倍叙事</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：股市里赚钱靠的是内幕消息或运气。纠偏：寓言里的三类赢家靠的是收税、定价权与克制，不是运气。</p><p>误解 2：看别人赚钱，赶紧跟进就对了。纠偏：跟进买入的正是接盘者——村民追高时故事已经到尾声。</p><p>误解 3：借钱买股是放大收益的好办法。纠偏：寓言里借钱买马的村民是最惨的输家，杠杆放大了亏损。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>谁在赚钱：三类赢家</h3>
+      <p>在讲什么：故事里赚钱的有三类——村长（收税方）、眼尖没上当的少数人（克制者）、商人（定价与筹码的操盘者）。关键理解：赢家的共同点是「不靠追价赚钱」，靠规则、信息和克制。怎么用：进场前先问自己属于故事里的哪个角色，而不是想当哪个角色。</p>
+      <div class="quote">依据 [03:20-03:40]：这个故事讲了有哪些人赚了？第一个就是村长，第二个就是眼尖的那一小批人、最后没上当的那批人，第三个人那就是商人。</div>
+      <div class="relation">立场分层：「三类赢家」为故事结论；「收税、克制、定价」为对赢家成因的归纳。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>追高陷阱：翻倍的诱惑</h3>
+      <p>在讲什么：商人把马抬到六十万，村民后悔卖早；助理夜里把马拉回村卖三十万，「三十万买、明天六十万卖、一天翻倍」的诱惑下，村民拿出积蓄甚至借钱买马。关键理解：翻倍叙事是专为接盘者设计的诱饵，接盘时筹码已经没人要。怎么用：听到「一天翻倍」这类话术时，把它当作风险信号而不是机会信号。</p>
+      <div class="quote">依据 [01:50-02:25]：三十万买，第二天就可以卖六十万，一天就翻倍，不得了赶紧卖（买）。……甚至还有人找村长借钱来买马。</div>
+      <div class="relation">立场分层：「翻倍诱惑」为剧情设置；「借钱追高」为对散户行为的镜像描写。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>谁最惨：接盘者</h3>
+      <p>在讲什么：第二天商人不见了，大家才知道上当；谁最惨？显然是高位接盘、借钱买马的村民。关键理解：价格由操盘者主导，涨到让你心动的价位，往往就是离场价。怎么用：把「谁最后接盘」想清楚再下单，别让自己成为故事结尾的人。</p>
+      <div class="quote">依据 [03:00-03:50]：等到第二天再去卖马的时候，发现商人不在了……那你知道这里面谁最惨吗？</div>
+      <div class="relation">立场分层：「商人消失」为剧情转折；「接盘者最惨」为对开放式问题的合理指向。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">养马村寓言的结构对照</h2><div class="card"><table><thead><tr><th>角色</th><th>动作</th><th>结果</th></tr></thead><tbody><tr><td>村长</td><td>定规则收税</td><td>稳赚费用</td></tr><tr><td>商人</td><td>定价、控盘、消失</td><td>赚走真金白银</td></tr><tr><td>理智村民</td><td>观望不进场</td><td>躲过一劫</td></tr><tr><td>追高村民</td><td>储蓄甚至借钱买马</td><td>最惨的接盘者</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：理解股市资金流向、识别追高与加杠杆风险的投资认知。</li><li>上限：寓言是简化模型，真实市场还有基本面、政策、流动性等多重因素。</li><li>反例：不能因「谁在赚钱」就认为市场只有零和博弈，长期价值投资是另一套逻辑。</li><li>例外：部分人靠基本面研究与长期持有也能持续获利，与寓言中的操盘结构不同。</li></ul><div class="pitfall">避坑：别把「别人赚到钱」当成自己进场的理由，别人的盈利可能正来自你的接盘。</div><div class="pitfall">避坑：别用借钱、加杠杆去追「明天还涨」的预期，寓言里最惨的正是借钱买马的村民。</div><div class="pitfall">避坑：别只记住赢家忘了输家，先算清楚自己会在哪一环离场。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>赚走真金白银的是收税方、操盘者和克制者。</li><li>「一天翻倍」的诱惑是接盘者的入场信号。</li><li>追高＋借钱＝最惨的输家结构。</li></ul><h3>行动清单</h3><ol><li>每次买入前先回答：我现在是接盘者还是克制者。</li><li>听到翻倍、暴涨叙事时，把它当作风险警示。</li><li>拒绝借钱、加杠杆参与自己看不懂的行情。</li></ol><h3>关键认知转变</h3><p>从「跟风追涨等别人抬轿」转到「先看清谁在赚钱、谁在接盘」：收税与定价权属于组织者，克制属于少数人，而追高加杠杆的普通人是故事里最惨的角色。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 3分50秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

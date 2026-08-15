@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6279" viewBox="0 0 1320 6279">
+  <foreignObject x="0" y="0" width="1320" height="6279">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>HR压价不要慌：弹性五步法反败为胜</h1>
+  <div class="meta"><span class="tag tag-blue">面试</span><span class="tag tag-green">薪资</span><span class="tag tag-orange">谈判</span><span class="tag tag-purple">求职</span><span class="tag tag-gray">时长 2分14秒</span><span class="tag tag-gray">分析视角：薪资谈判的五步谈判策略拆解</span></div>
+  <a class="source-link" href="local:RPReplay_Final1686666514(1).MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：90% 求职者都会遭遇 HR 压价，而 HR 的说辞（能力短板、薪资体系、空头支票、性价比竞争）几乎对所有求职者通吃，别轻易自我怀疑。应对的弹性五步法是：追问薪资结构对齐口径、拆穿定薪理由、坚定期望薪资并给理由、请 HR 申请（诚意+稳定+其他 offer）、最后折中为「期望薪资定在转正后、试用期不低于80%」。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">90%的人会遭遇压价，不懂技巧被拿捏</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">第一步：追问薪资结构（年薪月薪、税前税后、12/14薪）</span></div><div class="timeline-item"><span class="timeline-time">00:22</span><span class="timeline-text">第二步：询问定薪理由</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">四种惯用理由：能力短板、薪资体系、空头支票、性价比</span></div><div class="timeline-item"><span class="timeline-time">00:38</span><span class="timeline-text">这套说辞对所有人通吃，别自我怀疑</span></div><div class="timeline-item"><span class="timeline-time">00:42</span><span class="timeline-text">第三步：坚定期望薪资并给出合理理由</span></div><div class="timeline-item"><span class="timeline-time">00:50</span><span class="timeline-text">紧扣岗位胜任、过往亮点、面试官正向反馈</span></div><div class="timeline-item"><span class="timeline-time">00:58</span><span class="timeline-text">期望=过往收入+市场水平，有其他offer更佳</span></div><div class="timeline-item"><span class="timeline-time">01:06</span><span class="timeline-text">第四步：请HR申请，传递诚意与稳定性</span></div><div class="timeline-item"><span class="timeline-time">01:20</span><span class="timeline-text">透露其他offer，给HR紧迫感</span></div><div class="timeline-item"><span class="timeline-time">01:28</span><span class="timeline-text">第五步：期望薪资定为转正工资，试用期不低于80%</span></div><div class="timeline-item"><span class="timeline-time">02:14</span><span class="timeline-text">双方各退一步，谈判闭环</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">现象<br/>HR给薪低于预期，第一反应是「我不配」</div><span class="arrow">→</span><div class="node-green">拆穿<br/>压价说辞对所有人通吃，不是针对你</div><span class="arrow">→</span><div class="node-orange">真相<br/>谈判主动权在于会提问、会论证、会给理由</div><span class="arrow">→</span><div class="node-blue">行动<br/>弹性五步法：结构→理由→期望→申请→折中</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解1：HR压价是因为我真的能力不行。纠偏：能力短板、薪资体系、性价比竞争等说辞对几乎所有求职者通吃，是标准话术。</p><p>误解2：期望薪资说出口就不能改。纠偏：最后可以把期望薪资约定成转正工资，试用期不低于80%，双方各退一步。</p><p>误解3：谈判就是硬刚价格。纠偏：先对齐薪资结构、再拆穿理由、给足论证，最后才是价格博弈。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>第一步：追问薪资结构，先对齐口径</h3>
+      <p>在讲什么：确保双方说的薪资是同一回事——年薪还是月薪、税前还是税后、12薪还是14薪、基本工资/绩效奖金/年终奖占比。关键理解：口径不一致的报价没有比较意义。怎么用：先问清结构，再谈数字。</p>
+      <div class="quote">依据 [00:10-00:22]：这一步的目的是确保双方所说的这个薪资是同一回事，年薪还是月薪，税前还是税后，12薪还是14薪。</div>
+      <div class="relation">立场分层：「对齐口径」是前提；「占比」是结构变量。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>第二步：拆穿四种压价理由</h3>
+      <p>在讲什么：能力短板、公司薪资体系、空头支票（入职后涨薪/高估期权）、性价比竞争——这四种说法对所有人通吃。关键理解：听到压价话术别自我怀疑，它是标准流程。怎么用：保持淡定，顶住压力，用论证回应。</p>
+      <div class="quote">依据 [00:26-00:42]：这一类的说辞几乎对所有的求职者都是通吃的。我们要做的就是顶住压力，保持淡定。</div>
+      <div class="relation">立场分层：四种理由是清单；「通吃+淡定」是心态。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>第三至五步：论证、申请与折中</h3>
+      <p>在讲什么：坚定期望薪资并紧扣岗位胜任、过往亮点、面试官正向反馈；请HR申请时传递诚意、稳定性、其他offer；不行就折中——期望薪资定为转正工资，试用期不低于80%。关键理解：谈判是层层递进的博弈，最后留一个双方可接受的出口。怎么用：按步骤走，给HR理由和动力去帮你申请。</p>
+      <div class="quote">依据 [00:42-02:14]：把期望薪资约定成转正工资，至于试用期工资，不低于80%就行，这样一来，双方就各退了一步。</div>
+      <div class="relation">立场分层：「论证+申请」是主动进攻；「转正折中」是收尾方案。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">弹性五步法一览</h2><div class="card"><table><thead><tr><th>步骤</th><th>动作</th><th>目标</th></tr></thead><tbody><tr><td>一、追问薪资结构</td><td>对齐年薪月薪、税前税后、薪数占比</td><td>确保说的是同一回事</td></tr><tr><td>二、询问定薪理由</td><td>识别四种惯用压价话术</td><td>顶住压力，保持淡定</td></tr><tr><td>三、坚定期望薪资</td><td>岗位胜任+过往亮点+正向反馈</td><td>给出合理定档理由</td></tr><tr><td>四、请HR申请</td><td>诚意+稳定性+其他offer</td><td>给HR动力与紧迫感</td></tr><tr><td>五、折中换方案</td><td>期望薪资定转正，试用期≥80%</td><td>双方各退一步</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：offer 谈判中 HR 压价的应对。</li><li>上限：不适用于漫天要价，期望值要贴近市场与自身水平。</li><li>反例：捏造 offer 来压价有背调风险，不要虚构。</li><li>例外：公司薪资体系极刚性时，第五步折中可能也不适用。</li></ul><div class="pitfall">避坑：别一上来就亮底牌，先问结构再谈数字。</div><div class="pitfall">避坑：强调过往亮点要真实可讲，面试官会追问。</div><div class="pitfall">避坑：透露其他 offer 要委婉，避免「威胁式」谈判。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>HR压价话术对所有人通吃，别自我怀疑。</li><li>弹性五步法：结构→理由→期望→申请→折中。</li><li>最后折中：期望薪资定转正，试用期不低于80%。</li></ul><h3>行动清单</h3><ol><li>谈判前把期望薪资按结构与市场水平定档。</li><li>听到压价话术先淡定，用论证回应而非情绪。</li><li>谈不拢时主动提出转正定薪的折中方案。</li></ol><h3>关键认知转变</h3><p>从「被压价就自我怀疑」转到「会提问、会论证、会给方案」：弹性五步法让你把谈判主动权拿回自己手里。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分14秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
