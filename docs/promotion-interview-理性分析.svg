@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5805" viewBox="0 0 1320 5805">
+  <foreignObject x="0" y="0" width="1320" height="5805">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>晋升答辩遇到不会的问题怎么办</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">职场</span><span class="tag tag-blue">晋升</span><span class="tag tag-blue">答辩</span><span class="tag tag-gray">时长 3分16秒</span><span class="tag tag-gray">分析视角：晋升答辩的底层考核逻辑</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/9odWCpnTXJk">原视频链接</a>
+  <div class="summary-line">核心判断：答辩一定会遇到不会的问题，评委的问题只有三类——延续性、挑战性、发散性。但答辩考核的不是答案对错，而是人才画像与素质：能不能应对不确定性、有没有应变方法。所以心态上「不要慌」，追求稳定就该留在基层，接受不确定才有资格往上走。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场：晋升答辩一定遇到不会的问题</div></div><div class="timeline-item"><div class="timeline-time">00:12</div><div class="timeline-text">第一种：延续性问题——就你的分享展开</div></div><div class="timeline-item"><div class="timeline-time">00:34</div><div class="timeline-text">第二种：挑战性问题——质疑你的逻辑</div></div><div class="timeline-item"><div class="timeline-time">00:58</div><div class="timeline-text">第三种：发散性问题——外部门评委防作弊</div></div><div class="timeline-item"><div class="timeline-time">01:55</div><div class="timeline-text">应对心态：首先不要慌，问题有弦外之音</div></div><div class="timeline-item"><div class="timeline-time">02:23</div><div class="timeline-text">答辩看人才画像，答错不等于不升职</div></div><div class="timeline-item"><div class="timeline-time">02:45</div><div class="timeline-text">追求稳定就该在下面干活</div></div><div class="timeline-item"><div class="timeline-time">02:58</div><div class="timeline-text">向上走的人要应对巨大不确定性</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>答辩遇到不会的问题</div><div class="arrow">→</div><div class="node node-blue">证据<br/>三类问题拆解</div><div class="arrow">→</div><div class="node node-green">判断<br/>考核的是画像与素质</div><div class="arrow">→</div><div class="node node-orange">行动<br/>不慌+接受不确定性</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：答对问题就能升职。纠偏：答辩看人才画像和素质，答错不等于不升职。</p><p>误解 2：问题刁难是评委不友好。纠偏：发散性问题是防刷题作弊的机制设计。</p><p>误解 3：追求稳定也能晋升。纠偏：往上走必然面对不确定性，求稳就留在基层。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>三类必问题：延续/挑战/发散</h3><p>在讲什么：延续性问题是就你分享的内容展开；挑战性问题故意质疑你的逻辑，容易把人打懵；发散性问题来自外部门评委，是为了防止你们准备后刷题通过。关键理解：问题设计有机制意图，不是随机的。怎么用：答辩前先按三类准备，延续题靠积累、挑战题靠立场、发散题靠心态。</p><div class="quote">依据 [00:12–01:54]：延续性问题……挑战性问题就是质疑……发散性问题是为了防止你们准备了以后刷题然后通过答辩。</div><div class="relation">立场分层：三类问题为博主对评委机制的拆解；「防刷题」为其揭示的底层逻辑。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>不要慌：问题的弦外之音</h3><p>在讲什么：遇到紧急情况首先不要慌，问题可能有弦外之音，答对答错不是最重要的。关键理解：问题的真实功能是考察「临场反应」与「思维方式」，而非知识点。怎么用：被问懵时先复述问题、拆解意图，给自己争取思考时间。</p><div class="quote">依据 [01:55–02:22]：首先不要慌，因为人家的问题可能有弦外之音……你答的是对的还是不对的，并不是最重要。</div><div class="relation">立场分层：「弦外之音」为博主对评委心态的判断；「别慌」为其行动建议。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>本质：考核画像与素质</h3><p>在讲什么：答辩看的是人才的画像和素质——升上去要带团队、应对突发情况；追求稳定就留在基层，接受不稳定、有应变方法才能往上走。关键理解：晋升考核的是「未来岗位的适配度」而非「当下的知识储备」。怎么用：把答辩当「未来管理者面试」，用案例证明应变能力。</p><div class="quote">依据 [02:23–03:16]：它是看人才的画像和人才的素质的……如果你追求稳定，你就应该在下面干活……凡是往上走的人，他通常都要去应对这种巨大的不确定性。</div><div class="relation">立场分层：「画像与素质」为博主对考核本质的判断；「接受不确定性」为其给的核心标准。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">三类问题与应对策略表</h2><div class="card"><table><thead><tr><th>类型</th><th>特征</th><th>意图</th><th>应对</th></tr></thead><tbody><tr><td>延续性</td><td>就分享内容展开</td><td>考察深度</td><td>用案例补充</td></tr><tr><td>挑战性</td><td>质疑你的逻辑</td><td>考察立场</td><td>稳住并复述</td></tr><tr><td>发散性</td><td>完全想不到</td><td>防刷题</td><td>不慌+拆解</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：晋升答辩、汇报、面试等临场问答场景。</li><li>上限：提供心态与方法框架，不覆盖行业知识储备。</li><li>反例：专业硬伤型问题仍需真实能力兜底。</li><li>例外：不同公司答辩文化不同，发散题比例不一。</li></ul><div class="pitfall">避坑：别追求「答对」而忽略「答得有结构」。</div><div class="pitfall">避坑：遇到挑战性问题别急于反驳，先复述理解。</div><div class="pitfall">避坑：别把「接受不确定」理解成「准备不充分」。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>评委必问三类：延续/挑战/发散。</li><li>考核的是人才画像与素质，不是答案对错。</li><li>接受不确定性，才有资格往上走。</li></ul><h3>行动清单</h3><ol><li>答辩前按三类问题准备应答思路。</li><li>被问懵时先不慌，拆解问题的意图。</li><li>用真实案例证明应变能力。</li></ol><h3>关键认知转变</h3><p>从「背答案应对答辩」转到「展示画像迎接考核」：答辩不是在考试，而是在提前上岗。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 3分16秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

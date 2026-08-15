@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 6 分 19 秒的 AI 剪辑产品交流视频：从评测新出现的 AI 剪辑工具 Headcats 切入，对比自家正在开发的智能剪口播系统。核心观点是：剪一条口播最痛苦的其实不是剪辑本身，而是删重复的话、找气口、对字幕这些重复性劳动。产品思路是让 AI 做粗剪标注、保留原始素材无">
+<title>剪一条口播最痛苦的不是剪辑。删重复的话、找气口…｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>AI 剪口播：把重复劳动交给智能体</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">6:19</span><span class="meta-tag tag-topic">视频制作 AI 剪辑 口播</span></div>
+<a class="source-link" href="https://xhslink.cn/o/2g1D7cSYouu" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">从 Headcats 说起：痛点在哪</a><a href="#ch2">剪一条口播最痛苦的是什么</a><a href="#ch3">AI 标注代替手动画线</a><a href="#ch4">多机位与无损：专业流程的关键</a><a href="#ch5">下一步与团队招募</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 6 分 19 秒的 AI 剪辑产品交流视频：从评测新出现的 AI 剪辑工具 Headcats 切入，对比自家正在开发的智能剪口播系统。核心观点是：剪一条口播最痛苦的其实不是剪辑本身，而是删重复的话、找气口、对字幕这些重复性劳动。产品思路是让 AI 做粗剪标注、保留原始素材无损，人类专注在创作和精剪上。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:20]</span><div><strong>评测 Headcats</strong><p>用了四五个小时 Headcats，体会到它做的努力。看起来像 Hyperframe 的套壳，但更全面：特效、插件都列好了，用起来像 FineCut 和剪映的复合体。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:20→00:57]</span><div><strong>痛点：重复性劳动</strong><p>一期 25-30 分钟的视频要消耗一周剪辑时间。分析后发现很多是重复性工作：60% 的刷剪从 5 小时缩短到 30 分钟。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:57→01:30]</span><div><strong>自家产品思路</strong><p>做了智能剪口播系统：喜欢剪映画线点击的剪口播功能，但对专业流程不合适——需要自然语言告诉大模型删重复话、剪气口，由 AI 标注需要剪掉的部分而不是直接剪。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:30→02:30]</span><div><strong>多机位升级</strong><p>升级成多机位：给任意数量机位，会标注谁在说话，快速完成粗剪，导出 XML 到达芬奇精剪。创造部分留给人类，重复工作交给 AI。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:30→04:40]</span><div><strong>与 Headcats 对比</strong><p>Headcats 像通用 AI 剪辑，套壳 Hyperframe 让没技术基础的人也能用；自家专注剪口播，场景单一但更深入：实时同步输出 SRT、无损粗剪、支持多机位同步。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:40→06:19]</span><div><strong>未来与招募</strong><p>下一步想自动完成切镜：音轨有声音就亮，全部有声切大镜。团队在杭州成立 AI 公司，正在用 AI 筛简历，欢迎 AI 经验者加入。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>剪口播最痛苦的不是剪辑而是重复劳动。AI 剪口播的正确用法：让智能体做粗剪标注（删重复、剪气口）、保留原始素材无损、导出到专业软件精剪——创造部分留给人类，重复工作交给 AI。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:57</span>从 Headcats 说起：痛点在哪</h2><p>视频从一次真实的产品体验开场：「Headcats 这个软件，今天早上其实也用了大概四五个小时。但仅仅这么一点，我也能体会到它所做出的努力。」</p><p>主播评价：「其实看起来特别像一个 Hyperframe 的套壳，完全是。但是我觉得它做的更全面一些。它把里面的比如说特效、专长 FX 这个特效插件，全都在里面给你列好了，你要拿什么你自己用就 OK。」</p><p>「它现在用起来像剪映吗？它现在用起来像 FineCut 和剪映的复合体。」在见过非常非常多所谓 Web coding 出来的自动剪辑软件之后，「我们去实际使用的时候，我们发现它并没有说那么好。但是这个 Headcats 我们用下来不是这样的，它非常依托于实际情况。」</p><p>其中考虑最好的一个点：「视频编码这个事。265 这个编码是要手填配的，为了绕开这个收费限制，他们给了你时间线工程文件。你可以剪好这个时间线，再导进你的达芬奇，去选择你需要的视频编码再导出。」</p><figure><img src="assets/ai-talking-edit/shot-01.jpg" alt="演示 Headcats 软件界面与特效插件列表" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:08]</span>演示 Headcats 软件界面与特效插件列表</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c71deeab8296.mp3" type="button" aria-label="Play English audio">🔊</button><span>Showing the Headcats interface and its list of effect plugins</span></div>
+<audio class="cap-audio" src="audio/c71deeab8296.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/ai-talking-edit/shot-02.jpg" alt="提到视频编码 265 需要手动配置，为绕开限制给时间线工程文件" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:45]</span>提到视频编码 265 需要手动配置，为绕开限制给时间线工程文件</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9d5bd5b50b5a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Mentioning H.265 encoding requires manual config; they provide a timeline project file to avoid the fee</span></div>
+<audio class="cap-audio" src="audio/9d5bd5b50b5a.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/ai-talking-edit/shot-03.jpg" alt="一期 25-30 分钟的视频要消耗一周的剪辑时间" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:00]</span>一期 25-30 分钟的视频要消耗一周的剪辑时间</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8d94c3395e45.mp3" type="button" aria-label="Play English audio">🔊</button><span>A 25–30 minute video consumes about a week of editing time</span></div>
+<audio class="cap-audio" src="audio/8d94c3395e45.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:57-01:30</span>剪一条口播最痛苦的是什么</h2><p>「因为我们经常会去做这种多机位剪辑，这是非常重的剪辑工作。我们做一期 25 分钟到 30 分钟的视频，我们大概要消耗掉一周的时间，完全剪辑的时间。」</p><p>「我们大概分析了一下，很多工作是重复性的工作——60% 的刷剪方面，从 5 个小时缩短到 30 分钟。」</p><p>「我们就做了一个智能剪口波的这么一个东西，其实跟他们非常的类似，而且还可以剪方台（多机位）。如果你是做综艺的朋友，这个系统我想应该也适用。」</p><figure><img src="assets/ai-talking-edit/shot-04.jpg" alt="分析 60% 是重复性工作，刷剪从 5 小时缩短到 30 分钟" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:20]</span>分析 60% 是重复性工作，刷剪从 5 小时缩短到 30 分钟</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/90a87801314a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Analysis shows 60% is repetitive work; rough cutting dropped from 5 hours to 30 minutes</span></div>
+<audio class="cap-audio" src="audio/90a87801314a.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/ai-talking-edit/shot-05.jpg" alt="展示智能剪口播系统：自然语言提示词剪重复话和气口" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:50]</span>展示智能剪口播系统：自然语言提示词剪重复话和气口</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ccdedab89e91.mp3" type="button" aria-label="Play English audio">🔊</button><span>Showing the AI talking-head cutting system: natural-language prompts to remove repeated lines and breaths</span></div>
+<audio class="cap-audio" src="audio/ccdedab89e91.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:30-02:30</span>AI 标注代替手动画线</h2><p>「这位是选择（介绍）ClickScale 的开发者。」最初的想法：「我其实很喜欢剪映的剪口播的功能，像画线一样点击。但这个东西对于专业的创造者、专业的流程来说是非常不合适的，那个只是粗剪。」</p><p>「那个经典（精剪）我们需要在达芬奇里面去完成更专业的动作。当然如果你懒得自己画线，你可以用提示词告诉你的大模型——比如说把重复的话只保留最后一句，把中间说气口给剪掉，你可以直接用自然语言的对话给它去剪。」</p><p>关键点：「它剪完了你可以再核对。它不是帮你剪，它是帮你去标注哪些需要画掉。」画完之后可以导出一个 XML 的文件，导到达芬奇里完成后续的精剪操作。</p><figure><img src="assets/ai-talking-edit/shot-06.jpg" alt="AI 不是直接剪，而是标注哪些需要画掉" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:00]</span>AI 不是直接剪，而是标注哪些需要画掉</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0dfe0831609d.mp3" type="button" aria-label="Play English audio">🔊</button><span>The AI doesn&#x27;t cut directly — it marks which parts need to be removed</span></div>
+<audio class="cap-audio" src="audio/0dfe0831609d.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/ai-talking-edit/shot-07.jpg" alt="导出 XML 文件到达芬奇完成后续精剪操作" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:12]</span>导出 XML 文件到达芬奇完成后续精剪操作</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/765c0b6036fd.mp3" type="button" aria-label="Play English audio">🔊</button><span>Exporting an XML file to DaVinci Resolve for the fine-cut workflow</span></div>
+<audio class="cap-audio" src="audio/765c0b6036fd.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:30-04:40</span>多机位与无损：专业流程的关键</h2><p>「我们去开始把这个智能体升级成一个多机位。你可以直接任意数量的机位给到它，那么它会给你生成还是一个文字，但是这个文字已经不一样了——它开始去标注了你的姓名，每个人对话的人是谁、谁在说话，你可以这样去剪。」</p><p>「这个过程其实是非常快速的。剪完之后你再去做精剪，做一些过场，包括去优化一些切镜它的逻辑，加一些音效包装什么的。其实你只要花更多时间在你精剪上就可以了。」</p><p>「重复工作的部分你可以把它交给 AI。」创造部分还得是人：「比如说一些梗，AI 并不知道，因为它的数据是有延迟的。你让它实时搜索，它也不一定能理解那是什么意思。」</p><p>「顺便说一下，我们这个产品可以实时的同步输出 SRT 到你的时间线里面。它已经完成粗剪带 SRT，并且是无损的。」导入达芬奇后还是原素材的状态，「你还是在上面可以进行调色、加特效的各种东西，没有改变你的编码格式。」</p><figure><img src="assets/ai-talking-edit/shot-08.jpg" alt="多机位升级：标注谁在说话，任意数量机位输入" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:30]</span>多机位升级：标注谁在说话，任意数量机位输入</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/af87a399c946.mp3" type="button" aria-label="Play English audio">🔊</button><span>Multi-camera upgrade: it labels who is speaking, with any number of camera feeds</span></div>
+<audio class="cap-audio" src="audio/af87a399c946.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/ai-talking-edit/shot-09.jpg" alt="实时同步输出 SRT，粗剪带字幕且无损" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:00]</span>实时同步输出 SRT，粗剪带字幕且无损</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c2f50a61b802.mp3" type="button" aria-label="Play English audio">🔊</button><span>Real-time SRT sync output, lossless rough cut with subtitles</span></div>
+<audio class="cap-audio" src="audio/c2f50a61b802.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:40-06:19</span>下一步与团队招募</h2><p>「我们下一步希望做到的是，它可以自动完成切镜的东西。这个音轨有声音它就亮这个音轨，如果是所有的音轨都有声音，它就切大镜。这是我们目前的一个简单的逻辑，可以帮助多机位在切镜的时候自动筛选完成。」</p><p>团队计划在杭州设立 AI 公司。「我们真的没有时间招人，因为我们发现一边 Web coding 一边招人是一件非常痛苦的事情。」</p><p>「如果朋友你是一个自认为对 AI 非常有经验的朋友，欢迎你加入我们。我们会把这个邮箱留在下面，或者你可以私信或者评论区说一说你的经历。」</p><p>结尾评价 Headcats：「这个其实是给了我们一个新鲜的感觉。今天用了一下，其实我觉得可用度、可靠度都达到了一个比较能用的水平。这支团队是上海的，非常厉害。」</p><figure><img src="assets/ai-talking-edit/shot-10.jpg" alt="下一步计划：音轨有声就亮，全部有声切大镜" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:40]</span>下一步计划：音轨有声就亮，全部有声切大镜</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d685f890f916.mp3" type="button" aria-label="Play English audio">🔊</button><span>Next plan: light up tracks with audio and cut to the wide shot when all are active</span></div>
+<audio class="cap-audio" src="audio/d685f890f916.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/ai-talking-edit/shot-11.jpg" alt="结尾评价 Headcats 可用度可靠度达标，上海团队厉害" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:45]</span>结尾评价 Headcats 可用度可靠度达标，上海团队厉害</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6441821adee4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Closing: Headcats reaches a usable, reliable level — impressive Shanghai team</span></div>
+<audio class="cap-audio" src="audio/6441821adee4.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（211段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>Headcats这个软件呢</p></div>
+<div class="transcript-row"><time>00:01</time><p>今天早上其实也用了大概四五个小时</p></div>
+<div class="transcript-row"><time>00:04</time><p>但是仅仅这么一点</p></div>
+<div class="transcript-row"><time>00:05</time><p>我也能体会到它所做出的努力</p></div>
+<div class="transcript-row"><time>00:08</time><p>其实看起来特别像一个hyperframe的套格</p></div>
+<div class="transcript-row"><time>00:10</time><p>完全是</p></div>
+<div class="transcript-row"><time>00:11</time><p>但是我觉得它做的更全面一些</p></div>
+<div class="transcript-row"><time>00:13</time><p>它把里面的比如说特效</p></div>
+<div class="transcript-row"><time>00:14</time><p>专长fx这个特效插件</p></div>
+<div class="transcript-row"><time>00:16</time><p>全都在里面给你列好了</p></div>
+<div class="transcript-row"><time>00:18</time><p>你要拿什么你自己用就ok</p></div>
+<div class="transcript-row"><time>00:20</time><p>它现在用起来像剪硬吗</p></div>
+<div class="transcript-row"><time>00:21</time><p>它现在用起来像finecut和剪硬的复合体</p></div>
+<div class="transcript-row"><time>00:25</time><p>在之前我们已经见过非常非常多</p></div>
+<div class="transcript-row"><time>00:27</time><p>所谓web coding出来的这种</p></div>
+<div class="transcript-row"><time>00:29</time><p>自动剪辑软件是很多了</p></div>
+<div class="transcript-row"><time>00:30</time><p>但是我们去实际使用的时候</p></div>
+<div class="transcript-row"><time>00:33</time><p>我们发现它并没有说那么好</p></div>
+<div class="transcript-row"><time>00:35</time><p>但是这个headcat我们用下来不是这样的</p></div>
+<div class="transcript-row"><time>00:37</time><p>它非常依托于实际情况</p></div>
+<div class="transcript-row"><time>00:40</time><p>他们考虑一个点我觉得非常好</p></div>
+<div class="transcript-row"><time>00:42</time><p>就是视频编码这个事儿</p></div>
+<div class="transcript-row"><time>00:43</time><p>265这个编码我如果记得没错</p></div>
+<div class="transcript-row"><time>00:45</time><p>这个是要手填配的</p></div>
+<div class="transcript-row"><time>00:46</time><p>为了绕开这个收费限制</p></div>
+<div class="transcript-row"><time>00:48</time><p>他们给了你时间线工程文件</p></div>
+<div class="transcript-row"><time>00:50</time><p>你可以减好这个时间线</p></div>
+<div class="transcript-row"><time>00:52</time><p>你可以再导进你的达芬奇</p></div>
+<div class="transcript-row"><time>00:54</time><p>去选择你需要的视频编码再导出</p></div>
+<div class="transcript-row"><time>00:57</time><p>因为我们经常会去做这种多机位剪辑</p></div>
+<div class="transcript-row"><time>00:59</time><p>这是非常重的剪辑工作</p></div>
+<div class="transcript-row"><time>01:01</time><p>我们做一期25分钟到30分钟的视频</p></div>
+<div class="transcript-row"><time>01:04</time><p>我们大概要消耗掉一周的时间</p></div>
+<div class="transcript-row"><time>01:06</time><p>完全剪辑的时间</p></div>
+<div class="transcript-row"><time>01:07</time><p>我们大概分析了一下</p></div>
+<div class="transcript-row"><time>01:09</time><p>就很多工作是重复性的工作</p></div>
+<div class="transcript-row"><time>01:12</time><p>60%的刷剪方面</p></div>
+<div class="transcript-row"><time>01:14</time><p>从5个小时缩短到30分钟</p></div>
+<div class="transcript-row"><time>01:16</time><p>是</p></div>
+<div class="transcript-row"><time>01:16</time><p>这个时间也挺磨人的</p></div>
+<div class="transcript-row"><time>01:19</time><p>对</p></div>
+<div class="transcript-row"><time>01:19</time><p>我们就做了一个智能剪口波的这么一个东西</p></div>
+<div class="transcript-row"><time>01:23</time><p>其实跟他们非常的类似</p></div>
+<div class="transcript-row"><time>01:25</time><p>而且还可以剪方台</p></div>
+<div class="transcript-row"><time>01:26</time><p>如果你是做综艺的朋友</p></div>
+<div class="transcript-row"><time>01:28</time><p>这个系统我想应该也适用</p></div>
+<div class="transcript-row"><time>01:30</time><p>要不我给大家介绍一下这个系统</p></div>
+<div class="transcript-row"><time>01:32</time><p>这位是选择</p></div>
+<div class="transcript-row"><time>01:33</time><p>ClickScale的开发者</p></div>
+<div class="transcript-row"><time>01:34</time><p>最初的想法就是说</p></div>
+<div class="transcript-row"><time>01:36</time><p>我其实很喜欢剪硬的剪口波的功能</p></div>
+<div class="transcript-row"><time>01:39</time><p>像画线一样点击</p></div>
+<div class="transcript-row"><time>01:40</time><p>但这个东西对于专业的创造者</p></div>
+<div class="transcript-row"><time>01:42</time><p>专业的流程来说是非常不合适</p></div>
+<div class="transcript-row"><time>01:43</time><p>那个只是粗简</p></div>
+<div class="transcript-row"><time>01:44</time><p>那个经典我们需要在达芬奇里面</p></div>
+<div class="transcript-row"><time>01:46</time><p>去完成更专业的动作</p></div>
+<div class="transcript-row"><time>01:47</time><p>当然如果你懒得自己画线</p></div>
+<div class="transcript-row"><time>01:48</time><p>你可以提示词告诉你的大模型</p></div>
+<div class="transcript-row"><time>01:51</time><p>比如说把重复的话</p></div>
+<div class="transcript-row"><time>01:53</time><p>只保留最后一句</p></div>
+<div class="transcript-row"><time>01:54</time><p>把中间说气口给剪掉</p></div>
+<div class="transcript-row"><time>01:56</time><p>你可以直接用自然语言的对话给它去剪</p></div>
+<div class="transcript-row"><time>01:59</time><p>然后它当然剪完了</p></div>
+<div class="transcript-row"><time>02:00</time><p>你可以再核对</p></div>
+<div class="transcript-row"><time>02:00</time><p>它不是帮你剪</p></div>
+<div class="transcript-row"><time>02:01</time><p>它是帮你去标注哪些需要画掉</p></div>
+<div class="transcript-row"><time>02:04</time><p>OK 当你的这个画完了之后</p></div>
+<div class="transcript-row"><time>02:07</time><p>你可以导出</p></div>
+<div class="transcript-row"><time>02:08</time><p>你也可以选择</p></div>
+<div class="transcript-row"><time>02:09</time><p>你可以导出一个XML的文件</p></div>
+<div class="transcript-row"><time>02:12</time><p>把这个文件导到你的达芬奇里面</p></div>
+<div class="transcript-row"><time>02:14</time><p>完成后续的操作</p></div>
+<div class="transcript-row"><time>02:15</time><p>也就是精简</p></div>
+<div class="transcript-row"><time>02:16</time><p>所以我们去开始</p></div>
+<div class="transcript-row"><time>02:17</time><p>把这个智能体我们去升级成一个多机位</p></div>
+<div class="transcript-row"><time>02:20</time><p>你可以直接任意数量的机位给到它</p></div>
+<div class="transcript-row"><time>02:23</time><p>那么它会给你生成还是一个文字</p></div>
+<div class="transcript-row"><time>02:26</time><p>但是这个文字已经不一样了</p></div>
+<div class="transcript-row"><time>02:28</time><p>它开始去标注了你的姓名</p></div>
+<div class="transcript-row"><time>02:31</time><p>每个人对话的人是谁</p></div>
+<div class="transcript-row"><time>02:32</time><p>谁在说话</p></div>
+<div class="transcript-row"><time>02:33</time><p>你可以这样去剪</p></div>
+<div class="transcript-row"><time>02:35</time><p>OK 这个过程其实是非常快速的</p></div>
+<div class="transcript-row"><time>02:37</time><p>剪完之后你再去做精简</p></div>
+<div class="transcript-row"><time>02:39</time><p>做一些过场</p></div>
+<div class="transcript-row"><time>02:40</time><p>包括去优化一些切镜它的逻辑</p></div>
+<div class="transcript-row"><time>02:43</time><p>加一些音效包装什么的</p></div>
+<div class="transcript-row"><time>02:45</time><p>其实你只要花更多时间在你精简上就可以了</p></div>
+<div class="transcript-row"><time>02:47</time><p>对 我只要想着这块的素材</p></div>
+<div class="transcript-row"><time>02:50</time><p>我怎么样通过我的包装</p></div>
+<div class="transcript-row"><time>02:51</time><p>我的剪辑</p></div>
+<div class="transcript-row"><time>02:52</time><p>怎么样把它做得精彩一点</p></div>
+<div class="transcript-row"><time>02:54</time><p>你只用想需要创造的部分就可以了</p></div>
+<div class="transcript-row"><time>02:56</time><p>然后重复工作的部分</p></div>
+<div class="transcript-row"><time>02:58</time><p>你可以把它交给AI</p></div>
+<div class="transcript-row"><time>02:59</time><p>这是我们的主要思路</p></div>
+<div class="transcript-row"><time>03:01</time><p>我们觉得其实创造这个东西还是得人来</p></div>
+<div class="transcript-row"><time>03:03</time><p>比如说一些</p></div>
+<div class="transcript-row"><time>03:04</time><p>然后这点梗</p></div>
+<div class="transcript-row"><time>03:05</time><p>AI并不知道</p></div>
+<div class="transcript-row"><time>03:06</time><p>因为它的数据是有延迟的</p></div>
+<div class="transcript-row"><time>03:08</time><p>你让它实时搜索</p></div>
+<div class="transcript-row"><time>03:09</time><p>它也不一定能理解那是什么意思</p></div>
+<div class="transcript-row"><time>03:11</time><p>Chadcat和我们这个还真挺像</p></div>
+<div class="transcript-row"><time>03:14</time><p>我们本来是马上计划要推出它</p></div>
+<div class="transcript-row"><time>03:16</time><p>我觉得我们的场景还是不一样</p></div>
+<div class="transcript-row"><time>03:18</time><p>Chadcat它的整理思路</p></div>
+<div class="transcript-row"><time>03:20</time><p>就像是做一个通用剪辑</p></div>
+<div class="transcript-row"><time>03:23</time><p>它其实是类似于Hyperframe这种产品的套壳</p></div>
+<div class="transcript-row"><time>03:27</time><p>Hyperframe其实是一个这种题</p></div>
+<div class="transcript-row"><time>03:28</time><p>但是没有一些AI或者是研发经验的纯剪辑师</p></div>
+<div class="transcript-row"><time>03:32</time><p>它是不会用的</p></div>
+<div class="transcript-row"><time>03:32</time><p>对 你还是需要有一些基础的</p></div>
+<div class="transcript-row"><time>03:34</time><p>就Hyperframe这种AI剪辑软件</p></div>
+<div class="transcript-row"><time>03:36</time><p>它是需要一些AI基础的</p></div>
+<div class="transcript-row"><time>03:38</time><p>但是Chadcat它的思路我看起来</p></div>
+<div class="transcript-row"><time>03:40</time><p>它更像是把Hyperframe这种东西</p></div>
+<div class="transcript-row"><time>03:43</time><p>套壳做成一个不需要太多计算机基础的人</p></div>
+<div class="transcript-row"><time>03:47</time><p>可以操作的一个东西</p></div>
+<div class="transcript-row"><time>03:49</time><p>通用的AI剪辑软件</p></div>
+<div class="transcript-row"><time>03:50</time><p>它是这个思路</p></div>
+<div class="transcript-row"><time>03:51</time><p>我们其实还是说</p></div>
+<div class="transcript-row"><time>03:52</time><p>专注剪刻不多</p></div>
+<div class="transcript-row"><time>03:53</time><p>我们的场景还是比较单一了</p></div>
+<div class="transcript-row"><time>03:55</time><p>顺便说一下</p></div>
+<div class="transcript-row"><time>03:56</time><p>我们这个产品可以实时的同步输出SRT</p></div>
+<div class="transcript-row"><time>04:00</time><p>到你的时间线里面</p></div>
+<div class="transcript-row"><time>04:02</time><p>它已经完成粗剪带SRT</p></div>
+<div class="transcript-row"><time>04:03</time><p>并且是无损的</p></div>
+<div class="transcript-row"><time>04:05</time><p>你可以完成后续的所有的流程</p></div>
+<div class="transcript-row"><time>04:06</time><p>就等于是你的素材</p></div>
+<div class="transcript-row"><time>04:08</time><p>它导入进了达芬奇</p></div>
+<div class="transcript-row"><time>04:09</time><p>给你直接把你需要的地方全都排好了</p></div>
+<div class="transcript-row"><time>04:12</time><p>还是原素材的状态无损的</p></div>
+<div class="transcript-row"><time>04:14</time><p>你还是在上面可以进行调色</p></div>
+<div class="transcript-row"><time>04:16</time><p>加特效的各种东西</p></div>
+<div class="transcript-row"><time>04:17</time><p>没有改变你的编码格式</p></div>
+<div class="transcript-row"><time>04:19</time><p>任何的就是原始素材</p></div>
+<div class="transcript-row"><time>04:20</time><p>这一点是非常好的</p></div>
+<div class="transcript-row"><time>04:21</time><p>而且我觉得我们这一点</p></div>
+<div class="transcript-row"><time>04:23</time><p>比较好的一点</p></div>
+<div class="transcript-row"><time>04:24</time><p>我们这个还支持多机位</p></div>
+<div class="transcript-row"><time>04:25</time><p>比如说我们上次做一次放弹</p></div>
+<div class="transcript-row"><time>04:27</time><p>7个人有5个机位的前提下</p></div>
+<div class="transcript-row"><time>04:29</time><p>我们可以完成5个机位的同时的同步的粗剪</p></div>
+<div class="transcript-row"><time>04:34</time><p>这一下就搞定了</p></div>
+<div class="transcript-row"><time>04:35</time><p>我们只用在后期里面筛选一下机位</p></div>
+<div class="transcript-row"><time>04:37</time><p>基本上一个小时很快就过完它</p></div>
+<div class="transcript-row"><time>04:39</time><p>我们下一步希望做到的是</p></div>
+<div class="transcript-row"><time>04:41</time><p>它可以自动完成切镜的东西</p></div>
+<div class="transcript-row"><time>04:43</time><p>这个音轨有声音</p></div>
+<div class="transcript-row"><time>04:44</time><p>它就亮这个音轨</p></div>
+<div class="transcript-row"><time>04:46</time><p>如果说是所有的音轨都有声音</p></div>
+<div class="transcript-row"><time>04:47</time><p>它就切大镜</p></div>
+<div class="transcript-row"><time>04:48</time><p>这是我们目前的一个简单的逻辑</p></div>
+<div class="transcript-row"><time>04:50</time><p>可以帮助多机位在切镜的时候</p></div>
+<div class="transcript-row"><time>04:54</time><p>也可以自动筛选完成</p></div>
+<div class="transcript-row"><time>04:55</time><p>基本上我们不准分立了</p></div>
+<div class="transcript-row"><time>04:56</time><p>我们现在还没有进行强行的测试</p></div>
+<div class="transcript-row"><time>04:59</time><p>很快就能进行下一步了</p></div>
+<div class="transcript-row"><time>05:01</time><p>招募一些内测的人员吗</p></div>
+<div class="transcript-row"><time>05:02</time><p>我们将在杭州去设立一个AI的公司</p></div>
+<div class="transcript-row"><time>05:07</time><p>我们真的没有时间招人</p></div>
+<div class="transcript-row"><time>05:09</time><p>因为我们发现一边webcoding</p></div>
+<div class="transcript-row"><time>05:10</time><p>一边招人是一件非常痛苦的事情</p></div>
+<div class="transcript-row"><time>05:12</time><p>我们根本招不到人</p></div>
+<div class="transcript-row"><time>05:14</time><p>所以如果朋友你是一个自认为</p></div>
+<div class="transcript-row"><time>05:17</time><p>对AI非常有经验的朋友</p></div>
+<div class="transcript-row"><time>05:18</time><p>欢迎你加入我们</p></div>
+<div class="transcript-row"><time>05:19</time><p>我们会把这个邮箱留在下面</p></div>
+<div class="transcript-row"><time>05:22</time><p>或者你可以私信或者评论区</p></div>
+<div class="transcript-row"><time>05:25</time><p>可以说一说你的经历</p></div>
+<div class="transcript-row"><time>05:26</time><p>我们来筛选一下</p></div>
+<div class="transcript-row"><time>05:27</time><p>这样子我觉得应该快一点</p></div>
+<div class="transcript-row"><time>05:28</time><p>我们收简历好慢</p></div>
+<div class="transcript-row"><time>05:30</time><p>我们其实已经用AI筛简历</p></div>
+<div class="transcript-row"><time>05:32</time><p>但是还是很慢</p></div>
+<div class="transcript-row"><time>05:32</time><p>但目前就是这样</p></div>
+<div class="transcript-row"><time>05:33</time><p>其实ChadCAD</p></div>
+<div class="transcript-row"><time>05:35</time><p>这个其实是给了我们一个新鲜的感觉</p></div>
+<div class="transcript-row"><time>05:38</time><p>今天用了一下</p></div>
+<div class="transcript-row"><time>05:40</time><p>其实我觉得可用度可靠度</p></div>
+<div class="transcript-row"><time>05:43</time><p>都达到了一个比较能用的水平</p></div>
+<div class="transcript-row"><time>05:45</time><p>这支团队是上海的</p></div>
+<div class="transcript-row"><time>05:47</time><p>非常厉害</p></div>
+<div class="transcript-row"><time>05:48</time><p>是的跟我们很近</p></div>
+<div class="transcript-row"><time>05:48</time><p>我们在杭州</p></div>
+<div class="transcript-row"><time>05:49</time><p>向你们致敬</p></div>
+<div class="transcript-row"><time>05:50</time><p>对</p></div>
+<div class="transcript-row"><time>05:50</time><p>不要把我们杭州当成上海的后花园</p></div>
+<div class="transcript-row"><time>05:52</time><p>这是不可以的</p></div>
+<div class="transcript-row"><time>05:54</time><p>你知道这个梗吗</p></div>
+<div class="transcript-row"><time>05:55</time><p>不知道这个</p></div>
+<div class="transcript-row"><time>05:56</time><p>你看这个梗</p></div>
+<div class="transcript-row"><time>05:57</time><p>AI就不知道</p></div>
+<div class="transcript-row"><time>05:58</time><p>这也是我们下一步想去做的东西</p></div>
+<div class="transcript-row"><time>06:00</time><p>再说一遍</p></div>
+<div class="transcript-row"><time>06:01</time><p>我们非常需要人</p></div>
+<div class="transcript-row"><time>06:02</time><p>如果你在杭州</p></div>
+<div class="transcript-row"><time>06:03</time><p>或者你有意向从事AI工作</p></div>
+<div class="transcript-row"><time>06:04</time><p>欢迎你来联系我们</p></div>
+<div class="transcript-row"><time>06:06</time><p>我们这一期视频内容就到这里结束了</p></div>
+<div class="transcript-row"><time>06:09</time><p>如果说也想试一试</p></div>
+<div class="transcript-row"><time>06:10</time><p>我们这个AI检口播的朋友们</p></div>
+<div class="transcript-row"><time>06:12</time><p>给我们留言</p></div>
+<div class="transcript-row"><time>06:14</time><p>我们会不会给你发送给他们的仓库</p></div>
+<div class="transcript-row"><time>06:16</time><p>对</p></div>
+<div class="transcript-row"><time>06:16</time><p>是吧</p></div>
+<div class="transcript-row"><time>06:17</time><p>好这期就到这里</p></div>
+<div class="transcript-row"><time>06:18</time><p>我们再见</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

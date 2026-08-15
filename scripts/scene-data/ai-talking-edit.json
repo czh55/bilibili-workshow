@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "slug": "ai-talking-edit",
+    "title": "剪一条口播最痛苦的不是剪辑",
+    "title_en": "Editing a Talking Head: The Pain Isn't the Cutting",
+    "duration": "6分19秒",
+    "scenes": 4,
+    "sentences": 13,
+    "date": "2026-08-15",
+    "platform": "xiaohongshu",
+    "source_url": "https://xhslink.cn/o/2g1D7cSYouu",
+    "topic": "AI 剪辑 · 口播粗剪的效率再造"
+  },
+  "scene_imgs": ["shot-01", "shot-05", "shot-07", "shot-09"],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "痛苦的是重复劳动",
+      "title_en": "The Pain Is Repetitive Work",
+      "time": "01:10-02:19",
+      "context": "口播剪辑最痛苦的不是剪辑，而是删重复的话、找气口等重复性工作。",
+      "sentences": [
+        ["剪一条口播最痛苦的不是剪辑。", "The most painful part of editing a talking head isn't the cutting.", "talking head（口播）"],
+        ["删重复的话、找气口。", "Removing repeated lines and finding the breathing spots.", "breathing spots（气口）"],
+        ["60% 是重复性工作。", "Sixty percent is repetitive work.", "repetitive（重复的）"]
+      ],
+      "paraphrase": [
+        ["「重复劳动」的表达", "Most of the work is the same boring task again and again."],
+        ["「找气口」换说法", "Finding where the speaker naturally breathes."]
+      ],
+      "speak": "The most painful part of editing a talking head isn't the cutting. It's removing repeated lines and finding the breathing spots. Sixty percent is repetitive work."
+    },
+    {
+      "id": "s2",
+      "title_cn": "AI 标注而非代剪",
+      "title_en": "AI Marks, It Doesn't Cut",
+      "time": "02:20-03:39",
+      "context": "AI 用自然语言提示词标注哪些需要画掉，人工确认后再精剪。",
+      "sentences": [
+        ["用自然语言提示词剪重复话和气口。", "Use natural-language prompts to flag repeated lines and breaths.", "natural-language prompts（自然语言提示词）"],
+        ["AI 不是直接剪，而是标注哪些需要画掉。", "The AI doesn't cut directly — it marks what to remove.", "mark（标注）"],
+        ["导出 XML 文件到达芬奇。", "Export an XML file into DaVinci Resolve.", "DaVinci Resolve（达芬奇）"]
+      ],
+      "paraphrase": [
+        ["「标注而非代剪」的表达", "The AI highlights the parts, and you decide what stays."],
+        ["「导出 XML」换说法", "Send the marked timeline out as an XML file."]
+      ],
+      "speak": "Use natural-language prompts to flag repeated lines and breaths. The AI doesn't cut directly — it marks what to remove. Export an XML file into DaVinci Resolve."
+    },
+    {
+      "id": "s3",
+      "title_cn": "多机位与 SRT",
+      "title_en": "Multi-Camera and SRT",
+      "time": "04:10-05:49",
+      "context": "多机位版本能标注谁在说话，同时实时输出 SRT 字幕，粗剪带字幕且无损。",
+      "sentences": [
+        ["多机位升级：标注谁在说话。", "The multi-camera upgrade labels who is speaking.", "label（标注）"],
+        ["任意数量的机位输入。", "It accepts any number of camera feeds.", "camera feeds（机位输入）"],
+        ["实时同步输出 SRT，粗剪带字幕且无损。", "It syncs SRT output live — a lossless rough cut with subtitles.", "lossless（无损的）"]
+      ],
+      "paraphrase": [
+        ["「谁在说话」的表达", "It tags each speaker on the timeline."],
+        ["「带字幕粗剪」换说法", "You get a cut with subtitles, and nothing is degraded."]
+      ],
+      "speak": "The multi-camera upgrade labels who is speaking. It accepts any number of camera feeds. It syncs SRT output live — a lossless rough cut with subtitles."
+    },
+    {
+      "id": "s4",
+      "title_cn": "下一步与结论",
+      "title_en": "Next Steps and Verdict",
+      "time": "05:50-06:19",
+      "context": "下一步让音轨有声就亮、全部有声切大镜；评价 Headcats 可用度可靠度达标。",
+      "sentences": [
+        ["音轨有声就亮，全部有声切大镜。", "Tracks light up when they have audio; cut to the wide shot when all are active.", "wide shot（大镜/全景）"],
+        ["可用度、可靠度都达到了能用的水平。", "Usability and reliability both reach a workable level.", "reliability（可靠度）"],
+        ["这支团队是上海的，非常厉害。", "This team is from Shanghai — very impressive.", "impressive（厉害）"]
+      ],
+      "paraphrase": [
+        ["「达到可用水平」的表达", "It's good enough to use in real projects now."],
+        ["「非常厉害」换说法", "They've done outstanding work."]
+      ],
+      "speak": "Tracks light up when they have audio; cut to the wide shot when all are active. Usability and reliability both reach a workable level. This team is from Shanghai — very impressive."
+    }
+  ],
+  "practice": [
+    ["口播剪辑最痛苦的是什么？", "It's the repetitive work, not the cutting itself."],
+    ["AI 在剪辑里扮演什么角色？", "It marks what to remove — it doesn't cut directly."],
+    ["AI 剪完怎么交给人？", "Export an XML file into DaVinci Resolve for fine cutting."],
+    ["多机位升级带来了什么？", "It labels who is speaking on any number of camera feeds."]
+  ],
+  "pitfalls": [
+    ["让 AI 直接出成片", "AI 只做标注，人做确认与精剪", "自动成片会丢失节奏与审美判断。"],
+    ["忽略编码配置", "检查 H.265 是否需要手动配置", "编码格式不兼容会导致工程打不开。"],
+    ["AI 判断热点梗", "梗和实时热点靠人", "AI 数据有延迟，不懂语境梗。"],
+    ["把创造部分交给 AI", "重复交给 AI、创造留给人", "创造是 AI 当前的边界。"]
+  ],
+  "shifts": [
+    ["剪辑是体力活", "剪辑是判断活"],
+    ["一个人扛全部流程", "AI 接管重复、人做创造"],
+    ["粗剪靠手刷", "提示词标注提效 10 倍"]
+  ],
+  "difficult_words": ["talking head", "repetitive", "breathing spot", "prompt", "mark", "export", "timeline", "DaVinci Resolve", "multi-camera", "feed", "label", "SRT", "subtitle", "lossless", "wide shot", "reliability", "workable", "impressive", "rough cut", "fine cut"],
+  "footer_notes": "ASR 校正：产品名 Headcats 保留原文；「舱栏/成河」等未涉及。"
+}

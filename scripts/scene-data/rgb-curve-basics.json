@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "slug": "rgb-curve-basics",
+    "title": "曲线RGB三原色互补与混合原理",
+    "title_en": "Curves: RGB Complementary and Mixing Principles",
+    "duration": "4分10秒",
+    "scenes": 4,
+    "sentences": 12,
+    "date": "2026-08-15",
+    "platform": "xiaohongshu",
+    "source_url": "https://xhslink.cn/o/rAS0m3ji1g",
+    "topic": "PS 调色 · 曲线互补与混合原理"
+  },
+  "scene_imgs": ["shot-01", "shot-04", "shot-06", "shot-09"],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "三原色叠加与互补",
+      "title_en": "RGB Stacking and Complements",
+      "time": "00:00-00:52",
+      "context": "RGB 三色叠加变白代表亮暗，两两混合出青黄品红三补色。",
+      "sentences": [
+        ["红绿蓝三种颜色叠加会变成白色。", "Red, green, and blue stacked together become white.", "stack（叠加）"],
+        ["在 PS 里会当做亮暗来处理。", "In Photoshop it's treated as brightness.", "brightness（亮度）"],
+        ["红色的对立色就是青色。", "The opposite of red is cyan.", "opposite（对立色）"]
+      ],
+      "paraphrase": [
+        ["「三色叠加变白」的表达", "All three channels at full strength give you white."],
+        ["「对立色」换说法", "Each primary has a complement that cancels it."]
+      ],
+      "speak": "Red, green, and blue stacked together become white. In Photoshop it's treated as brightness. The opposite of red is cyan."
+    },
+    {
+      "id": "s2",
+      "title_cn": "互补法：加蓝剪黄",
+      "title_en": "Complementary Method: Add Blue, Cut Yellow",
+      "time": "00:53-02:00",
+      "context": "皮肤偏黄要剪黄，蓝黄互补，提蓝曲线就抵消了黄色。",
+      "sentences": [
+        ["人物的肤色特别的黄。", "The skin tone looks very yellow.", "skin tone（肤色）"],
+        ["蓝和黄是互补色，蓝多黄就少。", "Blue and yellow are complementary — more blue means less yellow.", "complementary（互补的）"],
+        ["选蓝色往上一提，黄就被抵消了。", "Lift the blue curve and the yellow cancels out.", "cancel out（抵消）"]
+      ],
+      "paraphrase": [
+        ["「互补抵消」的表达", "Adding its opposite color neutralizes the cast."],
+        ["「提蓝曲线」换说法", "Pull the blue channel upward."]
+      ],
+      "speak": "The skin tone looks very yellow. Blue and yellow are complementary — more blue means less yellow. Lift the blue curve and the yellow cancels out."
+    },
+    {
+      "id": "s3",
+      "title_cn": "混合法：减红减绿",
+      "title_en": "Mixing Method: Reduce Red and Green",
+      "time": "02:01-03:01",
+      "context": "黄色由红绿混合，减红减绿让蓝主导；但曲线下压会变暗，需回 RGB 提亮。",
+      "sentences": [
+        ["黄色是由红色和绿色叠加混合成的。", "Yellow is made by mixing red and green.", "mix（混合）"],
+        ["把红色减去、绿色减去。", "Reduce the red and reduce the green.", "reduce（减去）"],
+        ["回到 RGB 把它提亮。", "Go back to RGB and brighten it up.", "brighten（提亮）"]
+      ],
+      "paraphrase": [
+        ["「让蓝主导」的表达", "Make blue the dominant color to kill the yellow."],
+        ["「下压变暗」换说法", "Pushing the curve down darkens the image."]
+      ],
+      "speak": "Yellow is made by mixing red and green. Reduce the red and reduce the green. Go back to RGB and brighten it up."
+    },
+    {
+      "id": "s4",
+      "title_cn": "总结与边界",
+      "title_en": "Summary and Limits",
+      "time": "03:02-04:10",
+      "context": "曲线上提变亮下压变暗；RGB 只调亮暗；要配合其他工具才能调好照片。",
+      "sentences": [
+        ["曲线往上提，画面变亮。", "Pull the curve up and the image brightens.", "curve（曲线）"],
+        ["曲线往下压，画面变暗。", "Push it down and the image darkens.", "darken（变暗）"],
+        ["光靠曲线没法完成所有工作。", "The curve alone can't do all the work.", "can't do all the work（无法完成所有）"]
+      ],
+      "paraphrase": [
+        ["「RGB 只调亮暗」的表达", "The RGB channel only controls brightness."],
+        ["「配合其他工具」换说法", "Pair curves with other tools for a full grade."]
+      ],
+      "speak": "Pull the curve up and the image brightens. Push it down and the image darkens. The curve alone can't do all the work."
+    }
+  ],
+  "practice": [
+    ["RGB 三色叠加变成什么？", "They become white, which the curve treats as brightness."],
+    ["蓝色的对立色是什么？", "Yellow — add blue to cut yellow."],
+    ["混合法怎么剪黄？", "Reduce red and green so blue becomes dominant."],
+    ["曲线往下压会怎样？", "The image darkens."]
+  ],
+  "pitfalls": [
+    ["用 RGB 曲线改颜色", "用单通道曲线改颜色", "RGB 只调亮暗，不改色相。"],
+    ["提蓝过猛", "提蓝克制", "提太多肤色发紫。"],
+    ["混合法不提亮", "减完回 RGB 补亮", "下压变暗会损失通透感。"],
+    ["只用曲线做全部", "配合蒙版等工具", "曲线是基础不是全部。"]
+  ],
+  "shifts": [
+    ["曲线靠感觉试", "曲线有原理可循"],
+    ["调色凭运气", "按互补混合推演"],
+    ["一条曲线走天下", "曲线+其他工具配合"]
+  ],
+  "difficult_words": ["primary", "stack", "complement", "opposite", "cyan", "magenta", "yellow", "brightness", "darken", "curve", "channel", "cancel", "neutralize", "cast", "dominant", "reduce", "skin tone", "hue", "luminance", "blend"],
+  "footer_notes": "ASR 校正：转录中「梅红/平红」按语境修正为「品红」。"
+}

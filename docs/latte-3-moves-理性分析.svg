@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6324" viewBox="0 0 1320 6324">
+  <foreignObject x="0" y="0" width="1320" height="6324">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>咖啡拉花技巧｜3个动作细节，让你稳定出图</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">咖啡</span><span class="tag tag-blue">拉花</span><span class="tag tag-blue">动作细节</span><span class="tag tag-gray">时长 6分36秒</span><span class="tag tag-gray">分析视角：拉花稳定性的动作解构</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/4BDSExAjKUZ">原视频链接</a>
+  <div class="summary-line">核心判断：拉花图案不稳定，90% 的根因在动作而非技术。视频把「稳定出图」解构为三个可练的动作细节——握奶缸不贴掌心、小臂摆动而非手腕、大流量注入靠身体倾斜而非手腕发力。每个动作都给正反对比，让观众能自查纠正。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场：握奶缸的方法非常重要，直接决定图案稳定性</div></div><div class="timeline-item"><div class="timeline-time">00:10</div><div class="timeline-text">握法一：两三个手指握下方，力量分布讲解（两指用力两指不用力）</div></div><div class="timeline-item"><div class="timeline-time">00:40</div><div class="timeline-text">握法二：两指放上方轻握，手心留出空间</div></div><div class="timeline-item"><div class="timeline-time">01:30</div><div class="timeline-text">正确姿势：手背在上、小臂高于手腕的前后摆动</div></div><div class="timeline-item"><div class="timeline-time">02:40</div><div class="timeline-text">对比演示：用手腕摆动时水流不稳定，小臂摆动则稳定</div></div><div class="timeline-item"><div class="timeline-time">04:00</div><div class="timeline-text">大流量注入：身体倾斜带动整只手臂，而非手腕发力</div></div><div class="timeline-item"><div class="timeline-time">05:20</div><div class="timeline-text">端杯方式：手指拖杯底而非手心包住，手腕与奶缸保持垂直</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>拉花图案时稳时不稳</div><div class="arrow">→</div><div class="node node-blue">证据<br/>握法/摆动/注入三组正反演示</div><div class="arrow">→</div><div class="node node-green">判断<br/>稳定性来自三个动作细节</div><div class="arrow">→</div><div class="node node-orange">行动<br/>逐项自查：掌心留空、小臂摆动、身体倾斜</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：拉花不稳是奶泡没打好。纠偏：奶泡合格的前提下，握法与发力方式是更常见的根因。</p><p>误解 2：摆动幅度大就能让水流稳。纠偏：关键在小臂而非手腕，手腕摆动反而让流量忽大忽小。</p><p>误解 3：倒奶越多越要靠手腕发力。纠偏：大流量注入应靠身体倾斜带动整臂，手腕保持不动。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>握奶缸：掌心必须留空</h3><p>在讲什么：握奶缸有两种方法——两三个手指握下方（另外两指轻扶两侧），或两指放上方轻扶；无论哪种，共同铁律是掌心不能贴住奶缸。关键理解：掌心留空才能让手腕、小臂保持灵活的联动，握死则整个手臂僵硬。怎么用：练习时先刻意用「两指轻扶」的方式握缸，感受掌心空间。</p><div class="quote">依据 [00:10–00:39]：这两个几乎都握住奶缸，两个都是用力的，这两个是不用力的……放的时候这个是不用力的，只是轻轻的握它。</div><div class="relation">立场分层：握法演示为操作事实；「掌心留空间」为博主强调的动作原则。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>摆动：小臂动，手腕不动</h3><p>在讲什么：拉花摆动的动力来自小臂，不是手腕；标准姿态是手背在上、胳膊比手腕高、前后摆动而非左右摆动。关键理解：手腕是小幅微调工具，一旦作为摆动主发力，水流就会抖。怎么用：把注意力放在手肘，想象「整个小臂带动奶缸画直线」。</p><div class="quote">依据 [01:30–03:40]：我们用的是这个小臂……手背在上面，胳膊是比它高的……从我身体是前后摆动，不是这样（左右）摆动。</div><div class="relation">立场分层：正反对比演示可由画面核对；「小臂发力」为博主核心方法。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>注入大流量：身体倾斜，不靠手腕</h3><p>在讲什么：需要大量牛奶注入时，靠的是身体倾斜带动整只手臂，手腕保持不动。关键理解：手腕发力是垂直向下的流量，而拉花需要顺着液面铺开的流量，身体倾斜才能提供这种角度。怎么用：倒奶前先上身微倾，让手臂与杯面形成角度。</p><div class="quote">依据 [04:00–05:19]：注入的时候不能是手腕这么去倒（奶），我手腕不动，哪里动呢？身体在倾斜。</div><div class="relation">立场分层：原理讲解为教学内容；正反效果可画面核对。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>端杯与垂直关系</h3><p>在讲什么：端杯用手指拖住杯底或挂住杯沿，手指绝不能伸进杯内；做图案时手腕与奶缸保持垂直、手腕不弯曲。关键理解：端杯是发力的稳定锚点，手指入杯会改变杯身重心。怎么用：买一个适合自己手的杯型，反复练习「手指拖底」的端法。</p><div class="quote">依据 [05:20–06:30]：也可以这么拿，不要手心放在杯底……手指不能伸进杯子里……这个手腕和奶缸的这个部分是垂直的。</div><div class="relation">立场分层：端杯演示为操作事实；「手腕垂直不弯」为博主给出的稳定原则。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">三个动作细节与问题对应表</h2><div class="card"><table><thead><tr><th>动作细节</th><th>错误做法</th><th>正确做法</th><th>效果</th></tr></thead><tbody><tr><td>握奶缸</td><td>掌心贴死奶缸</td><td>手指轻扶，掌心留空</td><td>手臂灵活，图案可控</td></tr><tr><td>摆动</td><td>手腕发力左右摆</td><td>小臂发力前后摆</td><td>水流稳定不抖</td></tr><tr><td>注入</td><td>手腕倒奶垂直流</td><td>身体倾斜带动整臂</td><td>奶泡顺液面铺开</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：奶泡打发合格的进阶学员，排查图案不稳问题。</li><li>上限：解决的是「动作层」问题，不解决奶泡质量、咖啡浓度、液面状态等技术前提。</li><li>反例：若奶泡本身过稀或过厚，再标准的动作也难出图。</li><li>例外：各人手型不同，握法可微调，但「掌心留空」原则通用。</li></ul><div class="pitfall">避坑：别用「夹紧奶缸」找稳定感，那会让手腕发僵。</div><div class="pitfall">避坑：摆动速度不是关键，前后轨迹稳定才是。</div><div class="pitfall">避坑：大流量注入时眼睛要盯着液面，不能只看奶缸。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>握奶缸掌心留空，手指轻扶不贴死。</li><li>摆动用前后方向的小臂发力，手腕只做微调。</li><li>大流量注入靠身体倾斜带动整臂，手腕不动。</li></ul><h3>行动清单</h3><ol><li>今天先练握法：两指轻扶、掌心留空，重复 10 次。</li><li>再练小臂前后摆动，录屏对比手腕摆动的流量差异。</li><li>最后练身体倾斜注入，确认手腕始终不动。</li></ol><h3>关键认知转变</h3><p>从「图案不稳就重打奶泡」转到「先查三个动作细节」：稳定拉花的成本，其实藏在握、摆、倒三个小动作里。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 6分36秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

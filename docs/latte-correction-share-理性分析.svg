@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5775" viewBox="0 0 1320 5775">
+  <foreignObject x="0" y="0" width="1320" height="5775">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>拉花纠错分享</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">咖啡</span><span class="tag tag-blue">拉花</span><span class="tag tag-blue">纠错</span><span class="tag tag-gray">时长 1分15秒</span><span class="tag tag-gray">分析视角：拉花失败的症状诊断</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/6b69ZMrCcN5">原视频链接</a>
+  <div class="summary-line">核心判断：拉花「打了奶泡却没有线条」，是奶泡分层的典型症状——打完奶泡不摇匀，奶泡与牛奶分层，倒出来先是白色牛奶、后是厚奶泡，图案自然出不来。纠正方法两步：摇晃奶缸让奶泡重新融合，注入时给足大流量。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">摇晃奶缸展示奶泡摇起来细腻的状态</div></div><div class="timeline-item"><div class="timeline-time">00:03</div><div class="timeline-text">倒进咖啡后表面却没有奶泡，拉花变成一坨</div></div><div class="timeline-item"><div class="timeline-time">00:12</div><div class="timeline-text">诊断：奶泡打完会分层，拉花前要先摇匀</div></div><div class="timeline-item"><div class="timeline-time">00:30</div><div class="timeline-text">摇匀后再压低倒奶，线条一根根往前跑</div></div><div class="timeline-item"><div class="timeline-time">00:38</div><div class="timeline-text">学员反馈：摇了还是没有线条、图案很小</div></div><div class="timeline-item"><div class="timeline-time">00:50</div><div class="timeline-text">强调拉花时一定要给足够大的流量</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>打了奶泡却没线条</div><div class="arrow">→</div><div class="node node-blue">证据<br/>摇匀前摇匀后两次对比</div><div class="arrow">→</div><div class="node node-green">判断<br/>奶泡分层 + 流量不足</div><div class="arrow">→</div><div class="node node-orange">行动<br/>先摇匀再倒奶，流量给足</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：打了奶泡就一定能拉出花。纠偏：奶泡打完会分层，不摇匀就倒，先出来的是白色牛奶。</p><p>误解 2：图案小是手法问题。纠偏：流量不足时奶泡沉在杯底，根本没有推动力去铺开图案。</p><p>误解 3：摇奶缸只是心理作用。纠偏：摇晃让奶泡与牛奶重新融合，是决定「有无线条」的物理前提。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>症状：有奶泡却没线条</h3><p>在讲什么：看似打了细腻奶泡，倒进咖啡后表面却没有奶泡，拉花变成「一坨」。关键理解：这是典型的「奶泡分层」症状，不是手法问题。怎么用：先看自己的奶泡状态，再做手法调整，否则白练。</p><div class="quote">依据 [00:03–00:11]：倒进咖啡后表面却没有奶泡，拉花变成一坨。</div><div class="relation">立场分层：现象演示为事实；「分层」为博主诊断结论。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>诊断：奶泡打完会分层</h3><p>在讲什么：奶泡打完静置会分层，上层是细腻奶泡、下层是热牛奶；不摇匀直接倒，先倒出来的是白色牛奶，图案自然出不来。关键理解：奶泡与牛奶需要「持续融合」状态，静置即失效。怎么用：打完奶泡到拉花之间，奶缸一直拿在手里轻晃。</p><div class="quote">依据 [00:12–00:29]：奶泡打完会分层，拉花前要先摇匀。</div><div class="relation">立场分层：分层现象为物理事实；「先摇匀」为博主给的标准动作。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>纠偏：摇匀 + 大流量</h3><p>在讲什么：摇匀后再压低倒奶，线条一根根往前跑；学员反馈摇了还是没线条，是因为流量给得不够。关键理解：大流量才有推动力，奶泡才能浮在表面形成图案。怎么用：倒奶时想象「用牛奶推着奶泡走」，而不是慢慢淋。</p><div class="quote">依据 [00:30–01:15]：摇匀后再压低倒奶，线条一根根往前跑……强调拉花时一定要给足够大的流量。</div><div class="relation">立场分层：纠正步骤为博主方法；「流量推动力」为其原理解释。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">拉花无线条的排查表</h2><div class="card"><table><thead><tr><th>症状</th><th>原因</th><th>检查方式</th><th>纠正动作</th></tr></thead><tbody><tr><td>倒出全是白奶</td><td>奶泡分层</td><td>看奶缸静置是否分层</td><td>持续摇晃融合</td></tr><tr><td>图案很小</td><td>流量不足</td><td>观察注入速度</td><td>加大流量推动</td></tr><tr><td>图案一坨</td><td>奶泡过厚或沉底</td><td>检查奶泡打发度</td><td>重新打发并摇匀</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：打了奶泡但拉不出线条的新手学员。</li><li>上限：解决「分层」与「流量」两个常见根因，不覆盖奶泡打发过度/不足的问题。</li><li>反例：奶泡本身打发失败（过粗或过厚），摇匀与大流量都无法补救。</li><li>例外：不同奶缸、不同牛奶品种，分层速度略有差异。</li></ul><div class="pitfall">避坑：摇匀不是甩，力度过大会重新打进粗气泡。</div><div class="pitfall">避坑：压低倒奶时奶缸别贴液面，留出 1-2 公分才有推动力。</div><div class="pitfall">避坑：别在讲话停顿期间把奶缸放下，静置几秒就会分层。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>打了奶泡≠能拉花，奶泡静置即分层。</li><li>拉花前持续轻晃奶缸，让奶泡与牛奶融合。</li><li>倒奶给足大流量，才有推动力让奶泡浮面。</li></ul><h3>行动清单</h3><ol><li>打完奶泡立刻用手感知奶缸温度与晃动感。</li><li>倒奶前确认奶缸在手里持续晃动，不落地。</li><li>注入时观察线条是否「跑起来」，没有就加大流量。</li></ol><h3>关键认知转变</h3><p>从「奶泡打了就行」转到「奶泡要保持在融合状态」：拉花的第一道工序，在倒进杯子之前就开始了。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 1分15秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 5 分 44 秒的人像/街拍后期调色教程。先从「通透」这个高频词讲起：通透不是把直方图两端顶到纯黑纯白，而是光影层次有序、色彩干净不浑浊。接着用一组人文街拍原片演示低反差电影感的完整调色流程——影调压缩、RGB S 型曲线、蓝曲线高光加暖、校准偏青橙、柔焦与颗粒。最后把参数">
+<title>保姆级教程❗️普通人也能调出人文纪实色调｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>普通人也能调出的人文纪实色调</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">5:44</span><span class="meta-tag tag-topic">调色 PS 后期 扫街人文 电影感</span></div>
+<a class="source-link" href="https://xhslink.cn/o/32blN5npW1r" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">通透不是拉满对比</a><a href="#ch2">高反差与低反差的分工</a><a href="#ch3">影调压缩：控明暗结构</a><a href="#ch4">颜色控制：冷暖对比与青橙调</a><a href="#ch5">柔焦、颗粒与预设固化</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 5 分 44 秒的人像/街拍后期调色教程。先从「通透」这个高频词讲起：通透不是把直方图两端顶到纯黑纯白，而是光影层次有序、色彩干净不浑浊。接着用一组人文街拍原片演示低反差电影感的完整调色流程——影调压缩、RGB S 型曲线、蓝曲线高光加暖、校准偏青橙、柔焦与颗粒。最后把参数存成预设，多场景通用。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:58]</span><div><strong>通透的重新定义</strong><p>别人说你不通透，是因为刚学调色时用「拉曲线补全直方图两端」去灰，久而久之被当成通用标准。通透的本质是光影层次有序、色彩干净不浑浊，核心是干净度和分离度，与反差高低没有必然关系。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:58→01:41]</span><div><strong>高反差与低反差的分工</strong><p>高反差高清晰适合商业产品、婚纱写真——聚焦主体、制造视觉冲击；低反差把影调压缩在中间灰区间，没有刺眼明暗冲突，让人沉浸在场景氛围里，适合人文纪实。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:41→03:00]</span><div><strong>影调压缩三步</strong><p>先提阴影和黑色、压高光和白色，把像素压缩到中间区域；再在曲线里把黑点上提白点下压，中间调压暗、亮调微提；最后调曝光，整体光影层次就出来了。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:00→04:26]</span><div><strong>颜色控制四步</strong><p>加色温偏暖、减色调；在红绿蓝曲线里通过改变高光/阴影点加颜色——如蓝曲线高光下压等于加黄色；校准面板红绿色相右移、蓝色左移、加蓝饱和度；混色器降低颜色饱和度防溢出，黄往沉色靠、天空蓝往青靠。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:26→05:44]</span><div><strong>质感与预设固化</strong><p>蒙版选亮度范围高光区，降清晰度做柔焦；加颗粒和一点对比。把参数存成预设（勾选蒙版），换其他照片只需微调曝光和色温，人像同样适用。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>人文纪实色调 = 低反差影调（提暗压亮、中间调压缩）+ 冷暖对比（高光加暖、阴影加冷）+ 青橙调性（校准面板）+ 柔焦颗粒。通透的关键是干净度与分离度，不是死记黑位白位。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:41</span>通透不是拉满对比</h2><p>「你调完样图自己觉得还不错，结果别人一句不够通透，直接给你整不会了。」这是几乎所有调色新手都踩过的坑。视频由此引出第一个概念：到底什么是通透？</p><p>主播解释，很多人刚学调色时最容易踩的坑是画面发灰发闷，「拉曲线补全直方图两端加对比，是见效最快的去灰方法」——久而久之，这个去灰技巧被当成了照片好坏的通用评判标准。</p><p>「很多人觉得直方图两端顶到纯黑纯白才叫通透，反之就是不通透，这其实是对通透的片面理解。」原片明暗集中在中间调，恰恰是保留最多细节的健康状态，后期把明暗拉开只是众多影调风格里的一种选择。</p><p>「通透的本质是光影层次有序，色彩干净不浑浊，画面有清晰的空气感，核心是干净度和分离度。」高反差能做出锐利的通透感，低反差同样能做出柔和干净的通透感——它和反差高低没有必然关系。</p><figure><img src="assets/documentary-color-tone/shot-01.jpg" alt="提出问题：调完样图别人却说不通透" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:08]</span>提出问题：调完样图别人却说不通透</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/568fa30f61f7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Raising the question: after finishing your color grade, others say it&#x27;s not &quot;transparent&quot;</span></div>
+<audio class="cap-audio" src="audio/568fa30f61f7.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/documentary-color-tone/shot-02.jpg" alt="讲解通透的本质是光影层次有序、色彩干净" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:50]</span>讲解通透的本质是光影层次有序、色彩干净</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c23a96796952.mp3" type="button" aria-label="Play English audio">🔊</button><span>Explaining that &quot;transparent&quot; means orderly light-shadow layers and clean colors</span></div>
+<audio class="cap-audio" src="audio/c23a96796952.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:58-01:41</span>高反差与低反差的分工</h2><p>「纯黑和纯白是很强的视觉刺激，会第一时间抓住眼球，带来锐利硬朗的质感，但也容易打断沉浸感。」所以高反差高清晰的画面，核心是展示——展示细节、展示主体质感，观众的注意力停留在画面本身的形式上。</p><p>「适合商业产品、婚纱写真这类需要突出主体、制造视觉冲击的题材。」而低反差画面把所有影调压缩在柔和的中间灰区间，没有刺眼的明暗冲突，「反而能让人自然地沉浸在场景的氛围里」。</p><p>明确了目标后，视频用一组人文街拍原片做案例，演示如何调出这种有故事感的低反差色调。</p><figure><img src="assets/documentary-color-tone/shot-03.jpg" alt="对比高反差与低反差画面的沉浸感差异" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:35]</span>对比高反差与低反差画面的沉浸感差异</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/36fdbee663e4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Comparing immersion between high-contrast and low-contrast looks</span></div>
+<audio class="cap-audio" src="audio/36fdbee663e4.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:41-03:00</span>影调压缩：控明暗结构</h2><p>「先调影调、控明暗结构，主要工具是基础亮度面板和曲线。」因为这类片子要避免过强的黑和白，要把像素压缩在中间区域。</p><p>「先把照片的暗部，也就是阴影和黑色提起来；再把照片的亮部，也就是高光和白色往下压。」</p><p>「还不够，我们再来到曲线：将黑色的点往上提，白色的点往下压。」这类片子以低中调为主，所以中间调压暗一些，参数曲线里再把亮调提起来一些。</p><p>「整体光影层次有了，但整体画面太暗，所以把曝光提起来。」此时画面有些灰，主播来到红色曲线：在高光、中间调、阴影打三个点，高光上提、阴影下压，然后右键复制这条通道，分别粘贴到绿色和蓝色曲线。</p><p>「这里我们同时给红绿蓝增加形态一样的 S 型曲线，它们的颜色不会发生改变，但是会增加画面的对比度。」这是三曲线同形 S 型的小技巧。</p><figure><img src="assets/documentary-color-tone/shot-04.jpg" alt="案例原片展示，准备调出低反差人文色调" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:00]</span>案例原片展示，准备调出低反差人文色调</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/96fc47cc2500.mp3" type="button" aria-label="Play English audio">🔊</button><span>Showing the original case photo, ready for the low-contrast documentary tone</span></div>
+<audio class="cap-audio" src="audio/96fc47cc2500.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/documentary-color-tone/shot-05.jpg" alt="RGB 曲线打三点做 S 型，增强对比度" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:50]</span>RGB 曲线打三点做 S 型，增强对比度</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c5aa1dc6d261.mp3" type="button" aria-label="Play English audio">🔊</button><span>Placing three points on the RGB curve to make an S-shape that boosts contrast</span></div>
+<audio class="cap-audio" src="audio/c5aa1dc6d261.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:00-04:26</span>颜色控制：冷暖对比与青橙调</h2><p>「调整好画面的基础影调，我们再来调整它的颜色。」首先到颜色面板增加色温让画面偏暖；考虑到预色的通用性，「把色调减掉」。</p><p>关键一步：「可以在红绿蓝三条颜色曲线里，通过改变高光和阴影的点，给画面整体增加些颜色。」以蓝色曲线为例：想让高光有暖色，只需把蓝色曲线的高光点往下压——下压蓝色等于减少蓝色，也就是增加它的互补色黄色。</p><p>「按照这种方式，我们给高光加暖色、暗部加冷色，就可以让画面整体颜色基调呈现冷暖对比。」</p><p>接着到校准面板：红颜色和绿颜色色相往右移，蓝颜色色相往左移，适当增加蓝颜色的饱和度，「让画面整体颜色偏向青橙」。再到混色器把颜色饱和度适当降低避免溢出，黄色色相往左移让暖色更沉一些，天空蓝往青色靠、饱和度与明度都降低。</p><figure><img src="assets/documentary-color-tone/shot-06.jpg" alt="蓝色曲线高光下压，给高光增加暖黄色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:30]</span>蓝色曲线高光下压，给高光增加暖黄色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a330310ea287.mp3" type="button" aria-label="Play English audio">🔊</button><span>Pulling down the blue curve&#x27;s highlight to add warm yellow to highlights</span></div>
+<audio class="cap-audio" src="audio/a330310ea287.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/documentary-color-tone/shot-07.jpg" alt="校准面板移动红绿蓝色相，画面偏青橙" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:00]</span>校准面板移动红绿蓝色相，画面偏青橙</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e01e118b010a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Shifting hue sliders in Calibration to push the image toward teal and orange</span></div>
+<audio class="cap-audio" src="audio/e01e118b010a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:26-05:44</span>柔焦、颗粒与预设固化</h2><p>「接着我们要做一些高光朦胧的效果。」到蒙版面板选范围→亮度范围，把亮度范围控制在高光区域，将过渡的羽化拉大一些，「将它的清晰度降低，这样就可以营造一种高光柔焦的效果」。</p><p>「最后我们再增加一些颗粒。」到效果→颗粒，添加一些颗粒，「最后再增加一点点对比」。</p><p>「我们将调整好的参数存为一个预设，将蒙版也勾上。」这样后续可以直接复用整个调整流程。</p><p>「我们来测试一下其他场景的照片。因为每张照片的亮度不同，所以我们需要微调曝光。」将画面压暗一些，对比看看——「这种色调就很具有电影感」。</p><p>再试人像效果：这张图原图色温比较高，「所以除了降低一些曝光以外，还可以降低一些色温」。说明预设是底子，实际用的时候要根据原图微调。</p><figure><img src="assets/documentary-color-tone/shot-08.jpg" alt="蒙版范围选高光降清晰度，做柔焦效果" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:40]</span>蒙版范围选高光降清晰度，做柔焦效果</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/eabc29a26b0a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Masking the highlight range and lowering clarity for a soft-focus glow</span></div>
+<audio class="cap-audio" src="audio/eabc29a26b0a.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/documentary-color-tone/shot-09.jpg" alt="多场景测试预设，人像/街拍通用效果" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:30]</span>多场景测试预设，人像/街拍通用效果</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b1d64fe69e6d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Testing the preset across scenes — works for portraits and street shots</span></div>
+<audio class="cap-audio" src="audio/b1d64fe69e6d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（146段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>你一定遇到过这个问题</p></div>
+<div class="transcript-row"><time>00:02</time><p>你调完样图自己觉得还不错</p></div>
+<div class="transcript-row"><time>00:04</time><p>结果别人一句不够通透</p></div>
+<div class="transcript-row"><time>00:05</time><p>直接给你整不回了</p></div>
+<div class="transcript-row"><time>00:07</time><p>到底什么是通透</p></div>
+<div class="transcript-row"><time>00:08</time><p>它是平凡照片好坏的标准吗</p></div>
+<div class="transcript-row"><time>00:10</time><p>今天我们就从通透了解</p></div>
+<div class="transcript-row"><time>00:12</time><p>教你几个关键步骤</p></div>
+<div class="transcript-row"><time>00:13</time><p>带你调出有故事感的人文技术色调</p></div>
+<div class="transcript-row"><time>00:16</time><p>为什么我们总把通透当成调色标准</p></div>
+<div class="transcript-row"><time>00:19</time><p>因为刚学调色的时候</p></div>
+<div class="transcript-row"><time>00:21</time><p>最容易踩的坑就是画面发灰发闷</p></div>
+<div class="transcript-row"><time>00:23</time><p>而拉曲线补全直方图两端加对比</p></div>
+<div class="transcript-row"><time>00:26</time><p>是见效最快的去灰方法</p></div>
+<div class="transcript-row"><time>00:28</time><p>久而久之</p></div>
+<div class="transcript-row"><time>00:29</time><p>这个新手机就技巧就被当成了</p></div>
+<div class="transcript-row"><time>00:31</time><p>照片好坏的通用平板标准</p></div>
+<div class="transcript-row"><time>00:33</time><p>很多人觉得直方图两端顶到纯黑纯白才叫通透</p></div>
+<div class="transcript-row"><time>00:36</time><p>反之就是不通透</p></div>
+<div class="transcript-row"><time>00:38</time><p>这其实是对通透的片面理解</p></div>
+<div class="transcript-row"><time>00:40</time><p>甚至有人觉得肉圆片发灰就是质量差</p></div>
+<div class="transcript-row"><time>00:43</time><p>恰恰相反</p></div>
+<div class="transcript-row"><time>00:44</time><p>圆片明暗集中在中间调</p></div>
+<div class="transcript-row"><time>00:46</time><p>是保留的最多细节的健康状态</p></div>
+<div class="transcript-row"><time>00:48</time><p>后期把明暗拉开</p></div>
+<div class="transcript-row"><time>00:50</time><p>只是众多影调风格里的一种选择</p></div>
+<div class="transcript-row"><time>00:52</time><p>通透的本质是光影层次有序</p></div>
+<div class="transcript-row"><time>00:55</time><p>色彩干净不浑浊</p></div>
+<div class="transcript-row"><time>00:57</time><p>画面有清晰的空气感</p></div>
+<div class="transcript-row"><time>00:58</time><p>核心是干净度和分离度</p></div>
+<div class="transcript-row"><time>01:01</time><p>高反差能做出锐利的通透感</p></div>
+<div class="transcript-row"><time>01:03</time><p>低反差同样能做出柔和干净的通透感</p></div>
+<div class="transcript-row"><time>01:06</time><p>它和反差高低没有必然关系</p></div>
+<div class="transcript-row"><time>01:08</time><p>纯黑和纯白是很强的视觉刺激</p></div>
+<div class="transcript-row"><time>01:11</time><p>会第一时间抓住眼球</p></div>
+<div class="transcript-row"><time>01:13</time><p>带来锐利硬朗的质感</p></div>
+<div class="transcript-row"><time>01:15</time><p>但也容易打断沉浸感</p></div>
+<div class="transcript-row"><time>01:17</time><p>所以高反差高清晰的画面</p></div>
+<div class="transcript-row"><time>01:19</time><p>核心是展示</p></div>
+<div class="transcript-row"><time>01:20</time><p>展示细节</p></div>
+<div class="transcript-row"><time>01:21</time><p>展示主体质感</p></div>
+<div class="transcript-row"><time>01:22</time><p>观众的注意力会停留在画面本身的形式上</p></div>
+<div class="transcript-row"><time>01:25</time><p>适合商业产品</p></div>
+<div class="transcript-row"><time>01:27</time><p>婚纱写真这类需要突出主体</p></div>
+<div class="transcript-row"><time>01:29</time><p>制造视觉冲击的题材</p></div>
+<div class="transcript-row"><time>01:31</time><p>而低反差的画面</p></div>
+<div class="transcript-row"><time>01:32</time><p>把所有的影调压缩在柔和的中间灰区间</p></div>
+<div class="transcript-row"><time>01:36</time><p>没有刺眼的明暗冲突</p></div>
+<div class="transcript-row"><time>01:37</time><p>反而能让人自然的沉浸在场景的氛围里</p></div>
+<div class="transcript-row"><time>01:41</time><p>接下来我们就拿一组人文街拍原片</p></div>
+<div class="transcript-row"><time>01:44</time><p>教你如何调出这种有故事感的低反差色调</p></div>
+<div class="transcript-row"><time>01:48</time><p>我们用这张做案例演示</p></div>
+<div class="transcript-row"><time>01:50</time><p>先调影调 控明暗结构</p></div>
+<div class="transcript-row"><time>01:52</time><p>主要工具 基础亮度面板和曲线</p></div>
+<div class="transcript-row"><time>01:55</time><p>我们前面说过</p></div>
+<div class="transcript-row"><time>01:56</time><p>这类片子要避免过强的黑和白</p></div>
+<div class="transcript-row"><time>01:59</time><p>要把像素压缩在中间区域</p></div>
+<div class="transcript-row"><time>02:01</time><p>所以我们先把照片的暗部</p></div>
+<div class="transcript-row"><time>02:03</time><p>也就是阴影和黑色提起来</p></div>
+<div class="transcript-row"><time>02:06</time><p>再把照片的亮部</p></div>
+<div class="transcript-row"><time>02:08</time><p>也就是高光和白色往下压</p></div>
+<div class="transcript-row"><time>02:10</time><p>还不够</p></div>
+<div class="transcript-row"><time>02:11</time><p>我们再来到曲线</p></div>
+<div class="transcript-row"><time>02:12</time><p>将黑色的点往上提</p></div>
+<div class="transcript-row"><time>02:16</time><p>白色的点往下压</p></div>
+<div class="transcript-row"><time>02:17</time><p>这类片子都以低中调为主</p></div>
+<div class="transcript-row"><time>02:20</time><p>所以我们在中间调压暗一些</p></div>
+<div class="transcript-row"><time>02:23</time><p>适当在参数曲线里把亮调提起来一些</p></div>
+<div class="transcript-row"><time>02:27</time><p>整体光影层次有了</p></div>
+<div class="transcript-row"><time>02:29</time><p>但整体画面太暗</p></div>
+<div class="transcript-row"><time>02:30</time><p>所以把曝光提起来</p></div>
+<div class="transcript-row"><time>02:34</time><p>现在整体画面有些灰</p></div>
+<div class="transcript-row"><time>02:35</time><p>我们来到红色曲线</p></div>
+<div class="transcript-row"><time>02:38</time><p>我们在高光中间调和阴影打三个点</p></div>
+<div class="transcript-row"><time>02:41</time><p>将它的高光往上提</p></div>
+<div class="transcript-row"><time>02:43</time><p>阴影往下压</p></div>
+<div class="transcript-row"><time>02:45</time><p>右键复制这条通道</p></div>
+<div class="transcript-row"><time>02:46</time><p>再来到绿色曲线</p></div>
+<div class="transcript-row"><time>02:48</time><p>右键粘贴通道</p></div>
+<div class="transcript-row"><time>02:49</time><p>同样蓝色曲线粘贴通道</p></div>
+<div class="transcript-row"><time>02:52</time><p>这里我们同时给红绿蓝</p></div>
+<div class="transcript-row"><time>02:54</time><p>增加形态一样的S型曲线</p></div>
+<div class="transcript-row"><time>02:56</time><p>它们的颜色不会发生改变</p></div>
+<div class="transcript-row"><time>02:58</time><p>但是会增加画面的对比度</p></div>
+<div class="transcript-row"><time>03:00</time><p>调整好画面的基础影调</p></div>
+<div class="transcript-row"><time>03:02</time><p>我们再来调整它的颜色</p></div>
+<div class="transcript-row"><time>03:05</time><p>我们首先来到颜色里</p></div>
+<div class="transcript-row"><time>03:06</time><p>增加些色温让画面整体偏暖</p></div>
+<div class="transcript-row"><time>03:09</time><p>因为我们要考虑预色的通用性</p></div>
+<div class="transcript-row"><time>03:11</time><p>所以我们把色调减掉</p></div>
+<div class="transcript-row"><time>03:14</time><p>关键的一步</p></div>
+<div class="transcript-row"><time>03:15</time><p>我们可以在红绿蓝三条颜色曲线里</p></div>
+<div class="transcript-row"><time>03:18</time><p>通过改变高光和阴影的点</p></div>
+<div class="transcript-row"><time>03:20</time><p>给画面整体增加些颜色</p></div>
+<div class="transcript-row"><time>03:22</time><p>例如我们选择蓝色曲线</p></div>
+<div class="transcript-row"><time>03:24</time><p>我们想要在高光里增加一些暖色</p></div>
+<div class="transcript-row"><time>03:26</time><p>我们只需要把蓝色曲线的高光点往下压</p></div>
+<div class="transcript-row"><time>03:29</time><p>既可以给高光增加黄色</p></div>
+<div class="transcript-row"><time>03:31</time><p>这里我们下压蓝色的点</p></div>
+<div class="transcript-row"><time>03:33</time><p>相当于在减少蓝色</p></div>
+<div class="transcript-row"><time>03:35</time><p>也就是在增加它的互补色黄色</p></div>
+<div class="transcript-row"><time>03:37</time><p>按照这种方式</p></div>
+<div class="transcript-row"><time>03:39</time><p>我们给高光加暖色</p></div>
+<div class="transcript-row"><time>03:40</time><p>暗不加冷色</p></div>
+<div class="transcript-row"><time>03:41</time><p>就可以让画面整体颜色基调</p></div>
+<div class="transcript-row"><time>03:43</time><p>呈现冷暖对比</p></div>
+<div class="transcript-row"><time>03:49</time><p>再来到校准里</p></div>
+<div class="transcript-row"><time>03:50</time><p>将红颜色和绿颜色色相往右移</p></div>
+<div class="transcript-row"><time>03:53</time><p>将蓝颜色色相往左移</p></div>
+<div class="transcript-row"><time>03:55</time><p>适当增加些蓝颜色的饱和度</p></div>
+<div class="transcript-row"><time>03:58</time><p>让画面整体颜色偏向青澄</p></div>
+<div class="transcript-row"><time>04:01</time><p>接着我们来到混色器</p></div>
+<div class="transcript-row"><time>04:03</time><p>将画面中颜色的饱和度适当降低一些</p></div>
+<div class="transcript-row"><time>04:06</time><p>避免画面中颜色溢出</p></div>
+<div class="transcript-row"><time>04:08</time><p>可以将黄色的色相往左移动</p></div>
+<div class="transcript-row"><time>04:10</time><p>让整体的暖色更偏沉一些</p></div>
+<div class="transcript-row"><time>04:16</time><p>将天空的蓝色往青色靠</p></div>
+<div class="transcript-row"><time>04:19</time><p>饱和度适当降低</p></div>
+<div class="transcript-row"><time>04:22</time><p>明度也降低</p></div>
+<div class="transcript-row"><time>04:26</time><p>接着我们要做一些高光朦胧的效果</p></div>
+<div class="transcript-row"><time>04:28</time><p>我们来到盲板里</p></div>
+<div class="transcript-row"><time>04:30</time><p>选择范围</p></div>
+<div class="transcript-row"><time>04:31</time><p>找到亮度范围</p></div>
+<div class="transcript-row"><time>04:34</time><p>将我们的亮度范围控制在高光区域</p></div>
+<div class="transcript-row"><time>04:37</time><p>将过度的以画质拉大一些</p></div>
+<div class="transcript-row"><time>04:39</time><p>这里我们将它的清晰度降低</p></div>
+<div class="transcript-row"><time>04:42</time><p>这样就可以营造一种高光柔焦的效果</p></div>
+<div class="transcript-row"><time>04:45</time><p>前后对比看看</p></div>
+<div class="transcript-row"><time>04:49</time><p>最后我们再增加一些颗粒</p></div>
+<div class="transcript-row"><time>04:52</time><p>找到效果</p></div>
+<div class="transcript-row"><time>04:53</time><p>找到颗粒</p></div>
+<div class="transcript-row"><time>04:54</time><p>添加一些颗粒</p></div>
+<div class="transcript-row"><time>04:58</time><p>最后再增加一点点对比</p></div>
+<div class="transcript-row"><time>05:01</time><p>我们将调整好的参数存为一个预设</p></div>
+<div class="transcript-row"><time>05:05</time><p>将盲板也勾上</p></div>
+<div class="transcript-row"><time>05:07</time><p>我们来测试一下其他场景的照片</p></div>
+<div class="transcript-row"><time>05:10</time><p>因为每张照片的亮度不同</p></div>
+<div class="transcript-row"><time>05:12</time><p>所以我们需要微调曝光</p></div>
+<div class="transcript-row"><time>05:15</time><p>我们将它压暗一些</p></div>
+<div class="transcript-row"><time>05:17</time><p>对比看看</p></div>
+<div class="transcript-row"><time>05:19</time><p>我们多来测试几张</p></div>
+<div class="transcript-row"><time>05:25</time><p>这种色调就很具有电影感</p></div>
+<div class="transcript-row"><time>05:28</time><p>再试试人像的效果</p></div>
+<div class="transcript-row"><time>05:32</time><p>这张图原图色温比较高</p></div>
+<div class="transcript-row"><time>05:34</time><p>所以除了降低一些曝光以外</p></div>
+<div class="transcript-row"><time>05:36</time><p>还可以降低一些色温</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

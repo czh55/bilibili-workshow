@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6471" viewBox="0 0 1320 6471">
+  <foreignObject x="0" y="0" width="1320" height="6471">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>曲线RGB三原色互补与混合原理</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">PS</span><span class="tag tag-blue">曲线</span><span class="tag tag-blue">RGB</span><span class="tag tag-blue">调色</span><span class="tag tag-gray">时长 4分10秒</span><span class="tag tag-gray">分析视角：曲线调色的底层原理</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/rAS0m3ji1g">原视频链接</a>
+  <div class="summary-line">核心判断：曲线调色不靠感觉，靠三原色的互补与混合原理。RGB 三色叠加变白（调亮暗），两两混合出青黄品红三补色；皮肤偏黄时用「互补法」提蓝曲线直接减黄，或「混合法」减红减绿让蓝主导。曲线上提变亮、下压变暗，这是曲线调色的一切基础。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场：曲线是人像调色最重要的工具之一</div></div><div class="timeline-item"><div class="timeline-time">00:16</div><div class="timeline-text">RGB 三色叠加变白，曲线中代表亮暗</div></div><div class="timeline-item"><div class="timeline-time">00:37</div><div class="timeline-text">三原色混合产生青黄品红三补色</div></div><div class="timeline-item"><div class="timeline-time">00:53</div><div class="timeline-text">案例：人物肤色偏黄需要剪黄</div></div><div class="timeline-item"><div class="timeline-time">01:10</div><div class="timeline-text">互补原理：蓝黄互补，蓝多黄少</div></div><div class="timeline-item"><div class="timeline-time">01:33</div><div class="timeline-text">互补法实操：蓝曲线往上提抵消黄色</div></div><div class="timeline-item"><div class="timeline-time">02:01</div><div class="timeline-text">混合法：减红减绿让蓝主导</div></div><div class="timeline-item"><div class="timeline-time">02:41</div><div class="timeline-text">画面变暗的原因：曲线下压</div></div><div class="timeline-item"><div class="timeline-time">02:54</div><div class="timeline-text">回到 RGB 提亮，肤色更自然</div></div><div class="timeline-item"><div class="timeline-time">03:02</div><div class="timeline-text">方法选择：影调决定用哪种</div></div><div class="timeline-item"><div class="timeline-time">03:43</div><div class="timeline-text">总结：曲线依互补与混合原理，需配合其他工具</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>曲线调色找不到规律</div><div class="arrow">→</div><div class="node node-blue">证据<br/>互补法与混合法两个实验</div><div class="arrow">→</div><div class="node node-green">判断<br/>曲线基于三原色互补混合</div><div class="arrow">→</div><div class="node node-orange">行动<br/>按影调需求选方法</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：曲线调色凭感觉慢慢试。纠偏：红绿蓝互补关系是确定性的，调色有原理可循。</p><p>误解 2：RGB 曲线能改颜色。纠偏：RGB 只调亮暗，改颜色要用红/绿/蓝单通道曲线。</p><p>误解 3：一条曲线能完成所有调色。纠偏：曲线解决基础，要配合其他工具才能出完整效果。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>底子：RGB 与三补色</h3><p>在讲什么：红绿蓝三色叠加变白，在 PS 里当亮暗处理，所以 RGB 曲线只改亮度；三色两两混合出青、黄、品红，与红蓝绿分别互为对立色。关键理解：互补关系是「消色」的钥匙——想消哪个色就加它的对立色。怎么用：背下三组互补对：红↔青、绿↔品红、蓝↔黄。</p><div class="quote">依据 [00:16–00:52]：红绿蓝三种颜色叠加在一起会变成白色，在 PS 里面会当做亮暗来处理……红色的对立色就是青色，蓝色的对立色就是黄色。</div><div class="relation">立场分层：颜色叠加为光学事实；「对立色」为其给出的应用口诀。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>互补法：加蓝剪黄</h3><p>在讲什么：皮肤偏黄要剪黄，曲线里没有黄色选项，但黄蓝互补——提蓝色曲线增加蓝，黄就被抵消。关键理解：互补法直接且不动亮度，适合要通透提亮的人像。怎么用：肤色偏黄就选蓝通道上提，观察黄色退减。</p><div class="quote">依据 [01:33–02:00]：你选择蓝色往上一提，你看画面中的黄是不是就被抵消了。</div><div class="relation">立场分层：加蓝减黄为原理推导；操作结果可画面核对。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>混合法：减红减绿让蓝主导</h3><p>在讲什么：黄由红+绿混合而成，减红减绿让蓝成为主导色，同样抵消黄。但曲线下压画面变暗，需回 RGB 提亮。关键理解：混合法适合要暗调影调的场景，缺点是伴随亮度损失。怎么用：需要暗调时用混合法，需要提亮时用互补法。</p><div class="quote">依据 [02:01–03:01]：把红色减去、绿色减去，蓝色就是主导了……曲线往下压的画面会变暗，这时候只需要回到 RGB 把它提亮。</div><div class="relation">立场分层：两个实验对比为可复现事实；「影调决定方法」为博主结论。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>总结：原理与边界</h3><p>在讲什么：曲线调整就是根据三原色互补和混合原理；RGB 只调亮暗不改颜色；想调好一张照片，光靠曲线不够，要配合 PS 其他工具。关键理解：曲线是「结构性工具」，负责色与亮度的基础，细节交给蒙版、可选颜色等。怎么用：建立「曲线打底+其他工具精修」的分工意识。</p><div class="quote">依据 [03:43–04:10]：曲线的调整是非常简单的，就是根据三原色互补和混合的原理……想要调好一张照片，光靠一个曲线工具是没有办法完成所有工作的。</div><div class="relation">立场分层：原理归纳为博主教学总结；「配合其他工具」为其方法论边界。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">两种肤色去黄方法对比表</h2><div class="card"><table><thead><tr><th>方法</th><th>操作</th><th>亮度影响</th><th>适用场景</th></tr></thead><tbody><tr><td>互补法</td><td>提蓝曲线</td><td>基本不变</td><td>通透提亮的人像</td></tr><tr><td>混合法</td><td>减红减绿</td><td>变暗（需补亮）</td><td>需要暗调的影调</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：PS 曲线新手建立调色原理认知。</li><li>上限：解决色相与亮度关系，不解决磨皮、构图等具体处理。</li><li>反例：极端偏色需多通道组合调整，单一曲线不够。</li><li>例外：RAW 调色与 JPG 调色中曲线表现略有差异。</li></ul><div class="pitfall">避坑：提蓝要克制，提太多肤色发紫。</div><div class="pitfall">避坑：混合法减红绿后记得回 RGB 补亮度。</div><div class="pitfall">避坑：别只用曲线做全部调色，配合蒙版等工具。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>曲线调色=三原色互补与混合原理。</li><li>互补法加对立色、混合法减组成色。</li><li>RGB 只调亮暗，曲线需配合其他工具。</li></ul><h3>行动清单</h3><ol><li>记住三组互补对：红↔青、绿↔品红、蓝↔黄。</li><li>肤色偏黄先试互补法：提蓝曲线。</li><li>需要暗调影调时再用混合法，并补回亮度。</li></ol><h3>关键认知转变</h3><p>从「曲线靠感觉试」转到「曲线有原理可循」：知道互补关系，调色就从玄学变成科学。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 4分10秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7224" viewBox="0 0 1320 7224">
+  <foreignObject x="0" y="0" width="1320" height="7224">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>保姆级教程❗️普通人也能调出人文纪实色调</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">调色</span><span class="tag tag-blue">PS</span><span class="tag tag-blue">扫街</span><span class="tag tag-blue">人文</span><span class="tag tag-gray">时长 5分44秒</span><span class="tag tag-gray">分析视角：通透与人文色调的关系</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/32blN5npW1r">原视频链接</a>
+  <div class="summary-line">核心判断：通透不是把直方图两端顶到纯黑纯白，而是光影层次有序、色彩干净不浑浊，核心是干净度与分离度。人文纪实色调用「低反差」实现另一种通透——压缩中间灰、高光加暖阴影加冷、校准偏青橙，再配合柔焦与颗粒。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">提出问题：调完样图别人却说不通透</div></div><div class="timeline-item"><div class="timeline-time">00:16</div><div class="timeline-text">通透的常见误区：拉满直方图两端被当成通用标准</div></div><div class="timeline-item"><div class="timeline-time">00:52</div><div class="timeline-text">通透本质：光影层次有序、色彩干净，核心是干净度与分离度</div></div><div class="timeline-item"><div class="timeline-time">01:01</div><div class="timeline-text">高反差与低反差都能做通透，与反差高低无必然关系</div></div><div class="timeline-item"><div class="timeline-time">01:41</div><div class="timeline-text">案例：人文街拍原片调低反差色调</div></div><div class="timeline-item"><div class="timeline-time">01:50</div><div class="timeline-text">影调：提阴影压高光、曲线黑点上提白点下压</div></div><div class="timeline-item"><div class="timeline-time">02:34</div><div class="timeline-text">RGB 曲线打三点做 S 型，增强对比度不变色</div></div><div class="timeline-item"><div class="timeline-time">03:05</div><div class="timeline-text">颜色：加色温、蓝曲线高光下压加暖黄</div></div><div class="timeline-item"><div class="timeline-time">03:49</div><div class="timeline-text">校准：红绿右移、蓝左移，画面偏青橙</div></div><div class="timeline-item"><div class="timeline-time">04:26</div><div class="timeline-text">柔焦：蒙版高光区降清晰度</div></div><div class="timeline-item"><div class="timeline-time">04:58</div><div class="timeline-text">颗粒与对比，存为预设测试多场景</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>别人说画面不通透</div><div class="arrow">→</div><div class="node node-blue">证据<br/>高/低反差两种通透的对比</div><div class="arrow">→</div><div class="node node-green">判断<br/>通透=干净度+分离度</div><div class="arrow">→</div><div class="node node-orange">行动<br/>低反差影调+冷暖对比+青橙校准</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：直方图两端顶到纯黑纯白才叫通透。纠偏：原片明暗集中在中间调恰恰是健康状态，拉开明暗只是风格选择之一。</p><p>误解 2：发灰就是质量差。纠偏：低反差同样能做干净通透，关键在于层次有序而非反差高低。</p><p>误解 3：通透靠「加对比」就行。纠偏：通透的本质是干净度和分离度，高对比只是其中一种手段。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>通透的重新定义</h3><p>在讲什么：新手学调色最先踩的坑是画面发灰，拉曲线补直方图两端见效最快，久而久之被当成通用标准。但通透的本质是光影层次有序、色彩干净不浑浊、画面有清晰的空气感。关键理解：通透与反差高低无必然关系，核心是干净度和分离度。怎么用：评价画面先看层次与干净度，而不是只看对比度。</p><div class="quote">依据 [00:16–01:00]：很多人觉得直方图两端顶到纯黑纯白才叫通透……通透的本质是光影层次有序，色彩干净不浑浊，核心是干净度和分离度。</div><div class="relation">立场分层：「直方图两端」的迷信为博主批判对象；「干净度+分离度」为其重新定义。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>高反差与低反差的分工</h3><p>在讲什么：纯黑纯白带来锐利硬朗的质感，适合商业产品、婚纱写真这类突出主体的题材；低反差把影调压缩在中间灰，让人沉浸于氛围，适合人文纪实。关键理解：反差是风格选择，各有适用题材。怎么用：先想清照片的用途，再决定用高反差还是低反差。</p><div class="quote">依据 [01:01–01:47]：高反差高清晰的画面核心是展示……适合商业产品、婚纱写真；低反差反而能让人自然沉浸，适合人文纪实。</div><div class="relation">立场分层：两种反差的效果为演示事实；题材对应为博主归纳。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>影调压缩：低反差的关键手法</h3><p>在讲什么：先提阴影黑色、压高光白色，把像素压缩到中间区域；再在曲线里黑点上提白点下压，中间调压暗、亮调微提；最后调曝光。RGB 曲线打三点做同形 S 型，只增对比不变色。关键理解：低反差的实现是「先压后调」，不是简单降对比。怎么用：按「亮度面板→曲线→曝光」顺序逐步调，每步都观察直方图。</p><div class="quote">依据 [01:50–03:00]：先把照片的暗部提起来，再把亮部往下压……同时给红绿蓝增加形态一样的 S 型曲线，颜色不会改变，但增加对比度。</div><div class="relation">立场分层：操作步骤可复现核对；「压缩中间区域」为博主的目标定义。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>颜色控制：冷暖对比与青橙调</h3><p>在讲什么：加色温偏暖、减色调；蓝曲线高光点下压等于减蓝加黄，给高光加暖、阴影加冷；校准面板红绿右移蓝左移，整体偏青橙；混色器降饱和防溢出。关键理解：颜色曲线通过互补色控制局部冷暖，校准面板统一调性。怎么用：用「高光加暖、阴影加冷」的思路制造层次，再用校准统一风格。</p><div class="quote">依据 [03:05–04:25]：把蓝色曲线的高光点往下压，既给高光增加黄色……红颜色和绿颜色色相往右移，蓝颜色往左移，画面整体偏青橙。</div><div class="relation">立场分层：互补色逻辑为调色原理；具体参数为博主配方。</div></div><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>质感：柔焦、颗粒与预设</h3><p>在讲什么：蒙版选高光亮度范围、降清晰度做柔焦；加颗粒与少量对比；参数存为预设（勾蒙版），换照片只微调曝光色温。关键理解：柔焦与颗粒是「空气感」与「胶片感」的质感层。怎么用：存预设后逐张微调曝光，保留风格统一性。</p><div class="quote">依据 [04:26–05:44]：将亮度范围控制在高光区域，清晰度降低营造高光柔焦效果……将调整好的参数存为一个预设，将蒙版也勾上。</div><div class="relation">立场分层：质感操作为可复现步骤；「预设通用」为其效率方法。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">人文纪实色调调色步骤表</h2><div class="card"><table><thead><tr><th>模块</th><th>操作</th><th>目的</th></tr></thead><tbody><tr><td>影调</td><td>提阴影压高光、S 型曲线</td><td>压缩中间灰、增对比</td></tr><tr><td>颜色</td><td>高光加暖阴影加冷</td><td>冷暖对比层次</td></tr><tr><td>校准</td><td>红绿右移蓝左移</td><td>青橙统一调性</td></tr><tr><td>混色器</td><td>降饱和、黄往沉、蓝往青</td><td>防溢出、整体干净</td></tr><tr><td>质感</td><td>高光柔焦+颗粒</td><td>空气感胶片感</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：人文扫街、人像纪实类照片的低反差调色。</li><li>上限：解决影调与颜色结构，不解决构图、选片等前期问题。</li><li>反例：高调商业人像追求明快通透，此流程需反向调整。</li><li>例外：不同拍摄环境（阴天/逆光）需微调曝光与色温。</li></ul><div class="pitfall">避坑：蒙版柔焦别过度，清晰度降太多会发糊。</div><div class="pitfall">避坑：颗粒数量克制，加太多会脏。</div><div class="pitfall">避坑：预设不是万能，每张照片都要微调曝光色温。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>通透=干净度+分离度，与反差高低无关。</li><li>低反差人文色调：压缩中间灰+冷暖对比+青橙校准。</li><li>柔焦与颗粒提供质感，预设保证风格统一。</li></ul><h3>行动清单</h3><ol><li>先看直方图，判断画面信息分布再决定影调方向。</li><li>按影调→颜色→校准→质感四步走，不要跳步。</li><li>调完存预设，多场景微调曝光色温验证通用性。</li></ol><h3>关键认知转变</h3><p>从「通透=拉满对比」转到「通透=层次干净」：看懂低反差的美学，才真正理解人文色调。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 5分44秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7404" viewBox="0 0 1320 7404">
+  <foreignObject x="0" y="0" width="1320" height="7404">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>新官上任女领导，怎么管老员工/老油条</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">职场</span><span class="tag tag-blue">管理</span><span class="tag tag-blue">新领导</span><span class="tag tag-blue">女性管理</span><span class="tag tag-gray">时长 5分30秒</span><span class="tag tag-gray">分析视角：新领导上任的行动序列</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/6e5xXTYdpXa">原视频链接</a>
+  <div class="summary-line">核心判断：新官上任最大的坑是「急着向下谈」——谈心的真心话可能是试探。正解是先向上要三样东西：地图（目标）、钥匙（授权）、黑名单（权力结构）；然后前两周少表态多观察，找小切口立规则、把模糊承诺钉成具体的人和日期；最后用连续结果建立权威，而不是天天说「老板的意思」。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">反面案例：新领导逐个谈心却谈了个寂寞</div></div><div class="timeline-item"><div class="timeline-time">00:22</div><div class="timeline-text">表面支持的员工转头就拆台</div></div><div class="timeline-item"><div class="timeline-time">00:39</div><div class="timeline-text">被当枪使：建议协调的项目实为死对头</div></div><div class="timeline-item"><div class="timeline-time">00:59</div><div class="timeline-text">结论：新官上任向下谈容易把自己谈没</div></div><div class="timeline-item"><div class="timeline-time">01:04</div><div class="timeline-text">先向上谈：安全感来自直属领导</div></div><div class="timeline-item"><div class="timeline-time">01:26</div><div class="timeline-text">要三样东西：地图、钥匙、黑名单</div></div><div class="timeline-item"><div class="timeline-time">02:04</div><div class="timeline-text">钥匙=授权：任命与授权是两回事</div></div><div class="timeline-item"><div class="timeline-time">02:48</div><div class="timeline-text">越级汇报要提前谈好</div></div><div class="timeline-item"><div class="timeline-time">03:00</div><div class="timeline-text">黑名单=权力结构：刺头/关系户/意见领袖</div></div><div class="timeline-item"><div class="timeline-time">03:23</div><div class="timeline-text">前两周少表态多观察，翻记录看评估</div></div><div class="timeline-item"><div class="timeline-time">03:45</div><div class="timeline-text">小切口：会议当场确认结论/负责人/反馈</div></div><div class="timeline-item"><div class="timeline-time">04:21</div><div class="timeline-text">把「我尽量」钉成具体的人和日期</div></div><div class="timeline-item"><div class="timeline-time">04:43</div><div class="timeline-text">大坑：别天天说「老板的意思」</div></div><div class="timeline-item"><div class="timeline-time">05:03</div><div class="timeline-text">女性管理者：拿结果说话，重新被评估</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>新领导被老油条架空</div><div class="arrow">→</div><div class="node node-blue">证据<br/>谈心的三个翻车案例</div><div class="arrow">→</div><div class="node node-green">判断<br/>先向上拿地图/钥匙/黑名单</div><div class="arrow">→</div><div class="node node-orange">行动<br/>观察两周+小切口立规则</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：新官上任要先向下谈感情。纠偏：谈心对象可能各有盘算，先向上拿资源再向下。</p><p>误解 2：任命了就自动有权威。纠偏：授权是另一回事，要主动谈清楚权限边界。</p><p>误解 3：管老油条靠说「老板的意思」。纠偏：说多了权威就没了，靠连续结果建立。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>反面案例：谈了个寂寞</h3><p>在讲什么：把老油条逐个请进办公室谈心，记了一本子「真心话」；结果表态支持的转头拆台、哭诉打压的想看你好不好拿捏、建议协调的其实是拿你当枪使。关键理解：新领导信息劣势下，向下谈容易成为「被评估」而不是「评估」对象。怎么用：上任初期先别急着向下谈，先摸清信息源。</p><div class="quote">依据 [00:00–01:03]：那个跟我说「你放手干我们都支持你」的，转头就跟别人说……这个大哥是拿我当枪使。</div><div class="relation">立场分层：三个案例为博主亲历；「向下谈容易谈没自己」为其教训总结。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>先向上要三样：地图/钥匙/黑名单</h3><p>在讲什么：安全感来自直属领导，先找他谈要三样东西——地图（他希望你把团队带到什么状态）、钥匙（哪些事能拍板、哪些要请示）、黑名单（谁是什么角色）。关键理解：三样东西把「领导期望、授权边界、权力结构」一次拿齐，避免瞎干。怎么用：上任第一周就约直属领导，逐项问清三样。</p><div class="quote">依据 [01:04–03:22]：先不要着急着向下去谈，先找你的领导去谈……地图是什么？是他想让你干嘛……钥匙是什么？是授权……黑名单是让你的领导给你画出来这个团队中的权力结构。</div><div class="relation">立场分层：三样东西为博主方法论核心；「先向上后向下」为其行动次序。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>前两周：少表态多观察</h3><p>在讲什么：拿齐三样后深入团队，前两周少表态多观察、少评价人多还原事——翻项目复盘、交付记录、延期原因、绩效评估、聊天记录。关键理解：观察期是「信息重建」，用事实替代猜测。怎么用：先做信息审计，再决定动哪里。</p><div class="quote">依据 [03:23–04:43]：前面两周少表态多观察，少评价人多还原事……翻项目复盘、交付记录、绩效评估表、聊天记录。</div><div class="relation">立场分层：观察方法为博主实践；「小切口立规则」为其行动策略。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>小切口：把模糊钉成具体</h3><p>在讲什么：找小切口处理——会议结束前当场确认三件事（结论/谁干/周期反馈）；把「我尽量」变成「周三下午六点前给我第一版，卡在哪告诉我」。关键理解：管理动作的最小闭环是「具体的人+具体的时间」。怎么用：每个模糊承诺都追问「什么时间点、卡在哪个环节、需要谁配合」。</p><div class="quote">依据 [04:05–04:43]：每个会在结束前都要当场去确认三件事……把每件事打成具体的人、具体的时间。</div><div class="relation">立场分层：小切口操作可复现；「具体化」为其管理的核心动作。</div></div><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>立威：用结果不用「老板意思」</h3><p>在讲什么：别天天说「这是老板的意思」，说多权威就没了；尤其是年轻女性管理者，一定会被戴有色眼镜看，只需做三件事——上级喜欢你、规则清楚、结果拿得出来。关键理解：权威的本质是结果，不是授权背书。怎么用：连续拿下几个结果，让团队重新评估你。</p><div class="quote">依据 [04:43–05:30]：不要天天张嘴闭嘴就是「这是谁谁谁我们领导的意思」……你只需要干三件事：上级喜欢你、规则清楚、结果拿得出来。</div><div class="relation">立场分层：「三件事」为博主给女性管理者的核心建议；「拿结果立威」为其方法论结论。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">新领导上任行动序列表</h2><div class="card"><table><thead><tr><th>阶段</th><th>动作</th><th>产出</th><th>避坑</th></tr></thead><tbody><tr><td>第 1 周</td><td>向上要地图/钥匙/黑名单</td><td>目标+授权+权力结构</td><td>别急着向下谈</td></tr><tr><td>第 2-3 周</td><td>少表态多观察</td><td>信息审计</td><td>别轻信谈心</td></tr><tr><td>第 3-4 周</td><td>小切口立规则</td><td>会议确认三件事</td><td>别上来大改</td></tr><tr><td>持续</td><td>拿结果立威</td><td>连续成绩</td><td>别靠「老板意思」</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：新任/空降管理者，尤其是年轻女性管理者。</li><li>上限：提供行动序列与话术，不覆盖具体业务决策。</li><li>反例：直属领导不靠谱时，需额外管理向上关系。</li><li>例外：创业团队/扁平组织结构下，方法与科层组织略有差异。</li></ul><div class="pitfall">避坑：向上谈别只谈一次，第一周结束汇报时再确认。</div><div class="pitfall">避坑：观察期别完全沉默，会议要有参与感。</div><div class="pitfall">避坑：小切口别贪多，一次一件事做透。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>先向上拿地图、钥匙、黑名单，再向下动。</li><li>前两周少表态多观察，找小切口立规则。</li><li>用连续结果立威，不靠「老板的意思」。</li></ul><h3>行动清单</h3><ol><li>上任第一周约直属领导谈三样东西。</li><li>前两周做信息审计，不急着表态。</li><li>把每个「尽量」钉成具体的人和时间。</li></ol><h3>关键认知转变</h3><p>从「新官上任三把火」转到「先拿地图再点火」：权威靠结果建立，不靠职务与背书。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 5分30秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

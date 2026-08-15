@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6464" viewBox="0 0 1320 6464">
+  <foreignObject x="0" y="0" width="1320" height="6464">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#0f766e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#0f766e;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #14b8a6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#0f766e;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#0d9488;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #6ee7b7;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#065f46}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.node-blue{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd;color:#1e40af}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#0f766e;margin-bottom:16px;padding-left:16px;border-left:4px solid #14b8a6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #14b8a6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#0f766e;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#ecfdf5;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#065f46;border-left:4px solid #14b8a6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#d1fae5;color:#065f46}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#0f766e;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#0d9488;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#0f766e;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>穿裙子怎么拍？亲测实用的拍照姿势</h1>
+  <div class="meta"><span class="tag tag-blue">小红书</span><span class="tag tag-blue">穿搭</span><span class="tag tag-blue">拍照</span><span class="tag tag-blue">姿势</span><span class="tag tag-blue">女孩</span><span class="tag tag-gray">时长 2分56秒</span><span class="tag tag-gray">分析视角：拍照姿势与道具管理</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AsYxaJBYRig">原视频链接</a>
+  <div class="summary-line">核心判断：穿裙子拍照不尴尬的核心不是姿势本身，而是「表情管理 + 道具借力 + 裙型选择」的组合。表情分天真/温柔/威严三档；帽子调角度、墨镜露眉毛、外套挡腰线三个道具技巧；最后用收腰位置与垂感选对裙子，小个子也不显五五分。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><div class="timeline-time">00:00</div><div class="timeline-text">开场：表情管理——天真/温柔/威严三档笑</div></div><div class="timeline-item"><div class="timeline-time">00:15</div><div class="timeline-text">帽子技巧：角度对了才有牛仔感</div></div><div class="timeline-item"><div class="timeline-time">00:28</div><div class="timeline-text">墨镜误区：眉毛被遮住显怪异</div></div><div class="timeline-item"><div class="timeline-time">00:44</div><div class="timeline-text">姿势一：挎包提裙+温柔假笑</div></div><div class="timeline-item"><div class="timeline-time">01:05</div><div class="timeline-text">姿势二：穿裙看展侧身</div></div><div class="timeline-item"><div class="timeline-time">01:23</div><div class="timeline-text">外套挡腰线，微笑是礼貌也是警告</div></div><div class="timeline-item"><div class="timeline-time">01:50</div><div class="timeline-text">裙子实穿：收腰位置决定显不显五五分</div></div><div class="timeline-item"><div class="timeline-time">02:29</div><div class="timeline-text">开衫遮手臂，更帅气</div></div><div class="timeline-item"><div class="timeline-time">02:45</div><div class="timeline-text">长裙到脚面，走出温柔姐姐风</div></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node ">问题<br/>穿裙子拍照尴尬</div><div class="arrow">→</div><div class="node node-blue">证据<br/>表情/道具/裙型三组实测</div><div class="arrow">→</div><div class="node node-green">判断<br/>拍照=表情+道具+裙型组合</div><div class="arrow">→</div><div class="node node-orange">行动<br/>三招逐一上手</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：穿裙子拍照姿势要夸张。纠偏：温柔假笑+自然侧身就有氛围感，贵在克制。</p><p>误解 2：墨镜随便戴都好看。纠偏：眉毛被遮住会显怪异，露出眉毛是关键。</p><p>误解 3：小个子不能穿长裙。纠偏：收腰位置对，164 也能穿出温柔姐姐风。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2><div class="card card-green"><h3><span class="speaker speaker-host">UP 主观点</span>表情管理：三档假笑</h3><p>在讲什么：想笑得天真就嘴角用力上抬，想温柔就嘴角往外弯，想威严就收起来。关键理解：表情是拍照的第一道「姿势」，决定整张照片的情绪基调。怎么用：拍照前先确定这组照片要什么情绪，再调表情。</p><div class="quote">依据 [00:00–00:14]：如果想笑天真一点的话，这个地方用力往上抬；如果想笑得温柔的话，这个地方往外弯。</div><div class="relation">立场分层：三档表情为博主方法；对应示范可画面核对。</div></div><div class="card card-orange"><h3><span class="speaker speaker-host">UP 主观点</span>道具借力：帽子与墨镜</h3><p>在讲什么：帽子要调对角度才有牛仔感；戴墨镜眉毛一定要露出来，遮住就怪。关键理解：道具的佩戴方式比道具本身更重要。怎么用：戴帽侧一点、墨镜不上压眉，多角度试戴再拍。</p><div class="quote">依据 [00:15–00:43]：就今天发现这样戴才有感觉，会有那种牛仔的感觉……如果你戴墨镜总是戴得不好看，可能是因为眉毛遮住了。</div><div class="relation">立场分层：佩戴演示为博主实测；「露眉」为其纠正要点。</div></div><div class="card card-purple"><h3><span class="speaker speaker-host">UP 主观点</span>姿势与借物：提裙与外套</h3><p>在讲什么：姿势一挎包提裙配温柔假笑；姿势二穿裙看展侧身；料子薄或吃饱时拿小外套搭身前，还能挡腰线。关键理解：姿势的核心是「自然不尴尬」，道具负责兜底。怎么用：提裙动作放慢、侧身留出裙摆流动感，外套叠在身前。</p><div class="quote">依据 [00:44–01:49]：第一个姿势就是我最常用的提裙子……如果裙子料子薄，拿个小外套这样子，还可以挡住腰线。</div><div class="relation">立场分层：姿势与借物为博主实测分享；「微笑是礼貌也是警告」为其趣味总结。</div></div><div class="card "><h3><span class="speaker speaker-host">UP 主观点</span>裙型选择：收腰与垂感</h3><p>在讲什么：收腰位置决定比例——164 的身高，收腰收得好就不显五五分；料子轻薄但垂感好，小肚子友好；配开衫遮手臂更帅气。关键理解：裙子的「版型参数」比颜值更决定上身效果。怎么用：选裙先看收腰位置与垂感，再谈花色。</p><div class="quote">依据 [01:50–02:56]：收腰位置收得不好的话容易显五五分……这个裙子的版型、垂直感做得非常好。</div><div class="relation">立场分层：实穿评测为博主亲测；「收腰位置」为其选裙核心标准。</div></div></div>
+
+  <div class="section"><h2 class="sec-title">穿裙子拍照三招拆解表</h2><div class="card"><table><thead><tr><th>维度</th><th>要点</th><th>反例</th><th>实操</th></tr></thead><tbody><tr><td>表情</td><td>三档假笑</td><td>僵硬/过度</td><td>先定情绪再摆</td></tr><tr><td>道具</td><td>帽角度/墨镜露眉</td><td>遮眉/正戴</td><td>多角度试戴</td></tr><tr><td>姿势</td><td>提裙/侧身/借外套</td><td>尴尬站着</td><td>动作放慢自然</td></tr><tr><td>裙型</td><td>收腰位置+垂感</td><td>五五分</td><td>先看版型参数</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：日常穿裙拍照、看展打卡场景。</li><li>上限：解决摆姿与道具问题，不涉及专业摄影灯光与后期。</li><li>反例：正式写真场景需更专业的姿势与布光。</li><li>例外：不同裙型（A 字/直筒/纱裙）姿势侧重点不同。</li></ul><div class="pitfall">避坑：假笑别用力过猛，温柔档最百搭。</div><div class="pitfall">避坑：提裙动作别太快，抓拍容易糊。</div><div class="pitfall">避坑：外套挡腰线时别挡太多，露一点反而显瘦。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>表情三档：天真/温柔/威严，先定情绪。</li><li>道具借力：帽调角度、墨镜露眉、外套挡腰。</li><li>选裙看收腰位置与垂感，小个子也友好。</li></ul><h3>行动清单</h3><ol><li>下次拍照前先决定「这组照片的情绪」。</li><li>帽/墨镜多角度试戴，露眉是关键。</li><li>选裙优先看版型参数，再选花色。</li></ol><h3>关键认知转变</h3><p>从「摆姿势」转到「组合管理」：表情、道具、裙型三件事配合，拍照自然不尴尬。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录与可见字幕核对 · 2分56秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 4 分 10 秒的 PS 曲线调色原理课。新手用曲线觉得乱，是因为不知道曲线的互补和混合原理。视频先讲 RGB 三色叠加的知识：RGB 三色叠加变白色（代表亮暗）、混合出青黄品红三补色；再用「肤色偏黄怎么剪黄」这个真实案例，演示两种解法——互补法（加蓝抵黄）与混合法（减红减">
+<title>曲线RGB三原色互补与混合原理｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>曲线 RGB：三原色互补与混合原理</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">4:10</span><span class="meta-tag tag-topic">PS 曲线 调色 RGB 原理 教学</span></div>
+<a class="source-link" href="https://xhslink.cn/o/rAS0m3ji1g" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">三原色的叠加与互补</a><a href="#ch2">互补法：加蓝剪黄</a><a href="#ch3">混合法：减红减绿让蓝主导</a><a href="#ch4">方法选择与边界</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 4 分 10 秒的 PS 曲线调色原理课。新手用曲线觉得乱，是因为不知道曲线的互补和混合原理。视频先讲 RGB 三色叠加的知识：RGB 三色叠加变白色（代表亮暗）、混合出青黄品红三补色；再用「肤色偏黄怎么剪黄」这个真实案例，演示两种解法——互补法（加蓝抵黄）与混合法（减红减绿让蓝主导），最后总结：曲线上提变亮、下压变暗，配合其他工具才能完成好调色。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:53]</span><div><strong>曲线的底子：三原色叠加</strong><p>红绿蓝三种颜色叠加变白色，在 PS 里当亮暗处理。曲线里的 RGB 就是三色叠加，调整它只能改变照片的亮和暗。三色两两混合又出三种新颜色：青、黄、品红。红色对青色、蓝色对黄色、绿色对品红（平红）。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:53→02:01]</span><div><strong>互补法：肤色偏黄就加蓝</strong><p>黄是蓝的互补色，蓝多黄就少。曲线里没有黄色选项，但可以选蓝色往上提，画面中的黄就被抵消了。这是用互补原理做肤色调色，直接加蓝、不用调亮度，适合提亮的调性。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:01→03:02]</span><div><strong>混合法：减红减绿让蓝主导</strong><p>黄色由红+绿混合而成。要剪黄，就为画面减红减绿，蓝色自然成为主导色抵消黄色。但曲线下压会让画面变暗，需要回到 RGB 提亮——适合要暗调影调的场景。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:02→04:10]</span><div><strong>总结与边界</strong><p>曲线调整非常简单：根据三原色互补和混合原理。RGB 只调亮暗、不改颜色。光靠曲线没法完成所有工作，要配合 PS 其他工具才能达到想要的调色效果。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>曲线调色的两根支柱：①互补原理——想剪黄就加蓝（提蓝曲线）；②混合原理——减红减绿让蓝主导（压红绿曲线）。曲线往上提画面变亮、往下压画面变暗；RGB 通道只调亮暗。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:53</span>三原色的叠加与互补</h2><p>「人像调色最重要的调色工具之一就是曲线，特别是新手同学在不知道曲线的互补和混合原理之前，使用曲线调色会觉得非常乱，完全找不到调色的规律。」</p><p>「红绿蓝三种颜色叠加在一起，它会变成白色，在 PS 里面会当做亮暗来处理。」所以曲线里选 RGB 调曲线，只能改变照片的亮和暗。</p><p>「红绿蓝这三种颜色叠加，又多出来了三种颜色，分别是青、黄、品红。红色的对立色就是青色，蓝色的对立色就是黄色，绿色的对立色就是品红，也称之为平红。」</p><figure><img src="assets/rgb-curve-basics/shot-01.jpg" alt="开场：曲线是人像调色最重要的工具之一" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:12]</span>开场：曲线是人像调色最重要的工具之一</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/473e0ab4e82c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: the curve is one of the most important tools for portrait grading</span></div>
+<audio class="cap-audio" src="audio/473e0ab4e82c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/rgb-curve-basics/shot-02.jpg" alt="RGB 三色叠加变白色，曲线中代表亮暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:25]</span>RGB 三色叠加变白色，曲线中代表亮暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e24691a5164d.mp3" type="button" aria-label="Play English audio">🔊</button><span>RGB layered together becomes white, which the curve treats as brightness</span></div>
+<audio class="cap-audio" src="audio/e24691a5164d.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/rgb-curve-basics/shot-03.jpg" alt="三原色混合产生青黄品红三补色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:40]</span>三原色混合产生青黄品红三补色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/40c225406283.mp3" type="button" aria-label="Play English audio">🔊</button><span>Mixing primaries yields the three complements: cyan, yellow, magenta</span></div>
+<audio class="cap-audio" src="audio/40c225406283.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:53-02:01</span>互补法：加蓝剪黄</h2><p>回到照片：「你可以看到人物的肤色特别的黄。那如果肤色黄，我们是不是需要把黄色给剪掉？」但曲线里没有黄色选项，只有红绿蓝三种颜色。</p><p>「蓝色的对立色就是黄色，也称之为互补色。要想剪去照片中的黄色，我们就需要对应的为照片当中多增加一些蓝色。因为蓝和黄互补，蓝色多了黄就少，黄色多了蓝就少。」</p><p>「正好在曲线当中有蓝色这个选项，你选择蓝色往上一提——你看画面中的黄是不是就被抵消了。」这印证了互补原理：想让黄色少，就给它增加蓝，形成一个平衡。</p><figure><img src="assets/rgb-curve-basics/shot-04.jpg" alt="案例：人物肤色偏黄，需要剪掉黄色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:55]</span>案例：人物肤色偏黄，需要剪掉黄色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/038bbd973380.mp3" type="button" aria-label="Play English audio">🔊</button><span>Case: the skin tone is too yellow and needs the yellow removed</span></div>
+<audio class="cap-audio" src="audio/038bbd973380.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/rgb-curve-basics/shot-05.jpg" alt="互补法：蓝色曲线上提抵消黄色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:35]</span>互补法：蓝色曲线上提抵消黄色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d0c814293406.mp3" type="button" aria-label="Play English audio">🔊</button><span>Complementary method: lifting the blue curve cancels the yellow</span></div>
+<audio class="cap-audio" src="audio/d0c814293406.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:01-03:02</span>混合法：减红减绿让蓝主导</h2><p>「接下来我们用混合原理来做肤色调色，还是还原到这个偏黄的肤色的原图。」「这个黄色是由什么颜色组成的？从这个图你很容易发现，是由红色和绿色叠加在一起混合成了黄。」</p><p>「那现在我们要用混合原理把黄给削掉，是不是要为画面中减绿减红啊？我们把画面中的红色减去、绿色减去，蓝色是不是就是主导了？蓝色是主导，自然就把黄色给抵消了。」</p><p>实操验证：减红、再减绿，「大家看肤色是不是就没有那么黄了」。但画面会变暗——「因为我们的曲线是以下压的形式在调整」。</p><p>「这个时候我们只需要回到 RGB 把它提亮，这样也能削弱画面中的黄色部分，让肤色看上去更自然一些。」</p><figure><img src="assets/rgb-curve-basics/shot-06.jpg" alt="混合法：同时减红减绿让蓝色主导" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:30]</span>混合法：同时减红减绿让蓝色主导</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/02240d091dff.mp3" type="button" aria-label="Play English audio">🔊</button><span>Mixing method: reducing both red and green lets blue dominate</span></div>
+<audio class="cap-audio" src="audio/02240d091dff.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/rgb-curve-basics/shot-07.jpg" alt="回到 RGB 提亮，肤色更自然" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:55]</span>回到 RGB 提亮，肤色更自然</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9d61a3ab3dd4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Returning to RGB and brightening makes the skin more natural</span></div>
+<audio class="cap-audio" src="audio/9d61a3ab3dd4.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:02-04:10</span>方法选择与边界</h2><p>「通过这两个实验，大家应该知道：如果曲线是往上提的，画面会变亮；曲线是往下压的，画面会变暗。」</p><p>「像这种照片，我们肯定是优先选择互补的方式、往上提曲线的方式来校色的——直接加蓝色就完了，就不用去调亮度了。」</p><p>「这两种方法各有利弊。有些适合调人像，有些适合调风景，看你的影调需要什么样的形态。你需要那种暗一点的影调，就要用互补的方式去调；如果像这种人像想要透、想要亮一点，尽量就用互补的方式去调。」</p><p>「曲线的调整是非常简单的，它就是根据三原色互补和混合的原理来调。RGB 只能调整亮暗，不能改变颜色。想要调好一张照片，光靠一个曲线工具是没有办法完成所有工作的，你还要配合 PS 里面其他几个工具来配合使用，才能达到你想要的调色效果。」</p><figure><img src="assets/rgb-curve-basics/shot-08.jpg" alt="两种方法对比：互补法提亮、混合法压暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:15]</span>两种方法对比：互补法提亮、混合法压暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/558bba1ef51c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Comparing the two methods: complementary brightens, mixing darkens</span></div>
+<audio class="cap-audio" src="audio/558bba1ef51c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/rgb-curve-basics/shot-09.jpg" alt="总结：曲线依三原色互补与混合原理调整" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:45]</span>总结：曲线依三原色互补与混合原理调整</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/468bf1ecdbc2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Summary: the curve works on additive complementary and mixing principles</span></div>
+<audio class="cap-audio" src="audio/468bf1ecdbc2.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/rgb-curve-basics/shot-10.jpg" alt="曲线非万能，需配合 PS 其他工具使用" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:00]</span>曲线非万能，需配合 PS 其他工具使用</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/19a6d6b3fed5.mp3" type="button" aria-label="Play English audio">🔊</button><span>The curve is not a silver bullet — pair it with other PS tools</span></div>
+<audio class="cap-audio" src="audio/19a6d6b3fed5.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（120段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>人像调色最重要的调色工具之一就是曲线</p></div>
+<div class="transcript-row"><time>00:03</time><p>特别是新手同学在不知道曲线的互补和混合原理之前</p></div>
+<div class="transcript-row"><time>00:07</time><p>使用曲线调色会觉得非常的乱</p></div>
+<div class="transcript-row"><time>00:09</time><p>完全找不到调色的规律</p></div>
+<div class="transcript-row"><time>00:11</time><p>接下来我用三分钟的时间教会你如何使用曲线以及曲线的调色原理</p></div>
+<div class="transcript-row"><time>00:16</time><p>大家可以看一下我这里做了一个红绿蓝三种颜色的叠加</p></div>
+<div class="transcript-row"><time>00:19</time><p>那么在曲线当中啊</p></div>
+<div class="transcript-row"><time>00:21</time><p>对应的也有红绿蓝和叠加色RGB</p></div>
+<div class="transcript-row"><time>00:24</time><p>红绿蓝三种颜色叠加在一起</p></div>
+<div class="transcript-row"><time>00:26</time><p>它会变成白色</p></div>
+<div class="transcript-row"><time>00:27</time><p>在PS里面会当做亮暗</p></div>
+<div class="transcript-row"><time>00:29</time><p>来处理</p></div>
+<div class="transcript-row"><time>00:30</time><p>那我们在曲线当中</p></div>
+<div class="transcript-row"><time>00:32</time><p>如果选择RGB</p></div>
+<div class="transcript-row"><time>00:33</time><p>我们去调整这个曲线</p></div>
+<div class="transcript-row"><time>00:34</time><p>它只能改变照片的亮和暗</p></div>
+<div class="transcript-row"><time>00:37</time><p>然后你可以看一下红绿蓝这三种颜色叠加</p></div>
+<div class="transcript-row"><time>00:40</time><p>又多出来了三种颜色</p></div>
+<div class="transcript-row"><time>00:42</time><p>分别是黄青梅红</p></div>
+<div class="transcript-row"><time>00:44</time><p>那红色的对立色就是青色</p></div>
+<div class="transcript-row"><time>00:47</time><p>蓝色的对立色就是黄色</p></div>
+<div class="transcript-row"><time>00:49</time><p>绿色的对立色就是梅红色</p></div>
+<div class="transcript-row"><time>00:52</time><p>也称之为平红</p></div>
+<div class="transcript-row"><time>00:53</time><p>那接下来我们回到这张照片</p></div>
+<div class="transcript-row"><time>00:55</time><p>你可以看到人物的肤色特别的黄</p></div>
+<div class="transcript-row"><time>00:57</time><p>那如果肤色黄</p></div>
+<div class="transcript-row"><time>00:59</time><p>我们是不是需要把黄色给剪掉啊</p></div>
+<div class="transcript-row"><time>01:01</time><p>但是我们在曲线当中</p></div>
+<div class="transcript-row"><time>01:02</time><p>是没有让你去选择黄色颜色去调整的</p></div>
+<div class="transcript-row"><time>01:05</time><p>它只有红绿蓝这三种颜色</p></div>
+<div class="transcript-row"><time>01:07</time><p>那如何才能剪去皮肤上的黄色呢</p></div>
+<div class="transcript-row"><time>01:10</time><p>这就不得不提</p></div>
+<div class="transcript-row"><time>01:11</time><p>我们要看一下互补和混合原理了</p></div>
+<div class="transcript-row"><time>01:14</time><p>蓝色的对立色就是黄色</p></div>
+<div class="transcript-row"><time>01:15</time><p>也称之为互补色</p></div>
+<div class="transcript-row"><time>01:17</time><p>那刚才也说到皮肤偏黄</p></div>
+<div class="transcript-row"><time>01:19</time><p>那要剪黄</p></div>
+<div class="transcript-row"><time>01:20</time><p>那要想剪去照片中的黄色</p></div>
+<div class="transcript-row"><time>01:22</time><p>那我们就需要对应的为照片当中啊</p></div>
+<div class="transcript-row"><time>01:24</time><p>多增加一些蓝色</p></div>
+<div class="transcript-row"><time>01:26</time><p>因为蓝和黄色互补</p></div>
+<div class="transcript-row"><time>01:28</time><p>蓝色多了黄就少</p></div>
+<div class="transcript-row"><time>01:30</time><p>黄色多了蓝就少</p></div>
+<div class="transcript-row"><time>01:31</time><p>它是一个互补的原理</p></div>
+<div class="transcript-row"><time>01:33</time><p>那正好在曲线当中有蓝色这个选项</p></div>
+<div class="transcript-row"><time>01:35</time><p>你选择蓝色往上一提</p></div>
+<div class="transcript-row"><time>01:37</time><p>哎你看画面中的黄是不是就被抵消了</p></div>
+<div class="transcript-row"><time>01:40</time><p>那这也就印证了我刚才所说的</p></div>
+<div class="transcript-row"><time>01:42</time><p>蓝色如果多了黄色就会变少</p></div>
+<div class="transcript-row"><time>01:45</time><p>黄色如果多了蓝色就会变少</p></div>
+<div class="transcript-row"><time>01:47</time><p>那么刚才我们这个原图就是黄色很多</p></div>
+<div class="transcript-row"><time>01:50</time><p>想让黄色少就要给它增加蓝</p></div>
+<div class="transcript-row"><time>01:53</time><p>这样就形成了一个平衡</p></div>
+<div class="transcript-row"><time>01:55</time><p>那这个方法是用互补原理来做的肤色调色</p></div>
+<div class="transcript-row"><time>01:58</time><p>那接下来我们来一个混合原理来做肤色调色</p></div>
+<div class="transcript-row"><time>02:02</time><p>还是还原到这个偏黄的肤色的原图</p></div>
+<div class="transcript-row"><time>02:05</time><p>这个黄色是由什么颜色组成的</p></div>
+<div class="transcript-row"><time>02:07</time><p>从这个图你很容易发现是由红色和绿色叠加在一起</p></div>
+<div class="transcript-row"><time>02:12</time><p>混合成了黄</p></div>
+<div class="transcript-row"><time>02:14</time><p>那现在我们要用混合原理把黄给削掉</p></div>
+<div class="transcript-row"><time>02:17</time><p>那怎么办呢</p></div>
+<div class="transcript-row"><time>02:18</time><p>是不是要为画面中减绿减红啊</p></div>
+<div class="transcript-row"><time>02:22</time><p>我们把画面中的红色减去绿色减去</p></div>
+<div class="transcript-row"><time>02:25</time><p>蓝色是不是就是主导了</p></div>
+<div class="transcript-row"><time>02:27</time><p>那蓝色是主导</p></div>
+<div class="transcript-row"><time>02:28</time><p>自然就把黄色给抵消了呀</p></div>
+<div class="transcript-row"><time>02:30</time><p>是不是</p></div>
+<div class="transcript-row"><time>02:30</time><p>我们来试一下</p></div>
+<div class="transcript-row"><time>02:31</time><p>我们要减红</p></div>
+<div class="transcript-row"><time>02:34</time><p>再减绿</p></div>
+<div class="transcript-row"><time>02:36</time><p>大家看肤色是不是就没有那么黄了</p></div>
+<div class="transcript-row"><time>02:39</time><p>那么它对应的会变暗</p></div>
+<div class="transcript-row"><time>02:41</time><p>为什么画面会变暗呢</p></div>
+<div class="transcript-row"><time>02:42</time><p>就是因为我们这些曲线是以下压的形式在调整</p></div>
+<div class="transcript-row"><time>02:46</time><p>你看曲线是往下压的</p></div>
+<div class="transcript-row"><time>02:48</time><p>绿色也是往下压的</p></div>
+<div class="transcript-row"><time>02:50</time><p>只要曲线是往下压的形态来调色</p></div>
+<div class="transcript-row"><time>02:52</time><p>画面会变暗</p></div>
+<div class="transcript-row"><time>02:54</time><p>那这个时候我们只需要回到RGB把它提亮</p></div>
+<div class="transcript-row"><time>02:57</time><p>这样也能削弱画面中的黄色部分</p></div>
+<div class="transcript-row"><time>03:00</time><p>让肤色看上去更自然一些</p></div>
+<div class="transcript-row"><time>03:02</time><p>通过这两个实验</p></div>
+<div class="transcript-row"><time>03:03</time><p>大家应该知道</p></div>
+<div class="transcript-row"><time>03:04</time><p>如果曲线是往上提的</p></div>
+<div class="transcript-row"><time>03:06</time><p>那么画面会变亮</p></div>
+<div class="transcript-row"><time>03:07</time><p>曲线是往下压的画面会变暗</p></div>
+<div class="transcript-row"><time>03:09</time><p>那像这种照片</p></div>
+<div class="transcript-row"><time>03:10</time><p>我们肯定是优先选择互补的方式</p></div>
+<div class="transcript-row"><time>03:13</time><p>往上提曲线的方式来校色的</p></div>
+<div class="transcript-row"><time>03:15</time><p>那我们就用第一种刚才说的方法</p></div>
+<div class="transcript-row"><time>03:17</time><p>互补色方法</p></div>
+<div class="transcript-row"><time>03:18</time><p>直接加蓝色就完了</p></div>
+<div class="transcript-row"><time>03:20</time><p>就不用去调亮度了</p></div>
+<div class="transcript-row"><time>03:21</time><p>这两种方法各有利弊</p></div>
+<div class="transcript-row"><time>03:23</time><p>有些是适合调人像</p></div>
+<div class="transcript-row"><time>03:24</time><p>有些适合调风景</p></div>
+<div class="transcript-row"><time>03:25</time><p>看你的影调需要要什么样的形态</p></div>
+<div class="transcript-row"><time>03:28</time><p>你需要要那种暗一点的影调了</p></div>
+<div class="transcript-row"><time>03:30</time><p>就不需要那么亮</p></div>
+<div class="transcript-row"><time>03:31</time><p>就要用互补的方式去调</p></div>
+<div class="transcript-row"><time>03:33</time><p>如果像这种人像想要透</p></div>
+<div class="transcript-row"><time>03:34</time><p>想要亮一点</p></div>
+<div class="transcript-row"><time>03:35</time><p>那么我们尽量就要用互补的方式去调</p></div>
+<div class="transcript-row"><time>03:38</time><p>就跟我刚才这样把蓝色往上提</p></div>
+<div class="transcript-row"><time>03:40</time><p>是提亮的方式去调这个色彩</p></div>
+<div class="transcript-row"><time>03:43</time><p>给大家来总结一下</p></div>
+<div class="transcript-row"><time>03:44</time><p>其实曲线的调整是非常简单的</p></div>
+<div class="transcript-row"><time>03:47</time><p>它就是根据这个三原色互补和混合的原理来调</p></div>
+<div class="transcript-row"><time>03:50</time><p>这三种颜色在曲线当中</p></div>
+<div class="transcript-row"><time>03:52</time><p>它是同样存在的红绿蓝</p></div>
+<div class="transcript-row"><time>03:54</time><p>RGB就是三种颜色的叠加</p></div>
+<div class="transcript-row"><time>03:56</time><p>那么这个RGB只能调整亮暗</p></div>
+<div class="transcript-row"><time>03:58</time><p>不能改变颜色</p></div>
+<div class="transcript-row"><time>03:59</time><p>想要调好一张照片</p></div>
+<div class="transcript-row"><time>04:00</time><p>光靠一个曲线工具</p></div>
+<div class="transcript-row"><time>04:02</time><p>是没有办法完成所有工作的</p></div>
+<div class="transcript-row"><time>04:04</time><p>你还要配合PS里面其他几个工具来配合使用</p></div>
+<div class="transcript-row"><time>04:08</time><p>才能达到你想要的调色效果</p></div>
+<div class="transcript-row"><time>04:10</time><p>好了</p></div>
+<div class="transcript-row"><time>04:10</time><p>我们下个视频再见</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>
