@@ -101,6 +101,42 @@
       padding: 20px;
       backdrop-filter: blur(12px);
     }
+    .cal-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 4px 2px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s;
+    }
+    .cal-toggle:hover { opacity: 0.8; }
+    .cal-toggle-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .cal-toggle-icon { font-size: 16px; }
+    .cal-toggle-arrow {
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: transform 0.25s ease;
+    }
+    .calendar-wrapper.open .cal-toggle-arrow {
+      transform: rotate(180deg);
+    }
+    .cal-body {
+      border-top: 1px solid var(--border);
+      margin-top: 14px;
+      padding-top: 16px;
+    }
     .cal-header {
       display: flex;
       align-items: center;
@@ -751,22 +787,28 @@
 
   <!-- 日历 -->
   <div class="calendar-wrapper" id="calendarWrapper">
-    <div class="cal-header">
-      <button class="cal-nav-btn" id="calPrev">&larr;</button>
-      <span class="cal-title" id="calTitle"></span>
-      <button class="cal-nav-btn" id="calNext">&rarr;</button>
+    <button class="cal-toggle" id="calToggle" type="button" aria-expanded="false">
+      <span class="cal-toggle-label"><span class="cal-toggle-icon">&#x1F4C5;</span>日历</span>
+      <span class="cal-toggle-arrow" id="calToggleArrow">&#x25BE;</span>
+    </button>
+    <div class="cal-body" id="calBody" style="display:none;">
+      <div class="cal-header">
+        <button class="cal-nav-btn" id="calPrev">&larr;</button>
+        <span class="cal-title" id="calTitle"></span>
+        <button class="cal-nav-btn" id="calNext">&rarr;</button>
+      </div>
+      <div class="cal-grid">
+        <div class="cal-day-header">日</div>
+        <div class="cal-day-header">一</div>
+        <div class="cal-day-header">二</div>
+        <div class="cal-day-header">三</div>
+        <div class="cal-day-header">四</div>
+        <div class="cal-day-header">五</div>
+        <div class="cal-day-header">六</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <button class="cal-today-btn" id="calToday">回到今天</button>
     </div>
-    <div class="cal-grid">
-      <div class="cal-day-header">日</div>
-      <div class="cal-day-header">一</div>
-      <div class="cal-day-header">二</div>
-      <div class="cal-day-header">三</div>
-      <div class="cal-day-header">四</div>
-      <div class="cal-day-header">五</div>
-      <div class="cal-day-header">六</div>
-    </div>
-    <div class="cal-grid" id="calGrid"></div>
-    <button class="cal-today-btn" id="calToday">回到今天</button>
   </div>
 
   <!-- 分类标签栏 -->
@@ -1338,6 +1380,15 @@
         if (totalMinutes === 0) $('totalDuration').textContent = '0h';
       }
 
+      $('calToggle').addEventListener('click', function() {
+        var wrapper = $('calendarWrapper');
+        var body = $('calBody');
+        var isOpen = body.style.display !== 'none';
+        body.style.display = isOpen ? 'none' : '';
+        wrapper.classList.toggle('open', !isOpen);
+        this.setAttribute('aria-expanded', String(!isOpen));
+        if (!isOpen) buildCalendar();
+      });
       $('calPrev').addEventListener('click', function() {
         calMonth--;
         if (calMonth < 0) { calMonth = 11; calYear--; }
