@@ -372,6 +372,10 @@
       background: rgba(244,63,94,.16);
       color: #fda4af;
     }
+    .card-platform-pill.local {
+      background: rgba(52,211,153,.16);
+      color: #6ee7b7;
+    }
     .tag-blue   { background: var(--tag-blue);   color: #60a5fa; }
     .tag-purple { background: var(--tag-purple); color: #a78bfa; }
     .tag-green  { background: var(--tag-green);  color: #34d399; }
@@ -1224,8 +1228,9 @@
             var svgFile = outputs.svg || (/\.svg$/i.test(legacyFilename) ? legacyFilename : '');
 
             var platform = item.platform || ((item.url || '').indexOf('xhslink') >= 0 || (item.url || '').indexOf('xiaohongshu') >= 0 ? 'xiaohongshu' : 'bilibili');
-            var platformLabel = platform === 'xiaohongshu' ? '小红书' : 'B站';
-            var platformHtml = '<div class="card-platform"><span class="card-platform-pill' + (platform === 'xiaohongshu' ? ' xhs' : '') + '">' + platformLabel + '</span></div>';
+            var platformLabel = platform === 'xiaohongshu' ? '小红书' : (platform === 'local' ? '本地' : 'B站');
+            var platformPillClass = platform === 'xiaohongshu' ? ' xhs' : (platform === 'local' ? ' local' : '');
+            var platformHtml = '<div class="card-platform"><span class="card-platform-pill' + platformPillClass + '">' + platformLabel + '</span></div>';
 
             let tagsHtml = '';
             if (item.tags && item.tags.length > 0) {
@@ -1253,7 +1258,7 @@
             if (!isError && svgFile) {
               actions.push('<a class="card-action card-action-svg" href="' + escapeHtml(svgFile) + '" target="_blank" rel="noopener">🧭 理性分析</a>');
             }
-            if (item.url) {
+            if (item.url && platform !== 'local') {
               actions.push('<a class="card-action card-action-source" href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener noreferrer">📎 原视频</a>');
             }
             var actionsHtml = actions.length
