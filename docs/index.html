@@ -682,6 +682,19 @@
       color: var(--text-muted);
       pointer-events: none;
     }
+    .search-hint {
+      margin: 8px 2px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .search-hint code {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0 4px;
+      color: var(--accent);
+    }
     .search-empty {
       text-align: center;
       padding: 48px 20px;
@@ -885,6 +898,7 @@
   <div class="search-bar" id="searchBar">
     <span class="search-icon">&#x1F50D;</span>
     <input class="search-input" id="searchInput" type="text" placeholder="搜索视频总结或专题...">
+    <div class="search-hint">空格分隔多个词（AND）· <code>-词</code> 排除 · <code>词1|词2</code> 或 <code>OR</code> 任一匹配 · <code>"短语"</code> 精确匹配</div>
   </div>
 
   <!-- 主内容 -->
@@ -1137,7 +1151,7 @@
       }
 
       function buildSearchResults(query) {
-        const terms = query.split(/\s+/).filter(Boolean);
+        const parsed = parseSearchQuery(query);
         const container = $('searchResults');
         container.innerHTML = '';
 
@@ -1163,12 +1177,13 @@
             (entry.tags || []).join(' '),
             entry.body
           ].join(' ').toLowerCase();
-          return terms.every(function(t) { return haystack.indexOf(t) !== -1; });
+          return matchesQuery(haystack, parsed);
         });
 
+        const sortKey = parsed.must[0] || parsed.any[0] || '';
         results.sort(function(a, b) {
-          const at = (a.title || '').toLowerCase().indexOf(terms[0]);
-          const bt = (b.title || '').toLowerCase().indexOf(terms[0]);
+          const at = sortKey && (a.title || '').toLowerCase().indexOf(sortKey);
+          const bt = sortKey && (b.title || '').toLowerCase().indexOf(sortKey);
           if (at !== -1 && bt === -1) return -1;
           if (at === -1 && bt !== -1) return 1;
           return (b.date || '').localeCompare(a.date || '');
@@ -1208,8 +1223,8 @@
           }
 
           const titleHtml = entry.title ? escapeHtml(entry.title) : escapeHtml(entry.summary.slice(0, 40) || '未命名');
-          const snippet = makeSearchSnippet(entry.body, terms);
-          const snippetHtml = snippet ? '<div class="result-snippet">' + highlightTerms(escapeHtml(snippet), terms) + '</div>' : '';
+          const snippet = makeSearchSnippet(entry.body, parsed);
+          const snippetHtml = snippet ? '<div class="result-snippet">' + highlightTerms(escapeHtml(snippet), parsed.highlightTerms) + '</div>' : '';
 
           const actions = [];
           if (entry.html) {
@@ -1227,7 +1242,7 @@
           card.className = 'result-card';
           card.innerHTML =
             '<div class="card-header">' +
-              '<span class="card-title">' + highlightTerms(titleHtml, terms) + '</span>' +
+              '<span class="card-title">' + highlightTerms(titleHtml, parsed.highlightTerms) + '</span>' +
             '</div>' +
             '<div class="card-meta">' + metaHtml + '</div>' +
             snippetHtml +
@@ -1239,11 +1254,80 @@
         container.style.display = '';
       }
 
-      function makeSearchSnippet(body, terms) {
+      function parseSearchQuery(query) {
+        const parsed = { must: [], any: [], exclude: [], highlightTerms: [] };
+        const lower = query.toLowerCase();
+        let rest = query;
+
+        const phraseRe = /"([^"]+)"/g;
+        let m;
+        while ((m = phraseRe.exec(query)) !== null) {
+          const phrase = m[1].trim();
+          if (phrase) {
+            parsed.must.push(phrase.toLowerCase());
+            parsed.highlightTerms.push(phrase);
+          }
+        }
+        rest = query.replace(/"([^"]+)"/g, ' ');
+
+        const tokens = rest.split(/\s+/).filter(Boolean);
+        for (let i = 0; i < tokens.length; i++) {
+          let t = tokens[i];
+          if (t === 'OR' || t.toLowerCase() === 'or') {
+            if (i + 1 < tokens.length) {
+              const next = tokens[i + 1];
+              if (next !== 'OR' && !next.toLowerCase().startsWith('-')) {
+                parsed.any.push(next.toLowerCase());
+                parsed.highlightTerms.push(next);
+                i++;
+              }
+            }
+            continue;
+          }
+          if (t.startsWith('-') && t.length > 1) {
+            parsed.exclude.push(t.slice(1).toLowerCase());
+            continue;
+          }
+          if (t.indexOf('|') !== -1) {
+            t.split('|').filter(Boolean).forEach(function(part) {
+              parsed.any.push(part.toLowerCase());
+              parsed.highlightTerms.push(part);
+            });
+            continue;
+          }
+          parsed.must.push(t.toLowerCase());
+          parsed.highlightTerms.push(t);
+        }
+
+        parsed.highlightTerms = parsed.highlightTerms.filter(function(v, i, arr) {
+          return arr.indexOf(v) === i;
+        });
+        return parsed;
+      }
+
+      function matchesQuery(haystack, parsed) {
+        for (let i = 0; i < parsed.must.length; i++) {
+          if (haystack.indexOf(parsed.must[i]) === -1) return false;
+        }
+        if (parsed.any.length) {
+          let anyHit = false;
+          for (let i = 0; i < parsed.any.length; i++) {
+            if (haystack.indexOf(parsed.any[i]) !== -1) { anyHit = true; break; }
+          }
+          if (!anyHit) return false;
+        }
+        for (let i = 0; i < parsed.exclude.length; i++) {
+          if (haystack.indexOf(parsed.exclude[i]) !== -1) return false;
+        }
+        return true;
+      }
+
+      function makeSearchSnippet(body, parsed) {
         if (!body) return '';
         const lower = body.toLowerCase();
+        const keys = parsed.must.concat(parsed.any);
         let first = -1;
-        terms.forEach(function(t) {
+        keys.forEach(function(t) {
           const idx = lower.indexOf(t);
           if (idx !== -1 && (first === -1 || idx < first)) first = idx;
         });
