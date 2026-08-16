@@ -897,8 +897,8 @@
   <!-- 搜索 -->
   <div class="search-bar" id="searchBar">
     <span class="search-icon">&#x1F50D;</span>
-    <input class="search-input" id="searchInput" type="text" placeholder="搜索视频总结或专题...">
-    <div class="search-hint">空格分隔多个词（AND）· <code>-词</code> 排除 · <code>词1|词2</code> 或 <code>OR</code> 任一匹配 · <code>"短语"</code> 精确匹配</div>
+    <input class="search-input" id="searchInput" type="text" placeholder="搜索视频总结或专题（支持中文 / English）...">
+    <div class="search-hint">空格分隔多个词（AND）· <code>-词</code> 排除 · <code>词1|词2</code> 或 <code>OR</code> 任一匹配 · <code>"短语"</code> 精确匹配 · 英文支持词形前缀（<code>rotate</code> 命中 rotating）</div>
   </div>
 
   <!-- 主内容 -->
@@ -1151,13 +1151,15 @@
       }
 
       function buildSearchResults(query) {
-        const parsed = parseSearchQuery(query);
+        const isEnQuery = !/[\u4e00-\u9fa5]/.test(query);
+        const parsed = parseSearchQuery(query, isEnQuery);
         const container = $('searchResults');
         container.innerHTML = '';
 
         const entries = searchIndex.length > 0 ? searchIndex : allData.map(function(item) {
           return {
             title: item.title || '',
+            title_en: '',
             summary: item.summary || '',
             tags: item.tags || [],
             platform: item.platform || '',
@@ -1166,24 +1168,22 @@
             html: (item.outputs || {}).html || '',
             svg: (item.outputs || {}).svg || '',
             html_en: (item.outputs || {}).html_en || '',
-            body: item.summary || ''
+            body: item.summary || '',
+            body_en: ''
           };
         });
 
         const results = entries.filter(function(entry) {
-          const haystack = [
-            entry.title,
-            entry.summary,
-            (entry.tags || []).join(' '),
-            entry.body
-          ].join(' ').toLowerCase();
+          const haystack = isEnQuery
+            ? [entry.title_en, entry.body_en, entry.title, (entry.tags || []).join(' ')].join(' ').toLowerCase()
+            : [entry.title, entry.summary, (entry.tags || []).join(' '), entry.body].join(' ').toLowerCase();
           return matchesQuery(haystack, parsed);
         });
 
         const sortKey = parsed.must[0] || parsed.any[0] || '';
         results.sort(function(a, b) {
-          const at = sortKey && (a.title || '').toLowerCase().indexOf(sortKey);
-          const bt = sortKey && (b.title || '').toLowerCase().indexOf(sortKey);
+          const at = sortKey && (a.title_en || a.title || '').toLowerCase().indexOf(sortKey);
+          const bt = sortKey && (b.title_en || b.title || '').toLowerCase().indexOf(sortKey);
           if (at !== -1 && bt === -1) return -1;
           if (at === -1 && bt !== -1) return 1;
           return (b.date || '').localeCompare(a.date || '');
@@ -1222,9 +1222,10 @@
               '</div>';
           }
 
-          const titleHtml = entry.title ? escapeHtml(entry.title) : escapeHtml(entry.summary.slice(0, 40) || '未命名');
-          const snippet = makeSearchSnippet(entry.body, parsed);
-          const snippetHtml = snippet ? '<div class="result-snippet">' + highlightTerms(escapeHtml(snippet), parsed.highlightTerms) + '</div>' : '';
+          const titleText = isEnQuery && entry.title_en ? entry.title_en : entry.title;
+          const titleHtml = titleText ? escapeHtml(titleText) : escapeHtml(entry.summary.slice(0, 40) || '未命名');
+          const snippet = makeSearchSnippet(isEnQuery ? entry.body_en : entry.body, parsed);
+          const snippetHtml = snippet ? '<div class="result-snippet">' + highlightTerms(escapeHtml(snippet), parsed.highlightTerms, isEnQuery) + '</div>' : '';
 
           const actions = [];
           if (entry.html) {
@@ -1242,7 +1243,7 @@
           card.className = 'result-card';
           card.innerHTML =
             '<div class="card-header">' +
-              '<span class="card-title">' + highlightTerms(titleHtml, parsed.highlightTerms) + '</span>' +
+              '<span class="card-title">' + highlightTerms(titleHtml, parsed.highlightTerms, isEnQuery) + '</span>' +
             '</div>' +
             '<div class="card-meta">' + metaHtml + '</div>' +
             snippetHtml +
@@ -1254,9 +1255,8 @@
         container.style.display = '';
       }
 
-      function parseSearchQuery(query) {
+      function parseSearchQuery(query, isEnQuery) {
         const parsed = { must: [], any: [], exclude: [], highlightTerms: [] };
-        const lower = query.toLowerCase();
         let rest = query;
 
         const phraseRe = /"([^"]+)"/g;
@@ -1302,22 +1302,30 @@
         parsed.highlightTerms = parsed.highlightTerms.filter(function(v, i, arr) {
           return arr.indexOf(v) === i;
         });
+        parsed.isEn = !!isEnQuery;
         return parsed;
       }
 
       function matchesQuery(haystack, parsed) {
+        function hit(term) {
+          if (parsed.isEn) {
+            const re = new RegExp('\\b' + escapeRegExp(term), 'i');
+            return re.test(haystack);
+          }
+          return haystack.indexOf(term) !== -1;
+        }
         for (let i = 0; i < parsed.must.length; i++) {
-          if (haystack.indexOf(parsed.must[i]) === -1) return false;
+          if (!hit(parsed.must[i])) return false;
         }
         if (parsed.any.length) {
           let anyHit = false;
           for (let i = 0; i < parsed.any.length; i++) {
-            if (haystack.indexOf(parsed.any[i]) !== -1) { anyHit = true; break; }
+            if (hit(parsed.any[i])) { anyHit = true; break; }
           }
           if (!anyHit) return false;
         }
         for (let i = 0; i < parsed.exclude.length; i++) {
-          if (haystack.indexOf(parsed.exclude[i]) !== -1) return false;
+          if (hit(parsed.exclude[i])) return false;
         }
         return true;
       }
@@ -1328,7 +1336,7 @@
         const keys = parsed.must.concat(parsed.any);
         let first = -1;
         keys.forEach(function(t) {
-          const idx = lower.indexOf(t);
+          const idx = parsed.isEn ? lower.search(new RegExp('\\b' + escapeRegExp(t))) : lower.indexOf(t);
           if (idx !== -1 && (first === -1 || idx < first)) first = idx;
         });
         if (first === -1) first = 0;
@@ -1337,11 +1345,13 @@
         return (start > 0 ? '…' : '') + body.slice(start, end).replace(/\s+/g, ' ') + (end < body.length ? '…' : '');
       }
 
-      function highlightTerms(escapedText, terms) {
+      function highlightTerms(escapedText, terms, isEn) {
         let out = escapedText;
         terms.forEach(function(t) {
           if (!t) return;
-          const re = new RegExp('(' + escapeRegExp(t) + ')', 'gi');
+          const re = isEn
+            ? new RegExp('(\\b' + escapeRegExp(t) + '[A-Za-z]*)', 'gi')
+            : new RegExp('(' + escapeRegExp(t) + ')', 'gi');
           out = out.replace(re, '<mark>$1</mark>');
         });
         return out;
