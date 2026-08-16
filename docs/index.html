@@ -689,6 +689,69 @@
       font-size: 15px;
     }
 
+    /* ====== 搜索结果 ====== */
+    .search-results {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+    .result-count {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .result-count strong { color: var(--accent); }
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 12px;
+      transition: all 0.25s ease;
+    }
+    .result-card:hover {
+      background: var(--card-hover);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .result-card .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .result-card .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .result-card .card-title a { color: inherit; text-decoration: none; }
+    .result-card .card-title a:hover { color: var(--accent); }
+    .result-card .card-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .result-snippet {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      overflow-wrap: anywhere;
+    }
+    .result-snippet mark, .result-card .card-title mark {
+      background: rgba(251,146,60,0.35);
+      color: #fdba74;
+      border-radius: 3px;
+      padding: 0 2px;
+    }
+    .result-card .card-actions { margin-top: 0; }
+
     /* ====== 空状态 ====== */
     .empty-state {
       text-align: center;
@@ -834,12 +897,14 @@
     </div>
     <div class="timeline" id="timeline" style="display:none;"></div>
     <div class="search-empty" id="searchEmpty" style="display:none;">没有找到匹配的总结</div>
+    <div class="search-results" id="searchResults" style="display:none;"></div>
   </div>
 
   <script>
     (function() {
       let allData = [];
       let allTopics = [];
+      let searchIndex = [];
       let dateMap = {};
       let calYear, calMonth;
 
@@ -958,6 +1023,13 @@
         } catch (e) {
           allTopics = [];
         }
+        try {
+          const resp = await fetch('search-index.json');
+          if (!resp.ok) throw new Error('Failed');
+          searchIndex = await resp.json();
+        } catch (e) {
+          searchIndex = [];
+        }
         buildDateMap();
         render();
       }
@@ -1042,6 +1114,17 @@
         $('emptyState').style.display = 'none';
 
         const query = $('searchInput').value.trim().toLowerCase();
+
+        if (query) {
+          $('categoryBar').style.display = 'none';
+          $('topicsSection').style.display = 'none';
+          $('podcastHeading').style.display = 'none';
+          buildSearchResults(query);
+          return;
+        }
+
+        $('searchResults').style.display = 'none';
+
         buildCategoryBar();
         buildTopics(query);
 
@@ -1051,6 +1134,137 @@
           $('timeline').style.display = 'none';
           $('searchEmpty').style.display = 'none';
         }
+      }
+
+      function buildSearchResults(query) {
+        const terms = query.split(/\s+/).filter(Boolean);
+        const container = $('searchResults');
+        container.innerHTML = '';
+
+        const entries = searchIndex.length > 0 ? searchIndex : allData.map(function(item) {
+          return {
+            title: item.title || '',
+            summary: item.summary || '',
+            tags: item.tags || [],
+            platform: item.platform || '',
+            date: item.date || '',
+            duration: item.duration || '',
+            html: (item.outputs || {}).html || '',
+            svg: (item.outputs || {}).svg || '',
+            html_en: (item.outputs || {}).html_en || '',
+            body: item.summary || ''
+          };
+        });
+
+        const results = entries.filter(function(entry) {
+          const haystack = [
+            entry.title,
+            entry.summary,
+            (entry.tags || []).join(' '),
+            entry.body
+          ].join(' ').toLowerCase();
+          return terms.every(function(t) { return haystack.indexOf(t) !== -1; });
+        });
+
+        results.sort(function(a, b) {
+          const at = (a.title || '').toLowerCase().indexOf(terms[0]);
+          const bt = (b.title || '').toLowerCase().indexOf(terms[0]);
+          if (at !== -1 && bt === -1) return -1;
+          if (at === -1 && bt !== -1) return 1;
+          return (b.date || '').localeCompare(a.date || '');
+        });
+
+        $('timeline').style.display = 'none';
+        $('searchEmpty').style.display = 'none';
+
+        if (results.length === 0) {
+          container.style.display = 'none';
+          $('searchEmpty').style.display = '';
+          return;
+        }
+
+        const countEl = document.createElement('div');
+        countEl.className = 'result-count';
+        countEl.textContent = '共 ' + results.length + ' 篇匹配';
+        container.appendChild(countEl);
+
+        results.forEach(function(entry) {
+          const platform = entry.platform || 'bilibili';
+          const platformLabel = platform === 'xiaohongshu' ? '小红书' : (platform === 'local' ? '本地' : 'B站');
+          const platformPillClass = platform === 'xiaohongshu' ? ' xhs' : (platform === 'local' ? ' local' : '');
+          const platformHtml = '<span class="card-platform-pill' + platformPillClass + '">' + platformLabel + '</span>';
+
+          let metaHtml = platformHtml;
+          if (entry.date) metaHtml += '<span>' + escapeHtml(entry.date) + '</span>';
+          if (entry.duration) metaHtml += '<span>⏱ ' + escapeHtml(entry.duration) + '</span>';
+
+          let tagsHtml = '';
+          if (entry.tags && entry.tags.length > 0) {
+            tagsHtml = '<div class="card-tags">' +
+              entry.tags.map(function(t, i) {
+                return '<span class="card-tag ' + TAG_COLORS[i % TAG_COLORS.length] + '">' + escapeHtml(t) + '</span>';
+              }).join('') +
+              '</div>';
+          }
+
+          const titleHtml = entry.title ? escapeHtml(entry.title) : escapeHtml(entry.summary.slice(0, 40) || '未命名');
+          const snippet = makeSearchSnippet(entry.body, terms);
+          const snippetHtml = snippet ? '<div class="result-snippet">' + highlightTerms(escapeHtml(snippet), terms) + '</div>' : '';
+
+          const actions = [];
+          if (entry.html) {
+            actions.push('<a class="card-action card-action-html" href="' + escapeHtml(entry.html) + '" target="_blank" rel="noopener">📖 图文实录</a>');
+          }
+          if (entry.svg) {
+            actions.push('<a class="card-action card-action-svg" href="' + escapeHtml(entry.svg) + '" target="_blank" rel="noopener">🧭 理性分析</a>');
+          }
+          if (entry.html_en) {
+            actions.push('<a class="card-action card-action-svg" href="' + escapeHtml(entry.html_en) + '" target="_blank" rel="noopener">🇬🇧 English</a>');
+          }
+          const actionsHtml = actions.length ? '<div class="card-actions">' + actions.join('') + '</div>' : '';
+
+          const card = document.createElement('article');
+          card.className = 'result-card';
+          card.innerHTML =
+            '<div class="card-header">' +
+              '<span class="card-title">' + highlightTerms(titleHtml, terms) + '</span>' +
+            '</div>' +
+            '<div class="card-meta">' + metaHtml + '</div>' +
+            snippetHtml +
+            tagsHtml +
+            actionsHtml;
+          container.appendChild(card);
+        });
+
+        container.style.display = '';
+      }
+
+      function makeSearchSnippet(body, terms) {
+        if (!body) return '';
+        const lower = body.toLowerCase();
+        let first = -1;
+        terms.forEach(function(t) {
+          const idx = lower.indexOf(t);
+          if (idx !== -1 && (first === -1 || idx < first)) first = idx;
+        });
+        if (first === -1) first = 0;
+        const start = Math.max(0, first - 40);
+        const end = Math.min(body.length, start + 120);
+        return (start > 0 ? '…' : '') + body.slice(start, end).replace(/\s+/g, ' ') + (end < body.length ? '…' : '');
+      }
+
+      function highlightTerms(escapedText, terms) {
+        let out = escapedText;
+        terms.forEach(function(t) {
+          if (!t) return;
+          const re = new RegExp('(' + escapeRegExp(t) + ')', 'gi');
+          out = out.replace(re, '<mark>$1</mark>');
+        });
+        return out;
+      }
+
+      function escapeRegExp(s) {
+        return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       }
 
       function buildTopics(query) {
@@ -1410,8 +1624,10 @@
         calMonth = now.getMonth();
         buildCalendar();
       });
+      let searchTimer = null;
       $('searchInput').addEventListener('input', function() {
-        render();
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(render, 300);
       });
 
       loadData();
