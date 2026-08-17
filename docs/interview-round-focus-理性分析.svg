@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6366" viewBox="0 0 1320 6366">
+  <foreignObject x="0" y="0" width="1320" height="6366">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>面试10分钟定去留：各轮面试的考察重点</h1>
+  <div class="meta"><span class="tag tag-blue">职场</span><span class="tag tag-green">面试</span><span class="tag tag-orange">求职</span><span class="tag tag-purple">招聘</span><span class="tag tag-gray">时长 3分31秒</span><span class="tag tag-gray">分析视角：面试是分层的，每一轮都有不同的考察逻辑</span></div>
+  <a class="source-link" href="local:01e9b013b545f669010370039cd88e790c_4610.mp4video.MP4">原视频（本地文件）</a>
+  <div class="summary-line">核心判断：面试官对候选人的判断在自我介绍阶段就已基本形成——前十分钟甚至两三分钟就能决定去留。面试并非统一考察，业务一面看技能匹配、二面看做事与压力、三面看特质与潜力、HR 面看印象与配合，每一轮都要单独准备，并用体系化的思考框架应对不按常规出牌的问题。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场提问：面试十分钟就私心决定录用是为什么</span></div><div class="timeline-item"><span class="timeline-time">00:04</span><span class="timeline-text">面的人多了就知道：前十分钟甚至两三分钟定去留</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">面试官前段不提问，时间都在候选人的自我介绍上</span></div><div class="timeline-item"><span class="timeline-time">00:23</span><span class="timeline-text">自我介绍暴露逻辑思维、核心竞争力与表达</span></div><div class="timeline-item"><span class="timeline-time">00:58</span><span class="timeline-text">聊完即可验证基础能力 OK、可以培养</span></div><div class="timeline-item"><span class="timeline-time">01:12</span><span class="timeline-text">业务一面：技能是否匹配岗位（如数据分析场景）</span></div><div class="timeline-item"><span class="timeline-time">01:45</span><span class="timeline-text">业务二面：团队职责、压力下完成工作</span></div><div class="timeline-item"><span class="timeline-time">02:05</span><span class="timeline-text">业务三面：学习力、好奇心、AI 工具使用、潜力</span></div><div class="timeline-item"><span class="timeline-time">02:35</span><span class="timeline-text">HR 面：印象程度、思维表达、团队配合</span></div><div class="timeline-item"><span class="timeline-time">02:55</span><span class="timeline-text">结论：每轮面试准备不同问答，用体系化框架应对</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">现象<br/>面试官前十分钟甚至两三分钟就能决定要不要你</div><span class="arrow">→</span><div class="node-green">依据<br/>自我介绍阶段暴露逻辑思维、核心竞争力与表达</div><span class="arrow">→</span><div class="node-orange">拆解<br/>一面技能、二面做事、三面特质、HR面印象</div><span class="arrow">→</span><div class="node-blue">行动<br/>每轮单独准备，用体系化思考框架应对非常规问题</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误解 1：面试是全方位长时间考察，前十分钟不算数。纠偏：面试官面多了就知道，前十分钟甚至两三分钟就基本决定了去留。</p><p>误解 2：所有轮次的面试考察重点一样。纠偏：一面看技能、二面看做事、三面看特质、HR 面看印象，每层逻辑不同。</p><p>误解 3：只要把岗位技术准备好就够。纠偏：三面问题常与岗位不相关，甚至追问大学经历，需要体系化框架而非背题。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>面试决策很快：自我介绍即第一信号</h3>
+      <p>在讲什么：面试官面的人多了，前面十分钟甚至两三分钟就能决定这个人要不要，而这段时间面试官基本不提问，大部分是自我介绍。关键理解：自我介绍不是寒暄，是面试官观察逻辑思维、核心竞争力和表达能力的主窗口。怎么用：把自我介绍当成求职的核心作品来打磨，前几十秒就要亮出核心竞争力。</p>
+      <div class="quote">依据 [00:05-00:57]：很多时候你面前十分钟的时候，你就决定这个人要不要……他自我介绍的时候你就很明显地感觉到他自己的逻辑思维是不是清楚的。</div>
+      <div class="relation">立场分层：「前十分钟定去留」为面试官经验判断；「自我介绍暴露逻辑思维」可由对话印证。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>分层考察：四面各有重点</h3>
+      <p>在讲什么：业务一面由未来 mentor/leader 主持，考察技能是否匹配岗位；二面不细抠单项技能，看团队职责与压力下完成工作；三面看学习力、好奇心、AI 工具使用与潜力；HR 面评估印象、表达与团队配合。关键理解：每一层的问题设计服务于不同的筛选目标。怎么用：按轮次分别准备问题清单，避免一份答案走遍所有面试。</p>
+      <div class="quote">依据 [01:12-02:34]：每一层面试考察的逻辑可能都不太一样……第一轮的面试都是业务初试……HR 面更多的是评估你的印象程度。</div>
+      <div class="relation">立场分层：轮次职责划分为经验总结；「AI 使用是大厂看重点」为讲者观察结论。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>非常规问题的应对：体系化框架</h3>
+      <p>在讲什么：三面问题可能跟岗位不相关，甚至就你在大学里做的事进一步提问，很多时候不按常规逻辑出牌。关键理解：面试官在测的不是知识点，而是你的思考结构。怎么用：平时建立自己的分析框架（如先定义问题、再拆维度、后给结论），遇到陌生问题也能有条理地展开。</p>
+      <div class="quote">依据 [02:55-03:29]：三面的问题可能跟你直接面试的岗位并不太相关……需要你自己去准备特别体系化的一些思考逻辑跟框架来去应对。</div>
+      <div class="relation">立场分层：问题不相关的现象为讲者经历；「体系化框架应对」为行动建议。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">各轮面试考察重点对比</h2><div class="card"><table><thead><tr><th>面试轮次</th><th>面试官</th><th>考察重点</th><th>准备方向</th></tr></thead><tbody><tr><td>前十分钟</td><td>业务初试官</td><td>自我介绍中的逻辑思维、核心竞争力和表达</td><td>打磨自我介绍，前几十秒亮出亮点</td></tr><tr><td>业务一面</td><td>未来 mentor/leader</td><td>技能是否匹配岗位（如数据分析场景与工具）</td><td>把技能与目标岗位需求逐一对应</td></tr><tr><td>业务二面</td><td>业务负责人</td><td>团队职责、压力下完成工作</td><td>准备过往承担职责与抗压案例</td></tr><tr><td>业务三面</td><td>更高层负责人</td><td>学习力、好奇心、AI 工具使用、整体潜力</td><td>展示学习经历、工具应用与成长潜力</td></tr><tr><td>HR 面</td><td>HR</td><td>印象程度、思维表达、团队配合、薪资预期</td><td>沟通表达与配合度，敢于提出预期</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>适用：常规互联网公司业务线与 HR 的分层面试流程。</li><li>上限：不适用于极少数完全以笔试/机试代替面谈的岗位筛选。</li><li>反例：技术深度考核仍是技术面试的重要组成，本视频侧重考察结构而非技术考点本身。</li><li>例外：创业公司或扁平团队可能一轮到底，分层逻辑会压缩合并。</li></ul><div class="pitfall">避坑：把自我介绍当作流水账复述简历，白白浪费面试官唯一不提问的时间窗口。</div><div class="pitfall">避坑：一份自我介绍应对所有公司，未针对目标岗位组织核心竞争力的表达。</div><div class="pitfall">避坑：只准备岗位技术问题，遇到三面的非常规提问就乱了阵脚。</div><div class="pitfall">避坑：以为前十分钟不重要，前期表现松懈，面试官在介绍阶段就已做出判断。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>面试官前十分钟甚至两三分钟就能基本决定去留。</li><li>业务一面看技能、二面看做事、三面看特质、HR 面看印象。</li><li>每轮面试要单独准备，用体系化框架应对非常规问题。</li></ul><h3>行动清单</h3><ol><li>重写自我介绍：前几十秒直接亮出核心竞争力与逻辑结构。</li><li>为每一轮面试分别列出问题清单，按考察重点准备答案。</li><li>建立自己的思考框架（问题-维度-结论），用于应对陌生提问。</li></ol><h3>关键认知转变</h3><p>从「一份简历 + 一套答案走天下」转到「分层理解面试官意图，每轮单独定制表达」：把自我介绍当作面试官的第一信号，把体系化框架当作非常规问题的兜底。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 3分31秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
