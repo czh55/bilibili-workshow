@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6701" viewBox="0 0 1320 6701">
+  <foreignObject x="0" y="0" width="1320" height="6701">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>七夕“压纹玫瑰”🌹详细拆解教学</h1>
+  <div class="meta"><span class="tag tag-blue">咖啡</span><span class="tag tag-green">拉花</span><span class="tag tag-orange">压纹玫瑰</span><span class="tag tag-purple">教学</span><span class="tag tag-gray">时长 2分21秒</span><span class="tag tag-gray">分析视角：压纹玫瑰拉花的流量节奏与轨迹控制拆解</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/424nLiPriOE">原视频</a>
+  <div class="summary-line">核心判断：压纹玫瑰的灵魂是「流量节奏 + 液面轨迹控制」。四步流程：①融合（低流距小流量、注入点在杯底距液面最高点、防砸气泡）；②画椭圆搅拌（拉高流距、轨迹必须在液面内不碰杯壁）；③开底+二段（四分满后液面中心偏上注入、持续增流量边摆边回杯、半圆时缸子前推两厘米、深V底纹、二段更大流量回包）；④八字收尾+推花瓣（钢嘴贴近液面速度快、左右交替推瓣、花蕊加大流量包裹）。每一步都在解决同一件事：让奶泡稳定停留在液面、纹路干净成型。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场：拆解压纹玫瑰制作方法，祝七夕快乐</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">画椭圆搅拌式融合：低流距小流量注入</span></div><div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">注入点在杯底距液面最高的点位，防砸出气泡</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">牛奶进入液面瞬间拉高流距，开始画椭圆搅拌</span></div><div class="timeline-item"><span class="timeline-time">00:32</span><span class="timeline-text">轨迹一定要在液面里，不碰杯壁防变脏</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">融合到四分满，注入点位：液面中心点偏上</span></div><div class="timeline-item"><span class="timeline-time">00:52</span><span class="timeline-text">小流量注入持续增大流量，边摆动边回杯</span></div><div class="timeline-item"><span class="timeline-time">00:57</span><span class="timeline-text">纹路半圆时缸子前推两厘米，深V底纹形成</span></div><div class="timeline-item"><span class="timeline-time">01:05</span><span class="timeline-text">二段注入流量更大，让底纹充分回包</span></div><div class="timeline-item"><span class="timeline-time">01:20</span><span class="timeline-text">底纹最高点偏中心用钢嘴画竖八字</span></div><div class="timeline-item"><span class="timeline-time">01:31</span><span class="timeline-text">钢嘴贴近液面速度快，否则奶泡停不住</span></div><div class="timeline-item"><span class="timeline-time">01:46</span><span class="timeline-text">八字收尾，外侧花瓣制作完成</span></div><div class="timeline-item"><span class="timeline-time">01:51</span><span class="timeline-text">像包心一样左右交替推花瓣</span></div><div class="timeline-item"><span class="timeline-time">02:01</span><span class="timeline-text">钢嘴扎进液面，拉高时流量不断开</span></div><div class="timeline-item"><span class="timeline-time">02:07</span><span class="timeline-text">最后一颗花蕊加大流量，完全包裹</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">融合<br/>低流距小流量 → 防气泡</div><span class="arrow">→</span><div class="node-green">搅拌<br/>拉高流距 + 液面内轨迹 → 底色均匀</div><span class="arrow">→</span><div class="node-orange">开底<br/>增流量 + 前推两厘米 → 深V底纹</div><span class="arrow">→</span><div class="node-blue">收尾<br/>贴近液面 + 快画 → 八字花瓣包裹</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：融合时流量越大越快越省事。小流量低流距才能避免页面高度不足砸出气泡。</p><p>误区：画椭圆随意画。轨迹必须在液面内进行，碰到杯壁会导致页面变脏、纹路不干净。</p><p>误区：收尾八字可以慢慢画。钢嘴必须贴近液面且速度快，否则湿奶泡无法停留在表面。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>融合：低流距小流量</h3>
+      <p>在讲：开场的融合手法。关键理解：低流距、小流量注入，注入点在杯底距液面最高点位。怎么用：刚倒入时压低流距，防止砸出气泡。原文依据：「注入点一定要在我们杯底距离页面最高的点位进行」。</p>
+      
+      
+    </div>
+    <div class="card card-purple">
+      <h3>画椭圆搅拌：轨迹在液面内</h3>
+      <p>在讲：融合后的搅拌动作。关键理解：拉高流距画椭圆，轨迹必须在液面里、不碰杯壁。怎么用：控制手腕轨迹，只在液面区域画。原文依据：「画椭圆的轨迹一定要在页面里进行，不要碰到杯壁上去」。</p>
+      
+      
+    </div>
+    <div class="card card-orange">
+      <h3>开底与二段注入</h3>
+      <p>在讲：纹路成型阶段。关键理解：融合到四分满，中心偏上注入，持续增大流量边摆动边回杯；半圆时缸子前推两厘米形成深V底纹；二段流量更大让底纹回包。怎么用：按节奏递增流量，推进幅度两厘米。原文依据：「注入时的流量要比一段开底时的流量更大」。</p>
+      
+      
+    </div>
+    <div class="card ">
+      <h3>八字收尾与推花瓣</h3>
+      <p>在讲：玫瑰成型的收尾动作。关键理解：钢嘴贴近液面快画竖八字；像包心一样左右交替推花瓣；花蕊加大流量完全包裹。怎么用：收尾阶段保证钢嘴贴面、速度不减、流量不断。原文依据：「钢嘴一定要非常贴近页面，并且速度要快」。</p>
+      
+      
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">压纹玫瑰四步要点速查</h2><div class="card"><table><thead><tr><th>阶段</th><th>动作</th><th>关键要点</th></tr></thead><tbody><tr><td>融合</td><td>画椭圆搅拌</td><td>低流距小流量，注入点取杯底距液面最高点</td></tr><tr><td>搅拌</td><td>拉高流距画椭圆</td><td>轨迹在液面内，不碰杯壁</td></tr><tr><td>开底</td><td>持续增流量边摆边回杯</td><td>半圆时缸子前推两厘米，形成深V底纹</td></tr><tr><td>二段</td><td>加大流量注入</td><td>让底纹充分回包二段纹路</td></tr><tr><td>八字</td><td>钢嘴贴液面快画</td><td>湿奶泡才能停在表面</td></tr><tr><td>花瓣</td><td>左右交替推瓣</td><td>拉高时流量不断开，花蕊加大流量</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>奶泡质量（湿奶泡比例）会影响最终效果，视频未展开打奶细节</li><li>「两厘米」「四分满」为经验值，随杯型与奶泡状态需微调</li><li>压纹玫瑰对基础拉花（郁金香、叶子）有前置要求，新手建议先练基础</li><li>画面为过程演示，手法细节（手腕角度、注入速度）难以量化，需反复练习</li></ul><div class="pitfall">不要在融合阶段流量过大——页面高度不足会砸出气泡</div><div class="pitfall">不要让画椭圆轨迹碰到杯壁——液面变脏纹路不清</div><div class="pitfall">不要收尾时离液面太远——湿奶泡无法停留在液体表面</div><div class="pitfall">不要在中途断开流量——花瓣推拉要连贯</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>压纹玫瑰 = 流量节奏 + 液面轨迹控制</li><li>融合：低流距小流量，注入点取最高点位防气泡</li><li>搅拌：拉高流距，轨迹只在液面内</li><li>开底：持续增流量，半圆时前推两厘米成深V</li><li>二段：更大流量让底纹回包</li><li>收尾：贴近液面快画八字，左右交替推花瓣，花蕊大流量包裹</li></ul><h3>行动清单</h3><ol><li>先练好融合：小流量低流距，找准注入点位</li><li>画椭圆时把轨迹约束在液面内，别碰杯壁</li><li>开底时注意边摆动边回杯，纹路半圆再前推</li><li>二段注入加大流量，保证底纹回包</li><li>收尾八字贴近液面快画，左右推瓣不断流</li></ol><h3>关键认知转变</h3><p>以前：融合流量大、画圆碰杯壁、收尾离液面远、中途断流；现在：每一步都控住流量节奏与液面轨迹——小流量防气泡、轨迹在液面内、贴面快画、连续推瓣，压纹玫瑰成型干净利落。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 141 秒 · 小红书视频</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

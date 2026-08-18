@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6491" viewBox="0 0 1320 6491">
+  <foreignObject x="0" y="0" width="1320" height="6491">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>你绝对没注意过自己日常生活中的表情，原来</h1>
+  <div class="meta"><span class="tag tag-blue">形体</span><span class="tag tag-green">表情管理</span><span class="tag tag-orange">眼神</span><span class="tag tag-purple">气质</span><span class="tag tag-gray">时长 3分23秒</span><span class="tag tag-gray">分析视角：眼神定力与表情管理的训练拆解</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/8lHE9mjVYTv">原视频</a>
+  <div class="summary-line">核心判断：气质的差距不在五官而在「控制力」——眼神的定力（十秒不眨眼、三秒换视点）和表情管理（面无表情是克制无意识表情的结果），加上肩开、腹收、颈立、背挺的行走姿态。这套方法把抽象的「气质」拆成可训练、可验收的具体口令。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场：走路时眼睛到处看的日常问题</span></div><div class="timeline-item"><span class="timeline-time">00:11</span><span class="timeline-text">示范：认真管理 vs 未训练的表情对比</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">马路行人普遍无表情和眼神管理</span></div><div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">训练目标：眼神定力 + 表情管理</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">练习口令：闭眼后睁眼十秒不眨眼</span></div><div class="timeline-item"><span class="timeline-time">01:03</span><span class="timeline-text">眼睛酸 = 眼睛在用力，找到用力感</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">走路不能左看右看，一个地方看三秒</span></div><div class="timeline-item"><span class="timeline-time">02:00</span><span class="timeline-text">练习二：面无表情，克制抿嘴等无意识表情</span></div><div class="timeline-item"><span class="timeline-time">02:10</span><span class="timeline-text">面无表情很难，因为要压制无意识表情</span></div><div class="timeline-item"><span class="timeline-time">02:25</span><span class="timeline-text">行走姿态：肩开、腹收、颈立、背挺</span></div><div class="timeline-item"><span class="timeline-time">03:12</span><span class="timeline-text">验收：看镜头三秒、看前面三秒，眼神坚定</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">诊断<br/>眼睛乱看 + 无意识表情 → 气质减分</div><span class="arrow">→</span><div class="node-green">训练<br/>眼神定力（不眨眼/三秒视点）</div><span class="arrow">→</span><div class="node-orange">训练<br/>表情管理（面无表情）</div><span class="arrow">→</span><div class="node-blue">姿态<br/>肩开、腹收、颈立、背挺</div><span class="arrow">→</span><div class="node">成果<br/>眼神坚定，气质立现</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：气质感靠长相。实际上普通人也能靠控制力训练眼神与表情，当场见效。</p><p>误区：面无表情就是冷漠。面无表情是克制无意识小表情的结果，是有意识控制。</p><p>误区：看镜头时要盯紧不眨眼。走路与看镜头都需要三秒换视点，避免僵硬。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>问题诊断：无意识的日常小表情</h3>
+      <p>在讲：普通人气质减分的元凶。关键理解：眼睛到处看、嘴巴无意识张开或抿嘴，都是缺乏表情和眼神管理的表现。怎么用：先观察自己的日常习惯，意识到问题才能训练。原文依据：「大家的眼睛会到处看，嘴巴可能会无意识的张开，或者抿嘴」。</p>
+      
+      
+    </div>
+    <div class="card card-green">
+      <h3>眼神定力：十秒不眨眼</h3>
+      <p>在讲：练习一的核心。关键理解：闭眼-睁眼十秒不眨眼，酸感说明眼睛在用力；找到用力看前面的感觉。怎么用：日常可随时做闭眼-睁眼练习，建立用力感。原文依据：「酸的时候你的眼睛就在用力，找到这个眼睛用力的感觉」。</p>
+      
+      
+    </div>
+    <div class="card card-orange">
+      <h3>三秒换视点：走路控制</h3>
+      <p>在讲：把定力用进行走。关键理解：不能左看右看，一个地方停留三秒再换。怎么用：走路、看镜头都用「三秒规则」控制视线。原文依据：「你看一个地方三秒钟，再看下一个地方三秒」。</p>
+      
+      
+    </div>
+    <div class="card card-purple">
+      <h3>表情管理：面无表情是克制</h3>
+      <p>在讲：练习二的核心。关键理解：面无表情很难，因为要压制无意识表情；表情管理是控制能力。怎么用：从「不抿嘴、不乱动」开始，逐步建立控制。原文依据：「面无表情是很难的，你需要通过自己的能力思维去控制它」。</p>
+      
+      
+    </div>
+    <div class="card card-green">
+      <h3>行走姿态与验收</h3>
+      <p>在讲：表情放进行走。关键理解：肩开、腹收、颈立、背挺，配合眼神定力形成气质行走。怎么用：每次走路都过一遍四句口令。原文依据：「看镜头，好看前面，眼神坚定了」。</p>
+      
+      
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">训练口令速查</h2><div class="card"><table><thead><tr><th>项目</th><th>口令</th><th>目的</th></tr></thead><tbody><tr><td>眼神定力</td><td>闭眼-睁眼十秒不眨眼</td><td>找到眼睛用力的感觉</td></tr><tr><td>视点控制</td><td>一个地方看三秒再换</td><td>走路不飘忽、有节奏</td></tr><tr><td>表情管理</td><td>面无表情，不抿嘴不乱动</td><td>克制无意识小表情</td></tr><tr><td>行走姿态</td><td>肩开、腹收、颈立、背挺</td><td>整体气质感</td></tr><tr><td>验收</td><td>看镜头三秒+看前面三秒</td><td>眼神坚定、表情克制</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>方法为形体模特训练体系，适合日常气质管理，不替代社交场合的表情灵活性</li><li>「面无表情」适用于走秀与静态展示，日常社交需适度放松</li><li>十秒不眨眼是训练手段，日常保持自然眨眼频率即可</li><li>效果因人而异，需持续练习而非一次见效</li></ul><div class="pitfall">不要为了定力长时间不眨眼导致干眼——训练后恢复正常眨眼</div><div class="pitfall">不要把面无表情理解成僵住不动——是克制乱动而非僵硬</div><div class="pitfall">不要只练眼神忽略姿态——眼神与体态是整体气质的两半</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>气质减分源于无意识的乱看与碎表情</li><li>眼神定力 = 十秒不眨眼练习 + 三秒换视点</li><li>表情管理 = 面无表情是克制无意识表情的结果</li><li>行走四口令：肩开、腹收、颈立、背挺</li><li>看镜头三秒、看前面三秒，眼神坚定即出气质</li></ul><h3>行动清单</h3><ol><li>每天做一次闭眼-睁眼十秒不眨眼练习</li><li>走路时练习「一个地方看三秒」</li><li>对着镜子练面无表情，克制抿嘴与乱动</li><li>走路默念：肩开、腹收、颈立、背挺</li><li>用「看镜头三秒/看前面三秒」验收眼神</li></ol><h3>关键认知转变</h3><p>以前：眼睛乱看、表情碎、走路松垮全靠天生；现在：把气质拆成可练口令——眼神定力、三秒视点、面无表情、四句姿态，训练当场见效。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 202 秒 · 小红书视频</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

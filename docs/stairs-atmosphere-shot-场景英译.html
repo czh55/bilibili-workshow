@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="遇见楼梯一定要试试这样拍🎬氛围感十足视频场景英译学习卡" />
+  <title>遇见楼梯一定要试试这样拍🎬氛围感十足｜场景英译</title>
+  <style>:root {
+  --teal-950:#073f42; --teal-800:#0d686c; --teal-700:#0f7c80; --teal-600:#14919b;
+  --mint-100:#dff4ec; --mint-50:#f0faf6; --ink:#183536; --muted:#607879;
+  --line:#d7e8e2; --paper:#fff; --amber:#a85d08; --shadow:0 12px 32px rgba(7,63,66,.08);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:24px; }
+body { margin:0; color:var(--ink); background:#edf7f2; font-family:Inter,"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif; line-height:1.65; }
+button, select { font:inherit; }
+a { color:inherit; }
+.hero { color:#fff; background:radial-gradient(circle at 85% 10%,rgba(129,230,196,.24),transparent 30%),linear-gradient(125deg,#073f42,#0d7377 56%,#14919b); }
+.hero-inner { width:min(1440px,100%); margin:auto; padding:48px clamp(20px,5vw,72px) 42px; }
+.hero-flex { display:flex; gap:clamp(18px,3vw,40px); align-items:flex-start; }
+.hero-cover { width:min(240px,42vw); height:auto; max-height:320px; object-fit:contain; object-position:center; border-radius:16px; border:1px solid rgba(255,255,255,.28); box-shadow:0 18px 44px rgba(0,0,0,.32); flex-shrink:0; }
+.hero-text { min-width:0; flex:1; }
+.eyebrow { margin:0 0 12px; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.8; }
+h1 { max-width:1020px; margin:0; font-size:clamp(1.8rem,3.8vw,3.2rem); line-height:1.13; letter-spacing:-.04em; }
+.hero-en { margin:12px 0 24px; font-size:clamp(1rem,2vw,1.3rem); opacity:.82; }
+.hero-meta { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+.chip { border:1px solid rgba(255,255,255,.28); border-radius:99px; padding:5px 11px; font-size:.82rem; background:rgba(255,255,255,.08); }
+.source-link { font-weight:750; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.5); }
+.lang-switch { margin-left:12px; font-size:.8rem; font-weight:700; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:24px; }
+.toolbar label { font-size:.82rem; opacity:.82; }
+.toolbar select { color:#fff; background:#0a5d61; border:1px solid rgba(255,255,255,.3); border-radius:8px; padding:7px 9px; }
+.stop-btn { display:none; color:#fff; background:#8c3b2a; border:0; border-radius:8px; padding:8px 12px; cursor:pointer; }
+.stop-btn.visible { display:inline-flex; }
+.speech-status { min-height:1.4em; font-size:.82rem; opacity:.88; }
+.narration-player { margin-top:18px; padding:16px 18px; background:rgba(255,255,255,.1); border-radius:12px; border:1px solid rgba(255,255,255,.15); }
+.audio-label { color:rgba(255,255,255,.88); font-size:.82rem; font-weight:700; margin:0 0 8px; }
+.page { width:min(1440px,100%); margin:auto; padding:28px clamp(16px,3vw,44px) 64px; display:grid; grid-template-columns:minmax(230px,280px) minmax(0,1fr); gap:30px; align-items:start; }
+.sidebar { position:sticky; top:20px; min-width:0; }
+.sidebar-box { background:rgba(255,255,255,.8); border:1px solid var(--line); border-radius:16px; padding:17px; box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+.sidebar h2 { margin:0 0 13px; font-size:.9rem; letter-spacing:.08em; color:var(--teal-800); }
+.map-link { display:grid; grid-template-columns:34px minmax(0,1fr); gap:9px; padding:10px 6px; text-decoration:none; border-top:1px solid var(--line); }
+.map-link:hover b { color:var(--teal-700); }
+.map-id { width:30px; height:30px; display:grid; place-items:center; border-radius:9px; color:#fff; background:var(--teal-700); font-size:.72rem; font-weight:800; }
+.map-link b { display:block; font-size:.78rem; line-height:1.4; }
+.map-link small { display:block; color:var(--muted); font-size:.67rem; line-height:1.4; margin-top:2px; overflow-wrap:anywhere; }
+.content { min-width:0; }
+.scene-card { background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:clamp(20px,3vw,34px); margin-bottom:24px; box-shadow:var(--shadow); overflow:hidden; }
+.scene-frame { display:block; width:100%; max-height:480px; object-fit:contain; object-position:center; background:rgba(7,63,66,.04); border-radius:14px; margin:16px 0 4px; border:1px solid var(--line); box-shadow:0 10px 28px rgba(7,63,66,.1); }
+.scene-topline { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.scene-id { display:inline-grid; place-items:center; min-width:42px; height:30px; padding:0 10px; color:#fff; background:var(--teal-700); border-radius:8px; font-size:.78rem; font-weight:850; }
+.time { margin-left:10px; color:var(--muted); font-size:.82rem; font-variant-numeric:tabular-nums; }
+.scene-card h2 { margin:18px 0 2px; font-size:clamp(1.35rem,2.4vw,2rem); line-height:1.25; color:var(--teal-950); }
+.scene-title-en { margin:0 0 18px; color:var(--teal-600); font-weight:700; font-size:.98rem; }
+.context { margin:0 0 20px; padding:12px 15px; color:#496566; background:var(--mint-50); border-left:3px solid var(--teal-600); border-radius:0 10px 10px 0; font-size:.88rem; }
+.context b { margin-right:10px; color:var(--teal-800); }
+.sentence-list { display:grid; gap:12px; }
+.sentence { position:relative; display:grid; grid-template-columns:38px minmax(0,1fr); gap:12px; padding:16px; border:1px solid #e2ece8; border-radius:14px; background:#fcfefd; min-width:0; }
+.sentence-no { color:var(--teal-600); font-size:.76rem; font-weight:850; font-variant-numeric:tabular-nums; padding-top:4px; }
+.bilingual { min-width:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(14px,2vw,28px); }
+.lang-block { min-width:0; }
+.lang-block p { margin:5px 0 0; overflow-wrap:anywhere; }
+.en-block { padding-left:clamp(14px,2vw,28px); border-left:1px solid var(--line); }
+.en-block p { color:#0b5c60; font-weight:650; }
+.lang-tag { display:inline-block; color:var(--muted); font-size:.66rem; font-weight:850; letter-spacing:.12em; }
+.en-head { display:flex; justify-content:space-between; gap:10px; align-items:center; min-height:30px; }
+.note { grid-column:2; margin:1px 0 0; color:#708182; font-size:.78rem; }
+.note span { margin-right:7px; color:var(--amber); font-weight:750; }
+.speak-btn { display:inline-flex; align-items:center; gap:7px; border:1px solid #b8d9d1; border-radius:9px; padding:7px 11px; color:var(--teal-800); background:#f5fbf8; cursor:pointer; white-space:nowrap; font-size:.78rem; font-weight:750; transition:.15s ease; }
+.speak-btn:hover { color:#fff; background:var(--teal-700); border-color:var(--teal-700); transform:translateY(-1px); }
+.speak-btn.playing { color:#fff; background:var(--teal-700); border-color:var(--teal-700); }
+.speak-btn.compact { padding:4px 8px; font-size:.7rem; }
+.speak-btn.icon-only { padding:3px 7px; margin-left:6px; }
+.speak-btn.icon-only span:last-child { display:none; }
+.pronounce-word { display:inline; margin:0; padding:0 2px; color:inherit; background:rgba(20,145,155,.08); border:0; border-bottom:1px dashed var(--teal-600); border-radius:3px; font:inherit; font-weight:inherit; line-height:inherit; cursor:pointer; }
+.pronounce-word:hover, .pronounce-word:focus { color:var(--teal-950); background:#cceee4; border-bottom-style:solid; outline:3px solid rgba(20,145,155,.42); outline-offset:2px; }
+.pronounce-word.playing { color:#fff; background:var(--teal-700); border-bottom-color:var(--teal-700); }
+.paraphrase { margin-top:18px; border-top:1px solid var(--line); }
+.paraphrase summary { padding:16px 0 3px; color:var(--teal-800); cursor:pointer; font-weight:800; }
+.paraphrase summary span { color:var(--muted); font-size:.75rem; font-weight:500; margin-left:8px; }
+.paraphrase ol { margin:12px 0 0; padding-left:22px; }
+.paraphrase li { padding:7px 0 9px 5px; }
+.paraphrase li p { margin:0; font-size:.9rem; font-weight:650; }
+.chunks { margin-top:4px; color:var(--teal-700); font-size:.78rem; }
+.study-section { margin:38px 0 0; }
+.section-heading { display:flex; align-items:baseline; gap:10px; margin:0 0 15px; color:var(--teal-950); font-size:1.35rem; }
+.section-heading small { color:var(--teal-600); font-size:.78rem; letter-spacing:.05em; }
+.study-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.study-grid article { padding:17px; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 6px 18px rgba(7,63,66,.05); min-width:0; }
+.study-grid p { margin:0; }
+.practice-en { margin-top:9px; color:var(--teal-700); font-weight:650; overflow-wrap:anywhere; }
+.wrong { color:#a24831; text-decoration:line-through; overflow-wrap:anywhere; }
+.right { color:var(--teal-700); font-weight:750; margin:5px 0; overflow-wrap:anywhere; }
+.pitfalls p { color:var(--muted); font-size:.82rem; }
+.shifts article { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.5fr); gap:12px; align-items:center; }
+.shifts b { color:var(--teal-600); font-size:1.2rem; }
+.shifts strong { color:var(--teal-800); }
+footer { margin-top:38px; color:var(--muted); font-size:.78rem; text-align:center; }
+@media (max-width:900px) { .page { grid-template-columns:1fr; } .sidebar { position:static; } .sidebar-box { overflow-x:auto; padding:12px; } .sidebar h2 { padding-left:5px; } .map-nav { display:flex; width:max-content; gap:8px; } .map-link { width:220px; border:1px solid var(--line); border-radius:10px; padding:8px; } .bilingual { grid-template-columns:1fr; } .en-block { padding:12px 0 0; border-left:0; border-top:1px dashed var(--line); } }
+@media (max-width:620px) { .hero-inner { padding-top:32px; } .hero-flex { flex-direction:column; align-items:center; } .hero-cover { width:100%; max-width:360px; } .hero-text { text-align:center; } .page { padding-inline:10px; gap:18px; } .scene-card { border-radius:14px; padding:17px 13px; } .scene-topline { align-items:flex-start; } .scene-speak span:last-child { display:none; } .sentence { grid-template-columns:26px minmax(0,1fr); padding:13px 10px; gap:6px; } .note { grid-column:2; } .study-grid { grid-template-columns:1fr; } .shifts article { grid-template-columns:1fr; gap:5px; } .shifts b { transform:rotate(90deg); justify-self:start; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .speak-btn { transition:none; } }</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-flex">
+        <img class="hero-cover" src="assets/stairs-atmosphere-shot/shot-01.jpg" alt="遇见楼梯一定要试试这样拍🎬氛围感十足 封面" loading="lazy">
+        <div class="hero-text">
+          <p class="eyebrow">Scene English · 楼梯拍照 · 机位与构图技巧</p>
+          <h1>遇见楼梯一定要试试这样拍🎬氛围感十足</h1>
+          <p class="hero-en">Try These Poses When You Meet a Staircase</p>
+          <div class="hero-meta"><span class="chip">2026-08-17</span><span class="chip">xiaohongshu</span><span class="chip">39秒</span><span class="chip">4 个场景</span><span class="chip">点下划线单词听发音</span><a class="source-link" href="https://xhslink.cn/o/6lkYQliTehU" target="_blank" rel="noopener">查看原视频 ↗</a><a class="source-link lang-switch" href="stairs-atmosphere-shot-图文实录.html" hreflang="zh" style="margin-left:12px;font-size:.8rem">中文图文实录版 ↗</a></div>
+        </div>
+      </div>
+      <div class="toolbar"><label for="speech-rate">朗读速度</label><select id="speech-rate"><option value="0.85">慢速 0.85×</option><option value="1" selected>正常 1×</option><option value="1.15">快速 1.15×</option></select><button id="stop-speech" class="stop-btn" type="button">■ 停止朗读</button><span id="speech-status" class="speech-status" role="status" aria-live="polite"></span></div>
+      <div class="narration-player"><p class="audio-label">🎧 语音讲解</p><button class="speak-btn" type="button" data-audio="audio/stairs-atmosphere-shot/narration.mp3" aria-label="播放语音讲解"><span aria-hidden="true">▶</span><span>播放语音讲解</span></button></div>
+    </div>
+  </header>
+  <main class="page">
+    <aside class="sidebar" aria-label="场景地图"><div class="sidebar-box"><h2>场景地图 · SCENE MAP</h2><nav class="map-nav"><a class="map-link" href="#s1"><span class="map-id">S1</span><span><b>翻车开场</b><small>00:00-00:03 · The Flop Opening</small></span></a><a class="map-link" href="#s2"><span class="map-id">S2</span><span><b>纵深感</b><small>00:04-00:12 · Depth of the Stairs</small></span></a><a class="map-link" href="#s3"><span class="map-id">S3</span><span><b>俯拍与三分线</b><small>00:13-00:29 · Top-Down and Rule of Thirds</small></span></a><a class="map-link" href="#s4"><span class="map-id">S4</span><span><b>三角形构图</b><small>00:29-00:39 · Triangle Composition</small></span></a></nav></div></aside>
+    <div class="content">
+      <section class="scene-card" id="s1" data-scene><div class="scene-topline"><div><span class="scene-id">S1</span><span class="time">00:00-00:03</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/stairs-atmosphere-shot/s1.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/stairs-atmosphere-shot/shot-01.jpg" alt="翻车开场 场景截图" loading="lazy"><h2>翻车开场</h2><p class="scene-title-en">The Flop Opening</p><p class="context"><b>情境</b>朋友蹲下低机位平拍最容易翻车，由此引出四个楼梯拍照技巧。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>当朋友蹲下的时候，就知道要翻车了。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s1-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">When my friend crouches down, I know it's going to flop.</p></div></div><p class="note"><span>表达提示</span>flop（翻车/失败）</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>分享四个楼梯拍照小技巧。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s1-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Here are four staircase photo tricks.</p></div></div><p class="note"><span>表达提示</span>trick（小技巧）</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>「低机位平拍」的表达</p><div class="chunks">A low, flat shooting angle.</div></li><li><p>「翻车」换种说法</p><div class="chunks">The shot is doomed to fail.</div></li></ol></details></section><section class="scene-card" id="s2" data-scene><div class="scene-topline"><div><span class="scene-id">S2</span><span class="time">00:04-00:12</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/stairs-atmosphere-shot/s2.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/stairs-atmosphere-shot/shot-02.jpg" alt="纵深感 场景截图" loading="lazy"><h2>纵深感</h2><p class="scene-title-en">Depth of the Stairs</p><p class="context"><b>情境</b>手机抬高、后退两步、切换 1.5 倍，人物放中下两格，拍出楼梯纵深。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>你先把手机抬高。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s2-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Raise your phone first.</p></div></div><p class="note"><span>表达提示</span>raise（抬高）</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>再后退两步，切换1.5倍。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s2-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Step back twice and switch to 1.5x zoom.</p></div></div><p class="note"><span>表达提示</span>step back（后退）</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>把我放在中下两格就可以拍了。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s2-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Place me in the middle-lower two cells and shoot.</p></div></div><p class="note"><span>表达提示</span>middle-lower（中下）</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>「纵深感」的表达</p><div class="chunks">The stairs stretch away into depth.</div></li><li><p>「引导线构图」换种说法</p><div class="chunks">Use the stair lines to lead the eye.</div></li></ol></details></section><section class="scene-card" id="s3" data-scene><div class="scene-topline"><div><span class="scene-id">S3</span><span class="time">00:13-00:29</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/stairs-atmosphere-shot/s3.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/stairs-atmosphere-shot/shot-04.jpg" alt="俯拍与三分线 场景截图" loading="lazy"><h2>俯拍与三分线</h2><p class="scene-title-en">Top-Down and Rule of Thirds</p><p class="context"><b>情境</b>走到楼梯上面放大两倍俯拍裙摆；侧前方低机位、人物站三分线直接出片。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>走到上面去，放大两倍。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s3-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Go up the stairs and zoom in to 2x.</p></div></div><p class="note"><span>表达提示</span>zoom in（放大）</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>用俯拍视角拍我站动裙摆。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s3-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Shoot me top-down as the skirt moves.</p></div></div><p class="note"><span>表达提示</span>top-down（俯拍）</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>人物站三分线，出片。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s3-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Place me on the rule-of-thirds line and you're done.</p></div></div><p class="note"><span>表达提示</span>rule of thirds（三分线）</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>「更有意境」的表达</p><div class="chunks">It looks more cinematic and poetic.</div></li><li><p>「直接出片」换种说法</p><div class="chunks">That's a keeper right away.</div></li></ol></details></section><section class="scene-card" id="s4" data-scene><div class="scene-topline"><div><span class="scene-id">S4</span><span class="time">00:29-00:39</span></div><button class="speak-btn scene-speak" type="button" data-audio="audio/stairs-atmosphere-shot/s4.mp3" aria-label="朗读整个场景"><span aria-hidden="true">▶</span><span>朗读整个场景</span></button></div><img class="scene-frame" src="assets/stairs-atmosphere-shot/shot-05.jpg" alt="三角形构图 场景截图" loading="lazy"><h2>三角形构图</h2><p class="scene-title-en">Triangle Composition</p><p class="context"><b>情境</b>侧面抬高手机两倍、手往后撑，与楼梯形成三角形构图，避免显腿短。</p><div class="sentence-list"><article class="sentence"><div class="sentence-no">01</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>走到我侧面，把手机抬高一点。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s4-01.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Move to my side and raise the phone a bit.</p></div></div><p class="note"><span>表达提示</span>move to the side（走到侧面）</p></article><article class="sentence"><div class="sentence-no">02</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>切换两倍，手往后撑。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s4-02.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Switch to 2x, and push your hand back.</p></div></div><p class="note"><span>表达提示</span>push your hand back（手往后撑）</p></article><article class="sentence"><div class="sentence-no">03</div><div class="bilingual"><div class="lang-block zh-block"><span class="lang-tag">中文</span><p>三角形构图拍一张。</p></div><div class="lang-block en-block"><div class="en-head"><span class="lang-tag">EN</span><button class="speak-btn compact" type="button" data-audio="audio/stairs-atmosphere-shot/s4-03.mp3" aria-label="朗读本句"><span aria-hidden="true">▶</span><span>朗读本句</span></button></div><p class="english">Compose a triangle and take the shot.</p></div></div><p class="note"><span>表达提示</span>triangle composition（三角形构图）</p></article></div><details class="paraphrase"><summary>Paraphrase &amp; Chunks <span>2 组表达</span></summary><ol><li><p>「显腿短」的表达</p><div class="chunks">It makes the legs look short.</div></li><li><p>「几何结构」换种说法</p><div class="chunks">The arm and stairs form a triangle shape.</div></li></ol></details></section>
+      <section class="study-section" id="practice"><h2 class="section-heading">今日可练 <small>PRACTICE TODAY</small></h2><div class="study-grid"><article><p>如何拍出楼梯的纵深感？</p><div class="practice-en">Raise the phone, step back, and shoot at 1.5x. <button class="speak-btn icon-only" type="button" data-audio="audio/stairs-atmosphere-shot/practice-0.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>俯拍裙摆有什么效果？</p><div class="practice-en">It adds a dynamic, cinematic feel. <button class="speak-btn icon-only" type="button" data-audio="audio/stairs-atmosphere-shot/practice-1.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>人物在画面哪里最出片？</p><div class="practice-en">Place the subject on the rule-of-thirds line. <button class="speak-btn icon-only" type="button" data-audio="audio/stairs-atmosphere-shot/practice-2.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article><article><p>怎么避免显腿短？</p><div class="practice-en">Shoot from the side at a raised angle, not head-on and low. <button class="speak-btn icon-only" type="button" data-audio="audio/stairs-atmosphere-shot/practice-3.mp3" aria-label="朗读练习句"><span aria-hidden="true">▶</span><span>朗读练习句</span></button></div></article></div></section>
+      <section class="study-section pitfalls" id="pitfalls"><h2 class="section-heading">避坑 <small>PITFALLS</small></h2><div class="study-grid"><article><div class="wrong">✕ Crouch low for a flat shot.</div><div class="right">✓ Raise the phone and shoot from a new angle.</div><p>Low flat shots usually flop and shorten the legs.</p></article><article><div class="wrong">✕ Zoom all the way in.</div><div class="right">✓ Use 1.5x or 2x only.</div><p>Heavy digital zoom hurts image quality in low light.</p></article><article><div class="wrong">✕ Stand anywhere in the frame.</div><div class="right">✓ Follow the middle-lower two cells or the thirds line.</div><p>Deliberate placement makes the composition work.</p></article><article><div class="wrong">✕ Face the camera head-on.</div><div class="right">✓ Turn to the side and avoid the lens.</div><p>A side stance plus hand-back pose creates a triangle structure.</p></article></div></section>
+      <section class="study-section shifts" id="mindset"><h2 class="section-heading">认知转变 <small>MINDSET SHIFTS</small></h2><div class="study-grid"><article><span>以前蹲下低机位平拍</span><b aria-hidden="true">→</b><strong>现在抬高手机拍纵深感</strong></article><article><span>以前一个机位拍完就走</span><b aria-hidden="true">→</b><strong>现在俯拍、低机位、侧面多角度各拍一式</strong></article><article><span>以前构图靠感觉</span><b aria-hidden="true">→</b><strong>现在用中下两格、三分线、三角形等具体规则</strong></article></div></section>
+      <footer>英文基于 Whisper medium 转录校正（「斧拍戏角→俯拍视角」「正剑照→证件照」「闲腿短→显腿短」等已修正）。 · 场景/句子朗读使用 edge-tts 神经网络语音 · 单词发音使用浏览器 Web Speech API</footer>
+    </div>
+  </main>
+  <script>(() => {
+    let activeAudio = null;
+    let activeBtn = null;
+    const status = document.getElementById('speech-status');
+    const stopBtn = document.getElementById('stop-speech');
+    const rateSel = document.getElementById('speech-rate');
+    const reset = () => { if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn = null; stopBtn.classList.remove('visible'); status.textContent = ''; };
+    const playAudio = (url, btn) => { reset(); const a = new Audio(url); a.playbackRate = Number(rateSel.value); activeAudio = a; activeBtn = btn; btn.classList.add('playing'); stopBtn.classList.add('visible'); status.textContent = btn.classList.contains('scene-speak') ? '正在朗读整个场景…' : btn.classList.contains('speak-btn') && btn.dataset.audio.includes('narration') ? '正在播放语音讲解…' : '正在朗读…'; a.onended = () => { if (activeAudio === a) reset(); }; a.onerror = () => { status.textContent = '音频加载失败'; if (activeAudio === a) reset(); }; a.play().catch(() => { status.textContent = '播放失败'; if (activeAudio === a) reset(); }); };
+    document.addEventListener('click', e => { const btn = e.target.closest('[data-audio]'); if (!btn) return; e.preventDefault(); if (btn === activeBtn && activeAudio) { reset(); return; } playAudio(btn.dataset.audio, btn); });
+    stopBtn.addEventListener('click', reset);
+    const synth = window.speechSynthesis;
+    const getEnglishVoice = () => { const v = synth.getVoices(); return v.find(x => /^en-(US|GB)/i.test(x.lang)) || v.find(x => /^en/i.test(x.lang)) || null; };
+    const difficultWords = new Set(['staircase', 'flop', 'trick', 'raise', 'zoom', 'depth', 'perspective', 'top-down', 'skirt', 'thirds', 'compose', 'triangle', 'angle', 'frame', 'guide', 'lead', 'cinematic', 'dynamic', 'keeper', 'crouch', 'digital', 'quality', 'deliberate', 'structure', 'stance']);
+    const shouldPronounce = w => { const n = w.toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g,''); return n.replace(/[^a-z]/g,'').length >= 8 || difficultWords.has(n); };
+    const mark = root => { const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); const ns = []; while (w.nextNode()) ns.push(w.currentNode); ns.forEach(n => { if (n.parentElement?.closest('button,script,style')) return; let m,l=0,ch=false; const fg = document.createDocumentFragment(); const re = /[A-Za-z]+(?:[-'’][A-Za-z]+)*/g; while ((m = re.exec(n.nodeValue))) { if (!shouldPronounce(m[0])) continue; ch=true; fg.append(n.nodeValue.slice(l,m.index)); const b=document.createElement('button');b.type='button';b.className='pronounce-word';b.dataset.speak=m[0];b.setAttribute('aria-label','朗读单词 '+m[0]);b.title='点击听 '+m[0]+' 发音';b.textContent=m[0];fg.append(b);l=m.index+m[0].length;} if(!ch)return;fg.append(n.nodeValue.slice(l));n.replaceWith(fg);}); };
+    document.querySelectorAll('.english,.scene-title-en,.paraphrase li p,.chunks,.practice-en,.wrong,.right').forEach(mark);
+    document.addEventListener('click', e => { const wb = e.target.closest('.pronounce-word'); if (!wb) return; e.preventDefault(); if (!synth) return; synth.cancel(); if (activeAudio) { activeAudio.pause(); activeAudio = null; } activeBtn?.classList.remove('playing'); activeBtn=wb; wb.classList.add('playing'); const u=new SpeechSynthesisUtterance(wb.dataset.speak);u.lang='en-US';u.rate=0.88;const v=getEnglishVoice();if(v)u.voice=v;u.onend=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};u.onerror=()=>{activeBtn?.classList.remove('playing');activeBtn=null;};synth.speak(u); });
+  })();</script>
+</body>
+</html>
