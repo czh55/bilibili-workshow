@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6474" viewBox="0 0 1320 6474">
+  <foreignObject x="0" y="0" width="1320" height="6474">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>如何让你的街拍充满时尚感？</h1>
+  <div class="meta"><span class="tag tag-blue">摄影</span><span class="tag tag-green">街拍</span><span class="tag tag-orange">构图</span><span class="tag tag-purple">姿势</span><span class="tag tag-gray">时长 53秒</span><span class="tag tag-gray">分析视角：街拍出片的构图与姿势口令拆解</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/8TsYSymGw4o">原视频</a>
+  <div class="summary-line">核心判断：街拍时尚感不是靠环境或设备，而是三个可执行的口令层——机位与站位（举高+侧位）、构图（头顶空间、一分为二、纯背景）、姿势与情绪（倒肩伸手、半身右上角、松弛不盯镜头）。每个口令都能独立复制到下一次拍摄。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">断言开场：这个时段很出片，这么拍肯定不行</span></div><div class="timeline-item"><span class="timeline-time">00:03</span><span class="timeline-text">错误示范：正面平拍，拍到白色背景</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">正确口令：到侧面、避开白景、机位举高</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">头顶不留空间，被拍者走过来一点</span></div><div class="timeline-item"><span class="timeline-time">00:14</span><span class="timeline-text">把地面放进画面，构图一分为二</span></div><div class="timeline-item"><span class="timeline-time">00:21</span><span class="timeline-text">提醒往后站，避开水沟等杂景</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">纯粹背景板才能出大片</span></div><div class="timeline-item"><span class="timeline-time">00:27</span><span class="timeline-text">倒肩伸手，头顶放画面右上角拍半身</span></div><div class="timeline-item"><span class="timeline-time">00:36</span><span class="timeline-text">垮包看侧方，等风吹出松弛酷感</span></div><div class="timeline-item"><span class="timeline-time">00:44</span><span class="timeline-text">男生通用：侧面高角度，半身留给背景</span></div><div class="timeline-item"><span class="timeline-time">00:50</span><span class="timeline-text">尽量不看镜头，更松弛自然</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">机位<br/>举高 + 侧位站位，避开杂景</div><span class="arrow">→</span><div class="node-green">构图<br/>头顶空间 + 一分为二 + 纯背景</div><span class="arrow">→</span><div class="node-orange">姿势<br/>倒肩伸手 + 头顶右上角</div><span class="arrow">→</span><div class="node-blue">情绪<br/>垮包等风，松弛不盯镜头</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：正面平拍对着镜头就是街拍。实际上直怼正拍最显呆板，侧位+举高机位才出效果。</p><p>误区：背景有什么拍什么。杂景（水沟、白色景物）会毁掉画面，纯粹背景板才能突出主体。</p><p>误区：姿势靠被拍者自由发挥。给出具体口令（倒肩、伸手、头顶在右上角）才能稳定出片。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>机位与站位：先解决方向问题</h3>
+      <p>在讲：被拍者与镜头、背景的相对位置。关键理解：正面平拍 = 呆板；侧面站位 + 举高机位 = 时尚。怎么用：先让人物站到侧面，再要求举高手机。原文依据：「到我的侧面，不要拍到后面那些白色的景……反正你举高，这样是不是很帅」。</p>
+      
+      
+    </div>
+    <div class="card ">
+      <h3>构图三招：减法与分割</h3>
+      <p>在讲：头顶空间、画面分割、背景做减法的三个构图操作。关键理解：头顶不留太多空间；把地面放进画面底部形成一分为二；远离水沟让背景纯粹。怎么用：调整人物入画位置，必要时让被拍者移动。原文依据：「这样纯粹的背景板才能出大片」。</p>
+      
+      
+    </div>
+    <div class="card card-orange">
+      <h3>姿势细节：可执行的口令</h3>
+      <p>在讲：把抽象的「好看」翻译成具体动作。关键理解：倒个肩膀、伸手、头顶放右上角——每个口令都是可执行指令。怎么用：拍摄时给被拍者 2-3 个动作口令而非「自然一点」。原文依据：「尽量把我的头顶在你的右上角」。</p>
+      
+      
+    </div>
+    <div class="card card-purple">
+      <h3>情绪引导：松弛感是拍出来的</h3>
+      <p>在讲：如何让被拍者表现出松弛酷感。关键理解：不靠要求表情，靠动作引导——垮包、看侧方、等风吹来。怎么用：给被拍者一个「有事做」的动作，情绪自然松弛。原文依据：「拍着那种松弛酷酷的感觉」。</p>
+      
+      
+    </div>
+    <div class="card card-green">
+      <h3>通用方案：不看镜头</h3>
+      <p>在讲：男生也适用的收尾技巧。关键理解：侧面+高角度+半身留背景与女生示范同构，加上不看镜头更自然。怎么用：把视线引导到侧方，让眼睛离开镜头。原文依据：「尽量不要看镜头」。</p>
+      
+      
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">错误拍法 vs 正确拍法</h2><div class="card"><table><thead><tr><th>维度</th><th>错误（废片）</th><th>正确（出片）</th></tr></thead><tbody><tr><td>机位</td><td>正面平拍、低机位</td><td>侧位站位、机位举高</td></tr><tr><td>背景</td><td>拍到白景、水沟等杂景</td><td>纯背景板、避开杂物</td></tr><tr><td>构图</td><td>头顶大量留白、无分割</td><td>头顶少留空、地面一分为二</td></tr><tr><td>姿势</td><td>自由发挥、正对镜头</td><td>倒肩伸手、半身头顶右上角</td></tr><tr><td>情绪</td><td>刻意看镜头</td><td>垮包看侧方、松弛不盯镜头</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>技巧以单人站姿/半身街拍为主，多人或坐姿场景需另行调整</li><li>举高机位适合身材比例修饰，但也可能压缩面部视角，拍摄半身人像时需平衡</li><li>「一分为二」的地面分割依赖有清晰地平线的场地，纯室内地面也可使用</li><li>口令适合配合者愿意配合的情况，街拍路人不宜直接指挥</li><li>短视频示范为手机拍摄，相机参数不同但构图与姿势逻辑通用</li></ul><div class="pitfall">不要在逆光或强杂光环境直接举高拍摄——背景过曝会让「纯背景」失效</div><div class="pitfall">不要同时给太多口令，被拍者记不住动作，一次 2-3 个口令最佳</div><div class="pitfall">不要忽视风等自然条件——「等风吹过来」需要预留等待时间而非硬等瞬间</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>机位与站位决定画面方向：侧位 + 举高是摆脱呆板的第一步</li><li>构图是减法：头顶少留空、地面一分为二、背景做纯</li><li>姿势给具体口令：倒肩、伸手、头顶右上角，一次 2-3 个</li><li>情绪靠动作带：垮包、看侧方、等风吹，松弛感是拍出来的</li><li>通用方案：侧面高角度 + 半身留背景 + 不看镜头</li></ul><h3>行动清单</h3><ol><li>下次街拍先让被拍者站到侧面，再举高机位</li><li>检查背景是否纯粹，有杂景就让被拍者移动或换角度</li><li>拍摄时给被拍者 2-3 个具体动作口令</li><li>引导被拍者「有个事做」：垮包、看侧方、等风</li><li>半身构图时把人物头顶控制在画面右上角</li></ol><h3>关键认知转变</h3><p>以前：正面直拍、背景有什么拍什么、靠被拍者自由发挥；现在：先管机位与站位、再做背景减法、给具体姿势口令、用动作带出松弛感。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 53 秒 · 小红书视频</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

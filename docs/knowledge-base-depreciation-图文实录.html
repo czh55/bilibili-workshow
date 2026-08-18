@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一支 3 分半的反思型视频。UP 主做了 6 年笔记、深度使用 AI 知识库一年多，在全网吹捧「第二大脑」时却选择放弃，连 Obsidian 都再没打开。原因是存了 1000 条笔记、真正有用的不到 50 条。他从底层剖析知识库的致命缺陷：不是存得不够，而是「燃料太差」——白纸记">
+<title>小心，你刚建的知识库可能正在贬值｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>小心，你刚建的知识库可能正在贬值</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">3分33秒</span><span class="meta-tag tag-topic">知识库 笔记 AI 第二大脑</span></div>
+<a class="source-link" href="https://xhslink.cn/o/Ab8mwlYPLOp" target="_blank" rel="noopener">→ 原视频链接</a>
+<a class="source-link lang-switch" href="knowledge-base-depreciation-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">开场：6 年笔记，选择放弃第二大脑</a><a href="#ch2">致命缺陷：不是存得不够，而是燃料太差</a><a href="#ch3">破局思路：从被动记录转向苏格拉底式引导</a><a href="#ch4">结果：知识库自己长成树，价值在认知密度</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一支 3 分半的反思型视频。UP 主做了 6 年笔记、深度使用 AI 知识库一年多，在全网吹捧「第二大脑」时却选择放弃，连 Obsidian 都再没打开。原因是存了 1000 条笔记、真正有用的不到 50 条。他从底层剖析知识库的致命缺陷：不是存得不够，而是「燃料太差」——白纸记录摩擦力大，多数人坚持不下来就记流水账，产出的是没有上下文、AI 无法点燃的死语料。他的破局思路是从被动记录转向苏格拉底式引导：取消文件记录和手动整理，只保留「对话」一个功能，让 AI 像心理教练一样反问追问。结果是知识库自己长成一棵树，认知被加工出密度。核心观点：AI 时代比的不是存了多少信息，而是认知被加工到什么密度。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:36]</span><div><strong>放弃第二大脑</strong><p>6 年笔记 + 1 年深度用 AI 知识库，却选择放弃：存了 1000 条笔记，真正有用的不到 50 条。AI 检索再强也救不了低质量的原料。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:37→01:48]</span><div><strong>致命缺陷：燃料太差</strong><p>知识库不难做，难的是写出好燃料。白纸记录摩擦力大，坚持不了就记流水账（「今天又拖延了好烦」）——没有上下文，是死语料。90% 的知识库成为数字坟墓。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:49→02:40]</span><div><strong>破局：苏格拉底式引导</strong><p>从被动记录转向苏格拉底式引导：取消文件记录和手动整理，只保留「对话」——人天生擅长说话不擅长写文章。AI 像心理教练一样反问：任务太难还是害怕做不好？</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:41→03:25]</span><div><strong>知识库自己长成树</strong><p>没有任何整理动作，知识库长成一棵树：困惑连着输入、输入连着实验。AI 时代比的是认知被加工到什么密度，不是存了多少信息。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>知识库贬值的根因不是工具，而是「燃料」质量：被动记录产出的流水账是死语料，AI 无法点燃。解法是转向苏格拉底式引导——用低摩擦的对话替代高摩擦的写作，让 AI 反问追问把碎语料加工成可用燃料。价值不在于存了多少，而在于认知被加工到什么密度。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:36</span>开场：6 年笔记，选择放弃第二大脑</h2><p>视频以自我经历开场：「我自己做了6年笔记，深度使用AI知识库一年多，在全网都在吹捧第二大脑时，我却选择了放弃，甚至连Obsidian都再没有打开。」</p><p>放弃的理由很现实：「我曾存了1000条笔记，最后发现真正有用的不到50条。」</p><p>更关键的发现是：「AI的检索能力太强，也救不了低质量的原料。」——检索技术只能帮你把存过的东西找出来，改变不了内容的底层质量。UP 主预告要从底层剖析知识库的致命缺陷，以及摸索出的未来形态。</p><figure><img src="assets/knowledge-base-depreciation/shot-01.jpg" alt="开场：6 年笔记、深度使用 AI 知识库一年多，全网吹捧第二大脑时却选择放弃" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:02]</span>开场：6 年笔记、深度使用 AI 知识库一年多，全网吹捧第二大脑时却选择放弃</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2b077dac7de7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: six years of notes and deep AI knowledge-base use — yet I walked away from the second brain.</span></div>
+<audio class="cap-audio" src="audio/2b077dac7de7.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/knowledge-base-depreciation/shot-02.jpg" alt="存了 1000 条笔记，真正有用的不到 50 条" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:18]</span>存了 1000 条笔记，真正有用的不到 50 条</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f3ee70108474.mp3" type="button" aria-label="Play English audio">🔊</button><span>A thousand notes saved, fewer than fifty useful.</span></div>
+<audio class="cap-audio" src="audio/f3ee70108474.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:37-01:48</span>致命缺陷：不是存得不够，而是燃料太差</h2><p>「知识库的致命缺陷不是存得不够，而是燃料太差。」大家都说知识库是 AI 的专属燃料，但「做知识库很简单，能写出好燃料却极其困难」。</p><p>坚持不下去的根本原因是摩擦力：「面对一张白纸和空白文档，大脑会瞬间进入高认知负荷，构思、组织这些过程都太烦人性了。」</p><p>为了坚持，很多人退而求其次记流水账：「今天又拖延了好烦。」这种话对 AI 毫无用处——「AI拿到这些燃料，无法分辨底层的情绪需求和真实归因，没有上下文，这就是一句死语料」。</p><p>于是「辛辛苦苦记了一年，结果存进去的全是未加工的碎片」，AI 无法给出真正懂你的建议。结论很重：「90%的知识库成为数字坟墓，不是因为你找不到它，而是因为里面的燃料质量太差，根本点不燃AI。」</p><figure><img src="assets/knowledge-base-depreciation/shot-03.jpg" alt="致命缺陷：不是存得不够，而是燃料太差" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:42]</span>致命缺陷：不是存得不够，而是燃料太差</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/54de151ee801.mp3" type="button" aria-label="Play English audio">🔊</button><span>The fatal flaw: it&#x27;s not storage, it&#x27;s fuel.</span></div>
+<audio class="cap-audio" src="audio/54de151ee801.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/knowledge-base-depreciation/shot-04.jpg" alt="面对白纸和空白文档，大脑进入高认知负荷，构思组织太烦人" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:58]</span>面对白纸和空白文档，大脑进入高认知负荷，构思组织太烦人</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7f152a4548cd.mp3" type="button" aria-label="Play English audio">🔊</button><span>A blank page puts your brain under heavy load — drafting and organizing feel exhausting.</span></div>
+<audio class="cap-audio" src="audio/7f152a4548cd.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/knowledge-base-depreciation/shot-05.jpg" alt="退而求其次记流水账：今天又拖延了好烦，对 AI 毫无用处是死语料" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:16]</span>退而求其次记流水账：今天又拖延了好烦，对 AI 毫无用处是死语料</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/da51c608e35d.mp3" type="button" aria-label="Play English audio">🔊</button><span>You settle for a journal: &#x27;ugh, procrastinated again&#x27; — dead notes with no context for AI.</span></div>
+<audio class="cap-audio" src="audio/da51c608e35d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:49-02:40</span>破局思路：从被动记录转向苏格拉底式引导</h2><p>「破局思路：从被动记录转向苏格拉底式的引导。」想通这点，UP 主放弃现有知识库工具，搭了一个反常识的实验系统。</p><p>实验系统的关键动作是「取消所有文件记录和手动整理功能，只保留了一个功能：对话」。理由是人天生擅长说话不擅长写文章，「对话的摩擦力是极低的」。</p><p>更重要的是对话不是闲聊，而是设定了苏格拉底式引导：当你说「今天拖延了好烦」，它不会原样存下来，而像心理教练一样反问：「你觉得是因为任务太难，还是害怕做不好？你当时在做什么？触发拖延的信号是什么？」</p><p>「拖几轮对话，会被拆解成可用的燃料」——追问把模糊的情绪抽丝剥茧成具体的归因和信号，这正是好燃料。</p><figure><img src="assets/knowledge-base-depreciation/shot-06.jpg" alt="破局思路：从被动记录转向苏格拉底式引导" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:52]</span>破局思路：从被动记录转向苏格拉底式引导</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/82139924a93c.mp3" type="button" aria-label="Play English audio">🔊</button><span>The pivot: move from passive logging to Socratic questioning.</span></div>
+<audio class="cap-audio" src="audio/82139924a93c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/knowledge-base-depreciation/shot-07.jpg" alt="取消文件记录和手动整理，只保留一个功能：对话" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:10]</span>取消文件记录和手动整理，只保留一个功能：对话</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/451a6cba0fd9.mp3" type="button" aria-label="Play English audio">🔊</button><span>No file logging, no manual organizing — only one feature left: conversation.</span></div>
+<audio class="cap-audio" src="audio/451a6cba0fd9.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:41-03:25</span>结果：知识库自己长成树，价值在认知密度</h2><p>「一段时间后我打开它的看板，发现一件意想不到的事：我没有任何整理的动作，但我的知识库竟然长成了一棵树。」</p><p>树的结构是自组织的：「困惑连着输入，输入连着实验，实验又长出新的困惑」，甚至有一条看不见的线，「从我第一天写下『我想成为什么样的人』，一直传到了今天的复盘」。</p><p>这引出了核心顿悟：「AI时代比的不是我存了多少信息，而是我的认知被加工到了什么密度。」知识库只能回答「我存了什么」，回答不了「我能成为什么样子」。</p><p>结尾：不再整理笔记，「我的知识库自己会生长，但它可能已经不是知识库的样子了」——从一个存储容器，变成了一个认知加工系统。</p><figure><img src="assets/knowledge-base-depreciation/shot-08.jpg" alt="没有整理动作，知识库长成一棵树：困惑连着输入、输入连着实验" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:50]</span>没有整理动作，知识库长成一棵树：困惑连着输入、输入连着实验</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7c88ea42b0de.mp3" type="button" aria-label="Play English audio">🔊</button><span>With zero organizing, the base grew into a tree: puzzles feed inputs, inputs feed experiments.</span></div>
+<audio class="cap-audio" src="audio/7c88ea42b0de.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/knowledge-base-depreciation/shot-09.jpg" alt="结尾：不再整理笔记，知识库自己会生长，但可能已经不是知识库的样子了" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:20]</span>结尾：不再整理笔记，知识库自己会生长，但可能已经不是知识库的样子了</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2b754fbca062.mp3" type="button" aria-label="Play English audio">🔊</button><span>Ending: no more tidying — the base grows itself, and it no longer looks like a base.</span></div>
+<audio class="cap-audio" src="audio/2b754fbca062.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（95段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>我自己做了6年笔记</p></div>
+<div class="transcript-row"><time>00:02</time><p>深度使用AI家智智库一年多后</p></div>
+<div class="transcript-row"><time>00:06</time><p>在全网都在吹捧第二大脑室</p></div>
+<div class="transcript-row"><time>00:09</time><p>我却选择了放弃</p></div>
+<div class="transcript-row"><time>00:11</time><p>甚至连Oxydian都再没有打开</p></div>
+<div class="transcript-row"><time>00:14</time><p>为什么</p></div>
+<div class="transcript-row"><time>00:15</time><p>因为我曾存了1000条笔记</p></div>
+<div class="transcript-row"><time>00:18</time><p>最后发现真正有用的不到50条</p></div>
+<div class="transcript-row"><time>00:22</time><p>但我发现了一个致命问题</p></div>
+<div class="transcript-row"><time>00:24</time><p>AI的检索能力太强</p></div>
+<div class="transcript-row"><time>00:26</time><p>也救不了低质量的鱼鸟</p></div>
+<div class="transcript-row"><time>00:28</time><p>今天我就想从底层剖析</p></div>
+<div class="transcript-row"><time>00:31</time><p>当前智智库的致命缺陷</p></div>
+<div class="transcript-row"><time>00:34</time><p>以及我摸索出来的可能的未来形态</p></div>
+<div class="transcript-row"><time>00:37</time><p>第一</p></div>
+<div class="transcript-row"><time>00:38</time><p>智智库的致命缺陷不是存得不够</p></div>
+<div class="transcript-row"><time>00:41</time><p>而是燃料太差</p></div>
+<div class="transcript-row"><time>00:42</time><p>大家都说智智库是为给AI的专属燃料</p></div>
+<div class="transcript-row"><time>00:46</time><p>但很少有人意识到</p></div>
+<div class="transcript-row"><time>00:48</time><p>做智智库很简单</p></div>
+<div class="transcript-row"><time>00:50</time><p>但能写出好燃料却极其困难</p></div>
+<div class="transcript-row"><time>00:54</time><p>为什么大部分人无法坚持做智智库</p></div>
+<div class="transcript-row"><time>00:57</time><p>因为摩擦力太大</p></div>
+<div class="transcript-row"><time>00:59</time><p>对于普通人来说</p></div>
+<div class="transcript-row"><time>01:01</time><p>面对一张白纸和空白文档</p></div>
+<div class="transcript-row"><time>01:03</time><p>大脑会瞬间进入高认知复合</p></div>
+<div class="transcript-row"><time>01:06</time><p>构思</p></div>
+<div class="transcript-row"><time>01:07</time><p>组织原本这些过程都太烦人性了</p></div>
+<div class="transcript-row"><time>01:09</time><p>为了坚持</p></div>
+<div class="transcript-row"><time>01:11</time><p>很多人退而求其次</p></div>
+<div class="transcript-row"><time>01:12</time><p>击下流水章</p></div>
+<div class="transcript-row"><time>01:14</time><p>比如我以前经常写</p></div>
+<div class="transcript-row"><time>01:16</time><p>今天又拖延了好烦</p></div>
+<div class="transcript-row"><time>01:18</time><p>类似的话</p></div>
+<div class="transcript-row"><time>01:19</time><p>这些话遵循智智库有用吗</p></div>
+<div class="transcript-row"><time>01:21</time><p>毫无用处</p></div>
+<div class="transcript-row"><time>01:22</time><p>因为AI拿到这些燃料</p></div>
+<div class="transcript-row"><time>01:24</time><p>无法分辨底层的情绪需求</p></div>
+<div class="transcript-row"><time>01:26</time><p>和真实归因</p></div>
+<div class="transcript-row"><time>01:27</time><p>没有上下文</p></div>
+<div class="transcript-row"><time>01:28</time><p>这就是一句死语料</p></div>
+<div class="transcript-row"><time>01:30</time><p>于是你辛辛苦苦为了一年</p></div>
+<div class="transcript-row"><time>01:32</time><p>结果发现存进去的全是个未加工的碎片</p></div>
+<div class="transcript-row"><time>01:35</time><p>AI无法基于这些废话</p></div>
+<div class="transcript-row"><time>01:37</time><p>给你提供真正懂你的建议</p></div>
+<div class="transcript-row"><time>01:39</time><p>所以90%的智智库成为数字坟墓</p></div>
+<div class="transcript-row"><time>01:42</time><p>不是因为你找不到它</p></div>
+<div class="transcript-row"><time>01:44</time><p>而是因为里面的燃料质量太差</p></div>
+<div class="transcript-row"><time>01:47</time><p>根本点不染AI</p></div>
+<div class="transcript-row"><time>01:49</time><p>而破于思路</p></div>
+<div class="transcript-row"><time>01:50</time><p>从被动记录转向苏格拉底式的引导</p></div>
+<div class="transcript-row"><time>01:53</time><p>想通这点</p></div>
+<div class="transcript-row"><time>01:54</time><p>我放弃了现有的智库工具</p></div>
+<div class="transcript-row"><time>01:57</time><p>搭了一个反常识的实验系统</p></div>
+<div class="transcript-row"><time>02:00</time><p>我取消了所有文件记录</p></div>
+<div class="transcript-row"><time>02:03</time><p>和手动整理功能</p></div>
+<div class="transcript-row"><time>02:05</time><p>这保留了一个功能</p></div>
+<div class="transcript-row"><time>02:07</time><p>对话</p></div>
+<div class="transcript-row"><time>02:08</time><p>我为什么这么做</p></div>
+<div class="transcript-row"><time>02:10</time><p>因为人天生擅长说话</p></div>
+<div class="transcript-row"><time>02:12</time><p>不擅长写文章</p></div>
+<div class="transcript-row"><time>02:13</time><p>对话的摩擦力是极低的</p></div>
+<div class="transcript-row"><time>02:16</time><p>但我不仅是对话</p></div>
+<div class="transcript-row"><time>02:18</time><p>我也系统设定了苏格拉底式的引导设定</p></div>
+<div class="transcript-row"><time>02:22</time><p>当我说今天拖延了好凡</p></div>
+<div class="transcript-row"><time>02:24</time><p>它不会像传统笔记那样圆样存下来</p></div>
+<div class="transcript-row"><time>02:27</time><p>而像一个心理教练一样反问我</p></div>
+<div class="transcript-row"><time>02:29</time><p>你觉得是因为任务太难</p></div>
+<div class="transcript-row"><time>02:31</time><p>还是害怕做不好</p></div>
+<div class="transcript-row"><time>02:33</time><p>你当时在做什么</p></div>
+<div class="transcript-row"><time>02:35</time><p>触发拖延的信号是什么</p></div>
+<div class="transcript-row"><time>02:37</time><p>拖几轮豆花</p></div>
+<div class="transcript-row"><time>02:39</time><p>会被拆卸成可用的燃料</p></div>
+<div class="transcript-row"><time>02:41</time><p>一段时间后我打开它的看板</p></div>
+<div class="transcript-row"><time>02:43</time><p>发现一件意义要不到的事</p></div>
+<div class="transcript-row"><time>02:46</time><p>我没有任何整理的动作</p></div>
+<div class="transcript-row"><time>02:48</time><p>但我的智智库竟然长成了一个树</p></div>
+<div class="transcript-row"><time>02:50</time><p>困惑连着输入</p></div>
+<div class="transcript-row"><time>02:51</time><p>输入连着实验</p></div>
+<div class="transcript-row"><time>02:53</time><p>实验又长出新的困惑</p></div>
+<div class="transcript-row"><time>02:55</time><p>甚至有一条看不见的线</p></div>
+<div class="transcript-row"><time>02:57</time><p>从我第一天写下</p></div>
+<div class="transcript-row"><time>02:59</time><p>我想成为什么样的人</p></div>
+<div class="transcript-row"><time>03:01</time><p>一直传到了今天的覆盘</p></div>
+<div class="transcript-row"><time>03:03</time><p>那一刻我恍然大悟</p></div>
+<div class="transcript-row"><time>03:05</time><p>在AI时代之前的不是我存了多少信息</p></div>
+<div class="transcript-row"><time>03:07</time><p>而是我的认知被加工到了什么密度</p></div>
+<div class="transcript-row"><time>03:10</time><p>智智库只能回答我存了什么</p></div>
+<div class="transcript-row"><time>03:12</time><p>回答不了我能成为什么样子</p></div>
+<div class="transcript-row"><time>03:14</time><p>只有每天被真实看见</p></div>
+<div class="transcript-row"><time>03:16</time><p>深度追问不断推进</p></div>
+<div class="transcript-row"><time>03:18</time><p>才能找出答案</p></div>
+<div class="transcript-row"><time>03:20</time><p>于是现在我不再整理脾气了</p></div>
+<div class="transcript-row"><time>03:22</time><p>我的智智库自己会生长</p></div>
+<div class="transcript-row"><time>03:25</time><p>但它可能已经不是智智库的样子了</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

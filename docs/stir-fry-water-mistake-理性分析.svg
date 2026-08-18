@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="7545" viewBox="0 0 1320 7545">
+  <foreignObject x="0" y="0" width="1320" height="7545">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>你炒的菜全是水？因为从开火第一步就错了</h1>
+  <div class="meta"><span class="tag tag-blue">美食</span><span class="tag tag-green">炒菜</span><span class="tag tag-orange">调料</span><span class="tag tag-purple">烹饪科学</span><span class="tag tag-gray">时长 5分34秒</span><span class="tag tag-gray">分析视角：炒菜调料下锅时间表的化学与物理拆解</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AhYuW8cvrKR">原视频</a>
+  <div class="summary-line">核心判断：在家炒不出饭店味不是手艺差，而是调料下锅时机全反了。一切建立在两个物理化学现象上——美拉德反应（蛋白质+糖，140 度以上锁香）与莱顿弗洛斯特效应（200 度锅面蒸汽膜不粘不糊）。每样调料按化学性质选择时机：盐分肉菜汤三条铁律、生抽高温激发、老抽管色、蚝油怕热、姜蒜葱有序、醋分烹与点、淀粉临出锅。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">炒不出饭店味：不是手艺差，是放调料时间全反了</span></div><div class="timeline-item"><span class="timeline-time">00:19</span><span class="timeline-text">大火炒时倒蚝油 = 给全家炒苦味素</span></div><div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">美拉德反应：蛋白质+糖，140 度以上生成香味分子</span></div><div class="timeline-item"><span class="timeline-time">01:07</span><span class="timeline-text">饭店火力是家用 3-6 倍（5000 瓦 vs 30000 瓦）</span></div><div class="timeline-item"><span class="timeline-time">01:22</span><span class="timeline-text">家用慢热柴而无香，饭店瞬间爆炒锁水锁香</span></div><div class="timeline-item"><span class="timeline-time">01:31</span><span class="timeline-text">热锅冷油：锅烧冒烟再倒油，锅底超 200 度</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">莱顿弗洛斯特效应：蒸汽膜不粘锅不糊底</span></div><div class="timeline-item"><span class="timeline-time">01:57</span><span class="timeline-text">盐的渗透压：提前撒盐抽干肉细胞水分</span></div><div class="timeline-item"><span class="timeline-time">02:22</span><span class="timeline-text">肉变色放盐、青菜出锅前放、煲汤最后 15 分钟</span></div><div class="timeline-item"><span class="timeline-time">02:51</span><span class="timeline-text">生抽高温激发、老抽管色中途加</span></div><div class="timeline-item"><span class="timeline-time">03:18</span><span class="timeline-text">蚝油味精鸡精怕热，出锅前放</span></div><div class="timeline-item"><span class="timeline-time">03:36</span><span class="timeline-text">葱姜蒜：先姜再蒜最后葱</span></div><div class="timeline-item"><span class="timeline-time">04:05</span><span class="timeline-text">醋两次：烹醋为香、点醋为酸</span></div><div class="timeline-item"><span class="timeline-time">04:31</span><span class="timeline-text">干粉类：白胡椒花椒出锅前、五香粉加水前油煸</span></div><div class="timeline-item"><span class="timeline-time">04:52</span><span class="timeline-text">水淀粉临出锅前勾，提前放会结块</span></div><div class="timeline-item"><span class="timeline-time">05:09</span><span class="timeline-text">炒菜 = 温度×化学反应×时间的博弈</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">热锅冷油<br/>200 度锅面 + 蒸汽膜 → 不粘不糊</div><span class="arrow">→</span><div class="node-green">美拉德反应<br/>140 度以上 → 锁香锁水</div><span class="arrow">→</span><div class="node-orange">调料时机<br/>每样按化学性质选下锅点</div><span class="arrow">→</span><div class="node-blue">结果<br/>在家逼近饭店味</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：手艺差才炒不出饭店味。视频认为是调料时机全反了，本质是物理与化学的差距。</p><p>误区：调料越早放越入味。盐早放抽水、蚝油早放发苦、生抽晚放才有高温激发，时机决定成败。</p><p>误区：锅不够热靠延长炒制时间补。应该热锅冷油用蒸汽膜保护，而非慢炒脱水。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>美拉德反应：140 度的门槛</h3>
+      <p>在讲：香味的化学来源。关键理解：蛋白质和糖在 140 度以上生成几百种香味分子；家用灶温常不够。怎么用：用热锅冷油把锅面温度做上去再下料。原文依据：「温度必须到140度以上」「这不是手艺的差距，是物理的差距」。</p>
+      
+      
+    </div>
+    <div class="card card-green">
+      <h3>热锅冷油与莱顿弗洛斯特效应</h3>
+      <p>在讲：家用逼近饭店效果的方法。关键理解：锅烧冒烟再倒油（超 200 度），食材下锅形成蒸汽膜隔开锅底。怎么用：每次炒菜都执行热锅冷油。原文依据：「菜悬浮在一层气垫上，不粘锅、不糊底」。</p>
+      
+      
+    </div>
+    <div class="card card-orange">
+      <h3>盐的三条铁律</h3>
+      <p>在讲：盐的渗透压与下锅时机。关键理解：盐早放抽干肉水；肉变色放、青菜出锅放、煲汤最后 15 分钟。怎么用：按食材类型执行三条铁律。原文依据：「肉菜变色放，青菜出锅放，汤最后放，三条铁律，不是建议」。</p>
+      
+      
+    </div>
+    <div class="card card-purple">
+      <h3>酱油与鲜味调料</h3>
+      <p>在讲：生抽/老抽/蚝油的时机。关键理解：生抽高温沿锅边激发、老抽中途管色、蚝油味精怕热出锅前放。怎么用：生抽锅边淋、老抽中途加、蚝油最后放。原文依据：「大火猛炒的时候倒蚝油，等于把钱往火里扔」。</p>
+      
+      
+    </div>
+    <div class="card card-green">
+      <h3>葱姜蒜与两次用醋</h3>
+      <p>在讲：去腥增香料的顺序。关键理解：姜耐热冷油先下、蒜易糊中程放、葱娇气最后放；醋分烹醋（去酸留香）与点醋（保留酸）。怎么用：按姜→蒜→葱顺序下锅，醋两次放。原文依据：「先姜再蒜最后葱」「热油烹醋为了香，出锅点醋为了酸」。</p>
+      
+      
+    </div>
+    <div class="card card-red">
+      <h3>干粉与淀粉：勾芡的时机</h3>
+      <p>在讲：粉类调料的时机。关键理解：白胡椒花椒出锅前、五香粉加水前油煸、孜然粉肉熟前；水淀粉临出锅勾。怎么用：勾芡前再调水淀粉，快速搅匀。原文依据：「千万别提前放，淀粉沉底结块」。</p>
+      
+      
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">调料下锅时间表</h2><div class="card"><table><thead><tr><th>调料</th><th>下锅时机</th><th>原因</th></tr></thead><tbody><tr><td>盐（肉）</td><td>肉变色、表面凝固后</td><td>避免渗透压抽干水分</td></tr><tr><td>盐（青菜）</td><td>出锅前几秒</td><td>细胞壁薄，早放变煮菜汤</td></tr><tr><td>盐（汤）</td><td>最后 15 分钟</td><td>早放鲜味锁肉出不来</td></tr><tr><td>生抽</td><td>热油沿锅边</td><td>高温激发酱香</td></tr><tr><td>老抽</td><td>中途</td><td>早黑晚不上色</td></tr><tr><td>蚝油/味精/鸡精</td><td>出锅前</td><td>超 120 度变焦谷氨酸钠发苦</td></tr><tr><td>姜蒜葱</td><td>姜→蒜→葱</td><td>耐热性递减</td></tr><tr><td>醋</td><td>烹醋+点醋两次</td><td>烹去酸留香、点保留酸</td></tr><tr><td>白胡椒/花椒粉</td><td>出锅前</td><td>久煮发苦失麻</td></tr><tr><td>五香粉/十三香</td><td>加水前油煸</td><td>干撒像撒土</td></tr><tr><td>水淀粉</td><td>临出锅</td><td>早放沉底结块</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>火力数据（家用 5000 瓦 vs 饭店 30000 瓦）为 UP 主口头举例，不同灶具差异大</li><li>温度数值（140 度、200 度、120 度）为科普近似值，实际操作以锅冒烟为参照</li><li>方法面向中式爆炒，蒸、炖、炸等不同烹饪方式的调料时机需另行调整</li><li>调味比例与个人口味相关，本视频只讲时机不讲用量</li></ul><div class="pitfall">不要在食材下锅前提前撒盐——渗透压抽水，肉变柴</div><div class="pitfall">不要在大火猛炒时倒蚝油——谷氨酸钠过热变苦</div><div class="pitfall">不要提前放水淀粉——沉底结块，整锅菜变成浆糊</div><div class="pitfall">不要锅不热就下油——温度不够，美拉德反应不启动</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>炒不出饭店味 = 调料时机全反，不是手艺差</li><li>美拉德反应（140 度）与莱顿弗洛斯特效应（200 度蒸汽膜）是味道的物理基础</li><li>热锅冷油让家用灶逼近饭店效果</li><li>盐三条铁律：肉变色放、青菜出锅放、汤最后放</li><li>生抽高温激发、老抽管色、蚝油怕热出锅前放</li><li>葱姜蒜按耐热性排序，醋分烹与点，干粉类各有时机，淀粉临出锅勾</li></ul><h3>行动清单</h3><ol><li>每次炒菜执行热锅冷油（锅烧冒烟再倒油）</li><li>肉变色后再放盐，青菜出锅前放，煲汤最后 15 分钟放</li><li>生抽沿锅边淋激发，老抽中途加</li><li>蚝油味精鸡精出锅前放</li><li>葱姜蒜按姜→蒜→葱顺序下锅</li><li>勾芡前再调水淀粉，临出锅快速搅</li></ol><h3>关键认知转变</h3><p>以前：所有调料一起下、锅不热就炒、蚝油当底油；现在：按化学性质为每样调料安排下锅时机，热锅冷油打底，把炒菜变成一场可背熟的规则博弈。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 334 秒 · 小红书视频</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
