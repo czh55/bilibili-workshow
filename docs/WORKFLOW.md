@@ -45,6 +45,21 @@ HTML 不是 SVG 的加长版，SVG 也不是 HTML 的缩略图。二者共享同
 - 修复既有小红书文章时，优先且默认只使用仓库中已有的 HTML、截图、SVG 和本地转录；**不得**为润色、补全、转简体或重建摘要重新访问小红书。只有本地源文件确实缺失、且用户明确要求重新抓取时，才可按上述限流规则单独排队。
 - **限流器锁文件死锁恢复（2026-08 b45 批次实战）**：`xhs-rate-limit.mjs` 用 `os.tmpdir()` 下的 `bilibili-workshop-xhs-last-request*` 状态/锁文件串行化请求。进程被中断（Ctrl-C、超时 kill、沙箱终止）会留下孤儿锁文件，导致后续请求被误判为“间隔不足”而无限等待。症状：脚本长时间停留在「等待 N 秒」不前进。恢复：先 `pkill -f xhs-fetch.py; pkill -f xhs-rate-limit`，再删除锁文件 `rm -f "$(node -e 'console.log(require("os").tmpdir())')"/bilibili-workshop-xhs-last-request*` 后重试。
 
+### 执行环境网络权限（沙箱限制，2026-08 b49 批次实战）
+
+**凡是需要访问小红书/B 站/任意非白名单域名的命令，都必须显式请求 `full_network` 权限再执行；后台化（`block_until_ms: 0`）的命令尤其容易落入受限沙箱。** 沙箱默认只放行常见包管理域名（npm/pypi/github 等），对 `xiaohongshu.com`、`xhslink.cn` 的 `curl` 请求会被拦截或返回不完整页面。
+
+- **典型症状**：`xhs-fetch.py` 报「页面中未找到 __INITIAL_STATE__」，反复重试 3 次仍失败，但用相同命令在前台手动执行却成功——这几乎可以确定是沙箱网络限制，而不是链接失效或小红书反爬。
+- **正确做法**：下载类命令（`xhs-fetch.py`、`yt-dlp`、`curl` 抓页面、B 站 API）一律用 `required_permissions: ["full_network"]` 启动；批量下载脚本建议用 `block_until_ms: 0` 后台化 + `full_network` 权限，并用输出匹配（`=== 完成 cNN` / `全部下载流程结束`）监听进度。
+- **快速自检**：失败后不要盲目重试。先手动跑一次确认链路：
+  ```bash
+  curl -s -L -A "$UA" -H "Referer: https://www.xiaohongshu.com/" \
+    "https://xhslink.cn/o/xxxxxx" -o /tmp/xhs_test.html -w "HTTP:%{http_code} SIZE:%{size_download}\n"
+  grep -c '__INITIAL_STATE__' /tmp/xhs_test.html   # ≥1 说明页面正常，问题在权限；0 则可能是限流/反爬
+  ```
+- 若确认是沙箱导致：重启命令时带 `full_network` 权限，已被跳过/失败的条目由下载脚本的「已下载跳过」逻辑自然续跑。
+- 转录（Whisper）、抽帧（ffmpeg）、生成 HTML/SVG 等纯本地命令不需要额外权限，可在普通沙箱内执行。
+
 ```
 Task Progress:
 - [ ] 0. 自动识别平台（B 站 / 小红书）
