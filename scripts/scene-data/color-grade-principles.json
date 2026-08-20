@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "slug": "color-grade-principles",
+    "title": "调色底层原理，一个视频就懂",
+    "title_en": "The Fundamentals of Color Grading: One Video to Get It",
+    "duration": "12分31秒",
+    "scenes": 7,
+    "sentences": 24,
+    "date": "2026-08-20",
+    "platform": "xiaohongshu",
+    "source_url": "https://xhslink.cn/o/7fXZzEbgErz",
+    "topic": "达芬奇 · 调色底层原理"
+  },
+  "scene_imgs": ["shot-01", "shot-03", "shot-05", "shot-06", "shot-08", "shot-15", "shot-17"],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "光的色彩构成",
+      "title_en": "How Light Creates Color",
+      "time": "00:00-00:51",
+      "context": "在墙上打三盏RGB灯，重叠得到新颜色，调节亮度形成12色相环。",
+      "sentences": [
+        ["当红灯和绿灯的光束重叠时，我们就得到了黄色。", "When the red and green beams overlap, we get yellow.", "overlap（重叠）"],
+        ["当我们控制的是光，所以可以随意调节这三盏灯的亮度。", "Because we control light, we can freely adjust the brightness of these three lamps.", "adjust brightness（调节亮度）"],
+        ["达芬奇软件中的色轮，它的色彩排版逻辑就完全对应着这个色环。", "The color wheel in DaVinci follows exactly the same layout logic as this color ring.", "color ring（色环）"]
+      ],
+      "paraphrase": [
+        ["RGB三原色加法", "红+绿=黄；蓝+红=品红；绿+蓝=青"],
+        ["调亮度衍生全色", "降低某色亮度→相邻色相，最终形成12色相环"],
+        ["达芬奇对应", "软件色轮排版逻辑=色环"]
+      ],
+      "speak": "When the red and green beams overlap, we get yellow. Because we control light, we can freely adjust the brightness of these three lamps, and from the brightness variations we build the twelve-step color ring. The color wheel in DaVinci follows exactly the same layout logic as this color ring."
+    },
+    {
+      "id": "s2",
+      "title_cn": "互补色：180度最强对比",
+      "title_en": "Complementary Colors: The Strongest Contrast",
+      "time": "00:51-02:12",
+      "context": "色环上180度相对的颜色为互补色，创造视觉焦点并校正颜色。",
+      "sentences": [
+        ["在色环上呈180度相对位置的两种颜色即为互补色。", "Two colors sitting 180 degrees apart on the color ring are complementary colors.", "180 degrees apart（180度相对）"],
+        ["互补色是色彩对比中最强烈的组合，核心的作用在于创造视觉焦点和增强画面张力。", "Complementary colors are the strongest contrast in color, creating visual focus and increasing visual tension.", "visual focus（视觉焦点）"],
+        ["把环境调为青色冷调，人物肤色保持橙黄暖调，利用蓝橙互补使人物质感立体。", "Set the environment to cool cyan and keep the skin warm orange—the blue-orange complement makes the subject feel three-dimensional.", "blue-orange complement（蓝橙互补）"]
+      ],
+      "paraphrase": [
+        ["经典组合", "黄蓝/红青/绿品红"],
+        ["两大应用", "突出主体（橙青色调）+校正肤色（偏黄加蓝中和）"],
+        ["好莱坞典范", "环境青冷+肤色橙暖，电影感拉满"]
+      ],
+      "speak": "Two colors sitting 180 degrees apart on the color ring are complementary colors. Complementary colors are the strongest contrast in color, creating visual focus and increasing visual tension. In Hollywood's classic teal-and-orange look, the environment is cooled to cyan while the skin stays warm orange, and the complement makes the subject feel three-dimensional."
+    },
+    {
+      "id": "s3",
+      "title_cn": "邻近色：60度和谐统一",
+      "title_en": "Analogous Colors: Harmonious Unity",
+      "time": "02:12-03:06",
+      "context": "色环上相距约60度的颜色为邻近色，营造和谐统一的氛围。",
+      "sentences": [
+        ["在色环上相距约60度的颜色称为邻近色。", "Colors about 60 degrees apart on the color ring are called analogous colors.", "analogous colors（邻近色）"],
+        ["邻近色因色相接近，能营造和谐统一的画面氛围，使色彩过渡平滑自然。", "Because their hues are close, analogous colors create a harmonious, unified mood with smooth, natural transitions.", "harmonious（和谐的）"],
+        ["暖调邻近色适合表现温暖安详温馨的氛围，冷调邻近色常用于传达冷静孤独科技或神秘的情绪。", "Warm analogous schemes suit warm, cozy moods, while cool ones convey calm, lonely, techy, or mysterious emotions.", "warm/cool schemes（暖调/冷调）"]
+      ],
+      "paraphrase": [
+        ["经典组合", "红黄/蓝青/紫品红"],
+        ["暖调场景", "室内居家、黄昏→光线柔和氛围统一"],
+        ["冷调场景", "夜景、科幻、悬疑→冷静感未来感"]
+      ],
+      "speak": "Colors about 60 degrees apart on the color ring are called analogous colors. Because their hues are close, they create a harmonious, unified mood with smooth, natural transitions. Warm analogous schemes suit cozy home scenes and sunsets, while cool ones convey calm, lonely, techy, or mysterious emotions."
+    },
+    {
+      "id": "s4",
+      "title_cn": "单色系：简约安静高级",
+      "title_en": "Monochrome: Minimal, Calm, Elegant",
+      "time": "03:06-03:55",
+      "context": "单色系使用同一种颜色变化明度饱和度，带来高级感。",
+      "sentences": [
+        ["单色系是指使用同一种颜色，通过变化画面的明度与饱和度来构建整个色彩方案。", "A monochrome scheme uses one hue, building the whole palette through variations in lightness and saturation.", "monochrome scheme（单色系）"],
+        ["它能够给画面带来高级感和艺术感，让观众更专注于光影结构、纹理细节和形状构成。", "It brings elegance and artistry, letting viewers focus on light, texture, and shape rather than color.", "elegance（高级感）"],
+        ["当场景元素杂乱颜色过多时，使用单色系可以化繁为景，立刻提升画面的秩序感。", "When a scene is cluttered with too many colors, monochrome simplifies it and instantly restores a sense of order.", "restore order（恢复秩序）"]
+      ],
+      "paraphrase": [
+        ["极致表现", "黑白电影=单色系极致"],
+        ["适用场景", "未来感、性冷淡风、极简主义"],
+        ["关键价值", "化繁为景，提升画面秩序感"]
+      ],
+      "speak": "A monochrome scheme uses one hue, building the whole palette through variations in lightness and saturation. It brings elegance and artistry, letting viewers focus on light, texture, and shape rather than color. When a scene is cluttered with too many colors, monochrome simplifies it and instantly restores a sense of order."
+    },
+    {
+      "id": "s5",
+      "title_cn": "色彩三要素：明度/饱和度/色相",
+      "title_en": "The Three Elements: Lightness, Saturation, Hue",
+      "time": "03:55-05:30",
+      "context": "任何颜色都可用三个维度精确描述，明度是色彩的骨架。",
+      "sentences": [
+        ["任何你看到的颜色都可以通过这三个维度来精确的描述和控制。", "Every color you see can be precisely described and controlled through these three dimensions.", "dimensions（维度）"],
+        ["明度指的是色彩明暗程度，它是色彩的骨架，决定了画面的影调层次。", "Lightness is how light or dark a color is—it is the skeleton of color that decides the tonal layers of the image.", "tonal layers（影调层次）"],
+        ["通过提亮主体压暗环境，你可以不动声色的引导观众的视线。", "By brightening the subject and darkening the surroundings, you subtly guide the viewer's eye.", "guide the eye（引导视线）"],
+        ["色轮调整时会更直观，比较适合对画面明度的整体性的处理；曲线工具可以对从暗部到亮部的每一个明度的层级进行独立调节。", "The color wheel is intuitive for overall lightness; curves let you adjust every level from shadows to highlights independently.", "overall vs independent（整体 vs 独立）"]
+      ],
+      "paraphrase": [
+        ["三要素=控制面板", "明度/饱和度/色相，拿到它就等于拿到精准调色面板"],
+        ["明度=骨架", "示波器0%纯黑-100%纯白；塑造立体质感"],
+        ["工具分工", "色轮=整体直观；曲线=局部到每个明度层级"]
+      ],
+      "speak": "Every color you see can be precisely described and controlled through three dimensions: lightness, saturation, and hue. Lightness is the skeleton of color that decides the tonal layers of the image. By brightening the subject and darkening the surroundings, you subtly guide the viewer's eye. Use the color wheel for overall adjustment and curves for per-level fine control."
+    },
+    {
+      "id": "s6",
+      "title_cn": "五步调色流程：先整体后局部",
+      "title_en": "Five-Step Grading Flow: Whole First, Details Later",
+      "time": "07:20-08:50",
+      "context": "专业调色的基本原则是先整体后局部，以Log灰片演示五步流程。",
+      "sentences": [
+        ["在专业的调色中我们要遵守一个基本原则：先整体后局部。", "In professional grading we follow one basic principle: the whole first, then the details.", "whole first, then details（先整体后局部）"],
+        ["第一步使用一级色轮中的明暗工具，将画面的暗部和高光拉开，恢复正常的明暗反差。", "Step one: use the lightness tools in the primary wheels to separate shadows from highlights and restore normal contrast.", "primary wheels（一级色轮）"],
+        ["第二步调整影调，通过两个节点来构建高反差效果，注意避免画面出现曝光过度或是死黑区域。", "Step two: adjust tonality—build high contrast with two nodes while avoiding overexposure and crushed blacks.", "crushed blacks（死黑）"],
+        ["第四步进行风格化处理，在上方节点中通过曲线工具进一步压实画面，在下方节点中添加暗角效果。", "Step four: stylize—use curves in the upper node to compress the image and add a vignette in the lower node.", "vignette（暗角）"]
+      ],
+      "paraphrase": [
+        ["总原则", "先一级调色垫定全局，再二级调色处理局部"],
+        ["五步流程", "①明暗反差②影调（避免过曝死黑）③色相饱和统一④风格化（曲线压实+暗角）⑤局部强化"],
+        ["Log素材起点", "灰片还原=拉开暗部高光+增强饱和对比"]
+      ],
+      "speak": "In professional grading we follow one basic principle: the whole first, then the details. Step one uses the lightness tools in the primary wheels to separate shadows from highlights and restore normal contrast. Step two adjusts tonality with two nodes to build high contrast while avoiding overexposure and crushed blacks. Step four stylizes with curves and a vignette."
+    },
+    {
+      "id": "s7",
+      "title_cn": "实战：一镜到底全流程",
+      "title_en": "Demo: Full Workflow on One Clip",
+      "time": "08:50-10:40",
+      "context": "直出色彩理想的素材可跳过基础校正，直接演示影调到局部的完整流程。",
+      "sentences": [
+        ["如果素材的直出色彩已经比较理想，我们可以跳过基础校正，直接从影调调整开始。", "If the footage's straight-out-of-camera color is already good, we can skip basic correction and start from tonal adjustment.", "straight-out-of-camera（直出）"],
+        ["通过调整曲线暗部提亮肤色，接着切换到色轮工具，通过降低中间调细节的方式实现对皮肤柔化磨皮处理。", "Brighten the skin with the curve's shadow area, then switch to the color wheel and soften the skin by reducing midtone detail.", "soften the skin（柔化磨皮）"],
+        ["打开矢量图看一下肤色是否偏色，肤色偏红适当加入互补色绿色来校正肤色。", "Open the vectorscope to check the skin tone—if it's too red, add a bit of its complement, green, to correct it.", "vectorscope（矢量图）"],
+        ["最后添加电影暗角效果，增强画面的层次感与电影感。", "Finally add a cinematic vignette to boost depth and the film look.", "cinematic vignette（电影暗角）"]
+      ],
+      "paraphrase": [
+        ["跳过校正的条件", "直出色彩理想→直接从影调开始"],
+        ["肤色处理三连", "曲线暗部提亮→色轮柔化磨皮→矢量图偏色校正"],
+        ["收尾三步", "天空青绿→暗部降饱和偏蓝→电影暗角"]
+      ],
+      "speak": "If the footage's straight-out-of-camera color is already good, we can skip basic correction and start from tonal adjustment. For the skin, brighten it with the curve's shadow area, then switch to the color wheel and soften it by reducing midtone detail. Open the vectorscope to check the skin tone—if it's too red, add green to correct it. Finally add a cinematic vignette for depth and film feel."
+    }
+  ],
+  "practice": [
+    ["请将中文句子翻译成英文：在色环上呈180度相对位置的两种颜色即为互补色。", "Two colors sitting 180 degrees apart on the color ring are complementary colors."],
+    ["请将英文翻译成中文：In professional grading we follow one basic principle: the whole first, then the details.", "在专业的调色中我们要遵守一个基本原则：先整体后局部。"]
+  ],
+  "pitfalls": [
+    ["Trying to fix yellowish skin by adding more yellow", "Add a small amount of blue—its complement", "The complement neutralizes the cast and restores natural, fair skin"],
+    ["Starting local adjustments before establishing the whole look", "Grade the whole image first, then handle details", "Professional grading follows whole-first-then-details"],
+    ["Maxing out saturation for a vivid look", "Match saturation to the mood and scene", "Oversaturation looks fake and garish; low saturation builds moody, cinematic feel"],
+    ["Using only the color wheel for lightness control", "Use curves for per-level fine adjustments", "Curves adjust every lightness level from shadows to highlights independently"]
+  ],
+  "shifts": [
+    ["打开软件乱调色轮、不知道第一步做什么", "先定风格方向（互补/邻近/单色）再动手"],
+    ["肤色偏黄直接加黄越调越脏", "用互补色加少量蓝中和恢复白皙"],
+    ["只看色彩忽视明度，画面平没有立体感", "先立明度骨架再谈色彩"]
+  ],
+  "difficult_words": ["complementary", "analogous", "monochrome", "lightness", "saturation", "hue", "vectorscope", "vignette"],
+  "footer_notes": "本卡按视频章节切分，覆盖光色原理、三大色彩关系、三要素与五步流程的专业英文表达。"
+}

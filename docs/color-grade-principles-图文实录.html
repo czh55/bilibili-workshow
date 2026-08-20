@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一段 12 分 31 秒的调色底层原理课，从光的色彩构成讲到三大色彩关系（互补色/邻近色/单色系）再到色彩三要素（明度/饱和度/色相），最后给出一级二级调色五步流程和实战案例。①光的色彩构成：RGB三盏灯两两重叠→黄/品红/青，调节亮度衍生全色→12色相环，达芬奇色轮排版完全对应">
+<title>调色底层原理，一个视频就懂｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>调色底层原理，一个视频就懂</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">12分31秒</span><span class="meta-tag tag-topic">达芬奇 调色 色彩理论 教程</span></div>
+<a class="source-link" href="https://xhslink.cn/o/7fXZzEbgErz" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">光的色彩构成</a><a href="#ch2">三大色彩关系</a><a href="#ch3">色彩三要素</a><a href="#ch4">调色流程与实战</a><a href="#ch5">总结</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一段 12 分 31 秒的调色底层原理课，从光的色彩构成讲到三大色彩关系（互补色/邻近色/单色系）再到色彩三要素（明度/饱和度/色相），最后给出一级二级调色五步流程和实战案例。①光的色彩构成：RGB三盏灯两两重叠→黄/品红/青，调节亮度衍生全色→12色相环，达芬奇色轮排版完全对应。②互补色=色环180度相对（黄蓝/红青/绿品红），最强对比创造视觉焦点+增强张力；应用=突出主体（好莱坞橙青色调：环境青冷+肤色橙暖蓝橙互补）+校正肤色（偏黄加蓝中和）。③邻近色=相距60度（红黄/蓝青/紫品红），和谐统一引导沉浸；暖调=居家黄昏温馨、冷调=夜景科幻悬疑。④单色系=同一色变明度饱和度，简约安静高级；黑白电影/未来感/性冷淡风/杂乱场景化繁为景。⑤明度=色彩骨架（示波器0%-100%），塑造立体质感+引导视线（提亮主体压暗环境）；高调轻盈vs低调深沉；工具=色轮整体+曲线局部。⑥饱和度=鲜艳程度（0%灰-100%鲜艳），提高生动活力但过度虚假，降低宁静压抑复古；高饱和=动画爱情科幻、低饱和=战争复古。⑦色相=基本相貌对应色相曲线，统一颜色/改主体色相对比突出焦点；树叶变深绿偏黄、串联节点秋天氛围；色彩扭曲器色相饱和度联动。⑧调色流程：先整体后局部=一级垫底+二级局部；Log灰片五步=明暗反差→影调→色相饱和统一→风格化（曲线压实+暗角）→局部强化。⑨实战：直出理想跳过基础校正，影调→色相修正天空花草→饱和度曲线→肤色（提亮+磨皮+矢量图偏色校正）→天空青绿→暗部偏蓝→电影暗角。总结：先整体后局部+三种色彩关系+三大色彩要素。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:51]</span><div><strong>光的色彩构成</strong><p>RGB三盏灯重叠出黄品青；调亮度成12色相环。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:51→02:12]</span><div><strong>互补色</strong><p>180度相对；创造焦点增强张力；橙青色调+肤色校正。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:12→03:06]</span><div><strong>邻近色</strong><p>60度相近；和谐统一；暖调温馨冷调冷静。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:06→03:55]</span><div><strong>单色系</strong><p>同色变明度饱和；简约高级；黑白/极简/化繁为景。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:55→04:10]</span><div><strong>色彩三要素概述</strong><p>明度/饱和度/色相=精准调色控制面板。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:10→05:30]</span><div><strong>明度</strong><p>色彩骨架；立体质感+引导视线；色轮整体曲线局部。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:30→06:20]</span><div><strong>饱和度</strong><p>0%灰-100%鲜艳；高饱和活力低饱和凝重。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:20→07:20]</span><div><strong>色相</strong><p>基本相貌；曲线移动改风格；树叶/扭曲器联动。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:20→08:50]</span><div><strong>调色五步流程</strong><p>先整体后局部；明暗→影调→统一→风格化→局部。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:50→10:40]</span><div><strong>实战案例</strong><p>直出理想跳过校正；肤色磨皮+天空青绿+暗角。</p></div></div>
+<div class="summary-row"><span class="time-marker">[10:40→12:31]</span><div><strong>总结</strong><p>先整体后局部+三种色彩关系+三大色彩要素。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>调色底层原理=光的构成→色彩关系→色彩要素→流程。①光的构成：RGB三盏灯重叠出黄/品红/青，调节亮度成12色相环，达芬奇色轮排版对应。②三大色彩关系：互补色=180度相对（黄蓝/红青/绿品红）最强对比创造视觉焦点+突出主体（橙青色调）+校正肤色（偏黄加蓝）；邻近色=60度（红黄/蓝青/紫品红）和谐统一，暖调温馨冷调冷静；单色系=同色变明度饱和，简约高级，杂乱场景化繁为景。③色彩三要素：明度=色彩骨架（示波器0%-100%），塑造立体+引导视线，色轮整体+曲线局部；饱和度=鲜艳程度，0%灰-100%鲜艳，高饱和活力低饱和凝重，0=黑白；色相=基本相貌对应曲线位置，移动改风格，统一或对比突出焦点，扭曲器色相饱和联动。④流程：先整体后局部=一级垫底+二级局部；Log灰片五步=明暗反差→影调（避免过曝死黑）→色相饱和统一→风格化（曲线压实+暗角）→局部强化。⑤实战：直出理想跳过基础校正，影调→色相修正天空花草→饱和度→肤色磨皮校正→天空青绿→暗部偏蓝→电影暗角。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:51</span>光的色彩构成</h2><p>三盏灯：「在一面墙上打上三盏灯，分别是红灯、绿灯和蓝灯。当红灯和绿灯的光束重叠时我们就得到了黄色；当蓝灯和红灯光束重叠时我们就得到了品红色，也叫洋红；当绿灯和蓝灯光束重叠时我们就得到了青色。」</p><p>调亮度成色环：「因为我们控制的是光，所以可以随意调节这三盏灯的亮度，把红色亮度调低一半就会得到黄绿和蓝紫，最终形成一个我们进行色彩分析时常用的12色环。」</p><p>对应达芬奇：「达芬奇软件中的色轮，它的色彩排版逻辑就完全对应着这个色环。」</p><figure><img src="assets/color-grade-principles/shot-01.jpg" alt="开场：光的色彩构成——RGB三盏灯重叠出黄/品红/青" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:03]</span>开场：光的色彩构成——RGB三盏灯重叠出黄/品红/青</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6bc9aaf78fe4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: How light makes color — RGB lamps overlap into yellow/magenta/cyan</span></div>
+<audio class="cap-audio" src="audio/6bc9aaf78fe4.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-02.jpg" alt="12色相环：调节RGB亮度衍生全色；达芬奇色轮排版对应色环" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:41]</span>12色相环：调节RGB亮度衍生全色；达芬奇色轮排版对应色环</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3c7388678df2.mp3" type="button" aria-label="Play English audio">🔊</button><span>12-step color ring: adjusting RGB brightness spawns all hues; DaVinci&#x27;s wheel matches the ring</span></div>
+<audio class="cap-audio" src="audio/3c7388678df2.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:51-03:55</span>三大色彩关系</h2><p>互补色：「在色环上呈180度相对位置的两种颜色即为互补色，最经典的组合比如黄色与蓝色、红色与青色、绿色与品红色。互补色是色彩对比中最强烈的组合，核心的作用在于创造视觉焦点和增强画面张力。」</p><p>互补色应用：「突出主体分离层次，将主体与环境的颜色为互补色关系，能让主体从背景中鲜明的凸显出来，好莱坞经典的橙青色调即是典范，把环境调为青色冷调，人物肤色保持橙黄暖调，利用蓝橙互补使人物质感立体画面极具电影感。还可以中和色彩校正颜色，当画面人物肤色偏黄，借助互补色进行中和，通过增加少量蓝色就能使皮肤恢复到更自然的白皙状态。」</p><p>邻近色：「在色环上相距约60度的颜色称为邻近色，常见例子包括红与黄、蓝与青、紫与品红。邻近色因色相接近，能营造和谐统一的画面氛围，使色彩过渡平滑自然，引导观众沉浸于特定的情绪中。暖调邻近色适合表现温暖安详温馨的氛围，例如室内居家或黄昏场景；冷调邻近色常用于传达冷静孤独科技或神秘的情绪，例如夜景科幻片或悬疑片。」</p><p>单色系：「使用同一种颜色，通过变化画面的明度与饱和度来构建整个色彩方案。这种风格能带来极致简约统一和安静的视觉感受，让观众更专注于光影结构、纹理细节和形状构成。黑白电影就是单色系极致的表现。当场景元素杂乱颜色过多时，使用单色系可以化繁为景，立刻提升画面的秩序感。」</p><figure><img src="assets/color-grade-principles/shot-03.jpg" alt="互补色：色环180度相对（黄蓝/红青/绿品红），最强对比创造视觉焦点" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:59]</span>互补色：色环180度相对（黄蓝/红青/绿品红），最强对比创造视觉焦点</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9dff091ef75c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Complementary: 180° apart on the ring — strongest contrast creates visual focus</span></div>
+<audio class="cap-audio" src="audio/9dff091ef75c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-04.jpg" alt="好莱坞橙青色调：环境青冷+肤色橙暖，蓝橙互补立体电影感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:48]</span>好莱坞橙青色调：环境青冷+肤色橙暖，蓝橙互补立体电影感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5b5f4a1e65d6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hollywood teal-and-orange: cool cyan environment + warm orange skin — blue-orange complement adds cinematic depth</span></div>
+<audio class="cap-audio" src="audio/5b5f4a1e65d6.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-05.jpg" alt="邻近色：色环相距60度（红黄/蓝青/紫品红），和谐统一平滑过渡" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:18]</span>邻近色：色环相距60度（红黄/蓝青/紫品红），和谐统一平滑过渡</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/d8f839ed14ca.mp3" type="button" aria-label="Play English audio">🔊</button><span>Analogous: ~60° apart (red-yellow/blue-cyan/purple-magenta) — harmonious, smooth transitions</span></div>
+<audio class="cap-audio" src="audio/d8f839ed14ca.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-06.jpg" alt="单色系：同一颜色变明度饱和度，极致简约安静高级" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:16]</span>单色系：同一颜色变明度饱和度，极致简约安静高级</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6cfdfe2322fb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Monochrome: one hue varied in lightness and saturation — minimal, calm, elegant</span></div>
+<audio class="cap-audio" src="audio/6cfdfe2322fb.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:55-07:20</span>色彩三要素</h2><p>概述：「任何你看到的颜色都可以通过这三个维度来精确的描述和控制，也就是明度、饱和度与色相。理解了它们就等于拿到了精准调色的控制面板。」</p><p>明度：「指的是色彩明暗程度，它是色彩的骨架，决定了画面的影调层次。通过示波器可以直观观察，分布从底部百分之零纯黑到顶部百分之百纯白。它可以塑造立体与质感，如果画面没有明度层次物体就是平面的，通过刻画亮部暗部和中间调，一个球体才能圆润，一块布料才能显示出纹理。人眼会自然看向明亮且对比度高的区域，通过提亮主体压暗环境，可以不动声色的引导观众的视线。高调整体偏亮对比柔和带来轻盈明亮的感受；低调高反差整体偏暗会营造出深沉神秘或戏剧性的氛围。软件中色轮与曲线是控制画面明度的两种常用工具，色轮调整更直观适合整体性处理，曲线可以对从暗部到亮部的每一个明度层级进行独立调节。」</p><p>饱和度：「指的是色彩的鲜艳程度，0%完全灰色，100%极致鲜艳，它控制着色彩的浓度。提高饱和度会让画面更生动更具活力，但过度提升会显得虚假艳丽。降低饱和度就能营造出宁静压抑复古或高级的电影感，调整到0就会得到黑白影像。高饱和度常用于儿童动画、浪漫爱情片及风格化科幻作品；低饱和度更多用在战争题材或复古主题影片，使画面偏向中性灰调。」</p><p>色相：「是色彩的基本相貌，直接对应色彩在色相曲线上的具体位置。调整色相就是在画面中选取目标颜色，通过在曲线上移动某点来改变画面的色彩风格与整体氛围。可以通过色相调整统一画面中不同物体的颜色，也可以通过改变主体色相使它与环境形成对比从而突出视觉焦点。例如树叶绿色不足时，曲线下拉变为更深的绿色，上移就会偏向黄色；一个节点的调整强度不够可以多串联一个节点，进一步将色调加强为浓郁的橙黄色，营造秋天的氛围。还可以将色相与饱和度联动调整，在色彩扭曲器中把衣服的青绿向深蓝方向移动，青绿就会转变为青蓝色，同时饱和度也会相应提升。」</p><figure><img src="assets/color-grade-principles/shot-07.jpg" alt="色彩三要素：明度/饱和度/色相=精准调色控制面板" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:41]</span>色彩三要素：明度/饱和度/色相=精准调色控制面板</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1b377258acca.mp3" type="button" aria-label="Play English audio">🔊</button><span>Three elements: lightness/saturation/hue — the precise grading control panel</span></div>
+<audio class="cap-audio" src="audio/1b377258acca.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-08.jpg" alt="明度=色彩骨架：示波器0%纯黑-100%纯白；塑造立体质感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:11]</span>明度=色彩骨架：示波器0%纯黑-100%纯白；塑造立体质感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6d5f877b6f4f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Lightness = color skeleton: scopes 0% black to 100% white; builds dimension and texture</span></div>
+<audio class="cap-audio" src="audio/6d5f877b6f4f.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-09.jpg" alt="明度引导视线：提亮主体压暗环境；高调轻盈vs低调深沉" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:33]</span>明度引导视线：提亮主体压暗环境；高调轻盈vs低调深沉</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6fd1d95c5224.mp3" type="button" aria-label="Play English audio">🔊</button><span>Lightness guides the eye: brighten subject, darken surroundings; high key light vs low key moody</span></div>
+<audio class="cap-audio" src="audio/6fd1d95c5224.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-10.jpg" alt="明度工具：色轮整体处理+曲线局部精细（每一明度层级独立调节）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:31]</span>明度工具：色轮整体处理+曲线局部精细（每一明度层级独立调节）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0fd48f385d8d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Lightness tools: wheel for overall, curves for per-level fine control</span></div>
+<audio class="cap-audio" src="audio/0fd48f385d8d.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-11.jpg" alt="饱和度：0%完全灰-100%极致鲜艳；控制色彩浓度" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[06:32]</span>饱和度：0%完全灰-100%极致鲜艳；控制色彩浓度</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7939f28ea490.mp3" type="button" aria-label="Play English audio">🔊</button><span>Saturation: 0% fully gray to 100% vivid; controls color intensity</span></div>
+<audio class="cap-audio" src="audio/7939f28ea490.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-12.jpg" alt="色相=色彩基本相貌：对应色相曲线位置，移动某点改色彩风格" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[07:27]</span>色相=色彩基本相貌：对应色相曲线位置，移动某点改色彩风格</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b99045bfcd70.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hue = the basic identity of color; moving a point on the hue curve shifts the style</span></div>
+<audio class="cap-audio" src="audio/b99045bfcd70.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-13.jpg" alt="树叶调色：曲线下拉变深绿/上移偏黄；串联节点加强橙黄秋天氛围" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[07:53]</span>树叶调色：曲线下拉变深绿/上移偏黄；串联节点加强橙黄秋天氛围</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/dfb3c078ce21.mp3" type="button" aria-label="Play English audio">🔊</button><span>Leaf grading: curve down for deeper green, up toward yellow; add nodes for a rich orange autumn mood</span></div>
+<audio class="cap-audio" src="audio/dfb3c078ce21.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-14.jpg" alt="色彩扭曲器：衣服青绿→深蓝+饱和度提升，色相饱和度联动" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[08:24]</span>色彩扭曲器：衣服青绿→深蓝+饱和度提升，色相饱和度联动</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1c6ec3f207dc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Color Warper: teal dress → deep blue plus saturation boost — hue and saturation linked</span></div>
+<audio class="cap-audio" src="audio/1c6ec3f207dc.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">07:20-10:40</span>调色流程与实战</h2><p>先整体后局部：「在专业的调色中我们要遵守一个基本原则：先整体后局部，也就是先进行一级调色垫定全局影调基础，再进行二级调色处理比如画面里的吊灯、窗户光线、人物皮肤等。」</p><p>Log灰片五步：「第一步使用一级色轮中的明暗工具，将画面的暗部和高光拉开，恢复正常的明暗反差，并适当增强饱和度与对比度。第二步调整影调，例如通过两个节点来构建高反差效果，注意避免画面出现曝光过度或是死黑区域。第三步对画面的色相与饱和度进行统一调整，让画面显得干净统一。第四步进行风格化处理，在上方节点中通过曲线工具进一步压实画面，在下方节点中添加暗角效果实现边缘渐暗。最后一步给画面局部做强化，给窗户区域添加色光特效，增强视觉真实感与氛围。」</p><p>实战案例：「如果素材的直出色彩已经比较理想，可以跳过基础校正，直接从影调调整开始。用两个节点建立高反差效果，确保亮部不过曝暗部不死黑。然后曲线色相面板修正天空和花草的色相，再打开饱和度曲线调节花朵和天空的饱和度。第四步重点处理人物肤色，先通过曲线暗部提亮肤色，接着切换到色轮工具，通过降低中间调细节的方式实现对皮肤柔化磨皮处理，并打开矢量图看肤色是否偏色，肤色偏红适当加入互补色绿色来校正。第五步将深蓝的天空加入青绿色呈现青蓝色调。第六步处理暗部阴影，降低饱和度同时让色相略微偏向蓝色。最后添加电影暗角效果增强层次感与电影感。」</p><figure><img src="assets/color-grade-principles/shot-15.jpg" alt="调色流程：先整体后局部=一级调色垫底+二级调色局部" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[09:28]</span>调色流程：先整体后局部=一级调色垫底+二级调色局部</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4cc8e729a9d1.mp3" type="button" aria-label="Play English audio">🔊</button><span>Grading flow: whole first, then details — primary grading as base, secondary for local fixes</span></div>
+<audio class="cap-audio" src="audio/4cc8e729a9d1.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-16.jpg" alt="Log灰片五步流程：明暗反差→影调→色相饱和统一→风格化→局部强化" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[09:57]</span>Log灰片五步流程：明暗反差→影调→色相饱和统一→风格化→局部强化</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a1187082a3b2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Log five-step flow: contrast → tonality → hue/saturation unity → stylize → local enhancement</span></div>
+<audio class="cap-audio" src="audio/a1187082a3b2.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-17.jpg" alt="实战：肤色处理——曲线暗部提亮+色轮柔化磨皮+矢量图校正偏色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[11:21]</span>实战：肤色处理——曲线暗部提亮+色轮柔化磨皮+矢量图校正偏色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/23f52f4f403a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Demo: skin work — brighten with curve shadows, soften with the wheel, fix casts on the vectorscope</span></div>
+<audio class="cap-audio" src="audio/23f52f4f403a.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-grade-principles/shot-18.jpg" alt="实战：天空加青绿+暗部降饱和偏蓝+电影暗角增强层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[11:48]</span>实战：天空加青绿+暗部降饱和偏蓝+电影暗角增强层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/81119d152bba.mp3" type="button" aria-label="Play English audio">🔊</button><span>Demo: teal into the sky, desaturated blue shadows, cinematic vignette for depth</span></div>
+<audio class="cap-audio" src="audio/81119d152bba.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">10:40-12:31</span>总结</h2><p>核心：「无论面对哪一种类型的素材，整个流程都要严格遵循从整体到局部的调整顺序。其核心可以总结为：在先整体后局部的调整方向下，灵活应用三种色彩关系与三大色彩要素。」</p><p>实践：「掌握理论最好的方式就是实践，建议在课后亲自操作一遍，将知识真正转化为自己的技能。」</p><figure><img src="assets/color-grade-principles/shot-19.jpg" alt="总结：先整体后局部+三种色彩关系+三大色彩要素，理论靠实践转化" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[12:06]</span>总结：先整体后局部+三种色彩关系+三大色彩要素，理论靠实践转化</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/21c17bb2b01b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Summary: whole-first grading + three color relationships + three elements — theory becomes skill through practice</span></div>
+<audio class="cap-audio" src="audio/21c17bb2b01b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（371段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>今天我们学调色的底层原理</p></div>
+<div class="transcript-row"><time>00:03</time><p>你可以做一个简单的想象</p></div>
+<div class="transcript-row"><time>00:05</time><p>在一面墙上打上三盏灯</p></div>
+<div class="transcript-row"><time>00:07</time><p>分别是红灯</p></div>
+<div class="transcript-row"><time>00:09</time><p>绿灯和蓝灯</p></div>
+<div class="transcript-row"><time>00:11</time><p>当红灯和绿灯的光束重叠时</p></div>
+<div class="transcript-row"><time>00:14</time><p>我们就得到了黄色</p></div>
+<div class="transcript-row"><time>00:15</time><p>当蓝灯和红灯光束重叠时</p></div>
+<div class="transcript-row"><time>00:18</time><p>我们就得到了品红色</p></div>
+<div class="transcript-row"><time>00:19</time><p>也叫阳红</p></div>
+<div class="transcript-row"><time>00:20</time><p>当绿灯和蓝灯的光束重叠时</p></div>
+<div class="transcript-row"><time>00:23</time><p>我们就得到了青色</p></div>
+<div class="transcript-row"><time>00:25</time><p>因为我们控制的是光</p></div>
+<div class="transcript-row"><time>00:26</time><p>所以可以随意调节</p></div>
+<div class="transcript-row"><time>00:28</time><p>这三盏灯的亮度</p></div>
+<div class="transcript-row"><time>00:29</time><p>我们把红色亮度调低一半</p></div>
+<div class="transcript-row"><time>00:31</time><p>就会得到黄绿和蓝紫</p></div>
+<div class="transcript-row"><time>00:34</time><p>把绿色亮度调低一半</p></div>
+<div class="transcript-row"><time>00:35</time><p>就会得到橙色和青蓝</p></div>
+<div class="transcript-row"><time>00:38</time><p>把蓝色灯光调低一半</p></div>
+<div class="transcript-row"><time>00:39</time><p>就会得到青绿和纸红</p></div>
+<div class="transcript-row"><time>00:41</time><p>最终形成一个</p></div>
+<div class="transcript-row"><time>00:42</time><p>我们进行色彩分析时</p></div>
+<div class="transcript-row"><time>00:44</time><p>常用的12摄像环</p></div>
+<div class="transcript-row"><time>00:46</time><p>达芬奇软件中的摄轮</p></div>
+<div class="transcript-row"><time>00:48</time><p>它的色彩排版逻辑</p></div>
+<div class="transcript-row"><time>00:49</time><p>就完全对应着这个色环</p></div>
+<div class="transcript-row"><time>00:51</time><p>当我们理解了光的色彩构成之后</p></div>
+<div class="transcript-row"><time>00:54</time><p>就可以借助色彩环</p></div>
+<div class="transcript-row"><time>00:55</time><p>来指导我们的色彩搭配</p></div>
+<div class="transcript-row"><time>00:57</time><p>色彩搭配的风格有很多</p></div>
+<div class="transcript-row"><time>00:59</time><p>但我们只需要掌握最核心</p></div>
+<div class="transcript-row"><time>01:01</time><p>最使用的三种风格</p></div>
+<div class="transcript-row"><time>01:03</time><p>就足以应对绝大多数的调色场景</p></div>
+<div class="transcript-row"><time>01:06</time><p>后续的实战操作和审美提升</p></div>
+<div class="transcript-row"><time>01:08</time><p>也将围绕这三大风格展开</p></div>
+<div class="transcript-row"><time>01:10</time><p>第一种风格</p></div>
+<div class="transcript-row"><time>01:12</time><p>互补色</p></div>
+<div class="transcript-row"><time>01:13</time><p>在色腕上组一180度</p></div>
+<div class="transcript-row"><time>01:15</time><p>相对位置的两种颜色</p></div>
+<div class="transcript-row"><time>01:17</time><p>即为互补色</p></div>
+<div class="transcript-row"><time>01:18</time><p>最经典的组合</p></div>
+<div class="transcript-row"><time>01:19</time><p>比如黄色以蓝色</p></div>
+<div class="transcript-row"><time>01:21</time><p>红色以青色</p></div>
+<div class="transcript-row"><time>01:23</time><p>绿色以品红色</p></div>
+<div class="transcript-row"><time>01:24</time><p>互补色是色彩对比中</p></div>
+<div class="transcript-row"><time>01:26</time><p>最强烈的组合</p></div>
+<div class="transcript-row"><time>01:27</time><p>核心的作用在于创造视觉焦点</p></div>
+<div class="transcript-row"><time>01:30</time><p>和增强画面占领</p></div>
+<div class="transcript-row"><time>01:31</time><p>它能够立刻抓住观众的视线</p></div>
+<div class="transcript-row"><time>01:34</time><p>是引导注意力最有效的手段之一</p></div>
+<div class="transcript-row"><time>01:36</time><p>在实际应用中</p></div>
+<div class="transcript-row"><time>01:38</time><p>互补色还可以</p></div>
+<div class="transcript-row"><time>01:39</time><p>一</p></div>
+<div class="transcript-row"><time>01:40</time><p>突出主体分离层次</p></div>
+<div class="transcript-row"><time>01:42</time><p>将主体以环境色为互补色关系</p></div>
+<div class="transcript-row"><time>01:45</time><p>能让主体从背景中鲜明的凸显出来</p></div>
+<div class="transcript-row"><time>01:48</time><p>好莱坞经典的层青色调即是点范</p></div>
+<div class="transcript-row"><time>01:50</time><p>把环境调为青色冷调</p></div>
+<div class="transcript-row"><time>01:52</time><p>人物肤色保持层环暖调</p></div>
+<div class="transcript-row"><time>01:55</time><p>利用蓝环互补</p></div>
+<div class="transcript-row"><time>01:56</time><p>使人物质感立体</p></div>
+<div class="transcript-row"><time>01:58</time><p>画面极具电影感</p></div>
+<div class="transcript-row"><time>01:59</time><p>二</p></div>
+<div class="transcript-row"><time>02:00</time><p>可以综合色彩校正颜色</p></div>
+<div class="transcript-row"><time>02:02</time><p>当画面人物肤色偏黄</p></div>
+<div class="transcript-row"><time>02:04</time><p>可以借助互补色进行综合</p></div>
+<div class="transcript-row"><time>02:06</time><p>通过增加少量蓝色</p></div>
+<div class="transcript-row"><time>02:08</time><p>就能使皮肤恢复到更自然的白皙的状态</p></div>
+<div class="transcript-row"><time>02:12</time><p>第二种风格</p></div>
+<div class="transcript-row"><time>02:13</time><p>临近色</p></div>
+<div class="transcript-row"><time>02:14</time><p>在色环上相距约60度的颜色</p></div>
+<div class="transcript-row"><time>02:17</time><p>称为临近色</p></div>
+<div class="transcript-row"><time>02:18</time><p>常见例子包括红以黄</p></div>
+<div class="transcript-row"><time>02:21</time><p>蓝以青</p></div>
+<div class="transcript-row"><time>02:22</time><p>紫以品红</p></div>
+<div class="transcript-row"><time>02:23</time><p>临近色因色相接近</p></div>
+<div class="transcript-row"><time>02:25</time><p>能营造和谐</p></div>
+<div class="transcript-row"><time>02:26</time><p>统一的画面氛围</p></div>
+<div class="transcript-row"><time>02:28</time><p>使色彩过度平滑</p></div>
+<div class="transcript-row"><time>02:29</time><p>自然带来舒适的世界感受</p></div>
+<div class="transcript-row"><time>02:31</time><p>有助于引导观众</p></div>
+<div class="transcript-row"><time>02:33</time><p>沉浸于特定的情绪中</p></div>
+<div class="transcript-row"><time>02:35</time><p>在实际应用中</p></div>
+<div class="transcript-row"><time>02:36</time><p>暖调临近色适合表现温暖</p></div>
+<div class="transcript-row"><time>02:39</time><p>安详温馨的氛围</p></div>
+<div class="transcript-row"><time>02:41</time><p>例如在室内居家或黄昏的场景中</p></div>
+<div class="transcript-row"><time>02:45</time><p>将主色调控制在黄</p></div>
+<div class="transcript-row"><time>02:47</time><p>层及少量红色范围内</p></div>
+<div class="transcript-row"><time>02:50</time><p>可以呈现出光线柔和</p></div>
+<div class="transcript-row"><time>02:52</time><p>氛围统一的画面效果</p></div>
+<div class="transcript-row"><time>02:53</time><p>而冷调临近色常用于传达冷静</p></div>
+<div class="transcript-row"><time>02:56</time><p>孤独科技或神秘的情绪</p></div>
+<div class="transcript-row"><time>03:00</time><p>例如夜景科幻片或嫌疑片</p></div>
+<div class="transcript-row"><time>03:04</time><p>强化场景的冷静感或未来感</p></div>
+<div class="transcript-row"><time>03:06</time><p>第三种风格单色系</p></div>
+<div class="transcript-row"><time>03:08</time><p>单色系是指使用同一种颜色</p></div>
+<div class="transcript-row"><time>03:11</time><p>通过变化画面的明度</p></div>
+<div class="transcript-row"><time>03:13</time><p>以饱和度来构建整个色彩方案</p></div>
+<div class="transcript-row"><time>03:16</time><p>这种风格能带来极致简严</p></div>
+<div class="transcript-row"><time>03:18</time><p>统一和解的世界感受</p></div>
+<div class="transcript-row"><time>03:20</time><p>它能够给画面带来高级感和艺术感</p></div>
+<div class="transcript-row"><time>03:23</time><p>让观众更专注于光影结构</p></div>
+<div class="transcript-row"><time>03:26</time><p>纹理细节和形状构成</p></div>
+<div class="transcript-row"><time>03:28</time><p>而不是色彩本身</p></div>
+<div class="transcript-row"><time>03:30</time><p>在实际应用中</p></div>
+<div class="transcript-row"><time>03:31</time><p>单色系方案有很多类型的用途</p></div>
+<div class="transcript-row"><time>03:34</time><p>首先它非常适合用来营造</p></div>
+<div class="transcript-row"><time>03:36</time><p>强烈而纯粹的情绪氛围</p></div>
+<div class="transcript-row"><time>03:38</time><p>黑白电影就是单色系极致的表现</p></div>
+<div class="transcript-row"><time>03:41</time><p>其次这个方案也常用以表现未来感</p></div>
+<div class="transcript-row"><time>03:44</time><p>性冷淡风或极简主义风格</p></div>
+<div class="transcript-row"><time>03:47</time><p>当场景元素杂乱颜色过多时</p></div>
+<div class="transcript-row"><time>03:50</time><p>使用单色系可以画房为景</p></div>
+<div class="transcript-row"><time>03:53</time><p>立刻提升画面的秩序感</p></div>
+<div class="transcript-row"><time>03:55</time><p>当你明确了调色的风格方向</p></div>
+<div class="transcript-row"><time>03:57</time><p>知道画面要往哪种世界感受上靠拢之后</p></div>
+<div class="transcript-row"><time>04:01</time><p>下一步就需要掌握实现这些风格的底层攻击</p></div>
+<div class="transcript-row"><time>04:04</time><p>也就是色彩三要素</p></div>
+<div class="transcript-row"><time>04:06</time><p>任何你看到的颜色</p></div>
+<div class="transcript-row"><time>04:07</time><p>都可以通过这三个纬度来精确的描述和控制</p></div>
+<div class="transcript-row"><time>04:11</time><p>也就是明度</p></div>
+<div class="transcript-row"><time>04:13</time><p>饱和度以色相理解</p></div>
+<div class="transcript-row"><time>04:15</time><p>他们就等于拿到了精准调色的控制面板</p></div>
+<div class="transcript-row"><time>04:18</time><p>我们先来看第一要素</p></div>
+<div class="transcript-row"><time>04:21</time><p>明度指的是色彩明暗程度</p></div>
+<div class="transcript-row"><time>04:23</time><p>它是色彩的骨架</p></div>
+<div class="transcript-row"><time>04:24</time><p>决定了画面的影调层次</p></div>
+<div class="transcript-row"><time>04:26</time><p>如果把画面叠加上去</p></div>
+<div class="transcript-row"><time>04:28</time><p>我们可以通过视波器直观的观察</p></div>
+<div class="transcript-row"><time>04:31</time><p>它的分布从底部百分之零</p></div>
+<div class="transcript-row"><time>04:33</time><p>纯黑到顶部百分之百纯白</p></div>
+<div class="transcript-row"><time>04:36</time><p>为什么它是最重要的呢</p></div>
+<div class="transcript-row"><time>04:38</time><p>一可以塑造立体与质感</p></div>
+<div class="transcript-row"><time>04:40</time><p>如果画面没有明度层次</p></div>
+<div class="transcript-row"><time>04:42</time><p>物体就是平面的</p></div>
+<div class="transcript-row"><time>04:44</time><p>通过刻画亮部暗部和中间调</p></div>
+<div class="transcript-row"><time>04:47</time><p>一个球底才能圆润</p></div>
+<div class="transcript-row"><time>04:48</time><p>那么一块布料才能显示出纹理</p></div>
+<div class="transcript-row"><time>04:53</time><p>人眼会自然看向明亮</p></div>
+<div class="transcript-row"><time>04:55</time><p>且对比度高的区域</p></div>
+<div class="transcript-row"><time>04:57</time><p>通过提亮主体</p></div>
+<div class="transcript-row"><time>04:58</time><p>压暗环境</p></div>
+<div class="transcript-row"><time>04:59</time><p>你可以不动声色的引导观众的视线</p></div>
+<div class="transcript-row"><time>05:06</time><p>整体偏亮</p></div>
+<div class="transcript-row"><time>05:07</time><p>对比柔和</p></div>
+<div class="transcript-row"><time>05:08</time><p>带来轻盈</p></div>
+<div class="transcript-row"><time>05:10</time><p>明亮</p></div>
+<div class="transcript-row"><time>05:10</time><p>柔和的感受</p></div>
+<div class="transcript-row"><time>05:12</time><p>低调</p></div>
+<div class="transcript-row"><time>05:12</time><p>高反差</p></div>
+<div class="transcript-row"><time>05:13</time><p>整体偏暗</p></div>
+<div class="transcript-row"><time>05:14</time><p>对比强烈</p></div>
+<div class="transcript-row"><time>05:15</time><p>会营造出深层</p></div>
+<div class="transcript-row"><time>05:16</time><p>神秘或戏剧性的氛围</p></div>
+<div class="transcript-row"><time>05:19</time><p>在软件中</p></div>
+<div class="transcript-row"><time>05:20</time><p>摄轮已体现是控制画面明度的</p></div>
+<div class="transcript-row"><time>05:23</time><p>两种常用工具</p></div>
+<div class="transcript-row"><time>05:24</time><p>它们分别适用于不同金柱的调整需求</p></div>
+<div class="transcript-row"><time>05:27</time><p>摄轮调整时会更直观</p></div>
+<div class="transcript-row"><time>05:29</time><p>比较适合对画面明度的</p></div>
+<div class="transcript-row"><time>05:31</time><p>整体性的处理</p></div>
+<div class="transcript-row"><time>05:33</time><p>例如</p></div>
+<div class="transcript-row"><time>05:33</time><p>当处理一副因雾霾影响而整体发挥</p></div>
+<div class="transcript-row"><time>05:36</time><p>建筑缺乏立体感的层次风光时</p></div>
+<div class="transcript-row"><time>05:39</time><p>可以通过摄轮工具</p></div>
+<div class="transcript-row"><time>05:40</time><p>初步提升画面的整体对比</p></div>
+<div class="transcript-row"><time>05:43</time><p>使灰闷闷的观感得到初步改善</p></div>
+<div class="transcript-row"><time>05:46</time><p>如果需要对明度进行更为精细和局部的控制</p></div>
+<div class="transcript-row"><time>05:50</time><p>曲线工具是更高效的选择</p></div>
+<div class="transcript-row"><time>05:52</time><p>它可以对画面从暗部到亮部的</p></div>
+<div class="transcript-row"><time>05:55</time><p>每一个明度的层级进行独立调节</p></div>
+<div class="transcript-row"><time>05:58</time><p>例如</p></div>
+<div class="transcript-row"><time>05:59</time><p>可以在保留高光部分细节的基础上</p></div>
+<div class="transcript-row"><time>06:02</time><p>适当压按中间调以暗部</p></div>
+<div class="transcript-row"><time>06:04</time><p>从而增强画面的整体反差与立体感</p></div>
+<div class="transcript-row"><time>06:08</time><p>通过这样的局部调节</p></div>
+<div class="transcript-row"><time>06:09</time><p>原本灰屏单调的画面会立刻变得通透</p></div>
+<div class="transcript-row"><time>06:13</time><p>第二要素</p></div>
+<div class="transcript-row"><time>06:14</time><p>饱和度</p></div>
+<div class="transcript-row"><time>06:15</time><p>饱和度指的是色彩的鲜艳程度</p></div>
+<div class="transcript-row"><time>06:17</time><p>如果我们看到画面的苹果</p></div>
+<div class="transcript-row"><time>06:19</time><p>50%是属于正常画面</p></div>
+<div class="transcript-row"><time>06:21</time><p>左边数值到0%</p></div>
+<div class="transcript-row"><time>06:23</time><p>完全灰色</p></div>
+<div class="transcript-row"><time>06:24</time><p>右侧到100%就是极致鲜艳</p></div>
+<div class="transcript-row"><time>06:27</time><p>它控制着色彩的浓度</p></div>
+<div class="transcript-row"><time>06:28</time><p>那么饱和度是如何影响画面的世界感受呢</p></div>
+<div class="transcript-row"><time>06:32</time><p>提高饱和度会让画面更生动</p></div>
+<div class="transcript-row"><time>06:34</time><p>更具活力</p></div>
+<div class="transcript-row"><time>06:35</time><p>但过度提升会显得虚假</p></div>
+<div class="transcript-row"><time>06:38</time><p>视野</p></div>
+<div class="transcript-row"><time>06:39</time><p>降低饱和度就能营造出灵敬</p></div>
+<div class="transcript-row"><time>06:41</time><p>压抑</p></div>
+<div class="transcript-row"><time>06:43</time><p>复古</p></div>
+<div class="transcript-row"><time>06:43</time><p>或高级的电影感</p></div>
+<div class="transcript-row"><time>06:45</time><p>调整到0就会得到黑白影像</p></div>
+<div class="transcript-row"><time>06:47</time><p>在实际操作中</p></div>
+<div class="transcript-row"><time>06:48</time><p>饱和度可以结合自身想表达的情绪来塑造风格</p></div>
+<div class="transcript-row"><time>06:53</time><p>高饱和度常建议需要传达极其情绪的世界场景</p></div>
+<div class="transcript-row"><time>06:57</time><p>如儿童动画</p></div>
+<div class="transcript-row"><time>06:58</time><p>浪漫爱情片</p></div>
+<div class="transcript-row"><time>06:59</time><p>及风格化科幻作品</p></div>
+<div class="transcript-row"><time>07:01</time><p>通过鲜明浓郁的色调</p></div>
+<div class="transcript-row"><time>07:03</time><p>能够有效营造出活力</p></div>
+<div class="transcript-row"><time>07:04</time><p>以能量的氛围</p></div>
+<div class="transcript-row"><time>07:06</time><p>增加画面的世界感染力</p></div>
+<div class="transcript-row"><time>07:08</time><p>反过来看</p></div>
+<div class="transcript-row"><time>07:08</time><p>低饱和度更多情况会用在需要营造沉重感</p></div>
+<div class="transcript-row"><time>07:12</time><p>或历史感的叙事场景</p></div>
+<div class="transcript-row"><time>07:15</time><p>如战争题材</p></div>
+<div class="transcript-row"><time>07:16</time><p>以复古主题影片</p></div>
+<div class="transcript-row"><time>07:18</time><p>通过降低色彩存度</p></div>
+<div class="transcript-row"><time>07:20</time><p>使画面偏向中性灰调</p></div>
+<div class="transcript-row"><time>07:22</time><p>能够自然的削弱色彩的鲜活度</p></div>
+<div class="transcript-row"><time>07:25</time><p>强化凝重压抑的世界氛围</p></div>
+<div class="transcript-row"><time>07:27</time><p>帮助观众沉浸到特定的情境基调中</p></div>
+<div class="transcript-row"><time>07:30</time><p>第三要素</p></div>
+<div class="transcript-row"><time>07:31</time><p>摄像</p></div>
+<div class="transcript-row"><time>07:32</time><p>摄像是色彩的基本相貌</p></div>
+<div class="transcript-row"><time>07:35</time><p>例如红色</p></div>
+<div class="transcript-row"><time>07:36</time><p>蓝色</p></div>
+<div class="transcript-row"><time>07:37</time><p>绿色</p></div>
+<div class="transcript-row"><time>07:38</time><p>它直接对应色彩在摄像曲线上的具体位置</p></div>
+<div class="transcript-row"><time>07:42</time><p>调整摄像</p></div>
+<div class="transcript-row"><time>07:43</time><p>就是在画面中选取目标颜色</p></div>
+<div class="transcript-row"><time>07:46</time><p>通过在曲线上移动某点</p></div>
+<div class="transcript-row"><time>07:48</time><p>来改变画面的色彩风格</p></div>
+<div class="transcript-row"><time>07:51</time><p>以整体氛围</p></div>
+<div class="transcript-row"><time>07:52</time><p>在实际应用中</p></div>
+<div class="transcript-row"><time>07:53</time><p>我们可以通过色相调整</p></div>
+<div class="transcript-row"><time>07:55</time><p>来统一画面中不同物体的颜色</p></div>
+<div class="transcript-row"><time>07:57</time><p>使整体世界效果更加和谐</p></div>
+<div class="transcript-row"><time>08:00</time><p>也可以通过改变主体色相</p></div>
+<div class="transcript-row"><time>08:02</time><p>使它以周围环境形成对比</p></div>
+<div class="transcript-row"><time>08:05</time><p>从而突出世界焦点</p></div>
+<div class="transcript-row"><time>08:07</time><p>例如</p></div>
+<div class="transcript-row"><time>08:07</time><p>当感觉画面中的树叶力色不足时</p></div>
+<div class="transcript-row"><time>08:10</time><p>可以选中该原色区域</p></div>
+<div class="transcript-row"><time>08:12</time><p>在曲线中将某点向下拉动</p></div>
+<div class="transcript-row"><time>08:15</time><p>使它变为更深的绿色</p></div>
+<div class="transcript-row"><time>08:17</time><p>如果向上移动某点</p></div>
+<div class="transcript-row"><time>08:19</time><p>树叶就会偏向黄色</p></div>
+<div class="transcript-row"><time>08:21</time><p>操作时</p></div>
+<div class="transcript-row"><time>08:21</time><p>一个节点的调整强度不够</p></div>
+<div class="transcript-row"><time>08:23</time><p>可以多串减一个节点</p></div>
+<div class="transcript-row"><time>08:25</time><p>进一步将色调加强为浓郁的橙黄色</p></div>
+<div class="transcript-row"><time>08:28</time><p>从而轻松营造出秋天的氛围</p></div>
+<div class="transcript-row"><time>08:31</time><p>此外</p></div>
+<div class="transcript-row"><time>08:31</time><p>我们还可以将摄像以饱和度进行联动调整</p></div>
+<div class="transcript-row"><time>08:35</time><p>例如在摄像扭曲器中</p></div>
+<div class="transcript-row"><time>08:37</time><p>如果发现画面中的衣服偏青绿色</p></div>
+<div class="transcript-row"><time>08:40</time><p>可以选中这个青绿摄像</p></div>
+<div class="transcript-row"><time>08:42</time><p>将它向深蓝方向移动</p></div>
+<div class="transcript-row"><time>08:44</time><p>这时</p></div>
+<div class="transcript-row"><time>08:45</time><p>衣服及周边区域原本偏淡的青绿色</p></div>
+<div class="transcript-row"><time>08:48</time><p>就会转变为青蓝色</p></div>
+<div class="transcript-row"><time>08:50</time><p>同时饱和度也会相应提升</p></div>
+<div class="transcript-row"><time>08:52</time><p>画面的视觉冲击力谁知增强</p></div>
+<div class="transcript-row"><time>08:54</time><p>当你掌握了色彩三要素这些核心理论</p></div>
+<div class="transcript-row"><time>08:57</time><p>很多同学可能会遇到一个典型的困境</p></div>
+<div class="transcript-row"><time>09:00</time><p>道理我懂了</p></div>
+<div class="transcript-row"><time>09:01</time><p>思路也有了</p></div>
+<div class="transcript-row"><time>09:02</time><p>但一打开软件</p></div>
+<div class="transcript-row"><time>09:03</time><p>面对一段素材</p></div>
+<div class="transcript-row"><time>09:05</time><p>还是不知道第一步从哪里开始</p></div>
+<div class="transcript-row"><time>09:07</time><p>出现这种情况非常正常</p></div>
+<div class="transcript-row"><time>09:10</time><p>要解决这个问题</p></div>
+<div class="transcript-row"><time>09:11</time><p>你要明白一个清晰的调色流程思路</p></div>
+<div class="transcript-row"><time>09:14</time><p>在专业的调色中</p></div>
+<div class="transcript-row"><time>09:15</time><p>我们要遵守一个基本原则</p></div>
+<div class="transcript-row"><time>09:17</time><p>先整体</p></div>
+<div class="transcript-row"><time>09:18</time><p>后局部</p></div>
+<div class="transcript-row"><time>09:19</time><p>也就是先进行一级调色</p></div>
+<div class="transcript-row"><time>09:21</time><p>垫顶全级影调基础</p></div>
+<div class="transcript-row"><time>09:23</time><p>再进行二级调色</p></div>
+<div class="transcript-row"><time>09:24</time><p>比如画面里的吊灯</p></div>
+<div class="transcript-row"><time>09:26</time><p>窗户光线</p></div>
+<div class="transcript-row"><time>09:27</time><p>人物皮肤等</p></div>
+<div class="transcript-row"><time>09:28</time><p>我们以处理Log灰片素材为例</p></div>
+<div class="transcript-row"><time>09:31</time><p>整个流程可以这样分步推进</p></div>
+<div class="transcript-row"><time>09:33</time><p>第一步</p></div>
+<div class="transcript-row"><time>09:33</time><p>使用一级色轮中的明暗工具</p></div>
+<div class="transcript-row"><time>09:36</time><p>将画面的暗部和高光拉开</p></div>
+<div class="transcript-row"><time>09:38</time><p>恢复正常的明暗反差</p></div>
+<div class="transcript-row"><time>09:40</time><p>并适当增强饱和度</p></div>
+<div class="transcript-row"><time>09:42</time><p>与对比度</p></div>
+<div class="transcript-row"><time>09:43</time><p>使色彩鲜活起来</p></div>
+<div class="transcript-row"><time>09:45</time><p>在完成基本还原后</p></div>
+<div class="transcript-row"><time>09:47</time><p>第二步是调整影调</p></div>
+<div class="transcript-row"><time>09:48</time><p>例如</p></div>
+<div class="transcript-row"><time>09:49</time><p>通过两个节点来构建高反差效果</p></div>
+<div class="transcript-row"><time>09:52</time><p>这时要注意避免画面出现曝光过度</p></div>
+<div class="transcript-row"><time>09:55</time><p>或是黑区域</p></div>
+<div class="transcript-row"><time>09:57</time><p>第三步</p></div>
+<div class="transcript-row"><time>09:57</time><p>对画面的摄像以饱和度进行统一调整</p></div>
+<div class="transcript-row"><time>10:01</time><p>使摄像整体协调</p></div>
+<div class="transcript-row"><time>10:02</time><p>避免杂乱</p></div>
+<div class="transcript-row"><time>10:03</time><p>让画面显得干净</p></div>
+<div class="transcript-row"><time>10:05</time><p>统一</p></div>
+<div class="transcript-row"><time>10:05</time><p>第四步</p></div>
+<div class="transcript-row"><time>10:06</time><p>进行分割化处理</p></div>
+<div class="transcript-row"><time>10:07</time><p>在上方节点中</p></div>
+<div class="transcript-row"><time>10:09</time><p>通过曲线工具进一步压实画面</p></div>
+<div class="transcript-row"><time>10:12</time><p>充分挖掘素材的宽容度</p></div>
+<div class="transcript-row"><time>10:14</time><p>在下方节点中</p></div>
+<div class="transcript-row"><time>10:15</time><p>添加暗角效果</p></div>
+<div class="transcript-row"><time>10:17</time><p>实现边缘见暗</p></div>
+<div class="transcript-row"><time>10:18</time><p>最后一步</p></div>
+<div class="transcript-row"><time>10:19</time><p>给画面局部做了强化</p></div>
+<div class="transcript-row"><time>10:21</time><p>这里是给窗部区域添加色光特效</p></div>
+<div class="transcript-row"><time>10:24</time><p>增强世界真实感</p></div>
+<div class="transcript-row"><time>10:26</time><p>以氛围</p></div>
+<div class="transcript-row"><time>10:26</time><p>整个流程严格遵循</p></div>
+<div class="transcript-row"><time>10:28</time><p>从整体到局部的顺序</p></div>
+<div class="transcript-row"><time>10:30</time><p>逐步推进</p></div>
+<div class="transcript-row"><time>10:31</time><p>确保调色过程自由调理</p></div>
+<div class="transcript-row"><time>10:33</time><p>又能充分发挥创意的意图</p></div>
+<div class="transcript-row"><time>10:36</time><p>我们再来看一个实际调色案例</p></div>
+<div class="transcript-row"><time>10:38</time><p>如果素材的直出色彩已经比较理想</p></div>
+<div class="transcript-row"><time>10:41</time><p>我们可以跳过基础校正</p></div>
+<div class="transcript-row"><time>10:42</time><p>直接从第二步</p></div>
+<div class="transcript-row"><time>10:44</time><p>影调调整开始</p></div>
+<div class="transcript-row"><time>10:45</time><p>首先进行整体处理</p></div>
+<div class="transcript-row"><time>10:47</time><p>在第二步可以先做影调调整</p></div>
+<div class="transcript-row"><time>10:49</time><p>如果单个节点难以达到足够的层次感</p></div>
+<div class="transcript-row"><time>10:52</time><p>可以用两个节点来建立高反差效果</p></div>
+<div class="transcript-row"><time>10:55</time><p>需要注意的是</p></div>
+<div class="transcript-row"><time>10:56</time><p>在处理效果时</p></div>
+<div class="transcript-row"><time>10:58</time><p>要确保亮部细节不出现过暴</p></div>
+<div class="transcript-row"><time>11:00</time><p>同时暗部也不能死黑</p></div>
+<div class="transcript-row"><time>11:02</time><p>确定影调基础后</p></div>
+<div class="transcript-row"><time>11:03</time><p>第三步开始调整画面摄像</p></div>
+<div class="transcript-row"><time>11:06</time><p>可以在曲线工具中打开摄像面板</p></div>
+<div class="transcript-row"><time>11:09</time><p>先对天空和花草的摄像进行修正</p></div>
+<div class="transcript-row"><time>11:12</time><p>调整完成后</p></div>
+<div class="transcript-row"><time>11:13</time><p>再打开饱和度曲线</p></div>
+<div class="transcript-row"><time>11:15</time><p>适当调节花朵和天空的饱和度</p></div>
+<div class="transcript-row"><time>11:18</time><p>第四步进入局部调整</p></div>
+<div class="transcript-row"><time>11:20</time><p>重点处理人物肤色</p></div>
+<div class="transcript-row"><time>11:21</time><p>先通过调整曲线暗部提亮肤色</p></div>
+<div class="transcript-row"><time>11:24</time><p>接着切换到摄轮攻击</p></div>
+<div class="transcript-row"><time>11:27</time><p>通过降低中间调细节的方式</p></div>
+<div class="transcript-row"><time>11:29</time><p>实现对皮肤柔化膜皮处理</p></div>
+<div class="transcript-row"><time>11:32</time><p>并打开实量图</p></div>
+<div class="transcript-row"><time>11:33</time><p>看一下肤色是否偏色</p></div>
+<div class="transcript-row"><time>11:35</time><p>肤色偏红</p></div>
+<div class="transcript-row"><time>11:36</time><p>适当加入互补色</p></div>
+<div class="transcript-row"><time>11:38</time><p>绿色来校正肤色</p></div>
+<div class="transcript-row"><time>11:40</time><p>第五步继续对天空做局部调整</p></div>
+<div class="transcript-row"><time>11:43</time><p>将深蓝的天空加入青绿色</p></div>
+<div class="transcript-row"><time>11:45</time><p>使它呈现出青蓝色调</p></div>
+<div class="transcript-row"><time>11:47</time><p>第六步处理暗部阴影</p></div>
+<div class="transcript-row"><time>11:49</time><p>降低饱和度</p></div>
+<div class="transcript-row"><time>11:50</time><p>同时让摄像略微偏向蓝色</p></div>
+<div class="transcript-row"><time>11:52</time><p>这样会显得干净</p></div>
+<div class="transcript-row"><time>11:54</time><p>最后添加电影暗角效果</p></div>
+<div class="transcript-row"><time>11:56</time><p>增强画面的层次感与电影感</p></div>
+<div class="transcript-row"><time>11:59</time><p>无论面对哪一种类型的素材</p></div>
+<div class="transcript-row"><time>12:01</time><p>整个流程都要严格遵循</p></div>
+<div class="transcript-row"><time>12:03</time><p>从整体到局部的调整顺序</p></div>
+<div class="transcript-row"><time>12:06</time><p>以上都是本节课的核心内容</p></div>
+<div class="transcript-row"><time>12:08</time><p>现在你已经掌握了从色彩原理</p></div>
+<div class="transcript-row"><time>12:10</time><p>搭配方法到调色实战的完整思路</p></div>
+<div class="transcript-row"><time>12:14</time><p>其核心可以总结为</p></div>
+<div class="transcript-row"><time>12:15</time><p>在先整体后局部的调整方向时</p></div>
+<div class="transcript-row"><time>12:19</time><p>灵活应用三种色彩关系</p></div>
+<div class="transcript-row"><time>12:21</time><p>以三大色彩要素</p></div>
+<div class="transcript-row"><time>12:23</time><p>掌握理论最好的方式就是实践</p></div>
+<div class="transcript-row"><time>12:25</time><p>建议在课后亲自操作一遍</p></div>
+<div class="transcript-row"><time>12:28</time><p>将知识真正转化为自己的技能</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>
