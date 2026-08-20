@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "slug": "davinci-coloring",
+    "title": "芬奇调色，1个视频教会你",
+    "title_en": "DaVinci Color Grading: One Video to Teach You",
+    "duration": "21分59秒",
+    "scenes": 6,
+    "sentences": 14,
+    "date": "2026-08-20",
+    "platform": "xiaohongshu",
+    "source_url": "https://xhslink.cn/o/5P9dgZdWcX1",
+    "topic": "达芬奇 · 调色入门"
+  },
+  "scene_imgs": [
+    "shot-05",
+    "shot-07",
+    "shot-10",
+    "shot-14",
+    "shot-19",
+    "shot-21"
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "节点系统：装修模块化思维",
+      "title_en": "The Node System: Modular Renovation Thinking",
+      "time": "04:45-07:50",
+      "context": "节点系统逻辑和PS图层相似，作者用装修比喻：水电、泥瓦、木工混杂同步施工后期难调；正确是按功能分区模块化推进，每个功能区=一个节点，单独修改不影响其他=非破坏性编辑。节点流向左输入→右输出。",
+      "sentences": [
+        [
+          "它的基本逻辑和PS中的图层概念有相似之处，都是通过分层处理的方式来实现精细化调整。",
+          "Its core logic is similar to layers in Photoshop — both use stacked, layered processing for fine control.",
+          "layered processing（分层处理）"
+        ],
+        [
+          "每个功能区就像节点系统中的一个节点，你可以单独修改卫生间的瓷砖，而不会影响其他已经完成的部分。",
+          "Each functional area is like a node — you can change the bathroom tiles without touching anything already finished.",
+          "touching anything already finished（不影响已完成的部分）"
+        ],
+        [
+          "这种独立性正是节点非破坏性编辑的核心优势。",
+          "That independence is exactly the core advantage of non-destructive node editing.",
+          "non-destructive editing（非破坏性编辑）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "「装修模块化」换种说法",
+          "Do it room by room, not all at once."
+        ],
+        [
+          "「单独调整不影响其他」换种说法",
+          "Fix one part without breaking the rest."
+        ]
+      ],
+      "speak": "Its core logic is similar to layers in Photoshop — both use stacked, layered processing for fine control. Each functional area is like a node — you can change the bathroom tiles without touching anything already finished. That independence is exactly the core advantage of non-destructive node editing."
+    },
+    {
+      "id": "s2",
+      "title_cn": "色轮：四滑块定明暗",
+      "title_en": "Color Wheels: Four Sliders for Luma",
+      "time": "07:50-12:30",
+      "context": "色轮板块有四个色轮，每个下方有明度滑块：最左=阴影、中间=中间调（肤色固有色）、最右=高光、偏移=同时改变全画面明暗。log素材先定两头再调中间，避免暗部过黑高光过量。色环拖拽轻柔渐进防失真。",
+      "sentences": [
+        [
+          "最左边的滑块负责画面的明暗区域也就是阴影部分，中间的滑块负责画面中大部分内容比如人的肤色、物体的固有色。",
+          "The leftmost slider controls the shadows, while the middle one handles most of the frame — skin tones, the natural colors of objects.",
+          "the natural colors of objects（物体的固有色）"
+        ],
+        [
+          "当你的素材是log格式时，这些滑块在画面还原中就起到很大的作用。",
+          "When your footage is in log format, these sliders do the heavy lifting in restoring the image.",
+          "do the heavy lifting（起到很大的作用）"
+        ],
+        [
+          "即使轻微的拖动也会产生明显变化，如果调整幅度过大很容易导致色彩失真。",
+          "Even a tiny drag changes a lot, and going too far easily causes color distortion.",
+          "color distortion（色彩失真）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "「先定两头再调中间」换种说法",
+          "Lock the shadows and highlights first, then touch the mids."
+        ],
+        [
+          "「轻柔渐进操作」换种说法",
+          "Ease into it — small moves, gentle nudges."
+        ]
+      ],
+      "speak": "The leftmost slider controls the shadows, while the middle one handles most of the frame — skin tones, the natural colors of objects. When your footage is in log format, these sliders do the heavy lifting in restoring the image. Even a tiny drag changes a lot, and going too far easily causes color distortion."
+    },
+    {
+      "id": "s3",
+      "title_cn": "白平衡三招+对比度轴心点",
+      "title_en": "Three White-Balance Moves Plus Contrast and Pivot",
+      "time": "12:30-16:40",
+      "context": "白平衡：①自动A标识；②吸管点白色区域（白衬衫/白墙）自动校准；③手动色温色调（右暖左冷、右品红左绿）。中间调细节20-30最自然。对比度+轴心点配套用：log对比度1500上拉轴心点亮透下拉暗黑，轴心点=对比度变化支点防丢暗部。",
+      "sentences": [
+        [
+          "当画面出现偏色时，只需要点击本应为白色的区域，例如白衬衫或白墙，达芬奇就会自动校准全局白平衡。",
+          "When the image is off-color, just click a spot that should be white — a white shirt or a white wall — and DaVinci auto-calibrates the global white balance.",
+          "off-color（偏色）"
+        ],
+        [
+          "轴心点的作用是设定对比度变化的基准位置，相当于一个支点。",
+          "The pivot point sets the baseline for the contrast change — it works like a fulcrum.",
+          "a fulcrum（一个支点）"
+        ],
+        [
+          "通常建议将数值控制在20-30之间，效果会更加自然。",
+          "Keep the value between 20 and 30 for a more natural look.",
+          "a more natural look（更自然的效果）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "「吸管点白校准」换种说法",
+          "Click a white shirt and the whole image snaps to neutral."
+        ],
+        [
+          "「配套使用」换种说法",
+          "They only work as a pair."
+        ]
+      ],
+      "speak": "When the image is off-color, just click a spot that should be white — a white shirt or a white wall — and DaVinci auto-calibrates the global white balance. The pivot point sets the baseline for the contrast change — it works like a fulcrum. Keep the value between 20 and 30 for a more natural look."
+    },
+    {
+      "id": "s4",
+      "title_cn": "曲线：S型+分通道RGB",
+      "title_en": "Curves: S-Curve and Per-Channel RGB",
+      "time": "16:40-20:20",
+      "context": "曲线是调色最核心最强大的功能。横轴左暗右亮。S型曲线增强对比通透胶片感。精髓在分通道RGB独立调整：蓝曲提高光让天空更蓝、绿曲中间调下压中和偏绿、红曲暗部提=复古降=清透。针对特定亮度范围校正比全局白平衡更精准。",
+      "sentences": [
+        [
+          "最经典的用法是S型曲线，可以有效增强画面对比，让画面更通透、更具胶片感。",
+          "The classic move is an S-curve — it boosts contrast, opens up the image, and adds a filmic feel.",
+          "a filmic feel（胶片感）"
+        ],
+        [
+          "曲线调色的另一精髓是可以分别对红、绿、蓝三个通道进行独立调整，实现精准的色彩校正。",
+          "The other secret is tuning the red, green, and blue channels independently for precise color correction.",
+          "precisely（精准地）"
+        ],
+        [
+          "如果天空的高光区域蓝色不足，可以在蓝色曲线的高光部分适当提升，让天空更蓝。",
+          "If the sky's highlights lack blue, lift the blue curve in the highlight range and the sky turns bluer.",
+          "lack blue（蓝色不足）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "「S型曲线」换种说法",
+          "An S bend in the curve makes the image pop."
+        ],
+        [
+          "「分通道独立调整」换种说法",
+          "Fix just the blue, or just the shadows, without touching the rest."
+        ]
+      ],
+      "speak": "The classic move is an S-curve — it boosts contrast, opens up the image, and adds a filmic feel. The other secret is tuning the red, green, and blue channels independently for precise color correction. If the sky's highlights lack blue, lift the blue curve in the highlight range and the sky turns bluer."
+    },
+    {
+      "id": "s5",
+      "title_cn": "波形图：亮度地形图",
+      "title_en": "The Waveform: A Luma Topographic Map",
+      "time": "24:30-30:00",
+      "context": "波形图不显示颜色只反映亮度值，范围0-1023，底部绝对黑顶部绝对白。log灰片校正：亮部滑块让波形最高点接近但不超100%线、暗部滑块让最低点轻触0%线。超出0%=死黑、超100%=死白都丢细节。RGB三通道波形分散=偏色，调重合=白平衡准。Shift+Command+W开启。",
+      "sentences": [
+        [
+          "你可以把它理解为画面的亮度地形图，不显示颜色信息，只反映每个像素的亮度值。",
+          "Think of it as a topographic map of the frame's brightness — no color info, just the luma of every pixel.",
+          "topographic map（地形图）"
+        ],
+        [
+          "使波形的最高点接近但不超过顶部100%刻度线，这样既能确保白色准确还原，又不会丢失亮部细节。",
+          "Bring the waveform's peak near the top 100% line without crossing it — the whites render correctly and the highlights keep their detail.",
+          "without crossing it（不超过它）"
+        ],
+        [
+          "当拍摄受到灯光影响导致画面偏色时，在波形图上你会看到三个分散的波形，直到三条线重合，即可获得白平衡准确的画面。",
+          "When lighting throws the image off-color, the waveform shows three separate traces — bring them together and you have accurate white balance.",
+          "three separate traces（三条分散的波形）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "「白对100%黑对0%」换种说法",
+          "Whites touch the top line, blacks graze the bottom."
+        ],
+        [
+          "「RGB重合」换种说法",
+          "Three traces stack into one = neutral color."
+        ]
+      ],
+      "speak": "Think of it as a topographic map of the frame's brightness — no color info, just the luma of every pixel. Bring the waveform's peak near the top 100% line without crossing it — the whites render correctly and the highlights keep their detail. When lighting throws the image off-color, the waveform shows three separate traces — bring them together and you have accurate white balance."
+    },
+    {
+      "id": "s6",
+      "title_cn": "矢量示波器：色彩指南针",
+      "title_en": "The Vectorscope: A Color Compass",
+      "time": "34:30-39:00",
+      "context": "矢量示波器只关注两个问题：画面有什么颜色、饱和度多高。圆形色盘：中心=中性灰、方向=色相（六色辐射）、距离=饱和度。技巧：①肤色指示线——红黄间斜线，健康肤色信号点沿线，偏绿=绿偏品红=紫；②溢出检查——信号点超外圈=饱和过高失真，保持盘内。",
+      "sentences": [
+        [
+          "方向代表色相，从中心向外辐射的轴向分别对应六种基本颜色：红、绿、蓝、黄、青、品红。",
+          "The direction shows the hue — six axes radiate from the center for red, green, blue, yellow, cyan, and magenta.",
+          "six axes radiate（六个轴向辐射）"
+        ],
+        [
+          "健康肤色的信号点分布在这条线周围，如果点偏向绿说明肤色偏绿，若偏向品红则表示偏紫。",
+          "Healthy skin-tone points cluster along that line — points drifting green mean green skin, drifting magenta mean purple.",
+          "cluster along that line（分布在线周围）"
+        ],
+        [
+          "如果发现信号点过于靠近甚至超出最外圈的彩色边界，就表示颜色饱和度过高，会出现超出显示范围的失真。",
+          "If the signal points get too close to or beyond the outer ring, the color is oversaturated and will clip beyond what the display can show.",
+          "oversaturated（饱和度过高）"
+        ]
+      ],
+      "paraphrase": [
+        [
+          "「方向色相距离饱和度」换种说法",
+          "Which way it points is the hue, how far out is the saturation."
+        ],
+        [
+          "「溢出失真」换种说法",
+          "Beyond the ring means the color is out of range."
+        ]
+      ],
+      "speak": "The direction shows the hue — six axes radiate from the center for red, green, blue, yellow, cyan, and magenta. Healthy skin-tone points cluster along that line — points drifting green mean green skin, drifting magenta mean purple. If the signal points get too close to or beyond the outer ring, the color is oversaturated and will clip beyond what the display can show."
+    }
+  ],
+  "practice": [
+    ["一个节点管肤色、一个管白平衡、一个管曝光", "One node for skin, one for white balance, one for exposure."],
+    ["先调阴影高光的明度，再处理中间调", "Set the shadows and highlights first, then adjust the mids."],
+    ["用吸管点白衬衫校准白平衡", "Click the white shirt with the eyedropper to calibrate white balance."],
+    ["波形图白色对准100%线、黑色对准0%线", "Match the whites to the 100% line and the blacks to the 0% line."]
+  ],
+  "pitfalls": [
+    ["把所有调整堆在一个节点里，后期无法单独修改", "Split adjustments across nodes so each part stays editable.", "装修模块化：每功能区一个节点，单独改不影响其他。"],
+    ["全靠肉眼感觉调色，受环境光和显示器色偏影响", "Rely on the waveform and vectorscope instead of your eyes.", "示波器是科学依据，人眼不可靠。"],
+    ["单独拉轴心点，以为能调对比度", "Pair the pivot point with contrast — alone it does nothing.", "轴心点=对比度变化的支点，配套使用。"],
+    ["饱和度拉过头，信号点超圈失真", "Keep signal points inside the vectorscope ring.", "超外圈=饱和过高，色彩超出显示范围。"]
+  ],
+  "shifts": [
+    ["所有调整堆一个节点，改一处全乱", "分节点模块化，单独调整互不影响"],
+    ["凭感觉调色，输出偏色", "波形图+矢量图做尺子，白对100%黑对0%"],
+    ["调坏了一个参数只能重来", "四级复位：参数盘→整体→节点→全部"]
+  ],
+  "difficult_words": [
+    "node", "non-destructive", "layered", "modular", "fulcrum",
+    "pivot point", "eyedropper", "white balance", "off-color",
+    "S-curve", "filmic", "channel", "hue", "saturation",
+    "waveform", "luma", "vectorscope", "magenta", "cyan",
+    "oversaturated", "clip", "topographic", "trace", "baseline", "calibrate"
+  ],
+  "footer_notes": "ASR 校正：达奔起→达芬奇、射轮/设轮→色轮、竞争→静帧、死量→矢量、试读→示波器、门板→蒙版、护弯→复位、shaf的家地→Shift加D、死量施波计→矢量示波器。"
+}

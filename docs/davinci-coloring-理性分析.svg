@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2754" viewBox="0 0 1320 2754">
+  <foreignObject x="0" y="0" width="1320" height="2754">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>芬奇调色，1个视频教会你</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">调色</span><span class="tag tag-orange">教程</span><span class="tag tag-purple">示波器</span><span class="tag tag-gray">时长 21分59秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/5P9dgZdWcX1">原视频</a>
+  <div class="summary-line">达芬奇调色入门=三大板块：①节点系统=PS图层思维（装修模块比喻：每功能区=一个节点），单独调整不影响其他=非破坏性编辑；流向左输入→右输出，新建节点参数复位但继承上节点结果。②工具链：色轮（四滑块明暗：阴影/中间调/高光/偏移+四色环色彩，log先定两头再调中间）；白平衡三招（自动A/吸管点白/手动色温色调）；中间调细节20-30防脏晕；对比度+轴心点配套（log对比度1500+上拉轴心点亮透，轴心点=支点防丢暗部）；色彩增强智能提饱和防色块；饱和度0-100全局；色相染统一色（复古暖黄/科幻冷蓝）；曲线S型增强对比胶片感+分通道RGB独立校正（蓝曲提高光天空蓝/绿曲中间调中和偏绿/红曲暗部复古或清透）。③示波器=科学调色依据（人眼不可靠）：波形图=亮度地形图（0-1023，log校正白点100%黑点0%，超出=死黑死白，RGB三线重合=白平衡准）；矢量示波器=色彩指南针（方向=色相/距离=饱和度，肤色指示线红黄间+信号点超圈=饱和溢出）。多层级复位（参数盘/整体/重置节点/重置所有节点）+Shift+D前后对比；一级=整体校正、二级=局部精细（蒙版跟踪，预告）。心法：先学会一两种核心工具就能解决大部分问题。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">切调色面板，重置界面恢复出厂</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">片段三信息：编号/状态框/轨道号</span></div><div class="timeline-item"><span class="timeline-time">02:40</span><span class="timeline-text">画廊静帧抓取导出+LUT预设</span></div><div class="timeline-item"><span class="timeline-time">04:45</span><span class="timeline-text">节点系统：装修模块比喻</span></div><div class="timeline-item"><span class="timeline-time">07:00</span><span class="timeline-text">节点流向：左输入→右输出</span></div><div class="timeline-item"><span class="timeline-time">07:50</span><span class="timeline-text">色轮四滑块：阴影/中间调/高光/偏移</span></div><div class="timeline-item"><span class="timeline-time">09:20</span><span class="timeline-text">log还原先定两头再调中间</span></div><div class="timeline-item"><span class="timeline-time">10:40</span><span class="timeline-text">色环拖拽轻柔防失真</span></div><div class="timeline-item"><span class="timeline-time">12:30</span><span class="timeline-text">白平衡：自动A/吸管点白/色温色调</span></div><div class="timeline-item"><span class="timeline-time">14:10</span><span class="timeline-text">中间调细节20-30+对比度轴心点</span></div><div class="timeline-item"><span class="timeline-time">16:40</span><span class="timeline-text">色彩增强/饱和度/色相染统一色</span></div><div class="timeline-item"><span class="timeline-time">18:20</span><span class="timeline-text">曲线：S型+分通道RGB</span></div><div class="timeline-item"><span class="timeline-time">20:20</span><span class="timeline-text">多层级复位+Shift+D对比</span></div><div class="timeline-item"><span class="timeline-time">22:40</span><span class="timeline-text">一级vs二级调色</span></div><div class="timeline-item"><span class="timeline-time">24:30</span><span class="timeline-text">波形图=亮度地形图0-1023</span></div><div class="timeline-item"><span class="timeline-time">28:30</span><span class="timeline-text">RGB三线重合=白平衡准</span></div><div class="timeline-item"><span class="timeline-time">30:00</span><span class="timeline-text">渐变灰片实验看波形变化</span></div><div class="timeline-item"><span class="timeline-time">32:30</span><span class="timeline-text">亮度混合防过曝</span></div><div class="timeline-item"><span class="timeline-time">34:30</span><span class="timeline-text">矢量示波器：肤色线+溢出检查</span></div><div class="timeline-item"><span class="timeline-time">39:00</span><span class="timeline-text">总结：一级调色完成，预告二级</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">节点系统<br/>装修模块化=非破坏性编辑</div><span class="arrow">→</span><div class="node-green">色轮<br/>四滑块明暗+四色环色彩</div><span class="arrow">→</span><div class="node-orange">曲线<br/>S型对比+分通道RGB</div><span class="arrow">→</span><div class="node-blue">白平衡<br/>吸管点白/色温色调</div><span class="arrow">→</span><div class="node">波形图<br/>亮度地形图0-1023</div><span class="arrow">→</span><div class="node-green">矢量图<br/>色彩指南针+肤色线</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：把所有调色都堆在一个节点里乱调。应按功能分节点（肤色/白平衡/曝光），装修模块化思维，单独调整互不影响。</p><p>误区：全靠肉眼感觉调色。眼睛受环境光影响、显示器有色偏，必须以波形图/矢量图为准，log校正白点100%黑点0%。</p><p>误区：单独拉轴心点想调对比度。轴心点是对比度变化的支点，不调整对比度时单独移动它不会产生作用，必须配套使用。</p><p>误区：中间调细节拉满追求锐利。拉到110会显脏出晕影，20-30最自然。</p><p>误区：色彩增强=饱和度拉高。色彩增强智能提饱和度不足的颜色，鲜艳色影响小，不会出断层；饱和度过高反而信号点超圈失真。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>节点系统：装修模块化思维</h3>
+      <p>达芬奇调色的核心是节点系统，逻辑和PS图层相似。作者用装修比喻：如果水电、泥瓦、木工、油漆混杂在一起同步施工，后期单独调整某一处会非常困难；正确做法是按功能分区模块化推进——卫生间水电防水一个模块、厨房橱柜灶机一个模块、卧室墙面照明一个模块。每个功能区就是一个节点：单独改卫生间瓷砖不影响其他完工部分=非破坏性编辑。节点流向左输入→右输出，新建节点参数复位但继承上一节点结果。</p>
+      <div class="quote">每个功能区就像节点系统中的一个节点，你可以单独修改卫生间的瓷砖……而不会影响其他已经完成的部分</div>
+      <div class="relation">分节点=模块化施工，改一处不动其他。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>色轮：四滑块定明暗</h3>
+      <p>色轮板块有四个色轮，每个下方有一个明度滑块：最左负责阴影（暗部）、中间负责画面大部分内容（肤色、固有色）=中间调、最右负责最亮部分（天空灯光）=高光、偏移滑块影响力最大会同时改变全画面明暗。log素材还原遵循「先定两头再调中间」：先调阴影和高光明度，再处理中间调，避免暗部拉过黑、高光调过量。直出色彩素材直接用色轮调色彩（暗部/中间调/亮部/全局四环），拖拽要轻柔渐进，轻微拖动变化就很大，拉猛了会色彩失真。</p>
+      <div class="quote">先遵循先定两头、再调中间的原则，先调整阴影和高光的明度，再处理中间调</div>
+      <div class="relation">四滑块分区分工，先两头后中间。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>白平衡三招+对比度轴心点</h3>
+      <p>白平衡：①自动白平衡A标识（一键算）；②白平衡吸管——点本应为白色的区域（白衬衫/白墙）自动校准全局白平衡，最实用；③手动色温色调——色温右暖黄左冷蓝、色调右品红左绿。中间调细节向右增强局部对比更锐利，但拉到110会显脏出晕影，20-30最自然。对比度和轴心点是配套参数：不调对比度时单独移轴心点无效；log素材对比度拉到1500后上拉轴心点=画面亮通透、下拉=暗黑。轴心点=对比度变化的支点，调好避免丢失暗部细节。</p>
+      <div class="quote">轴心点的作用是设定对比度变化的基准位置，相当于一个支点</div>
+      <div class="relation">吸管点白=最快白平衡；轴心点=对比度支点。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>曲线：S型+分通道RGB</h3>
+      <p>曲线是调色最核心最强大的功能。横轴左暗右亮。最经典用法：S型曲线增强对比、画面通透、更具胶片感。精髓在分通道：分别对红绿蓝三通道独立调整实现精准校正——天空高光蓝色不足→蓝曲高光部分提升；树木皮肤偏绿→绿曲中间调下压引入品红中和；暗部想复古→红曲暗部提升，想干净清透→降暗部红色。优势：能针对特定亮度范围校正，比如只调高光偏色而保留暗部色彩，比全局白平衡更精准。</p>
+      <div class="quote">曲线调色的另一精髓是可以分别对红、绿、蓝三个通道进行独立调整</div>
+      <div class="relation">S型调对比，RGB分通道调色彩。</div>
+    </div>
+    <div class="card card card-blue">
+      <h3>波形图：亮度地形图</h3>
+      <p>波形图不显示颜色，只反映每个像素的亮度值，范围0-1023，底部绝对黑、顶部绝对白，相当于画面亮度地图。log灰片校正：拉色轮亮部滑块让波形最高点接近但不超100%线（白色准确还原不丢亮部细节），拉暗部滑块让最低点轻触0%线（黑到但不死黑）。超出0%=死黑、超出100%=死白，都丢细节显脏。进阶：波形图显示RGB三通道，偏色时三条波形分散，调整到三条线重合=白平衡准确。Shift+Command+W开启示波器。</p>
+      <div class="quote">使波形的最高点接近但不超过顶部百分之百刻度线……接着调整暗部滑块向下拉动，直到波形的最低点轻微接触0%刻度线</div>
+      <div class="relation">白对100%、黑对0%，波形是调色的尺子。</div>
+    </div>
+    <div class="card card card-dark">
+      <h3>矢量示波器：色彩指南针</h3>
+      <p>矢量示波器不关心亮度，只回答两个问题：画面有什么颜色、饱和度多高。圆形彩色色盘：中心白点=中性灰（黑白灰），方向=色相（红绿蓝黄青品红六轴辐射），距离=饱和度（越远越鲜艳），点都集中中心=接近黑白。两大技巧：①肤色指示线——右上角开启后红黄之间出现斜线，健康肤色信号点分布沿线，偏绿=肤色绿、偏品红=偏紫，客观调肤色不靠眼睛；②溢出检查——信号点太靠近甚至超出外圈彩色边界=饱和度过高会失真，保持盘内色彩才自然。</p>
+      <div class="quote">健康肤色的信号点分布在这条线周围，如果点偏向绿说明肤色偏绿，若偏向品红则表示偏紫</div>
+      <div class="relation">方向看色相，距离看饱和度，肤色看指示线。</div>
+    </div>
+    <div class="card card">
+      <h3>多层级复位+前后对比</h3>
+      <p>达芬奇提供四级复位：①单个参数盘上的复位图标（弧形箭头）=恢复该参数初始状态；②色轮/曲线面板右上角整体复位=重来该面板；③节点上右键重置节点=清空当前节点所有调色；④节点图空白区域右键重置所有节点=全部重来。前后对比：单节点点节点下方数字切开/关；整体看调色前后点素材监视器圆形开关或快捷键Shift+D。二级调色预告：一级只做整体校正（对比度/白平衡），二级针对局部区域或特定颜色，结合抠像、蒙版跟踪。</p>
+      <div class="quote">如果遇到素材需要完全重新调色的情况，只需在节点图的空白区域右键选择重置所有节点</div>
+      <div class="relation">四级复位兜底，Shift+D看变化。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">达芬奇调色核心工具速查</h2><div class="card"><table><thead><tr><th>工具</th><th>作用</th><th>关键参数/操作</th></tr></thead><tbody><tr><td>节点系统</td><td>分层非破坏性编辑</td><td>每节点独立功能，顺序可调</td></tr><tr><td>色轮·明度</td><td>阴影/中间调/高光/偏移</td><td>log先定两头再调中间</td></tr><tr><td>色轮·色彩</td><td>暗部/中间调/亮部/全局</td><td>轻柔拖拽防失真</td></tr><tr><td>白平衡吸管</td><td>点白色区域校准</td><td>白衬衫/白墙</td></tr><tr><td>中间调细节</td><td>局部对比更锐利</td><td>20-30自然防脏晕</td></tr><tr><td>对比度+轴心点</td><td>明暗反差+基准支点</td><td>配套使用，log可到1500</td></tr><tr><td>色彩增强</td><td>智能提饱和度不足色</td><td>防色块断层</td></tr><tr><td>饱和度/色相</td><td>全局饱和/统一染色</td><td>0-100；复古暖黄/科幻冷蓝</td></tr><tr><td>曲线</td><td>对比+分通道校正</td><td>S型+RGB三通道独立调</td></tr><tr><td>波形图</td><td>亮度地形图0-1023</td><td>白100%/黑0%，RGB重合</td></tr><tr><td>矢量图</td><td>色彩指南针</td><td>肤色指示线+溢出检查</td></tr><tr><td>复位</td><td>多层级恢复</td><td>参数盘→整体→节点→全部</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>教程针对达芬奇（DaVinci Resolve）桌面版，不同版本界面入口可能略有差异。</li><li>log校正的0-1023范围与具体亮度值以波形图刻度为准，不同素材需按实际判断。</li><li>一级调色是基础，二级调色（蒙版/抠像跟踪）在后续教程中展开。</li></ul><div class="pitfall">把全部调整堆在一个节点里，后期无法单独修改。</div><div class="pitfall">全靠肉眼调色，受环境光和显示器色偏影响。</div><div class="pitfall">单独拉轴心点，以为能调对比度。</div><div class="pitfall">中间调细节拉满，画面显脏出晕影。</div><div class="pitfall">色彩增强当成饱和度拉高，出现色块断层。</div><div class="pitfall">饱和度拉过头，矢量图信号点超圈失真。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>节点系统=装修模块化，单独调整不影响其他。</li><li>色轮四滑块定明暗，log先定两头再调中间。</li><li>白平衡吸管点白最快，对比度+轴心点配套用。</li><li>曲线S型+分通道RGB精准校正。</li><li>波形图=亮度尺（白100%黑0%），矢量图=色彩指南针。</li><li>多层级复位+Shift+D对比。</li></ul><h3>行动清单</h3><ol><li>每类调整分一个节点（肤色/白平衡/曝光）。</li><li>用波形图校准log素材的黑白点。</li><li>白平衡用吸管点白衬衫校准。</li><li>中间调细节控制在20-30。</li><li>调色后用矢量图检查肤色线和溢出。</li></ol><h3>关键认知转变</h3><p>从『凭感觉调色、改一处全乱、输出偏色』到『节点模块化+示波器做尺子』——调色从艺术玄学变成可测量的科学流程。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 21分59秒 · 芬奇调色</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
