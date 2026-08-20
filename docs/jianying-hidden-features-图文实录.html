@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一段 12 分 07 秒的剪映专业版时间线功能实操课，把时间线上方一排功能按钮和轨道操作全讲透：①加号=新建多条时间线当独立工作区（Command+C复制→新建→Command+V粘贴=版本管理，改坏了能回原版）。②鼠标模式切换：分割模式快捷键B左键切割，Command+B多轨道">
+<title>剪映隐藏功能！让剪辑效率直接起飞｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>剪映隐藏功能！让剪辑效率直接起飞</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">12分07秒</span><span class="meta-tag tag-topic">剪映 剪辑 教程 隐藏功能</span></div>
+<a class="source-link" href="https://xhslink.cn/o/3IBCA7A91Ql" target="_blank" rel="noopener">→ 原视频链接</a>
+<a class="source-link lang-switch" href="jianying-hidden-features-场景英译.html" hreflang="en">English Version</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">多时间线=多个独立工作区</a><a href="#ch2">鼠标模式：分割+左右全选</a><a href="#ch3">撤销/重置/裁剪/删除</a><a href="#ch4">标记：便利贴+音乐踩点</a><a href="#ch5">智能剪口播：自动去语气词</a><a href="#ch6">右侧功能：录音/吸附/联动/预览</a><a href="#ch7">视图：缩放/全局预览/轨道高度</a><a href="#ch8">轨道左侧：锁定/隐藏/原声/独奏</a><a href="#ch9">时间线操作：时长/淡入淡出/音量</a><a href="#ch10">变速+更多功能</a><a href="#ch11">片段面板+结语</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一段 12 分 07 秒的剪映专业版时间线功能实操课，把时间线上方一排功能按钮和轨道操作全讲透：①加号=新建多条时间线当独立工作区（Command+C复制→新建→Command+V粘贴=版本管理，改坏了能回原版）。②鼠标模式切换：分割模式快捷键B左键切割，Command+B多轨道同步分割；向左全选（左括号）选中片段及其左侧全部，向右全选（右括号）方向相反。③撤销（回退一步）/重置（向前一步）组合用；向左裁剪Q/向右裁剪W一步到位，比分割+删除快；Delete删除。④标记=时间线便利贴（记特效怕忘），选中音频打点=音乐踩点，按节奏点卡点。⑤智能剪口播自动识别语气词/重复/停顿，一键删除，几分钟的活几秒搞定。⑥右侧功能：麦克风=配音录音（切设备/音量/消除回音）；主轨道吸附（默认开=无缝连接，关=随意移动）；磁铁（默认开=自动吸附剪切点）；关闭联动（默认开=字幕音效跟主轨动，关=独立调整）；关闭预览S（默认关=点素材自动预览，开=省资源更流畅）。⑦视图：Command+滚轮缩放、全局预览Shift+Z、三点图标调轨道高度+显示状态。⑧轨道左侧：T=文字轨/方块=视频轨/音乐图标=音乐轨；小锁=轨道锁定防误操作；隐藏轨道清理视野；关闭原声不影响画面；独奏单独监听一条轨。⑨时间线操作：拖片段尾部双括号调时长；底部圆点双头箭头=原声淡入淡出；音频中间横线上下拖=直接调音量；Command+R变速（点三角选0.5/2/10倍，片段顶部拖更快）；更多功能（倒放/定格/镜像）可右键或图标栏空白处前推。⑩右上方片段面板：画面/音频/变速/动画/调色集中调整。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:41]</span><div><strong>多时间线</strong><p>加号新建多条时间线=多个独立工作区互不干扰。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:41→02:40]</span><div><strong>版本管理</strong><p>Command+C复制→新建时间线→Command+V粘贴，原版保留随便改。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:40→04:00]</span><div><strong>分割模式</strong><p>B键左键切割；Command+B多轨道同步分割。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:00→04:46]</span><div><strong>左右全选</strong><p>左括号/右括号=选中片段及左侧/右侧全部。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:46→06:10]</span><div><strong>撤销裁剪删除</strong><p>撤销/重置；Q向左裁剪/W向右裁剪一步到位；Delete删除。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:10→07:47]</span><div><strong>标记</strong><p>便利贴打点记特效；选中音频打点=音乐踩点卡节奏。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:47→09:06]</span><div><strong>智能剪口播</strong><p>自动识别语气词/重复/停顿，一键删除，几分钟的活几秒搞定。</p></div></div>
+<div class="summary-row"><span class="time-marker">[09:06→11:43]</span><div><strong>右侧功能</strong><p>配音录音/主轨道吸附/磁铁吸附/关闭联动/关闭预览S。</p></div></div>
+<div class="summary-row"><span class="time-marker">[11:43→13:33]</span><div><strong>视图调整</strong><p>Command+滚轮缩放、全局预览Shift+Z、轨道高度+显示状态。</p></div></div>
+<div class="summary-row"><span class="time-marker">[13:33→16:00]</span><div><strong>轨道左侧功能</strong><p>轨道锁定/隐藏轨道/关闭原声/独奏监听。</p></div></div>
+<div class="summary-row"><span class="time-marker">[16:00→20:11]</span><div><strong>时间线操作</strong><p>拖尾调时长、底部圆点淡入淡出、横线拖音量。</p></div></div>
+<div class="summary-row"><span class="time-marker">[20:11→22:24]</span><div><strong>变速+更多</strong><p>Command+R变速、顶部拖拽、倒放/定格/镜像。</p></div></div>
+<div class="summary-row"><span class="time-marker">[22:24→23:50]</span><div><strong>片段面板+结语</strong><p>右上方集中调画面/音频/变速/动画/调色；下节课预告调色。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>剪映时间线功能=三组：①顶部一排按钮：加号多时间线（Command+C复制→新建→Command+V=版本管理）、分割模式B（Command+B多轨同步分割）、左右全选（左括号/[右括号]）、撤销/重置、向左裁剪Q/向右裁剪W（一步到位比分割+删除快）、Delete删除、标记（便利贴+音乐踩点）、智能剪口播（自动去语气词/重复/停顿）。②右侧功能：麦克风配音录音、主轨道吸附（默认开=无缝，关=随意移）、磁铁（默认开=自动贴剪切点）、关闭联动（默认开=字幕音效跟主轨动）、关闭预览S（卡顿就开）。③轨道左侧：小锁=锁定防误操作、隐藏轨道、关闭原声、独奏单独监听。④时间线操作：拖尾部双括号调时长、底部圆点=原声淡入淡出、音频中间横线=直接调音量、Command+R变速（0.5/2/10倍，片段顶部拖更快）。心法：每个功能默认状态先搞清楚，短剪辑用快捷键长剪辑用锁定，效率靠熟练。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-02:40</span>多时间线=多个独立工作区</h2><p>功能总览：「今天我们学剪映专业版的隐藏功能……首先我们来看一下时间线上方的这排功能按钮。」</p><p>加号新建：「先看左侧的第一个是加号图标，点击它就会在当前项目里新建一条时间线，甚至三条多条都可以。有什么用呢？相当于给你多个独立的工作区，而且互不干扰。」</p><p>版本管理场景：「当你剪完一个视频版本感觉差不多了，但还想试试另外一种节奏，改着改着发现还是原来的版本好……可是已经回不去了。再比如给客户剪完一个视频版本，客户让你改了好几轮之后说还是第一个版本好。」</p><p>操作：「你可以在修改第二个版本之前，用鼠标先选中所有素材，按Command加C复制，然后新建一条时间线，把原来时间线里的片段用Command加V粘贴过来，在这个新版本上继续改。这样一来第一条保留原版，其他几条放心大胆的改。」</p><figure><img src="assets/jianying-hidden-features/shot-01.jpg" alt="开场：剪映隐藏功能，让剪辑效率直接起飞" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:02]</span>开场：剪映隐藏功能，让剪辑效率直接起飞</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a6614a0bf297.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: JianYing&#x27;s hidden features — make your editing take off.</span></div>
+<audio class="cap-audio" src="audio/a6614a0bf297.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-02.jpg" alt="隐藏功能①：加号图标新建多条时间线=多个独立工作区" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:38]</span>隐藏功能①：加号图标新建多条时间线=多个独立工作区</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/851e2ea31e18.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hidden feature #1: the plus icon creates multiple timelines = independent workspaces.</span></div>
+<audio class="cap-audio" src="audio/851e2ea31e18.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-03.jpg" alt="版本管理：Command+C复制→新建时间线→Command+V粘贴，原版保留" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:11]</span>版本管理：Command+C复制→新建时间线→Command+V粘贴，原版保留</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/16a812cf995e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Version control: Command-C copy → new timeline → Command-V paste — the original stays safe.</span></div>
+<audio class="cap-audio" src="audio/16a812cf995e.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">02:40-04:46</span>鼠标模式：分割+左右全选</h2><p>模式切换：「第二个功能有一个鼠标箭头，旁边还带一个小三角，用来切换鼠标的操作模式。点开后可以看到除了默认的鼠标模式，还可以切换到分割模式，快捷键B。」</p><p>单轨分割：「在分割模式下，将播放头移动到想要切割的位置，用鼠标左键即可完成分割。」</p><p>多轨分割：「如果想同时分割多个轨道上的素材，可以先选中素材，再使用快捷键Command加B，就能实现多轨道同步分割，非常方便。」</p><p>左右全选：「这个菜单中还提供了向左全选和向右全选功能，快捷键分别是左括号和右括号。比如按一下左括号，然后在某个片段上点击鼠标左键，就能选中这个片段以及它左侧的所有片段。右括号功能一样，只是方向反过来选右边。」</p><figure><img src="assets/jianying-hidden-features/shot-04.jpg" alt="隐藏功能②：鼠标模式切换——分割模式快捷键B" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:53]</span>隐藏功能②：鼠标模式切换——分割模式快捷键B</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2cd59bc1cff8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hidden feature #2: switch mouse modes — blade mode with the B shortcut.</span></div>
+<audio class="cap-audio" src="audio/2cd59bc1cff8.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-05.jpg" alt="Command+B多轨道同步分割" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:29]</span>Command+B多轨道同步分割</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/008d7aa8e28f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Command-B cuts clips across several tracks at once.</span></div>
+<audio class="cap-audio" src="audio/008d7aa8e28f.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-06.jpg" alt="隐藏功能③：向左全选（[）选中片段及其左侧所有片段" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:06]</span>隐藏功能③：向左全选（[）选中片段及其左侧所有片段</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9fda13e15f3d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hidden feature #3: select-left ( [ ) picks a clip plus everything to its left.</span></div>
+<audio class="cap-audio" src="audio/9fda13e15f3d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">04:46-06:10</span>撤销/重置/裁剪/删除</h2><p>撤销重置：「撤销就是当你操作失误的时候可以往回退一步。撤销旁边是重置，也就是向前一步，当你觉得退多了想找回上一步操作。这两个功能在剪辑时偶尔会配合着用。」</p><p>向左裁剪：「比如下方这段音频素材，如果左边有一部分不想要了，选中模式后只需要点一下鼠标，或使用快捷键Q就能实现向左裁剪，前面部分直接被切掉并删除。这比之前的方法快多了，以前需要先分割、再选中、再删除，现在是一步到位。」</p><p>向右裁剪：「它旁边的向右裁剪快捷键W，原理和向左裁剪一模一样，只是裁剪方向变成了右边。」</p><p>删除：「时间线上哪个素材不想要了，直接选中它，点这个删除按钮就行了，也可以按键盘上的Delete键。」</p><figure><img src="assets/jianying-hidden-features/shot-07.jpg" alt="隐藏功能④⑤：撤销（往回一步）/重置（向前一步）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:54]</span>隐藏功能④⑤：撤销（往回一步）/重置（向前一步）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6445c84a6145.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hidden features #4-5: undo (step back) / redo (step forward).</span></div>
+<audio class="cap-audio" src="audio/6445c84a6145.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-08.jpg" alt="隐藏功能⑥⑦：向左裁剪Q/向右裁剪W，一步到位" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:36]</span>隐藏功能⑥⑦：向左裁剪Q/向右裁剪W，一步到位</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c160a1147f64.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hidden features #6-7: trim-left Q / trim-right W — done in one step.</span></div>
+<audio class="cap-audio" src="audio/c160a1147f64.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">06:10-07:47</span>标记：便利贴+音乐踩点</h2><p>第一种用法：「你不需要选中任何素材，直接把播放头移动到时间标志上的某个位置，然后点击标记，就能在时间线上打一个点。你可以理解成在时间线上贴了一张便利贴。比如我们可以标记一个加个特效怕它等一下忘记，方便回头快速找到。标记好之后，鼠标停放在标记点上就能看到标记内容。」</p><p>第二种用法：「先选中音频素材，再点标记，这样就能对音乐进行踩点。踩完之后，音频上就会出现对应的节奏点，剪视频时就能照着这个节奏点来卡点，对于新手非常友好。」</p><figure><img src="assets/jianying-hidden-features/shot-09.jpg" alt="隐藏功能⑨：标记①——时间线打点当便利贴" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:34]</span>隐藏功能⑨：标记①——时间线打点当便利贴</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ed80238a9df0.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hidden feature #9: markers — dot the timeline like a sticky note.</span></div>
+<audio class="cap-audio" src="audio/ed80238a9df0.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-10.jpg" alt="标记②：选中音频打点=音乐踩点，按节奏点卡点" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[06:36]</span>标记②：选中音频打点=音乐踩点，按节奏点卡点</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3a3a17c6e4c2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Marker use #2: select the audio and mark it to beat-map the music and cut on the beats.</span></div>
+<audio class="cap-audio" src="audio/3a3a17c6e4c2.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">07:47-09:06</span>智能剪口播：自动去语气词</h2><p>痛点：「我们日常录视频的时候是不是会经常说错、老卡壳，会有很多的语气词。以前剪这种口播视频呢，得一帧一帧的去找到这些地方，再分割删除，很麻烦。」</p><p>操作：「现在有了这个功能，你只是要把素材放到时间线上，然后在上方这里点击智能剪口播，它就会自动识别出多余的语气词、重复与停顿的地方，你点一下删除，几分钟的活几秒钟就能搞定，效率非常的快。」</p><figure><img src="assets/jianying-hidden-features/shot-11.jpg" alt="隐藏功能⑩：智能剪口播——自动识别语气词/重复/停顿" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[07:26]</span>隐藏功能⑩：智能剪口播——自动识别语气词/重复/停顿</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7e7805c0c87a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hidden feature #10: Smart Vlog Trimmer — auto-detects filler words, repeats and pauses.</span></div>
+<audio class="cap-audio" src="audio/7e7805c0c87a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">09:06-11:43</span>右侧功能：录音/吸附/联动/预览</h2><p>配音录音：「第一个是麦克风的图标，这个功能是配音的录音，点开后可以看到弹出的一个窗口，在这个窗口里可以切换你的设备录制音频，调整录音的音量，以及消除回音等设置。」</p><p>主轨道吸附：「第二个功能是主轨道吸附，在默认模式下它是开启的，所以我们在主轨道里每个素材的模式是连接的，不能留有空隙。当我们关闭这个模式下，我们再移动主轨道就可以随意移动片段位置了。」</p><p>磁铁：「第三个图标是磁铁，剪辑时在默认情况下，当我们把一段素材移动到相邻片段时，它会像磁铁吸住一样自动吸附相邻片段的剪切点，方便素材对齐。如果不想要这种效果把它关掉就行了。」</p><p>关闭联动：「第四个功能是关闭联动，这个功能默认是开着的，联动的对象包括文字、特效、音效等。当你移动主轨道的视频时，上面配好的字幕、下方的音效都会跟着一起动。而关闭联动之后，无论主轨道怎么移动，视频上方的文字和音频都不会跟着跑，这样就适合单独调整某个片段。」</p><p>关闭预览：「第五个是关闭预览，快捷键S。默认情况下这个功能是关闭的，所以你鼠标左键点一下素材它就会自动播放预览。开启之后就不预览了，点击素材也不会自动播放。如果你的电脑卡顿不流畅，可以把它打开，剪辑时会流畅一些。」</p><figure><img src="assets/jianying-hidden-features/shot-12.jpg" alt="右侧功能①：麦克风=配音录音（切换设备/消除回音）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[08:06]</span>右侧功能①：麦克风=配音录音（切换设备/消除回音）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7ab82cb024ce.mp3" type="button" aria-label="Play English audio">🔊</button><span>Right-side #1: the mic = voice-over recording (switch devices / remove echo).</span></div>
+<audio class="cap-audio" src="audio/7ab82cb024ce.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-13.jpg" alt="主轨道吸附（默认开无缝连接）+磁铁吸附（自动贴剪切点）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[09:06]</span>主轨道吸附（默认开无缝连接）+磁铁吸附（自动贴剪切点）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/06278b7dcb8b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Master-track snapping (on by default = seamless) + magnet snapping (auto-clings to cut points).</span></div>
+<audio class="cap-audio" src="audio/06278b7dcb8b.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-14.jpg" alt="关闭联动：移动主轨道时字幕/音效不再跟着跑" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[10:06]</span>关闭联动：移动主轨道时字幕/音效不再跟着跑</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/271752d6f78e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Disable linking: subtitles and sound effects no longer follow the master track.</span></div>
+<audio class="cap-audio" src="audio/271752d6f78e.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-15.jpg" alt="关闭预览S：点素材不再自动播放，电脑卡顿时打开更流畅" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[11:14]</span>关闭预览S：点素材不再自动播放，电脑卡顿时打开更流畅</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/162411b077c3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Disable preview (S): clicking a clip won&#x27;t autoplay — turn it on when your computer lags.</span></div>
+<audio class="cap-audio" src="audio/162411b077c3.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch7"><h2><span class="time-marker">11:43-13:33</span>视图：缩放/全局预览/轨道高度</h2><p>缩放：「后面这个加号和减号是放大和缩小时间线，除了点这里的按钮，你也可以用快捷键Command加鼠标滚轮来缩放会更顺手。」</p><p>全局预览：「如果你觉得缩放有点乱了，想看整个时间线上的所有素材，点旁边像这个尺子一样的图标，这个叫全局预览，快捷键Shift加Z，这个快捷键我剪辑时会经常用到，非常好用。」</p><p>轨道高度：「最后面这个是三个点的图标，是用来调节轨道高度和显示状态的。点开后拉动这个滑块可以调整轨道的上下高度，下面还有一个选项可以调整视频素材的显示状态。如果你的电脑剪起来有点卡，可以在这里改个最简洁的显示状态，会流畅一些。」</p><figure><img src="assets/jianying-hidden-features/shot-16.jpg" alt="视图：Command+滚轮缩放；全局预览Shift+Z看全部素材" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[12:18]</span>视图：Command+滚轮缩放；全局预览Shift+Z看全部素材</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/037a9be27d9c.mp3" type="button" aria-label="Play English audio">🔊</button><span>View: Command + scroll wheel to zoom; Shift-Z global preview shows every clip.</span></div>
+<audio class="cap-audio" src="audio/037a9be27d9c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-17.jpg" alt="三点图标：轨道高度滑块+视频显示状态（卡顿改最简洁）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[13:11]</span>三点图标：轨道高度滑块+视频显示状态（卡顿改最简洁）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2c71c898a4e3.mp3" type="button" aria-label="Play English audio">🔊</button><span>The three-dot icon: track height slider + clip display mode (use the simplest when lagging).</span></div>
+<audio class="cap-audio" src="audio/2c71c898a4e3.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch8"><h2><span class="time-marker">13:33-16:00</span>轨道左侧：锁定/隐藏/原声/独奏</h2><p>轨道类别：「第一排是用来识别轨道类别，比如这个T代表文字轨道，中间的小方块是视频轨道，最下方带音乐图标的是音乐轨道。这些只是方便你识别轨道类别。」</p><p>轨道锁定：「第二个图标是一把小锁，表示轨道锁定。日常剪一些长视频素材一多这个功能就很有用了。比如你在加音效，因为整体素材太多，一不小心点到了视频或文字，排查起来会非常麻烦。这时候就可以先锁定视频特效文字轨道，再一个一个的去添加音效，就不用担心误操作了。」</p><p>隐藏轨道：「第三个是隐藏轨道，有时候画面上的素材或字幕太多看着眼花，可以暂时把某个轨道隐藏掉，只看你想处理的部分，清理视野提升效率。」</p><p>关闭原声+独奏：「第四个是关闭原声，轨道上带有声音的视频素材你不想听它的原本声音，但也不想一个一个的去处理，可以直接关闭原声，不影响画面。第五个是开启独奏，当你想单独监听某一条轨道上的声音，比如只想听音乐轨道，就打开这个轨道的独奏，其他轨道会自动静音。」</p><figure><img src="assets/jianying-hidden-features/shot-18.jpg" alt="轨道左侧：T=文字轨、方块=视频轨；小锁=轨道锁定防误操作" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[14:22]</span>轨道左侧：T=文字轨、方块=视频轨；小锁=轨道锁定防误操作</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c3c58c2b6bac.mp3" type="button" aria-label="Play English audio">🔊</button><span>Track sidebar: T = text, square = video; the padlock locks tracks against misclicks.</span></div>
+<audio class="cap-audio" src="audio/c3c58c2b6bac.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-hidden-features/shot-19.jpg" alt="隐藏轨道清理视野；关闭原声不影响画面；独奏单独监听" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[15:31]</span>隐藏轨道清理视野；关闭原声不影响画面；独奏单独监听</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f5a3960563f5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Hide a track to clear the view; mute original sound without losing picture; solo to listen to one track.</span></div>
+<audio class="cap-audio" src="audio/f5a3960563f5.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch9"><h2><span class="time-marker">16:00-20:11</span>时间线操作：时长/淡入淡出/音量</h2><p>调时长：「把鼠标放在片段尾部，鼠标会变成双括号的样子，这时候按住鼠标左键拖动就可以调整片段的时长，往里推是缩短，往外拉是延长，相当于手动剪辑头尾，非常直观。」</p><p>淡入淡出：「如果把鼠标放在片段的底部靠近边缘的位置，片段的头尾两端会出现一个亮起来的圆点，再把鼠标挪到圆点上会变成左右双头箭头，这时候往里拖就可以给素材的原声添加淡入淡出的效果。」</p><p>淡出例子：「比如把音乐后面切掉，你会发现波形是突然结束的，听着会很突兀。这时只要拉动这个圆点调整一下淡出，音乐的结尾就会变得很自然舒服。」</p><p>直接调音量：「还有一个常用的操作，把鼠标放在音频素材中间这条横线上，鼠标会变成上下双头箭头，上下拖动就能直接调整这段音频的音量大小，不用进入面板调整。」</p><figure><img src="assets/jianying-hidden-features/shot-20.jpg" alt="时间线操作：拖片段尾部调时长；底部圆点=原声淡入淡出" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[17:14]</span>时间线操作：拖片段尾部调时长；底部圆点=原声淡入淡出</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/15d21d254076.mp3" type="button" aria-label="Play English audio">🔊</button><span>Timeline moves: drag a clip&#x27;s tail to trim; the bottom dot fades the original sound in and out.</span></div>
+<audio class="cap-audio" src="audio/15d21d254076.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch10"><h2><span class="time-marker">20:11-22:24</span>变速+更多功能</h2><p>变速：「我们这里先选中素材，按Command加R，素材中间会出现一个数字1.00，点一下旁边的小三角就可以选择具体速度，比如0.5倍、2倍甚至10倍。」</p><p>快捷变速：「更快捷的方式是把鼠标放在片段顶部的前端或后端，鼠标也会变成双头箭头，往后拉是变慢，往前推是加速，这个操作同样适用于音频轨道。」</p><p>更多功能：「如果你需要对素材做更多调整，比如倒放、定格、镜像这些，先选中素材，时间线上方就会出现更多小功能，你可以用鼠标按住图标栏的空白处往前推就能看到更多功能，也可以在素材上点右键，大部分基础功能都是字面意思，自己点两下就明白了。」</p><figure><img src="assets/jianying-hidden-features/shot-21.jpg" alt="变速：Command+R出现1.00，点三角选0.5/2/10倍；顶部拖拽更快" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[19:37]</span>变速：Command+R出现1.00，点三角选0.5/2/10倍；顶部拖拽更快</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cf47483525cf.mp3" type="button" aria-label="Play English audio">🔊</button><span>Speed: Command-R shows 1.00, pick 0.5x/2x/10x from the arrow; dragging the top edge is even faster.</span></div>
+<audio class="cap-audio" src="audio/cf47483525cf.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch11"><h2><span class="time-marker">22:24-23:50</span>片段面板+结语</h2><p>集中面板：「选中素材之后，右上方区域也会有一个专门针对当前片段的面板，这里功能非常集中，比如画面调整可以调大小位置，音频调整可以调音量、降噪等，变速就是前面说的快进慢放，动画是加一些简单的进出场效果，还有调色功能，这些功能之后都会讲到。」</p><p>结语：「学会了这几个小技巧，你的剪辑效率会明显提升，不过下课之后一定要花点时间去熟悉一下，对这几个的内容加深一下记忆，这样才能真正掌握。下一节课开始呢，我们将解锁剪映调色功能，也是大家最期待的。」</p></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（336段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>今天我们学简易专业版的隐藏功能</p></div>
+<div class="transcript-row"><time>00:25</time><p>首先我们来看一下时间线上方的这排功能按钮</p></div>
+<div class="transcript-row"><time>00:28</time><p>先看左侧的第一个是加号图标</p></div>
+<div class="transcript-row"><time>00:31</time><p>点击它就会在单前项目里新建一条时间线</p></div>
+<div class="transcript-row"><time>00:35</time><p>甚至三条多条都可以</p></div>
+<div class="transcript-row"><time>00:38</time><p>有什么用呢</p></div>
+<div class="transcript-row"><time>00:39</time><p>相当于给你多个独立的工作区</p></div>
+<div class="transcript-row"><time>00:42</time><p>而且互不干扰</p></div>
+<div class="transcript-row"><time>00:43</time><p>在实际操作中我们会经常遇到这种情况</p></div>
+<div class="transcript-row"><time>00:47</time><p>当你剪完一个视频版本感觉差不多了</p></div>
+<div class="transcript-row"><time>00:50</time><p>但还想试试另外一种节奏</p></div>
+<div class="transcript-row"><time>00:52</time><p>改着改着发现还是原来的版本好</p></div>
+<div class="transcript-row"><time>00:54</time><p>来的时候好好的</p></div>
+<div class="transcript-row"><time>00:55</time><p>可是已经回不去了</p></div>
+<div class="transcript-row"><time>00:57</time><p>再比如给客户剪完一个视频版本</p></div>
+<div class="transcript-row"><time>01:00</time><p>客户让你改改了好几轮之后</p></div>
+<div class="transcript-row"><time>01:02</time><p>客户说还是第一个版本好</p></div>
+<div class="transcript-row"><time>01:04</time><p>就在那个基础点上加点东西就行</p></div>
+<div class="transcript-row"><time>01:08</time><p>这时候你又懵了</p></div>
+<div class="transcript-row"><time>01:10</time><p>那有了这个功能</p></div>
+<div class="transcript-row"><time>01:11</time><p>你就完全不用担心了</p></div>
+<div class="transcript-row"><time>01:13</time><p>你可以在修改第二个版本之前</p></div>
+<div class="transcript-row"><time>01:15</time><p>用鼠标先选中所有素材</p></div>
+<div class="transcript-row"><time>01:18</time><p>按command加C复制</p></div>
+<div class="transcript-row"><time>01:20</time><p>然后新建一条时间线</p></div>
+<div class="transcript-row"><time>01:22</time><p>把原来时间线里的片段</p></div>
+<div class="transcript-row"><time>01:24</time><p>用command加V粘贴过来</p></div>
+<div class="transcript-row"><time>01:26</time><p>在这个新版本上继续改</p></div>
+<div class="transcript-row"><time>01:28</time><p>这样以来第一条保留原版</p></div>
+<div class="transcript-row"><time>01:30</time><p>其他几条放心大胆的改</p></div>
+<div class="transcript-row"><time>01:32</time><p>想怎么改就怎么改</p></div>
+<div class="transcript-row"><time>01:34</time><p>这个功能虽然简单</p></div>
+<div class="transcript-row"><time>01:36</time><p>但养成习惯之后</p></div>
+<div class="transcript-row"><time>01:37</time><p>很多时候可以减少不必要的麻烦</p></div>
+<div class="transcript-row"><time>01:39</time><p>这是第一个功能</p></div>
+<div class="transcript-row"><time>01:41</time><p>接下来我们来看第二个</p></div>
+<div class="transcript-row"><time>01:42</time><p>第二个功能有一个鼠标箭头</p></div>
+<div class="transcript-row"><time>01:44</time><p>旁边还带一个小三角</p></div>
+<div class="transcript-row"><time>01:46</time><p>用来切换鼠标的操作模式</p></div>
+<div class="transcript-row"><time>01:48</time><p>点开后可以看到</p></div>
+<div class="transcript-row"><time>01:50</time><p>除了默认的鼠标模式</p></div>
+<div class="transcript-row"><time>01:52</time><p>还可以切换到分割模式</p></div>
+<div class="transcript-row"><time>01:54</time><p>快捷键B在分割模式下</p></div>
+<div class="transcript-row"><time>01:56</time><p>将播放头移动到想要切割的位置</p></div>
+<div class="transcript-row"><time>01:59</time><p>用鼠标左键即可完成分割</p></div>
+<div class="transcript-row"><time>02:02</time><p>如果想同时分割多个轨道上的素材</p></div>
+<div class="transcript-row"><time>02:05</time><p>可以先选中素材</p></div>
+<div class="transcript-row"><time>02:07</time><p>再使用快捷键command加B</p></div>
+<div class="transcript-row"><time>02:09</time><p>就能实现多轨道同步分割</p></div>
+<div class="transcript-row"><time>02:12</time><p>非常方便</p></div>
+<div class="transcript-row"><time>02:13</time><p>除了分割模式</p></div>
+<div class="transcript-row"><time>02:14</time><p>这个菜单中还提供了</p></div>
+<div class="transcript-row"><time>02:16</time><p>向左权选和向右权选功能</p></div>
+<div class="transcript-row"><time>02:19</time><p>快捷键分别是左扩号和右扩号</p></div>
+<div class="transcript-row"><time>02:22</time><p>操作也很简单</p></div>
+<div class="transcript-row"><time>02:23</time><p>比如按一下左扩号</p></div>
+<div class="transcript-row"><time>02:25</time><p>然后在某个片段上点击鼠标左键</p></div>
+<div class="transcript-row"><time>02:28</time><p>就能选中这个片段</p></div>
+<div class="transcript-row"><time>02:29</time><p>以及它左侧的所有片段</p></div>
+<div class="transcript-row"><time>02:32</time><p>右扩号功能一样</p></div>
+<div class="transcript-row"><time>02:33</time><p>只是方向反过来选右边</p></div>
+<div class="transcript-row"><time>02:35</time><p>选中之后就可以对这些片段</p></div>
+<div class="transcript-row"><time>02:38</time><p>进行移动、删除等处理了</p></div>
+<div class="transcript-row"><time>02:40</time><p>接下来看下一个功能</p></div>
+<div class="transcript-row"><time>02:42</time><p>撤销</p></div>
+<div class="transcript-row"><time>02:43</time><p>撤销就是当你操作失误的时候</p></div>
+<div class="transcript-row"><time>02:46</time><p>可以往回退一步</p></div>
+<div class="transcript-row"><time>02:47</time><p>好比下集走错了回不齐</p></div>
+<div class="transcript-row"><time>02:50</time><p>撤销旁边是重置</p></div>
+<div class="transcript-row"><time>02:52</time><p>也就是向前一步</p></div>
+<div class="transcript-row"><time>02:53</time><p>当你觉得退多了</p></div>
+<div class="transcript-row"><time>02:55</time><p>想找回上一步操作</p></div>
+<div class="transcript-row"><time>02:57</time><p>这两个功能在剪辑时偶尔会配合着用</p></div>
+<div class="transcript-row"><time>03:00</time><p>第五个功能是分割</p></div>
+<div class="transcript-row"><time>03:02</time><p>刚才已经讲过了</p></div>
+<div class="transcript-row"><time>03:03</time><p>所以我们直接看第六个</p></div>
+<div class="transcript-row"><time>03:05</time><p>向左裁剪</p></div>
+<div class="transcript-row"><time>03:06</time><p>这个理解起来也很简单</p></div>
+<div class="transcript-row"><time>03:08</time><p>比如下方这段音频素材</p></div>
+<div class="transcript-row"><time>03:10</time><p>如果左边有一部分不想要了</p></div>
+<div class="transcript-row"><time>03:13</time><p>选中模式后</p></div>
+<div class="transcript-row"><time>03:14</time><p>只需要点一下鼠标</p></div>
+<div class="transcript-row"><time>03:15</time><p>或使用快捷键Q就能实现向左裁剪</p></div>
+<div class="transcript-row"><time>03:19</time><p>前面部分直接被切掉并删除</p></div>
+<div class="transcript-row"><time>03:22</time><p>这比之前的方法快多了</p></div>
+<div class="transcript-row"><time>03:24</time><p>以前需要先分割</p></div>
+<div class="transcript-row"><time>03:25</time><p>再选中再删除</p></div>
+<div class="transcript-row"><time>03:27</time><p>现在是一步到位</p></div>
+<div class="transcript-row"><time>03:29</time><p>它旁边的向右裁剪</p></div>
+<div class="transcript-row"><time>03:31</time><p>快捷键W</p></div>
+<div class="transcript-row"><time>03:32</time><p>原理和向左裁剪一模一样</p></div>
+<div class="transcript-row"><time>03:34</time><p>只是裁剪方向变成了右边</p></div>
+<div class="transcript-row"><time>03:37</time><p>第八个功能是删除</p></div>
+<div class="transcript-row"><time>03:39</time><p>时间线上哪个素材不想要了</p></div>
+<div class="transcript-row"><time>03:41</time><p>直接选中它</p></div>
+<div class="transcript-row"><time>03:43</time><p>点这个删除按钮就行了</p></div>
+<div class="transcript-row"><time>03:45</time><p>也可以按键盘上的delay的键</p></div>
+<div class="transcript-row"><time>03:47</time><p>这里我们先把刚才删掉的音乐拉回来</p></div>
+<div class="transcript-row"><time>03:50</time><p>因为接下来的标记功能会用到它</p></div>
+<div class="transcript-row"><time>03:53</time><p>标记有两种常见用法</p></div>
+<div class="transcript-row"><time>03:54</time><p>第一种</p></div>
+<div class="transcript-row"><time>03:55</time><p>你不需要选中任何素材</p></div>
+<div class="transcript-row"><time>03:57</time><p>直接把播放头移动到时间标志上的某个位置</p></div>
+<div class="transcript-row"><time>04:01</time><p>然后点击标记</p></div>
+<div class="transcript-row"><time>04:02</time><p>就能在时间线上打一个点</p></div>
+<div class="transcript-row"><time>04:05</time><p>你可以理解成在时间线上贴了一张便利贴</p></div>
+<div class="transcript-row"><time>04:09</time><p>比如我们可以标记一个加个特效</p></div>
+<div class="transcript-row"><time>04:11</time><p>它等一下忘记</p></div>
+<div class="transcript-row"><time>04:12</time><p>方便回头快速找到</p></div>
+<div class="transcript-row"><time>04:14</time><p>标记好之后</p></div>
+<div class="transcript-row"><time>04:15</time><p>鼠标停放在标记点上就能看到标记内容</p></div>
+<div class="transcript-row"><time>04:19</time><p>第二种用法是先选中音频素材</p></div>
+<div class="transcript-row"><time>04:22</time><p>再点标记</p></div>
+<div class="transcript-row"><time>04:23</time><p>这样就能对音乐进行踩点</p></div>
+<div class="transcript-row"><time>04:25</time><p>踩完之后</p></div>
+<div class="transcript-row"><time>04:26</time><p>音频上就会出现对应的节奏点</p></div>
+<div class="transcript-row"><time>04:29</time><p>剪视频时就能照着这个节奏点来卡点</p></div>
+<div class="transcript-row"><time>04:32</time><p>对于新手非常友好</p></div>
+<div class="transcript-row"><time>04:33</time><p>我们接下来看下一个功能</p></div>
+<div class="transcript-row"><time>04:36</time><p>智能减口波</p></div>
+<div class="transcript-row"><time>04:38</time><p>我们日常录视频的时候</p></div>
+<div class="transcript-row"><time>04:39</time><p>是不是会经常说错</p></div>
+<div class="transcript-row"><time>04:41</time><p>老卡壳会有很多的语气词</p></div>
+<div class="transcript-row"><time>04:43</time><p>比如</p></div>
+<div class="transcript-row"><time>04:49</time><p>以前剪这种口波视频呢</p></div>
+<div class="transcript-row"><time>04:51</time><p>得一针一针的去找到这些地方</p></div>
+<div class="transcript-row"><time>04:53</time><p>再分割</p></div>
+<div class="transcript-row"><time>04:54</time><p>删除很麻烦</p></div>
+<div class="transcript-row"><time>04:56</time><p>现在有了这个功能</p></div>
+<div class="transcript-row"><time>04:57</time><p>你只是要把素材放到时间线上</p></div>
+<div class="transcript-row"><time>05:00</time><p>然后在上方这里点击智能减口波</p></div>
+<div class="transcript-row"><time>05:03</time><p>它就会自动识别出多余的语气词</p></div>
+<div class="transcript-row"><time>05:06</time><p>重复与停顿的地方</p></div>
+<div class="transcript-row"><time>05:08</time><p>你点一下删除</p></div>
+<div class="transcript-row"><time>05:10</time><p>几分钟的火</p></div>
+<div class="transcript-row"><time>05:11</time><p>几秒钟就能搞定</p></div>
+<div class="transcript-row"><time>05:12</time><p>效率非常的快</p></div>
+<div class="transcript-row"><time>05:13</time><p>再来看右侧的几个功能</p></div>
+<div class="transcript-row"><time>05:15</time><p>第一个是麦克风的图标</p></div>
+<div class="transcript-row"><time>05:16</time><p>这个功能是剪音的录音</p></div>
+<div class="transcript-row"><time>05:18</time><p>点开后可以看到弹出的一个窗口</p></div>
+<div class="transcript-row"><time>05:20</time><p>在这个窗口里</p></div>
+<div class="transcript-row"><time>05:21</time><p>可以切换你的设备录制音</p></div>
+<div class="transcript-row"><time>05:24</time><p>调整录音的音量</p></div>
+<div class="transcript-row"><time>05:25</time><p>以及消除回音等设置</p></div>
+<div class="transcript-row"><time>05:27</time><p>第二个功能是主轨道吸附</p></div>
+<div class="transcript-row"><time>05:30</time><p>在默认模式下</p></div>
+<div class="transcript-row"><time>05:31</time><p>它是开启的</p></div>
+<div class="transcript-row"><time>05:32</time><p>所以我们在主轨道里</p></div>
+<div class="transcript-row"><time>05:34</time><p>每个素材的模式是连接的</p></div>
+<div class="transcript-row"><time>05:36</time><p>不能留有空隙</p></div>
+<div class="transcript-row"><time>05:37</time><p>当我们关闭这个模式下</p></div>
+<div class="transcript-row"><time>05:39</time><p>我们再移动主轨道</p></div>
+<div class="transcript-row"><time>05:40</time><p>就可以随意移动片段位置了</p></div>
+<div class="transcript-row"><time>05:43</time><p>第三个图标是磁铁</p></div>
+<div class="transcript-row"><time>05:45</time><p>剪辑时在默认情况下</p></div>
+<div class="transcript-row"><time>05:47</time><p>当我们把一段素材</p></div>
+<div class="transcript-row"><time>05:49</time><p>移动到相邻片段时</p></div>
+<div class="transcript-row"><time>05:51</time><p>它会像磁铁吸住一样</p></div>
+<div class="transcript-row"><time>05:53</time><p>自动吸附相邻片段的剪切点</p></div>
+<div class="transcript-row"><time>05:56</time><p>方便以素材对齐</p></div>
+<div class="transcript-row"><time>05:57</time><p>如果不想要这种效果</p></div>
+<div class="transcript-row"><time>05:59</time><p>把它关掉就行了</p></div>
+<div class="transcript-row"><time>06:00</time><p>拖动素材就不会被吸住了</p></div>
+<div class="transcript-row"><time>06:03</time><p>第四个功能是关闭联动</p></div>
+<div class="transcript-row"><time>06:05</time><p>这个功能默认是开着的</p></div>
+<div class="transcript-row"><time>06:07</time><p>联动的对线包括文字</p></div>
+<div class="transcript-row"><time>06:10</time><p>特效、音效等</p></div>
+<div class="transcript-row"><time>06:11</time><p>你可以自己选择</p></div>
+<div class="transcript-row"><time>06:13</time><p>如果你不做更改</p></div>
+<div class="transcript-row"><time>06:14</time><p>当你移动主轨道的视频时</p></div>
+<div class="transcript-row"><time>06:16</time><p>上面配好的字幕</p></div>
+<div class="transcript-row"><time>06:18</time><p>下方的音效都会跟着一起动</p></div>
+<div class="transcript-row"><time>06:20</time><p>而关闭联动之后</p></div>
+<div class="transcript-row"><time>06:22</time><p>无论主轨道怎么移动</p></div>
+<div class="transcript-row"><time>06:24</time><p>视频上方的文字和音频</p></div>
+<div class="transcript-row"><time>06:26</time><p>都不会跟着跑</p></div>
+<div class="transcript-row"><time>06:28</time><p>这样就适合单独调整某个片段</p></div>
+<div class="transcript-row"><time>06:31</time><p>第五个是关闭预览</p></div>
+<div class="transcript-row"><time>06:33</time><p>快捷键S</p></div>
+<div class="transcript-row"><time>06:34</time><p>默认情况下</p></div>
+<div class="transcript-row"><time>06:35</time><p>这个功能是光调的</p></div>
+<div class="transcript-row"><time>06:37</time><p>所以你鼠标左键点一下素材</p></div>
+<div class="transcript-row"><time>06:39</time><p>它就会自动播放预览</p></div>
+<div class="transcript-row"><time>06:41</time><p>开启之后就不预览了</p></div>
+<div class="transcript-row"><time>06:43</time><p>点击素材也不会自动播放</p></div>
+<div class="transcript-row"><time>06:45</time><p>如果你的电脑卡顿不流畅</p></div>
+<div class="transcript-row"><time>06:47</time><p>可以把它打开</p></div>
+<div class="transcript-row"><time>06:49</time><p>紧急时会流畅一些</p></div>
+<div class="transcript-row"><time>06:51</time><p>下面几个功能是调整时间线视图的</p></div>
+<div class="transcript-row"><time>06:54</time><p>先来看后面这个加号和减号</p></div>
+<div class="transcript-row"><time>06:57</time><p>这是放大和缩小时间线</p></div>
+<div class="transcript-row"><time>06:59</time><p>除了点这里的按钮</p></div>
+<div class="transcript-row"><time>07:01</time><p>你也可以用快捷键</p></div>
+<div class="transcript-row"><time>07:02</time><p>卡麦利加鼠标滚轮</p></div>
+<div class="transcript-row"><time>07:04</time><p>来缩放会更顺手</p></div>
+<div class="transcript-row"><time>07:06</time><p>那如果你觉得缩放有点乱了</p></div>
+<div class="transcript-row"><time>07:08</time><p>想看整个时间线上的所有素材</p></div>
+<div class="transcript-row"><time>07:11</time><p>点旁边像这个尺子一样的图标</p></div>
+<div class="transcript-row"><time>07:14</time><p>这个叫全局预览</p></div>
+<div class="transcript-row"><time>07:16</time><p>快捷键Shift加Z</p></div>
+<div class="transcript-row"><time>07:17</time><p>这个快捷键我剪辑时会经常用到</p></div>
+<div class="transcript-row"><time>07:20</time><p>非常好用</p></div>
+<div class="transcript-row"><time>07:21</time><p>最后面这个是三个点的图标</p></div>
+<div class="transcript-row"><time>07:23</time><p>是用来调节轨道高度和显示状态的</p></div>
+<div class="transcript-row"><time>07:27</time><p>点开后拉动这个滑块</p></div>
+<div class="transcript-row"><time>07:29</time><p>可以调整轨道的上下高度</p></div>
+<div class="transcript-row"><time>07:31</time><p>下面还有一个选项</p></div>
+<div class="transcript-row"><time>07:33</time><p>可以调整视频素材的显示状态</p></div>
+<div class="transcript-row"><time>07:36</time><p>如果你的电脑捡起来有点卡</p></div>
+<div class="transcript-row"><time>07:38</time><p>可以在这里改个最简洁的显示状态</p></div>
+<div class="transcript-row"><time>07:41</time><p>会流畅一些</p></div>
+<div class="transcript-row"><time>07:42</time><p>接下来我们来看轨道上的一些常用功能</p></div>
+<div class="transcript-row"><time>07:45</time><p>首先注意时间线最左侧有很多图标</p></div>
+<div class="transcript-row"><time>07:49</time><p>第一排是用来识别轨道类别</p></div>
+<div class="transcript-row"><time>07:51</time><p>比如这个T代表文字轨道</p></div>
+<div class="transcript-row"><time>07:54</time><p>中间的小方块是视频轨道</p></div>
+<div class="transcript-row"><time>07:56</time><p>最下方带音乐图标的是音乐轨道</p></div>
+<div class="transcript-row"><time>08:00</time><p>这些只是方便你识别轨道类别就不多讲了</p></div>
+<div class="transcript-row"><time>08:04</time><p>第二个图标是一把小锁</p></div>
+<div class="transcript-row"><time>08:06</time><p>表示轨道锁定</p></div>
+<div class="transcript-row"><time>08:07</time><p>日常剪一些长视频</p></div>
+<div class="transcript-row"><time>08:09</time><p>素材一多这个功能就很有用了</p></div>
+<div class="transcript-row"><time>08:11</time><p>比如你在加音效</p></div>
+<div class="transcript-row"><time>08:13</time><p>因为整体素材太多</p></div>
+<div class="transcript-row"><time>08:15</time><p>一不小心点到了视频或文字</p></div>
+<div class="transcript-row"><time>08:17</time><p>排查起来会非常麻烦</p></div>
+<div class="transcript-row"><time>08:19</time><p>这时候就可以先锁定视频特效文字轨道</p></div>
+<div class="transcript-row"><time>08:23</time><p>再一个一个的去添加音效</p></div>
+<div class="transcript-row"><time>08:25</time><p>就不用担心误操作了</p></div>
+<div class="transcript-row"><time>08:28</time><p>第三个是隐藏轨道</p></div>
+<div class="transcript-row"><time>08:30</time><p>有时候画面上的素材或字幕太多</p></div>
+<div class="transcript-row"><time>08:32</time><p>看着眼花可以暂时把某个轨道隐藏掉</p></div>
+<div class="transcript-row"><time>08:36</time><p>只看你想处理的部分</p></div>
+<div class="transcript-row"><time>08:38</time><p>清理视野提升效率</p></div>
+<div class="transcript-row"><time>08:41</time><p>第四个是关闭原声</p></div>
+<div class="transcript-row"><time>08:42</time><p>这个很好理解</p></div>
+<div class="transcript-row"><time>08:43</time><p>比如轨道上带有声音的视频素材</p></div>
+<div class="transcript-row"><time>08:46</time><p>你不想听它的原本声音</p></div>
+<div class="transcript-row"><time>08:48</time><p>但也不想一个一个的去处理</p></div>
+<div class="transcript-row"><time>08:51</time><p>可以直接关闭原声</p></div>
+<div class="transcript-row"><time>08:52</time><p>不影响画面</p></div>
+<div class="transcript-row"><time>08:53</time><p>也不用单独静音</p></div>
+<div class="transcript-row"><time>08:55</time><p>第五个是开启读咒</p></div>
+<div class="transcript-row"><time>08:57</time><p>当你想单独监听某一条轨道上的声音</p></div>
+<div class="transcript-row"><time>09:01</time><p>比如只想听音乐轨道</p></div>
+<div class="transcript-row"><time>09:03</time><p>或者只想听音效轨道</p></div>
+<div class="transcript-row"><time>09:05</time><p>就打开这个轨道的读咒</p></div>
+<div class="transcript-row"><time>09:07</time><p>其他轨道会自动静音</p></div>
+<div class="transcript-row"><time>09:09</time><p>方便你快速监听</p></div>
+<div class="transcript-row"><time>09:11</time><p>除了轨道上的功能</p></div>
+<div class="transcript-row"><time>09:12</time><p>时间线里也有一些非常实用的操作</p></div>
+<div class="transcript-row"><time>09:15</time><p>我们一个个来看</p></div>
+<div class="transcript-row"><time>09:16</time><p>首先在时间线里拖入一个片段</p></div>
+<div class="transcript-row"><time>09:19</time><p>把鼠标放在片段尾部</p></div>
+<div class="transcript-row"><time>09:21</time><p>鼠标会变成双括号的样子</p></div>
+<div class="transcript-row"><time>09:24</time><p>这时候按住鼠标左键拖动</p></div>
+<div class="transcript-row"><time>09:26</time><p>就可以调整片段的时长</p></div>
+<div class="transcript-row"><time>09:28</time><p>往里推是缩短</p></div>
+<div class="transcript-row"><time>09:29</time><p>往外拉是侦查</p></div>
+<div class="transcript-row"><time>09:31</time><p>相当于手动剪辑头尾</p></div>
+<div class="transcript-row"><time>09:33</time><p>非常直观</p></div>
+<div class="transcript-row"><time>09:34</time><p>如果把鼠标放在片段的底部</p></div>
+<div class="transcript-row"><time>09:37</time><p>靠近边缘的位置</p></div>
+<div class="transcript-row"><time>09:38</time><p>片段的头尾两端</p></div>
+<div class="transcript-row"><time>09:39</time><p>会出现一个亮起来的圆点</p></div>
+<div class="transcript-row"><time>09:42</time><p>再把鼠标挪到圆点上</p></div>
+<div class="transcript-row"><time>09:43</time><p>会变成左右双头箭头</p></div>
+<div class="transcript-row"><time>09:46</time><p>这时候往里拖</p></div>
+<div class="transcript-row"><time>09:47</time><p>就可以给素材的原生</p></div>
+<div class="transcript-row"><time>09:49</time><p>添加淡入淡出的效果</p></div>
+<div class="transcript-row"><time>09:51</time><p>我们这里单独放一段音乐</p></div>
+<div class="transcript-row"><time>09:52</time><p>会看得更清楚</p></div>
+<div class="transcript-row"><time>09:54</time><p>比如把音乐后面切掉</p></div>
+<div class="transcript-row"><time>09:56</time><p>你会发现波形是突然结束的</p></div>
+<div class="transcript-row"><time>09:59</time><p>听着会很突兀</p></div>
+<div class="transcript-row"><time>10:00</time><p>这时只要拉动这个圆点</p></div>
+<div class="transcript-row"><time>10:02</time><p>调整一下淡出</p></div>
+<div class="transcript-row"><time>10:03</time><p>音乐的结尾就会变得很自然舒服</p></div>
+<div class="transcript-row"><time>10:06</time><p>还有一个常用的操作</p></div>
+<div class="transcript-row"><time>10:08</time><p>把鼠标放在音频</p></div>
+<div class="transcript-row"><time>10:10</time><p>素材中间这条横线上</p></div>
+<div class="transcript-row"><time>10:12</time><p>鼠标会变成上下双头箭头</p></div>
+<div class="transcript-row"><time>10:14</time><p>上下拖动就能直接调整</p></div>
+<div class="transcript-row"><time>10:17</time><p>这段音频的音量大小</p></div>
+<div class="transcript-row"><time>10:19</time><p>不用进入面板调整</p></div>
+<div class="transcript-row"><time>10:20</time><p>接着是变速</p></div>
+<div class="transcript-row"><time>10:22</time><p>我们这里先选中素材</p></div>
+<div class="transcript-row"><time>10:24</time><p>按command加R</p></div>
+<div class="transcript-row"><time>10:25</time><p>素材中间会出现一个数字1.00</p></div>
+<div class="transcript-row"><time>10:29</time><p>点一下旁边的小三角</p></div>
+<div class="transcript-row"><time>10:31</time><p>就可以选择具体速度</p></div>
+<div class="transcript-row"><time>10:32</time><p>比如0.5倍</p></div>
+<div class="transcript-row"><time>10:35</time><p>2倍甚至10倍</p></div>
+<div class="transcript-row"><time>10:37</time><p>更快捷的方式是</p></div>
+<div class="transcript-row"><time>10:38</time><p>把鼠标放在片段顶部的前端或后端</p></div>
+<div class="transcript-row"><time>10:42</time><p>鼠标也会变成双头箭头</p></div>
+<div class="transcript-row"><time>10:44</time><p>往后拉是变慢</p></div>
+<div class="transcript-row"><time>10:46</time><p>往前推是加速</p></div>
+<div class="transcript-row"><time>10:48</time><p>这个操作同样适用于音频轨道</p></div>
+<div class="transcript-row"><time>10:50</time><p>这几个小技巧掌握了</p></div>
+<div class="transcript-row"><time>10:51</time><p>剪辑效率会明显提升</p></div>
+<div class="transcript-row"><time>10:53</time><p>如果你需要对素材做更多调整</p></div>
+<div class="transcript-row"><time>10:56</time><p>比如倒放</p></div>
+<div class="transcript-row"><time>10:57</time><p>定格</p></div>
+<div class="transcript-row"><time>10:58</time><p>镜像这些操作起来也非常简单</p></div>
+<div class="transcript-row"><time>11:00</time><p>先选中素材</p></div>
+<div class="transcript-row"><time>11:02</time><p>时间线上方就会出现更多小功能</p></div>
+<div class="transcript-row"><time>11:05</time><p>你可以用鼠标按住图标盘的空白处往前推</p></div>
+<div class="transcript-row"><time>11:09</time><p>就能看到更多功能</p></div>
+<div class="transcript-row"><time>11:10</time><p>也可以在素材上点右键</p></div>
+<div class="transcript-row"><time>11:13</time><p>大部分基础功能都是字面意思</p></div>
+<div class="transcript-row"><time>11:15</time><p>自己点两下就明白了</p></div>
+<div class="transcript-row"><time>11:17</time><p>另外</p></div>
+<div class="transcript-row"><time>11:18</time><p>选中素材之后</p></div>
+<div class="transcript-row"><time>11:19</time><p>右上方区域也会有一个</p></div>
+<div class="transcript-row"><time>11:21</time><p>专门针对单前片段的面板</p></div>
+<div class="transcript-row"><time>11:23</time><p>这里功能非常集中</p></div>
+<div class="transcript-row"><time>11:25</time><p>比如画面调整可以调大小位置</p></div>
+<div class="transcript-row"><time>11:28</time><p>音频调整可以调音量</p></div>
+<div class="transcript-row"><time>11:30</time><p>降噪等</p></div>
+<div class="transcript-row"><time>11:31</time><p>变数就是前面说的快进慢放</p></div>
+<div class="transcript-row"><time>11:34</time><p>动画是加一些简单的进出场效果</p></div>
+<div class="transcript-row"><time>11:37</time><p>还有调色功能</p></div>
+<div class="transcript-row"><time>11:38</time><p>这些功能之后都会讲到</p></div>
+<div class="transcript-row"><time>11:41</time><p>好了这些可能先到这里</p></div>
+<div class="transcript-row"><time>11:42</time><p>学会了这几个小技巧</p></div>
+<div class="transcript-row"><time>11:44</time><p>你的剪辑效率会明显提升</p></div>
+<div class="transcript-row"><time>11:46</time><p>不过下课之后一定要花点时间去熟悉一下</p></div>
+<div class="transcript-row"><time>11:49</time><p>对这几个的内容加深一下记忆</p></div>
+<div class="transcript-row"><time>11:51</time><p>这样才能真正掌握</p></div>
+<div class="transcript-row"><time>11:53</time><p>下一节课开始呢</p></div>
+<div class="transcript-row"><time>11:54</time><p>我们将解锁检映调色功能</p></div>
+<div class="transcript-row"><time>11:56</time><p>也是大家最期待的</p></div>
+<div class="transcript-row"><time>11:59</time><p>好了这里是自由摄影同学们</p></div>
+<div class="transcript-row"><time>12:01</time><p>拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>
