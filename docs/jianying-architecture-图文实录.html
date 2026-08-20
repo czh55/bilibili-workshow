@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一段 12 分 34 秒的剪映专业版入门教程，帮你建立软件底层架构认知。打开剪映只需记住三点：左侧模板套用=直接出片（适合零基础）、云空间=电脑手机平板同步剪辑（需登录）、中间官方功能介绍（新手不管）；最上方「开始创作」才是剪辑主界面，剪辑中途退出会实时保存为草稿。剪辑界面三大板">
+<title>一个视频教会你剪映专业版底层架构｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>一个视频教会你剪映专业版底层架构</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">12分34秒</span><span class="meta-tag tag-topic">剪映 剪辑 教程 视频制作</span></div>
+<a class="source-link" href="https://xhslink.cn/o/Ad8AIwVNoLm" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">打开剪映：记住三个点</a><a href="#ch2">剪辑界面三大板块</a><a href="#ch3">素材管理：四个实用功能</a><a href="#ch4">音频导入：四类方式</a><a href="#ch5">文本五个常用功能</a><a href="#ch6">贴纸·特效·转场</a><a href="#ch7">字幕·滤镜·调节</a><a href="#ch8">模板·数字人·结语作业</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一段 12 分 34 秒的剪映专业版入门教程，帮你建立软件底层架构认知。打开剪映只需记住三点：左侧模板套用=直接出片（适合零基础）、云空间=电脑手机平板同步剪辑（需登录）、中间官方功能介绍（新手不管）；最上方「开始创作」才是剪辑主界面，剪辑中途退出会实时保存为草稿。剪辑界面三大板块：左侧效果栏（添加视频/图片/文字/效果）、中间预览区（实时观看）、底部时间线（剪辑核心）。效果栏自上而下依次讲解：素材（导入/账号收藏/AI素材/官方素材库）、音频（视频提取/链接下载/收藏音乐/AI音乐/音乐库/音效）、文本（新建文本/智能包装/花字库/文字模板/智能文本识别字幕）、贴纸（贴纸库/图形库）、特效（画面特效管环境/人物特效管人）、转场（拖到片段间调时长）、字幕、智能包装、滤镜（一键预设色彩）、调节（调色：基础/HSL曲线/色轮；调节管整条时间线、调整管单个片段）、模板（成品框架替换素材）、数字人（虚拟口播）。结语作业：上手熟悉九个功能。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:52]</span><div><strong>界面三要点</strong><p>模板套用直接出片、云空间多端同步、官方介绍新手不管；开始创作=主界面，退出实时保存草稿。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:52→01:52]</span><div><strong>剪辑界面三板块</strong><p>效果栏加素材/预览区观看/时间线排列剪辑；素材导入加号或拖拽。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:52→02:47]</span><div><strong>素材管理</strong><p>账号收藏/AI素材/语音素材多端同步/官方素材库分类齐全。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:47→04:04]</span><div><strong>音频导入</strong><p>视频提取/链接下载/收藏音乐/AI音乐/音乐库搜索/音效热梗。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:04→06:40]</span><div><strong>文本五功能</strong><p>新建文本/智能包装/花字库/文字模板/智能文本识别字幕+歌词+文稿匹配。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:40→08:47]</span><div><strong>贴纸特效转场</strong><p>贴纸库+图形库；画面特效管环境人物特效管人；转场拖片段间调时长。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:47→10:54]</span><div><strong>字幕滤镜调节</strong><p>识别字幕/歌词；滤镜一键预设色彩；调节=调色（HSL曲线/色轮）。</p></div></div>
+<div class="summary-row"><span class="time-marker">[10:54→12:34]</span><div><strong>模板数字人结语</strong><p>模板成品框架替换素材导出；数字人虚拟口播；作业=上手九功能。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>剪映专业版底层架构=界面三板块（效果栏/预览区/时间线）+效果栏九个功能链路。上手顺序：①素材导入→②音频（视频提取/链接/收藏/AI/音乐库/音效）→③文本（新建/智能包装/花字/模板/智能字幕）→④贴纸→⑤特效（画面管环境人物管人）→⑥转场（拖到片段间）→⑦字幕→⑧滤镜（一键预设）→⑨调节（调色，调节=整条时间线/调整=单个片段）。模板=成品框架替换素材，数字人=虚拟口播。核心方法：眼睛看不记住，上手才记住。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:52</span>打开剪映：记住三个点</h2><p>开场定位：「一个视频教会你剪映专业版，让你彻底理解剪映软件的底层架构。」</p><p>打开后的界面只需记住三点：第一，左侧的模板套用是直接出片，适合完全零基础；第二，云空间可以电脑手机平板同步剪辑，不过需要先登录；第三，中间一堆官方功能介绍、简易教程以及AI视频图文入口，新手暂时不用管。</p><p>「最上方的开始创作，是真正进入剪辑的主界面。」剪辑途中如果退出了，剪映会实时保存，以草稿的形式储存到下方，不用担心工程丢失。</p><figure><img src="assets/jianying-architecture/shot-01.jpg" alt="开场：一个视频教会你剪映专业版底层架构" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:02]</span>开场：一个视频教会你剪映专业版底层架构</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7b6d93e71967.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: one video teaches you the underlying architecture of JianYing Pro</span></div>
+<audio class="cap-audio" src="audio/7b6d93e71967.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-02.jpg" alt="打开剪映记住三点：模板套用直接出片、云空间同步、官方功能介绍" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:09]</span>打开剪映记住三点：模板套用直接出片、云空间同步、官方功能介绍</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2263b88f8747.mp3" type="button" aria-label="Play English audio">🔊</button><span>Remember three things when opening JianYing: template one-tap output, cloud sync, official intros</span></div>
+<audio class="cap-audio" src="audio/2263b88f8747.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-03.jpg" alt="最上方开始创作=真正进入剪辑主界面；退出会实时保存为草稿" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:38]</span>最上方开始创作=真正进入剪辑主界面；退出会实时保存为草稿</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8db4df94ce42.mp3" type="button" aria-label="Play English audio">🔊</button><span>Create at the top = the real editing main screen; exit saves a draft automatically</span></div>
+<audio class="cap-audio" src="audio/8db4df94ce42.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:52-01:52</span>剪辑界面三大板块</h2><p>进入剪辑界面后，界面主要分成三个板块：「最左侧的是效果栏，你可以在这里添加视频、图片、文字以及各种效果；中间是预览区，实时观看素材以及剪辑后的效果；底部是时间线，这是剪辑的核心区域，所有的素材都会在这里排列和剪辑。」</p><p>新手最需要搞懂的是左侧效果栏，因为所有要剪辑的东西都得先从这里加进去。</p><p>素材导入：点加号选中文件点击导入，或者打开文件夹直接拖拽进来；素材拖到时间线上就可以剪辑，不需要直接按delete删除。</p><figure><img src="assets/jianying-architecture/shot-04.jpg" alt="剪辑界面三大板块：左侧效果栏、中间预览区、底部时间线" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:57]</span>剪辑界面三大板块：左侧效果栏、中间预览区、底部时间线</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/15ddcecadf88.mp3" type="button" aria-label="Play English audio">🔊</button><span>The editing screen has three zones: effects panel left, preview center, timeline bottom</span></div>
+<audio class="cap-audio" src="audio/15ddcecadf88.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-05.jpg" alt="时间线是剪辑核心区域，所有素材在这里排列和剪辑" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:15]</span>时间线是剪辑核心区域，所有素材在这里排列和剪辑</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b600b1ccb753.mp3" type="button" aria-label="Play English audio">🔊</button><span>The timeline is the core — every clip is arranged and cut here</span></div>
+<audio class="cap-audio" src="audio/b600b1ccb753.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-06.jpg" alt="导入素材：点加号选文件，或从文件夹直接拖拽进时间线" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:34]</span>导入素材：点加号选文件，或从文件夹直接拖拽进时间线</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5d8cc5208ecf.mp3" type="button" aria-label="Play English audio">🔊</button><span>Import clips: tap the plus and pick files, or drag them straight onto the timeline</span></div>
+<audio class="cap-audio" src="audio/5d8cc5208ecf.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:52-02:47</span>素材管理：四个实用功能</h2><p>账号收藏：登录账号后把经常要用的素材收藏起来，下次剪辑不用翻文件夹，直接在收藏里就能找到，非常省时间。</p><p>AI素材：以文字的形式输入想法，就可以生成图片或视频素材。</p><p>语音素材：用来多设备同步，电脑上存的素材手机上也能接着用。</p><p>官方素材库：分类非常齐全——热门、节日、美食、旅行，几乎需要的主题都能找到，而且素材经常更新。</p><figure><img src="assets/jianying-architecture/shot-07.jpg" alt="素材管理：账号收藏、AI素材（文字生成）、官方素材库" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:11]</span>素材管理：账号收藏、AI素材（文字生成）、官方素材库</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8ea2bce10d59.mp3" type="button" aria-label="Play English audio">🔊</button><span>Clip management: account favorites, AI clips from text, official library</span></div>
+<audio class="cap-audio" src="audio/8ea2bce10d59.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:47-04:04</span>音频导入：四类方式</h2><p>第一种从视频素材中提取音乐：点击音频提取，导入视频后得到没有画面只有音频的素材；还有链接下载功能，复制抖音里的视频链接直接粘贴就能导入音频。</p><p>第二种是收藏的音乐，在抖音里收藏的歌曲这里会同步显示（需先登录账号）。</p><p>第三种AI音乐：输入想要的风格或想法关键词，自动生成一段原创音乐。</p><p>第四种音乐库：查找任何类型的歌曲，或用关键词搜索背景音乐；最下面是音效——转场音效、氛围感音效，甚至一些热梗语录都非常实用。</p><figure><img src="assets/jianying-architecture/shot-08.jpg" alt="音频导入：视频提取音乐、链接下载、收藏音乐、AI音乐" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:54]</span>音频导入：视频提取音乐、链接下载、收藏音乐、AI音乐</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/348e28572045.mp3" type="button" aria-label="Play English audio">🔊</button><span>Audio import: extract from video, download by link, favorites, AI music</span></div>
+<audio class="cap-audio" src="audio/348e28572045.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-09.jpg" alt="音乐库关键词搜索背景音乐；音效含转场/氛围/热梗语录" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:43]</span>音乐库关键词搜索背景音乐；音效含转场/氛围/热梗语录</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1c43d36df9c9.mp3" type="button" aria-label="Play English audio">🔊</button><span>Search the music library by keyword; effects include transitions, vibes, trending lines</span></div>
+<audio class="cap-audio" src="audio/1c43d36df9c9.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:04-06:40</span>文本五个常用功能</h2><p>新建文本：点击加号监视器里出现默认文本框，可移动位置、调整大小，也可在右侧参数控制区更改文字内容、字体、颜色等。</p><p>智能包装：适用于信息流剪辑，时间线初剪完成后选一个风格，它会根据画面信息自动匹配动画效果和贴纸，适合想快速出效果的新手。</p><p>花字库：剪映做好的默认效果，字体分类详细（热门类型、综艺类型等），可在花字基础上改自己的文字。</p><p>文字模板：比花字更完整，自带排版和动画，适合做标题、字幕条这类效果；使用前鼠标左键预览，点加号添加到画面。</p><p>智能文本：最常用的智能字幕——只要素材里有人讲话，点击识别自动生成字幕；还有识别歌词（给音乐加歌词，多种排版）和文稿匹配（输入文案自动匹配时间线）。注意：AI不是万能的，可能有错别字，操作完最好自己检查一遍。</p><figure><img src="assets/jianying-architecture/shot-10.jpg" alt="文本五功能：新建文本、智能包装、花字库、文字模板、智能文本" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:04]</span>文本五功能：新建文本、智能包装、花字库、文字模板、智能文本</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/aff2ded0daf4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Five text tools: new text, smart packaging, word-art library, templates, smart subtitles</span></div>
+<audio class="cap-audio" src="audio/aff2ded0daf4.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-11.jpg" alt="文字模板自带排版和动画，适合标题、字幕条效果" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:37]</span>文字模板自带排版和动画，适合标题、字幕条效果</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4f3485161f62.mp3" type="button" aria-label="Play English audio">🔊</button><span>Text templates ship with layout and animation — great for titles and caption bars</span></div>
+<audio class="cap-audio" src="audio/4f3485161f62.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-12.jpg" alt="智能文本：有人讲话点击识别就自动生成字幕；文稿匹配自动对齐时间线" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:54]</span>智能文本：有人讲话点击识别就自动生成字幕；文稿匹配自动对齐时间线</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/dd76ddfeb914.mp3" type="button" aria-label="Play English audio">🔊</button><span>Smart text: tap recognize on any speech to auto-generate subtitles; script match syncs the timeline</span></div>
+<audio class="cap-audio" src="audio/dd76ddfeb914.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">06:40-08:47</span>贴纸·特效·转场</h2><p>贴纸功能主要有两个类目：贴纸库有各种主题的预设装饰元素，做笔记或标注时可快速增加作品的趣味表达或视觉分区；图形库是基础几何形状（矩形、圆形、箭头、自由形状），做结构图、流程图非常实用。</p><p>特效有两个类目：画面特效针对画面或背景，比如模糊、光晕、噪点、色彩分离——营造氛围或提升质感；人物特效针对人物主体，比如抠图换背景、人像光效、美颜、轮廓光。一句话：「画面特效管环境，人物特效管人。」</p><p>转场就是两个场景或片段之间的过渡效果（淡入淡出、叠化、滑动、翻页）。片段之间光线、影调、色彩都不一样，直接硬切会显得生硬，加一个转场让衔接过渡更自然流畅。操作：选一个转场效果拖到两个片段之间，拖动效果边缘可以调时长。</p><figure><img src="assets/jianying-architecture/shot-13.jpg" alt="贴纸：贴纸库（主题装饰）+图形库（矩形/圆形/箭头做结构图）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[06:43]</span>贴纸：贴纸库（主题装饰）+图形库（矩形/圆形/箭头做结构图）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fb32b9e6035b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Stickers: themed library plus shapes — rectangles, circles, arrows for diagrams</span></div>
+<audio class="cap-audio" src="audio/fb32b9e6035b.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-14.jpg" alt="特效：画面特效管环境（模糊/光晕/噪点/色彩分离），人物特效管人" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[07:20]</span>特效：画面特效管环境（模糊/光晕/噪点/色彩分离），人物特效管人</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8cffda55e54d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Effects: screen effects treat the scene (blur/glow/noise/color split), people effects treat the person</span></div>
+<audio class="cap-audio" src="audio/8cffda55e54d.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-15.jpg" alt="转场：拖到两个片段之间，拖动边缘调整时长" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[08:07]</span>转场：拖到两个片段之间，拖动边缘调整时长</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/acc374d66759.mp3" type="button" aria-label="Play English audio">🔊</button><span>Transitions: drop between two clips, drag the edge to set duration</span></div>
+<audio class="cap-audio" src="audio/acc374d66759.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch7"><h2><span class="time-marker">08:47-10:54</span>字幕·滤镜·调节</h2><p>字幕功能在文本剪辑里讲过了，这里再强调两个：识别字幕——素材里有人讲话点击识别就自动生成字幕；歌词识别——识别素材里的歌曲，自动生成同步歌词，一句一句排列好。</p><p>滤镜其实就是一键给画面套上预设好的色彩风格，风格分得很细——人像、风景、影视级；点一个滤镜整体色调就变了。用法：选中滤镜拖到时间线上、拖动边缘和素材对齐，还可以通过右上方的控制区调整滤镜强度。</p><p>调节说得直白一点就是调色。点击素材上方调节上的加号，时间线上会出现一个黄色的素材，右侧控制器可调参数有基础调整、HSL曲线、色轮。选中下方素材片段后，右上方控制器第5个工具也会出现一个调整，功能一致——只是调节针对整条时间线，调整针对单个片段。</p><figure><img src="assets/jianying-architecture/shot-16.jpg" alt="滤镜一键套预设色彩风格；调节=调色（黄色调节层：基础/HSL曲线/色轮）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[09:24]</span>滤镜一键套预设色彩风格；调节=调色（黄色调节层：基础/HSL曲线/色轮）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/14a4bddc84e5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Filters apply preset color in one tap; adjust = grading via a yellow layer: basics, HSL curves, color wheels</span></div>
+<audio class="cap-audio" src="audio/14a4bddc84e5.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch8"><h2><span class="time-marker">10:54-12:34</span>模板·数字人·结语作业</h2><p>数字人：生成一个虚拟人物进行口播视频，稍微复杂一点，后面单独做一期。</p><p>模板：剪映已经帮你做好的成品框架，点开预览，把要用的模板拖到时间线上，点击素材中间位置的替换，把需要的素材一个一个拖进去替换，替换好后点空格键播放预览，没有问题就可以导出了。</p><p>结语：「这个版本的功能都讲完了，现在大家可以打开剪映，从上到下把这九个功能都熟悉一遍。眼睛看过不一定能记住，上手了才容易记住。」下节课讲从导入素材、分割、删除、加音乐、加文字到剪辑成片和最终导出。</p><figure><img src="assets/jianying-architecture/shot-17.jpg" alt="模板=成品框架拖入替换素材；数字人=虚拟人物口播" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[10:55]</span>模板=成品框架拖入替换素材；数字人=虚拟人物口播</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a43188a80aa9.mp3" type="button" aria-label="Play English audio">🔊</button><span>Templates are ready frames — drop in and swap clips; digital human = a virtual talking head</span></div>
+<audio class="cap-audio" src="audio/a43188a80aa9.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/jianying-architecture/shot-18.jpg" alt="结语：从上到下熟悉九个功能，上手才容易记住" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[12:01]</span>结语：从上到下熟悉九个功能，上手才容易记住</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/be4d51131669.mp3" type="button" aria-label="Play English audio">🔊</button><span>Closing: run through all nine tools top to bottom — hands-on beats watching</span></div>
+<audio class="cap-audio" src="audio/be4d51131669.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（392段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>一个视频教会你检映专业版</p></div>
+<div class="transcript-row"><time>00:02</time><p>让你彻底理解检映软件的底层架构</p></div>
+<div class="transcript-row"><time>00:05</time><p>首先打开检映</p></div>
+<div class="transcript-row"><time>00:07</time><p>打开后会看到这个界面</p></div>
+<div class="transcript-row"><time>00:09</time><p>在这里我们只需要记住三个点</p></div>
+<div class="transcript-row"><time>00:11</time><p>第一左侧的模板套用是直接出片</p></div>
+<div class="transcript-row"><time>00:15</time><p>适合完全零基础</p></div>
+<div class="transcript-row"><time>00:17</time><p>第二云空间</p></div>
+<div class="transcript-row"><time>00:19</time><p>比如电脑手机平板</p></div>
+<div class="transcript-row"><time>00:21</time><p>它是可以同步剪辑</p></div>
+<div class="transcript-row"><time>00:23</time><p>不过需要先登录</p></div>
+<div class="transcript-row"><time>00:25</time><p>中间这一堆图片是官方功能介绍</p></div>
+<div class="transcript-row"><time>00:28</time><p>简易教程以及AI视频图文入口</p></div>
+<div class="transcript-row"><time>00:31</time><p>新手暂时不用管</p></div>
+<div class="transcript-row"><time>00:33</time><p>进入剪辑界面都会有</p></div>
+<div class="transcript-row"><time>00:35</time><p>那我们在最上方的开始创作</p></div>
+<div class="transcript-row"><time>00:38</time><p>是真正进入剪辑的主界面</p></div>
+<div class="transcript-row"><time>00:40</time><p>另外</p></div>
+<div class="transcript-row"><time>00:41</time><p>剪辑途中如果退出了</p></div>
+<div class="transcript-row"><time>00:43</time><p>检映会实时保存</p></div>
+<div class="transcript-row"><time>00:44</time><p>以超高的形式储存到下方</p></div>
+<div class="transcript-row"><time>00:47</time><p>不用担心剪辑工程不见了</p></div>
+<div class="transcript-row"><time>00:49</time><p>好</p></div>
+<div class="transcript-row"><time>00:50</time><p>我们这里直接点击开始创作</p></div>
+<div class="transcript-row"><time>00:52</time><p>进入剪辑界面</p></div>
+<div class="transcript-row"><time>00:54</time><p>这也是我们这节课最核心的地方</p></div>
+<div class="transcript-row"><time>00:57</time><p>进来之后</p></div>
+<div class="transcript-row"><time>00:58</time><p>界面主要分成三个板块</p></div>
+<div class="transcript-row"><time>01:00</time><p>最左侧的是效果栏</p></div>
+<div class="transcript-row"><time>01:01</time><p>你可以在这里添加视频</p></div>
+<div class="transcript-row"><time>01:04</time><p>图片</p></div>
+<div class="transcript-row"><time>01:05</time><p>文字以及各种效果</p></div>
+<div class="transcript-row"><time>01:07</time><p>中间是预览区</p></div>
+<div class="transcript-row"><time>01:08</time><p>也就是在这里实时观看素材的区域</p></div>
+<div class="transcript-row"><time>01:12</time><p>以及剪辑后的效果</p></div>
+<div class="transcript-row"><time>01:14</time><p>底部是时间线</p></div>
+<div class="transcript-row"><time>01:15</time><p>这是剪辑的核心区域</p></div>
+<div class="transcript-row"><time>01:17</time><p>所有的素材都会在这里排列和剪辑</p></div>
+<div class="transcript-row"><time>01:21</time><p>那这三个板块里</p></div>
+<div class="transcript-row"><time>01:22</time><p>新手最需要搞懂的是左侧效果栏</p></div>
+<div class="transcript-row"><time>01:25</time><p>因为所有要剪辑的东西</p></div>
+<div class="transcript-row"><time>01:26</time><p>都得先从这里加进去</p></div>
+<div class="transcript-row"><time>01:28</time><p>那左侧这个面板里</p></div>
+<div class="transcript-row"><time>01:30</time><p>新手最需要先搞定的是素材的导入和管理</p></div>
+<div class="transcript-row"><time>01:34</time><p>第一个导入素材是可以直接点这个加号</p></div>
+<div class="transcript-row"><time>01:38</time><p>选中你需要的文件</p></div>
+<div class="transcript-row"><time>01:39</time><p>然后点击导入</p></div>
+<div class="transcript-row"><time>01:41</time><p>或者打开文件夹</p></div>
+<div class="transcript-row"><time>01:42</time><p>直接把需要的素材拖拽进来</p></div>
+<div class="transcript-row"><time>01:45</time><p>素材拖到时间线上就可以剪辑</p></div>
+<div class="transcript-row"><time>01:48</time><p>假如不需要</p></div>
+<div class="transcript-row"><time>01:49</time><p>直接按delete删除就可以</p></div>
+<div class="transcript-row"><time>01:52</time><p>素材导进来之后怎么管理呢</p></div>
+<div class="transcript-row"><time>01:55</time><p>简硬提供了几个很实用的功能</p></div>
+<div class="transcript-row"><time>01:57</time><p>第一个账号收藏</p></div>
+<div class="transcript-row"><time>01:59</time><p>登录账号后</p></div>
+<div class="transcript-row"><time>02:00</time><p>你可以把经常要用的素材收藏起来</p></div>
+<div class="transcript-row"><time>02:04</time><p>下次剪辑时就不需要再翻文件夹</p></div>
+<div class="transcript-row"><time>02:07</time><p>直接在收藏里就能找到</p></div>
+<div class="transcript-row"><time>02:09</time><p>非常的省时间</p></div>
+<div class="transcript-row"><time>02:11</time><p>第二个AI素材</p></div>
+<div class="transcript-row"><time>02:13</time><p>在这里只需要以文字的形式输入你的想法</p></div>
+<div class="transcript-row"><time>02:16</time><p>就可以生成图片或视频素材</p></div>
+<div class="transcript-row"><time>02:19</time><p>第三个语音素材用来多设备同步</p></div>
+<div class="transcript-row"><time>02:23</time><p>比如你在电脑上存的素材</p></div>
+<div class="transcript-row"><time>02:25</time><p>手机上也能接着用</p></div>
+<div class="transcript-row"><time>02:27</time><p>最下面的这个也是我个人比较喜欢用的</p></div>
+<div class="transcript-row"><time>02:31</time><p>官方素材库</p></div>
+<div class="transcript-row"><time>02:32</time><p>点开之后你会发现里面分类非常曲线</p></div>
+<div class="transcript-row"><time>02:35</time><p>热门的</p></div>
+<div class="transcript-row"><time>02:36</time><p>节日的</p></div>
+<div class="transcript-row"><time>02:37</time><p>美食的</p></div>
+<div class="transcript-row"><time>02:39</time><p>旅行的</p></div>
+<div class="transcript-row"><time>02:40</time><p>几乎你需要的主题都能找到</p></div>
+<div class="transcript-row"><time>02:42</time><p>而且这些素材会经常更新</p></div>
+<div class="transcript-row"><time>02:44</time><p>可以给我们带来更多花样的效果</p></div>
+<div class="transcript-row"><time>02:47</time><p>讲完素材导入</p></div>
+<div class="transcript-row"><time>02:48</time><p>我们再来看看效果栏里第二个功能</p></div>
+<div class="transcript-row"><time>02:51</time><p>音频</p></div>
+<div class="transcript-row"><time>02:52</time><p>也就是导入音乐方式</p></div>
+<div class="transcript-row"><time>02:54</time><p>导入音频的方式有很多</p></div>
+<div class="transcript-row"><time>02:56</time><p>我们来看看具体有几种</p></div>
+<div class="transcript-row"><time>02:58</time><p>第一种可以从视频素材中提起音乐</p></div>
+<div class="transcript-row"><time>03:01</time><p>点击音频提起</p></div>
+<div class="transcript-row"><time>03:03</time><p>然后在文件夹里选择你需要的视频</p></div>
+<div class="transcript-row"><time>03:06</time><p>点击导入</p></div>
+<div class="transcript-row"><time>03:07</time><p>就可以得到一个没有画面</p></div>
+<div class="transcript-row"><time>03:09</time><p>只有音频的素材</p></div>
+<div class="transcript-row"><time>03:10</time><p>你还可以使用链接下载功能</p></div>
+<div class="transcript-row"><time>03:13</time><p>只需要复制抖音里的视频链接</p></div>
+<div class="transcript-row"><time>03:15</time><p>然后在这里直接粘贴</p></div>
+<div class="transcript-row"><time>03:17</time><p>就能导入音频进行使用</p></div>
+<div class="transcript-row"><time>03:20</time><p>第二种是收藏的音乐</p></div>
+<div class="transcript-row"><time>03:22</time><p>你在抖音里收藏的音乐歌曲</p></div>
+<div class="transcript-row"><time>03:24</time><p>在这里会同步显示</p></div>
+<div class="transcript-row"><time>03:26</time><p>不过要注意</p></div>
+<div class="transcript-row"><time>03:27</time><p>需要先登录账号才可以同步</p></div>
+<div class="transcript-row"><time>03:30</time><p>第三种AI音乐</p></div>
+<div class="transcript-row"><time>03:32</time><p>在这里输入你想要的风格</p></div>
+<div class="transcript-row"><time>03:34</time><p>或者想法关键词</p></div>
+<div class="transcript-row"><time>03:36</time><p>它会自动生成一段原创音乐</p></div>
+<div class="transcript-row"><time>03:39</time><p>这个我会用的比较少</p></div>
+<div class="transcript-row"><time>03:40</time><p>第四种就非常好用</p></div>
+<div class="transcript-row"><time>03:43</time><p>音乐库</p></div>
+<div class="transcript-row"><time>03:43</time><p>你可以在这里查找任何类型的歌曲</p></div>
+<div class="transcript-row"><time>03:46</time><p>也可以用关键词</p></div>
+<div class="transcript-row"><time>03:47</time><p>搜索任何你想要的背景音乐</p></div>
+<div class="transcript-row"><time>03:50</time><p>最下面这个是音效</p></div>
+<div class="transcript-row"><time>03:52</time><p>这里面音效还是很虚浅的</p></div>
+<div class="transcript-row"><time>03:54</time><p>转场音效</p></div>
+<div class="transcript-row"><time>03:56</time><p>氛围感音效</p></div>
+<div class="transcript-row"><time>03:57</time><p>甚至一些热耕语录都有非常实用</p></div>
+<div class="transcript-row"><time>04:00</time><p>我平时剪辑视频</p></div>
+<div class="transcript-row"><time>04:02</time><p>会经常用到这里的音效</p></div>
+<div class="transcript-row"><time>04:04</time><p>好</p></div>
+<div class="transcript-row"><time>04:05</time><p>我们再来看看下一个功能</p></div>
+<div class="transcript-row"><time>04:07</time><p>好音频讲完了</p></div>
+<div class="transcript-row"><time>04:08</time><p>我们再来看第三个功能文本</p></div>
+<div class="transcript-row"><time>04:10</time><p>文本类目里有五个常用功能</p></div>
+<div class="transcript-row"><time>04:12</time><p>我挨个讲一下</p></div>
+<div class="transcript-row"><time>04:13</time><p>第一个新建文本</p></div>
+<div class="transcript-row"><time>04:15</time><p>点击这个加号</p></div>
+<div class="transcript-row"><time>04:16</time><p>监视器里就会出现默认文本框</p></div>
+<div class="transcript-row"><time>04:19</time><p>也就是输入文字</p></div>
+<div class="transcript-row"><time>04:21</time><p>你可以在监视器里直接移动文本位置</p></div>
+<div class="transcript-row"><time>04:24</time><p>调整大小</p></div>
+<div class="transcript-row"><time>04:25</time><p>也可以在右侧的参数控制区</p></div>
+<div class="transcript-row"><time>04:28</time><p>更改文字内容</p></div>
+<div class="transcript-row"><time>04:30</time><p>字体</p></div>
+<div class="transcript-row"><time>04:30</time><p>颜色等</p></div>
+<div class="transcript-row"><time>04:31</time><p>画面里任何的调整</p></div>
+<div class="transcript-row"><time>04:33</time><p>都可以在右侧这个窗口去完成</p></div>
+<div class="transcript-row"><time>04:36</time><p>非常的直观</p></div>
+<div class="transcript-row"><time>04:37</time><p>我们再回过来</p></div>
+<div class="transcript-row"><time>04:38</time><p>在他旁边有个叫添加口播稿的功能</p></div>
+<div class="transcript-row"><time>04:42</time><p>点击一下</p></div>
+<div class="transcript-row"><time>04:43</time><p>在这里</p></div>
+<div class="transcript-row"><time>04:43</time><p>AI会根据你的主题</p></div>
+<div class="transcript-row"><time>04:45</time><p>自动生成口播稿</p></div>
+<div class="transcript-row"><time>04:47</time><p>如果你是新手</p></div>
+<div class="transcript-row"><time>04:48</time><p>不会写文案</p></div>
+<div class="transcript-row"><time>04:49</time><p>这个功能就非常好用</p></div>
+<div class="transcript-row"><time>04:51</time><p>另外还有一个是导入本地字幕</p></div>
+<div class="transcript-row"><time>04:54</time><p>如果你已经有做好的字幕文件</p></div>
+<div class="transcript-row"><time>04:57</time><p>可以直接从这里去导入</p></div>
+<div class="transcript-row"><time>04:59</time><p>再来看第二个</p></div>
+<div class="transcript-row"><time>05:00</time><p>智能包装</p></div>
+<div class="transcript-row"><time>05:02</time><p>这个功能适用以信息流剪辑</p></div>
+<div class="transcript-row"><time>05:04</time><p>当你在时间线上</p></div>
+<div class="transcript-row"><time>05:06</time><p>把镜头初剪完成之后</p></div>
+<div class="transcript-row"><time>05:08</time><p>在这里选择一个你想要的风格</p></div>
+<div class="transcript-row"><time>05:10</time><p>它会根据你的画面信息</p></div>
+<div class="transcript-row"><time>05:12</time><p>自动给你匹配动画效果和贴纸</p></div>
+<div class="transcript-row"><time>05:15</time><p>非常适合想快速出效果</p></div>
+<div class="transcript-row"><time>05:18</time><p>又不想自己调的新手</p></div>
+<div class="transcript-row"><time>05:20</time><p>第三个</p></div>
+<div class="transcript-row"><time>05:21</time><p>花字库</p></div>
+<div class="transcript-row"><time>05:22</time><p>这是检验已经做好的默认效果</p></div>
+<div class="transcript-row"><time>05:25</time><p>简单的理解就是字体</p></div>
+<div class="transcript-row"><time>05:27</time><p>系统把字体分得非常详细</p></div>
+<div class="transcript-row"><time>05:29</time><p>热门类型的</p></div>
+<div class="transcript-row"><time>05:31</time><p>中意类型的等等</p></div>
+<div class="transcript-row"><time>05:32</time><p>你可以在花字的基础上</p></div>
+<div class="transcript-row"><time>05:34</time><p>更改自己需要的文字内容</p></div>
+<div class="transcript-row"><time>05:36</time><p>非常方便</p></div>
+<div class="transcript-row"><time>05:37</time><p>第四个</p></div>
+<div class="transcript-row"><time>05:38</time><p>文字模板</p></div>
+<div class="transcript-row"><time>05:39</time><p>比花字更完整一些</p></div>
+<div class="transcript-row"><time>05:41</time><p>自带排版和动画</p></div>
+<div class="transcript-row"><time>05:43</time><p>适合做一些标题</p></div>
+<div class="transcript-row"><time>05:45</time><p>字幕调这类效果</p></div>
+<div class="transcript-row"><time>05:46</time><p>使用前</p></div>
+<div class="transcript-row"><time>05:47</time><p>用鼠标左键可以预览素材效果</p></div>
+<div class="transcript-row"><time>05:50</time><p>然后点击加号就能添加到画面中</p></div>
+<div class="transcript-row"><time>05:53</time><p>第五个</p></div>
+<div class="transcript-row"><time>05:54</time><p>智能文本</p></div>
+<div class="transcript-row"><time>05:55</time><p>这个是最常用的智能字幕</p></div>
+<div class="transcript-row"><time>05:57</time><p>只要视频素材里有人讲话</p></div>
+<div class="transcript-row"><time>06:00</time><p>点击识别就会自动生成字幕</p></div>
+<div class="transcript-row"><time>06:03</time><p>就不需要自己打字</p></div>
+<div class="transcript-row"><time>06:04</time><p>这个文字识别</p></div>
+<div class="transcript-row"><time>06:05</time><p>对于剪辑效率来说</p></div>
+<div class="transcript-row"><time>06:07</time><p>真的非常好用</p></div>
+<div class="transcript-row"><time>06:09</time><p>另外还有识别歌词</p></div>
+<div class="transcript-row"><time>06:10</time><p>就是给音乐加歌词</p></div>
+<div class="transcript-row"><time>06:12</time><p>你可以在这里选择不同的排列方式</p></div>
+<div class="transcript-row"><time>06:15</time><p>各种类型排版</p></div>
+<div class="transcript-row"><time>06:16</time><p>都会有</p></div>
+<div class="transcript-row"><time>06:17</time><p>还有最下方这个文稿匹配</p></div>
+<div class="transcript-row"><time>06:19</time><p>对于很多新手</p></div>
+<div class="transcript-row"><time>06:20</time><p>很多时候输入完字幕</p></div>
+<div class="transcript-row"><time>06:22</time><p>文字长度和视频总长度</p></div>
+<div class="transcript-row"><time>06:24</time><p>经常对不上</p></div>
+<div class="transcript-row"><time>06:26</time><p>有了这个功能</p></div>
+<div class="transcript-row"><time>06:27</time><p>你只需要输入文案</p></div>
+<div class="transcript-row"><time>06:28</time><p>它就会自动匹配时间线</p></div>
+<div class="transcript-row"><time>06:30</time><p>非常便捷</p></div>
+<div class="transcript-row"><time>06:32</time><p>但一定要注意</p></div>
+<div class="transcript-row"><time>06:33</time><p>AI不是万能的</p></div>
+<div class="transcript-row"><time>06:34</time><p>可能会有一些错别字</p></div>
+<div class="transcript-row"><time>06:35</time><p>操作完</p></div>
+<div class="transcript-row"><time>06:36</time><p>最好是自己检查一遍</p></div>
+<div class="transcript-row"><time>06:38</time><p>有错别字</p></div>
+<div class="transcript-row"><time>06:38</time><p>然后手动改一下</p></div>
+<div class="transcript-row"><time>06:40</time><p>好文本讲完了</p></div>
+<div class="transcript-row"><time>06:41</time><p>我们再看下一个功能</p></div>
+<div class="transcript-row"><time>06:43</time><p>贴纸</p></div>
+<div class="transcript-row"><time>06:44</time><p>贴纸功能主要有两个类目</p></div>
+<div class="transcript-row"><time>06:46</time><p>贴纸库和图形库</p></div>
+<div class="transcript-row"><time>06:48</time><p>贴纸库里有各种主题的贴纸</p></div>
+<div class="transcript-row"><time>06:51</time><p>是系统预设好的</p></div>
+<div class="transcript-row"><time>06:52</time><p>带有风格化的装饰元素</p></div>
+<div class="transcript-row"><time>06:54</time><p>平时做笔记或标注的时候</p></div>
+<div class="transcript-row"><time>06:57</time><p>可以快速增加作品的群序表达</p></div>
+<div class="transcript-row"><time>06:59</time><p>或视觉分区</p></div>
+<div class="transcript-row"><time>07:01</time><p>而图形库</p></div>
+<div class="transcript-row"><time>07:02</time><p>就是基础的几何形状</p></div>
+<div class="transcript-row"><time>07:04</time><p>比如矩形</p></div>
+<div class="transcript-row"><time>07:05</time><p>圆形</p></div>
+<div class="transcript-row"><time>07:06</time><p>箭头</p></div>
+<div class="transcript-row"><time>07:07</time><p>自由形状</p></div>
+<div class="transcript-row"><time>07:08</time><p>如果你日常要做结构图</p></div>
+<div class="transcript-row"><time>07:10</time><p>流程图</p></div>
+<div class="transcript-row"><time>07:11</time><p>或者像我这种校程类的</p></div>
+<div class="transcript-row"><time>07:13</time><p>需要干净规整的形状</p></div>
+<div class="transcript-row"><time>07:15</time><p>那图形库就非常好用了</p></div>
+<div class="transcript-row"><time>07:17</time><p>接下来我们来看第五个功能</p></div>
+<div class="transcript-row"><time>07:20</time><p>特效</p></div>
+<div class="transcript-row"><time>07:21</time><p>同样有两个类目</p></div>
+<div class="transcript-row"><time>07:22</time><p>画面特效和人物特效</p></div>
+<div class="transcript-row"><time>07:25</time><p>画面特效是针对画面或背景</p></div>
+<div class="transcript-row"><time>07:27</time><p>添加的视觉效果</p></div>
+<div class="transcript-row"><time>07:29</time><p>比如模糊</p></div>
+<div class="transcript-row"><time>07:30</time><p>光韵</p></div>
+<div class="transcript-row"><time>07:31</time><p>噪点</p></div>
+<div class="transcript-row"><time>07:32</time><p>色彩利菌这些</p></div>
+<div class="transcript-row"><time>07:34</time><p>平时你想营造某种氛围</p></div>
+<div class="transcript-row"><time>07:36</time><p>或者让画面更有质感的时候</p></div>
+<div class="transcript-row"><time>07:38</time><p>直接套一个画面特效</p></div>
+<div class="transcript-row"><time>07:40</time><p>就能快速改变作品的调性</p></div>
+<div class="transcript-row"><time>07:42</time><p>而人物特效</p></div>
+<div class="transcript-row"><time>07:44</time><p>是针对画面中的人物主体进行处理的</p></div>
+<div class="transcript-row"><time>07:47</time><p>比如抠图换背景</p></div>
+<div class="transcript-row"><time>07:49</time><p>人像光效</p></div>
+<div class="transcript-row"><time>07:50</time><p>美颜</p></div>
+<div class="transcript-row"><time>07:51</time><p>或者给人物加一些轮廓光</p></div>
+<div class="transcript-row"><time>07:54</time><p>如果你需要突出人物</p></div>
+<div class="transcript-row"><time>07:55</time><p>或者让人物和场景更好的融合</p></div>
+<div class="transcript-row"><time>07:58</time><p>那人物特效就非常好用了</p></div>
+<div class="transcript-row"><time>08:00</time><p>简单的来说</p></div>
+<div class="transcript-row"><time>08:02</time><p>画面特效管环境</p></div>
+<div class="transcript-row"><time>08:03</time><p>人物特效管人</p></div>
+<div class="transcript-row"><time>08:05</time><p>接下来我们来看下一个功能</p></div>
+<div class="transcript-row"><time>08:07</time><p>转场</p></div>
+<div class="transcript-row"><time>08:08</time><p>转场就是两个场景</p></div>
+<div class="transcript-row"><time>08:10</time><p>或片段之间的过渡效果</p></div>
+<div class="transcript-row"><time>08:12</time><p>比如淡入</p></div>
+<div class="transcript-row"><time>08:13</time><p>淡出</p></div>
+<div class="transcript-row"><time>08:14</time><p>叠化</p></div>
+<div class="transcript-row"><time>08:15</time><p>滑动</p></div>
+<div class="transcript-row"><time>08:16</time><p>翻页这些</p></div>
+<div class="transcript-row"><time>08:17</time><p>平时做视频剪辑时</p></div>
+<div class="transcript-row"><time>08:19</time><p>片段之间光线</p></div>
+<div class="transcript-row"><time>08:21</time><p>影调</p></div>
+<div class="transcript-row"><time>08:21</time><p>色彩都不一样</p></div>
+<div class="transcript-row"><time>08:23</time><p>直接硬切会显得比较生硬</p></div>
+<div class="transcript-row"><time>08:25</time><p>加一个转场</p></div>
+<div class="transcript-row"><time>08:26</time><p>就能让衔接过度更加自然流畅</p></div>
+<div class="transcript-row"><time>08:29</time><p>观众视觉看着也会更舒服一点</p></div>
+<div class="transcript-row"><time>08:32</time><p>操作也很简单</p></div>
+<div class="transcript-row"><time>08:33</time><p>选一个转场效果</p></div>
+<div class="transcript-row"><time>08:34</time><p>拖到两个片段之间</p></div>
+<div class="transcript-row"><time>08:36</time><p>然后时长还可以自己调</p></div>
+<div class="transcript-row"><time>08:38</time><p>只需要拖动效果边缘就可以</p></div>
+<div class="transcript-row"><time>08:40</time><p>想要干净利落的</p></div>
+<div class="transcript-row"><time>08:42</time><p>就选淡入</p></div>
+<div class="transcript-row"><time>08:43</time><p>淡出</p></div>
+<div class="transcript-row"><time>08:44</time><p>想要更有动感的</p></div>
+<div class="transcript-row"><time>08:45</time><p>可以选硬动类型的转场</p></div>
+<div class="transcript-row"><time>08:47</time><p>接下来我们来看第七个功能</p></div>
+<div class="transcript-row"><time>08:50</time><p>字幕</p></div>
+<div class="transcript-row"><time>08:50</time><p>这几个功能在文本剪辑</p></div>
+<div class="transcript-row"><time>08:52</time><p>刚才都讲过了</p></div>
+<div class="transcript-row"><time>08:53</time><p>这里又出现了</p></div>
+<div class="transcript-row"><time>08:55</time><p>我这里再强调一下</p></div>
+<div class="transcript-row"><time>08:56</time><p>识别字母和识别歌词</p></div>
+<div class="transcript-row"><time>08:59</time><p>识别字母就是你素材里</p></div>
+<div class="transcript-row"><time>09:00</time><p>只要有人讲话</p></div>
+<div class="transcript-row"><time>09:02</time><p>你只需要点击识别</p></div>
+<div class="transcript-row"><time>09:03</time><p>它都能自动识别出来</p></div>
+<div class="transcript-row"><time>09:05</time><p>生成对应的文字字幕</p></div>
+<div class="transcript-row"><time>09:07</time><p>而歌词识别</p></div>
+<div class="transcript-row"><time>09:08</time><p>就是识别素材里的歌曲</p></div>
+<div class="transcript-row"><time>09:11</time><p>它会自动生成同步的歌词</p></div>
+<div class="transcript-row"><time>09:13</time><p>一句一句给你排列好</p></div>
+<div class="transcript-row"><time>09:15</time><p>那这两个功能都很简单</p></div>
+<div class="transcript-row"><time>09:17</time><p>至于字幕的其他调整功能</p></div>
+<div class="transcript-row"><time>09:19</time><p>这里就不再重复了</p></div>
+<div class="transcript-row"><time>09:21</time><p>好</p></div>
+<div class="transcript-row"><time>09:21</time><p>那我们再来看第九个功能</p></div>
+<div class="transcript-row"><time>09:24</time><p>滤镜</p></div>
+<div class="transcript-row"><time>09:25</time><p>第八个功能</p></div>
+<div class="transcript-row"><time>09:26</time><p>智能包装</p></div>
+<div class="transcript-row"><time>09:26</time><p>刚才讲过了</p></div>
+<div class="transcript-row"><time>09:28</time><p>滤镜其实就是一键给画面</p></div>
+<div class="transcript-row"><time>09:30</time><p>套上预示好的色彩风格</p></div>
+<div class="transcript-row"><time>09:32</time><p>剪影里的滤镜风格也分得比较细</p></div>
+<div class="transcript-row"><time>09:35</time><p>比如人像</p></div>
+<div class="transcript-row"><time>09:36</time><p>风景</p></div>
+<div class="transcript-row"><time>09:37</time><p>还有一些影视级的</p></div>
+<div class="transcript-row"><time>09:38</time><p>平时你拍完一段素材</p></div>
+<div class="transcript-row"><time>09:40</time><p>如果觉得颜色比较淡</p></div>
+<div class="transcript-row"><time>09:42</time><p>或者氛围不太对</p></div>
+<div class="transcript-row"><time>09:43</time><p>不想自己慢慢调参数</p></div>
+<div class="transcript-row"><time>09:45</time><p>直接点一个滤镜</p></div>
+<div class="transcript-row"><time>09:46</time><p>整体的色调就不一样了</p></div>
+<div class="transcript-row"><time>09:48</time><p>效率非常快</p></div>
+<div class="transcript-row"><time>09:49</time><p>用法也很简单</p></div>
+<div class="transcript-row"><time>09:50</time><p>找一个喜欢的主题风格</p></div>
+<div class="transcript-row"><time>09:52</time><p>选中滤镜</p></div>
+<div class="transcript-row"><time>09:53</time><p>拖到时间线上</p></div>
+<div class="transcript-row"><time>09:55</time><p>再拖动滤镜边缘</p></div>
+<div class="transcript-row"><time>09:56</time><p>让它和素材对齐就行</p></div>
+<div class="transcript-row"><time>09:59</time><p>还可以通过右上方的控制区</p></div>
+<div class="transcript-row"><time>10:01</time><p>调整滤镜的强度</p></div>
+<div class="transcript-row"><time>10:03</time><p>让它浓一点</p></div>
+<div class="transcript-row"><time>10:04</time><p>或者淡一点</p></div>
+<div class="transcript-row"><time>10:05</time><p>下一个功能是调节</p></div>
+<div class="transcript-row"><time>10:07</time><p>说的直白一点就是调色</p></div>
+<div class="transcript-row"><time>10:09</time><p>这里我们先删掉之前这个滤镜</p></div>
+<div class="transcript-row"><time>10:12</time><p>然后我们点击自立音调节上的加号</p></div>
+<div class="transcript-row"><time>10:15</time><p>时间线上就会出现一个黄色的素材</p></div>
+<div class="transcript-row"><time>10:17</time><p>你还可以看到右侧控制器</p></div>
+<div class="transcript-row"><time>10:20</time><p>可以调节的参数</p></div>
+<div class="transcript-row"><time>10:21</time><p>有基础调整</p></div>
+<div class="transcript-row"><time>10:22</time><p>HSL曲线</p></div>
+<div class="transcript-row"><time>10:24</time><p>摄轮</p></div>
+<div class="transcript-row"><time>10:26</time><p>这里我们先删掉黄色素材</p></div>
+<div class="transcript-row"><time>10:28</time><p>假如我们选中下方素材片段</p></div>
+<div class="transcript-row"><time>10:31</time><p>右上方控制器第5个工具</p></div>
+<div class="transcript-row"><time>10:33</time><p>也会出现一个调整</p></div>
+<div class="transcript-row"><time>10:35</time><p>它们的功能其实是一致的</p></div>
+<div class="transcript-row"><time>10:37</time><p>只是调节是可以针对整条时间线</p></div>
+<div class="transcript-row"><time>10:41</time><p>而调整是对单个片段</p></div>
+<div class="transcript-row"><time>10:44</time><p>至于调色这个功能</p></div>
+<div class="transcript-row"><time>10:45</time><p>我已经单独做了一期</p></div>
+<div class="transcript-row"><time>10:47</time><p>讲的非常细</p></div>
+<div class="transcript-row"><time>10:48</time><p>这期你先知道有这两个入口就行</p></div>
+<div class="transcript-row"><time>10:51</time><p>想深入学习的可以去看那一期</p></div>
+<div class="transcript-row"><time>10:54</time><p>好</p></div>
+<div class="transcript-row"><time>10:55</time><p>最后我们来看一下</p></div>
+<div class="transcript-row"><time>10:56</time><p>剩下的两个功能</p></div>
+<div class="transcript-row"><time>10:58</time><p>模板和数字人</p></div>
+<div class="transcript-row"><time>11:00</time><p>数字人稍微复杂一点</p></div>
+<div class="transcript-row"><time>11:02</time><p>就是生成一个虚拟人物进行口播视频</p></div>
+<div class="transcript-row"><time>11:06</time><p>这个后面我也会单独做一期</p></div>
+<div class="transcript-row"><time>11:08</time><p>这一期你先知道有这个功能就行</p></div>
+<div class="transcript-row"><time>11:11</time><p>这里我们把模板再细说一下</p></div>
+<div class="transcript-row"><time>11:14</time><p>刚开始讲课之前提到过模板</p></div>
+<div class="transcript-row"><time>11:16</time><p>我们这里再展开讲一下</p></div>
+<div class="transcript-row"><time>11:19</time><p>先把时间线上素材删掉</p></div>
+<div class="transcript-row"><time>11:21</time><p>模板是什么</p></div>
+<div class="transcript-row"><time>11:22</time><p>就是简易已经帮你做好的成品框架</p></div>
+<div class="transcript-row"><time>11:26</time><p>它有很多类型和风格</p></div>
+<div class="transcript-row"><time>11:28</time><p>我们来点开看一下</p></div>
+<div class="transcript-row"><time>11:29</time><p>比如风格大片</p></div>
+<div class="transcript-row"><time>11:31</time><p>履行这些</p></div>
+<div class="transcript-row"><time>11:32</time><p>我们只需要用鼠标点击模板</p></div>
+<div class="transcript-row"><time>11:35</time><p>就可以预览</p></div>
+<div class="transcript-row"><time>11:36</time><p>觉得哪个模板不错</p></div>
+<div class="transcript-row"><time>11:37</time><p>就把自己要用的模板拖到时间线上</p></div>
+<div class="transcript-row"><time>11:40</time><p>之后点击素材中间位置的替换</p></div>
+<div class="transcript-row"><time>11:43</time><p>就可以看到片段上需要几个素材进行替换</p></div>
+<div class="transcript-row"><time>11:47</time><p>然后在左上方切换到导入素材这里</p></div>
+<div class="transcript-row"><time>11:50</time><p>把需要的素材一个一个的拖进去进行替换</p></div>
+<div class="transcript-row"><time>11:54</time><p>替换好之后点空格间播放预览</p></div>
+<div class="transcript-row"><time>11:57</time><p>那么没有问题就可以导出了</p></div>
+<div class="transcript-row"><time>11:59</time><p>效果就完成了</p></div>
+<div class="transcript-row"><time>12:01</time><p>好了</p></div>
+<div class="transcript-row"><time>12:01</time><p>这个版本的功能都讲完了</p></div>
+<div class="transcript-row"><time>12:03</time><p>现在大家可以打开剪印</p></div>
+<div class="transcript-row"><time>12:05</time><p>从上到下把这九个功能都熟悉一遍</p></div>
+<div class="transcript-row"><time>12:09</time><p>眼睛看过不一定能记住</p></div>
+<div class="transcript-row"><time>12:10</time><p>上手了才容易记住</p></div>
+<div class="transcript-row"><time>12:12</time><p>这就是今天的小作业</p></div>
+<div class="transcript-row"><time>12:13</time><p>等到下节时超课</p></div>
+<div class="transcript-row"><time>12:15</time><p>我会讲到从导入素材分割删除加音乐加文字</p></div>
+<div class="transcript-row"><time>12:21</time><p>剪辑成片到最终导出</p></div>
+<div class="transcript-row"><time>12:24</time><p>你就会发现上手特别简单</p></div>
+<div class="transcript-row"><time>12:26</time><p>好了</p></div>
+<div class="transcript-row"><time>12:27</time><p>这里是自由摄影同学们</p></div>
+<div class="transcript-row"><time>12:29</time><p>拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

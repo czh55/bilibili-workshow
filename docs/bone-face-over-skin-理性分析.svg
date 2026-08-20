@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2465" viewBox="0 0 1320 2465">
+  <foreignObject x="0" y="0" width="1320" height="2465">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>骨相脸一定大于皮相脸</h1>
+  <div class="meta"><span class="tag tag-blue">变美</span><span class="tag tag-green">骨相</span><span class="tag tag-orange">审美</span><span class="tag tag-gray">时长 1分56秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/3t2zYvu2ACl">原视频</a>
+  <div class="summary-line">判断自己是骨相还是皮相：侧脸/照片好看 = 骨相，正脸/本人好看 = 皮相。底层标准是面部高光点不同。三大区别：①调整重心——骨相讲眉弓转折（与额骨阶梯呼应）、颧骨高微凸、下颌角有角度；皮相线条柔和下颌角平滑。②抗老——骨相越老特征越明显，皮相鼻基底凹陷+颧骨低→软组织下垂→鼻唇沟，三五年必垮。③上镜——骨相上镜更好看，保留适当缺陷=辨识度。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">立题：骨相脸一定大于皮相脸，先自测风格</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">自测：侧脸&gt;正脸、拍照&gt;现实 = 骨相；反之皮相</span></div><div class="timeline-item"><span class="timeline-time">00:21</span><span class="timeline-text">判断标准：高光点（立体度）不同</span></div><div class="timeline-item"><span class="timeline-time">00:31</span><span class="timeline-text">区别一·调整重心：皮相柔和 vs 骨相有转折</span></div><div class="timeline-item"><span class="timeline-time">00:41</span><span class="timeline-text">眉弓立体度与额骨阶梯式呼应</span></div><div class="timeline-item"><span class="timeline-time">00:51</span><span class="timeline-text">颧骨位置高微凸、下颌角有角度</span></div><div class="timeline-item"><span class="timeline-time">00:58</span><span class="timeline-text">区别二·抗老：骨相越老越好看</span></div><div class="timeline-item"><span class="timeline-time">01:12</span><span class="timeline-text">皮相：鼻基底凹陷+颧骨低→软组织下垂→鼻唇沟</span></div><div class="timeline-item"><span class="timeline-time">01:22</span><span class="timeline-text">区别三·上镜：骨相上镜更好看</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">保留适当缺陷=辨识度（明星案例）</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">骨相脸<br/>侧脸/拍照好看 高光点立体</div><span class="arrow">→</span><div class="node-green">皮相脸<br/>正脸/本人好看 线条柔和</div><span class="arrow">→</span><div class="node-orange">调整重心<br/>骨骼转折 vs 软组织线条</div><span class="arrow">→</span><div class="node-blue">抗老<br/>骨相越老越美 皮相必垮</div><span class="arrow">→</span><div class="node">上镜<br/>骨相更好看 缺陷=辨识度</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为美只分「好看/不好看」两个维度。实际按骨骼 vs 软组织可分为骨相/皮相两种风格，选对风格再动手事半功倍。</p><p>误区：以为追求无瑕疵=上镜美。皮相追求的大五官+无瑕疵上镜反而扁平宽；保留适当缺陷才是辨识度。</p><p>误区：以为医美/化妆效果能长久维持。皮相基础的三五年会垮，骨相打造是在给未来留空间。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>自测法：侧脸 vs 正脸</h3>
+      <p>不用看骨相知识，先做 30 秒自测：如果你的侧脸比正脸好看，或者拍照比现实好看——你是骨相脸。如果正脸比侧脸好看、拍照没有本人好看——你是皮相脸。判断标准本质是：你的美来自骨骼支撑，还是来自软组织表现。</p>
+      <div class="quote">如果你的侧脸比正脸好看，或者拍照比现实好看，那你就是骨相脸</div>
+      <div class="relation">自测 → 定位风格 → 再谈调整手段。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>底层标准：高光点的不同</h3>
+      <p>为什么测脸就知道类型？因为骨相和皮相最重要的判断标准就是高光点的不同。高光点是面部受光时骨骼顶点的表现——骨相脸高光点位置高、骨骼支撑明确，皮相脸靠软组织撑起、高光点平。这是后续所有区别的底层原理。</p>
+      <div class="quote">骨相和皮相最重要的一个判断标准，就是高光点的不同</div>
+      <div class="relation">高光点 = 骨骼立体度的可视呈现。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>区别一：调整重心——骨骼转折 vs 柔和线条</h3>
+      <p>皮相脸调整重心在眉眼线条：眉弓不明显、没有立体度，下颌角平滑没角度。骨相脸恰好相反：眉弓有转折且与额骨阶梯式呼应，颧骨位置高、微凸，下颌角有明显转折。从侧面一张照片就能分辨——这就是为什么用侧脸自测。</p>
+      <div class="quote">骨相脸的眉弓立体度是和额骨阶梯式呼应的，是有转折的</div>
+      <div class="relation">骨相 = 骨骼转折点清晰（眉弓/颧骨/下颌角）。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>区别二：抗老——骨相留空间，皮相必垮</h3>
+      <p>年龄越大骨相特征越明显，所以现在打造的骨相脸是在给未来三五年留空间。皮相脸只是暂时好看，且垮得越来越厉害——机理是：鼻基底凹陷 + 颧骨低 → 软组织挂下来 → 形成鼻唇沟。</p>
+      <div class="quote">皮相脸都会有鼻基底凹陷的问题，再加上你的颧骨低，你的软组织就会挂下来</div>
+      <div class="relation">衰老路径：皮相靠软组织→软组织下垂→垮；骨相靠骨骼→挂得住。</div>
+    </div>
+    <div class="card card card-blue">
+      <h3>区别三：上镜——缺陷就是辨识度</h3>
+      <p>上镜没争议，骨相更好看：所有好看的女明星都是骨相脸。皮相脸追求大五官、把瑕疵变成辨识度——刘亦菲的头缝鼻、林青霞的下巴、王祖贤的凸嘴，这些不符合主流审美的特征在镜头下各有千秋。而追求无瑕疵的皮相脸上镜立刻扁平宽。</p>
+      <div class="quote">上镜骨相脸一定要保留适当的缺陷，反而你就会更好看、更有辨识度</div>
+      <div class="relation">镜头吃立体不吃平：骨骼转折→光影→上镜美；无瑕疵平脸→扁平宽。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">骨相 vs 皮相对照</h2><div class="card"><table><thead><tr><th>维度</th><th>骨相脸</th><th>皮相脸</th></tr></thead><tbody><tr><td>自测</td><td>侧脸/拍照好看</td><td>正脸/本人好看</td></tr><tr><td>判断标准</td><td>高光点立体、骨骼顶位高</td><td>高光点平、靠软组织</td></tr><tr><td>眉眼</td><td>眉弓有转折、与额骨呼应</td><td>线条柔和、眉弓不明显</td></tr><tr><td>颧骨</td><td>位置高、微凸</td><td>位置低、平缓</td></tr><tr><td>下颌角</td><td>有明显转折角度</td><td>平滑无角度</td></tr><tr><td>抗老</td><td>越老特征越明显</td><td>三五年必垮、鼻唇沟</td></tr><tr><td>上镜</td><td>更好看、缺陷=辨识度</td><td>大五官无瑕疵、易扁平宽</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>「骨相大于皮相」是 UP 主的个人价值判断，偏好成熟感、上镜感的美学立场；追求少女感、亲和感的风格未必适用。</li><li>自测法（侧脸 vs 正脸）受光线、角度、拍照设备影响，仅作初步参考，不能替代专业面诊。</li><li>「保留缺陷」不等于不处理瑕疵——指保留有辨识度的特征点（如鼻型、下颌），而非放任皮肤状态不管。</li></ul><div class="pitfall">只测一遍就给自己贴标签——换光线下拍照/正脸观感会变，多角度验证。</div><div class="pitfall">以为皮相脸就没有救——皮相脸照样可以走清新甜美路线，重点是选对赛道。</div><div class="pitfall">把「保留缺陷」理解成完全不动——该做的皮肤保养、轮廓调整仍要做。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>自测定位：侧脸/拍照好看=骨相，正脸/本人好看=皮相。</li><li>底层标准是面部高光点：骨相高光立体，皮相高光平。</li><li>三点区别：调整重心（骨骼转折 vs 线条）、抗老（留空间 vs 必垮）、上镜（立体 vs 扁平）。</li><li>上镜骨相脸保留适当缺陷，缺陷=辨识度。</li></ul><h3>行动清单</h3><ol><li>先做侧脸/正脸自测，确定自己属于哪种风格再谈调整。</li><li>骨相脸重点打造眉弓、颧骨、下颌角的转折与立体度。</li><li>皮相脸接受赛道选择，不盲目模仿骨相路线。</li><li>上镜/拍照时突出自己的骨骼转折，保留特征性缺陷。</li><li>抗老视角：骨相路线=给未来三五年留空间。</li></ol><h3>关键认知转变</h3><p>不要先动手后定位——变美第一步是自测风格。骨相脸靠骨骼立体度吃饭，皮相脸靠软组织线条吃饭；上镜时代，保留适当的缺陷反而让你更有辨识度。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 1分56秒 · 变美审美方法论</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

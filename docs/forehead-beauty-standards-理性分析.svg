@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2433" viewBox="0 0 1320 2433">
+  <foreignObject x="0" y="0" width="1320" height="2433">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>刘亦菲和张柏芝的额头，你更想do哪款？</h1>
+  <div class="meta"><span class="tag tag-blue">变美</span><span class="tag tag-green">审美</span><span class="tag tag-orange">额头</span><span class="tag tag-purple">医美</span><span class="tag tag-gray">时长 1分03秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/3Ktkep3cUh2">原视频</a>
+  <div class="summary-line">两款额头美学对比：刘亦菲款=标准直面型——90度额面垂直、额结节浑圆、天庭与眉心无起伏，柔和温婉；张柏芝款=起伏型——额结节精致清晰、花瓣型发际线、印堂与眉心有高低落差，轻瘦高挺、精致明艳。选哪款取决于自身浓颜/淡颜基础：浓颜衬起伏精致，淡颜适合柔和温婉。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">提问：刘亦菲额头还是张柏芝额头？</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">刘亦菲款：标准直面型，90度额面垂直</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">顶光下额结节浑圆、与额顶衔接厚重</span></div><div class="timeline-item"><span class="timeline-time">00:21</span><span class="timeline-text">天庭与眉心无起伏→柔和温婉</span></div><div class="timeline-item"><span class="timeline-time">00:29</span><span class="timeline-text">张柏芝款：有清晰角度但不后倾</span></div><div class="timeline-item"><span class="timeline-time">00:38</span><span class="timeline-text">额结节精致+花瓣型发际线→起伏感</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">印堂与眉心衔接处高低落差→精致明艳</span></div><div class="timeline-item"><span class="timeline-time">00:54</span><span class="timeline-text">选款看基础：浓颜还是淡颜</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">刘亦菲款<br/>直面型 浑圆 无起伏 温婉</div><span class="arrow">→</span><div class="node-green">张柏芝款<br/>起伏型 清晰落差 明艳</div><span class="arrow">→</span><div class="node-orange">区别核心<br/>额面起伏度</div><span class="arrow">→</span><div class="node-blue">选款依据<br/>浓颜 vs 淡颜</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为额头美=饱满。实际两种审美路径：刘亦菲式浑圆平缓（温婉）与张柏芝式清晰起伏（明艳），饱满不是唯一标准。</p><p>误区：以为可以照搬明星额头。选款必须看自身浓颜/淡颜基础，同样的额头在不同底子上效果天差地别。</p><p>误区：以为起伏度只取决于额骨。发际线形状（花瓣型）、印堂眉心衔接都共同构成额头的观感。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>刘亦菲款：直面型额头</h3>
+      <p>标准直面型：90度垂直视角下额面是垂直的。顶光下额结节有高光但比较浑圆，与额顶衔接厚重，淡淡额沟不明显。正切面与侧切面转折度较高，但关键是天庭与眉心没有明显起伏——所以显得柔和温婉。</p>
+      <div class="quote">关键是一庭眉心并没有明显的起伏，就会显得人比较的柔和温婉</div>
+      <div class="relation">直面+无起伏=温婉气质关键词。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>张柏芝款：起伏型额头</h3>
+      <p>90度观察有清晰角度但不至于后倾。顶光下额结节精致清晰，与花瓣型发际线组合构成跌宕起伏感；淡淡的额沟与眉上浅凹显得轻瘦高挺。显著区别是印堂与眉心衔接处有清晰的高低落差——整体精致明艳。</p>
+      <div class="quote">印堂和眉心的衔接处并非平缓的过渡，而是有一个清晰的高低落差</div>
+      <div class="relation">起伏+落差=明艳气质关键词。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>选款依据：浓颜还是淡颜</h3>
+      <p>普通人选哪款，取决于自身基础——浓颜还是淡颜。浓颜系五官浓烈、立体感强，更适合张柏芝式的起伏精致；淡颜系线条柔和，更适合刘亦菲式的柔和温婉。额头要与整体骨相和谐，而不是孤立的部件。</p>
+      <div class="quote">你适合哪一款还是要取决于你自身的基础，到底是浓颜还是淡颜</div>
+      <div class="relation">整体观：额头只是脸的一部分，选款看整脸底色。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">两款额头对比</h2><div class="card"><table><thead><tr><th>维度</th><th>刘亦菲款</th><th>张柏芝款</th></tr></thead><tbody><tr><td>额型</td><td>标准直面型</td><td>有角度但不前倾</td></tr><tr><td>额结节</td><td>浑圆、有高光</td><td>精致清晰</td></tr><tr><td>额沟</td><td>淡淡不明显</td><td>明显+眉上浅凹</td></tr><tr><td>发际线</td><td>常规</td><td>花瓣型</td></tr><tr><td>印堂眉心</td><td>无起伏</td><td>高低落差清晰</td></tr><tr><td>气质</td><td>柔和温婉</td><td>轻瘦高挺、精致明艳</td></tr><tr><td>适合</td><td>淡颜</td><td>浓颜</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>视频是审美分析而非医美建议，是否做额头相关项目需面诊专业医生。</li><li>「浓颜/淡颜」是粗略分类，实际每个人都是两种特征的混合。</li><li>明星额头是原生骨相，医美手段未必能完全复现同样的形态。</li></ul><div class="pitfall">照搬明星额头忽视自身底色——浓淡颜不匹配，效果适得其反。</div><div class="pitfall">只看额结节忽略发际线与印堂眉心——额头观感是多个部件的组合。</div><div class="pitfall">以为「越饱满越美」——浑圆与起伏是两种审美，没有绝对高下。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>刘亦菲款=直面型：浑圆平缓无起伏，柔和温婉。</li><li>张柏芝款=起伏型：结节清晰、落差明显，轻瘦明艳。</li><li>两款核心差异是额面起伏度。</li><li>选款取决于浓颜/淡颜基础。</li></ul><h3>行动清单</h3><ol><li>先判断自己浓颜还是淡颜，再谈额头审美方向。</li><li>观察自己的额面起伏度与印堂眉心衔接。</li><li>参考发际线形状对额头观感的影响。</li><li>有医美意向时以专业面诊为准。</li></ol><h3>关键认知转变</h3><p>别把额头当孤立的部件——直面型与起伏型是两种完整审美，浓颜衬起伏、淡颜衬平缓。先认自己的底色，再谈想do哪款。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 1分03秒 · 面部审美分析</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

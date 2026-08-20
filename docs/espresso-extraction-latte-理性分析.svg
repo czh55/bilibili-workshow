@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2433" viewBox="0 0 1320 2433">
+  <foreignObject x="0" y="0" width="1320" height="2433">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>在家学拉花第一课：如何萃取适合拉花的浓缩咖啡</h1>
+  <div class="meta"><span class="tag tag-blue">咖啡</span><span class="tag tag-green">浓缩萃取</span><span class="tag tag-orange">拉花</span><span class="tag tag-purple">教学</span><span class="tag tag-gray">时长 7分35秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/75EwmlsxSZl">原视频</a>
+  <div class="summary-line">适合拉花的浓缩 = 传统拼配中深烘焙豆 × 专业设备 × 结果导向参数。选豆看关键词（意式+中深烘焙）、日期（1-3月内）、保存（防空气）、养豆（10-15天）；设备要求专业咖啡机+电磨禁玩具机；参数不看刻度看流速三态（水粗油OK滴细），推荐粉18.5-20g/水温88-90度/时间23-30秒/液重比1:1.5-1.7。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场叠甲：目标只是适合拉花的浓缩，三步法选豆/设备/参数</span></div><div class="timeline-item"><span class="timeline-time">00:17</span><span class="timeline-text">选豆：传统拼配（意式、中深烘焙），避开手冲与SOE</span></div><div class="timeline-item"><span class="timeline-time">00:46</span><span class="timeline-text">豆类互转：牛排部位比喻，按品牌建议做对应咖啡</span></div><div class="timeline-item"><span class="timeline-time">01:47</span><span class="timeline-text">日期：1-3月内新鲜烘焙才有丰富油脂</span></div><div class="timeline-item"><span class="timeline-time">02:15</span><span class="timeline-text">保存：禁止与空气长时间接触</span></div><div class="timeline-item"><span class="timeline-time">03:00</span><span class="timeline-text">养豆：太新鲜冒大泡不利拉花，养10-15天</span></div><div class="timeline-item"><span class="timeline-time">03:16</span><span class="timeline-text">设备：专业咖啡机+专业电磨，禁玩具机</span></div><div class="timeline-item"><span class="timeline-time">04:15</span><span class="timeline-text">研磨：看流速三态（水/油/滴），结果导向</span></div><div class="timeline-item"><span class="timeline-time">05:45</span><span class="timeline-text">参数：18.5-20g粉/88-90度/23-30秒/液重比1:1.5-1.7</span></div><div class="timeline-item"><span class="timeline-time">06:45</span><span class="timeline-text">拉花适配：增粉量或降液重更丝滑</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">选豆<br/>传统拼配 中深烘焙</div><span class="arrow">→</span><div class="node-green">日期保存<br/>1-3月内 防空气 养豆</div><span class="arrow">→</span><div class="node-orange">设备<br/>专业咖啡机 + 电磨</div><span class="arrow">→</span><div class="node-blue">参数<br/>结果导向 流速三态</div><span class="arrow">→</span><div class="node">目标<br/>丝滑有支撑力的浓缩</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：问「3刻度/6刻度够不够」。刻度因磨型号与刀盘间距而异，交流无意义；正确做法是看流速反推研磨度。</p><p>误区：豆子越新鲜越好。太新鲜萃取冒大泡、泡硬且分解快，不利拉花；应养豆10-15天。</p><p>误区：贪便宜买千元大台意式咖啡机。意式有门槛，玩具机过不了机器这一关。</p><p>误区：以为1:2比例是标准。拉花要更丝滑有支撑力，液重比缩到1:1.5左右更合适。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>选豆链路：关键词×日期×保存×养豆</h3>
+      <p>选豆要抓关键词：意式咖啡+中深烘焙，对应传统拼配；手冲与SOE尽量不选。日期选1-3个月内新鲜烘焙，才有充足油脂（油脂靠新鲜二氧化碳）。保存禁与空气长时间接触，用不完放回原包装、豆仓不长期存豆。最后养豆10-15天，避免太新鲜冒大泡。</p>
+      <div class="quote">只有这种新鲜的咖啡豆，我们才能够萃取出比较丰富的油脂</div>
+      <div class="relation">因果链：新鲜烘焙 → 二氧化碳充足 → 油脂丰富 → 拉花有支撑。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>豆类互转：牛排部位的比喻</h3>
+      <p>SOE做手冲、手冲做意式、意式做手冲——理论上都可以。像牛的部位：牛排煎着最好吃是经验总结，不是硬性禁止。但建议按咖啡豆包装上的品牌建议做对应咖啡，让风味物尽其用。</p>
+      <div class="quote">理论上你想怎么做就怎么做，但是我还是建议大家按照品牌建议去做</div>
+      <div class="relation">自由度边界：做法自由，但品牌建议是最省心的路径。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>设备门槛：专业咖啡机+电磨</h3>
+      <p>设备两个硬要求：专业咖啡机（商用/家用皆可，但必须是正经咖啡品牌出品，配置可以差、可用泵加热，但禁玩具机）+ 专业电磨（手摇不是磨不到意式研磨度，而是会累死）。</p>
+      <div class="quote">意式咖啡机它就是有门槛的</div>
+      <div class="relation">因果链：玩具机 → 萃取不稳 → 拉花失败；手摇 → 磨不动 → 放弃。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>参数哲学：结果导向，看流速三态</h3>
+      <p>研磨度不看刻度看流速：像水→粗了往细调；点滴或不出液→细了往粗调；像油流下→OK。咖啡机参数推荐18.5-20g粉、88-90度、23-30秒、液重比1:1.5-1.7。一切以最后味道/状态反推参数，先看结果再调。</p>
+      <div class="quote">意式咖啡的调整永远都是结果导向的</div>
+      <div class="relation">方法论：结果 → 参数反推 → 微调，而非预设刻度猜结果。</div>
+    </div>
+    <div class="card card card-red">
+      <h3>拉花适配：更浓不等于更好喝</h3>
+      <p>想让浓缩更适配拉花：增加粉量或降低液重，浓缩更丝滑、更有支撑力。但必须清醒：这不一定会更好喝。在家做要兼顾，1:1.5左右是丝滑与口味的平衡点。</p>
+      <div class="quote">增加粉量、降低液重，会更丝滑更有支撑力，但不一定更好喝</div>
+      <div class="relation">权衡点：拉花需求（浓稠支撑）vs 饮用体验（风味平衡）。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">拉花浓缩推荐参数</h2><div class="card"><table><thead><tr><th>参数</th><th>推荐值</th><th>说明</th></tr></thead><tbody><tr><td>豆类</td><td>意式传统拼配</td><td>关键词：意式咖啡、中深烘焙</td></tr><tr><td>烘焙日期</td><td>1-3个月内</td><td>油脂靠新鲜二氧化碳</td></tr><tr><td>养豆期</td><td>10-15天</td><td>太新鲜冒大泡不利拉花</td></tr><tr><td>粉量</td><td>18.5-20克</td><td>机器限制则顶满粉碗</td></tr><tr><td>水温</td><td>88-90度</td><td>咖啡机参数</td></tr><tr><td>萃取时间</td><td>23-30秒</td><td>时间可放宽</td></tr><tr><td>液重比</td><td>1:1.5-1.7</td><td>比1:2更浓，兼顾丝滑与口味</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>本课目标是适合拉花的浓缩，好不好喝不在讨论范围；想喝得更好需另行调整参数。</li><li>推荐参数是 UP 主经验值，需按自己机器、磨与豆子微调。</li><li>「结果导向」要求有观察能力：判断流速状态、油脂品质需要练习。</li><li>拉花更浓的方案（增粉/降液重）不保证更好喝，家庭场景要权衡。</li></ul><div class="pitfall">追求刻度数字——刻度交流无意义，看流速才靠谱。</div><div class="pitfall">豆子太新鲜直接用——冒大泡不利拉花，先养豆。</div><div class="pitfall">买千元玩具机——意式有门槛，机器不过关全白搭。</div><div class="pitfall">照搬1:2比例——拉花要更浓的1:1.5左右液重比。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>选豆：传统拼配（意式+中深烘焙），1-3月内，防空气保存，养豆10-15天。</li><li>设备：专业咖啡机+电磨，禁玩具机。</li><li>参数：结果导向看流速三态，推荐粉18.5-20g/水温88-90度/23-30秒/液重比1:1.5-1.7。</li></ul><h3>行动清单</h3><ol><li>买豆时核对关键词：意式咖啡、中深烘焙、1-3个月内。</li><li>豆子到手先养10-15天，再开袋萃取。</li><li>用流速三态法调试研磨度，不纠结刻度。</li><li>按推荐参数起步，再按拉花效果微调粉量与液重。</li></ol><h3>关键认知转变</h3><p>浓缩萃取不是玄学手感，而是选豆、设备、参数三环的可控叠加——一切调整以结果为导向，刻度只是噪音。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 7分35秒 · 咖啡浓缩萃取教学</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

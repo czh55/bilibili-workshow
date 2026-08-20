@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2388" viewBox="0 0 1320 2388">
+  <foreignObject x="0" y="0" width="1320" height="2388">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>裙子鞋袜万能穿搭技巧</h1>
+  <div class="meta"><span class="tag tag-blue">穿搭</span><span class="tag tag-green">裙子</span><span class="tag tag-orange">鞋子</span><span class="tag tag-gray">时长 21秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/6V1AjjXSsMf">原视频</a>
+  <div class="summary-line">裙鞋搭配的万能口诀：五条互补原则（短裙配量感足、长裙配轻量、紧身配细跟、轻飘配重鞋、花哨配简洁）+ 四种裙型具体方案（长裙→平底、短裙→长靴、开叉裙→高跟、碎花裙→小白鞋）。本质是视觉量感与繁简的互补匹配。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">裙子越短，鞋面越多</span></div><div class="timeline-item"><span class="timeline-time">00:02</span><span class="timeline-text">裙子越长，鞋面越少</span></div><div class="timeline-item"><span class="timeline-time">00:05</span><span class="timeline-text">裙子越紧，鞋跟越细</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">裙子越轻，鞋体越重</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">裙子越花哨，鞋子越简洁</span></div><div class="timeline-item"><span class="timeline-time">00:13</span><span class="timeline-text">长裙配平底鞋</span></div><div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">短裙配长靴</span></div><div class="timeline-item"><span class="timeline-time">00:17</span><span class="timeline-text">开叉裙配高跟鞋</span></div><div class="timeline-item"><span class="timeline-time">00:19</span><span class="timeline-text">碎花裙配小白鞋</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">短裙<br/>鞋面多 量感足</div><span class="arrow">→</span><div class="node-green">长裙<br/>鞋面少 轻量鞋</div><span class="arrow">→</span><div class="node-orange">紧身裙<br/>细跟</div><span class="arrow">→</span><div class="node-blue">轻飘裙<br/>重体鞋</div><span class="arrow">→</span><div class="node">花哨裙<br/>简洁鞋</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为搭配是「鞋子好看就穿」。实际鞋子的选择由裙子决定——裙型、裙长、材质、花色四要素决定鞋的量感与风格。</p><p>误区：以为短裙只能配高跟鞋。短裙配长靴同样成立——露肤多时用靴筒补足量感。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>裙长决定鞋的存在感</h3>
+      <p>裙子越短，露肤越多，下半身的视觉重点落在鞋上，所以要选鞋面多、量感足的款式。裙子越长，腿部被包裹，鞋子的存在感下降，选量感小的平底款更协调。裙长是配鞋的第一变量。</p>
+      <div class="quote">裙子越短鞋面越多，裙子越长鞋面越少</div>
+      <div class="relation">规则：露肤越多→鞋越有存在感；包裹越多→鞋越轻量。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>松紧轻重互补</h3>
+      <p>裙子越紧，线条越利落，配细跟高跟鞋延续利落感；裙子越轻（雪纺、纱裙），飘动感强，配鞋体较重的鞋才能压住重心，避免头重脚轻。紧配细、轻配重，都是互补逻辑。</p>
+      <div class="quote">裙子越紧鞋跟越细，裙子越轻鞋体越重</div>
+      <div class="relation">互补：紧身→细跟延续线条；轻飘→重鞋压住重心。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>繁简互衬</h3>
+      <p>裙子越花哨，鞋子越简洁。碎花、印花裙本身已是视觉重点，再配复杂鞋子就乱了；一双小白鞋负责清新托底。反过来，素色简约裙可以适当选有设计感的鞋来点缀。</p>
+      <div class="quote">裙子越花哨，鞋子越简洁</div>
+      <div class="relation">主次：一个重点=花裙，另一个必须退为配角。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>四种裙型具体方案</h3>
+      <p>口诀落地：长裙配平底鞋——轻量统一；短裙配长靴——补足下半身量感；开叉裙配高跟鞋——延长腿部线条呼应开叉的女性感；碎花裙配小白鞋——花裙做主角，白鞋做清新底色。</p>
+      <div class="quote">长裙配平底鞋，短裙配长靴，开叉裙配高跟鞋，碎花裙配小白鞋</div>
+      <div class="relation">落地方案：每种裙型一个最优解，直接照抄。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">裙鞋搭配口诀速查</h2><div class="card"><table><thead><tr><th>裙型</th><th>配鞋</th><th>逻辑</th></tr></thead><tbody><tr><td>短裙</td><td>鞋面多、量感足</td><td>露肤多，鞋补足存在感</td></tr><tr><td>长裙</td><td>平底鞋、鞋面少</td><td>包裹强，鞋退居轻量</td></tr><tr><td>紧身裙</td><td>细跟</td><td>利落线条延续</td></tr><tr><td>轻飘裙</td><td>鞋体重</td><td>重鞋压住重心</td></tr><tr><td>花哨裙</td><td>简洁鞋</td><td>繁简互衬</td></tr><tr><td>开叉裙</td><td>高跟鞋</td><td>延长腿部线条</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>口诀是通用框架，具体还要结合身高、腿型、场合与配色微调。</li><li>「鞋面越多」指视觉量感（靴筒、厚底、装饰），不一定是鞋的露肤面积。</li><li>四种裙型方案是默认安全解，会穿搭的人可以打破规则制造惊喜。</li></ul><div class="pitfall">短裙配厚重靴时腿粗——靴筒高度要卡在腿部最细处。</div><div class="pitfall">长裙配平底鞋压个子——超长裙+平底对矮个子不友好，可换微厚底。</div><div class="pitfall">碎花裙配小白鞋在通勤场合偏休闲——根据场合调整鞋款。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>裙长决定鞋的存在感：短裙量感足、长裙轻量。</li><li>松紧轻重互补：紧配细跟、轻配重鞋。</li><li>繁简互衬：花裙配简洁鞋。</li><li>四方案：长裙→平底、短裙→长靴、开叉裙→高跟、碎花裙→小白鞋。</li></ul><h3>行动清单</h3><ol><li>穿裙前先判断：裙长、松紧、材质、花色四个维度。</li><li>短裙选有量感的鞋，长裙选轻量鞋。</li><li>花色裙配简洁鞋，素裙可加设计感鞋点缀。</li><li>拿不准就直接套用四种裙型的标准方案。</li></ol><h3>关键认知转变</h3><p>别再「喜欢哪双穿哪双」——先看裙子再选鞋。裙长定存在感、松紧定跟型、轻重定量感、繁简定风格，四维互补，百搭不翻车。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 21秒 · 裙鞋穿搭口诀</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

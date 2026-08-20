@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2342" viewBox="0 0 1320 2342">
+  <foreignObject x="0" y="0" width="1320" height="2342">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>在家学拉花第二课：如何打发好奶泡</h1>
+  <div class="meta"><span class="tag tag-blue">咖啡</span><span class="tag tag-green">拉花</span><span class="tag tag-orange">奶泡</span><span class="tag tag-purple">教学</span><span class="tag tag-gray">时长 3分58秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/2QtqKPrcUq8">原视频</a>
+  <div class="summary-line">奶泡打发的完整链路：原料（巴氏冷藏全脂牛奶）× 工具（打奶缸/全能缸，避开直径最大的拉花缸）× 原理（进气搅入空气 + 打棉切细气泡两阶段）× 实操参数（三点钟贴棒位置、按机型的进气时间、65度打棉停点）。核心纪律：打棉期间不乱动，防二次进气。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">第二课主题：如何打发好奶泡</span></div><div class="timeline-item"><span class="timeline-time">00:08</span><span class="timeline-text">牛奶选择：巴氏杀菌冷藏鲜牛奶，冷藏+全脂</span></div><div class="timeline-item"><span class="timeline-time">00:27</span><span class="timeline-text">奶缸选择：打奶缸/全能缸，避免拉花缸（直径最大）</span></div><div class="timeline-item"><span class="timeline-time">01:02</span><span class="timeline-text">原理：奶泡=外部空气搅入；两阶段=进气+打棉</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">实操位置：缸嘴贴蒸汽棒，蒸汽棒三点钟方向</span></div><div class="timeline-item"><span class="timeline-time">02:08</span><span class="timeline-text">进气时间：家用机10-15秒（等蒸汽变强计时）/商用机3-5秒</span></div><div class="timeline-item"><span class="timeline-time">03:04</span><span class="timeline-text">打棉停点：理想65度，手感分级（烫手拿得住60度）</span></div><div class="timeline-item"><span class="timeline-time">03:42</span><span class="timeline-text">纪律：打棉不乱动，防二次进气</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">原料<br/>巴氏冷藏全脂牛奶</div><span class="arrow">→</span><div class="node-green">工具<br/>打奶缸/全能缸</div><span class="arrow">→</span><div class="node-orange">原理<br/>进气 → 打棉</div><span class="arrow">→</span><div class="node-blue">实操<br/>位置/进气时间/温度</div><span class="arrow">→</span><div class="node">成果<br/>绵密均匀的奶泡</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为拉花缸顺手，打奶也用同一只。实际上拉花缸直径最大，旋转费劲，打出的奶泡不均匀——打奶要专用打奶缸/全能缸。</p><p>误区：进气时间按公式硬套。家用机蒸汽由弱到强渐变，开蒸汽头几秒根本不在进气；要从蒸汽变强、有进气声才开始计时。</p><p>误区：打棉期间不断调整蒸汽头想「完善」奶泡。任何多余操作都可能二次进气，一旦二次进气奶泡基本没救。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>原料与工具：两个前置条件决定成败</h3>
+      <p>牛奶要满足「冷藏+全脂」两个硬条件，首选巴氏杀菌冷藏鲜牛奶；只有常温盒装就先冰一会。奶缸要按用途分类：打奶泡用打奶缸或全能缸，避免用拉花缸——拉花缸直径最大，旋转费劲，影响奶泡均匀度。</p>
+      <div class="quote">一定要满足两个非常重要的点：冷藏、全脂</div>
+      <div class="relation">前置条件链：原料冷藏全脂 → 奶泡能成形；缸径适配 → 旋转顺畅 → 奶泡均匀。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>原理：进气把空气搅入，打棉把气泡切细</h3>
+      <p>奶泡的本质是「外面的空气被搅进牛奶」。两阶段各有分工：进气阶段靠蒸汽推力让牛奶旋转、把空气搅打进来；打棉阶段靠旋转切割，把大气泡不断变成更小的气泡并均匀分布。</p>
+      <div class="quote">奶泡是通过外面的空气搅进去所形成的</div>
+      <div class="relation">因果链：蒸汽推力 → 牛奶旋转 → 进气；持续旋转 → 切割 → 气泡变细 → 奶泡绵密。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>实操三参数：位置、进气时间、打棉停点</h3>
+      <p>位置：缸嘴贴住蒸汽棒不悬空，蒸汽棒在三点钟方向（凭手感微调）；蒸汽头埋没三分之一（商用机）或触碰液面（家用机）。进气时间按机型：家用机3000-5000元档10-15秒且等蒸汽变强再计时，商用机6000元以上档3-5秒。打棉停点看温度：理想65度，手感「烫手但拿得住」约60度。</p>
+      <div class="quote">蒸汽棒的位置在三点钟……商用机你只要一开蒸汽，它立刻就打发了</div>
+      <div class="relation">参数矩阵：机器强度 → 蒸汽头状态与进气时间；温度 → 打棉停点。</div>
+    </div>
+    <div class="card card card-red">
+      <h3>核心纪律：打棉期间不乱动</h3>
+      <p>蒸汽头埋进去之后就不再需要任何操作。此时任何多余动作都可能造成二次进气——新的粗大气泡混入已打好的奶泡，「那你的奶泡就基本上是没救了」。</p>
+      <div class="quote">你基本上埋进去了之后，就不需要你再做任何操作了</div>
+      <div class="relation">风险链：埋入后乱动 → 二次进气 → 粗泡混入 → 奶泡报废。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">家用机 vs 商用机：奶泡打发参数对照</h2><div class="card"><table><thead><tr><th>维度</th><th>家用咖啡机</th><th>商用咖啡机</th><th>判断依据</th></tr></thead><tbody><tr><td>价格参考</td><td>3000-5000元</td><td>6000元以上</td><td>UP 主经验档位</td></tr><tr><td>蒸汽特性</td><td>泵加热，由弱到强渐变</td><td>开蒸汽立刻打发</td><td>机器动力结构</td></tr><tr><td>蒸汽头状态</td><td>触碰液面</td><td>埋没三分之一</td><td>蒸汽强弱</td></tr><tr><td>进气时间</td><td>约10-15秒（等变强后计时）</td><td>约3-5秒</td><td>蒸汽强度</td></tr><tr><td>打棉停点</td><td>理想65度，手感分级</td><td>同左</td><td>牛奶温度</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>进气时间与蒸汽头状态是 UP 主个人机器的经验值，需按自己机器的蒸汽强度磨合调整。</li><li>「蒸汽棒三点钟」非绝对位置，不同奶缸口径与手持习惯下应以稳定旋转为准微调。</li><li>65度理想温度适合意式奶泡；不同饮品种类（如冷奶泡）目标温度不同。</li><li>若奶泡本身打不出绵密感，需先检查牛奶新鲜度与冷藏全脂条件，而非只调操作参数。</li></ul><div class="pitfall">跳过牛奶选择直接用常温盒装奶——冷藏全脂是奶泡成形的前提。</div><div class="pitfall">用拉花缸打奶——直径太大旋转费劲，奶泡粗糙不均。</div><div class="pitfall">进气时间从开蒸汽就开始计时——家用机前几秒无进气，会把时间算错。</div><div class="pitfall">打棉期间反复移动蒸汽头——二次进气直接毁掉奶泡。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>奶泡 = 冷藏全脂牛奶 × 打奶缸/全能缸 × 进气+打棉两阶段。</li><li>实操三参数：三点钟贴棒位置、按机型的进气时间、65度打棉停点。</li><li>核心纪律：打棉期间不乱动，防二次进气。</li></ul><h3>行动清单</h3><ol><li>确认牛奶冷藏全脂、奶缸选打奶缸/全能缸。</li><li>用「等蒸汽变强再计进气时间」的方法确定自己机器的进气秒数。</li><li>以65度为目标温度，配合「烫手但拿得住」的手感判断停点。</li><li>埋入蒸汽头后克制操作，只观察，不调整。</li></ol><h3>关键认知转变</h3><p>奶泡打发不是玄学手感，而是原料、工具、原理、参数四个环节的可控叠加——每环节都有明确标准，唯一的纪律是打棉时管住手。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 3分58秒 · 咖啡奶泡教学</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

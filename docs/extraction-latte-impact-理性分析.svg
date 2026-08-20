@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2219" viewBox="0 0 1320 2219">
+  <foreignObject x="0" y="0" width="1320" height="2219">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>萃取对拉花的影响：浓度决定图案</h1>
+  <div class="meta"><span class="tag tag-blue">咖啡</span><span class="tag tag-green">萃取</span><span class="tag tag-orange">拉花</span><span class="tag tag-purple">浓度</span><span class="tag tag-gray">时长 3分07秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/4FUwRukpITx">原视频</a>
+  <div class="summary-line">三组对比实验证明：拉花成败由浓缩浓度决定。低浓度（14克粉/20克液）颜色浅、偏水，图案变形带锯齿——偏酸、支撑力不够；正常浓度（17克）流动性更好；高浓度（20克）像融化的巧克力，图案最完整最丝滑、对比度最高。结论：拉花要中高浓度；调节手段除粉量外还有研磨度与萃取比例。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">实验设计：三个流速对应低/中/高浓度</span></div><div class="timeline-item"><span class="timeline-time">00:25</span><span class="timeline-text">低浓度：14克粉萃20克液，颜色浅、偏水</span></div><div class="timeline-item"><span class="timeline-time">00:52</span><span class="timeline-text">低浓度拉花：图案变形带锯齿，偏酸无支撑</span></div><div class="timeline-item"><span class="timeline-time">01:21</span><span class="timeline-text">正常浓度：17克粉萃20克液，流动性更好</span></div><div class="timeline-item"><span class="timeline-time">01:51</span><span class="timeline-text">高浓度：20克粉，像融化巧克力</span></div><div class="timeline-item"><span class="timeline-time">02:01</span><span class="timeline-text">高浓度拉花：图形最完整最丝滑、对比度高</span></div><div class="timeline-item"><span class="timeline-time">02:23</span><span class="timeline-text">结论：拉花需中高浓度，颜色更深流动性更强</span></div><div class="timeline-item"><span class="timeline-time">02:37</span><span class="timeline-text">调节手段：粉量、研磨度、萃取比例</span></div><div class="timeline-item"><span class="timeline-time">02:59</span><span class="timeline-text">收尾互动：浓度对拉花影响你学会了吗</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">低浓度<br/>颜色浅 图案锯齿</div><span class="arrow">→</span><div class="node-green">正常浓度<br/>流动性更好</div><span class="arrow">→</span><div class="node-orange">高浓度<br/>最完整 最丝滑</div><span class="arrow">→</span><div class="node-blue">结论<br/>拉花要中高浓度</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为拉花图案好不好看是手法问题。实验证明浓度是决定性变量——低浓度下再熟练的手法也撑不出完整图案。</p><p>误区：以为只有加粉量才能提高浓度。研磨度调细、萃取比例缩短（少萃）都能得到更浓的浓缩。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>实验一：低浓度的失败样本</h3>
+      <p>14克粉萃20克液，粉没装满粉碗。结果颜色偏浅、比较水。拉花时图案轻微变形、出现锯齿状——仁义老师判断这是浓缩偏酸、支撑力不够的表现。低浓度浓缩的油脂层太薄，撑不住奶泡推出来的形状。</p>
+      <div class="quote">图案有一些轻微的变形，而且会有一些锯齿状，这个是浓缩偏酸以及支撑力不够的表现</div>
+      <div class="relation">因果链：粉少→浓度低→油脂薄→偏酸→支撑不足→图案变形锯齿。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>实验二：正常浓度的过渡</h3>
+      <p>17克粉同样萃取20克液，浓度明显增加，流动性更好。作为中间对照，验证了「粉量→浓度」的直接关系。</p>
+      <div class="quote">明显浓度是有增加的，能感受到17克的粉量它的流动性会更好一些</div>
+      <div class="relation">变量控制：保持萃液量不变，仅增粉量→浓度升→流动性变化。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>实验三：高浓度的最佳样本</h3>
+      <p>20克粉萃20克液，萃取液「有点像融化的巧克力」——质地厚重顺滑。拉花结果是三组里最理想的：图形最完整、最丝滑，对比度非常高。高浓度浓缩提供了足够的支撑与颜色深度。</p>
+      <div class="quote">高浓度的浓缩咖啡整个图形是最完整最丝滑的，而且它的对比度非常的高</div>
+      <div class="relation">因果链：粉多→浓度高→油脂厚→支撑强→图案完整对比度高。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>方法：三种手段调节浓度</h3>
+      <p>结论是拉花需要中高浓度。但调节浓度的路径不止加粉：①研磨度（粗/适中/正常）②萃取比例（完整/偏少/极短）。三种手段殊途同归，都能得到理想的浓缩状态。</p>
+      <div class="quote">我们也可以通过调整研磨度……再包括我们可以萃出不同的萃取比例，也可以得到不同的浓度</div>
+      <div class="relation">等效路径：粉量↑或研磨细或萃取短 → 浓度↑ → 拉花效果增强。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">三组浓度实验对照</h2><div class="card"><table><thead><tr><th>组别</th><th>粉量</th><th>萃液量</th><th>浓缩状态</th><th>拉花效果</th></tr></thead><tbody><tr><td>低浓度</td><td>14克</td><td>20克</td><td>颜色浅、偏水、偏酸</td><td>变形、锯齿状、支撑不足</td></tr><tr><td>正常浓度</td><td>17克</td><td>20克</td><td>浓度增加</td><td>流动性更好</td></tr><tr><td>高浓度</td><td>20克</td><td>20克</td><td>像融化巧克力、厚重</td><td>最完整、最丝滑、对比度高</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>三组实验以相同萃液量（20克）为控制变量，实际拉花中还要考虑萃液量本身的调整。</li><li>「高浓度」不等于「越浓越好」——口感与拉花支撑需要平衡，过度浓缩可能过苦。</li><li>调节浓度的手段（粉量/研磨/萃取比例）效果不完全等价，需按机器与豆子微调。</li></ul><div class="pitfall">粉量过少直接拉花——低浓度图案必变形，先看浓缩状态再动手。</div><div class="pitfall">只看手法不看浓缩——手法再好，浓度不够也白搭。</div><div class="pitfall">盲目加粉不提萃液比——浓度提高同时也要留意流速与口感。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>浓度是拉花的决定性变量：低浓度变形锯齿，高浓度完整丝滑。</li><li>拉花需要中高浓度：颜色更深、流动性更强。</li><li>调节浓度三手段：粉量、研磨度、萃取比例。</li></ul><h3>行动清单</h3><ol><li>拉花前先萃取观察浓度：颜色浅、偏水说明浓度不足。</li><li>对照三组实验，用相同萃液量测试自己机器的粉量梯度。</li><li>想提高浓度，先加粉，再试调细研磨或缩短萃取。</li><li>记录每次的粉量/研磨/萃比与拉花效果，建立自己的参数表。</li></ol><h3>关键认知转变</h3><p>拉花翻车先别怪手法——浓度才是底层变量。用粉量、研磨、萃取比例三个旋钮把浓缩调到中高浓度，图案自然完整丝滑。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 3分07秒 · 咖啡萃取与拉花教学</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2372" viewBox="0 0 1320 2372">
+  <foreignObject x="0" y="0" width="1320" height="2372">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>高颧骨的他们算是把额头彻底玩明白了</h1>
+  <div class="meta"><span class="tag tag-blue">审美</span><span class="tag tag-green">额头</span><span class="tag tag-orange">骨相</span><span class="tag tag-purple">发际线</span><span class="tag tag-gray">时长 3分14秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/32YP6XFDbVd">原视频</a>
+  <div class="summary-line">发际线形状是额头骨相的外在表现，不是装饰品——无底子硬做花瓣发际线=贴片子违和。好看额头=上窄下宽梯形：额结节点位合适+眉弓视觉高光点外移→梯形成立→开阔额头弱化脸宽、包裹眉弓、呼应颧骨；反面=正方形额面扁平局促显脸长，调整后正梯形+外框C包裹颧弓。两个骨点分额顶/额面，额面衔接T区形成高位收纳面中；额颞转折线（额结节+眉弓高光点）决定球形还是T面。隐藏细节：颞部饱满+发型打造卢米斯之圆=模拟饱满头骨形成头包脸。结语：看不懂的调整三年后成主流。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">立论：发际线=骨相外在表现，非装饰品</span></div><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">硬做花瓣发际线=贴片子违和</span></div><div class="timeline-item"><span class="timeline-time">00:24</span><span class="timeline-text">好看额头=上窄下宽梯形</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">早期：上宽下窄+眉弓高光靠内=钝感</span></div><div class="timeline-item"><span class="timeline-time">00:49</span><span class="timeline-text">额结节分亮面/灰面，点位决定梯形</span></div><div class="timeline-item"><span class="timeline-time">00:65</span><span class="timeline-text">开阔额头弱化脸宽，呼应颧骨</span></div><div class="timeline-item"><span class="timeline-time">01:24</span><span class="timeline-text">反面：正方形额面扁平显脸长</span></div><div class="timeline-item"><span class="timeline-time">01:36</span><span class="timeline-text">正梯形+额结节眉弓眼眶联动</span></div><div class="timeline-item"><span class="timeline-time">01:42</span><span class="timeline-text">外框C包裹颧弓→立体结构</span></div><div class="timeline-item"><span class="timeline-time">01:58</span><span class="timeline-text">额顶/额面分区，高位收纳面中</span></div><div class="timeline-item"><span class="timeline-time">02:13</span><span class="timeline-text">额颞转折线：球形还是T面</span></div><div class="timeline-item"><span class="timeline-time">02:35</span><span class="timeline-text">灰面承托亮面、暗面后退</span></div><div class="timeline-item"><span class="timeline-time">02:46</span><span class="timeline-text">颞部饱满+卢米斯之圆=头包脸</span></div><div class="timeline-item"><span class="timeline-time">03:06</span><span class="timeline-text">结语：看不懂的调整三年后成主流</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">发际线<br/>骨相外在表现，非装饰品</div><span class="arrow">→</span><div class="node-green">额头梯形<br/>上窄下宽=开阔大气</div><span class="arrow">→</span><div class="node-orange">额结节<br/>点位合适→包裹眉弓呼应颧骨</div><span class="arrow">→</span><div class="node-blue">眉弓高光点<br/>外移→梯形出现</div><span class="arrow">→</span><div class="node">额颞转折线<br/>决定球形还是T面</div><span class="arrow">→</span><div class="node-green">隐藏细节<br/>颞部饱满+卢米斯之圆=头包脸</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为花瓣型发际线贴上就好看。发际线是骨相的外在表现，没有骨相底子=戏剧贴片子，整脸违和。</p><p>误区：以为额头问题是『缺发量/缺颅顶』。真实逻辑是梯形、额结节、转折线的骨相结构。</p><p>误区：以为高颅顶是单一追求。正确是模拟饱满头骨形成头包脸，而非只加颅顶。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>立论：发际线=骨相的外在表现</h3>
+      <p>为什么林青霞能驾驭花瓣型发际线端庄不失柔美，而别人做个一模一样的就违和？因为发际线的形状是额头骨相的外在表现，不是可以随便贴上去的装饰品。没有骨相底子硬做，结果就像戏剧里的贴片子——单看发际线挺好看，放大到整张脸就违和。</p>
+      <div class="quote">发际线的形状是额头骨相的外在表现，不是可以随便贴上去的装饰品</div>
+      <div class="relation">因果：骨相底子→发际线成立；无底子→违和。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>梯形法则：上窄下宽的额</h3>
+      <p>好看的额头都有一个上窄下宽的梯形。梯形呈现得当，额头开阔大气；反之显得局促。早期林青霞额结节靠上但梯形上宽下窄，眉弓视觉高光点过于靠内，整个额头亮面局促、钝感明显。眉弓高光点的位置，是额头是否舒展的关键变量。</p>
+      <div class="quote">好看的额头都有一个上窄下宽的梯形</div>
+      <div class="relation">梯形方向决定开阔或局促。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>额结节点位：亮面灰面的开关</h3>
+      <p>额结节把额头分为亮面和灰面。早期灰面和暗面分界线不明显、灰面区域变大；当额结节点位调整到合适位置、眉弓视觉高光点外移，上窄下宽梯形出现。收益是连锁的：开阔额头弱化脸的视觉宽度，额结节包裹眉弓，眉弓向下呼应颧骨，面部结构舒展。</p>
+      <div class="quote">开阔的额头反而能够弱化脸的视觉宽度</div>
+      <div class="relation">点位→梯形→弱化脸宽→结构舒展。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>额颞转折线：球形还是 T 面</h3>
+      <p>T形的斜边由额结节和眉弓高光点组成额颞转折线，它让额头有转折、带来光影变化，直接决定额头是球形还是T面。转折不明显→圆润额头，中下面部立体度跟不上，只剩额头孤零零在前；转折明显→额头划分成灰面和暗面，灰面承托亮面、暗面向后退，任何角度都立体。</p>
+      <div class="quote">这条线让额头有了转折，带来了光影变化，也直接决定了额头是球形还是T面</div>
+      <div class="relation">转折强度→球形/圆润 vs T面/立体。</div>
+    </div>
+    <div class="card card card-blue">
+      <h3>隐藏细节：颞部饱满与头包脸</h3>
+      <p>变化不只是额头，还有颞部的饱满。不仅在变美时打造颞部和额部的关系，还在发型装饰上打造美术上的卢米斯之圆（Loomis头骨画法之圆）。目标不是单一打造高颅顶，而是模拟出饱满的头骨、形成头包脸。有些人看着哪里都没变却变好看了，背后是逻辑严密的变美思路。</p>
+      <div class="quote">不是单一打造高颅顶，而是去模拟出饱满的头骨，形成头包脸</div>
+      <div class="relation">局部饱满→头包脸→整体高级。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">额头骨相修法速查</h2><div class="card"><table><thead><tr><th>层次</th><th>问题</th><th>修法</th></tr></thead><tbody><tr><td>梯形</td><td>上宽下窄→局促钝感</td><td>塑上窄下宽正梯形</td></tr><tr><td>额结节</td><td>点位靠内/过近</td><td>靠下+适当外移</td></tr><tr><td>眉弓高光点</td><td>位置过于靠内</td><td>外移→梯形出现</td></tr><tr><td>转折线</td><td>转折不明显=球形圆润</td><td>转折明显=灰面承托亮面</td></tr><tr><td>颞部/发型</td><td>只加高颅顶</td><td>卢米斯之圆→头包脸</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>额骨与发际线的美学判断需结合面部整体，本文为单一视角拆解。</li><li>涉及的医美操作（额结节塑造、外框C等）须专业面诊，视频仅讲审美逻辑。</li><li>『三年后成主流』为作者审美趋势判断，不构成投资或行动建议。</li></ul><div class="pitfall">无骨相底子硬贴花瓣型发际线，得到整脸违和。</div><div class="pitfall">只做发际线/只加颅顶，忽略梯形与转折线的结构。</div><div class="pitfall">把额头修成圆润球形，导致中下面部立体度跟不上。</div><div class="pitfall">追求单点变化，没有理解额结节-眉弓-眼眶-颧弓的联动关系。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>发际线形状=骨相外在表现。</li><li>上窄下宽梯形=开阔大气。</li><li>额结节分亮面/灰面，点位决定梯形。</li><li>额颞转折线决定球形还是T面。</li><li>颞部饱满+卢米斯之圆=头包脸。</li></ul><h3>行动清单</h3><ol><li>对照额结节、眉弓高光点、梯形方向自查额头。</li><li>判断额颞转折线是否明显，暗面是否向后退。</li><li>不要单一追求高颅顶，先看头包脸的整体比例。</li><li>涉及操作交给专业人士，自己先建立审美逻辑。</li></ol><h3>关键认知转变</h3><p>从『做发际线、加颅顶』的装饰思维，到『梯形、额结节、转折线』的结构思维——变美的每一步背后都有骨相与光影的逻辑。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 3分14秒 · 额头骨相分析</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

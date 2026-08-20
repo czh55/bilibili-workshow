@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2295" viewBox="0 0 1320 2295">
+  <foreignObject x="0" y="0" width="1320" height="2295">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>不对称才美：国画构图的不平衡美学</h1>
+  <div class="meta"><span class="tag tag-blue">国画</span><span class="tag tag-green">构图</span><span class="tag tag-orange">摄影</span><span class="tag tag-purple">美学</span><span class="tag tag-gray">时长 1分01秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/5X3zqHfWLWy">原视频</a>
+  <div class="summary-line">一段 60 秒的国画写生构图课：①绿色块面不落上下中线，一半一半最难看，宁可天多留或荷叶多留；②主体花不居中，放黄金分割点；③花头叶枝统一朝右成「势」，用一片朝左的反叶四两拨千斤掰回来；④拍照人靠左靠右放三七出枝位。底层美学：在不平衡中求平衡，最忌四平八稳。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">取景框示范：荷叶绿块面避开上下中线</span></div><div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">一半一半不好看，天或荷叶多留一边</span></div><div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">花不能放中间，中间太直白</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">主体放黄金分割点</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">花头叶枝统一朝右，势往一处走</span></div><div class="timeline-item"><span class="timeline-time">00:35</span><span class="timeline-text">反叶朝左，四两拨千斤把势掰回</span></div><div class="timeline-item"><span class="timeline-time">00:43</span><span class="timeline-text">迁移摄影：人不要居中，靠左靠右</span></div><div class="timeline-item"><span class="timeline-time">00:51</span><span class="timeline-text">三七出枝位；不平衡中求平衡，忌四平八稳</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">块面不居中<br/>绿色块面避开中线</div><span class="arrow">→</span><div class="node-green">主体不放中间<br/>放黄金分割点</div><span class="arrow">→</span><div class="node-orange">统一之势<br/>花叶枝同向朝右</div><span class="arrow">→</span><div class="node-blue">反叶破势<br/>逆向小元素制造张力</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为主体放正中间最稳、最突出。实际中间太直白，没有经营感；黄金分割点才是视觉舒适区。</p><p>误区：以为对称=平衡=美。中国画恰恰相反——四平八稳是最忌讳的，不平衡中的平衡才高级。</p><p>误区：以为所有元素方向一致就够了。单一方向的势容易流走，需要一片反叶/反势来「四两拨千斤」。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>原则一：块面避开中线</h3>
+      <p>取景框示范最直观：荷叶形成的绿色块面若正好落在画框上下的中线上，画面就是一半一半——这是最不好看的构图。修正只在一念之间：要么天留得多一点，要么荷叶留得多一点。方向相反的两侧天然不对称，画面立即活起来。</p>
+      <div class="quote">你尽量不要让荷叶形成的这个绿的块面，在你这个框的上下的中线上</div>
+      <div class="relation">规则：大块面（重量级视觉元素）不要居中对称，偏向任一侧。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>原则二：主体放黄金分割点</h3>
+      <p>即使这朵花姿态极好看，也不能放在画面中间——中间太直白了，等于放弃了构图经营。画近景时，要表达的主体应落在黄金分割点上。这个比例位置是视觉的重心舒适区，主体在侧而不失焦点。</p>
+      <div class="quote">你要表达的这个主体的东西，要在黄金分割点上</div>
+      <div class="relation">规则：主体不在中心而在黄金分割点，兼具聚焦与留白。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>原则三：反叶四两拨千斤</h3>
+      <p>处理当下：花头朝右、叶子也朝右、枝也朝右，整个「势」都往右走。如果到此为止画面会一边倒、失去回旋。老师的关键一笔是在旁边留一片朝左的反叶——以小博大，像杠杆一样把势又掰回来。张力由此产生。</p>
+      <div class="quote">旁边有一个反叶是朝左的，就会有一个四两拨千斤的、把它又掰回去的这个感觉</div>
+      <div class="relation">机制：统一之势确立方向，逆向小元素制造回旋与张力。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>迁移：拍照人靠三七位</h3>
+      <p>同样的法则用于日常摄影：人在河塘前拍照，千万不要把人放到正中间，要靠左或靠右放——也就是三七出枝的位置。这与中国画写生一脉相承：在不平衡当中去求一个平衡，最忌讳的是四平八稳。</p>
+      <div class="quote">中国画里面最讲究的是在不平衡当中去求一个平衡，它最忌讳的是四平八稳</div>
+      <div class="relation">通用性：同一法则贯穿国画构图与摄影取景——侧位、留白、破势。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">构图原则速查</h2><div class="card"><table><thead><tr><th>原则</th><th>不要做</th><th>应该做</th></tr></thead><tbody><tr><td>块面位置</td><td>绿块面落上下中线（一半一半）</td><td>天或荷叶多留一边</td></tr><tr><td>主体位置</td><td>放正中间</td><td>放黄金分割点</td></tr><tr><td>势的走向</td><td>单边方向任其流走</td><td>用反叶/反势掰回</td></tr><tr><td>人物位置</td><td>居中正对</td><td>靠左靠右三七出枝位</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>黄金分割点是近景构图的参考，写意大幅仍要结合气韵与布白灵活处理。</li><li>「不对称」不是随意偏移——破坏对称的同时仍需保证视觉重量平衡。</li><li>反叶破势适用于线条/块面感强的题材，抽象或极简风格另当别论。</li></ul><div class="pitfall">只记「不要对称」而把主体塞到角落——偏离太远失去重心，同样失败。</div><div class="pitfall">理解了黄金分割点却忘了块面关系——大色块仍占中线，主体位置再对也救不回。</div><div class="pitfall">反叶角度过大变成喧宾夺主——四两拨千斤的「小」才是关键。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>块面不居中：一半一半最难看，宁可偏天偏地。</li><li>主体放黄金分割点，不放正中间。</li><li>统一之势 + 逆向反叶 = 张力与平衡。</li><li>底层美学：不平衡中求平衡，忌四平八稳。</li></ul><h3>行动清单</h3><ol><li>下次构图先自查：最大的块面在中线吗？偏到一侧去。</li><li>主体放黄金分割点：横竖各取约 1/3 相交处。</li><li>画面势向单一，加一个方向相反的细节元素破势。</li><li>拍人像/合影时人放画面左或右的三七分位。</li></ol><h3>关键认知转变</h3><p>构图不好看不是「不会摆」，而是太追求对称稳定。学会避中线、放黄金分割点、用反叶破势——在不平衡中求平衡，画面立即生动。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 1分01秒 · 国画写生构图教学</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>
