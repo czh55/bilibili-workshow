@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2403" viewBox="0 0 1320 2403">
+  <foreignObject x="0" y="0" width="1320" height="2403">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>调色三大色轮，一个视频全掌握</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">色轮</span><span class="tag tag-orange">调色</span><span class="tag tag-purple">教程</span><span class="tag tag-gray">时长 9分18秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/6GOX8FDv7O0">原视频</a>
+  <div class="summary-line">达芬奇三大色轮=三种控制粒度。①一级校色轮（亮部/中灰/暗部/偏移）：偏移=全局均匀调整；亮中暗三区联动渐变（调亮部→高光最明显+中灰暗部连带渐变），效果线性过渡自然，使用频率最高，用于还原log/矫正曝光/塑造影调/建立对比度/基础染色。②log色轮：高光/中间调/阴影三区独立隔离互不牵连（调高光只影响最亮区域），染色精准可控，但幅度过大会破坏影调平滑过渡造成断层。③HDR色轮=七分区（global/镜面高光/高光/亮部=主体肤色/阴影=体积感关键/暗部/黑场），不限于HDR素材光影复杂更好用；参数=圆形按钮查看影响区、左右滑块选区柔化、下方调曝光饱和度、XY轴定位色相饱和度；global左滑块色温（上黄下蓝）右滑块色调（上红下绿）。实战：一级还原太阳过曝→一级压高光中灰跟着变闷→log单独压回过曝+中灰暗部不变→HDR highlight只提亮太阳核心云层保留。染色对比：高光染红=一级全球偏红/log云层高光/HDR最亮高光点精确变红；暗部染绿同理。总结：整体控制→影调隔离→像素级精度=调色思维升级。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">三大色轮总览：一级/log/HDR</span></div><div class="timeline-item"><span class="timeline-time">00:33</span><span class="timeline-text">一级校色轮四部分+全局偏移</span></div><div class="timeline-item"><span class="timeline-time">01:32</span><span class="timeline-text">一级用途：还原log/矫正曝光</span></div><div class="timeline-item"><span class="timeline-time">02:10</span><span class="timeline-text">log色轮：三区独立隔离</span></div><div class="timeline-item"><span class="timeline-time">03:35</span><span class="timeline-text">log染色精准可控，幅度大断层</span></div><div class="timeline-item"><span class="timeline-time">04:25</span><span class="timeline-text">HDR七分区：global到黑场</span></div><div class="timeline-item"><span class="timeline-time">05:35</span><span class="timeline-text">HDR参数：圆形按钮/滑块/XY轴</span></div><div class="timeline-item"><span class="timeline-time">06:20</span><span class="timeline-text">HDR global：色温色调滑块</span></div><div class="timeline-item"><span class="timeline-time">06:45</span><span class="timeline-text">实战：一级还原太阳过曝</span></div><div class="timeline-item"><span class="timeline-time">07:40</span><span class="timeline-text">log压高光，中灰暗部不变</span></div><div class="timeline-item"><span class="timeline-time">08:10</span><span class="timeline-text">HDR highlight只提亮太阳核心</span></div><div class="timeline-item"><span class="timeline-time">08:40</span><span class="timeline-text">高光染红对比三色轮</span></div><div class="timeline-item"><span class="timeline-time">09:05</span><span class="timeline-text">暗部染绿对比+总结</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">一级校色轮<br/>全局联动，大范围调整</div><span class="arrow">→</span><div class="node-green">log色轮<br/>影调隔离，独立分区</div><span class="arrow">→</span><div class="node-orange">HDR色轮<br/>像素级精度，七分区</div><span class="arrow">→</span><div class="node-blue">实战选轮<br/>过曝压高光逐级精调</div><span class="arrow">→</span><div class="node">染色对比<br/>全球/分区/精确点</div><span class="arrow">→</span><div class="node-green">思维升级<br/>整体→隔离→精度</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：以为HDR色轮只能用HDR素材。HDR色轮能出色处理任何类型的画面，尤其在光影层次复杂时更能发挥价值。</p><p>误区：想压过曝高光用一级校色轮。一级高光轮压下会连带压暗中灰，画面变闷变暗，应改用log色轮的高光轮单独压。</p><p>误区：以为三组色轮染色效果一样。一级=全球性偏色，log=分区偏色，HDR=精确到最亮/最暗点，染色精度完全不同。</p><p>误区：log色轮可以随便大力度调整。幅度过大会破坏影调间的平滑过渡，导致色彩或亮度断层。</p><p>误区：不知道HDR色轮有选区柔化参数。左右滑块控制选区范围下限上限，配合圆形按钮查看影响区，让调整更精准。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>一级校色轮：全局联动</h3>
+      <p>最基础也最重要，包括四部分：亮部色轮、中灰色轮、暗部色轮和偏移色轮。偏移负责全局调整——右拖整体变亮、左拖整体变暗、染色均匀影响每一部分。亮中暗三区之间存在相互关联的影响：调整亮部色轮高光变化最明显，但中灰和暗部也会渐变式连带变化；为亮部加红时红色自然向中灰暗部渗透，程度依次减弱。效果线性过渡自然，是达芬奇使用频率最高的工具，用于还原log、矫正曝光、塑造影调、建立对比度、基础染色。</p>
+      <div class="quote">亮部、中灰、暗部色轮则用于分区控制，但三者之间存在相互关联的影响</div>
+      <div class="relation">全局联动，适合大范围集体调整。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>log色轮：影调隔离</h3>
+      <p>log色轮同样有高光、中间调、阴影和偏移，但除偏移外三区调整逻辑与一级校色轮显著不同——高度独立隔离：调高光色轮影响非常集中作用在最亮区域，暗部中间调基本保持原状；调中间调高光阴影稳定；调阴影中间调高光微乎其微。染色也对应精准：高光轮拖红=高光染红、中间调轮拖红=中间调染红、阴影轮拖红=暗部染红。比一级更精准可控，但幅度过大会破坏影调平滑过渡、造成色彩或亮度断层。</p>
+      <div class="quote">这种调整对于暗部和中间调的影响被极大的隔离了，他们基本会保持原状</div>
+      <div class="relation">影调隔离，精准但不贪猛。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>HDR色轮：七分区像素级</h3>
+      <p>很多人误以为只能用于HDR素材，其实它能出色处理任何画面，光影层次复杂时价值最大。核心是超级分区系统，七个色轮从右到左：global整体调整、specular镜面高光（光源金属反光）、highlight高光（被照亮墙面）、light亮部（常影响主体肤色）、shadow阴影（塑造体积感的关键）、暗部（比black稍亮）、black黑场（阴影深处）。每个色轮还附带功能参数：左上圆形按钮查看影响区、左右滑块=选区范围下限上限（柔化程度）、下方单独调该区域曝光饱和度、底部XY轴精准定位色相饱和度。</p>
+      <div class="quote">很多人会误以为他只能用一HDR素材，其实不然，他能出色的处理任何类型的画面</div>
+      <div class="relation">七区细分+选区柔化=像素级精度。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>实战：过曝太阳三连救</h3>
+      <p>同一素材完整演示三组色轮的选轮逻辑：①一级校色轮还原画面——提亮高光时中灰暗部连带变化，线性全局关联适合大范围调整，但还原后发现太阳过曝。②想用一级高光轮单独压下？中灰区域也跟着被压暗，画面变闷变暗，不理想。③换log色轮高光轮单独压——过曝的太阳云层高光压回来了，中灰暗部几乎不受影响，保住整体曝光基础。④但云层有点闷不够透亮，新建节点用HDR色轮highlight上提——只有太阳核心被提亮，云层细节完全保留，还能拖滑块柔化选区。</p>
+      <div class="quote">只有太阳核心及最亮的部分被提亮了，而旁边稍暗的云层细节完全不受影响</div>
+      <div class="relation">大范围用一级，隔离用log，精调用HDR。</div>
+    </div>
+    <div class="card card card-blue">
+      <h3>染色对比：精度一目了然</h3>
+      <p>同样把高光色轮往红色拉，三组色轮结果完全不同：一级校色轮=整个画面从高光到暗部整体偏红，变化是全球性的；log色轮=主要是云层和高光区域偏红，对中间调影响较小，控制范围是小部分区域而非精确点；HDR色轮=只有最亮的高光点如太阳边缘精确变红，旁边云层颜色完全不变。暗部染绿同样逻辑：一级全画面偏绿、log暗部大部分变绿中间调亮部稳定、HDR精准作用在更暗区域范围更窄更集中。这就是三种控制粒度最直观的证明。</p>
+      <div class="quote">从一级校色轮的整体控制到log色轮的影调隔离再到HDR色轮的像素级精度，这不仅是工具的切换，更是一种调色思维的升级</div>
+      <div class="relation">染色对比看粒度：全球/分区/精确点。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">达芬奇三大色轮速查</h2><div class="card"><table><thead><tr><th>色轮</th><th>分区</th><th>控制特点</th><th>典型用途</th></tr></thead><tbody><tr><td>一级校色轮</td><td>亮部/中灰/暗部/偏移</td><td>三区联动渐变+全局偏移</td><td>还原log/矫正曝光/基础染色</td></tr><tr><td>log色轮</td><td>高光/中间调/阴影/偏移</td><td>三区独立隔离互不牵连</td><td>精准压高光/局部修正</td></tr><tr><td>HDR色轮</td><td>七分区global到黑场</td><td>像素级+选区柔化滑块</td><td>最亮/最暗点精调</td></tr><tr><td>HDR global</td><td>色温+色调滑块</td><td>左滑色温上黄下蓝</td><td>整体色温色调</td></tr><tr><td>—</td><td>—</td><td>右滑色调上红下绿</td><td>—</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>教程基于达芬奇调色面板演示，HDR色轮具体分区命名以软件实际版本为准。</li><li>三大色轮的选择需结合素材实际光影层次，本课提供的是选轮思维框架。</li><li>色彩扭曲器为下节课内容，本课未展开。</li></ul><div class="pitfall">以为HDR色轮只能用于HDR素材。</div><div class="pitfall">压过曝高光用一级色轮，中灰被连带压暗。</div><div class="pitfall">三组色轮染色混用，控制粒度搞不清。</div><div class="pitfall">log色轮幅度过大造成亮度断层。</div><div class="pitfall">不用圆形按钮和滑块查看/柔化选区，盲目调整。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>一级=全局联动，适合大范围调整。</li><li>log=影调隔离，三区互不牵连。</li><li>HDR=七分区像素级精度。</li><li>实战：一级还原→log压高光→HDR提亮太阳。</li><li>染色对比：全球/分区/精确点。</li></ul><h3>行动清单</h3><ol><li>还原素材先用一级校色轮。</li><li>压过曝高光用log色轮高光轮。</li><li>精调最亮/最暗点用HDR色轮。</li><li>HDR调整前用圆形按钮查看影响区。</li><li>用左右滑块柔化选区再调整。</li></ol><h3>关键认知转变</h3><p>从『一个色轮调到底、过曝压不回去、染色一片糊』到『一级管整体、log管隔离、HDR管像素』——选轮粒度对了，调色才有控制感。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 9分18秒 · 调色三大色轮</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

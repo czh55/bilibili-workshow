@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一段 9 分 18 秒的达芬奇三大色轮对比课，讲透一级校色轮、log色轮、HDR色轮的设计逻辑与应用场景：①一级校色轮=最基础最重要：四部分（亮部/中灰/暗部/偏移），偏移=全局均匀调整；亮中暗三区联动渐变（调亮部→高光最明显+中灰暗部连带渐变）；效果线性过渡自然，使用频率最高，">
+<title>调色三大色轮，一个视频全掌握｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>调色三大色轮，一个视频全掌握</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">9分18秒</span><span class="meta-tag tag-topic">达芬奇 色轮 调色 教程</span></div>
+<a class="source-link" href="https://xhslink.cn/o/6GOX8FDv7O0" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">一级校色轮：全局联动</a><a href="#ch2">log色轮：影调隔离</a><a href="#ch3">HDR色轮：像素级精度</a><a href="#ch4">实战：三种粒度选轮</a><a href="#ch5">染色对比+总结</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一段 9 分 18 秒的达芬奇三大色轮对比课，讲透一级校色轮、log色轮、HDR色轮的设计逻辑与应用场景：①一级校色轮=最基础最重要：四部分（亮部/中灰/暗部/偏移），偏移=全局均匀调整；亮中暗三区联动渐变（调亮部→高光最明显+中灰暗部连带渐变）；效果线性过渡自然，使用频率最高，用于还原log/矫正曝光/塑造影调/建立对比度/基础染色。②log色轮=影调隔离：高光/中间调/阴影三区独立互不牵连（调高光只影响最亮区域，暗部中间调保持原状）；染色同理精准可控；警示=幅度过大会破坏影调平滑过渡造成断层。③HDR色轮=最精细最强大：不限于HDR素材，光影复杂画面更好用；七分区（global/镜面高光/高光/亮部=主体肤色/阴影=体积感关键/暗部/黑场）；功能参数=左上圆形按钮查看影响区、左右滑块=选区柔化范围、下方单独调曝光饱和度、XY轴精准定位色相饱和度；global色轮左滑块=色温（上黄下蓝）右滑块=色调（上红下绿）。④实战对比：一级还原（太阳过曝）→一级高光压下中灰跟着变闷→log高光单独压回过曝太阳+中灰暗部不变→HDR highlight上提只有太阳核心提亮云层保留。⑤染色对比：高光染红=一级全球偏红/log云层高光偏红/HDR只有最亮高光点精确变红；暗部染绿同理（一级全画面/ log暗部大部分/ HDR范围更窄更集中）。总结：整体控制→影调隔离→像素级精度=调色思维升级。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:33]</span><div><strong>三大色轮总览</strong><p>一级校色轮/log色轮/HDR色轮，搞清区别与时机。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:33→02:10]</span><div><strong>一级校色轮</strong><p>四部分：亮部/中灰/暗部/偏移；三区联动渐变+全局均匀。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:10→03:35]</span><div><strong>log色轮</strong><p>高光/中间调/阴影三区独立隔离互不牵连。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:35→04:25]</span><div><strong>log染色</strong><p>精准可控；幅度过大破坏平滑过渡造成断层。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:25→05:35]</span><div><strong>HDR七分区</strong><p>global/镜面高光/高光/亮部/阴影/暗部/黑场。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:35→06:45]</span><div><strong>HDR参数</strong><p>圆形按钮/左右滑块柔化/曝光饱和度/XY轴/global色温色调。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:45→07:40]</span><div><strong>实战-一级还原</strong><p>线性全局关联适合大范围调整；还原后发现太阳过曝。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:40→08:10]</span><div><strong>实战-log压高光</strong><p>一级压下中灰跟着变闷；log单独压回过曝+中灰暗部不变。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:10→08:40]</span><div><strong>实战-HDR提亮</strong><p>highlight上提只有太阳核心提亮，云层细节保留。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:40→09:05]</span><div><strong>染色对比-高光</strong><p>一级全球偏红/log云层高光/HDR只有最亮高光点。</p></div></div>
+<div class="summary-row"><span class="time-marker">[09:05→09:18]</span><div><strong>染色对比-暗部</strong><p>一级全画面/log暗部大部分/HDR范围更窄更集中。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>达芬奇三大色轮=三种控制粒度。①一级校色轮（四部分：亮部/中灰/暗部/偏移）：偏移=全局均匀调整；亮中暗三区联动渐变（调亮部高光最明显+中灰暗部连带渐变），效果线性过渡自然，用于还原log/矫正曝光/塑造影调/建立对比度/基础染色。②log色轮：高光/中间调/阴影三区独立隔离互不牵连（调高光只影响最亮区域），染色精准可控，但幅度过大会破坏影调平滑过渡造成断层。③HDR色轮=七分区（global/镜面高光/高光/亮部=主体肤色/阴影=体积感/暗部/黑场），不限于HDR素材；参数=圆形按钮查看影响区、左右滑块选区柔化、下方调曝光饱和度、XY轴定位色相饱和度；global左滑块色温（上黄下蓝）右滑块色调（上红下绿）。选轮心法：大范围整体调整用一级、要隔离影调用log、像素级精调用HDR——整体控制→影调隔离→像素级精度=调色思维升级。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-02:10</span>一级校色轮：全局联动</h2><p>总览：「今天我们学调色的三大色轮。面对一级校色轮、log色轮和hdr色轮，许多同学仍然会困惑他们到底有什么区别，又该在什么时候去使用。」</p><p>四部分：「一级校色轮通常包括四个部分：亮部色轮、中灰色轮、暗部色轮和偏移色轮。偏移色轮负责全局调整，当你向右拖动它时整个画面的亮度会整体提升，向左拖动会整体变暗，为他添加颜色时这种染色效果也会均匀的影响画面的每一个部分。」</p><p>三区联动：「亮部、中灰、暗部色轮则用于分区控制，但三者之间存在相互关联的影响。当你调整亮部色轮的亮度时，画面高光区域的变化最明显，但中灰和暗部区域的亮度也会随之发生渐变式的连带变化。例如当你用一级校色轮为亮部增加红色时，高光区域的改变最为明显，同时红色也会自然的向中灰和暗部区域渗透，只是影响程度会依次减弱。」</p><p>用途：「一级校色轮的调整范围非常宽广，它的效果线性且过渡自然，这也让他成为达芬奇中使用频率最高的工具之一，常用于初步还原log素材、矫正曝光、塑造明暗影调、建立对比度以及画面进行基础染色。」</p><figure><img src="assets/color-wheel-three/shot-01.jpg" alt="开场：三大色轮——一级校色轮/log色轮/HDR色轮，搞清区别与使用时机" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:03]</span>开场：三大色轮——一级校色轮/log色轮/HDR色轮，搞清区别与使用时机</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ee0cce9f0b88.mp3" type="button" aria-label="Play English audio">🔊</button><span>Opening: The three major color wheels — primary, log, and HDR — know their differences and when to use each</span></div>
+<audio class="cap-audio" src="audio/ee0cce9f0b88.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-02.jpg" alt="一级校色轮四部分：亮部/中灰/暗部/偏移；偏移=全局均匀调整" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[00:44]</span>一级校色轮四部分：亮部/中灰/暗部/偏移；偏移=全局均匀调整</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/12d7da72db5d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Primary wheels: four zones — lift/gamma/gain/offset; offset applies even global adjustment</span></div>
+<audio class="cap-audio" src="audio/12d7da72db5d.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-03.jpg" alt="一级校色轮亮中暗三区联动：调亮部→高光最明显+中灰暗部连带渐变" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:05]</span>一级校色轮亮中暗三区联动：调亮部→高光最明显+中灰暗部连带渐变</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0d5336952743.mp3" type="button" aria-label="Play English audio">🔊</button><span>Primary wheels: zones chain together — lifting gain hits highlights hardest while midtones and shadows shift gradually</span></div>
+<audio class="cap-audio" src="audio/0d5336952743.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-04.jpg" alt="一级校色轮用途：还原log/矫正曝光/塑造影调/建立对比度/基础染色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[01:32]</span>一级校色轮用途：还原log/矫正曝光/塑造影调/建立对比度/基础染色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7cc088dca97d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Primary wheel uses: restore log, fix exposure, shape tonality, build contrast, and base tint</span></div>
+<audio class="cap-audio" src="audio/7cc088dca97d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">02:10-04:25</span>log色轮：影调隔离</h2><p>独立逻辑：「log色轮同样包含高光、中间调、阴影和偏移色轮，除了偏移色轮负责全局调整外，其他三个色轮在调整逻辑上与一级校色轮有显著不同。当你调整高光色轮时，它的影响会非常集中的作用在画面中最亮的区域，这种调整对于暗部和中间调的影响被极大的隔离了，他们基本会保持原状。同理调整中间调主要改变中间亮度范围，高光和阴影保持相对稳定；调整阴影能够精准改变暗部区域，中间调和高光受到的影响微乎其微。」</p><p>染色对应：「将高光色轮向红色方向拖动，主要调整的是高光区域会染上红色；将中间调色轮向红色拖动，影响集中在中间调画面区域；将阴影色轮向红色拖动，那么效果主要调整的是暗部。」</p><p>警示：「在实际使用中log色轮相比一级校色轮能实现更精准可控的调整，但需要注意的是，如果调整幅度过大，会破坏影调间的平滑过渡，导致色彩或亮度断层使画面显得不自然。」</p><figure><img src="assets/color-wheel-three/shot-05.jpg" alt="log色轮：高光/中间调/阴影/偏移，三区独立隔离互不牵连" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:10]</span>log色轮：高光/中间调/阴影/偏移，三区独立隔离互不牵连</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c2f2292ad468.mp3" type="button" aria-label="Play English audio">🔊</button><span>Log wheels: highlights/midtones/shadows/offset — the three zones stay isolated from each other</span></div>
+<audio class="cap-audio" src="audio/c2f2292ad468.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-06.jpg" alt="log色轮染色：高光染红→只影响高光区域，精准可控" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[02:57]</span>log色轮染色：高光染红→只影响高光区域，精准可控</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4e92fdcffa29.mp3" type="button" aria-label="Play English audio">🔊</button><span>Log wheel tint: red on highlights affects only highlights — precise and controllable</span></div>
+<audio class="cap-audio" src="audio/4e92fdcffa29.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">04:25-06:45</span>HDR色轮：像素级精度</h2><p>适用性：「很多人会误以为他只能用一HDR素材，其实不然，他能出色的处理任何类型的画面，尤其在光影层次复杂时更能发挥他的价值。」</p><p>七分区：「它的核心是一套超级分区系统，将影调精细的划分为七个色轮，从右到左：第一个色轮是global用于整体调整；specular镜面高光控制最刺眼的极亮光如光源、金属反光；highlight高光控制标准的高光如被照亮的墙面；light亮部控制中间调偏亮的部分常影响主体肤色；shadow阴影控制中间调偏暗的部分是塑造物体体积感的关键；暗部控制暗部区域但比black稍亮；black黑场控制画面中最深的黑色如阴影深处。」</p><p>功能参数：「每个色轮都附带功能参数。首先你可以在左上角按住圆形按钮查看色轮对画面的影响。左侧滑块是影响画面选区范围的下限，右侧滑块是上限，你可以直观的把它理解为对选区范围的柔化程度。接着在色轮下方可以单独调整这个区域的曝光与饱和度，而不会影响画面其他色彩。最后色轮底部的参数XY轴用于在色轮内精准定位色相与饱和度。」</p><p>global色轮：「在global色轮左侧滑块影响的是色温，向上滑动偏黄，向下滑动偏蓝；右侧滑块影响的是色调，向上滑动偏红，向下滑动偏绿。色轮下方用于整体的明暗曝光与饱和度调整。」</p><figure><img src="assets/color-wheel-three/shot-07.jpg" alt="HDR色轮七分区：global/镜面高光/高光/亮部/阴影/暗部/黑场" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[03:39]</span>HDR色轮七分区：global/镜面高光/高光/亮部/阴影/暗部/黑场</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/583efe7c6bb5.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR wheels: seven zones — global/specular/highlight/light/shadow/dark/black</span></div>
+<audio class="cap-audio" src="audio/583efe7c6bb5.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-08.jpg" alt="HDR色轮参数：圆形按钮查看影响区；左右滑块=选区柔化范围" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:10]</span>HDR色轮参数：圆形按钮查看影响区；左右滑块=选区柔化范围</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/74aed636ff6c.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR wheel params: round button shows the affected area; left/right sliders soften the selection range</span></div>
+<audio class="cap-audio" src="audio/74aed636ff6c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-09.jpg" alt="HDR global色轮：左滑块=色温（上黄下蓝）；右滑块=色调（上红下绿）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[04:49]</span>HDR global色轮：左滑块=色温（上黄下蓝）；右滑块=色调（上红下绿）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b50271467924.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR Global wheel: left slider is temperature (up=warm, down=cool); right slider is tint (up=magenta, down=green)</span></div>
+<audio class="cap-audio" src="audio/b50271467924.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">06:45-08:40</span>实战：三种粒度选轮</h2><p>一级还原：「我们用一级校色轮来还原一下画面，大家注意看示波器，当提亮高光时中灰和暗部会连带变化，压暗暗部时中灰和高光同样会受影响，这就是它线性全局关联的特点，适合做大范围集体调整。还原后注意看波形，我们发现画面的高光区域比如太阳已经过曝了。」</p><p>一级局限：「新建一个节点，如果我尝试用一级校色轮的高光色轮单独往下压，效果并不理想，因为中灰区域也会跟着被压暗，导致整个画面风格变闷变暗。」</p><p>log救场：「我们切换到log色轮，用它的高光色轮单独往下压，大家可以看到过曝的太阳和云层的高光就被压回来了，而关键点在于画面的中灰和暗部几乎不受影响，这就保住了整体的曝光基础。」</p><p>HDR精调：「我们想要只给这部分最亮的高光增加一点通透感，使用HDR色轮，选中highlight的高光色轮稍微向上提亮，只有太阳核心及最亮的部分被提亮了，而旁边稍暗的云层细节完全不受影响。我们还可以拖动色轮旁边的滑块进一步柔化、控制选区范围。选区精准了，无论是修复问题还是做风格化都会显得非常简单。」</p><figure><img src="assets/color-wheel-three/shot-10.jpg" alt="实战案例：一级校色轮还原画面，线性全局关联适合大范围调整" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:34]</span>实战案例：一级校色轮还原画面，线性全局关联适合大范围调整</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e3558badd38f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Demo: restore footage with primary wheels — linear global linkage suits broad adjustments</span></div>
+<audio class="cap-audio" src="audio/e3558badd38f.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-11.jpg" alt="还原后发现太阳过曝；一级高光轮压下→中灰跟着压暗画面变闷" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[05:56]</span>还原后发现太阳过曝；一级高光轮压下→中灰跟着压暗画面变闷</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7d8de82439ea.mp3" type="button" aria-label="Play English audio">🔊</button><span>After restoring, the sun is overexposed; pushing gain down drags midtones too, making the image dull</span></div>
+<audio class="cap-audio" src="audio/7d8de82439ea.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-12.jpg" alt="log高光轮单独压：过曝太阳云层压回+中灰暗部几乎不受影响" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[06:19]</span>log高光轮单独压：过曝太阳云层压回+中灰暗部几乎不受影响</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/cfa5dc6298b5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Log highlight wheel alone pulls back the overexposed sun and clouds while midtones and shadows stay untouched</span></div>
+<audio class="cap-audio" src="audio/cfa5dc6298b5.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-13.jpg" alt="HDR highlight高光轮上提：只有太阳核心被提亮，云层细节保留" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[06:41]</span>HDR highlight高光轮上提：只有太阳核心被提亮，云层细节保留</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/93b329e709e9.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR highlight wheel lifted: only the sun&#x27;s core brightens while cloud detail is preserved</span></div>
+<audio class="cap-audio" src="audio/93b329e709e9.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">08:40-09:18</span>染色对比+总结</h2><p>高光染红：「先用一级校色轮染色，将高光色轮往红色拉，整个画面从高光到暗部都会整体偏红，变化是全球性的。log色轮染色将高光色轮往红色拉，主要是云层和高光区域会偏红，对中间调影响较小，它的控制范围还是属于小部分区域而非一个精确的点。HDR色轮染色将highlight高光色轮往红色拉，只有最亮的高光点如太阳边缘会精确的变红，旁边的云层颜色完全不变。」</p><p>暗部染绿：「同样的逻辑，我们将暗部区域染绿来直观对比一下三组色轮的效果。一级色轮，整个画面的暗部、中灰和高光整体偏绿；log色轮可以看到暗部大部分区域变绿了，但中间调与亮部还是保持相对稳定；HDR色轮效果会精准的作用在典型的更暗区域，不过范围更窄也更集中。」</p><p>总结：「从一级校色轮的整体控制到log色轮的影调隔离再到HDR色轮的像素级精度，这不仅是工具的切换，更是一种调色思维的升级。下节课我们将继续解锁同样强大的色彩扭曲器。」</p><figure><img src="assets/color-wheel-three/shot-14.jpg" alt="染色对比：一级=全球性整体偏红；log=云层高光偏红" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[07:17]</span>染色对比：一级=全球性整体偏红；log=云层高光偏红</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8b93dd746333.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tint comparison: primary = global red shift; log = red mainly on clouds and highlights</span></div>
+<audio class="cap-audio" src="audio/8b93dd746333.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-15.jpg" alt="HDR染色：只有最亮高光点如太阳边缘精确变红，云层不变" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[07:48]</span>HDR染色：只有最亮高光点如太阳边缘精确变红，云层不变</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b83d54bc05d2.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR tint: only the brightest points like the sun&#x27;s edge turn red precisely; clouds stay unchanged</span></div>
+<audio class="cap-audio" src="audio/b83d54bc05d2.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-16.jpg" alt="暗部染绿对比：一级全画面偏绿；log暗部大部分变绿中间调亮部稳定" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[08:26]</span>暗部染绿对比：一级全画面偏绿；log暗部大部分变绿中间调亮部稳定</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/13af76d6b5c8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Green on shadows: primary = whole image greenish; log = most shadows green while midtones and highlights stay stable</span></div>
+<audio class="cap-audio" src="audio/13af76d6b5c8.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-17.jpg" alt="HDR染绿：精准作用更暗区域，范围更窄更集中" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[08:41]</span>HDR染绿：精准作用更暗区域，范围更窄更集中</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f477f3a07fdc.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR green tint: precisely hits the darkest zone — narrower and more concentrated</span></div>
+<audio class="cap-audio" src="audio/f477f3a07fdc.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/color-wheel-three/shot-18.jpg" alt="总结：整体控制→影调隔离→像素级精度，是调色思维升级；预告色彩扭曲器" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh"><span class="time-badge">[09:02]</span>总结：整体控制→影调隔离→像素级精度，是调色思维升级；预告色彩扭曲器</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3a68b91e5d69.mp3" type="button" aria-label="Play English audio">🔊</button><span>Summary: global control to tonal isolation to pixel-level precision — a grading mindset upgrade; next up, the Color Warper</span></div>
+<audio class="cap-audio" src="audio/3a68b91e5d69.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（86段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>今天我们学调色的三大色轮</p></div>
+<div class="transcript-row"><time>00:03</time><p>在达芬吉调色面板中 色轮是最核心的攻击之一 虽然你可能已经对它有所了解 但面对一级叫色轮</p></div>
+<div class="transcript-row"><time>00:12</time><p>log色轮和hdr色轮 许多同学仍然会困惑他们到底有什么区别</p></div>
+<div class="transcript-row"><time>00:18</time><p>又该在什么时候去使用 今天我们通过原理讲解和实战对比 一致性为你彻底理解他们的设计逻辑</p></div>
+<div class="transcript-row"><time>00:26</time><p>核心差异与应用场景 让你在今后调色时能毫不犹豫的选出最正确的那个</p></div>
+<div class="transcript-row"><time>00:33</time><p>首先 我们来详细讲解最基础也最重要的一级叫色轮 一级叫色轮通常包括四个部分</p></div>
+<div class="transcript-row"><time>00:40</time><p>亮部色轮 中灰色轮 暗部色轮和偏移色轮</p></div>
+<div class="transcript-row"><time>00:44</time><p>偏移色轮负责全级调整 当你向右拖动它时 整个画面的亮度会整体提升</p></div>
+<div class="transcript-row"><time>00:51</time><p>向左拖动会整体变暗 为他添加颜色时 这种染色效果也会均匀的影响画面的每一个部分</p></div>
+<div class="transcript-row"><time>00:58</time><p>亮部 中灰 暗部色轮则用于分区控制 但三者之间存在相互关联的影响</p></div>
+<div class="transcript-row"><time>01:05</time><p>当你调整亮部色轮的亮度时 画面高光区域的变化最明显</p></div>
+<div class="transcript-row"><time>01:10</time><p>但中灰和暗部区域的亮度也会随之发生渐变式的连带变化</p></div>
+<div class="transcript-row"><time>01:15</time><p>调整中灰色轮时 中间调受影响最大 同时亮部和暗部也会产生一定程度的过度变化</p></div>
+<div class="transcript-row"><time>01:23</time><p>调整暗部色轮时 阴影区域变化最明显 中灰和亮部同样会受到影响 当然你用色轮染色也是同样的道理</p></div>
+<div class="transcript-row"><time>01:32</time><p>例如 当你用一级轿车轮为亮部增加红色时 高光区域的改变最为明显</p></div>
+<div class="transcript-row"><time>01:38</time><p>同时 红色也会自然的向中灰和暗部区域渗透 只是影响程度会依次减弱</p></div>
+<div class="transcript-row"><time>01:45</time><p>同理 用中灰色轮染色主要影响中间调 用暗部色轮染色影响的是阴影区域</p></div>
+<div class="transcript-row"><time>01:51</time><p>正因为如此 一级轿车轮的调整范围非常宽广 它的效果线性且过度自然</p></div>
+<div class="transcript-row"><time>01:58</time><p>这也让他成为达芬吉中使用频率最高的工具之一 常用于初步还原log素材 矫正曝光</p></div>
+<div class="transcript-row"><time>02:05</time><p>塑造明暗影调 建立对比度以及画面进行基础染色</p></div>
+<div class="transcript-row"><time>02:10</time><p>我们接着来看log色轮log色轮同样包含高光 中间调 阴影和偏移色轮</p></div>
+<div class="transcript-row"><time>02:16</time><p>除了偏移色轮负责全级调整外</p></div>
+<div class="transcript-row"><time>02:19</time><p>其他三个色轮在调整逻辑上以一级轿车轮有显著不同</p></div>
+<div class="transcript-row"><time>02:23</time><p>当你调整高光色轮时 它的影响会非常集中的作用在画面中最亮的区域</p></div>
+<div class="transcript-row"><time>02:29</time><p>而以一级轿车轮不同的是 这种调整对于暗部和中间调的影响被极大的隔离了</p></div>
+<div class="transcript-row"><time>02:36</time><p>他们基本会保持圆转 同理当你调整中间调的设轮时</p></div>
+<div class="transcript-row"><time>02:41</time><p>主要改变的是画面里中间亮度范围 而高光和阴影部分就能保持相对稳定 不受明显牵连</p></div>
+<div class="transcript-row"><time>02:48</time><p>当你调整阴影设轮时 就能够精准的改变暗部区域 而中间调和高光部分受到的影响微乎其微</p></div>
+<div class="transcript-row"><time>02:57</time><p>这种独立的控制逻辑在染色操作上也是完全一致的</p></div>
+<div class="transcript-row"><time>03:01</time><p>例如将高光色轮向红色方向拖动 主要调整的是高光区域会染上红色</p></div>
+<div class="transcript-row"><time>03:08</time><p>将中间调色轮向红色拖动 影响的是集中在中间调画面区域</p></div>
+<div class="transcript-row"><time>03:14</time><p>将阴影色轮向红色拖动 那么效果主要调整的是暗部</p></div>
+<div class="transcript-row"><time>03:18</time><p>因此在实际使用中log设轮相比一级轿车轮能实现更精准可控的调整</p></div>
+<div class="transcript-row"><time>03:25</time><p>但需要注意的是 如果调整幅度过大 会破坏影调间的平滑过度 导致色彩或亮度断层使画面显得不自然</p></div>
+<div class="transcript-row"><time>03:35</time><p>最后我们来认识一下最精细也最强大的hdr设轮</p></div>
+<div class="transcript-row"><time>03:39</time><p>很多人会误以为他只能用一hdr素材 其实不然他能出色的处理任何类型的画面 尤其在光影层次复杂时更能发挥他更大的优势</p></div>
+<div class="transcript-row"><time>03:49</time><p>它的核心是一套超级分歧系统 将影调精细的划分为七个设轮 从右到左 第一个设轮是global用于整体调整</p></div>
+<div class="transcript-row"><time>03:59</time><p>spakella 镜面高光 控制最次养的极亮光 如光源 金属反光</p></div>
+<div class="transcript-row"><time>04:05</time><p>highlight 高光 控制标准的高光 如被照亮的墙面</p></div>
+<div class="transcript-row"><time>04:10</time><p>light 亮部 控制中间调偏亮的部分 常影响主体肤色</p></div>
+<div class="transcript-row"><time>04:15</time><p>shadow 阴影 控制中间调偏暗的部分是塑造物体体积感的关键</p></div>
+<div class="transcript-row"><time>04:21</time><p>大可暗部 控制暗部区域 但比black 稍亮</p></div>
+<div class="transcript-row"><time>04:25</time><p>black 黑场 控制画面中最深的黑色 如阴影深处</p></div>
+<div class="transcript-row"><time>04:29</time><p>它的强大远不止于多分几个区 每个色轮都附带功能参数 首先你可以在左上角按住圆形按钮 查看色轮对画面的影响范围</p></div>
+<div class="transcript-row"><time>04:39</time><p>例如 我们调整shadow 阴影色轮时 可以先拖动色轮来改变颜色 然后拖动左侧滑坏 可以直观的看到它对画面的影响</p></div>
+<div class="transcript-row"><time>04:49</time><p>左侧滑坏是影响画面选区范围的下限 右侧滑坏是上限 你可以直观的把它理解为对选区范围的柔化程度</p></div>
+<div class="transcript-row"><time>04:58</time><p>接着在设轮下方可以单独调整这个区域的曝光以饱和度 而不会影响画面其他色彩</p></div>
+<div class="transcript-row"><time>05:05</time><p>最后设轮底部的参数xy轴 用于在设轮内精准定位设想以饱和度</p></div>
+<div class="transcript-row"><time>05:11</time><p>而最右侧global设轮 以其以六个设轮附带的功能有所区别</p></div>
+<div class="transcript-row"><time>05:16</time><p>在global设轮左侧滑坏 影响的是设温 向上滑动偏黄 向下滑动偏蓝</p></div>
+<div class="transcript-row"><time>05:23</time><p>右侧滑坏影响的是色调 向上滑动偏红 向下滑动偏绿</p></div>
+<div class="transcript-row"><time>05:28</time><p>设轮下方用于整体的明暗曝光以饱和度调整 操作直观清晰</p></div>
+<div class="transcript-row"><time>05:34</time><p>简单的理解 hdr功能将画面亮度细分成六个可独立调控的区域 来实现对光影以色彩的精准控制</p></div>
+<div class="transcript-row"><time>05:43</time><p>当然 很多同学会说 老师这三组设轮的原理我理解了 但我还是不知道具体该怎么用 该什么时候用</p></div>
+<div class="transcript-row"><time>05:51</time><p>为了让大家彻底理解他们的区别 我们直接用一个实际素材案例来演示</p></div>
+<div class="transcript-row"><time>05:56</time><p>首先 我们用一级较色轮来还原一下画面 大家注意看试播器</p></div>
+<div class="transcript-row"><time>06:01</time><p>当提亮高光时 中灰和暗部会连带变化 压暗暗部时</p></div>
+<div class="transcript-row"><time>06:07</time><p>中灰和高光同样会受影响 这就是它线性全级关联的特点 适合做大范围集体调整</p></div>
+<div class="transcript-row"><time>06:14</time><p>这里 我们快速来回调整一下 做一个简单的曝光和色彩还原</p></div>
+<div class="transcript-row"><time>06:19</time><p>还原后 注意看波形 我们发现画面的高光区域 比如太阳已经过曝了</p></div>
+<div class="transcript-row"><time>06:24</time><p>新建一个节点 如果我尝试用一级较色轮的高光色轮单独往下压 效果并不理想</p></div>
+<div class="transcript-row"><time>06:31</time><p>因为中灰区域也会跟着被压暗 导致整个画面风格变闷变暗</p></div>
+<div class="transcript-row"><time>06:37</time><p>这时我们就需要更精准的工具 我们切换到log色轮</p></div>
+<div class="transcript-row"><time>06:41</time><p>现在我用它的高光色轮单独往下压 大家可以看到过曝的太阳和云层的高光就被压回来了</p></div>
+<div class="transcript-row"><time>06:49</time><p>而关键点在于画面的中灰和暗部几乎不受影响 这就保住了整体的曝光基础</p></div>
+<div class="transcript-row"><time>06:55</time><p>不过现在的高光虽然压回来了 但云层可能显得有点闷 不够透亮 缺乏质感</p></div>
+<div class="transcript-row"><time>07:02</time><p>我们想要只给这部分最亮的高光增加一点通透感</p></div>
+<div class="transcript-row"><time>07:06</time><p>这就需要更高精度的工具 我们再新建一个节点 使用htr色轮</p></div>
+<div class="transcript-row"><time>07:12</time><p>顺便通过每个色轮左上角的圆形按钮 看一下画面中调整区域</p></div>
+<div class="transcript-row"><time>07:17</time><p>现在我选中highlight的高光色轮 稍微向上提亮 大家看只有太阳核心及最亮的部分被提亮了</p></div>
+<div class="transcript-row"><time>07:24</time><p>而旁边稍暗的云层细节完全不受影响 细节依然保留 我们还可以拖动色轮旁边的滑块</p></div>
+<div class="transcript-row"><time>07:32</time><p>进一步柔化 控制选区范围 选区精准了 无论是修复问题还是做分割化都会显得非常简单</p></div>
+<div class="transcript-row"><time>07:39</time><p>最后我们来直观的对比一下三者的染色效果 大家就完全明白了</p></div>
+<div class="transcript-row"><time>07:44</time><p>我们先用一级叫色轮染色 将高光色轮往红色拉</p></div>
+<div class="transcript-row"><time>07:48</time><p>整个画面从高光到暗部都会整体偏红 变化是全球性的</p></div>
+<div class="transcript-row"><time>07:53</time><p>log色轮染色将高光色轮往红色拉 主要是云层和高光区域会偏红 对中间调影响较小</p></div>
+<div class="transcript-row"><time>08:01</time><p>它的控制范围还是属于小部分区域 而非一个精确的点</p></div>
+<div class="transcript-row"><time>08:06</time><p>htr色轮染色将highlight高光色轮往红色拉 只有最亮的高光点 如太阳边缘会精确的变红</p></div>
+<div class="transcript-row"><time>08:14</time><p>旁边的云层颜色完全不变</p></div>
+<div class="transcript-row"><time>08:17</time><p>同样的逻辑 我们将暗部区域染绿 以来直观对比一下三组色轮的效果 一级色轮 整个画面的暗部中灰和高光整体偏向绿色</p></div>
+<div class="transcript-row"><time>08:26</time><p>log色轮可以看到暗部大部分区域变利了 但中间调以亮部还是保持相对稳定 不太会受影响</p></div>
+<div class="transcript-row"><time>08:34</time><p>htr色轮效果会精准的作用在典型的更暗区域 不过范围更窄也更集中好了</p></div>
+<div class="transcript-row"><time>08:41</time><p>听到这里 相信大家已经掌握了每一种色轮的操作 恭喜你 更重要的是你理解了在不同场景下如何选择需要的色轮</p></div>
+<div class="transcript-row"><time>08:50</time><p>记住 从一级叫色轮的整体控制 到log色轮的影调隔离 再到htr色轮的像素及精度 这不仅是工具的切换 更是你应对不同画面问题的逻辑升级</p></div>
+<div class="transcript-row"><time>09:02</time><p>我是自由摄影 下节课我们将继续解锁同样强大的色彩扭曲器 同学们</p></div>
+<div class="transcript-row"><time>09:09</time><p>拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>
