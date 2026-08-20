@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="2618" viewBox="0 0 1320 2618">
+  <foreignObject x="0" y="0" width="1320" height="2618">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>二级调色，一个视频教会你</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">二级调色</span><span class="tag tag-orange">抠像</span><span class="tag tag-purple">跟踪</span><span class="tag tag-red">AI抠图</span><span class="tag tag-gray">教程</span><span class="tag tag-gray">时长 14分55秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AdnHRS4Fk1t">原视频</a>
+  <div class="summary-line">二级调色=先打好整体色调，再用工具分离画面元素独立塑造。①前置：S-Log3→CST→一级曝光白平衡→风格LUT→色轮微调（压高光提亮暗部）→键输出调LUT浓度贴合素材。②曲线四类：色相对色相（渐变色带控制点只改目标色）、色相对饱和度（吸管上拉增饱和、只留橙红其余归零强冲击）、色相对亮度（上拉变亮下拉浓郁）、亮度对饱和度（降暗部饱和避免脏乱）；吸管取样+锚点+扩选区+直方图凸起定位；操作顺序=矫正LUT后再做局部（log素材反差弱选区不准），并行节点+标签备注。③限定器抠像：吸管点选+Shift+H预览+加减吸管+色相/饱和/亮度三参数+门板优化（羽化/黑白场/模糊半径）第二页阴影高光中间调+反向。④抠像方式：HSL/亮度（Option+P选暗部脏区）/RGB（三通道）/3D（多色同时选）。⑤门板+跟踪：窗口模板+云跟踪；选区不精确结合门板覆盖跟踪；马赛克打码；遮挡跟踪=遮挡前关键帧+重现后对齐再跟踪两段独立；蒙版四关键帧平滑过渡（正常→隐藏→最小→恢复）。⑥AI智能抠图：点头发/皮肤/衣服自动生成蒙版+跟踪，三层节点分解主体分别调色；AI抠图+Alpha输出+字幕转场=创意前景层次。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">二级调色总览：分离元素独立塑造</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">前置：S-Log3→CST→一级→风格LUT</span></div><div class="timeline-item"><span class="timeline-time">02:11</span><span class="timeline-text">曲线工具：色相对色相</span></div><div class="timeline-item"><span class="timeline-time">04:45</span><span class="timeline-text">色相对饱和度：只留橙红</span></div><div class="timeline-item"><span class="timeline-time">06:30</span><span class="timeline-text">色相对亮度+亮度对饱和度</span></div><div class="timeline-item"><span class="timeline-time">07:30</span><span class="timeline-text">限定器抠像+三参数+门板优化</span></div><div class="timeline-item"><span class="timeline-time">10:00</span><span class="timeline-text">亮度/RGB/3D抠像</span></div><div class="timeline-item"><span class="timeline-time">11:30</span><span class="timeline-text">门板+云跟踪+马赛克</span></div><div class="timeline-item"><span class="timeline-time">12:30</span><span class="timeline-text">遮挡跟踪两步+四关键帧</span></div><div class="timeline-item"><span class="timeline-time">13:40</span><span class="timeline-text">肤色抠出优化</span></div><div class="timeline-item"><span class="timeline-time">14:20</span><span class="timeline-text">AI智能抠图分层+创意字幕特效</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">前置流程<br/>CST+一级+风格LUT打底</div><span class="arrow">→</span><div class="node-green">曲线四类<br/>色相/饱和/亮度联动</div><span class="arrow">→</span><div class="node-orange">限定器<br/>吸管+三参数+门板优化</div><span class="arrow">→</span><div class="node-blue">抠像方式<br/>HSL/亮度/RGB/3D</div><span class="arrow">→</span><div class="node">门板跟踪<br/>云跟踪+遮挡处理</div><span class="arrow">→</span><div class="node-green">AI抠图<br/>头发皮肤衣服分层</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：一上来就做二级调色。必须先把整体色调打好（CST→一级→风格LUT→微调），二级调色通常发生在整体色调确定之后。</p><p>误区：直接在log素材上做曲线局部调整。原始画面色彩反差弱，选区识别不准效果不清晰，应在矫正LUT之后再做局部。</p><p>误区：曲线调整幅度过大。可能导致色彩偏色或断层，影响画面观感，应适度并配合衰减拉杆。</p><p>误区：以为跟踪就能一直跟到底。目标被遮挡时跟踪会失效，需要真跟踪+关键帧分段解决。</p><p>误区：选区不精确不知道怎么办。曲线和限定器都可以结合蒙版覆盖目标物体再跟踪，蒙版也可反向使用。</p><p>误区：以为AI抠图只能抠人。AI抠图配合Alpha输出和字幕轨道还能做前景人物+文字+背景的创意视觉层次。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>前置：先打好整体色调</h3>
+      <p>二级调色的目的是对画面特定部分进行独立调整，通常发生在整体基本色调确定好之后。以索尼S-Log3素材为例：先创建节点应用S-Log3转Rec.709的色彩转换LUT；接着在应用矫正LUT之前先调整全局曝光和白平衡，确保矫正阶段没有过曝或偏色；得到色彩与明暗都正常的画面后，再创建新节点套用风格LUT比如模拟胶片色调。LUT并非万能，往往还需要手动微调：通过色轮压低高光提亮暗部让画面更干净，有时进入键输出界面调整LUT浓度，降低强度使其更贴合素材。完成这些步骤才能获得理想的整体色调，为二级调色奠定扎实基础。</p>
+      <div class="quote">二级调色的目的是对画面特定部分进行独立调整，它通常发生在整体基本色调确定好之后</div>
+      <div class="relation">整体定调→二级分离，顺序不能乱。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>曲线四类：锁定特定元素</h3>
+      <p>曲线工具包含色相对色相、色相对饱和度、亮度对饱和度等多种类型。以色相对色相为例：背景是渐变色带，中间线条代表当前色彩状态，在青色区域建两个控制点拖曲线，就只改变青色部分的色相。想扩影响范围可拖两端点扩展选区，或加更多控制点、用下方按钮加拉杆调整渐变衰减幅度，幅度过大可能偏色断层。吸管取样是最快的方式：吸树木颜色→锚点上拉→拖左右控制点扩选区。曲线背景以直方图形式显示各种颜色的像素分布，对应色相位置凸起，帮你看清选区。注意顺序：在矫正LUT之后再做局部调整，直接套在log素材上反差弱容易选区不准。</p>
+      <div class="quote">如果在青色区域建立两个控制点并拖动曲线，就只会改变画面中青色部分的色相</div>
+      <div class="relation">吸管+锚点+扩选区，直方图凸起定位。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>饱和/亮度曲线玩法</h3>
+      <p>色相对饱和度是最常用的工具之一：吸管吸取救生圈原色→软件自动在曲线上建控制点→上拉增加救生圈饱和度，其他区域完全不受影响。还能玩出强视觉冲击：只保留画面中的橙红色，其他所有色彩饱和度调到零。色相对亮度专调特定颜色范围明暗：吸管选中→上拉让救生圈（含少量树叶）变亮，下拉变暗且色彩更浓郁。亮度对饱和度分控不同亮度区域：人眼对暗部色彩敏感，暗部色彩杂乱画面显得脏，所以单独降低暗部饱和度，保持风格的同时让暗部干净。</p>
+      <div class="quote">将曲线的控制点向上拉动就能增加救生圈的饱和度，而画面中其他区域的色彩饱和度就完全不受影响</div>
+      <div class="relation">一种曲线原理相通，掌握一种理解其他。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>限定器：精准抠像</h3>
+      <p>曲线难精准选色时用限定器（俗称抠像工具），用过Lightroom/Photoshop很快上手。操作链路：新建节点→吸管点击湖面完成初步抠像→左上角突出显示按钮或Shift+H快速预览单色选区→加减号吸管增减范围。还不够精确就调下方三种参数：色相（起止点+柔化对称设置）、饱和度、亮度，配合柔化与对称范围让选区过渡自然。右侧门板优化进一步调整：拖动羽化处理，调节黑场白场模糊半径优化选区边缘，减少画面闪烁和像素断层；第二页还能调阴影高光中间调使边缘更干净。选区完成后可反向操作灵活控制，再结合色轮向蓝绿调节让湖面更绿更纯净。</p>
+      <div class="quote">通过调整下方的三种参数：色相、饱和度、亮度来进一步优化选区</div>
+      <div class="relation">吸管→预览→参数→蒙版优化，四级递进。</div>
+    </div>
+    <div class="card card card-blue">
+      <h3>跟踪+遮挡+AI抠图</h3>
+      <p>选区不精确时结合蒙版：同一节点添加蒙版调整大小形状覆盖目标→跟踪。达芬奇默认云跟踪，通过大量细小的跟踪点共同运算得出稳定准确效果，正反跟踪即可；马赛克效果可直接应用到跟踪好的蒙板上打码。遮挡问题：目标被行人树木遮挡时跟踪失效，两步解决——切换到真跟踪模式，在遮挡前最后一帧放跟踪点加关键帧，主体重现后对齐再跟踪生成第二关键帧，两段独立跟踪。AI智能抠图最高效：点头发/皮肤/衣服自动识别生成蒙版+跟踪，三层图层节点把主体分解为衣服/皮肤/头发分别调色；还能做创意特效——AI抠出人物+Alpha输出+字幕入场转场，形成前景人物+文字+背景层次。</p>
+      <div class="quote">无论是抠像塑造、跟踪还是ai智能抠图，根本目的都是为了实现对画面局部区域的精确控制</div>
+      <div class="relation">云跟踪稳定，遮挡分段，AI一键分层。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">二级调色工具速查</h2><div class="card"><table><thead><tr><th>工具</th><th>作用</th><th>关键操作</th></tr></thead><tbody><tr><td>色相对色相曲线</td><td>改特定色相</td><td>吸管取样+锚点+扩选区</td></tr><tr><td>色相对饱和度曲线</td><td>改特定色饱和度</td><td>吸管上拉增饱和/归零</td></tr><tr><td>色相对亮度曲线</td><td>改特定色明暗</td><td>上拉变亮下拉浓郁</td></tr><tr><td>亮度对饱和度曲线</td><td>分亮度区控饱和</td><td>降暗部饱和避免脏乱</td></tr><tr><td>限定器抠像</td><td>按颜色/亮度选区</td><td>吸管+Shift+H+三参数</td></tr><tr><td>门板+跟踪</td><td>覆盖目标跟踪</td><td>云跟踪+正反跟踪</td></tr><tr><td>AI智能抠图</td><td>一键抠主体分层</td><td>点头发/皮肤/衣服+跟踪</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>教程基于达芬奇软件演示，S-Log3/CST等术语为索尼素材的特定流程，其他品牌相机曲线不同。</li><li>跟踪遮挡处理需要真跟踪模式配合关键帧，普通跟踪模式无法分段。</li><li>AI智能抠图的分层数量取决于达芬奇版本，部分旧版本可能没有此功能。</li></ul><div class="pitfall">整体色调没打好就做二级调色。</div><div class="pitfall">直接在log素材上做曲线局部调整。</div><div class="pitfall">曲线调整幅度过大导致偏色断层。</div><div class="pitfall">选区不精确不结合蒙版覆盖跟踪。</div><div class="pitfall">以为跟踪能一直跟到底，遇到遮挡失效。</div><div class="pitfall">忽略节点标签，操作逻辑混乱。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>二级调色发生在整体色调确定之后。</li><li>前置：CST→一级→风格LUT→色轮微调。</li><li>曲线四类：色相/饱和/亮度联动。</li><li>限定器：吸管+三参数+蒙版优化。</li><li>抠像方式：HSL/亮度/RGB/3D。</li><li>跟踪遇遮挡：真跟踪+关键帧分段。</li><li>AI抠图：分层节点+创意特效。</li></ul><h3>行动清单</h3><ol><li>先打好整体色调再做局部。</li><li>局部调整在矫正LUT之后进行。</li><li>吸管取样快速锁定目标色。</li><li>选区不精确时结合蒙版覆盖。</li><li>跟踪遇遮挡用关键帧分段。</li><li>用AI抠图分层分别调色。</li><li>给节点加标签保持操作逻辑清晰。</li></ol><h3>关键认知转变</h3><p>从『只能整体调色、局部无从下手、选区总是不准』到『曲线锁定元素、限定器精准抠像、AI一键分层』——二级调色让每处画面都可独立精修。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 14分55秒 · 二级调色</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

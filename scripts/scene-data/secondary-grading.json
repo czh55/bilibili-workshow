@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "slug": "secondary-grading",
+    "title": "二级调色，一个视频教会你",
+    "title_en": "Secondary Grading: One Video to Teach You",
+    "duration": "14分55秒",
+    "scenes": 7,
+    "sentences": 24,
+    "date": "2026-08-20",
+    "platform": "xiaohongshu",
+    "source_url": "https://xhslink.cn/o/AdnHRS4Fk1t",
+    "topic": "达芬奇 · 二级调色"
+  },
+  "scene_imgs": ["shot-01", "shot-02", "shot-04", "shot-06", "shot-10", "shot-15", "shot-17"],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "二级调色总览",
+      "title_en": "Secondary Grading Overview",
+      "time": "00:00-00:55",
+      "context": "二级调色的挑战在于分离画面不同元素并独立精准塑造。",
+      "sentences": [
+        ["二级调色的挑战不再是整体校正，而在于如何分离画面中不同元素比如人物、光影、环境，并对他们进行独立精准的塑造。", "The challenge of secondary grading is no longer whole-image correction, but separating elements like people, light, and environment and shaping each independently.", "independent shaping（独立塑造）"],
+        ["这正是调色从校正走向创作的关键一步。", "This is the key step where grading moves from correction toward creation.", "from correction to creation（从校正到创作）"],
+        ["学习如何将不同的工具协同工作，干净利落的锁定你想调整的区域。", "Learn how different tools work together to lock onto the exact region you want to adjust.", "lock onto（锁定）"]
+      ],
+      "paraphrase": [
+        ["定义", "分离人物/光影/环境等元素独立精准塑造"],
+        ["地位", "调色从校正走向创作的关键一步"],
+        ["目标", "工具协同，干净利落锁定目标区域"]
+      ],
+      "speak": "The challenge of secondary grading is no longer whole-image correction, but separating elements like people, light, and environment and shaping each independently. This is the key step where grading moves from correction toward creation. In this lesson, we learn how different tools work together to lock onto the exact region you want to adjust."
+    },
+    {
+      "id": "s2",
+      "title_cn": "前置流程：先打好整体色调",
+      "title_en": "Pre-Flow: Nail the Overall Look First",
+      "time": "00:55-02:11",
+      "context": "二级调色通常发生在整体基本色调确定好之后，先做完整前置流程。",
+      "sentences": [
+        ["二级调色的目的是对画面特定部分进行独立调整，它通常发生在整体基本色调确定好之后。", "Secondary grading adjusts specific parts of the frame independently, and it usually happens after the overall base look is set.", "base look（基本色调）"],
+        ["我会先创建一个节点应用s-log3转rec.709的色彩转换lut。", "I first create a node that applies an S-Log3 to Rec.709 color transform LUT.", "color transform LUT（色彩转换LUT）"],
+        ["我会先调整全局曝光和白平衡，确保画面在矫正阶段没有过曝或偏色。", "I adjust the global exposure and white balance first, making sure nothing is overexposed or color-cast during correction.", "color cast（偏色）"],
+        ["我可能会通过色轮压低高光和提亮暗部，让画面显得更干净。", "I may use the color wheels to pull down highlights and lift shadows, making the image cleaner.", "lift shadows（提亮暗部）"]
+      ],
+      "paraphrase": [
+        ["顺序铁律", "整体色调确定之后才做二级调色"],
+        ["四步前置", "CST色彩转换→全局曝光白平衡→风格LUT→手动微调"],
+        ["微调手法", "色轮压高光提亮暗部+键输出调LUT浓度"]
+      ],
+      "speak": "Secondary grading adjusts specific parts of the frame independently, and it usually happens after the overall base look is set. I first create a node that applies an S-Log3 to Rec.709 color transform LUT, then adjust global exposure and white balance before correction. After applying a style LUT, I use the color wheels to pull down highlights and lift shadows, making the image cleaner."
+    },
+    {
+      "id": "s3",
+      "title_cn": "曲线工具：锁定特定颜色",
+      "title_en": "Curves: Locking Specific Colors",
+      "time": "02:11-04:45",
+      "context": "曲线工具包含多种类型，以色相对色相为例演示精准选色。",
+      "sentences": [
+        ["曲线工具包含多种类型，例如色相对色相、色相对饱和度、亮度对饱和度等。", "The curves tool includes many types, such as hue vs hue, hue vs saturation, and luminance vs saturation.", "hue vs hue（色相对色相）"],
+        ["如果在青色区域建立两个控制点并拖动曲线，就只会改变画面中青色部分的色相。", "If you add two control points in the cyan area and drag the curve, only the cyan parts of the image change.", "control points（控制点）"],
+        ["可以拖动曲线的两端的点来扩展选区，也可以增加更多的控制点或使用下方的按钮来增加拉杆调整选区的渐变与衰减幅度。", "You can drag the end points to expand the selection, add more control points, or use the buttons below to add sliders that adjust the gradient and falloff.", "falloff（衰减幅度）"],
+        ["建议在套用矫正lut之后再进行局部调整，如果直接套在log素材上操作，容易导致选区识别不准确。", "Do local adjustments after the correction LUT—working directly on log footage gives weak contrast and inaccurate selections.", "correction LUT（矫正LUT）"]
+      ],
+      "paraphrase": [
+        ["曲线类型", "色相对色相/色相对饱和度/亮度对饱和度"],
+        ["操作逻辑", "渐变色带+控制点，只改目标色相"],
+        ["扩选区三招", "拖端点/加控制点/拉杆调渐变衰减"],
+        ["操作顺序", "矫正LUT后再做局部，log素材反差弱选区不准"]
+      ],
+      "speak": "The curves tool includes many types, such as hue vs hue, hue vs saturation, and luminance vs saturation. If you add two control points in the cyan area and drag the curve, only the cyan parts of the image change. You can drag the end points to expand the selection, add more control points, or use sliders to adjust the falloff. Always do local adjustments after the correction LUT."
+    },
+    {
+      "id": "s4",
+      "title_cn": "饱和与亮度曲线",
+      "title_en": "Saturation & Luminance Curves",
+      "time": "04:45-07:30",
+      "context": "色相对饱和度与亮度类曲线配合吸管工具精准调整特定元素。",
+      "sentences": [
+        ["使用吸管工具吸取救生圈的原色，软件就会在曲线上自动创建相应的控制点。", "Use the eyedropper to pick the lifebuoy's color, and the software automatically creates control points on the curve.", "eyedropper（吸管工具）"],
+        ["将曲线的控制点向上拉动就能增加救生圈的饱和度，而画面中其他区域的色彩饱和度就完全不受影响。", "Pull the control point up to boost the lifebuoy's saturation while the rest of the frame stays completely untouched.", "completely untouched（完全不受影响）"],
+        ["只保留画面中的橙红色，而将其他所有的色彩的饱和度都调整到零，这样的处理方式会形成强烈的视觉对比。", "Keep only the orange-red and drop every other color's saturation to zero—this creates a striking visual contrast.", "visual contrast（视觉对比）"],
+        ["我通常会单独降低暗部饱和度，在保持风格的同时确保暗部不会显得脏乱。", "I usually lower the shadow saturation on its own, keeping the style while making sure the shadows don't look muddy.", "muddy（脏乱）"]
+      ],
+      "paraphrase": [
+        ["色相对饱和度", "吸管选色→曲线上拉增饱和，其他区域不受影响"],
+        ["强冲击玩法", "只留橙红其余饱和度归零"],
+        ["色相对亮度", "上拉变亮/下拉变暗色彩更浓郁"],
+        ["亮度对饱和度", "单独降暗部饱和避免脏乱"]
+      ],
+      "speak": "Use the eyedropper to pick the lifebuoy's color, and the software automatically creates control points on the curve. Pull the control point up to boost its saturation while the rest of the frame stays completely untouched. For a striking look, keep only the orange-red and zero out every other color. And to keep shadows clean, I lower shadow saturation on its own."
+    },
+    {
+      "id": "s5",
+      "title_cn": "限定器：精准抠像",
+      "title_en": "Qualifier: Precise Keying",
+      "time": "07:30-10:00",
+      "context": "曲线难以精准选色时使用限定器（抠像工具）配合三参数与蒙版优化。",
+      "sentences": [
+        ["曲线工具虽然方便，但有时候难以精准选取到特定颜色，这时候就需要使用限定器，也就是俗称的抠像工具。", "Curves are convenient, but sometimes it's hard to pick a specific color precisely—that's when you use the qualifier, commonly known as the keyer.", "qualifier（限定器）"],
+        ["点击左上角的突出显示按钮或使用快捷键shift加h，可以快速预览单色选区范围。", "Click the highlight button in the upper-left or press Shift+H to quickly preview the single-color selection.", "preview selection（预览选区）"],
+        ["通过调整下方的三种参数色相、饱和度、亮度来进一步优化选区。", "Fine-tune the selection with the three parameters below: hue, saturation, and luminance.", "fine-tune（微调）"],
+        ["调节黑场、白场、模糊半径来优化选区边缘，减少画面闪烁和像素断层。", "Adjust black point, white point, and blur radius to refine the edges and reduce flicker and pixel banding.", "blur radius（模糊半径）"]
+      ],
+      "paraphrase": [
+        ["适用场景", "曲线难以精准选色时用限定器"],
+        ["操作链路", "吸管点选→Shift+H预览→加减吸管→三参数优化"],
+        ["蒙版优化", "羽化/黑白场/模糊半径减少闪烁断层"],
+        ["进阶", "蒙版优化第二页阴影高光中间调+反向操作"]
+      ],
+      "speak": "Curves are convenient, but sometimes it's hard to pick a specific color precisely—that's when you use the qualifier, commonly known as the keyer. Click the highlight button or press Shift+H to preview the selection, then fine-tune it with hue, saturation, and luminance. Adjust black point, white point, and blur radius to refine the edges and reduce flicker and pixel banding."
+    },
+    {
+      "id": "s6",
+      "title_cn": "跟踪+遮挡处理",
+      "title_en": "Tracking & Occlusion Handling",
+      "time": "11:30-13:40",
+      "context": "选区不精确时结合蒙版覆盖目标再跟踪，遇遮挡用关键帧分段解决。",
+      "sentences": [
+        ["在同一个节点上添加一个门板，调整它的大小和形状覆盖目标物体，然后进行跟踪。", "Add a mask on the same node, size and shape it to cover the target, then track it.", "track it（跟踪它）"],
+        ["达芬奇默认使用的是云跟踪，它会通过画面中大量细小的跟踪点共同运算，从而得出稳定准确的效果。", "DaVinci defaults to cloud tracking, which computes across many tiny tracking points for stable, accurate results.", "cloud tracking（云跟踪）"],
+        ["当跟踪目标中途被其他物体遮挡，跟踪会随之失效。", "When the tracked target gets occluded by another object midway, tracking fails.", "occluded（被遮挡）"],
+        ["在主体被遮挡前的最后一帧将跟踪点准确放置在主体上，并在此处添加一个关键帧。", "On the last frame before occlusion, place the tracking point on the subject and add a keyframe there.", "keyframe（关键帧）"]
+      ],
+      "paraphrase": [
+        ["蒙版补充", "选区不精确→同节点加蒙版覆盖目标+跟踪"],
+        ["云跟踪", "大量跟踪点共同运算，稳定准确"],
+        ["遮挡两步", "遮挡前最后一帧放点加关键帧+重现后对齐再跟踪"],
+        ["蒙版四关键帧", "正常→缩小隐藏→保持最小→恢复平滑过渡"]
+      ],
+      "speak": "Add a mask on the same node, size and shape it to cover the target, then track it. DaVinci defaults to cloud tracking, which computes across many tiny tracking points for stable, accurate results. When the target gets occluded by another object, tracking fails—so place the tracking point on the last frame before occlusion and add a keyframe, then re-align and track again after the subject reappears."
+    },
+    {
+      "id": "s7",
+      "title_cn": "AI智能抠图+创意特效",
+      "title_en": "AI Magic Mask & Creative FX",
+      "time": "14:20-14:55",
+      "context": "AI智能抠图大幅简化抠图流程，还能配合Alpha输出做创意字幕特效。",
+      "sentences": [
+        ["达芬奇抠图最高效的功能：ai智能抠图，可以针对性的对人物的脸部、头发、衣服单独的抠出来进行调整。", "DaVinci's most efficient keying feature is the AI magic mask—it can isolate and adjust a person's face, hair, and clothing separately.", "AI magic mask（AI智能抠图）"],
+        ["在画面中头发区域点击一下，ai便会自动识别并生成头发区域的门板。", "Click on the hair area in the frame, and the AI automatically detects and generates a mask for it.", "automatically detects（自动识别）"],
+        ["通过这样的操作我们把一个完整的主体分解为衣服、皮肤、头发三个独立的节点图层。", "This way we break a whole subject into three independent node layers: clothing, skin, and hair.", "node layers（节点图层）"],
+        ["接着在节点区域空白处右键选择添加alpha输出，将抠像节点的蓝色输出线连接到这个alpha输出端口。", "Right-click in the blank node area, choose Add Alpha Output, and connect the keyer's blue output line to the Alpha output port.", "Alpha Output（Alpha输出）"]
+      ],
+      "paraphrase": [
+        ["AI一键分层", "点头发/皮肤/衣服自动生成蒙版+跟踪"],
+        ["分层调色", "调发色/皮肤提亮美白磨皮/衣服压深偏粉"],
+        ["创意特效", "AI抠出人物+Alpha输出+字幕入场转场→前景层次"]
+      ],
+      "speak": "DaVinci's most efficient keying feature is the AI magic mask—it can isolate and adjust a person's face, hair, and clothing separately. Click on the hair area, and the AI automatically generates a mask for it. We break the whole subject into three independent node layers: clothing, skin, and hair. For creative effects, add an Alpha Output node and connect the keyer's blue output line to it."
+    }
+  ],
+  "practice": [
+    ["请将中文句子翻译成英文：二级调色的挑战在于如何分离画面中不同元素，并对他们进行独立精准的塑造。", "The challenge of secondary grading is how to separate different elements in the frame and shape each one independently and precisely."],
+    ["请将英文翻译成中文：DaVinci defaults to cloud tracking, which computes across many tiny tracking points for stable, accurate results.", "达芬奇默认使用云跟踪，它通过画面中大量细小的跟踪点共同运算，从而得出稳定准确的效果。"]
+  ],
+  "pitfalls": [
+    ["Doing secondary grading before the overall look is set", "Nail the base look first, then separate elements", "Secondary grading usually happens after the overall base tone is established"],
+    ["Adjusting curves directly on log footage", "Apply the correction LUT first, then do local work", "Weak contrast on log makes selections inaccurate and results unclear"],
+    ["Dragging curves too far", "Keep adjustments moderate and use falloff sliders", "Overshooting causes color shifts or banding that hurt the image"],
+    ["Assuming tracking survives occlusion", "Split it with true-track mode plus keyframes", "Occlusion breaks tracking; keyframes before and after fix it"]
+  ],
+  "shifts": [
+    ["只能整体调色、局部无从下手", "曲线锁定元素+限定器精准抠像"],
+    ["选区总是不准、靠手蒙", "吸管取样+蒙版覆盖+云跟踪"],
+    ["跟踪遇到遮挡就崩", "真跟踪+关键帧分段解决"]
+  ],
+  "difficult_words": ["secondary", "qualifier", "keyer", "hue", "luminance", "saturation", "eyedropper", "occlusion", "keyframe", "mask"],
+  "footer_notes": "本卡按课程主线切分，覆盖二级调色前置流程、曲线、限定器、跟踪与AI抠图的核心英文表达。"
+}

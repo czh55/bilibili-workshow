@@ -14181,5 +14181,30 @@
     "screenshot_count": 19,
     "transcript_segments": 371,
     "svg_height": 2556
+  },
+  {
+    "date": "2026-08-20",
+    "title": "二级调色，一个视频教会你",
+    "summary": "核心判断：二级调色=先打好整体色调，再用工具分离画面元素独立塑造。①前置：S-Log3→CST→一级曝光白平衡→风格LUT→色轮微调（压高光提亮暗部）→键输出调LUT浓度贴合素材。②曲线四类：色相对色相（渐变色带控制点只改目标色）、色相对饱和度（吸管上拉增饱和、只留橙红其余归零强冲击）、色相对亮度（上拉变亮下拉浓郁）、亮度对饱和度（降暗部饱和避免脏乱）；吸管取样+锚点+扩选区+直方图凸起定位；操作顺序=矫正LUT后再做局部（log素材反差弱选区不准），并行节点+标签备注。③限定器抠像：吸管点选+Shift+H预览+加减吸管+色相/饱和/亮度三参数+门板优化（羽化/黑白场/模糊半径）第二页阴影高光中间调+反向。④抠像方式：HSL/亮度（Option+P选暗部脏区）/RGB（三通道）/3D（多色同时选）。⑤门板+跟踪：窗口模板+云跟踪；选区不精确结合门板覆盖跟踪；马赛克打码；遮挡跟踪=遮挡前关键帧+重现后对齐再跟踪两段独立；蒙版四关键帧平滑过渡（正常→隐藏→最小→恢复）。⑥AI智能抠图：点头发/皮肤/衣服自动生成蒙版+跟踪，三层节点分解主体分别调色；AI抠图+Alpha输出+字幕转场=创意前景层次。",
+    "tags": [
+      "达芬奇",
+      "二级调色",
+      "抠像",
+      "跟踪",
+      "AI抠图",
+      "教程"
+    ],
+    "platform": "xiaohongshu",
+    "url": "https://xhslink.cn/o/AdnHRS4Fk1t",
+    "duration": "14分55秒",
+    "outputs": {
+      "html": "secondary-grading-图文实录.html",
+      "svg": "secondary-grading-理性分析.svg",
+      "html_en": "secondary-grading-场景英译.html",
+      "html_en_type": "scene-english"
+    },
+    "screenshot_count": 18,
+    "transcript_segments": 137,
+    "svg_height": 2618
   }
 ]
