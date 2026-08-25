@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="UP 主阿方分享了一套终于能在 Final Cut Pro 上跑的 AI 自动剪辑工作流：把口播粗剪、B-roll 匹配、上字幕这些脏活交给 Chad Cut，再由一个自制的 skill 把工程导入 Final Cut 二次创作。他先复盘了 Chad Cut 半年使用中的三个痛点">
+<title>终于😭 FinalCut也能用的自动剪辑工作流｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+</head>
+<body><main class="container">
+<header><h1>终于😭 FinalCut也能用的自动剪辑工作流</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">3分47秒</span><span class="meta-tag tag-topic">Final Cut Pro AI剪辑 ChadCut 效率工具 教程</span></div>
+<a class="source-link" href="https://xhslink.cn/o/874xMKvHEdF" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">开场：一刀未动的自动剪辑成片</a><a href="#ch2">三个意见：为什么过去省不下时间</a><a href="#ch3">配置与使用：一句话让 Agent 接管剪辑</a><a href="#ch4">效果边界：做得最好的是口播，仍需人工修正</a><a href="#ch5">二次创作与核心经验：剪辑习惯文档</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>UP 主阿方分享了一套终于能在 Final Cut Pro 上跑的 AI 自动剪辑工作流：把口播粗剪、B-roll 匹配、上字幕这些脏活交给 Chad Cut，再由一个自制的 skill 把工程导入 Final Cut 二次创作。他先复盘了 Chad Cut 半年使用中的三个痛点（工程无法导入 FCP、中文口播剪辑不自然、不对 Agent 开放），再演示通过 Codex 或 Claude Code 一句话配置、在对话里 Add Chad Cut 即可开始剪辑的完整流程，最后给出他的核心经验——建立一个剪辑习惯文档，让 AI 每次执行后复盘，它会越来越懂你的风格。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:24]</span><div><strong>成果展示</strong><p>开头口播粗剪一刀未动即成片；半年摸索后，Chad Cut 的动画生成早已自由，但 AI 剪辑一直没省时间。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:25→01:03]</span><div><strong>三个痛点</strong><p>给 Chad Cut 提的三个意见：工程无法导入 Final Cut、中文口播剪辑不自然、不对 Codex 等 Agent 开放；一次更新+一个自制 skill 全解决。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:03→01:52]</span><div><strong>配置流程</strong><p>对 Codex（ChatGPT 桌面端）或 Claude Code 说一句话完成配置，新对话里 Add Chad Cut，丢素材提要求即可剪辑。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:52→02:31]</span><div><strong>效果与修正</strong><p>做得最好的是口播剪辑与动画生成；但字幕识别错误、缩放效果不自然、素材不合意仍需人工修正，网页端界面改起来方便。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:31→03:11]</span><div><strong>二次创作</strong><p>把粗稿转回更熟悉的 Final Cut Pro 完成高质量剪辑；skill 免费分享，Final Cut 稀缺的中文字幕识别、自动剪辑、动画制作全都有了。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:11→03:47]</span><div><strong>核心经验</strong><p>从现在开始建一个剪辑习惯文档，让 AI 每次执行项目后复盘一遍——它会剪得越来越懂你（比如气口剪紧凑、喜欢的动画风格）。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>Chad Cut + Agent（Codex/Claude Code）+ 自制 skill 构成一条完整的 FCP AI 剪辑链：Agent 负责配置与指挥，Chad Cut 做粗剪与动画，skill 打通工程导入 Final Cut。AI 剪辑仍需人工纠错，但脏活已省下；真正让它「越来越懂你」的机制，是剪辑习惯文档+每次项目后复盘。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:24</span>开场：一刀未动的自动剪辑成片</h2><p>视频用一个成果直接开场——开头的口播片段「我一刀都没有动」，全靠 AI 完成。UP 主阿方点明动机：「一个足够聪明的自动剪辑工作流终于被我打通了，而且可以用在一直没那么聪明的 Final Cut Pro 上，咱终于不用再羡慕剪映和达芬奇了。」</p><p>他坦白过去的经历：过去半年一直在用 Chad Cut 这个 AI 剪辑软件，但「几乎只用来制作你现在看到的动画效果」，在真正的 AI 剪辑上没省下任何时间。</p><figure><img src="assets/finalcut-auto-edit-workflow/shot-01.jpg" alt="开头动画演示：AI 自动剪辑的口播粗剪，一刀未动的成片效果" loading="lazy"><figcaption><span class="time-badge">[00:12]</span>开头动画演示：AI 自动剪辑的口播粗剪，一刀未动的成片效果</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:25-01:03</span>三个意见：为什么过去省不下时间</h2><p>阿方梳理了给 Chad Cut 工程师提的三个意见：「第一，剪辑好的项目没法导入到 Final Cut Pro 进行二次创作；第二，中文口播的自动剪辑很不自然；第三，没有开放给 Codex、Claude 这样的 Agent 去调。」</p><p>转折来了：「没想到他们最近的一次更新，通过解决第三点，解决了第二点；再加上我写了一个 skill，也解决了第一点。」现在的分工是：口播粗剪、B-roll 匹配、上字幕这样的脏活全交给 Chad Cut 自己办。</p><figure><img src="assets/finalcut-auto-edit-workflow/shot-02.jpg" alt="半年使用 Chad Cut 的复盘：动画效果很好但没省下剪辑时间" loading="lazy"><figcaption><span class="time-badge">[00:30]</span>半年使用 Chad Cut 的复盘：动画效果很好但没省下剪辑时间</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:03-01:52</span>配置与使用：一句话让 Agent 接管剪辑</h2><p>演示非常简短：「第一步，对你的 Codex（就是现在的 ChatGPT 桌面端）说一句这样的话，然后留给它跑一段时间，它会帮你配置好 Chad Cut 粗剪。」用 Claude Code 也可以——「Chad Cut 现在也配了 Claude Code，我个人觉得它会比 ChatGPT 剪得更懂我一丢丢。」</p><p>配置完之后，「在一段新的对话里 Add Chad Cut，把你的素材丢进去，对它提出要求，它就可以帮你剪辑了。」阿方把自己的提示词贴在画面上，供观众截图保存。</p><figure><img src="assets/finalcut-auto-edit-workflow/shot-03.jpg" alt="第一步：对 Codex（ChatGPT 桌面端）下一句话，自动配置 Chad Cut" loading="lazy"><figcaption><span class="time-badge">[01:15]</span>第一步：对 Codex（ChatGPT 桌面端）下一句话，自动配置 Chad Cut</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">01:52-02:31</span>效果边界：做得最好的是口播，仍需人工修正</h2><p>阿方评价：「它现在做的最好的地方，反而就是口播的剪辑，当然还有它一贯擅长的动画生成。」但为了播放量考虑，还是要做一些小的纠正和调整——比如字幕识别错误、放大缩小效果不够自然、插入的素材不是想要的。</p><p>好在 Chad Cut 上修改方便：「它的本质是一个 AI 和人能够共同操控的网页端剪辑软件，界面和你熟悉的剪辑软件相似，不太需要花时间学习。」</p><figure><img src="assets/finalcut-auto-edit-workflow/shot-04.jpg" alt="提示词展示：素材丢进对话，提出剪辑要求，可截图保存" loading="lazy"><figcaption><span class="time-badge">[01:55]</span>提示词展示：素材丢进对话，提出剪辑要求，可截图保存</figcaption></figure><figure><img src="assets/finalcut-auto-edit-workflow/shot-05.jpg" alt="Chad Cut 网页端剪辑界面：与主流剪辑软件相似的界面，AI 与人共同操控" loading="lazy"><figcaption><span class="time-badge">[02:20]</span>Chad Cut 网页端剪辑界面：与主流剪辑软件相似的界面，AI 与人共同操控</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">02:31-03:47</span>二次创作与核心经验：剪辑习惯文档</h2><p>阿方说明自己的完整路径：「我肯定还是会选择把它完成的粗稿转回我更熟悉、更自由的 Final Cut Pro，完成更高质量的剪辑。」skill 是免费分享的，它不会完美复刻 Chad Cut 的工程文件结果，但「像 Final Cut 最稀缺的中文字幕识别、自动剪辑和动画制作，现在你都拥有了。」</p><p>收尾给出最宝贵的经验：「从现在开始，去建一个自己的剪辑习惯文档，让你的 AI 每次执行完项目之后复盘一遍，它会剪得越来越懂你。比如它现在就知道我喜欢把气口剪得更紧凑一些、喜欢什么风格的动画，我现在做字幕识别，再也不需要把『R方』纠正成『R方』了。」</p><figure><img src="assets/finalcut-auto-edit-workflow/shot-06.jpg" alt="关键经验：建一个自己的剪辑习惯文档，让 AI 每次执行后复盘" loading="lazy"><figcaption><span class="time-badge">[03:10]</span>关键经验：建一个自己的剪辑习惯文档，让 AI 每次执行后复盘</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（90段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>一个足够聪明的自动剪辑工作又终于被我得通了</p></div>
+<div class="transcript-row"><time>00:04</time><p>而且可以用在一直没那么聪明的Final Cut Pro上</p></div>
+<div class="transcript-row"><time>00:08</time><p>咱终于不用再羡慕剪音和达芬奇了</p></div>
+<div class="transcript-row"><time>00:11</time><p>而且它可以剪得更自然更懂你</p></div>
+<div class="transcript-row"><time>00:13</time><p>比如刚刚你看到的开头我一刀都没有动</p></div>
+<div class="transcript-row"><time>00:24</time><p>OK 事情是这样的</p></div>
+<div class="transcript-row"><time>00:25</time><p>在过去的半年</p></div>
+<div class="transcript-row"><time>00:26</time><p>我一直在用一个叫做Chad Cut的AI剪辑软件</p></div>
+<div class="transcript-row"><time>00:30</time><p>但几乎只用来制作你现在看到的动画效果</p></div>
+<div class="transcript-row"><time>00:35</time><p>摸索了一年</p></div>
+<div class="transcript-row"><time>00:36</time><p>阿芳可以说是已经获得了动画自由</p></div>
+<div class="transcript-row"><time>00:39</time><p>但回到AI剪辑这件事情上</p></div>
+<div class="transcript-row"><time>00:41</time><p>她没有给我省下任何的时间</p></div>
+<div class="transcript-row"><time>00:43</time><p>我给Chad Cut的工程师提了三个意见</p></div>
+<div class="transcript-row"><time>00:46</time><p>剪辑好的项目没法导入到Final Cut Pro进行二次创作</p></div>
+<div class="transcript-row"><time>00:50</time><p>中文口播的自动剪辑很不自然</p></div>
+<div class="transcript-row"><time>00:52</time><p>而且没有开放给Codex小龙虾这样的Agent去调</p></div>
+<div class="transcript-row"><time>00:55</time><p>没想到他们最近的一次更新通过解决第三点</p></div>
+<div class="transcript-row"><time>00:59</time><p>解决了第二点</p></div>
+<div class="transcript-row"><time>01:00</time><p>再加上阿芳写了一个skill</p></div>
+<div class="transcript-row"><time>01:02</time><p>也解决了第一点</p></div>
+<div class="transcript-row"><time>01:03</time><p>现在比如这期视频的口播的粗剪</p></div>
+<div class="transcript-row"><time>01:06</time><p>B-roll的匹配或者是上字幕这样的脏活</p></div>
+<div class="transcript-row"><time>01:09</time><p>就全都交给Chad Cut自己去办了</p></div>
+<div class="transcript-row"><time>01:12</time><p>我来演示一下 非常的简单</p></div>
+<div class="transcript-row"><time>01:13</time><p>好的 第一步对你的Codex</p></div>
+<div class="transcript-row"><time>01:15</time><p>就是现在所谓的Chad GPT桌面端</p></div>
+<div class="transcript-row"><time>01:18</time><p>说一句这样的话</p></div>
+<div class="transcript-row"><time>01:19</time><p>然后留给它跑一段时间</p></div>
+<div class="transcript-row"><time>01:21</time><p>它之后帮你配置好Chad Cut查剪</p></div>
+<div class="transcript-row"><time>01:24</time><p>如果你用的是Cloud Code</p></div>
+<div class="transcript-row"><time>01:25</time><p>那也没有关系</p></div>
+<div class="transcript-row"><time>01:26</time><p>对它说这样的一句话</p></div>
+<div class="transcript-row"><time>01:28</time><p>Chad Cut现在也是配了Cloud Code</p></div>
+<div class="transcript-row"><time>01:30</time><p>而且我个人认为</p></div>
+<div class="transcript-row"><time>01:31</time><p>会比Chad GPT剪得更懂我一丢丢</p></div>
+<div class="transcript-row"><time>01:34</time><p>那不管你用的是哪个</p></div>
+<div class="transcript-row"><time>01:36</time><p>你配置完之后都可以在一段新的对话里面</p></div>
+<div class="transcript-row"><time>01:39</time><p>Add Chad Cut</p></div>
+<div class="transcript-row"><time>01:40</time><p>之后把你的素材丢进去</p></div>
+<div class="transcript-row"><time>01:42</time><p>对它提出要求</p></div>
+<div class="transcript-row"><time>01:43</time><p>它就可以帮你剪辑了</p></div>
+<div class="transcript-row"><time>01:52</time><p>这些是我的提示词</p></div>
+<div class="transcript-row"><time>01:54</time><p>大家可以自由的截图保存</p></div>
+<div class="transcript-row"><time>01:56</time><p>我觉得它现在做的最好的地方</p></div>
+<div class="transcript-row"><time>01:58</time><p>反而就是口播的剪辑</p></div>
+<div class="transcript-row"><time>02:00</time><p>当然还有它一贯擅长的动画的生成</p></div>
+<div class="transcript-row"><time>02:03</time><p>但是为了你的播放量考虑</p></div>
+<div class="transcript-row"><time>02:05</time><p>你还是要做一些小的纠正和调整</p></div>
+<div class="transcript-row"><time>02:08</time><p>它才成为一个可以发布的视频</p></div>
+<div class="transcript-row"><time>02:10</time><p>比如字幕的识别错误</p></div>
+<div class="transcript-row"><time>02:12</time><p>放大缩小的效果不够自然</p></div>
+<div class="transcript-row"><time>02:14</time><p>或者它插入的素材</p></div>
+<div class="transcript-row"><time>02:15</time><p>还并不是你想要的</p></div>
+<div class="transcript-row"><time>02:17</time><p>幸好在Chad Cut上修改还是比较方便的</p></div>
+<div class="transcript-row"><time>02:19</time><p>它的本质是一个AI和人都能够操控的网页端的剪辑软件</p></div>
+<div class="transcript-row"><time>02:24</time><p>它和你熟悉的常用的那个剪辑软件</p></div>
+<div class="transcript-row"><time>02:27</time><p>有着相似的界面</p></div>
+<div class="transcript-row"><time>02:29</time><p>不太需要你花时间学习</p></div>
+<div class="transcript-row"><time>02:31</time><p>但我肯定还是会选择把它完成的这个粗稿</p></div>
+<div class="transcript-row"><time>02:34</time><p>转套</p></div>
+<div class="transcript-row"><time>02:35</time><p>我更熟悉更自由的Final Cut Pro</p></div>
+<div class="transcript-row"><time>02:38</time><p>完成更高质量的剪辑</p></div>
+<div class="transcript-row"><time>02:49</time><p>故事讲到这里就没有什么技巧可以了</p></div>
+<div class="transcript-row"><time>02:52</time><p>你只需要让你的AI agent去读一遍</p></div>
+<div class="transcript-row"><time>02:55</time><p>我给大家的skill</p></div>
+<div class="transcript-row"><time>02:56</time><p>它不会完美的复刻Chad Cut的那个工程文件的结果</p></div>
+<div class="transcript-row"><time>03:00</time><p>但是像Final Cut最稀缺的中文字幕的识别</p></div>
+<div class="transcript-row"><time>03:04</time><p>自动剪辑和动画制作</p></div>
+<div class="transcript-row"><time>03:06</time><p>现在你都拥有了</p></div>
+<div class="transcript-row"><time>03:08</time><p>skill是免费的分享</p></div>
+<div class="transcript-row"><time>03:10</time><p>快给我点一个小赞</p></div>
+<div class="transcript-row"><time>03:11</time><p>好了 关于Chad Cut</p></div>
+<div class="transcript-row"><time>03:12</time><p>我会做一期长视频内容</p></div>
+<div class="transcript-row"><time>03:13</time><p>和大家详细讲解</p></div>
+<div class="transcript-row"><time>03:15</time><p>但是现在我会告诉大家</p></div>
+<div class="transcript-row"><time>03:16</time><p>我最宝贵的一个经验就是从现在开始</p></div>
+<div class="transcript-row"><time>03:19</time><p>去建一个自己的剪辑习惯文档</p></div>
+<div class="transcript-row"><time>03:22</time><p>让你的AI</p></div>
+<div class="transcript-row"><time>03:23</time><p>每次执行完项目之后复盘一遍</p></div>
+<div class="transcript-row"><time>03:25</time><p>它会剪得越来越懂你</p></div>
+<div class="transcript-row"><time>03:27</time><p>比如说它现在就知道</p></div>
+<div class="transcript-row"><time>03:28</time><p>我喜欢把气口剪得更紧凑一些</p></div>
+<div class="transcript-row"><time>03:30</time><p>我喜欢什么样风格的动画</p></div>
+<div class="transcript-row"><time>03:32</time><p>我现在去做字幕识别</p></div>
+<div class="transcript-row"><time>03:33</time><p>再也不需要把R方</p></div>
+<div class="transcript-row"><time>03:35</time><p>纠正成R方了</p></div>
+<div class="transcript-row"><time>03:37</time><p>好了 这期视频就到这里了</p></div>
+<div class="transcript-row"><time>03:39</time><p>我们下期再见</p></div>
+<div class="transcript-row"><time>03:45</time><p>拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+</body></html>

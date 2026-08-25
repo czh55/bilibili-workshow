@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "slug": "lut-placement-tips",
+    "title": "LUT使用的小秘诀：放链路开头还是结尾？",
+    "title_en": "LUT Secrets: Front of the Chain or at the End?",
+    "duration": "2分08秒",
+    "scenes": 3,
+    "sentences": 9,
+    "date": "2026-08-25",
+    "platform": "xiaohongshu",
+    "source_url": "https://xhslink.cn/o/6DWfzldxlgw",
+    "topic": "调色 · LUT · 色域"
+  },
+  "scene_imgs": ["shot-01", "shot-02", "shot-03"],
+  "scenes": [
+    {
+      "id": "s1",
+      "title_cn": "两种 LUT 用法：放开头还是结尾",
+      "title_en": "Two Ways to Use a LUT: Front or End",
+      "time": "00:00-00:20",
+      "context": "有人把 LUT 放在调色链路最开头，之后再校色。这是最常见的做法之一，但调色师随即给出一个警告：这可能很危险。",
+      "sentences": [
+        ["有人把 LUT 放在调色链路的最开始，在它之后再做校色。", "Some people use a LUT at the very beginning of their chain and color correct after it.", "color chain（调色链路）"],
+        ["这可能有危险。", "This can be dangerous.", "dangerous（危险的）"],
+        ["这是一次对一个范围很大的问题的回答。", "This is a response to a very overarching question.", "overarching（范围很大的）"]
+      ],
+      "paraphrase": [
+        ["「链路开头套 LUT」换种说法", "Some grade with the LUT up front, then correct on top."],
+        ["「先说风险」换种说法", "A word of caution before you pick a side."]
+      ],
+      "speak": "Some people use a LUT at the very beginning of their chain and color correct after it. This can be dangerous. This is a response to a very overarching question."
+    },
+    {
+      "id": "s2",
+      "title_cn": "开头的风险：显示器看不到的色会在 P3 里显形",
+      "title_en": "The Risk: Invisible Colors Can Surface in P3",
+      "time": "00:20-01:08",
+      "context": "如果影片最终要在 DCI P3 色域的投影机播放，显示器上看不到的颜色可能在 P3 里突然显现。对策是在链路末尾加 DCI P3 limiter，把色彩约束在交付色域内。",
+      "sentences": [
+        ["有些颜色在你的显示器上看不见，却会在 P3 色域里突然表达出来。", "There are colors you can't see on your monitor that suddenly express themselves in P3.", "express themselves（显现出来）"],
+        ["我建议在链路末尾放一个限制器。", "I always think it's good to put a limiter at the end of your chain.", "limiter（限制器）"],
+        ["DCI P3 限制器确保你工作在受约束的色彩空间里。", "A DCI P3 limiter makes certain you're working in a constrained color space.", "constrained color space（受约束的色彩空间）"]
+      ],
+      "paraphrase": [
+        ["「显示器骗了你」换种说法", "Your monitor is hiding colors that the projector will reveal."],
+        ["「加保险」换种说法", "Add a safety net so your final deliverable stays in spec."]
+      ],
+      "speak": "There are colors you can't see on your monitor that suddenly express themselves in P3. I always think it's good to put a limiter at the end of your chain. A DCI P3 limiter makes certain you're working in a constrained color space."
+    },
+    {
+      "id": "s3",
+      "title_cn": "作者习惯：LUT 放链路末尾，先校色后套 LUT",
+      "title_en": "My Habit: LUT at the End, Correct First",
+      "time": "01:08-01:51",
+      "context": "作者个人倾向把 LUT 放在链路末尾：先校色、后套 LUT，全程知道自己调色板的约束、对比曲线与最终色彩，非常省时且清晰。两种方式都成立。",
+      "sentences": [
+        ["我个人倾向于把 LUT 放在链路末尾。", "I personally tend to work with a LUT at the end of my chain.", "tend to（倾向于）"],
+        ["我知道我这个调色板的约束。", "I know the constraints of my palette.", "palette（调色板）"],
+        ["这非常省时，而且在色彩和对比值上非常清晰。", "It's very time-efficient, and it's very clear in terms of colors and contrast values.", "time-efficient（省时的）"]
+      ],
+      "paraphrase": [
+        ["「知道自己色板的边界」换种说法", "I know exactly how far my color palette can go."],
+        ["「顺手且可控」换种说法", "For me it's the fastest, clearest way to work."]
+      ],
+      "speak": "I personally tend to work with a LUT at the end of my chain. I know the constraints of my palette. It's very time-efficient, and it's very clear in terms of colors and contrast values."
+    }
+  ],
+  "practice": [
+    ["「LUT 放在链路开头还是结尾？」怎么说？", "Should the LUT go at the front or the end of the chain?"],
+    ["「显示器看不到的色」怎么表达？", "Colors you can't see on your monitor."],
+    ["「保护交付色域」用英文怎么说？", "Protect your deliverable color space."],
+    ["「先校色，后套 LUT」怎么讲？", "Grade first, then apply the LUT."]
+  ],
+  "pitfalls": [
+    ["Place the LUT up front with no safety net.", "Add a DCI P3 limiter at the end of the chain.", "Without a limiter, hidden colors can blow out in the P3 projector."],
+    ["Trust your monitor for final color.", "Verify in your target color space.", "Your monitor can't show every color your deliverable can."],
+    ["Treat LUT placement as pure taste.", "Treat it as a workflow decision tied to your color space.", "Placement is about managing color-space risk, not preference."],
+    ["Forget to check the final deliverable.", "Confirm your output stays inside the intended color space.", "The whole point is a clean, predictable final deliverable."]
+  ],
+  "shifts": [
+    ["以为 LUT 只能放一个固定位置", "理解 LUT 位置与色域管理要配套"],
+    ["只信显示器上的颜色", "用限制器与交付色域确认最终输出"],
+    ["把摆放当口味问题", "把摆放当风险管理问题"]
+  ],
+  "difficult_words": ["LUT", "chain", "color correct", "dangerous", "overarching", "monitor", "projector", "DCI P3", "express themselves", "limiter", "constrained", "color space", "deliverable", "palette", "constraints", "contrast values", "time-efficient", "tend to", "suddenly", "surprise"],
+  "footer_notes": "原视频为 Natasha Leonnet 的英文调色技巧分享，英文为原文，中文为意译；LUT/色域术语保留英文原词。"
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="刹车失灵时，左边是树、右边是墙，一秒钟你选哪个？直觉可能选「更软」的树，但事故与仿真测试给出的答案是：树反而更危险。UP 主三驱兄弟从碰撞吸能结构讲起——判断一次碰撞危险与否，不看障碍物多硬，而看防撞梁、吸能盒、前纵梁有没有接住撞击；树可以绕开关键结构直接伤及成员舱，而宽墙反而让">
+<title>为啥"更软"的树，反而更危险？刹车坏了，如何自救？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+</head>
+<body><main class="container">
+<header><h1>为啥"更软"的树，反而更危险？刹车坏了，如何自救？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分31秒</span><span class="meta-tag tag-topic">汽车安全 碰撞测试 刹车失灵 自救 科普</span></div>
+<a class="source-link" href="https://xhslink.cn/o/947KAfQ6d2o" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">开场：选树还是选墙？答案藏在吸能结构里</a><a href="#ch2">树的危险与 25% 偏置碰撞测试</a><a href="#ch3">为什么墙反而更安全：让整个车头一起吸能</a><a href="#ch4">硬不等于安全：拳套比喻与安全本质</a><a href="#ch5">看懂车头结构：防撞梁、吸能盒与前纵梁</a><a href="#ch6">消费者怎么看：碰撞测试的读法与边界</a><a href="#ch7">刹车失灵处置清单与最终结论</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>刹车失灵时，左边是树、右边是墙，一秒钟你选哪个？直觉可能选「更软」的树，但事故与仿真测试给出的答案是：树反而更危险。UP 主三驱兄弟从碰撞吸能结构讲起——判断一次碰撞危险与否，不看障碍物多硬，而看防撞梁、吸能盒、前纵梁有没有接住撞击；树可以绕开关键结构直接伤及成员舱，而宽墙反而让整个车头一起吸能。最后给出刹车失灵后的完整处置清单：松油门、扶稳方向、开双闪、全力踩或高频点刹、逐级降挡、谨慎用电子手刹、避险车道，以及「千万别在最后一刻猛打方向找墙」。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:20]</span><div><strong>极限二选一</strong><p>刹车失灵时左边树右边墙，一秒选择；直觉觉得树更软更安全，但结论相反。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:21→00:57]</span><div><strong>吸能原理</strong><p>碰撞危险不取决于障碍物多硬，而看防撞梁摊开力、吸能盒与前纵梁压溃折叠、载荷路径是否把能量消耗在成员舱前。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:57→01:29]</span><div><strong>树的危险</strong><p>细树干撞在两根前纵梁之间会绕过吸能结构直接冲击成员舱；车头一侧受力时变形更严重。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:29→02:30]</span><div><strong>测试依据</strong><p>25% 偏置碰撞测试（64km/h 单侧撞刚性物）是专门应对这种情况的项目；优评车在现实正面碰撞中驾驶员死亡风险低约 12%。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:30→03:18]</span><div><strong>为什么墙更安全</strong><p>平整宽墙接触更大车头，防撞梁、吸能盒、左右纵梁同时参与吸能，类似 100% 正面碰撞；树的优势不在软，而是让整个车头一起吸能。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:18→04:43]</span><div><strong>硬≠安全</strong><p>拳套比喻：金属拳套打水泥墙手会断；车太硬不变形，人就变形。安全追求的是乘客活下来，不是车没撞坏。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:43→05:50]</span><div><strong>看结构而非参数</strong><p>防撞梁看抗弯不看厚度（钢抗弯是铝三倍）、覆盖范围不是越宽越好、吸能盒的预折线让折叠可控、前纵梁三段分工。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:50→08:31]</span><div><strong>刹车失灵自救</strong><p>看中保研碰撞测试别只看评分，要看 A 柱门框侵入、踏板位移；刹车失灵后松油门扶稳开双闪、全力踩或高频点刹、降挡、谨慎拉手刹、找避险车道，绝不猛打方向找墙。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>树比墙危险，不是因为它硬，而是因为细窄障碍物能绕开防撞梁、吸能盒、前纵梁这套吸能结构，直接冲击成员舱；宽墙反而让更多结构同时吸能。刹车失灵时，决定后果的第一因素是车速，第二是车辆是否失控，第三才是撞树还是撞墙——正确处置是全力减速并稳住车辆，而不是在最后一刻去找墙。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:57</span>开场：选树还是选墙？答案藏在吸能结构里</h2><p>视频用一个极限选择开场：「左边是树，右边是墙，一秒钟你选哪个？」如果你选了看起来更软的树，UP 主建议先看这段视频——「为什么看起来没有水泥墙结实的树，反而更危险？」</p><p>他用最真实的事故和仿真测试来说明。第一反应当然是初中物理：「树的接触面积小，压强更大，才会把车撞得解体。」但这里只说对了一半——「更关键的是，汽车负责吸收碰撞能量的结构有没有接住这次撞击。」碰撞瞬间，最前面的防撞梁先把力摊开，后面的吸能盒和前纵梁再通过压溃和折叠，用车身形变吸收能量。这条让撞击一步步向后传递的路径，叫载荷路径。</p><figure><img src="assets/tree-vs-wall-crash/shot-01.jpg" alt="极限二选一：左侧树右侧墙，一秒钟要选哪个避险目标" loading="lazy"><figcaption><span class="time-badge">[00:15]</span>极限二选一：左侧树右侧墙，一秒钟要选哪个避险目标</figcaption></figure><figure><img src="assets/tree-vs-wall-crash/shot-02.jpg" alt="碰撞吸能结构：防撞梁摊开力，吸能盒与前纵梁压溃折叠吸收能量" loading="lazy"><figcaption><span class="time-badge">[00:40]</span>碰撞吸能结构：防撞梁摊开力，吸能盒与前纵梁压溃折叠吸收能量</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:57-02:30</span>树的危险与 25% 偏置碰撞测试</h2><p>「所以判断一次碰撞有多危险，不能只看障碍物有多硬，要看防撞梁、吸能盒、前纵梁有没有接住这次撞击。」UP 主点出撞树最危险的地方：细窄的重载物体如果刚好撞在两根前纵梁之间，就直接冲着成员舱来。模拟结果显示，无论整体车身还是前排空间都会变形得更严重；如果撞在车头一侧，只有一边的纵梁参与吸能，车速高、角度刁钻时真能把车撞到解体。</p><p>针对这种情况，汽车安全测试里有一个专门项目叫 25% 偏置碰撞测试：让汽车以 64km/h 用车头一侧撞上刚性物体，主要看只有单根纵梁受力时成员舱还能不能保持完整。美国道路安全保险协会（IIHS）2023 年公布的一项现实事故调查显示：在 25% 偏置碰撞测试拿到优秀评价的车辆，在现实正面碰撞中驾驶员死亡风险比差评车辆低大约 12%。</p><figure><img src="assets/tree-vs-wall-crash/shot-03.jpg" alt="25% 偏置碰撞测试：64km/h 车头一侧撞刚性物体，考验单纵梁受力" loading="lazy"><figcaption><span class="time-badge">[01:30]</span>25% 偏置碰撞测试：64km/h 车头一侧撞刚性物体，考验单纵梁受力</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:30-03:18</span>为什么墙反而更安全：让整个车头一起吸能</h2><p>换成撞一面宽墙，情况就不同了：「平整的宽墙可以接触到更大的车头，让防撞梁、吸能盒和左右纵梁更有机会同时参与碰撞。」这种接近 100% 的正面碰撞，也是强制性国标（C-NCAP）的考试项目——「相当于考试压中了真题」。</p><p>结论被浓缩成一句关键判断：「不是撞墙不严重，而是汽车的车头更有机会按照设计好的方式溃缩，把碰撞能量消耗在成员舱前面。树的危险也不是硬，而是它可以绕开关键结构，直接伤及成员舱。」</p><figure><img src="assets/tree-vs-wall-crash/shot-04.jpg" alt="撞宽墙对比：平整宽墙让更多吸能结构同时参与，近似 100% 正面碰撞" loading="lazy"><figcaption><span class="time-badge">[02:05]</span>撞宽墙对比：平整宽墙让更多吸能结构同时参与，近似 100% 正面碰撞</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:18-04:43</span>硬不等于安全：拳套比喻与安全本质</h2><p>顺着「车头越硬越安全」的思路，UP 主抛出一个问题：为什么车企没有演变成「你硬我比你更硬」的安全军备竞赛？</p><p>他用拳套比喻解释：「这就像带着两种拳套去打水泥墙。普通拳套是中间的缓冲，一拳下去最多有点痛；换成金属拳套，一拳下去手可能就断了。汽车也是一样——如果硬得完全不变形，确实更耐撞，那里面坐的人就要变形了。」所以汽车安全追求的是「如何让乘客活下来，而不是车有没有被撞坏」。</p><figure><img src="assets/tree-vs-wall-crash/shot-05.jpg" alt="拳套比喻：金属拳套打水泥墙手会断，车太硬则人就要变形" loading="lazy"><figcaption><span class="time-badge">[03:10]</span>拳套比喻：金属拳套打水泥墙手会断，车太硬则人就要变形</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:43-05:50</span>看懂车头结构：防撞梁、吸能盒与前纵梁</h2><p>如何判断一台车的车头结构设计是否合理？UP 主先纠正一个误区：很多拆车视频喜欢量防撞梁厚度或吸能盒长度，好像数字越大越安全。但「防撞梁最重要的不是厚度，是抗弯能力」——易拉罐一捏就扁，却撑得起 7.5 公斤重物。最常见材料里，同样条件下钢的抗弯性能是铝合金的三倍，铝合金要做成日字型等截面结构补强。好车爱用抗弯能力差的铝合金，是因为轻和耐腐蚀。截面结构上，「口子越多，结构稳定性越好」。</p><p>覆盖范围也不是越宽越好——「就像小时候玩过的尺子，伸出去太远一按就软了，后面没有有效支撑就纯多余。」但在小重叠碰撞中，撞击刚好落在车头最外侧可能绕过纵梁，所以一些车型会在防撞梁末端加特殊支撑块，尽量让车从障碍物旁边「插」出去。真正负责消耗能量的吸能盒，重点是能不能按设计稳定地压下去：带凹槽的吸能盒看似偷工减料，那其实是工程师预留的预折线，碰撞时从这些位置开始像手风琴一样一层层压下去。最后是前纵梁——工作分三段：最前面被撞折把冲击接下来，中间继续折叠消耗能量，末端必须稳住，把剩下的力分给副车架、门槛和车地板。</p><figure><img src="assets/tree-vs-wall-crash/shot-06.jpg" alt="防撞梁设计：抗弯能力、材料与截面结构，口子越多结构稳定性越好" loading="lazy"><figcaption><span class="time-badge">[04:30]</span>防撞梁设计：抗弯能力、材料与截面结构，口子越多结构稳定性越好</figcaption></figure><figure><img src="assets/tree-vs-wall-crash/shot-07.jpg" alt="前纵梁三段工作：前端被撞折、中间折叠耗能、末端把力分给车身" loading="lazy"><figcaption><span class="time-badge">[05:30]</span>前纵梁三段工作：前端被撞折、中间折叠耗能、末端把力分给车身</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">05:50-06:45</span>消费者怎么看：碰撞测试的读法与边界</h2><p>「这套结构能不能按计划工作，不真正撞一次很多时候根本看不出来。」所以对普通消费者，更直接的办法是看中保研（C-IASI）的碰撞测试。但「别光看评分和爆了多少气囊，这几张图片才是关键」：正面碰撞看 A 柱、门框、脚步空间有没有明显变形，方向盘、踏板有没有向驾驶员移动；侧面碰撞看 B 柱和车门往车内侵入了多少。</p><p>不过碰撞测试也有自己的边界：「一台车拿到 G，只能说它在规定的工况下完成了这场考试，不代表这台车绝对安全。」</p><figure><img src="assets/tree-vs-wall-crash/shot-08.jpg" alt="刹车失灵处置：松油门扶稳方向开双闪，继续尝试刹车，逐步降挡" loading="lazy"><figcaption><span class="time-badge">[06:45]</span>刹车失灵处置：松油门扶稳方向开双闪，继续尝试刹车，逐步降挡</figcaption></figure></section>
+<section class="story-section" id="ch7"><h2><span class="time-marker">06:45-08:31</span>刹车失灵处置清单与最终结论</h2><p>回到开头的极限二选一。UP 主先否定一个想法：既然宽墙更容易让车头结构参与碰撞，是不是应该主动找墙撞？「当然不是。在真正的事故中，决定碰撞结果的是撞击速度——根据动能公式，车速降低一半，动能只剩四分之一。」</p><p>所以刹车失灵后要「想尽一切办法把速度降下来」：首先立刻松开油门、双手扶稳方向盘、打开双闪、继续尝试刹车；如果刹车突然变得特别硬，可能只是刹车助力失效，不要高频点刹，要全力踩；如果踏板变得很软，一脚到底才需要高频点刹重新建立制动压力。脚刹无法减速时用动力系统帮忙——手动挡逐级降挡，自动挡用 M 挡或换挡拨片，千万不要在高速状态下直接挂 P 挡或 R 挡，也不要主动熄火，否则可能同时失去转向助力。</p><p>接下来尝试手刹：机械手刹不能一把拉死，要慢慢增加力度避免后轮抱死车辆失控；电子手刹通过持续拉住开关启动紧急制动，但不同车型逻辑不一样，最好现在就翻说明书。与此同时观察周围环境，找避险车道、上坡、开阔区域。「如果碰撞已经无法避免，继续减速稳住车辆，不要为了寻找一面墙在最后一刻突然大幅打方向——翻车比撞树还危险。实在不行可以强行蹭护栏之类的坚硬物体进行减速。」</p><p>最终答案：撞墙并不更安全，墙和树的区别只是碰撞能量会怎么侵入车身；真正决定事故后果的，首先是碰撞速度，其次是车辆有没有失控，最后才是撞树还是撞墙。</p><figure><img src="assets/tree-vs-wall-crash/shot-09.jpg" alt="结论：决定事故后果的是撞击速度、车辆是否失控，其次才是目标选择" loading="lazy"><figcaption><span class="time-badge">[08:10]</span>结论：决定事故后果的是撞击速度、车辆是否失控，其次才是目标选择</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（270段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>煞不住车</p></div>
+<div class="transcript-row"><time>00:00</time><p>左边是树 右边是墙</p></div>
+<div class="transcript-row"><time>00:02</time><p>一秒钟你选哪个</p></div>
+<div class="transcript-row"><time>00:04</time><p>如果你选的树</p></div>
+<div class="transcript-row"><time>00:04</time><p>可以先看这段视频</p></div>
+<div class="transcript-row"><time>00:06</time><p>为什么看起来</p></div>
+<div class="transcript-row"><time>00:07</time><p>没有水泥墙结实的树</p></div>
+<div class="transcript-row"><time>00:09</time><p>反而更危险</p></div>
+<div class="transcript-row"><time>00:10</time><p>接下来我们用最真实的事故</p></div>
+<div class="transcript-row"><time>00:12</time><p>和仿真测试告诉你</p></div>
+<div class="transcript-row"><time>00:14</time><p>真遇到刹车失灵该怎么处置</p></div>
+<div class="transcript-row"><time>00:16</time><p>又该怎么避险</p></div>
+<div class="transcript-row"><time>00:18</time><p>本期视频全程无广</p></div>
+<div class="transcript-row"><time>00:19</time><p>放心使用</p></div>
+<div class="transcript-row"><time>00:20</time><p>看到这种事故</p></div>
+<div class="transcript-row"><time>00:21</time><p>大家的第一反应</p></div>
+<div class="transcript-row"><time>00:22</time><p>肯定是初中物理知识嘛</p></div>
+<div class="transcript-row"><time>00:24</time><p>树的接触面积小</p></div>
+<div class="transcript-row"><time>00:25</time><p>所以压强更大</p></div>
+<div class="transcript-row"><time>00:26</time><p>才会把车撞得解体</p></div>
+<div class="transcript-row"><time>00:28</time><p>但这里只说对了一半</p></div>
+<div class="transcript-row"><time>00:30</time><p>更关键的是</p></div>
+<div class="transcript-row"><time>00:31</time><p>汽车负责吸收碰撞能量的结构</p></div>
+<div class="transcript-row"><time>00:33</time><p>有没有接住这次撞击</p></div>
+<div class="transcript-row"><time>00:35</time><p>碰撞发生了一瞬间</p></div>
+<div class="transcript-row"><time>00:37</time><p>最前面的防撞梁</p></div>
+<div class="transcript-row"><time>00:38</time><p>先尽量把力摊开</p></div>
+<div class="transcript-row"><time>00:39</time><p>后面的吸能盒和前重量</p></div>
+<div class="transcript-row"><time>00:41</time><p>再通过压溃和折叠</p></div>
+<div class="transcript-row"><time>00:43</time><p>用车身的形变吸收能量</p></div>
+<div class="transcript-row"><time>00:45</time><p>这条让撞击一步步向后传递的路径</p></div>
+<div class="transcript-row"><time>00:49</time><p>就叫载荷路径</p></div>
+<div class="transcript-row"><time>00:50</time><p>不同车型的具体设计会有所差异</p></div>
+<div class="transcript-row"><time>00:52</time><p>但目标都是</p></div>
+<div class="transcript-row"><time>00:53</time><p>车头可以报废</p></div>
+<div class="transcript-row"><time>00:54</time><p>但成员舱必须尽量保持完整</p></div>
+<div class="transcript-row"><time>00:57</time><p>所以判断一次碰撞有多危险</p></div>
+<div class="transcript-row"><time>00:59</time><p>不能只看障碍物有多硬</p></div>
+<div class="transcript-row"><time>01:01</time><p>要看防撞梁</p></div>
+<div class="transcript-row"><time>01:02</time><p>吸能和前重量</p></div>
+<div class="transcript-row"><time>01:03</time><p>有没有接触这次撞击</p></div>
+<div class="transcript-row"><time>01:05</time><p>这也是撞速最危险的地方</p></div>
+<div class="transcript-row"><time>01:07</time><p>重载物体如果刚好撞在两根前重量之间</p></div>
+<div class="transcript-row"><time>01:11</time><p>直接冲着成员舱来</p></div>
+<div class="transcript-row"><time>01:12</time><p>我们分别模拟了两种情况</p></div>
+<div class="transcript-row"><time>01:14</time><p>可以看到撞速</p></div>
+<div class="transcript-row"><time>01:16</time><p>无论是整体的车身</p></div>
+<div class="transcript-row"><time>01:17</time><p>还是前排空间</p></div>
+<div class="transcript-row"><time>01:18</time><p>都会变形得更严重</p></div>
+<div class="transcript-row"><time>01:20</time><p>如果撞在车头一次</p></div>
+<div class="transcript-row"><time>01:22</time><p>只有一边的重量参与吸能</p></div>
+<div class="transcript-row"><time>01:24</time><p>车速高</p></div>
+<div class="transcript-row"><time>01:24</time><p>碰撞角度也刁钻</p></div>
+<div class="transcript-row"><time>01:26</time><p>真能把汽车撞到解体</p></div>
+<div class="transcript-row"><time>01:28</time><p>针对这种情况</p></div>
+<div class="transcript-row"><time>01:29</time><p>在汽车安全测试</p></div>
+<div class="transcript-row"><time>01:31</time><p>有一个专门的项目</p></div>
+<div class="transcript-row"><time>01:32</time><p>叫25%偏挚碰撞测试</p></div>
+<div class="transcript-row"><time>01:34</time><p>会让汽车以每小时64公里的速度</p></div>
+<div class="transcript-row"><time>01:36</time><p>用车头的一侧撞上刚性物体</p></div>
+<div class="transcript-row"><time>01:39</time><p>这项测试主要看的是</p></div>
+<div class="transcript-row"><time>01:41</time><p>只有单根重量受理的情况下</p></div>
+<div class="transcript-row"><time>01:43</time><p>成员舱还能不能保持完整</p></div>
+<div class="transcript-row"><time>01:45</time><p>并根据结果打分</p></div>
+<div class="transcript-row"><time>01:47</time><p>美国道路安全保险协会</p></div>
+<div class="transcript-row"><time>01:48</time><p>在2023年公布的一项现实事故调查显示</p></div>
+<div class="transcript-row"><time>01:52</time><p>在25%偏挚碰撞测试</p></div>
+<div class="transcript-row"><time>01:54</time><p>获得优秀评价的车辆</p></div>
+<div class="transcript-row"><time>01:55</time><p>在现实正面碰撞中</p></div>
+<div class="transcript-row"><time>01:57</time><p>驾驶员死亡风险比差评车辆低大约12%</p></div>
+<div class="transcript-row"><time>02:01</time><p>如果是撞上一面宽墙</p></div>
+<div class="transcript-row"><time>02:02</time><p>情况就不一样了</p></div>
+<div class="transcript-row"><time>02:03</time><p>平整的宽墙可以接触到更大的车头</p></div>
+<div class="transcript-row"><time>02:06</time><p>让防撞量 吸能荷和左右重量</p></div>
+<div class="transcript-row"><time>02:08</time><p>更有机会同时参与碰撞</p></div>
+<div class="transcript-row"><time>02:10</time><p>这种几乎100%正面碰撞</p></div>
+<div class="transcript-row"><time>02:12</time><p>也是强制性国标</p></div>
+<div class="transcript-row"><time>02:14</time><p>这相当于考试压重了真体</p></div>
+<div class="transcript-row"><time>02:16</time><p>通常来说</p></div>
+<div class="transcript-row"><time>02:16</time><p>25%偏挚碰撞成绩好的车</p></div>
+<div class="transcript-row"><time>02:19</time><p>正面碰撞成绩都不会差</p></div>
+<div class="transcript-row"><time>02:21</time><p>不是撞墙不严重</p></div>
+<div class="transcript-row"><time>02:22</time><p>而是汽车的车头</p></div>
+<div class="transcript-row"><time>02:24</time><p>更有机会按照设计好的方式溃缩</p></div>
+<div class="transcript-row"><time>02:26</time><p>把碰撞能量消耗在成员舱前面</p></div>
+<div class="transcript-row"><time>02:29</time><p>最强的优势不是软</p></div>
+<div class="transcript-row"><time>02:31</time><p>而是能让整个车头一起吸能</p></div>
+<div class="transcript-row"><time>02:33</time><p>树的危险也不是硬</p></div>
+<div class="transcript-row"><time>02:35</time><p>而是它可以绕开关键结构</p></div>
+<div class="transcript-row"><time>02:37</time><p>直接伤及成员舱</p></div>
+<div class="transcript-row"><time>02:38</time><p>那么既然撞击让车头扛</p></div>
+<div class="transcript-row"><time>02:40</time><p>那车头越硬 汽车就越安全</p></div>
+<div class="transcript-row"><time>02:43</time><p>现在不少新车宣传安全</p></div>
+<div class="transcript-row"><time>02:45</time><p>意思就是我的车有多硬</p></div>
+<div class="transcript-row"><time>02:47</time><p>如果是两辆车发生碰撞</p></div>
+<div class="transcript-row"><time>02:49</time><p>更重 结构更硬的车</p></div>
+<div class="transcript-row"><time>02:51</time><p>确实更有优势</p></div>
+<div class="transcript-row"><time>02:52</time><p>那么车企为什么没有演变成</p></div>
+<div class="transcript-row"><time>02:54</time><p>你硬我比你更硬的安全经备竞赛</p></div>
+<div class="transcript-row"><time>02:57</time><p>这就像带着两种拳套去打水泥墙</p></div>
+<div class="transcript-row"><time>03:00</time><p>普通拳套就是中间的缓冲</p></div>
+<div class="transcript-row"><time>03:02</time><p>一拳下去最多有点痛</p></div>
+<div class="transcript-row"><time>03:04</time><p>换成金属拳套</p></div>
+<div class="transcript-row"><time>03:06</time><p>一拳下去手可能就会断了</p></div>
+<div class="transcript-row"><time>03:08</time><p>汽车也是一样</p></div>
+<div class="transcript-row"><time>03:09</time><p>如果硬的完全不变形</p></div>
+<div class="transcript-row"><time>03:11</time><p>确实更耐撞</p></div>
+<div class="transcript-row"><time>03:12</time><p>那里面坐的人就要变形了</p></div>
+<div class="transcript-row"><time>03:14</time><p>所以汽车安全追求的是</p></div>
+<div class="transcript-row"><time>03:16</time><p>如何让乘客活下来</p></div>
+<div class="transcript-row"><time>03:17</time><p>而不是车有没有被撞坏</p></div>
+<div class="transcript-row"><time>03:19</time><p>那如何才能判断一台车的车头结构设计</p></div>
+<div class="transcript-row"><time>03:22</time><p>是否合理呢</p></div>
+<div class="transcript-row"><time>03:23</time><p>现在很多拆车都喜欢量防撞量厚度</p></div>
+<div class="transcript-row"><time>03:26</time><p>或者吸能盒的长度</p></div>
+<div class="transcript-row"><time>03:28</time><p>好像数字越大就越有安全感</p></div>
+<div class="transcript-row"><time>03:30</time><p>首先防撞量最重要的不是厚度</p></div>
+<div class="transcript-row"><time>03:33</time><p>是抗弯能力</p></div>
+<div class="transcript-row"><time>03:34</time><p>一拉罐一捏就别</p></div>
+<div class="transcript-row"><time>03:35</time><p>但也撑得起7.5千克的亚琳</p></div>
+<div class="transcript-row"><time>03:38</time><p>最常见的防撞量材料</p></div>
+<div class="transcript-row"><time>03:40</time><p>同样条件下</p></div>
+<div class="transcript-row"><time>03:41</time><p>钢的抗弯性能是铝合金的三倍</p></div>
+<div class="transcript-row"><time>03:43</time><p>铝合金想要做到同等的性能</p></div>
+<div class="transcript-row"><time>03:45</time><p>就必须更厚</p></div>
+<div class="transcript-row"><time>03:46</time><p>同时做成日暮这样的结构进行补强</p></div>
+<div class="transcript-row"><time>03:50</time><p>看起来更结实</p></div>
+<div class="transcript-row"><time>03:51</time><p>而好车更爱用抗弯能力差的铝合金</p></div>
+<div class="transcript-row"><time>03:54</time><p>还是因为轻加耐腐蚀</p></div>
+<div class="transcript-row"><time>03:56</time><p>以上是最常见的几种防撞量的结面结构</p></div>
+<div class="transcript-row"><time>03:59</time><p>在材料厚度一样的条件下</p></div>
+<div class="transcript-row"><time>04:01</time><p>可以简单理解成</p></div>
+<div class="transcript-row"><time>04:03</time><p>口子越多 结构稳定性越好</p></div>
+<div class="transcript-row"><time>04:05</time><p>除了扛得住还得接得住</p></div>
+<div class="transcript-row"><time>04:07</time><p>所以覆盖范围也很重要</p></div>
+<div class="transcript-row"><time>04:09</time><p>但不是越宽越好</p></div>
+<div class="transcript-row"><time>04:10</time><p>就像小时候玩过的尺子</p></div>
+<div class="transcript-row"><time>04:12</time><p>伸出去太远一按就软了</p></div>
+<div class="transcript-row"><time>04:14</time><p>防撞量也是一样</p></div>
+<div class="transcript-row"><time>04:15</time><p>看起来长</p></div>
+<div class="transcript-row"><time>04:16</time><p>但是后面没有有效的支撑</p></div>
+<div class="transcript-row"><time>04:18</time><p>就纯多余</p></div>
+<div class="transcript-row"><time>04:19</time><p>但在小重叠碰撞中</p></div>
+<div class="transcript-row"><time>04:21</time><p>撞击刚好落在车头的最外侧</p></div>
+<div class="transcript-row"><time>04:23</time><p>就有可能直接绕过重量</p></div>
+<div class="transcript-row"><time>04:25</time><p>所以一些车型会在防撞量的末端</p></div>
+<div class="transcript-row"><time>04:27</time><p>增加特殊的支撑块</p></div>
+<div class="transcript-row"><time>04:29</time><p>尽量让车从障碍物旁边插出去</p></div>
+<div class="transcript-row"><time>04:31</time><p>所以看一根防撞量</p></div>
+<div class="transcript-row"><time>04:33</time><p>不能只问它有多厚 覆盖力多高</p></div>
+<div class="transcript-row"><time>04:35</time><p>还要看它用什么材料 前面怎么设计</p></div>
+<div class="transcript-row"><time>04:37</time><p>以及接住撞击以后</p></div>
+<div class="transcript-row"><time>04:39</time><p>能不能把力量继续传给后面的结构</p></div>
+<div class="transcript-row"><time>04:42</time><p>真正负责消耗这股力的是吸能盒</p></div>
+<div class="transcript-row"><time>04:45</time><p>吸能盒的重点是</p></div>
+<div class="transcript-row"><time>04:47</time><p>能不能按照设计稳定的压下去</p></div>
+<div class="transcript-row"><time>04:50</time><p>图中两种吸能盒</p></div>
+<div class="transcript-row"><time>04:51</time><p>你觉得哪一种更好呢</p></div>
+<div class="transcript-row"><time>04:53</time><p>B的凹槽看起来像是偷工减标</p></div>
+<div class="transcript-row"><time>04:55</time><p>但这其实是工程师专门留下的预折线</p></div>
+<div class="transcript-row"><time>04:59</time><p>发生碰撞时</p></div>
+<div class="transcript-row"><time>05:00</time><p>吸能盒会从这些位置开始变形</p></div>
+<div class="transcript-row"><time>05:02</time><p>像手风擎一样一层一层压下去</p></div>
+<div class="transcript-row"><time>05:05</time><p>A很难判断好坏</p></div>
+<div class="transcript-row"><time>05:06</time><p>因为车企很少公布自己吸能盒的截面结构</p></div>
+<div class="transcript-row"><time>05:10</time><p>无法判断内幕有没有预留折线的设计</p></div>
+<div class="transcript-row"><time>05:13</time><p>再往后就是前重量</p></div>
+<div class="transcript-row"><time>05:14</time><p>也是车身的一部分了</p></div>
+<div class="transcript-row"><time>05:16</time><p>不仅要应对碰撞</p></div>
+<div class="transcript-row"><time>05:17</time><p>还要连接副车架 悬架</p></div>
+<div class="transcript-row"><time>05:19</time><p>和车身其他结构</p></div>
+<div class="transcript-row"><time>05:20</time><p>所以哪怕同一个品牌</p></div>
+<div class="transcript-row"><time>05:22</time><p>不同车型的防撞量都不一样</p></div>
+<div class="transcript-row"><time>05:24</time><p>单看拆车很难说谁好谁坏</p></div>
+<div class="transcript-row"><time>05:27</time><p>为了方便理解</p></div>
+<div class="transcript-row"><time>05:28</time><p>可以简单把它的工作分成三段</p></div>
+<div class="transcript-row"><time>05:30</time><p>最前面先被撞折</p></div>
+<div class="transcript-row"><time>05:32</time><p>把冲击截下来</p></div>
+<div class="transcript-row"><time>05:34</time><p>中间继续折叠</p></div>
+<div class="transcript-row"><time>05:35</time><p>尽可能把能量消耗在车头</p></div>
+<div class="transcript-row"><time>05:38</time><p>最后靠近成员舱的位置必须稳住</p></div>
+<div class="transcript-row"><time>05:40</time><p>把剩下的力量分给副车架 门槛和车地板等结构</p></div>
+<div class="transcript-row"><time>05:44</time><p>但这套结构能不能按照计划工作</p></div>
+<div class="transcript-row"><time>05:47</time><p>不真正撞一次</p></div>
+<div class="transcript-row"><time>05:48</time><p>很多时候根本看不出来</p></div>
+<div class="transcript-row"><time>05:50</time><p>所以对于普通消费者来说</p></div>
+<div class="transcript-row"><time>05:51</time><p>更直接的办法是看中保严的碰撞测试</p></div>
+<div class="transcript-row"><time>05:54</time><p>但别光看评分和爆了多少装备</p></div>
+<div class="transcript-row"><time>05:57</time><p>这几张图片才是关键</p></div>
+<div class="transcript-row"><time>05:58</time><p>正面碰撞看A柱 门框 脚步空间</p></div>
+<div class="transcript-row"><time>06:01</time><p>有没有明显的变形</p></div>
+<div class="transcript-row"><time>06:03</time><p>方向盘 踏板有没有向驾驶员移动</p></div>
+<div class="transcript-row"><time>06:05</time><p>侧面碰撞看B柱和车门往车内侵入了多少</p></div>
+<div class="transcript-row"><time>06:09</time><p>说到底拆车能让我们看到一台车</p></div>
+<div class="transcript-row"><time>06:12</time><p>打算怎么性能</p></div>
+<div class="transcript-row"><time>06:13</time><p>碰撞测试才能告诉我们这套车机</p></div>
+<div class="transcript-row"><time>06:15</time><p>到底有没有奏效</p></div>
+<div class="transcript-row"><time>06:17</time><p>不过碰撞测试也有自己的边界</p></div>
+<div class="transcript-row"><time>06:19</time><p>一台车拿到G</p></div>
+<div class="transcript-row"><time>06:20</time><p>只能说它在规定的工况下完成了这场考试</p></div>
+<div class="transcript-row"><time>06:24</time><p>不代表这台车绝对的安全</p></div>
+<div class="transcript-row"><time>06:26</time><p>回到开头的问题</p></div>
+<div class="transcript-row"><time>06:27</time><p>刹车试令以后</p></div>
+<div class="transcript-row"><time>06:28</time><p>既然宽强更容易让车头结构参与碰撞</p></div>
+<div class="transcript-row"><time>06:31</time><p>是不是应该主动寻找一面传撞呢</p></div>
+<div class="transcript-row"><time>06:34</time><p>当然不是</p></div>
+<div class="transcript-row"><time>06:34</time><p>开头则是极限二选一</p></div>
+<div class="transcript-row"><time>06:36</time><p>在真正的事故中决定碰撞结果的</p></div>
+<div class="transcript-row"><time>06:39</time><p>是撞击速度</p></div>
+<div class="transcript-row"><time>06:41</time><p>根据动能公式</p></div>
+<div class="transcript-row"><time>06:42</time><p>车速降低了一半</p></div>
+<div class="transcript-row"><time>06:43</time><p>动能只剩四分之一</p></div>
+<div class="transcript-row"><time>06:45</time><p>所以刹车试令之后</p></div>
+<div class="transcript-row"><time>06:46</time><p>想尽一切办法把速度降下来</p></div>
+<div class="transcript-row"><time>06:49</time><p>首先立刻松开油门</p></div>
+<div class="transcript-row"><time>06:50</time><p>双手扶稳方向盘</p></div>
+<div class="transcript-row"><time>06:52</time><p>打开双扇</p></div>
+<div class="transcript-row"><time>06:53</time><p>继续尝试刹车</p></div>
+<div class="transcript-row"><time>06:54</time><p>如果刹车突然变得特别硬</p></div>
+<div class="transcript-row"><time>06:57</time><p>可能只是刹车助理失效</p></div>
+<div class="transcript-row"><time>06:58</time><p>不要高频点刹</p></div>
+<div class="transcript-row"><time>07:00</time><p>需要用全力踩刹车</p></div>
+<div class="transcript-row"><time>07:02</time><p>如果刹板变得很软</p></div>
+<div class="transcript-row"><time>07:03</time><p>一脚到底才需要高频点刹</p></div>
+<div class="transcript-row"><time>07:05</time><p>尝试重新建立制动压力</p></div>
+<div class="transcript-row"><time>07:08</time><p>如果脚刹没法减速</p></div>
+<div class="transcript-row"><time>07:09</time><p>就要利用动力系统帮忙</p></div>
+<div class="transcript-row"><time>07:11</time><p>手动挡足即降低挡位</p></div>
+<div class="transcript-row"><time>07:13</time><p>自动挡可以使用M挡或者换挡拨片</p></div>
+<div class="transcript-row"><time>07:16</time><p>足即降挡</p></div>
+<div class="transcript-row"><time>07:17</time><p>千万不要在高速状态下</p></div>
+<div class="transcript-row"><time>07:19</time><p>直接挂入P挡或者R挡</p></div>
+<div class="transcript-row"><time>07:20</time><p>也不要主动熄火</p></div>
+<div class="transcript-row"><time>07:22</time><p>否则可能同时失去转向助力</p></div>
+<div class="transcript-row"><time>07:24</time><p>和其他控制功能</p></div>
+<div class="transcript-row"><time>07:25</time><p>接下来继续尝试使用手刹</p></div>
+<div class="transcript-row"><time>07:27</time><p>如果是机械手刹</p></div>
+<div class="transcript-row"><time>07:28</time><p>不能一把拉死</p></div>
+<div class="transcript-row"><time>07:30</time><p>而是慢慢增加力度</p></div>
+<div class="transcript-row"><time>07:31</time><p>避免后轮突然爆死车辆失控</p></div>
+<div class="transcript-row"><time>07:34</time><p>电子手刹通过持续拉电子手刹开关</p></div>
+<div class="transcript-row"><time>07:37</time><p>启动紧急制动</p></div>
+<div class="transcript-row"><time>07:38</time><p>但不同车型的逻辑并不完全一样</p></div>
+<div class="transcript-row"><time>07:41</time><p>所以最好现在就翻一下</p></div>
+<div class="transcript-row"><time>07:42</time><p>自己的车辆说明书</p></div>
+<div class="transcript-row"><time>07:44</time><p>而不是等到用上的时候来猜</p></div>
+<div class="transcript-row"><time>07:46</time><p>在完成这些操作的同时</p></div>
+<div class="transcript-row"><time>07:47</time><p>观察周围环境</p></div>
+<div class="transcript-row"><time>07:48</time><p>找到避险车道上坡开阔区域</p></div>
+<div class="transcript-row"><time>07:51</time><p>避开一切可能造成更严重后果的目标</p></div>
+<div class="transcript-row"><time>07:54</time><p>如果碰撞已经无法避免</p></div>
+<div class="transcript-row"><time>07:56</time><p>继续减速稳住车辆</p></div>
+<div class="transcript-row"><time>07:58</time><p>不要为了寻找一面墙</p></div>
+<div class="transcript-row"><time>08:00</time><p>在最后一刻突然大幅打方向</p></div>
+<div class="transcript-row"><time>08:02</time><p>翻车比撞树还危险</p></div>
+<div class="transcript-row"><time>08:03</time><p>实在不行可以强行蹭护栏之类的</p></div>
+<div class="transcript-row"><time>08:06</time><p>坚硬物体进行减速</p></div>
+<div class="transcript-row"><time>08:07</time><p>所以这期视频真正答案</p></div>
+<div class="transcript-row"><time>08:09</time><p>并不是撞墙救安全</p></div>
+<div class="transcript-row"><time>08:10</time><p>墙和树的区别只是</p></div>
+<div class="transcript-row"><time>08:12</time><p>碰撞能量会怎么侵入车身</p></div>
+<div class="transcript-row"><time>08:14</time><p>真正决定事故后果的</p></div>
+<div class="transcript-row"><time>08:16</time><p>首先是碰撞速度</p></div>
+<div class="transcript-row"><time>08:17</time><p>其次是车辆有没有失控</p></div>
+<div class="transcript-row"><time>08:19</time><p>最后才是撞树还是撞墙的抉择</p></div>
+<div class="transcript-row"><time>08:23</time><p>这些知识我当然希望</p></div>
+<div class="transcript-row"><time>08:24</time><p>大家一辈子用不上</p></div>
+<div class="transcript-row"><time>08:26</time><p>但如果真遇到那一秒</p></div>
+<div class="transcript-row"><time>08:27</time><p>你必须在发生之前</p></div>
+<div class="transcript-row"><time>08:29</time><p>就知道应该怎么做</p></div>
+</div></div></details></section>
+</article>
+</main>
+</body></html>

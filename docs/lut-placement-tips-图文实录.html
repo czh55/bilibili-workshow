@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="调色师 Natasha 用两分钟回答一个关于 LUT 的高频问题：LUT 应该放在调色链路的开头还是结尾？她先指出「开头用 LUT、之后再校色」的一个潜在风险——最终要在 DCI P3 投影的影片，可能在电脑显示器上看不到的色，在 P3 色域里突然冒出来。她给出的保护措施是在链路">
+<title>LUT使用的小秘诀：放链路开头还是结尾？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+</head>
+<body><main class="container">
+<header><h1>LUT使用的小秘诀：放链路开头还是结尾？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">2分08秒</span><span class="meta-tag tag-topic">调色 LUT 达芬奇 色域 教学</span></div>
+<a class="source-link" href="https://xhslink.cn/o/6DWfzldxlgw" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">问题本身：LUT 放开头还是结尾</a><a href="#ch2">开头的风险：看不见的颜色会在 P3 色域里显形</a><a href="#ch3">作者习惯：LUT 放链路末尾，先校色后套 LUT</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>调色师 Natasha 用两分钟回答一个关于 LUT 的高频问题：LUT 应该放在调色链路的开头还是结尾？她先指出「开头用 LUT、之后再校色」的一个潜在风险——最终要在 DCI P3 投影的影片，可能在电脑显示器上看不到的色，在 P3 色域里突然冒出来。她给出的保护措施是在链路末尾加一个 P3 限制器。而她本人的习惯是让 LUT 位于链路末尾：先校色、后套 LUT，全程知道调色板的边界、对比曲线与最终色彩。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:20]</span><div><strong>两种用法</strong><p>有人把 LUT 放在调色链路开头、之后再校色；有人把它放在链路末尾。这是最常见的 LUT 摆放分歧。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:20→01:08]</span><div><strong>风险提示</strong><p>开头放 LUT 有风险：在显示器上看不到的色，可能在 P3 投影色域里突然显现；对策是在链路末尾加 DCI P3 limiter 把色彩约束在交付色域内。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:08→01:51]</span><div><strong>个人偏好</strong><p>作者习惯把 LUT 放链路末尾：先建立调色板约束再套 LUT，清楚知道自己用的色彩与对比曲线，效率高且可控。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>LUT 放链路开头可以，但必须用 DCI P3 limiter 保护交付色域；把 LUT 放链路末尾、先校色后套 LUT，则天然在已知色板内工作。两种方式都成立，关键是让最终输出落在目标色域里。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:20</span>问题本身：LUT 放开头还是结尾</h2><p>视频直接回应一个「范围很大的问题」——怎么在调色中使用 LUT。Natasha 提炼出两种主流做法：「有人把 LUT 放在调色链路的最开始，在它之后再做校色。」这是第一种。</p><p>她紧接着给出一个警告：「这可能有危险。」一句话把两种做法的分歧点点了出来。</p><figure><img src="assets/lut-placement-tips/shot-01.jpg" alt="问题提出：LUT 放在调色链路开头，随后再校色" loading="lazy"><figcaption><span class="time-badge">[00:12]</span>问题提出：LUT 放在调色链路开头，随后再校色</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:20-01:08</span>开头的风险：看不见的颜色会在 P3 色域里显形</h2><p>为什么开头放 LUT 危险？Natasha 的推演非常具体：「假设你在一台显示器上校色，但最终影片要在电影节用 DCI P3 色域的投影机播放。有些颜色在你的显示器上根本看不见，却会在 P3 色域里突然表达出来——给你一个意外。」</p><p>她的保护措施是：「如果你打算把 LUT 放在链路开头，我建议在链路末尾放一个限制器——比如 DCI P3 limiter，确保你始终工作在正确的、受约束的色彩空间里，为最终交付物提供保护。」即便当前显示器无法完整呈现那个色域，也能兜住最坏情况。</p><figure><img src="assets/lut-placement-tips/shot-02.jpg" alt="建议在链路末尾加 DCI P3 limiter，把色彩限制在交付色域内" loading="lazy"><figcaption><span class="time-badge">[00:45]</span>建议在链路末尾加 DCI P3 limiter，把色彩限制在交付色域内</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:08-01:51</span>作者习惯：LUT 放链路末尾，先校色后套 LUT</h2><p>展示完开头的做法后，Natasha 给出她自己的选择：「我个人倾向于把 LUT 放在链路末尾。」理由很务实：「我知道我这个调色板的约束，我始终待在那个特定色板里；我知道那个色板的对比曲线。」</p><p>对她而言这样做「非常省时、非常清晰」——整个项目周期里，色彩与对比值始终是已知的。「这两种是不同的工作方式，希望这个小片段对回答那个大问题有帮助。」</p><figure><img src="assets/lut-placement-tips/shot-03.jpg" alt="个人偏好：LUT 放在链路末尾，先校色后套 LUT，全程在已知色域内工作" loading="lazy"><figcaption><span class="time-badge">[01:20]</span>个人偏好：LUT 放在链路末尾，先校色后套 LUT，全程在已知色域内工作</figcaption></figure><figure><img src="assets/lut-placement-tips/shot-04.jpg" alt="结尾总结：两种 LUT 用法都成立，关键是与交付色域匹配" loading="lazy"><figcaption><span class="time-badge">[01:45]</span>结尾总结：两种 LUT 用法都成立，关键是与交付色域匹配</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（10段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>Hello everyone, okay, so this is a response to the very overarching question of how do you use LUTs in color grading. Fabulous question.</p></div>
+<div class="transcript-row"><time>00:11</time><p>Some people use LUTs at the beginning of their chain and they color correct after it. Just a word of caution.</p></div>
+<div class="transcript-row"><time>00:20</time><p>This can be dangerous. Let's say you're color correcting on a monitor, but ultimately you want this to play at a film festival and it's going to be shown in a projector in DCI P3 color space.</p></div>
+<div class="transcript-row"><time>00:32</time><p>You could have colors that you couldn't see on your monitor that suddenly express themselves in the P3 color space that come as a bit of a surprise.</p></div>
+<div class="transcript-row"><time>00:41</time><p>So in my experience, I always think it's good to put a limiter at the end of your chain if you're going to work with your LUT at the beginning of your chain.</p></div>
+<div class="transcript-row"><time>00:49</time><p>So you could put like a DCI P3 limiter at the end of your chain that will make certain that you're in the right basically constrained color space as you're working and you're protecting yourself for your final deliverable.</p></div>
+<div class="transcript-row"><time>01:08</time><p>Even though the actual monitor that you're on can't quite portray that. That's just like a worst case scenario. It rarely happens, but it's a worst case scenario.</p></div>
+<div class="transcript-row"><time>01:19</time><p>I personally tend to work with a LUT at the end of my chain. I find that it's just kind of I know the constraints of my palette. I'm staying within that specific palette.</p></div>
+<div class="transcript-row"><time>01:34</time><p>I know the contrast curve of that palette and I find it's just very, very time efficient and it's just very clear in terms of the colors and the contrast values that you're going to be working with throughout the space of the work on your project.</p></div>
+<div class="transcript-row"><time>01:51</time><p>So hopefully that was helpful. That's just a tiny little part of an answer for that overarching question. But these are two different ways that you can work with LUTs in your grading. Thank you so much.</p></div>
+</div></div></details></section>
+</article>
+</main>
+</body></html>

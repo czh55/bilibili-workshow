@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6290" viewBox="0 0 1320 6290">
+  <foreignObject x="0" y="0" width="1320" height="6290">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>咖啡拉花入门要看：融合做不好，液面怎么干净？</h1>
+  <div class="meta"><span class="tag tag-blue">咖啡</span><span class="tag tag-green">拉花</span><span class="tag tag-orange">融合</span><span class="tag tag-purple">教学</span><span class="tag tag-gray">时长 2分31秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/470wpG6zFLv">原视频</a>
+  <div class="summary-line">拉花液面干净与否，取决于融合的四句口诀：折杯融合（咖啡液面变深，倒奶不易翻滚）、高融合（杯缸距离 5-10 厘米，避免白色奶纹）、椭圆形融合（流量稳定、奶不浇杯底）、大面积快速融合（液面流动、减缓奶泡分层）。四步组合是新手拉花液面干净的基础。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">提问：融合怎么才能让液面干净些？</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">手法一：折杯融合——咖啡液面变深，倒奶不易翻滚</span></div><div class="timeline-item"><span class="timeline-time">00:38</span><span class="timeline-text">手法二：高融合——杯缸距离 5-10 厘米，避免白色奶纹</span></div><div class="timeline-item"><span class="timeline-time">01:07</span><span class="timeline-text">手法三：椭圆形融合——流量稳、牛奶不浇杯底</span></div><div class="timeline-item"><span class="timeline-time">01:44</span><span class="timeline-text">手法四：大面积快速融合——液面流动、减缓奶泡分层</span></div><div class="timeline-item"><span class="timeline-time">02:15</span><span class="timeline-text">四句口诀总结：折杯、高融合、椭圆形、大面积快速</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">折杯融合<br/>液面变深，倒奶不易翻滚</div><span class="arrow">→</span><div class="node-green">高融合<br/>距离 5-10cm，避免白奶纹</div><span class="arrow">→</span><div class="node-orange">椭圆形融合<br/>流量稳定，不浇杯底</div><span class="arrow">→</span><div class="node-blue">大面积快速<br/>液面流动，奶泡不分层</div><span class="arrow">→</span><div class="node">干净液面<br/>拉花出图的起点</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：融合时缸子越贴近杯面越好。实际融合要高（5-10cm），出图时才贴面出纹路。</p><p>误区：融合用小流量慢慢来更稳。实际小流量液面融合不开，拉花会有毛边毛丝、味道不均匀。</p><p>误区：圆形融合也可以。实际圆形融合流量忽大忽小、牛奶浇杯底导致液面翻滚。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>折杯融合：先让液面深下去</h3>
+      <p>平拿杯子叫平杯，咖啡液面很薄，往下倒牛奶时周边全部泛白、泛牛奶，液面不干净。把杯子稍微折叠成折杯，咖啡液面变深，倒奶融合时液面不容易剧烈翻滚。</p>
+      <div class="quote">折杯融合的目的就是让你的里面的液体变得稍微深一点，这样你往下倒牛奶融合的时候，液面不容易翻滚那么猛烈。</div>
+      <div class="relation">机制：液面越深，倒奶冲击对液面的扰动越小。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>高融合：距离决定奶纹</h3>
+      <p>融合时杯子和缸子距离拉高到 5-10 厘米，别太近。太近融合液面都是白色奶纹。注意融合与出图要求不同：融合要高融合，出图时缸子要贴着杯面纹路才能出来。</p>
+      <div class="quote">我们融合的时候要高融合，做出的时候，缸子要贴着面，是不是纹路才能出来。</div>
+      <div class="relation">对比：融合（高距离）与出图（贴面）是两种不同的高度控制。</div>
+    </div>
+    <div class="card card card-orange">
+      <h3>椭圆形融合：为什么不能圆形</h3>
+      <p>圆形融合时流量忽大忽小——往前流量大、往回流量小，所有人都控制不住；而且牛奶会浇到杯子底上，液面就会翻滚。椭圆形融合的两个目的：流量控制更稳，牛奶不会浇到杯底。</p>
+      <div class="quote">如果你圆形融合，你的流量是忽大忽小，你控制不住的……椭圆形融合可以让你的流量控制的更稳，二牛奶不会浇到杯子底上。</div>
+      <div class="relation">轨迹物理：椭圆形轨迹避免流量突变与直冲杯底。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>大面积快速融合：让液面活起来</h3>
+      <p>小流量慢慢融合，液面融合不开，拉花有毛边毛丝、不圆润、味道不均匀。大面积快速融合有两个好处：让液面流动起来、搅动起来；让缸内与杯内牛奶晃动，减缓奶泡分层，拉花不会出现一坨。</p>
+      <div class="quote">大面积快速融合……让你的液面流动起来，搅动起来；减缓奶泡分层速度，拉花就不会出现一坨。</div>
+      <div class="relation">目的：充分混合 + 延缓分层，是干净液面的前提。</div>
+    </div></div>
+
+  <div class="section"><h2 class="sec-title">四个融合手法要点</h2><div class="card"><table><thead><tr><th>手法</th><th>做法</th><th>解决什么</th><th>避免</th></tr></thead><tbody><tr><td>折杯融合</td><td>杯子微微倾斜</td><td>液面变深防翻滚</td><td>平杯倒奶泛白</td></tr><tr><td>高融合</td><td>杯缸距 5-10cm</td><td>避免白色奶纹</td><td>太近融合</td></tr><tr><td>椭圆形融合</td><td>轨迹呈椭圆</td><td>流量稳、不浇杯底</td><td>圆形融合</td></tr><tr><td>大面积快速</td><td>快速大面积倒入</td><td>液面流动、奶泡不分层</td><td>小流量慢融</td></tr></tbody></table></div></div>
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>本技巧针对液面干净度，不覆盖拉花出图的具体图案手法。</li><li>折杯角度、融合高度需结合杯子大小与奶泡状态微调。</li><li>奶泡质量（温度、绵密度）同样影响液面表现，本视频未展开。</li></ul><div class="pitfall">圆形融合——流量控制不住，牛奶浇杯底液面翻滚。</div><div class="pitfall">小流量慢慢融合——液面融合不开，拉花毛边、味道不均匀。</div><div class="pitfall">融合高度和出图高度搞混——该高的时候贴面、该贴面的时候高了。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>液面干净的四句口诀：折杯、高融合、椭圆形、大面积快速。</li><li>折杯让液面变深防翻滚，高距离避免白奶纹。</li><li>椭圆形融合流量稳、不浇杯底，大面积快速让液面流动并延缓分层。</li></ul><h3>行动清单</h3><ol><li>练习时先只练融合四步，不出图，观察液面是否干净。</li><li>用手机慢动作回放自己的融合轨迹，检查是否椭圆、是否贴杯底。</li><li>把口诀贴在吧台：折杯、高融合、椭圆、大面积快速。</li></ol><h3>关键认知转变</h3><p>从「拉花图案决定成败」到「融合先决定液面干不干净」——出图前的地基是融合，融合是拉花的液面画布。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 视频 2分31秒 · 咖啡拉花教学</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="修图师浩哥哥用一分钟演示如何把一张光线杂乱、肤色蜡黄的新娘跟妆废片调成高级白亮透。流程：先分析底片问题（光线无主次、背景抢主体、肤色蜡黄不均），进 Camera Raw 后开启光学去除暗角，提高黑色、降低对比和阴影回拉细节，再稍加高光和白色；用 RGB 曲线拉 S 型增强对比，蓝">
+<title>高级白亮透｜1分钟拯救废片，这样调色太绝了｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}figcaption .time-badge{font-weight:700;color:#b45309;margin-right:6px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+</head>
+<body><main class="container">
+<header><h1>高级白亮透｜1分钟拯救废片，这样调色太绝了</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">1分26秒</span><span class="meta-tag tag-topic">人像修图 调色 CameraRaw PS 教学</span></div>
+<a class="source-link" href="https://xhslink.cn/o/1dcUcoV877r" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">先看底片：问题都在哪里</a><a href="#ch2">Camera Raw 基础与曲线：提黑去黄</a><a href="#ch3">蒙版分区与颜色分级：统一肤色、拉开层次</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>修图师浩哥哥用一分钟演示如何把一张光线杂乱、肤色蜡黄的新娘跟妆废片调成高级白亮透。流程：先分析底片问题（光线无主次、背景抢主体、肤色蜡黄不均），进 Camera Raw 后开启光学去除暗角，提高黑色、降低对比和阴影回拉细节，再稍加高光和白色；用 RGB 曲线拉 S 型增强对比，蓝色曲线中部定点提亮去黄；最后通过背景蒙版（镜像蒙版反向）和人物蒙版分区处理，并在颜色分级里给高光加少量蓝色，完成肤色统一与空间层次。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:26]</span><div><strong>问题诊断</strong><p>底片光线杂乱无主次、背景光感太亮抢主体、视觉中心不突出、前后虚实不够、肤色蜡黄不均、妆感油腻、头部暗部细节缺失。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:26→00:42]</span><div><strong>基础调整</strong><p>Camera Raw 开启光学去暗角；提高黑色、降低对比和阴影控回画面信息；稍加高光和白色提高整体光感。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:42→00:51]</span><div><strong>曲线调整</strong><p>RGB 曲线拉 S 型加强对比；蓝色曲线中部定点提亮，去除画面大量黄色信息。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:51→01:20]</span><div><strong>蒙版分区与收尾</strong><p>背景蒙版（镜像蒙版反向）调整背景过亮信息建立空间层次；人物蒙版选身体皮肤统一肤色；颜色分级给高光加入少量蓝色。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>白亮透调色四步：先诊断（光线/肤色/细节），再在 Camera Raw 里用「提黑降对比」回拉信息，用 RGB S 曲线和蓝色曲线中部提亮去黄，最后用背景/人物蒙版分区处理并给高光加蓝。核心是让主体突出、肤色干净、层次分明。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:26</span>先看底片：问题都在哪里</h2><p>视频以一张「客妹前期不满意的新娘跟妆」照片开场，UP 主先逐条列出底片的问题：「前期照片光线杂乱、没有主次；背景光感太亮，抢掉了人物主体，视觉中心不够突出；拍摄前后虚实不够；另外照片人物对比略重，肤色蜡黄不均、不够干净；新娘妆感略显油腻、不够柔和；头部的暗部细节缺失比较严重——很明显需要修改。」</p><p>先诊断再动手，是这条一分钟教程的顺序感来源。</p><figure><img src="assets/bright-skin-one-minute/shot-01.jpg" alt="底片问题分析：光线杂乱无主次，背景抢主体，肤色蜡黄不均" loading="lazy"><figcaption><span class="time-badge">[00:12]</span>底片问题分析：光线杂乱无主次，背景抢主体，肤色蜡黄不均</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:26-00:51</span>Camera Raw 基础与曲线：提黑去黄</h2><p>把照片导入 PS 的 Camera Raw 后，第一步：「光学打开，去除照片四周暗角。」第二步处理光感：「点开亮度基本页面，提高黑色、降低对比和阴影，控回画面整体信息；稍加高光和白色，提高人物整体光感。」</p><p>第三步上曲线：「选择曲线，RGB 曲线中正拉 S 型曲线加强画面对比；蓝色曲线里中部定点提亮，去除画面大量黄色信息。」这一步直接回应了「肤色蜡黄」的诊断。</p><figure><img src="assets/bright-skin-one-minute/shot-02.jpg" alt="Camera Raw 基础：提高黑色降对比和阴影，稍加高光与白色" loading="lazy"><figcaption><span class="time-badge">[00:36]</span>Camera Raw 基础：提高黑色降对比和阴影，稍加高光与白色</figcaption></figure><figure><img src="assets/bright-skin-one-minute/shot-03.jpg" alt="曲线调整：RGB 拉 S 型曲线，蓝色曲线中部定点提亮去黄" loading="lazy"><figcaption><span class="time-badge">[00:50]</span>曲线调整：RGB 拉 S 型曲线，蓝色曲线中部定点提亮去黄</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:51-01:20</span>蒙版分区与颜色分级：统一肤色、拉开层次</h2><p>基础调整后照片还没有层次，UP 主开始分区处理：「选择蒙版，点击背景，调整背景过亮信息；选择新建镜像蒙版、反向，继续调整背景与人物的空间层次。」</p><p>再处理人物：「再次新建，选择人物蒙版，选择身体皮肤，调整新娘人物肤色。」这里他特别给出知识点：「画面人物肤色不同一，可以反复多做几次蒙版达到效果。」最后「回到基础颜色分级，给照片高光加入少量蓝色偏色」，完成白亮透的整体氛围。</p><figure><img src="assets/bright-skin-one-minute/shot-04.jpg" alt="蒙版分区：背景镜像蒙版反向控制空间层次，人物蒙版统一肤色" loading="lazy"><figcaption><span class="time-badge">[01:10]</span>蒙版分区：背景镜像蒙版反向控制空间层次，人物蒙版统一肤色</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（45段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>了解底层调色逻辑</p></div>
+<div class="transcript-row"><time>00:01</time><p>只需一分钟让皮肤通透明亮</p></div>
+<div class="transcript-row"><time>00:03</time><p>先点赞收藏 浩哥哥来教你</p></div>
+<div class="transcript-row"><time>00:06</time><p>这是一张客媚前妻不满意的新娘跟装</p></div>
+<div class="transcript-row"><time>00:08</time><p>我们先来看一下这张底片的问题</p></div>
+<div class="transcript-row"><time>00:10</time><p>前期照片光线杂乱 没有主刺</p></div>
+<div class="transcript-row"><time>00:12</time><p>背景光感太亮 抢掉了人物主体</p></div>
+<div class="transcript-row"><time>00:15</time><p>视觉中心不够突出</p></div>
+<div class="transcript-row"><time>00:16</time><p>拍摄前后虚实不够</p></div>
+<div class="transcript-row"><time>00:17</time><p>另外 照片人物对比略重</p></div>
+<div class="transcript-row"><time>00:19</time><p>肤色蜡黄不均 不够干净</p></div>
+<div class="transcript-row"><time>00:21</time><p>新娘妆感略显油腻 不够柔和</p></div>
+<div class="transcript-row"><time>00:24</time><p>头部的暗部细节确实比较严重</p></div>
+<div class="transcript-row"><time>00:26</time><p>很明显需要修改</p></div>
+<div class="transcript-row"><time>00:27</time><p>把照片导入PS Camera后</p></div>
+<div class="transcript-row"><time>00:29</time><p>光学打开 去除照片四周暗角</p></div>
+<div class="transcript-row"><time>00:31</time><p>光感较重 点开亮度基本页面</p></div>
+<div class="transcript-row"><time>00:34</time><p>提高黑色 降低对比和阴影</p></div>
+<div class="transcript-row"><time>00:36</time><p>控回画面整体信息</p></div>
+<div class="transcript-row"><time>00:38</time><p>稍加高光和白色竖直</p></div>
+<div class="transcript-row"><time>00:40</time><p>提高人物整体光感</p></div>
+<div class="transcript-row"><time>00:41</time><p>选择曲线</p></div>
+<div class="transcript-row"><time>00:42</time><p>RGB曲线中</p></div>
+<div class="transcript-row"><time>00:44</time><p>正拉S型曲线加强画面对比</p></div>
+<div class="transcript-row"><time>00:46</time><p>蓝色曲线里中部定点提亮</p></div>
+<div class="transcript-row"><time>00:48</time><p>去除画面大量黄色信息</p></div>
+<div class="transcript-row"><time>00:50</time><p>来 看一下效果</p></div>
+<div class="transcript-row"><time>00:52</time><p>照片没有层次</p></div>
+<div class="transcript-row"><time>00:53</time><p>选择蒙版点击背景</p></div>
+<div class="transcript-row"><time>00:55</time><p>调整背景过量信息</p></div>
+<div class="transcript-row"><time>00:57</time><p>选择新建镜像蒙版 反向</p></div>
+<div class="transcript-row"><time>01:00</time><p>继续调整背景与人物的空间层次</p></div>
+<div class="transcript-row"><time>01:03</time><p>再次新建 选择人物蒙版</p></div>
+<div class="transcript-row"><time>01:05</time><p>选择身体皮肤</p></div>
+<div class="transcript-row"><time>01:07</time><p>调整新娘人物肤色</p></div>
+<div class="transcript-row"><time>01:08</time><p>知识点哦</p></div>
+<div class="transcript-row"><time>01:09</time><p>画面人物肤色不同一</p></div>
+<div class="transcript-row"><time>01:11</time><p>这里我们可以反复多做几次蒙版</p></div>
+<div class="transcript-row"><time>01:13</time><p>达到效果</p></div>
+<div class="transcript-row"><time>01:14</time><p>回到基础颜色分级</p></div>
+<div class="transcript-row"><time>01:16</time><p>给照片高光加入少量蓝色偏色</p></div>
+<div class="transcript-row"><time>01:18</time><p>效果完成</p></div>
+<div class="transcript-row"><time>01:20</time><p>我是会修图的浩哥哥</p></div>
+<div class="transcript-row"><time>01:21</time><p>如果觉得分享有用</p></div>
+<div class="transcript-row"><time>01:22</time><p>记得点赞收藏</p></div>
+</div></div></details></section>
+</article>
+</main>
+</body></html>
