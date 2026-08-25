@@ -172,7 +172,7 @@ yt-dlp -f "bestvideo[height<=1080][ext=mp4]/bestvideo[height<=1080]/best[height<
 
 ### 小红书下载
 
-**主路径（推荐，2026-08 起）**：`yt-dlp` 的小红书提取器已因小红书页面改版失效（报 403 或 "No video formats found"），改用仓库内脚本 `scripts/xhs-fetch.py`，它负责短链展开、页面解析、提取视频直链、下载与抽音频，一次调用产出全部所需文件：
+**主路径（推荐，2026-08 起）**：`yt-dlp` 的小红书提取器曾因页面改版间歇性失效（报 403 / "No video formats found" / "Unable to extract initial state"），且需注意平台侧会动态收紧（曾一度要求 `web_session` cookie 才返回 `video_info`）。2026-08-25 用 `yt-dlp 2026.07.04` 实测短链可正常进入 `XiaoHongShu` 提取器并列出格式（无需 cookie），说明提取器**已恢复可用，但属服务端动态状态、随时可能再次收紧**。为避免提取器波动影响流水线，仍以仓库内脚本 `scripts/xhs-fetch.py` 为主路径，它不依赖 yt-dlp 提取器，负责短链展开、页面解析、提取视频直链、下载与抽音频，一次调用产出全部所需文件：
 
 ```bash
 # 脚本内部已执行 xhs-rate-limit.mjs 限流；产出 {slug}.source.mp4 + {slug}.m4a + {slug}.meta.json
@@ -185,9 +185,9 @@ python3 scripts/xhs-fetch.py "{url}" "{slug}"
 - 解析页面 `window.__INITIAL_STATE__`：优先读新版路径 `noteData.data.noteData`，旧路径 `note.noteDetailMap` 作为兜底；JSON 解析失败时用 `yt_dlp.utils.js_to_json` 修复非标准 JSON
 - 从 `video.media.stream.h264/h265` 中取第一个 `masterUrl` 作为视频直链，再 `curl` 下载（视频本体在 CDN，**下载视频不占限流额度**）
 - `meta.json` 包含笔记 id / 标题 / 时长 / 作者 / master_url，可直接作为后续图文实录的元数据来源
-- 需要 `curl` 和能 `import yt_dlp.utils` 的 Python 环境；若 `yt-dlp` 后续修复了提取器，可自行判断是否退回备选方式
+- 需要 `curl` 和能 `import yt_dlp.utils` 的 Python 环境；yt-dlp 提取器仅在应急时作为备选（见下），主路径不依赖其稳定性
 
-**备选方式（yt-dlp 提取器恢复有效时，或新方式失效时退回）**：
+**备选方式（yt-dlp 提取器当前可用时应急，或新方式失效时退回）**：
 
 ```bash
 # 请求前必须手动过限流器，保证与上一条小红书网络请求相隔至少 60 秒
@@ -195,6 +195,8 @@ node xhs-rate-limit.mjs
 yt-dlp -f "best[height<=1080]/best" -o "{slug}.source.%(ext)s" "{url}"
 ffmpeg -i "{slug}.source.{实际扩展名}" -vn -acodec aac -b:a 128k "{slug}.m4a"
 ```
+
+画质提示：小红书公开格式最高通常只有 1080p（2026-01 起平台不再提供 4K/HDR 源文件，实测常见为 720p）；`-F` 先列格式再选，若出现 `No video formats found` 或 `Unable to extract initial state`，先确认该链接在浏览器中可无验证码打开，必要时加 `--cookies-from-browser chrome`。
 
 注意：
 
