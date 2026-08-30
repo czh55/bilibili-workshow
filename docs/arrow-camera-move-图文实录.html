@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="泽西 sama 试了二十多次、花掉大量积分后，总结出一套更稳的「箭头运镜」流程：别在最终画面上画箭头硬生成，而是同时上传一张干净原图和一张路径参考图，再用文字把箭头翻译成具体镜头语言。核心判断是——对视频模型来说，图里的箭头不只是说明，也可能被当成画面里的真实涂鸦。">
+<title>箭头运镜详解：干净原图与路径图分开上传｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+</head>
+<body><main class="container">
+<header><h1>箭头运镜详解：干净原图与路径图分开上传</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">1分22秒</span><span class="meta-tag tag-topic">AI运镜 箭头 图生视频 剪映 分镜 教学</span></div>
+<a class="source-link" href="https://xhslink.cn/o/4PxLVPhJmrg" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">试了二十多次：箭头总留在成片里</a><a href="#ch2">为什么箭头会被画进视频</a><a href="#ch3">两张图分工：干净原图 + 路径图</a><a href="#ch4">把箭头翻译成可执行的镜头语言</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>泽西 sama 试了二十多次、花掉大量积分后，总结出一套更稳的「箭头运镜」流程：别在最终画面上画箭头硬生成，而是同时上传一张干净原图和一张路径参考图，再用文字把箭头翻译成具体镜头语言。核心判断是——对视频模型来说，图里的箭头不只是说明，也可能被当成画面里的真实涂鸦。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:13]</span><div><strong>问题现象</strong><p>箭头运镜很火，但生成结果常把箭头留在成片里；作者反复测试后找到较稳定做法。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:13→00:32]</span><div><strong>原因分析</strong><p>对视频模型，图片里的箭头可能被识别为真实元素；颜色鲜艳、画得很粗的红箭头尤其像涂鸦或标记。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:32→00:50]</span><div><strong>拆分参考</strong><p>把运镜参考与最终画面分开：一张无标记原图作最终画面，一张路径图只负责告诉镜头怎么走；两张一起上传并写清各自用途。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:50→01:22]</span><div><strong>镜头语言</strong><p>不要只写「按箭头运镜」，要写清起点、靠近谁、从哪侧经过、停在哪里；作者用德里巷道低机位环绕读报老人的提示词作范例。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>箭头运镜想稳定，关键不是反复强调「不要出现箭头」，而是把路径参考和最终画面拆开：干净原图定长相，路径图定走位，文字把箭头翻译成可执行的镜头语言。粗红箭头留在单张合成图里，最容易被模型当涂鸦画进视频。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:13</span>试了二十多次：箭头总留在成片里</h2><p>作者开场说最近「画箭头运镜」的方式很火，自己尝试二十多次、耗费大量积分，才找到一套比较稳定的方法。紧接着亮出痛点：生成的画面里还会出现箭头，像真实画在场景上一样。</p><figure><img src="assets/arrow-camera-move/shot-01.jpg" alt="AI 生成成片对比：画面中残留醒目红色箭头，说明「箭头留在视频里」的问题" loading="lazy"><figcaption>[00:10] AI 生成成片对比：画面中残留醒目红色箭头，说明「箭头留在视频里」的问题</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:13-00:32</span>为什么箭头会被画进视频</h2><p>原因写得很直白：对视频模型来说，图片里的箭头不只是说明，也有可能被当成画面里的真实元素。「尤其是颜色鲜艳、画得很粗的红色箭头，很容易被识别成涂鸦或者是标记。」</p><p>因此关键不是反复强调「不要出现箭头」，而是把运镜参考和最终画面分开处理。</p><figure><img src="assets/arrow-camera-move/shot-02.jpg" alt="前景模糊红箭头与逆光阁楼场景叠化，字幕强调箭头不只是说明" loading="lazy"><figcaption>[00:18] 前景模糊红箭头与逆光阁楼场景叠化，字幕强调箭头不只是说明</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:32-00:50</span>两张图分工：干净原图 + 路径图</h2><p>在剪映 AI（笔记侧也写作 Flova）里准备两张图：一张没有任何标记的原图，作为最终参考画面；另一张是画了路径的运镜参考图。新建图生视频项目，把两张图一起上传，并明确告诉模型：第一张是最终参考画面，第二张只用于理解摄像机的运动运镜。</p><figure><img src="assets/arrow-camera-move/shot-03.jpg" alt="路径参考图：巷道中读报老人与摩托车被红圈与箭头标出运镜路线" loading="lazy"><figcaption>[00:42] 路径参考图：巷道中读报老人与摩托车被红圈与箭头标出运镜路线</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">00:50-01:22</span>把箭头翻译成可执行的镜头语言</h2><p>第三步是把箭头翻译成镜头语言：不要只写「按照箭头运镜」，要写清楚箭头从哪里出发、靠近谁、从哪一侧经过、最后停到哪里。</p><p>以示范画面为例，他详细描述：从贴近地面的低机位开始，沿巷道缓慢向前推进，靠近右侧摩托车后轻微抬升，从读报老人的右侧平行环绕，再继续朝左前方移动。片尾放出完整提示词，方便复制粘贴使用。</p><figure><img src="assets/arrow-camera-move/shot-04.jpg" alt="最终巷道成片：逆光下老人坐在摩托车上读报，字幕描述镜头继续朝左前方移动" loading="lazy"><figcaption>[01:14] 最终巷道成片：逆光下老人坐在摩托车上读报，字幕描述镜头继续朝左前方移动</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（11段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>最近这个画箭头运箭的方式非常的火,我在尝试了20多次,耗费了5000几分,终于找到了一套比较稳定的方法。</p></div>
+<div class="transcript-row"><time>00:07</time><p>先讲一下我遇到的问题,就是我生成的画面它会有箭头出现在画面里面,就像这样。</p></div>
+<div class="transcript-row"><time>00:13</time><p>为什么箭头会出现在视频里,因为对于视频模型来说,图片里的箭头不只是寿命,也有可能会被当成画面里面的真实元素,</p></div>
+<div class="transcript-row"><time>00:21</time><p>尤其是颜色鲜艳卸掉很粗的红色箭头,很容易被识别成涂鸦或者是标记。</p></div>
+<div class="transcript-row"><time>00:27</time><p>所以关键不是反复强调不要出现箭头,而是把运镜参考和最终画面分开。</p></div>
+<div class="transcript-row"><time>00:32</time><p>在Flower里面,我们准备两张图,一张是没有任何标记的原图,作为最终的参考画面,另一张是录镜图。</p></div>
+<div class="transcript-row"><time>00:39</time><p>第二步,我们在Flower里面新建图身视频的项目,把两张图片一起上传,并明确告诉它。</p></div>
+<div class="transcript-row"><time>00:45</time><p>第一张图片是最终的参考画面,第二张图片只用于理解摄像机的用途录镜。</p></div>
+<div class="transcript-row"><time>00:50</time><p>第三步,把箭头翻译成镜头语言,不要只写按照箭头运镜,要写清楚箭头是从哪里出发,靠近谁,然后从哪一侧经过,最后停到哪里,比如说我们这个画面。</p></div>
+<div class="transcript-row"><time>01:01</time><p>我就详细描述了箭头从贴近地面的低阶位开始沿着向道缓慢向前推进,靠近右侧摩托车后轻微地抬身从独步老人的右侧平行环绕,然后继续朝左前方移动。</p></div>
+<div class="transcript-row"><time>01:14</time><p>下面就是我的提示词,你可以作为参考来复制连接使用,这就是我这期的分享,我们下期再见。</p></div>
+</div></div></details></section>
+</article>
+</main>
+</body></html>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5490" viewBox="0 0 1320 5490">
+  <foreignObject x="0" y="0" width="1320" height="5490">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>旅行感来自人和环境的距离</h1>
+  <div class="meta"><span class="tag tag-blue">旅行摄影</span><span class="tag tag-green">构图</span><span class="tag tag-orange">人物比例</span><span class="tag tag-purple">出片</span><span class="tag tag-red">教学</span><span class="tag tag-gray">时长 1分33秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/7RdjZLr0LOU">原视频</a>
+  <div class="summary-line">旅行感的关键变量是人与环境的距离：把人缩小到能辨认但不抢戏，让天空、街道纵深或山野尺度成为主角。人物太大容易拍成写真，小到看不见又变纯风景；大约控制在画面高度四分之一以内，并把「看镜头」换成背对、侧身或边缘站位，完成从看你到看地方的抽离。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">命题：景大旅行感强，因人物占比变小后视觉中心转向环境</span></div><div class="timeline-item"><span class="timeline-time">00:23</span><span class="timeline-text">示范：海边比例、街道纵深、山野大背景尺度对照</span></div><div class="timeline-item"><span class="timeline-time">00:43</span><span class="timeline-text">反例：人太大挤掉环境信息；层次多一层才成可走空间</span></div><div class="timeline-item"><span class="timeline-time">01:03</span><span class="timeline-text">姿态与比例：背对/侧身/边缘；约1/4高度；核心是抽离</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">人物占比↓<br/>视觉中心转向环境</div><span class="arrow">→</span><div class="node-green">场景策略<br/>海边/街道/山野各自借比例</div><span class="arrow">→</span><div class="node-orange">反例<br/>人太大→地方变写真</div><span class="arrow">→</span><div class="node-blue">抽离<br/>约1/4高度 + 非看镜头姿态</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：大景天然更高级所以旅行感强。实际是人物占比变小后，中心才从人转向环境。</p><p>误区：咖啡馆半身好看就等于旅行照。它更像生活方式照，环境信息量不够。</p><p>误区：人越小越好。小到看不见、失去辨识度，又会变成单纯风景照。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>核心命题：旅行感来自人—环境距离，不是大景滤镜</h3>
+      <p>「景越大，旅行感才越强」不是因为大景天然高级，而是人物占比变小后，视觉中心会从人物转向环境。咖啡馆半身可以很好看，但更像生活方式照片；想让别人一眼感到你在旅行，就要放大环境信息量。</p>
+      <div class="quote">我发现旅行照景越大，旅行感才越强……人物在画面里的占比变小后，视觉中心会从人物转向环境</div>
+      <div class="relation">诊断问题：先问画面主角是人还是地方。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>场景操作：用人物比例衬出开阔与纵深</h3>
+      <p>海边留下天空与海岸线，用人物比例衬开阔；城市街道用道路纵深让人往深处走，把建筑与街道关系拍进去；山野与建筑用大背景做尺度对照。人物变小，人与环境比例拉开，开阔程度才被感知。</p>
+      <div class="quote">去海边，把天空和海岸线一起留下，用人物比例衬出开阔感</div>
+      <div class="relation">同一地点，先退后一步放大环境，再按人物。</div>
+    </div>
+    <div class="card card card-red">
+      <h3>反例：人物太大 → 地方变成个人写真</h3>
+      <p>即使没有明显地标，环境信息足够时别人也更容易感到你出去玩了。人物太大，这些信息会被挤掉，容易把一个地方拍成一个人的写真。层次多一层，照片才能从平面记录变成可走路的空间。</p>
+      <div class="quote">如果人物太大，这些信息就会被挤掉，容易把一个地方拍成了一个人的写真</div>
+      <div class="relation">取舍：环境信息与人脸面积不能同时最大化。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>执行标准：约四分之一高度 + 抽离姿态</h3>
+      <p>人物不必一直看镜头：背对、侧身、站边缘或只留很小身影都成立。控制在画面高度约四分之一以内，再按开阔程度微调。旅行照的核心是抽离——让观者从看你切换到看你所在的地方。</p>
+      <div class="quote">一般可以把人物控制在画面高度的四分之一以内……旅行照的核心其实就是抽离</div>
+      <div class="relation">比例是尺，姿态是从「证明我好看」切到「记录此地」。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>讨论的是旅行感构图与比例，不是器材、焦段或后期调色教程。</li><li>「约四分之一高度」是经验区间，极端开阔或狭窄空间需微调。</li><li>生活方式照（如咖啡馆半身）仍可很好看，只是类型目标不同。</li></ul><div class="pitfall">人太大导致环境信息被挤掉，写真感压过旅行感。</div><div class="pitfall">人小到看不见，失去辨识度变成纯风景。</div><div class="pitfall">全程看镜头微笑，抽离感建立不起来。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>人物占比↓：视觉中心转向环境</li><li>场景策略：海边/街道/山野各自借比例</li><li>反例：人太大→地方变写真</li><li>抽离：约1/4高度 + 非看镜头姿态</li></ul><h3>行动清单</h3><ol><li>同一场景拍两张：半身近景 vs 人约占高度1/4的环境照，对比旅行感。</li><li>海边/街道/山野各练一种：留天空海岸线、用纵深、用大背景尺度。</li><li>至少一半张数改为背对、侧身或边缘站位，减少对镜头营业。</li><li>成片筛选时先问「别人想不想去这里」，再问「脸清不清楚」。</li></ol><h3>关键认知转变</h3><p>旅行感由人与环境的距离决定：把人放到约画面高度四分之一以内、姿态抽离看镜头，让环境成为视觉中心；太大变写真，太小变风景。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 1分33秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

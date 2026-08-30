@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="摄影博主 Leo《迷人仿色教程》第十期，拆解日本摄影师品川力的低饱和暗调：暖不是靠死拉白平衡，而是中间调的品红暖，阴影与高光偏冷，形成内敛冷暖对比。全程在 Lightroom 走「曲线铺基调→基础面板→混色降饱和→颜色分级三区→校准青橙色」，并强调参数必须能复用到一组手机片，才算">
+<title>这个色调学会了一定是大师｜品川力 Lightroom 仿色｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+</head>
+<body><main class="container">
+<header><h1>这个色调学会了一定是大师｜品川力 Lightroom 仿色</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分57秒</span><span class="meta-tag tag-topic">调色 Lightroom 品川力 仿色 日系 电影感 颜色分级</span></div>
+<a class="source-link" href="https://xhslink.cn/o/89ICbrxOSb9" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">迷人仿色第十期：品川力不是「清新」刻板</a><a href="#ch2">影调与色调：电影暗调 + 品红暖 + 冷暖内敛</a><a href="#ch3">直方图读色：阴影青蓝、高光琥珀绿、整体褪色</a><a href="#ch4">实战门槛：能复用才算风格，先 Adobe 再曲线铺调</a><a href="#ch5">曲线铺基调 + 基础面板：亮部青、暗调柔、细节回血</a><a href="#ch6">混色面板：降暖色饱和，用褪色换故事感</a><a href="#ch7">颜色分级三区 + 校准「右右左」青橙色</a><a href="#ch8">复制到同组片：只动基本参数即算调色成功</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>摄影博主 Leo《迷人仿色教程》第十期，拆解日本摄影师品川力的低饱和暗调：暖不是靠死拉白平衡，而是中间调的品红暖，阴影与高光偏冷，形成内敛冷暖对比。全程在 Lightroom 走「曲线铺基调→基础面板→混色降饱和→颜色分级三区→校准青橙色」，并强调参数必须能复用到一组手机片，才算真正形成风格。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:49]</span><div><strong>立题定位</strong><p>完美仿色钩子后介绍第十期：品川力=空气感与叙事性交汇；极简里有温润厚度，非刻板「清新」日系。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:49→01:50]</span><div><strong>影调色调</strong><p>低饱和暗调、偏电影影调；暖是品红暖而非黄暖；阴影与高光偏冷，中间调暖，冷暖对比内敛。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:50→02:23]</span><div><strong>直方图线索</strong><p>左端红蓝突出→阴影偏青蓝；高光绿红突出→琥珀绿感；蓝降饱和偏青、红偏橙，整体褪色复古。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:23→03:16]</span><div><strong>可复用原则</strong><p>手机素材实战；一张调好却不能复用不算成功；iPhone 片先改 Adobe 色彩，主张曲线先于基本参数铺基调。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:16→04:43]</span><div><strong>曲线+基础</strong><p>三原色曲线拉对比，红曲线让高光偏青；区域曲线柔化亮部、压暗；再提阴影与黑色、压高光白色、略降清晰度。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:43→05:48]</span><div><strong>混色褪色</strong><p>蓝/青/绿/黄/橙/红系统性偏色并降饱和；故事感靠氛围而非堆暖色饱和。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:48→06:52]</span><div><strong>分级+校准</strong><p>阴影青蓝 H156/S40，高光琥珀绿 H100/S7，中间调品红暖 H335/S32，混合平衡 100；校准「右右左」加强青橙。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:52→08:57]</span><div><strong>复用验证</strong><p>微调白平衡与曲线后复制到同组片，只动基本参数即可匹配；前后对比收尾，邀练习与点名摄影师。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>品川力仿色的硬核不是「参数清单」，而是可迁移的结构：曲线先铺电影感暗调与亮部青，混色把暖色饱和打薄做成褪色，再用颜色分级把「中间调品红暖 + 阴影/高光冷」嵌回去，校准用青橙公式收束。验收标准是复制到同组其他手机片时，几乎只改曝光等基本参数仍成立。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:49</span>迷人仿色第十期：品川力不是「清新」刻板</h2><p>开场用成片钩子：「记住这个色调……这就是完美的仿色。」Leo 自报摄影博主身份，点明本期是《迷人仿色教程》第十期，目标是拆日本摄影师品川力的作品风格，并在 Lightroom 里完成仿色。</p><p>风格定位刻意纠正刻板印象：品川力不是单纯清新日系，而是空气感与叙事性结合——「极简中透着温润的厚度」，常用柔和自然光与留白，捕捉东京街头、家庭日常或孤独瞬间，色调内敛却有情感深度。</p><figure><img src="assets/master-color-grade-tone/shot-01.jpg" alt="开场仿色钩子：窗内看红瓦小镇与暖灯帘幕，成片色调示例" loading="lazy"><figcaption>[00:08] 开场仿色钩子：窗内看红瓦小镇与暖灯帘幕，成片色调示例</figcaption></figure><figure><img src="assets/master-color-grade-tone/shot-02.jpg" alt="品川力风格介绍段：画面展示空气感与叙事性结合的参考作品" loading="lazy"><figcaption>[00:35] 品川力风格介绍段：画面展示空气感与叙事性结合的参考作品</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:49-01:50</span>影调与色调：电影暗调 + 品红暖 + 冷暖内敛</h2><p>影调上，作品偏典型低饱和暗调：直方图显示虽有高对比，能量多落在中间调一带，阴影有缺失——Leo 把它归为偏电影、有故事感的影调。</p><p>色调上看似暖，但「不是单纯靠拉白平衡把照片变暖」，也「不是黄色暖，而是品红暖」；阴影与高光偏冷，于是阴影—中间调—高光形成非常内敛的冷暖对比。这三点合在一起，才是品川力的风格指纹。</p><figure><img src="assets/master-color-grade-tone/shot-03.jpg" alt="LR 打开和室光束参考图，字幕「低饱和暗调风」，直方图偏左" loading="lazy"><figcaption>[01:05] LR 打开和室光束参考图，字幕「低饱和暗调风」，直方图偏左</figcaption></figure><figure><img src="assets/master-color-grade-tone/shot-04.jpg" alt="讲解品红暖与阴影/高光冷色形成内敛冷暖对比时的参考画面" loading="lazy"><figcaption>[01:40] 讲解品红暖与阴影/高光冷色形成内敛冷暖对比时的参考画面</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:50-02:23</span>直方图读色：阴影青蓝、高光琥珀绿、整体褪色</h2><p>继续读直方图最左端：左端哪种颜色突出，说明该色在阴影里相对少——红与蓝突出，对应阴影呈青蓝色；高光端绿与红突出，对应琥珀绿混色感。</p><p>混色观察上，蓝色饱和大幅降低且偏青，红色偏橙，整体有褪色与复古感。作品分析收束后，进入实战。</p><figure><img src="assets/master-color-grade-tone/shot-05.jpg" alt="读直方图左端：红蓝突出对应阴影青蓝；高光琥珀绿线索" loading="lazy"><figcaption>[02:05] 读直方图左端：红蓝突出对应阴影青蓝；高光琥珀绿线索</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:23-03:16</span>实战门槛：能复用才算风格，先 Adobe 再曲线铺调</h2><p>素材是 Leo 手机拍的一组片：先精调一张，再把参数复制到其他照片验证预设。他反复强调——调好一张不算什么；参数不能复用，后期会很累，也难形成自己的调色风格，因此「只为参数」的笔记意义不大、还容易误导。</p><p>本张 iPhone 原片先把颜色模式改为 Adobe 色彩。流程偏好：不要先拧基本参数，而像画水彩/油画一样先用曲线铺基调；先用三原色曲线拉对比，为后面的品川力亮部青色打底。</p><figure><img src="assets/master-color-grade-tone/shot-06.jpg" alt="手机素材组（海岸/街景底片条），口播强调「有一定名气的摄影师」需可复用风格" loading="lazy"><figcaption>[02:45] 手机素材组（海岸/街景底片条），口播强调「有一定名气的摄影师」需可复用风格</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">03:16-04:43</span>曲线铺基调 + 基础面板：亮部青、暗调柔、细节回血</h2><p>红色曲线让高光偏青——对应原作「统一暖调但亮部偏青」的明显特征；不必急着上颜色分级。再用曲线中和对比，亮部往下放，避免刺眼；区域曲线压低暗部，贴合暗调风格。</p><p>暗部细节看不见时回到基础面板：略提阴影、大幅提升黑色色阶（曲线已压暗，这里不必再压黑），同时柔化高对比带来的硬朗感；降低高光与白色色阶，并略降清晰度，把电影感暗调稳住。</p><figure><img src="assets/master-color-grade-tone/shot-07.jpg" alt="富士山+过山车案例：红色点曲线拉对比/亮部偏青，字幕「先不急啊」" loading="lazy"><figcaption>[03:40] 富士山+过山车案例：红色点曲线拉对比/亮部偏青，字幕「先不急啊」</figcaption></figure><figure><img src="assets/master-color-grade-tone/shot-08.jpg" alt="基础面板回提阴影与黑色、压高光白色，柔化曲线高对比硬朗感" loading="lazy"><figcaption>[04:30] 基础面板回提阴影与黑色、压高光白色，柔化曲线高对比硬朗感</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">04:43-05:48</span>混色面板：降暖色饱和，用褪色换故事感</h2><p>混色路径很具体：蓝色偏青并大幅降饱和；青色往蓝回一点、降饱和、提亮度让青更干净；绿色偏黄并降饱和；黄色略偏橙并大幅降饱和；橙色再「沉」一点做褪色；红色往橙靠并降饱和。</p><p>方法论句：「具有故事感的暖调一定要降低暖色饱和」——故事感不是靠颜色堆出来的，而是靠色调氛围。画面暂时「没颜色」是预期状态，下一步用颜色分级把氛围加回来。</p><figure><img src="assets/master-color-grade-tone/shot-09.jpg" alt="混色器：绿色色相/饱和大幅下调并提亮度，系统降暖色饱和造褪色" loading="lazy"><figcaption>[05:15] 混色器：绿色色相/饱和大幅下调并提亮度，系统降暖色饱和造褪色</figcaption></figure></section>
+<section class="story-section" id="ch7"><h2><span class="time-marker">05:48-06:52</span>颜色分级三区 + 校准「右右左」青橙色</h2><p>颜色分级对齐前面的分析：阴影加青蓝（略偏绿），色相 156、饱和 40；高光加琥珀绿，色相 100、饱和 7；中间调加品红暖，色相 335、饱和 32；混合与平衡都到 100。三区混完后，内敛冷暖对比与复古褪色感回来。</p><p>校准面板用来加强青橙色分裂：口诀「右右左」是青橙色调色公式。对比前后与原作，色调已非常接近；再回基本面板微调细节，并略加白平衡暖感；阴影发灰则回曲线略压暗，影调与色调一并贴齐。</p><figure><img src="assets/master-color-grade-tone/shot-10.jpg" alt="颜色分级面板：高光琥珀绿色相约 100、低饱和，三区冷暖嵌套" loading="lazy"><figcaption>[06:10] 颜色分级面板：高光琥珀绿色相约 100、低饱和，三区冷暖嵌套</figcaption></figure><figure><img src="assets/master-color-grade-tone/shot-11.jpg" alt="校准面板「右右左」青橙色公式后与原作对照，色调已接近" loading="lazy"><figcaption>[06:50] 校准面板「右右左」青橙色公式后与原作对照，色调已接近</figcaption></figure></section>
+<section class="story-section" id="ch8"><h2><span class="time-marker">06:52-08:57</span>复制到同组片：只动基本参数即算调色成功</h2><p>把参数复制到其他手机片：通常只需降低曝光等基本参数微调，色调与影调仍匹配原作与主案例。「完全不用动其他地方」被 Leo 当作本次调色成功的判据——说明结构参数可复用，而不是单张碰运气。</p><p>收尾放出一组前后对比，邀请留言要素材私信发送；欢迎在评论区点名想学的摄影师，下期继续仿色。片尾：「我是 Leo，我们下期再见。」</p><figure><img src="assets/master-color-grade-tone/shot-12.jpg" alt="参数复制到列车窗景等其他片：基本面板只微调曝光等，风格仍匹配" loading="lazy"><figcaption>[07:40] 参数复制到列车窗景等其他片：基本面板只微调曝光等，风格仍匹配</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（190段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>记住这个色调,如何把这组图调成刚刚的色</p></div>
+<div class="transcript-row"><time>00:04</time><p>这就是完美的仿色</p></div>
+<div class="transcript-row"><time>00:08</time><p>哈喽大家好,我是摄影博主Leo</p></div>
+<div class="transcript-row"><time>00:10</time><p>今天是《迷人仿色教程》第十期</p></div>
+<div class="transcript-row"><time>00:13</time><p>想跟大家一起深入探讨的</p></div>
+<div class="transcript-row"><time>00:15</time><p>是日本摄影师品川丽的作品风格</p></div>
+<div class="transcript-row"><time>00:18</time><p>并教大家如何在Lightroom里面进行完美仿色</p></div>
+<div class="transcript-row"><time>00:23</time><p>品川丽的作品是当代日系摄影中空气感与叙事性结合的典范</p></div>
+<div class="transcript-row"><time>00:27</time><p>它的风格并非像很多人对日本摄影的刻板印象</p></div>
+<div class="transcript-row"><time>00:31</time><p>单纯的清新,而是在极简中透着一种温润的厚度</p></div>
+<div class="transcript-row"><time>00:36</time><p>它常利用柔和的自然光和适当的留白</p></div>
+<div class="transcript-row"><time>00:39</time><p>捕捉东京街头家庭日常或孤独的瞬间</p></div>
+<div class="transcript-row"><time>00:43</time><p>画面色调内敛但富有情感深度</p></div>
+<div class="transcript-row"><time>00:46</time><p>传达出一种情感深度</p></div>
+<div class="transcript-row"><time>00:48</time><p>接下来我们来分析这些作品的色调和影调</p></div>
+<div class="transcript-row"><time>00:51</time><p>品川丽的作品是比较典型的低饱和暗调风</p></div>
+<div class="transcript-row"><time>00:55</time><p>从直方图我们可以看出</p></div>
+<div class="transcript-row"><time>00:57</time><p>虽然是高对比</p></div>
+<div class="transcript-row"><time>00:58</time><p>但影调距于常调和中调之间</p></div>
+<div class="transcript-row"><time>01:01</time><p>量不缺失比较多</p></div>
+<div class="transcript-row"><time>01:03</time><p>阴影也有缺失</p></div>
+<div class="transcript-row"><time>01:05</time><p>这种影调是比较典型的电影影调</p></div>
+<div class="transcript-row"><time>01:08</time><p>特点是影调比较高调</p></div>
+<div class="transcript-row"><time>01:10</time><p>而影调比较低调</p></div>
+<div class="transcript-row"><time>01:12</time><p>而影调比较高调</p></div>
+<div class="transcript-row"><time>01:14</time><p>这种影调是比较典型的电影影调</p></div>
+<div class="transcript-row"><time>01:17</time><p>特点是非常具有故事感</p></div>
+<div class="transcript-row"><time>01:19</time><p>再看色调</p></div>
+<div class="transcript-row"><time>01:21</time><p>照片看上去是暖调</p></div>
+<div class="transcript-row"><time>01:23</time><p>但要注意</p></div>
+<div class="transcript-row"><time>01:24</time><p>这里的暖调不是单纯靠拉白平衡把照片变暖</p></div>
+<div class="transcript-row"><time>01:28</time><p>那通过什么变暖呢</p></div>
+<div class="transcript-row"><time>01:30</time><p>这里先卖个关子</p></div>
+<div class="transcript-row"><time>01:32</time><p>再就是这里的暖调不是黄色暖</p></div>
+<div class="transcript-row"><time>01:35</time><p>而是品红暖</p></div>
+<div class="transcript-row"><time>01:36</time><p>再看它的阴影和高光都是冷色</p></div>
+<div class="transcript-row"><time>01:39</time><p>这恰好就让照片的阴影中间调</p></div>
+<div class="transcript-row"><time>01:42</time><p>中间调高光形成了冷暖对比</p></div>
+<div class="transcript-row"><time>01:45</time><p>对比非常内敛</p></div>
+<div class="transcript-row"><time>01:47</time><p>这就是品川丽风格特点</p></div>
+<div class="transcript-row"><time>01:49</time><p>我们再观察直方图最左端</p></div>
+<div class="transcript-row"><time>01:52</time><p>上期教程我有提到</p></div>
+<div class="transcript-row"><time>01:54</time><p>左端什么颜色突出说明什么颜色就少</p></div>
+<div class="transcript-row"><time>01:58</time><p>这里红色和蓝色突出</p></div>
+<div class="transcript-row"><time>02:00</time><p>说明照片的阴影呈现青蓝色</p></div>
+<div class="transcript-row"><time>02:03</time><p>再看高光</p></div>
+<div class="transcript-row"><time>02:04</time><p>绿色和红色突出</p></div>
+<div class="transcript-row"><time>02:06</time><p>所以高光呈现琥珀绿</p></div>
+<div class="transcript-row"><time>02:09</time><p>混色这里</p></div>
+<div class="transcript-row"><time>02:10</time><p>蓝色饱和大幅度降低</p></div>
+<div class="transcript-row"><time>02:12</time><p>且偏向青色</p></div>
+<div class="transcript-row"><time>02:13</time><p>红色偏向橙色</p></div>
+<div class="transcript-row"><time>02:15</time><p>整体颜色有褪色感</p></div>
+<div class="transcript-row"><time>02:17</time><p>给人一种复古感</p></div>
+<div class="transcript-row"><time>02:19</time><p>通过作品分析</p></div>
+<div class="transcript-row"><time>02:20</time><p>总结出调色思路</p></div>
+<div class="transcript-row"><time>02:22</time><p>接下来</p></div>
+<div class="transcript-row"><time>02:23</time><p>打卡直接进入实战</p></div>
+<div class="transcript-row"><time>02:26</time><p>这些是接下来会用到的调色素材</p></div>
+<div class="transcript-row"><time>02:29</time><p>都是我用手机拍的</p></div>
+<div class="transcript-row"><time>02:30</time><p>我会选一张作为调色案例</p></div>
+<div class="transcript-row"><time>02:33</time><p>完成后同样会把参数复制到其他照片</p></div>
+<div class="transcript-row"><time>02:36</time><p>看看预设的效果如何</p></div>
+<div class="transcript-row"><time>02:38</time><p>提过很多次啊</p></div>
+<div class="transcript-row"><time>02:39</time><p>一张照片的调色成功并不算什么</p></div>
+<div class="transcript-row"><time>02:42</time><p>要想成为有一定名气的摄影师</p></div>
+<div class="transcript-row"><time>02:45</time><p>必须要有自己的调色风格</p></div>
+<div class="transcript-row"><time>02:47</time><p>如果调好一张的照片</p></div>
+<div class="transcript-row"><time>02:49</time><p>但这些参数不能复用到其他照片</p></div>
+<div class="transcript-row"><time>02:52</time><p>这种调色在我看来是不成功的</p></div>
+<div class="transcript-row"><time>02:55</time><p>不能复用代表后期会很累</p></div>
+<div class="transcript-row"><time>02:58</time><p>也很难形成自己的风格</p></div>
+<div class="transcript-row"><time>03:00</time><p>所以我也不建议同学们</p></div>
+<div class="transcript-row"><time>03:02</time><p>去看那种只为参数的笔记</p></div>
+<div class="transcript-row"><time>03:04</time><p>那种笔记我认为意义不大</p></div>
+<div class="transcript-row"><time>03:07</time><p>反而会误导同学们</p></div>
+<div class="transcript-row"><time>03:09</time><p>这张照片因为是用iphone拍的照片</p></div>
+<div class="transcript-row"><time>03:12</time><p>这里先把颜色模式改为adobe颜色</p></div>
+<div class="transcript-row"><time>03:15</time><p>我们先用曲线铺调</p></div>
+<div class="transcript-row"><time>03:17</time><p>有些同学喜欢先调基本参数</p></div>
+<div class="transcript-row"><time>03:20</time><p>我建议大家都先用曲线</p></div>
+<div class="transcript-row"><time>03:22</time><p>就好像画水彩油画一样先铺基调</p></div>
+<div class="transcript-row"><time>03:25</time><p>先用三原色曲线拉对比</p></div>
+<div class="transcript-row"><time>03:31</time><p>在红色曲线这里让高光偏青色</p></div>
+<div class="transcript-row"><time>03:34</time><p>有同学会问</p></div>
+<div class="transcript-row"><time>03:35</time><p>为什么不直接在颜色分级面板里给高光加轻</p></div>
+<div class="transcript-row"><time>03:39</time><p>先不急啊</p></div>
+<div class="transcript-row"><time>03:40</time><p>颜色分级面板后面再用到</p></div>
+<div class="transcript-row"><time>03:42</time><p>我们来看品川丽的作品</p></div>
+<div class="transcript-row"><time>03:44</time><p>统一的暖调</p></div>
+<div class="transcript-row"><time>03:45</time><p>但不难发现亮部是偏青色的</p></div>
+<div class="transcript-row"><time>03:47</time><p>这是一个比较明显的特征</p></div>
+<div class="transcript-row"><time>03:49</time><p>所以在用曲线做基调的同时</p></div>
+<div class="transcript-row"><time>03:52</time><p>就把亮出的青色先加上</p></div>
+<div class="transcript-row"><time>03:55</time><p>接着我们再用这个曲线来中和下</p></div>
+<div class="transcript-row"><time>03:57</time><p>让对比度显得柔和一些</p></div>
+<div class="transcript-row"><time>04:00</time><p>亮部往下放</p></div>
+<div class="transcript-row"><time>04:02</time><p>注意看直方图亮部的变化</p></div>
+<div class="transcript-row"><time>04:04</time><p>这样做是为了亮部不那么刺眼</p></div>
+<div class="transcript-row"><time>04:10</time><p>继续用区域曲线压低暗部</p></div>
+<div class="transcript-row"><time>04:12</time><p>因为品川丽的风格是暗调</p></div>
+<div class="transcript-row"><time>04:18</time><p>现在暗部细节看不到了对吧</p></div>
+<div class="transcript-row"><time>04:20</time><p>没关系</p></div>
+<div class="transcript-row"><time>04:21</time><p>我们回到基础面板</p></div>
+<div class="transcript-row"><time>04:23</time><p>提升一点阴影细节</p></div>
+<div class="transcript-row"><time>04:24</time><p>大幅度提升黑色色阶</p></div>
+<div class="transcript-row"><time>04:26</time><p>因为我们在曲线了压低了暗部</p></div>
+<div class="transcript-row"><time>04:28</time><p>这里不需要再压低黑色色阶了</p></div>
+<div class="transcript-row"><time>04:31</time><p>这里提升黑色色阶不仅能提升阴影细节</p></div>
+<div class="transcript-row"><time>04:34</time><p>还能柔和因为高对比带来的硬朗感</p></div>
+<div class="transcript-row"><time>04:37</time><p>降低高光和白色色阶</p></div>
+<div class="transcript-row"><time>04:40</time><p>稍微降低清晰度</p></div>
+<div class="transcript-row"><time>04:43</time><p>接着我们来到混色面板</p></div>
+<div class="transcript-row"><time>04:46</time><p>蓝色偏青色</p></div>
+<div class="transcript-row"><time>04:48</time><p>饱和大幅度降低</p></div>
+<div class="transcript-row"><time>04:53</time><p>青色往蓝色回来点</p></div>
+<div class="transcript-row"><time>04:55</time><p>也降低饱和</p></div>
+<div class="transcript-row"><time>04:58</time><p>提高亮度让青色干净点</p></div>
+<div class="transcript-row"><time>05:03</time><p>绿色偏向黄色</p></div>
+<div class="transcript-row"><time>05:06</time><p>饱和也降低</p></div>
+<div class="transcript-row"><time>05:14</time><p>黄色稍微偏向橙色</p></div>
+<div class="transcript-row"><time>05:18</time><p>饱和大幅度降低</p></div>
+<div class="transcript-row"><time>05:20</time><p>具有故事感的暖调一定要降低暖色饱和</p></div>
+<div class="transcript-row"><time>05:23</time><p>因为故事感不是靠颜色去支撑的</p></div>
+<div class="transcript-row"><time>05:26</time><p>而是靠色调氛围感去呈现的</p></div>
+<div class="transcript-row"><time>05:31</time><p>橙色再沉下去让它有褪色的感觉</p></div>
+<div class="transcript-row"><time>05:38</time><p>红色往橙色来一点</p></div>
+<div class="transcript-row"><time>05:40</time><p>饱和也降一降</p></div>
+<div class="transcript-row"><time>05:43</time><p>现在整个画面看上去是不是没有颜色了</p></div>
+<div class="transcript-row"><time>05:46</time><p>没关系</p></div>
+<div class="transcript-row"><time>05:48</time><p>我们来到颜色分级给照片添加色调氛围</p></div>
+<div class="transcript-row"><time>05:53</time><p>还记得前面的色调分析吗</p></div>
+<div class="transcript-row"><time>05:56</time><p>阴影这里添加青蓝色</p></div>
+<div class="transcript-row"><time>05:58</time><p>稍微往绿色偏多点</p></div>
+<div class="transcript-row"><time>06:00</time><p>色相给156</p></div>
+<div class="transcript-row"><time>06:02</time><p>饱和给40</p></div>
+<div class="transcript-row"><time>06:07</time><p>高光添加琥珀绿</p></div>
+<div class="transcript-row"><time>06:09</time><p>色相100</p></div>
+<div class="transcript-row"><time>06:11</time><p>饱和给7吧</p></div>
+<div class="transcript-row"><time>06:13</time><p>中间调这里</p></div>
+<div class="transcript-row"><time>06:15</time><p>让画面增加品红暖调</p></div>
+<div class="transcript-row"><time>06:18</time><p>色相335</p></div>
+<div class="transcript-row"><time>06:20</time><p>饱和32</p></div>
+<div class="transcript-row"><time>06:24</time><p>混合和平衡都给到100</p></div>
+<div class="transcript-row"><time>06:26</time><p>通过三个区域的配色混合</p></div>
+<div class="transcript-row"><time>06:28</time><p>这时候画面就有了比较内敛的冷暖对比</p></div>
+<div class="transcript-row"><time>06:31</time><p>有种复古褪色感</p></div>
+<div class="transcript-row"><time>06:34</time><p>我们继续来到校准面板加强画面的澄清色</p></div>
+<div class="transcript-row"><time>06:38</time><p>这里记住个知识点</p></div>
+<div class="transcript-row"><time>06:40</time><p>校准这里</p></div>
+<div class="transcript-row"><time>06:41</time><p>右右左是澄清色的调色公式</p></div>
+<div class="transcript-row"><time>06:45</time><p>对比下前后看看变化</p></div>
+<div class="transcript-row"><time>06:48</time><p>跟原作对比看看</p></div>
+<div class="transcript-row"><time>06:50</time><p>这时候就已经非常相似了</p></div>
+<div class="transcript-row"><time>06:52</time><p>我们再回到基本面板调整下细节</p></div>
+<div class="transcript-row"><time>06:55</time><p>再用白平衡增加一点暖色</p></div>
+<div class="transcript-row"><time>06:58</time><p>感觉阴影有点发灰</p></div>
+<div class="transcript-row"><time>07:00</time><p>回到曲线压暗点</p></div>
+<div class="transcript-row"><time>07:05</time><p>看</p></div>
+<div class="transcript-row"><time>07:06</time><p>不管是色调还是影调</p></div>
+<div class="transcript-row"><time>07:08</time><p>都跟品川丽的风格一样</p></div>
+<div class="transcript-row"><time>07:13</time><p>我们试一下</p></div>
+<div class="transcript-row"><time>07:16</time><p>我们试着把这些参数复制到其他照片</p></div>
+<div class="transcript-row"><time>07:19</time><p>看看效果如何</p></div>
+<div class="transcript-row"><time>07:24</time><p>降低曝光</p></div>
+<div class="transcript-row"><time>07:25</time><p>基本参数稀微调整下</p></div>
+<div class="transcript-row"><time>07:32</time><p>看一下前后对比</p></div>
+<div class="transcript-row"><time>07:34</time><p>跟原作的对比</p></div>
+<div class="transcript-row"><time>07:36</time><p>很完美对吧</p></div>
+<div class="transcript-row"><time>07:39</time><p>看一下这张</p></div>
+<div class="transcript-row"><time>07:42</time><p>同样调整下基本参数</p></div>
+<div class="transcript-row"><time>07:50</time><p>色调、影调都非常匹配</p></div>
+<div class="transcript-row"><time>07:54</time><p>大家发现没有</p></div>
+<div class="transcript-row"><time>07:56</time><p>我只需要根据照片稍微调整下基本参数就可以了</p></div>
+<div class="transcript-row"><time>08:00</time><p>完全不用动其他地方</p></div>
+<div class="transcript-row"><time>08:02</time><p>这就说明这次调色是成功的</p></div>
+<div class="transcript-row"><time>08:06</time><p>总体的调色思路就是这样</p></div>
+<div class="transcript-row"><time>08:08</time><p>不知道大家有没有收获</p></div>
+<div class="transcript-row"><time>08:10</time><p>也希望大家看完视频可以上手练习</p></div>
+<div class="transcript-row"><time>08:13</time><p>可以在下方留言想要素材</p></div>
+<div class="transcript-row"><time>08:15</time><p>我会私信发你的</p></div>
+<div class="transcript-row"><time>08:17</time><p>接下来一起看一下这些照片的前后对比吧</p></div>
+<div class="transcript-row"><time>08:25</time><p>好啦</p></div>
+<div class="transcript-row"><time>08:26</time><p>以上就是本期视频的全部内容</p></div>
+<div class="transcript-row"><time>08:28</time><p>如果有收获的话可以持续关注</p></div>
+<div class="transcript-row"><time>08:30</time><p>感谢观看</p></div>
+<div class="transcript-row"><time>08:33</time><p>如果大家有喜欢的摄影师也可以在评论区告诉我</p></div>
+<div class="transcript-row"><time>08:36</time><p>我会教你模仿出你心目中大神的色调</p></div>
+<div class="transcript-row"><time>08:39</time><p>我是Leo</p></div>
+<div class="transcript-row"><time>08:40</time><p>我们下期再见</p></div>
+</div></div></details></section>
+</article>
+</main>
+</body></html>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5501" viewBox="0 0 1320 5501">
+  <foreignObject x="0" y="0" width="1320" height="5501">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>咖啡饮品分层技巧：密度差、加料加气与避坑</h1>
+  <div class="meta"><span class="tag tag-blue">咖啡</span><span class="tag tag-green">分层</span><span class="tag tag-orange">鸡尾酒</span><span class="tag tag-purple">密度</span><span class="tag tag-red">教学</span><span class="tag tag-gray">时长 2分05秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AQP25hbPuL4">原视频</a>
+  <div class="summary-line">分层的本质是控制密度差：加料让重液下沉、轻液上浮；加气（打发）也能让牛乳或浓缩变轻浮在上方。真正决定界线干不干净的，往往是倒液冲击力——用冰块或勺背把液体横向铺开，比反复换配方更管用。分层只是饮品好看的方法之一。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">立题：分层靠密度差，常用加料与加气；预告失败原因</span></div><div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">加料：红石榴糖浆沉底，维他命水/纯净水上浮，金酒可再分层</span></div><div class="timeline-item"><span class="timeline-time">00:49</span><span class="timeline-text">加气：黄油牛乳直倒沉底，打发后浮顶；浓缩加糖打发后倒入椰汁可分层</span></div><div class="timeline-item"><span class="timeline-time">01:24</span><span class="timeline-text">避坑：向下冲击力冲花界面，冰块或勺子把力横过来</span></div><div class="timeline-item"><span class="timeline-time">01:49</span><span class="timeline-text">边界：分层只是好看方法之一，后续还有其他做法</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">密度差<br/>分层的物理核心</div><span class="arrow">→</span><div class="node-green">加料<br/>重料下沉、轻料上浮</div><span class="arrow">→</span><div class="node-orange">加气<br/>打发进气→体积大密度小</div><span class="arrow">→</span><div class="node-blue">化解冲击<br/>冰块/勺背横向铺展</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：分层失败是因为配方不对。实际多数是向下冲击力把界面冲花，辅助工具比换料更关键。</p><p>误区：牛乳或浓缩只能靠换品类分层。实际同一液体，打发加气后密度变小也能浮在上方。</p><p>误区：分层就是饮品好看的全部。作者明确说它只是方法之一。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>核心命题：分层 = 密度差，不是玄学手法</h3>
+      <p>开场把原理收成一句话：分层广泛用于咖啡与鸡尾酒，核心就是密度差别。改变密度常用两条路——加料和加气。后面所有演示都是在验证这句话，而不是堆「高级感」话术。</p>
+      <div class="quote">分层的核心其实就是密度的差别。改变密度一般常用两种方式：加料和加气</div>
+      <div class="relation">判断标准：先问谁更重/更轻，再选加料还是加气。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>加料路径：重下沉、轻上浮，酒精也能浮</h3>
+      <p>橙汁里倒红石榴糖浆会沉底（更重）；加冰块后缓慢倒入维他命水、纯净水会依次上浮（更淡、密度小）。酒精也能浮在水上，金酒加一点糖浆调色后再倒入，可再做一层可见分层。</p>
+      <div class="quote">杯中倒入橙汁，再加入红石榴糖浆，它就会跑到橙汁下方，因为它的密度更大更重</div>
+      <div class="relation">操作顺序：先重后轻、缓慢倒入，才能保留界面。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>加气路径：打发让同一液体变轻上浮</h3>
+      <p>黄油牛乳直倒会沉进咖啡并混合；用打奶器打发进气后体积约翻倍、密度变小，再倒入就浮在上方。意式浓缩稍加白砂糖打发后倒入椰汁，同样可分层——关键变量是进气后的密度，不是换一杯新饮品。</p>
+      <div class="quote">用打奶器打发黄油牛乳，随着搅打空气进入，它的体积变成了原本的两倍，密度变小也变得更轻</div>
+      <div class="relation">对照实验：同一液体「未打发 vs 打发」，比换配方更能说明机制。</div>
+    </div>
+    <div class="card card card-red">
+      <h3>失败主因：向下冲击力，要把力横过来</h3>
+      <p>加液时的向下冲击会把两种液体撞在一起，干净界面就没了。对策很具体：放两颗冰块，或用勺子接住液体，把冲击化解成横向铺展，分层才会自然、干净、鲜明。</p>
+      <div class="quote">我们在加液体时会有一个向下的冲击力……放两颗冰块进去，或者用勺子接住液体</div>
+      <div class="relation">优先级：先控冲击力，再纠结糖浆牌子或打发时长。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>本片只讲分层物理与操作细节，不覆盖拉花、糖浆配方或商业出品标准。</li><li>分层是视觉呈现手段之一，不等于好喝或「高级」的全部条件。</li><li>演示液体（橙汁、金酒、椰汁等）用于可见性，家用复刻需按自身配方微调密度。</li></ul><div class="pitfall">只换配方不改倒法——冲击力没化解，界面仍会花。</div><div class="pitfall">打发不足就倒——密度没真正变小，仍会沉底混合。</div><div class="pitfall">倒得太快，即使有冰块也可能局部冲混。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>密度差：分层的物理核心</li><li>加料：重料下沉、轻料上浮</li><li>加气：打发进气→体积大密度小</li><li>化解冲击：冰块/勺背横向铺展</li></ul><h3>行动清单</h3><ol><li>先用橙汁+红石榴糖浆做一次「重下沉」演示，确认密度差可见。</li><li>同一杯咖啡对比：黄油牛乳直倒 vs 打发后再倒，观察是否上浮。</li><li>故意直冲倒液一次冲花界面，再用冰块/勺背横向铺展对照。</li><li>记录哪种辅助工具对自己手感最稳，固化成固定流程。</li></ol><h3>关键认知转变</h3><p>先控密度差（加料/加气），再控冲击力（冰块/勺背横向铺展）；配方细节次要，界面是否干净才是分层成败的硬指标。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 2分05秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

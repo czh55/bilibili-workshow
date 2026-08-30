@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5825" viewBox="0 0 1320 5825">
+  <foreignObject x="0" y="0" width="1320" height="5825">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>三大调色扭曲器，轻松掌握核心用法</h1>
+  <div class="meta"><span class="tag tag-blue">调色</span><span class="tag tag-green">达芬奇</span><span class="tag tag-orange">扭曲器</span><span class="tag tag-purple">Color Warper</span><span class="tag tag-red">色相</span><span class="tag tag-gray">饱和度</span><span class="tag tag-gray">时长 9分34秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AZ3AYoYsNzj">原视频</a>
+  <div class="summary-line">三大色彩扭曲器是同一色轮逻辑的三种交互：三角擅长局部精准换色（普通椭圆范围 / 点对点 + 图钉隔离）；六边擅长全景统调（图钉保色相点、扩展收缩聚拢相近色）；双方形专注特定亮度区间的倾向与明暗精修。按「手术刀 / 指挥家 / 精修师」选工具，比死磕曲线更直观。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">入门：达芬奇 Color Warper，三角网格映射色轮</span></div><div class="timeline-item"><span class="timeline-time">01:04</span><span class="timeline-text">普通模式：椭圆范围改色相/饱和，适合大范围风格化</span></div><div class="timeline-item"><span class="timeline-time">01:43</span><span class="timeline-text">点对点+图钉：指哪调哪，锁定书本/皮肤干扰色</span></div><div class="timeline-item"><span class="timeline-time">03:02</span><span class="timeline-text">六边形色相饱和度扭曲器：全景统调建风格</span></div><div class="timeline-item"><span class="timeline-time">04:16</span><span class="timeline-text">图钉防连带、扩展收缩聚拢、控制线可加到24</span></div><div class="timeline-item"><span class="timeline-time">05:55</span><span class="timeline-text">双方形色度亮度：黄蓝/绿红 × 明暗两轴</span></div><div class="timeline-item"><span class="timeline-time">06:56</span><span class="timeline-text">湖面实操：分层加绿、暖色对冲、图钉提亮暗树</span></div><div class="timeline-item"><span class="timeline-time">08:35</span><span class="timeline-text">总结三器分工；与曲线原理相通、交互更直观</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">三角<br/>局部换色手术刀</div><span class="arrow">→</span><div class="node-green">六边<br/>全局统调指挥家</div><span class="arrow">→</span><div class="node-orange">双方形<br/>明暗分层精修师</div><span class="arrow">→</span><div class="node-blue">共用底<br/>色轮映射 + 多维一体</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>误区：图钉在三角与六边里作用相同。三角图钉可钉住并恢复原色；六边图钉主要固定相应色相点防连带，仍可能被一定程度带动。</p><p>误区：只会用曲线才算专业。扭曲器把色相/饱和/亮度融进直观网格，按任务选型往往更快。</p><p>误区：六边形适合做外科手术式局部。片中明确：六边更适合整体倾向统一与风格化。</p><p>误区：提亮暗部绿树直接拖控制点即可。邻色易被误伤，应先图钉锁定再单独提亮。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card">
+      <h3>命题：三套面板，一套色轮逻辑</h3>
+      <p>三角、六边、双方形界面不同，但都映射熟悉色轮。差别在交互侧重：精度局部、效率全局、还是按亮度区间精修明暗与倾向。</p>
+      <div class="quote">底层逻辑……乃至传统色轮都是一脉相承的，只是交互设计的侧重点有所不同</div>
+      <div class="relation">先问任务是局部换色还是统调倾向，再选面板，而不是三套都拧一遍。</div>
+    </div>
+    <div class="card card card-green">
+      <h3>三角：普通范围 vs 点对点 + 图钉</h3>
+      <p>普通模式椭圆越大影响越广，适合大范围风格化；点对点只改圆形选区内颜色，指哪调哪。波及书本/皮肤时用图钉钉住恢复，并可柔化范围、调主体明暗。</p>
+      <div class="quote">真正做到了指哪调哪……配合图钉功能来隔离干扰色</div>
+      <div class="relation">局部改色优先三角；干扰色多就图钉或遮罩。</div>
+    </div>
+    <div class="card card card-purple">
+      <h3>六边：聚拢相近色相做高级统一</h3>
+      <p>圆周改色相、径向改饱和。扩展/收缩让周围相近色相点朝目标色（如橙红）聚拢，快速统一电影感色倾向；控制线可从 6 加到 24 做细调。</p>
+      <div class="quote">周围相近色相的点都会朝这个点聚拢……统一到一个和谐的目标色相上</div>
+      <div class="relation">画面色相散乱时，先聚拢再微调，比逐色硬拧省事。</div>
+    </div>
+    <div class="card card card-red">
+      <h3>双方形：两轴倾向 × 明暗分层</h3>
+      <p>左格黄↔蓝+明暗，右格绿↔红+明暗。湖面案例：加绿提浓、亮部分层、暖色对冲偏绿、树干去黄、图钉后提亮暗树，再整体微蓝并加黄对冲。</p>
+      <div class="quote">分层调整不同明暗区域的绿色表现……通过色彩对冲恢复整体平衡</div>
+      <div class="relation">当问题是「某亮度段颜色不对」而不是「整块物体换色」时用它。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>工具场景是达芬奇色彩扭曲器三形态，不覆盖 Lightroom 混色/颜色分级或手机滤镜。</li><li>口播参数与案例是演示锚点，换素材需保留分工逻辑、微调取样点。</li><li>与曲线可互补：曲线更细分维度，扭曲器更直观融合；非互相取代。</li><li>本片不展开二级校色节点图或完整电影 Look 流程。</li></ul><div class="pitfall">普通模式椭圆拉太大，皮肤/背景被连带染色却不图钉。</div><div class="pitfall">把六边形当局部手术刀，忽视其「倾向统一」定位。</div><div class="pitfall">六边图钉误以为能完全冻结原色，拉动边缘后仍被带动却困惑。</div><div class="pitfall">双方形提亮暗部不锁定邻色，导致整片发灰或串色。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>三角：局部换色手术刀</li><li>六边：全局统调指挥家</li><li>双方形：明暗分层精修师</li><li>共用底：色轮映射 + 多维一体</li></ul><h3>行动清单</h3><ol><li>在达芬奇打开 Color Warper，先用三角普通模式大范围试一次，再重置切点对点对照精度。</li><li>故意让改衣波及皮肤，练习图钉锁定多色后再继续拖目标色。</li><li>切六边形，用扩展收缩把画面相近暖色聚向一个目标橙红，看杂乱是否下降。</li><li>用色度亮度双方形只改湖面/天空某一亮度段的绿或蓝，并做一次暖色对冲。</li></ol><h3>关键认知转变</h3><p>局部换色用三角+点对点+图钉，整体色倾向用六边聚拢统调，按明暗分层改倾向用双方形；同一色轮，三种交互，按任务选型即是核心用法。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 9分34秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

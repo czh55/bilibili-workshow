@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="自由摄影在达芬奇调色页拆解三大色彩扭曲器：三角形色彩扭曲器擅长局部精准换色；六边形色相饱和度扭曲器擅长全景统调与风格塑形；双方形色度亮度扭曲器专注特定亮度区间的倾向与明暗精修。三者底层都映射色轮，但交互侧重点不同——按「手术刀 / 指挥家 / 精修师」分工选用，比死磕曲线更直观。">
+<title>三大调色扭曲器，轻松掌握核心用法｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+</head>
+<body><main class="container">
+<header><h1>三大调色扭曲器，轻松掌握核心用法</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">9分34秒</span><span class="meta-tag tag-topic">调色 达芬奇 扭曲器 Color Warper 色相 饱和度 色度亮度</span></div>
+<a class="source-link" href="https://xhslink.cn/o/AZ3AYoYsNzj" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">入门：达芬奇色彩扭曲器与三角网格</a><a href="#ch2">普通模式：椭圆范围改色相与饱和度</a><a href="#ch3">点对点 + 图钉：指哪调哪并隔离干扰色</a><a href="#ch4">六边形：色相饱和度扭曲器做全景统调</a><a href="#ch5">图钉差异、扩展收缩与控制线加密</a><a href="#ch6">双方形：色度亮度扭曲器的两套轴</a><a href="#ch7">湖面实操：分层加绿、对冲与图钉提亮</a><a href="#ch8">收束：手术刀 / 指挥家 / 精修师</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>自由摄影在达芬奇调色页拆解三大色彩扭曲器：三角形色彩扭曲器擅长局部精准换色；六边形色相饱和度扭曲器擅长全景统调与风格塑形；双方形色度亮度扭曲器专注特定亮度区间的倾向与明暗精修。三者底层都映射色轮，但交互侧重点不同——按「手术刀 / 指挥家 / 精修师」分工选用，比死磕曲线更直观。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:04]</span><div><strong>开场入门</strong><p>进入达芬奇调色页点开蜘蛛网图标；确认 Color Warper；三角网格映射色轮，可扩成独立窗口。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:04→01:43]</span><div><strong>普通模式</strong><p>吸管点衣服生成控制点：上下改色相、外增内减饱和；椭圆范围越大影响越广，适合大范围风格化。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:43→03:02]</span><div><strong>点对点+图钉</strong><p>点对点只改圆形选区内颜色；图钉锁定书本/皮肤等干扰色；下方可柔化范围并调主体明暗。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:02→04:16]</span><div><strong>六边形统调</strong><p>切色相饱和度扭曲器（六边形）；三角精局部、六边统全局；沿圆周改色相、径向改饱和。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:16→05:55]</span><div><strong>图钉差+聚拢</strong><p>此处图钉固定相应色相点防连带；扩展/收缩把相近色聚向目标色相；控制线可增至 8–24 条。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:55→06:56]</span><div><strong>双方形入门</strong><p>色度亮度扭曲器：左格黄↔蓝+明暗，右格绿↔红+明暗；配合右侧功能区。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:56→08:35]</span><div><strong>湖面实操</strong><p>吸管加绿提浓、亮部分层；暖色对冲偏绿；树干去黄；图钉后提亮暗树；整体微偏蓝再加黄对冲。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:35→09:34]</span><div><strong>三器总结</strong><p>三角=手术刀、六边=指挥家、方形=精修师；与曲线原理相通，扭曲器更直观融合多维调整。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>三大扭曲器不是三套玄学面板，而是同一色轮逻辑的三种交互：要局部换色用三角+点对点+图钉；要整体色倾向统一用六边+扩展收缩聚拢；要按明暗分层改倾向用双方形网格。按任务选工具，比在曲线里硬拧更快落地。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:04</span>入门：达芬奇色彩扭曲器与三角网格</h2><p>开场立题学调色三大扭曲器。进入达芬奇调色页面，点击蜘蛛网状图标打开色彩扭曲器；左侧确认选中 Color Warper。界面是三角形网格，可点右侧扩展成可拖放的独立窗口。</p><p>三角网格本质是更精密地映射色轮：方位与色轮对应，网格内亮度纹理反映素材色彩关系。它把色相对色相、色相对饱和度、色相对亮度等多维调整融进一个交互面；鼠标移到画面上，网格中心会出现红色准星实时跟踪所指颜色。</p><figure><img src="assets/three-color-warpers/shot-01.jpg" alt="达芬奇调色页打开色彩扭曲器：三角网格与 Color Warper 面板" loading="lazy"><figcaption>[00:12] 达芬奇调色页打开色彩扭曲器：三角网格与 Color Warper 面板</figcaption></figure><figure><img src="assets/three-color-warpers/shot-02.jpg" alt="鼠标移到画面：三角网格中心红色准星实时跟踪所指颜色" loading="lazy"><figcaption>[00:58] 鼠标移到画面：三角网格中心红色准星实时跟踪所指颜色</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:04-01:43</span>普通模式：椭圆范围改色相与饱和度</h2><p>示例：想改衣服颜色，用吸管点衣服，网格生成红色小圆圈控制点。以三角中心为基准，上下拖改色相，向外增饱和、向内减饱和。</p><p>默认普通模式调的是椭圆形色彩范围——拉得越大影响越广，适合大范围风格化处理；要更精细则切另一种模式。</p><figure><img src="assets/three-color-warpers/shot-03.jpg" alt="吸管点衣服生成控制点：普通模式上下改色相、径向改饱和" loading="lazy"><figcaption>[01:16] 吸管点衣服生成控制点：普通模式上下改色相、径向改饱和</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:43-03:02</span>点对点 + 图钉：指哪调哪并隔离干扰色</h2><p>重置后切点对点模式：再吸衣服生成控制点，拖动时只有圆形选区内颜色被精确替换，选区外几乎不动，真正指哪调哪。</p><p>若波及书本或皮肤，用右侧图钉工具（大头针图标）点希望保护的颜色，即可钉住并恢复原状，可锁多个色。面板下方还可柔化控制点范围、调主体明暗。局部换色时建议图钉隔离干扰色，也可结合遮罩。</p><figure><img src="assets/three-color-warpers/shot-04.jpg" alt="点对点模式：仅圆形选区内颜色被精确替换" loading="lazy"><figcaption>[01:55] 点对点模式：仅圆形选区内颜色被精确替换</figcaption></figure><figure><img src="assets/three-color-warpers/shot-05.jpg" alt="图钉工具锁定书本/皮肤等干扰色并恢复原状" loading="lazy"><figcaption>[02:22] 图钉工具锁定书本/皮肤等干扰色并恢复原状</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:02-04:16</span>六边形：色相饱和度扭曲器做全景统调</h2><p>扭曲器不止局部修改。点右上角第二个图标切到色相饱和度扭曲器：六边形蜘蛛网网格，底层逻辑与三角扭曲器、传统色轮一脉相承，侧重点不同。</p><p>分工：三角精度高，擅衣物/产品等局部换色；六边效率高，擅全景关联调整、快速统一色调建风格。用法同样：吸管取色（如蓝衣服）→对应色相点变红 → 沿圆周改色相，向中心/外改该色相范围饱和度。</p><figure><img src="assets/three-color-warpers/shot-06.jpg" alt="切换色相饱和度扭曲器：六边形蜘蛛网网格界面" loading="lazy"><figcaption>[03:20] 切换色相饱和度扭曲器：六边形蜘蛛网网格界面</figcaption></figure><figure><img src="assets/three-color-warpers/shot-07.jpg" alt="吸管取蓝色衣服：六边形对应色相点变红，圆周/径向拖动" loading="lazy"><figcaption>[04:05] 吸管取蓝色衣服：六边形对应色相点变红，圆周/径向拖动</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:16-05:55</span>图钉差异、扩展收缩与控制线加密</h2><p>六边形里的图钉用途不同：主要固定相应色相点防连带影响，并不直接「恢复画面颜色」。例如固定了某区域黄色再拉边缘点，原先固定色仍可能被一定程度带动——因此更适合整体倾向统一与风格化，而非外科手术式局部。</p><p>右侧全局工具含柔化、反选、扩展/收缩选区等。扩展与收缩尤实用：电影画面忌过多不同层次色相显得杂乱；选工具后点目标色相（如橙红），周围相近色相点会向该点聚拢，快速统一和谐倾向。控制线默认 6 条，可增至 8、12、16 乃至 24 条做更细腻微调。</p><figure><img src="assets/three-color-warpers/shot-08.jpg" alt="扩展收缩工具：相近色相点向目标橙红聚拢统调" loading="lazy"><figcaption>[05:22] 扩展收缩工具：相近色相点向目标橙红聚拢统调</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">05:55-06:56</span>双方形：色度亮度扭曲器的两套轴</h2><p>第三种形态是色度亮度扭曲器：前两者分别擅局部改色与全局统调，它专注色彩明暗的精细调整，对特定亮度区间的颜色细腻控制。</p><p>右上角第三个图标切入后是两个并排方形网格，白色纹理对应画面色彩分布。第一格：横向黄↔蓝，纵向提亮/压暗；第二格：横向绿↔红，纵向同样控亮度。理解逻辑并配合右侧功能区即可驾驭。</p><figure><img src="assets/three-color-warpers/shot-09.jpg" alt="色度亮度扭曲器：两个并排方形网格（黄蓝/绿红 × 明暗）" loading="lazy"><figcaption>[06:20] 色度亮度扭曲器：两个并排方形网格（黄蓝/绿红 × 明暗）</figcaption></figure></section>
+<section class="story-section" id="ch7"><h2><span class="time-marker">06:56-08:35</span>湖面实操：分层加绿、对冲与图钉提亮</h2><p>案例：湖面右上方偏淡、绿色不足——在偏绿区吸管取样，控制点往左（绿）拖，湖面更浓郁；层次丰富时可再在亮部加点，分层调不同明暗的绿色。若整体因此偏绿，选红杉等暖色控制点往右（红）拖做对冲。</p><p>左侧树干红不够纯、略泛黄，再加点往红微调。最深的绿树暗沉时，直接提亮可能误伤邻区：先图钉锁定周围色，再单独提亮暗部。最后在第一格整体微偏蓝减杂色，并适当加黄对冲，层次与明暗关系明显改善。</p><figure><img src="assets/three-color-warpers/shot-10.jpg" alt="湖面案例：控制点往绿方向拖，提升偏淡湖面绿色" loading="lazy"><figcaption>[07:10] 湖面案例：控制点往绿方向拖，提升偏淡湖面绿色</figcaption></figure><figure><img src="assets/three-color-warpers/shot-11.jpg" alt="图钉锁定邻色后单独提亮暗部绿树，画面更通透" loading="lazy"><figcaption>[08:02] 图钉锁定邻色后单独提亮暗部绿树，画面更通透</figcaption></figure></section>
+<section class="story-section" id="ch8"><h2><span class="time-marker">08:35-09:34</span>收束：手术刀 / 指挥家 / 精修师</h2><p>三大色彩扭曲器核心用法：三角=精准换色、指哪调哪的局部修正手术刀；六边=全局统调、高效塑风格的指挥家；方形=明暗精修、分层控制的质感精修师。</p><p>与曲线底层原理相通：曲线提供更细分维度，扭曲器把多项调整融为一体、操作更直观。按需求灵活选型，在保证效果同时提升效率。片尾：「我是自由摄影，我们下期再见。」</p><figure><img src="assets/three-color-warpers/shot-12.jpg" alt="收束口播：三角手术刀、六边指挥家、方形精修师" loading="lazy"><figcaption>[08:42] 收束口播：三角手术刀、六边指挥家、方形精修师</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（87段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>今天我们学调色的三大扭曲器</p></div>
+<div class="transcript-row"><time>00:04</time><p>首先我们进入达分级的调色页面 找到并点击那个蜘蛛网一样的图标</p></div>
+<div class="transcript-row"><time>00:10</time><p>他就是色彩扭曲器 打开面板后 请确认左侧选中的是cronwork</p></div>
+<div class="transcript-row"><time>00:16</time><p>这时你会看到一个三角形网格界面 如果觉得窗口太小 可以点击右侧扩展按钮 将它变成一个自由拖动</p></div>
+<div class="transcript-row"><time>00:24</time><p>收放的独立窗口 操作视野会更开阔 这个工具的设计非常精妙 它的三角形网格布局本质上是以更精密的方式</p></div>
+<div class="transcript-row"><time>00:34</time><p>映射了我们熟悉的色轮 颜色方位以色轮完全对应 同时网格内的亮度纹理也直观反映了画面素材的色彩关系</p></div>
+<div class="transcript-row"><time>00:44</time><p>它的强大之处在于将摄像对摄像 摄像对饱和度 摄像对亮度等多维度调整 融合在一个直观的交互界面中 操作非常直观</p></div>
+<div class="transcript-row"><time>00:55</time><p>只要将鼠标移动到视频画面上 三角形网格中心就会出现一个红色准星</p></div>
+<div class="transcript-row"><time>01:01</time><p>实时跟踪你当前所指的颜色</p></div>
+<div class="transcript-row"><time>01:04</time><p>举个例子 假如我想改变衣服的颜色 用吸管点击衣服 网格内就会自动生成一个对应的红色小圆圈</p></div>
+<div class="transcript-row"><time>01:13</time><p>我们可以直接拖动这个小圆圈内的控制点 以这个三角中心为基准 上下拖动可以改变这个颜色的摄像</p></div>
+<div class="transcript-row"><time>01:21</time><p>向外拖动 增加饱和度 向内则减少饱和度</p></div>
+<div class="transcript-row"><time>01:25</time><p>不过要注意 在这个默认的普通模式下 你调整的是一个椭圆形的色彩范围</p></div>
+<div class="transcript-row"><time>01:31</time><p>拉得越大 影响的颜色范围就越广 非常适合进行大范围的色彩分合化处理</p></div>
+<div class="transcript-row"><time>01:38</time><p>当然 如果需要进行更精细的控制 我们可以切换到另一种模式</p></div>
+<div class="transcript-row"><time>01:43</time><p>现在我们先点击面板上重置按钮 恢复到初始状态 来试试第二个功能 点对点模式</p></div>
+<div class="transcript-row"><time>01:51</time><p>再次用吸管点击衣服生成控制点 这时再拖动它 效果就完全不同了</p></div>
+<div class="transcript-row"><time>01:57</time><p>只有严格位移这个圆形选区内的颜色会被精确替换 选区外的颜色几乎不受影响 真正做到了指哪调哪</p></div>
+<div class="transcript-row"><time>02:06</time><p>如果在调整过程中影响到了不想改变的区域 比如书本或皮肤</p></div>
+<div class="transcript-row"><time>02:12</time><p>可以使用涂钉功能来锁定颜色 点击面板上右侧的涂钉攻击图标 形状像一个大头针</p></div>
+<div class="transcript-row"><time>02:20</time><p>然后在画面中希望保护的颜色上 比如书本和皮肤点击一下</p></div>
+<div class="transcript-row"><time>02:25</time><p>这个颜色就会立刻被盯住并恢复原状 你也可以根据需要锁定多个颜色</p></div>
+<div class="transcript-row"><time>02:31</time><p>之后 无论你怎么调整目标颜色 它都会保持不变</p></div>
+<div class="transcript-row"><time>02:35</time><p>此外 在面板下方 你还可以选中需要的控制点进行柔化范围 让选区更精准</p></div>
+<div class="transcript-row"><time>02:43</time><p>色彩也过渡得更自然 避免出现生硬边缘 还可以选中主体区域提升或者降低明暗程度</p></div>
+<div class="transcript-row"><time>02:51</time><p>直到达成满意的效果</p></div>
+<div class="transcript-row"><time>02:53</time><p>这个工具在处理局部色彩更换时非常好用 调整时建议配合涂钉功能来隔离干扰色 也可以结合遮罩一起使用</p></div>
+<div class="transcript-row"><time>03:02</time><p>不过 色彩扭曲器的能力远不止以局部修改 接下来我们就来看看它在塑造整体色调方面更为强大的另一种形态</p></div>
+<div class="transcript-row"><time>03:12</time><p>摄像饱和度扭曲器</p></div>
+<div class="transcript-row"><time>03:15</time><p>你可以点击右上角的第二个图标切换到它 它的界面是一个六边形的网格 形状类似传统蜘蛛网</p></div>
+<div class="transcript-row"><time>03:23</time><p>虽然从三角形变成了六边形 但它的底层逻辑 以我们刚学的三角形扭曲器 乃至传统色轮都是一脉相承的</p></div>
+<div class="transcript-row"><time>03:32</time><p>只是交互设计的侧重点有所不同</p></div>
+<div class="transcript-row"><time>03:35</time><p>三角形扭曲器精度高 擅长处理画面中特定位置的颜色 如衣物</p></div>
+<div class="transcript-row"><time>03:42</time><p>产品或具体物体的色彩替换 六边形扭曲器 效率高 擅长全景性</p></div>
+<div class="transcript-row"><time>03:48</time><p>关联性的色彩调整 能快速统一画面色调 建立整体色彩风格</p></div>
+<div class="transcript-row"><time>03:54</time><p>使用起来 同样直观 用吸管在画面中吸取你想调整的颜色</p></div>
+<div class="transcript-row"><time>04:00</time><p>例如一件蓝色衣服 六边形网格上对应摄像的点就会变成红色的点</p></div>
+<div class="transcript-row"><time>04:06</time><p>以中心点为基准 沿着圆周拖动 改变这个颜色的摄像 向中心或向外拖动 降低或提高这个摄像范围的饱和度</p></div>
+<div class="transcript-row"><time>04:16</time><p>需要注意的是这里的图定工具用途与之前不同</p></div>
+<div class="transcript-row"><time>04:19</time><p>它主要用以固定相迎色摄像点 防止他们被连带影响 而不是直接恢复画面颜色 举个例子</p></div>
+<div class="transcript-row"><time>04:27</time><p>如果我固定了疏分面的黄色 再去拉动边缘的某点</p></div>
+<div class="transcript-row"><time>04:32</time><p>原先固定的颜色还是会受到一定程度的影响</p></div>
+<div class="transcript-row"><time>04:35</time><p>因此 这个工具更适合用以整体色彩的倾向型统一以分隔化调整</p></div>
+<div class="transcript-row"><time>04:41</time><p>在他的右侧 还提供了一系列强大的全局控制工具 比如柔化 反选</p></div>
+<div class="transcript-row"><time>04:48</time><p>或展收缩选期等 帮助你实现更精细的影响范围控制</p></div>
+<div class="transcript-row"><time>04:53</time><p>其中或长以收缩工具特别有意思 也极其实用性</p></div>
+<div class="transcript-row"><time>04:58</time><p>大家知道在电影画面里 色彩往往具有高度的一致性和统一性 如果画面中出现太多不同层次</p></div>
+<div class="transcript-row"><time>05:06</time><p>不同摄像的色彩容易显得杂乱合张 以往想要统一这些相近色彩的摄像倾向是非常复杂的事情</p></div>
+<div class="transcript-row"><time>05:14</time><p>而现在你可以利用这个工具轻松实现选中它 然后在画面中选择一个目标摄点</p></div>
+<div class="transcript-row"><time>05:21</time><p>比如你想的橙红色 你会发现周围相近摄像的点都会朝这个点聚笼</p></div>
+<div class="transcript-row"><time>05:26</time><p>这能让你快速将画面中分散的相近色彩 统一到一个和谐的目标摄像上 对营造高级</p></div>
+<div class="transcript-row"><time>05:34</time><p>统一的整体画面的色彩倾向特别有帮助 最后 如果你觉得默认的六个控制线不够用</p></div>
+<div class="transcript-row"><time>05:41</time><p>需要更精细的调整色彩 还可以在面板左下方将控制线数量六条增加到八条</p></div>
+<div class="transcript-row"><time>05:48</time><p>12条16条乃至24条 从而实现对色彩更细腻 更极致的微调</p></div>
+<div class="transcript-row"><time>05:55</time><p>看完了整体调色的六边形工具 我们再来认识一下第三种形态</p></div>
+<div class="transcript-row"><time>06:01</time><p>色度亮度扭曲器 如果说前两者分别擅长局部改色和全集统一</p></div>
+<div class="transcript-row"><time>06:07</time><p>那么它就是专注于色彩的明暗 精细调整 能对特度亮度期间的颜色进行细腻控制</p></div>
+<div class="transcript-row"><time>06:14</time><p>在面板右上角的第三个图标可以切换到这个工具 你会看到界面变成了两个并排的方形网格</p></div>
+<div class="transcript-row"><time>06:22</time><p>两个网格上的白色纹理信息分别对应画面中色彩的分布情况</p></div>
+<div class="transcript-row"><time>06:27</time><p>第一个网格横向代表色彩倾向 向左调整偏黄 向右调整偏蓝</p></div>
+<div class="transcript-row"><time>06:33</time><p>纵向代表明暗变化 向上提亮 向下为暗 第二个网格同样横向控制色彩</p></div>
+<div class="transcript-row"><time>06:41</time><p>向左偏绿 向右偏红 纵向同样控制亮度变化 很多同学初次接触这个工具可能会觉得有些复杂</p></div>
+<div class="transcript-row"><time>06:48</time><p>其实只要理解它的调整逻辑 再配合它右侧的功能区就能轻松驾驭 为了让大家更直观的掌握使用方法</p></div>
+<div class="transcript-row"><time>06:56</time><p>我们来看一个时超案例</p></div>
+<div class="transcript-row"><time>06:58</time><p>在这个画面中 湖面右上方的色彩偏淡 绿色不足 我们可以在对应的全绿色区域用吸管吸起颜色</p></div>
+<div class="transcript-row"><time>07:07</time><p>网格对应位置会生成红色控制点 将它向左绿色方向拖动 即可让湖面显得更浓郁</p></div>
+<div class="transcript-row"><time>07:15</time><p>如果湖面的色彩层次丰富 单一控制点不够 我们还可以在亮部区域添加另一个控制点</p></div>
+<div class="transcript-row"><time>07:22</time><p>分层调整不同明暗区域的绿色表现 调整后 湖面色彩虽然得到改善 但画面整体可能因此偏绿</p></div>
+<div class="transcript-row"><time>07:30</time><p>这时我们可以选中画面中的暖色调区域 比如红杉树的控制点 向右红色方向拖动 通过色彩对冲</p></div>
+<div class="transcript-row"><time>07:39</time><p>恢复整体平衡 还有在画面中 左侧速干红色不够纯净 略带泛黄</p></div>
+<div class="transcript-row"><time>07:45</time><p>也可以再添加控制点 继续往红色方向微调 让色彩更干净</p></div>
+<div class="transcript-row"><time>07:51</time><p>此时如果发现画面中最深的绿色树木显得暗沉</p></div>
+<div class="transcript-row"><time>07:55</time><p>直接提亮对应控制点 可能会影响到其他区域 这时可以使用右侧涂钉工具</p></div>
+<div class="transcript-row"><time>08:01</time><p>先选中涂钉工具 将周围的色彩锁定 再切换回调整工具 单独提亮暗部区域 画面立刻就会显得更加通透</p></div>
+<div class="transcript-row"><time>08:11</time><p>最后我们可以在第一个网格中将整体色彩轻微向蓝色方向调整</p></div>
+<div class="transcript-row"><time>08:16</time><p>减少杂色感 同时适当加入黄色作为对冲 让色调更自然</p></div>
+<div class="transcript-row"><time>08:22</time><p>经过这几步的调整 画面的色彩层次以明暗关系就得到了明显改善</p></div>
+<div class="transcript-row"><time>08:27</time><p>这个工具无论是改变颜色倾向还是调整明暗亮度都能做到精准控制 让调整过程既高效又直观</p></div>
+<div class="transcript-row"><time>08:35</time><p>恭喜你 你已经掌握了三大色彩扭击器的核心用法</p></div>
+<div class="transcript-row"><time>08:39</time><p>三角形 精准换色 指哪条哪是极不修正的手术刀</p></div>
+<div class="transcript-row"><time>08:44</time><p>六边形 拳击统调 高效竖设是分格塑造的指挥家 方形</p></div>
+<div class="transcript-row"><time>08:50</time><p>明暗精修 分层控制是自敢打造的精修师 无论是色彩扭曲器还是之前学习的曲线工具</p></div>
+<div class="transcript-row"><time>08:58</time><p>它的底层原理都是相通的 曲线提供了更细分纬度的控制 而扭曲器则将多项调整融合到一体</p></div>
+<div class="transcript-row"><time>09:06</time><p>操作更加直观 在实际操作中 你可以根据具体需求灵活选择合适的工具</p></div>
+<div class="transcript-row"><time>09:12</time><p>在确保效果的同时 进一步提升调色效率和操作体验</p></div>
+<div class="transcript-row"><time>09:16</time><p>希望通过今天的讲解 能帮助你更好的应用色彩扭曲器 在实际创作中实现更精准高效的调色效果</p></div>
+<div class="transcript-row"><time>09:25</time><p>我是自由摄影 我们下期再见 同学们 拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+</body></html>
