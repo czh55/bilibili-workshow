@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="个人专栏：围绕 Sony a6700 + 18-135 拍 S-Log3 日出日落，梳理 Log 参数、向右曝光、动态范围误解、白平衡、光线剧变与曝光骑乘的讨论结论与可执行清单。">
+<title>a6700 日出日落拍 S-Log：参数、ETTR 与连续性｜图文实录</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#d97706;color:#fff}
+.tag-duration{background:#f1f5f9;color:#64748b}
+.tag-topic{background:#dbeafe;color:#1e40af}
+.source-note{color:#78716c;font-size:14px;margin:0 0 8px}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}
+.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}
+.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}
+.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#1e40af;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+.callout{background:#fff;border-radius:14px;padding:18px 20px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.04);border-left:4px solid #3b82f6}
+.callout.warn{border-left-color:#f59e0b;background:#fffbeb}
+.callout.fix{border-left-color:#ef4444;background:#fef2f2}
+.callout h3{margin:0 0 8px;font-size:16px;color:#1e40af}
+.callout.warn h3{color:#92400e}
+.callout.fix h3{color:#991b1b}
+.callout p,.callout li{font-size:15px;color:#57534e;margin:0 0 8px}
+.callout ul{margin:0;padding-left:20px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+th{background:#f1f5f9;padding:12px 14px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 14px;border-bottom:1px solid #e2e8f0;color:#44403c;vertical-align:top}
+.pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:#1c1917;color:#e7e5e4;padding:16px 18px;border-radius:12px;overflow-x:auto;white-space:pre-wrap;line-height:1.6}
+.transcript-section{margin-top:48px}
+.transcript-collapsible{border:none;margin:0;padding:0}
+.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}
+.transcript-note{font-size:14px;color:#78716c;margin:16px 0 24px}
+.transcript-row{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}
+.transcript-row p{margin:0;color:#44403c}
+.qa{font-size:13px;font-weight:700;color:#1e40af;margin-right:6px}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:72px 1fr;gap:10px}}
+</style>
+</head>
+<body>
+<main class="container">
+<header>
+  <h1>a6700 日出日落拍 S-Log：参数、ETTR 与连续性</h1>
+  <div class="meta-row">
+    <span class="meta-tag tag-platform">个人专栏</span>
+    <span class="meta-tag tag-duration">讨论整理</span>
+    <span class="meta-tag tag-topic">S-Log3 a6700 向右曝光 白平衡 日出日落</span>
+  </div>
+  <p class="source-note">来源：Cursor 对话问答整理（2026-09-05～09-06）。设备前提：Sony a6700 + E 18-135mm。无原视频截图；按提问顺序展开。</p>
+</header>
+
+<nav class="toc">
+  <h3>内容导航</h3>
+  <a href="#ch1">FCP 里怎么用 S-Log</a>
+  <a href="#ch2">Log 要调什么：ISO / EV / 物理参数</a>
+  <a href="#ch3">向右曝光与「暗部强」并不矛盾</a>
+  <a href="#ch4">Log 为何显得 DR 更大、中灰会变差吗</a>
+  <a href="#ch5">a6700 日出日落参数卡</a>
+  <a href="#ch6">白平衡、光线剧变与曝光跳跃</a>
+  <a href="#transcript">完整讨论提纲</a>
+</nav>
+
+<article class="documentary">
+<div class="content-points">
+  <h2>内容要点</h2>
+  <p>从 Final Cut Pro 的 S-Log 工作流问起，一路落到 a6700 + 18-135 拍日出日落的可执行参数。核心纠偏有三条：ISO 要锁在原生感光度而不是「不管」；Log 提高的是文件保留率而非传感器物理档数；暗部宽容度好不等于可以欠曝。现场则以保高光为主骑 ND/光圈，接受镜头间曝光差，用后期对齐补连续性。</p>
+  <h3>知识结构</h3>
+  <div class="summary-row"><span class="time-marker">[Q1→Q2]</span><div><strong>后期入口</strong><p>FCP 用 Wide Gamut 库 + Camera LUT / Sony 技术 LUT；元数据可读光圈。</p></div></div>
+  <div class="summary-row"><span class="time-marker">[Q3→Q5]</span><div><strong>曝光心智</strong><p>Base ISO + 光圈快门 ND；ETTR 保高光；DR 是保留率。</p></div></div>
+  <div class="summary-row"><span class="time-marker">[Q6→Q8]</span><div><strong>机身落地</strong><p>a6700：S-Log3、ISO 800/2500、手动 WB、18-135 用 ND 控光。</p></div></div>
+  <div class="summary-row"><span class="time-marker">[Q9→Q11]</span><div><strong>现场连续性</strong><p>光剧变要骑曝光；跳跃靠分段拍 + 后期对齐。</p></div></div>
+  <div class="takeaway-box"><strong>总结</strong><p>Log 负责把已拍到的光比活着带进后期；现场仍要正确曝光、锁 WB、追光。日出日落没有「设一次就完」的参数，只有可骑乘的规则。</p></div>
+</div>
+
+<section class="story-section" id="ch1">
+  <h2><span class="time-marker">Q1–Q2</span>FCP 里怎么用 S-Log，以及如何查看光圈</h2>
+  <p>S-Log 素材在 Final Cut Pro 里先认对色彩空间，再转换，最后才创意调色。库建议 Wide Gamut HDR，SDR 成片项目可用 Rec.709。检查器里选对应 Camera LUT（如 S-Log3 / S-Gamut3.Cine），或导入 Sony 的 <code>SLog3SGamut3Cine_To_LC-709</code> 类技术 LUT。元数据不准时，用色彩空间覆盖纠正。</p>
+  <p>光圈等拍摄参数写在文件元数据里：Finder 简介有时可见；更稳的是 ExifTool / MediaInfo / ffprobe。转码成片常把元数据清掉。FCP 检查器信息面板也可能显示，取决于素材是否保留相机标签。</p>
+  <div class="callout">
+    <h3>最短后期路径（SDR）</h3>
+    <ul>
+      <li>库：Wide Gamut HDR；项目：Rec.709</li>
+      <li>确认拍摄为 S-Log3 + S-Gamut3.Cine</li>
+      <li>Camera LUT 或 Sony LC-709 技术 LUT</li>
+      <li>色轮修曝光与白平衡，再加对比度</li>
+    </ul>
+  </div>
+</section>
+
+<section class="story-section" id="ch2">
+  <h2><span class="time-marker">Q3</span>Log 下是不是只调光圈快门对焦？</h2>
+  <p>不完全对。全手动时 EV 通常不用；光圈、快门、对焦必须设。但 ISO 不是「不管」，而是<strong>锁在机身推荐 Base / 原生 ISO</strong>，用光圈、ND、灯光调进光量。暗了先加光或开光圈，不要狂抬 ISO；亮了用 ND，不要把 ISO 压到 Base 以下硬抠。</p>
+  <table>
+    <thead><tr><th>参数</th><th>Log 实务</th></tr></thead>
+    <tbody>
+      <tr><td>光圈 / 快门 / 对焦</td><td>要设；快门跟帧率</td></tr>
+      <tr><td>EV</td><td>全手动基本不用</td></tr>
+      <tr><td>ISO</td><td>锁 Base（a6700 约 800；必要时 2500）</td></tr>
+      <tr><td>ND / 白平衡</td><td>几乎必备；WB 手动锁定</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="story-section" id="ch3">
+  <h2><span class="time-marker">Q4</span>向右曝光，和「暗部宽容度强」打架吗？</h2>
+  <p>表面矛盾，其实两层事：「信息压在较暗区」讲的是 Log <strong>编码曲线</strong>把很多码值分给暗部与中间调，原片看起来灰；「暗部宽容度强」讲的是<strong>正确曝光时</strong>，暗部细节还在文件里、还能拉。</p>
+  <p>码值多不等于欠曝也干净。欠曝等于把信号压近噪底，一提亮噪点一起上来。推荐是保高光前提下的 ETTR：先把信噪比拍好，再在后期压回；不是靠欠曝去「用」暗部余量。</p>
+  <div class="callout warn">
+    <h3>表述纠偏</h3>
+    <p>错误语感：Log 暗部强，所以欠曝也没事。<br/>
+    应改成：Log 看起来暗不代表真欠曝；暗部余量是曝光到位后的奖励。实务仍宁可靠右、保高光不炸。</p>
+  </div>
+</section>
+
+<section class="story-section" id="ch4">
+  <h2><span class="time-marker">Q5</span>Log 会提高传感器物理 DR 吗？中灰质量会下降吗？</h2>
+  <p>Log <strong>不会</strong>让传感器物理动态范围变大。变高的是「传感器已经捕捉到的光，有多少能以可调色形式活进文件」：少做成品化膝点裁切、按档位更均匀分码值、常配 10bit。中灰放得更低（S-Log3 约 41% IRE）是为了给高光留档，不是把中灰光学画质打坏。</p>
+  <p>有代价的是量化：同样 bit 深要覆盖更宽光比，中间调平均台阶更稀。10bit 通常够用；8bit Log 猛拉中间调容易色带。光学清晰度与信噪比仍主要看曝光与 ISO。</p>
+</section>
+
+<section class="story-section" id="ch5">
+  <h2><span class="time-marker">Q6–Q7</span>a6700 + 18-135 日出日落怎么设</h2>
+  <p>a6700 用菜单开启 Log 拍摄（Flexible ISO），选 S-Log3 + S-Gamut3.Cine；旧机 PP8/PP9 槽位已不在。双原生大约 ISO <strong>800 / 2500</strong>。优先 10bit（XAVC S-I 或 HS/S 10bit）。18-135 为 f/3.5–5.6，长焦端更暗，控光靠 ND，蓝调可跳 2500。</p>
+  <p>创作先定目标：剪影按天空；天空+地面保高光、地面略欠或用渐变 ND/补光；人脸为主则补脸、勿曝穿太阳。</p>
+  <div class="callout">
+    <h3>黄金时刻起点（25p · 风光）</h3>
+    <pre class="pre">Log 开 / S-Log3 / S-Gamut3.Cine
+ISO 800
+1/50s
+18mm，f/8（长焦尽量开大）
+WB 5600K 手动锁定
+ND：加到亮云刚好不大面积死白
+斑马约 90%+；View Assist 只辅助构图
+OSS：手持开</pre>
+  </div>
+  <div class="callout fix">
+    <h3>18-135 特别提醒</h3>
+    <p>不是大光圈头：日落后半段逼你上 ISO 2500 是正常的，比乱降快门好。逆光色散在长焦更明显。日出渐变天空务必 10bit。</p>
+  </div>
+</section>
+
+<section class="story-section" id="ch6">
+  <h2><span class="time-marker">Q8–Q11</span>白平衡、光线剧变、多次调曝光会不会跳</h2>
+  <p>a6700 的 S-Log3（XAVC）里白平衡基本烤进画面，不是 RAW 那种纯标签。关 Auto，按时间窗手动定一次并锁定；严重不准会先顶穿某一 RGB 通道。</p>
+  <p>日出日落亮度与色温剧变，会造成曝光与色彩连续性崩掉。解决：每 30–60 秒看斑马/直方图；变亮拧 ND 或收光圈保高光；变暗开光圈→减 ND→ISO 2500；按时间窗分段拍关键镜头。</p>
+  <p>多次调曝光<strong>会导致</strong>镜头间亮度跳跃。窗内求稳、跨窗才大改；大改发生在两条之间，避免一条里猛跳。后期先转 Rec.709，再对齐曝光与色温；差约一档通常可修，已炸高光或沉噪底救不回。现场追光的小跳跃是预期内，靠后期对齐，而不是全程参数死锁。</p>
+  <div class="callout">
+    <h3>现场口令</h3>
+    <pre class="pre">快门锁死 / ISO 只在 800↔2500 跳
+变亮：拧 ND（或收光圈），看斑马不炸
+变暗：开光圈 → 减 ND → ISO 2500
+WB：每个时间窗手动定一次，窗内别动
+每分钟看一次直方图；关键镜头优先拍完</pre>
+  </div>
+</section>
+
+<section class="transcript-section" id="transcript">
+<details class="transcript-collapsible" open>
+<summary>完整讨论提纲（11 问）</summary>
+<div class="transcript-body">
+<p class="transcript-note">以下为对话提问顺序整理，便于回溯结论来源；非 Whisper 视频转录。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>Q1</time><p><span class="qa">问</span>Final Cut Pro 如何给素材使用 S-Log？<br/><span class="qa">结</span>Wide Gamut 库 + 正确 Camera LUT / 技术 LUT，再创意调色。</p></div>
+<div class="transcript-row"><time>Q2</time><p><span class="qa">问</span>如何查看视频文件光圈值？<br/><span class="qa">结</span>读元数据：ExifTool / MediaInfo / ffprobe；成片常丢失。</p></div>
+<div class="transcript-row"><time>Q3</time><p><span class="qa">问</span>Log 是否只需光圈快门对焦、ISO/EV 不用调？<br/><span class="qa">结</span>EV 可不管；ISO 要锁 Base，不是不管。</p></div>
+<div class="transcript-row"><time>Q4</time><p><span class="qa">问</span>拍 Log 还要注意什么？向右曝光？<br/><span class="qa">结</span>ETTR 但保高光；ND、手动 WB、示波器/斑马。</p></div>
+<div class="transcript-row"><time>Q5</time><p><span class="qa">问</span>「信息在暗部」与「暗部宽容度强」是否矛盾？<br/><span class="qa">结</span>编码 vs 可用 SNR；欠曝仍噪。</p></div>
+<div class="transcript-row"><time>Q6</time><p><span class="qa">问</span>为何 Log 下可用动态范围更高？<br/><span class="qa">结</span>保留率提高，不是传感器扩容。</p></div>
+<div class="transcript-row"><time>Q7</time><p><span class="qa">问</span>压缩中灰保高光，中灰质量会下降吗？<br/><span class="qa">结</span>光学未必；量化台阶变稀，故要 10bit。</p></div>
+<div class="transcript-row"><time>Q8</time><p><span class="qa">问</span>日出日落如何设参？机器 a6700 + 18-135。<br/><span class="qa">结</span>见参数卡；ISO 800/2500；ND 控光。</p></div>
+<div class="transcript-row"><time>Q9</time><p><span class="qa">问</span>白平衡影响 Log 拍摄吗？<br/><span class="qa">结</span>影响，基本烤进画面；关 Auto、分段锁定。</p></div>
+<div class="transcript-row"><time>Q10</time><p><span class="qa">问</span>短时间光线剧变会造成什么问题？<br/><span class="qa">结</span>曝光与色温连续性崩；骑 ND + 时间窗。</p></div>
+<div class="transcript-row"><time>Q11</time><p><span class="qa">问</span>多次调整曝光会导致成片跳跃吗？<br/><span class="qa">结</span>会；窗内稳、跨窗改；后期对齐曝光。</p></div>
+</div>
+</div>
+</details>
+</section>
+</article>
+</main>
+</body>
+</html>
