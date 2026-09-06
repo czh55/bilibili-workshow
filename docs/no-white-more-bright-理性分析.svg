@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5336" viewBox="0 0 1320 5336">
+  <foreignObject x="0" y="0" width="1320" height="5336">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>不加白，居然更耀眼？纯度也能增强光感</h1>
+  <div class="meta"><span class="tag tag-blue">色彩原理</span><span class="tag tag-green">光感</span><span class="tag tag-orange">纯度</span><span class="tag tag-purple">画光</span><span class="tag tag-red">莫奈</span><span class="tag tag-gray">写生</span><span class="tag tag-gray">时长 98秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/HB5WFAJ2Jy">原视频</a>
+  <div class="summary-line">画光第三招：纯度。明度与冷暖接近时，更鲜艳的一侧光感更强。莫奈鲁昂受光区靠提纯而非一味画浅；雪村实操把中心黄与云缘橙红、天空蓝紫饱和度拉满，耀眼不必加白。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">双球：右边光感更强</span></div><div class="timeline-item"><span class="timeline-time">00:07</span><span class="timeline-text">明度、冷暖接近 → 差在纯度</span></div><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">莫奈鲁昂：受光区提纯，不一味画浅</span></div><div class="timeline-item"><span class="timeline-time">00:36</span><span class="timeline-text">画光三思路：明度、冷暖、纯度</span></div><div class="timeline-item"><span class="timeline-time">00:44</span><span class="timeline-text">雪村：基调→云→树→雪</span></div><div class="timeline-item"><span class="timeline-time">01:03</span><span class="timeline-text">中心鲜黄+橙黄；云缘橙红+天空蓝紫拉满</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">证据<br/>双球纯度差</div><span class="arrow">→</span><div class="node-green">典范<br/>莫奈提纯受光</div><span class="arrow">→</span><div class="node-orange">三招<br/>明度·冷暖·纯度</div><span class="arrow">→</span><div class="node-blue">实操<br/>中心高纯+对拉</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「鲁王／木乃／化浅／化光」校正为「鲁昂／莫奈／画浅／画光」。</p><p>误区：光感=提亮加白。视频证明纯度可独立增强光感。</p><p>误区：受光区越浅越好。莫奈例证是更鲜艳而非一味画浅。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>实验：纯度独立贡献光感</h3>
+      <p>两球明度与冷暖接近时，更鲜艳的右边光感更强。结论直接：纯度也能增强光感——为「不加白更耀眼」提供可重复证据。</p>
+      <div class="quote">右边的明度一样……冷暖也差不多啊……一定是纯度</div>
+      <div class="relation">控制变量后，纯度是第三旋钮。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>莫奈：受光区提纯</h3>
+      <p>鲁昂大教堂受光区不一味画浅，而是让颜色更鲜艳、纯度更高，于是更鲜活炽热。把「画浅」替换成「提纯」。</p>
+      <div class="quote">没有一味地把受光区画浅，而是让这块颜色更鲜艳，纯度更高</div>
+      <div class="relation">浅 ≠ 亮；鲜也可以亮。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>三招齐全：明度、冷暖、纯度</h3>
+      <p>作者把本集定位为画光第三思路，与明度、冷暖并列。缺纯度时，只调亮暗与冷暖仍可能「亮但不耀眼」。</p>
+      <div class="quote">三种画光的思路：明度、冷暖和今天说的纯度</div>
+      <div class="relation">检查清单少一招就少一分光感。</div>
+    </div>
+    <div class="card card-red">
+      <h3>实操：中心高纯 + 冷暖对拉</h3>
+      <p>雪村步骤把视觉中心鲜黄拉到明度对比最强，再用橙黄、云缘橙红与天空蓝紫把纯度拉满。光感鲜活来自饱和对冲，不是涂白。</p>
+      <div class="quote">加入更鲜艳的黄色……加入最高饱和的橙红色……纯度此刻也被拉到最大</div>
+      <div class="relation">关键受光区允许最高饱和。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>98 秒聚焦纯度与光感，不展开完整风景写生课程。</li><li>莫奈例证服务原理，非作品史考证。</li><li>「画光就是这么简单」是鼓励语，需结合前两集明度／冷暖。</li></ul><div class="pitfall">受光区只加白加浅，画面粉气无光。</div><div class="pitfall">到处拉满饱和，失去视觉中心。</div><div class="pitfall">有冷暖对比却把纯度压死，光感发闷。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>纯度是画光第三招，可独立增强光感</li><li>受光区优先提纯，而非一味画浅</li><li>中心高纯 + 冷暖对拉，比加白更耀眼</li></ul><h3>行动清单</h3><ol><li>对一张旧作：找到最「想发光」的区域，提高纯度而非提白</li><li>临摹时同时看彩图与灰度，确认光感是否主要靠纯度</li><li>风景写生规定：视觉中心允许画面最高饱和</li><li>自检三招是否都用到：明度、冷暖、纯度</li></ol><h3>关键认知转变</h3><p>以前：想要耀眼就加白加亮；现在：在明度与冷暖之外，把关键受光区的纯度拉起来。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 98秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

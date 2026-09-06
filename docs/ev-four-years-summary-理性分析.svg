@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5634" viewBox="0 0 1320 5634">
+  <foreignObject x="0" y="0" width="1320" height="5634">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>四年电车换回油车：四点亲身账</h1>
+  <div class="meta"><span class="tag tag-blue">电车</span><span class="tag tag-green">油车</span><span class="tag tag-orange">续航</span><span class="tag tag-purple">充电</span><span class="tag tag-red">贬值</span><span class="tag tag-gray">时长 4分41秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AqJsgbsKZF3">原视频</a>
+  <div class="summary-line">个体样本，不是行业判决：可用续航远低于标称、外充时间成本高于电价差、车重拉长制动、迭代快与智驾不可托付、油钱被残值吞掉、寿命叙事偏向油车。买车要把四件事一起算。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">换回油车开场</span></div><div class="timeline-item"><span class="timeline-time">00:09</span><span class="timeline-text">第一点续航</span></div><div class="timeline-item"><span class="timeline-time">00:48</span><span class="timeline-text">尾段用不满</span></div><div class="timeline-item"><span class="timeline-time">00:53</span><span class="timeline-text">充电焦虑</span></div><div class="timeline-item"><span class="timeline-time">01:46</span><span class="timeline-text">第二点安全</span></div><div class="timeline-item"><span class="timeline-time">02:53</span><span class="timeline-text">更新与智驾</span></div><div class="timeline-item"><span class="timeline-time">03:45</span><span class="timeline-text">省钱与贬值</span></div><div class="timeline-item"><span class="timeline-time">04:22</span><span class="timeline-text">第四点寿命</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">续航<br/>可用≠标称</div><span class="arrow">→</span><div class="node-green">补能<br/>时间＞电价</div><span class="arrow">→</span><div class="node-orange">安全<br/>车重制动</div><span class="arrow">→</span><div class="node-blue">账本<br/>残值寿命</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「镇峨把景」→正儿八经；「焦虏」→焦虑；「公卫上」→公司上。</p><p>「职能驾驶／质价」→智能驾驶；「杠前头追头」→刚前头追尾。</p><p>本片为单一车主口述，里程与价格为个人经历，非统计结论。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-orange">
+      <h3>可用续航</h3>
+      <p>标称700，高速约300、城区三四百；20%–30%就要充，尾段名义里程用不满。</p>
+      <div class="quote">有百分之二十的续航你是用不到的或者是跑不完的</div>
+      <div class="relation">决策看日常可用区间，不看广告数字。</div>
+    </div>
+    <div class="card card-red">
+      <h3>时间折磨</h3>
+      <p>电价可忍，半小时站等不可忍；家充花十万仍难消外充摩擦与车位占用费。</p>
+      <div class="quote">但是这个时间我是无法忍受</div>
+      <div class="relation">补能体验＝价格×时间×场景便利。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>车重安全</h3>
+      <p>电池包推高整备质量，制动距离与惯性是他亲感最强的安全点；辐射不谈。</p>
+      <div class="quote">在刹车的时候是明显感觉到惯性太大</div>
+      <div class="relation">堆续航≈堆质量≈挑战刹车悬挂。</div>
+    </div>
+    <div class="card card-green">
+      <h3>残值与寿命</h3>
+      <p>油钱被四年贬值吃回；油车十五年以上常见，十年前电车少见仍上路。</p>
+      <div class="quote">你省下来的油钱在贬值的过程当中又给你吃完了</div>
+      <div class="relation">TCO 要把残值与持有年限算进去。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>单一访谈样本，车型／城市／充电条件不同结论会变。</li><li>2025「八百多款」等数字为口述，未核验统计源。</li><li>辅助驾驶个案不能外推全部品牌与版本。</li><li>不构成购车建议；仅整理其四点论证结构。</li></ul><div class="pitfall">只比标称续航与油价，忽略可用比例与等待时间。</div><div class="pitfall">把「省油钱」当总拥有成本，忽略残值与保险。</div><div class="pitfall">用网络自燃新闻替代亲身与结构讨论（车重／制动）。</div><div class="pitfall">把智驾营销话术当成已验证的生命安全保障。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>可用续航＜标称</li><li>补能时间是硬约束</li><li>车重影响制动体感</li><li>残值与寿命决定总账</li></ul><h3>行动清单</h3><ol><li>按自己通勤列出「必须外充」的次数与单次等待上限</li><li>试驾时专门体感中高速制动与车身惯性</li><li>二手残值按同系三年／四年成交价粗算，再对比油费差</li><li>智驾功能当辅助，不把生命安全外包给营销名号</li></ol><h3>关键认知转变</h3><p>以前：听续航数字和省油故事就心动；现在：用可用里程、补能时间、制动体感、残值寿命四本账一起做决定。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 4分41秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

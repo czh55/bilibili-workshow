@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5930" viewBox="0 0 1320 5930">
+  <foreignObject x="0" y="0" width="1320" height="5930">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>纯度秩序：节奏／空间／构图</h1>
+  <div class="meta"><span class="tag tag-blue">纯度秩序</span><span class="tag tag-green">远灰近纯</span><span class="tag tag-orange">节奏</span><span class="tag tag-purple">构图</span><span class="tag tag-red">伦勃朗</span><span class="tag tag-gray">时长 210秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/4dQz9iqeCkS">原视频</a>
+  <div class="summary-line">秩序＝合理安排。纯度秩序三类：纯灰节奏对比；纯度渐变造空间（远灰近纯）；高纯分布服务构图（纵线／三角／H）。视觉引导与主题强化留待下期。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">打开纯灰大门</span></div><div class="timeline-item"><span class="timeline-time">00:16</span><span class="timeline-text">接明度秩序→纯度秩序</span></div><div class="timeline-item"><span class="timeline-time">00:44</span><span class="timeline-text">阅兵／劳逸／合影类比</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">秩序＝合理安排</span></div><div class="timeline-item"><span class="timeline-time">01:36</span><span class="timeline-text">纯灰大节奏</span></div><div class="timeline-item"><span class="timeline-time">01:56</span><span class="timeline-text">栏杆隔绿如音符</span></div><div class="timeline-item"><span class="timeline-time">02:20</span><span class="timeline-text">远灰近纯</span></div><div class="timeline-item"><span class="timeline-time">02:32</span><span class="timeline-text">伦勃朗红饱和递减</span></div><div class="timeline-item"><span class="timeline-time">02:47</span><span class="timeline-text">朱红纵线撑构图</span></div><div class="timeline-item"><span class="timeline-time">03:05</span><span class="timeline-text">高纯绿三角／H形</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">节奏<br/>纯↔灰交替</div><span class="arrow">→</span><div class="node-green">空间<br/>远灰近纯</div><span class="arrow">→</span><div class="node-orange">构图<br/>高纯作骨架</div><span class="arrow">→</span><div class="node-blue">预告<br/>引导／主题</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「唇灰／远辉近纯／伦布朗／珠红色」→「纯灰／远灰近纯／伦勃朗／朱红色」。</p><p>误区：高级＝全面提纯。视频强调纯灰秩序。</p><p>误区：远景必须脏灰。是对比递减，不是一律脏。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>秩序定义</h3>
+      <p>阅兵整齐、劳逸张弛、合影间隔——合理安排即秩序。</p>
+      <div class="quote">秩序即合理安排</div>
+      <div class="relation">先理解秩序感，再谈纯度公式。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>纯灰节奏</h3>
+      <p>背景灰对人物纯；栏杆墙面把高纯绿隔成强弱块。</p>
+      <div class="quote">如同强弱音符一样营造出一种节奏感</div>
+      <div class="relation">纯度差可以当节拍器用。</div>
+    </div>
+    <div class="card card-red">
+      <h3>远灰近纯</h3>
+      <p>远山到近屋红灌木；伦勃朗红饱和向远递减。</p>
+      <div class="quote">体现了远灰近纯的空间秩序</div>
+      <div class="relation">空间感常靠纯度阶梯，不只靠透视。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>高纯撑构图</h3>
+      <p>朱红纵线、高纯绿三角与H形成为结构。</p>
+      <div class="quote">服务了构图关系</div>
+      <div class="relation">最抢眼的纯应站在骨架上。</div>
+    </div>
+    <div class="card ">
+      <h3></h3>
+      <p>还有视觉引导与强化主题</p>
+      <div class="quote">我们下期再讲</div>
+      <div class="relation">本集只覆盖三类常见纯度秩序</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>210 秒分型短片，不含完整作业讲评。</li><li>「视觉引导／强化主题」两类明确延后。</li><li>课宣非步骤。</li></ul><div class="pitfall">所有色块同等高纯，节奏变噪声。</div><div class="pitfall">为「高级」把近景也画灰，空间塌。</div><div class="pitfall">高纯色块散落装饰位，不进构图骨架。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>纯灰交替成节奏</li><li>远灰近纯推空间</li><li>高纯服务骨架</li></ul><h3>行动清单</h3><ol><li>给习作标「纯／灰」两档，看是否有大节奏</li><li>风景练习：远中近三档纯度递减</li><li>把最高纯色块移到纵线或三角顶点试构图</li><li>禁止无秩序地全面拉饱和</li></ol><h3>关键认知转变</h3><p>以前：哪里重要就涂更鲜；现在：先排纯度秩序，让鲜有位置、有理由。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 210秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

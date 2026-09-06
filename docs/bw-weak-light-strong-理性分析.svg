@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5870" viewBox="0 0 1320 5870">
+  <foreignObject x="0" y="0" width="1320" height="5870">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>黑白弱仍光感强：冷暖通道</h1>
+  <div class="meta"><span class="tag tag-blue">光感</span><span class="tag tag-green">冷暖</span><span class="tag tag-orange">明度</span><span class="tag tag-purple">色块</span><span class="tag tag-red">受光背光</span><span class="tag tag-gray">时长 89秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/1FynErXo88P">原视频</a>
+  <div class="summary-line">无明显黑白也可强光感。实验消掉草地暖与树影冷后光感塌，灰度证明明度未变。秘诀是受光／背光冷暖对比。色块起稿：亮暖黄、背冷紫、底面可泛绿。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">黑白不强为何有光</span></div><div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">草地变冷</span></div><div class="timeline-item"><span class="timeline-time">00:20</span><span class="timeline-text">树影变暖</span></div><div class="timeline-item"><span class="timeline-time">00:28</span><span class="timeline-text">光感弱掉</span></div><div class="timeline-item"><span class="timeline-time">00:35</span><span class="timeline-text">明度其实没变</span></div><div class="timeline-item"><span class="timeline-time">00:39</span><span class="timeline-text">只变了冷暖</span></div><div class="timeline-item"><span class="timeline-time">00:54</span><span class="timeline-text">色块起稿</span></div><div class="timeline-item"><span class="timeline-time">01:01</span><span class="timeline-text">亮黄背紫</span></div><div class="timeline-item"><span class="timeline-time">01:18</span><span class="timeline-text">各区冷暖变化</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">问题<br/>弱黑白强光</div><span class="arrow">→</span><div class="node-green">实验<br/>消冷暖则塌</div><span class="arrow">→</span><div class="node-orange">秘诀<br/>受暖背冷</div><span class="arrow">→</span><div class="node-blue">落地<br/>色块起稿</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「密切／物质下面」→「秘诀／物体下面」。</p><p>误区：光感＝黑白拉满。视频展示冷暖通道。</p><p>误区：起稿就抠细节。强调色块先立冷暖。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>反例实验</h3>
+      <p>草地变冷、树影变暖后光感全无；灰度显示明度未动。</p>
+      <div class="quote">其实我只变了冷暖</div>
+      <div class="relation">光感有独立于明度的温度轴。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>秘诀表述</h3>
+      <p>除了明度，受光与背光的冷暖对比制造光感。</p>
+      <div class="quote">受光和背光的冷暖对比还是制造光感的秘诀</div>
+      <div class="relation">双通道：明度＋温度。</div>
+    </div>
+    <div class="card card-red">
+      <h3>起稿配方</h3>
+      <p>亮部受暖光发黄；背光受天光发紫；底面反光可泛绿。</p>
+      <div class="quote">亮部会明显的发黄……背光……会明显的发紫</div>
+      <div class="relation">先分区温度，再谈局部固有色。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>真实感</h3>
+      <p>所有受光背光都有冷暖变化，光感强烈又真实。</p>
+      <div class="quote">这让光感强烈又真实</div>
+      <div class="relation">统一规则重复出现＝可信光。</div>
+    </div>
+    <div class="card ">
+      <h3></h3>
+      <p>下期纯度</p>
+      <div class="quote">预告颜色纯度如何决定光的强弱。</div>
+      <div class="relation">下一期我们继续讲</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>89 秒短片，纯度与光留给下期。</li><li>猫／林间为演示素材，光源设定以画面为准。</li><li>「受光」标注为教学简化。</li></ul><div class="pitfall">只拉黑白，忽略冷暖。</div><div class="pitfall">亮部背光同温。</div><div class="pitfall">起稿陷入皮毛／树叶琐碎。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>冷暖是光感第二通道</li><li>受暖背冷</li><li>色块先于细节</li></ul><h3>行动清单</h3><ol><li>给喜欢的风景去色，看光感剩多少</li><li>再做只改冷暖的破坏实验</li><li>色块稿强制：亮黄、背紫、底微绿</li><li>自检：每个大面是否有温度差</li></ol><h3>关键认知转变</h3><p>以前：光感不够就加深阴影；现在：先问受光背光的冷暖是否还在。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 89秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

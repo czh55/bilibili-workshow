@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="8432" viewBox="0 0 1320 8432">
+  <foreignObject x="0" y="0" width="1320" height="8432">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>Lightroom 蒙版控光绝招</h1>
+  <div class="meta"><span class="tag tag-blue">Lightroom</span><span class="tag tag-green">蒙版</span><span class="tag tag-orange">控光</span><span class="tag tag-purple">选择对象</span><span class="tag tag-red">自动蒙版</span><span class="tag tag-gray">径向渐变</span><span class="tag tag-blue">交集</span><span class="tag tag-gray">时长 56分00秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/13dKO2oYdxj">原视频</a>
+  <div class="summary-line">一小时课的主线不是「多点几个 AI 按钮」，而是：拿到干净边界（选择对象＞选择主体）→ 在边界内做定向调整（点颜色、冷暖、眼睛、径向暗角、交集、侧背光）→ 用数量滑块与全图回看控制强度。选区质量与克制，比滑块配方更重要。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">开场与预告</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">蒙版面板对齐</span></div><div class="timeline-item"><span class="timeline-time">02:31</span><span class="timeline-text">选择主体溢边</span></div><div class="timeline-item"><span class="timeline-time">04:08</span><span class="timeline-text">选择对象</span></div><div class="timeline-item"><span class="timeline-time">05:56</span><span class="timeline-text">复制并反转</span></div><div class="timeline-item"><span class="timeline-time">08:26</span><span class="timeline-text">点颜色去蓝</span></div><div class="timeline-item"><span class="timeline-time">11:36</span><span class="timeline-text">自动蒙版</span></div><div class="timeline-item"><span class="timeline-time">15:00</span><span class="timeline-text">Option 减选</span></div><div class="timeline-item"><span class="timeline-time">16:42</span><span class="timeline-text">纹理失效</span></div><div class="timeline-item"><span class="timeline-time">19:38</span><span class="timeline-text">冷暖分层</span></div><div class="timeline-item"><span class="timeline-time">22:17</span><span class="timeline-text">眼睛增强</span></div><div class="timeline-item"><span class="timeline-time">27:51</span><span class="timeline-text">数量滑块</span></div><div class="timeline-item"><span class="timeline-time">29:59</span><span class="timeline-text">径向暗角</span></div><div class="timeline-item"><span class="timeline-time">33:06</span><span class="timeline-text">减去主体</span></div><div class="timeline-item"><span class="timeline-time">37:42</span><span class="timeline-text">蒙版交集</span></div><div class="timeline-item"><span class="timeline-time">42:22</span><span class="timeline-text">相交画笔</span></div><div class="timeline-item"><span class="timeline-time">44:22</span><span class="timeline-text">颜色／亮度范围</span></div><div class="timeline-item"><span class="timeline-time">48:19</span><span class="timeline-text">侧背光径向</span></div><div class="timeline-item"><span class="timeline-time">54:45</span><span class="timeline-text">仅限侧背光</span></div><div class="timeline-item"><span class="timeline-time">55:25</span><span class="timeline-text">Cmd/Ctrl+/</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">边界<br/>选择对象＋反转</div><span class="arrow">→</span><div class="node-green">局部色<br/>点颜色／冷暖</div><span class="arrow">→</span><div class="node-orange">塑光<br/>径向＋交集</div><span class="arrow">→</span><div class="node-blue">收束<br/>数量＋全图看</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「萌版／蒙板」→蒙版；「镜像渐变」→径向渐变；「划块」→滑块。</p><p>「合度偏移／红膜／皂点／去蒙龙／语化」→饱和度偏移／虹膜／噪点／去朦胧／羽化。</p><p>「书构图／标击／反旋／压按」→竖构图／交集／反向／压暗。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>选择对象优于选择主体</h3>
+      <p>主体／背景按钮易溢边或漏选；对象框选或画笔粗涂后再复制反转，主体与背景才能真正分轨。</p>
+      <div class="quote">下次你处理主体时……可以尝试使用选择对象而非选择主体</div>
+      <div class="relation">边界质量先于任何局部滑块。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>点颜色专治环境蓝偏</h3>
+      <p>白／黑主体染天空蓝时，在对象蒙版内采样并降饱和度偏移；多数情况不必折腾范围滑块，再回一点暖即可。</p>
+      <div class="quote">绝大多数情况下你只需要……直接降低那个饱和度</div>
+      <div class="relation">蒙版内点颜色 ≠ 全局颜色混合器。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>自动蒙版会帮倒忙</h3>
+      <p>边缘清晰时从内侧推向轮廓；纹理碎密时先关自动蒙版大面积涂，再用 Option＋自动修边。</p>
+      <div class="quote">他们了解了这个功能后……打开它就再也不关了</div>
+      <div class="relation">工具开关本身是工作流决策。</div>
+    </div>
+    <div class="card card-green">
+      <h3>暖前冷后换纵深</h3>
+      <p>暖主体配合略冷背景，利用色彩前后关系增强立体感；幅度宜小，试了再留。</p>
+      <div class="quote">冷色调会显得靠后……暖色调则倾向于向前突出</div>
+      <div class="relation">色温也可作空间工具。</div>
+    </div>
+    <div class="card card-red">
+      <h3>放大定稿必过度</h3>
+      <p>眼睛等多滑块组合在 200% 下容易过猛；缩回全图后用数量滑块整体缩放，少即是多。</p>
+      <div class="quote">千万不要在这样放大查看时判断效果</div>
+      <div class="relation">数量＝效果强度的总闸。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>径向暗角要隐形</h3>
+      <p>反向径向比内置暗角更可控；中心圈宜小、过渡要软，可减去主体或压冷柔边——被人看穿即失败。</p>
+      <div class="quote">最大的诀窍就在于要确保观众……察觉不到暗角的存在</div>
+      <div class="relation">引导视线 ≠ 展示技法。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>交集＝边界内的第二工具</h3>
+      <p>先选主体／背景／对象定边界，再相交线性、画笔、颜色或亮度范围；羽化过窄会海报化。</p>
+      <div class="quote">我先创建一个初始选区……限定下一个蒙版所能生效的区域</div>
+      <div class="relation">精细化依赖集合运算，而非只靠手稳。</div>
+    </div>
+    <div class="card card-red">
+      <h3>侧背光法有硬边界</h3>
+      <p>径向造光晕只适用于原本有侧光或背光的照片；正面光硬套永远不自然。</p>
+      <div class="quote">如果你的主体是正面光照明，用这个技巧效果永远不会好</div>
+      <div class="relation">后期强化光线，不凭空发明光源关系。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>演示参数（色温 −9～−10、眼睛数量约 65–70%、流量 50% 等）为当次示意，非通用配方。</li><li>「选择主体」在简单轮廓上仍可用；本片强调飞羽／野生动物场景下对象选更稳。</li><li>课程导流、点赞订阅为片尾运营，不作为技术结论。</li><li>Lightroom 版本差异可能影响 AI 选区与点颜色布局；心智模型仍成立。</li><li>亮度范围手柄保留暗部是可选工具，作者自述多数时候不用。</li></ul><div class="pitfall">死守选择主体／背景，接受溢边与翅间漏光。</div><div class="pitfall">用全局颜色混合器去局部蓝偏，牵动整张图。</div><div class="pitfall">学会自动蒙版后永不关闭，在复杂羽毛上造渗线。</div><div class="pitfall">只在放大视图里判断眼睛效果，导出后像塑料。</div><div class="pitfall">径向暗角中心过大、过渡生硬，一眼假。</div><div class="pitfall">亮度范围羽化过窄，高光压暗出现海报化断层。</div><div class="pitfall">对正面光主体硬套侧背光径向光晕。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>干净边界先于局部调色</li><li>自动蒙版是开关不是信仰</li><li>数量滑块与全图回看管强度</li><li>交集把第二工具锁在边界内</li><li>侧背光增强不可用于正面光</li></ul><h3>行动清单</h3><ol><li>下一张野生动物：用选择对象＋复制反转拆主体／背景，对比选择主体溢边</li><li>白鸟或黑兽对蓝天：对象蒙版内点颜色采样，只拖饱和度偏移</li><li>复杂羽毛：关自动蒙版涂面，Option＋自动蒙版修边</li><li>眼睛调完强制缩回全图，用量把强度收到「几乎看不出」</li><li>需要暗角时用反向径向，中心圈宁小勿大，过猛拉数量</li><li>只对已有侧／背光的片子做径向光晕，并低流量把光刷回轮廓</li></ol><h3>关键认知转变</h3><p>以前：点选主体／背景再狂拖曝光，边缘脏了也不知道为什么；现在：先争选区质量，再在边界内做有方向的光，并用数量与全图回看把效果收到自然。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 56分00秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

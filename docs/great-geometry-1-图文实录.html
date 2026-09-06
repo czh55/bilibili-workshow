@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="把马看成不同几何体块，一切变简单：假设马站在方盒子里——头似棱锥、颈像弯曲圆柱、胸梯形、腰为两头大小不同的弯曲圆柱、臀为切面半圆体块；方盒随时检查透视。大腿扁圆柱、小腿棱柱，头可再细分。有体块支撑，细化、大肌肉附着与光影都更好理解；蹄子注意结构与透视形变。还可换仰视角度持续练。">
+<title>伟大的几何体：用体块拆一匹马｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>伟大的几何体：用体块拆一匹马</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">94秒</span><span class="meta-tag tag-topic">几何体块 马 透视 造型 体块 赵老师绘画课</span></div>
+<a class="source-link" href="https://xhslink.cn/o/7flDH69qTo6" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">方盒里的马：体块拆解</a><a href="#ch2">体块之上的细化与换角</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>把马看成不同几何体块，一切变简单：假设马站在方盒子里——头似棱锥、颈像弯曲圆柱、胸梯形、腰为两头大小不同的弯曲圆柱、臀为切面半圆体块；方盒随时检查透视。大腿扁圆柱、小腿棱柱，头可再细分。有体块支撑，细化、大肌肉附着与光影都更好理解；蹄子注意结构与透视形变。还可换仰视角度持续练。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:42]</span><div><strong>体块清单</strong><p>方盒＋棱锥／圆柱／梯形／半圆；检查透视。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:42→01:34]</span><div><strong>细化＋换角</strong><p>肌肉与光影附着体块；仰视再练。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>复杂动物先装进方盒并拆成标准体块，透视与光影才有附着点——几何体是造型的脚手架。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:42</span>方盒里的马：体块拆解</h2><p>如果把这匹马看成不同几何体块，一切会变得简单。假设马站在方盒子里：头部类似棱锥体，脖子像弯曲圆柱，胸部像梯形体块，腰部是弯曲但两头大小不一样的圆柱，屁股看成切面半圆体块。通过方盒子可随时检查体块透视。</p><p>大腿是扁一点的圆柱，小腿是棱柱；头部还可稍微再细分。00:15「胸部像梯形的体块」是拆解现场。</p><figure><img src="assets/great-geometry-1/shot-01.jpg" alt="左马参考照，右红线：方盒内胸部梯形体块；底字「胸部呢像一个梯形的体块」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:15] 左马参考照，右红线：方盒内胸部梯形体块；底字「胸部呢像一个梯形的体块」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c625a3e6908f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Horse photo left; red lines right: trapezoid chest mass inside a box; bottom “The chest is like a trapezoid mass”</span></div>
+<audio class="cap-audio" src="audio/c625a3e6908f.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/great-geometry-1/shot-02.jpg" alt="继续体块：头棱锥、颈圆柱、腰变径圆柱、臀切面半圆，方盒检查透视" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 继续体块：头棱锥、颈圆柱、腰变径圆柱、臀切面半圆，方盒检查透视</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9ccdc371ba67.mp3" type="button" aria-label="Play English audio">🔊</button><span>More blocks: pyramidal head, cylinder neck, tapered waist cylinder, half-round rump; box checks perspective</span></div>
+<audio class="cap-audio" src="audio/9ccdc371ba67.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:42-01:34</span>体块之上的细化与换角</h2><p>有了体块支撑，细化会很轻松：大的肌肉很容易附着在上面，光影也会因为体块更好理解。蹄子要注意结构与透视带来的形变；再轻松加几笔细节就完成——这就是几何体块的魅力。</p><p>还可换一个仰视角度不断练习，你会真的强到飞起。系统学习指向造型课程。</p><figure><img src="assets/great-geometry-1/shot-03.jpg" alt="体块上附着大肌肉；底字「大的肌肉」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:45] 体块上附着大肌肉；底字「大的肌肉」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f48b96d9b397.mp3" type="button" aria-label="Play English audio">🔊</button><span>Major muscles attached onto the blocks; bottom “The large muscles”</span></div>
+<audio class="cap-audio" src="audio/f48b96d9b397.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/great-geometry-1/shot-04.jpg" alt="换仰视角几何体块练习，鼓励不断练习" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] 换仰视角几何体块练习，鼓励不断练习</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a063cf49d491.mp3" type="button" aria-label="Play English audio">🔊</button><span>Low-angle geometric-mass drill — keep practicing</span></div>
+<audio class="cap-audio" src="audio/a063cf49d491.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（30段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>如果把这匹马看成不同的几何体块</p></div>
+<div class="transcript-row"><time>00:03</time><p>那一切会变得简单起来</p></div>
+<div class="transcript-row"><time>00:06</time><p>我们假设马站在一个方盒子里</p></div>
+<div class="transcript-row"><time>00:09</time><p>头部类似一个棱椎体</p></div>
+<div class="transcript-row"><time>00:11</time><p>脖子像一个弯曲的圆柱</p></div>
+<div class="transcript-row"><time>00:14</time><p>胸部像一个梯形的体块</p></div>
+<div class="transcript-row"><time>00:16</time><p>腰部也是一个弯曲的</p></div>
+<div class="transcript-row"><time>00:18</time><p>但两头大小不一样的圆柱</p></div>
+<div class="transcript-row"><time>00:21</time><p>屁股我们来看成一个切面的半圆体块</p></div>
+<div class="transcript-row"><time>00:26</time><p>通过方盒子</p></div>
+<div class="transcript-row"><time>00:27</time><p>我们可以随时检查体块的透视</p></div>
+<div class="transcript-row"><time>00:31</time><p>大腿是扁一点的圆柱</p></div>
+<div class="transcript-row"><time>00:34</time><p>小腿是棱柱</p></div>
+<div class="transcript-row"><time>00:37</time><p>头部我们可以稍微再细分几何体块</p></div>
+<div class="transcript-row"><time>00:40</time><p>有了体块的支撑</p></div>
+<div class="transcript-row"><time>00:41</time><p>细化就会很轻松</p></div>
+<div class="transcript-row"><time>00:44</time><p>大的肌肉会很容易的附着在上面</p></div>
+<div class="transcript-row"><time>00:47</time><p>光影也会因为体块而变得更好理解</p></div>
+<div class="transcript-row"><time>00:51</time><p>蹄子在画的时候要注意结构</p></div>
+<div class="transcript-row"><time>00:54</time><p>和透视带来的形变</p></div>
+<div class="transcript-row"><time>00:56</time><p>再轻松加几笔细节就完成了</p></div>
+<div class="transcript-row"><time>00:59</time><p>很简单吧</p></div>
+<div class="transcript-row"><time>01:00</time><p>这就是几何体块的魅力</p></div>
+<div class="transcript-row"><time>01:04</time><p>我们还可以换一个仰式的角度</p></div>
+<div class="transcript-row"><time>01:17</time><p>不断这样进行练习</p></div>
+<div class="transcript-row"><time>01:19</time><p>你真的会强不到飞起</p></div>
+<div class="transcript-row"><time>01:26</time><p>如果你也想通过系统学习</p></div>
+<div class="transcript-row"><time>01:29</time><p>全面提升自己的造型能力</p></div>
+<div class="transcript-row"><time>01:31</time><p>我们2月2日合掌见</p></div>
+<div class="transcript-row"><time>01:33</time><p>拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

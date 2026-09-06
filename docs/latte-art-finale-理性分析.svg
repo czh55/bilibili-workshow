@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5535" viewBox="0 0 1320 5535">
+  <foreignObject x="0" y="0" width="1320" height="5535">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>拉花系列最终章：比赛上限 vs 门店下限</h1>
+  <div class="meta"><span class="tag tag-blue">精品咖啡</span><span class="tag tag-green">拉花</span><span class="tag tag-orange">门店出品</span><span class="tag tag-purple">比赛</span><span class="tag tag-red">基本功</span><span class="tag tag-gray">时长 65秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AQFtyuHqkGe">原视频</a>
+  <div class="summary-line">比赛冠军 ≠ 门店高效：两者是不同能力。比赛追上限（细节／创意／时间充裕），门店守下限（稳定／效率／一致）。连续约 80 分的十杯，比一杯满分加十九杯及格更有门店价值；基本功是两边共用的核心。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">冠军不一定能高效出品 → 两种完全不同的能力</span></div><div class="timeline-item"><span class="timeline-time">00:04</span><span class="timeline-text">比赛：细节、复杂度、创意；时间充裕</span></div><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">门店：稳定、效率、一致；高峰期连出十杯</span></div><div class="timeline-item"><span class="timeline-time">00:21</span><span class="timeline-text">门店稳定出品才是核心</span></div><div class="timeline-item"><span class="timeline-time">00:24</span><span class="timeline-text">比赛=上限；门店=下限</span></div><div class="timeline-item"><span class="timeline-time">00:28</span><span class="timeline-text">连续80分 vs 100分+19杯60分</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">日常出品才是基本盘</span></div><div class="timeline-item"><span class="timeline-time">00:43</span><span class="timeline-text">基本功扎实才是核心；系列收束</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">比赛<br/>上限 · 细节创意</div><span class="arrow">→</span><div class="node-green">门店<br/>下限 · 稳定一致</div><span class="arrow">→</span><div class="node-orange">对照<br/>十杯80分 &gt; 1×100+19×60</div><span class="arrow">→</span><div class="node-blue">底座<br/>基本功</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「高空期」按门店语境校正为「高峰期」。</p><p>误区：拉花水平=比赛名次。视频把门店一致交付单独列为能力。</p><p>误区：单杯满分最有价值。门店更看重连续可复现的分数带。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-orange">
+      <h3>能力拆分：比赛 ≠ 门店</h3>
+      <p>冠军不一定能在店里高效出品，因为两者完全不同。比赛优化细节、复杂度与创意，且时间充裕；门店优化稳定、效率与一致，高峰期甚至 30 秒一杯连出十杯。</p>
+      <div class="quote">因为这两者是完全不同的能力……在门店稳定的出品才是核心</div>
+      <div class="relation">先认清优化目标，再谈「谁更厉害」。</div>
+    </div>
+    <div class="card card-red">
+      <h3>上限与下限的价值排序</h3>
+      <p>比赛展示技术上限，门店保证出品下限。连续十杯约 80 分，对比一杯 100 分加十九杯 60 分——问稳定、价值与门店重要性时，答案偏向前者。日常出品才是基本盘。</p>
+      <div class="quote">比赛呢展示的是我们拉花技术的上限，而门店出品呢则是保证了我们拉花出品的一个下限</div>
+      <div class="relation">用可复现的地板，衡量门店交付。</div>
+    </div>
+    <div class="card card-green">
+      <h3>共用底座：基本功</h3>
+      <p>无论冲上限还是守下限，基本功扎实才是核心。系列以此收束，并把后续扩展交给评论区需求与感官系列。</p>
+      <div class="quote">不管是比赛还是出品，基本功扎实才是核心</div>
+      <div class="relation">基本功是可迁移资产，不绑定赛场或柜台。</div>
+    </div>
+    <div class="card ">
+      <h3>门店自检题</h3>
+      <p>别只问「这杯能不能上分」，改问「高峰期连出十杯，分数带是否仍可接受」。把一致与效率写进练习目标，比赛技巧才不会变成柜台负债。</p>
+      <div class="quote">哪一个对于门店来说才是比较重要的</div>
+      <div class="relation">用门店场景反向设计训练量。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>65 秒口播论证，不含具体拉花手法分解或店内排班方案。</li><li>80／100／60 分为作者比喻性分数带，非官方评分标准。</li><li>「DLC／加载」为加更戏谑，非产品功能承诺。</li></ul><div class="pitfall">只练比赛花型，忽略连杯一致与出杯时间。</div><div class="pitfall">用单杯满分掩盖其余杯的崩盘。</div><div class="pitfall">把基本功训练让位给花式动作表演。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>比赛能力与门店能力必须分开评估</li><li>门店价值在连续稳定的下限，不在偶发上限</li><li>基本功是两边共用的核心</li></ul><h3>行动清单</h3><ol><li>给自己设「十杯连续」练习，记录分数离散度而非只看最好一杯</li><li>高峰模拟：限时出杯，优先保形稳定再谈复杂度</li><li>把基本功（奶泡、高度、流量）列成每日必练，比赛花型作加项</li><li>门店复盘时问：崩在一致，还是崩在创意</li></ol><h3>关键认知转变</h3><p>以前：用比赛天花板定义拉花水平；现在：用门店可复现的下限与基本功衡量交付能力。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 65秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

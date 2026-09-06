@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5421" viewBox="0 0 1320 5421">
+  <foreignObject x="0" y="0" width="1320" height="5421">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>家里想显大，全靠这3招！</h1>
+  <div class="meta"><span class="tag tag-blue">家装设计</span><span class="tag tag-green">镜子</span><span class="tag tag-orange">悬浮</span><span class="tag tag-purple">地面颜色</span><span class="tag tag-red">小户型</span><span class="tag tag-gray">家居美学</span><span class="tag tag-gray">时长 112秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/65oym3n8EgF">原视频</a>
+  <div class="summary-line">显大三招：墙角镜只反射窗景制造第二扇窗；背景墙上下留空减重并约按 300mm 控悬空；深色地面助显高且必须配浅墙。角度、高度、配色各有反例。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">闭塞墙角 → 镜反射窗景＝多一扇窗</span></div><div class="timeline-item"><span class="timeline-time">00:18</span><span class="timeline-text">镜子角度只对窗口，避免杂乱反射</span></div><div class="timeline-item"><span class="timeline-time">00:40</span><span class="timeline-text">厚重背景墙上下留空 → 悬浮轻盈</span></div><div class="timeline-item"><span class="timeline-time">01:09</span><span class="timeline-text">上下悬空约 300mm，勿过高过低</span></div><div class="timeline-item"><span class="timeline-time">01:20</span><span class="timeline-text">浅地膨胀显矮；深地收缩助显高</span></div><div class="timeline-item"><span class="timeline-time">01:39</span><span class="timeline-text">深地必须配浅墙，否则下沉感被抵消</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">反射<br/>镜只映窗</div><span class="arrow">→</span><div class="node-green">减重<br/>上下留空</div><span class="arrow">→</span><div class="node-orange">高度<br/>深地 + 浅墙</div><span class="arrow">→</span><div class="node-blue">检查<br/>角度·300·配色</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「闭色／钢材的方法／俐落」校正为「闭塞／以上的方法／利落」。</p><p>误区：镜子随便摆就显大。必须调到只反射窗口。</p><p>误区：深色地面配深色墙更高级。墙深会抵消地面下沉显高。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>招一：镜反射窗景，补一扇「假窗」</h3>
+      <p>昏暗/闭塞墙角加镜，反射对面窗景，感觉多了一扇窗甚至两扇窗，空间更敞亮。机制是借入窗外亮度与景深，不是镜面本身好看。</p>
+      <div class="quote">镜子反射了对面的窗景……一扇窗变成了两扇窗，房间就显得更敞亮了</div>
+      <div class="relation">先借光借景，再谈装饰镜。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>镜子剂量：角度只对窗口</h3>
+      <p>反射画面特别乱会适得其反。调整角度只反射窗口，才能同时拿到通透并避开杂乱。</p>
+      <div class="quote">调整角度，只反射窗口，既能增加通透感，又能避免杂乱的效果</div>
+      <div class="relation">显大工具也有构图约束。</div>
+    </div>
+    <div class="card ">
+      <h3>招二：上下留空减重量，悬空约 300mm</h3>
+      <p>高大背景墙压迫且切断墙面整体；上下留空得悬浮轻盈、视线更远、墙面更连贯。悬空过高有下压感，过低悬浮不明显——作者经验是上下约 300（家装习惯作毫米）。</p>
+      <div class="quote">把造型上下留空，给人悬浮的轻盈感……保持上下悬空的尺寸在300左右</div>
+      <div class="relation">减的是视觉重量，控的是悬空剂量。</div>
+    </div>
+    <div class="card card-red">
+      <h3>招三：深地助显高，必须配浅墙</h3>
+      <p>浅地是膨胀色，上升托举让房间显矮；深地是收缩色，下沉感让房间显高。深地旁若墙也深，会弱化下沉效果——必须换成浅墙才能恢复显高、明亮与层次。</p>
+      <div class="quote">有了深色的地面，就不能要深色的墙面……换成浅色墙就恢复了下沉感</div>
+      <div class="relation">管高度先管地面明度，再锁墙面明度。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>112 秒家装短片，不含完整施工图或材料清单。</li><li>「300」口播未明单位，按家装习惯理解为毫米量级经验值。</li><li>「显高／显大」为观感，非实测层高变化。</li></ul><div class="pitfall">镜子反射杂乱角落，通透变嘈杂。</div><div class="pitfall">悬浮造型过高或过低，压迫或拥堵。</div><div class="pitfall">深色地面配深色墙，显高被抵消。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>显大 = 借窗反射 + 留空减重 + 深地浅墙</li><li>镜只映窗口；悬空约 300mm</li><li>深地时墙必须浅</li></ul><h3>行动清单</h3><ol><li>在最闭塞墙角试镜，只对准窗口拍一张对比「假窗」效果</li><li>量背景墙/吊柜上下空隙，对照是否接近约 300mm 且不过高过低</li><li>若地面偏深，检查墙面是否明显更浅；同深则先改墙</li><li>排除「深墙+深地」和「乱反射镜」两套方案后再谈风格</li></ol><h3>关键认知转变</h3><p>以前：显大就加灯加浅色；现在：按反射借景、留空减重、明度管高度三招改，并给每招设可检查反例。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 112秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

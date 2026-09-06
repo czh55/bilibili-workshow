@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5336" viewBox="0 0 1320 5336">
+  <foreignObject x="0" y="0" width="1320" height="5336">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>一个视频告诉你提前踩点有多重要……</h1>
+  <div class="meta"><span class="tag tag-blue">手机摄影</span><span class="tag tag-green">踩点</span><span class="tag tag-orange">光线</span><span class="tag tag-purple">指南针</span><span class="tag tag-red">逆光</span><span class="tag tag-gray">出片</span><span class="tag tag-gray">时长 87秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/48MgxMuTpwX">原视频</a>
+  <div class="summary-line">踩点提升出片率：提前找景 + 预判光位。用指南针以南为 12 点估算太阳，优先逆光层次；时段与作息冲突的点位应主动放弃，避免白跑。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">定义：踩点 = 找景 + 预判光线</span></div><div class="timeline-item"><span class="timeline-time">00:15</span><span class="timeline-text">第一点：栏杆 + 矮树 → 预想逆光透树</span></div><div class="timeline-item"><span class="timeline-time">00:26</span><span class="timeline-text">成片预想：树被打亮 + 补面光 + 喷水</span></div><div class="timeline-item"><span class="timeline-time">00:38</span><span class="timeline-text">指南针：南＝12点，估中午斑驳</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">拒绝顺光：亮度均一无层次</span></div><div class="timeline-item"><span class="timeline-time">01:01</span><span class="timeline-text">第二点东北向仅清晨 → 放弃</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">目标<br/>出片率</div><span class="arrow">→</span><div class="node-green">输入<br/>景 + 光位</div><span class="arrow">→</span><div class="node-orange">工具<br/>指南针时段</div><span class="arrow">→</span><div class="node-blue">决策<br/>拍或放弃</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「一盘光位」校正为「预判光位」。</p><p>「逆光光感最强」为作者教程立场，作观点保留。</p><p>「南方对应中午12点」为简化日晷法，未含季节精细修正。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>核心定义：踩点是出片率工程</h3>
+      <p>提前踩点不是随便逛，而是提升出片率：提前找好景，并提前预判点位光线。经验丰富者还能一眼判断角落是否出片。</p>
+      <div class="quote">提前踩点是为了提升出片率……提前找好景，加提前预判点位的光线情况</div>
+      <div class="relation">把「感觉会好看」拆成景与光两个可检查项。</div>
+    </div>
+    <div class="card card-green">
+      <h3>第一点：构图元素 + 逆光预演</h3>
+      <p>栏杆可坐人、旁有矮树——若阳光透过树形成逆光会很绝。预想后树被打亮、补面光、喷水增氛围，通透感来自光位设计而非后期硬拉。</p>
+      <div class="quote">拍到阳光透过这个树的一个逆光照片，那就会很绝……再给人补个面光，喷点水增加氛围</div>
+      <div class="relation">踩点时写下「人放哪、光从哪来、空气感怎么加」。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>指南针把光位换成时段</h3>
+      <p>树被打亮≈太阳在拍摄者前方。以南为 12 点估算：中午可拍树影斑驳。太阳从后打来是顺光，亮度均一、层次弱；作者主张逆光光感更强。</p>
+      <div class="quote">指向南方对应中午12点……逆光的光感是最强的，顺光拍的照片画面亮度是一样的</div>
+      <div class="relation">光位必须落到钟点，否则踩点无效。</div>
+    </div>
+    <div class="card card-red">
+      <h3>放弃也是有效结论</h3>
+      <p>第二点东北向，除约 7 点前有太阳外多被环境挡住。起床困难户选择放弃，避免白跑——踩点的产出可以是「不来这里拍」。</p>
+      <div class="quote">基本可以放弃这个点位了，这样就可以避免白跑一趟</div>
+      <div class="relation">效率来自剔除不可执行点位。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>87 秒踩点方法短片，不含完整测光参数或机位表。</li><li>指南针日晷法为经验简化，需结合季节与遮挡实地复核。</li><li>喷水增氛围为作者习惯，注意现场与安全约束。</li></ul><div class="pitfall">只找好看背景，不预判太阳方位与遮挡。</div><div class="pitfall">顺光硬拍，画面平、无层次却怪后期。</div><div class="pitfall">明知只有清晨有光仍不设闹钟，反复白跑。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>出片率 = 找景 + 预判光位</li><li>指南针把方向换成可执行时段</li><li>冲突作息的点位应主动放弃</li></ul><h3>行动清单</h3><ol><li>下次重要拍摄前先到现场，用手机拍点位并标注人/树/栏杆关系</li><li>用指南针记录方位，写下「预计可用时间窗」</li><li>优先验证逆光或侧逆光是否被建筑/树冠挡住</li><li>把「放弃该点」写进计划，避免当天临时空耗</li></ol><h3>关键认知转变</h3><p>以前：到了再找光、找不着就怪运气；现在：踩点时用指南针把成片预想绑到时段，绑不上就放弃。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 87秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

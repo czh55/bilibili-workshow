@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="懂太多的高糕手译制的一堂完整 Lightroom 风光后期课：把「平淡 RAW」重置后从头做起——先裁剪定构图，再基础校正与小 S 曲线；校准定底层色，HSL（尤其明度）做鲜活，色彩分级分冷暖；用少量蒙版塑光（径向引向海湾、线性压前景、圆形侧光模拟与蒙版堆叠），清理杂物，导出前过">
+<title>平淡的风光RAW，在 Lightroom 修出大片感｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>平淡的风光RAW，在 Lightroom 修出大片感</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">20分40秒</span><span class="meta-tag tag-topic">Lightroom 风光 RAW 蒙版 校准 HSL 色彩分级</span></div>
+<a class="source-link" href="https://xhslink.cn/o/2TXPgE0LcDp" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">先裁剪定构图，再谈精修</a><a href="#ch2">基础校正与简单小 S 曲线</a><a href="#ch3">先校准再 HSL：忍不住早清杂物</a><a href="#ch4">HSL 明度：加深蓝色、压绿提黄</a><a href="#ch5">色彩分级：阴影偏冷、高光偏暖</a><a href="#ch6">五蒙版塑层次：径向引向小海湾</a><a href="#ch7">侧光模拟、蒙版堆叠与画笔收边</a><a href="#ch8">再提对比，清理建筑与杂物</a><a href="#ch9">导出前检查，最重要是离开电脑</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>懂太多的高糕手译制的一堂完整 Lightroom 风光后期课：把「平淡 RAW」重置后从头做起——先裁剪定构图，再基础校正与小 S 曲线；校准定底层色，HSL（尤其明度）做鲜活，色彩分级分冷暖；用少量蒙版塑光（径向引向海湾、线性压前景、圆形侧光模拟与蒙版堆叠），清理杂物，导出前过降噪／镜头校正／暗角，并强调离开电脑再回看。秘诀不是「动几个滑块」，而是可复用的工作流与眼睛判断。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:30]</span><div><strong>裁剪优先</strong><p>重置成品；4:3＋自动拉直；O 键参考线；预设可作起点但本期从头。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:30→03:02]</span><div><strong>基础＋曲线</strong><p>自动／手调曝光；小 S 曲线；暗部轻抬；略降清晰度。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:02→05:20]</span><div><strong>校准先行</strong><p>早清杂物（AI 污点）；蓝／红原色校准后再进 HSL。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:20→07:00]</span><div><strong>HSL 明度</strong><p>降蓝饱和＋降蓝明度加深；黄提亮、绿压暗。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:00→08:45]</span><div><strong>色彩分级</strong><p>本片阴影偏冷补蓝；色调略冷、高光略暖。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:45→12:06]</span><div><strong>蒙版塑形</strong><p>五蒙版对比；径向引海湾；盯直方图防白色过曝。</p></div></div>
+<div class="summary-row"><span class="time-marker">[12:06→15:43]</span><div><strong>侧光堆叠</strong><p>圆形侧光模拟；锥形第二光源堆叠；画笔收边。</p></div></div>
+<div class="summary-row"><span class="time-marker">[15:43→18:00]</span><div><strong>清理</strong><p>再提对比／改裁剪；移除建筑船只柱子＝清理照片。</p></div></div>
+<div class="summary-row"><span class="time-marker">[18:00→20:40]</span><div><strong>导出与留白</strong><p>ISO100 可不降噪；暗角颗粒；离开电脑再看。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>大片感来自「构图→全局色调→局部塑光→清理→离开再看」的闭环；蒙版是为掌控光线与纵深，不是堆滑块。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:30</span>先裁剪定构图，再谈精修</h2><p>开场反驳「秘诀只是动几个滑块」：作者做后期约一年，本期毫无保留演示完整工作流。画面先出示已修好的竖幅山谷海湾风光，再重置，从零开始。</p><p>第一件事永远是裁剪：定构图后才知道蒙版该落在哪。选 4:3，点自动校正拉直；不知参考线时按 O 键切换辅助线。通常会再套自用预设（如夏日色彩流行）加速，但教程选择从头演示；预设包链接在描述里。00:26／00:47 可核。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-01.jpg" alt="Lightroom 中已修好的竖幅山谷海湾风光：前景虚化橙黄枝叶，中景湖湾与村屋，右侧基础面板可见；字幕「这就是我们今天要处理的照片」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:26] Lightroom 中已修好的竖幅山谷海湾风光：前景虚化橙黄枝叶，中景湖湾与村屋，右侧基础面板可见；字幕「这就是我们今天要处理的照片」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/91e333597f2a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Fixed vertical valley-bay landscape in Lightroom: soft orange foreground leaves, mid-ground bay and houses, Basic panel on the right; subtitle: &quot;This is the photo we&#x27;ll work on today&quot;</span></div>
+<audio class="cap-audio" src="audio/91e333597f2a.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/lr-landscape-raw-cinematic/shot-02.jpg" alt="裁剪工具激活，三分线网格覆盖画面；右侧 Crop 面板，字幕提示选 4:3 比例" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:47] 裁剪工具激活，三分线网格覆盖画面；右侧 Crop 面板，字幕提示选 4:3 比例</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/52592a19607f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Crop tool active with rule-of-thirds grid; Crop panel on the right, subtitle prompts choosing a 4:3 aspect ratio</span></div>
+<audio class="cap-audio" src="audio/52592a19607f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:30-03:02</span>基础校正与简单小 S 曲线</h2><p>从基础面板起步：可先乱拖几个滑块看感觉，或点自动校正曝光，同时看直方图——怎么开始并不重要，关键是修图时的状态与感觉。</p><p>再做简单小 S 曲线提对比；暗部可轻微抬升，让黑色不那么「死」。略降清晰度后，裁剪＋基础＋曲线告一段落。作者强调后期大半时间在来回微调，用眼睛判断好看，艺术主观。02:15 曲线帧对应。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-03.jpg" alt="色调曲线面板拉出简单小 S 曲线；字幕「我们去做一个简单的小S曲线」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:15] 色调曲线面板拉出简单小 S 曲线；字幕「我们去做一个简单的小S曲线」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1023ae44883b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tone Curve with a simple gentle S-curve; subtitle: &quot;Let&#x27;s add a simple little S-curve&quot;</span></div>
+<audio class="cap-audio" src="audio/1023ae44883b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:02-05:20</span>先校准再 HSL：忍不住早清杂物</h2><p>接下来两条路：先 HSL 调色相／饱和度／明度，或先蒙版塑光分离主体——取决于照片与感觉。本期选先色彩后蒙版。通常去污放最后，但画面杂物太刺眼，先用污点去除＋生成式 AI 涂抹清掉。</p><p>调色从校准开始：蓝原色色相约减 30、饱和度加 20，红原色色相加 7（夸张效果会回退）；绿饱和度试到约 25。校准改变 Lightroom 解读底层基调的方式，作者建议在 HSL 前做。黄／橙／蓝色相再小幅来回。04:08 字幕参数可核。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-04.jpg" alt="校准阶段口播参数：蓝原色色相减 30、饱和度加 20，红原色色相加 7；画面字幕已校正术语" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:08] 校准阶段口播参数：蓝原色色相减 30、饱和度加 20，红原色色相加 7；画面字幕已校正术语</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3f51ece5ef4c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Calibration spoken settings: Blue Primary Hue −30, Saturation +20, Red Primary Hue +7; on-screen subtitle terms corrected</span></div>
+<audio class="cap-audio" src="audio/3f51ece5ef4c.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:20-07:00</span>HSL 明度：加深蓝色、压绿提黄</h2><p>开关对比展示 HSL 前后差异。重点讲明度：很多人羡慕「颜色突出鲜活」，除时机光线蒙版外，明度贡献大量冲击力。</p><p>个人习惯少蓝：先降蓝饱和得舒服色，再降蓝明度——不是减蓝，是加深。黄提亮更明亮；绿不提亮反而压暗，避免全图亮闪闪；绿黄相近可同向压，绿更浓郁。整体再微调，橙色忌过火。05:12／05:55 为证据。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-05.jpg" alt="HSL 面板展开，演示开关对比；字幕「这是没动HSL的样子，这是启用HSL之后的样子」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:12] HSL 面板展开，演示开关对比；字幕「这是没动HSL的样子，这是启用HSL之后的样子」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/07d9c8ec6b0b.mp3" type="button" aria-label="Play English audio">🔊</button><span>HSL panel open with before/after toggle; subtitle: &quot;This is without HSL, and this is after enabling HSL&quot;</span></div>
+<audio class="cap-audio" src="audio/07d9c8ec6b0b.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/lr-landscape-raw-cinematic/shot-06.jpg" alt="HSL 饱和度／明度：蓝色饱和度大幅下调，光标落在蓝色通道；字幕谈不喜欢照片里太多蓝色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:55] HSL 饱和度／明度：蓝色饱和度大幅下调，光标落在蓝色通道；字幕谈不喜欢照片里太多蓝色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/24bb388e5b7a.mp3" type="button" aria-label="Play English audio">🔊</button><span>HSL Saturation/Luminance: Blue saturation pulled down hard, cursor on the Blue channel; subtitle about not wanting too much blue in the photo</span></div>
+<audio class="cap-audio" src="audio/24bb388e5b7a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">07:00-08:45</span>色彩分级：阴影偏冷、高光偏暖</h2><p>进色彩分级（阴影／中间调／高光）。怀旧复古常让阴影偏暖；本片因饱和度已减很多蓝，选择阴影偏冷、补回一点点蓝。色调约减到 -5，高光加暖约到 +41。</p><p>作者强调：色彩理论越透，越能在各分区「只是在加颜色」，进而形成个人风格。中段穿插点赞玩笑，并预告真正关键步是蒙版。07:42 冷阴影色轮可指认。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-07.jpg" alt="色彩分级 Shadows 色轮偏向青冷；字幕「但对于这张照片，我…」接阴影偏冷选择" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:42] 色彩分级 Shadows 色轮偏向青冷；字幕「但对于这张照片，我…」接阴影偏冷选择</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f957262e3e7e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Color Grading Shadows wheel tipped toward cool cyan; subtitle &quot;But for this photo, I…&quot; leading into cooler shadows</span></div>
+<audio class="cap-audio" src="audio/f957262e3e7e.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">08:45-12:06</span>五蒙版塑层次：径向引向小海湾</h2><p>全局色不错仍缺层次：开关约五个蒙版，前后差巨大。蒙版目的是塑光、掌控光线、增加纵深——像古典绘画大师塑造画面，而非莎士比亚口误。</p><p>本片没有其他作品那种强主体，是山谷整体景；目标把视线引到小海湾。用径向渐变（ASR「镜像」）放中部：提阴影、加白色，盯直方图三角防局部过曝，再调羽化与对比度。线性渐变压暗前景对立体感帮助巨大，常联用曝光与对比度。09:20／11:22 对应。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-08.jpg" alt="蒙版列表约五个，粉红叠加显示选区；局部曝光约 -2.30；字幕「你看，我总共只用了五个蒙版」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[09:20] 蒙版列表约五个，粉红叠加显示选区；局部曝光约 -2.30；字幕「你看，我总共只用了五个蒙版」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/96dd7e3c1ecd.mp3" type="button" aria-label="Play English audio">🔊</button><span>About five masks listed with pink overlay; local exposure around −2.30; subtitle: &quot;See, I only used five masks in total&quot;</span></div>
+<audio class="cap-audio" src="audio/96dd7e3c1ecd.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/lr-landscape-raw-cinematic/shot-09.jpg" alt="径向／渐变蒙版置于中景海湾一带：阴影拉高、白色略提，羽化可见；引导视线到小海湾" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[11:22] 径向／渐变蒙版置于中景海湾一带：阴影拉高、白色略提，羽化可见；引导视线到小海湾</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/477adb466f40.mp3" type="button" aria-label="Play English audio">🔊</button><span>Radial/gradient mask on the mid-ground bay: Shadows lifted, Whites nudged up, feathering visible; guiding the eye to the small bay</span></div>
+<audio class="cap-audio" src="audio/477adb466f40.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch7"><h2><span class="time-marker">12:06-15:43</span>侧光模拟、蒙版堆叠与画笔收边</h2><p>据建筑阴影判断阳光方向后做「侧光模拟」：圆形选区放在光源同侧角落，降清晰度＋降去朦胧；可选色温暖化模拟阳光，本片只需极轻。再做一个锥形第二光源叠在山谷／海湾，称蒙版堆叠——功能相近的蒙版叠加换更强控制。</p><p>录制中电池告急、窗外太阳变强导致邻居房过曝，临时加补光后「接着干」。画笔缩小预览看全边，O 键显示涂抹范围，轻微压暗边角与底部。12:15／13:20 为塑光帧。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-10.jpg" alt="线性渐变压暗前景边缘，增强立体感；Develop 基础与蒙版控件同框" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[12:15] 线性渐变压暗前景边缘，增强立体感；Develop 基础与蒙版控件同框</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/913db13856da.mp3" type="button" aria-label="Play English audio">🔊</button><span>Linear gradient darkens the foreground edge for more depth; Develop Basic and mask controls in the same frame</span></div>
+<audio class="cap-audio" src="audio/913db13856da.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/lr-landscape-raw-cinematic/shot-11.jpg" alt="圆形蒙版落在光源一侧角落，演示降清晰度与去朦胧的「侧光模拟」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[13:20] 圆形蒙版落在光源一侧角落，演示降清晰度与去朦胧的「侧光模拟」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6d75f8e8cf29.mp3" type="button" aria-label="Play English audio">🔊</button><span>Circular mask on the light-source corner, demonstrating Clarity down and Dehaze for a &quot;side-light&quot; simulation</span></div>
+<audio class="cap-audio" src="audio/6d75f8e8cf29.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch8"><h2><span class="time-marker">15:43-18:00</span>再提对比，清理建筑与杂物</h2><p>对照最终稿：颜色更好但仍缺对比——回曲线再拉。并发现裁剪可从 4:5 调到 3:4；觉得建筑不好看就用移除工具清掉，小船、柱子、电线杆同理。问自己「好看吗、有必要吗、对画面有贡献吗」，没有就移除，称「清理照片」。生成式 AI 可选，早年纯手动点除也能做。</p><p>导出前若认同这种思维方式，中段导流 Lightroom 大学课（含色彩理论模块）——属广告，正文只记「理解为什么调」的取向。16:30 移除工具帧。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-12.jpg" alt="移除工具清理分散注意力的建筑等；字幕「你只需点击『移除工具』」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[16:30] 移除工具清理分散注意力的建筑等；字幕「你只需点击『移除工具』」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a3cfa9673636.mp3" type="button" aria-label="Play English audio">🔊</button><span>Remove tool cleaning distracting buildings and the like; subtitle: &quot;Just click the Remove tool&quot;</span></div>
+<audio class="cap-audio" src="audio/a3cfa9673636.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch9"><h2><span class="time-marker">18:00-20:40</span>导出前检查，最重要是离开电脑</h2><p>最后几步顺序可自定：先问「要不要降噪」——本片 ISO100，按语境应是不需要（ASR 疑漏「不」）；镜头校正常习惯前置，但有时喜欢镜头畸变可不启。再扫颜色、加一点暗角与羽化、颗粒，整体再过对比度、降过绿过蓝、局部再降一点曝光。</p><p>编辑时最重要是离开电脑：沉浸易做出糟糕调整而不自知。站起五分钟喝水，或次日再看，才能发现蓝偏、Aqua 等问题。理解每个调整的效果只解决一半，另一半是如何运用；片尾预告立体感／深度续集。19:40 回看差异帧收束。</p><figure><img src="assets/lr-landscape-raw-cinematic/shot-13.jpg" alt="离开电脑后再回看的成片差异：杆子已移、色彩收敛；字幕「你可以看到一些不同」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[19:40] 离开电脑后再回看的成片差异：杆子已移、色彩收敛；字幕「你可以看到一些不同」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/71a9636250b9.mp3" type="button" aria-label="Play English audio">🔊</button><span>Final look after stepping away: poles removed, colors tightened; subtitle: &quot;You can see some differences&quot;</span></div>
+<audio class="cap-audio" src="audio/71a9636250b9.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（653段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>大家常问我,如何把平淡无奇的RAW文件变成这样漂亮的照片</p></div>
+<div class="transcript-row"><time>00:04</time><p>而秘诀只是在Lightroom里动几个滑块</p></div>
+<div class="transcript-row"><time>00:06</time><p>其实是这样</p></div>
+<div class="transcript-row"><time>00:07</time><p>我这样做后期已经快一年了</p></div>
+<div class="transcript-row"><time>00:09</time><p>而且我也在网上交了成千上万的摄影师很久了</p></div>
+<div class="transcript-row"><time>00:13</time><p>今天呢</p></div>
+<div class="transcript-row"><time>00:14</time><p>朋友</p></div>
+<div class="transcript-row"><time>00:15</time><p>我会把我从头到尾的完整后期工作流展示给你</p></div>
+<div class="transcript-row"><time>00:18</time><p>毫无保留</p></div>
+<div class="transcript-row"><time>00:18</time><p>包括我所有的小技巧</p></div>
+<div class="transcript-row"><time>00:20</time><p>我什么都不藏的</p></div>
+<div class="transcript-row"><time>00:21</time><p>椰子</p></div>
+<div class="transcript-row"><time>00:21</time><p>让我们直接进入Lightroom吧</p></div>
+<div class="transcript-row"><time>00:23</time><p>好的朋友</p></div>
+<div class="transcript-row"><time>00:24</time><p>那么这就是我们今天要处理的照片</p></div>
+<div class="transcript-row"><time>00:26</time><p>嗯</p></div>
+<div class="transcript-row"><time>00:26</time><p>它现在是已经处理好的状态</p></div>
+<div class="transcript-row"><time>00:28</time><p>不过我们可以重置它</p></div>
+<div class="transcript-row"><time>00:29</time><p>然后从零开始重新编辑</p></div>
+<div class="transcript-row"><time>00:31</time><p>所以我编辑照片时喜欢做的第一件事</p></div>
+<div class="transcript-row"><time>00:33</time><p>永远是先进行裁剪</p></div>
+<div class="transcript-row"><time>00:37</time><p>我这样做的原因是先完成裁剪</p></div>
+<div class="transcript-row"><time>00:39</time><p>确定构图</p></div>
+<div class="transcript-row"><time>00:41</time><p>这样我之后就知道该把萌版用在哪些位置了</p></div>
+<div class="transcript-row"><time>00:43</time><p>所以我喜欢先做这一步</p></div>
+<div class="transcript-row"><time>00:45</time><p>现在点击这里的裁剪工具</p></div>
+<div class="transcript-row"><time>00:47</time><p>我们可以选4比3的比例</p></div>
+<div class="transcript-row"><time>00:49</time><p>类似这样</p></div>
+<div class="transcript-row"><time>00:50</time><p>画面有点歪</p></div>
+<div class="transcript-row"><time>00:51</time><p>所以我们点一下自动校正</p></div>
+<div class="transcript-row"><time>00:53</time><p>它会稍微把画面拉直一点</p></div>
+<div class="transcript-row"><time>00:55</time><p>我觉得为了这个教程</p></div>
+<div class="transcript-row"><time>00:56</time><p>大概定在这个位置就可以了</p></div>
+<div class="transcript-row"><time>00:59</time><p>如果你不知道怎么调出这些不同的参考线的话</p></div>
+<div class="transcript-row"><time>01:02</time><p>只需要按一下键盘上的欧键</p></div>
+<div class="transcript-row"><time>01:04</time><p>你就会看到所有这些不同的辅助线来帮助构图</p></div>
+<div class="transcript-row"><time>01:07</time><p>现在这样看起来相当不错了</p></div>
+<div class="transcript-row"><time>01:08</time><p>接下来我通常会做的是到侧边栏子里</p></div>
+<div class="transcript-row"><time>01:11</time><p>选择一个我的预设</p></div>
+<div class="transcript-row"><time>01:13</time><p>有很多预设</p></div>
+<div class="transcript-row"><time>01:14</time><p>我觉得比如这个夏日色彩流行</p></div>
+<div class="transcript-row"><time>01:16</time><p>就是一个很好的起点</p></div>
+<div class="transcript-row"><time>01:17</time><p>然后我会在此基础上继续调整</p></div>
+<div class="transcript-row"><time>01:19</time><p>但是朋友</p></div>
+<div class="transcript-row"><time>01:20</time><p>我今天要给你从头开始演示</p></div>
+<div class="transcript-row"><time>01:22</time><p>另外如果你想获取我的一些预设包</p></div>
+<div class="transcript-row"><time>01:24</time><p>并让你的图像色调保持一致</p></div>
+<div class="transcript-row"><time>01:26</time><p>并极大的加快工作流程</p></div>
+<div class="transcript-row"><time>01:28</time><p>那你可以在下方的描述中找到链接</p></div>
+<div class="transcript-row"><time>01:30</time><p>好了</p></div>
+<div class="transcript-row"><time>01:30</time><p>各位朋友</p></div>
+<div class="transcript-row"><time>01:31</time><p>我们现在要从头开始</p></div>
+<div class="transcript-row"><time>01:32</time><p>为这张照片添加这些调整</p></div>
+<div class="transcript-row"><time>01:34</time><p>那么我现在习惯的做法是</p></div>
+<div class="transcript-row"><time>01:36</time><p>从基础面板的校正开始</p></div>
+<div class="transcript-row"><time>01:38</time><p>有时候你懂的</p></div>
+<div class="transcript-row"><time>01:39</time><p>我会先随便拖动几个划块</p></div>
+<div class="transcript-row"><time>01:42</time><p>看看感觉如何</p></div>
+<div class="transcript-row"><time>01:43</time><p>同时我也经常会参考质方图</p></div>
+<div class="transcript-row"><time>01:45</time><p>有时候我也喜欢先点一下自动按钮</p></div>
+<div class="transcript-row"><time>01:48</time><p>按照他认为正确的方式</p></div>
+<div class="transcript-row"><time>01:50</time><p>比如先校正一下曝光</p></div>
+<div class="transcript-row"><time>01:52</time><p>然后我再基于这个结果继续调整</p></div>
+<div class="transcript-row"><time>01:54</time><p>我觉得具体怎么开始</p></div>
+<div class="transcript-row"><time>01:55</time><p>其实并不重要</p></div>
+<div class="transcript-row"><time>01:56</time><p>我只是像这样稍微调整一下</p></div>
+<div class="transcript-row"><time>01:58</time><p>这一切都关乎感觉</p></div>
+<div class="transcript-row"><time>02:00</time><p>要知道</p></div>
+<div class="transcript-row"><time>02:00</time><p>你必须在修图时保持良好的感觉和状态</p></div>
+<div class="transcript-row"><time>02:03</time><p>这个自动调整的效果还不错</p></div>
+<div class="transcript-row"><time>02:05</time><p>我的意思是</p></div>
+<div class="transcript-row"><time>02:05</time><p>是的</p></div>
+<div class="transcript-row"><time>02:06</time><p>这是个相当不错的起点</p></div>
+<div class="transcript-row"><time>02:07</time><p>之后我们可以来调整一下色调曲线</p></div>
+<div class="transcript-row"><time>02:09</time><p>做个S型</p></div>
+<div class="transcript-row"><time>02:10</time><p>那么为了这次教程</p></div>
+<div class="transcript-row"><time>02:13</time><p>我们就做一个简单的小S曲线</p></div>
+<div class="transcript-row"><time>02:15</time><p>像这样调整</p></div>
+<div class="transcript-row"><time>02:16</time><p>甚至可以在暗部这里做一个轻微的抬身</p></div>
+<div class="transcript-row"><time>02:19</time><p>当黑色看起来不是那么纯粹的时候</p></div>
+<div class="transcript-row"><time>02:21</time><p>经常会这么做</p></div>
+<div class="transcript-row"><time>02:24</time><p>黑色部分</p></div>
+<div class="transcript-row"><time>02:25</time><p>但我觉得目前这是一个相当不错的起点</p></div>
+<div class="transcript-row"><time>02:27</time><p>到目前为止</p></div>
+<div class="transcript-row"><time>02:29</time><p>我们已经完成了裁剪</p></div>
+<div class="transcript-row"><time>02:30</time><p>也做了一些基础校正</p></div>
+<div class="transcript-row"><time>02:31</time><p>而且正如你在后期处理中看到的</p></div>
+<div class="transcript-row"><time>02:33</time><p>很大一部分工作就是来回调整</p></div>
+<div class="transcript-row"><time>02:35</time><p>真正的用你的眼睛去判断什么是好看的</p></div>
+<div class="transcript-row"><time>02:38</time><p>并相信你的直觉和本能</p></div>
+<div class="transcript-row"><time>02:41</time><p>当然</p></div>
+<div class="transcript-row"><time>02:42</time><p>你学习的色彩理论和摄影知识越多</p></div>
+<div class="transcript-row"><time>02:45</time><p>这个过程就会越顺利越轻松</p></div>
+<div class="transcript-row"><time>02:47</time><p>但是归根结底</p></div>
+<div class="transcript-row"><time>02:49</time><p>你觉得什么看起来好看</p></div>
+<div class="transcript-row"><time>02:50</time><p>要知道这是艺术</p></div>
+<div class="transcript-row"><time>02:52</time><p>而艺术是非常主观的</p></div>
+<div class="transcript-row"><time>02:53</time><p>你懂的</p></div>
+<div class="transcript-row"><time>02:54</time><p>不过在这里</p></div>
+<div class="transcript-row"><time>02:55</time><p>我们可以稍微降低一点清晰度</p></div>
+<div class="transcript-row"><time>02:57</time><p>调整幅度很小</p></div>
+<div class="transcript-row"><time>02:58</time><p>这样基础调整就完成了</p></div>
+<div class="transcript-row"><time>02:59</time><p>包括裁剪和一部分色调曲线</p></div>
+<div class="transcript-row"><time>03:02</time><p>接下来的部分</p></div>
+<div class="transcript-row"><time>03:03</time><p>我通常的做法是</p></div>
+<div class="transcript-row"><time>03:04</time><p>要么先进入HSL面板开始调整色彩</p></div>
+<div class="transcript-row"><time>03:08</time><p>把颜色调对色调饱和度和明度</p></div>
+<div class="transcript-row"><time>03:12</time><p>然后也会调整底部的校正面板</p></div>
+<div class="transcript-row"><time>03:15</time><p>但有时候我会先做蒙板</p></div>
+<div class="transcript-row"><time>03:17</time><p>这完全取决于具体的照片和当时的感觉</p></div>
+<div class="transcript-row"><time>03:21</time><p>先做蒙板</p></div>
+<div class="transcript-row"><time>03:21</time><p>然后设定光照</p></div>
+<div class="transcript-row"><time>03:22</time><p>一开始就把主体分离出来</p></div>
+<div class="transcript-row"><time>03:24</time><p>明确它的位置之后再处理色彩</p></div>
+<div class="transcript-row"><time>03:28</time><p>那么为了这个校正</p></div>
+<div class="transcript-row"><time>03:30</time><p>我们就先从色彩开始</p></div>
+<div class="transcript-row"><time>03:31</time><p>然后再进入蒙板部分</p></div>
+<div class="transcript-row"><time>03:33</time><p>但在开始之前</p></div>
+<div class="transcript-row"><time>03:35</time><p>这个东西让我有点介意</p></div>
+<div class="transcript-row"><time>03:37</time><p>我通常不会这么早去除杂物</p></div>
+<div class="transcript-row"><time>03:39</time><p>那是我最后几步才做的事</p></div>
+<div class="transcript-row"><time>03:41</time><p>但这个就是让我忍不住</p></div>
+<div class="transcript-row"><time>03:43</time><p>所以我们先点开污点去除工具</p></div>
+<div class="transcript-row"><time>03:46</time><p>这里用生成式AI功能</p></div>
+<div class="transcript-row"><time>03:48</time><p>像这样涂抹一下就能把它去掉</p></div>
+<div class="transcript-row"><time>03:50</time><p>好了</p></div>
+<div class="transcript-row"><time>03:53</time><p>现在看起来顺眼多了</p></div>
+<div class="transcript-row"><time>03:54</time><p>干净多了</p></div>
+<div class="transcript-row"><time>03:55</time><p>那么关于调色</p></div>
+<div class="transcript-row"><time>03:58</time><p>我们可以从</p></div>
+<div class="transcript-row"><time>03:59</time><p>我们实际上可以先从校准开始</p></div>
+<div class="transcript-row"><time>04:02</time><p>对于这张照片</p></div>
+<div class="transcript-row"><time>04:04</time><p>我想把蓝颜色摄像减30</p></div>
+<div class="transcript-row"><time>04:06</time><p>饱和度加20</p></div>
+<div class="transcript-row"><time>04:07</time><p>再把红颜色摄像加7</p></div>
+<div class="transcript-row"><time>04:10</time><p>嗯</p></div>
+<div class="transcript-row"><time>04:10</time><p>这个改动非常大</p></div>
+<div class="transcript-row"><time>04:11</time><p>我不会保留这么夸张的效果</p></div>
+<div class="transcript-row"><time>04:14</time><p>真的</p></div>
+<div class="transcript-row"><time>04:15</time><p>我们把绿颜色饱和度提到35</p></div>
+<div class="transcript-row"><time>04:17</time><p>实际上还是降到25</p></div>
+<div class="transcript-row"><time>04:21</time><p>我觉得这样就挺不错了</p></div>
+<div class="transcript-row"><time>04:22</time><p>那么校准工具改变的是Lightroom</p></div>
+<div class="transcript-row"><time>04:25</time><p>解读图像底层基调和基础色彩的方式</p></div>
+<div class="transcript-row"><time>04:28</time><p>会对它们进行整体偏移</p></div>
+<div class="transcript-row"><time>04:30</time><p>我觉得在开始调整HSL之前</p></div>
+<div class="transcript-row"><time>04:32</time><p>先做这一步挺好的</p></div>
+<div class="transcript-row"><time>04:34</time><p>我非常喜欢这个效果</p></div>
+<div class="transcript-row"><time>04:35</time><p>这是个相当不错的起点</p></div>
+<div class="transcript-row"><time>04:37</time><p>从这里开始</p></div>
+<div class="transcript-row"><time>04:38</time><p>现在我们来稍微调整一下色调</p></div>
+<div class="transcript-row"><time>04:40</time><p>我感觉黄色部分现在有点太黄了</p></div>
+<div class="transcript-row"><time>04:43</time><p>这张照片是夏天拍的</p></div>
+<div class="transcript-row"><time>04:45</time><p>所以我们可以把黄色再提起来一点点</p></div>
+<div class="transcript-row"><time>04:47</time><p>我们像这样把橙色稍微降一点</p></div>
+<div class="transcript-row"><time>04:50</time><p>蓝色也降一点</p></div>
+<div class="transcript-row"><time>04:51</time><p>你知道吗</p></div>
+<div class="transcript-row"><time>04:52</time><p>这个过程其实挺繁琐的</p></div>
+<div class="transcript-row"><time>04:54</time><p>需要大量来回调整</p></div>
+<div class="transcript-row"><time>04:55</time><p>全靠眼睛来判断</p></div>
+<div class="transcript-row"><time>04:56</time><p>不过我们加快进度</p></div>
+<div class="transcript-row"><time>04:58</time><p>稍后我再跟你解释</p></div>
+<div class="transcript-row"><time>04:59</time><p>我为什么做这些调整</p></div>
+<div class="transcript-row"><time>05:08</time><p>好了</p></div>
+<div class="transcript-row"><time>05:09</time><p>我们来看一下</p></div>
+<div class="transcript-row"><time>05:09</time><p>这就是调整后的效果</p></div>
+<div class="transcript-row"><time>05:11</time><p>这是没动HSL的样子</p></div>
+<div class="transcript-row"><time>05:13</time><p>这是启用HSL之后的样子</p></div>
+<div class="transcript-row"><time>05:14</time><p>现在算是一个相当不错的起点了</p></div>
+<div class="transcript-row"><time>05:16</time><p>之后我可能还会继续调整</p></div>
+<div class="transcript-row"><time>05:18</time><p>做更多改动</p></div>
+<div class="transcript-row"><time>05:20</time><p>现在我想重点强调一下明度划块</p></div>
+<div class="transcript-row"><time>05:26</time><p>如果你关注过一些摄影师</p></div>
+<div class="transcript-row"><time>05:27</time><p>看到他们照片的色彩会想</p></div>
+<div class="transcript-row"><time>05:29</time><p>哇</p></div>
+<div class="transcript-row"><time>05:29</time><p>他们是怎么让颜色这么突出</p></div>
+<div class="transcript-row"><time>05:32</time><p>这么鲜活的</p></div>
+<div class="transcript-row"><time>05:33</time><p>这其实是很多因素</p></div>
+<div class="transcript-row"><time>05:34</time><p>共同作用的结果</p></div>
+<div class="transcript-row"><time>05:35</time><p>当然</p></div>
+<div class="transcript-row"><time>05:36</time><p>包括拍摄时机</p></div>
+<div class="transcript-row"><time>05:37</time><p>光线</p></div>
+<div class="transcript-row"><time>05:37</time><p>蒙版技巧等等</p></div>
+<div class="transcript-row"><time>05:40</time><p>但明度也是你能为色彩增添大量冲击力</p></div>
+<div class="transcript-row"><time>05:44</time><p>这些超级鲜明色彩的地方</p></div>
+<div class="transcript-row"><time>05:49</time><p>比如通过降低蓝色的饱和度</p></div>
+<div class="transcript-row"><time>05:51</time><p>你会得到很舒服的颜色</p></div>
+<div class="transcript-row"><time>05:54</time><p>我个人通常不太喜欢照片里有太多蓝色</p></div>
+<div class="transcript-row"><time>05:59</time><p>但如果我再把蓝色的明度降低</p></div>
+<div class="transcript-row"><time>06:02</time><p>我不是在减少蓝色</p></div>
+<div class="transcript-row"><time>06:04</time><p>其实我是在加深颜色</p></div>
+<div class="transcript-row"><time>06:06</time><p>你能看出来</p></div>
+<div class="transcript-row"><time>06:08</time><p>我觉得这样的组合效果非常好</p></div>
+<div class="transcript-row"><time>06:10</time><p>还有我通常喜欢把黄色提亮</p></div>
+<div class="transcript-row"><time>06:13</time><p>这样能让黄色显得更明亮一些</p></div>
+<div class="transcript-row"><time>06:16</time><p>我们提高了黄色的亮度和明度</p></div>
+<div class="transcript-row"><time>06:19</time><p>相反</p></div>
+<div class="transcript-row"><time>06:20</time><p>对于绿色</p></div>
+<div class="transcript-row"><time>06:20</time><p>我不是提亮</p></div>
+<div class="transcript-row"><time>06:21</time><p>而是喜欢把它降暗</p></div>
+<div class="transcript-row"><time>06:22</time><p>这样就不会让所有颜色都变得亮闪闪</p></div>
+<div class="transcript-row"><time>06:24</time><p>绿色和黄色的色相很接近</p></div>
+<div class="transcript-row"><time>06:26</time><p>我喜欢把它们都调低一点</p></div>
+<div class="transcript-row"><time>06:29</time><p>这样一来</p></div>
+<div class="transcript-row"><time>06:30</time><p>绿色就会显得更浓郁一些</p></div>
+<div class="transcript-row"><time>06:33</time><p>饱满</p></div>
+<div class="transcript-row"><time>06:33</time><p>没错</p></div>
+<div class="transcript-row"><time>06:35</time><p>这样搭配起来就非常舒服</p></div>
+<div class="transcript-row"><time>06:37</time><p>所以这里可以稍微关注一下</p></div>
+<div class="transcript-row"><time>06:39</time><p>明度试着调一调</p></div>
+<div class="transcript-row"><time>06:40</time><p>然后你就能得到非常漂亮的颜色</p></div>
+<div class="transcript-row"><time>06:43</time><p>那么接下来</p></div>
+<div class="transcript-row"><time>06:44</time><p>我们再把整体颜色稍微提亮一点</p></div>
+<div class="transcript-row"><time>06:48</time><p>整体颜色</p></div>
+<div class="transcript-row"><time>06:49</time><p>我觉得这样看起来就挺好了</p></div>
+<div class="transcript-row"><time>06:52</time><p>橙色感觉有点过了</p></div>
+<div class="transcript-row"><time>06:54</time><p>橙色</p></div>
+<div class="transcript-row"><time>06:55</time><p>现在看起来已经相当不错了</p></div>
+<div class="transcript-row"><time>06:57</time><p>还不错</p></div>
+<div class="transcript-row"><time>06:59</time><p>现在在HSL调整之后</p></div>
+<div class="transcript-row"><time>07:00</time><p>我们要进行色彩分级</p></div>
+<div class="transcript-row"><time>07:02</time><p>到这一步</p></div>
+<div class="transcript-row"><time>07:02</time><p>颜色基本上</p></div>
+<div class="transcript-row"><time>07:04</time><p>我是说</p></div>
+<div class="transcript-row"><time>07:05</time><p>已经挺不错的了</p></div>
+<div class="transcript-row"><time>07:06</time><p>顺便提一下</p></div>
+<div class="transcript-row"><time>07:06</time><p>我制作了一个免费的33天邮件课程</p></div>
+<div class="transcript-row"><time>07:09</time><p>每天会发送一个简短的小技巧</p></div>
+<div class="transcript-row"><time>07:10</time><p>帮助你提升修图水平</p></div>
+<div class="transcript-row"><time>07:12</time><p>完全免费</p></div>
+<div class="transcript-row"><time>07:13</time><p>你可以在下方的描述中找到链接</p></div>
+<div class="transcript-row"><time>07:16</time><p>好了</p></div>
+<div class="transcript-row"><time>07:16</time><p>说回调色</p></div>
+<div class="transcript-row"><time>07:18</time><p>这里有阴影</p></div>
+<div class="transcript-row"><time>07:18</time><p>有中间调</p></div>
+<div class="transcript-row"><time>07:20</time><p>还有高光</p></div>
+<div class="transcript-row"><time>07:22</time><p>那么我们要做的是</p></div>
+<div class="transcript-row"><time>07:23</time><p>要么让阴影偏冷一点</p></div>
+<div class="transcript-row"><time>07:26</time><p>要么让阴影偏暖一点</p></div>
+<div class="transcript-row"><time>07:31</time><p>我常常觉得</p></div>
+<div class="transcript-row"><time>07:31</time><p>如果我想要营造一点怀旧的氛围</p></div>
+<div class="transcript-row"><time>07:35</time><p>那种偏暖一点的复古色调</p></div>
+<div class="transcript-row"><time>07:37</time><p>那么</p></div>
+<div class="transcript-row"><time>07:38</time><p>让阴影偏暖会非常有效</p></div>
+<div class="transcript-row"><time>07:40</time><p>但对于这张照片</p></div>
+<div class="transcript-row"><time>07:42</time><p>我觉得让阴影偏冷一点也不错</p></div>
+<div class="transcript-row"><time>07:44</time><p>毕竟我们刚刚</p></div>
+<div class="transcript-row"><time>07:46</time><p>在饱和度里降低了很多蓝色</p></div>
+<div class="transcript-row"><time>07:50</time><p>我想我们可以稍微添加一点点</p></div>
+<div class="transcript-row"><time>07:53</time><p>就一点点蓝色回来</p></div>
+<div class="transcript-row"><time>07:54</time><p>我觉得这样就挺好了</p></div>
+<div class="transcript-row"><time>07:57</time><p>大概像这样</p></div>
+<div class="transcript-row"><time>07:58</time><p>关键在于</p></div>
+<div class="transcript-row"><time>07:59</time><p>你对色彩理论理解的越透彻</p></div>
+<div class="transcript-row"><time>08:02</time><p>你的色彩分析能力就越强</p></div>
+<div class="transcript-row"><time>08:05</time><p>因为你实际上在做的是</p></div>
+<div class="transcript-row"><time>08:07</time><p>你其实只是在阴影部分添加颜色</p></div>
+<div class="transcript-row"><time>08:10</time><p>中间调和高光也是</p></div>
+<div class="transcript-row"><time>08:12</time><p>朋友</p></div>
+<div class="transcript-row"><time>08:12</time><p>如果你能掌握色彩分析</p></div>
+<div class="transcript-row"><time>08:14</time><p>你才能真正达到出</p></div>
+<div class="transcript-row"><time>08:15</time><p>属于自己的独特风格和视觉效果</p></div>
+<div class="transcript-row"><time>08:17</time><p>尽情发挥创意</p></div>
+<div class="transcript-row"><time>08:19</time><p>那么现在我其实想把这里的色调</p></div>
+<div class="transcript-row"><time>08:22</time><p>稍微调冷一点</p></div>
+<div class="transcript-row"><time>08:24</time><p>就一点点</p></div>
+<div class="transcript-row"><time>08:25</time><p>大概减到负5左右</p></div>
+<div class="transcript-row"><time>08:28</time><p>然后对于高光区域</p></div>
+<div class="transcript-row"><time>08:30</time><p>会给它加一点点暖色</p></div>
+<div class="transcript-row"><time>08:34</time><p>没错</p></div>
+<div class="transcript-row"><time>08:34</time><p>我打算把高光调到正41</p></div>
+<div class="transcript-row"><time>08:38</time><p>再微调一下</p></div>
+<div class="transcript-row"><time>08:38</time><p>差不多</p></div>
+<div class="transcript-row"><time>08:39</time><p>这样</p></div>
+<div class="transcript-row"><time>08:40</time><p>现在看这个朋友</p></div>
+<div class="transcript-row"><time>08:42</time><p>已经开始有点样子了</p></div>
+<div class="transcript-row"><time>08:44</time><p>相当不错</p></div>
+<div class="transcript-row"><time>08:45</time><p>而接下来的这一步</p></div>
+<div class="transcript-row"><time>08:46</time><p>可以说是整个后期处理中</p></div>
+<div class="transcript-row"><time>08:47</time><p>至关重要的一步</p></div>
+<div class="transcript-row"><time>08:49</time><p>朋友</p></div>
+<div class="transcript-row"><time>08:50</time><p>这一步你可千万别忽视</p></div>
+<div class="transcript-row"><time>08:52</time><p>那就是狠狠的按下点赞按钮</p></div>
+<div class="transcript-row"><time>08:54</time><p>这个玩笑其实是萌版</p></div>
+<div class="transcript-row"><time>08:56</time><p>好的</p></div>
+<div class="transcript-row"><time>08:56</time><p>这是经过编辑的照片</p></div>
+<div class="transcript-row"><time>08:58</time><p>你可以看到它目前还缺乏层次感</p></div>
+<div class="transcript-row"><time>09:02</time><p>单看这里没问题</p></div>
+<div class="transcript-row"><time>09:04</time><p>颜色也挺不错的</p></div>
+<div class="transcript-row"><time>09:06</time><p>但把这两张图对比一下</p></div>
+<div class="transcript-row"><time>09:08</time><p>这张图的层次感就丰富太多了</p></div>
+<div class="transcript-row"><time>09:10</time><p>为什么会这样呢</p></div>
+<div class="transcript-row"><time>09:12</time><p>因为我在这里用了几个萌版</p></div>
+<div class="transcript-row"><time>09:15</time><p>在这张照片里</p></div>
+<div class="transcript-row"><time>09:16</time><p>萌版用的比较简单</p></div>
+<div class="transcript-row"><time>09:18</time><p>看我总共只用了5个萌版</p></div>
+<div class="transcript-row"><time>09:20</time><p>这是关闭他们的效果</p></div>
+<div class="transcript-row"><time>09:22</time><p>这是开启他们的效果</p></div>
+<div class="transcript-row"><time>09:23</time><p>你就能直观地看到这带来的</p></div>
+<div class="transcript-row"><time>09:26</time><p>令人惊叹的变化</p></div>
+<div class="transcript-row"><time>09:28</time><p>有时候处理一些照片</p></div>
+<div class="transcript-row"><time>09:30</time><p>我会用到大量的萌版</p></div>
+<div class="transcript-row"><time>09:32</time><p>而我使用萌版的目的</p></div>
+<div class="transcript-row"><time>09:33</time><p>就是为了给照片增添重生感</p></div>
+<div class="transcript-row"><time>09:36</time><p>去掌控光线</p></div>
+<div class="transcript-row"><time>09:37</time><p>去塑造它</p></div>
+<div class="transcript-row"><time>09:39</time><p>我想像一位你知道的</p></div>
+<div class="transcript-row"><time>09:42</time><p>像莎士比亚那样去塑造照片</p></div>
+<div class="transcript-row"><time>09:44</time><p>不不是莎士比亚</p></div>
+<div class="transcript-row"><time>09:45</time><p>像是达芬奇</p></div>
+<div class="transcript-row"><time>09:46</time><p>就像一位已故的古典绘画大师</p></div>
+<div class="transcript-row"><time>09:49</time><p>正在创作传世杰作那样</p></div>
+<div class="transcript-row"><time>09:52</time><p>可以看到这是应用萌版之前</p></div>
+<div class="transcript-row"><time>09:54</time><p>这是应用萌版之后</p></div>
+<div class="transcript-row"><time>09:55</time><p>大家可以看到</p></div>
+<div class="transcript-row"><time>09:56</time><p>我刚刚只是画面这部分</p></div>
+<div class="transcript-row"><time>09:58</time><p>显得比较平</p></div>
+<div class="transcript-row"><time>09:59</time><p>画面的层次感一下子就出来了</p></div>
+<div class="transcript-row"><time>10:01</time><p>这一张是如此美丽</p></div>
+<div class="transcript-row"><time>10:03</time><p>而这一张则平淡无奇</p></div>
+<div class="transcript-row"><time>10:06</time><p>把这张拿给你喜欢的人看</p></div>
+<div class="transcript-row"><time>10:08</time><p>说不定能成功</p></div>
+<div class="transcript-row"><time>10:08</time><p>要到联系方式</p></div>
+<div class="transcript-row"><time>10:09</time><p>对吧</p></div>
+<div class="transcript-row"><time>10:10</time><p>当然这可能只是我一厢情愿</p></div>
+<div class="transcript-row"><time>10:12</time><p>但右边这种效果</p></div>
+<div class="transcript-row"><time>10:14</time><p>正是我们要努力实现的</p></div>
+<div class="transcript-row"><time>10:15</time><p>而左边是我们目前的样子</p></div>
+<div class="transcript-row"><time>10:17</time><p>我觉得现在颜色已经好一些了</p></div>
+<div class="transcript-row"><time>10:19</time><p>但再说一次修图的时候</p></div>
+<div class="transcript-row"><time>10:21</time><p>经常需要反复的来回调整</p></div>
+<div class="transcript-row"><time>10:23</time><p>虽然我现在是为了做教程</p></div>
+<div class="transcript-row"><time>10:24</time><p>在即兴演示</p></div>
+<div class="transcript-row"><time>10:26</time><p>但我平时真的会花很多时间</p></div>
+<div class="transcript-row"><time>10:29</time><p>在这上面</p></div>
+<div class="transcript-row"><time>10:29</time><p>所以这里我可能会把橙色</p></div>
+<div class="transcript-row"><time>10:31</time><p>调的再偏红一点</p></div>
+<div class="transcript-row"><time>10:32</time><p>我觉得这个效果挺酷的</p></div>
+<div class="transcript-row"><time>10:34</time><p>看然后或许还会提升高光等参数</p></div>
+<div class="transcript-row"><time>10:37</time><p>但我们接下来要做一些萌版调整</p></div>
+<div class="transcript-row"><time>10:39</time><p>那么第一步</p></div>
+<div class="transcript-row"><time>10:40</time><p>我们可以创建一个镜像渐变</p></div>
+<div class="transcript-row"><time>10:41</time><p>并设置较大的语话值</p></div>
+<div class="transcript-row"><time>10:43</time><p>如果你听懂了语话值这个说法</p></div>
+<div class="transcript-row"><time>10:45</time><p>我这可是会加印象分导</p></div>
+<div class="transcript-row"><time>10:47</time><p>我们把它放在画面中间</p></div>
+<div class="transcript-row"><time>10:50</time><p>那么这张照片的主体是什么呢</p></div>
+<div class="transcript-row"><time>10:52</time><p>我认为它没有一个非常明确的</p></div>
+<div class="transcript-row"><time>10:55</time><p>像我其他一些照片里那样</p></div>
+<div class="transcript-row"><time>10:57</time><p>突出的主体</p></div>
+<div class="transcript-row"><time>10:57</time><p>比如这张</p></div>
+<div class="transcript-row"><time>10:59</time><p>主体明确主体明确主体明确</p></div>
+<div class="transcript-row"><time>11:04</time><p>主体非常明确</p></div>
+<div class="transcript-row"><time>11:06</time><p>而这一张更多是在展示</p></div>
+<div class="transcript-row"><time>11:08</time><p>或者说呈现这片山谷的整体景色</p></div>
+<div class="transcript-row"><time>11:11</time><p>明白吧</p></div>
+<div class="transcript-row"><time>11:12</time><p>我想要做的是将观众的视线引导至</p></div>
+<div class="transcript-row"><time>11:15</time><p>这个小小的海湾</p></div>
+<div class="transcript-row"><time>11:17</time><p>这里用海湾这个词更准确些</p></div>
+<div class="transcript-row"><time>11:19</time><p>所以我会像这样添加一个镜像滤镜</p></div>
+<div class="transcript-row"><time>11:22</time><p>然后我会适当提亮阴影</p></div>
+<div class="transcript-row"><time>11:23</time><p>并稍微增加白色色阶</p></div>
+<div class="transcript-row"><time>11:25</time><p>注意当你提升白色色阶时</p></div>
+<div class="transcript-row"><time>11:28</time><p>很容易让局部高光过曝</p></div>
+<div class="transcript-row"><time>11:30</time><p>所以要随时留意直方图</p></div>
+<div class="transcript-row"><time>11:32</time><p>当你看到这个小三角警示标志亮起时</p></div>
+<div class="transcript-row"><time>11:35</time><p>是在告诉你你的高光部分过曝了</p></div>
+<div class="transcript-row"><time>11:38</time><p>你调过头了</p></div>
+<div class="transcript-row"><time>11:39</time><p>他们太白了</p></div>
+<div class="transcript-row"><time>11:41</time><p>所以你就观察一下</p></div>
+<div class="transcript-row"><time>11:42</time><p>我可以把参数提到多高</p></div>
+<div class="transcript-row"><time>11:44</time><p>它才会开始过曝</p></div>
+<div class="transcript-row"><time>11:45</time><p>然后再微调一下曝光</p></div>
+<div class="transcript-row"><time>11:47</time><p>效果不错</p></div>
+<div class="transcript-row"><time>11:48</time><p>现在雨画</p></div>
+<div class="transcript-row"><time>11:49</time><p>我们可以对它进行雨画处理</p></div>
+<div class="transcript-row"><time>11:52</time><p>雨画值不一定非要设的这么高</p></div>
+<div class="transcript-row"><time>11:53</time><p>我们可以调到类似这样</p></div>
+<div class="transcript-row"><time>11:55</time><p>我觉得这样就挺好</p></div>
+<div class="transcript-row"><time>11:57</time><p>现在我还想做的就是把</p></div>
+<div class="transcript-row"><time>11:59</time><p>比度稍微拉高一点点</p></div>
+<div class="transcript-row"><time>12:01</time><p>好</p></div>
+<div class="transcript-row"><time>12:01</time><p>让这里的画面整体恢复一点冲击力</p></div>
+<div class="transcript-row"><time>12:04</time><p>这效果相当不错</p></div>
+<div class="transcript-row"><time>12:06</time><p>接下来我要做的是</p></div>
+<div class="transcript-row"><time>12:09</time><p>使用一个线性渐变工具</p></div>
+<div class="transcript-row"><time>12:10</time><p>来压按前景</p></div>
+<div class="transcript-row"><time>12:12</time><p>这对增强立体感帮助巨大</p></div>
+<div class="transcript-row"><time>12:16</time><p>我们可以把它稍微降下来一点</p></div>
+<div class="transcript-row"><time>12:18</time><p>有点刚才可能调的有点过了</p></div>
+<div class="transcript-row"><time>12:20</time><p>我可以放大看看</p></div>
+<div class="transcript-row"><time>12:21</time><p>放大到多少合适呢</p></div>
+<div class="transcript-row"><time>12:23</time><p>33%怎么样</p></div>
+<div class="transcript-row"><time>12:24</time><p>对33%</p></div>
+<div class="transcript-row"><time>12:26</time><p>不错</p></div>
+<div class="transcript-row"><time>12:27</time><p>大概像这样</p></div>
+<div class="transcript-row"><time>12:28</time><p>现在我们可以再点一下适合</p></div>
+<div class="transcript-row"><time>12:30</time><p>然后继续调低</p></div>
+<div class="transcript-row"><time>12:31</time><p>而且通常当我压按边角</p></div>
+<div class="transcript-row"><time>12:34</time><p>边缘或前景</p></div>
+<div class="transcript-row"><time>12:35</time><p>有时也包括天空时</p></div>
+<div class="transcript-row"><time>12:37</time><p>经常会结合使用曝光度</p></div>
+<div class="transcript-row"><time>12:39</time><p>还有这里的对比度划块</p></div>
+<div class="transcript-row"><time>12:42</time><p>这样效果也很好</p></div>
+<div class="transcript-row"><time>12:43</time><p>好</p></div>
+<div class="transcript-row"><time>12:43</time><p>我们再压按</p></div>
+<div class="transcript-row"><time>12:44</time><p>那么接下来我们要去塑造光线</p></div>
+<div class="transcript-row"><time>12:47</time><p>光线是从这个方向过来的</p></div>
+<div class="transcript-row"><time>12:49</time><p>对吧</p></div>
+<div class="transcript-row"><time>12:49</time><p>看这里太阳大概在这个位置</p></div>
+<div class="transcript-row"><time>12:51</time><p>你可以看到光线是如何从这一侧照射过来的</p></div>
+<div class="transcript-row"><time>12:54</time><p>你可以看到</p></div>
+<div class="transcript-row"><time>12:54</time><p>那个那边的建筑物阴影是在这一侧</p></div>
+<div class="transcript-row"><time>12:59</time><p>所以我要做的是去强化这个光源的效果</p></div>
+<div class="transcript-row"><time>13:04</time><p>我称这个小技巧为测光模拟</p></div>
+<div class="transcript-row"><time>13:06</time><p>说实在的</p></div>
+<div class="transcript-row"><time>13:07</time><p>一下子也想不到更贴切的词了</p></div>
+<div class="transcript-row"><time>13:09</time><p>但现在看起来是这样的</p></div>
+<div class="transcript-row"><time>13:10</time><p>你只需要创建一个圆形选区</p></div>
+<div class="transcript-row"><time>13:12</time><p>我把它拖到这里</p></div>
+<div class="transcript-row"><time>13:14</time><p>你可以看到这个圆形区域</p></div>
+<div class="transcript-row"><time>13:16</time><p>然后按一下H键</p></div>
+<div class="transcript-row"><time>13:17</time><p>你就能看到它</p></div>
+<div class="transcript-row"><time>13:18</time><p>这样我们就能一直看到这个圆形</p></div>
+<div class="transcript-row"><time>13:20</time><p>接下来我所做的只是降低清晰度</p></div>
+<div class="transcript-row"><time>13:24</time><p>同时降低去朦胧</p></div>
+<div class="transcript-row"><time>13:25</time><p>看到了吗</p></div>
+<div class="transcript-row"><time>13:26</time><p>如果我稍微夸张一点来展示它的实际效果</p></div>
+<div class="transcript-row"><time>13:30</time><p>你可以看到这就是光源的位置</p></div>
+<div class="transcript-row"><time>13:32</time><p>我把它放在和实际光线来源相同的角落</p></div>
+<div class="transcript-row"><time>13:38</time><p>同时你也可以试着调整一下色温</p></div>
+<div class="transcript-row"><time>13:41</time><p>如果你想让它显得更暖</p></div>
+<div class="transcript-row"><time>13:43</time><p>想模拟阳光的感觉</p></div>
+<div class="transcript-row"><time>13:44</time><p>那就可以在这里调整色温</p></div>
+<div class="transcript-row"><time>13:47</time><p>把它向黄色或橙色方向调</p></div>
+<div class="transcript-row"><time>13:49</time><p>这样就能塑造出光源的效果</p></div>
+<div class="transcript-row"><time>13:51</time><p>现在好像有点卡顿</p></div>
+<div class="transcript-row"><time>13:53</time><p>对吧</p></div>
+<div class="transcript-row"><time>13:53</time><p>现在好了</p></div>
+<div class="transcript-row"><time>13:54</time><p>但是我们就这样把它调回来</p></div>
+<div class="transcript-row"><time>13:57</time><p>我们甚至不需要让它偏暖</p></div>
+<div class="transcript-row"><time>13:59</time><p>我们只需要非常轻微的调整一下</p></div>
+<div class="transcript-row"><time>14:02</time><p>像这样一点就好</p></div>
+<div class="transcript-row"><time>14:04</time><p>然后我实际上要再创建一个</p></div>
+<div class="transcript-row"><time>14:06</time><p>这个我会把它做成锥形</p></div>
+<div class="transcript-row"><time>14:08</time><p>创建另一个光源</p></div>
+<div class="transcript-row"><time>14:09</time><p>基本上我现在做的是将两个功能类似的</p></div>
+<div class="transcript-row"><time>14:12</time><p>不同蒙板结合起来</p></div>
+<div class="transcript-row"><time>14:15</time><p>但我会把它们叠加在一起</p></div>
+<div class="transcript-row"><time>14:16</time><p>以获得更强的控制力</p></div>
+<div class="transcript-row"><time>14:19</time><p>我称之为蒙板堆叠</p></div>
+<div class="transcript-row"><time>14:21</time><p>这是个非常简单的概念</p></div>
+<div class="transcript-row"><time>14:23</time><p>看这个蒙板实现的是我刚刚展示的效果</p></div>
+<div class="transcript-row"><time>14:26</time><p>就是这一个</p></div>
+<div class="transcript-row"><time>14:28</time><p>然后这一个的功能很相似</p></div>
+<div class="transcript-row"><time>14:30</time><p>但我现在是把光线打进山谷或者说海湾里</p></div>
+<div class="transcript-row"><time>14:34</time><p>所以现在看起来是这样</p></div>
+<div class="transcript-row"><time>14:37</time><p>可以看到这个效果就是这样</p></div>
+<div class="transcript-row"><time>14:38</time><p>我把光线这样投射下来</p></div>
+<div class="transcript-row"><time>14:41</time><p>你们会看到我经常这么做</p></div>
+<div class="transcript-row"><time>14:43</time><p>好吧</p></div>
+<div class="transcript-row"><time>14:44</time><p>抱歉我的电池没电了</p></div>
+<div class="transcript-row"><time>14:46</time><p>另外你们能看到光线有点变化了</p></div>
+<div class="transcript-row"><time>14:49</time><p>因为太阳出来了</p></div>
+<div class="transcript-row"><time>14:50</time><p>之前我用的只是自然光</p></div>
+<div class="transcript-row"><time>14:52</time><p>我觉得效果还不错</p></div>
+<div class="transcript-row"><time>14:53</time><p>但太阳一出来</p></div>
+<div class="transcript-row"><time>14:54</time><p>光线直射在我邻居的房屋上</p></div>
+<div class="transcript-row"><time>14:56</time><p>就显得那片区域看起来就过曝</p></div>
+<div class="transcript-row"><time>14:59</time><p>太亮了</p></div>
+<div class="transcript-row"><time>14:59</time><p>所以我加了点补光设备</p></div>
+<div class="transcript-row"><time>15:01</time><p>做好布置在这里</p></div>
+<div class="transcript-row"><time>15:03</time><p>好了</p></div>
+<div class="transcript-row"><time>15:03</time><p>我们就像冰岛人常说的接着干吧</p></div>
+<div class="transcript-row"><time>15:05</time><p>继续我们的调整</p></div>
+<div class="transcript-row"><time>15:07</time><p>接下来我要用的是画笔工具</p></div>
+<div class="transcript-row"><time>15:09</time><p>这里与其让照片适配窗口</p></div>
+<div class="transcript-row"><time>15:11</time><p>使用画笔工具时</p></div>
+<div class="transcript-row"><time>15:12</time><p>喜欢把照片稍微缩小一点</p></div>
+<div class="transcript-row"><time>15:14</time><p>试图这样我就能看到所有的边缘</p></div>
+<div class="transcript-row"><time>15:16</time><p>现在我要在这里降低一些清晰度</p></div>
+<div class="transcript-row"><time>15:19</time><p>我只是在边缘涂抹</p></div>
+<div class="transcript-row"><time>15:21</time><p>我们可以按欧键</p></div>
+<div class="transcript-row"><time>15:23</time><p>这样你就能看到我的操作范围</p></div>
+<div class="transcript-row"><time>15:24</time><p>就像这样</p></div>
+<div class="transcript-row"><time>15:25</time><p>还有这里上面也稍微来一点</p></div>
+<div class="transcript-row"><time>15:27</time><p>这里也轻轻刷一下</p></div>
+<div class="transcript-row"><time>15:29</time><p>这么做基本上是为了实现一种效果</p></div>
+<div class="transcript-row"><time>15:32</time><p>当然现在这个数值显然太高了</p></div>
+<div class="transcript-row"><time>15:35</time><p>但我只是稍微收拢一下</p></div>
+<div class="transcript-row"><time>15:37</time><p>压按边角以及最底部的位置</p></div>
+<div class="transcript-row"><time>15:39</time><p>就轻微的调整搞定</p></div>
+<div class="transcript-row"><time>15:41</time><p>我觉得这样就差不多了</p></div>
+<div class="transcript-row"><time>15:43</time><p>现在你可以看到我最终的编辑效果</p></div>
+<div class="transcript-row"><time>15:45</time><p>眼尖的朋友会发现</p></div>
+<div class="transcript-row"><time>15:46</time><p>这和之前有些不同</p></div>
+<div class="transcript-row"><time>15:49</time><p>你看这里</p></div>
+<div class="transcript-row"><time>15:50</time><p>他做了什么</p></div>
+<div class="transcript-row"><time>15:51</time><p>你发现了吗</p></div>
+<div class="transcript-row"><time>15:52</time><p>首先这里的颜色看起来更好了一些</p></div>
+<div class="transcript-row"><time>15:54</time><p>我对他们又做了一些调整</p></div>
+<div class="transcript-row"><time>15:56</time><p>他现在对比度更高了</p></div>
+<div class="transcript-row"><time>15:58</time><p>所以我想指出的问题是</p></div>
+<div class="transcript-row"><time>15:59</time><p>这张照片还缺乏大量对比度</p></div>
+<div class="transcript-row"><time>16:01</time><p>所以我会再提升一下对比度</p></div>
+<div class="transcript-row"><time>16:03</time><p>我可能会进入色调曲线面板</p></div>
+<div class="transcript-row"><time>16:05</time><p>我们会像这样调整一下色调曲线</p></div>
+<div class="transcript-row"><time>16:09</time><p>大概是这样的感觉</p></div>
+<div class="transcript-row"><time>16:11</time><p>但你看出来这里还有什么问题吗</p></div>
+<div class="transcript-row"><time>16:13</time><p>当然了</p></div>
+<div class="transcript-row"><time>16:13</time><p>裁剪</p></div>
+<div class="transcript-row"><time>16:14</time><p>这是一张4比5比例裁剪后的图</p></div>
+<div class="transcript-row"><time>16:15</time><p>现在用3比4的裁剪比例</p></div>
+<div class="transcript-row"><time>16:17</time><p>再看我正在移除这里的这几栋建筑</p></div>
+<div class="transcript-row"><time>16:21</time><p>你看我只是觉得这里所有的建筑</p></div>
+<div class="transcript-row"><time>16:23</time><p>我觉得他们看起来不太好看</p></div>
+<div class="transcript-row"><time>16:25</time><p>所以我就干脆把它们去掉了</p></div>
+<div class="transcript-row"><time>16:27</time><p>具体操作方法是</p></div>
+<div class="transcript-row"><time>16:29</time><p>你只需点击移除工具</p></div>
+<div class="transcript-row"><time>16:31</time><p>虽然你可以启用生成式AI功能</p></div>
+<div class="transcript-row"><time>16:33</time><p>但其实没必要</p></div>
+<div class="transcript-row"><time>16:35</time><p>然后你基本上只需在这里点击</p></div>
+<div class="transcript-row"><time>16:37</time><p>就能移除任何你认为分散注意力的东西</p></div>
+<div class="transcript-row"><time>16:41</time><p>我觉得这边的这艘小船有点碍眼</p></div>
+<div class="transcript-row"><time>16:44</time><p>我觉得连这个小柱子也去掉了</p></div>
+<div class="transcript-row"><time>16:46</time><p>基本上你可以放大画面</p></div>
+<div class="transcript-row"><time>16:48</time><p>然后去想</p></div>
+<div class="transcript-row"><time>16:49</time><p>这个东西看起来好看吗</p></div>
+<div class="transcript-row"><time>16:50</time><p>它有必要存在吗</p></div>
+<div class="transcript-row"><time>16:51</time><p>比如这些房子</p></div>
+<div class="transcript-row"><time>16:52</time><p>他们对画面有什么贡献吗</p></div>
+<div class="transcript-row"><time>16:53</time><p>如果没有</p></div>
+<div class="transcript-row"><time>16:54</time><p>那就移除</p></div>
+<div class="transcript-row"><time>16:55</time><p>我称之为清理照片</p></div>
+<div class="transcript-row"><time>16:56</time><p>我想我已经把这些电线杆清理掉了</p></div>
+<div class="transcript-row"><time>16:58</time><p>我甚至觉得这边我也做了很多清理工作</p></div>
+<div class="transcript-row"><time>17:02</time><p>这还是在生成式AI功能出现之前做的</p></div>
+<div class="transcript-row"><time>17:04</time><p>所以可以说这些都是手动完成的</p></div>
+<div class="transcript-row"><time>17:06</time><p>不过操作上你只需要点击移除</p></div>
+<div class="transcript-row"><time>17:09</time><p>那么在最终导出之前</p></div>
+<div class="transcript-row"><time>17:10</time><p>我认为还有几个关键步骤是我们必须做的</p></div>
+<div class="transcript-row"><time>17:14</time><p>如果我们想将照片编辑水平提升一个层次</p></div>
+<div class="transcript-row"><time>17:17</time><p>真正创作出令自己骄傲的作品的话</p></div>
+<div class="transcript-row"><time>17:20</time><p>是的</p></div>
+<div class="transcript-row"><time>17:21</time><p>如果你喜欢这种关于照片编辑的思维方式</p></div>
+<div class="transcript-row"><time>17:23</time><p>那我强烈推荐你去看我的整个Lightroom大学课</p></div>
+<div class="transcript-row"><time>17:27</time><p>这基本上将我过去一年修图所学的一切</p></div>
+<div class="transcript-row"><time>17:29</time><p>都浓缩成了一套简单</p></div>
+<div class="transcript-row"><time>17:31</time><p>易于跟随循序渐进的教学课程</p></div>
+<div class="transcript-row"><time>17:34</time><p>我的目标不仅仅是教你如何拖动滑块</p></div>
+<div class="transcript-row"><time>17:37</time><p>要让你理解为什么要这么做</p></div>
+<div class="transcript-row"><time>17:39</time><p>以及在处理的当下</p></div>
+<div class="transcript-row"><time>17:40</time><p>做出某些决定的背后原因</p></div>
+<div class="transcript-row"><time>17:42</time><p>已有超过700名摄影师学完了这门课</p></div>
+<div class="transcript-row"><time>17:44</time><p>我们收到的反馈简直好到爆</p></div>
+<div class="transcript-row"><time>17:46</time><p>有一个完整模块是专门为摄影师讲解色彩理论的</p></div>
+<div class="transcript-row"><time>17:50</time><p>这也是目前我能带给各位最棒的后期处理工具</p></div>
+<div class="transcript-row"><time>17:55</time><p>如果你们感兴趣</p></div>
+<div class="transcript-row"><time>17:56</time><p>可以在下方的描述中找到更多信息</p></div>
+<div class="transcript-row"><time>17:59</time><p>好了</p></div>
+<div class="transcript-row"><time>17:59</time><p>还有最后几件我喜欢做的是</p></div>
+<div class="transcript-row"><time>18:01</time><p>这几步非常重要</p></div>
+<div class="transcript-row"><time>18:03</time><p>那就是我需要给照片降噪吗</p></div>
+<div class="transcript-row"><time>18:05</time><p>这一步你可以按任何喜欢的顺序来做</p></div>
+<div class="transcript-row"><time>18:08</time><p>这张照片我挺满意的</p></div>
+<div class="transcript-row"><time>18:10</time><p>我是用ISO100拍摄的</p></div>
+<div class="transcript-row"><time>18:11</time><p>需要降噪</p></div>
+<div class="transcript-row"><time>18:12</time><p>然后我们进行镜头校正</p></div>
+<div class="transcript-row"><time>18:14</time><p>这一步我通常会在所有调整之前做</p></div>
+<div class="transcript-row"><time>18:17</time><p>我刚才把它忘了</p></div>
+<div class="transcript-row"><time>18:18</time><p>但有时我确实喜欢镜头产生的畸变</p></div>
+<div class="transcript-row"><time>18:21</time><p>你知道的那种效果</p></div>
+<div class="transcript-row"><time>18:22</time><p>所以我并不总是启用镜头校正</p></div>
+<div class="transcript-row"><time>18:24</time><p>但这次它校正的挺不错的</p></div>
+<div class="transcript-row"><time>18:27</time><p>然后我再过一遍颜色</p></div>
+<div class="transcript-row"><time>18:28</time><p>再检查一次</p></div>
+<div class="transcript-row"><time>18:29</time><p>我觉得我们可以别动绿色</p></div>
+<div class="transcript-row"><time>18:31</time><p>所以这个改动其实不太好</p></div>
+<div class="transcript-row"><time>18:33</time><p>我们可以把这个稍微调低一点点</p></div>
+<div class="transcript-row"><time>18:36</time><p>这样感觉不错</p></div>
+<div class="transcript-row"><time>18:37</time><p>我们可以加暗角</p></div>
+<div class="transcript-row"><time>18:38</time><p>我们可以加一点点暗角</p></div>
+<div class="transcript-row"><time>18:42</time><p>调整高光</p></div>
+<div class="transcript-row"><time>18:42</time><p>我觉得现在效果都不错</p></div>
+<div class="transcript-row"><time>18:44</time><p>调整一下羽化</p></div>
+<div class="transcript-row"><time>18:44</time><p>然后是颗粒感</p></div>
+<div class="transcript-row"><time>18:46</time><p>然后现在我喜欢做的是</p></div>
+<div class="transcript-row"><time>18:47</time><p>把所有调整再过一遍</p></div>
+<div class="transcript-row"><time>18:49</time><p>只是看看</p></div>
+<div class="transcript-row"><time>18:51</time><p>我们还能做点什么</p></div>
+<div class="transcript-row"><time>18:52</time><p>让它更好一点</p></div>
+<div class="transcript-row"><time>18:54</time><p>我喜欢再提升一下对比度</p></div>
+<div class="transcript-row"><time>18:56</time><p>我觉得绿色有点太绿了</p></div>
+<div class="transcript-row"><time>18:58</time><p>所以我打算把绿色的饱和度</p></div>
+<div class="transcript-row"><time>19:00</time><p>稍微降低一点</p></div>
+<div class="transcript-row"><time>19:01</time><p>就像这样</p></div>
+<div class="transcript-row"><time>19:02</time><p>所以我觉得我们也可以把这里的蓝色</p></div>
+<div class="transcript-row"><time>19:04</time><p>再稍微调低一点</p></div>
+<div class="transcript-row"><time>19:06</time><p>把绿色也降一点</p></div>
+<div class="transcript-row"><time>19:07</time><p>是的</p></div>
+<div class="transcript-row"><time>19:08</time><p>我觉得这很不错了</p></div>
+<div class="transcript-row"><time>19:09</time><p>看看这个</p></div>
+<div class="transcript-row"><time>19:10</time><p>我是说这效果真是太棒了</p></div>
+<div class="transcript-row"><time>19:12</time><p>我可能会再</p></div>
+<div class="transcript-row"><time>19:13</time><p>我觉得我们还可以把这里的</p></div>
+<div class="transcript-row"><time>19:14</time><p>曝光再降低一点点</p></div>
+<div class="transcript-row"><time>19:18</time><p>还有这里的曝光也再降一点点</p></div>
+<div class="transcript-row"><time>19:21</time><p>另外在编辑照片时</p></div>
+<div class="transcript-row"><time>19:23</time><p>最重要的一点就是离开</p></div>
+<div class="transcript-row"><time>19:27</time><p>你的电脑</p></div>
+<div class="transcript-row"><time>19:27</time><p>因为你很容易沉浸在各种调整</p></div>
+<div class="transcript-row"><time>19:29</time><p>决策中而迷失</p></div>
+<div class="transcript-row"><time>19:32</time><p>有时你做出了很糟糕的调整</p></div>
+<div class="transcript-row"><time>19:34</time><p>自己却意识不到</p></div>
+<div class="transcript-row"><time>19:37</time><p>比如说这张照片</p></div>
+<div class="transcript-row"><time>19:39</time><p>你可以看到一些不同</p></div>
+<div class="transcript-row"><time>19:41</time><p>我移走了这里的这根杆子</p></div>
+<div class="transcript-row"><time>19:43</time><p>整体的颜色也更好看了一些</p></div>
+<div class="transcript-row"><time>19:47</time><p>像之前那样有点过于鲜艳了</p></div>
+<div class="transcript-row"><time>19:48</time><p>当然</p></div>
+<div class="transcript-row"><time>19:50</time><p>我还想做一些额外的调整</p></div>
+<div class="transcript-row"><time>19:52</time><p>但如果我一直坐着</p></div>
+<div class="transcript-row"><time>19:53</time><p>可能就发现不了</p></div>
+<div class="transcript-row"><time>19:54</time><p>所以站起来</p></div>
+<div class="transcript-row"><time>19:55</time><p>离开一下再回来</p></div>
+<div class="transcript-row"><time>19:56</time><p>可能只需要五分钟去喝杯水</p></div>
+<div class="transcript-row"><time>19:59</time><p>或者干脆等到第二天</p></div>
+<div class="transcript-row"><time>20:00</time><p>这会让你获得全新的视角</p></div>
+<div class="transcript-row"><time>20:02</time><p>然后你就能发现</p></div>
+<div class="transcript-row"><time>20:03</time><p>好吧</p></div>
+<div class="transcript-row"><time>20:04</time><p>这个蓝色有点太偏太轻了</p></div>
+<div class="transcript-row"><time>20:07</time><p>我们在这里调整它</p></div>
+<div class="transcript-row"><time>20:09</time><p>还有水绿色Aqua</p></div>
+<div class="transcript-row"><time>20:10</time><p>我们也可以调整一下</p></div>
+<div class="transcript-row"><time>20:12</time><p>稍微调一点</p></div>
+<div class="transcript-row"><time>20:12</time><p>关键是第一步</p></div>
+<div class="transcript-row"><time>20:13</time><p>要理解你做的每个调整</p></div>
+<div class="transcript-row"><time>20:15</time><p>会产生什么效果</p></div>
+<div class="transcript-row"><time>20:16</time><p>这是第一步</p></div>
+<div class="transcript-row"><time>20:17</time><p>但是知道为什么某个调整有效</p></div>
+<div class="transcript-row"><time>20:19</time><p>这其实只解决了一半的问题</p></div>
+<div class="transcript-row"><time>20:21</time><p>问题的另一半</p></div>
+<div class="transcript-row"><time>20:22</time><p>我的朋友在于知道如何运用它</p></div>
+<div class="transcript-row"><time>20:24</time><p>而在Lightroom中</p></div>
+<div class="transcript-row"><time>20:25</time><p>有一种我们在这个视频里</p></div>
+<div class="transcript-row"><time>20:27</time><p>稍微涉及到的技巧</p></div>
+<div class="transcript-row"><time>20:29</time><p>它能帮你为照片创造出</p></div>
+<div class="transcript-row"><time>20:30</time><p>惊人的三维立体感与深度</p></div>
+<div class="transcript-row"><time>20:32</time><p>我说的就是那种让人一看就惊呼</p></div>
+<div class="transcript-row"><time>20:35</time><p>哇</p></div>
+<div class="transcript-row"><time>20:35</time><p>这是怎么做到的</p></div>
+<div class="transcript-row"><time>20:36</time><p>如果你想学习如何做到这一点</p></div>
+<div class="transcript-row"><time>20:38</time><p>那么接下来请看这个视频</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

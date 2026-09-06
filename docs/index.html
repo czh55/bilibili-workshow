@@ -376,6 +376,10 @@
       background: rgba(52,211,153,.16);
       color: #6ee7b7;
     }
+    .card-platform-pill.personal {
+      background: rgba(251,191,36,.18);
+      color: #fcd34d;
+    }
     .tag-blue   { background: var(--tag-blue);   color: #60a5fa; }
     .tag-purple { background: var(--tag-purple); color: #a78bfa; }
     .tag-green  { background: var(--tag-green);  color: #34d399; }
@@ -924,6 +928,7 @@
 
       const CATEGORIES = [
         { key: null, label: '全部', match: [] },
+        { key: '个人专栏', label: '个人专栏', match: ['个人专栏'] },
         { key: '摄影', label: '摄影', match: ['摄影', '摄影技巧', '拍摄技巧', '人像拍照', '灯光', '器材', '旅拍', '构图', '光圈', '快门', 'ISO', '运镜', '相机', '摄影教程', '拍摄教程', '布光', '产品拍摄', '静物摄影', '摄影教学', '手机摄影', '相机上手', '摄影背包', '户外摄影', '相机对比', '街拍', '摄影教材', '拍照姿势'] },
         { key: '视频制作', label: '视频制作', match: ['视频制作', '后期', '剪辑干货', '视频剪辑', 'vlog', 'Vlog', 'vlog教程', '电影感', '剪辑', '剪辑后期', '剪映', '短视频', '分镜头', '拍摄思维', 'AI剪辑', 'Remotion', '剪辑教程', '转场', '运动相机', '延时摄影', '收音教程', '声道选择', '后期导出', '视频清晰度', '旅行视频', '短视频带货'] },
         { key: '化妆', label: '化妆', match: ['化妆', '眉毛', '脸型分析', '五官分析', '侧脸面型', '变美', '美商', '面部分析', '三庭比例', '脸型', '面部中轴线', '审美自检', '五官结构', '面部设计', '立体度', '颜值'] },
@@ -1536,8 +1541,8 @@
             var svgFile = outputs.svg || (/\.svg$/i.test(legacyFilename) ? legacyFilename : '');
 
             var platform = item.platform || ((item.url || '').indexOf('xhslink') >= 0 || (item.url || '').indexOf('xiaohongshu') >= 0 ? 'xiaohongshu' : 'bilibili');
-            var platformLabel = platform === 'xiaohongshu' ? '小红书' : (platform === 'local' ? '本地' : 'B站');
-            var platformPillClass = platform === 'xiaohongshu' ? ' xhs' : (platform === 'local' ? ' local' : '');
+            var platformLabel = platform === 'xiaohongshu' ? '小红书' : (platform === 'local' ? '本地' : (platform === 'personal' ? '个人专栏' : 'B站'));
+            var platformPillClass = platform === 'xiaohongshu' ? ' xhs' : (platform === 'local' ? ' local' : (platform === 'personal' ? ' personal' : ''));
             var platformHtml = '<div class="card-platform"><span class="card-platform-pill' + platformPillClass + '">' + platformLabel + '</span></div>';
 
             let tagsHtml = '';
@@ -1566,7 +1571,7 @@
             if (!isError && svgFile) {
               actions.push('<a class="card-action card-action-svg" href="' + escapeHtml(svgFile) + '" target="_blank" rel="noopener">🧭 理性分析</a>');
             }
-            if (item.url && platform !== 'local') {
+            if (item.url && platform !== 'local' && platform !== 'personal') {
               actions.push('<a class="card-action card-action-source" href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener noreferrer">📎 原视频</a>');
             }
             var actionsHtml = actions.length

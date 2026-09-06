@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="秋秋造梦姐用对照卡在约 50 秒内扫过一组可写入提示词的「高级质感」参数：空气透视、光比、柔光／高光扩散、黑位、粗糙度与各向异性。meta 标题为空，内容以画面标签与口播为准——每一组都给「无／弱／强」或档位差异，方便直接抄进 prompt。">
+<title>50秒认识AI画面高级质感参数提示词｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>50秒认识AI画面高级质感参数提示词</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">46秒</span><span class="meta-tag tag-topic">AI绘画 提示词 空气透视 光比 柔光 黑位 粗糙度 电影感</span></div>
+<a class="source-link" href="https://xhslink.cn/o/6MEgD4a4TIJ" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">空气透视三档：扁平 → 真实 → 史诗</a><a href="#ch2">光比：2:1 / 4:1 / 8:1</a><a href="#ch3">柔光／高光扩散：锐利数字感 vs 电影晕光</a><a href="#ch4">黑位三档 + 粗糙度 + 各向异性</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>秋秋造梦姐用对照卡在约 50 秒内扫过一组可写入提示词的「高级质感」参数：空气透视、光比、柔光／高光扩散、黑位、粗糙度与各向异性。meta 标题为空，内容以画面标签与口播为准——每一组都给「无／弱／强」或档位差异，方便直接抄进 prompt。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:10]</span><div><strong>空气透视</strong><p>无：远近一样清晰显扁平；自然：越远对比度越低更真实；强：远景层次丰富、史诗电影感。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:10→00:20]</span><div><strong>光比</strong><p>2:1 阴影柔、画面干净；4:1 层次自然、电影常见；8:1 反差强、戏剧与压迫感升。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:20→00:29]</span><div><strong>柔光扩散</strong><p>无：锐利偏数字摄影；强高光扩散：更柔、更电影；轻度：保留细节又更高级。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:29→00:46]</span><div><strong>黑位与材质</strong><p>压黑／标准／抬升黑位对应力量、真实、胶片灰；高／低粗糙度＝磨砂／镜面；各向异性＝拉丝金属高光。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>这组参数的用法是「对照选档」：先定空间（空气透视）、光比与扩散，再定黑位与微表面。把画面标签原词写进提示词，比空喊「更电影感」更可控。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:10</span>空气透视三档：扁平 → 真实 → 史诗</h2><p>开场沙漠骑马远景卡：无空气透视时远近几乎一样清晰，画面易扁平。自然空气透视让距离越远对比度越低（ASR「位比度」按语境校正），空间更真实。强空气透视则远景层次更丰富，更有史诗电影感。</p><p>00:02 黄字标题「空气透视」+「[无空气透视]」标签，是后续各组「有无对照」的同一版式。</p><figure><img src="assets/ai-texture-params-50s/shot-01.jpg" alt="黑底竖屏教学卡：黄字标题「空气透视」，中央沙漠骑马远景标注「[无空气透视]」，底文「远近几乎一样清晰」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:02] 黑底竖屏教学卡：黄字标题「空气透视」，中央沙漠骑马远景标注「[无空气透视]」，底文「远近几乎一样清晰」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7cd3e87382b2.mp3" type="button" aria-label="Play English audio">🔊</button><span>Vertical teaching card on black: yellow title “Atmospheric perspective”; desert rider labeled “[No atmospheric perspective]”; bottom text “Near and far look equally sharp”</span></div>
+<audio class="cap-audio" src="audio/7cd3e87382b2.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:10-00:20</span>光比：2:1 / 4:1 / 8:1</h2><p>同一石廊人像用光比分档：2:1 低光比阴影更柔、画面更干净；4:1 中等光比层次自然，口播称是电影里最常见的光比；8:1 高光比明暗反差更强，戏剧感与压迫感明显提升。</p><p>00:14 上下对照直接标出「[2:1低光比]」与「[4:1中等光比]」，方便截图进素材库。</p><figure><img src="assets/ai-texture-params-50s/shot-02.jpg" alt="黄字标题「光比」；上下对照同一石廊人像：上为「[2:1低光比]」、下为「[4:1中等光比]」；底文强调「这是4:1中等光比」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:14] 黄字标题「光比」；上下对照同一石廊人像：上为「[2:1低光比]」、下为「[4:1中等光比]」；底文强调「这是4:1中等光比」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6c96c5122459.mp3" type="button" aria-label="Play English audio">🔊</button><span>Yellow title “Lighting ratio”; same stone-corridor portrait stacked: top “[2:1 low ratio]”, bottom “[4:1 medium ratio]”; bottom text stresses “This is a 4:1 medium ratio”</span></div>
+<audio class="cap-audio" src="audio/6c96c5122459.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:20-00:29</span>柔光／高光扩散：锐利数字感 vs 电影晕光</h2><p>夜景超跑对照：无柔光扩散时画面锐利、偏数字摄影感；强高光扩散（画面原词）让灯光更柔、更有电影氛围；轻度柔光扩散则在保留细节的同时让画面更高级。</p><p>00:25 标题「柔光扩散」下，「[无柔光扩散]」与「[强高光扩散]」并置，bloom 差异一目了然。</p><figure><img src="assets/ai-texture-params-50s/shot-03.jpg" alt="黄字标题「柔光扩散」；夜景银超跑上下对照：「[无柔光扩散]」锐利 vs「[强高光扩散]」高光晕开；底文「更有电影氛围」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:25] 黄字标题「柔光扩散」；夜景银超跑上下对照：「[无柔光扩散]」锐利 vs「[强高光扩散]」高光晕开；底文「更有电影氛围」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/882e4796719e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Yellow title “Soft-light bloom”; night silver supercar stacked: “[No soft bloom]” crisp vs “[Strong highlight bloom]” glowing; bottom “More cinematic atmosphere”</span></div>
+<audio class="cap-audio" src="audio/882e4796719e.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">00:29-00:46</span>黑位三档 + 粗糙度 + 各向异性</h2><p>黑位：压黑使暗部更深、更有力量感；标准黑位层次自然、最接近真实摄影；抬升黑位暗部偏灰、更有复古胶片质感。材质微表面：高粗糙度像磨砂、反射柔和；低粗糙度像镜面、反射锐利。</p><p>收尾各向异性（ASR「各项异性」）：高光沿纹理拉伸，呈现高级拉丝金属质感。00:42 腕表高／低粗糙度对照是本组最清晰的微表面证据。</p><figure><img src="assets/ai-texture-params-50s/shot-04.jpg" alt="黄字标题「材质微表面」；腕表上下对照「[高粗糙度]」磨砂柔反射 vs「[低粗糙度]」镜面锐反射；底文「反射更加锐利」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:42] 黄字标题「材质微表面」；腕表上下对照「[高粗糙度]」磨砂柔反射 vs「[低粗糙度]」镜面锐反射；底文「反射更加锐利」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5f5ccd7fa899.mp3" type="button" aria-label="Play English audio">🔊</button><span>Yellow title “Material micro-surface”; watch stacked: “[High roughness]” soft matte reflections vs “[Low roughness]” sharp mirror ones; bottom “Reflections get sharper”</span></div>
+<audio class="cap-audio" src="audio/5f5ccd7fa899.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（35段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>这是无空气透视</p></div>
+<div class="transcript-row"><time>00:01</time><p>远近几乎一样清晰</p></div>
+<div class="transcript-row"><time>00:02</time><p>画面容易显得扁平</p></div>
+<div class="transcript-row"><time>00:03</time><p>这是自然空气透视</p></div>
+<div class="transcript-row"><time>00:04</time><p>距离越远 位比度越低</p></div>
+<div class="transcript-row"><time>00:05</time><p>空间更加真实</p></div>
+<div class="transcript-row"><time>00:06</time><p>这是强空气透视</p></div>
+<div class="transcript-row"><time>00:08</time><p>远景层次更丰富</p></div>
+<div class="transcript-row"><time>00:09</time><p>画面更有史诗电影感</p></div>
+<div class="transcript-row"><time>00:10</time><p>这是2比1低光比</p></div>
+<div class="transcript-row"><time>00:11</time><p>阴影更柔和 画面更加干净</p></div>
+<div class="transcript-row"><time>00:13</time><p>这是4比1中等光比</p></div>
+<div class="transcript-row"><time>00:14</time><p>层次自然 也是电影里最常见的光比</p></div>
+<div class="transcript-row"><time>00:16</time><p>这是8比1高光比</p></div>
+<div class="transcript-row"><time>00:17</time><p>明暗反差更强</p></div>
+<div class="transcript-row"><time>00:18</time><p>戏剧感和压迫感都会明显提升</p></div>
+<div class="transcript-row"><time>00:20</time><p>这是无柔光扩散</p></div>
+<div class="transcript-row"><time>00:21</time><p>画面锐利 更有数字摄影感</p></div>
+<div class="transcript-row"><time>00:22</time><p>这是强高光扩散</p></div>
+<div class="transcript-row"><time>00:24</time><p>灯光更柔和 更有电影氛围</p></div>
+<div class="transcript-row"><time>00:25</time><p>这是轻度柔光扩散</p></div>
+<div class="transcript-row"><time>00:26</time><p>保留细节的同时 让画面更高级</p></div>
+<div class="transcript-row"><time>00:28</time><p>这是压黑黑位</p></div>
+<div class="transcript-row"><time>00:29</time><p>暗部更深 画面更有力量感</p></div>
+<div class="transcript-row"><time>00:31</time><p>这是标准黑位</p></div>
+<div class="transcript-row"><time>00:32</time><p>层次自然 最接近真实摄影</p></div>
+<div class="transcript-row"><time>00:34</time><p>这是抬升黑位</p></div>
+<div class="transcript-row"><time>00:35</time><p>暗部偏灰 更有复古胶片质感</p></div>
+<div class="transcript-row"><time>00:36</time><p>这是高粗糙度</p></div>
+<div class="transcript-row"><time>00:37</time><p>基础更像磨砂 反射更加柔和</p></div>
+<div class="transcript-row"><time>00:39</time><p>这是低粗糙度</p></div>
+<div class="transcript-row"><time>00:40</time><p>基础更像镜面 反射更加锐利</p></div>
+<div class="transcript-row"><time>00:42</time><p>这是各项异性</p></div>
+<div class="transcript-row"><time>00:43</time><p>高光会沿着纹理拉伸</p></div>
+<div class="transcript-row"><time>00:44</time><p>呈现高级拉丝金属质感</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

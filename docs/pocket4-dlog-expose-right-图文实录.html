@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="李宇辰针对「Pocket 4／4P 的 D-Log 看起来普通」给出机内解法：曝光菜单选 Auto，把 EV 调到 +0.7，等于向右曝光一点；后期再稍稍压暗，高光白云保留、暗部更干净通透。他用如影 4D 文档里中灰约 41.2% 类比索尼 S-Log3，说明这条曲线本就该向右曝">
+<title>Pocket 4 的 D-Log 也需要向右曝光吗？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>Pocket 4 的 D-Log 也需要向右曝光吗？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">B站</span><span class="meta-tag tag-duration">248秒</span><span class="meta-tag tag-topic">Pocket4 D-Log 向右曝光 EV+0.7 李宇辰 大疆</span></div>
+<a class="source-link" href="https://b23.tv/6fG6mEk" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">机内一步：曝光 Auto，EV 拉到 +0.7</a><a href="#ch2">+0.7 拉回更通透，默认更脏</a><a href="#ch3">为什么大疆 D-Log 也要向右曝</a><a href="#ch4">实战直方与 0.7 甜蜜点</a><a href="#ch5">4P 或可更右；主观边界与 LUT 预告</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>李宇辰针对「Pocket 4／4P 的 D-Log 看起来普通」给出机内解法：曝光菜单选 Auto，把 EV 调到 +0.7，等于向右曝光一点；后期再稍稍压暗，高光白云保留、暗部更干净通透。他用如影 4D 文档里中灰约 41.2% 类比索尼 S-Log3，说明这条曲线本就该向右曝；实战直方居中健康，默认则偏左欠曝拉脏。0.7 是他在小底上的甜蜜点（不敢跟到 S-Log3 的 1.7），并声明主观；4P 因高光余量更大或可再往右，但他没机器需自行测。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:46]</span><div><strong>设置</strong><p>Auto＋EV+0.7：D-Log 向右曝一点，素材更亮。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:46→01:18]</span><div><strong>对比</strong><p>+0.7 拉回通透；默认暗部噪点显脏。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:18→02:18]</span><div><strong>理论</strong><p>中灰≈41.2% 近 S-Log3，应向右曝再回拉净暗部。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:18→03:23]</span><div><strong>验证</strong><p>直方居中健康；0.7 甜蜜点，勿过到 1.7。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:23→04:08]</span><div><strong>边界</strong><p>4P 或可更右；主观结论＋LUT 预告。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>Pocket 4 拍 D-Log：先试 EV+0.7 向右曝光，后期压回；小底别照搬 S-Log3 的 1.7，高光拉不回来就白干。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:46</span>机内一步：曝光 Auto，EV 拉到 +0.7</h2><p>开场点题：Pocket 4／4P 画面普通、货不对版，往往是参数没调对。李宇辰的做法是把曝光补偿加到 +0.7，让 D-Log「向右曝光一点」，画面更通透干净。</p><p>操作：右侧滑出菜单→曝光→Auto，左侧 EV 选 +0.7。00:32 触屏特写是可指认证据；这样拍比默认更亮，后期再稍稍压暗就能得到均衡效果。</p><figure><img src="assets/pocket4-dlog-expose-right/shot-01.jpg" alt="手持 Pocket 4 触屏：曝光菜单选 Auto，手指点左侧 EV 到 +0.7；字幕「左边的这个EV值我们选择到+0.7」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:32] 手持 Pocket 4 触屏：曝光菜单选 Auto，手指点左侧 EV 到 +0.7；字幕「左边的这个EV值我们选择到+0.7」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/645c1ce642f0.mp3" type="button" aria-label="Play English audio">🔊</button><span>Handheld Pocket 4 touchscreen: Exposure menu → Auto, tap left EV to +0.7; subtitle “Set this left EV value to +0.7”</span></div>
+<audio class="cap-audio" src="audio/645c1ce642f0.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:46-01:18</span>+0.7 拉回更通透，默认更脏</h2><p>先看过曝 0.7 档再拉回的结果：天空白云高光细节还在，暗部相对干净，整体有空气感。00:50 外景角标「+0.7 EV」对应「后期拉回的画面效果」。</p><p>默认值因暗部噪点显得更脏——这可能就是你的 Pocket 4 和别人、和官方样片差一截的原因。</p><figure><img src="assets/pocket4-dlog-expose-right/shot-02.jpg" alt="运河旁草地住宅外景，角标「+0.7 EV」；字幕「后期拉回的画面效果」——过曝拍摄后压暗的通透结果" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] 运河旁草地住宅外景，角标「+0.7 EV」；字幕「后期拉回的画面效果」——过曝拍摄后压暗的通透结果</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2939c302a8c4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Canal-side grass and houses, corner badge “+0.7 EV”; subtitle “Look after pulling it back in post” — overexpose then darken for clarity</span></div>
+<audio class="cap-audio" src="audio/2939c302a8c4.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:18-02:18</span>为什么大疆 D-Log 也要向右曝</h2><p>作者称未找到 Pocket 4 专用白皮书，但如影 4D 文档写明 D-Log 把中灰曝光设在约 41.2%，与索尼描述 S-Log3 的 18% 灰约 41% 很接近，曲线重合度高。</p><p>摄影圈都知道 S-Log3 要向右曝光；据此拼出结论——大疆这条 D-Log 也应向右一点，再用后期回拉让暗部更纯净。01:35 文档画面可核。</p><figure><img src="assets/pocket4-dlog-expose-right/shot-03.jpg" alt="如影 4D／D-Log 白皮书类文档画面，讲解中灰曝光约 41.2% 与索尼 S-Log3 相似" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:35] 如影 4D／D-Log 白皮书类文档画面，讲解中灰曝光约 41.2% 与索尼 S-Log3 相似</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fa006c6f9c66.mp3" type="button" aria-label="Play English audio">🔊</button><span>Ronin 4D / D-Log white-paper-style doc: mid-gray exposure ≈41.2%, similar to Sony S-Log3</span></div>
+<audio class="cap-audio" src="audio/fa006c6f9c66.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:18-03:23</span>实战直方与 0.7 甜蜜点</h2><p>美式探店、暗光 Vlog、台风天等场景带 +0.7 自动过曝：直方大致居中「健康」；官方默认则稍靠左＝欠曝，Log 欠曝一拉就脏、颜色不对。</p><p>为何不是 S-Log3 那档 1.7？小底过曝太多高光可能拉不回，他主观觉得 0.7 更稳，并强调按环境自测。02:35 直方对比是证据。</p><figure><img src="assets/pocket4-dlog-expose-right/shot-04.jpg" alt="实拍场景叠直方图：向右曝光后直方居中偏健康，对比默认偏左欠曝" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:35] 实拍场景叠直方图：向右曝光后直方居中偏健康，对比默认偏左欠曝</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5b4efe5947f4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Live scene with histogram overlay: expose to the right — histogram centers healthier vs default left underexposure</span></div>
+<audio class="cap-audio" src="audio/5b4efe5947f4.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">03:23-04:08</span>4P 或可更右；主观边界与 LUT 预告</h2><p>补充：4P 的 D-Log2 用 Lofic，高光据说多约三档，动态优化偏高光，理解上可以向右再多一点——但作者没这台机器，只能观众自测。</p><p>收束重申全是个人主观看法；并预告一系列生活化 D-Log 还原 LUT。03:30 附近对应片尾。</p><figure><img src="assets/pocket4-dlog-expose-right/shot-05.jpg" alt="收束口播：小底不宜过到 1.7，0.7 为实践甜蜜点；并提及 4P D-Log2／Lofic 可更靠右" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:30] 收束口播：小底不宜过到 1.7，0.7 为实践甜蜜点；并提及 4P D-Log2／Lofic 可更靠右</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ec1c9c24b79b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Closing VO: small sensors shouldn’t push to 1.7; 0.7 is the practical sweet spot; notes 4P D-Log2 / Lofic can go further right</span></div>
+<audio class="cap-audio" src="audio/ec1c9c24b79b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（145段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>如果你觉得你手里面的Pocket 4或者是4P拍出来的画面很普通</p></div>
+<div class="transcript-row"><time>00:04</time><p>根本没有网上宣传的那么好</p></div>
+<div class="transcript-row"><time>00:06</time><p>甚至有点货不对版的感觉</p></div>
+<div class="transcript-row"><time>00:08</time><p>那有可能是你机器的这个参数调整的不对</p></div>
+<div class="transcript-row"><time>00:10</time><p>那如果你想我一样</p></div>
+<div class="transcript-row"><time>00:11</time><p>将这个曝光参数调整为加0.7</p></div>
+<div class="transcript-row"><time>00:14</time><p>就可以让你D-Log的画面更加的通透干净</p></div>
+<div class="transcript-row"><time>00:17</time><p>换句话说Pocket 4的D-Log就是要向右曝光一点</p></div>
+<div class="transcript-row"><time>00:21</time><p>好的大家好</p></div>
+<div class="transcript-row"><time>00:22</time><p>我是李宇辰</p></div>
+<div class="transcript-row"><time>00:23</time><p>首先我们来看看机内如何设置这个参数</p></div>
+<div class="transcript-row"><time>00:26</time><p>打开机器右边滑出菜单栏</p></div>
+<div class="transcript-row"><time>00:27</time><p>在曝光这里点进去</p></div>
+<div class="transcript-row"><time>00:29</time><p>右边选择Auto</p></div>
+<div class="transcript-row"><time>00:30</time><p>关键就是这一步</p></div>
+<div class="transcript-row"><time>00:31</time><p>左边的这个EV值我们选择到加0.7</p></div>
+<div class="transcript-row"><time>00:34</time><p>简简单单的操作</p></div>
+<div class="transcript-row"><time>00:35</time><p>这样的一个拍摄模式得到的素材</p></div>
+<div class="transcript-row"><time>00:37</time><p>会比默认值拍出来的画面更亮一些</p></div>
+<div class="transcript-row"><time>00:39</time><p>后期我们拿到素材之后</p></div>
+<div class="transcript-row"><time>00:41</time><p>只需要稍稍的把曝光往暗了拉一点</p></div>
+<div class="transcript-row"><time>00:43</time><p>就能得到一个非常均衡且漂亮的画面效果</p></div>
+<div class="transcript-row"><time>00:46</time><p>首先是我这个过曝0.7档拍摄</p></div>
+<div class="transcript-row"><time>00:49</time><p>后期拉回的画面效果</p></div>
+<div class="transcript-row"><time>00:50</time><p>可以看到天空的白云高光的细节</p></div>
+<div class="transcript-row"><time>00:53</time><p>也得到了正确的保留</p></div>
+<div class="transcript-row"><time>00:54</time><p>看着还是非常舒服的</p></div>
+<div class="transcript-row"><time>00:55</time><p>画面的暗部也是相对更干净一些</p></div>
+<div class="transcript-row"><time>00:57</time><p>使得整体画面的观感</p></div>
+<div class="transcript-row"><time>00:59</time><p>就是有一种通透感 空气感</p></div>
+<div class="transcript-row"><time>01:01</time><p>默认值拍摄的这个画面</p></div>
+<div class="transcript-row"><time>01:02</time><p>由于暗部噪点的问题</p></div>
+<div class="transcript-row"><time>01:04</time><p>就会显得更加的脏</p></div>
+<div class="transcript-row"><time>01:05</time><p>所以这个点可能就是你的Poke4</p></div>
+<div class="transcript-row"><time>01:07</time><p>和其他人的Poke4</p></div>
+<div class="transcript-row"><time>01:08</time><p>拍出来为什么有不一样的区别</p></div>
+<div class="transcript-row"><time>01:10</time><p>以及网上为什么那些博主</p></div>
+<div class="transcript-row"><time>01:12</time><p>或者是摄影的那些官方账号</p></div>
+<div class="transcript-row"><time>01:14</time><p>拍出来的画面</p></div>
+<div class="transcript-row"><time>01:15</time><p>就会更加的干净通透一些</p></div>
+<div class="transcript-row"><time>01:16</time><p>好 我们来看一下为什么大疆的D-Log</p></div>
+<div class="transcript-row"><time>01:18</time><p>要进行这样一个过曝的操作</p></div>
+<div class="transcript-row"><time>01:20</time><p>我当然是没有找到大疆</p></div>
+<div class="transcript-row"><time>01:21</time><p>对于Poke4的D-Log曲线的白皮书</p></div>
+<div class="transcript-row"><time>01:24</time><p>但是我找到了当初</p></div>
+<div class="transcript-row"><time>01:25</time><p>他们发布电影机如影4D的时候</p></div>
+<div class="transcript-row"><time>01:27</time><p>因为这个机器是面向专业的创作者</p></div>
+<div class="transcript-row"><time>01:29</time><p>所以他们必须要把D-Log这个曲线</p></div>
+<div class="transcript-row"><time>01:31</time><p>讲得比较通透</p></div>
+<div class="transcript-row"><time>01:32</time><p>我们可以看到文件里面有写</p></div>
+<div class="transcript-row"><time>01:34</time><p>大疆设计这条D-Log的时候</p></div>
+<div class="transcript-row"><time>01:35</time><p>把中挥曝光值设定在41.2%</p></div>
+<div class="transcript-row"><time>01:38</time><p>这是什么意思呢</p></div>
+<div class="transcript-row"><time>01:39</time><p>其实你不用明白</p></div>
+<div class="transcript-row"><time>01:40</time><p>你只需要知道</p></div>
+<div class="transcript-row"><time>01:41</time><p>索尼的S-Log3</p></div>
+<div class="transcript-row"><time>01:43</time><p>官方在描述它曝光指数的时候</p></div>
+<div class="transcript-row"><time>01:45</time><p>18度中挥也是41%</p></div>
+<div class="transcript-row"><time>01:48</time><p>非常的相似</p></div>
+<div class="transcript-row"><time>01:49</time><p>所以理论上来说</p></div>
+<div class="transcript-row"><time>01:50</time><p>D-Log这条曲线</p></div>
+<div class="transcript-row"><time>01:51</time><p>跟索尼的S-Log3的这条曲线</p></div>
+<div class="transcript-row"><time>01:53</time><p>应该具有相似的曝光的手法</p></div>
+<div class="transcript-row"><time>01:56</time><p>这两条Log曲线的重合度</p></div>
+<div class="transcript-row"><time>01:58</time><p>非常非常的高</p></div>
+<div class="transcript-row"><time>01:59</time><p>那摄影老肯定都知道</p></div>
+<div class="transcript-row"><time>02:00</time><p>S-Log3就是需要向右曝光的</p></div>
+<div class="transcript-row"><time>02:02</time><p>这个我们之前已经出过一期节目了</p></div>
+<div class="transcript-row"><time>02:04</time><p>所以从以上这些不完整的</p></div>
+<div class="transcript-row"><time>02:06</time><p>但是比较官方的信息</p></div>
+<div class="transcript-row"><time>02:07</time><p>可以拼凑出来一个结论</p></div>
+<div class="transcript-row"><time>02:09</time><p>就是说大疆的这一条D-Log曲线</p></div>
+<div class="transcript-row"><time>02:11</time><p>就是应该向右曝光一些</p></div>
+<div class="transcript-row"><time>02:13</time><p>才能够通过后期回拉的方式</p></div>
+<div class="transcript-row"><time>02:15</time><p>让暗部噪点变得更加纯净</p></div>
+<div class="transcript-row"><time>02:16</time><p>但是以上都是理论值</p></div>
+<div class="transcript-row"><time>02:18</time><p>所以我为了进一步验证</p></div>
+<div class="transcript-row"><time>02:19</time><p>最近很长一段时间里面</p></div>
+<div class="transcript-row"><time>02:20</time><p>都会带着这样的一套出装出门</p></div>
+<div class="transcript-row"><time>02:23</time><p>假设拍摄美式探店</p></div>
+<div class="transcript-row"><time>02:24</time><p>暗光环境拍Vlog</p></div>
+<div class="transcript-row"><time>02:25</time><p>或者是台风天到处溜达</p></div>
+<div class="transcript-row"><time>02:27</time><p>等等一切来给大家假设出来的</p></div>
+<div class="transcript-row"><time>02:29</time><p>使用这台机器拍摄的场景</p></div>
+<div class="transcript-row"><time>02:31</time><p>可以看到使用了自动过曝0.7档之后</p></div>
+<div class="transcript-row"><time>02:34</time><p>直方图其实一直位于中间的位置</p></div>
+<div class="transcript-row"><time>02:36</time><p>显示是非常健康的一个水平</p></div>
+<div class="transcript-row"><time>02:38</time><p>通过后期压按之后</p></div>
+<div class="transcript-row"><time>02:39</time><p>也能得到一个漂亮的</p></div>
+<div class="transcript-row"><time>02:41</time><p>不错的通透的画面效果</p></div>
+<div class="transcript-row"><time>02:42</time><p>反而是使用了官方默认的</p></div>
+<div class="transcript-row"><time>02:44</time><p>这种曝光方式之后</p></div>
+<div class="transcript-row"><time>02:45</time><p>可以看到直方图</p></div>
+<div class="transcript-row"><time>02:46</time><p>有点稍稍靠左了一点</p></div>
+<div class="transcript-row"><time>02:48</time><p>靠左就意味着有点欠曝了</p></div>
+<div class="transcript-row"><time>02:49</time><p>所以大家懂得Log素材</p></div>
+<div class="transcript-row"><time>02:51</time><p>一旦欠曝拉回</p></div>
+<div class="transcript-row"><time>02:52</time><p>画面就会显得有点脏脏的</p></div>
+<div class="transcript-row"><time>02:54</time><p>并且颜色有点不对劲</p></div>
+<div class="transcript-row"><time>02:55</time><p>所以虽然官方没有给出</p></div>
+<div class="transcript-row"><time>02:56</time><p>Poke4这台机器</p></div>
+<div class="transcript-row"><time>02:58</time><p>标准的Dlog的白皮书</p></div>
+<div class="transcript-row"><time>02:59</time><p>但是通过这些理论以及我的实践</p></div>
+<div class="transcript-row"><time>03:01</time><p>我们似乎可以得出一个结论</p></div>
+<div class="transcript-row"><time>03:03</time><p>就是Dlog</p></div>
+<div class="transcript-row"><time>03:04</time><p>也是需要向右曝光一点的</p></div>
+<div class="transcript-row"><time>03:06</time><p>但至于为什么是0.7这个数值</p></div>
+<div class="transcript-row"><time>03:08</time><p>而不是Slog3的那个1.7</p></div>
+<div class="transcript-row"><time>03:10</time><p>主要是我实践下来</p></div>
+<div class="transcript-row"><time>03:11</time><p>觉得说这台机器毕竟是个小底</p></div>
+<div class="transcript-row"><time>03:14</time><p>如果你过曝太多</p></div>
+<div class="transcript-row"><time>03:15</time><p>到了1.7的这个程度</p></div>
+<div class="transcript-row"><time>03:17</time><p>你很有可能高光是拉不回来的</p></div>
+<div class="transcript-row"><time>03:19</time><p>所以就稍微稳了一手</p></div>
+<div class="transcript-row"><time>03:20</time><p>我觉得说0.7可能是一个比较好的甜蜜点</p></div>
+<div class="transcript-row"><time>03:23</time><p>当然以上全是我个人的</p></div>
+<div class="transcript-row"><time>03:24</time><p>非常主观的看法以及结论</p></div>
+<div class="transcript-row"><time>03:26</time><p>大家如果真的想要使用</p></div>
+<div class="transcript-row"><time>03:28</time><p>这种向右曝光的手法</p></div>
+<div class="transcript-row"><time>03:29</time><p>要根据自己实际的拍摄环境来决定</p></div>
+<div class="transcript-row"><time>03:32</time><p>那我们多说一句</p></div>
+<div class="transcript-row"><time>03:33</time><p>关于4P的这个Dlog2</p></div>
+<div class="transcript-row"><time>03:34</time><p>之前我们已经有聊过</p></div>
+<div class="transcript-row"><time>03:35</time><p>4P是使用了Lofic技术</p></div>
+<div class="transcript-row"><time>03:37</time><p>所以它的高光</p></div>
+<div class="transcript-row"><time>03:38</time><p>会比普通的这种机器要多了三档</p></div>
+<div class="transcript-row"><time>03:40</time><p>它的动态范围优化</p></div>
+<div class="transcript-row"><time>03:41</time><p>也都是给到了高光</p></div>
+<div class="transcript-row"><time>03:42</time><p>所以在我的理解来看</p></div>
+<div class="transcript-row"><time>03:43</time><p>4P的向右曝光可以再往右一点</p></div>
+<div class="transcript-row"><time>03:45</time><p>不过我没有这台机器</p></div>
+<div class="transcript-row"><time>03:46</time><p>所以就只有靠大家自己去测试了</p></div>
+<div class="transcript-row"><time>03:49</time><p>最近拿着这台机器拍摄</p></div>
+<div class="transcript-row"><time>03:50</time><p>我觉得效果非常非常好</p></div>
+<div class="transcript-row"><time>03:51</time><p>很方便</p></div>
+<div class="transcript-row"><time>03:51</time><p>所以我决定给它出一系列的Dlog的还原LUT</p></div>
+<div class="transcript-row"><time>03:55</time><p>方便大家能够更好的调出生活化的</p></div>
+<div class="transcript-row"><time>03:59</time><p>但是好看的颜色的那些LUT</p></div>
+<div class="transcript-row"><time>04:00</time><p>预告一下</p></div>
+<div class="transcript-row"><time>04:01</time><p>大家可以期待一下</p></div>
+<div class="transcript-row"><time>04:02</time><p>好那么本期的分享就到这里了</p></div>
+<div class="transcript-row"><time>04:04</time><p>我是滴滴滴</p></div>
+<div class="transcript-row"><time>04:04</time><p>我们下次再见</p></div>
+<div class="transcript-row"><time>04:05</time><p>Respect</p></div>
+<div class="transcript-row"><time>04:06</time><p>拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

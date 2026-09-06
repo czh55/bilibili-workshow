@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5870" viewBox="0 0 1320 5870">
+  <foreignObject x="0" y="0" width="1320" height="5870">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>大师的蓝：冷暖同时对比</h1>
+  <div class="meta"><span class="tag tag-blue">冷暖</span><span class="tag tag-green">同时对比</span><span class="tag tag-orange">西斯莱</span><span class="tag tag-purple">克罗耶</span><span class="tag tag-red">蓝色</span><span class="tag tag-gray">时长 117秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/3agCqgRTEwa">原视频</a>
+  <div class="summary-line">同蓝换暖底更显蓝。西斯莱天空靠暖云托出通透；云改纯白则天硬。规律：冷色要自然，亮部须发暖。克罗耶脸冷紫因海更冷而反显温暖。高手设计关系，不是单块「神蓝」。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">蓝圆换暖底</span></div><div class="timeline-item"><span class="timeline-time">00:06</span><span class="timeline-text">突然更蓝</span></div><div class="timeline-item"><span class="timeline-time">00:22</span><span class="timeline-text">冷暖同时对比</span></div><div class="timeline-item"><span class="timeline-time">00:35</span><span class="timeline-text">西斯莱天空</span></div><div class="timeline-item"><span class="timeline-time">00:46</span><span class="timeline-text">云的暖白</span></div><div class="timeline-item"><span class="timeline-time">00:54</span><span class="timeline-text">云纯白则天硬</span></div><div class="timeline-item"><span class="timeline-time">01:03</span><span class="timeline-text">规律：亮部发暖</span></div><div class="timeline-item"><span class="timeline-time">01:25</span><span class="timeline-text">克罗耶冷紫脸</span></div><div class="timeline-item"><span class="timeline-time">01:40</span><span class="timeline-text">海更冷衬脸暖</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">机制<br/>暖推冷</div><span class="arrow">→</span><div class="node-green">风景<br/>云暖托天蓝</div><span class="arrow">→</span><div class="node-orange">规律<br/>亮部发暖</div><span class="arrow">→</span><div class="node-blue">人像<br/>海冷衬脸</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「同时对／西斯兰零间小路／加蓝子／亮度的颜色」→「同时对比／西斯莱林间小路／加蓝紫／亮部的颜色」。</p><p>误区：天蓝＝加更多蓝。视频强调旁边要暖。</p><p>误区：脸冷紫一定病态。取决于环境是否更冷。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>机制</h3>
+      <p>见暖则旁色更冷；同蓝在暖底上更蓝。</p>
+      <div class="quote">会自动的让旁边的颜色看起来比实际更冷</div>
+      <div class="relation">冷感是相对的。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>西斯莱钥匙在云</h3>
+      <p>通透蓝关键常在暖白云；切断冷暖则天硬。</p>
+      <div class="quote">云的暖白会让我们的眼睛自动觉得天空更蓝</div>
+      <div class="relation">先设计云温，再谈蓝配方。</div>
+    </div>
+    <div class="card card-red">
+      <h3>可执行规律</h3>
+      <p>冷色要自然，别只加蓝紫；同时让亮部发暖。</p>
+      <div class="quote">一定要记得同时让亮部的颜色发暖</div>
+      <div class="relation">冷的成立条件是暖的在场。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>克罗耶关系逆转</h3>
+      <p>脸冷紫本可病态；海更冷更蓝后脸反显温暖有血色。</p>
+      <div class="quote">让脸上的冷反而变得温暖有血色了</div>
+      <div class="relation">单块色的评价取决于关系网。</div>
+    </div>
+    <div class="card ">
+      <h3></h3>
+      <p>关系＞单块</p>
+      <div class="quote">真正的高手……是颜色之间的关系设计得很精彩</div>
+      <div class="relation">从来不是某一块颜色画得好</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>117 秒冷暖短片，明度同时对比留给下期。</li><li>画名「林间小路」据口播校正，具体馆藏名可能变体。</li><li>片尾预告非本集结论。</li></ul><div class="pitfall">天空一路加蓝加紫。</div><div class="pitfall">云涂死白，切断冷暖。</div><div class="pitfall">孤立评价「这脸太冷」而不看环境。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>暖推冷的同时对比</li><li>亮部发暖托冷色</li><li>关系设计决定单块观感</li></ul><h3>行动清单</h3><ol><li>同蓝对冷底／暖底对照</li><li>风景小稿：先铺暖云再铺天蓝</li><li>人像：环境再冷一档，看肤色冷紫是否「活」</li><li>自检：最冷处旁边是否有足够暖</li></ol><h3>关键认知转变</h3><p>以前：找「大师用的那管蓝」；现在：经营旁边的暖与更冷的环境，让蓝自己显出来。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 117秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

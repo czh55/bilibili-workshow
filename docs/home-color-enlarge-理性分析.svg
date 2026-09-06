@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5322" viewBox="0 0 1320 5322">
+  <foreignObject x="0" y="0" width="1320" height="5322">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>家里拥挤？利用颜色把家变大!</h1>
+  <div class="meta"><span class="tag tag-blue">家装设计</span><span class="tag tag-green">膨胀色</span><span class="tag tag-orange">收缩色</span><span class="tag tag-purple">小户型</span><span class="tag tag-red">色彩</span><span class="tag tag-gray">门套</span><span class="tag tag-gray">时长 75秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AHpHYIropek">原视频</a>
+  <div class="summary-line">同大色块定义膨胀色与收缩色：前者显大靠前，后者显小退后。客厅用前景膨胀色 + 背景收缩色做层次显大；位置反了会互相挤压。同一对概念延伸到走廊、灯光强化与门窗套范围。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">红=膨胀色更近；黑=收缩色更远</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">全米色糊成一片 → 家具膨胀色 + 背景收缩色</span></div><div class="timeline-item"><span class="timeline-time">00:27</span><span class="timeline-text">禁忌：膨胀色在后、收缩色在前 → 挤小</span></div><div class="timeline-item"><span class="timeline-time">00:37</span><span class="timeline-text">调换位置 → 层次与显大恢复</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">走廊远近、灯光强化、门窗套扩大范围</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">膨胀色<br/>显大 / 强化主体 / 向前挤</div><span class="arrow">→</span><div class="node-green">收缩色<br/>显小 / 弱化主体 / 向后退</div><span class="arrow">→</span><div class="node-orange">正确前后<br/>前膨胀 + 后收缩</div><span class="arrow">→</span><div class="node-blue">延伸<br/>走廊·灯光·门窗套</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>「膨胀色／收缩色」按画面字幕保留，不改写成其他色彩学术语。</p><p>误区：到处涂亮色就能显大。位置错误（膨胀在后、收缩在前）会挤小。</p><p>误区：只改墙面色。视频把家具主体、背景、门套窗套范围一并纳入同一逻辑。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>定义：膨胀色 vs 收缩色</h3>
+      <p>两个一样大的色块对照：红色膨胀色显大、强化主体、感觉更近；黑色收缩色显小、弱化主体、感觉更远。后续所有建议都建立在这对可演示定义上。</p>
+      <div class="quote">红色是膨胀色……黑色是收缩色</div>
+      <div class="relation">先记住前后感，再谈搭配。</div>
+    </div>
+    <div class="card card-green">
+      <h3>客厅公式：前膨胀 + 后收缩</h3>
+      <p>全米色会糊在一起没层次。把沙发等主体换成膨胀色、背景换成收缩色：主体被突出，视线被拉长，房间更显大。</p>
+      <div class="quote">把沙发换成膨胀色，背景换成收缩色……让房间更显大</div>
+      <div class="relation">层次来自前后色差，不是来自颜色数量。</div>
+    </div>
+    <div class="card card-red">
+      <h3>禁忌：前后反了会挤小</h3>
+      <p>膨胀色在后、收缩色在前时，一前一后对挤，房间显小。注意事项页用「向前挤／向后退」把机制画清楚，调换后层次与显大同时回来。</p>
+      <div class="quote">膨胀色不要在后边，收缩色不要在前边……房间就显小</div>
+      <div class="relation">先查位置，再加饱和度。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>延伸：走廊、灯光、门窗套</h3>
+      <p>走廊用收缩色显狭长，换膨胀色可弱化；灯光提亮能强化膨胀；门套窗套用膨胀色扩大开口的开阔大气感，且范围越大越明显。</p>
+      <div class="quote">门套……换成膨胀色就会显得更开阔更大气；膨胀色的范围越大……越开阔越明亮</div>
+      <div class="relation">同一对颜色逻辑，换到通道与开口。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>75 秒色彩知觉短片，不含完整配色体系、漆号或照明计算。</li><li>红/黑模型是极端对照，实际家装需按材质与光照折中。</li><li>「显大」指观感，不是建筑面积变化。</li></ul><div class="pitfall">把膨胀色铺在远端背景、收缩色放在身前家具。</div><div class="pitfall">全屋同明度米色，缺乏前后层次却怪户型小。</div><div class="pitfall">门套窗套长期用深收缩色，开口显得小气却只加灯不改色。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>膨胀色向前、收缩色退后，是显大的基本前后关系</li><li>客厅：主体膨胀色 + 背景收缩色</li><li>同一逻辑可用于走廊、灯光强化与门窗套范围</li></ul><h3>行动清单</h3><ol><li>拍一张客厅正面照，标出「最靠前的大件」与「最靠后的墙/柜」颜色</li><li>若前后明度接近，先把主体家具或靠垫换成相对膨胀的色</li><li>检查门套窗套：过深则试浅膨胀色边框或扩大浅色范围</li><li>走廊尽端若过暗过缩，优先改尽端或侧墙的收缩/膨胀关系，再补灯</li></ol><h3>关键认知转变</h3><p>以前：觉得拥挤就拼命涂浅色或加灯；现在：先固定膨胀色与收缩色的前后位置，再把灯光和门窗套范围当作同一套显大工具。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 75秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

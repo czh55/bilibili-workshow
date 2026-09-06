@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5508" viewBox="0 0 1320 5508">
+  <foreignObject x="0" y="0" width="1320" height="5508">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>咖啡和牛奶融合的那些事</h1>
+  <div class="meta"><span class="tag tag-blue">精品咖啡</span><span class="tag tag-green">拉花</span><span class="tag tag-orange">融合高度</span><span class="tag tag-purple">crema</span><span class="tag tag-red">奶泡</span><span class="tag tag-gray">咖啡培训</span><span class="tag tag-gray">时长 91秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/1ROZGJJbQRs">原视频</a>
+  <div class="summary-line">融合高度是拉花地基：&gt;10cm 冲破 crema 导致脏污混色；&lt;约2cm 奶泡抢跑铺满；理想约5–10cm（实操常8–10cm）后迅速切低起花。用奶缸标记把高→低练成肌肉记忆。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">高度差 2cm → 图案天差地别</span></div><div class="timeline-item"><span class="timeline-time">00:04</span><span class="timeline-text">&gt;10cm：破坏 crema → 脏污混色</span></div><div class="timeline-item"><span class="timeline-time">00:17</span><span class="timeline-text">&lt;约2cm：奶泡外溢，未起花已全白</span></div><div class="timeline-item"><span class="timeline-time">00:30</span><span class="timeline-text">理想约 5–10cm，看杯型</span></div><div class="timeline-item"><span class="timeline-time">00:42</span><span class="timeline-text">实操 8–10cm 后迅速切低起花</span></div><div class="timeline-item"><span class="timeline-time">00:57</span><span class="timeline-text">奶缸标记 → 肌肉记忆打地基</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">过高<br/>破 crema</div><span class="arrow">→</span><div class="node-green">过低<br/>奶泡抢跑</div><span class="arrow">→</span><div class="node-orange">区间<br/>5–10cm</div><span class="arrow">→</span><div class="node-blue">动作<br/>高融合→低起花</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>画面字幕校正 ASR「蘑菇」为「模糊」。</p><p>「玉金香」校正为「郁金香」。</p><p>高度厘米数为作者经验区间，需按杯口深度微调。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-red">
+      <h3>故障两端：过高脏、过低抢</h3>
+      <p>注入点超过约十公分，奶泡冲太深破坏 crema，白与咖模糊混成脏污感。低于约两公分，奶泡易外溢，未起花已铺满，整杯发白不干净。两端都不是「手法玄学」，是高度越界。</p>
+      <div class="quote">超过十公分以上……会破坏表面的CREMA……低于两公分左右……我还没有开始起花呢 奶泡全跑了</div>
+      <div class="relation">先排除高度越界，再调摆动与流量。</div>
+    </div>
+    <div class="card card-green">
+      <h3>理想区间：冲击力与 crema 共存</h3>
+      <p>比较理想约 5–10 公分，具体看杯子大小与杯口深度。此高度奶泡有足够冲击力冲入咖啡液，又不破坏表面 crema——融合的目标是「进得去且表面还在」。</p>
+      <div class="quote">比较理想的融合高度大概是在5到10公分左右……不会破坏表面的CREMA</div>
+      <div class="relation">区间是守 crema 的操作窗。</div>
+    </div>
+    <div class="card ">
+      <h3>关键动作：高融合后切低起花</h3>
+      <p>实操融合常在 8–10 公分，到量后迅速切到起花高度。从高到低的角度切换时间点非常关键，是拉花重要动作之一——融合与起花是两个高度态，不是一个姿势做到底。</p>
+      <div class="quote">会迅速的切换到起花的高度……从高到低的切换是拉花过程当中非常重要的动作之一</div>
+      <div class="relation">把「切换」练成独立技能。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>练习法：标记 → 肌肉记忆 → 地基</h3>
+      <p>在奶缸上贴纸或画线，记住约 10 公分对应杯口角度；久了形成肌肉记忆。融合拉高、起花放低练稳，地基才算打好；否则天鹅郁金香无从谈起。</p>
+      <div class="quote">融合拉高起花放低，只要把这两个动作给它练熟练稳了，咱们这个地基就算是打好了</div>
+      <div class="relation">高级花型建立在高度切换稳态上。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>91 秒融合高度专题，不含完整花型分解。</li><li>厘米阈值为作者经验，不同杯深需微调。</li><li>承接系列「物理/密度」讨论，本集专注高度变量。</li></ul><div class="pitfall">融合一直很高，crema 被冲破却怪奶质。</div><div class="pitfall">贴杯过低导致奶泡抢跑，误以为打发过稀。</div><div class="pitfall">不练高→低切换，直接挑战复杂花型。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>高度越界 → 脏污或抢跑</li><li>守 5–10cm 窗，实操常 8–10cm 后切低</li><li>标记练习把切换变成肌肉记忆</li></ul><h3>行动清单</h3><ol><li>在常用奶缸外侧标记约 5/8/10cm 参考线</li><li>连续十杯只练「高融合→低起花」切换，不追求花型复杂度</li><li>过高故障时先看 crema 是否还在；过低故障时看是否未起花已全白</li><li>换杯型时重测理想高度，不要照搬旧标记</li></ol><h3>关键认知转变</h3><p>以前：融合好坏靠感觉；现在：用厘米区间与高→低切换两态管理 crema 与起花时机。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 91秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

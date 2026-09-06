@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一芳（ClockYF）面向零基础把 Final Cut 调色收成一条可跟做的链路：Sony PP8／S-Log3 灰片先套官方还原 LUT→进二级调色前先把曝光分层做对（高光别过 100、阴影别低于 1，开波形）→再用色轮做高光偏暖、阴影偏冷，中调定风格。新手不必一上来追曲线，先">
+<title>高手慎点！零基础 Final Cut 调色流程｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>高手慎点！零基础 Final Cut 调色流程</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">203秒</span><span class="meta-tag tag-topic">Final Cut 调色 LUT 颜色板 色轮 零基础 ClockYF</span></div>
+<a class="source-link" href="https://xhslink.cn/o/4JsvDEt90vA" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">第一步：官方 LUT 色彩还原</a><a href="#ch2">二级调色前：曝光分层必须先对</a><a href="#ch3">色轮：高光暖、阴影冷，新手先练双对比</a><a href="#ch4">回顾变化，流程给你参考</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一芳（ClockYF）面向零基础把 Final Cut 调色收成一条可跟做的链路：Sony PP8／S-Log3 灰片先套官方还原 LUT→进二级调色前先把曝光分层做对（高光别过 100、阴影别低于 1，开波形）→再用色轮做高光偏暖、阴影偏冷，中调定风格。新手不必一上来追曲线，先把明暗对比和冷暖对比练出层次；色相饱和度曲线留作下期。全文按繁体口播转写后统一为简体表述。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:52]</span><div><strong>LUT</strong><p>效果里套官方还原 LUT，先把灰片拉回。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:52→01:39]</span><div><strong>曝光</strong><p>颜色板分层调曝光；高光≤100、阴影≥1，看波形。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:39→03:03]</span><div><strong>色轮</strong><p>高光暖、阴影冷；中调定冷暖风格；新手先练双对比。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:03→03:23]</span><div><strong>回顾</strong><p>看前后层次变化；预告曲线精细调。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>Final Cut 零基础调色口令：先 LUT 还原，再曝光分层到位，最后色轮冷暖分层——颜色会跟着正确曝光「去该去的位置」。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:52</span>第一步：官方 LUT 色彩还原</h2><p>开场自称一芳：很多同学要看 Final Cut 调色，本期直接给她的流程。素材是 Sony 图片配置 PP8 拍的 S-Log3 灰片，所以第一步用官方 LUT 还原。</p><p>点效果→搜 LUT→双击选自定义 LUT。不知道下载地址的按片中步骤自行找。00:28 面板是证据。</p><figure><img src="assets/finalcut-color-zero-base/shot-01.jpg" alt="Final Cut 效果面板搜索 LUT，双击应用索尼官方还原 LUT；PP8／S-Log3 素材" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:28] Final Cut 效果面板搜索 LUT，双击应用索尼官方还原 LUT；PP8／S-Log3 素材</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/bc36fcdc47e0.mp3" type="button" aria-label="Play English audio">🔊</button><span>Final Cut Effects panel: search LUT, double-click Sony official transform LUT; PP8 / S-Log3 footage</span></div>
+<audio class="cap-audio" src="audio/bc36fcdc47e0.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:52-01:39</span>二级调色前：曝光分层必须先对</h2><p>进二级前最重要的是调曝光——「只有正确的曝光，颜色才会去它该去的位置」。颜色检查器→颜色板：可调颜色、饱和度、曝光，且全局／高光／中间调／阴影可分层。</p><p>打开视频观测仪看波形。常规：高光拉到接近 100 不超过，阴影到约 1 不低于，中间调看风格。调完明暗对比更明显。01:10 高光约 48% 的操作帧可指认。</p><figure><img src="assets/finalcut-color-zero-base/shot-02.jpg" alt="颜色检查器→颜色板→曝光页，分层拖高光（约 48%）等；字幕「还可以分别对画面的高光」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:10] 颜色检查器→颜色板→曝光页，分层拖高光（约 48%）等；字幕「还可以分别对画面的高光」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8267ed8de4f9.mp3" type="button" aria-label="Play English audio">🔊</button><span>Color inspector → Color board → Exposure: lift highlights (~48%) per layer; subtitle “You can also adjust the frame’s highlights separately”</span></div>
+<audio class="cap-audio" src="audio/8267ed8de4f9.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:39-03:03</span>色轮：高光暖、阴影冷，新手先练双对比</h2><p>色轮同样可对全局／高光／中调／阴影动手：中心钮在色轮上偏左上偏橙暖、右下偏蓝冷，再叠加饱和与亮度。分析当前片：已有明暗，但整体太冷，而现场灯光偏暖——于是高光拉向橙、阴影偏向蓝，冷暖对比出层次；中调决定偏冷还是偏暖风格。</p><p>给新手建议：别一上来追求复杂，先用明暗对比＋冷暖对比练层次。另可后续用颜色曲线、色相饱和度曲线做更细。02:00／02:30 对应色轮与建议。</p><figure><img src="assets/finalcut-color-zero-base/shot-03.jpg" alt="色轮界面：高光偏橙暖、阴影偏蓝冷，演示冷暖分层" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:00] 色轮界面：高光偏橙暖、阴影偏蓝冷，演示冷暖分层</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/12926460823b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Color wheels: highlights bias warm orange, shadows cool blue — demo of cool/warm layering</span></div>
+<audio class="cap-audio" src="audio/12926460823b.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/finalcut-color-zero-base/shot-04.jpg" alt="建议新手先练明暗对比与冷暖对比；预告色相饱和度曲线等进阶" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:30] 建议新手先练明暗对比与冷暖对比；预告色相饱和度曲线等进阶</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/42de65fa66f1.mp3" type="button" aria-label="Play English audio">🔊</button><span>Advice for beginners: first practice value contrast and cool–warm contrast; teases hue/sat curves as next steps</span></div>
+<audio class="cap-audio" src="audio/42de65fa66f1.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:03-03:23</span>回顾变化，流程给你参考</h2><p>片尾回放步骤后的前后差异，欢迎留言交流。03:15 成片观感收束。</p><figure><img src="assets/finalcut-color-zero-base/shot-05.jpg" alt="流程回顾前后对比：明暗与冷暖层次更清晰后的成片观感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:15] 流程回顾前后对比：明暗与冷暖层次更清晰后的成片观感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/353b26e4b077.mp3" type="button" aria-label="Play English audio">🔊</button><span>Workflow before/after: clearer value and cool–warm layers improve the final look</span></div>
+<audio class="cap-audio" src="audio/353b26e4b077.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（69段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>Final Cut 启动</p></div>
+<div class="transcript-row"><time>00:08</time><p>Hello 大家好 我是一芳</p></div>
+<div class="transcript-row"><time>00:09</time><p>因为很多同学想要看 Final Cut 调色</p></div>
+<div class="transcript-row"><time>00:12</time><p>那本期视频我会分享自己的调色流程</p></div>
+<div class="transcript-row"><time>00:16</time><p>不会调色的同学赶快收藏起来</p></div>
+<div class="transcript-row"><time>00:18</time><p>好 话不多说</p></div>
+<div class="transcript-row"><time>00:19</time><p>我们直接进入到操作介面</p></div>
+<div class="transcript-row"><time>00:22</time><p>好 因为我是用 Sony 图片配置 PP8 拍摄的 S-Log 3 灰片</p></div>
+<div class="transcript-row"><time>00:27</time><p>所以第一步我会用官方 LUT 进行色彩还原</p></div>
+<div class="transcript-row"><time>00:31</time><p>点击效果按钮</p></div>
+<div class="transcript-row"><time>00:32</time><p>输入 LUT</p></div>
+<div class="transcript-row"><time>00:35</time><p>直接双击</p></div>
+<div class="transcript-row"><time>00:36</time><p>就可以选择自建一 LUT</p></div>
+<div class="transcript-row"><time>00:42</time><p>那不知道官方还原 LUT 下载地址的同学</p></div>
+<div class="transcript-row"><time>00:45</time><p>可以按以下步骤进行下载</p></div>
+<div class="transcript-row"><time>00:47</time><p>好 那进入到二级调色前</p></div>
+<div class="transcript-row"><time>00:49</time><p>有一个非常重要的步骤</p></div>
+<div class="transcript-row"><time>00:51</time><p>那就是调整曝光</p></div>
+<div class="transcript-row"><time>00:52</time><p>因为只有正确的曝光颜色才会去它该去的位置</p></div>
+<div class="transcript-row"><time>00:56</time><p>那我们来看看怎么样来操作</p></div>
+<div class="transcript-row"><time>00:58</time><p>我们点击颜色检查器按钮</p></div>
+<div class="transcript-row"><time>01:01</time><p>选择颜色版</p></div>
+<div class="transcript-row"><time>01:02</time><p>可以看到能对颜色、饱和度、曝光进行调整</p></div>
+<div class="transcript-row"><time>01:06</time><p>而且除了全局</p></div>
+<div class="transcript-row"><time>01:07</time><p>还可以分别对画面的高光、中间调、阴影进行分层调</p></div>
+<div class="transcript-row"><time>01:13</time><p>接著我们可以打开视频观测仪</p></div>
+<div class="transcript-row"><time>01:16</time><p>可以看到画面调整时候的波形图</p></div>
+<div class="transcript-row"><time>01:19</time><p>有利于调整时候的数字参考 非常好用</p></div>
+<div class="transcript-row"><time>01:23</time><p>那正常来讲把高光拉到100</p></div>
+<div class="transcript-row"><time>01:26</time><p>不超过100</p></div>
+<div class="transcript-row"><time>01:28</time><p>阴影拉到1 不低于1</p></div>
+<div class="transcript-row"><time>01:30</time><p>中间调的话看个人的风格需求</p></div>
+<div class="transcript-row"><time>01:33</time><p>可以看到曝光调整后</p></div>
+<div class="transcript-row"><time>01:35</time><p>画面的明暗对比更为明显</p></div>
+<div class="transcript-row"><time>01:37</time><p>更有层次</p></div>
+<div class="transcript-row"><time>01:39</time><p>好 接下来会通过色轮进行色彩的调整</p></div>
+<div class="transcript-row"><time>01:42</time><p>给大家详细介绍下这个介面</p></div>
+<div class="transcript-row"><time>01:45</time><p>首先可以看到这个工具依旧可以对画面的四个部分</p></div>
+<div class="transcript-row"><time>01:49</time><p>全局、高光、中间调、阴影进行调整</p></div>
+<div class="transcript-row"><time>01:54</time><p>调中间的按钮可以在色轮上进行色调的调整</p></div>
+<div class="transcript-row"><time>01:58</time><p>比如说往左上方移动是橙色调、拼暖色</p></div>
+<div class="transcript-row"><time>02:03</time><p>右下方移动是蓝色调、拼冷色</p></div>
+<div class="transcript-row"><time>02:06</time><p>调整色调之后还可以在此基础上进行饱和度</p></div>
+<div class="transcript-row"><time>02:10</time><p>亮度的再次调整</p></div>
+<div class="transcript-row"><time>02:13</time><p>好 那了解功能之后我们来对这个画面进行分析</p></div>
+<div class="transcript-row"><time>02:17</time><p>现在画面的曝光已经有明暗对比了</p></div>
+<div class="transcript-row"><time>02:20</time><p>但色调整体太冷</p></div>
+<div class="transcript-row"><time>02:22</time><p>但是看到云拼的灯光打的是暖光</p></div>
+<div class="transcript-row"><time>02:25</time><p>那我们可以调整高光部分到橙色暖色调</p></div>
+<div class="transcript-row"><time>02:29</time><p>阴影部分为蓝色冷色调</p></div>
+<div class="transcript-row"><time>02:33</time><p>增加画面的冷暖对比更有层次</p></div>
+<div class="transcript-row"><time>02:36</time><p>最后通过中间调来决定你的画面风格是拼冷还是拼暖</p></div>
+<div class="transcript-row"><time>02:42</time><p>那这里也有一个建议</p></div>
+<div class="transcript-row"><time>02:43</time><p>如果你是新手可以不用追求复杂</p></div>
+<div class="transcript-row"><time>02:46</time><p>可以先以增加画面明暗对比和冷暖对比来练习</p></div>
+<div class="transcript-row"><time>02:50</time><p>增加画面的层次感</p></div>
+<div class="transcript-row"><time>02:53</time><p>当然除了今天所介绍的银色板受冷外</p></div>
+<div class="transcript-row"><time>02:57</time><p>还可以以银色曲线、色相饱和度曲线</p></div>
+<div class="transcript-row"><time>03:00</time><p>这两个功能来进行更为精细的调色</p></div>
+<div class="transcript-row"><time>03:03</time><p>如以时间过长记得关注我</p></div>
+<div class="transcript-row"><time>03:05</time><p>下期进行分享</p></div>
+<div class="transcript-row"><time>03:07</time><p>好 那最后我们来回顾一下</p></div>
+<div class="transcript-row"><time>03:09</time><p>经过本期这些步骤</p></div>
+<div class="transcript-row"><time>03:10</time><p>画面发生了怎样的变化</p></div>
+<div class="transcript-row"><time>03:12</time><p>好 这个调色流程希望给你参考</p></div>
+<div class="transcript-row"><time>03:15</time><p>也欢迎评论区留言交流</p></div>
+<div class="transcript-row"><time>03:17</time><p>记得关注我</p></div>
+<div class="transcript-row"><time>03:18</time><p>我是一芳带你学更多摄影钢货</p></div>
+<div class="transcript-row"><time>03:20</time><p>我们下期再见 拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

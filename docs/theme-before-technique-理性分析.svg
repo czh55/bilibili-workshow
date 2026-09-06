@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5583" viewBox="0 0 1320 5583">
+  <foreignObject x="0" y="0" width="1320" height="5583">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>先主题再技巧</h1>
+  <div class="meta"><span class="tag tag-blue">构图</span><span class="tag tag-green">主题</span><span class="tag tag-orange">裁切</span><span class="tag tag-purple">参与者视角</span><span class="tag tag-red">德加</span><span class="tag tag-gray">时长 4分48秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/4edNXZ0iaNQ">原视频</a>
+  <div class="summary-line">技巧堆满仍不好看，常因缺少绝对主角。先裁干扰确认「我想说什么」，再匹配引导线／包围／前景等手段；德加乐池证明参与者视角是主题驱动的结果，不是技法菜单的起点。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">技巧无效提问</span></div><div class="timeline-item"><span class="timeline-time">00:12</span><span class="timeline-text">北海船案例</span></div><div class="timeline-item"><span class="timeline-time">00:46</span><span class="timeline-text">裁掉干扰</span></div><div class="timeline-item"><span class="timeline-time">01:08</span><span class="timeline-text">多裁切练习</span></div><div class="timeline-item"><span class="timeline-time">01:32</span><span class="timeline-text">顺序：主题→技巧</span></div><div class="timeline-item"><span class="timeline-time">01:35</span><span class="timeline-text">长椅暮年</span></div><div class="timeline-item"><span class="timeline-time">02:33</span><span class="timeline-text">人与鸟</span></div><div class="timeline-item"><span class="timeline-time">03:20</span><span class="timeline-text">德加前景</span></div><div class="timeline-item"><span class="timeline-time">04:27</span><span class="timeline-text">技巧只是手段</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">主题<br/>我想说什么</div><span class="arrow">→</span><div class="node-green">裁切<br/>清出主角</div><span class="arrow">→</span><div class="node-orange">匹配<br/>选构图手段</div><span class="arrow">→</span><div class="node-blue">检验<br/>主次是否清楚</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「采料」→裁掉；「主思」→主次；「生命的数」→树；「折思」→哲思。</p><p>误区：先选引导线／三分法再找主题——视频明确顺序相反。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-red">
+      <h3>有线无主角</h3>
+      <p>引导线抢眼却不知看什么＝技巧在场、主题缺席。</p>
+      <div class="quote">视线被引导了以后却不知道该看什么</div>
+      <div class="relation">手段成功≠画面成立。</div>
+    </div>
+    <div class="card card-green">
+      <h3>先裁再谈</h3>
+      <p>裁掉左侧干扰后船成绝对主体，陪衬立刻各安其位。</p>
+      <div class="quote">先确定我想说什么，再为它匹配最合适的构图方法</div>
+      <div class="relation">主题锚定后，技巧才有落点。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>包围是结果</h3>
+      <p>人小鸟围为表达和谐；圆形／包围构图是自然结果，不是出发点。</p>
+      <div class="quote">这个构图技巧在这里就是一种自然而然的结果，而不是出发点</div>
+      <div class="relation">先意境，后标签。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>参与者视角</h3>
+      <p>乐池前景把观众设计进画面；大面积演奏家靠色彩概括不抢舞者。</p>
+      <div class="quote">构图技巧永远只是一种手段</div>
+      <div class="relation">感受优先，技法服役。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>案例服务于「顺序」教学，不是否定引导线等工具本身。</li><li>片尾构成系统课为导流，不纳入技术结论。</li><li>摄影与绘画例子可迁移，但媒介约束不同。</li></ul><div class="pitfall">先套构图公式再硬找主题。</div><div class="pitfall">画面元素都抢戏，没有绝对主角。</div><div class="pitfall">把「用了某某构图」当成完成标准。</div><div class="pitfall">前景面积大却忘记用色彩／细节降权。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>绝对主角优先</li><li>主题→技巧顺序不可颠</li><li>构图是结果标签</li><li>感受驱动手段</li></ul><h3>行动清单</h3><ol><li>拍／画前用一句话写下「我想说什么」</li><li>对问题照片做三次大胆裁切，只保留一个主角</li><li>检查引导线终点是否落在主角上</li><li>加前景时同步降低其色彩复杂度</li></ol><h3>关键认知转变</h3><p>以前：先背构图技巧再出门拍；现在：先钉主题与主角，让技巧成为匹配结果。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 4分48秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

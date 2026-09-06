@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5438" viewBox="0 0 1320 5438">
+  <foreignObject x="0" y="0" width="1320" height="5438">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>锐评⑦：动态、场景自洽与前景</h1>
+  <div class="meta"><span class="tag tag-blue">锐评</span><span class="tag tag-green">动态</span><span class="tag tag-orange">叙事</span><span class="tag tag-purple">前景</span><span class="tag tag-red">明度</span><span class="tag tag-gray">时长 180秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/8uYR5RVJK2l">原视频</a>
+  <div class="summary-line">拍清楚不等于作品感；古色场景塞现代道具会出戏；写字题材半身叙事优于局部特写；冲击力光影也要检查手脸明度是否统一。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:10</span><span class="timeline-text">僵硬全身像</span></div><div class="timeline-item"><span class="timeline-time">00:45</span><span class="timeline-text">现代洗地出戏</span></div><div class="timeline-item"><span class="timeline-time">01:30</span><span class="timeline-text">手部特写不够</span></div><div class="timeline-item"><span class="timeline-time">01:50</span><span class="timeline-text">半身更好仍挡字</span></div><div class="timeline-item"><span class="timeline-time">02:35</span><span class="timeline-text">逆光蘸墨手黑</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">动态<br/>肢体表情</div><span class="arrow">→</span><div class="node-green">场景<br/>时代道具自洽</div><span class="arrow">→</span><div class="node-orange">构图<br/>半身&gt;碎特写</div><span class="arrow">→</span><div class="node-blue">光比<br/>局部别脱节</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>「宝节」按画面现代喷字／洗地语境理解。</p><p>点评主观。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-green">
+      <h3>清晰度幻觉</h3>
+      <p>主体清楚但动态假、表情垮，仍无作品感。</p>
+      <div class="quote">不能说是没有作品感……感觉被踩了香蕉皮</div>
+      <div class="relation">技术清晰≠审美完成。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>场景冲突</h3>
+      <p>古色地+现代喷枪/保安→叙事崩坏；前景乱叉雪上加霜。</p>
+      <div class="quote">这种冲突性太强了</div>
+      <div class="relation">道具也在讲故事。</div>
+    </div>
+    <div class="card card-red">
+      <h3>信息够不够成片</h3>
+      <p>只拍手与字难撑单张；半身交代人物在干什么。</p>
+      <div class="quote">它是撑不起来一张好的作品的</div>
+      <div class="relation">题材完整度先于局部质感。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>明度衔接</h3>
+      <p>脸亮手死黑会像「手不属于他」。</p>
+      <div class="quote">你感觉这个手好像不属于它</div>
+      <div class="relation">局部光比也是统一性。</div>
+    </div>
+    <div class="card ">
+      <h3></h3>
+      <p>可看性阶梯</p>
+      <div class="quote">整体的比刚才那张要有可看性</div>
+      <div class="relation">同一组里用叙事完整度排序。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>连评口播，建议当作检查清单而非评分标准。</li></ul><div class="pitfall">只追清晰度。</div><div class="pitfall">场景道具穿越。</div><div class="pitfall">前景挡关键信息。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>动态真实</li><li>场景自洽</li><li>局部服务整体</li></ul><h3>行动清单</h3><ol><li>人像先查肢体僵硬与表情是否在「演」</li><li>古色场景拍摄前扫一眼现代道具是否出戏</li><li>写字题材优先半身叙事，再考虑局部特写</li><li>逆光大片检查手脸明度是否像同一人</li></ol><h3>关键认知转变</h3><p>以前：拍到算；现在：先审动态与场景是否同讲一个故事。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 180秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="白云师叔把拉花拆回物理题：奶泡浮在浓缩上是因为密度差；打发注入空气降密度，打绵让气泡均匀稳定；crema 是缓冲层；温度过高蛋白质分解会导致分层。理解原理是为了知道「为什么要控制打发时间」，而不是只会照着做。">
+<title>拉个花还有物理的事？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>拉个花还有物理的事？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">70秒</span><span class="meta-tag tag-topic">精品咖啡 拉花 密度差 crema 奶泡 咖啡培训</span></div>
+<a class="source-link" href="https://xhslink.cn/o/A3RxRyA6IjC" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">奶泡为何浮着：密度差；打发与打绵</a><a href="#ch2">crema 缓冲层；温度与蛋白质</a><a href="#ch3">原理有什么用；拉花是物理题</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>白云师叔把拉花拆回物理题：奶泡浮在浓缩上是因为密度差；打发注入空气降密度，打绵让气泡均匀稳定；crema 是缓冲层；温度过高蛋白质分解会导致分层。理解原理是为了知道「为什么要控制打发时间」，而不是只会照着做。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:20]</span><div><strong>密度差</strong><p>打发后牛奶密度低于浓缩，故浮在表面，类比油浮水上；打发注气、打绵稳结构。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:20→00:41]</span><div><strong>crema与温度</strong><p>crema 作缓冲助奶泡铺开；crema 差则直沉。温度越高蛋白质越易分解，超约 70℃ 易分层。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:41→01:10]</span><div><strong>原理何用</strong><p>打发过度会沉底因结构不稳。拉花=两液体在重力与表面张力下成图；下期预告融合高度。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>拉花不是玄学手感课：先守密度差（打发与绵密），再守 crema 与温度，最后才谈图案。原理的用处是让你主动控制变量——尤其是打发时间——而不是机械复述步骤。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:20</span>奶泡为何浮着：密度差；打发与打绵</h2><p>开场设问：为什么奶泡浮在咖啡上而不是沉下去？答案是密度差——打发后牛奶密度低于浓缩，所以会上浮，就像油浮在水上；轻的液体浮在重的液体上面。00:08 俯拍倒奶画面，把「浮在表面起形」变成可见事实。</p><p>操作拆两步：打发是往牛奶注入空气、降低密度；打绵是让气泡更均匀，结构更稳定。没有稳定结构，后面的图案无从谈起。</p><figure><img src="assets/latte-art-physics/shot-01.jpg" alt="俯拍拉花：钢缸往白杯浓缩上倒入奶泡，白色微泡在金色 crema 表面铺开起形，对应「密度差让奶泡浮在上面」" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:08] 俯拍拉花：钢缸往白杯浓缩上倒入奶泡，白色微泡在金色 crema 表面铺开起形，对应「密度差让奶泡浮在上面」</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/87ea06ede431.mp3" type="button" aria-label="Play English audio">🔊</button><span>Overhead latte art: steel pitcher pours foam onto espresso in a white cup; microfoam spreads on golden crema — “density difference floats the foam”</span></div>
+<audio class="cap-audio" src="audio/87ea06ede431.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:20-00:41</span>crema 缓冲层；温度与蛋白质</h2><p>crema 被点名为关键缓冲层：帮助牛奶均匀铺开，而不是直接沉入咖啡。若 crema 不好，奶泡一到就会直沉。00:22 杯面完整金棕 crema 特写，对应「非常关键的作用」。</p><p>温度同样关键：越高，蛋白质分解越严重，气泡越不稳。作者给出经验线——超过约 70℃ 蛋白质开始分解，拉花容易分层，变成「奶是奶、泡是泡」。00:38 口播字幕直接出现蛋白质变性表述。</p><figure><img src="assets/latte-art-physics/shot-02.jpg" alt="手持白杯特写：杯面覆盖完整金棕色 crema，字幕「一个非常关键的作用」，背景可见意式机与电子秤" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:22] 手持白杯特写：杯面覆盖完整金棕色 crema，字幕「一个非常关键的作用」，背景可见意式机与电子秤</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1fa4f235331c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Handheld white-cup close-up: full golden-brown crema; subtitle “A very critical role”; espresso machine and scale behind</span></div>
+<audio class="cap-audio" src="audio/1fa4f235331c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/latte-art-physics/shot-03.jpg" alt="主讲人对镜口播温度与蛋白质变性，字幕可见「蛋白质就会开始变性」；身后意式机与磨豆机同框" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:38] 主讲人对镜口播温度与蛋白质变性，字幕可见「蛋白质就会开始变性」；身后意式机与磨豆机同框</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/07467079eb32.mp3" type="button" aria-label="Play English audio">🔊</button><span>Host to camera on temperature and protein denaturation; subtitle “Proteins start to denature”; espresso machine and grinder behind</span></div>
+<audio class="cap-audio" src="audio/07467079eb32.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">00:41-01:10</span>原理有什么用；拉花是物理题</h2><p>理解密度差，就能解释打发过度为何沉底：气泡结构不稳，密度关系反而恶化。原理的用处是「知道为什么要这么做，而不是照着做而做」——例如因此去控制打发时间。</p><p>收束定义：拉花本质上是一道物理题，两种不同液体在重力和表面张力作用下形成不同图案。01:00 字幕钉住「两种不同的液体在重力和表面」。片尾预告下期「融合的高度」决定拉花上限，并完成系列署名告别。</p><figure><img src="assets/latte-art-physics/shot-04.jpg" alt="收束讲解：字幕「两种不同的液体在重力和表面」，把拉花定义为重力与表面张力作用下的图案形成" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:00] 收束讲解：字幕「两种不同的液体在重力和表面」，把拉花定义为重力与表面张力作用下的图案形成</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6a02151c9a3c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Wrap-up: subtitle “Two different liquids under gravity and surface…” — latte art as pattern under gravity and surface tension</span></div>
+<audio class="cap-audio" src="audio/6a02151c9a3c.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（50段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>你有没有想过为什么我们的奶泡它是浮在这个咖啡上面</p></div>
+<div class="transcript-row"><time>00:03</time><p>而不是沉下去呢</p></div>
+<div class="transcript-row"><time>00:04</time><p>答案呢就是密度差</p></div>
+<div class="transcript-row"><time>00:05</time><p>打发之后的牛奶的密度低于浓缩咖啡的这个密度</p></div>
+<div class="transcript-row"><time>00:08</time><p>所以呢它就会浮到上面</p></div>
+<div class="transcript-row"><time>00:09</time><p>这就像油会浮在水上是一样的</p></div>
+<div class="transcript-row"><time>00:11</time><p>氢的液体呢自然是浮在重的液体上面啊</p></div>
+<div class="transcript-row"><time>00:13</time><p>那打发呢是往牛奶里面注入空气</p></div>
+<div class="transcript-row"><time>00:15</time><p>降低了它的密度</p></div>
+<div class="transcript-row"><time>00:16</time><p>而打棉呢就是让这些气泡呢</p></div>
+<div class="transcript-row"><time>00:18</time><p>更加的均匀</p></div>
+<div class="transcript-row"><time>00:19</time><p>让它的结构更加的稳定</p></div>
+<div class="transcript-row"><time>00:20</time><p>那crema在这里起到了一个非常关键的作用</p></div>
+<div class="transcript-row"><time>00:22</time><p>它是一个缓冲层</p></div>
+<div class="transcript-row"><time>00:23</time><p>帮助牛奶呢均匀的扑展开来</p></div>
+<div class="transcript-row"><time>00:25</time><p>而不是怎么直接沉入到咖啡里面</p></div>
+<div class="transcript-row"><time>00:27</time><p>如果crema不好呢</p></div>
+<div class="transcript-row"><time>00:27</time><p>奶泡一到它就会直接沉下去</p></div>
+<div class="transcript-row"><time>00:29</time><p>温度也非常重要</p></div>
+<div class="transcript-row"><time>00:30</time><p>如果你的温度越高</p></div>
+<div class="transcript-row"><time>00:31</time><p>你的蛋我们的这个蛋白质的分解呢就越严重</p></div>
+<div class="transcript-row"><time>00:33</time><p>那它气泡的结构就会越不稳定</p></div>
+<div class="transcript-row"><time>00:35</time><p>那这也就是为什么</p></div>
+<div class="transcript-row"><time>00:35</time><p>超过70度呢我们的蛋白质就会开始分解</p></div>
+<div class="transcript-row"><time>00:38</time><p>这个时候你就会发现</p></div>
+<div class="transcript-row"><time>00:39</time><p>拉这个花它怎么就开始分层了呢</p></div>
+<div class="transcript-row"><time>00:40</time><p>奶是奶泡是泡</p></div>
+<div class="transcript-row"><time>00:41</time><p>理解了密度差</p></div>
+<div class="transcript-row"><time>00:42</time><p>你就知道为什么打发过度的这个奶泡呢</p></div>
+<div class="transcript-row"><time>00:44</time><p>它就会开始沉底</p></div>
+<div class="transcript-row"><time>00:45</time><p>因为它的气泡结构不稳定</p></div>
+<div class="transcript-row"><time>00:47</time><p>它的密度差反而变大了</p></div>
+<div class="transcript-row"><time>00:48</time><p>那么有人就要问</p></div>
+<div class="transcript-row"><time>00:49</time><p>我理解这个原理有什么用呢</p></div>
+<div class="transcript-row"><time>00:50</time><p>那当然有用啊</p></div>
+<div class="transcript-row"><time>00:51</time><p>你这样就是知道你为什么要这么做</p></div>
+<div class="transcript-row"><time>00:52</time><p>而不是照着做而做</p></div>
+<div class="transcript-row"><time>00:53</time><p>就比如说你知道的密度差</p></div>
+<div class="transcript-row"><time>00:54</time><p>那你就会知道我要控制我的什么打发时间</p></div>
+<div class="transcript-row"><time>00:56</time><p>拉花本质上呢它就是一道物理题啊</p></div>
+<div class="transcript-row"><time>00:58</time><p>两种不同的液体</p></div>
+<div class="transcript-row"><time>00:59</time><p>在重力和表面张力的作用下</p></div>
+<div class="transcript-row"><time>01:01</time><p>形成的不同的图案</p></div>
+<div class="transcript-row"><time>01:02</time><p>理解了原理之后呢</p></div>
+<div class="transcript-row"><time>01:03</time><p>我们下一期来聊一聊融合的高度</p></div>
+<div class="transcript-row"><time>01:04</time><p>因为它决定了你拉花的上限</p></div>
+<div class="transcript-row"><time>01:06</time><p>ok series coffee catch your talk</p></div>
+<div class="transcript-row"><time>01:07</time><p>我是白云师叔</p></div>
+<div class="transcript-row"><time>01:08</time><p>我们下个视频再见</p></div>
+<div class="transcript-row"><time>01:09</time><p>拜拜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>
