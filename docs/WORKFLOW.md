@@ -882,14 +882,24 @@ XML 注意事项：
 }
 ```
 
-- `platform`：`bilibili` 或 `xiaohongshu`，由 Step 0 自动识别写入
-- `outputs.html`：轻松纪实、含截图与完整转录的 HTML
+- `platform`：`bilibili` / `xiaohongshu`（Step 0）；另支持 `local`（本地视频）与 `personal`（个人专栏）
+- `outputs.html`：轻松纪实、含截图与完整转录的 HTML；个人专栏可为讨论问答实录（无截图时 `screenshot_count` 可为 0）
 - `outputs.svg`：客观结构化分析 SVG
 - `outputs.html_en`：可选，场景英译学习卡页面（`{slug}-场景英译.html`）
 - `outputs.html_en_type`：`"scene-english"`，供前端识别英文学习卡类型
 - `screenshot_count`：实际提交的截图数
-- `transcript_segments`：HTML 呈现的非空 Whisper 分段数
+- `transcript_segments`：HTML 呈现的非空 Whisper 分段数；个人专栏可为讨论问条数
 - `svg_height`：`buildSvg()` 返回的最终高度
+
+### 个人专栏（platform: personal）
+
+当内容来自对话/自学笔记而非平台视频时：
+
+1. `url` 使用稳定本地标识，如 `personal:{slug}`
+2. 仍须双轨：`{slug}-图文实录.html` + `{slug}-理性分析.svg`
+3. 首页顶栏 Tab **「个人专栏」**（`#personal`）单独展示，banner 样式参考 drama-analysis english-hub；**不要**混入视频总结分类条
+4. 标签建议含 `个人专栏`；不展示「原视频」链接
+5. 视频总结时间线与搜索排除 `platform: personal`，避免与搬运总结混排
 
 **增强/替换既有文章后必须同步索引**：若只是增强或替换某个既有条目（如新增大量截图），必须同步更新该条目的 `screenshot_count`（以及变化了的 `transcript_segments`、`svg_height` 等字段），保持索引与实际产物一致；不要只更新 HTML 而留下过期的元数据。
 

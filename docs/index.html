@@ -380,6 +380,200 @@
       background: rgba(251,191,36,.18);
       color: #fcd34d;
     }
+
+    /* ====== 顶栏模式 Tab ====== */
+    .mode-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 0 24px 28px;
+    }
+    .mode-tab {
+      padding: 12px 28px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .mode-tab:hover {
+      color: var(--text);
+      border-color: rgba(96,165,250,0.45);
+    }
+    .mode-tab.active[data-mode="videos"] {
+      background: rgba(96,165,250,0.16);
+      border-color: rgba(96,165,250,0.55);
+      color: #93c5fd;
+      box-shadow: 0 0 0 1px rgba(96,165,250,0.12);
+    }
+    .mode-tab.active[data-mode="personal"] {
+      background: rgba(251,191,36,0.16);
+      border-color: rgba(251,191,36,0.55);
+      color: #fcd34d;
+      box-shadow: 0 0 0 1px rgba(251,191,36,0.15);
+    }
+    .mode-tab .tab-count {
+      opacity: 0.7;
+      font-weight: 500;
+      margin-left: 6px;
+      font-size: 12px;
+    }
+
+    /* ====== 个人专栏 Hub（参考 drama-analysis） ====== */
+    .personal-hub {
+      max-width: 1100px;
+      margin: 0 auto 36px;
+      padding: 0 24px;
+    }
+    .hub-section { margin-bottom: 28px; }
+    .hub-heading { margin-bottom: 16px; }
+    .hub-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 8px;
+      color: #fcd34d;
+      background: rgba(251,191,36,0.14);
+    }
+    .hub-heading h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .hub-heading p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      line-height: 1.55;
+      max-width: 640px;
+    }
+    .phrasebook-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .phrasebook-banner {
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border: 1px solid rgba(251,191,36,0.28);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(244,114,182,0.08));
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+      width: 100%;
+    }
+    .phrasebook-banner.tone-blue {
+      border-color: rgba(96,165,250,0.28);
+      background: linear-gradient(135deg, rgba(96,165,250,0.12), rgba(167,139,250,0.10));
+    }
+    .phrasebook-banner.tone-green {
+      border-color: rgba(52,211,153,0.28);
+      background: linear-gradient(135deg, rgba(52,211,153,0.10), rgba(96,165,250,0.08));
+    }
+    .phrasebook-banner.tone-purple {
+      border-color: rgba(167,139,250,0.28);
+      background: linear-gradient(135deg, rgba(167,139,250,0.12), rgba(52,211,153,0.08));
+    }
+    .phrasebook-banner:hover {
+      border-color: rgba(251,191,36,0.55);
+      transform: translateY(-2px);
+    }
+    .phrasebook-banner.tone-blue:hover { border-color: rgba(96,165,250,0.55); }
+    .phrasebook-banner.tone-green:hover { border-color: rgba(52,211,153,0.55); }
+    .phrasebook-banner.tone-purple:hover { border-color: rgba(167,139,250,0.55); }
+    .phrasebook-banner .pb-icon {
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      background: rgba(251,191,36,0.18);
+    }
+    .phrasebook-banner.tone-blue .pb-icon { background: rgba(96,165,250,0.15); }
+    .phrasebook-banner.tone-green .pb-icon { background: rgba(52,211,153,0.16); }
+    .phrasebook-banner.tone-purple .pb-icon { background: rgba(167,139,250,0.18); }
+    .phrasebook-banner .pb-text { flex: 1; min-width: 0; }
+    .phrasebook-banner .pb-text strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 2px;
+      color: var(--text);
+    }
+    .phrasebook-banner .pb-text em {
+      display: block;
+      font-style: normal;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .phrasebook-banner .pb-meta {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .phrasebook-banner .pb-arrow {
+      flex-shrink: 0;
+      color: #fbbf24;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .phrasebook-banner.tone-blue .pb-arrow { color: var(--accent); }
+    .personal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .personal-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--border);
+    }
+    .personal-actions a.html-link {
+      color: #fdba74;
+      background: rgba(251,146,60,0.12);
+    }
+    .personal-actions a.svg-link {
+      color: #93c5fd;
+      background: rgba(96,165,250,0.12);
+    }
+    .personal-empty {
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+    }
+
     .tag-blue   { background: var(--tag-blue);   color: #60a5fa; }
     .tag-purple { background: var(--tag-purple); color: #a78bfa; }
     .tag-green  { background: var(--tag-green);  color: #34d399; }
@@ -824,31 +1018,64 @@
       .search-icon { left: 28px; }
       .category-bar { padding: 0 12px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .category-bar::-webkit-scrollbar { display: none; }
+      .mode-tabs { padding: 0 12px 20px; gap: 8px; }
+      .mode-tab { padding: 10px 18px; font-size: 14px; }
+      .phrasebook-row { grid-template-columns: 1fr; }
+      .personal-hub { padding: 0 12px; }
     }
   </style>
 </head>
 <body>
   <div class="hero">
     <h1>视频总结墙</h1>
-    <p>B 站与小红书 · 一条视频，两种阅读：轻松图文实录 · 客观理性分析</p>
+    <p>B 站 / 小红书视频双轨总结 · 另开个人专栏沉淀自学笔记</p>
   </div>
 
   <div class="stats-bar" id="statsBar">
     <div class="stat-item">
       <div class="stat-num" id="totalCount">0</div>
-      <div class="stat-label">总总结</div>
+      <div class="stat-label" id="statCountLabel">总总结</div>
     </div>
     <div class="stat-item">
       <div class="stat-num" id="totalDuration">0h</div>
-      <div class="stat-label">总时长</div>
+      <div class="stat-label" id="statDurationLabel">总时长</div>
     </div>
     <div class="stat-item">
       <div class="stat-num" id="totalDays">0</div>
-      <div class="stat-label">覆盖天数</div>
+      <div class="stat-label" id="statDaysLabel">覆盖天数</div>
     </div>
     <div class="stat-item">
       <div class="stat-num" id="totalTopics">0</div>
-      <div class="stat-label">专题</div>
+      <div class="stat-label" id="statTopicsLabel">专题</div>
+    </div>
+  </div>
+
+  <div class="mode-tabs" id="modeTabs">
+    <button type="button" class="mode-tab active" data-mode="videos" id="tabVideos">
+      视频总结<span class="tab-count" id="tabCountVideos"></span>
+    </button>
+    <button type="button" class="mode-tab" data-mode="personal" id="tabPersonal">
+      个人专栏<span class="tab-count" id="tabCountPersonal"></span>
+    </button>
+  </div>
+
+  <!-- 搜索 -->
+  <div class="search-bar" id="searchBar">
+    <span class="search-icon">&#x1F50D;</span>
+    <input class="search-input" id="searchInput" type="text" placeholder="搜索视频总结或专题（支持中文 / English）...">
+    <div class="search-hint">空格分隔多个词（AND）· <code>-词</code> 排除 · <code>词1|词2</code> 或 <code>OR</code> 任一匹配 · <code>"短语"</code> 精确匹配 · 英文支持词形前缀（<code>rotate</code> 命中 rotating）</div>
+  </div>
+
+  <!-- 个人专栏 Hub -->
+  <div class="personal-hub" id="personalHub" style="display:none;">
+    <div class="hub-section">
+      <div class="hub-heading">
+        <span class="hub-badge">个人专栏</span>
+        <h2>自学笔记 · 对话沉淀</h2>
+        <p>不是视频搬运，而是自己问清楚的技术结论——参数卡、认知纠偏、可执行清单。对应视频总结墙里的「主动产出」位。</p>
+      </div>
+      <div class="phrasebook-row" id="personalBanners"></div>
+      <div class="personal-empty" id="personalEmpty" style="display:none;">还没有个人专栏文章。对话整理后写入 platform: personal 即可出现在这里。</div>
     </div>
   </div>
 
@@ -898,13 +1125,6 @@
   <!-- 分类标签栏 -->
   <div class="category-bar" id="categoryBar"></div>
 
-  <!-- 搜索 -->
-  <div class="search-bar" id="searchBar">
-    <span class="search-icon">&#x1F50D;</span>
-    <input class="search-input" id="searchInput" type="text" placeholder="搜索视频总结或专题（支持中文 / English）...">
-    <div class="search-hint">空格分隔多个词（AND）· <code>-词</code> 排除 · <code>词1|词2</code> 或 <code>OR</code> 任一匹配 · <code>"短语"</code> 精确匹配 · 英文支持词形前缀（<code>rotate</code> 命中 rotating）</div>
-  </div>
-
   <!-- 主内容 -->
   <div class="container" id="mainContainer">
     <div class="empty-state" id="emptyState">
@@ -925,10 +1145,10 @@
       let searchIndex = [];
       let dateMap = {};
       let calYear, calMonth;
+      let viewMode = (location.hash === '#personal') ? 'personal' : 'videos';
 
       const CATEGORIES = [
         { key: null, label: '全部', match: [] },
-        { key: '个人专栏', label: '个人专栏', match: ['个人专栏'] },
         { key: '摄影', label: '摄影', match: ['摄影', '摄影技巧', '拍摄技巧', '人像拍照', '灯光', '器材', '旅拍', '构图', '光圈', '快门', 'ISO', '运镜', '相机', '摄影教程', '拍摄教程', '布光', '产品拍摄', '静物摄影', '摄影教学', '手机摄影', '相机上手', '摄影背包', '户外摄影', '相机对比', '街拍', '摄影教材', '拍照姿势'] },
         { key: '视频制作', label: '视频制作', match: ['视频制作', '后期', '剪辑干货', '视频剪辑', 'vlog', 'Vlog', 'vlog教程', '电影感', '剪辑', '剪辑后期', '剪映', '短视频', '分镜头', '拍摄思维', 'AI剪辑', 'Remotion', '剪辑教程', '转场', '运动相机', '延时摄影', '收音教程', '声道选择', '后期导出', '视频清晰度', '旅行视频', '短视频带货'] },
         { key: '化妆', label: '化妆', match: ['化妆', '眉毛', '脸型分析', '五官分析', '侧脸面型', '变美', '美商', '面部分析', '三庭比例', '脸型', '面部中轴线', '审美自检', '五官结构', '面部设计', '立体度', '颜值'] },
@@ -949,6 +1169,21 @@
       let activeCategory = null;
 
       const $ = id => document.getElementById(id);
+
+      function isPersonalItem(item) {
+        if (!item) return false;
+        if (item.platform === 'personal') return true;
+        const tags = item.tags || [];
+        return tags.indexOf('个人专栏') >= 0;
+      }
+
+      function videoItems() {
+        return allData.filter(function(item) { return !isPersonalItem(item); });
+      }
+
+      function personalItems() {
+        return allData.filter(isPersonalItem);
+      }
 
       function escapeHtml(s) {
         const d = document.createElement('div');
@@ -1050,13 +1285,55 @@
           searchIndex = [];
         }
         buildDateMap();
+        bindModeTabs();
+        syncModeTabs();
         render();
+      }
+
+      function bindModeTabs() {
+        document.querySelectorAll('.mode-tab').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            viewMode = btn.getAttribute('data-mode') || 'videos';
+            if (viewMode === 'personal') {
+              history.replaceState(null, '', '#personal');
+            } else {
+              history.replaceState(null, '', location.pathname + location.search);
+            }
+            $('searchInput').value = '';
+            activeCategory = null;
+            syncModeTabs();
+            render();
+          });
+        });
+        window.addEventListener('hashchange', function() {
+          const next = (location.hash === '#personal') ? 'personal' : 'videos';
+          if (next === viewMode) return;
+          viewMode = next;
+          $('searchInput').value = '';
+          activeCategory = null;
+          syncModeTabs();
+          render();
+        });
+      }
+
+      function syncModeTabs() {
+        document.querySelectorAll('.mode-tab').forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-mode') === viewMode);
+        });
+        const videos = videoItems();
+        const personals = personalItems();
+        $('tabCountVideos').textContent = String(videos.filter(function(i) { return !i.error; }).length);
+        $('tabCountPersonal').textContent = String(personals.length);
+        $('searchInput').placeholder = viewMode === 'personal'
+          ? '搜索个人专栏标题 / 摘要 / 标签…'
+          : '搜索视频总结或专题（支持中文 / English）...';
       }
 
       function buildDateMap() {
         dateMap = {};
-        applyDisplayDates(allData);
-        allData.forEach(item => {
+        const items = videoItems();
+        applyDisplayDates(items);
+        items.forEach(item => {
           const d = item.displayDate || item.date || '';
           if (!dateMap[d]) dateMap[d] = [];
           dateMap[d].push(item);
@@ -1076,12 +1353,13 @@
 
       function getCategoryCounts() {
         const counts = {};
+        const pool = videoItems();
         CATEGORIES.forEach(function(cat) {
           if (cat.key === null) {
-            counts[null] = allData.length;
+            counts[null] = pool.length;
             return;
           }
-          counts[cat.key] = allData.filter(function(item) {
+          counts[cat.key] = pool.filter(function(item) {
             return itemHasCategory(item, cat.key);
           }).length;
         });
@@ -1111,17 +1389,91 @@
         });
       }
 
+      function renderPersonalHub(query) {
+        const banners = $('personalBanners');
+        const empty = $('personalEmpty');
+        banners.innerHTML = '';
+        const tones = ['', 'tone-blue', 'tone-green', 'tone-purple'];
+        const icons = ['📓', '🎬', '📷', '🎛️', '🌅', '🧠'];
+        let items = personalItems().slice().sort(function(a, b) {
+          return (b.date || '').localeCompare(a.date || '');
+        });
+        const q = (query || '').trim().toLowerCase();
+        if (q) {
+          items = items.filter(function(item) {
+            const hay = [item.title, item.summary, (item.tags || []).join(' ')].join(' ').toLowerCase();
+            return hay.indexOf(q) >= 0;
+          });
+        }
+        if (items.length === 0) {
+          empty.style.display = '';
+          empty.textContent = q ? '没有匹配的个人专栏文章' : '还没有个人专栏文章。对话整理后写入 platform: personal 即可出现在这里。';
+          return;
+        }
+        empty.style.display = 'none';
+        items.forEach(function(item, idx) {
+          const outputs = item.outputs || {};
+          const htmlFile = outputs.html || '';
+          const svgFile = outputs.svg || '';
+          const tone = tones[idx % tones.length];
+          const card = document.createElement('div');
+          card.className = 'phrasebook-banner' + (tone ? ' ' + tone : '');
+          const actions = [];
+          if (htmlFile) {
+            actions.push('<a class="html-link" href="' + escapeHtml(htmlFile) + '" target="_blank" rel="noopener">📖 图文实录</a>');
+          }
+          if (svgFile) {
+            actions.push('<a class="svg-link" href="' + escapeHtml(svgFile) + '" target="_blank" rel="noopener">🧭 理性分析</a>');
+          }
+          card.innerHTML =
+            '<span class="pb-icon">' + icons[idx % icons.length] + '</span>' +
+            '<span class="pb-text">' +
+              '<strong>' + escapeHtml(item.title || '未命名') + '</strong>' +
+              '<em>' + displayText(item.summary || '') + '</em>' +
+              '<span class="pb-meta">' + escapeHtml(item.date || '') +
+                (item.duration ? ' · ' + escapeHtml(item.duration) : '') + '</span>' +
+              (actions.length ? '<span class="personal-actions">' + actions.join('') + '</span>' : '') +
+            '</span>' +
+            '<span class="pb-arrow">→</span>';
+          if (htmlFile) {
+            card.addEventListener('click', function(e) {
+              if (e.target && e.target.closest && e.target.closest('a')) return;
+              window.open(htmlFile, '_blank', 'noopener');
+            });
+          }
+          banners.appendChild(card);
+        });
+      }
+
       function render() {
-        const hasPodcasts = allData.length > 0;
+        const videos = videoItems();
+        const personals = personalItems();
+        const hasVideos = videos.length > 0;
+        const hasPersonals = personals.length > 0;
         const hasTopics = allTopics.length > 0;
-        const hasData = hasPodcasts || hasTopics;
+        const isPersonal = viewMode === 'personal';
 
-        $('searchBar').style.display = hasData ? 'block' : 'none';
-        $('calendarWrapper').style.display = hasPodcasts ? 'block' : 'none';
-        $('categoryBar').style.display = hasPodcasts ? 'flex' : 'none';
-        $('topicsSection').style.display = hasTopics ? 'block' : 'none';
-        $('podcastHeading').style.display = hasPodcasts ? 'block' : 'none';
+        syncModeTabs();
 
+        $('personalHub').style.display = isPersonal ? 'block' : 'none';
+        $('searchBar').style.display = (isPersonal ? hasPersonals : (hasVideos || hasTopics)) ? 'block' : 'none';
+        $('calendarWrapper').style.display = (!isPersonal && hasVideos) ? 'block' : 'none';
+        $('categoryBar').style.display = (!isPersonal && hasVideos) ? 'flex' : 'none';
+        $('topicsSection').style.display = (!isPersonal && hasTopics) ? 'block' : 'none';
+        $('podcastHeading').style.display = (!isPersonal && hasVideos) ? 'block' : 'none';
+        $('mainContainer').style.display = isPersonal ? 'none' : '';
+
+        if (isPersonal) {
+          $('emptyState').style.display = 'none';
+          $('timeline').style.display = 'none';
+          $('searchEmpty').style.display = 'none';
+          $('searchResults').style.display = 'none';
+          updateStatsPersonal(personals);
+          renderPersonalHub($('searchInput').value);
+          return;
+        }
+
+        const hasData = hasVideos || hasTopics;
         if (!hasData) {
           $('emptyState').style.display = '';
           $('timeline').style.display = 'none';
@@ -1147,11 +1499,12 @@
         buildCategoryBar();
         buildTopics(query);
 
-        if (hasPodcasts) {
+        if (hasVideos) {
           renderPodcasts(query);
         } else {
           $('timeline').style.display = 'none';
           $('searchEmpty').style.display = 'none';
+          updateStats(0, 0);
         }
       }
 
@@ -1161,7 +1514,7 @@
         const container = $('searchResults');
         container.innerHTML = '';
 
-        const entries = searchIndex.length > 0 ? searchIndex : allData.map(function(item) {
+        const entries = (searchIndex.length > 0 ? searchIndex : allData.map(function(item) {
           return {
             title: item.title || '',
             title_en: '',
@@ -1176,6 +1529,8 @@
             body: item.summary || '',
             body_en: ''
           };
+        })).filter(function(entry) {
+          return entry.platform !== 'personal' && !(entry.tags || []).includes('个人专栏');
         });
 
         const results = entries.filter(function(entry) {
@@ -1210,8 +1565,8 @@
 
         results.forEach(function(entry) {
           const platform = entry.platform || 'bilibili';
-          const platformLabel = platform === 'xiaohongshu' ? '小红书' : (platform === 'local' ? '本地' : 'B站');
-          const platformPillClass = platform === 'xiaohongshu' ? ' xhs' : (platform === 'local' ? ' local' : '');
+          const platformLabel = platform === 'xiaohongshu' ? '小红书' : (platform === 'local' ? '本地' : (platform === 'personal' ? '个人专栏' : 'B站'));
+          const platformPillClass = platform === 'xiaohongshu' ? ' xhs' : (platform === 'local' ? ' local' : (platform === 'personal' ? ' personal' : ''));
           const platformHtml = '<span class="card-platform-pill' + platformPillClass + '">' + platformLabel + '</span>';
 
           let metaHtml = platformHtml;
@@ -1469,7 +1824,7 @@
 
       function renderPodcasts(query) {
         const days = Object.keys(dateMap).sort().reverse();
-        updateStats(allData.length, days.length);
+        updateStats(videoItems().length, days.length);
 
         let filteredDays = days;
         let visibleCount = 0;
@@ -1672,18 +2027,44 @@
         items.forEach(function(item) { if (!item.error) c++; });
         return c;
       }
+      function updateStatsPersonal(items) {
+        $('statCountLabel').textContent = '专栏篇数';
+        $('statDurationLabel').textContent = '双轨产物';
+        $('statDaysLabel').textContent = '最近更新日期';
+        $('statTopicsLabel').textContent = '专题（视频区）';
+        $('totalCount').textContent = String(items.length);
+        var dual = 0;
+        items.forEach(function(item) {
+          var o = item.outputs || {};
+          if (o.html && o.svg) dual++;
+        });
+        $('totalDuration').textContent = String(dual);
+        var dates = items.map(function(i) { return i.date || ''; }).filter(Boolean).sort();
+        $('totalDays').textContent = dates.length ? dates[dates.length - 1].slice(5) : '—';
+        $('totalTopics').textContent = String(allTopics.length);
+      }
+
       function updateStats(count, days) {
-        var errorCount = allData.filter(function(item) { return item.error; }).length;
-        var validCount = count - errorCount;
+        $('statCountLabel').textContent = '总总结';
+        $('statDurationLabel').textContent = '总时长';
+        $('statDaysLabel').textContent = '覆盖天数';
+        $('statTopicsLabel').textContent = '专题';
+        var pool = videoItems();
+        var errorCount = pool.filter(function(item) { return item.error; }).length;
+        var validCount = typeof count === 'number' ? count - errorCount : pool.filter(function(item) { return !item.error; }).length;
+        if (typeof count !== 'number') {
+          count = pool.length;
+          days = Object.keys(dateMap).length;
+        }
         $('totalCount').textContent = validCount;
         $('totalDays').textContent = days;
         if (errorCount > 0) {
           $('totalCount').textContent = validCount + ' (+' + errorCount + ' 失败)';
         }
 
-        // 计算总时长
+        // 计算总时长（仅视频总结）
         var totalMinutes = 0;
-        allData.forEach(function(item) {
+        pool.forEach(function(item) {
           if (item.error || !item.duration) return;
           var m = item.duration.match(/(\d+)\s*小时?/);
           if (m) totalMinutes += parseInt(m[1]) * 60;
@@ -1696,6 +2077,7 @@
           $('totalDuration').textContent = totalMinutes + 'm';
         }
         if (totalMinutes === 0) $('totalDuration').textContent = '0h';
+        $('totalTopics').textContent = String(allTopics.length);
       }
 
       $('calToggle').addEventListener('click', function() {
