@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5501" viewBox="0 0 1320 5501">
+  <foreignObject x="0" y="0" width="1320" height="5501">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>如何用达芬奇打造沉稳耐看的纪实画面</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">纪实</span><span class="tag tag-orange">沧桑</span><span class="tag tag-purple">天空</span><span class="tag tag-red">色彩增强</span><span class="tag tag-gray">时长 7分36秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/AdyeAAEZPjc">原视频</a>
+  <div class="summary-line">纪实沧桑：HDR 略暗拉开反差；主体强化、四周降反差反衬。压天先加冷再密度，并行纠肤。归色后再加暖。色彩增强去低饱和脏色并回饱和。柔和对比度收两端。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">HDR 岁月感；主体对比 + 外部压四周</span></div><div class="timeline-item"><span class="timeline-time">01:50</span><span class="timeline-text">先加冷染白边，再密度压天；纠肤</span></div><div class="timeline-item"><span class="timeline-time">03:35</span><span class="timeline-text">归整黄绿后再后插加暖</span></div><div class="timeline-item"><span class="timeline-time">05:10</span><span class="timeline-text">色彩增强去脏；柔和对比度</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">影调<br/>略暗大反差</div><span class="arrow">→</span><div class="node-green">天空<br/>染色→密度</div><span class="arrow">→</span><div class="node-orange">颜色<br/>先干净再加暖</div><span class="arrow">→</span><div class="node-blue">清洁<br/>增强+饱和组合</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「暗波」校正为「暗部」；「过量」校正为「过亮」；「按了钟」校正为「这样一做」；「波旋图」校正为「波形图」；「L或者是Option加P」校正为「Alt/Option+P」；「色向网红」校正为「色相往红」；「历史上的分享」校正为「知识分享」；「达福星」校正为「达芬奇」；「干净的技术」校正为「干净的基础」；「草多」校正为「草丛」；「划快」校正为「滑块」；「波感」校正为「波杆」；「赞联」校正为「三连」。</p><p>误区：只加密度压天，白斑不动。</p><p>误区：在杂色未归整前加暖放大色差。</p><p>误区：色彩增强力度过大毁中高饱和。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>沧桑：略暗 + 反衬主体</h3>
+      <p>HDR 压 Shadow/Light、抬 Highlight。四周降反差反衬中间小力度强化。</p>
+      <div class="quote">我们是通过四周降低反差的行为，来反衬中间主体强化的力度</div>
+      <div class="relation">此消彼长，力度可小。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>压天两步：先有色再密度</h3>
+      <p>白边先加冷染色，再加蓝青密度整片下降；并行纠肤。</p>
+      <div class="quote">我要让这里的天空也是蓝色，而不是白色</div>
+      <div class="relation">密度只对「有色」生效更明显。</div>
+    </div>
+    <div class="card card-green">
+      <h3>加暖放在归色之后</h3>
+      <p>先减蓝黄绿色差，再后插加暖，避免扩大杂色差别。</p>
+      <div class="quote">是在我们已经减少了这些色相差的前提下加的暖</div>
+      <div class="relation">别回到加蓝节点去加暖。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>染色后查低饱和脏色</h3>
+      <p>降色彩增强去头发/草怪色，再抬饱和救中高饱和。力度宁小。</p>
+      <div class="quote">同时还能够保留在低饱和部分颜色降低的这个行为</div>
+      <div class="relation">增强对低饱和极敏感。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>户外儿童/纪实案例。</li><li>柔和对比度非必做。</li><li>节点偏多，重逻辑不重抄参数。</li></ul><div class="pitfall">天空有白斑仍只拧密度。</div><div class="pitfall">全局加蓝不纠肤。</div><div class="pitfall">杂色未清就加暖。</div><div class="pitfall">色彩增强拉满。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>略暗大反差+四周反衬</li><li>压天：染色→密度→纠肤</li><li>干净后再加暖</li><li>增强+饱和清低饱和脏色</li></ul><h3>行动清单</h3><ol><li>HDR 定岁月感</li><li>主体提、四周压</li><li>天空两步法</li><li>归色→加暖→清脏→可选柔和</li></ol><h3>关键认知转变</h3><p>以前：天空死压、颜色越加越脏；现在：先让天有色再密度，归色后加暖并清低饱和。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 7分36秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="用「沧桑」形容故事感：还原后 HDR 压 Shadow/Light、抬 Highlight 略暗拉开反差；C 位遮罩加对比，外部节点压四周——四周降反差反衬主体。天空：先全局加冷让白边也成蓝，再加蓝青密度压暗，并行纠肤。归整黄绿杂色后再后插加暖；色彩增强降低饱和杂色并回饱和救中高">
+<title>如何用达芬奇打造沉稳耐看的纪实画面｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>如何用达芬奇打造沉稳耐看的纪实画面</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">7分36秒</span><span class="meta-tag tag-topic">达芬奇 纪实 沧桑 天空压暗 色彩增强 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/AdyeAAEZPjc" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">沧桑影调：HDR + 主体/四周此消彼长</a><a href="#ch2">天空：先染蓝再密度；并行护肤</a><a href="#ch3">归整杂色后再加暖</a><a href="#ch4">色彩增强去脏；柔和对比度收束</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>用「沧桑」形容故事感：还原后 HDR 压 Shadow/Light、抬 Highlight 略暗拉开反差；C 位遮罩加对比，外部节点压四周——四周降反差反衬主体。天空：先全局加冷让白边也成蓝，再加蓝青密度压暗，并行纠肤。归整黄绿杂色后再后插加暖；色彩增强降低饱和杂色并回饱和救中高饱和；柔和对比度收两端护中间调。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:50]</span><div><strong>岁月影调</strong><p>HDR 略暗+抬 Highlight；主体对比、外部压四周反衬。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:50→03:35]</span><div><strong>天空压暗</strong><p>先加冷染色再密度；并行纠肤防僵尸蓝。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:35→05:10]</span><div><strong>干净再加暖</strong><p>蓝转青、黄降饱和偏橙；后插加暖不扩大色差。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:10→07:36]</span><div><strong>杂色+柔和</strong><p>色彩增强去低饱和脏色+抬饱和回救；样条线柔和对比度。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>纪实沉稳=略暗大反差+主体突出+天空不抢。压天要先让「白」变成「有色」再加密度。染色后必查低饱和杂色；加暖放在归色之后。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:50</span>沧桑影调：HDR + 主体/四周此消彼长</h2><p>故事感用不太恰当的词「沧桑」。曲线拉高低+饱和还原。岁月感要整体反差拉开且不过亮：HDR 降 Shadow/Light，再抬 Highlight——小男孩更「经历过」。</p><p>C 位遮罩略加对比；Alt/Option+O 外部对比+轴心压四周。四周波形下压=降反差，反衬中间强化，小力度也够用。</p><figure><img src="assets/davinci-documentary-steady/shot-01.jpg" alt="HDR 岁月感；C 位对比 + 外部节点压四周反衬" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:10] HDR 岁月感；C 位对比 + 外部节点压四周反衬</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fa865396a09f.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR aged feel; hero contrast + outside press for foil.</span></div>
+<audio class="cap-audio" src="audio/fa865396a09f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:50-03:35</span>天空：先染蓝再密度；并行护肤</h2><p>希望天空不比人亮。只加蓝青密度：白斑不动、压不够。应在密度节点前 Shift+S：全局降色温、略减色调带青绿，让白边也染蓝，再加密度整片下降，并略降饱和。</p><p>全局加蓝伤肤：并行节点加肤饱和、色相略偏红纠回。三节点开关看压天效果。</p><figure><img src="assets/davinci-documentary-steady/shot-02.jpg" alt="先加冷染白边再密度压天；并行纠肤" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 先加冷染白边再密度压天；并行纠肤</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/70e0a0a98a11.mp3" type="button" aria-label="Play English audio">🔊</button><span>Cool white edges first, density-press sky; parallel skin fix.</span></div>
+<audio class="cap-audio" src="audio/70e0a0a98a11.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:35-05:10</span>归整杂色后再加暖</h2><p>蓝略转青降饱和；地面黄降饱和偏橙——色相差变少更干净。若仍偏冷，不要回 7 号加暖（会放大蓝/黄/绿差别），应后插新节点基于已干净分布略加色温。</p><p>有明确阳光时可略暖。素材知识分享平台自取。</p><figure><img src="assets/davinci-documentary-steady/shot-03.jpg" alt="归整蓝青与地面黄后，后插节点略加暖" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:20] 归整蓝青与地面黄后，后插节点略加暖</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3ef26206948d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tidy blue/cyan and ground yellow, then insert a slight warm.</span></div>
+<audio class="cap-audio" src="audio/3ef26206948d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:10-07:36</span>色彩增强去脏；柔和对比度收束</h2><p>头发/草染上怪蓝等：降低色彩增强去掉低饱和杂色，再略抬饱和滑块救中高饱和（黑架等归黑）。力度勿大，增强对低饱和极敏感。</p><p>柔和对比度：高光下压波杆上提，暗部上提波杆下压——收两端、护中间调。拉不准可不做。节点多但逻辑清。</p><figure><img src="assets/davinci-documentary-steady/shot-04.jpg" alt="色彩增强去低饱和脏色，再抬饱和回救" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:50] 色彩增强去低饱和脏色，再抬饱和回救</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0e2670398d0b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Color boost clears low-sat mud, then raise sat to recover.</span></div>
+<audio class="cap-audio" src="audio/0e2670398d0b.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-documentary-steady/shot-05.jpg" alt="柔和对比度收高光暗部，护中间调" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:00] 柔和对比度收高光暗部，护中间调</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/323325b30366.mp3" type="button" aria-label="Play English audio">🔊</button><span>Soft contrast tames highs/lows while protecting midtones.</span></div>
+<audio class="cap-audio" src="audio/323325b30366.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（270段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>怎么让你的视频画面更有故事感呢</p></div>
+<div class="transcript-row"><time>00:06</time><p>我会用一个不太恰当的词来形容啊</p></div>
+<div class="transcript-row"><time>00:08</time><p>就是让画面中的人物多一些沧桑的感觉</p></div>
+<div class="transcript-row"><time>00:11</time><p>看到我们这个画面</p></div>
+<div class="transcript-row"><time>00:12</time><p>虽然最前面这一期的节点可能会有点多</p></div>
+<div class="transcript-row"><time>00:14</time><p>但是理清了逻辑之后其实也不难理解</p></div>
+<div class="transcript-row"><time>00:16</time><p>看到灰片</p></div>
+<div class="transcript-row"><time>00:17</time><p>我们先给他做下简单的还原</p></div>
+<div class="transcript-row"><time>00:18</time><p>还原其实一点都不复杂</p></div>
+<div class="transcript-row"><time>00:20</time><p>我一贯以来都是以手搓为主的</p></div>
+<div class="transcript-row"><time>00:22</time><p>用曲线把高光和暗波拉到位</p></div>
+<div class="transcript-row"><time>00:24</time><p>然后再给画面加点饱和度</p></div>
+<div class="transcript-row"><time>00:25</time><p>这样就做好了</p></div>
+<div class="transcript-row"><time>00:26</time><p>还原还是非常简单的</p></div>
+<div class="transcript-row"><time>00:27</time><p>然后我们就要开始影调的塑造</p></div>
+<div class="transcript-row"><time>00:29</time><p>要呈现出沧桑或者岁月的感觉</p></div>
+<div class="transcript-row"><time>00:32</time><p>其实就需要整体的反差稍微拉开一些</p></div>
+<div class="transcript-row"><time>00:35</time><p>而且你画面整体也不能过量</p></div>
+<div class="transcript-row"><time>00:37</time><p>所以我在第二排的第一个节点</p></div>
+<div class="transcript-row"><time>00:39</time><p>用HDR色轮降低了Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>00:42</time><p>以及Light色轮的曝光</p></div>
+<div class="transcript-row"><time>00:45</time><p>让整体能够稍微往暗的一点走</p></div>
+<div class="transcript-row"><time>00:46</time><p>你按了钟你就发现这个岁月感觉更强了</p></div>
+<div class="transcript-row"><time>00:49</time><p>对不对</p></div>
+<div class="transcript-row"><time>00:49</time><p>但是反差也稍微有点降低了</p></div>
+<div class="transcript-row"><time>00:51</time><p>那我们就再稍微提高一点Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>00:54</time><p>好</p></div>
+<div class="transcript-row"><time>00:54</time><p>那此时在中间这小男孩是不是感觉经历了很多啊</p></div>
+<div class="transcript-row"><time>00:57</time><p>那初步的效果有了</p></div>
+<div class="transcript-row"><time>00:58</time><p>但是我觉得还不是特别够</p></div>
+<div class="transcript-row"><time>01:00</time><p>所以我会再来一个节点</p></div>
+<div class="transcript-row"><time>01:01</time><p>给中间这个C位的男生给他画一个遮罩</p></div>
+<div class="transcript-row"><time>01:05</time><p>然后给他再加一点点对比度</p></div>
+<div class="transcript-row"><time>01:07</time><p>不要加太多</p></div>
+<div class="transcript-row"><time>01:08</time><p>我们稍微加一点就行了</p></div>
+<div class="transcript-row"><time>01:09</time><p>加一点巩固一下</p></div>
+<div class="transcript-row"><time>01:10</time><p>好</p></div>
+<div class="transcript-row"><time>01:11</time><p>大概到这个程度就差不多</p></div>
+<div class="transcript-row"><time>01:12</time><p>力度不会太大的</p></div>
+<div class="transcript-row"><time>01:13</time><p>因为我们还需要按住Alt或者Option加O</p></div>
+<div class="transcript-row"><time>01:15</time><p>建立一个外部节点</p></div>
+<div class="transcript-row"><time>01:16</time><p>就是四周的范围</p></div>
+<div class="transcript-row"><time>01:17</time><p>把四周稍微压暗一些</p></div>
+<div class="transcript-row"><time>01:19</time><p>也是通过增加对比度的行为</p></div>
+<div class="transcript-row"><time>01:21</time><p>再配合轴心</p></div>
+<div class="transcript-row"><time>01:22</time><p>让四周能够暗一些</p></div>
+<div class="transcript-row"><time>01:25</time><p>好</p></div>
+<div class="transcript-row"><time>01:25</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>01:26</time><p>整体压暗或者提亮</p></div>
+<div class="transcript-row"><time>01:28</time><p>这个行为本质上就是在降低反差</p></div>
+<div class="transcript-row"><time>01:30</time><p>我们看到四周的波旋图的变化</p></div>
+<div class="transcript-row"><time>01:32</time><p>是不是在往下压</p></div>
+<div class="transcript-row"><time>01:33</time><p>而往下压就是在减少他们的反差</p></div>
+<div class="transcript-row"><time>01:35</time><p>也就是说我们是通过四周降低反差的行为</p></div>
+<div class="transcript-row"><time>01:39</time><p>来反衬中间主体强化的力度</p></div>
+<div class="transcript-row"><time>01:42</time><p>你会发现就能够允许我们用较小的调整</p></div>
+<div class="transcript-row"><time>01:44</time><p>来获得不错的效果</p></div>
+<div class="transcript-row"><time>01:45</time><p>那这三个节点的行为</p></div>
+<div class="transcript-row"><time>01:47</time><p>是不是就从影调层面</p></div>
+<div class="transcript-row"><time>01:48</time><p>给画面带来一个非常大的改观了</p></div>
+<div class="transcript-row"><time>01:50</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:50</time><p>接下来我们就开始动颜色</p></div>
+<div class="transcript-row"><time>01:51</time><p>我们一般希望天空不要太亮</p></div>
+<div class="transcript-row"><time>01:54</time><p>如果能够比人物还暗的话</p></div>
+<div class="transcript-row"><time>01:55</time><p>那整体的味道就非常好了</p></div>
+<div class="transcript-row"><time>01:57</time><p>可是目前的天空</p></div>
+<div class="transcript-row"><time>01:58</time><p>也就是在波旋图中的这一坨</p></div>
+<div class="transcript-row"><time>02:00</time><p>这一坨蓝色还是比较亮的</p></div>
+<div class="transcript-row"><time>02:02</time><p>那如果我们此时再来一个节点</p></div>
+<div class="transcript-row"><time>02:04</time><p>通过增加蓝色和青色的密度</p></div>
+<div class="transcript-row"><time>02:07</time><p>我们我把波旋图放在这吧</p></div>
+<div class="transcript-row"><time>02:08</time><p>通过增加蓝色和青色的密度</p></div>
+<div class="transcript-row"><time>02:10</time><p>你发现天空被压暗了</p></div>
+<div class="transcript-row"><time>02:12</time><p>对不对</p></div>
+<div class="transcript-row"><time>02:12</time><p>可是你看这一部分</p></div>
+<div class="transcript-row"><time>02:14</time><p>这里有一小坨没变化</p></div>
+<div class="transcript-row"><time>02:16</time><p>因为它这里太白了</p></div>
+<div class="transcript-row"><time>02:17</time><p>所以就导致整个天空的压暗的程度不太够</p></div>
+<div class="transcript-row"><time>02:20</time><p>我们需要让整个天空都往下降</p></div>
+<div class="transcript-row"><time>02:22</time><p>那这时候该怎么办呢</p></div>
+<div class="transcript-row"><time>02:23</time><p>当然我们也需要给它再稍微降一点饱和度</p></div>
+<div class="transcript-row"><time>02:26</time><p>那该怎么办呢</p></div>
+<div class="transcript-row"><time>02:27</time><p>这时候我们应该在7号节点</p></div>
+<div class="transcript-row"><time>02:29</time><p>也就是我们增加青色和蓝色密度的节点之前</p></div>
+<div class="transcript-row"><time>02:33</time><p>按住Shift加S往前建立一个节点</p></div>
+<div class="transcript-row"><time>02:35</time><p>我要让这里的天空也是蓝色</p></div>
+<div class="transcript-row"><time>02:37</time><p>而不是白色</p></div>
+<div class="transcript-row"><time>02:38</time><p>所以我给画面用色温</p></div>
+<div class="transcript-row"><time>02:40</time><p>全局加了点冷</p></div>
+<div class="transcript-row"><time>02:41</time><p>色调也稍微减一减</p></div>
+<div class="transcript-row"><time>02:43</time><p>让它带点青绿色</p></div>
+<div class="transcript-row"><time>02:44</time><p>好</p></div>
+<div class="transcript-row"><time>02:44</time><p>这时候我们就让这部分天也染上了蓝色</p></div>
+<div class="transcript-row"><time>02:48</time><p>所以我们在后面增加密度的行为</p></div>
+<div class="transcript-row"><time>02:51</time><p>就能让整个天空都往下降了</p></div>
+<div class="transcript-row"><time>02:53</time><p>你发现没有</p></div>
+<div class="transcript-row"><time>02:54</time><p>这个地方也往下压了</p></div>
+<div class="transcript-row"><time>02:55</time><p>因为它有蓝色</p></div>
+<div class="transcript-row"><time>02:57</time><p>这个思路其实很好理解</p></div>
+<div class="transcript-row"><time>02:58</time><p>但是全局加蓝会让人物的皮肤也受到影响</p></div>
+<div class="transcript-row"><time>03:01</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:02</time><p>原本的皮肤是这样的</p></div>
+<div class="transcript-row"><time>03:03</time><p>弄完了之后变成了这样</p></div>
+<div class="transcript-row"><time>03:04</time><p>反而不舒服</p></div>
+<div class="transcript-row"><time>03:05</time><p>那怎么办呢</p></div>
+<div class="transcript-row"><time>03:05</time><p>所以我们需要在7号节点</p></div>
+<div class="transcript-row"><time>03:07</time><p>就是全局加蓝的这个节点</p></div>
+<div class="transcript-row"><time>03:08</time><p>按住L或者是Option加P</p></div>
+<div class="transcript-row"><time>03:10</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>03:12</time><p>在并行节点下面这个节点中</p></div>
+<div class="transcript-row"><time>03:13</time><p>把肤色给它稍微纠正回来一点</p></div>
+<div class="transcript-row"><time>03:15</time><p>增加点饱和度</p></div>
+<div class="transcript-row"><time>03:16</time><p>再稍微色向网红的方向走一点</p></div>
+<div class="transcript-row"><time>03:19</time><p>大概是这个程度</p></div>
+<div class="transcript-row"><time>03:20</time><p>我们来放大看一下</p></div>
+<div class="transcript-row"><time>03:20</time><p>肤色就被我们纠正回来了</p></div>
+<div class="transcript-row"><time>03:22</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:22</time><p>包括手臂也被我们纠正回来</p></div>
+<div class="transcript-row"><time>03:24</time><p>变成一个正常的颜色</p></div>
+<div class="transcript-row"><time>03:25</time><p>这样我们就能够在保护肤色的前提下</p></div>
+<div class="transcript-row"><time>03:27</time><p>压暗天空</p></div>
+<div class="transcript-row"><time>03:28</time><p>我把这三个节点再开关一下</p></div>
+<div class="transcript-row"><time>03:29</time><p>看看</p></div>
+<div class="transcript-row"><time>03:30</time><p>效果还是可以的</p></div>
+<div class="transcript-row"><time>03:31</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:31</time><p>这个思路稍微有点绕</p></div>
+<div class="transcript-row"><time>03:33</time><p>大家可以把素材领取过去之后</p></div>
+<div class="transcript-row"><time>03:34</time><p>一起操作感受一下</p></div>
+<div class="transcript-row"><time>03:35</time><p>素材我已经传到历史上的分享平台</p></div>
+<div class="transcript-row"><time>03:37</time><p>私信或者看我剪辑</p></div>
+<div class="transcript-row"><time>03:38</time><p>就可以加入后免费自取</p></div>
+<div class="transcript-row"><time>03:39</time><p>还有达福星的线上系统</p></div>
+<div class="transcript-row"><time>03:40</time><p>各种各样的线下调色训练营</p></div>
+<div class="transcript-row"><time>03:42</time><p>在我们已经实现了天空压暗的前提下</p></div>
+<div class="transcript-row"><time>03:44</time><p>我们就可以继续的给画面颜色做优化</p></div>
+<div class="transcript-row"><time>03:47</time><p>我觉得可以让蓝色稍微走点青色</p></div>
+<div class="transcript-row"><time>03:50</time><p>让画面的颜色能够干净一些</p></div>
+<div class="transcript-row"><time>03:51</time><p>否则你会发现画面中又有黄又有绿</p></div>
+<div class="transcript-row"><time>03:54</time><p>还有天空的蓝</p></div>
+<div class="transcript-row"><time>03:55</time><p>颜色还是有点多的</p></div>
+<div class="transcript-row"><time>03:56</time><p>我这里新建了一个节点</p></div>
+<div class="transcript-row"><time>03:58</time><p>其实你放在10号节点做</p></div>
+<div class="transcript-row"><time>03:59</time><p>也是没问题的</p></div>
+<div class="transcript-row"><time>04:00</time><p>我主要是给大家看到这个区别</p></div>
+<div class="transcript-row"><time>04:01</time><p>首先我把天空稍微给它蓝色</p></div>
+<div class="transcript-row"><time>04:04</time><p>降低点饱和度</p></div>
+<div class="transcript-row"><time>04:05</time><p>让它稍微往青色走一点</p></div>
+<div class="transcript-row"><time>04:07</time><p>那天空的颜色就变少了</p></div>
+<div class="transcript-row"><time>04:08</time><p>能变干净一点</p></div>
+<div class="transcript-row"><time>04:09</time><p>而且衣服上的领子的颜色也能够回来</p></div>
+<div class="transcript-row"><time>04:12</time><p>再一个就是地面的黄色</p></div>
+<div class="transcript-row"><time>04:14</time><p>我把黄色饱和度给它往下一降</p></div>
+<div class="transcript-row"><time>04:16</time><p>然后让它稍微往橙色方向走一点</p></div>
+<div class="transcript-row"><time>04:18</time><p>此时你看</p></div>
+<div class="transcript-row"><time>04:19</time><p>这地面的颜色是不是变少了</p></div>
+<div class="transcript-row"><time>04:21</time><p>天空的颜色也不会那么独立了</p></div>
+<div class="transcript-row"><time>04:24</time><p>效果还是不错的</p></div>
+<div class="transcript-row"><time>04:25</time><p>这时候很有意思的一个点</p></div>
+<div class="transcript-row"><time>04:27</time><p>如果你觉得画面整体稍微冷了一些</p></div>
+<div class="transcript-row"><time>04:29</time><p>我们不要回到前面任何节点去调</p></div>
+<div class="transcript-row"><time>04:31</time><p>而应该在后面新建一个节点</p></div>
+<div class="transcript-row"><time>04:33</time><p>给画面稍微加一点点色温</p></div>
+<div class="transcript-row"><time>04:35</time><p>让它带上一点暖色</p></div>
+<div class="transcript-row"><time>04:36</time><p>这里加的色温是基于目前画面已有颜色分布来做的</p></div>
+<div class="transcript-row"><time>04:40</time><p>它不会产生更多的问题</p></div>
+<div class="transcript-row"><time>04:41</time><p>如果说你在7号节点去做的话</p></div>
+<div class="transcript-row"><time>04:43</time><p>原本的这些颜色</p></div>
+<div class="transcript-row"><time>04:45</time><p>我们刚刚还记得吗</p></div>
+<div class="transcript-row"><time>04:46</time><p>有天空的蓝</p></div>
+<div class="transcript-row"><time>04:46</time><p>有地面的黄</p></div>
+<div class="transcript-row"><time>04:47</time><p>还有这些草的绿</p></div>
+<div class="transcript-row"><time>04:48</time><p>你如果在前面7号节点加的暖</p></div>
+<div class="transcript-row"><time>04:50</time><p>就会扩大这些颜色的区别</p></div>
+<div class="transcript-row"><time>04:52</time><p>而我们在后面新建的这个节点</p></div>
+<div class="transcript-row"><time>04:54</time><p>是在我们已经减少了这些色相差的前提下</p></div>
+<div class="transcript-row"><time>04:57</time><p>加的暖颜色是在干净的技术上加的</p></div>
+<div class="transcript-row"><time>04:59</time><p>所以在这个时候我们就不要回去做了</p></div>
+<div class="transcript-row"><time>05:01</time><p>而加暖这个行为</p></div>
+<div class="transcript-row"><time>05:02</time><p>当然完全看你自己可做可不做</p></div>
+<div class="transcript-row"><time>05:04</time><p>我觉得对于这个画面来讲</p></div>
+<div class="transcript-row"><time>05:05</time><p>稍微暖一点好看</p></div>
+<div class="transcript-row"><time>05:06</time><p>因为有明确的阳光</p></div>
+<div class="transcript-row"><time>05:07</time><p>到这里我们颜色就大体调好了</p></div>
+<div class="transcript-row"><time>05:10</time><p>我们可以把颜色节点开关看一下效果</p></div>
+<div class="transcript-row"><time>05:13</time><p>第二排所有的节点都做下开关</p></div>
+<div class="transcript-row"><time>05:15</time><p>效果也挺好的</p></div>
+<div class="transcript-row"><time>05:16</time><p>但是我们仔细看画面之后产生了一个新的问题</p></div>
+<div class="transcript-row"><time>05:19</time><p>我们放大看人物的头发</p></div>
+<div class="transcript-row"><time>05:20</time><p>这个头发它对我们染上了更多的颜色</p></div>
+<div class="transcript-row"><time>05:23</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:24</time><p>特别是个蓝色不舒服</p></div>
+<div class="transcript-row"><time>05:25</time><p>而且背后的这个草多</p></div>
+<div class="transcript-row"><time>05:27</time><p>也有一些很怪的颜色</p></div>
+<div class="transcript-row"><time>05:29</time><p>我们需要把它的颜色给减少</p></div>
+<div class="transcript-row"><time>05:31</time><p>也就是说我们需要降低低饱和部分的饱和度</p></div>
+<div class="transcript-row"><time>05:34</time><p>我们可以再来一个节点给它拉到第三排</p></div>
+<div class="transcript-row"><time>05:36</time><p>我们很少会用到第三排</p></div>
+<div class="transcript-row"><time>05:37</time><p>但是我们这次必须要用到第三排</p></div>
+<div class="transcript-row"><time>05:39</time><p>否则放不下了</p></div>
+<div class="transcript-row"><time>05:39</time><p>我们在新建的这个节点中</p></div>
+<div class="transcript-row"><time>05:41</time><p>稍微降低点色彩增强划快</p></div>
+<div class="transcript-row"><time>05:44</time><p>来把这些低饱和部分的颜色给它去了</p></div>
+<div class="transcript-row"><time>05:46</time><p>我们看到头发是不是变回了没有颜色的结果</p></div>
+<div class="transcript-row"><time>05:49</time><p>这个草多也是一样</p></div>
+<div class="transcript-row"><time>05:50</time><p>颜色都变干净了</p></div>
+<div class="transcript-row"><time>05:51</time><p>而且你看这个自行车</p></div>
+<div class="transcript-row"><time>05:52</time><p>这个架子上的颜色也变成了该有的黑色</p></div>
+<div class="transcript-row"><time>05:55</time><p>可是像这种中高饱和部分的颜色也受到了牺牲</p></div>
+<div class="transcript-row"><time>05:59</time><p>因为色彩增强</p></div>
+<div class="transcript-row"><time>06:00</time><p>也是全局改变饱和度的一个工具</p></div>
+<div class="transcript-row"><time>06:02</time><p>所以这时候我们就需要再稍微提高一点饱和度划快</p></div>
+<div class="transcript-row"><time>06:05</time><p>我们就可以把中高饱和部分饱和度给它救回来</p></div>
+<div class="transcript-row"><time>06:08</time><p>同时还能够保留在低饱和部分颜色降低的这个行为</p></div>
+<div class="transcript-row"><time>06:12</time><p>这是调整后</p></div>
+<div class="transcript-row"><time>06:13</time><p>这是调整前</p></div>
+<div class="transcript-row"><time>06:14</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:14</time><p>效果还是非常好的</p></div>
+<div class="transcript-row"><time>06:15</time><p>颜色就能够变得干净了</p></div>
+<div class="transcript-row"><time>06:17</time><p>这一点其实大家一定要在自己调色的过程中</p></div>
+<div class="transcript-row"><time>06:19</time><p>有意的去观察一下</p></div>
+<div class="transcript-row"><time>06:21</time><p>画面中会不会因为你的染色</p></div>
+<div class="transcript-row"><time>06:22</time><p>产生了很多新的杂色的问题</p></div>
+<div class="transcript-row"><time>06:24</time><p>而且这个色彩增强和饱和度这个组合</p></div>
+<div class="transcript-row"><time>06:27</time><p>我们之前讲过非常多次</p></div>
+<div class="transcript-row"><time>06:28</time><p>还是比较好用的</p></div>
+<div class="transcript-row"><time>06:29</time><p>但是要注意色彩增强</p></div>
+<div class="transcript-row"><time>06:30</time><p>因为对低饱和太敏感了</p></div>
+<div class="transcript-row"><time>06:31</time><p>所以你力度调太大的话</p></div>
+<div class="transcript-row"><time>06:33</time><p>容易让画面产生不太舒服的一个结果</p></div>
+<div class="transcript-row"><time>06:35</time><p>所以力度不要太大</p></div>
+<div class="transcript-row"><time>06:36</time><p>要根据画面情况来</p></div>
+<div class="transcript-row"><time>06:38</time><p>最后我们可以给画面加一个柔和对比度</p></div>
+<div class="transcript-row"><time>06:40</time><p>柔和对比度</p></div>
+<div class="transcript-row"><time>06:41</time><p>我们后面有机会再展开讲</p></div>
+<div class="transcript-row"><time>06:43</time><p>其实这个东西还是比较麻烦的</p></div>
+<div class="transcript-row"><time>06:45</time><p>我们可以把高光这一端往下压</p></div>
+<div class="transcript-row"><time>06:47</time><p>再把高光延伸出来的波感给它往上提</p></div>
+<div class="transcript-row"><time>06:49</time><p>再把暗部这一端给它往上提</p></div>
+<div class="transcript-row"><time>06:51</time><p>把暗部延伸出来的波感给它往下压</p></div>
+<div class="transcript-row"><time>06:53</time><p>很多朋友会跟我说这个柔和对比度拉得不到位</p></div>
+<div class="transcript-row"><time>06:56</time><p>这个确实</p></div>
+<div class="transcript-row"><time>06:57</time><p>因为我觉得这个行为</p></div>
+<div class="transcript-row"><time>06:59</time><p>你本身也不是说必做的一件事情</p></div>
+<div class="transcript-row"><time>07:01</time><p>如果真拉不到位的话就不拉了</p></div>
+<div class="transcript-row"><time>07:03</time><p>我们重点的目的是希望能够让画面</p></div>
+<div class="transcript-row"><time>07:05</time><p>不要特别亮的那个情况</p></div>
+<div class="transcript-row"><time>07:07</time><p>同时还能够保护中间调的反差</p></div>
+<div class="transcript-row"><time>07:08</time><p>不会受到影响</p></div>
+<div class="transcript-row"><time>07:09</time><p>我们看到暗部这一端被我们压缩了</p></div>
+<div class="transcript-row"><time>07:11</time><p>压灰了</p></div>
+<div class="transcript-row"><time>07:12</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:12</time><p>高光这一端也收缩了</p></div>
+<div class="transcript-row"><time>07:14</time><p>而中间调部分</p></div>
+<div class="transcript-row"><time>07:15</time><p>它的反差基本上没有任何改变</p></div>
+<div class="transcript-row"><time>07:17</time><p>你就可以让它稍微再亮一些</p></div>
+<div class="transcript-row"><time>07:19</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>07:20</time><p>我觉得挺好了</p></div>
+<div class="transcript-row"><time>07:21</time><p>这时候我们就调完了</p></div>
+<div class="transcript-row"><time>07:22</time><p>我们把画面从这样变成了这样</p></div>
+<div class="transcript-row"><time>07:24</time><p>效果还是非常好的</p></div>
+<div class="transcript-row"><time>07:26</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:26</time><p>节点确实有点多</p></div>
+<div class="transcript-row"><time>07:27</time><p>但是思路理清的其实还好</p></div>
+<div class="transcript-row"><time>07:29</time><p>所以大家别忘了领取之后一起练练手</p></div>
+<div class="transcript-row"><time>07:31</time><p>剪到这里</p></div>
+<div class="transcript-row"><time>07:32</time><p>如果觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>07:33</time><p>还希望多多赞联</p></div>
+<div class="transcript-row"><time>07:34</time><p>好了</p></div>
+<div class="transcript-row"><time>07:34</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>07:35</time><p>拜拜溜</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

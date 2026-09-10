@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="老叉回应学员「冷暖反差怎么调都怪」：能变冷的通常只有暗面或本色偏冷的物体；受光暖色硬染成画面最冷必然假。正确顺序是先校正白平衡保留色相差，再还原后加暖；用 HDR 柔化影调、大遮罩+暗角强化中心，再全局加冷并用并行节点找回暖色饱和——按本色分区染色，而不是按一级轮曝光分区硬染。">
+<title>达芬奇冷暖反差怎么做最简单？很多人都想错｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>达芬奇冷暖反差怎么做最简单？很多人都想错</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分24秒</span><span class="meta-tag tag-topic">达芬奇 冷暖反差 白平衡 色相差 并行节点 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/9jqn7ftdAwQ" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">立题：能变冷的只有暗面或本色冷</a><a href="#ch2">影调：HDR 柔化 + 大遮罩提中心 + 暗角</a><a href="#ch3">可选：白柔/黑柔柔化观感</a><a href="#ch4">冷暖：缺冷先全局加冷，并行找回暖</a><a href="#ch5">收束：纠黄密度 + 对比还原</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>老叉回应学员「冷暖反差怎么调都怪」：能变冷的通常只有暗面或本色偏冷的物体；受光暖色硬染成画面最冷必然假。正确顺序是先校正白平衡保留色相差，再还原后加暖；用 HDR 柔化影调、大遮罩+暗角强化中心，再全局加冷并用并行节点找回暖色饱和——按本色分区染色，而不是按一级轮曝光分区硬染。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→02:10]</span><div><strong>能冷才冷</strong><p>冷只在暗面/本色冷；先校白平衡再加暖，保留色相差。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:10→04:32]</span><div><strong>影调分区</strong><p>降 Light/Shadow、回 Highlight；大遮罩对比度+轴心，并行暗角。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:32→05:12]</span><div><strong>可选白柔</strong><p>Alt/Option+S 串行 + Alt+L 图层改屏幕，高斯模糊+曲线控力度。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:12→07:00]</span><div><strong>先加冷再找回暖</strong><p>缺冷就全局加冷（可偏青绿）；并行节点找回暖色饱和。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:00→08:24]</span><div><strong>微调收束</strong><p>可再全局微暖；蜘蛛网纠黄、提密度；非一级轮曝光分区，逻辑更稳。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>冷暖反差不是硬把受光暖色染成最冷，而是找出「能冷」的本色/暗面：先校白平衡保留色相差，影调到位后全局加冷、并行找回暖。比一级校色轮按曝光硬分区更安全。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-02:10</span>立题：能变冷的只有暗面或本色冷</h2><p>线下训练营学员想做冷暖反差却总觉得怪。老叉指出：画面能出现冷色，一般只有暗面，或物体本色偏冷；若本色本暖又处在受光面，硬染成画面最冷必然假。核心是「把能够变成冷的变成冷色」。</p><p>室内打电话素材先简单还原后仍偏暖：用不会因置景改色的窗户判断——偏暖说明是白平衡错误。2 号节点先校正白平衡（校正前可抓静帧对照），窗帘与白衣背光、电话本色归正。若仍喜欢最初的暖，在着色节点略加暖——这不是重复：先校再加暖，暖色区几乎不动，该冷的白/肤色能相对冷，保留色相差。</p><figure><img src="assets/davinci-warm-cool-simple/shot-01.jpg" alt="校正白平衡前后：窗帘与白衣归正，保留色相差" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:05] 校正白平衡前后：窗帘与白衣归正，保留色相差</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5de2fb7598fa.mp3" type="button" aria-label="Play English audio">🔊</button><span>Before/after white balance: curtains and whites corrected while keeping color difference.</span></div>
+<audio class="cap-audio" src="audio/5de2fb7598fa.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">02:10-04:32</span>影调：HDR 柔化 + 大遮罩提中心 + 暗角</h2><p>还原后偏暗氛围更好：降 HDR 的 Light 与 Shadow，高光过闷再略抬 Highlight，Shadow 可回一点。电话主体不够突出时，中间大遮罩加对比度并配合轴心提亮。</p><p>Shift+P / Option+P 并行暗角：中心含右下腿，超大柔化后反转压四周；用对比度+轴心压暗以免牺牲本子高光，并略降饱和（对比度会抬饱和）。两节点此消彼长强化中心。闷则可给窗户略提高光滑块；膝盖太暗再并行微提。</p><figure><img src="assets/davinci-warm-cool-simple/shot-02.jpg" alt="大遮罩加对比度+轴心提中心，并行暗角压四周" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:20] 大遮罩加对比度+轴心提中心，并行暗角压四周</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/1cf358bdda78.mp3" type="button" aria-label="Play English audio">🔊</button><span>Large mask: contrast + pivot lifts center; parallel vignette darkens edges.</span></div>
+<audio class="cap-audio" src="audio/1cf358bdda78.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">04:32-05:12</span>可选：白柔/黑柔柔化观感</h2><p>明暗分区到位后若想更柔和：Alt/Option+S 建串行，再 Alt+L 建图层节点，合成模式改屏幕，下层拉满高斯模糊，用曲线控白柔力度，暗部可略走黑柔。可加可不加。</p></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:12-07:00</span>冷暖：缺冷先全局加冷，并行找回暖</h2><p>肤色、衣、桌、墙柜多为暖，不能硬冷；电话与窗户可略冷。缺冷就直接全局加冷，色调可偏青绿带复古。全局变冷时，本可冷的区域染蓝力度仍大于本暖物体。</p><p>并行节点把暖色饱和找回来：暖区几乎不受影响，能冷的变冷——冷暖都出现即可，不必一次把每个色做死；不够暖可再全局微暖。开关对比可见：全局偏暖同时该冷仍冷，思路与「校白平衡再染色」一致。</p><figure><img src="assets/davinci-warm-cool-simple/shot-03.jpg" alt="全局加冷偏青绿：缺冷先染上冷色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:40] 全局加冷偏青绿：缺冷先染上冷色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/eca61e3e7b1d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Add global cool teal-green—put cold in first when it’s missing.</span></div>
+<audio class="cap-audio" src="audio/eca61e3e7b1d.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-warm-cool-simple/shot-04.jpg" alt="并行节点找回暖色饱和，冷暖同时在场" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:15] 并行节点找回暖色饱和，冷暖同时在场</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5a3472724d49.mp3" type="button" aria-label="Play English audio">🔊</button><span>Parallel node restores warm saturation so cool and warm coexist.</span></div>
+<audio class="cap-audio" src="audio/5a3472724d49.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">07:00-08:24</span>收束：纠黄密度 + 对比还原</h2><p>人物光太黄可用向量示波器（蜘蛛网）略往红、降黄饱和，并提黄/皮肤密度防过艳。该冷的冷、该暖的暖，且不按一级校色轮曝光分区，不易逻辑翻车。另有素材同思路；素材与课程见简介。</p><figure><img src="assets/davinci-warm-cool-simple/shot-05.jpg" alt="蜘蛛网纠黄并提密度，肤色更稳" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:20] 蜘蛛网纠黄并提密度，肤色更稳</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/aa8bb7ca734c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Vectors fix yellow cast and add density for steadier skin.</span></div>
+<audio class="cap-audio" src="audio/aa8bb7ca734c.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-warm-cool-simple/shot-06.jpg" alt="与还原对比：该冷的冷、该暖的暖" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[08:00] 与还原对比：该冷的冷、该暖的暖</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/25d3f6e3dce6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Vs restore: cool where it should be cool, warm where it should be warm.</span></div>
+<audio class="cap-audio" src="audio/25d3f6e3dce6.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（367段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>冷暖反差</p></div>
+<div class="transcript-row"><time>00:08</time><p>这种冷暖反差要怎么做</p></div>
+<div class="transcript-row"><time>00:09</time><p>前两天结束了25年最后一期线下调色训练营</p></div>
+<div class="transcript-row"><time>00:12</time><p>有一位学员回去之后</p></div>
+<div class="transcript-row"><time>00:14</time><p>针对自己的项目</p></div>
+<div class="transcript-row"><time>00:14</time><p>他想要做出冷暖反差</p></div>
+<div class="transcript-row"><time>00:16</time><p>但是感觉怎么做都怪怪的</p></div>
+<div class="transcript-row"><time>00:17</time><p>核心的点还是在于冷的地方</p></div>
+<div class="transcript-row"><time>00:19</time><p>能出现冷的一般只会有两种情况</p></div>
+<div class="transcript-row"><time>00:22</time><p>一般情况下</p></div>
+<div class="transcript-row"><time>00:23</time><p>一个是暗面</p></div>
+<div class="transcript-row"><time>00:24</time><p>另一个是物体本色微冷色</p></div>
+<div class="transcript-row"><time>00:27</time><p>如果本色就是暖色</p></div>
+<div class="transcript-row"><time>00:28</time><p>并且它处在一个受光面</p></div>
+<div class="transcript-row"><time>00:30</time><p>你硬要把它变成画面中最冷的存在</p></div>
+<div class="transcript-row"><time>00:33</time><p>这必然是会很假</p></div>
+<div class="transcript-row"><time>00:34</time><p>所以冷暖反差核心的思路</p></div>
+<div class="transcript-row"><time>00:36</time><p>其实是把能够变成冷的变成冷色</p></div>
+<div class="transcript-row"><time>00:39</time><p>比如说这个画面</p></div>
+<div class="transcript-row"><time>00:40</time><p>当我们给它简单做一下还原之后</p></div>
+<div class="transcript-row"><time>00:42</time><p>能够看到整体颜色</p></div>
+<div class="transcript-row"><time>00:43</time><p>还是按照前期置景的想法</p></div>
+<div class="transcript-row"><time>00:45</time><p>总暖掉了</p></div>
+<div class="transcript-row"><time>00:46</time><p>但是这种暖是场景的暖</p></div>
+<div class="transcript-row"><time>00:48</time><p>还是因为白平衡不正确的暖</p></div>
+<div class="transcript-row"><time>00:49</time><p>我们可以看一下画面中</p></div>
+<div class="transcript-row"><time>00:50</time><p>不会因为置景而改变颜色的东西</p></div>
+<div class="transcript-row"><time>00:53</time><p>比如说窗户</p></div>
+<div class="transcript-row"><time>00:54</time><p>那此时这个窗户是有一点偏暖的</p></div>
+<div class="transcript-row"><time>00:56</time><p>所以它这个其实是白平衡不正确的暖</p></div>
+<div class="transcript-row"><time>00:59</time><p>我们要在2号节点</p></div>
+<div class="transcript-row"><time>01:00</time><p>先给它校正一下白平衡</p></div>
+<div class="transcript-row"><time>01:01</time><p>在校正之前</p></div>
+<div class="transcript-row"><time>01:02</time><p>我给它先抓取个竞争</p></div>
+<div class="transcript-row"><time>01:04</time><p>是原因我们一会再说</p></div>
+<div class="transcript-row"><time>01:05</time><p>给它校正一下白平衡了之后</p></div>
+<div class="transcript-row"><time>01:07</time><p>我们看到整体的颜色是不是就变干净了</p></div>
+<div class="transcript-row"><time>01:10</time><p>窗帘窗户的颜色变成白色</p></div>
+<div class="transcript-row"><time>01:12</time><p>而且像这种白衣服</p></div>
+<div class="transcript-row"><time>01:13</time><p>它的背光面也不会像原本那样那么暖</p></div>
+<div class="transcript-row"><time>01:16</time><p>电话也能够变成正常的颜色</p></div>
+<div class="transcript-row"><time>01:18</time><p>也就是找出了它的本色</p></div>
+<div class="transcript-row"><time>01:19</time><p>那如果你说</p></div>
+<div class="transcript-row"><time>01:20</time><p>我还是觉得一开始的那种暖比较好看</p></div>
+<div class="transcript-row"><time>01:23</time><p>那就可以考虑在4号节点</p></div>
+<div class="transcript-row"><time>01:24</time><p>也就是著色节点上给它加一点点暖</p></div>
+<div class="transcript-row"><time>01:27</time><p>加成这样差不多</p></div>
+<div class="transcript-row"><time>01:28</time><p>你可能会觉得这不是一个重复行为吗</p></div>
+<div class="transcript-row"><time>01:30</time><p>并不是</p></div>
+<div class="transcript-row"><time>01:31</time><p>我们把刚刚校正白平衡之前的画面</p></div>
+<div class="transcript-row"><time>01:33</time><p>来做一下滑向对比</p></div>
+<div class="transcript-row"><time>01:35</time><p>你乍一看好像没什么变化</p></div>
+<div class="transcript-row"><time>01:36</time><p>特别是在暖色部分</p></div>
+<div class="transcript-row"><time>01:38</time><p>但是你仔细看</p></div>
+<div class="transcript-row"><time>01:39</time><p>我们在这些该是冷色部分的</p></div>
+<div class="transcript-row"><time>01:41</time><p>比如说白色的窗帘</p></div>
+<div class="transcript-row"><time>01:43</time><p>以及它的肤色</p></div>
+<div class="transcript-row"><time>01:44</time><p>还有这里白色的衣服</p></div>
+<div class="transcript-row"><time>01:45</time><p>它该呈现白色的</p></div>
+<div class="transcript-row"><time>01:47</time><p>它能够呈现白色</p></div>
+<div class="transcript-row"><time>01:48</time><p>你会发现</p></div>
+<div class="transcript-row"><time>01:48</time><p>如果说我们一开始保持白平衡错误的暖</p></div>
+<div class="transcript-row"><time>01:52</time><p>会导致这些本该偏冷的物体</p></div>
+<div class="transcript-row"><time>01:55</time><p>还是保持错误的颜色</p></div>
+<div class="transcript-row"><time>01:56</time><p>但如果说你先给它校正白平衡</p></div>
+<div class="transcript-row"><time>01:59</time><p>再给它调暖</p></div>
+<div class="transcript-row"><time>02:00</time><p>一方面这些暖色部分几乎不受到影响</p></div>
+<div class="transcript-row"><time>02:02</time><p>但是这些该是冷色的部分</p></div>
+<div class="transcript-row"><time>02:04</time><p>能呈现出相对冷的结果</p></div>
+<div class="transcript-row"><time>02:06</time><p>这个就是保留了它的色相差</p></div>
+<div class="transcript-row"><time>02:08</time><p>这个色相差就是我们时刻要注意的内容</p></div>
+<div class="transcript-row"><time>02:10</time><p>那此时我们就做好了还原的行为</p></div>
+<div class="transcript-row"><time>02:13</time><p>接下来就可以考虑给这个画面</p></div>
+<div class="transcript-row"><time>02:15</time><p>增加一点质感</p></div>
+<div class="transcript-row"><time>02:16</time><p>加几个节点</p></div>
+<div class="transcript-row"><time>02:16</time><p>拉到第二排</p></div>
+<div class="transcript-row"><time>02:17</time><p>整体的影调</p></div>
+<div class="transcript-row"><time>02:18</time><p>根据这个环境以及这个置景</p></div>
+<div class="transcript-row"><time>02:20</time><p>还是觉得说偏暗点会好看一点</p></div>
+<div class="transcript-row"><time>02:22</time><p>才符合氛围</p></div>
+<div class="transcript-row"><time>02:23</time><p>让它整体能够柔和一点</p></div>
+<div class="transcript-row"><time>02:24</time><p>所以我们可以给它稍微降低点</p></div>
+<div class="transcript-row"><time>02:26</time><p>中晖部分的曝光</p></div>
+<div class="transcript-row"><time>02:27</time><p>我这里选择的是降低H大色轮中</p></div>
+<div class="transcript-row"><time>02:29</time><p>Light色轮的曝光</p></div>
+<div class="transcript-row"><time>02:32</time><p>以及Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>02:34</time><p>大概是这个结果</p></div>
+<div class="transcript-row"><time>02:35</time><p>你会看到整体画面变得柔和了</p></div>
+<div class="transcript-row"><time>02:37</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:37</time><p>但是高光压得太多</p></div>
+<div class="transcript-row"><time>02:39</time><p>所以我们可以再稍微提高一点</p></div>
+<div class="transcript-row"><time>02:41</time><p>Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>02:42</time><p>这个就不用提太多了</p></div>
+<div class="transcript-row"><time>02:43</time><p>让高光能够回来一点</p></div>
+<div class="transcript-row"><time>02:45</time><p>不至于那么闷</p></div>
+<div class="transcript-row"><time>02:46</time><p>大概是这个结果</p></div>
+<div class="transcript-row"><time>02:47</time><p>我觉得挺好的</p></div>
+<div class="transcript-row"><time>02:48</time><p>Shadow色轮可以回来一点点</p></div>
+<div class="transcript-row"><time>02:50</time><p>此时画面就大体不错了</p></div>
+<div class="transcript-row"><time>02:51</time><p>如果你觉得主体发生的地方</p></div>
+<div class="transcript-row"><time>02:53</time><p>也就是电话这个区域</p></div>
+<div class="transcript-row"><time>02:54</time><p>还不够突出</p></div>
+<div class="transcript-row"><time>02:55</time><p>那你就可以考虑给它加一个遮罩</p></div>
+<div class="transcript-row"><time>02:57</time><p>在后面这个节点中</p></div>
+<div class="transcript-row"><time>02:58</time><p>给中间区域画一个</p></div>
+<div class="transcript-row"><time>03:00</time><p>较大的一个遮罩</p></div>
+<div class="transcript-row"><time>03:01</time><p>然后给它稍微加一点点对比度</p></div>
+<div class="transcript-row"><time>03:04</time><p>配合轴心让它能够亮一点</p></div>
+<div class="transcript-row"><time>03:06</time><p>好</p></div>
+<div class="transcript-row"><time>03:07</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>03:08</time><p>然后你可以按住L的加P</p></div>
+<div class="transcript-row"><time>03:09</time><p>或者是Option加P</p></div>
+<div class="transcript-row"><time>03:10</time><p>来个并行节点</p></div>
+<div class="transcript-row"><time>03:11</time><p>给四周加一个暗角</p></div>
+<div class="transcript-row"><time>03:13</time><p>但大家要注意这个暗角</p></div>
+<div class="transcript-row"><time>03:14</time><p>千万不要忽略了右下角</p></div>
+<div class="transcript-row"><time>03:16</time><p>这里还有个腿的存在</p></div>
+<div class="transcript-row"><time>03:17</time><p>我们可以以这个地方</p></div>
+<div class="transcript-row"><time>03:18</time><p>作为中心给它画一个</p></div>
+<div class="transcript-row"><time>03:20</time><p>超大柔化的遮罩</p></div>
+<div class="transcript-row"><time>03:21</time><p>然后把它反转了</p></div>
+<div class="transcript-row"><time>03:22</time><p>让它直映下四周</p></div>
+<div class="transcript-row"><time>03:23</time><p>对于四周这个暗角</p></div>
+<div class="transcript-row"><time>03:25</time><p>我觉得其实</p></div>
+<div class="transcript-row"><time>03:26</time><p>这些周围的内容还是有用的</p></div>
+<div class="transcript-row"><time>03:27</time><p>但我不希望它太亮</p></div>
+<div class="transcript-row"><time>03:29</time><p>所以我们可以用增加对比度</p></div>
+<div class="transcript-row"><time>03:31</time><p>然后配合轴心的方式</p></div>
+<div class="transcript-row"><time>03:33</time><p>让它能够压暗一点</p></div>
+<div class="transcript-row"><time>03:34</time><p>这样既不会牺牲掉</p></div>
+<div class="transcript-row"><time>03:36</time><p>比如说本子上的高光</p></div>
+<div class="transcript-row"><time>03:38</time><p>也能够让这些</p></div>
+<div class="transcript-row"><time>03:39</time><p>本来处在暗面的四周</p></div>
+<div class="transcript-row"><time>03:40</time><p>再次压暗</p></div>
+<div class="transcript-row"><time>03:41</time><p>保留了它一定的光感</p></div>
+<div class="transcript-row"><time>03:42</time><p>也稍微可以降低一点饱和度</p></div>
+<div class="transcript-row"><time>03:44</time><p>因为增加对比度会增加饱和度</p></div>
+<div class="transcript-row"><time>03:46</time><p>其实我们这两个节点的行为</p></div>
+<div class="transcript-row"><time>03:47</time><p>就是来利用此消彼长的方式</p></div>
+<div class="transcript-row"><time>03:49</time><p>来强化中间部分的提亮</p></div>
+<div class="transcript-row"><time>03:51</time><p>你会发现</p></div>
+<div class="transcript-row"><time>03:52</time><p>你的视线中心就变得更加明确</p></div>
+<div class="transcript-row"><time>03:54</time><p>而且画面不会发灰了</p></div>
+<div class="transcript-row"><time>03:55</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:55</time><p>最后如果你觉得</p></div>
+<div class="transcript-row"><time>03:56</time><p>画面还是有点闷的话</p></div>
+<div class="transcript-row"><time>03:58</time><p>其实可以考虑</p></div>
+<div class="transcript-row"><time>03:58</time><p>一般来讲</p></div>
+<div class="transcript-row"><time>03:59</time><p>我们有窗户</p></div>
+<div class="transcript-row"><time>04:00</time><p>我们可以让它稍微亮一点</p></div>
+<div class="transcript-row"><time>04:02</time><p>柔化记得开大</p></div>
+<div class="transcript-row"><time>04:03</time><p>然后给它稍微提高一点</p></div>
+<div class="transcript-row"><time>04:04</time><p>高光划快</p></div>
+<div class="transcript-row"><time>04:05</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>04:06</time><p>其实还挺不错的</p></div>
+<div class="transcript-row"><time>04:07</time><p>对不对</p></div>
+<div class="transcript-row"><time>04:07</time><p>能够让画面中</p></div>
+<div class="transcript-row"><time>04:09</time><p>有那么一点点小亮点</p></div>
+<div class="transcript-row"><time>04:11</time><p>那此时</p></div>
+<div class="transcript-row"><time>04:11</time><p>我们就让画面层次</p></div>
+<div class="transcript-row"><time>04:12</time><p>变得更加立体了</p></div>
+<div class="transcript-row"><time>04:13</time><p>也可以用还原后的画面</p></div>
+<div class="transcript-row"><time>04:14</time><p>来做一下对比</p></div>
+<div class="transcript-row"><time>04:15</time><p>这是我们还原后的画面</p></div>
+<div class="transcript-row"><time>04:16</time><p>这是我们调完的画面</p></div>
+<div class="transcript-row"><time>04:18</time><p>整体的一个氛围跟质感</p></div>
+<div class="transcript-row"><time>04:19</time><p>就已经出来了</p></div>
+<div class="transcript-row"><time>04:20</time><p>对不对</p></div>
+<div class="transcript-row"><time>04:20</time><p>当然</p></div>
+<div class="transcript-row"><time>04:20</time><p>如果你觉得</p></div>
+<div class="transcript-row"><time>04:21</time><p>这个人物的膝盖太暗的话</p></div>
+<div class="transcript-row"><time>04:23</time><p>也可以再来个并行节点</p></div>
+<div class="transcript-row"><time>04:24</time><p>把人物膝盖</p></div>
+<div class="transcript-row"><time>04:25</time><p>给它稍微提亮一点点</p></div>
+<div class="transcript-row"><time>04:27</time><p>不需要太多</p></div>
+<div class="transcript-row"><time>04:28</time><p>大概是这样</p></div>
+<div class="transcript-row"><time>04:29</time><p>好度也可以稍微降一点点</p></div>
+<div class="transcript-row"><time>04:32</time><p>既然此时</p></div>
+<div class="transcript-row"><time>04:33</time><p>我们已经做出了明暗反差</p></div>
+<div class="transcript-row"><time>04:34</time><p>也就是让这些亮的该亮</p></div>
+<div class="transcript-row"><time>04:36</time><p>暗的该暗</p></div>
+<div class="transcript-row"><time>04:37</time><p>那如果说</p></div>
+<div class="transcript-row"><time>04:38</time><p>你想让画面更加柔和</p></div>
+<div class="transcript-row"><time>04:39</time><p>其实可以考虑来个白柔</p></div>
+<div class="transcript-row"><time>04:40</time><p>白柔怎么建</p></div>
+<div class="transcript-row"><time>04:41</time><p>按住 Alt 加 S</p></div>
+<div class="transcript-row"><time>04:42</time><p>或者是 Option 加 S</p></div>
+<div class="transcript-row"><time>04:43</time><p>建立一个串行节点</p></div>
+<div class="transcript-row"><time>04:44</time><p>然后再按住 Alt 加 L</p></div>
+<div class="transcript-row"><time>04:46</time><p>建立一个图层节点</p></div>
+<div class="transcript-row"><time>04:47</time><p>把图层节点的合成模式</p></div>
+<div class="transcript-row"><time>04:49</time><p>改成绿色</p></div>
+<div class="transcript-row"><time>04:50</time><p>然后在特效库中</p></div>
+<div class="transcript-row"><time>04:51</time><p>搜索高斯模糊</p></div>
+<div class="transcript-row"><time>04:53</time><p>把高斯模糊拉到下面这个节点</p></div>
+<div class="transcript-row"><time>04:55</time><p>并且把高斯模糊的数值拉满</p></div>
+<div class="transcript-row"><time>04:57</time><p>然后同样在下面这个节点中</p></div>
+<div class="transcript-row"><time>04:58</time><p>用曲线来把这个白柔的力度</p></div>
+<div class="transcript-row"><time>05:00</time><p>给它做一定的优化</p></div>
+<div class="transcript-row"><time>05:02</time><p>稍微降低一点</p></div>
+<div class="transcript-row"><time>05:03</time><p>暗部这边也可以走一点来</p></div>
+<div class="transcript-row"><time>05:04</time><p>让它能够呈现出一个</p></div>
+<div class="transcript-row"><time>05:06</time><p>黑柔的效果</p></div>
+<div class="transcript-row"><time>05:07</time><p>我觉得大概这样的一个结果</p></div>
+<div class="transcript-row"><time>05:09</time><p>还挺好的</p></div>
+<div class="transcript-row"><time>05:09</time><p>能够有一点温柔的感觉</p></div>
+<div class="transcript-row"><time>05:10</time><p>当然你不要就算了</p></div>
+<div class="transcript-row"><time>05:11</time><p>问题也不大</p></div>
+<div class="transcript-row"><time>05:12</time><p>接下来就可以考虑颜色了</p></div>
+<div class="transcript-row"><time>05:13</time><p>我们是明确想要</p></div>
+<div class="transcript-row"><time>05:15</time><p>冷暖反差的</p></div>
+<div class="transcript-row"><time>05:16</time><p>我们此时看画面</p></div>
+<div class="transcript-row"><time>05:17</time><p>可以变成冷色的是谁</p></div>
+<div class="transcript-row"><time>05:19</time><p>你像人物的皮肤</p></div>
+<div class="transcript-row"><time>05:20</time><p>人物的衣服</p></div>
+<div class="transcript-row"><time>05:21</time><p>桌子</p></div>
+<div class="transcript-row"><time>05:21</time><p>背景墙</p></div>
+<div class="transcript-row"><time>05:22</time><p>这个柜子</p></div>
+<div class="transcript-row"><time>05:23</time><p>还有左侧这里的墙</p></div>
+<div class="transcript-row"><time>05:24</time><p>它都是暖色的</p></div>
+<div class="transcript-row"><time>05:25</time><p>它们不能变成冷色</p></div>
+<div class="transcript-row"><time>05:27</time><p>只有黑色的电话和窗户</p></div>
+<div class="transcript-row"><time>05:29</time><p>可以稍微冷一点</p></div>
+<div class="transcript-row"><time>05:30</time><p>而此时我们画面是</p></div>
+<div class="transcript-row"><time>05:31</time><p>缺少冷色</p></div>
+<div class="transcript-row"><time>05:32</time><p>既然缺少冷色</p></div>
+<div class="transcript-row"><time>05:34</time><p>不用想太多</p></div>
+<div class="transcript-row"><time>05:35</time><p>直接给画面</p></div>
+<div class="transcript-row"><time>05:36</time><p>先加冷色</p></div>
+<div class="transcript-row"><time>05:37</time><p>可以多加一点</p></div>
+<div class="transcript-row"><time>05:38</time><p>色调也可以降一降</p></div>
+<div class="transcript-row"><time>05:39</time><p>我就让它稍微走一点</p></div>
+<div class="transcript-row"><time>05:40</time><p>青绿色调</p></div>
+<div class="transcript-row"><time>05:41</time><p>还挺好看的</p></div>
+<div class="transcript-row"><time>05:42</time><p>带那么一点复古的感觉</p></div>
+<div class="transcript-row"><time>05:43</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>05:44</time><p>你看到此时</p></div>
+<div class="transcript-row"><time>05:45</time><p>我们已经给画面</p></div>
+<div class="transcript-row"><time>05:46</time><p>整体加冷了</p></div>
+<div class="transcript-row"><time>05:47</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:47</time><p>最重要的一点就是</p></div>
+<div class="transcript-row"><time>05:48</time><p>虽然画面此时</p></div>
+<div class="transcript-row"><time>05:49</time><p>全局变成冷色</p></div>
+<div class="transcript-row"><time>05:51</time><p>但是它们变成冷色的</p></div>
+<div class="transcript-row"><time>05:52</time><p>幅度是有区别的</p></div>
+<div class="transcript-row"><time>05:54</time><p>像这些可以变成冷色的</p></div>
+<div class="transcript-row"><time>05:55</time><p>它们染上蓝色的力度</p></div>
+<div class="transcript-row"><time>05:57</time><p>要大于这些</p></div>
+<div class="transcript-row"><time>05:58</time><p>原本就是暖色东西</p></div>
+<div class="transcript-row"><time>05:59</time><p>对不对</p></div>
+<div class="transcript-row"><time>05:59</time><p>那也正因为如此</p></div>
+<div class="transcript-row"><time>06:01</time><p>我们可以按住</p></div>
+<div class="transcript-row"><time>06:01</time><p>2D加P</p></div>
+<div class="transcript-row"><time>06:02</time><p>或者是Option加P</p></div>
+<div class="transcript-row"><time>06:03</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>06:04</time><p>来利用并行节点的方式</p></div>
+<div class="transcript-row"><time>06:06</time><p>把这些暖色的部分</p></div>
+<div class="transcript-row"><time>06:07</time><p>不好度给它找回来</p></div>
+<div class="transcript-row"><time>06:09</time><p>大概是这样的一个结果</p></div>
+<div class="transcript-row"><time>06:10</time><p>我们来看一下</p></div>
+<div class="transcript-row"><time>06:11</time><p>调整前调整后</p></div>
+<div class="transcript-row"><time>06:12</time><p>暖色部分</p></div>
+<div class="transcript-row"><time>06:13</time><p>几乎不受到影响</p></div>
+<div class="transcript-row"><time>06:14</time><p>当然这有点偏黄</p></div>
+<div class="transcript-row"><time>06:15</time><p>没关系</p></div>
+<div class="transcript-row"><time>06:15</time><p>不管它先</p></div>
+<div class="transcript-row"><time>06:16</time><p>但是这些能变成冷色东西</p></div>
+<div class="transcript-row"><time>06:18</time><p>它都变成了冷色</p></div>
+<div class="transcript-row"><time>06:19</time><p>也就是说</p></div>
+<div class="transcript-row"><time>06:20</time><p>此时冷色也有了</p></div>
+<div class="transcript-row"><time>06:21</time><p>暖色也有了</p></div>
+<div class="transcript-row"><time>06:22</time><p>其实我们在用</p></div>
+<div class="transcript-row"><time>06:23</time><p>这个并行节点染色的时候</p></div>
+<div class="transcript-row"><time>06:24</time><p>不用太纠结</p></div>
+<div class="transcript-row"><time>06:25</time><p>一定要把每个颜色</p></div>
+<div class="transcript-row"><time>06:26</time><p>做得特别到位</p></div>
+<div class="transcript-row"><time>06:27</time><p>只要让颜色都出现</p></div>
+<div class="transcript-row"><time>06:28</time><p>如果你觉得某一个颜色不好看</p></div>
+<div class="transcript-row"><time>06:30</time><p>你完全可以后面</p></div>
+<div class="transcript-row"><time>06:31</time><p>再建个节点单独调整</p></div>
+<div class="transcript-row"><time>06:32</time><p>比如说</p></div>
+<div class="transcript-row"><time>06:33</time><p>我现在觉得冷暖虽然都有</p></div>
+<div class="transcript-row"><time>06:34</time><p>但我觉得它不够暖</p></div>
+<div class="transcript-row"><time>06:36</time><p>我还是希望它整体</p></div>
+<div class="transcript-row"><time>06:37</time><p>能够走暖掉</p></div>
+<div class="transcript-row"><time>06:38</time><p>现在冷的太多了</p></div>
+<div class="transcript-row"><time>06:39</time><p>那你就可以在后面来个节点</p></div>
+<div class="transcript-row"><time>06:40</time><p>在冷与暖都有的前提下</p></div>
+<div class="transcript-row"><time>06:42</time><p>给画面稍微加一点点暖</p></div>
+<div class="transcript-row"><time>06:44</time><p>你这不是又做回去了吗</p></div>
+<div class="transcript-row"><time>06:46</time><p>其实并不是</p></div>
+<div class="transcript-row"><time>06:47</time><p>我们可以把这三个</p></div>
+<div class="transcript-row"><time>06:48</time><p>调颜色的节点做下开关</p></div>
+<div class="transcript-row"><time>06:51</time><p>你会发现</p></div>
+<div class="transcript-row"><time>06:52</time><p>在我们做了这样一个</p></div>
+<div class="transcript-row"><time>06:53</time><p>风格化调整了之后</p></div>
+<div class="transcript-row"><time>06:55</time><p>能够保持全局偏暖的同时</p></div>
+<div class="transcript-row"><time>06:58</time><p>还能让冷色的东西</p></div>
+<div class="transcript-row"><time>06:59</time><p>依旧是冷色</p></div>
+<div class="transcript-row"><time>07:00</time><p>这个其实和我们在一起校色</p></div>
+<div class="transcript-row"><time>07:02</time><p>有还原阶段</p></div>
+<div class="transcript-row"><time>07:02</time><p>还原白平衡</p></div>
+<div class="transcript-row"><time>07:04</time><p>再全局染色思路</p></div>
+<div class="transcript-row"><time>07:05</time><p>是一模一样的</p></div>
+<div class="transcript-row"><time>07:06</time><p>再然后</p></div>
+<div class="transcript-row"><time>07:06</time><p>如果你觉得</p></div>
+<div class="transcript-row"><time>07:07</time><p>人物身上的光太黄了</p></div>
+<div class="transcript-row"><time>07:08</time><p>你可以用蜘蛛网去纠正一下</p></div>
+<div class="transcript-row"><time>07:10</time><p>当然你可以在17号节点</p></div>
+<div class="transcript-row"><time>07:11</time><p>一起做</p></div>
+<div class="transcript-row"><time>07:12</time><p>而我是为了掩饰区别</p></div>
+<div class="transcript-row"><time>07:13</time><p>故意把它放在另外一个节点</p></div>
+<div class="transcript-row"><time>07:15</time><p>把这里的黄</p></div>
+<div class="transcript-row"><time>07:15</time><p>给它稍微往红色方向走一点点</p></div>
+<div class="transcript-row"><time>07:18</time><p>稍微降一点点黄色的饱和度</p></div>
+<div class="transcript-row"><time>07:20</time><p>大概是这个结果</p></div>
+<div class="transcript-row"><time>07:21</time><p>也可以稍微提高一点</p></div>
+<div class="transcript-row"><time>07:23</time><p>这些暖色元素的密度</p></div>
+<div class="transcript-row"><time>07:24</time><p>让它们不要太艳</p></div>
+<div class="transcript-row"><time>07:25</time><p>也就是提高一点黄色的密度</p></div>
+<div class="transcript-row"><time>07:28</time><p>再提高一点皮肤的密度</p></div>
+<div class="transcript-row"><time>07:29</time><p>同时让它们的饱和度</p></div>
+<div class="transcript-row"><time>07:30</time><p>稍微降一点点下来</p></div>
+<div class="transcript-row"><time>07:32</time><p>让它们不要太腻</p></div>
+<div class="transcript-row"><time>07:33</time><p>你看</p></div>
+<div class="transcript-row"><time>07:34</time><p>这样效果是不是挺好的</p></div>
+<div class="transcript-row"><time>07:36</time><p>肤色也相对舒服</p></div>
+<div class="transcript-row"><time>07:37</time><p>如果你觉得这里太黑的话</p></div>
+<div class="transcript-row"><time>07:38</time><p>再给它回到9号节点</p></div>
+<div class="transcript-row"><time>07:40</time><p>提亮点就好了</p></div>
+<div class="transcript-row"><time>07:40</time><p>这个我就不多说了</p></div>
+<div class="transcript-row"><time>07:41</time><p>此时我们就让画面</p></div>
+<div class="transcript-row"><time>07:44</time><p>非常安全</p></div>
+<div class="transcript-row"><time>07:45</time><p>并且高效的做出了冷暖对比</p></div>
+<div class="transcript-row"><time>07:47</time><p>而且这样的冷暖对比</p></div>
+<div class="transcript-row"><time>07:48</time><p>我们可以再把这几个节点</p></div>
+<div class="transcript-row"><time>07:50</time><p>开关一下看一看</p></div>
+<div class="transcript-row"><time>07:51</time><p>是不是效果非常好</p></div>
+<div class="transcript-row"><time>07:52</time><p>这些该冷的冷</p></div>
+<div class="transcript-row"><time>07:54</time><p>该暖的还是暖</p></div>
+<div class="transcript-row"><time>07:55</time><p>而且我们并不是按照</p></div>
+<div class="transcript-row"><time>07:57</time><p>曝光作为分区的</p></div>
+<div class="transcript-row"><time>07:58</time><p>像1级交死轮那样</p></div>
+<div class="transcript-row"><time>07:59</time><p>所以它并不会出现</p></div>
+<div class="transcript-row"><time>08:00</time><p>逻辑上错误的问题</p></div>
+<div class="transcript-row"><time>08:01</time><p>我们再与还原后的画面</p></div>
+<div class="transcript-row"><time>08:03</time><p>做一下对比</p></div>
+<div class="transcript-row"><time>08:03</time><p>这是还原后的画面</p></div>
+<div class="transcript-row"><time>08:04</time><p>这是我们调整后的画面</p></div>
+<div class="transcript-row"><time>08:06</time><p>还不错吧</p></div>
+<div class="transcript-row"><time>08:06</time><p>对吧</p></div>
+<div class="transcript-row"><time>08:07</time><p>还有一个素材</p></div>
+<div class="transcript-row"><time>08:08</time><p>我们也可以用类似的思路</p></div>
+<div class="transcript-row"><time>08:09</time><p>去做调整</p></div>
+<div class="transcript-row"><time>08:10</time><p>这里我就不掩饰了</p></div>
+<div class="transcript-row"><time>08:11</time><p>思路是一模一样的</p></div>
+<div class="transcript-row"><time>08:13</time><p>这两个素材我也上传了</p></div>
+<div class="transcript-row"><time>08:14</time><p>大家可以看</p></div>
+<div class="transcript-row"><time>08:15</time><p>视频下方的小字来找我</p></div>
+<div class="transcript-row"><time>08:16</time><p>还有WG的线上系统课程</p></div>
+<div class="transcript-row"><time>08:18</time><p>和线下调色训练营</p></div>
+<div class="transcript-row"><time>08:19</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>08:20</time><p>如果觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>08:21</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>08:22</time><p>好了</p></div>
+<div class="transcript-row"><time>08:22</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>08:23</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

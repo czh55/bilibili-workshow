@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="手搓室内柔和哑光：先确保无大面积过曝。用 HDR 压 Light/Shadow、护 Highlight，再阴影抬/高光降收缩反差；为做 LUT 可不画遮罩。颜色可暖绿，RGB 混合器拉开红蓝防滤镜感，蜘蛛网去脏黄。核心是可编辑样条线大幅压高光杠杆成哑光，暗部波杆找回反差；饱和度曲">
+<title>室内柔和哑光的效果该怎么用达芬奇做出来｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>室内柔和哑光的效果该怎么用达芬奇做出来</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分08秒</span><span class="meta-tag tag-topic">达芬奇 哑光 柔和对比度 共享静帧 RGB混合器 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/2vil3P69aD9" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">哑光前提：无大过曝；压中灰护反差</a><a href="#ch2">暖绿染色 + RGB 混合器 + 去脏黄</a><a href="#ch3">样条线：哑光最重要一刀</a><a href="#ch4">降高饱和艳度；限定器护脸反差</a><a href="#ch5">导出：33 点 LUT 不如共享静帧可改</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>手搓室内柔和哑光：先确保无大面积过曝。用 HDR 压 Light/Shadow、护 Highlight，再阴影抬/高光降收缩反差；为做 LUT 可不画遮罩。颜色可暖绿，RGB 混合器拉开红蓝防滤镜感，蜘蛛网去脏黄。核心是可编辑样条线大幅压高光杠杆成哑光，暗部波杆找回反差；饱和度曲线降高饱和艳度，3D 限定器救人脸反差。导出更推共享静帧附加节点图，可改力度。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:38]</span><div><strong>压中护两端</strong><p>HDR 降 Light/Shadow、抬 Highlight 范围；阴影抬高光降收反差。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:38→03:25]</span><div><strong>染色不单一</strong><p>暖绿全局易糊滤镜；RGB 混合器保红蓝；蜘蛛网去脏黄留粉感。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:25→04:16]</span><div><strong>哑光核心</strong><p>样条线大胆压高光+左拉杠杆；暗部上提右拉波杆回反差。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:16→05:23]</span><div><strong>艳度+肤</strong><p>饱和曲线降高饱和；3D 限定器略抬 Highlight 护脸反差。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:23→08:08]</span><div><strong>LUT vs 静帧</strong><p>可生成 33 点 LUT；更推共享静帧附加节点图，跨项目可改。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>哑光=主要内容下移且两端不炸、反差不强，关键一刀在样条线压缩高光。颜色要防单一滤镜感；做人脸可选区。可复用优先共享静帧节点图，比死 LUT 好改。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:38</span>哑光前提：无大过曝；压中灰护反差</h2><p>很多人嫌 LUT 不好改，本期手搓。哑光一般不太亮，且大面积破曝易高光断层。全曲线硬压会反差过强不舒服。</p><p>第二排 HDR：降 Light 与 Shadow（避免死黑），略抬 Highlight 并改范围——主内容下移、高光暗部少动，压暗却不过度强化反差。再节点抬阴影、降高光滑块，初步哑光感；为做 LUT 先不画遮罩（绿植抢眼等可后补）。</p><figure><img src="assets/indoor-soft-matte-davinci/shot-01.jpg" alt="HDR 压 Light/Shadow、护 Highlight，再收反差" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:55] HDR 压 Light/Shadow、护 Highlight，再收反差</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8a948db28e99.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR: press Light/Shadow, protect Highlight, then ease contrast.</span></div>
+<audio class="cap-audio" src="audio/8a948db28e99.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:38-03:25</span>暖绿染色 + RGB 混合器 + 去脏黄</h2><p>可加色温减色调走暖绿；全局染色易牺牲他色、像滤镜糊表面。RGB 混合器略提红通道、降蓝通道：暖更暖、冷相对保蓝，也护肤色。蜘蛛网同样可统一色相饱和。</p><p>加暖可能脏：蜘蛛网降黄饱和并略往橙，橙再略回黄——整体仍暖，去掉难受黄、留偏粉，是这类哑光常见色。</p><figure><img src="assets/indoor-soft-matte-davinci/shot-02.jpg" alt="暖绿染色 + RGB 混合器拉开红蓝；蜘蛛网去脏黄" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:30] 暖绿染色 + RGB 混合器拉开红蓝；蜘蛛网去脏黄</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fafbf6f5e7d1.mp3" type="button" aria-label="Play English audio">🔊</button><span>Warm-green tint + RGB mixer separates red/blue; vectors clear dirty yellow.</span></div>
+<audio class="cap-audio" src="audio/fafbf6f5e7d1.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:25-04:16</span>样条线：哑光最重要一刀</h2><p>打开可编辑样条线：高光端大胆下压，画面变暗后把延伸波杆往左多拉——波形被压缩即哑光。力度过大则收回一点。</p><p>暗部略抬，暗部波杆往右拉，把暗部反差做回来。前面节点可不做，这一刀有了哑光感；颜色该有还是得有。</p><figure><img src="assets/indoor-soft-matte-davinci/shot-03.jpg" alt="样条线大胆压高光杠杆，波形压缩成哑光" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:45] 样条线大胆压高光杠杆，波形压缩成哑光</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a22fc1ba3848.mp3" type="button" aria-label="Play English audio">🔊</button><span>Splines boldly lever highs down—scopes compress to matte.</span></div>
+<audio class="cap-audio" src="audio/a22fc1ba3848.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">04:16-05:23</span>降高饱和艳度；限定器护脸反差</h2><p>向量上看未加倍时颜色仍偏艳：饱和度曲线降右端（高饱和），暗部也可略降。若脸受光反差掉太多，前插节点用 3D 限定器粗选皮肤，略抬 Highlight 把脸拉回来；为做 LUT 不精细抠唇。</p><p>整体低反差但人脸反差保留。遮罩记得跟踪。</p><figure><img src="assets/indoor-soft-matte-davinci/shot-04.jpg" alt="饱和曲线降艳；3D 限定器略抬脸部 Highlight" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:55] 饱和曲线降艳；3D 限定器略抬脸部 Highlight</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2a23ea10998d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Sat curve eases hot color; 3D qualifier slightly lifts face Highlight.</span></div>
+<audio class="cap-audio" src="audio/2a23ea10998d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">05:23-08:08</span>导出：33 点 LUT 不如共享静帧可改</h2><p>建议隐藏还原与皮肤选区，片段缩略图右键生成 33 点 LUT，拷进 LUT 库文件夹刷新。套用：还原后拖 LUT。但 LUT 难改。</p><p>更推：画廊新建共享静帧集，只开风格节点抓静帧——存在本机可跨项目。还原后右键「附加节点图」粘贴风格节点，可回改色温色调。多镜演示肤色因 RGB 混合器仍相对正确。素材知识分享平台自取。</p><figure><img src="assets/indoor-soft-matte-davinci/shot-05.jpg" alt="共享静帧附加节点图复用风格，可回改色温" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:50] 共享静帧附加节点图复用风格，可回改色温</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/978b53a44e0b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Shared still + node graph reuses the look; temp still editable.</span></div>
+<audio class="cap-audio" src="audio/978b53a44e0b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（335段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>怎么做出这种哑光的效果</p></div>
+<div class="transcript-row"><time>00:06</time><p>这也是很多人问过的风格</p></div>
+<div class="transcript-row"><time>00:08</time><p>他们觉得LUT不是很好套</p></div>
+<div class="transcript-row"><time>00:09</time><p>要修改很麻烦</p></div>
+<div class="transcript-row"><time>00:10</time><p>所以这一期我们就来分享一下</p></div>
+<div class="transcript-row"><time>00:12</time><p>该怎么用达芬吉手搓出这种风格</p></div>
+<div class="transcript-row"><time>00:14</time><p>我们先给画面做一下还原</p></div>
+<div class="transcript-row"><time>00:15</time><p>大概是这样的一个结果</p></div>
+<div class="transcript-row"><time>00:17</time><p>要做出哑光的感觉</p></div>
+<div class="transcript-row"><time>00:19</time><p>首先你得先确保</p></div>
+<div class="transcript-row"><time>00:20</time><p>画面中没有大面积破爆的内容</p></div>
+<div class="transcript-row"><time>00:22</time><p>否则你的高光可能会断层</p></div>
+<div class="transcript-row"><time>00:23</time><p>不绝对</p></div>
+<div class="transcript-row"><time>00:24</time><p>但可能会断层</p></div>
+<div class="transcript-row"><time>00:25</time><p>而且哑光是什么感觉</p></div>
+<div class="transcript-row"><time>00:26</time><p>一般的哑光都不会特别亮</p></div>
+<div class="transcript-row"><time>00:28</time><p>对不对</p></div>
+<div class="transcript-row"><time>00:28</time><p>所以我们把它一按</p></div>
+<div class="transcript-row"><time>00:29</time><p>可是我们如果全曲给它一按</p></div>
+<div class="transcript-row"><time>00:32</time><p>哑光的话又不舒服</p></div>
+<div class="transcript-row"><time>00:33</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:34</time><p>这样会显得反差很强</p></div>
+<div class="transcript-row"><time>00:35</time><p>所以这时候我们就要考虑</p></div>
+<div class="transcript-row"><time>00:36</time><p>把画面的主要内容给它往下降</p></div>
+<div class="transcript-row"><time>00:39</time><p>建立几个节点</p></div>
+<div class="transcript-row"><time>00:40</time><p>拉到第二排</p></div>
+<div class="transcript-row"><time>00:40</time><p>我们在第二排的第一个节点中</p></div>
+<div class="transcript-row"><time>00:42</time><p>用HDR色轮</p></div>
+<div class="transcript-row"><time>00:43</time><p>给它降低一点中灰部分的爆光</p></div>
+<div class="transcript-row"><time>00:45</time><p>也就是稍微降低一点Light色轮的爆光</p></div>
+<div class="transcript-row"><time>00:47</time><p>再降低一点Shadow色轮的爆光</p></div>
+<div class="transcript-row"><time>00:49</time><p>要注意你的画面中不要太多的死黑</p></div>
+<div class="transcript-row"><time>00:51</time><p>然后高光给它稍微提高一点</p></div>
+<div class="transcript-row"><time>00:53</time><p>改变一下Highlight色轮的一个范围</p></div>
+<div class="transcript-row"><time>00:56</time><p>好</p></div>
+<div class="transcript-row"><time>00:56</time><p>大概是这个情况</p></div>
+<div class="transcript-row"><time>00:57</time><p>我们这样做的目的是为了啥</p></div>
+<div class="transcript-row"><time>00:59</time><p>我们可以看波形图的变化</p></div>
+<div class="transcript-row"><time>01:00</time><p>我们希望它能够偏暗</p></div>
+<div class="transcript-row"><time>01:02</time><p>可是又不想让它因为压暗</p></div>
+<div class="transcript-row"><time>01:04</time><p>导致画面显得反差增加</p></div>
+<div class="transcript-row"><time>01:06</time><p>所以我们可以让主要的内容给它往下走</p></div>
+<div class="transcript-row"><time>01:09</time><p>但是高光和暗部不发生改变</p></div>
+<div class="transcript-row"><time>01:11</time><p>那这样就能够保护画面的反差</p></div>
+<div class="transcript-row"><time>01:13</time><p>不会过度的强化的前提下</p></div>
+<div class="transcript-row"><time>01:15</time><p>还能够让它压暗</p></div>
+<div class="transcript-row"><time>01:17</time><p>这个是我们的一个核心目的</p></div>
+<div class="transcript-row"><time>01:18</time><p>也就是让画面主要内容下降的同时</p></div>
+<div class="transcript-row"><time>01:20</time><p>高光不会破坏</p></div>
+<div class="transcript-row"><time>01:21</time><p>再加上哑光的画面</p></div>
+<div class="transcript-row"><time>01:22</time><p>一般反差不会特别强</p></div>
+<div class="transcript-row"><time>01:24</time><p>所以我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>01:25</time><p>稍微提高一点阴影滑块</p></div>
+<div class="transcript-row"><time>01:28</time><p>再降低一点高光滑块</p></div>
+<div class="transcript-row"><time>01:29</time><p>好</p></div>
+<div class="transcript-row"><time>01:30</time><p>大概是个结果</p></div>
+<div class="transcript-row"><time>01:31</time><p>让它能够在我们确保了主要内容往下降的同时</p></div>
+<div class="transcript-row"><time>01:34</time><p>还能够稍微收缩一点它的反差</p></div>
+<div class="transcript-row"><time>01:36</time><p>让整个画面能够更加舒服</p></div>
+<div class="transcript-row"><time>01:38</time><p>初步的风格其实就有了</p></div>
+<div class="transcript-row"><time>01:39</time><p>那又因为我们是想把这个做成蜡色的</p></div>
+<div class="transcript-row"><time>01:41</time><p>所以我们就不画任何的遮罩了</p></div>
+<div class="transcript-row"><time>01:43</time><p>其实按理说还是有很多需要调整的</p></div>
+<div class="transcript-row"><time>01:44</time><p>你比如说背后的这个绿色太抢眼了</p></div>
+<div class="transcript-row"><time>01:47</time><p>我们要把它稍微降低一点</p></div>
+<div class="transcript-row"><time>01:48</time><p>比如说右边这个架子</p></div>
+<div class="transcript-row"><time>01:49</time><p>或假如如果想要突出主体的话</p></div>
+<div class="transcript-row"><time>01:51</time><p>它应该压暗</p></div>
+<div class="transcript-row"><time>01:51</time><p>但是呢</p></div>
+<div class="transcript-row"><time>01:52</time><p>还是那句话</p></div>
+<div class="transcript-row"><time>01:52</time><p>为了做蜡的</p></div>
+<div class="transcript-row"><time>01:53</time><p>我们就先不做这些行为</p></div>
+<div class="transcript-row"><time>01:55</time><p>直接来颜色</p></div>
+<div class="transcript-row"><time>01:55</time><p>如果你希望画面能够走</p></div>
+<div class="transcript-row"><time>01:57</time><p>稍微有一点点暖绿的感觉</p></div>
+<div class="transcript-row"><time>01:59</time><p>那么你可以考虑给它加一点点色温</p></div>
+<div class="transcript-row"><time>02:02</time><p>再减一点色调</p></div>
+<div class="transcript-row"><time>02:03</time><p>这种暖绿的感觉其实也可以</p></div>
+<div class="transcript-row"><time>02:05</time><p>当然你别的颜色也可以</p></div>
+<div class="transcript-row"><time>02:06</time><p>一会我们再演示</p></div>
+<div class="transcript-row"><time>02:07</time><p>但是我们这样的全局染色</p></div>
+<div class="transcript-row"><time>02:08</time><p>非常容易让别的物体的色相受到牺牲</p></div>
+<div class="transcript-row"><time>02:11</time><p>也就是让画面颜色过于单一</p></div>
+<div class="transcript-row"><time>02:13</time><p>显得像是一层滤镜糊在表面</p></div>
+<div class="transcript-row"><time>02:15</time><p>所以这时候我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>02:16</time><p>用2Gb混合器来优化一下颜色的分布</p></div>
+<div class="transcript-row"><time>02:19</time><p>稍微提高一点</p></div>
+<div class="transcript-row"><time>02:20</time><p>红色输出中红色通道的输值</p></div>
+<div class="transcript-row"><time>02:22</time><p>再降低一点蓝色通道的输值</p></div>
+<div class="transcript-row"><time>02:24</time><p>我们看到像这些颜色</p></div>
+<div class="transcript-row"><time>02:26</time><p>暖的依旧是暖的</p></div>
+<div class="transcript-row"><time>02:27</time><p>甚至更暖了</p></div>
+<div class="transcript-row"><time>02:28</time><p>但是这些冷色</p></div>
+<div class="transcript-row"><time>02:29</time><p>它保持相对的蓝</p></div>
+<div class="transcript-row"><time>02:31</time><p>这就是我们想要的一个效果</p></div>
+<div class="transcript-row"><time>02:32</time><p>并且也能够保护肤色</p></div>
+<div class="transcript-row"><time>02:33</time><p>让它能够稍微显眼一点</p></div>
+<div class="transcript-row"><time>02:35</time><p>更加突出一点</p></div>
+<div class="transcript-row"><time>02:36</time><p>这个操作如果大家不熟悉的话</p></div>
+<div class="transcript-row"><time>02:37</time><p>其实你用蜘蛛网也是一样的</p></div>
+<div class="transcript-row"><time>02:39</time><p>这个色相和饱和度</p></div>
+<div class="transcript-row"><time>02:40</time><p>给它做一下统一的调整</p></div>
+<div class="transcript-row"><time>02:41</time><p>都是可以的</p></div>
+<div class="transcript-row"><time>02:42</time><p>重点是希望让红是红的</p></div>
+<div class="transcript-row"><time>02:44</time><p>蓝是蓝的</p></div>
+<div class="transcript-row"><time>02:46</time><p>那至于绿色</p></div>
+<div class="transcript-row"><time>02:46</time><p>我们已经全局偏绿了</p></div>
+<div class="transcript-row"><time>02:48</time><p>自然啊</p></div>
+<div class="transcript-row"><time>02:48</time><p>绿色就是绿色</p></div>
+<div class="transcript-row"><time>02:49</time><p>但是一般来讲</p></div>
+<div class="transcript-row"><time>02:50</time><p>加了暖之后</p></div>
+<div class="transcript-row"><time>02:51</time><p>有可能会让你的画面</p></div>
+<div class="transcript-row"><time>02:52</time><p>显得有点脏</p></div>
+<div class="transcript-row"><time>02:53</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:53</time><p>我们有一个小方法</p></div>
+<div class="transcript-row"><time>02:55</time><p>这个方法当然也要看具体情况</p></div>
+<div class="transcript-row"><time>02:56</time><p>如果是针对我们这个画面的话</p></div>
+<div class="transcript-row"><time>02:58</time><p>其实可以再来一个节点</p></div>
+<div class="transcript-row"><time>02:59</time><p>用蜘蛛网把黄色的薄度</p></div>
+<div class="transcript-row"><time>03:01</time><p>给它降低一点</p></div>
+<div class="transcript-row"><time>03:02</time><p>可以让它稍微往橙色方向走一点</p></div>
+<div class="transcript-row"><time>03:04</time><p>然后再把这个橙色的</p></div>
+<div class="transcript-row"><time>03:05</time><p>稍微往黄色方向走一点点</p></div>
+<div class="transcript-row"><time>03:07</time><p>我们看到这样的颜色是</p></div>
+<div class="transcript-row"><time>03:09</time><p>不破坏画面整体偏暖的</p></div>
+<div class="transcript-row"><time>03:11</time><p>这个前提下</p></div>
+<div class="transcript-row"><time>03:12</time><p>能够去掉这些让你不舒服的黄</p></div>
+<div class="transcript-row"><time>03:14</time><p>留下这些偏粉的这种效果</p></div>
+<div class="transcript-row"><time>03:17</time><p>这种感觉其实也是这一类哑光的</p></div>
+<div class="transcript-row"><time>03:19</time><p>特别是这种风格的片子</p></div>
+<div class="transcript-row"><time>03:20</time><p>会有的一个颜色结果</p></div>
+<div class="transcript-row"><time>03:22</time><p>这个效果还挺好的</p></div>
+<div class="transcript-row"><time>03:23</time><p>当然你不喜欢就可以不做</p></div>
+<div class="transcript-row"><time>03:24</time><p>这个问题不大</p></div>
+<div class="transcript-row"><time>03:24</time><p>再然后</p></div>
+<div class="transcript-row"><time>03:25</time><p>也就是哑光最重要的一步</p></div>
+<div class="transcript-row"><time>03:27</time><p>我们要利用曲线</p></div>
+<div class="transcript-row"><time>03:28</time><p>也就是打开曲线右上角三个点中的</p></div>
+<div class="transcript-row"><time>03:30</time><p>可编辑的样条线</p></div>
+<div class="transcript-row"><time>03:31</time><p>然后把它高光这一端往下压</p></div>
+<div class="transcript-row"><time>03:34</time><p>多压一些</p></div>
+<div class="transcript-row"><time>03:35</time><p>大胆压</p></div>
+<div class="transcript-row"><time>03:36</time><p>压完了之后</p></div>
+<div class="transcript-row"><time>03:37</time><p>这时候你画面不是变暗了吗</p></div>
+<div class="transcript-row"><time>03:38</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:39</time><p>那么我们就可以把延伸出来的波感</p></div>
+<div class="transcript-row"><time>03:41</time><p>给它往左边去拉</p></div>
+<div class="transcript-row"><time>03:43</time><p>多拉一些</p></div>
+<div class="transcript-row"><time>03:43</time><p>你看我拉成这样的话</p></div>
+<div class="transcript-row"><time>03:45</time><p>它不就变成了哑光吗</p></div>
+<div class="transcript-row"><time>03:46</time><p>在波形图上它就被压缩了</p></div>
+<div class="transcript-row"><time>03:48</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:48</time><p>当然力度不要这么大</p></div>
+<div class="transcript-row"><time>03:50</time><p>稍微回来一点</p></div>
+<div class="transcript-row"><time>03:51</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>03:52</time><p>然后再稍微提高一点暗部</p></div>
+<div class="transcript-row"><time>03:54</time><p>再把暗部以前出来的波感</p></div>
+<div class="transcript-row"><time>03:56</time><p>给它往右边去拉</p></div>
+<div class="transcript-row"><time>03:58</time><p>把它的暗部的反差给它做回来</p></div>
+<div class="transcript-row"><time>04:00</time><p>此时你看</p></div>
+<div class="transcript-row"><time>04:01</time><p>这种哑光的感觉是不是就有了</p></div>
+<div class="transcript-row"><time>04:03</time><p>这其实非常非常简单</p></div>
+<div class="transcript-row"><time>04:04</time><p>那至于你说我前面这些节点</p></div>
+<div class="transcript-row"><time>04:06</time><p>不做行不行</p></div>
+<div class="transcript-row"><time>04:08</time><p>你真不做问题也不大</p></div>
+<div class="transcript-row"><time>04:09</time><p>重点就在于这一个节点的行为</p></div>
+<div class="transcript-row"><time>04:11</time><p>这一个节点能做到的话</p></div>
+<div class="transcript-row"><time>04:12</time><p>你的哑光的感觉具有</p></div>
+<div class="transcript-row"><time>04:13</time><p>但是颜色该有还是得有</p></div>
+<div class="transcript-row"><time>04:15</time><p>那这时候风格就出来了</p></div>
+<div class="transcript-row"><time>04:16</time><p>最后我们其实也可以给它降低点</p></div>
+<div class="transcript-row"><time>04:18</time><p>高饱和部分的饱和度</p></div>
+<div class="transcript-row"><time>04:19</time><p>因为我们从实量图上去看</p></div>
+<div class="transcript-row"><time>04:20</time><p>在没有两倍的前提下</p></div>
+<div class="transcript-row"><time>04:22</time><p>颜色其实饱度还是比较高的</p></div>
+<div class="transcript-row"><time>04:23</time><p>特别是画面中这些部分</p></div>
+<div class="transcript-row"><time>04:24</time><p>颜色都有点咽了</p></div>
+<div class="transcript-row"><time>04:25</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:26</time><p>那我们可以用曲线的饱和度</p></div>
+<div class="transcript-row"><time>04:28</time><p>对饱和度曲线</p></div>
+<div class="transcript-row"><time>04:28</time><p>把右边这一端给它往下降</p></div>
+<div class="transcript-row"><time>04:30</time><p>稍微降低一点</p></div>
+<div class="transcript-row"><time>04:32</time><p>我觉得暗部可以再来一点</p></div>
+<div class="transcript-row"><time>04:33</time><p>这个曲线</p></div>
+<div class="transcript-row"><time>04:35</time><p>稍微降低点高饱和部分的饱和度</p></div>
+<div class="transcript-row"><time>04:36</time><p>让它颜色不要太咽</p></div>
+<div class="transcript-row"><time>04:38</time><p>这时候如果你觉得</p></div>
+<div class="transcript-row"><time>04:39</time><p>皮肤的反差降低太多</p></div>
+<div class="transcript-row"><time>04:41</time><p>比如说是这一部分</p></div>
+<div class="transcript-row"><time>04:42</time><p>它这里其实是有一定的受光的</p></div>
+<div class="transcript-row"><time>04:43</time><p>你如果觉得它的皮肤的反差</p></div>
+<div class="transcript-row"><time>04:45</time><p>降低的太多的话</p></div>
+<div class="transcript-row"><time>04:46</time><p>你可以回到前面</p></div>
+<div class="transcript-row"><time>04:47</time><p>再来一个节点</p></div>
+<div class="transcript-row"><time>04:48</time><p>我们把皮肤给它选出来</p></div>
+<div class="transcript-row"><time>04:49</time><p>选的其实非常简单</p></div>
+<div class="transcript-row"><time>04:51</time><p>我们不用选的太精细</p></div>
+<div class="transcript-row"><time>04:53</time><p>我们可以利用3D限定器</p></div>
+<div class="transcript-row"><time>04:54</time><p>把这个皮肤给它</p></div>
+<div class="transcript-row"><time>04:56</time><p>大概一选</p></div>
+<div class="transcript-row"><time>04:56</time><p>好</p></div>
+<div class="transcript-row"><time>04:57</time><p>选出来了对吧</p></div>
+<div class="transcript-row"><time>04:58</time><p>给它再稍微提高一点点</p></div>
+<div class="transcript-row"><time>04:59</time><p>highlight色轮</p></div>
+<div class="transcript-row"><time>05:01</time><p>你看这样皮肤不就出来了吗</p></div>
+<div class="transcript-row"><time>05:02</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:03</time><p>当然你想把肤色和嘴唇的颜色</p></div>
+<div class="transcript-row"><time>05:05</time><p>给它独立开来也可以</p></div>
+<div class="transcript-row"><time>05:06</time><p>但是我们为了做蜡色</p></div>
+<div class="transcript-row"><time>05:07</time><p>所以我就不做的太精细了</p></div>
+<div class="transcript-row"><time>05:09</time><p>你看这样的效果</p></div>
+<div class="transcript-row"><time>05:09</time><p>其实对于整个画面中</p></div>
+<div class="transcript-row"><time>05:11</time><p>都是一个看似低反差的一个结果</p></div>
+<div class="transcript-row"><time>05:13</time><p>但是人脸它的反差还保留</p></div>
+<div class="transcript-row"><time>05:15</time><p>所以整体的结果还是不错的</p></div>
+<div class="transcript-row"><time>05:17</time><p>当然这个制造要跟踪</p></div>
+<div class="transcript-row"><time>05:18</time><p>跟踪很简单</p></div>
+<div class="transcript-row"><time>05:19</time><p>之前讲过非常多次</p></div>
+<div class="transcript-row"><time>05:20</time><p>这样我们就把画面</p></div>
+<div class="transcript-row"><time>05:21</time><p>从这样的一个结果</p></div>
+<div class="transcript-row"><time>05:22</time><p>调成这样的一个风格</p></div>
+<div class="transcript-row"><time>05:23</time><p>这个风格你如果喜欢的话</p></div>
+<div class="transcript-row"><time>05:25</time><p>其实也挺好的</p></div>
+<div class="transcript-row"><time>05:26</time><p>不喜欢的就算了</p></div>
+<div class="transcript-row"><time>05:27</time><p>素材我也传到了</p></div>
+<div class="transcript-row"><time>05:28</time><p>线上分享平台</p></div>
+<div class="transcript-row"><time>05:28</time><p>大家可以私信</p></div>
+<div class="transcript-row"><time>05:29</time><p>或者看我几天来</p></div>
+<div class="transcript-row"><time>05:30</time><p>免费领取过去之后练练手</p></div>
+<div class="transcript-row"><time>05:31</time><p>还有答复你的线上系统课程</p></div>
+<div class="transcript-row"><time>05:33</time><p>和线下调色训练营</p></div>
+<div class="transcript-row"><time>05:34</time><p>那我们要怎么把它做成LUT呢</p></div>
+<div class="transcript-row"><time>05:36</time><p>我们其实之前说过这个方法</p></div>
+<div class="transcript-row"><time>05:37</time><p>我建议把还原的节点</p></div>
+<div class="transcript-row"><time>05:40</time><p>和皮肤的选区给它删去</p></div>
+<div class="transcript-row"><time>05:41</time><p>给它隐藏了之后</p></div>
+<div class="transcript-row"><time>05:43</time><p>打开片段的缩略图</p></div>
+<div class="transcript-row"><time>05:44</time><p>在片段缩略图中右键</p></div>
+<div class="transcript-row"><time>05:46</time><p>给它生成一个33点的LUT</p></div>
+<div class="transcript-row"><time>05:48</time><p>然后再在LUT库中</p></div>
+<div class="transcript-row"><time>05:50</time><p>随便找一个文件夹右键</p></div>
+<div class="transcript-row"><time>05:52</time><p>打开文件位置</p></div>
+<div class="transcript-row"><time>05:54</time><p>此时你会弹出一个文件夹</p></div>
+<div class="transcript-row"><time>05:55</time><p>把你刚刚生成的</p></div>
+<div class="transcript-row"><time>05:56</time><p>33点的LUT</p></div>
+<div class="transcript-row"><time>05:57</time><p>拉到这个文件夹中</p></div>
+<div class="transcript-row"><time>05:58</time><p>此时你在空白处</p></div>
+<div class="transcript-row"><time>05:59</time><p>给它点一下刷新</p></div>
+<div class="transcript-row"><time>06:00</time><p>那它就能够给它出现在</p></div>
+<div class="transcript-row"><time>06:02</time><p>这个列表中</p></div>
+<div class="transcript-row"><time>06:03</time><p>LUT怎么套呢</p></div>
+<div class="transcript-row"><time>06:04</time><p>其实很简单</p></div>
+<div class="transcript-row"><time>06:05</time><p>我们只需要给它把还原给打开</p></div>
+<div class="transcript-row"><time>06:06</time><p>做好了还原之后</p></div>
+<div class="transcript-row"><time>06:07</time><p>把LUT套到这个节点上</p></div>
+<div class="transcript-row"><time>06:09</time><p>这种感觉就有了</p></div>
+<div class="transcript-row"><time>06:10</time><p>这个还是很简单的</p></div>
+<div class="transcript-row"><time>06:10</time><p>但是有个问题就是</p></div>
+<div class="transcript-row"><time>06:12</time><p>你这个LUT是没法修改的</p></div>
+<div class="transcript-row"><time>06:13</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:13</time><p>所以其实我更建议</p></div>
+<div class="transcript-row"><time>06:15</time><p>用另外一种方式来做</p></div>
+<div class="transcript-row"><time>06:16</time><p>也就是用节点的方式来套</p></div>
+<div class="transcript-row"><time>06:18</time><p>左上角有个画廊</p></div>
+<div class="transcript-row"><time>06:19</time><p>在画廊中</p></div>
+<div class="transcript-row"><time>06:19</time><p>我们可以新建一个共享竞争集</p></div>
+<div class="transcript-row"><time>06:22</time><p>然后你可以给它改名</p></div>
+<div class="transcript-row"><time>06:23</time><p>比如说风格</p></div>
+<div class="transcript-row"><time>06:25</time><p>同样的我们要删去</p></div>
+<div class="transcript-row"><time>06:26</time><p>这些所有的还原</p></div>
+<div class="transcript-row"><time>06:27</time><p>和皮肤的选区之类的</p></div>
+<div class="transcript-row"><time>06:28</time><p>只把后面的风格化的节点给打开</p></div>
+<div class="transcript-row"><time>06:30</time><p>然后再给它抓取一个竞争</p></div>
+<div class="transcript-row"><time>06:32</time><p>这样它就能够在共享竞争集中</p></div>
+<div class="transcript-row"><time>06:34</time><p>出现这个竞争</p></div>
+<div class="transcript-row"><time>06:35</time><p>而共享竞争集有什么一个优势</p></div>
+<div class="transcript-row"><time>06:37</time><p>它是能够跨项目的</p></div>
+<div class="transcript-row"><time>06:38</time><p>因为它是存在电脑上的</p></div>
+<div class="transcript-row"><time>06:40</time><p>任何项目都能够看到</p></div>
+<div class="transcript-row"><time>06:41</time><p>这些共享竞争集</p></div>
+<div class="transcript-row"><time>06:43</time><p>那么我们就可以利用这么一个方式</p></div>
+<div class="transcript-row"><time>06:45</time><p>去给它做一个风格的赋予</p></div>
+<div class="transcript-row"><time>06:46</time><p>比如说我给画面做好了还原</p></div>
+<div class="transcript-row"><time>06:48</time><p>我可以右键点击这个风格中的竞争</p></div>
+<div class="transcript-row"><time>06:51</time><p>选择附加节点图</p></div>
+<div class="transcript-row"><time>06:54</time><p>这样它就会把这些创建出来的节点</p></div>
+<div class="transcript-row"><time>06:56</time><p>给它以附加的形式</p></div>
+<div class="transcript-row"><time>06:58</time><p>放在你选择的那个节点之后</p></div>
+<div class="transcript-row"><time>07:00</time><p>比如说我这时候</p></div>
+<div class="transcript-row"><time>07:01</time><p>我觉得这个画面稍微有点暖</p></div>
+<div class="transcript-row"><time>07:02</time><p>我想让它冷一点</p></div>
+<div class="transcript-row"><time>07:04</time><p>我就可以回到7号节点</p></div>
+<div class="transcript-row"><time>07:05</time><p>给它稍微减一点点色温</p></div>
+<div class="transcript-row"><time>07:07</time><p>也可以稍微加点色调</p></div>
+<div class="transcript-row"><time>07:08</time><p>不要让它这么绿</p></div>
+<div class="transcript-row"><time>07:09</time><p>你看这种感觉不也挺好的吗</p></div>
+<div class="transcript-row"><time>07:11</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:12</time><p>它就能够让你去修改</p></div>
+<div class="transcript-row"><time>07:13</time><p>这个方式比起蜡调好用的多</p></div>
+<div class="transcript-row"><time>07:15</time><p>同样的</p></div>
+<div class="transcript-row"><time>07:16</time><p>我们如果用别的镜头来演示的话</p></div>
+<div class="transcript-row"><time>07:18</time><p>比如说这个画面是做好了一个还原</p></div>
+<div class="transcript-row"><time>07:20</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:20</time><p>然后给它在画廊中右键点击附加节点图</p></div>
+<div class="transcript-row"><time>07:24</time><p>就能够把这些节点给它粘贴上去了</p></div>
+<div class="transcript-row"><time>07:26</time><p>你看这个效果</p></div>
+<div class="transcript-row"><time>07:27</time><p>其实不错的对吧</p></div>
+<div class="transcript-row"><time>07:28</time><p>它能够给它快速的赋予一个风格</p></div>
+<div class="transcript-row"><time>07:30</time><p>而且我们做了这个RGB混合器的操作</p></div>
+<div class="transcript-row"><time>07:33</time><p>所以肤色不会有受到太多的影响</p></div>
+<div class="transcript-row"><time>07:35</time><p>它至少还是正确的色相</p></div>
+<div class="transcript-row"><time>07:36</time><p>如果它产生了问题</p></div>
+<div class="transcript-row"><time>07:37</time><p>你就可以在前面任何节点去做一定的修改</p></div>
+<div class="transcript-row"><time>07:40</time><p>这个画面我们已经给它做好了还原</p></div>
+<div class="transcript-row"><time>07:42</time><p>同样的在画廊中点击附加节点图</p></div>
+<div class="transcript-row"><time>07:45</time><p>给它套上去</p></div>
+<div class="transcript-row"><time>07:46</time><p>你看这种感觉是不是也挺好的</p></div>
+<div class="transcript-row"><time>07:48</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:48</time><p>还是那句话</p></div>
+<div class="transcript-row"><time>07:49</time><p>因为你有节点</p></div>
+<div class="transcript-row"><time>07:50</time><p>所以所有的力度你都可以自己去调</p></div>
+<div class="transcript-row"><time>07:52</time><p>如果你不喜欢哪个效果的话</p></div>
+<div class="transcript-row"><time>07:53</time><p>你可以自己再去微调</p></div>
+<div class="transcript-row"><time>07:55</time><p>这问题都不大</p></div>
+<div class="transcript-row"><time>07:55</time><p>这个风格相对来讲还是比较个性化的</p></div>
+<div class="transcript-row"><time>07:58</time><p>如果你觉得有用得到的机会的话</p></div>
+<div class="transcript-row"><time>07:59</time><p>可以把色彩领取过去之后</p></div>
+<div class="transcript-row"><time>08:00</time><p>感受一下这个思路</p></div>
+<div class="transcript-row"><time>08:01</time><p>并且自己也尝试着做一个竞争风格</p></div>
+<div class="transcript-row"><time>08:04</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>08:04</time><p>如果你觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>08:05</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>08:06</time><p>好了</p></div>
+<div class="transcript-row"><time>08:07</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>08:07</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

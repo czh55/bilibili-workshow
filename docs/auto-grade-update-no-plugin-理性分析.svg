@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="6161" viewBox="0 0 1320 6161">
+  <foreignObject x="0" y="0" width="1320" height="6161">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>自动调色大更新，无需额外插件一键调色工具</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">自动调色</span><span class="tag tag-orange">LUT</span><span class="tag tag-purple">V3</span><span class="tag tag-red">无需插件</span><span class="tag tag-gray">时长 5分24秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/8lkMHW4NjKg">原视频</a>
+  <div class="summary-line">仿色工具 V3 增强模型：直出/灰片（先还原）生成 LUT，强度可拉满；709 下套用后，并行向量修色+渐变分区，灰片再内外节点塑氛围。LUT 是基底，判断力仍在人；预告 WorkBuddy 网页直达达芬奇。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">V3：上传参考生成；强度100%+饱和可重跑</span></div><div class="timeline-item"><span class="timeline-time">00:50</span><span class="timeline-text">暂用 Rec.709，广色域 LUT 仍在优化</span></div><div class="timeline-item"><span class="timeline-time">01:18</span><span class="timeline-text">并行向量修天蓝/暖高光；渐变压天空</span></div><div class="timeline-item"><span class="timeline-time">02:21</span><span class="timeline-text">灰片先还原再生成；LUT 套在还原后</span></div><div class="timeline-item"><span class="timeline-time">03:19</span><span class="timeline-text">主体对比度+轴心，外部压暗塑氛围</span></div><div class="timeline-item"><span class="timeline-time">04:32</span><span class="timeline-text">反馈入口；WorkBuddy 自动进达芬奇预告</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">生成<br/>V3 LUT 基底</div><span class="arrow">→</span><div class="node-green">空间<br/>优先 Rec.709</div><span class="arrow">→</span><div class="node-orange">收色<br/>向量 + 渐变</div><span class="arrow">→</span><div class="node-blue">氛围<br/>内外节点分区</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「达分集/达分器」校正为「达芬奇」；「L的加P」校正为「Shift+P」；「遮照」校正为「遮罩」；「指出画面」校正为「直出画面」；「揣上来」校正为「传上来」；「薄度」校正为「饱和度」；「现场分享」校正为「知识分享」；「ALT加O」校正为「Alt+O」。</p><p>误区：广色域下硬套当前 LUT。作者标明逻辑不同、仍在优化。</p><p>误区：灰片未还原就生成/套 LUT。应还原后再匹配、再套用。</p><p>误区：以为自动调色可替代学习。作者强调仍需调色能力收尾。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>V3：更快的风格起点</h3>
+      <p>更多调色大模型介入。上传素材与参考生成 LUT；默认约 70% 可拉满，饱和可补后重跑。接近参考但缺局部能力，下载进达芬奇继续收。</p>
+      <div class="quote">因为它没法通过局部调整来实现某些效果</div>
+      <div class="relation">自动给全局关系，局部仍靠节点。</div>
+    </div>
+    <div class="card card-red">
+      <h3>色彩空间：先 709</h3>
+      <p>暂勿选达芬奇广色域套用——广色域 LUT 逻辑不同仍在优化。默认 709 下影调变化通常可用。</p>
+      <div class="quote">目前你还不能选择达芬奇广色域，因为广色域的LUT它的逻辑稍微有点不同</div>
+      <div class="relation">套用前先检查项目色彩管理。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>套后收色：向量 + 渐变</h3>
+      <p>天空灰、高光过黄时：并行向量加蓝饱和靠青，暖高光加饱和略降黄；再按光线做渐变遮罩压天空，氛围与层次快速贴近参考。</p>
+      <div class="quote">通过非常简单的操作，就能让画面从这样变成这样</div>
+      <div class="relation">LUT 之后通常 1–2 个节点就够收一大截。</div>
+    </div>
+    <div class="card card-green">
+      <h3>灰片纪律：还原 → 生成 → 还原后套 LUT</h3>
+      <p>灰片先曝光与饱和还原再截图匹配。套 LUT 必须在还原节点之后，行为相对不暴力，留给你后续发挥空间。</p>
+      <div class="quote">我们要套用这个LUT的话，一定要在还原后</div>
+      <div class="relation">顺序错了，基底会漂。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>氛围：内外节点建立在 LUT 基底上</h3>
+      <p>主体遮罩对比度+轴心右移更立体更暗；外部节点压其余。开关三节点可见：风格化变容易，细节色可再调，影调关系已被 LUT 快速拉近。</p>
+      <div class="quote">而这个氛围就是通过我们这个LUT作为一个风格化的基底来实现的</div>
+      <div class="relation">预告 WorkBuddy 将进一步降低「自动进达芬奇」门槛。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>V3 界面与模型以当时演示为准，后续会变。</li><li>广色域支持明确标注为未完成。</li><li>WorkBuddy 自动应用为预告功能，上线时间以作者为准。</li><li>工具免费不等于可替代系统学习调色。</li></ul><div class="pitfall">广色域项目硬套当前 LUT。</div><div class="pitfall">灰片未还原就匹配或套用。</div><div class="pitfall">套 LUT 后不做任何色相/分区收尾。</div><div class="pitfall">匹配强度偏低却抱怨不像，未尝试拉满重跑。</div><div class="pitfall">把自动结果当终稿，放弃主体/背景分区。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>V3 LUT＝快速风格基底，不是终稿</li><li>优先 Rec.709；灰片先还原再套</li><li>向量修色 + 渐变/内外节点收氛围</li><li>自动降操作成本，判断力仍在人</li></ul><h3>行动清单</h3><ol><li>直出或还原截图 + 参考 → 生成（强度/饱和按需重跑）</li><li>709 下拖入 LUT，左右对比影调</li><li>并行向量修天蓝与暖高光，必要时渐变压天</li><li>灰片案例：主体对比度+轴心，外部压背景</li><li>不准案例经网页反馈，推动工具迭代</li></ol><h3>关键认知转变</h3><p>以前：从零手搓追参考；现在：V3 起盘，只用少量节点把色相与分区收到位。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 5分24秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

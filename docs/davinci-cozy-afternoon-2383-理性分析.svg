@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5601" viewBox="0 0 1320 5601">
+  <foreignObject x="0" y="0" width="1320" height="5601">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>利用达芬奇打造温馨午后的质感</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">温馨午后</span><span class="tag tag-orange">分区</span><span class="tag tag-purple">2383</span><span class="tag tag-red">柔和对比度</span><span class="tag tag-gray">时长 7分49秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/1WiDRUs8wUb">原视频</a>
+  <div class="summary-line">温馨午后：HDR 做大光比层次；主体/氛围/环境三区；全局降高光加慵懒须建立在分区后。颜色暗部微冷+并行保暖。可手搓或套2383后回调。柔和对比度收两端。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">HDR：Shadow/Light 降，Highlight 抬</span></div><div class="timeline-item"><span class="timeline-time">01:02</span><span class="timeline-text">三区：桌 / 儿童画 / 暗角</span></div><div class="timeline-item"><span class="timeline-time">02:54</span><span class="timeline-text">全局降高光加慵懒；冷暖分层</span></div><div class="timeline-item"><span class="timeline-time">04:45</span><span class="timeline-text">柔和对比度</span></div><div class="timeline-item"><span class="timeline-time">05:58</span><span class="timeline-text">2383 套用后前回调</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">影调<br/>午后大光比</div><span class="arrow">→</span><div class="node-green">分区<br/>主体/氛围/环境</div><span class="arrow">→</span><div class="node-orange">颜色<br/>冷暖层次</div><span class="arrow">→</span><div class="node-blue">备选<br/>2383+回调</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「大分析」校正为「达芬奇」；「手出」校正为「手搓」；「夕阳十分」校正为「夕阳时分」；「主要的加P」校正为「Alt/Option+P」；「变形节点」校正为「并行节点」；「划块」校正为「滑块」；「大如画」校正为「大柔化」；「阴暗」语境含压暗；「一线交错点」校正为「一级校色轮」；「拥来」校正为「慵懒」；「现场分享」校正为「知识分享」；「FilmLux」校正为「FilmLooks」；「管他3721」口语「随便用」；「腌」校正为「艳」；「手凑」校正为「手搓」。</p><p>误区：只全局降高光当慵懒（无主次仍平）。</p><p>误区：颜色暖成一片无层次。</p><p>误区：套2383不回调。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>午后质感先来自 HDR 层次</h3>
+      <p>降 Shadow/Light、抬 Highlight，人物光影立体，温馨感初现。</p>
+      <div class="quote">这个组合我们用了非常非常多次，因为它足够好用</div>
+      <div class="relation">按夕阳大光比思路走。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>三区曝光不可省</h3>
+      <p>主体桌提亮；氛围儿童画抬高光；环境暗角压四周仍略抬高光。</p>
+      <div class="quote">你会发现画面的主次就做好了区分</div>
+      <div class="relation">对照 Stage0 流程第二阶段。</div>
+    </div>
+    <div class="card card-red">
+      <h3>慵懒 ≠ 取消分区</h3>
+      <p>全局降高光 alone 无慵懒；分区后再压高光才既有层次又有懒感。</p>
+      <div class="quote">这两个阶段的行为都是必须要做的</div>
+      <div class="relation">开关节点验证因果关系。</div>
+    </div>
+    <div class="card card-green">
+      <h3>颜色也要层次；2383 须回调</h3>
+      <p>暗部微冷+并行保暖。2383 常过暗过反差，前回调曝光饱和并同样分区。</p>
+      <div class="quote">我们不能只依赖这个LUT……做到一定的回调或者是优化</div>
+      <div class="relation">手搓与 LUT 两条路可对照练。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>室内多人午后案例。</li><li>流程图在作者知识平台 Stage0。</li><li>2383 行为随色彩管理设置变化。</li></ul><div class="pitfall">暖成一片无暗部冷。</div><div class="pitfall">只压高光不做三区。</div><div class="pitfall">套2383不回调。</div><div class="pitfall">暗角只压不提导致四周发灰。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>HDR 定午后大光比</li><li>主体/氛围/环境三区</li><li>慵懒建立在分区后</li><li>2383 必须回调</li></ul><h3>行动清单</h3><ol><li>HDR 组合出层次</li><li>画三区遮罩验证主次</li><li>再全局降高光</li><li>暗部冷+并行暖；或2383后同样分区</li></ol><h3>关键认知转变</h3><p>以前：一团暖滤镜；现在：影调分区+颜色层次，LUT 只作可选铺底。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 7分49秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

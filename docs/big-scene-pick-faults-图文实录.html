@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="老叉用室内大场景演示：先曲线拉开黑白位并校正白平衡，再按「主体→氛围光区→环境背光」做曝光分区；接着用挑刺修右侧过亮墙面，用色调/并行找回青橙、降红与提高青密度，最后暗角与电影感外观收束。核心口令是缺啥补啥、哪里过强就弱化——电影感外观不能代替前面的层次与挑刺。">
+<title>大场景画面强化层次，新手必学——挑刺！｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>大场景画面强化层次，新手必学——挑刺！</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">10分08秒</span><span class="meta-tag tag-topic">达芬奇 大场景 层次 挑刺 曝光分区 青橙色调 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/2R2qICZPFQG" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">还原：曲线拉开黑白位，白平衡先做准</a><a href="#ch2">曝光三区：主体、氛围光区、环境背光</a><a href="#ch3">挑刺：右侧墙壁比中间还亮</a><a href="#ch4">颜色：补青找暖、降红、提高青密度</a><a href="#ch5">定调：暗角避开光源 + 电影感外观</a><a href="#ch6">收束：还原对比与「缺啥补啥」</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>老叉用室内大场景演示：先曲线拉开黑白位并校正白平衡，再按「主体→氛围光区→环境背光」做曝光分区；接着用挑刺修右侧过亮墙面，用色调/并行找回青橙、降红与提高青密度，最后暗角与电影感外观收束。核心口令是缺啥补啥、哪里过强就弱化——电影感外观不能代替前面的层次与挑刺。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:50]</span><div><strong>还原校色</strong><p>曲线拉开黑白位；偏黄则降色温、色调略品红；分量图看受光面 RGB 接近即可。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:50→05:03]</span><div><strong>三区曝光</strong><p>主体遮罩提高光压阴影；并行强化光区对比；外部节点压背光暗面不闷。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:03→05:50]</span><div><strong>挑刺压墙</strong><p>左侧来光却右侧墙过亮：遮罩压暗+略提高光，护受光面。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:50→07:45]</span><div><strong>青橙与降红</strong><p>色调补窗青→并行找回暖；蜘蛛网降暗部红；提高青绿密度去浮。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:45→08:50]</span><div><strong>暗角+外观</strong><p>圆形遮罩反转暗角避开光源；电影感外观创造器微调白平衡/色调。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:50→10:08]</span><div><strong>对比与口令</strong><p>还原对比：外观不能跳过层次；工具非唯一，缺啥补啥。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>大场景层次靠「先还原准色→三区曝光→挑刺修离谱亮面→再补色」，电影感外观只是锦上添花。挑刺的本质是对照现场灯光逻辑：过亮抢戏就压、缺色就补、过艳就降。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:50</span>还原：曲线拉开黑白位，白平衡先做准</h2><p>室内大场景要做出层次本来就难：就算前期光打到位，调完也常觉得差一口气。老叉先简单还原灰片：用曲线把高光端上拉、暗部下压，快速拉开黑白位，再在后节点略加饱和。</p><p>画面整体偏黄时回到矫正节点：色温往蓝、色调略往品红，避免偏绿。判断白平衡看分量图——找受光面黑白灰（如右侧瓶子最亮处），RGB 三值尽量接近即可，不必死磕某个精确数值。</p><p>为何一定要先校准：颜色不准会让肤色隐性偏移、物体本色丢失；真喜欢暖色可后面单独加暖。一开始就锁死偏暖，后面想改冷往往调不干净。着色节点可自定义全局偏色，他觉得当前颜色够用就先控住，节点拉到第二排。</p><figure><img src="assets/big-scene-pick-faults/shot-01.jpg" alt="灰片还原：曲线拉开黑白位，室内大场景舞蹈人物" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:25] 灰片还原：曲线拉开黑白位，室内大场景舞蹈人物</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e3ac950e557f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Log restore: curve opens black/white; indoor dancers in a wide set.</span></div>
+<audio class="cap-audio" src="audio/e3ac950e557f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:50-05:03</span>曝光三区：主体、氛围光区、环境背光</h2><p>「没质感、很平」往往是没拆主次。流程图第二板块是曝光优化：先找主体——本片就是跳舞的人。大致画遮罩，思路对标现场打光：把人物身上的光打亮一点。略提高光滑块后，因高光全局影响，再略降阴影滑块，让衣服暗面保持黑、背景少受牵连。调整前人物发灰，调整后立体。</p><p>氛围区就是明确的光区：Shift/Option+P 建并行，钢笔大致勾选、开柔化。地上影子说明是硬光，强化就是亮更亮、暗更暗——加对比度并配合轴心改整体曝光，让受光面更立体。</p><p>环境区是背光面：对前一节点建外部节点（Alt/Option+O），反转选区省得重画。不能只粗暴压曝光，否则微弱受光物体失光感、暗面发闷——应靠加对比度压背光里的暗面、尽量护住背光亮面。三节点开关对比，画面瞬间立体。</p><figure><img src="assets/big-scene-pick-faults/shot-02.jpg" alt="主体遮罩：略提高光并压阴影，人物从发灰变立体" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 主体遮罩：略提高光并压阴影，人物从发灰变立体</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8da23c5dc5d9.mp3" type="button" aria-label="Play English audio">🔊</button><span>Subject mask: lift highs, press shadows—gray figure turns dimensional.</span></div>
+<audio class="cap-audio" src="audio/8da23c5dc5d9.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/big-scene-pick-faults/shot-03.jpg" alt="氛围光区：并行遮罩加对比+轴心，受光面更立体" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:50] 氛围光区：并行遮罩加对比+轴心，受光面更立体</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/342ddebf19c7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Mood-light zone: parallel mask contrast + pivot for lit volume.</span></div>
+<audio class="cap-audio" src="audio/342ddebf19c7.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">05:03-05:50</span>挑刺：右侧墙壁比中间还亮</h2><p>光从左侧来，理应左亮右暗，但右侧墙壁甚至比中间墙更亮。后跟节点大致画遮罩压暗：压阴影后仍略提高光，避免受光面太闷。挑刺就是对照灯光逻辑，把离谱抢戏面压回去。</p><figure><img src="assets/big-scene-pick-faults/shot-04.jpg" alt="挑刺：右侧过亮墙壁遮罩压暗并略提高光" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:20] 挑刺：右侧过亮墙壁遮罩压暗并略提高光</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ec79a1cd4331.mp3" type="button" aria-label="Play English audio">🔊</button><span>Nitpick: mask the hot right wall—darken and slightly lift highlight control.</span></div>
+<audio class="cap-audio" src="audio/ec79a1cd4331.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:50-07:45</span>颜色：补青找暖、降红、提高青密度</h2><p>场景偏暖黄、黄元素多，缺一点青——能做青的主要是窗光。后节点用色调略往绿，给窗户戴上青；暖色变怪后并行节点加饱和、色相略往橙，找回暖，形成青橙色调。</p><p>继续挑刺：人物暗部红过强不合理。蜘蛛网略降红饱和，暗部与毯子、灯都更舒服。窗户青太浮：同节点用色轮 60° 切片提高绿/青密度（降明度并略降饱和），青更沉稳。三节点开关看颜色变化。</p><figure><img src="assets/big-scene-pick-faults/shot-05.jpg" alt="颜色：色调补窗青+并行找回暖，形成青橙色调" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:35] 颜色：色调补窗青+并行找回暖，形成青橙色调</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/596e4b6cc494.mp3" type="button" aria-label="Play English audio">🔊</button><span>Color: tint windows cyan, parallel-recover warmth for teal-orange.</span></div>
+<audio class="cap-audio" src="audio/596e4b6cc494.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">07:45-08:50</span>定调：暗角避开光源 + 电影感外观</h2><p>想加强氛围可加暗角：圆形遮罩大柔化并反转压四周。有明确光源时，遮罩中心避开光源、可略旋转顺光，压暗才自然；压到光源会怪且生硬。</p><p>还差点意思就新建节点拖入电影感外观创造器，默认往往已好看；要冷可调白平衡，不要太绿可调色调。但若跳过前面节点，外观只能给基础，画面仍发平无层次——该做的层次与挑刺不能省。</p><figure><img src="assets/big-scene-pick-faults/shot-06.jpg" alt="暗角圆形遮罩反转压四周，中心避开左侧光源" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[08:00] 暗角圆形遮罩反转压四周，中心避开左侧光源</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ae3e2261d3d1.mp3" type="button" aria-label="Play English audio">🔊</button><span>Vignette circle inverted; center avoids the left light source.</span></div>
+<audio class="cap-audio" src="audio/ae3e2261d3d1.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">08:50-10:08</span>收束：还原对比与「缺啥补啥」</h2><p>与还原后对比，效果已经很好。调色不必被「必须用曲线染色」误导：染色方式很多，色轮同样能做；不会某工具就别硬上——RGB 混合器听懂却不会用就先不用，别的工具更直观也能出同样颜色。</p><p>口令：缺啥补啥，哪里不够强就强化，哪里太强就弱化。有帮助就三连；本期完。</p><figure><img src="assets/big-scene-pick-faults/shot-07.jpg" alt="还原后与调色完成画面开关对比收束" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[09:10] 还原后与调色完成画面开关对比收束</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/90793eee140b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Toggle restore vs finished grade to close.</span></div>
+<audio class="cap-audio" src="audio/90793eee140b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（271段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>一个室内大场景 想要做出层次 本身就是会有难度的</p></div>
+<div class="transcript-row"><time>00:10</time><p>就算我们前期把光打得非常到位</p></div>
+<div class="transcript-row"><time>00:12</time><p>调出来的结果总感觉还是差那么点意思 对吧</p></div>
+<div class="transcript-row"><time>00:15</time><p>比如说这个画面 我们看到前期它是做了光驱的分位的</p></div>
+<div class="transcript-row"><time>00:18</time><p>我们可以给它先简单做一个还原 挥冰状态下要还原</p></div>
+<div class="transcript-row"><time>00:21</time><p>首先考虑的就是把它的黑白位给拉开</p></div>
+<div class="transcript-row"><time>00:24</time><p>所以呢 我们可以用曲线把高光这一端往上拉</p></div>
+<div class="transcript-row"><time>00:28</time><p>然后把暗部这一端往下降</p></div>
+<div class="transcript-row"><time>00:30</time><p>这样就可以快速的把黑白位给它拉开</p></div>
+<div class="transcript-row"><time>00:33</time><p>然后再在后面3号节点给画面加一点点饱和度</p></div>
+<div class="transcript-row"><time>00:37</time><p>此时我们看画面 其实它的白平衡不是很正确 整体还是偏黄 对不对</p></div>
+<div class="transcript-row"><time>00:41</time><p>我们就回到2号节点 因为它是矫正节点 我们把白平衡给它拉回来</p></div>
+<div class="transcript-row"><time>00:45</time><p>既然它偏黄 所以我们就把色温往反方向 也就是往蓝色方向去动</p></div>
+<div class="transcript-row"><time>00:49</time><p>我就到这里差不多 然后再给它色调稍微往屏的方向走一点点</p></div>
+<div class="transcript-row"><time>00:53</time><p>不然的话有点偏绿</p></div>
+<div class="transcript-row"><time>00:55</time><p>这个时候我们怎么去判断我们的白平衡有没有做到位</p></div>
+<div class="transcript-row"><time>00:57</time><p>其实看到分量图就可以了</p></div>
+<div class="transcript-row"><time>00:59</time><p>我们找画面中受光面的黑白灰 比如说右边这个瓶子它的最亮处</p></div>
+<div class="transcript-row"><time>01:04</time><p>我们要保证它的RGB3值尽可能的接近 蓝色稍微多了一点点</p></div>
+<div class="transcript-row"><time>01:09</time><p>那此时基本上接近就可以了</p></div>
+<div class="transcript-row"><time>01:12</time><p>我们不用去刻意的追求某一个数值一定的完全准确 这个太浪费时间了</p></div>
+<div class="transcript-row"><time>01:16</time><p>那此时肯定会有朋友会问 我们为什么一定要矫正</p></div>
+<div class="transcript-row"><time>01:19</time><p>原本片段的效果我还挺喜欢的 原因很简单</p></div>
+<div class="transcript-row"><time>01:21</time><p>如果一开始的颜色不够准 一方面会让肤色产生偏移</p></div>
+<div class="transcript-row"><time>01:26</time><p>你会一时看不出肤色的不准确</p></div>
+<div class="transcript-row"><time>01:28</time><p>那第二个是整体偏色就必然导致物体本色丢失</p></div>
+<div class="transcript-row"><time>01:32</time><p>比如说右侧这些物体</p></div>
+<div class="transcript-row"><time>01:34</time><p>第三点如果你真的喜欢暖色</p></div>
+<div class="transcript-row"><time>01:36</time><p>那么你完全可以在后面来个节点让画面调暖</p></div>
+<div class="transcript-row"><time>01:39</time><p>但如果你一开始就保持了偏暖的结果</p></div>
+<div class="transcript-row"><time>01:41</time><p>随着我们调色的进行你后悔了 我想要偏冷</p></div>
+<div class="transcript-row"><time>01:44</time><p>那这个时候就可能会有点麻烦了</p></div>
+<div class="transcript-row"><time>01:46</time><p>你的颜色可能会调不回来或者调得不干净</p></div>
+<div class="transcript-row"><time>01:48</time><p>所以我建议大家先把颜色调准</p></div>
+<div class="transcript-row"><time>01:51</time><p>让我们的调色是在一个正确的基础上来进行的</p></div>
+<div class="transcript-row"><time>01:54</time><p>此时我们看到4号节点</p></div>
+<div class="transcript-row"><time>01:56</time><p>这个4号节点就是刚刚说到你可以自定义改变画面全局偏色的着色节点</p></div>
+<div class="transcript-row"><time>02:00</time><p>但我觉得目前这个颜色完全够用</p></div>
+<div class="transcript-row"><time>02:02</time><p>所以我们就给它先控制 建立几个节点拉到第二排</p></div>
+<div class="transcript-row"><time>02:05</time><p>不知道大家有没有遇到这样的反馈</p></div>
+<div class="transcript-row"><time>02:07</time><p>说你的画面太没质感 没层次 画面很平之类之类的</p></div>
+<div class="transcript-row"><time>02:10</time><p>这就是没有完整拆分画面主次</p></div>
+<div class="transcript-row"><time>02:12</time><p>我们可以看到流程图 在流程图的第二个板块是曝光优化</p></div>
+<div class="transcript-row"><time>02:15</time><p>我们对于一个画面一定要先找主体</p></div>
+<div class="transcript-row"><time>02:18</time><p>主体一定是被强化的 对吧</p></div>
+<div class="transcript-row"><time>02:20</time><p>那这个画面中主体不用想 自然就是跳舞的人</p></div>
+<div class="transcript-row"><time>02:23</time><p>我们要怎么把它强化呢</p></div>
+<div class="transcript-row"><time>02:24</time><p>我们先给它大致的画一个遮罩</p></div>
+<div class="transcript-row"><time>02:27</time><p>强化的思路大家可以想一想</p></div>
+<div class="transcript-row"><time>02:28</time><p>如果你在现场是打光的</p></div>
+<div class="transcript-row"><time>02:30</time><p>那么你会通过什么行为让这个人物强化你</p></div>
+<div class="transcript-row"><time>02:33</time><p>那不就是把人物身上光给打亮一点吧 对吧</p></div>
+<div class="transcript-row"><time>02:35</time><p>这是很简单的一个思路</p></div>
+<div class="transcript-row"><time>02:36</time><p>我们给人物画好了遮罩之后</p></div>
+<div class="transcript-row"><time>02:38</time><p>只需要稍微提高一点点高光滑块</p></div>
+<div class="transcript-row"><time>02:41</time><p>提高完了之后大家要注意</p></div>
+<div class="transcript-row"><time>02:43</time><p>因为高光滑块是全局影响的</p></div>
+<div class="transcript-row"><time>02:45</time><p>所以我们要稍微再降低一点阴影滑块</p></div>
+<div class="transcript-row"><time>02:47</time><p>一方面能够保证人物身上的暗面这些衣服</p></div>
+<div class="transcript-row"><time>02:51</time><p>本来黑的还是能保持黑 不至于发灰</p></div>
+<div class="transcript-row"><time>02:53</time><p>那同时也不会让背景受到太多的影响</p></div>
+<div class="transcript-row"><time>02:56</time><p>我们只是想让人物身上的这个光变得更加明显的而已</p></div>
+<div class="transcript-row"><time>02:59</time><p>我们可以来看一下这个区别</p></div>
+<div class="transcript-row"><time>03:01</time><p>调整前人物有一点发灰 对吧</p></div>
+<div class="transcript-row"><time>03:03</time><p>调整后人物就变得立体了</p></div>
+<div class="transcript-row"><time>03:04</time><p>然后就是来到第二个区 氛围区</p></div>
+<div class="transcript-row"><time>03:06</time><p>这个画面氛围区我觉得特别好找吧</p></div>
+<div class="transcript-row"><time>03:08</time><p>就这个光的区 对不对</p></div>
+<div class="transcript-row"><time>03:10</time><p>我们也同样给它画一个遮罩</p></div>
+<div class="transcript-row"><time>03:11</time><p>安卓要再加P或者Option加B建一个B型节点</p></div>
+<div class="transcript-row"><time>03:14</time><p>在下面这个B型节点中我们可以用钢笔大致的一勾</p></div>
+<div class="transcript-row"><time>03:17</time><p>因为它这个光区氛围还是非常非常明确的</p></div>
+<div class="transcript-row"><time>03:20</time><p>画完遮罩之后给它开一点柔化</p></div>
+<div class="transcript-row"><time>03:22</time><p>对于这一块我们要以什么思路来小幅像画它呢</p></div>
+<div class="transcript-row"><time>03:25</time><p>这个光打的是映光</p></div>
+<div class="transcript-row"><time>03:26</time><p>我们通过这个地上的影子也看得出来</p></div>
+<div class="transcript-row"><time>03:28</time><p>要强化它自然就是把光打的再立体点</p></div>
+<div class="transcript-row"><time>03:31</time><p>也就是让亮的更亮 暗的更暗</p></div>
+<div class="transcript-row"><time>03:33</time><p>所以我们可以直接加一点点对比度</p></div>
+<div class="transcript-row"><time>03:36</time><p>加完对比度之后我们配合轴心来改变一下</p></div>
+<div class="transcript-row"><time>03:40</time><p>它整体的一个曝光程度</p></div>
+<div class="transcript-row"><time>03:42</time><p>我就到这差不多</p></div>
+<div class="transcript-row"><time>03:43</time><p>我们看到经过这样的调整</p></div>
+<div class="transcript-row"><time>03:44</time><p>我们能够让这些受光面的亮变得更亮</p></div>
+<div class="transcript-row"><time>03:48</time><p>而这些暗同样也能够变得更暗</p></div>
+<div class="transcript-row"><time>03:50</time><p>整体的画面这些受光面这一个光区位置</p></div>
+<div class="transcript-row"><time>03:53</time><p>它就能变得更加立体</p></div>
+<div class="transcript-row"><time>03:54</time><p>不至于原本那么灰对不对</p></div>
+<div class="transcript-row"><time>03:55</time><p>最后呢就是环境区域</p></div>
+<div class="transcript-row"><time>03:56</time><p>我们需要对环境区域去做小幅的弱化</p></div>
+<div class="transcript-row"><time>03:59</time><p>那这个画面中环境区域就是这些背光面</p></div>
+<div class="transcript-row"><time>04:01</time><p>不然的话你光也不会打成这样吧</p></div>
+<div class="transcript-row"><time>04:03</time><p>我们只要遵循拍摄现场灯光的设计思路</p></div>
+<div class="transcript-row"><time>04:06</time><p>就很容易指导这些区域</p></div>
+<div class="transcript-row"><time>04:07</time><p>那画面中除了受光面</p></div>
+<div class="transcript-row"><time>04:09</time><p>剩下的就是背光面</p></div>
+<div class="transcript-row"><time>04:10</time><p>所以我们可以对6号节点建立一个外部节点</p></div>
+<div class="transcript-row"><time>04:13</time><p>按住L或者是option加O</p></div>
+<div class="transcript-row"><time>04:15</time><p>外部节点的意思就是跟前面这个节点</p></div>
+<div class="transcript-row"><time>04:17</time><p>有着完全相反的制造范围</p></div>
+<div class="transcript-row"><time>04:19</time><p>那这样就可以避免我们再次花制造浪费时间</p></div>
+<div class="transcript-row"><time>04:21</time><p>我们建好了外部节点之后要压按背光面</p></div>
+<div class="transcript-row"><time>04:24</time><p>那我们压也不能只是简单的压</p></div>
+<div class="transcript-row"><time>04:26</time><p>因为背光面它不是暗面</p></div>
+<div class="transcript-row"><time>04:28</time><p>还是有不少物体有一定的光感的</p></div>
+<div class="transcript-row"><time>04:30</time><p>我们可以看到如果我们只是单纯的压按曝光</p></div>
+<div class="transcript-row"><time>04:32</time><p>先不管它这个边缘是不是自然</p></div>
+<div class="transcript-row"><time>04:34</time><p>我们压按了之后能够看到</p></div>
+<div class="transcript-row"><time>04:35</time><p>这些有被微弱的光照到的物体</p></div>
+<div class="transcript-row"><time>04:37</time><p>它都失去了一定的光感</p></div>
+<div class="transcript-row"><time>04:39</time><p>就会让你的暗面显得特别发闷</p></div>
+<div class="transcript-row"><time>04:41</time><p>所以我们不能简单粗暴的压按曝光</p></div>
+<div class="transcript-row"><time>04:43</time><p>我们正要压按这些背光面的部分</p></div>
+<div class="transcript-row"><time>04:45</time><p>其实是背光面的暗面</p></div>
+<div class="transcript-row"><time>04:47</time><p>那背光面的亮面我们不希望破坏太多</p></div>
+<div class="transcript-row"><time>04:49</time><p>所以我们也可以通过增加对比度的方式</p></div>
+<div class="transcript-row"><time>04:51</time><p>来把背光面它的暗面给它压按</p></div>
+<div class="transcript-row"><time>04:53</time><p>好 我就到这个程度差不多</p></div>
+<div class="transcript-row"><time>04:55</time><p>我们可以看一下这三个节点的一个行为变化</p></div>
+<div class="transcript-row"><time>04:57</time><p>画面是不是瞬间就变得立体了</p></div>
+<div class="transcript-row"><time>04:59</time><p>这个效果是非常非常明显的</p></div>
+<div class="transcript-row"><time>05:01</time><p>这个操作很简单</p></div>
+<div class="transcript-row"><time>05:03</time><p>接下来我们就开始挑刺</p></div>
+<div class="transcript-row"><time>05:05</time><p>大家觉得这个画面中此时的曝光层次</p></div>
+<div class="transcript-row"><time>05:07</time><p>有哪里让你觉得不舒服</p></div>
+<div class="transcript-row"><time>05:09</time><p>我觉得既然光是从左侧照射来的</p></div>
+<div class="transcript-row"><time>05:11</time><p>那必然会呈现左侧亮于右侧的一个结果</p></div>
+<div class="transcript-row"><time>05:15</time><p>可是右侧这个墙壁我觉得太亮了</p></div>
+<div class="transcript-row"><time>05:17</time><p>它甚至比中间这个墙壁还要再亮那么一点点</p></div>
+<div class="transcript-row"><time>05:19</time><p>所以我们可以在后面跟一个节点</p></div>
+<div class="transcript-row"><time>05:21</time><p>给右侧墙壁大致化一个遮罩</p></div>
+<div class="transcript-row"><time>05:25</time><p>画完了之后我们给它压按一点点</p></div>
+<div class="transcript-row"><time>05:27</time><p>同样的要压按就不能只压按</p></div>
+<div class="transcript-row"><time>05:29</time><p>我们在压完了阴影滑块之后</p></div>
+<div class="transcript-row"><time>05:31</time><p>还得稍微把高光滑块给它提点上来</p></div>
+<div class="transcript-row"><time>05:33</time><p>原因跟刚刚是一样的</p></div>
+<div class="transcript-row"><time>05:35</time><p>不要让这些瘦光面太闷</p></div>
+<div class="transcript-row"><time>05:37</time><p>这样的操作就是能够简单的强化我们的一个层次了</p></div>
+<div class="transcript-row"><time>05:39</time><p>效果还是比较好的</p></div>
+<div class="transcript-row"><time>05:41</time><p>接下来我们就可以动颜色</p></div>
+<div class="transcript-row"><time>05:43</time><p>先想一想我们要干嘛</p></div>
+<div class="transcript-row"><time>05:45</time><p>这个场景整体是偏暖黄的</p></div>
+<div class="transcript-row"><time>05:47</time><p>那要去做风格化颜色大家第一时间想到什么颜色</p></div>
+<div class="transcript-row"><time>05:49</time><p>是不是金层色调</p></div>
+<div class="transcript-row"><time>05:51</time><p>画面中有变成的能力</p></div>
+<div class="transcript-row"><time>05:53</time><p>黄色元素非常非常多</p></div>
+<div class="transcript-row"><time>05:55</time><p>但是缺了那么一点点青色</p></div>
+<div class="transcript-row"><time>05:57</time><p>能做青色的只有这个窗户光</p></div>
+<div class="transcript-row"><time>05:59</time><p>其他地方没有什么条件能够做青色</p></div>
+<div class="transcript-row"><time>06:01</time><p>先不想太多</p></div>
+<div class="transcript-row"><time>06:03</time><p>我们既然缺青色就把缺点色找回来</p></div>
+<div class="transcript-row"><time>06:05</time><p>我们在后面来个节点用色调</p></div>
+<div class="transcript-row"><time>06:07</time><p>色调是绿和平的一个走向</p></div>
+<div class="transcript-row"><time>06:09</time><p>所以我们可以在色调中减一点点</p></div>
+<div class="transcript-row"><time>06:11</time><p>色调的竖直让它往绿色方向走一点点</p></div>
+<div class="transcript-row"><time>06:13</time><p>那这样就能够让这个窗户戴上一定的青色</p></div>
+<div class="transcript-row"><time>06:15</time><p>那此时青色是有了</p></div>
+<div class="transcript-row"><time>06:17</time><p>暖色就变怪了对不对</p></div>
+<div class="transcript-row"><time>06:19</time><p>那我们就再次按住L加P或者是Option加P</p></div>
+<div class="transcript-row"><time>06:21</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>06:23</time><p>在下面这个节点中把暖色给它找回来就行了</p></div>
+<div class="transcript-row"><time>06:25</time><p>稍微给它加一点点饱和度</p></div>
+<div class="transcript-row"><time>06:27</time><p>然后色相往橙色方向走一点点来</p></div>
+<div class="transcript-row"><time>06:29</time><p>我们此时看</p></div>
+<div class="transcript-row"><time>06:31</time><p>是不是瞬间就变成了青橙色调了</p></div>
+<div class="transcript-row"><time>06:33</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:35</time><p>那这样调色就变得非常安全</p></div>
+<div class="transcript-row"><time>06:37</time><p>而且变得非常直接啊</p></div>
+<div class="transcript-row"><time>06:39</time><p>不用去动太多脑子也不用去费心的去调色轮</p></div>
+<div class="transcript-row"><time>06:41</time><p>之类之类的很麻烦</p></div>
+<div class="transcript-row"><time>06:43</time><p>好 我们继续来挑刺</p></div>
+<div class="transcript-row"><time>06:45</time><p>这个画面中哪里的颜色让你不舒服</p></div>
+<div class="transcript-row"><time>06:47</time><p>我觉得最不舒服的就是这个红色</p></div>
+<div class="transcript-row"><time>06:49</time><p>这些红色特别不舒服</p></div>
+<div class="transcript-row"><time>06:51</time><p>特别是人物暗部的红</p></div>
+<div class="transcript-row"><time>06:53</time><p>因为你暗部的饱和度怎么可能会比亮面还要去强这么多呢</p></div>
+<div class="transcript-row"><time>06:55</time><p>对吧 所以我们后面再跟一个节点</p></div>
+<div class="transcript-row"><time>06:57</time><p>用蜘蛛网稍微把红色饱和度给它降一点点下来</p></div>
+<div class="transcript-row"><time>06:59</time><p>好 降了之后呢</p></div>
+<div class="transcript-row"><time>07:01</time><p>我们看到暗部原本发红</p></div>
+<div class="transcript-row"><time>07:03</time><p>但是我们降完了暗部就变舒服了</p></div>
+<div class="transcript-row"><time>07:05</time><p>包括右侧这个毯子还有这个灯</p></div>
+<div class="transcript-row"><time>07:07</time><p>原本是红的发液</p></div>
+<div class="transcript-row"><time>07:09</time><p>我们把它饱和度降低了之后呢</p></div>
+<div class="transcript-row"><time>07:11</time><p>也能够让它变得舒服一点</p></div>
+<div class="transcript-row"><time>07:13</time><p>再继续挑刺</p></div>
+<div class="transcript-row"><time>07:15</time><p>还有什么不舒服的</p></div>
+<div class="transcript-row"><time>07:17</time><p>我觉得窗户的青色不够沉稳</p></div>
+<div class="transcript-row"><time>07:19</time><p>我觉得它有点太浮了</p></div>
+<div class="transcript-row"><time>07:21</time><p>所以我们可以在同一个节点中</p></div>
+<div class="transcript-row"><time>07:23</time><p>用色轮60较切片工具</p></div>
+<div class="transcript-row"><time>07:25</time><p>把绿色和青色的密度给它稍微提高一点</p></div>
+<div class="transcript-row"><time>07:27</time><p>增加密度的行为就是降低它的明度</p></div>
+<div class="transcript-row"><time>07:29</time><p>小幅降低它的饱和度</p></div>
+<div class="transcript-row"><time>07:31</time><p>我们降低了一点它的明度之后</p></div>
+<div class="transcript-row"><time>07:33</time><p>它就没有原本那么扎眼了 对吧</p></div>
+<div class="transcript-row"><time>07:35</time><p>没有那么刺眼了 这样的颜色就舒服多了</p></div>
+<div class="transcript-row"><time>07:37</time><p>我们可以这三个节点来开关一下</p></div>
+<div class="transcript-row"><time>07:39</time><p>看一下 效果还是不错的</p></div>
+<div class="transcript-row"><time>07:41</time><p>最后呢就是定调</p></div>
+<div class="transcript-row"><time>07:43</time><p>定调我们要做什么样的事情</p></div>
+<div class="transcript-row"><time>07:45</time><p>比如说你想让画面的氛围感再强一点</p></div>
+<div class="transcript-row"><time>07:47</time><p>那我可能会考虑加一个暗角</p></div>
+<div class="transcript-row"><time>07:49</time><p>暗角怎么建立</p></div>
+<div class="transcript-row"><time>07:51</time><p>就是建立一个圆形遮罩</p></div>
+<div class="transcript-row"><time>07:53</time><p>然后把柔化开大 并且把它反转了</p></div>
+<div class="transcript-row"><time>07:55</time><p>把四周压暗就是个暗角</p></div>
+<div class="transcript-row"><time>07:57</time><p>但是对于这种有明确光源的</p></div>
+<div class="transcript-row"><time>07:59</time><p>我们压暗的部分最好不要包含这个光源</p></div>
+<div class="transcript-row"><time>08:01</time><p>所以我们把遮罩往右移一点点</p></div>
+<div class="transcript-row"><time>08:03</time><p>以这样的一个形式</p></div>
+<div class="transcript-row"><time>08:05</time><p>也可以顺着光的方向稍微旋转一点</p></div>
+<div class="transcript-row"><time>08:07</time><p>然后再去给它压暗</p></div>
+<div class="transcript-row"><time>08:09</time><p>你会发现这样的压暗会变得更加自然</p></div>
+<div class="transcript-row"><time>08:11</time><p>如果你把光源压暗的话 那画面就变得特别怪了</p></div>
+<div class="transcript-row"><time>08:13</time><p>这个暗角有就会变得特别生硬</p></div>
+<div class="transcript-row"><time>08:15</time><p>此时整体的效果已经不错了</p></div>
+<div class="transcript-row"><time>08:17</time><p>但总感觉还差那么点意思</p></div>
+<div class="transcript-row"><time>08:19</time><p>既然差点意思 不用想太多</p></div>
+<div class="transcript-row"><time>08:21</time><p>再建一个节点 在特效库中搜索</p></div>
+<div class="transcript-row"><time>08:23</time><p>把电影感外观创造器把它拉到新建的节点上</p></div>
+<div class="transcript-row"><time>08:25</time><p>什么都不用改 你会发现</p></div>
+<div class="transcript-row"><time>08:27</time><p>效果很好 对不对</p></div>
+<div class="transcript-row"><time>08:29</time><p>那当然啊 如果说你想让它冷一点可不可以</p></div>
+<div class="transcript-row"><time>08:31</time><p>你在电影感外观创造器中把摆平痕</p></div>
+<div class="transcript-row"><time>08:33</time><p>往冷的方向走一点点</p></div>
+<div class="transcript-row"><time>08:35</time><p>或者说你不想让它这么绿</p></div>
+<div class="transcript-row"><time>08:37</time><p>那你可以在色调中往屁影的方向走一点</p></div>
+<div class="transcript-row"><time>08:39</time><p>怎么调都可以 很好看</p></div>
+<div class="transcript-row"><time>08:41</time><p>我觉得这样的一个效果其实就是不错的</p></div>
+<div class="transcript-row"><time>08:43</time><p>那你说为什么我不直接用电影感外观创造器</p></div>
+<div class="transcript-row"><time>08:45</time><p>既然它这么好用的话</p></div>
+<div class="transcript-row"><time>08:47</time><p>前面做这么多事情不是有点浪费时间吗</p></div>
+<div class="transcript-row"><time>08:49</time><p>如果说你前面这些节点都不做的话</p></div>
+<div class="transcript-row"><time>08:51</time><p>你会发现 电影感外观创造器虽然能够给你画面带来一定的基础</p></div>
+<div class="transcript-row"><time>08:55</time><p>可是这样的画面就是发屏没有层次</p></div>
+<div class="transcript-row"><time>08:57</time><p>所以前面这些节点</p></div>
+<div class="transcript-row"><time>08:59</time><p>该做还得做 挑次该做还得做</p></div>
+<div class="transcript-row"><time>09:01</time><p>那现在结果我们可以用还原后的画面来做一下对比</p></div>
+<div class="transcript-row"><time>09:03</time><p>这是还原后的画面</p></div>
+<div class="transcript-row"><time>09:05</time><p>这是我们调好后的画面</p></div>
+<div class="transcript-row"><time>09:07</time><p>效果是不是非常不错 所以调色千万不要想太复杂</p></div>
+<div class="transcript-row"><time>09:09</time><p>也不要被别人误导了</p></div>
+<div class="transcript-row"><time>09:11</time><p>一定要用多么复杂的思路来操作</p></div>
+<div class="transcript-row"><time>09:13</time><p>如果说你不会曲线</p></div>
+<div class="transcript-row"><time>09:15</time><p>那非要你用曲线去染色</p></div>
+<div class="transcript-row"><time>09:17</time><p>那我觉得没有特别大的必要吧</p></div>
+<div class="transcript-row"><time>09:19</time><p>因为你染色的方式有非常多 你可以用色轮</p></div>
+<div class="transcript-row"><time>09:21</time><p>当然曲线也不是不可要</p></div>
+<div class="transcript-row"><time>09:23</time><p>如果你会用曲线也非常好用</p></div>
+<div class="transcript-row"><time>09:25</time><p>可是你不会 那你可以平时去练</p></div>
+<div class="transcript-row"><time>09:27</time><p>但你不要把它当做唯一的一个效果</p></div>
+<div class="transcript-row"><time>09:29</time><p>达芬奇能够实现某一个效果的工具有非常非常多</p></div>
+<div class="transcript-row"><time>09:31</time><p>不是哪个工具是必选的</p></div>
+<div class="transcript-row"><time>09:33</time><p>那包括我们之前有很多朋友来问过我说</p></div>
+<div class="transcript-row"><time>09:35</time><p>老查 RGB 混合器好难学</p></div>
+<div class="transcript-row"><time>09:37</time><p>我理解不了</p></div>
+<div class="transcript-row"><time>09:39</time><p>我的意思就是 我先给你讲明白</p></div>
+<div class="transcript-row"><time>09:41</time><p>如果你听明白了 但是不知道怎么应用</p></div>
+<div class="transcript-row"><time>09:43</time><p>那就别用它</p></div>
+<div class="transcript-row"><time>09:45</time><p>就那么简单 因为你要用 RGB 混合器给画面做成的颜色效果</p></div>
+<div class="transcript-row"><time>09:47</time><p>你用别的工具一样能够实现</p></div>
+<div class="transcript-row"><time>09:49</time><p>而且别的工具更直观 为什么非要用这个工具呢</p></div>
+<div class="transcript-row"><time>09:51</time><p>这就是我想说的一个点</p></div>
+<div class="transcript-row"><time>09:53</time><p>我们要调色就是</p></div>
+<div class="transcript-row"><time>09:55</time><p>缺啥补啥 哪里不够强</p></div>
+<div class="transcript-row"><time>09:57</time><p>我们就强化哪里 哪里太强</p></div>
+<div class="transcript-row"><time>09:59</time><p>我们就弱化哪里 就那么简单</p></div>
+<div class="transcript-row"><time>10:01</time><p>讲到这里 如果你觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>10:03</time><p>还希望多多赞联 好了 这期就到这里</p></div>
+<div class="transcript-row"><time>10:05</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

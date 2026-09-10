@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="朋友想阴天故事感，自己调的说不上来的怪。老叉：还原高光约 80、暗部略暗；故事感要求中间调尽量低——压中灰再抬暗部与亮部找回层次。去灰不用全局对比（人太暗、天太亮），而用人物遮罩对比度+外部节点分区。颜色在解衣服发紫时顺势降色调走青绿冷调；要更暗则加蓝青密度而非死压曝光；可选高光">
+<title>达芬奇正确呈现阴天质感，让画面暗中有亮｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>达芬奇正确呈现阴天质感，让画面暗中有亮</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">5分59秒</span><span class="meta-tag tag-topic">达芬奇 阴天 故事感 中灰 密度 冷调 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/8qrLp6yMXje" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">怪结果 vs 目标：阴天故事感</a><a href="#ch2">故事感：把中间调尽量压低</a><a href="#ch3">去灰：人物遮罩对比 + 外部节点，别全局硬加</a><a href="#ch4">解衣服发紫，顺势走出青绿冷调</a><a href="#ch5">密度做阴沉；高光暖风格化独立节点</a><a href="#ch6">柔和对比度压灰天，对比看清朋友问题</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>朋友想阴天故事感，自己调的说不上来的怪。老叉：还原高光约 80、暗部略暗；故事感要求中间调尽量低——压中灰再抬暗部与亮部找回层次。去灰不用全局对比（人太暗、天太亮），而用人物遮罩对比度+外部节点分区。颜色在解衣服发紫时顺势降色调走青绿冷调；要更暗则加蓝青密度而非死压曝光；可选高光暖风格化放独立节点；柔和对比度把天空压灰且不牺牲中间反差。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:28]</span><div><strong>还原</strong><p>阴天高光别太亮（约 80）；暗部可略暗。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:28→01:16]</span><div><strong>压中灰</strong><p>故事感＝中间调尽量低；压中灰后抬暗部/亮部；波形中灰下压。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:16→02:11]</span><div><strong>分区对比</strong><p>人物简易遮罩加对比+轴向左；外部节点分区调环境，避免全局对比失控。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:11→03:07]</span><div><strong>解紫走冷</strong><p>衣服发紫→降色调顺带青绿冷调；可再略降色温加蓝。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:07→04:35]</span><div><strong>密度阴沉</strong><p>加蓝青密度让观感更阴沉，比直接压曝光自然；高光暖风格化建议独立节点。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:35→05:59]</span><div><strong>柔和天空</strong><p>样条线压高光找灰天；与朋友结果对比问题一目了然。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>阴天故事感关键是中间调够低、暗中仍有可控亮部。用压中灰+分区对比去灰，用降色调解问题同时赋冷调，用密度做「阴沉」而不是死压曝光；风格化节点与必做冷调拆开，方便后悔修改。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:28</span>怪结果 vs 目标：阴天故事感</h2><p>朋友发素材想做阴天故事感，自己那版确实怪；老叉一版对方觉得不错。先还原：阴天高光别太亮，大约波形 80 左右，暗部可略暗。三号节点略加饱和。</p><figure><img src="assets/davinci-overcast-dark-bright/shot-01.jpg" alt="阴天人像：还原高光约 80，暗部略暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:18] 阴天人像：还原高光约 80，暗部略暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/12f4d4c2e886.mp3" type="button" aria-label="Play English audio">🔊</button><span>Overcast portrait: restore highs ~80, shadows a bit dark.</span></div>
+<audio class="cap-audio" src="audio/12f4d4c2e886.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:28-01:16</span>故事感：把中间调尽量压低</h2><p>要阴天故事感，中间调曝光应尽量低。第二排降中灰曝光后暗部会过暗，再略抬暗部色轮与亮部色轮把高光找回。数值一步到位是演示，实操按画面反复微调——重点是结果满足需求。</p><p>波形上高光与暗部变化不大，中灰明显下压，这就是目的；用曲线或并进还原节点也可以。</p><figure><img src="assets/davinci-overcast-dark-bright/shot-02.jpg" alt="压中灰做故事感，波形中灰下压两端变化小" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] 压中灰做故事感，波形中灰下压两端变化小</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/50e9c9a710cb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Press midtones for story mood; scopes show mid drop, ends steady.</span></div>
+<audio class="cap-audio" src="audio/50e9c9a710cb.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:16-02:11</span>去灰：人物遮罩对比 + 外部节点，别全局硬加</h2><p>仍略发灰时想到加对比，但全局对比易让人物（尤其裤子）太暗、天空太亮，不符阴天。给人物画简易遮罩单独加一点对比，轴向左让人物略亮；Option/Alt+O 建外部节点，对其余区域用不同力度加对比并调轴，避免太暗。</p><p>看起来像全局加对比，实则人物与环境独立可控。曝光到此差不多。</p><figure><img src="assets/davinci-overcast-dark-bright/shot-03.jpg" alt="人物遮罩加对比 + 外部节点分区去灰" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:40] 人物遮罩加对比 + 外部节点分区去灰</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b0c870f1a0a7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Subject mask adds contrast; outside node zones away the gray.</span></div>
+<audio class="cap-audio" src="audio/b0c870f1a0a7.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:11-03:07</span>解衣服发紫，顺势走出青绿冷调</h2><p>阴天走冷不错，但全局猛加蓝会像朋友那样颜色无层次。先解不对：衣服发紫，节点降色调——紫消了，整体带青绿冷调，等于在解决问题时赋风格。可再略降色温加点蓝，力度自控。素材已传平台。</p><figure><img src="assets/davinci-overcast-dark-bright/shot-04.jpg" alt="降色调解衣服发紫，顺势走出青绿冷调" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 降色调解衣服发紫，顺势走出青绿冷调</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/aa48201e833d.mp3" type="button" aria-label="Play English audio">🔊</button><span>Drop tint to fix purple clothes, then lean into teal-green cool.</span></div>
+<audio class="cap-audio" src="audio/aa48201e833d.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">03:07-04:35</span>密度做阴沉；高光暖风格化独立节点</h2><p>朋友要暗，再直接压曝光会丢层次。全局已偏冷，可节点增加蓝与青的密度（曝光观感下降），并略降饱和；盯画面避免噪点与断层。波形蓝部略降，观感却更阴沉，比直接降对应曝光更自然。</p><p>可选风格：亮部色轮左上略暖，中灰右下回调。不建议与前面「必做」的全局加冷挤同一节点——风格化是主观赋予，后悔只改该节点即可。</p><figure><img src="assets/davinci-overcast-dark-bright/shot-05.jpg" alt="蓝青密度做阴沉，比直接压曝光更自然" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:30] 蓝青密度做阴沉，比直接压曝光更自然</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e5ed54b016cf.mp3" type="button" aria-label="Play English audio">🔊</button><span>Blue/cyan density for gloom feels more natural than crushing exposure.</span></div>
+<audio class="cap-audio" src="audio/e5ed54b016cf.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">04:35-05:59</span>柔和对比度压灰天，对比看清朋友问题</h2><p>柔和对比度：可编辑样条线，高光端多降（阴天）、高光波谷上提找回，暗部上提、暗部波谷下降，把天空压灰，去掉特别亮的结果；波形上中间调反差几乎不变，只是平移，不牺牲整体反差。</p><p>与朋友结果对比，问题一目了然。节点看似多但每步简单，很少需要精细遮罩；真要精细优先神奇遮罩。与还原比变化未必戏剧，但风格走向更强。</p><figure><img src="assets/davinci-overcast-dark-bright/shot-06.jpg" alt="柔和对比度压灰天，与朋友怪结果对比" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:00] 柔和对比度压灰天，与朋友怪结果对比</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/377a78b3c793.mp3" type="button" aria-label="Play English audio">🔊</button><span>Soft contrast presses gray sky; compare the “weird” friend result.</span></div>
+<audio class="cap-audio" src="audio/377a78b3c793.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（220段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>前两天有个朋友给我发了这个素材</p></div>
+<div class="transcript-row"><time>00:06</time><p>说想做出阴天的故事感</p></div>
+<div class="transcript-row"><time>00:08</time><p>这是他调的结果</p></div>
+<div class="transcript-row"><time>00:09</time><p>他觉得就是说不上来的怪确实挺怪的</p></div>
+<div class="transcript-row"><time>00:12</time><p>这是我调的结果</p></div>
+<div class="transcript-row"><time>00:13</time><p>他觉得还不错</p></div>
+<div class="transcript-row"><time>00:14</time><p>那么这一期我们就来分享一下</p></div>
+<div class="transcript-row"><time>00:16</time><p>该如何调出这种感觉</p></div>
+<div class="transcript-row"><time>00:17</time><p>其实很简单</p></div>
+<div class="transcript-row"><time>00:19</time><p>我们首先给它做下还原</p></div>
+<div class="transcript-row"><time>00:20</time><p>阴天的话高光就别太亮了</p></div>
+<div class="transcript-row"><time>00:22</time><p>让它在80左右就行了</p></div>
+<div class="transcript-row"><time>00:24</time><p>暗部可以稍微暗一些</p></div>
+<div class="transcript-row"><time>00:25</time><p>大概是这种我调的这个程度</p></div>
+<div class="transcript-row"><time>00:28</time><p>这个有点偏差问题不大</p></div>
+<div class="transcript-row"><time>00:29</time><p>然后在3号节点加点饱和度</p></div>
+<div class="transcript-row"><time>00:31</time><p>我们想要让画面呈现出阴天的感觉</p></div>
+<div class="transcript-row"><time>00:33</time><p>而且要做出所谓的故事感</p></div>
+<div class="transcript-row"><time>00:36</time><p>那么中间调部分的曝光</p></div>
+<div class="transcript-row"><time>00:37</time><p>其实要尽可能的低</p></div>
+<div class="transcript-row"><time>00:38</time><p>所以我们可以建立几个节点</p></div>
+<div class="transcript-row"><time>00:40</time><p>拉到第二排</p></div>
+<div class="transcript-row"><time>00:41</time><p>然后降低一点中晖部分的曝光</p></div>
+<div class="transcript-row"><time>00:44</time><p>降低了中晖部分曝光之后</p></div>
+<div class="transcript-row"><time>00:45</time><p>暗部也会太暗对不对</p></div>
+<div class="transcript-row"><time>00:47</time><p>所以我们可以再稍微提高一点</p></div>
+<div class="transcript-row"><time>00:49</time><p>暗部色轮的曝光</p></div>
+<div class="transcript-row"><time>00:50</time><p>再稍微提高一点亮部色轮的曝光</p></div>
+<div class="transcript-row"><time>00:52</time><p>让它高光能够回来</p></div>
+<div class="transcript-row"><time>00:54</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>00:55</time><p>我这里是因为已经做出了结果</p></div>
+<div class="transcript-row"><time>00:57</time><p>所以数值是一步到位的</p></div>
+<div class="transcript-row"><time>00:58</time><p>但是大家在调的时候</p></div>
+<div class="transcript-row"><time>00:59</time><p>要根据画面结果来反复微调</p></div>
+<div class="transcript-row"><time>01:01</time><p>重点不是数值</p></div>
+<div class="transcript-row"><time>01:02</time><p>而是画面结果得满足你的需求</p></div>
+<div class="transcript-row"><time>01:04</time><p>我们看到波星图</p></div>
+<div class="transcript-row"><time>01:05</time><p>高光和暗部几乎没有什么特别大的变化</p></div>
+<div class="transcript-row"><time>01:08</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:08</time><p>但终会往下压了</p></div>
+<div class="transcript-row"><time>01:10</time><p>这就是我们的目的</p></div>
+<div class="transcript-row"><time>01:11</time><p>当然你用曲线能做到也是可以的</p></div>
+<div class="transcript-row"><time>01:13</time><p>也可以把这个行为放在你的还原节点</p></div>
+<div class="transcript-row"><time>01:15</time><p>问题都不大</p></div>
+<div class="transcript-row"><time>01:16</time><p>再然后</p></div>
+<div class="transcript-row"><time>01:17</time><p>我觉得画面其实还是有一点发灰的</p></div>
+<div class="transcript-row"><time>01:19</time><p>灰的话我们首先想到的</p></div>
+<div class="transcript-row"><time>01:20</time><p>肯定是增加对比度</p></div>
+<div class="transcript-row"><time>01:21</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:22</time><p>我们再来个节点</p></div>
+<div class="transcript-row"><time>01:22</time><p>但是全局增加对比度</p></div>
+<div class="transcript-row"><time>01:24</time><p>很容易让人物变得特别暗</p></div>
+<div class="transcript-row"><time>01:26</time><p>特别是裤子</p></div>
+<div class="transcript-row"><time>01:27</time><p>同时天空又会太亮</p></div>
+<div class="transcript-row"><time>01:28</time><p>不符合一天那种感觉</p></div>
+<div class="transcript-row"><time>01:30</time><p>所以全局增加对比度肯定是不行的</p></div>
+<div class="transcript-row"><time>01:32</time><p>我们可以给人物画一个简易的支障</p></div>
+<div class="transcript-row"><time>01:34</time><p>单独的给人物增加对比度</p></div>
+<div class="transcript-row"><time>01:36</time><p>也别加太多</p></div>
+<div class="transcript-row"><time>01:37</time><p>加一点对比度之后</p></div>
+<div class="transcript-row"><time>01:38</time><p>然后向左移动轴</p></div>
+<div class="transcript-row"><time>01:40</time><p>新任它能够亮一点</p></div>
+<div class="transcript-row"><time>01:41</time><p>大概是这个意思</p></div>
+<div class="transcript-row"><time>01:42</time><p>然后再按住 alt 或者是 option 加 o</p></div>
+<div class="transcript-row"><time>01:44</time><p>建立一个外部节点</p></div>
+<div class="transcript-row"><time>01:45</time><p>也就是其余部分</p></div>
+<div class="transcript-row"><time>01:46</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:47</time><p>我们给四周用不同的力度</p></div>
+<div class="transcript-row"><time>01:49</time><p>我们给它稍微再增加一点对比度</p></div>
+<div class="transcript-row"><time>01:52</time><p>也可以动一下轴</p></div>
+<div class="transcript-row"><time>01:53</time><p>新任它别太暗</p></div>
+<div class="transcript-row"><time>01:55</time><p>大概是个结果</p></div>
+<div class="transcript-row"><time>01:56</time><p>那这样的调整</p></div>
+<div class="transcript-row"><time>01:57</time><p>我们可以看这两个节点的变化</p></div>
+<div class="transcript-row"><time>01:59</time><p>你看着好像是全局一起增加对比度</p></div>
+<div class="transcript-row"><time>02:01</time><p>但确实是</p></div>
+<div class="transcript-row"><time>02:02</time><p>只不过我们用两个制造的行为</p></div>
+<div class="transcript-row"><time>02:04</time><p>让它每个区域</p></div>
+<div class="transcript-row"><time>02:05</time><p>也就是人物跟环境能够独立的去调整</p></div>
+<div class="transcript-row"><time>02:07</time><p>就不会出现刚刚那种不可控的情况了</p></div>
+<div class="transcript-row"><time>02:09</time><p>那曝光铁刀这就差不多</p></div>
+<div class="transcript-row"><time>02:11</time><p>其实不用怎么调</p></div>
+<div class="transcript-row"><time>02:12</time><p>这时候我们看画面</p></div>
+<div class="transcript-row"><time>02:13</time><p>颜色方面有没有特别不舒服的</p></div>
+<div class="transcript-row"><time>02:15</time><p>我们都知道阴天走冷掉是不错的结果</p></div>
+<div class="transcript-row"><time>02:17</time><p>但是如果我们直接给它全局加蓝</p></div>
+<div class="transcript-row"><time>02:20</time><p>就会出现那位朋友那个问题</p></div>
+<div class="transcript-row"><time>02:21</time><p>整体颜色没有任何的层次</p></div>
+<div class="transcript-row"><time>02:24</time><p>我们要先解决画面中颜色不对的问题</p></div>
+<div class="transcript-row"><time>02:26</time><p>我们看到衣服</p></div>
+<div class="transcript-row"><time>02:27</time><p>其实这个衣服有点发紫</p></div>
+<div class="transcript-row"><time>02:29</time><p>对不对</p></div>
+<div class="transcript-row"><time>02:29</time><p>那既然它发紫的话</p></div>
+<div class="transcript-row"><time>02:30</time><p>我们就可以再来个节点</p></div>
+<div class="transcript-row"><time>02:32</time><p>稍微给全局降一点点色调</p></div>
+<div class="transcript-row"><time>02:35</time><p>还可以多降一点</p></div>
+<div class="transcript-row"><time>02:36</time><p>其实我们这个时候就可以给画面</p></div>
+<div class="transcript-row"><time>02:38</time><p>整体带上一点风格走向了</p></div>
+<div class="transcript-row"><time>02:39</time><p>你看我们给它降了色调之后</p></div>
+<div class="transcript-row"><time>02:42</time><p>原本这个衣服就不紫了</p></div>
+<div class="transcript-row"><time>02:43</time><p>而且整体带上了一点绿色的</p></div>
+<div class="transcript-row"><time>02:45</time><p>青绿色的感觉</p></div>
+<div class="transcript-row"><time>02:46</time><p>冷掉的效果就出来了</p></div>
+<div class="transcript-row"><time>02:48</time><p>也就是说我们是在解决问题的同时</p></div>
+<div class="transcript-row"><time>02:49</time><p>给画面赋予一定的风格</p></div>
+<div class="transcript-row"><time>02:51</time><p>当然我们也可以给它再降一点点色温</p></div>
+<div class="transcript-row"><time>02:53</time><p>让它再带点蓝</p></div>
+<div class="transcript-row"><time>02:54</time><p>你看这种结果是不是挺好的</p></div>
+<div class="transcript-row"><time>02:56</time><p>青绿青绿色的对吧</p></div>
+<div class="transcript-row"><time>02:57</time><p>这个加蓝加绿的这个力度</p></div>
+<div class="transcript-row"><time>02:59</time><p>你可以自己把控</p></div>
+<div class="transcript-row"><time>03:00</time><p>素材我也经过了那位朋友的同意</p></div>
+<div class="transcript-row"><time>03:01</time><p>传到了现场分享平台</p></div>
+<div class="transcript-row"><time>03:02</time><p>可以私信或是看我紧接来加入或免费自取</p></div>
+<div class="transcript-row"><time>03:05</time><p>还有大分析的线上系统课程和线下调色训练营</p></div>
+<div class="transcript-row"><time>03:07</time><p>目前的大体颜色是有了</p></div>
+<div class="transcript-row"><time>03:09</time><p>但是那位朋友明确的是要暗的效果</p></div>
+<div class="transcript-row"><time>03:12</time><p>但是我们现在如果单纯的给它再压暗的话</p></div>
+<div class="transcript-row"><time>03:14</time><p>又会失去那种层次对吧</p></div>
+<div class="transcript-row"><time>03:16</time><p>暗的地方太多</p></div>
+<div class="transcript-row"><time>03:17</time><p>这时候我们就可以考虑</p></div>
+<div class="transcript-row"><time>03:18</time><p>既然全局是偏冷的</p></div>
+<div class="transcript-row"><time>03:20</time><p>那么我们是不是可以稍微降低一点冷色的明度</p></div>
+<div class="transcript-row"><time>03:23</time><p>也就是再来一个节点</p></div>
+<div class="transcript-row"><time>03:24</time><p>增加蓝色和青色的密度</p></div>
+<div class="transcript-row"><time>03:27</time><p>你看我增加密度了之后</p></div>
+<div class="transcript-row"><time>03:28</time><p>它曝光是往下降的</p></div>
+<div class="transcript-row"><time>03:29</time><p>蓝色也是一样啊</p></div>
+<div class="transcript-row"><time>03:30</time><p>增加点密度</p></div>
+<div class="transcript-row"><time>03:31</time><p>也可以适当的给它们降低一点饱和度</p></div>
+<div class="transcript-row"><time>03:33</time><p>我们在调整密度的时候</p></div>
+<div class="transcript-row"><time>03:34</time><p>大家一定要仔细看的画面</p></div>
+<div class="transcript-row"><time>03:35</time><p>你调整的方向不要出现那些噪点</p></div>
+<div class="transcript-row"><time>03:38</time><p>或者是断层的这种情况</p></div>
+<div class="transcript-row"><time>03:39</time><p>好我们这样调完了之后呢</p></div>
+<div class="transcript-row"><time>03:41</time><p>可以看一下波形图</p></div>
+<div class="transcript-row"><time>03:42</time><p>在波形图上它确实是往下降了</p></div>
+<div class="transcript-row"><time>03:45</time><p>对不对</p></div>
+<div class="transcript-row"><time>03:45</time><p>蓝色部分都往下降了</p></div>
+<div class="transcript-row"><time>03:46</time><p>但是下降的幅度不是很大</p></div>
+<div class="transcript-row"><time>03:48</time><p>可是你从画面的观感来说</p></div>
+<div class="transcript-row"><time>03:51</time><p>它就变得更加阴沉了</p></div>
+<div class="transcript-row"><time>03:52</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:53</time><p>所以这样的一个效果能够比我们直接降低</p></div>
+<div class="transcript-row"><time>03:55</time><p>对应的曝光效果会自然一些</p></div>
+<div class="transcript-row"><time>03:57</time><p>再然后如果说你想来点风格化的颜色的话</p></div>
+<div class="transcript-row"><time>04:00</time><p>当然这也可做可不做</p></div>
+<div class="transcript-row"><time>04:01</time><p>我觉得可以给这个画面高光加一点点暖</p></div>
+<div class="transcript-row"><time>04:04</time><p>也就是让它亮部色轮往左上方去走</p></div>
+<div class="transcript-row"><time>04:07</time><p>然后再把中灰色轮往右下去做回调</p></div>
+<div class="transcript-row"><time>04:12</time><p>好大概是这个意思</p></div>
+<div class="transcript-row"><time>04:13</time><p>这种感觉其实也挺不错的</p></div>
+<div class="transcript-row"><time>04:15</time><p>但是这个行为我不建议跟前面七号节点</p></div>
+<div class="transcript-row"><time>04:17</time><p>全局加冷一起做</p></div>
+<div class="transcript-row"><time>04:19</time><p>因为九号节点这个风格化</p></div>
+<div class="transcript-row"><time>04:21</time><p>结果是我们主观想要赋予的</p></div>
+<div class="transcript-row"><time>04:22</time><p>而前面全局加冷</p></div>
+<div class="transcript-row"><time>04:24</time><p>是我认为对于这个画面来说</p></div>
+<div class="transcript-row"><time>04:26</time><p>它就得做的</p></div>
+<div class="transcript-row"><time>04:27</time><p>也就是说如果风格化</p></div>
+<div class="transcript-row"><time>04:28</time><p>你在后面后悔了或者是需要修改的话</p></div>
+<div class="transcript-row"><time>04:30</time><p>那么我们只需要单独修改这个九号节点就行了</p></div>
+<div class="transcript-row"><time>04:33</time><p>不用整个颜色全部重新做</p></div>
+<div class="transcript-row"><time>04:35</time><p>最后也可以来一个柔和对比度</p></div>
+<div class="transcript-row"><time>04:37</time><p>也就是在曲线右上角三个点中</p></div>
+<div class="transcript-row"><time>04:38</time><p>打开可编辑的样条线</p></div>
+<div class="transcript-row"><time>04:39</time><p>把高光这一端给它往下降</p></div>
+<div class="transcript-row"><time>04:41</time><p>多加一点没问题</p></div>
+<div class="transcript-row"><time>04:42</time><p>因为它是阴天</p></div>
+<div class="transcript-row"><time>04:43</time><p>把高光这里的波感给它往上提</p></div>
+<div class="transcript-row"><time>04:45</time><p>把高光给它找回来</p></div>
+<div class="transcript-row"><time>04:46</time><p>再把暗部这一端给它往上提</p></div>
+<div class="transcript-row"><time>04:48</time><p>把暗部这里延伸出来的波感给它往下降</p></div>
+<div class="transcript-row"><time>04:51</time><p>好大概是这个结果</p></div>
+<div class="transcript-row"><time>04:52</time><p>让画面这个天空你仔细看</p></div>
+<div class="transcript-row"><time>04:54</time><p>这个天空原本是这样的一个天空</p></div>
+<div class="transcript-row"><time>04:56</time><p>我们给它压灰了</p></div>
+<div class="transcript-row"><time>04:57</time><p>我不希望它画面中特别亮的那个结果存在</p></div>
+<div class="transcript-row"><time>04:59</time><p>而我们从波线图上来看</p></div>
+<div class="transcript-row"><time>05:00</time><p>除了天空跟暗部有一点变化</p></div>
+<div class="transcript-row"><time>05:02</time><p>中间调的反差是不会有任何变化的</p></div>
+<div class="transcript-row"><time>05:04</time><p>对不对</p></div>
+<div class="transcript-row"><time>05:05</time><p>要有变化也只是平移</p></div>
+<div class="transcript-row"><time>05:06</time><p>所以我们没有牺牲掉整体的一个反差</p></div>
+<div class="transcript-row"><time>05:08</time><p>那调到这个结果就差不多了</p></div>
+<div class="transcript-row"><time>05:09</time><p>我们可以与那位朋友的结果去做一下对比</p></div>
+<div class="transcript-row"><time>05:12</time><p>我们通过对比就能看出来</p></div>
+<div class="transcript-row"><time>05:13</time><p>它的问题在哪儿了</p></div>
+<div class="transcript-row"><time>05:14</time><p>对不对</p></div>
+<div class="transcript-row"><time>05:15</time><p>一目了然了</p></div>
+<div class="transcript-row"><time>05:16</time><p>那素材大家别忘了</p></div>
+<div class="transcript-row"><time>05:17</time><p>邻居过去之后感受一下</p></div>
+<div class="transcript-row"><time>05:18</time><p>也可以提供看重点感受</p></div>
+<div class="transcript-row"><time>05:20</time><p>我们这个调蓝对画面的影响</p></div>
+<div class="transcript-row"><time>05:22</time><p>以及整体的一个风格走向</p></div>
+<div class="transcript-row"><time>05:24</time><p>该怎么去做</p></div>
+<div class="transcript-row"><time>05:24</time><p>其实对于我们这个画面来讲</p></div>
+<div class="transcript-row"><time>05:26</time><p>这样一做你看的节点很多</p></div>
+<div class="transcript-row"><time>05:27</time><p>其实每个节点都很简单</p></div>
+<div class="transcript-row"><time>05:29</time><p>没有特别复杂的</p></div>
+<div class="transcript-row"><time>05:30</time><p>也不会出现那种我们要画特别精细的遮罩</p></div>
+<div class="transcript-row"><time>05:33</time><p>一般来讲精细的遮罩</p></div>
+<div class="transcript-row"><time>05:34</time><p>我们现在也很少会用了</p></div>
+<div class="transcript-row"><time>05:35</time><p>如果真要画的话</p></div>
+<div class="transcript-row"><time>05:37</time><p>我们反而会优先考虑用神奇遮罩</p></div>
+<div class="transcript-row"><time>05:39</time><p>因为你画精细太麻烦了</p></div>
+<div class="transcript-row"><time>05:41</time><p>跟踪什么都太费劲了</p></div>
+<div class="transcript-row"><time>05:42</time><p>那这样调完了</p></div>
+<div class="transcript-row"><time>05:43</time><p>我们其实跟还原后的画面做下对比</p></div>
+<div class="transcript-row"><time>05:45</time><p>你看着好像变化不是特别大</p></div>
+<div class="transcript-row"><time>05:47</time><p>但是它就是比起你还原后</p></div>
+<div class="transcript-row"><time>05:49</time><p>会带上一个比较强的一个风格走向</p></div>
+<div class="transcript-row"><time>05:51</time><p>效果其实还是不错的</p></div>
+<div class="transcript-row"><time>05:52</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:53</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>05:53</time><p>如果觉得你有帮助的话</p></div>
+<div class="transcript-row"><time>05:55</time><p>还希望多多赞联</p></div>
+<div class="transcript-row"><time>05:55</time><p>好了</p></div>
+<div class="transcript-row"><time>05:56</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>05:57</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

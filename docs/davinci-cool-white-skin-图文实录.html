@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="阳光造成的肤黄未必是白平衡错，可沿用「加冷再优化」。快路径：强化反差→降色温加冷（蓝可略转青）→切片降蓝青密度回调，蜘蛛网微调肤相。原理是互补对冲：加蓝对冲黄，橙肤留红再纠，勿降色调乱出绿；勿把肤饱和抽成僵尸色。闷黄且白平衡正确时先提亮统一饱和再降密度，最后才全局加冷。环境不接纳">
+<title>皮肤发黄？3 步用达芬奇做冷白皮｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>皮肤发黄？3 步用达芬奇做冷白皮</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分56秒</span><span class="meta-tag tag-topic">达芬奇 冷白皮 肤色 互补色 密度 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/9hhWNevxFaK" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">快路径：反差 → 加冷 → 回调蓝青</a><a href="#ch2">核心：互补对冲，不是抽干肤色</a><a href="#ch3">白平衡对仍黄：先透亮再加冷</a><a href="#ch4">环境也要冷；适用边界</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>阳光造成的肤黄未必是白平衡错，可沿用「加冷再优化」。快路径：强化反差→降色温加冷（蓝可略转青）→切片降蓝青密度回调，蜘蛛网微调肤相。原理是互补对冲：加蓝对冲黄，橙肤留红再纠，勿降色调乱出绿；勿把肤饱和抽成僵尸色。闷黄且白平衡正确时先提亮统一饱和再降密度，最后才全局加冷。环境不接纳冷调时要把暖叶改墨绿。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:23]</span><div><strong>三步快做</strong><p>反差→降色温加冷→降蓝青密度+纠肤相。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:23→03:19]</span><div><strong>对冲原理</strong><p>加蓝对冲黄；勿抽干饱和；慎减色调出绿。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:19→06:17]</span><div><strong>先透亮</strong><p>白平衡对仍闷黄：先提亮统一饱和、降密度，再加冷。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:17→08:56]</span><div><strong>环境匹配</strong><p>肤冷了叶太暖→墨绿；晨阴天宜冷，暖沙滩慎用。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>冷白皮是互补对冲保留血色比重，不是洗白成灰。先判断能否全局加冷；不能则先透亮。肤色改完必须看环境是否也允许冷调。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:23</span>快路径：反差 → 加冷 → 回调蓝青</h2><p>女生肤黄：本例因阳光照身，非白平衡错，但可沿白平衡修正思路。先节点强化明暗，再一级色温左移加冷，同节点蓝略转青去紫感——肤黄减轻。</p><p>环境蓝过多则切片降蓝青密度回调；肤偏红可用蜘蛛网略拉黄。无需画遮罩，白人/亚洲示例都快。</p><figure><img src="assets/davinci-cool-white-skin/shot-01.jpg" alt="三步快做：反差 → 降色温加冷 → 降蓝青密度回调" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] 三步快做：反差 → 降色温加冷 → 降蓝青密度回调</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f96c180fd40b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Three steps: contrast → cooler temp → ease blue/cyan density offset.</span></div>
+<audio class="cap-audio" src="audio/f96c180fd40b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:23-03:19</span>核心：互补对冲，不是抽干肤色</h2><p>把肤饱和抽光会成僵尸色。冷白皮是用互补色对冲：加青会先靠近白；加蓝对冲的是黄，橙肤（黄+红）对冲黄后偏红，再用蜘蛛网纠相——比全局减色调加绿更安全。</p><p>降色温+减色调才是加青，但减色调易出不可控绿。保留原色比重，只对冲过黄。</p><figure><img src="assets/davinci-cool-white-skin/shot-02.jpg" alt="色轮示意：互补对冲靠近白，勿抽干成僵尸色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:20] 色轮示意：互补对冲靠近白，勿抽干成僵尸色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e32f594a3010.mp3" type="button" aria-label="Play English audio">🔊</button><span>Wheel idea: complements cancel toward white—don’t drain into zombie color.</span></div>
+<audio class="cap-audio" src="audio/e32f594a3010.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:19-06:17</span>白平衡对仍黄：先透亮再加冷</h2><p>领白 RGB 接近说明全局白平衡正确；强行加冷会让受光面先入蓝、背光仍暖，难控。根因是不够透亮：抬阴影降高光先亮起来；蜘蛛网抬低饱和受光面饱和、同时降高饱和，统一脸部饱和。</p><p>再降肤密度（提亮感）并略降肤饱和，护嘴唇。然后才全局降色温；蜘蛛网处理偏紫区。对比还原，暗沉黄可变舒服冷白。</p><figure><img src="assets/davinci-cool-white-skin/shot-03.jpg" alt="闷黄案例：先提亮统一饱和、降密度，再加冷" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:30] 闷黄案例：先提亮统一饱和、降密度，再加冷</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/476d95c7e5e6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Muddy yellow case: lift and unify sat, drop density, then cool.</span></div>
+<audio class="cap-audio" src="audio/476d95c7e5e6.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">06:17-08:56</span>环境也要冷；适用边界</h2><p>另一镜：反差+降密度+加冷+去蓝后肤好了，但黄绿叶太暖导致不融合——蜘蛛网把黄/黄绿往墨绿（绿加蓝）并控饱和。</p><p>冷白皮不太挑素材，前提是环境接受冷调：晨/阴天合适；西洋暖沙滩不合，蓝调时刻或需护沙。可选曲线低区高区做胶片压缩，但须建立在前述流程上。</p><figure><img src="assets/davinci-cool-white-skin/shot-04.jpg" alt="肤冷后环境叶改墨绿，整体才融合" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:10] 肤冷后环境叶改墨绿，整体才融合</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/451432a2d8cb.mp3" type="button" aria-label="Play English audio">🔊</button><span>After cool skin, shift foliage to deep green so the frame unifies.</span></div>
+<audio class="cap-audio" src="audio/451432a2d8cb.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-cool-white-skin/shot-05.jpg" alt="适用边界与可选胶片高低区压缩收束" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[08:20] 适用边界与可选胶片高低区压缩收束</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a0465edb12a8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Boundaries plus optional film high/low compress to close.</span></div>
+<audio class="cap-audio" src="audio/a0465edb12a8.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（430段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>拍了女生之后皮肤发现它发黄怎么办</p></div>
+<div class="transcript-row"><time>00:02</time><p>我们看到这个画面</p></div>
+<div class="transcript-row"><time>00:03</time><p>发黄其实有很多个原因</p></div>
+<div class="transcript-row"><time>00:04</time><p>这个素材的原因</p></div>
+<div class="transcript-row"><time>00:05</time><p>是因为阳光照在人物身上了</p></div>
+<div class="transcript-row"><time>00:07</time><p>它并不是白平衡的错误</p></div>
+<div class="transcript-row"><time>00:08</time><p>但是我们可以沿用白平衡修正</p></div>
+<div class="transcript-row"><time>00:10</time><p>再优化的方式来操作</p></div>
+<div class="transcript-row"><time>00:12</time><p>我们可以再来个节点</p></div>
+<div class="transcript-row"><time>00:13</time><p>给它稍微强化一下反差</p></div>
+<div class="transcript-row"><time>00:14</time><p>这个反差就不多说了</p></div>
+<div class="transcript-row"><time>00:17</time><p>大概这样一做就好</p></div>
+<div class="transcript-row"><time>00:18</time><p>让它的明暗关系更强一些</p></div>
+<div class="transcript-row"><time>00:20</time><p>然后再来一个节点</p></div>
+<div class="transcript-row"><time>00:21</time><p>给画面整体加冷</p></div>
+<div class="transcript-row"><time>00:23</time><p>我做了一个反差</p></div>
+<div class="transcript-row"><time>00:24</time><p>这个反差就不够了</p></div>
+<div class="transcript-row"><time>00:25</time><p>大概这样一做就好</p></div>
+<div class="transcript-row"><time>00:26</time><p>让它的明暗关系更强一些</p></div>
+<div class="transcript-row"><time>00:27</time><p>然后再来一个节点</p></div>
+<div class="transcript-row"><time>00:28</time><p>给画面整体加冷</p></div>
+<div class="transcript-row"><time>00:29</time><p>我这里选择的是</p></div>
+<div class="transcript-row"><time>00:30</time><p>一级校色轮中的色温滑块</p></div>
+<div class="transcript-row"><time>00:32</time><p>给它往左边移动</p></div>
+<div class="transcript-row"><time>00:33</time><p>也就是给它降低点色温</p></div>
+<div class="transcript-row"><time>00:35</time><p>让它加一点冷</p></div>
+<div class="transcript-row"><time>00:36</time><p>加完冷冷之后</p></div>
+<div class="transcript-row"><time>00:37</time><p>我们可以同步在同一个节点中</p></div>
+<div class="transcript-row"><time>00:38</time><p>把蓝色往青色方向偏</p></div>
+<div class="transcript-row"><time>00:39</time><p>因为这里的蓝有一点发紫</p></div>
+<div class="transcript-row"><time>00:41</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:42</time><p>让它往青色方向稍微偏一偏</p></div>
+<div class="transcript-row"><time>00:43</time><p>那这样做了之后</p></div>
+<div class="transcript-row"><time>00:44</time><p>我们就能让画面</p></div>
+<div class="transcript-row"><time>00:45</time><p>整体呈现冷掉的结果</p></div>
+<div class="transcript-row"><time>00:47</time><p>特别是皮肤</p></div>
+<div class="transcript-row"><time>00:48</time><p>它也没有原本那么黄了</p></div>
+<div class="transcript-row"><time>00:49</time><p>但是环境中的蓝加的太多了</p></div>
+<div class="transcript-row"><time>00:51</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:52</time><p>我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>00:53</time><p>你用任何的工具都行</p></div>
+<div class="transcript-row"><time>00:54</time><p>我这里选择的是切片工具</p></div>
+<div class="transcript-row"><time>00:55</time><p>把蓝色和青色的薄度给它降低了</p></div>
+<div class="transcript-row"><time>00:57</time><p>也就是把蓝色给它回调</p></div>
+<div class="transcript-row"><time>00:59</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>01:00</time><p>青色回来一点吧</p></div>
+<div class="transcript-row"><time>01:01</time><p>如果你觉得皮肤此时有点偏红</p></div>
+<div class="transcript-row"><time>01:03</time><p>我们可以用蜘蛛网</p></div>
+<div class="transcript-row"><time>01:04</time><p>给它往黄色方向稍微拉一点</p></div>
+<div class="transcript-row"><time>01:06</time><p>这问题都不大</p></div>
+<div class="transcript-row"><time>01:07</time><p>好 那这样一做</p></div>
+<div class="transcript-row"><time>01:08</time><p>我们就让这个肤色</p></div>
+<div class="transcript-row"><time>01:09</time><p>从这样变成了这样</p></div>
+<div class="transcript-row"><time>01:10</time><p>我们放大看</p></div>
+<div class="transcript-row"><time>01:11</time><p>肤色原本是非常黄的</p></div>
+<div class="transcript-row"><time>01:12</time><p>调完之后</p></div>
+<div class="transcript-row"><time>01:13</time><p>它就变成了一个</p></div>
+<div class="transcript-row"><time>01:14</time><p>不错的一个效果</p></div>
+<div class="transcript-row"><time>01:15</time><p>包括后面的亚洲人</p></div>
+<div class="transcript-row"><time>01:16</time><p>都是一样的</p></div>
+<div class="transcript-row"><time>01:17</time><p>而且这个方式非常非常快</p></div>
+<div class="transcript-row"><time>01:18</time><p>它并不需要你画遮罩</p></div>
+<div class="transcript-row"><time>01:20</time><p>或者是做皮肤的选区</p></div>
+<div class="transcript-row"><time>01:21</time><p>之类之类的</p></div>
+<div class="transcript-row"><time>01:22</time><p>很简单</p></div>
+<div class="transcript-row"><time>01:23</time><p>当然我们换一个素材</p></div>
+<div class="transcript-row"><time>01:24</time><p>也是一样的</p></div>
+<div class="transcript-row"><time>01:25</time><p>这个是还原后的结果</p></div>
+<div class="transcript-row"><time>01:26</time><p>同样我们给它在</p></div>
+<div class="transcript-row"><time>01:27</time><p>第二排第一个节点</p></div>
+<div class="transcript-row"><time>01:28</time><p>增加点明暗反差</p></div>
+<div class="transcript-row"><time>01:29</time><p>同样用HDR色轮</p></div>
+<div class="transcript-row"><time>01:30</time><p>让它这个光影能够更加明显</p></div>
+<div class="transcript-row"><time>01:32</time><p>然后再在5号节点</p></div>
+<div class="transcript-row"><time>01:33</time><p>给它降一点色温</p></div>
+<div class="transcript-row"><time>01:34</time><p>让它偏冷一点</p></div>
+<div class="transcript-row"><time>01:35</time><p>偏冷了之后</p></div>
+<div class="transcript-row"><time>01:36</time><p>再把它蓝色和青色的薄度</p></div>
+<div class="transcript-row"><time>01:38</time><p>给它往下一降</p></div>
+<div class="transcript-row"><time>01:39</time><p>同时也稍微给它微调一下皮肤</p></div>
+<div class="transcript-row"><time>01:41</time><p>因为原本有点偏红</p></div>
+<div class="transcript-row"><time>01:42</time><p>这样一调</p></div>
+<div class="transcript-row"><time>01:43</time><p>你会发现</p></div>
+<div class="transcript-row"><time>01:44</time><p>肤色也变得非常舒服了</p></div>
+<div class="transcript-row"><time>01:45</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:46</time><p>最重要的就是</p></div>
+<div class="transcript-row"><time>01:47</time><p>肤色原本的颜色还是保留的</p></div>
+<div class="transcript-row"><time>01:49</time><p>我举个例子</p></div>
+<div class="transcript-row"><time>01:50</time><p>它并不是说像把</p></div>
+<div class="transcript-row"><time>01:51</time><p>这个皮肤的薄度</p></div>
+<div class="transcript-row"><time>01:52</time><p>全部给它往下降了</p></div>
+<div class="transcript-row"><time>01:53</time><p>降成这样</p></div>
+<div class="transcript-row"><time>01:54</time><p>它不是这个意思</p></div>
+<div class="transcript-row"><time>01:55</time><p>因为你这样降的话</p></div>
+<div class="transcript-row"><time>01:56</time><p>它就是完全的僵尸色了</p></div>
+<div class="transcript-row"><time>01:58</time><p>而我们那个行为</p></div>
+<div class="transcript-row"><time>01:59</time><p>其实是保留</p></div>
+<div class="transcript-row"><time>02:00</time><p>它原本的一个颜色比重的</p></div>
+<div class="transcript-row"><time>02:02</time><p>它只不过拿它的护股色去对冲</p></div>
+<div class="transcript-row"><time>02:04</time><p>那护股色对冲着</p></div>
+<div class="transcript-row"><time>02:05</time><p>到底要怎么理解呢</p></div>
+<div class="transcript-row"><time>02:06</time><p>我们以色轮来举例</p></div>
+<div class="transcript-row"><time>02:07</time><p>我们的肤色大概是在这个位置</p></div>
+<div class="transcript-row"><time>02:09</time><p>如果说我们给这个颜色</p></div>
+<div class="transcript-row"><time>02:11</time><p>增加它的护股色</p></div>
+<div class="transcript-row"><time>02:12</time><p>也就是青色</p></div>
+<div class="transcript-row"><time>02:13</time><p>那么这个颜色</p></div>
+<div class="transcript-row"><time>02:14</time><p>这个颜色会先靠近白色</p></div>
+<div class="transcript-row"><time>02:16</time><p>而不是变成青色</p></div>
+<div class="transcript-row"><time>02:17</time><p>靠近白色</p></div>
+<div class="transcript-row"><time>02:18</time><p>它这个行为</p></div>
+<div class="transcript-row"><time>02:19</time><p>本质上是来给它加颜色</p></div>
+<div class="transcript-row"><time>02:20</time><p>而不是去颜色</p></div>
+<div class="transcript-row"><time>02:21</time><p>如果护股色对冲的力度</p></div>
+<div class="transcript-row"><time>02:23</time><p>和你原色的一个比重是一样的</p></div>
+<div class="transcript-row"><time>02:25</time><p>那它就会变成白色</p></div>
+<div class="transcript-row"><time>02:26</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:27</time><p>这就是我们冷白皮</p></div>
+<div class="transcript-row"><time>02:28</time><p>这个核心原理</p></div>
+<div class="transcript-row"><time>02:29</time><p>只有突破了中间点</p></div>
+<div class="transcript-row"><time>02:30</time><p>它才会逐渐出现青色</p></div>
+<div class="transcript-row"><time>02:32</time><p>但是你还记得吗</p></div>
+<div class="transcript-row"><time>02:33</time><p>我们的操作并不是加青色</p></div>
+<div class="transcript-row"><time>02:35</time><p>而是加蓝色</p></div>
+<div class="transcript-row"><time>02:36</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:37</time><p>我这里降的是色温</p></div>
+<div class="transcript-row"><time>02:38</time><p>我们知道</p></div>
+<div class="transcript-row"><time>02:39</time><p>如果你想要给画面全去加青色</p></div>
+<div class="transcript-row"><time>02:40</time><p>那应该是降色温的</p></div>
+<div class="transcript-row"><time>02:41</time><p>同时再降一点色调</p></div>
+<div class="transcript-row"><time>02:43</time><p>因为降色调是加绿吗</p></div>
+<div class="transcript-row"><time>02:44</time><p>绿加蓝才是青色</p></div>
+<div class="transcript-row"><time>02:45</time><p>但是要注意减少色调这个行为</p></div>
+<div class="transcript-row"><time>02:48</time><p>它容易让画面产生破坏</p></div>
+<div class="transcript-row"><time>02:50</time><p>也就是产生不可控的绿色</p></div>
+<div class="transcript-row"><time>02:52</time><p>它不一定好看</p></div>
+<div class="transcript-row"><time>02:53</time><p>主要它不安全</p></div>
+<div class="transcript-row"><time>02:54</time><p>所以我们只要加蓝就行了</p></div>
+<div class="transcript-row"><time>02:55</time><p>可是加蓝它对冲的是谁</p></div>
+<div class="transcript-row"><time>02:57</time><p>是黄色</p></div>
+<div class="transcript-row"><time>02:58</time><p>皮肤是橙色</p></div>
+<div class="transcript-row"><time>02:59</time><p>而橙色是由黄色加红色得到的</p></div>
+<div class="transcript-row"><time>03:02</time><p>所以我们把黄色对冲完了之后</p></div>
+<div class="transcript-row"><time>03:04</time><p>画面中的皮肤就会留下红色</p></div>
+<div class="transcript-row"><time>03:06</time><p>这也是为什么皮肤会偏红的原因</p></div>
+<div class="transcript-row"><time>03:08</time><p>那么我们就可以</p></div>
+<div class="transcript-row"><time>03:09</time><p>在后面再来个节点</p></div>
+<div class="transcript-row"><time>03:10</time><p>用蜘蛛网给它稍微调整一下</p></div>
+<div class="transcript-row"><time>03:12</time><p>皮肤的色相</p></div>
+<div class="transcript-row"><time>03:13</time><p>这样更直观</p></div>
+<div class="transcript-row"><time>03:14</time><p>也更简单</p></div>
+<div class="transcript-row"><time>03:15</time><p>不至于说我们给画面整体调了绿之后</p></div>
+<div class="transcript-row"><time>03:17</time><p>其他的颜色产生的破坏不可控</p></div>
+<div class="transcript-row"><time>03:19</time><p>有些朋友会说</p></div>
+<div class="transcript-row"><time>03:20</time><p>你这两个粒子都是白人</p></div>
+<div class="transcript-row"><time>03:21</time><p>如果亚洲人</p></div>
+<div class="transcript-row"><time>03:22</time><p>我们可以看这个素材的变化</p></div>
+<div class="transcript-row"><time>03:24</time><p>这个是我们还原后的结果</p></div>
+<div class="transcript-row"><time>03:25</time><p>我们可以把它从这样变成这样</p></div>
+<div class="transcript-row"><time>03:27</time><p>效果其实也非常好的对不对</p></div>
+<div class="transcript-row"><time>03:29</time><p>这几个素材我都传到了</p></div>
+<div class="transcript-row"><time>03:30</time><p>现场分享平台</p></div>
+<div class="transcript-row"><time>03:31</time><p>私信或者跟我姐姐来找我就行了</p></div>
+<div class="transcript-row"><time>03:32</time><p>这是免费领取的</p></div>
+<div class="transcript-row"><time>03:33</time><p>还有达文集</p></div>
+<div class="transcript-row"><time>03:34</time><p>线上系统课程和</p></div>
+<div class="transcript-row"><time>03:35</time><p>线下调色训练营</p></div>
+<div class="transcript-row"><time>03:36</time><p>这个素材要怎么做</p></div>
+<div class="transcript-row"><time>03:37</time><p>这个思路稍微有一点点区别</p></div>
+<div class="transcript-row"><time>03:38</time><p>因为它比较麻烦</p></div>
+<div class="transcript-row"><time>03:39</time><p>我们可以看到</p></div>
+<div class="transcript-row"><time>03:40</time><p>这是还原后的结果</p></div>
+<div class="transcript-row"><time>03:41</time><p>皮肤是很黄的</p></div>
+<div class="transcript-row"><time>03:42</time><p>但是我们能不能说</p></div>
+<div class="transcript-row"><time>03:43</time><p>这个素材白平衡不正确</p></div>
+<div class="transcript-row"><time>03:44</time><p>其实是不能的对吧</p></div>
+<div class="transcript-row"><time>03:46</time><p>我们仔细看画面中的</p></div>
+<div class="transcript-row"><time>03:47</time><p>这个白色受光面</p></div>
+<div class="transcript-row"><time>03:48</time><p>就是它的这个领子</p></div>
+<div class="transcript-row"><time>03:49</time><p>它的2GB三值非常接近</p></div>
+<div class="transcript-row"><time>03:51</time><p>几乎一致</p></div>
+<div class="transcript-row"><time>03:52</time><p>也就是说</p></div>
+<div class="transcript-row"><time>03:53</time><p>它全局的白平衡是正确的</p></div>
+<div class="transcript-row"><time>03:54</time><p>如果在这个基础上</p></div>
+<div class="transcript-row"><time>03:56</time><p>给它强行加楞的话</p></div>
+<div class="transcript-row"><time>03:57</time><p>它会怎么样</p></div>
+<div class="transcript-row"><time>03:58</time><p>它会出现皮肤的受光面</p></div>
+<div class="transcript-row"><time>04:00</time><p>提前进入蓝色区域</p></div>
+<div class="transcript-row"><time>04:02</time><p>但是其他的背光面</p></div>
+<div class="transcript-row"><time>04:03</time><p>或者是保护的比较高的区域</p></div>
+<div class="transcript-row"><time>04:04</time><p>它依旧保留暖色</p></div>
+<div class="transcript-row"><time>04:06</time><p>这就不好控了对吧</p></div>
+<div class="transcript-row"><time>04:07</time><p>很麻烦而且不好看</p></div>
+<div class="transcript-row"><time>04:08</time><p>那它的皮肤</p></div>
+<div class="transcript-row"><time>04:09</time><p>为啥会看得这么黄呢</p></div>
+<div class="transcript-row"><time>04:10</time><p>其实它的核心原因</p></div>
+<div class="transcript-row"><time>04:11</time><p>是不够透亮</p></div>
+<div class="transcript-row"><time>04:12</time><p>所以我们给它先提亮</p></div>
+<div class="transcript-row"><time>04:13</time><p>我在第二排第一个节点中</p></div>
+<div class="transcript-row"><time>04:15</time><p>我这里选择的是提高了</p></div>
+<div class="transcript-row"><time>04:16</time><p>一级校色轮中阴影滑块</p></div>
+<div class="transcript-row"><time>04:18</time><p>然后同步降低了点高光滑块</p></div>
+<div class="transcript-row"><time>04:20</time><p>让它呈现出一个亮的结果</p></div>
+<div class="transcript-row"><time>04:22</time><p>让它皮肤先透亮对吧</p></div>
+<div class="transcript-row"><time>04:23</time><p>再然后我利用蜘蛛网</p></div>
+<div class="transcript-row"><time>04:25</time><p>在它脸上这个受光面</p></div>
+<div class="transcript-row"><time>04:27</time><p>你看到受光面</p></div>
+<div class="transcript-row"><time>04:28</time><p>也就是这个低饱和部分的肤色</p></div>
+<div class="transcript-row"><time>04:30</time><p>让它增加饱和度</p></div>
+<div class="transcript-row"><time>04:31</time><p>然后再把高饱和部分的颜色</p></div>
+<div class="transcript-row"><time>04:34</time><p>也让它的脸上的饱度更加一致</p></div>
+<div class="transcript-row"><time>04:36</time><p>这个行为我重新来一下吧</p></div>
+<div class="transcript-row"><time>04:37</time><p>让大家看得更直观</p></div>
+<div class="transcript-row"><time>04:38</time><p>脸上为什么它的受光面</p></div>
+<div class="transcript-row"><time>04:40</time><p>会提前进入蓝色</p></div>
+<div class="transcript-row"><time>04:41</time><p>是因为它的饱度太低了</p></div>
+<div class="transcript-row"><time>04:42</time><p>我们此时看到这个蜘蛛网</p></div>
+<div class="transcript-row"><time>04:44</time><p>它无限接近于原点对不对</p></div>
+<div class="transcript-row"><time>04:46</time><p>那我们需要让它远离原点</p></div>
+<div class="transcript-row"><time>04:47</time><p>也就是让它的饱度稍微提高一些</p></div>
+<div class="transcript-row"><time>04:49</time><p>可是蜘蛛网这一改动的时候</p></div>
+<div class="transcript-row"><time>04:51</time><p>是其它的高饱和部分也会受到影响</p></div>
+<div class="transcript-row"><time>04:53</time><p>所以呢我们把低饱和往上提的同时</p></div>
+<div class="transcript-row"><time>04:56</time><p>要把高饱和部分的饱和度</p></div>
+<div class="transcript-row"><time>04:57</time><p>给它往下一降</p></div>
+<div class="transcript-row"><time>04:58</time><p>那这样呢</p></div>
+<div class="transcript-row"><time>04:59</time><p>我们可以力度稍微再大一点</p></div>
+<div class="transcript-row"><time>05:00</time><p>那这样就能够保证</p></div>
+<div class="transcript-row"><time>05:01</time><p>这些高饱和部分的颜色</p></div>
+<div class="transcript-row"><time>05:02</time><p>几乎不受到影响</p></div>
+<div class="transcript-row"><time>05:03</time><p>但是这个低饱和部分的颜色</p></div>
+<div class="transcript-row"><time>05:05</time><p>它就往上走了对吧</p></div>
+<div class="transcript-row"><time>05:06</time><p>因为它原本还是在暖色嘛</p></div>
+<div class="transcript-row"><time>05:08</time><p>这样我们就能让皮肤的颜色</p></div>
+<div class="transcript-row"><time>05:09</time><p>更加一致</p></div>
+<div class="transcript-row"><time>05:10</time><p>还没结束</p></div>
+<div class="transcript-row"><time>05:11</time><p>我觉得皮肤此时还不是特别透亮</p></div>
+<div class="transcript-row"><time>05:13</time><p>我们还可以再来个节点</p></div>
+<div class="transcript-row"><time>05:14</time><p>当然你在同一个节点也行啊</p></div>
+<div class="transcript-row"><time>05:16</time><p>用色轮六相切片工具</p></div>
+<div class="transcript-row"><time>05:17</time><p>降低皮肤的密度</p></div>
+<div class="transcript-row"><time>05:19</time><p>我们之前讲过这个点非常多次啊</p></div>
+<div class="transcript-row"><time>05:21</time><p>因为降低密度</p></div>
+<div class="transcript-row"><time>05:22</time><p>会让你的对应颜色</p></div>
+<div class="transcript-row"><time>05:23</time><p>增加它的明目的同时</p></div>
+<div class="transcript-row"><time>05:25</time><p>我们也可以再多降一点</p></div>
+<div class="transcript-row"><time>05:26</time><p>它的皮肤的饱和度</p></div>
+<div class="transcript-row"><time>05:27</time><p>红色也可以微调一下</p></div>
+<div class="transcript-row"><time>05:28</time><p>因为我们看到这个地方</p></div>
+<div class="transcript-row"><time>05:29</time><p>它的鼻头这里有一点点发紫啊</p></div>
+<div class="transcript-row"><time>05:31</time><p>所以我们把皮肤的密度</p></div>
+<div class="transcript-row"><time>05:32</time><p>也给它稍微一降</p></div>
+<div class="transcript-row"><time>05:33</time><p>然后把皮肤的饱和度</p></div>
+<div class="transcript-row"><time>05:34</time><p>也稍微给它降一点下来</p></div>
+<div class="transcript-row"><time>05:35</time><p>注意它的嘴唇的颜色不要丢失</p></div>
+<div class="transcript-row"><time>05:37</time><p>好 大概是这样的一个结果</p></div>
+<div class="transcript-row"><time>05:39</time><p>我们看到皮肤已经不错了</p></div>
+<div class="transcript-row"><time>05:40</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:41</time><p>我们与还原后的画面去对比</p></div>
+<div class="transcript-row"><time>05:43</time><p>效果挺好的</p></div>
+<div class="transcript-row"><time>05:44</time><p>这时候我们就可以</p></div>
+<div class="transcript-row"><time>05:45</time><p>再给它来一个节点</p></div>
+<div class="transcript-row"><time>05:46</time><p>用全局降低色温的方式</p></div>
+<div class="transcript-row"><time>05:48</time><p>给它去做优化了</p></div>
+<div class="transcript-row"><time>05:49</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:50</time><p>你这样一降的话</p></div>
+<div class="transcript-row"><time>05:51</time><p>它的整体的颜色</p></div>
+<div class="transcript-row"><time>05:52</time><p>就能够一起往蓝色方向曲片</p></div>
+<div class="transcript-row"><time>05:53</time><p>效果是不错的</p></div>
+<div class="transcript-row"><time>05:54</time><p>但是我们要注意</p></div>
+<div class="transcript-row"><time>05:55</time><p>但是我们要注意</p></div>
+<div class="transcript-row"><time>05:56</time><p>我这里多加了一个蜘蛛网的行为</p></div>
+<div class="transcript-row"><time>05:57</time><p>为啥要做这个呢</p></div>
+<div class="transcript-row"><time>05:58</time><p>一方面是为了整体皮肤不要发红</p></div>
+<div class="transcript-row"><time>06:00</time><p>其实特别像这个区域</p></div>
+<div class="transcript-row"><time>06:01</time><p>它有点偏紫</p></div>
+<div class="transcript-row"><time>06:02</time><p>它不是红了 对吧</p></div>
+<div class="transcript-row"><time>06:03</time><p>我们可以让它把蜘蛛网</p></div>
+<div class="transcript-row"><time>06:05</time><p>往左边移动一些</p></div>
+<div class="transcript-row"><time>06:06</time><p>然后这个紫色</p></div>
+<div class="transcript-row"><time>06:07</time><p>也往左边移动一些</p></div>
+<div class="transcript-row"><time>06:08</time><p>让它这里的颜色</p></div>
+<div class="transcript-row"><time>06:09</time><p>能够给它单独处理了</p></div>
+<div class="transcript-row"><time>06:10</time><p>那这样呢</p></div>
+<div class="transcript-row"><time>06:11</time><p>我们就让整体的肤色从</p></div>
+<div class="transcript-row"><time>06:12</time><p>这样的一个偏黄的结果</p></div>
+<div class="transcript-row"><time>06:14</time><p>特别暗淡</p></div>
+<div class="transcript-row"><time>06:15</time><p>暗沉的一个结果</p></div>
+<div class="transcript-row"><time>06:16</time><p>变成这样的一个效果</p></div>
+<div class="transcript-row"><time>06:17</time><p>还不错 对吧</p></div>
+<div class="transcript-row"><time>06:18</time><p>可是这样的一个思路</p></div>
+<div class="transcript-row"><time>06:19</time><p>还有一个情况</p></div>
+<div class="transcript-row"><time>06:20</time><p>不是特别适用</p></div>
+<div class="transcript-row"><time>06:21</time><p>那比如说这个素材</p></div>
+<div class="transcript-row"><time>06:22</time><p>这个素材呢</p></div>
+<div class="transcript-row"><time>06:23</time><p>还原后的结果</p></div>
+<div class="transcript-row"><time>06:24</time><p>其实你看</p></div>
+<div class="transcript-row"><time>06:25</time><p>你说它有问题吗</p></div>
+<div class="transcript-row"><time>06:26</time><p>没有很大的问题</p></div>
+<div class="transcript-row"><time>06:27</time><p>可是就是不舒服</p></div>
+<div class="transcript-row"><time>06:28</time><p>不好看</p></div>
+<div class="transcript-row"><time>06:29</time><p>皮肤也有点发黄</p></div>
+<div class="transcript-row"><time>06:30</time><p>那怎么做呢</p></div>
+<div class="transcript-row"><time>06:31</time><p>首先我同样的是</p></div>
+<div class="transcript-row"><time>06:32</time><p>在第二排第一个节点</p></div>
+<div class="transcript-row"><time>06:33</time><p>给它强化一下光影</p></div>
+<div class="transcript-row"><time>06:34</time><p>让它脸上这个光</p></div>
+<div class="transcript-row"><time>06:35</time><p>更加强 更有质感</p></div>
+<div class="transcript-row"><time>06:36</time><p>然后呢</p></div>
+<div class="transcript-row"><time>06:37</time><p>也是用切片工具</p></div>
+<div class="transcript-row"><time>06:38</time><p>给它降低了皮肤的密度</p></div>
+<div class="transcript-row"><time>06:39</time><p>让它皮肤稍微透亮一些</p></div>
+<div class="transcript-row"><time>06:40</time><p>再然后呢</p></div>
+<div class="transcript-row"><time>06:41</time><p>我们又是再来一个节点</p></div>
+<div class="transcript-row"><time>06:42</time><p>给画面整体降了点色温</p></div>
+<div class="transcript-row"><time>06:44</time><p>让它整体往冷掉去走</p></div>
+<div class="transcript-row"><time>06:45</time><p>然后再来一个节点</p></div>
+<div class="transcript-row"><time>06:46</time><p>把蓝色给去了</p></div>
+<div class="transcript-row"><time>06:47</time><p>蓝色给去了</p></div>
+<div class="transcript-row"><time>06:48</time><p>这个操作都是一样的</p></div>
+<div class="transcript-row"><time>06:49</time><p>肤色也稍微往黄的方向走一点</p></div>
+<div class="transcript-row"><time>06:50</time><p>目前你放大看皮肤</p></div>
+<div class="transcript-row"><time>06:52</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:53</time><p>能够有不错的效果</p></div>
+<div class="transcript-row"><time>06:54</time><p>可是你看全局</p></div>
+<div class="transcript-row"><time>06:56</time><p>你就会觉得怪怪的</p></div>
+<div class="transcript-row"><time>06:57</time><p>皮肤变冷白皮了之后</p></div>
+<div class="transcript-row"><time>06:58</time><p>它跟环境不融合</p></div>
+<div class="transcript-row"><time>07:00</time><p>那为啥会这样呢</p></div>
+<div class="transcript-row"><time>07:01</time><p>是因为皮肤变冷白皮</p></div>
+<div class="transcript-row"><time>07:02</time><p>等于是我们给皮肤</p></div>
+<div class="transcript-row"><time>07:04</time><p>赋予了冷掉</p></div>
+<div class="transcript-row"><time>07:05</time><p>可是这个环境</p></div>
+<div class="transcript-row"><time>07:06</time><p>它并不符合冷掉的效果</p></div>
+<div class="transcript-row"><time>07:08</time><p>这些黄绿色的叶子</p></div>
+<div class="transcript-row"><time>07:09</time><p>都太暖了</p></div>
+<div class="transcript-row"><time>07:10</time><p>所以我们必须要</p></div>
+<div class="transcript-row"><time>07:11</time><p>再来一个节点</p></div>
+<div class="transcript-row"><time>07:12</time><p>把黄绿色的叶子</p></div>
+<div class="transcript-row"><time>07:13</time><p>让它往墨绿色走</p></div>
+<div class="transcript-row"><time>07:15</time><p>因为墨绿色就是</p></div>
+<div class="transcript-row"><time>07:16</time><p>绿上加点蓝</p></div>
+<div class="transcript-row"><time>07:17</time><p>我这里呢</p></div>
+<div class="transcript-row"><time>07:18</time><p>选择用蜘蛛网</p></div>
+<div class="transcript-row"><time>07:19</time><p>给它往右边去偏</p></div>
+<div class="transcript-row"><time>07:20</time><p>我们看画面的变化</p></div>
+<div class="transcript-row"><time>07:21</time><p>一条</p></div>
+<div class="transcript-row"><time>07:22</time><p>你会感觉</p></div>
+<div class="transcript-row"><time>07:23</time><p>整体的效果</p></div>
+<div class="transcript-row"><time>07:24</time><p>更符合该有的一个结果了</p></div>
+<div class="transcript-row"><time>07:25</time><p>对不对</p></div>
+<div class="transcript-row"><time>07:26</time><p>怎么做</p></div>
+<div class="transcript-row"><time>07:27</time><p>这个其实非常非常简单</p></div>
+<div class="transcript-row"><time>07:28</time><p>我们把这个</p></div>
+<div class="transcript-row"><time>07:29</time><p>黄色往右边去走</p></div>
+<div class="transcript-row"><time>07:30</time><p>然后降低一点它的饱和度</p></div>
+<div class="transcript-row"><time>07:32</time><p>然后这里的黄绿色呢</p></div>
+<div class="transcript-row"><time>07:33</time><p>也往右边走</p></div>
+<div class="transcript-row"><time>07:34</time><p>也稍微给它</p></div>
+<div class="transcript-row"><time>07:35</time><p>调整一下它的饱和度</p></div>
+<div class="transcript-row"><time>07:36</time><p>大概这样一做就行了</p></div>
+<div class="transcript-row"><time>07:37</time><p>让它能够</p></div>
+<div class="transcript-row"><time>07:38</time><p>环境也呈现出</p></div>
+<div class="transcript-row"><time>07:39</time><p>一定的冷掉</p></div>
+<div class="transcript-row"><time>07:40</time><p>这个思路其实非常简单啊</p></div>
+<div class="transcript-row"><time>07:42</time><p>而且最重要的就是</p></div>
+<div class="transcript-row"><time>07:43</time><p>你们这个所谓的冷白皮</p></div>
+<div class="transcript-row"><time>07:44</time><p>它不怎么挑素材</p></div>
+<div class="transcript-row"><time>07:45</time><p>只要你环境能够接受得了</p></div>
+<div class="transcript-row"><time>07:47</time><p>它整体走冷掉那个结果</p></div>
+<div class="transcript-row"><time>07:48</time><p>就可以</p></div>
+<div class="transcript-row"><time>07:49</time><p>那你比如说</p></div>
+<div class="transcript-row"><time>07:50</time><p>在西洋的沙滩</p></div>
+<div class="transcript-row"><time>07:51</time><p>你让它走这个冷白皮</p></div>
+<div class="transcript-row"><time>07:52</time><p>那这个就不合适了</p></div>
+<div class="transcript-row"><time>07:53</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:54</time><p>因为它不符合走冷掉的</p></div>
+<div class="transcript-row"><time>07:55</time><p>一个质感</p></div>
+<div class="transcript-row"><time>07:56</time><p>但是如果你说是在</p></div>
+<div class="transcript-row"><time>07:57</time><p>蓝掉时刻拍的沙滩</p></div>
+<div class="transcript-row"><time>07:58</time><p>那就有可能做得了</p></div>
+<div class="transcript-row"><time>07:59</time><p>但是你可能得对沙子</p></div>
+<div class="transcript-row"><time>08:00</time><p>做一定的保护 做回调</p></div>
+<div class="transcript-row"><time>08:02</time><p>大体的情况下</p></div>
+<div class="transcript-row"><time>08:03</time><p>特别是早晨</p></div>
+<div class="transcript-row"><time>08:04</time><p>或者是阴天</p></div>
+<div class="transcript-row"><time>08:05</time><p>那就非常适合了</p></div>
+<div class="transcript-row"><time>08:06</time><p>因为整体环境</p></div>
+<div class="transcript-row"><time>08:07</time><p>是允许它走冷掉的</p></div>
+<div class="transcript-row"><time>08:08</time><p>所以呢</p></div>
+<div class="transcript-row"><time>08:09</time><p>我们还是要多观察环境</p></div>
+<div class="transcript-row"><time>08:10</time><p>单纯的肤色调整</p></div>
+<div class="transcript-row"><time>08:11</time><p>没有什么难度啊</p></div>
+<div class="transcript-row"><time>08:12</time><p>我们可以再看一下这个画面</p></div>
+<div class="transcript-row"><time>08:13</time><p>从还原后的结果</p></div>
+<div class="transcript-row"><time>08:14</time><p>变成我们调好的结果</p></div>
+<div class="transcript-row"><time>08:16</time><p>对吧</p></div>
+<div class="transcript-row"><time>08:17</time><p>这个效果其实非常好的</p></div>
+<div class="transcript-row"><time>08:18</time><p>你至于后面想给它</p></div>
+<div class="transcript-row"><time>08:19</time><p>再加点什么风格化</p></div>
+<div class="transcript-row"><time>08:20</time><p>比如说带点胶片感之类的</p></div>
+<div class="transcript-row"><time>08:21</time><p>那种高光和暗不是压缩的</p></div>
+<div class="transcript-row"><time>08:23</time><p>我们可以简单的用这个</p></div>
+<div class="transcript-row"><time>08:24</time><p>曲线右下角这个面板</p></div>
+<div class="transcript-row"><time>08:26</time><p>有个低区跟高区</p></div>
+<div class="transcript-row"><time>08:27</time><p>我们把低区往上一提</p></div>
+<div class="transcript-row"><time>08:29</time><p>太多了</p></div>
+<div class="transcript-row"><time>08:30</time><p>大概这个结果</p></div>
+<div class="transcript-row"><time>08:31</time><p>这不就胶片感的味道</p></div>
+<div class="transcript-row"><time>08:32</time><p>就来了吗</p></div>
+<div class="transcript-row"><time>08:33</time><p>对吧 高区可以往下一降</p></div>
+<div class="transcript-row"><time>08:34</time><p>稍微高光也压灰一点</p></div>
+<div class="transcript-row"><time>08:36</time><p>这种强风的话也是可以的</p></div>
+<div class="transcript-row"><time>08:38</time><p>但你如果说前面这些行为</p></div>
+<div class="transcript-row"><time>08:39</time><p>都不做的话</p></div>
+<div class="transcript-row"><time>08:40</time><p>你只是给它上这个</p></div>
+<div class="transcript-row"><time>08:41</time><p>你就会感觉怪怪的</p></div>
+<div class="transcript-row"><time>08:42</time><p>对吧</p></div>
+<div class="transcript-row"><time>08:43</time><p>所以这个思路非常简单</p></div>
+<div class="transcript-row"><time>08:44</time><p>但也同样是我认为</p></div>
+<div class="transcript-row"><time>08:45</time><p>对于这种画面结果</p></div>
+<div class="transcript-row"><time>08:47</time><p>非常必要的一个流程</p></div>
+<div class="transcript-row"><time>08:48</time><p>素材大家别忘了</p></div>
+<div class="transcript-row"><time>08:49</time><p>领取过去之后</p></div>
+<div class="transcript-row"><time>08:50</time><p>尝试一下</p></div>
+<div class="transcript-row"><time>08:51</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>08:52</time><p>如果你觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>08:53</time><p>还希望多多赞联</p></div>
+<div class="transcript-row"><time>08:54</time><p>好了 这期就到这里</p></div>
+<div class="transcript-row"><time>08:55</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

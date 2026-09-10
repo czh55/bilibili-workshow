@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="针对「调成沙尘暴、想要偏暗电影感」的航拍雪山：雪/天应是最亮，其余用暗衬亮。还原大胆压暗部、护高光约80%；再用 HDR 找亮去灰。压近处抢戏山（压其高光）、强化远山、渐变压天空。颜色用青绿互补对冲受光黄，再增蓝青密度做灰蓝清冷；暗调饱和本不该高。可选柔和对比度、暗角或遮幅。">
+<title>航拍雪山视频达芬奇怎么调？暗调电影感思路｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>航拍雪山视频达芬奇怎么调？暗调电影感思路</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">7分49秒</span><span class="meta-tag tag-topic">达芬奇 航拍 雪山 暗调 互补色 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/6euEIOoS28m" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">立论：雪或天最亮，曲线大胆压暗</a><a href="#ch2">暗调要找亮：HDR 展开中间灰</a><a href="#ch3">运镜主体：压近山、提远山、压天空</a><a href="#ch4">颜色：互补对冲掉受光黄</a><a href="#ch5">灰蓝清冷 + 可选柔和对比度/暗角/遮幅</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>针对「调成沙尘暴、想要偏暗电影感」的航拍雪山：雪/天应是最亮，其余用暗衬亮。还原大胆压暗部、护高光约80%；再用 HDR 找亮去灰。压近处抢戏山（压其高光）、强化远山、渐变压天空。颜色用青绿互补对冲受光黄，再增蓝青密度做灰蓝清冷；暗调饱和本不该高。可选柔和对比度、暗角或遮幅。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:14]</span><div><strong>暗调结论</strong><p>最亮只能是雪或天；曲线大胆压暗、抬回高光约80%。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:14→02:01]</span><div><strong>找亮去灰</strong><p>抬 Light、微压 Shadow 展开中间灰堆；可与还原分节点。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:01→03:38]</span><div><strong>分区主体</strong><p>压近山高光；远山加对比+轴心；渐变压左上天（压阴影+提高光）。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:38→05:05]</span><div><strong>对冲去黄</strong><p>单纯降暖饱和发闷；降温+降色调用青绿对冲，雪近白仍相对暖。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:05→07:49]</span><div><strong>灰蓝收束</strong><p>增蓝青密度+降饱和；可蜘蛛网再降暖；柔和对比度样条线+暗角/遮幅可选。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>暗调雪山：先让雪/天成为真正高光，其余敢压；发灰就找亮。去「沙尘暴」黄用互补加色对冲，再把蓝压成耐看的灰蓝。暗调＝光不强＝饱和不宜高。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:14</span>立论：雪或天最亮，曲线大胆压暗</h2><p>朋友调得像沙尘暴，想要偏暗电影感。雪山重点是有雪的山——雪是高反光，最亮要么天要么雪，其余尽可能暗，用暗衬亮。</p><p>原片雪受光已在80%以上，高光不能再猛提。曲线暗部大胆下压但勿死黑；全局压缩会伤高光，故高光段再上提保持约80%，略加饱和看清颜色。已比「坐着」乱调舒服。</p><figure><img src="assets/davinci-aerial-snow-dark/shot-01.jpg" alt="雪/天应为最亮：曲线大胆压暗部、再抬回高光约80%，告别沙尘暴感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:40] 雪/天应为最亮：曲线大胆压暗部、再抬回高光约80%，告别沙尘暴感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/eae3ddb9db1c.mp3" type="button" aria-label="Play English audio">🔊</button><span>Snow/sky brightest: curve-crush shadows, lift highs ~80%—leave dust-storm look.</span></div>
+<audio class="cap-audio" src="audio/eae3ddb9db1c.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:14-02:01</span>暗调要找亮：HDR 展开中间灰</h2><p>波形大面积堆在中间仍偏灰。暗调只有暗不好看，要找亮：略抬 Light，可小幅降 Shadow（小心死黑），或直接加对比——重点去灰。</p><p>该步可并进还原节点；若后续常改，建议单独节点以免从头改。</p><figure><img src="assets/davinci-aerial-snow-dark/shot-02.jpg" alt="暗调要找亮：抬 Light、小幅压 Shadow 展开中间灰堆" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:40] 暗调要找亮：抬 Light、小幅压 Shadow 展开中间灰堆</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/da6541edad7a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Dark looks need lights: raise Light, slight Shadow press to open mid gray mass.</span></div>
+<audio class="cap-audio" src="audio/da6541edad7a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:01-03:38</span>运镜主体：压近山、提远山、压天空</h2><p>前推运镜主体是远处雪山，近处山梁因比重抢戏。其暗已够，抢的是高光——用 Light 压高光，Shadow 可视情况微降求过渡。</p><p>远山遮罩少加对比配合轴心更立体，避免遮罩太脏。天空左上不够暗则渐变遮罩再压阴影并略提高光。三节点后曝光分布更清晰。</p><figure><img src="assets/davinci-aerial-snow-dark/shot-03.jpg" alt="压近处抢戏山（压高光非全局）；远山加对比+轴心更立体" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 压近处抢戏山（压高光非全局）；远山加对比+轴心更立体</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8e7224586b9a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Press near hot mountains via highlight not global; far hills contrast+pivot for volume.</span></div>
+<audio class="cap-audio" src="audio/8e7224586b9a.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-aerial-snow-dark/shot-04.jpg" alt="渐变遮罩压左上天：压阴影同时略提高光，收缩视线" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:50] 渐变遮罩压左上天：压阴影同时略提高光，收缩视线</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/97af7fa32536.mp3" type="button" aria-label="Play English audio">🔊</button><span>Gradient mask left-sky: press shadows, slight highlight—tighten the eye.</span></div>
+<audio class="cap-audio" src="audio/97af7fa32536.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:38-05:05</span>颜色：互补对冲掉受光黄</h2><p>暗调第一反应偏冷；片中蓝已有，但受光暖太明显才像沙尘暴。单纯降暖饱和会失色发闷。应用互补对冲：受光偏橙黄，对面是蓝青——降温加蓝、降色调加绿。</p><p>目标让受光尽量淡；雪可近白，但整体受光仍相对最暖——色相相对性。也可用偏移色轮直接搓。</p><figure><img src="assets/davinci-aerial-snow-dark/shot-05.jpg" alt="互补对冲去黄：降温+降色调加青绿；雪近白但仍相对暖" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:50] 互补对冲去黄：降温+降色调加青绿；雪近白但仍相对暖</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a38d3f6ba126.mp3" type="button" aria-label="Play English audio">🔊</button><span>Complement cancel yellow: cooler temp/tint to teal-green; snow near-white yet relatively warm.</span></div>
+<audio class="cap-audio" src="audio/a38d3f6ba126.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">05:05-07:49</span>灰蓝清冷 + 可选柔和对比度/暗角/遮幅</h2><p>蓝太多则切片增青蓝密度（降明度并略降饱和），再降青蓝饱和，做出灰蓝耐看、清冷。暗调光不强，饱和本不该高；暖仍多可在后节点用向量略降暖饱和并归拢杂色相。</p><p>要更强风格：柔和对比度开可编辑样条，压高光端并护波谷，暗端上提再压暗部波谷——压其余后高光更显。可再暗角或 2.35:1 遮幅藏碍眼近山。思路其实简单。</p><figure><img src="assets/davinci-aerial-snow-dark/shot-06.jpg" alt="加蓝青密度做灰蓝清冷；柔和对比度样条线+可选暗角/遮幅" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:40] 加蓝青密度做灰蓝清冷；柔和对比度样条线+可选暗角/遮幅</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/54cbda198fa8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Blue/cyan density for cool gray-blue; soft-contrast splines + optional vignette/crop.</span></div>
+<audio class="cap-audio" src="audio/54cbda198fa8.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（271段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>上周有位朋友问我这个画面要怎么调</p></div>
+<div class="transcript-row"><time>00:06</time><p>他觉得自己调得像沙尘暴</p></div>
+<div class="transcript-row"><time>00:08</time><p>想要电影感偏暗一些的那种效果</p></div>
+<div class="transcript-row"><time>00:10</time><p>那这要怎么做呢</p></div>
+<div class="transcript-row"><time>00:11</time><p>我们简单分析一下</p></div>
+<div class="transcript-row"><time>00:13</time><p>雪山镜头</p></div>
+<div class="transcript-row"><time>00:14</time><p>重点一定是有雪的山</p></div>
+<div class="transcript-row"><time>00:16</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:16</time><p>那雪是高反光面</p></div>
+<div class="transcript-row"><time>00:17</time><p>我们就可以得出一个结论</p></div>
+<div class="transcript-row"><time>00:19</time><p>画面中最亮的要么是天</p></div>
+<div class="transcript-row"><time>00:21</time><p>要么就是这个雪</p></div>
+<div class="transcript-row"><time>00:22</time><p>这样才能够让整体呈现出偏暗掉的结果</p></div>
+<div class="transcript-row"><time>00:25</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:25</time><p>也就是让其余部分尽可能的暗</p></div>
+<div class="transcript-row"><time>00:27</time><p>用暗来衬托亮</p></div>
+<div class="transcript-row"><time>00:29</time><p>我们来看操作</p></div>
+<div class="transcript-row"><time>00:30</time><p>首先还是还原我们建立几个节点</p></div>
+<div class="transcript-row"><time>00:32</time><p>还原非常关键</p></div>
+<div class="transcript-row"><time>00:33</time><p>我们看到原片的雪</p></div>
+<div class="transcript-row"><time>00:35</time><p>我们用播情图来看</p></div>
+<div class="transcript-row"><time>00:36</time><p>此时雪的受光面</p></div>
+<div class="transcript-row"><time>00:38</time><p>已经在80以上的曝光了</p></div>
+<div class="transcript-row"><time>00:39</time><p>非常高</p></div>
+<div class="transcript-row"><time>00:40</time><p>所以我们对于高光就不能提亮太多</p></div>
+<div class="transcript-row"><time>00:42</time><p>再高要过曝了</p></div>
+<div class="transcript-row"><time>00:43</time><p>我们要大幅的压</p></div>
+<div class="transcript-row"><time>00:45</time><p>所以我们要把曲线暗部这一段</p></div>
+<div class="transcript-row"><time>00:47</time><p>给它往下压</p></div>
+<div class="transcript-row"><time>00:48</time><p>大胆压</p></div>
+<div class="transcript-row"><time>00:49</time><p>但是不要让它死黑了</p></div>
+<div class="transcript-row"><time>00:50</time><p>但又因为曲线是全局工具</p></div>
+<div class="transcript-row"><time>00:52</time><p>它的高光也会被压缩</p></div>
+<div class="transcript-row"><time>00:53</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:53</time><p>所以我们也要把曲线高光这一段</p></div>
+<div class="transcript-row"><time>00:55</time><p>给它往上提</p></div>
+<div class="transcript-row"><time>00:56</time><p>让高光保持在80左右</p></div>
+<div class="transcript-row"><time>00:58</time><p>差不多是在这个地方</p></div>
+<div class="transcript-row"><time>01:00</time><p>可以暗部再往下走一点点</p></div>
+<div class="transcript-row"><time>01:02</time><p>可以的</p></div>
+<div class="transcript-row"><time>01:03</time><p>此时是不是就已经比坐着的结果舒服一点了</p></div>
+<div class="transcript-row"><time>01:05</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:05</time><p>然后我们又可以给它稍微加一点点饱和度</p></div>
+<div class="transcript-row"><time>01:08</time><p>不用加太多</p></div>
+<div class="transcript-row"><time>01:09</time><p>加饱和度的目的</p></div>
+<div class="transcript-row"><time>01:10</time><p>其实对于这个画面来讲</p></div>
+<div class="transcript-row"><time>01:11</time><p>是让我们可以把画面颜色看得再清楚一点</p></div>
+<div class="transcript-row"><time>01:14</time><p>然后建立几个节点来到第二排</p></div>
+<div class="transcript-row"><time>01:16</time><p>我们要再一次的强化一下影调关系</p></div>
+<div class="transcript-row"><time>01:19</time><p>再看播情图</p></div>
+<div class="transcript-row"><time>01:20</time><p>整体其实还是有点偏灰的对吧</p></div>
+<div class="transcript-row"><time>01:22</time><p>因为它大面积都堆积在了中间部分</p></div>
+<div class="transcript-row"><time>01:24</time><p>我们要把它展开</p></div>
+<div class="transcript-row"><time>01:25</time><p>之前说过暗调画面</p></div>
+<div class="transcript-row"><time>01:26</time><p>我们要找亮</p></div>
+<div class="transcript-row"><time>01:27</time><p>只有暗是不好看的</p></div>
+<div class="transcript-row"><time>01:28</time><p>所以我们要稍微再提高一点</p></div>
+<div class="transcript-row"><time>01:30</time><p>Light色轮的曝光</p></div>
+<div class="transcript-row"><time>01:32</time><p>大概到这个程度就差不多</p></div>
+<div class="transcript-row"><time>01:35</time><p>让它高光给它往上走一点</p></div>
+<div class="transcript-row"><time>01:36</time><p>然后也可以小幅的降低一点点</p></div>
+<div class="transcript-row"><time>01:39</time><p>Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>01:40</time><p>但是不要降太多</p></div>
+<div class="transcript-row"><time>01:41</time><p>你要小心它不要死黑了</p></div>
+<div class="transcript-row"><time>01:43</time><p>当然你直接提高对不对也可以</p></div>
+<div class="transcript-row"><time>01:44</time><p>重点我们是要解决画面整体发灰的一个问题</p></div>
+<div class="transcript-row"><time>01:47</time><p>之前有个评论问到</p></div>
+<div class="transcript-row"><time>01:48</time><p>这个操作能不能放在2号节点还原的时候一起做呢</p></div>
+<div class="transcript-row"><time>01:52</time><p>当然是可以的</p></div>
+<div class="transcript-row"><time>01:53</time><p>如果说你这个行为是必做的</p></div>
+<div class="transcript-row"><time>01:54</time><p>那就放一起没问题</p></div>
+<div class="transcript-row"><time>01:56</time><p>如果说你后续可能要调整的话</p></div>
+<div class="transcript-row"><time>01:58</time><p>那我其实建议你单独来</p></div>
+<div class="transcript-row"><time>01:59</time><p>这样我们就不用从头修改了对吧</p></div>
+<div class="transcript-row"><time>02:01</time><p>好我们继续来</p></div>
+<div class="transcript-row"><time>02:02</time><p>这个画面中我们看运镜是往前推的对吧</p></div>
+<div class="transcript-row"><time>02:04</time><p>那么主体一定是远处的雪山</p></div>
+<div class="transcript-row"><time>02:06</time><p>而不是近处的这个小山间</p></div>
+<div class="transcript-row"><time>02:08</time><p>但又因为画面笔重的问题</p></div>
+<div class="transcript-row"><time>02:10</time><p>近处的山间还是比较抢际的</p></div>
+<div class="transcript-row"><time>02:12</time><p>所以我们可以给它画一个遮罩</p></div>
+<div class="transcript-row"><time>02:14</time><p>把它稍微压暗一点</p></div>
+<div class="transcript-row"><time>02:15</time><p>怎么压呢</p></div>
+<div class="transcript-row"><time>02:16</time><p>我们不能是全局压</p></div>
+<div class="transcript-row"><time>02:18</time><p>我们要明确调整的是什么</p></div>
+<div class="transcript-row"><time>02:20</time><p>其实它的暗部已经足够暗了</p></div>
+<div class="transcript-row"><time>02:21</time><p>它真正抢际的是因为它的高光太强了</p></div>
+<div class="transcript-row"><time>02:24</time><p>所以我们要降低的是高光</p></div>
+<div class="transcript-row"><time>02:26</time><p>我这里用HDR色轮的Light色轮</p></div>
+<div class="transcript-row"><time>02:28</time><p>给它把高光给它往下压</p></div>
+<div class="transcript-row"><time>02:31</time><p>至于Shadow色轮也就是它的暗部要不要压</p></div>
+<div class="transcript-row"><time>02:33</time><p>你可以看情况</p></div>
+<div class="transcript-row"><time>02:34</time><p>我觉得稍微降低一点点是可以的</p></div>
+<div class="transcript-row"><time>02:36</time><p>让它的过度能够舒服一点</p></div>
+<div class="transcript-row"><time>02:38</time><p>我觉得到这个程度差不多</p></div>
+<div class="transcript-row"><time>02:39</time><p>然后主体肯定要强化对吧</p></div>
+<div class="transcript-row"><time>02:41</time><p>我们也可以对远处的雪山画一个遮罩</p></div>
+<div class="transcript-row"><time>02:45</time><p>然后对于这一部分</p></div>
+<div class="transcript-row"><time>02:46</time><p>我们可以稍微给它增加一点对比度</p></div>
+<div class="transcript-row"><time>02:48</time><p>少加一点</p></div>
+<div class="transcript-row"><time>02:49</time><p>不然这个遮罩会特别明显</p></div>
+<div class="transcript-row"><time>02:51</time><p>我们也可以配合轴心</p></div>
+<div class="transcript-row"><time>02:52</time><p>让它的曝光再符合这个场景</p></div>
+<div class="transcript-row"><time>02:54</time><p>也同样是为了遮罩避免不要太明显</p></div>
+<div class="transcript-row"><time>02:56</time><p>这个行为就可以让远处的山更加立体一点</p></div>
+<div class="transcript-row"><time>02:59</time><p>原本还是有点发挥的</p></div>
+<div class="transcript-row"><time>03:00</time><p>最后就是天空</p></div>
+<div class="transcript-row"><time>03:01</time><p>天空虽然它带了一点层次</p></div>
+<div class="transcript-row"><time>03:03</time><p>左上角是暗一点对吧</p></div>
+<div class="transcript-row"><time>03:04</time><p>但是我觉得还不够</p></div>
+<div class="transcript-row"><time>03:06</time><p>所以我又画了一个渐变遮罩</p></div>
+<div class="transcript-row"><time>03:08</time><p>从左上往右下</p></div>
+<div class="transcript-row"><time>03:09</time><p>拉了一个渐变遮罩</p></div>
+<div class="transcript-row"><time>03:10</time><p>再一次的压按左上角的部分曝光</p></div>
+<div class="transcript-row"><time>03:13</time><p>降低一点阴影滑块</p></div>
+<div class="transcript-row"><time>03:15</time><p>同样的还是那句话</p></div>
+<div class="transcript-row"><time>03:16</time><p>要压按就不能止压按还得提亮</p></div>
+<div class="transcript-row"><time>03:17</time><p>所以我又提高了一点高光滑块的曝光</p></div>
+<div class="transcript-row"><time>03:21</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>03:22</time><p>这个遮罩可以转一点了</p></div>
+<div class="transcript-row"><time>03:25</time><p>这样挺好的</p></div>
+<div class="transcript-row"><time>03:26</time><p>压按天空同样可以让我们视线聚焦</p></div>
+<div class="transcript-row"><time>03:28</time><p>这三个节点做完</p></div>
+<div class="transcript-row"><time>03:29</time><p>我们就能让画面的曝光分布更加清晰</p></div>
+<div class="transcript-row"><time>03:33</time><p>这个的柔化可以开得再大一点</p></div>
+<div class="transcript-row"><time>03:37</time><p>对吧 效果还是挺好的</p></div>
+<div class="transcript-row"><time>03:38</time><p>接下来我们就可以开始调颜色了</p></div>
+<div class="transcript-row"><time>03:40</time><p>素材大家也可以免费领取过去之后跟着做一做</p></div>
+<div class="transcript-row"><time>03:42</time><p>作者也是同意分享的</p></div>
+<div class="transcript-row"><time>03:44</time><p>还有达分析的线上系统课程和线下调色训练营</p></div>
+<div class="transcript-row"><time>03:46</time><p>过年期间我应该会做一定的折扣</p></div>
+<div class="transcript-row"><time>03:48</time><p>可以私信或者看我剪辑来找我就行了</p></div>
+<div class="transcript-row"><time>03:50</time><p>说回画面</p></div>
+<div class="transcript-row"><time>03:51</time><p>我们要调整颜色暗调结果</p></div>
+<div class="transcript-row"><time>03:53</time><p>大家第一时间想到的是什么颜色倾向</p></div>
+<div class="transcript-row"><time>03:56</time><p>是不是偏冷调</p></div>
+<div class="transcript-row"><time>03:57</time><p>目前画面中蓝色其实是有的</p></div>
+<div class="transcript-row"><time>03:59</time><p>但是受光面的暖太明显了</p></div>
+<div class="transcript-row"><time>04:02</time><p>这也是导致作者调得像沙尘暴的原因</p></div>
+<div class="transcript-row"><time>04:04</time><p>我们要去掉这些暖</p></div>
+<div class="transcript-row"><time>04:05</time><p>可是如果说我们单纯的降低暖的饱和度</p></div>
+<div class="transcript-row"><time>04:09</time><p>我觉得不是特别好看</p></div>
+<div class="transcript-row"><time>04:10</time><p>它就是单纯的失去颜色</p></div>
+<div class="transcript-row"><time>04:12</time><p>之后有点发闷发灰</p></div>
+<div class="transcript-row"><time>04:13</time><p>对吧 不舒服</p></div>
+<div class="transcript-row"><time>04:14</time><p>那该怎么办</p></div>
+<div class="transcript-row"><time>04:15</time><p>我们可以用互补色来对冲</p></div>
+<div class="transcript-row"><time>04:17</time><p>用加颜色的方式来去掉颜色</p></div>
+<div class="transcript-row"><time>04:19</time><p>怎么做</p></div>
+<div class="transcript-row"><time>04:20</time><p>我们可以看到色轮</p></div>
+<div class="transcript-row"><time>04:21</time><p>目前受光面的颜色差不多在这个位置</p></div>
+<div class="transcript-row"><time>04:24</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:24</time><p>它是带了一点橙色的黄</p></div>
+<div class="transcript-row"><time>04:26</time><p>那我们就要去找它对面的颜色</p></div>
+<div class="transcript-row"><time>04:28</time><p>也就是蓝青色</p></div>
+<div class="transcript-row"><time>04:30</time><p>蓝青色就是蓝色加绿色</p></div>
+<div class="transcript-row"><time>04:32</time><p>所以我们可以稍微降低一点色温</p></div>
+<div class="transcript-row"><time>04:34</time><p>也就是给画面加一点蓝</p></div>
+<div class="transcript-row"><time>04:36</time><p>再降低一点色调</p></div>
+<div class="transcript-row"><time>04:37</time><p>给画面加一点绿</p></div>
+<div class="transcript-row"><time>04:39</time><p>那这样我们就可以用青蓝色</p></div>
+<div class="transcript-row"><time>04:40</time><p>来对冲掉这些黄色</p></div>
+<div class="transcript-row"><time>04:42</time><p>当然你用偏溢色轮直接搓也行</p></div>
+<div class="transcript-row"><time>04:44</time><p>如果你搓得准的话</p></div>
+<div class="transcript-row"><time>04:45</time><p>我们要的目的是让受光面的颜色</p></div>
+<div class="transcript-row"><time>04:48</time><p>尽可能的淡</p></div>
+<div class="transcript-row"><time>04:48</time><p>大概到这个效果就行了</p></div>
+<div class="transcript-row"><time>04:50</time><p>那此时我们放大看远处的雪山</p></div>
+<div class="transcript-row"><time>04:52</time><p>它这些雪已经无限接近于白色了</p></div>
+<div class="transcript-row"><time>04:55</time><p>没有一开始那么黄了</p></div>
+<div class="transcript-row"><time>04:57</time><p>但是对于整体来说</p></div>
+<div class="transcript-row"><time>04:58</time><p>受光面依旧是最暖的结果</p></div>
+<div class="transcript-row"><time>05:01</time><p>所以这就是色相的相对性</p></div>
+<div class="transcript-row"><time>05:03</time><p>我们要保证受光面相对暖就行了</p></div>
+<div class="transcript-row"><time>05:05</time><p>但这样做完了之后</p></div>
+<div class="transcript-row"><time>05:06</time><p>会带来一个新问题</p></div>
+<div class="transcript-row"><time>05:07</time><p>蓝色太多了对吧</p></div>
+<div class="transcript-row"><time>05:09</time><p>所以我们可以再建立一个节点</p></div>
+<div class="transcript-row"><time>05:10</time><p>来解决新产生的问题</p></div>
+<div class="transcript-row"><time>05:12</time><p>这时候我们可以利用色轮流向切片工具</p></div>
+<div class="transcript-row"><time>05:14</time><p>把青色和蓝色的密度都给它增加</p></div>
+<div class="transcript-row"><time>05:17</time><p>增加密度是降低明度的同时</p></div>
+<div class="transcript-row"><time>05:19</time><p>小幅降低它的饱和度</p></div>
+<div class="transcript-row"><time>05:20</time><p>然后再降低点饱和度</p></div>
+<div class="transcript-row"><time>05:22</time><p>因为我觉得降低饱和度的力度还不够</p></div>
+<div class="transcript-row"><time>05:24</time><p>我们把青色饱和度往下降</p></div>
+<div class="transcript-row"><time>05:26</time><p>蓝色的饱和度也给它往下降</p></div>
+<div class="transcript-row"><time>05:28</time><p>大概到这个结果</p></div>
+<div class="transcript-row"><time>05:29</time><p>让蓝色不要那么抢眼</p></div>
+<div class="transcript-row"><time>05:32</time><p>带上一点点那种灰蓝灰蓝的感觉</p></div>
+<div class="transcript-row"><time>05:34</time><p>是不是很耐看</p></div>
+<div class="transcript-row"><time>05:35</time><p>这时候的画面就会有清冷的感觉了</p></div>
+<div class="transcript-row"><time>05:37</time><p>我们要知道的是</p></div>
+<div class="transcript-row"><time>05:38</time><p>我们看到的任何颜色</p></div>
+<div class="transcript-row"><time>05:39</time><p>或者说任何的物体</p></div>
+<div class="transcript-row"><time>05:40</time><p>只要能被看到</p></div>
+<div class="transcript-row"><time>05:41</time><p>它一定是靠光的反射来达到的</p></div>
+<div class="transcript-row"><time>05:44</time><p>而暗调画面就注定了光不强</p></div>
+<div class="transcript-row"><time>05:46</time><p>那既然光不强</p></div>
+<div class="transcript-row"><time>05:47</time><p>那所有的颜色饱和度就一定不会太高</p></div>
+<div class="transcript-row"><time>05:49</time><p>那此时如果你觉得暖的还是有点多的话</p></div>
+<div class="transcript-row"><time>05:52</time><p>你可以不用回到9号节点去做</p></div>
+<div class="transcript-row"><time>05:54</time><p>太麻烦了</p></div>
+<div class="transcript-row"><time>05:54</time><p>你这个数值你要调有点抽象</p></div>
+<div class="transcript-row"><time>05:56</time><p>你不如在10号节点</p></div>
+<div class="transcript-row"><time>05:57</time><p>用蜘蛛网稍微给它把暖色的饱和度给它降一降</p></div>
+<div class="transcript-row"><time>06:01</time><p>这时候稍微降一点就问题不大了</p></div>
+<div class="transcript-row"><time>06:02</time><p>大概到这个程度就差不多</p></div>
+<div class="transcript-row"><time>06:04</time><p>我其实觉得原本中间这部分有点杂色</p></div>
+<div class="transcript-row"><time>06:06</time><p>我们把暖色部分给它饱和度往下降了之后</p></div>
+<div class="transcript-row"><time>06:08</time><p>也能去掉一部分这里的杂色</p></div>
+<div class="transcript-row"><time>06:10</time><p>如果你觉得这里有一点点紫的话</p></div>
+<div class="transcript-row"><time>06:12</time><p>也可以把这里的色相给它稍微归隆归隆</p></div>
+<div class="transcript-row"><time>06:15</time><p>大概到这个程度挺好的对吧</p></div>
+<div class="transcript-row"><time>06:17</time><p>此时画面基本上就不错了</p></div>
+<div class="transcript-row"><time>06:19</time><p>我们可以与还原后的画面出来对比</p></div>
+<div class="transcript-row"><time>06:21</time><p>效果挺好的</p></div>
+<div class="transcript-row"><time>06:22</time><p>那如果说你还希望风格感能够更强的话</p></div>
+<div class="transcript-row"><time>06:24</time><p>可以来个柔和对比度</p></div>
+<div class="transcript-row"><time>06:26</time><p>力度可以做得大一点</p></div>
+<div class="transcript-row"><time>06:27</time><p>我们打开曲线右上角三个点中的可编辑的一条线</p></div>
+<div class="transcript-row"><time>06:30</time><p>把高光这一端给它往下降</p></div>
+<div class="transcript-row"><time>06:32</time><p>再把高光延伸出来的波感给它往上提</p></div>
+<div class="transcript-row"><time>06:35</time><p>这一步是为了保护高光</p></div>
+<div class="transcript-row"><time>06:37</time><p>然后再把暗部这一端往上提</p></div>
+<div class="transcript-row"><time>06:39</time><p>再把暗部延伸出来的波感给它往下降</p></div>
+<div class="transcript-row"><time>06:42</time><p>这一步是让暗的能够更暗</p></div>
+<div class="transcript-row"><time>06:44</time><p>我觉得大概到这个程度就差不多</p></div>
+<div class="transcript-row"><time>06:46</time><p>可以再来一点</p></div>
+<div class="transcript-row"><time>06:47</time><p>你看</p></div>
+<div class="transcript-row"><time>06:47</time><p>当我们把气游部分压得再暗一点了之后</p></div>
+<div class="transcript-row"><time>06:50</time><p>就算高光也被小幅的降低</p></div>
+<div class="transcript-row"><time>06:52</time><p>但是你从画面整体来看</p></div>
+<div class="transcript-row"><time>06:54</time><p>高光就变得更加明显</p></div>
+<div class="transcript-row"><time>06:56</time><p>这个效果挺好的对吧</p></div>
+<div class="transcript-row"><time>06:57</time><p>当然你可做可不做</p></div>
+<div class="transcript-row"><time>06:58</time><p>最后也可以考虑来一个暗角</p></div>
+<div class="transcript-row"><time>07:01</time><p>再一次的收缩视线</p></div>
+<div class="transcript-row"><time>07:02</time><p>其实重点还是希望能够</p></div>
+<div class="transcript-row"><time>07:03</time><p>让这个近处的小山间能够再暗一点</p></div>
+<div class="transcript-row"><time>07:06</time><p>把这个遮罩揉化开大一点</p></div>
+<div class="transcript-row"><time>07:08</time><p>然后把它反转一下</p></div>
+<div class="transcript-row"><time>07:09</time><p>让它暗部给它往下降</p></div>
+<div class="transcript-row"><time>07:11</time><p>然后再提高一点高光滑快</p></div>
+<div class="transcript-row"><time>07:13</time><p>要压不能只压嘛对吧</p></div>
+<div class="transcript-row"><time>07:14</time><p>那这个暗角当然也是可做可不做</p></div>
+<div class="transcript-row"><time>07:16</time><p>你觉得不需要就不做了</p></div>
+<div class="transcript-row"><time>07:17</time><p>那这样呢</p></div>
+<div class="transcript-row"><time>07:18</time><p>我们就可以把画面从这样调成这样</p></div>
+<div class="transcript-row"><time>07:20</time><p>效果非常好对吧</p></div>
+<div class="transcript-row"><time>07:21</time><p>其实这个思路是非常简单的</p></div>
+<div class="transcript-row"><time>07:23</time><p>那如果说你还是觉得</p></div>
+<div class="transcript-row"><time>07:24</time><p>下方这个山间太碍眼的话</p></div>
+<div class="transcript-row"><time>07:26</time><p>也可以考虑给它来一个遮浮</p></div>
+<div class="transcript-row"><time>07:28</time><p>来个2.3 5比1的遮浮给它遮一遮</p></div>
+<div class="transcript-row"><time>07:30</time><p>也挺好的对吧</p></div>
+<div class="transcript-row"><time>07:31</time><p>素材大家别忘了领取</p></div>
+<div class="transcript-row"><time>07:32</time><p>还有线上和线下的课程</p></div>
+<div class="transcript-row"><time>07:34</time><p>这应该是我年前倒数第二期视频了</p></div>
+<div class="transcript-row"><time>07:37</time><p>年底的活实在太多了</p></div>
+<div class="transcript-row"><time>07:38</time><p>没时间做视频</p></div>
+<div class="transcript-row"><time>07:39</time><p>年前的最后一期</p></div>
+<div class="transcript-row"><time>07:41</time><p>会是小明同学拍的短片</p></div>
+<div class="transcript-row"><time>07:42</time><p>非常非常牛的片子</p></div>
+<div class="transcript-row"><time>07:43</time><p>大家可以期待一下</p></div>
+<div class="transcript-row"><time>07:44</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>07:45</time><p>如果你觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>07:46</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>07:47</time><p>好了</p></div>
+<div class="transcript-row"><time>07:48</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>07:48</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

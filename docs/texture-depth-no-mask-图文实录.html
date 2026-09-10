@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="穿越机等大幅运动素材难画遮罩时，老叉用 HDR 色轮在暗部或亮部内部做局部 S 曲线：Dark 降 + Shadow 抬展开暗部层次去灰、护天空；亮面则用 Light/Highlight 组合。对比暴力提暗部更自然。颜色侧用冷暖分离、向量示波器与密度收尾，重点仍是掌握 HDR。">
+<title>画面质感和层次怎么强化？不画遮罩行不行｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>画面质感和层次怎么强化？不画遮罩行不行</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">6分08秒</span><span class="meta-tag tag-topic">达芬奇 HDR色轮 发灰 层次 不画遮罩 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/79Ykkro3SYk" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">立题：大幅运动难画遮罩，发灰别只会全局加对比</a><a href="#ch2">HDR：Dark 降 + Shadow 抬，天空几乎不受影响</a><a href="#ch3">举一反三：自然提亮暗部，别暴力抬黑</a><a href="#ch4">对位选轮：地面灯走 Shadow，云走 Light/Highlight</a><a href="#ch5">原理：局部 S 曲线——只在暗部或只在亮部出对比</a><a href="#ch6">颜色简说 + 收束：重点仍是练 HDR</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>穿越机等大幅运动素材难画遮罩时，老叉用 HDR 色轮在暗部或亮部内部做局部 S 曲线：Dark 降 + Shadow 抬展开暗部层次去灰、护天空；亮面则用 Light/Highlight 组合。对比暴力提暗部更自然。颜色侧用冷暖分离、向量示波器与密度收尾，重点仍是掌握 HDR。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:58]</span><div><strong>发灰诊断</strong><p>全局加对比度前半段好、后半天空过曝；波形见暗面信息堆积＝缺暗面层次。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:58→02:11]</span><div><strong>HDR展暗部</strong><p>Dark 降 + Shadow 抬，调范围让暗部整体参与；天空几乎不受影响。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:11→03:06]</span><div><strong>举一反三</strong><p>同法提地面受光更自然；暴力用暗部轮/阴影滑块易发灰发脏。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:06→03:58]</span><div><strong>对位选轮</strong><p>地面灯在约30级→提 Shadow 非亮部；云立体用 Light 降 + Highlight 抬。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:58→04:37]</span><div><strong>原理</strong><p>局部 S：暗部 Dark/Shadow，亮部 Light/Highlight，只在目标区出对比。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:37→06:08]</span><div><strong>颜色收束</strong><p>降色温铺冷→并行强化暖→向量微调→蓝青加密度；电影感外观可选。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>难画遮罩时，用 HDR 在暗/亮内部做局部 S 曲线：展开层次去灰，而不是全局猛加对比或硬提暗部。先对波形找「该展哪一段」，再选对色轮对。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:58</span>立题：大幅运动难画遮罩，发灰别只会全局加对比</h2><p>老叉开场：运动幅度大（如穿越机）再画遮罩会很麻烦。以穿越、整体发灰的素材为例——不画遮罩怎么强化质感与层次？去灰最简单是加对比度：一加就不灰了，但对本片前半段很好，移到后半天空却过曝——因为对比度让亮更亮、暗更暗，地面层次展开的同时天空也更亮。</p><p>重置后看波形：有一块曝光区域信息大量堆积（地面），且贯穿全片，说明画面缺少暗面层次。只要展开暗部层次，发灰就能解决大半。</p><figure><img src="assets/texture-depth-no-mask/shot-01.jpg" alt="波形诊断：地面曝光带信息堆积，说明缺暗面层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:40] 波形诊断：地面曝光带信息堆积，说明缺暗面层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/248d8c3b94d3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Scopes: ground exposure band is piled up—missing shadow depth.</span></div>
+<audio class="cap-audio" src="audio/248d8c3b94d3.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:58-02:11</span>HDR：Dark 降 + Shadow 抬，天空几乎不受影响</h2><p>用 HDR 色轮给暗部加对比：优先 Shadow 与 Dark。降低 Dark 曝光让暗部下降（别拉太多），并微调 Dark 起点/范围，把目标暗区视作整体，从中间一带开始往下降，而不是只压最底三分之一。再小幅提高 Shadow 曝光与范围。</p><p>波形被拉开，画面不那么灰；拉到后半段天空基本不受影响，弧面也更立体。力度可自行把控——思路比数值更重要。</p><figure><img src="assets/texture-depth-no-mask/shot-02.jpg" alt="HDR：Dark 降 + Shadow 抬展开暗部，天空几乎不受影响" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:45] HDR：Dark 降 + Shadow 抬展开暗部，天空几乎不受影响</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7fbd6c7cf693.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR: lower Dark, raise Shadow to open shadows; sky barely moves.</span></div>
+<audio class="cap-audio" src="audio/7fbd6c7cf693.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:11-03:06</span>举一反三：自然提亮暗部，别暴力抬黑</h2><p>同一思路用在别的画面：Dark 降、Shadow 抬后，地面被舒服地提亮，且不破坏暗部层次。若用暗部色轮或阴影滑块暴力提亮，也能亮，但易发灰、发脏、不自然。</p><p>HDR 做法本质是展开暗部层次：黑位尽量不动，只把暗区里「没那么暗」的受光面往上提，所以更自然。夜景楼体与灯光同理——展开暗部后立体感与灯光边界更清楚。</p><figure><img src="assets/texture-depth-no-mask/shot-03.jpg" alt="同法自然提亮地面受光，对比暴力抬暗部更干净" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:20] 同法自然提亮地面受光，对比暴力抬暗部更干净</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/764d8a0da491.mp3" type="button" aria-label="Play English audio">🔊</button><span>Same move lifts ground light naturally—cleaner than crushing shadows up.</span></div>
+<audio class="cap-audio" src="audio/764d8a0da491.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:06-03:58</span>对位选轮：地面灯走 Shadow，云走 Light/Highlight</h2><p>若希望地面灯更亮，不要先提亮部——亮部一抬天空也亮。波形上这些受光面大约在 30 级，仍属暗面，应提 Shadow，并配合 Dark 降；还可降 Light/Highlight 加强天空层次，否则暗面提亮会显得过头。</p><p>云要更立体则换组合：亮面用 Light 降曝光 + Highlight 抬曝光，局部拉开高光内部层次。</p><figure><img src="assets/texture-depth-no-mask/shot-04.jpg" alt="地面灯走 Shadow；可降 Light/Highlight 护天空层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:25] 地面灯走 Shadow；可降 Light/Highlight 护天空层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/11d665fc5a87.mp3" type="button" aria-label="Play English audio">🔊</button><span>Treat ground lamps with Shadow; ease Light/Highlight to protect sky detail.</span></div>
+<audio class="cap-audio" src="audio/11d665fc5a87.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">03:58-04:37</span>原理：局部 S 曲线——只在暗部或只在亮部出对比</h2><p>黑白渐变加对比度后波形呈 S 形，即常说的 S 曲线去灰。HDR 的 Dark/Shadow 是把这个 S 只做在暗部；Light/Highlight 则只做在高光面。这就是「不画遮罩也能强化层次」的核心思路。</p></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">04:37-06:08</span>颜色简说 + 收束：重点仍是练 HDR</h2><p>素材已传知识分享平台，可私信或看简介加入后免费自取。颜色侧：画面偏缺冷色，略降色温色调铺冷，并行节点用向量示波器把暖色饱和度拉回，再用向量微调黄→橙、蓝→青；蓝青过艳则用色轮切片器加密度并略降饱和。最后可套达芬奇自带电影感外观创建器微风格化。</p><p>他强调：本期重点是 HDR；别的软件往往要靠曲线才能近似，掌握成本更高。一定要练 HDR 色轮。</p><figure><img src="assets/texture-depth-no-mask/shot-05.jpg" alt="冷暖与密度收色后出片，强调重点仍是 HDR" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:30] 冷暖与密度收色后出片，强调重点仍是 HDR</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0384f4f61ac7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Finish with warm/cool and density—but the key is still HDR.</span></div>
+<audio class="cap-audio" src="audio/0384f4f61ac7.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（156段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>如果运动幅度大 比如说穿越期 你要画遮罩那肯定是会比较麻烦的 对吧</p></div>
+<div class="transcript-row"><time>00:11</time><p>比如说这个素材 首先它是穿越 其次呢 整体发挥的厉害</p></div>
+<div class="transcript-row"><time>00:15</time><p>那要怎么才能在不画之后的前提下去做好强化呢</p></div>
+<div class="transcript-row"><time>00:18</time><p>我们要知道 要解决发挥 最简单的方式就是给画面增加对比度 对吧</p></div>
+<div class="transcript-row"><time>00:23</time><p>我们一加对比度它就不灰了</p></div>
+<div class="transcript-row"><time>00:25</time><p>但是对于这个画面 如果你增加对比度 对于前半段效果是非常好的</p></div>
+<div class="transcript-row"><time>00:29</time><p>但是移动到后半部分 你发现天空过曝了 对吧</p></div>
+<div class="transcript-row"><time>00:32</time><p>因为增加对比度是让亮的更亮 暗的更暗</p></div>
+<div class="transcript-row"><time>00:35</time><p>虽然可以展开地面的层次 但是天空也变得更亮了</p></div>
+<div class="transcript-row"><time>00:39</time><p>我把它给重置了 我们观察一下波形图</p></div>
+<div class="transcript-row"><time>00:41</time><p>在波形图上 我们能发现有一个曝光区域是让画面发挥的罪魁祸首啊</p></div>
+<div class="transcript-row"><time>00:46</time><p>是不是就这个位置 有大量的信息堆积在这个位置 也就是地面</p></div>
+<div class="transcript-row"><time>00:50</time><p>而且它是贯穿全局的 也就是说画面缺少了暗面</p></div>
+<div class="transcript-row"><time>00:55</time><p>我们需要展开暗部的层次 只要解决了它就能解决发挥的问题</p></div>
+<div class="transcript-row"><time>00:58</time><p>这时候我们就可以使用HDR色轮</p></div>
+<div class="transcript-row"><time>01:01</time><p>如果你对HDR色轮不熟悉的话 可以看这一期视频</p></div>
+<div class="transcript-row"><time>01:03</time><p>我们要给暗部增加对比度 也就是需要展开这一部分的曝光层次</p></div>
+<div class="transcript-row"><time>01:09</time><p>又因为它是处于暗面 所以我们就可以考虑HDR色轮中的Shadow跟Dark色轮</p></div>
+<div class="transcript-row"><time>01:13</time><p>我们可以翻页在HDR色轮中</p></div>
+<div class="transcript-row"><time>01:15</time><p>我把这个节点重置了 我们重新做一下</p></div>
+<div class="transcript-row"><time>01:17</time><p>我们可以降低Dark色轮的曝光 你会发现暗部是不是往下降了</p></div>
+<div class="transcript-row"><time>01:21</time><p>不用拉太多 我们稍微拉一拉</p></div>
+<div class="transcript-row"><time>01:24</time><p>然后也可以微调一下这个Dark色轮的起点 它的范围</p></div>
+<div class="transcript-row"><time>01:28</time><p>因为我们希望把这一部分视作整体</p></div>
+<div class="transcript-row"><time>01:31</time><p>我们通过改变Dark色轮的范围 让它能够从中间部分开始往下降</p></div>
+<div class="transcript-row"><time>01:35</time><p>而不是刚刚只有降了下面的三分之一</p></div>
+<div class="transcript-row"><time>01:37</time><p>然后我们还需要提高一下Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>01:40</time><p>稍微提高一点Shadow色轮的范围</p></div>
+<div class="transcript-row"><time>01:42</time><p>因为我已经做过了 所以我这个参数我就直接调到结果</p></div>
+<div class="transcript-row"><time>01:45</time><p>微调一下它的范围 然后小幅提高一点它的曝光</p></div>
+<div class="transcript-row"><time>01:49</time><p>我们降低了Dark色轮的曝光 提高了Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>01:52</time><p>我们看波希图的变化 它是不是展开了 对吧</p></div>
+<div class="transcript-row"><time>01:55</time><p>而对于画面来讲 它也不灰了 解决了它一部分发灰的问题</p></div>
+<div class="transcript-row"><time>02:00</time><p>我们往后拉拉到这一部分 你会发现天空基本上不受到影响</p></div>
+<div class="transcript-row"><time>02:04</time><p>而且这一部分的弧面它也变得更加立体了 原本弧面也是发灰的</p></div>
+<div class="transcript-row"><time>02:08</time><p>当然力度你可以自己把共享强一点弱点都可以</p></div>
+<div class="transcript-row"><time>02:11</time><p>但这个思路其实很关键 我们甚至可以举一反三</p></div>
+<div class="transcript-row"><time>02:14</time><p>比如说这个画面 当我们给它利用一样的思路</p></div>
+<div class="transcript-row"><time>02:17</time><p>我降低了Dark色轮 提高了Shadow色轮之后</p></div>
+<div class="transcript-row"><time>02:20</time><p>你会发现地面它提亮了 对吧</p></div>
+<div class="transcript-row"><time>02:22</time><p>而且这种提亮是非常舒服的</p></div>
+<div class="transcript-row"><time>02:24</time><p>它不会破坏我们暗部的层次</p></div>
+<div class="transcript-row"><time>02:25</time><p>如果说我们非常暴力的给它 比如说用暗部色轮提亮</p></div>
+<div class="transcript-row"><time>02:29</time><p>它也提亮了 可是它会发灰 对吧</p></div>
+<div class="transcript-row"><time>02:31</time><p>就算我们用阴影滑块提亮 它也会发灰 而且显得特别脏</p></div>
+<div class="transcript-row"><time>02:35</time><p>并且它不自然</p></div>
+<div class="transcript-row"><time>02:36</time><p>但是我们用H加色轮提亮的这个方式</p></div>
+<div class="transcript-row"><time>02:39</time><p>我们尽是在展开暗部的层次 让它黑位不发生改变</p></div>
+<div class="transcript-row"><time>02:42</time><p>但是让暗部这个区域中没那么暗的部分给它往上提</p></div>
+<div class="transcript-row"><time>02:46</time><p>也就是这个地面中受光面提亮</p></div>
+<div class="transcript-row"><time>02:48</time><p>那么它就能够更加自然的提亮</p></div>
+<div class="transcript-row"><time>02:50</time><p>再或者是这个画面</p></div>
+<div class="transcript-row"><time>02:51</time><p>当我们也是一样的利用降低Dark色轮提高Shadow色轮的这个方式</p></div>
+<div class="transcript-row"><time>02:56</time><p>你会发现整个画面 包括这边的楼它都变得更加立体了</p></div>
+<div class="transcript-row"><time>02:59</time><p>这些灯也变得更加明确了</p></div>
+<div class="transcript-row"><time>03:01</time><p>我们其实就是在展开暗部的层次</p></div>
+<div class="transcript-row"><time>03:04</time><p>你看这一部分 对吧</p></div>
+<div class="transcript-row"><time>03:05</time><p>我们再看一个案例</p></div>
+<div class="transcript-row"><time>03:06</time><p>在这个画面中 如果你希望地面的灯更亮</p></div>
+<div class="transcript-row"><time>03:09</time><p>不是提亮亮部 为什么呀</p></div>
+<div class="transcript-row"><time>03:11</time><p>因为你提亮亮部了之后 天空也会变亮</p></div>
+<div class="transcript-row"><time>03:14</time><p>这就不舒服了 对吧</p></div>
+<div class="transcript-row"><time>03:15</time><p>我们可以在波形图中看到这些受光面</p></div>
+<div class="transcript-row"><time>03:17</time><p>它大概在哪个曝光位置 它是不是在30级</p></div>
+<div class="transcript-row"><time>03:20</time><p>这个其实是暗面 对吧</p></div>
+<div class="transcript-row"><time>03:21</time><p>所以我们要提亮的不是亮面 而是Shadow色轮</p></div>
+<div class="transcript-row"><time>03:25</time><p>我们这里提高了Shadow色轮 降低了Dark色轮之后</p></div>
+<div class="transcript-row"><time>03:28</time><p>你会发现 对于这个画面来讲</p></div>
+<div class="transcript-row"><time>03:30</time><p>是不是地面亮灯了 而且这个灯只影响地面</p></div>
+<div class="transcript-row"><time>03:33</time><p>对于天空来讲 因为我这里还降低了Light色轮和Highlight色轮</p></div>
+<div class="transcript-row"><time>03:36</time><p>让天空的层次更强</p></div>
+<div class="transcript-row"><time>03:38</time><p>如果这两个色轮不做的话</p></div>
+<div class="transcript-row"><time>03:39</time><p>其实暗面提亮会非常明显</p></div>
+<div class="transcript-row"><time>03:41</time><p>再或者这个画面 我们看到</p></div>
+<div class="transcript-row"><time>03:43</time><p>我们可以让这个云变得更加立体 怎么做呢</p></div>
+<div class="transcript-row"><time>03:46</time><p>因为它是亮面</p></div>
+<div class="transcript-row"><time>03:47</time><p>所以我们就要换一个组合 变成Light色轮和Highlight色轮</p></div>
+<div class="transcript-row"><time>03:51</time><p>我降低了Light色轮的曝光 提高了Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>03:54</time><p>你会发现 天上的云是不是就变得更加立体了</p></div>
+<div class="transcript-row"><time>03:57</time><p>那么这究竟是为什么呢</p></div>
+<div class="transcript-row"><time>03:58</time><p>原理其实非常简单</p></div>
+<div class="transcript-row"><time>04:00</time><p>我们这里有一张黑白渐变图</p></div>
+<div class="transcript-row"><time>04:01</time><p>我们给这个黑白渐变图增加对比度了之后</p></div>
+<div class="transcript-row"><time>04:04</time><p>它的波形都会呈现出一个S形状 对不对</p></div>
+<div class="transcript-row"><time>04:07</time><p>也就是我们常说的画一个S曲线</p></div>
+<div class="transcript-row"><time>04:09</time><p>来让画面不发挥</p></div>
+<div class="transcript-row"><time>04:10</time><p>但是我们刚刚的行为是只强化了局部</p></div>
+<div class="transcript-row"><time>04:12</time><p>比如说暗面</p></div>
+<div class="transcript-row"><time>04:13</time><p>那么我就希望这个S曲线只发生在暗面</p></div>
+<div class="transcript-row"><time>04:16</time><p>所以我就需要降低更暗的Dark色轮的曝光</p></div>
+<div class="transcript-row"><time>04:19</time><p>再提高稍微亮一点的Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>04:22</time><p>我们通过它们参数的调整</p></div>
+<div class="transcript-row"><time>04:24</time><p>就让它能够只在暗部产生一个S曲线</p></div>
+<div class="transcript-row"><time>04:26</time><p>那亮面同样如此</p></div>
+<div class="transcript-row"><time>04:28</time><p>当我给它降低了Light色轮的曝光</p></div>
+<div class="transcript-row"><time>04:30</time><p>提高了Highlight色轮的曝光了之后</p></div>
+<div class="transcript-row"><time>04:32</time><p>你会发现 只在高光面产生了一个S曲线</p></div>
+<div class="transcript-row"><time>04:35</time><p>所以这个思路非常关键</p></div>
+<div class="transcript-row"><time>04:37</time><p>再回到我们这个画面</p></div>
+<div class="transcript-row"><time>04:38</time><p>这个素材呢</p></div>
+<div class="transcript-row"><time>04:39</time><p>我传到了线上分享平台</p></div>
+<div class="transcript-row"><time>04:40</time><p>大家也可以领取过去之后练练手</p></div>
+<div class="transcript-row"><time>04:42</time><p>私信或者跟我姐姐来加入后</p></div>
+<div class="transcript-row"><time>04:43</time><p>免费自取就行了</p></div>
+<div class="transcript-row"><time>04:44</time><p>还要搭乘你的线上系统课程和线下调色训练营</p></div>
+<div class="transcript-row"><time>04:47</time><p>那这个画面中颜色该怎么调呢</p></div>
+<div class="transcript-row"><time>04:49</time><p>我觉得整体的画面有点缺颜色</p></div>
+<div class="transcript-row"><time>04:51</time><p>暖色是有的 冷色不够</p></div>
+<div class="transcript-row"><time>04:53</time><p>画面没有太多颜色的层次</p></div>
+<div class="transcript-row"><time>04:55</time><p>那么我就来一个节点</p></div>
+<div class="transcript-row"><time>04:56</time><p>稍微降低了点色温和色调</p></div>
+<div class="transcript-row"><time>04:58</time><p>让它整体先带上冷色</p></div>
+<div class="transcript-row"><time>04:59</time><p>然后再来个并行节点</p></div>
+<div class="transcript-row"><time>05:01</time><p>用蜘蛛网把这个暖色薄度给它强化回来</p></div>
+<div class="transcript-row"><time>05:03</time><p>这样一做的话 画面中冷与暖都有了</p></div>
+<div class="transcript-row"><time>05:05</time><p>但是冷与暖都有</p></div>
+<div class="transcript-row"><time>05:06</time><p>它并不代表好看</p></div>
+<div class="transcript-row"><time>05:08</time><p>所以我又来了一个节点</p></div>
+<div class="transcript-row"><time>05:09</time><p>用蜘蛛网稍微调了一下</p></div>
+<div class="transcript-row"><time>05:11</time><p>整体的一个颜色的配别</p></div>
+<div class="transcript-row"><time>05:12</time><p>比如说我把这个黄色往橙色方向移动了</p></div>
+<div class="transcript-row"><time>05:15</time><p>给整体稍微加了一点暖</p></div>
+<div class="transcript-row"><time>05:16</time><p>把蓝色往青色方向依靠</p></div>
+<div class="transcript-row"><time>05:18</time><p>但是这样做完了之后</p></div>
+<div class="transcript-row"><time>05:19</time><p>这一部分其实还好</p></div>
+<div class="transcript-row"><time>05:20</time><p>往后一拉你会发现</p></div>
+<div class="transcript-row"><time>05:21</time><p>这个蓝特别艳</p></div>
+<div class="transcript-row"><time>05:22</time><p>对吧 这个青色也特别艳</p></div>
+<div class="transcript-row"><time>05:23</time><p>所以我又来了一个节点</p></div>
+<div class="transcript-row"><time>05:25</time><p>用色轮切片器增加青色和蓝色的密度</p></div>
+<div class="transcript-row"><time>05:28</time><p>还小幅降低了点它们的饱和度</p></div>
+<div class="transcript-row"><time>05:30</time><p>让这个蓝色更加耐看</p></div>
+<div class="transcript-row"><time>05:31</time><p>最后我就再上一个</p></div>
+<div class="transcript-row"><time>05:33</time><p>达芬吉自带的电感外观充的器</p></div>
+<div class="transcript-row"><time>05:34</time><p>我稍微动了一下白边和色调</p></div>
+<div class="transcript-row"><time>05:36</time><p>让画面带上一点点风格化</p></div>
+<div class="transcript-row"><time>05:38</time><p>你看这样一做的话</p></div>
+<div class="transcript-row"><time>05:39</time><p>其实整体的效果还是不错的 对吧</p></div>
+<div class="transcript-row"><time>05:41</time><p>这个颜色我们简单一说</p></div>
+<div class="transcript-row"><time>05:42</time><p>我不花太多的时间去重新做了</p></div>
+<div class="transcript-row"><time>05:44</time><p>重点在于我们前面的H加色轮的使用</p></div>
+<div class="transcript-row"><time>05:46</time><p>H加色轮</p></div>
+<div class="transcript-row"><time>05:47</time><p>它其实可以算是</p></div>
+<div class="transcript-row"><time>05:49</time><p>达芬吉非常独特</p></div>
+<div class="transcript-row"><time>05:50</time><p>并且极具优势的工具</p></div>
+<div class="transcript-row"><time>05:52</time><p>你别的软件想实现的话比较难</p></div>
+<div class="transcript-row"><time>05:54</time><p>你可能得用曲线</p></div>
+<div class="transcript-row"><time>05:55</time><p>不是说曲线做不到</p></div>
+<div class="transcript-row"><time>05:56</time><p>曲线当然也能做到</p></div>
+<div class="transcript-row"><time>05:57</time><p>但是它掌握起来会比较费劲</p></div>
+<div class="transcript-row"><time>05:59</time><p>所以大家一定要好好地去练习</p></div>
+<div class="transcript-row"><time>06:01</time><p>跟掌握H加色轮</p></div>
+<div class="transcript-row"><time>06:02</time><p>它对你的调色一定是有非常大的帮助的</p></div>
+<div class="transcript-row"><time>06:04</time><p>大家素材别忘了联系过去之后</p></div>
+<div class="transcript-row"><time>06:05</time><p>也一起贴上看</p></div>
+<div class="transcript-row"><time>06:06</time><p>感受一下这个调整的力度</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

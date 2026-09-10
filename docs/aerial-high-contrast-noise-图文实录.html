@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="大光比航拍地面太暗、强行提亮噪点爆炸：先曲线压暗部去灰再还原，再对地面受光面局部展层次（HDR 的 Shadow 抬 + Dark 压，或对比度+轴心），过曝太阳可牺牲。提亮本质是「提受光面、压更暗面」，噪点区变少；第二镜则敢把已无细节的天空拉过曝，再渐变强化光向、HDR 展地面">
+<title>航拍光比太大，强行提亮又会有太多噪点怎么办？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>航拍光比太大，强行提亮又会有太多噪点怎么办？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分35秒</span><span class="meta-tag tag-topic">达芬奇 航拍 大光比 噪点 HDR色轮 轴心 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/3Kv7TIujR92" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">诉求：地面提上来却不能噪点炸</a><a href="#ch2">先去灰，再局部对受光面展对比</a><a href="#ch3">过曝太阳可牺牲；影调后再微提阴影</a><a href="#ch4">柔和对比度压天空刺眼；噪点逻辑</a><a href="#ch5">第二镜：敢拉过曝 + 渐变光向</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>大光比航拍地面太暗、强行提亮噪点爆炸：先曲线压暗部去灰再还原，再对地面受光面局部展层次（HDR 的 Shadow 抬 + Dark 压，或对比度+轴心），过曝太阳可牺牲。提亮本质是「提受光面、压更暗面」，噪点区变少；第二镜则敢把已无细节的天空拉过曝，再渐变强化光向、HDR 展地面层次。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:18]</span><div><strong>问题定位</strong><p>大光比地面暗；全局曲线/阴影提亮皆发灰。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:18→03:21]</span><div><strong>局部展层次</strong><p>遮罩受光面；Shadow 抬+Dark 压，或对比度+轴心左移。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:21→04:44]</span><div><strong>牺牲太阳</strong><p>无细节高光可不拉回；影调到位后再微提阴影。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:44→06:09]</span><div><strong>柔和对比度</strong><p>样条线压刺眼天空；提亮兼压暗→噪点区减少。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:09→08:35]</span><div><strong>第二镜</strong><p>敢拉过曝天空；渐变光向+HDR 展地面；颜色可选。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>大光比不是全局猛提暗部，而是先去灰、再在暗面内局部拉开受光/背光；过曝无细节区可牺牲。提亮同时压暗更多面积，噪点反而可控。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:18</span>诉求：地面提上来却不能噪点炸</h2><p>上一期记错问题：核心是光比过大、地面太暗、后期展不开，强行提亮暗部噪点过多。作者结果满意，但可更稳。全局曲线或阴影滑块提亮都会发灰——地面真实更暗，画面表现发灰。</p><figure><img src="assets/aerial-high-contrast-noise/shot-01.jpg" alt="大光比航拍：作者结果与问题对照" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:20] 大光比航拍：作者结果与问题对照</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4863a63304d9.mp3" type="button" aria-label="Play English audio">🔊</button><span>High-contrast aerial: author’s result vs the problem frame.</span></div>
+<audio class="cap-audio" src="audio/4863a63304d9.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:18-03:21</span>先去灰，再局部对受光面展对比</h2><p>2 号节点曲线略压暗部去灰并微加饱和（D-Log M 还原）。逆光夕阳太阳在镜内，除太阳外很黑是自然；但地面有大片受光，波形约在 10%–30% 一带——要提的是这块受光面的上半，下半压或不动，类似局部加对比。</p><p>遮罩后 HDR：抬 Shadow、压 Dark，只让受光面亮；仍灰再加对比度。也可重置后直接加对比度并把轴心左移，只提下部受光面——轴心界定谁亮谁暗。</p><figure><img src="assets/aerial-high-contrast-noise/shot-02.jpg" alt="遮罩受光面：Shadow 抬 + Dark 压局部展层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:35] 遮罩受光面：Shadow 抬 + Dark 压局部展层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0aa2d2fc37e5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Mask lit areas: raise Shadow, lower Dark to open local depth.</span></div>
+<audio class="cap-audio" src="audio/0aa2d2fc37e5.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:21-04:44</span>过曝太阳可牺牲；影调后再微提阴影</h2><p>太阳已无信息就不必花精力拉回，可当牺牲区；嫌刺眼可大柔化遮罩限制，非必须。因提的是本就较亮的受光面并压了更暗地面，不易发灰。还要整体亮暗部时，后节点微提阴影滑块即可——影调已到位。</p><figure><img src="assets/aerial-high-contrast-noise/shot-03.jpg" alt="对比度+轴心左移：只提地面受光面" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:05] 对比度+轴心左移：只提地面受光面</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/807cd42c8f22.mp3" type="button" aria-label="Play English audio">🔊</button><span>Contrast + pivot left: lift only the ground’s lit face.</span></div>
+<audio class="cap-audio" src="audio/807cd42c8f22.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">04:44-06:09</span>柔和对比度压天空刺眼；噪点逻辑</h2><p>颜色可略暖对冲远景蓝紫，可做可不做。柔和对比度：可编辑样条线降高光端、抬高光波谷，暗部端上提、暗部波谷下降——天空变「灰」不刺眼且反差不大变。一按高光易断层，柔和对比更安全。</p><p>原本约 15% 亮度区调后可到 10% 以下：本质提亮也压暗，噪点区变少；略降噪即可。</p><figure><img src="assets/aerial-high-contrast-noise/shot-04.jpg" alt="柔和对比度样条线：天空变灰不刺眼" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:25] 柔和对比度样条线：天空变灰不刺眼</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/8486d219b24b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Soft-contrast splines gray the sky without glare.</span></div>
+<audio class="cap-audio" src="audio/8486d219b24b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">06:09-08:35</span>第二镜：敢拉过曝 + 渐变光向</h2><p>第二镜闷在高光层次没拉开：对已无细节的小块天空敢再拉过曝，往往已好八成。再从太阳方向拉渐变强化光向，HDR 抬 Highlight、小幅抬 Light、微降 Shadow 展地面受光。远景蓝太重可色温暖化并对冲红紫偏黄。第三段自行练；素材作者同意分享。</p><figure><img src="assets/aerial-high-contrast-noise/shot-05.jpg" alt="第二镜：敢拉无细节天空过曝拉开高光" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:55] 第二镜：敢拉无细节天空过曝拉开高光</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/47e793218b92.mp3" type="button" aria-label="Play English audio">🔊</button><span>Shot two: willingly blow empty sky to open highlight separation.</span></div>
+<audio class="cap-audio" src="audio/47e793218b92.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/aerial-high-contrast-noise/shot-06.jpg" alt="渐变光向+HDR 展地面受光层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:30] 渐变光向+HDR 展地面受光层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fdfc643537a5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Power window + HDR opens ground light layers.</span></div>
+<audio class="cap-audio" src="audio/fdfc643537a5.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（337段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>上一期视频不是说解决一位朋友的问题吗</p></div>
+<div class="transcript-row"><time>00:02</time><p>后来那位朋友给我发了私信</p></div>
+<div class="transcript-row"><time>00:03</time><p>我才发现问题记错了</p></div>
+<div class="transcript-row"><time>00:05</time><p>他的核心诉求是处理高光问题</p></div>
+<div class="transcript-row"><time>00:07</time><p>前期拍的这个光比太大了</p></div>
+<div class="transcript-row"><time>00:09</time><p>地面太暗</p></div>
+<div class="transcript-row"><time>00:10</time><p>后期拉不开层次</p></div>
+<div class="transcript-row"><time>00:11</time><p>如果想要强行体谅</p></div>
+<div class="transcript-row"><time>00:12</time><p>又会让暗部出现太多噪点</p></div>
+<div class="transcript-row"><time>00:13</time><p>有三个片段</p></div>
+<div class="transcript-row"><time>00:14</time><p>我挑选两个来看</p></div>
+<div class="transcript-row"><time>00:16</time><p>这是他的结果</p></div>
+<div class="transcript-row"><time>00:18</time><p>我大概调了一下</p></div>
+<div class="transcript-row"><time>00:19</time><p>这是我的结果</p></div>
+<div class="transcript-row"><time>00:20</time><p>能够在一定程度上解决这个问题</p></div>
+<div class="transcript-row"><time>00:22</time><p>调色结果</p></div>
+<div class="transcript-row"><time>00:23</time><p>作者也是非常好</p></div>
+<div class="transcript-row"><time>00:24</time><p>但是我认为</p></div>
+<div class="transcript-row"><time>00:25</time><p>这个结果</p></div>
+<div class="transcript-row"><time>00:26</time><p>我认为是因为</p></div>
+<div class="transcript-row"><time>00:28</time><p>调色结果</p></div>
+<div class="transcript-row"><time>00:29</time><p>作者也是非常满意的</p></div>
+<div class="transcript-row"><time>00:30</time><p>如果你也遇到了</p></div>
+<div class="transcript-row"><time>00:31</time><p>类似的大光比的航拍问题的话</p></div>
+<div class="transcript-row"><time>00:33</time><p>那么这一期应该对你有帮助</p></div>
+<div class="transcript-row"><time>00:35</time><p>我们看到画面</p></div>
+<div class="transcript-row"><time>00:36</time><p>作者一定是希望</p></div>
+<div class="transcript-row"><time>00:37</time><p>把地面的光给它提上来的</p></div>
+<div class="transcript-row"><time>00:39</time><p>但是我们可以看一下</p></div>
+<div class="transcript-row"><time>00:41</time><p>不论我们用任何的方式</p></div>
+<div class="transcript-row"><time>00:42</time><p>都无法去做全局的调整</p></div>
+<div class="transcript-row"><time>00:44</time><p>比如说我用曲线</p></div>
+<div class="transcript-row"><time>00:45</time><p>不行它会发灰</p></div>
+<div class="transcript-row"><time>00:46</time><p>如果我又提高了是阴影滑块</p></div>
+<div class="transcript-row"><time>00:48</time><p>它也发灰</p></div>
+<div class="transcript-row"><time>00:49</time><p>怎么提它都是发灰的</p></div>
+<div class="transcript-row"><time>00:51</time><p>这个时候我们要先解决一个问题</p></div>
+<div class="transcript-row"><time>00:53</time><p>这个画面的地面虽然偏暗</p></div>
+<div class="transcript-row"><time>00:55</time><p>我们看到波线图</p></div>
+<div class="transcript-row"><time>00:56</time><p>它已经在10%左右</p></div>
+<div class="transcript-row"><time>00:57</time><p>但是它是发灰的</p></div>
+<div class="transcript-row"><time>00:59</time><p>因为这个地面的真实情况</p></div>
+<div class="transcript-row"><time>01:00</time><p>要远暗于我们这个画面的表现情况</p></div>
+<div class="transcript-row"><time>01:03</time><p>所以我们可以用曲线</p></div>
+<div class="transcript-row"><time>01:05</time><p>先在2号节点</p></div>
+<div class="transcript-row"><time>01:06</time><p>给它的暗部往下走一点点</p></div>
+<div class="transcript-row"><time>01:08</time><p>给它解决掉发灰的问题</p></div>
+<div class="transcript-row"><time>01:10</time><p>然后再给它加一点点饱和度</p></div>
+<div class="transcript-row"><time>01:12</time><p>其实也就是在还原灰片的一个过程</p></div>
+<div class="transcript-row"><time>01:14</time><p>只不过它这个是D-Log M</p></div>
+<div class="transcript-row"><time>01:16</time><p>它不是那么灰</p></div>
+<div class="transcript-row"><time>01:17</time><p>它的宽容度也没有那么大</p></div>
+<div class="transcript-row"><time>01:18</time><p>解决好发灰的问题了</p></div>
+<div class="transcript-row"><time>01:19</time><p>我们就再来看波星图</p></div>
+<div class="transcript-row"><time>01:21</time><p>大光比的逆光夕阳素材</p></div>
+<div class="transcript-row"><time>01:23</time><p>太阳又在镜头内</p></div>
+<div class="transcript-row"><time>01:24</time><p>所以除了太阳以外</p></div>
+<div class="transcript-row"><time>01:26</time><p>其他的物体它就是很黑的</p></div>
+<div class="transcript-row"><time>01:28</time><p>这是自然现象</p></div>
+<div class="transcript-row"><time>01:29</time><p>但是我们仔细看画面</p></div>
+<div class="transcript-row"><time>01:30</time><p>地面其实是有大面积被照亮的</p></div>
+<div class="transcript-row"><time>01:33</time><p>这些地方都是有被照亮的</p></div>
+<div class="transcript-row"><time>01:35</time><p>所以我们真正要调整的是</p></div>
+<div class="transcript-row"><time>01:37</time><p>地面这一处的受光面</p></div>
+<div class="transcript-row"><time>01:39</time><p>从波星图上来看</p></div>
+<div class="transcript-row"><time>01:40</time><p>差不多是中间这个区域</p></div>
+<div class="transcript-row"><time>01:42</time><p>稍微高一点点</p></div>
+<div class="transcript-row"><time>01:43</time><p>在这一块位置</p></div>
+<div class="transcript-row"><time>01:44</time><p>10%到30%之间差不多</p></div>
+<div class="transcript-row"><time>01:47</time><p>所以我们要保证的是</p></div>
+<div class="transcript-row"><time>01:49</time><p>这一块区域的内容往上走</p></div>
+<div class="transcript-row"><time>01:50</time><p>让它亮一点</p></div>
+<div class="transcript-row"><time>01:51</time><p>但同时我们又不能牺牲掉暗暗部</p></div>
+<div class="transcript-row"><time>01:54</time><p>否则它会发灰</p></div>
+<div class="transcript-row"><time>01:55</time><p>因此我们就得到了一个答案</p></div>
+<div class="transcript-row"><time>01:57</time><p>我们要局部调整</p></div>
+<div class="transcript-row"><time>01:58</time><p>怎么来</p></div>
+<div class="transcript-row"><time>01:59</time><p>我们可以先给这一块的位置</p></div>
+<div class="transcript-row"><time>02:01</time><p>画一个遮罩</p></div>
+<div class="transcript-row"><time>02:02</time><p>然后假设这一块位置</p></div>
+<div class="transcript-row"><time>02:04</time><p>它在波星图上</p></div>
+<div class="transcript-row"><time>02:05</time><p>我们刚刚不是看到吗</p></div>
+<div class="transcript-row"><time>02:06</time><p>是在10%到30%之间</p></div>
+<div class="transcript-row"><time>02:07</time><p>我们把它看作一个整体</p></div>
+<div class="transcript-row"><time>02:09</time><p>我们的目的是让这一个区域</p></div>
+<div class="transcript-row"><time>02:11</time><p>它的上半部分往上走</p></div>
+<div class="transcript-row"><time>02:13</time><p>下半部分往下走</p></div>
+<div class="transcript-row"><time>02:15</time><p>或者保持不变</p></div>
+<div class="transcript-row"><time>02:16</time><p>这个是不是就是类似于</p></div>
+<div class="transcript-row"><time>02:18</time><p>增加对比度的行为</p></div>
+<div class="transcript-row"><time>02:19</time><p>让亮的更亮暗的更暗</p></div>
+<div class="transcript-row"><time>02:20</time><p>我们先用HDR色轮来操作一下</p></div>
+<div class="transcript-row"><time>02:21</time><p>打开HDR色轮</p></div>
+<div class="transcript-row"><time>02:22</time><p>我们在提高Shadow色轮的时候</p></div>
+<div class="transcript-row"><time>02:24</time><p>它的上半部分是不是往上走了</p></div>
+<div class="transcript-row"><time>02:27</time><p>对吧 往上走</p></div>
+<div class="transcript-row"><time>02:28</time><p>但是光体亮还不行</p></div>
+<div class="transcript-row"><time>02:29</time><p>会出现刚刚说的发灰的问题</p></div>
+<div class="transcript-row"><time>02:31</time><p>我们还得压暗</p></div>
+<div class="transcript-row"><time>02:32</time><p>所以我们把更暗的Dark色轮给它往下压</p></div>
+<div class="transcript-row"><time>02:35</time><p>此时我们看到</p></div>
+<div class="transcript-row"><time>02:36</time><p>是不是只有受光面</p></div>
+<div class="transcript-row"><time>02:38</time><p>我们保护度再高一点点吧</p></div>
+<div class="transcript-row"><time>02:40</time><p>是不是只有受光面在提亮了</p></div>
+<div class="transcript-row"><time>02:42</time><p>这就是在局部强化了对比度</p></div>
+<div class="transcript-row"><time>02:44</time><p>它开始亮了</p></div>
+<div class="transcript-row"><time>02:45</time><p>但它不好看</p></div>
+<div class="transcript-row"><time>02:46</time><p>它太灰了</p></div>
+<div class="transcript-row"><time>02:47</time><p>所以我们还得再给它增加对比度</p></div>
+<div class="transcript-row"><time>02:49</time><p>来解决它发灰的问题</p></div>
+<div class="transcript-row"><time>02:50</time><p>这个时候你会不会有一个疑问</p></div>
+<div class="transcript-row"><time>02:52</time><p>为什么我们不直接用对比度来调整</p></div>
+<div class="transcript-row"><time>02:54</time><p>没错 当然可以的</p></div>
+<div class="transcript-row"><time>02:55</time><p>我们把5号节点给它重置了</p></div>
+<div class="transcript-row"><time>02:57</time><p>然后给画面增加一点对比度</p></div>
+<div class="transcript-row"><time>02:59</time><p>然后配合轴心</p></div>
+<div class="transcript-row"><time>03:01</time><p>我们把轴心往左边移</p></div>
+<div class="transcript-row"><time>03:03</time><p>这样就能够让它只针对</p></div>
+<div class="transcript-row"><time>03:05</time><p>下面的受光面给它提亮了</p></div>
+<div class="transcript-row"><time>03:08</time><p>看到没有</p></div>
+<div class="transcript-row"><time>03:09</time><p>这样的效果其实也是非常非常好的</p></div>
+<div class="transcript-row"><time>03:11</time><p>轴心的作用就是去界定</p></div>
+<div class="transcript-row"><time>03:13</time><p>增加对比度之后</p></div>
+<div class="transcript-row"><time>03:14</time><p>哪些面是亮面</p></div>
+<div class="transcript-row"><time>03:15</time><p>哪些面是暗面</p></div>
+<div class="transcript-row"><time>03:16</time><p>具体的你可以点我主页</p></div>
+<div class="transcript-row"><time>03:18</time><p>去看看轴心那期视频</p></div>
+<div class="transcript-row"><time>03:19</time><p>这样一条地面就亮起来了</p></div>
+<div class="transcript-row"><time>03:21</time><p>然后有一个核心的观点</p></div>
+<div class="transcript-row"><time>03:22</time><p>我要讲在前面</p></div>
+<div class="transcript-row"><time>03:23</time><p>过曝的天空</p></div>
+<div class="transcript-row"><time>03:24</time><p>我们要不要花精力把它拉回来</p></div>
+<div class="transcript-row"><time>03:26</time><p>我的结论是不用拉</p></div>
+<div class="transcript-row"><time>03:28</time><p>因为你拉不回来</p></div>
+<div class="transcript-row"><time>03:29</time><p>在原片我们看到</p></div>
+<div class="transcript-row"><time>03:30</time><p>太阳就已经是完全失去了信息</p></div>
+<div class="transcript-row"><time>03:32</time><p>既然没有信息没有细节</p></div>
+<div class="transcript-row"><time>03:34</time><p>那就让它成为可以被牺牲的区域</p></div>
+<div class="transcript-row"><time>03:37</time><p>我们让画面真的变亮</p></div>
+<div class="transcript-row"><time>03:38</time><p>导致太阳变得更亮</p></div>
+<div class="transcript-row"><time>03:39</time><p>这件事情有没有问题</p></div>
+<div class="transcript-row"><time>03:40</time><p>其实没有很大的问题</p></div>
+<div class="transcript-row"><time>03:42</time><p>当然你如果不希望太阳这么亮</p></div>
+<div class="transcript-row"><time>03:43</time><p>你可以画折罩</p></div>
+<div class="transcript-row"><time>03:44</time><p>我们把这个限制</p></div>
+<div class="transcript-row"><time>03:45</time><p>在中间这个区域把柔化开大</p></div>
+<div class="transcript-row"><time>03:47</time><p>这样的行为当然可以</p></div>
+<div class="transcript-row"><time>03:49</time><p>但是我觉得没有特别大的必要</p></div>
+<div class="transcript-row"><time>03:51</time><p>太阳亮一点问题也不是很大</p></div>
+<div class="transcript-row"><time>03:53</time><p>我就把这个制造给它删了</p></div>
+<div class="transcript-row"><time>03:54</time><p>而且又因为我们提亮地面的方式</p></div>
+<div class="transcript-row"><time>03:56</time><p>是提亮本就亮一点的受光面</p></div>
+<div class="transcript-row"><time>03:58</time><p>同时我们还压暗了暗一点的地面</p></div>
+<div class="transcript-row"><time>04:01</time><p>所以我们这样的提亮</p></div>
+<div class="transcript-row"><time>04:02</time><p>它不会让画面发灰</p></div>
+<div class="transcript-row"><time>04:03</time><p>同样的如果说你想让画面整体再亮一点</p></div>
+<div class="transcript-row"><time>04:06</time><p>指的是它的暗部</p></div>
+<div class="transcript-row"><time>04:07</time><p>那么此时你就可以在后面更一个节点</p></div>
+<div class="transcript-row"><time>04:10</time><p>稍微给它提高一点点阴影滑块</p></div>
+<div class="transcript-row"><time>04:12</time><p>这样的提亮它就不会发灰了</p></div>
+<div class="transcript-row"><time>04:14</time><p>为什么呀</p></div>
+<div class="transcript-row"><time>04:15</time><p>因为我们前面在5号节点</p></div>
+<div class="transcript-row"><time>04:16</time><p>把影调给它做到位了</p></div>
+<div class="transcript-row"><time>04:17</time><p>让亮的足够亮 暗的足够暗</p></div>
+<div class="transcript-row"><time>04:19</time><p>这样在正确的影调基础上</p></div>
+<div class="transcript-row"><time>04:21</time><p>稍微给它提亮点阴影滑块</p></div>
+<div class="transcript-row"><time>04:23</time><p>画面就不会有特别大的牺牲</p></div>
+<div class="transcript-row"><time>04:25</time><p>不用提亮这么多</p></div>
+<div class="transcript-row"><time>04:26</time><p>稍微提亮一点点</p></div>
+<div class="transcript-row"><time>04:27</time><p>然后你说颜色要不要调</p></div>
+<div class="transcript-row"><time>04:29</time><p>我是觉得完全随你</p></div>
+<div class="transcript-row"><time>04:30</time><p>你如果想暖一点的话</p></div>
+<div class="transcript-row"><time>04:31</time><p>你可以来个节点</p></div>
+<div class="transcript-row"><time>04:32</time><p>稍微给它用色温往暖的方向走一点点</p></div>
+<div class="transcript-row"><time>04:36</time><p>对冲掉远处的这里有一点点的蓝紫色</p></div>
+<div class="transcript-row"><time>04:39</time><p>让你的画面颜色更干净一点</p></div>
+<div class="transcript-row"><time>04:40</time><p>少一点</p></div>
+<div class="transcript-row"><time>04:41</time><p>当然我觉得这个可做可不做了</p></div>
+<div class="transcript-row"><time>04:42</time><p>如果你觉得现在就挺好</p></div>
+<div class="transcript-row"><time>04:43</time><p>那就不用动</p></div>
+<div class="transcript-row"><time>04:44</time><p>最后我们依旧可以来一个柔和对比度</p></div>
+<div class="transcript-row"><time>04:47</time><p>为什么要做这个</p></div>
+<div class="transcript-row"><time>04:48</time><p>就是为了天空不要太刺眼</p></div>
+<div class="transcript-row"><time>04:50</time><p>它可以亮</p></div>
+<div class="transcript-row"><time>04:51</time><p>但它不要太刺眼 太抢戏了</p></div>
+<div class="transcript-row"><time>04:53</time><p>如果我们调到这一步了</p></div>
+<div class="transcript-row"><time>04:54</time><p>你还是觉得天空太亮了</p></div>
+<div class="transcript-row"><time>04:55</time><p>此时你会发现</p></div>
+<div class="transcript-row"><time>04:56</time><p>如果我们用一按高光的方式</p></div>
+<div class="transcript-row"><time>04:58</time><p>它容易压断层 对吧</p></div>
+<div class="transcript-row"><time>05:00</time><p>这也是经常会遇到的一个情况</p></div>
+<div class="transcript-row"><time>05:01</time><p>那么这个时候</p></div>
+<div class="transcript-row"><time>05:02</time><p>柔和对比度就会相对安全了</p></div>
+<div class="transcript-row"><time>05:04</time><p>我们可以打开曲线右上角的</p></div>
+<div class="transcript-row"><time>05:05</time><p>可编辑的烟条线这个选项</p></div>
+<div class="transcript-row"><time>05:07</time><p>然后把高光这一端往下降</p></div>
+<div class="transcript-row"><time>05:09</time><p>然后再把高光延伸出来的波感</p></div>
+<div class="transcript-row"><time>05:11</time><p>给它往上提</p></div>
+<div class="transcript-row"><time>05:13</time><p>让它的高光恢复到</p></div>
+<div class="transcript-row"><time>05:14</time><p>原本该有的一个位置</p></div>
+<div class="transcript-row"><time>05:15</time><p>然后把暗部这一端往上提</p></div>
+<div class="transcript-row"><time>05:17</time><p>再把暗部这一端延伸出来的波感</p></div>
+<div class="transcript-row"><time>05:19</time><p>给它往下降</p></div>
+<div class="transcript-row"><time>05:20</time><p>让整个画面的反差</p></div>
+<div class="transcript-row"><time>05:21</time><p>不要有太大的变化</p></div>
+<div class="transcript-row"><time>05:23</time><p>你看下面基本上没有太大的变化</p></div>
+<div class="transcript-row"><time>05:25</time><p>但是我们放大看画面</p></div>
+<div class="transcript-row"><time>05:28</time><p>这是调整前的</p></div>
+<div class="transcript-row"><time>05:29</time><p>这一侧非常非常亮</p></div>
+<div class="transcript-row"><time>05:30</time><p>这是调整后的</p></div>
+<div class="transcript-row"><time>05:31</time><p>它变灰了</p></div>
+<div class="transcript-row"><time>05:32</time><p>就是这么简单</p></div>
+<div class="transcript-row"><time>05:33</time><p>这也是我们想要的一个核心目的</p></div>
+<div class="transcript-row"><time>05:35</time><p>而且你用柔和对比度</p></div>
+<div class="transcript-row"><time>05:36</time><p>它做起来会非常快</p></div>
+<div class="transcript-row"><time>05:37</time><p>是不是还可以</p></div>
+<div class="transcript-row"><time>05:38</time><p>效果还挺好的</p></div>
+<div class="transcript-row"><time>05:39</time><p>而且我们这样提亮</p></div>
+<div class="transcript-row"><time>05:40</time><p>因为我们不只是单纯的提亮</p></div>
+<div class="transcript-row"><time>05:42</time><p>我们还压暗了非常多面积的内容</p></div>
+<div class="transcript-row"><time>05:44</time><p>你看原本</p></div>
+<div class="transcript-row"><time>05:45</time><p>原本的这一侧它的亮度</p></div>
+<div class="transcript-row"><time>05:47</time><p>它是在15左右</p></div>
+<div class="transcript-row"><time>05:48</time><p>我们看播信图</p></div>
+<div class="transcript-row"><time>05:49</time><p>但是我们全部调整完了之后</p></div>
+<div class="transcript-row"><time>05:51</time><p>它变到了10以下了</p></div>
+<div class="transcript-row"><time>05:53</time><p>所以本质上我们不只是在提亮</p></div>
+<div class="transcript-row"><time>05:55</time><p>我们还在压暗</p></div>
+<div class="transcript-row"><time>05:56</time><p>所以它会出现噪点的区域就变少了</p></div>
+<div class="transcript-row"><time>05:58</time><p>那么它的噪点也不会特别特别明显</p></div>
+<div class="transcript-row"><time>06:01</time><p>当然你想让它稍微降点噪</p></div>
+<div class="transcript-row"><time>06:02</time><p>问题也不是很大</p></div>
+<div class="transcript-row"><time>06:04</time><p>稍微来一点点就行了</p></div>
+<div class="transcript-row"><time>06:06</time><p>简单一做</p></div>
+<div class="transcript-row"><time>06:07</time><p>这样一做就OK了</p></div>
+<div class="transcript-row"><time>06:08</time><p>效果还挺好的</p></div>
+<div class="transcript-row"><time>06:09</time><p>我们简单回顾一下</p></div>
+<div class="transcript-row"><time>06:10</time><p>为什么大光比的画面提亮暗部会那么不自然</p></div>
+<div class="transcript-row"><time>06:13</time><p>一方面你的暗面</p></div>
+<div class="transcript-row"><time>06:14</time><p>有没有真实的一个受光照的条件</p></div>
+<div class="transcript-row"><time>06:17</time><p>如果没有的话</p></div>
+<div class="transcript-row"><time>06:18</time><p>你是提不亮的</p></div>
+<div class="transcript-row"><time>06:19</time><p>这是个大前提</p></div>
+<div class="transcript-row"><time>06:20</time><p>如果有的话</p></div>
+<div class="transcript-row"><time>06:21</time><p>那么你就要把暗面做好分区</p></div>
+<div class="transcript-row"><time>06:22</time><p>尽管暗面的曝光层次非常非常弱</p></div>
+<div class="transcript-row"><time>06:25</time><p>也就是它的亮的不够亮</p></div>
+<div class="transcript-row"><time>06:26</time><p>暗的不够暗</p></div>
+<div class="transcript-row"><time>06:27</time><p>但它还是有亮面和暗面</p></div>
+<div class="transcript-row"><time>06:29</time><p>所以我们要想尽一切办法</p></div>
+<div class="transcript-row"><time>06:31</time><p>把这一块小的区域它的明暗层次给它拉开</p></div>
+<div class="transcript-row"><time>06:34</time><p>就是这么简单的一个思路</p></div>
+<div class="transcript-row"><time>06:35</time><p>然后我们看到第二个素材</p></div>
+<div class="transcript-row"><time>06:37</time><p>这个素材问题就不是太大了</p></div>
+<div class="transcript-row"><time>06:38</time><p>它光影情况还是不错的</p></div>
+<div class="transcript-row"><time>06:40</time><p>曝光也还行</p></div>
+<div class="transcript-row"><time>06:41</time><p>但是为什么那位朋友的效果</p></div>
+<div class="transcript-row"><time>06:42</time><p>他会觉得有点发闷呢</p></div>
+<div class="transcript-row"><time>06:44</time><p>就是因为它的高光层次没有拉开</p></div>
+<div class="transcript-row"><time>06:46</time><p>亮的不够亮</p></div>
+<div class="transcript-row"><time>06:47</time><p>其实如果你敢把已经过曝的东西拉过曝</p></div>
+<div class="transcript-row"><time>06:50</time><p>你的问题就能解决80%</p></div>
+<div class="transcript-row"><time>06:52</time><p>这句话是对这位作者说的</p></div>
+<div class="transcript-row"><time>06:53</time><p>其实我也没做啥</p></div>
+<div class="transcript-row"><time>06:54</time><p>我们可以看一下</p></div>
+<div class="transcript-row"><time>06:55</time><p>我单单是还原</p></div>
+<div class="transcript-row"><time>06:56</time><p>你看我看</p></div>
+<div class="transcript-row"><time>06:57</time><p>你看我在二号节点</p></div>
+<div class="transcript-row"><time>06:59</time><p>我把高光拉的是非常非常高的</p></div>
+<div class="transcript-row"><time>07:01</time><p>我就是把左上角这里一块小小的天空</p></div>
+<div class="transcript-row"><time>07:04</time><p>让它拉过曝了</p></div>
+<div class="transcript-row"><time>07:05</time><p>因为它本来就已经过曝了</p></div>
+<div class="transcript-row"><time>07:06</time><p>没有什么细节的</p></div>
+<div class="transcript-row"><time>07:07</time><p>把它拉的再亮一点</p></div>
+<div class="transcript-row"><time>07:08</time><p>到这一步</p></div>
+<div class="transcript-row"><time>07:09</time><p>其实就已经比你原本调的那个效果要好了</p></div>
+<div class="transcript-row"><time>07:12</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:13</time><p>那剩下的也没有额外的一些特别奇怪的一个操作</p></div>
+<div class="transcript-row"><time>07:15</time><p>我在五号节点从左上</p></div>
+<div class="transcript-row"><time>07:16</time><p>也就是太阳方向</p></div>
+<div class="transcript-row"><time>07:17</time><p>往右下拉一个渐变遮罩</p></div>
+<div class="transcript-row"><time>07:18</time><p>把光的方向给它强化了一下</p></div>
+<div class="transcript-row"><time>07:20</time><p>因为原本亮的暗的这个变化不是很明显</p></div>
+<div class="transcript-row"><time>07:23</time><p>然后呢</p></div>
+<div class="transcript-row"><time>07:24</time><p>我再用HDR色轮</p></div>
+<div class="transcript-row"><time>07:25</time><p>把地面的受光面它拉开一下层次</p></div>
+<div class="transcript-row"><time>07:28</time><p>我们先看画面结果</p></div>
+<div class="transcript-row"><time>07:29</time><p>这调整后的结果</p></div>
+<div class="transcript-row"><time>07:30</time><p>这是原本的效果</p></div>
+<div class="transcript-row"><time>07:32</time><p>当然这个你觉得你想不想要看你吧</p></div>
+<div class="transcript-row"><time>07:34</time><p>我觉得如果你想要这样的一个效果</p></div>
+<div class="transcript-row"><time>07:36</time><p>让它受光面更明显的话</p></div>
+<div class="transcript-row"><time>07:38</time><p>它可以让你在把画面缩小了之后</p></div>
+<div class="transcript-row"><time>07:40</time><p>看的会更有层次</p></div>
+<div class="transcript-row"><time>07:42</time><p>怎么做呢</p></div>
+<div class="transcript-row"><time>07:43</time><p>其实很简单</p></div>
+<div class="transcript-row"><time>07:44</time><p>在HDR色轮中</p></div>
+<div class="transcript-row"><time>07:45</time><p>我提高了highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>07:46</time><p>小幅提高了light色轮的曝光</p></div>
+<div class="transcript-row"><time>07:48</time><p>轻微的降低了shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>07:50</time><p>就这么简单</p></div>
+<div class="transcript-row"><time>07:51</time><p>最后这个颜色</p></div>
+<div class="transcript-row"><time>07:52</time><p>看你需求吧</p></div>
+<div class="transcript-row"><time>07:53</time><p>你想不想调</p></div>
+<div class="transcript-row"><time>07:54</time><p>我个人是觉得远处这些蓝色的比重太大了</p></div>
+<div class="transcript-row"><time>07:56</time><p>所以我在这里</p></div>
+<div class="transcript-row"><time>07:57</time><p>我用色温让它往暖的方向调</p></div>
+<div class="transcript-row"><time>07:59</time><p>对冲掉这个远处的蓝</p></div>
+<div class="transcript-row"><time>08:00</time><p>然后把这个太阳这一侧</p></div>
+<div class="transcript-row"><time>08:02</time><p>这一侧原本有点偏红偏紫的这个颜色</p></div>
+<div class="transcript-row"><time>08:05</time><p>让它往黄的方向走一点</p></div>
+<div class="transcript-row"><time>08:06</time><p>让你的颜色更加干净点</p></div>
+<div class="transcript-row"><time>08:07</time><p>少一点</p></div>
+<div class="transcript-row"><time>08:08</time><p>简单过一下</p></div>
+<div class="transcript-row"><time>08:09</time><p>因为这一期视频</p></div>
+<div class="transcript-row"><time>08:10</time><p>我感觉时间到这里也很长了</p></div>
+<div class="transcript-row"><time>08:11</time><p>还有一个片段</p></div>
+<div class="transcript-row"><time>08:12</time><p>那这个片段呢</p></div>
+<div class="transcript-row"><time>08:13</time><p>我就不多讲了</p></div>
+<div class="transcript-row"><time>08:14</time><p>大家可以素材领取过去</p></div>
+<div class="transcript-row"><time>08:15</time><p>就是自己试一试</p></div>
+<div class="transcript-row"><time>08:16</time><p>我也询问过作者</p></div>
+<div class="transcript-row"><time>08:17</time><p>他也同意分享</p></div>
+<div class="transcript-row"><time>08:18</time><p>大家如果有遇到类似的这个情况</p></div>
+<div class="transcript-row"><time>08:19</time><p>你们可以用自己的素材去练</p></div>
+<div class="transcript-row"><time>08:21</time><p>如果没有的话</p></div>
+<div class="transcript-row"><time>08:22</time><p>也可以来我这里免费领取这三个素材</p></div>
+<div class="transcript-row"><time>08:23</time><p>去感受一下这个思路</p></div>
+<div class="transcript-row"><time>08:25</time><p>大家如果还有别的问题</p></div>
+<div class="transcript-row"><time>08:26</time><p>也可以来找我</p></div>
+<div class="transcript-row"><time>08:27</time><p>如果我觉得你这个问题具有普遍性的话</p></div>
+<div class="transcript-row"><time>08:29</time><p>我就会做一期视频</p></div>
+<div class="transcript-row"><time>08:30</time><p>那讲到这里</p></div>
+<div class="transcript-row"><time>08:31</time><p>如果你觉得你有帮助的话</p></div>
+<div class="transcript-row"><time>08:32</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>08:33</time><p>好了这期就到这里</p></div>
+<div class="transcript-row"><time>08:34</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

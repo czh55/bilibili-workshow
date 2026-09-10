@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="轴心决定对比度把谁当亮面、谁当暗面：亮于轴心更亮、暗于轴心更暗。轴心左移→更多面积当亮面（加对比同时提亮）；右移→更多当暗面（加对比同时压暗）。不要迷信广色域默认 0.436；按目的与素材曝光选轴心，再配合遮罩内外节点强化主次。">
+<title>达芬奇的轴心到底是干嘛的？学会调色提升｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>达芬奇的轴心到底是干嘛的？学会调色提升</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">7分23秒</span><span class="meta-tag tag-topic">达芬奇 轴心 对比度 亮面暗面 分区 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/9xREfLXhAKr" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">对比度的分界点就是轴心</a><a href="#ch2">脸部应用；默认 0.436 不是圣经</a><a href="#ch3">实战：人物亮、背景暗的轴心组合</a><a href="#ch4">颜色微调与柔和对比度</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>轴心决定对比度把谁当亮面、谁当暗面：亮于轴心更亮、暗于轴心更暗。轴心左移→更多面积当亮面（加对比同时提亮）；右移→更多当暗面（加对比同时压暗）。不要迷信广色域默认 0.436；按目的与素材曝光选轴心，再配合遮罩内外节点强化主次。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:33]</span><div><strong>轴心定义</strong><p>对比度分界点；左移提亮面、右移压暗面。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:33→03:23]</span><div><strong>不要死记数字</strong><p>0.436 保中灰是理，过亮素材应右移护高光。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:23→05:58]</span><div><strong>实战分区</strong><p>人物亮背景暗：加对比+轴心左；遮罩内外再强化。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:58→07:23]</span><div><strong>颜色收束</strong><p>天空密度/饱和；柔和对比度可选。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>轴心不是固定参数表，而是对比度的亮暗分界旋钮：左移保脸提亮、右移护高光压背景。先定目的再移轴心，再谈默认数值。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:33</span>对比度的分界点就是轴心</h2><p>提高对比度＝亮更亮暗更暗，波形两端张开，近似曲线画 S。分界点即当前轴心：亮于轴心为亮面，暗于为暗面。加对比前提下轴心左移（减小数值）→更多面积当亮面，画面加对比同时提亮；右移→更多当暗面，加对比同时压暗。</p><figure><img src="assets/davinci-axis-what-for/shot-01.jpg" alt="加对比度后波形分界点＝当前轴心" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:40] 加对比度后波形分界点＝当前轴心</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ef8ba5397f4e.mp3" type="button" aria-label="Play English audio">🔊</button><span>After adding contrast, the scope split equals the current pivot.</span></div>
+<audio class="cap-audio" src="audio/ef8ba5397f4e.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:33-03:23</span>脸部应用；默认 0.436 不是圣经</h2><p>人像加对比后面部大面积变暗：轴心略左，让更多脸被当亮面。广色域默认约 0.436 时常说可保中灰加对比——前提是你认定的中灰曝光正确。素材已偏亮时默认轴心轻轻加对比就过曝；改成更小轴心更易爆。此时要加对比应右移轴心（甚至 0.7–0.8）护高光。轴心跟目的走，不跟死记数字。</p><figure><img src="assets/davinci-axis-what-for/shot-02.jpg" alt="轴心左移：脸部更多面积被视作亮面" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:50] 轴心左移：脸部更多面积被视作亮面</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7fd0d598001e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Pivot left: more of the face reads as the bright side.</span></div>
+<audio class="cap-audio" src="audio/7fd0d598001e.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:23-05:58</span>实战：人物亮、背景暗的轴心组合</h2><p>烟花人像：还原拉高光/暗部并加饱和，校正白平衡略偏蓝。发灰则加对比——目标人物更亮、背景更暗。默认加对比后背景暗了但人物（除烟花）也暗：轴心左移让受光面当亮面。人物仍融入背景可再遮罩加对比+轴心提受光；Option+O 外部节点压四周，对比度+轴心右移压暗。开关可见人物立体亮、背景立体暗。</p><figure><img src="assets/davinci-axis-what-for/shot-03.jpg" alt="实战加对比+轴心左：人物亮、背景暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:30] 实战加对比+轴心左：人物亮、背景暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ad9796bdb8d8.mp3" type="button" aria-label="Play English audio">🔊</button><span>In practice: contrast + pivot left—subject bright, background dark.</span></div>
+<audio class="cap-audio" src="audio/ad9796bdb8d8.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-axis-what-for/shot-04.jpg" alt="遮罩内提 + 外部节点轴心右移压四周" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:30] 遮罩内提 + 外部节点轴心右移压四周</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2fca589e33eb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Lift inside the mask; outside node pivot-right darkens edges.</span></div>
+<audio class="cap-audio" src="audio/2fca589e33eb.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:58-07:23</span>颜色微调与柔和对比度</h2><p>天空可略往青、皮肤微橙并降一点饱和；天空过艳则提青蓝密度并降饱和防抢戏。柔和对比度可做可不做，减弱数码硬感。达芬奇没有固定不变的「数」，参数跟目的与素材走。</p><figure><img src="assets/davinci-axis-what-for/shot-05.jpg" alt="与还原对比：主次分层与氛围出来" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:50] 与还原对比：主次分层与氛围出来</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/92ac6fa7664f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Vs restore: hierarchy and mood come through.</span></div>
+<audio class="cap-audio" src="audio/92ac6fa7664f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（36段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>阿芬奇的轴心是干嘛的?我们今天不讲太抽象的原理,我们直接讲应用。当我们对一个画面进行对比度的提高时,我们看到画面就会出现亮的更亮暗的更暗,而波形图也同样呈现出右半端往上,左半端往下的一个趋势,它就是一个S曲线对吧?就像是我们在用曲线工具给它画了一个S曲线是一样的。</p></div>
+<div class="transcript-row"><time>00:28</time><p>如果说我们用曲线做了一个S曲线,那么它的效果跟增加对比度本质上是一模一样的。</p></div>
+<div class="transcript-row"><time>00:34</time><p>而我们增加对比度之后,此时我们看到,不论是画面还是波形图都有一个分界点,随着对比度的提高,这个分界点越来越明确对吧?</p></div>
+<div class="transcript-row"><time>00:43</time><p>而这个分界点就是当前轴心所在的位置,也就是说,轴心的位置决定了达芬奇将哪一部分视作亮面,哪一部分视作暗面。</p></div>
+<div class="transcript-row"><time>00:54</time><p>亮于轴心的部分就是亮面,也就是个黑白界面图的右半部分,而暗于轴心的部分就是暗面。</p></div>
+<div class="transcript-row"><time>01:01</time><p>我们能够通过改变轴心的竖直,来改变亮面与暗面的关系。</p></div>
+<div class="transcript-row"><time>01:05</time><p>当我们在增加对比度的前提下,向左也就是减少轴心的竖直的时候,画面中有更多面积被视作亮面,那对于整体画面来讲,更多的面积被体量了,也就是画面在增加对比的同时体量了。</p></div>
+<div class="transcript-row"><time>01:21</time><p>而如果说我们向右也就是增加轴心竖直的时候,画面中会有更多的面积被视作暗面,那对于整体画面来讲,有更多面积的内容被压暗,那么画面就是在增加对比的同时压暗了。</p></div>
+<div class="transcript-row"><time>01:33</time><p>此词,轴心,你就理解了,就这么简单,那要怎么去应用呢?我们可以看到这个画面,假如说我们要增加它的对比度,我觉得它向右可能有点太灰了,对吧,增加点对比度。</p></div>
+<div class="transcript-row"><time>01:44</time><p>增加对比度了之后,它的脸部有太多面积变暗了,所以我们就可以向左移动一点轴心,让脸部有更多面积被视作亮面,这样就能够既保证增加对比度,也能够保证脸部不会太暗。</p></div>
+<div class="transcript-row"><time>01:59</time><p>不知道有多少人看过这张表,在不同的色彩空间下,轴心的默认数值是不同的,比如说在达芬基广色域是0.436,也就是说在0.436的轴心数值下增加对比度,能够保证中晖部分的曝光不变的前提下增加对比度。</p></div>
+<div class="transcript-row"><time>02:12</time><p>这同样也是很多些博主他们会说,要在还原阶段用0.436的轴心去增加对比度,理是这个理,但这会有一个问题,怎么保证你认定的中晖区域曝光是正确的。</p></div>
+<div class="transcript-row"><time>02:23</time><p>如果说你前期拍的稍微有点过暴呢,比如说是这个画面,它是S6三排的,所以我们可以用输入在空间还原来给它简单做一下调整,你会看到这个画面目前在波形图上来看它还好,只是稍微有点亮了对不对,如果说我们想让它再增加一点对比度,轻轻一动,你会发现左上角这个蓝的,我们把它连转过来啊,轻轻一动,我才改了一点点的数值,它就过暴了,而我们此时轴心的数值是默认的0.435,如果说我们把它改成0.336,我们可以把它改成0.336,我们可以把它改成0.336,我们可以把它改成0.336,我们可以把它改成</p></div>
+<div class="transcript-row"><time>02:53</time><p>0.336会怎么样,画面会有更多的部分被视作亮面对不对,那我们增加对比度的时候,这张脸更容易过暴了,那你就说这是肯定不合适的对吧,那你说对这个画面我就不加对比度了呗,不是这样说的啊,就当你这个画面的曝光不能够依照正确的或者是标准的一个曝光来进行的话,你的对比度调整,它就不能依靠一个默认的轴心数值,那对于这个画面,如果说我就要让它增加对比度,那我轴心应该是往右移,而不是向左变成0.436,甚至要跑到0.70.8的样子,</p></div>
+<div class="transcript-row"><time>03:23</time><p>它才能够在增加对比度的同时保证这些高光不会过暴对不对,也就是说轴心从来不能依靠某一个具体数字,而是根据你的最终目的来操作的,我们再来一个更直接的应用场景啊,比如说这个画面我们给它先简单做一下还原,高光这一端给它往上拉一点,暗部这一端往下降一点,到这差不多,等等再给它加一点点饱和度,画面白平衡不正确对吧,我们可以先给它校正一下,</p></div>
+<div class="transcript-row"><time>03:53</time><p>再回到2号节点,用色温工具给它往蓝的方向走一点点,我就到这里就差不多,那整体呢,目前来看,严重发挥,对吧,那既然发挥呢,我们自然要提高对比度,这个画面它其实已经做好了分区的,也就是人物是亮面,背景是暗面,如果说我们在增加对比度的时候,能让人物更亮,背景更暗,那画面的立体感立马就出来了,层次也能增加,我们可以先增加一下对比度试试看啊,给它加到这个程度,稍微多加一点,我们看到背景是变暗了对吧,但是人物除了手中的烟花,</p></div>
+<div class="transcript-row"><time>04:23</time><p>以外七部分也变暗了,这肯定不是我们想的结果,那此时呢,我们只需要向左移动轴心,让它有更多的面积是成为亮面,那这样的一个结果就能够让人物的受光面被试做亮面,从而在增加对比度的同时让人物这个区域变亮,对吧,而背景呢依旧能够变暗,这才是轴心在一起交涉与还原阶段真正的涌出,而不是利用一个默认数值进行操作,那对于这个画面,我们还有什么行为可以去做呢,我认为啊,人物我觉得还是有一点</p></div>
+<div class="transcript-row"><time>04:53</time><p>发挥,所以呢,我们可以给他这个区域再画一个遮罩,</p></div>
+<div class="transcript-row"><time>05:01</time><p>不好遮罩之后,我们再给他稍微加一点对比度,</p></div>
+<div class="transcript-row"><time>05:06</time><p>配合轴心,</p></div>
+<div class="transcript-row"><time>05:08</time><p>来让想亮起来的部分,让他变亮啊,也就是人物的受光面,他一定是要远亮于背景的,不然的话,你人物太多,融入背景也是不好看的啊,</p></div>
+<div class="transcript-row"><time>05:17</time><p>我就这样差不多,然后呢,再按住 alt 或者是 option 加 o 来建立一个外部节点,</p></div>
+<div class="transcript-row"><time>05:23</time><p>外部节点就是与前面这个节点的遮罩完全相反的一个节点啊,我们在外部节点中,压按其余部分,也就是压按四周,我们同样可以利用轴心和对比度的组合来进行操作,</p></div>
+<div class="transcript-row"><time>05:36</time><p>增加点对比度,然后将轴心往右移动,让画面中有更多的面积被视作暗面,让他能够在增加对比度的同时让他压按,</p></div>
+<div class="transcript-row"><time>05:45</time><p>好,我们此时来看这两个节点的变化,调整前,调整后,是不是人物变立体了,同时他变亮了,背景也变立体了,同时他变暗了,对吧,那这样的一个分层,或者说强化主次的一个效果就非常非常好,</p></div>
+<div class="transcript-row"><time>05:58</time><p>然后颜色方面,我觉得可以考虑把天空弄的稍微轻一点点啊,也就是把蓝色往青色方向走一点,</p></div>
+<div class="transcript-row"><time>06:06</time><p>皮肤呢也可以稍微红一点点,让他往橙色方向走一点点啊,不要太多,一点点就行了,然后把饱和度稍微降一点下来,</p></div>
+<div class="transcript-row"><time>06:14</time><p>我觉得这样的一个结果就不错啊,不用怎么调,这本身场景就已经比较不错了,这个效果大方向其实不错,但是我觉得天空的颜色有点太艳丽了,所以我在后面跟了一个节点,</p></div>
+<div class="transcript-row"><time>06:23</time><p>稍微增加了一点青色和蓝色的密度,同时降低了一点他们的饱和度啊,这个天不要太抢心了,</p></div>
+<div class="transcript-row"><time>06:30</time><p>好,我觉得这样效果其实不错的,最后呢再来一个柔和对比度,简单的一操作就好了,柔和对比度同样的啊,我们讲过无数次了,</p></div>
+<div class="transcript-row"><time>06:38</time><p>根据你的观感,可做可不做,这一步其实不是必备的,但是如果说你不想让你的画面有太强的一个数码感,</p></div>
+<div class="transcript-row"><time>06:45</time><p>能够让画面这个氛围感更强一点点的话,可以考虑来个柔和对比度,操作也非常简单,</p></div>
+<div class="transcript-row"><time>06:50</time><p>那么这个画面其实这样就调好了,不需要那么复杂的一个操作,我们可以以还原后的画面来做一下对比,这是还原后的画面,这调好后的画面,对吧,整体的一个感觉就能出来了,</p></div>
+<div class="transcript-row"><time>07:00</time><p>这些素材大家可以看视频中的小字,领取过去之后自己操作下,如果按照我的思路能够调出一个满意的效果,</p></div>
+<div class="transcript-row"><time>07:06</time><p>那么你就能够熟练掌握对比度和轴心的使用了,要记住的一个点啊,就是达芬奇没有什么数,只是固定不变的,</p></div>
+<div class="transcript-row"><time>07:14</time><p>一定是根据目的和素材本身情况来找整的一个参数的,讲到这里,如果觉得你有帮助的话,还希望多多赞联,好了,这期就到这里,886。</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

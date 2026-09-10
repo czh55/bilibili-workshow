@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="老叉用影视飓风耶稣像外景演示快速仿色：冷暖反差强且跟明暗挂钩时，可先套 FilmLooks 2383 再还原；灰片先找白点/黑点，另节点加饱和再微调白平衡。重点是分区——中间加对比去雾、神奇遮罩把耶稣像反直觉地做暖做亮、天空渐变压暗并用 HDR 控局部；互补色用降色温一举两得。仿">
+<title>分区调色的重要性：达芬奇该如何快速仿色｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>分区调色的重要性：达芬奇该如何快速仿色</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">9分20秒</span><span class="meta-tag tag-topic">达芬奇 分区调色 仿色 2383 神奇遮罩 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/407sW4s81SA" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">立题：强冷暖仿色，先猜 2383</a><a href="#ch2">还原：白点暗部到位，饱和后再判白平衡</a><a href="#ch3">中间去雾 + 神奇遮罩暖亮耶稣像</a><a href="#ch4">天空渐变：压暗保光感，HDR 精控</a><a href="#ch5">互补色降色温；水面建筑再分区</a><a href="#ch6">复盘：为何必须分区，如何过度解读</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>老叉用影视飓风耶稣像外景演示快速仿色：冷暖反差强且跟明暗挂钩时，可先套 FilmLooks 2383 再还原；灰片先找白点/黑点，另节点加饱和再微调白平衡。重点是分区——中间加对比去雾、神奇遮罩把耶稣像反直觉地做暖做亮、天空渐变压暗并用 HDR 控局部；互补色用降色温一举两得。仿色训练重在过度解读主次与冷暖。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:52]</span><div><strong>2383 铺底</strong><p>冷暖强反差→多半 2383；LUT 库 FilmLooks 拖末节点，不转 Cineon 也能调。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:52→02:00]</span><div><strong>还原顺序</strong><p>找白点压暗部；另节点加饱和再回色温；灰片难先判白平衡。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:00→03:43]</span><div><strong>中间+雕像</strong><p>中间遮罩加对比去雾；神奇遮罩提亮加暖耶稣像与平台（反直觉）。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:43→05:09]</span><div><strong>天空分区</strong><p>渐变压暗：大幅降暗部、略抬中灰保光感；HDR Shadow/高光精控。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:09→07:17]</span><div><strong>互补与局部</strong><p>降色温同时加冷减暖；水面/建筑再加对比与饱和明确冷暖。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:17→09:20]</span><div><strong>为何分区</strong><p>全局加对比会爆天压死暗部；主体/氛围/环境分工，暖强化冷弱化。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>仿色不是像素对齐，而是猜出「后期一定做了什么」。强冷暖可先 2383；曝光对齐后必须区域性调——主体反直觉强化、天空分区压暗、互补色用色温整体搬迁。过度解读主次与冷暖，思路才自洽。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:52</span>立题：强冷暖仿色，先猜 2383</h2><p>朋友圈出中间区域为何清晰、颜色如何仿到参考。老叉用约九个节点做出接近结果。看到明确冷暖反差且与明暗强相关时，大概率是 2383 铺底。</p><p>重置后先建节点：调色面板左上角 LUT 库 → FilmLooks → 2383 拖到末节点。可先再均转成 Cineon，但往期结论是不转也能调出来；灰片套上后曝光颜色仍不对，需要还原。</p><figure><img src="assets/zone-grade-fast-match/shot-01.jpg" alt="参考图冷暖强反差：提示可先套 FilmLooks 2383 铺底" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:25] 参考图冷暖强反差：提示可先套 FilmLooks 2383 铺底</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c0e84101a304.mp3" type="button" aria-label="Play English audio">🔊</button><span>Reference’s strong warm/cool: FilmLooks 2383 can lay the base.</span></div>
+<audio class="cap-audio" src="audio/c0e84101a304.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:52-02:00</span>还原：白点暗部到位，饱和后再判白平衡</h2><p>撇开 4 号与降噪 1 号：2 号找高光白点、压暗部；3 号加一点饱和。发现偏冷再回 2 号略加色温。</p><p>单独开饱和节点是因为灰片做好黑白点仍难精准判白平衡，需先加饱和再调；也可能改该节点色彩空间到 HSV 做减法饱和（本期不展开）。此时冷暖开始有，但与参考曝光分区差很大——进入本期重点：分区调整。</p><figure><img src="assets/zone-grade-fast-match/shot-02.jpg" alt="灰片还原：找白点压暗部，另节点加饱和后再调色温" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] 灰片还原：找白点压暗部，另节点加饱和后再调色温</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/31d066c13959.mp3" type="button" aria-label="Play English audio">🔊</button><span>Log restore: find white, crush shadows; another node adds sat before temp.</span></div>
+<audio class="cap-audio" src="audio/31d066c13959.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:00-03:43</span>中间去雾 + 神奇遮罩暖亮耶稣像</h2><p>中间缺光感因雾气导致反差不够、偏灰。直觉加对比度：给中间（可带一点雕像）画遮罩，加对比并移轴心略提亮——灰感下去。</p><p>参考里耶稣像异常暖且亮：光线从前往后照，面向镜头理应暗冷，属反直觉强化。Alt/Option+P 并行，用 AI 神奇遮罩点选雕像与平台，Shift+H 看选区并跟踪；加色温、对比度，轴心左移提亮，感觉开始接近。</p><figure><img src="assets/zone-grade-fast-match/shot-03.jpg" alt="神奇遮罩选中耶稣像与平台，加暖提亮（反直觉强化）" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:10] 神奇遮罩选中耶稣像与平台，加暖提亮（反直觉强化）</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/93e79d4133f3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Magic Mask on statue/platform—warm and lift (counterintuitive punch).</span></div>
+<audio class="cap-audio" src="audio/93e79d4133f3.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:43-05:09</span>天空渐变：压暗保光感，HDR 精控</h2><p>再 Alt/Option+P 建并行，自上而下渐变遮罩。参考天空明显压暗去雾、背光面更暗：大幅降暗部色轮曝光；中灰光感丢失则略抬中灰。局部再暗可用 HDR Shadow，比只拧一级暗部更准。</p><p>太阳附近高光仍亮：再降 HDR 高光曝光。曝光整体接近参考后，可做「猜成熟画面哪些行为一定是后期做的」——成本极低的自学；招生信息略。</p><figure><img src="assets/zone-grade-fast-match/shot-04.jpg" alt="天空渐变压暗：降暗部、抬中灰，HDR 精控高光" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:20] 天空渐变压暗：降暗部、抬中灰，HDR 精控高光</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/718eef0c35a6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Sky gradient darken: lower shadows, lift midtones; HDR fine-controls highs.</span></div>
+<audio class="cap-audio" src="audio/718eef0c35a6.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">05:09-07:17</span>互补色降色温；水面建筑再分区</h2><p>颜色差：己方过暖、冷不够——互补。不分开加蓝饱和/降暖饱和，而在天空节点略降色温：冷变冷、暖变淡，一举两得。</p><p>水面可再并行遮罩（可带远山），柔化开大，对比+轴心出光感。天空略暗则抬回一点 Highlight；中间建筑回 4 号轴心微调。建筑区再遮罩加饱和并略加色温暖一点，冷暖关系更明确。</p><figure><img src="assets/zone-grade-fast-match/shot-05.jpg" alt="降色温互补；水面遮罩加对比出光感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:10] 降色温互补；水面遮罩加对比出光感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9964d44d186e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Cooler temp as complement; water mask contrast for light feel.</span></div>
+<audio class="cap-audio" src="audio/9964d44d186e.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">07:17-09:20</span>复盘：为何必须分区，如何过度解读</h2><p>仿色目的不是单纯一致，而要明确为何这样做。全局加对比：雾天气该加，但最亮天空更亮、背光与雕像更死——不舒服，必须区域性调。</p><p>按调色思路图：主体耶稣像大幅强化；建筑与天空是氛围区；山体可适当压暗。强化不只靠明暗，也靠颜色——重要区域偏暖，不重要山体偏冷。过度解读越多，调色越自洽。素材可寻影视飓风官网。</p><figure><img src="assets/zone-grade-fast-match/shot-06.jpg" alt="复盘分区：主体/氛围/环境与冷暖主次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[08:20] 复盘分区：主体/氛围/环境与冷暖主次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e6367e1acf59.mp3" type="button" aria-label="Play English audio">🔊</button><span>Review zones: subject/mood/environment and warm-cool hierarchy.</span></div>
+<audio class="cap-audio" src="audio/e6367e1acf59.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（437段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>前几天一位朋友问我这个素材该怎么调</p></div>
+<div class="transcript-row"><time>00:06</time><p>这是影视剧风的素材</p></div>
+<div class="transcript-row"><time>00:08</time><p>他说圈出来的区域是怎么做的这么清晰</p></div>
+<div class="transcript-row"><time>00:10</time><p>还有他这个颜色怎么调的</p></div>
+<div class="transcript-row"><time>00:12</time><p>这是他调的结果</p></div>
+<div class="transcript-row"><time>00:13</time><p>这是他想要的结果</p></div>
+<div class="transcript-row"><time>00:14</time><p>他调的其实已经不错了</p></div>
+<div class="transcript-row"><time>00:15</time><p>但是和想要的还是有一点点区别的</p></div>
+<div class="transcript-row"><time>00:17</time><p>这是我用9个节点去调的</p></div>
+<div class="transcript-row"><time>00:19</time><p>还是比较接近的对吧</p></div>
+<div class="transcript-row"><time>00:20</time><p>我们这一期就来分析一下这该怎么调</p></div>
+<div class="transcript-row"><time>00:22</time><p>首先我们看到参考图</p></div>
+<div class="transcript-row"><time>00:23</time><p>大家在看到一个画面有着明确的冷暖反差</p></div>
+<div class="transcript-row"><time>00:25</time><p>并且冷暖反差和明暗关系有着强联系的前提下</p></div>
+<div class="transcript-row"><time>00:29</time><p>其实能够很快速的就知道</p></div>
+<div class="transcript-row"><time>00:30</time><p>它大概率是2383铺底来做的</p></div>
+<div class="transcript-row"><time>00:33</time><p>我们把节点给它重置了</p></div>
+<div class="transcript-row"><time>00:34</time><p>对于一个灰片来讲</p></div>
+<div class="transcript-row"><time>00:36</time><p>其实我们可以先建立几个节点</p></div>
+<div class="transcript-row"><time>00:37</time><p>然后再达分析调色面板</p></div>
+<div class="transcript-row"><time>00:39</time><p>左上角这里有个蜡的库</p></div>
+<div class="transcript-row"><time>00:40</time><p>在蜡的库中找到FilmLooks</p></div>
+<div class="transcript-row"><time>00:42</time><p>然后再找到2383</p></div>
+<div class="transcript-row"><time>00:44</time><p>直接把它拖到最后一个节点上</p></div>
+<div class="transcript-row"><time>00:45</time><p>你当然可以先用再均转换</p></div>
+<div class="transcript-row"><time>00:47</time><p>把素材转换成CineLog</p></div>
+<div class="transcript-row"><time>00:48</time><p>但是我们之前出过一期视频</p></div>
+<div class="transcript-row"><time>00:50</time><p>你不转其实问题也不大</p></div>
+<div class="transcript-row"><time>00:51</time><p>你是能调出来的</p></div>
+<div class="transcript-row"><time>00:52</time><p>套上去之后因为它还是灰片</p></div>
+<div class="transcript-row"><time>00:54</time><p>所以我们还是需要还原对吧</p></div>
+<div class="transcript-row"><time>00:55</time><p>这个目前曝光和颜色都不对</p></div>
+<div class="transcript-row"><time>00:57</time><p>我们把4号节点给它撇开</p></div>
+<div class="transcript-row"><time>00:58</time><p>1号节点留作降噪也给它撇开</p></div>
+<div class="transcript-row"><time>01:00</time><p>然后在2号节点中</p></div>
+<div class="transcript-row"><time>01:02</time><p>我们把它的曝光</p></div>
+<div class="transcript-row"><time>01:03</time><p>给它做一点调整</p></div>
+<div class="transcript-row"><time>01:04</time><p>首先把白点</p></div>
+<div class="transcript-row"><time>01:05</time><p>就是把它高光给它找到位</p></div>
+<div class="transcript-row"><time>01:06</time><p>然后把暗部给它往下降</p></div>
+<div class="transcript-row"><time>01:08</time><p>好 这样一做</p></div>
+<div class="transcript-row"><time>01:09</time><p>我们的曝光差不多了</p></div>
+<div class="transcript-row"><time>01:10</time><p>然后我们再在3号节点</p></div>
+<div class="transcript-row"><time>01:11</time><p>后面一个节点中</p></div>
+<div class="transcript-row"><time>01:12</time><p>把它增加一点饱和度</p></div>
+<div class="transcript-row"><time>01:14</time><p>加完了之后</p></div>
+<div class="transcript-row"><time>01:15</time><p>我们发现有点冷对不对</p></div>
+<div class="transcript-row"><time>01:16</time><p>我们再回到2号节点</p></div>
+<div class="transcript-row"><time>01:18</time><p>给它加一点色温</p></div>
+<div class="transcript-row"><time>01:19</time><p>让它往暖的方向调一点点</p></div>
+<div class="transcript-row"><time>01:21</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>01:22</time><p>这个流程其实之前</p></div>
+<div class="transcript-row"><time>01:23</time><p>有不少朋友问过</p></div>
+<div class="transcript-row"><time>01:24</time><p>为啥我用饱和度</p></div>
+<div class="transcript-row"><time>01:25</time><p>单独另一个节点</p></div>
+<div class="transcript-row"><time>01:26</time><p>很多时候我们在灰偏状态下</p></div>
+<div class="transcript-row"><time>01:28</time><p>就算你做好了白点和黑点</p></div>
+<div class="transcript-row"><time>01:30</time><p>你也有可能是无法精准判断</p></div>
+<div class="transcript-row"><time>01:32</time><p>它白平衡是否有问题的</p></div>
+<div class="transcript-row"><time>01:33</time><p>所以我们需要先加饱和度</p></div>
+<div class="transcript-row"><time>01:35</time><p>再去调白平衡</p></div>
+<div class="transcript-row"><time>01:36</time><p>而我单独另一个节点</p></div>
+<div class="transcript-row"><time>01:37</time><p>是因为我有可能会改变</p></div>
+<div class="transcript-row"><time>01:39</time><p>饱和度节点的色彩空间</p></div>
+<div class="transcript-row"><time>01:40</time><p>我们可能会把它</p></div>
+<div class="transcript-row"><time>01:41</time><p>在这里面改成HSV</p></div>
+<div class="transcript-row"><time>01:43</time><p>因为我要做减发饱和度</p></div>
+<div class="transcript-row"><time>01:44</time><p>这个我们这一期不展开讲</p></div>
+<div class="transcript-row"><time>01:46</time><p>之前其实有讲过的</p></div>
+<div class="transcript-row"><time>01:47</time><p>此时我们看到画面是不是</p></div>
+<div class="transcript-row"><time>01:48</time><p>那种冷暖反差开始有了 对吧</p></div>
+<div class="transcript-row"><time>01:50</time><p>我们这时候</p></div>
+<div class="transcript-row"><time>01:51</time><p>可以跟参考图再做一下对比</p></div>
+<div class="transcript-row"><time>01:53</time><p>还是有非常大的区别</p></div>
+<div class="transcript-row"><time>01:55</time><p>区别在哪呢</p></div>
+<div class="transcript-row"><time>01:55</time><p>区别在于曝光情况</p></div>
+<div class="transcript-row"><time>01:57</time><p>我们是非常一致</p></div>
+<div class="transcript-row"><time>01:58</time><p>那这时候就需要用到</p></div>
+<div class="transcript-row"><time>01:59</time><p>我们这一期的重点思路</p></div>
+<div class="transcript-row"><time>02:00</time><p>分区调整</p></div>
+<div class="transcript-row"><time>02:01</time><p>首先我们要先解决</p></div>
+<div class="transcript-row"><time>02:02</time><p>那位朋友的问题</p></div>
+<div class="transcript-row"><time>02:03</time><p>他觉得中间这个区域</p></div>
+<div class="transcript-row"><time>02:04</time><p>得做出光感</p></div>
+<div class="transcript-row"><time>02:05</time><p>那这个地方</p></div>
+<div class="transcript-row"><time>02:06</time><p>为啥没有那么强的光感呢</p></div>
+<div class="transcript-row"><time>02:08</time><p>是因为这个天气太有误 对吧</p></div>
+<div class="transcript-row"><time>02:09</time><p>那有误就代表着</p></div>
+<div class="transcript-row"><time>02:10</time><p>反差不够太灰了</p></div>
+<div class="transcript-row"><time>02:12</time><p>增加反差</p></div>
+<div class="transcript-row"><time>02:13</time><p>我们第一个反应是什么</p></div>
+<div class="transcript-row"><time>02:14</time><p>是不是增加对比度</p></div>
+<div class="transcript-row"><time>02:15</time><p>那我们可以建立几个节点</p></div>
+<div class="transcript-row"><time>02:16</time><p>给它拉到第二排</p></div>
+<div class="transcript-row"><time>02:17</time><p>我们开始调整曝光</p></div>
+<div class="transcript-row"><time>02:19</time><p>我们可以先给中间这个区域</p></div>
+<div class="transcript-row"><time>02:20</time><p>画一个遮罩</p></div>
+<div class="transcript-row"><time>02:21</time><p>稍微带一下中间这个耶稣像</p></div>
+<div class="transcript-row"><time>02:23</time><p>问题不大</p></div>
+<div class="transcript-row"><time>02:23</time><p>画出来了之后</p></div>
+<div class="transcript-row"><time>02:24</time><p>给它增加一点对比度</p></div>
+<div class="transcript-row"><time>02:27</time><p>然后配合轴心</p></div>
+<div class="transcript-row"><time>02:28</time><p>让它稍微亮一点</p></div>
+<div class="transcript-row"><time>02:29</time><p>好 大概这个结果</p></div>
+<div class="transcript-row"><time>02:30</time><p>我们放大看</p></div>
+<div class="transcript-row"><time>02:31</time><p>是不是加了对比度之后</p></div>
+<div class="transcript-row"><time>02:32</time><p>它就不灰了</p></div>
+<div class="transcript-row"><time>02:33</time><p>这个思路其实非常直观</p></div>
+<div class="transcript-row"><time>02:35</time><p>我们就是要通过这个方式</p></div>
+<div class="transcript-row"><time>02:36</time><p>给它去掉一部分的误集</p></div>
+<div class="transcript-row"><time>02:38</time><p>然后我们再看参考图</p></div>
+<div class="transcript-row"><time>02:40</time><p>其实参考图</p></div>
+<div class="transcript-row"><time>02:40</time><p>有个很奇怪的地方</p></div>
+<div class="transcript-row"><time>02:41</time><p>它的耶稣像是不正常的暖</p></div>
+<div class="transcript-row"><time>02:43</time><p>也不正常的亮</p></div>
+<div class="transcript-row"><time>02:44</time><p>它是比较反直觉的</p></div>
+<div class="transcript-row"><time>02:45</time><p>因为曝光</p></div>
+<div class="transcript-row"><time>02:46</time><p>我们看到这个暖光</p></div>
+<div class="transcript-row"><time>02:48</time><p>它是从前方往后照的</p></div>
+<div class="transcript-row"><time>02:49</time><p>而面向我们的耶稣像</p></div>
+<div class="transcript-row"><time>02:51</time><p>是没有被光照到</p></div>
+<div class="transcript-row"><time>02:52</time><p>所以它理应是暗的是冷的</p></div>
+<div class="transcript-row"><time>02:54</time><p>那想要单独调整它</p></div>
+<div class="transcript-row"><time>02:55</time><p>这种不规则的物体</p></div>
+<div class="transcript-row"><time>02:56</time><p>我们最好的方式</p></div>
+<div class="transcript-row"><time>02:57</time><p>其实可以用神奇遮罩</p></div>
+<div class="transcript-row"><time>02:58</time><p>我们可以按住Alt加P</p></div>
+<div class="transcript-row"><time>02:59</time><p>或者是Alt加P</p></div>
+<div class="transcript-row"><time>03:00</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>03:01</time><p>在新进的这个节点中</p></div>
+<div class="transcript-row"><time>03:02</time><p>我们选择这个工具</p></div>
+<div class="transcript-row"><time>03:04</time><p>AI神奇遮罩</p></div>
+<div class="transcript-row"><time>03:04</time><p>选择它了之后</p></div>
+<div class="transcript-row"><time>03:05</time><p>我们许多点击一下</p></div>
+<div class="transcript-row"><time>03:06</time><p>这个耶稣像</p></div>
+<div class="transcript-row"><time>03:07</time><p>再按住Shift加H</p></div>
+<div class="transcript-row"><time>03:09</time><p>打开突出显示</p></div>
+<div class="transcript-row"><time>03:10</time><p>此时你看它就选出来了</p></div>
+<div class="transcript-row"><time>03:11</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:11</time><p>我们也可以把这个地上的平台</p></div>
+<div class="transcript-row"><time>03:13</time><p>也给它选中</p></div>
+<div class="transcript-row"><time>03:13</time><p>因为参考图也有选中这个平台</p></div>
+<div class="transcript-row"><time>03:15</time><p>选完了之后</p></div>
+<div class="transcript-row"><time>03:16</time><p>我们别忘了点击跟踪</p></div>
+<div class="transcript-row"><time>03:18</time><p>这个地方有个向前向后跟踪</p></div>
+<div class="transcript-row"><time>03:19</time><p>给它大致跑一下</p></div>
+<div class="transcript-row"><time>03:22</time><p>好</p></div>
+<div class="transcript-row"><time>03:22</time><p>那选好了之后</p></div>
+<div class="transcript-row"><time>03:22</time><p>我们可以给它加点色温</p></div>
+<div class="transcript-row"><time>03:24</time><p>让它稍微暖一点</p></div>
+<div class="transcript-row"><time>03:25</time><p>同时我们也可以配合</p></div>
+<div class="transcript-row"><time>03:27</time><p>对比度和轴心</p></div>
+<div class="transcript-row"><time>03:28</time><p>来给它稍微调整一下</p></div>
+<div class="transcript-row"><time>03:30</time><p>它的反射和它的曝光</p></div>
+<div class="transcript-row"><time>03:31</time><p>增加点对比度</p></div>
+<div class="transcript-row"><time>03:32</time><p>然后向左移动轴心</p></div>
+<div class="transcript-row"><time>03:33</time><p>让它能够亮一点</p></div>
+<div class="transcript-row"><time>03:35</time><p>好</p></div>
+<div class="transcript-row"><time>03:35</time><p>大概到这个情况</p></div>
+<div class="transcript-row"><time>03:36</time><p>我们看到</p></div>
+<div class="transcript-row"><time>03:37</time><p>是不是跟它感觉开始接近了</p></div>
+<div class="transcript-row"><time>03:38</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:38</time><p>它也是暖的</p></div>
+<div class="transcript-row"><time>03:39</time><p>它也是亮的</p></div>
+<div class="transcript-row"><time>03:40</time><p>当然这个力度</p></div>
+<div class="transcript-row"><time>03:40</time><p>你们自己在调的时候</p></div>
+<div class="transcript-row"><time>03:41</time><p>也可以做一定的调整</p></div>
+<div class="transcript-row"><time>03:43</time><p>最后就是天空</p></div>
+<div class="transcript-row"><time>03:44</time><p>一般来讲</p></div>
+<div class="transcript-row"><time>03:44</time><p>我们调天空</p></div>
+<div class="transcript-row"><time>03:45</time><p>希望它能够有个渐变的效果</p></div>
+<div class="transcript-row"><time>03:47</time><p>这是符合真实情况的一个调整</p></div>
+<div class="transcript-row"><time>03:49</time><p>那我们也可以再按住AID加P</p></div>
+<div class="transcript-row"><time>03:50</time><p>进入一个变形节点</p></div>
+<div class="transcript-row"><time>03:51</time><p>从上往下</p></div>
+<div class="transcript-row"><time>03:52</time><p>给它拉一个渐变遮罩</p></div>
+<div class="transcript-row"><time>03:55</time><p>那该怎么调</p></div>
+<div class="transcript-row"><time>03:56</time><p>我们依旧要打开参考图</p></div>
+<div class="transcript-row"><time>03:58</time><p>我们其实能看到</p></div>
+<div class="transcript-row"><time>03:59</time><p>对于天空</p></div>
+<div class="transcript-row"><time>04:00</time><p>它是有明显压暗的</p></div>
+<div class="transcript-row"><time>04:01</time><p>那当然它也是为了去误器</p></div>
+<div class="transcript-row"><time>04:03</time><p>所以它的暗部压得会更多</p></div>
+<div class="transcript-row"><time>04:04</time><p>你看这边这一部分的背光面</p></div>
+<div class="transcript-row"><time>04:06</time><p>但是非常暗的</p></div>
+<div class="transcript-row"><time>04:07</time><p>那可以映射到我们的操作</p></div>
+<div class="transcript-row"><time>04:08</time><p>我们可以大幅的降低暗部色轮</p></div>
+<div class="transcript-row"><time>04:10</time><p>曝光</p></div>
+<div class="transcript-row"><time>04:11</time><p>让它往暗了去走</p></div>
+<div class="transcript-row"><time>04:12</time><p>可是这样调完了之后</p></div>
+<div class="transcript-row"><time>04:14</time><p>你会发现这些中灰区域</p></div>
+<div class="transcript-row"><time>04:15</time><p>它的光感也失去了不少</p></div>
+<div class="transcript-row"><time>04:16</time><p>对不对</p></div>
+<div class="transcript-row"><time>04:17</time><p>所以我们可以稍微再提高点</p></div>
+<div class="transcript-row"><time>04:18</time><p>中灰色轮的曝光</p></div>
+<div class="transcript-row"><time>04:19</time><p>把它的光感稍微就一点回来</p></div>
+<div class="transcript-row"><time>04:21</time><p>但是如果你觉得暗部</p></div>
+<div class="transcript-row"><time>04:22</time><p>还是不够的话</p></div>
+<div class="transcript-row"><time>04:22</time><p>其实我们完全可以用</p></div>
+<div class="transcript-row"><time>04:23</time><p>HDR色轮中的Shadow色轮</p></div>
+<div class="transcript-row"><time>04:25</time><p>给它再往下降</p></div>
+<div class="transcript-row"><time>04:26</time><p>当然你降暗部色轮也是可以的</p></div>
+<div class="transcript-row"><time>04:28</time><p>但如果你想要精准调整</p></div>
+<div class="transcript-row"><time>04:30</time><p>这局部的曝光的话</p></div>
+<div class="transcript-row"><time>04:31</time><p>用HDR色轮会效率更高</p></div>
+<div class="transcript-row"><time>04:32</time><p>那此时我们再看参考图</p></div>
+<div class="transcript-row"><time>04:34</time><p>参考图它的天空</p></div>
+<div class="transcript-row"><time>04:35</time><p>还能再暗一些</p></div>
+<div class="transcript-row"><time>04:36</time><p>特别是这个高光位置</p></div>
+<div class="transcript-row"><time>04:37</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:37</time><p>高光位置</p></div>
+<div class="transcript-row"><time>04:38</time><p>那我们再降低点</p></div>
+<div class="transcript-row"><time>04:39</time><p>HDR色轮的曝光</p></div>
+<div class="transcript-row"><time>04:40</time><p>把它的最亮的高光再往下降</p></div>
+<div class="transcript-row"><time>04:42</time><p>好</p></div>
+<div class="transcript-row"><time>04:42</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>04:44</time><p>我们看到这个太阳</p></div>
+<div class="transcript-row"><time>04:44</time><p>其实差不多了对不对</p></div>
+<div class="transcript-row"><time>04:45</time><p>那此时我们其实整体的曝光来讲</p></div>
+<div class="transcript-row"><time>04:48</time><p>跟参考图就比较接近了</p></div>
+<div class="transcript-row"><time>04:49</time><p>这样的思考其实很有趣</p></div>
+<div class="transcript-row"><time>04:50</time><p>我们的线下课有一个板块</p></div>
+<div class="transcript-row"><time>04:52</time><p>就是去猜</p></div>
+<div class="transcript-row"><time>04:53</time><p>猜一个成熟画面</p></div>
+<div class="transcript-row"><time>04:55</time><p>它有哪些行为</p></div>
+<div class="transcript-row"><time>04:56</time><p>一定是后期做的</p></div>
+<div class="transcript-row"><time>04:57</time><p>但如果你猜出来了</p></div>
+<div class="transcript-row"><time>04:58</time><p>那我们的调色思路就完善了</p></div>
+<div class="transcript-row"><time>05:00</time><p>这是一个成本极低的</p></div>
+<div class="transcript-row"><time>05:01</time><p>自我学习的方式</p></div>
+<div class="transcript-row"><time>05:02</time><p>那目前杭州班</p></div>
+<div class="transcript-row"><time>05:04</time><p>重庆班跟广州班都在招生</p></div>
+<div class="transcript-row"><time>05:05</time><p>如果你想了解</p></div>
+<div class="transcript-row"><time>05:06</time><p>也可以私信</p></div>
+<div class="transcript-row"><time>05:06</time><p>或是看我姐姐来找我</p></div>
+<div class="transcript-row"><time>05:09</time><p>那目前我们虽然把天空的曝光</p></div>
+<div class="transcript-row"><time>05:12</time><p>做得大差不差</p></div>
+<div class="transcript-row"><time>05:13</time><p>但是颜色还不是很对</p></div>
+<div class="transcript-row"><time>05:14</time><p>导致我们观感上来讲</p></div>
+<div class="transcript-row"><time>05:15</time><p>不是特别的舒服</p></div>
+<div class="transcript-row"><time>05:16</time><p>那差在哪儿呢</p></div>
+<div class="transcript-row"><time>05:17</time><p>第一个就是</p></div>
+<div class="transcript-row"><time>05:18</time><p>我们的暖比它暖多了</p></div>
+<div class="transcript-row"><time>05:19</time><p>而我们的冷又不够它的冷</p></div>
+<div class="transcript-row"><time>05:22</time><p>那这两个颜色</p></div>
+<div class="transcript-row"><time>05:22</time><p>其实是有一点互补色的</p></div>
+<div class="transcript-row"><time>05:24</time><p>对不对</p></div>
+<div class="transcript-row"><time>05:24</time><p>对于互补色要调整</p></div>
+<div class="transcript-row"><time>05:25</time><p>我们之前有说过</p></div>
+<div class="transcript-row"><time>05:27</time><p>我们可以直接往目标方向去改变</p></div>
+<div class="transcript-row"><time>05:29</time><p>什么意思</p></div>
+<div class="transcript-row"><time>05:29</time><p>我们不去增加蓝色饱和度</p></div>
+<div class="transcript-row"><time>05:31</time><p>也不去降低暖色的饱和度</p></div>
+<div class="transcript-row"><time>05:33</time><p>而是通过降低色温的方式</p></div>
+<div class="transcript-row"><time>05:35</time><p>往蓝的方向整体去做</p></div>
+<div class="transcript-row"><time>05:37</time><p>我还是用的</p></div>
+<div class="transcript-row"><time>05:38</time><p>刚刚这个天空这个界面</p></div>
+<div class="transcript-row"><time>05:39</time><p>这个节点给它降一点点色温</p></div>
+<div class="transcript-row"><time>05:41</time><p>我放大看吧</p></div>
+<div class="transcript-row"><time>05:42</time><p>你看啊</p></div>
+<div class="transcript-row"><time>05:43</time><p>当我们不做改变的时候</p></div>
+<div class="transcript-row"><time>05:44</time><p>整体是非常暖的</p></div>
+<div class="transcript-row"><time>05:45</time><p>那我们给它降一点色温了之后</p></div>
+<div class="transcript-row"><time>05:47</time><p>你会发现冷的开始变冷了</p></div>
+<div class="transcript-row"><time>05:49</time><p>暖的也开始变淡了</p></div>
+<div class="transcript-row"><time>05:51</time><p>哎</p></div>
+<div class="transcript-row"><time>05:51</time><p>这不就是一举两得的一个效果吗</p></div>
+<div class="transcript-row"><time>05:53</time><p>既能够给这些冷的加冷</p></div>
+<div class="transcript-row"><time>05:54</time><p>又能够降低暖的饱和度</p></div>
+<div class="transcript-row"><time>05:56</time><p>那效果还不错对不对</p></div>
+<div class="transcript-row"><time>05:57</time><p>那此时如果你觉得</p></div>
+<div class="transcript-row"><time>05:58</time><p>你想让这个水面再亮一点</p></div>
+<div class="transcript-row"><time>06:00</time><p>我们也可以再来个节点</p></div>
+<div class="transcript-row"><time>06:01</time><p>按主要的加P或者是Option加P</p></div>
+<div class="transcript-row"><time>06:03</time><p>给中间这个水面</p></div>
+<div class="transcript-row"><time>06:04</time><p>可以带上一点点远处的山体</p></div>
+<div class="transcript-row"><time>06:06</time><p>给它画一个遮罩</p></div>
+<div class="transcript-row"><time>06:08</time><p>柔化剂的开大</p></div>
+<div class="transcript-row"><time>06:09</time><p>然后也通过对比度的方式</p></div>
+<div class="transcript-row"><time>06:11</time><p>让它稍微增加一点点反差</p></div>
+<div class="transcript-row"><time>06:14</time><p>配合轴心去微调一下它的曝光</p></div>
+<div class="transcript-row"><time>06:16</time><p>好</p></div>
+<div class="transcript-row"><time>06:17</time><p>你看</p></div>
+<div class="transcript-row"><time>06:17</time><p>那这样的这个水面</p></div>
+<div class="transcript-row"><time>06:18</time><p>它的光感是不是就出来了</p></div>
+<div class="transcript-row"><time>06:20</time><p>那我们曝光条这就差不多了</p></div>
+<div class="transcript-row"><time>06:21</time><p>我们再用参考图去做对比</p></div>
+<div class="transcript-row"><time>06:23</time><p>那此时是不是大体都非常接近了</p></div>
+<div class="transcript-row"><time>06:25</time><p>我们觉得我们的天空</p></div>
+<div class="transcript-row"><time>06:26</time><p>是不是比它稍微暗了一些</p></div>
+<div class="transcript-row"><time>06:28</time><p>那我们把天空给它曝光</p></div>
+<div class="transcript-row"><time>06:29</time><p>再拉回来一点</p></div>
+<div class="transcript-row"><time>06:30</time><p>把哈莱的色轮</p></div>
+<div class="transcript-row"><time>06:31</time><p>给它稍微提高一点</p></div>
+<div class="transcript-row"><time>06:32</time><p>好</p></div>
+<div class="transcript-row"><time>06:33</time><p>大概是这样</p></div>
+<div class="transcript-row"><time>06:33</time><p>那具体的参数</p></div>
+<div class="transcript-row"><time>06:34</time><p>你们在练习的时候</p></div>
+<div class="transcript-row"><time>06:36</time><p>可以再微调</p></div>
+<div class="transcript-row"><time>06:36</time><p>那这一部分的建筑</p></div>
+<div class="transcript-row"><time>06:38</time><p>好像我们也稍微暗了一点</p></div>
+<div class="transcript-row"><time>06:39</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:40</time><p>那我们也可以回到4号节点</p></div>
+<div class="transcript-row"><time>06:41</time><p>把它的曝光通过轴心的调整</p></div>
+<div class="transcript-row"><time>06:43</time><p>让它稍微亮一点</p></div>
+<div class="transcript-row"><time>06:45</time><p>好</p></div>
+<div class="transcript-row"><time>06:46</time><p>那除了曝光以外</p></div>
+<div class="transcript-row"><time>06:47</time><p>这一部分</p></div>
+<div class="transcript-row"><time>06:48</time><p>还有一个很大的区别</p></div>
+<div class="transcript-row"><time>06:49</time><p>就是它的冷暖关系</p></div>
+<div class="transcript-row"><time>06:50</time><p>比我们是要明确的</p></div>
+<div class="transcript-row"><time>06:51</time><p>而我们可能颜色比较单一</p></div>
+<div class="transcript-row"><time>06:53</time><p>那其实说到底</p></div>
+<div class="transcript-row"><time>06:54</time><p>就是因为我们的饱和度</p></div>
+<div class="transcript-row"><time>06:55</time><p>在这个区域还是不够</p></div>
+<div class="transcript-row"><time>06:56</time><p>所以我们可以在后面</p></div>
+<div class="transcript-row"><time>06:58</time><p>跟一个节点</p></div>
+<div class="transcript-row"><time>06:58</time><p>我们开始要调颜色了</p></div>
+<div class="transcript-row"><time>06:59</time><p>对不对</p></div>
+<div class="transcript-row"><time>07:00</time><p>给这边的建筑</p></div>
+<div class="transcript-row"><time>07:01</time><p>给它画一个遮罩</p></div>
+<div class="transcript-row"><time>07:02</time><p>我大致一画</p></div>
+<div class="transcript-row"><time>07:03</time><p>我们不浪费时间</p></div>
+<div class="transcript-row"><time>07:04</time><p>然后给它增加一点饱和度</p></div>
+<div class="transcript-row"><time>07:06</time><p>加了饱和度之后</p></div>
+<div class="transcript-row"><time>07:07</time><p>它有点偏冷</p></div>
+<div class="transcript-row"><time>07:07</time><p>对不对</p></div>
+<div class="transcript-row"><time>07:08</time><p>我们可以通过色温的调整</p></div>
+<div class="transcript-row"><time>07:09</time><p>让它往暖的方向走一点</p></div>
+<div class="transcript-row"><time>07:10</time><p>此时你看</p></div>
+<div class="transcript-row"><time>07:11</time><p>是不是我们冷暖的关系</p></div>
+<div class="transcript-row"><time>07:12</time><p>也变得更加明确了</p></div>
+<div class="transcript-row"><time>07:13</time><p>跟参考图更加接近了</p></div>
+<div class="transcript-row"><time>07:15</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:15</time><p>那这个10号节点用不着</p></div>
+<div class="transcript-row"><time>07:16</time><p>我们就可以拔山了</p></div>
+<div class="transcript-row"><time>07:17</time><p>当然</p></div>
+<div class="transcript-row"><time>07:17</time><p>如果你想把左边这个建筑</p></div>
+<div class="transcript-row"><time>07:19</time><p>也给它提亮的话</p></div>
+<div class="transcript-row"><time>07:20</time><p>你可以在4号节点画支灶的时候</p></div>
+<div class="transcript-row"><time>07:21</time><p>把左边也带上</p></div>
+<div class="transcript-row"><time>07:22</time><p>这个随便你问题不大</p></div>
+<div class="transcript-row"><time>07:24</time><p>我们这个演示的视频</p></div>
+<div class="transcript-row"><time>07:25</time><p>就不做特别细了</p></div>
+<div class="transcript-row"><time>07:26</time><p>那此时我们通过滑翔的方式</p></div>
+<div class="transcript-row"><time>07:27</time><p>其实大体是比较接近的</p></div>
+<div class="transcript-row"><time>07:29</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:29</time><p>你可能说这个水面</p></div>
+<div class="transcript-row"><time>07:30</time><p>它比我们还要亮一些</p></div>
+<div class="transcript-row"><time>07:31</time><p>那我们可以再提高一点</p></div>
+<div class="transcript-row"><time>07:33</time><p>它的曝光</p></div>
+<div class="transcript-row"><time>07:33</time><p>这都是没问题的</p></div>
+<div class="transcript-row"><time>07:35</time><p>也可以稍微给它加点Light色轮</p></div>
+<div class="transcript-row"><time>07:36</time><p>那这种细微的调整</p></div>
+<div class="transcript-row"><time>07:37</time><p>包括你每个区域的力度</p></div>
+<div class="transcript-row"><time>07:39</time><p>你可以自己去把控</p></div>
+<div class="transcript-row"><time>07:40</time><p>我个人觉得目前这样</p></div>
+<div class="transcript-row"><time>07:41</time><p>稍微好看一些</p></div>
+<div class="transcript-row"><time>07:42</time><p>素材大家可以去</p></div>
+<div class="transcript-row"><time>07:43</time><p>影视飓风的官网去找</p></div>
+<div class="transcript-row"><time>07:44</time><p>我就不给大家分享了</p></div>
+<div class="transcript-row"><time>07:45</time><p>要知道的一个点就是</p></div>
+<div class="transcript-row"><time>07:46</time><p>仿色它不是为了</p></div>
+<div class="transcript-row"><time>07:47</time><p>单纯的调出一致</p></div>
+<div class="transcript-row"><time>07:49</time><p>而是要明确调色目的</p></div>
+<div class="transcript-row"><time>07:50</time><p>我们大致做出来之后</p></div>
+<div class="transcript-row"><time>07:52</time><p>就要分析</p></div>
+<div class="transcript-row"><time>07:53</time><p>为啥要这样做</p></div>
+<div class="transcript-row"><time>07:53</time><p>首先我们一定要明确的是</p></div>
+<div class="transcript-row"><time>07:54</time><p>我们要局部调整</p></div>
+<div class="transcript-row"><time>07:55</time><p>如果你是全篇加对比度的话</p></div>
+<div class="transcript-row"><time>07:57</time><p>它会怎么样</p></div>
+<div class="transcript-row"><time>07:58</time><p>因为你有误器嘛对吧</p></div>
+<div class="transcript-row"><time>07:59</time><p>加对比度是应该的</p></div>
+<div class="transcript-row"><time>08:00</time><p>那我们加了对比度之后</p></div>
+<div class="transcript-row"><time>08:01</time><p>会出现一个</p></div>
+<div class="transcript-row"><time>08:02</time><p>本来就是最亮的天空</p></div>
+<div class="transcript-row"><time>08:04</time><p>它会变得更亮</p></div>
+<div class="transcript-row"><time>08:05</time><p>那这些背光面它太暗了</p></div>
+<div class="transcript-row"><time>08:06</time><p>包括这个耶稣像也太暗了</p></div>
+<div class="transcript-row"><time>08:08</time><p>这就不舒服</p></div>
+<div class="transcript-row"><time>08:09</time><p>所以我们一定要区域性的调整</p></div>
+<div class="transcript-row"><time>08:10</time><p>那这个局部调整的思路</p></div>
+<div class="transcript-row"><time>08:11</time><p>完全就可以按照</p></div>
+<div class="transcript-row"><time>08:12</time><p>我之前分享过的调色思路图来</p></div>
+<div class="transcript-row"><time>08:14</time><p>那首先就是判断</p></div>
+<div class="transcript-row"><time>08:15</time><p>我们画面中主体是谁</p></div>
+<div class="transcript-row"><time>08:16</time><p>你拍这个地方</p></div>
+<div class="transcript-row"><time>08:17</time><p>肯定是为了拍耶稣像呗</p></div>
+<div class="transcript-row"><time>08:19</time><p>所以耶稣像是主体</p></div>
+<div class="transcript-row"><time>08:20</time><p>我们要大幅强化</p></div>
+<div class="transcript-row"><time>08:22</time><p>然后呢就是氛围区域</p></div>
+<div class="transcript-row"><time>08:23</time><p>耶稣这一个宗教的象征</p></div>
+<div class="transcript-row"><time>08:25</time><p>要与百姓挂钩的话</p></div>
+<div class="transcript-row"><time>08:26</time><p>那么这一片的建筑</p></div>
+<div class="transcript-row"><time>08:27</time><p>自然就是氛围区</p></div>
+<div class="transcript-row"><time>08:29</time><p>要辅助主体表达的</p></div>
+<div class="transcript-row"><time>08:30</time><p>那这个天空同样也是氛围区域</p></div>
+<div class="transcript-row"><time>08:32</time><p>能够表达时间天气等信息</p></div>
+<div class="transcript-row"><time>08:34</time><p>你也可以给它加上</p></div>
+<div class="transcript-row"><time>08:36</time><p>那么一点情绪什么</p></div>
+<div class="transcript-row"><time>08:38</time><p>比如说希望之类的</p></div>
+<div class="transcript-row"><time>08:39</time><p>至于剩下的这些山体</p></div>
+<div class="transcript-row"><time>08:41</time><p>它不重要</p></div>
+<div class="transcript-row"><time>08:42</time><p>对于这个画面来讲意义不大</p></div>
+<div class="transcript-row"><time>08:43</time><p>对我们可以适当的阴暗</p></div>
+<div class="transcript-row"><time>08:44</time><p>来让画面主次区分更加明显</p></div>
+<div class="transcript-row"><time>08:47</time><p>而强化与弱化</p></div>
+<div class="transcript-row"><time>08:48</time><p>不只是通过明暗关系来的</p></div>
+<div class="transcript-row"><time>08:50</time><p>也得靠颜色</p></div>
+<div class="transcript-row"><time>08:51</time><p>在这个画面中</p></div>
+<div class="transcript-row"><time>08:52</time><p>我们仔细看</p></div>
+<div class="transcript-row"><time>08:52</time><p>重要的都往暖的方向调了</p></div>
+<div class="transcript-row"><time>08:54</time><p>这个天这个水</p></div>
+<div class="transcript-row"><time>08:55</time><p>这个耶稣像</p></div>
+<div class="transcript-row"><time>08:56</time><p>包括这里的人民群众</p></div>
+<div class="transcript-row"><time>08:58</time><p>那不重要的都偏冷了</p></div>
+<div class="transcript-row"><time>08:59</time><p>你看这些山体</p></div>
+<div class="transcript-row"><time>09:00</time><p>对吧</p></div>
+<div class="transcript-row"><time>09:00</time><p>这样做就能够用颜色</p></div>
+<div class="transcript-row"><time>09:02</time><p>也去强化我们的主次关系</p></div>
+<div class="transcript-row"><time>09:04</time><p>所以仿似的训练</p></div>
+<div class="transcript-row"><time>09:05</time><p>很多时候就在于</p></div>
+<div class="transcript-row"><time>09:06</time><p>我们调完了之后</p></div>
+<div class="transcript-row"><time>09:07</time><p>要去过度解读</p></div>
+<div class="transcript-row"><time>09:08</time><p>那你过度的解读越多</p></div>
+<div class="transcript-row"><time>09:10</time><p>你的调色就越自洽</p></div>
+<div class="transcript-row"><time>09:11</time><p>也能够有更完善的一个思路</p></div>
+<div class="transcript-row"><time>09:13</time><p>我们的细唱课程</p></div>
+<div class="transcript-row"><time>09:14</time><p>同样也有仿似的课程</p></div>
+<div class="transcript-row"><time>09:15</time><p>有需要也可以找我</p></div>
+<div class="transcript-row"><time>09:16</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>09:16</time><p>如果觉得你有帮助的话</p></div>
+<div class="transcript-row"><time>09:17</time><p>还希望多多赞连</p></div>
+<div class="transcript-row"><time>09:18</time><p>好了</p></div>
+<div class="transcript-row"><time>09:19</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>09:19</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

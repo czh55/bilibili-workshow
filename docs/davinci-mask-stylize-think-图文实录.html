@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="遮罩反映你对还原结果的不满与优化。先 HDR 展脸部灰面立体（全局会改环境）；再局部：提人物、对比强化相机、压中间过亮区——柔化尽量大。穿插讲清圆形遮罩三/四圈与渐变箭头含义。暗角巩固视线。风格化先盘点画面已有色，从夹角找（如加绿），并行纠肤；高光区该暖却仍冷时再用遮罩局部加温。">
+<title>达芬奇的遮罩要怎么用？风格化要怎么思考｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>达芬奇的遮罩要怎么用？风格化要怎么思考</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分27秒</span><span class="meta-tag tag-topic">达芬奇 遮罩 柔化 渐变 风格化 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/ANBoBvHVVfl" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">何时用遮罩：先对不满做全局 HDR</a><a href="#ch2">人物 / 相机 / 中间亮区三刀</a><a href="#ch3">圆形与渐变遮罩范围怎么读</a><a href="#ch4">风格化：从已有色夹角找；亮暖要遮罩补</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>遮罩反映你对还原结果的不满与优化。先 HDR 展脸部灰面立体（全局会改环境）；再局部：提人物、对比强化相机、压中间过亮区——柔化尽量大。穿插讲清圆形遮罩三/四圈与渐变箭头含义。暗角巩固视线。风格化先盘点画面已有色，从夹角找（如加绿），并行纠肤；高光区该暖却仍冷时再用遮罩局部加温。最后可用偏移式软对比浓郁化。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→02:08]</span><div><strong>先全局 HDR</strong><p>降 Light/Shadow、抬 Highlight 展脸 40–75 区间。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:08→03:25]</span><div><strong>三遮罩主次</strong><p>提人、强化相机、压中间亮区；柔化开大。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:25→05:40]</span><div><strong>范围课</strong><p>圆遮罩起止与柔化圈；渐变箭头方向与衰减。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:40→08:27]</span><div><strong>暗角+风格</strong><p>暗角；加绿纠肤；高光遮罩加暖；软对比收束。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>遮罩=局部纠正全局副作用与主次。先全局出体积，再遮罩抢回视线。风格从已有色夹角长出来，并让亮暖暗冷物理自洽。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-02:08</span>何时用遮罩：先对不满做全局 HDR</h2><p>遮罩反映你对画面不满的优化。还原后仍平：女主体、右侧相机重要，但脸明暗不够。波形交叉点显示脸约 40–75。</p><p>第二排 HDR：降 Light/Shadow 让更多亮面变灰面立体，再抬 Highlight 护最亮——脸立体甚至显小。但全局会改环境：角架更深、远处更亮抢走视线——于是需要局部遮罩。</p><figure><img src="assets/davinci-mask-stylize-think/shot-01.jpg" alt="HDR 展脸部灰面：波形 40–75 区间被拉开" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] HDR 展脸部灰面：波形 40–75 区间被拉开</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b51ff474be8a.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR opens face gray mass—scope 40–75 band separates.</span></div>
+<audio class="cap-audio" src="audio/b51ff474be8a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">02:08-03:25</span>人物 / 相机 / 中间亮区三刀</h2><p>人物遮罩柔化开大，略提曝光——提太多边缘又明显。Option+P 并行：相机遮罩加对比+轴心左移略亮，避免灰融背景。</p><p>再并行压中间过亮：降中灰与亮部曝光。三节点后视觉中心回到人物。</p><figure><img src="assets/davinci-mask-stylize-think/shot-02.jpg" alt="三遮罩：提人物、强化相机、压中间过亮区" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:50] 三遮罩：提人物、强化相机、压中间过亮区</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9c379a6470b3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Three masks: lift subject, punch camera, press mid hot spot.</span></div>
+<audio class="cap-audio" src="audio/9c379a6470b3.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:25-05:40</span>圆形与渐变遮罩范围怎么读</h2><p>圆遮罩柔化开大出现多圈：描边控制点线是起始全效范围；外圈拉大柔化过渡；中间还有柔化起点圈——之内满效，之外渐减到外圈与默认圈中点为 0。Shift+H 突出显示可验证。</p><p>渐变：箭头+垂线；反方向线后满效，沿箭头衰减至中点约 0，箭头长度改过渡。理解后回原片加暗角：超大柔化圆反转，降曝光且略抬高光。</p><figure><img src="assets/davinci-mask-stylize-think/shot-03.jpg" alt="圆形遮罩多圈示意：全效、柔化起点与衰减到 0" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:20] 圆形遮罩多圈示意：全效、柔化起点与衰减到 0</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/aa4d387ad02b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Circle mask rings: full effect, soft start, falloff to zero.</span></div>
+<audio class="cap-audio" src="audio/aa4d387ad02b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:40-08:27</span>风格化：从已有色夹角找；亮暖要遮罩补</h2><p>盘点蓝、肤橙黄等，风格可从夹角加绿；并行蜘蛛网纠肤提饱和、黄略转橙。仍怪：暖应在高光，远处高光却冷——再遮罩局部加色温。可后插全局略暖，不必回改。</p><p>想更浓：降偏移/加亮部、降中灰、抬暗部做软对比。力度自控；不熟遮罩更要练区域性调整。</p><figure><img src="assets/davinci-mask-stylize-think/shot-04.jpg" alt="暗角巩固视线；盘点已有色准备风格化" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:00] 暗角巩固视线；盘点已有色准备风格化</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/69f25d232186.mp3" type="button" aria-label="Play English audio">🔊</button><span>Vignette locks the eye; inventory existing color before stylizing.</span></div>
+<audio class="cap-audio" src="audio/69f25d232186.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-mask-stylize-think/shot-05.jpg" alt="加绿纠肤后，高光区遮罩局部加暖使冷暖自洽" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:20] 加绿纠肤后，高光区遮罩局部加暖使冷暖自洽</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7ceecc11c626.mp3" type="button" aria-label="Play English audio">🔊</button><span>After green skin fix, warm highlight mask for coherent warm/cool.</span></div>
+<audio class="cap-audio" src="audio/7ceecc11c626.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（303段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>经常会有朋友问我调色的时候到底什么时候该用遮罩</p></div>
+<div class="transcript-row"><time>00:09</time><p>那遮罩的使用呢其实就是反映你对画面不满的优化结果的</p></div>
+<div class="transcript-row"><time>00:13</time><p>比如说这个画面当我们已经做好了还原之后能够看到啊</p></div>
+<div class="transcript-row"><time>00:17</time><p>整体的画面还是非常平的</p></div>
+<div class="transcript-row"><time>00:19</time><p>主体呢是这位被拍摄的女生右侧的相机其实也是比较重要</p></div>
+<div class="transcript-row"><time>00:23</time><p>可是目前我们放大看画面</p></div>
+<div class="transcript-row"><time>00:24</time><p>人物的脸上原本其实有明暗关系</p></div>
+<div class="transcript-row"><time>00:27</time><p>但是目前的结果是不够明确的</p></div>
+<div class="transcript-row"><time>00:29</time><p>我们可以打开波星图</p></div>
+<div class="transcript-row"><time>00:30</time><p>在波星图右上角三个点的设置中勾选显示线的急交点缓和线</p></div>
+<div class="transcript-row"><time>00:35</time><p>那此时呢我们把鼠标移动到画面中</p></div>
+<div class="transcript-row"><time>00:38</time><p>波星图上就会呈现出对应的曝光情况啊</p></div>
+<div class="transcript-row"><time>00:40</time><p>我们看到人物的脸</p></div>
+<div class="transcript-row"><time>00:42</time><p>它目前的范围是这个范围</p></div>
+<div class="transcript-row"><time>00:44</time><p>最暗的呢差不多在40</p></div>
+<div class="transcript-row"><time>00:46</time><p>最亮的在75左右</p></div>
+<div class="transcript-row"><time>00:48</time><p>我们想要让人物脸上的反差更明显的</p></div>
+<div class="transcript-row"><time>00:50</time><p>这个时候呢就需要人物脸上的明暗关系更强</p></div>
+<div class="transcript-row"><time>00:53</time><p>所以我们可以建立几个节点拉到第二排</p></div>
+<div class="transcript-row"><time>00:56</time><p>这时候我们就要先利用HDR色轮</p></div>
+<div class="transcript-row"><time>00:58</time><p>来给画面全局做一下曝光优化</p></div>
+<div class="transcript-row"><time>01:00</time><p>明暗关系强</p></div>
+<div class="transcript-row"><time>01:01</time><p>那自然就是让亮的更亮暗的更暗对吧</p></div>
+<div class="transcript-row"><time>01:03</time><p>但人物的脸上不是只有亮面和暗面的</p></div>
+<div class="transcript-row"><time>01:06</time><p>必须得有足够的灰面才能显得立体</p></div>
+<div class="transcript-row"><time>01:09</time><p>所以我们目前需要让更多的亮面内容往暗面去走</p></div>
+<div class="transcript-row"><time>01:13</time><p>也就是稍微降低点Light色轮的曝光</p></div>
+<div class="transcript-row"><time>01:15</time><p>也可以降低点Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>01:17</time><p>那此时画面中呈现出了更多的暗面以及灰面对吧</p></div>
+<div class="transcript-row"><time>01:21</time><p>但是它的亮面也受到了牺牲</p></div>
+<div class="transcript-row"><time>01:23</time><p>所以我们再稍微提高一点更亮的Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>01:27</time><p>好大概到这个程度</p></div>
+<div class="transcript-row"><time>01:28</time><p>我们先不看画面</p></div>
+<div class="transcript-row"><time>01:29</time><p>我们看波星图</p></div>
+<div class="transcript-row"><time>01:31</time><p>是不是在刚刚我们75-40之间的内容被展开了对吧</p></div>
+<div class="transcript-row"><time>01:35</time><p>展开了就代表着它的明暗反差变得更强了</p></div>
+<div class="transcript-row"><time>01:37</time><p>那我们再看到人物的脸上的变化</p></div>
+<div class="transcript-row"><time>01:40</time><p>这是调整前非常平</p></div>
+<div class="transcript-row"><time>01:42</time><p>而且特别亮不好看</p></div>
+<div class="transcript-row"><time>01:43</time><p>做完之后人物脸上的皮肤就变得更加立体了对吧</p></div>
+<div class="transcript-row"><time>01:46</time><p>还能显脸小</p></div>
+<div class="transcript-row"><time>01:47</time><p>但是这样做会出现一个意外的问题</p></div>
+<div class="transcript-row"><time>01:50</time><p>HDR色轮使用毕竟是全局影响</p></div>
+<div class="transcript-row"><time>01:52</time><p>这必然会改变环境的曝光</p></div>
+<div class="transcript-row"><time>01:54</time><p>我们虽然让其余部分</p></div>
+<div class="transcript-row"><time>01:55</time><p>不特别是这边重复的角属架移</p></div>
+<div class="transcript-row"><time>01:57</time><p>让它变得更加的深邃以外</p></div>
+<div class="transcript-row"><time>01:59</time><p>还让远处这一个区域让它变得更亮了</p></div>
+<div class="transcript-row"><time>02:02</time><p>那更亮人物又不够亮</p></div>
+<div class="transcript-row"><time>02:04</time><p>就会导致主体不够突出</p></div>
+<div class="transcript-row"><time>02:06</time><p>视线很容易被亮的地方带走了对吧</p></div>
+<div class="transcript-row"><time>02:08</time><p>这时候我们就需要局部进行优化</p></div>
+<div class="transcript-row"><time>02:10</time><p>所以呢我们就需要用到遮罩</p></div>
+<div class="transcript-row"><time>02:11</time><p>我们先来一个节点给人物体量</p></div>
+<div class="transcript-row"><time>02:14</time><p>人物体量是必须的</p></div>
+<div class="transcript-row"><time>02:15</time><p>因为它是主体嘛</p></div>
+<div class="transcript-row"><time>02:16</time><p>我们给它画一个遮罩</p></div>
+<div class="transcript-row"><time>02:17</time><p>把柔化开的稍微大一点</p></div>
+<div class="transcript-row"><time>02:19</time><p>大家在用遮罩的时候</p></div>
+<div class="transcript-row"><time>02:20</time><p>柔化尽可能的大一点</p></div>
+<div class="transcript-row"><time>02:21</time><p>这样可以减少遮罩边缘</p></div>
+<div class="transcript-row"><time>02:23</time><p>过于明显的风险</p></div>
+<div class="transcript-row"><time>02:24</time><p>画好了遮罩之后呢</p></div>
+<div class="transcript-row"><time>02:25</time><p>给它稍微提高一点点曝光</p></div>
+<div class="transcript-row"><time>02:27</time><p>不用提太多</p></div>
+<div class="transcript-row"><time>02:28</time><p>你也不能提太多</p></div>
+<div class="transcript-row"><time>02:29</time><p>你提这么亮的话</p></div>
+<div class="transcript-row"><time>02:30</time><p>这个遮罩边缘不就又变得过于明显了吗</p></div>
+<div class="transcript-row"><time>02:32</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:32</time><p>稍微提高一点</p></div>
+<div class="transcript-row"><time>02:33</time><p>大概这个程度</p></div>
+<div class="transcript-row"><time>02:34</time><p>然后我们在Android Out加P</p></div>
+<div class="transcript-row"><time>02:36</time><p>或者是Option加P</p></div>
+<div class="transcript-row"><time>02:37</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>02:38</time><p>在下面这个节点中</p></div>
+<div class="transcript-row"><time>02:39</time><p>给右边这里的相机</p></div>
+<div class="transcript-row"><time>02:41</time><p>也可以给它画一个遮罩</p></div>
+<div class="transcript-row"><time>02:42</time><p>让它稍微立体一点</p></div>
+<div class="transcript-row"><time>02:43</time><p>目前这个相机还是有点灰的</p></div>
+<div class="transcript-row"><time>02:45</time><p>这灰的就导致它跟背景融为一体了</p></div>
+<div class="transcript-row"><time>02:47</time><p>也是不够突出</p></div>
+<div class="transcript-row"><time>02:48</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:49</time><p>那我们可以给它增加一点对比度</p></div>
+<div class="transcript-row"><time>02:51</time><p>然后配合轴心</p></div>
+<div class="transcript-row"><time>02:52</time><p>让它稍微亮一点点回来</p></div>
+<div class="transcript-row"><time>02:55</time><p>也就是轴心向左移动一点</p></div>
+<div class="transcript-row"><time>02:57</time><p>好 大概到这个程度</p></div>
+<div class="transcript-row"><time>02:58</time><p>最后呢就是中间区</p></div>
+<div class="transcript-row"><time>03:00</time><p>同样建立一个并行节点</p></div>
+<div class="transcript-row"><time>03:01</time><p>要解决中间区这么亮</p></div>
+<div class="transcript-row"><time>03:03</time><p>那自然就是让它压暗一点呗</p></div>
+<div class="transcript-row"><time>03:04</time><p>我们再给它画一个遮罩</p></div>
+<div class="transcript-row"><time>03:06</time><p>柔化开大</p></div>
+<div class="transcript-row"><time>03:07</time><p>然后呢降低一点中灰色轮的曝光</p></div>
+<div class="transcript-row"><time>03:09</time><p>也可以降低一点亮补色轮的曝光</p></div>
+<div class="transcript-row"><time>03:12</time><p>好 大概是这个程度</p></div>
+<div class="transcript-row"><time>03:13</time><p>我们来看一下这三个节点的调整</p></div>
+<div class="transcript-row"><time>03:15</time><p>前后变化</p></div>
+<div class="transcript-row"><time>03:17</time><p>是不是画面的视觉中心发生了改变</p></div>
+<div class="transcript-row"><time>03:20</time><p>也就是它的曝光比重发生了改变</p></div>
+<div class="transcript-row"><time>03:22</time><p>让我们的视线中心</p></div>
+<div class="transcript-row"><time>03:23</time><p>能够更聚焦于人物</p></div>
+<div class="transcript-row"><time>03:25</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:25</time><p>这时候呢我们就要插进去一块内容</p></div>
+<div class="transcript-row"><time>03:27</time><p>曾经有不少朋友问过我</p></div>
+<div class="transcript-row"><time>03:28</time><p>遮罩的范围到底是什么意思</p></div>
+<div class="transcript-row"><time>03:30</time><p>怎么去判断</p></div>
+<div class="transcript-row"><time>03:31</time><p>比如说圆形遮罩</p></div>
+<div class="transcript-row"><time>03:33</time><p>我们给画面做一个圆形遮罩了之后</p></div>
+<div class="transcript-row"><time>03:35</time><p>你会发现它有三个圈</p></div>
+<div class="transcript-row"><time>03:38</time><p>那这三个圈它分别代表着什么范围呢</p></div>
+<div class="transcript-row"><time>03:40</time><p>我们可以先把内外两个较细的圈缩小</p></div>
+<div class="transcript-row"><time>03:43</time><p>也就是减少它们的柔化</p></div>
+<div class="transcript-row"><time>03:45</time><p>在窗口面板中呈现的是这个柔化的数值</p></div>
+<div class="transcript-row"><time>03:48</time><p>当我们柔化数值开大</p></div>
+<div class="transcript-row"><time>03:49</time><p>两侧范围就会更大</p></div>
+<div class="transcript-row"><time>03:51</time><p>如果把柔化开小或者是零的话</p></div>
+<div class="transcript-row"><time>03:53</time><p>那画面中只有一根线</p></div>
+<div class="transcript-row"><time>03:54</time><p>也就是只有一个范围</p></div>
+<div class="transcript-row"><time>03:55</time><p>然后对于这个遮罩范围进行染色</p></div>
+<div class="transcript-row"><time>03:57</time><p>我们假设给它染成这个颜色</p></div>
+<div class="transcript-row"><time>03:59</time><p>此时我们看到</p></div>
+<div class="transcript-row"><time>04:00</time><p>这个圈内都被染上了颜色</p></div>
+<div class="transcript-row"><time>04:03</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:03</time><p>并且它的遮罩边缘是清晰锐利的</p></div>
+<div class="transcript-row"><time>04:06</time><p>而这个边缘就是以蓝色描边</p></div>
+<div class="transcript-row"><time>04:08</time><p>白色填充的圆点围成的线</p></div>
+<div class="transcript-row"><time>04:11</time><p>那这一圈就是遮罩的起始范围</p></div>
+<div class="transcript-row"><time>04:13</time><p>随着我们拉的外围粉色描边</p></div>
+<div class="transcript-row"><time>04:16</time><p>这个圆时你会发现</p></div>
+<div class="transcript-row"><time>04:17</time><p>染色的边缘开始逐渐变淡了</p></div>
+<div class="transcript-row"><time>04:19</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:20</time><p>拉得越开变淡的范围也就越大</p></div>
+<div class="transcript-row"><time>04:22</time><p>柔化的范围也就越大</p></div>
+<div class="transcript-row"><time>04:23</time><p>此时画面中出现了三个圈</p></div>
+<div class="transcript-row"><time>04:26</time><p>我把这个遮罩开大一点</p></div>
+<div class="transcript-row"><time>04:27</time><p>此时画面中出现了三个圈</p></div>
+<div class="transcript-row"><time>04:29</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:29</time><p>里面一个圈</p></div>
+<div class="transcript-row"><time>04:30</time><p>中间一个圈</p></div>
+<div class="transcript-row"><time>04:31</time><p>外围还有一个圈</p></div>
+<div class="transcript-row"><time>04:32</time><p>但是我们仔细观察</p></div>
+<div class="transcript-row"><time>04:33</time><p>它其实是有四个圈的</p></div>
+<div class="transcript-row"><time>04:34</time><p>在这个位置</p></div>
+<div class="transcript-row"><time>04:35</time><p>还有一个边缘没那么清晰的一个圈</p></div>
+<div class="transcript-row"><time>04:38</time><p>而这个圈就是柔化的起点</p></div>
+<div class="transcript-row"><time>04:40</time><p>这个圈之内的内容</p></div>
+<div class="transcript-row"><time>04:42</time><p>保持了染色的行为</p></div>
+<div class="transcript-row"><time>04:43</time><p>而从这个圈之外</p></div>
+<div class="transcript-row"><time>04:45</time><p>染色的行为开始逐渐减少</p></div>
+<div class="transcript-row"><time>04:47</time><p>一直到外围这个圈</p></div>
+<div class="transcript-row"><time>04:48</time><p>和默认这个圈的中间位置</p></div>
+<div class="transcript-row"><time>04:51</time><p>染色行为就变成0了</p></div>
+<div class="transcript-row"><time>04:52</time><p>那此时其实我们也可以</p></div>
+<div class="transcript-row"><time>04:54</time><p>按住Shift加H打开突出显示</p></div>
+<div class="transcript-row"><time>04:55</time><p>看到我们的制造范围</p></div>
+<div class="transcript-row"><time>04:57</time><p>染色的柔化行为</p></div>
+<div class="transcript-row"><time>04:58</time><p>是从中间这个圈</p></div>
+<div class="transcript-row"><time>04:59</time><p>和默认圈中间这个范围开始</p></div>
+<div class="transcript-row"><time>05:02</time><p>一直到默认这个圈</p></div>
+<div class="transcript-row"><time>05:03</time><p>和外围这个圈的中间位置</p></div>
+<div class="transcript-row"><time>05:06</time><p>很好理解对吧</p></div>
+<div class="transcript-row"><time>05:06</time><p>还有不少朋友对渐变制造</p></div>
+<div class="transcript-row"><time>05:08</time><p>也有理解上的难点</p></div>
+<div class="transcript-row"><time>05:09</time><p>我们可以看一下</p></div>
+<div class="transcript-row"><time>05:10</time><p>渐变制造它其实是由一个</p></div>
+<div class="transcript-row"><time>05:13</time><p>箭头加上一条垂直于箭头的线组成的</p></div>
+<div class="transcript-row"><time>05:17</time><p>当我们给这个渐变制造染色了之后</p></div>
+<div class="transcript-row"><time>05:19</time><p>能够看到和箭头反方向</p></div>
+<div class="transcript-row"><time>05:22</time><p>并且是在这根线后面的区域</p></div>
+<div class="transcript-row"><time>05:25</time><p>是完整呈现调整的内容的</p></div>
+<div class="transcript-row"><time>05:27</time><p>而调整的行为</p></div>
+<div class="transcript-row"><time>05:28</time><p>会随着箭头方向逐渐简单</p></div>
+<div class="transcript-row"><time>05:30</time><p>直到近似于中间位置</p></div>
+<div class="transcript-row"><time>05:33</time><p>染色的行为变成0</p></div>
+<div class="transcript-row"><time>05:34</time><p>并且这个行为</p></div>
+<div class="transcript-row"><time>05:36</time><p>会随着我们箭头长度的改变</p></div>
+<div class="transcript-row"><time>05:38</time><p>而发生改变</p></div>
+<div class="transcript-row"><time>05:39</time><p>也是很好理解的对吧</p></div>
+<div class="transcript-row"><time>05:40</time><p>那简单理解了之后</p></div>
+<div class="transcript-row"><time>05:41</time><p>我们就回到刚刚那个画面</p></div>
+<div class="transcript-row"><time>05:43</time><p>我们已经通过这三个制造的区性调整</p></div>
+<div class="transcript-row"><time>05:45</time><p>让画面的视觉中心</p></div>
+<div class="transcript-row"><time>05:47</time><p>成功的转移到人物身上</p></div>
+<div class="transcript-row"><time>05:48</time><p>但还没完</p></div>
+<div class="transcript-row"><time>05:49</time><p>我们也可以给画面再来一个暗角</p></div>
+<div class="transcript-row"><time>05:51</time><p>也就是建一个超大柔化的圆形制造</p></div>
+<div class="transcript-row"><time>05:55</time><p>把柔化记得开大</p></div>
+<div class="transcript-row"><time>05:56</time><p>然后把它反转范围</p></div>
+<div class="transcript-row"><time>05:58</time><p>对于外围区域</p></div>
+<div class="transcript-row"><time>05:59</time><p>我们稍微给它降低点曝光</p></div>
+<div class="transcript-row"><time>06:01</time><p>还是那句话</p></div>
+<div class="transcript-row"><time>06:01</time><p>要压不能只压</p></div>
+<div class="transcript-row"><time>06:02</time><p>你还得提亮对吧</p></div>
+<div class="transcript-row"><time>06:03</time><p>我们要把高光划快</p></div>
+<div class="transcript-row"><time>06:04</time><p>也稍微提高一点点</p></div>
+<div class="transcript-row"><time>06:05</time><p>让四周呈现出一个</p></div>
+<div class="transcript-row"><time>06:07</time><p>比较淡的一个暗角效果</p></div>
+<div class="transcript-row"><time>06:09</time><p>暗角也可以再次巩固一下</p></div>
+<div class="transcript-row"><time>06:11</time><p>我们想让画面视觉中心</p></div>
+<div class="transcript-row"><time>06:12</time><p>更聚焦于前景的一个效果</p></div>
+<div class="transcript-row"><time>06:14</time><p>接下来我们就可以开始动颜色了</p></div>
+<div class="transcript-row"><time>06:16</time><p>素材我已经传到了</p></div>
+<div class="transcript-row"><time>06:17</time><p>线上分享平台</p></div>
+<div class="transcript-row"><time>06:17</time><p>大家可以领取过去之后</p></div>
+<div class="transcript-row"><time>06:18</time><p>练练手</p></div>
+<div class="transcript-row"><time>06:19</time><p>还要打分起线上系统</p></div>
+<div class="transcript-row"><time>06:20</time><p>各种各样的线下调色训练营</p></div>
+<div class="transcript-row"><time>06:22</time><p>那颜色怎么调整呢</p></div>
+<div class="transcript-row"><time>06:23</time><p>我们之前说过</p></div>
+<div class="transcript-row"><time>06:24</time><p>如果说你不知道风格化的思路是</p></div>
+<div class="transcript-row"><time>06:26</time><p>其实可以分析画面中</p></div>
+<div class="transcript-row"><time>06:27</time><p>存在哪些颜色</p></div>
+<div class="transcript-row"><time>06:28</time><p>有蓝色 对吧</p></div>
+<div class="transcript-row"><time>06:29</time><p>还有皮肤的橙黄色以及黄色</p></div>
+<div class="transcript-row"><time>06:32</time><p>明确了这些颜色之后</p></div>
+<div class="transcript-row"><time>06:33</time><p>那么我们就可以对画面</p></div>
+<div class="transcript-row"><time>06:34</time><p>全局的风格化颜色</p></div>
+<div class="transcript-row"><time>06:36</time><p>从这些颜色的夹角去找</p></div>
+<div class="transcript-row"><time>06:38</time><p>我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>06:39</time><p>让整体稍微加点绿</p></div>
+<div class="transcript-row"><time>06:41</time><p>其实不错</p></div>
+<div class="transcript-row"><time>06:42</time><p>差不多是这个效果</p></div>
+<div class="transcript-row"><time>06:43</time><p>挺好的 对吧</p></div>
+<div class="transcript-row"><time>06:44</time><p>但是做完了之后</p></div>
+<div class="transcript-row"><time>06:45</time><p>皮肤会受到影响</p></div>
+<div class="transcript-row"><time>06:46</time><p>那么我们就可以再建一个</p></div>
+<div class="transcript-row"><time>06:48</time><p>并行节点</p></div>
+<div class="transcript-row"><time>06:48</time><p>在下面这个节点中</p></div>
+<div class="transcript-row"><time>06:50</time><p>用蜘蛛网来把肤色</p></div>
+<div class="transcript-row"><time>06:51</time><p>给它纠正回来</p></div>
+<div class="transcript-row"><time>06:53</time><p>我们可以吸取下肤色</p></div>
+<div class="transcript-row"><time>06:54</time><p>让它的薄度稍微上来一点</p></div>
+<div class="transcript-row"><time>06:57</time><p>然后下面这个黄色</p></div>
+<div class="transcript-row"><time>06:58</time><p>也可以让它稍微</p></div>
+<div class="transcript-row"><time>06:59</time><p>往橙色方向走一点</p></div>
+<div class="transcript-row"><time>07:01</time><p>大概是这个行为</p></div>
+<div class="transcript-row"><time>07:02</time><p>我们把肤色给它纠回来了</p></div>
+<div class="transcript-row"><time>07:04</time><p>但是我们仔细看画面</p></div>
+<div class="transcript-row"><time>07:05</time><p>还是感觉怪怪的</p></div>
+<div class="transcript-row"><time>07:06</time><p>为什么会怪呢</p></div>
+<div class="transcript-row"><time>07:07</time><p>我们都知道</p></div>
+<div class="transcript-row"><time>07:08</time><p>如果要去区分画面中</p></div>
+<div class="transcript-row"><time>07:09</time><p>冷与暖的区域</p></div>
+<div class="transcript-row"><time>07:10</time><p>最常见的就是明暗关系</p></div>
+<div class="transcript-row"><time>07:11</time><p>一个场景中暖的区域</p></div>
+<div class="transcript-row"><time>07:13</time><p>一般会发生在高光区域</p></div>
+<div class="transcript-row"><time>07:14</time><p>而冷的则是暗不去</p></div>
+<div class="transcript-row"><time>07:16</time><p>但是画面中人物虽然暖了</p></div>
+<div class="transcript-row"><time>07:18</time><p>远处的高光区域</p></div>
+<div class="transcript-row"><time>07:19</time><p>还是保持冷的 对吧</p></div>
+<div class="transcript-row"><time>07:21</time><p>这就是让你画面显得怪的原因</p></div>
+<div class="transcript-row"><time>07:22</time><p>所以这个时候</p></div>
+<div class="transcript-row"><time>07:23</time><p>我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>07:24</time><p>又要用到遮罩</p></div>
+<div class="transcript-row"><time>07:26</time><p>我们画好了这个制造之后</p></div>
+<div class="transcript-row"><time>07:27</time><p>然后可以改变色温</p></div>
+<div class="transcript-row"><time>07:29</time><p>让它稍微暖一点点回来</p></div>
+<div class="transcript-row"><time>07:31</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>07:33</time><p>此时你看画面</p></div>
+<div class="transcript-row"><time>07:34</time><p>就会变得稍微舒服了一点</p></div>
+<div class="transcript-row"><time>07:36</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:36</time><p>在目前的基础上</p></div>
+<div class="transcript-row"><time>07:37</time><p>如果你觉得</p></div>
+<div class="transcript-row"><time>07:38</time><p>还想要再暖一点的话</p></div>
+<div class="transcript-row"><time>07:39</time><p>其实再来个节点</p></div>
+<div class="transcript-row"><time>07:40</time><p>给画面整体再加点色温也行</p></div>
+<div class="transcript-row"><time>07:43</time><p>你不用回去做</p></div>
+<div class="transcript-row"><time>07:44</time><p>回去做太麻烦了</p></div>
+<div class="transcript-row"><time>07:45</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:45</time><p>大概这个意思</p></div>
+<div class="transcript-row"><time>07:46</time><p>当然你可要可不要</p></div>
+<div class="transcript-row"><time>07:47</time><p>这个问题不大</p></div>
+<div class="transcript-row"><time>07:48</time><p>最后如果你想让画面再浓郁一点</p></div>
+<div class="transcript-row"><time>07:50</time><p>可以来一个左右左右对比度</p></div>
+<div class="transcript-row"><time>07:52</time><p>也就是降低偏移色能的曝光</p></div>
+<div class="transcript-row"><time>07:54</time><p>多加一点</p></div>
+<div class="transcript-row"><time>07:54</time><p>问题不大</p></div>
+<div class="transcript-row"><time>07:55</time><p>我们大胆的降</p></div>
+<div class="transcript-row"><time>07:56</time><p>然后再提高亮部色轮的曝光</p></div>
+<div class="transcript-row"><time>07:59</time><p>再降低中灰色轮的曝光</p></div>
+<div class="transcript-row"><time>08:01</time><p>最后提高暗部色轮的曝光</p></div>
+<div class="transcript-row"><time>08:03</time><p>把它的暗部给它找回来</p></div>
+<div class="transcript-row"><time>08:05</time><p>大概是这个意思</p></div>
+<div class="transcript-row"><time>08:07</time><p>这样的调整</p></div>
+<div class="transcript-row"><time>08:07</time><p>我们就让画面从这样变成了这样</p></div>
+<div class="transcript-row"><time>08:10</time><p>效果还挺好的</p></div>
+<div class="transcript-row"><time>08:11</time><p>对吧</p></div>
+<div class="transcript-row"><time>08:11</time><p>当然你其中这些节点的力度</p></div>
+<div class="transcript-row"><time>08:13</time><p>你可以自己去把控</p></div>
+<div class="transcript-row"><time>08:14</time><p>色彩领取过去之后</p></div>
+<div class="transcript-row"><time>08:15</time><p>自己练一练</p></div>
+<div class="transcript-row"><time>08:16</time><p>特别是对于有些朋友</p></div>
+<div class="transcript-row"><time>08:17</time><p>他对遮罩不太能理解的话</p></div>
+<div class="transcript-row"><time>08:19</time><p>你更要去感受一下</p></div>
+<div class="transcript-row"><time>08:20</time><p>每一次操作的</p></div>
+<div class="transcript-row"><time>08:21</time><p>区域性调整的问题</p></div>
+<div class="transcript-row"><time>08:23</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>08:23</time><p>如果绝对你有帮助的话</p></div>
+<div class="transcript-row"><time>08:25</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>08:25</time><p>好了</p></div>
+<div class="transcript-row"><time>08:26</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>08:27</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

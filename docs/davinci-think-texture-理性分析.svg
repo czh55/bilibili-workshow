@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5799" viewBox="0 0 1320 5799">
+  <foreignObject x="0" y="0" width="1320" height="5799">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>达芬奇调色到底该怎么思考让画面更有质感</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">调色思考</span><span class="tag tag-orange">光衰减</span><span class="tag tag-purple">遮罩差集</span><span class="tag tag-red">青橙</span><span class="tag tag-gray">时长 9分14秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/ARf4GP8brcE">原视频</a>
+  <div class="summary-line">灰片好看一调成坨，缺的是思考链：傍晚还原勿过亮→夕阳大光比压中灰再护高光→主体对比分区→更亮要符合光衰减（圆∩渐变差集）→颜色先看清再补蓝出青橙→外观必须有曝光与颜色底座。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">傍晚还原受光&lt;80%，勿硬拉90%</span></div><div class="timeline-item"><span class="timeline-time">00:55</span><span class="timeline-text">压 Shadow/Light 靠暗；抬 Highlight 回光感</span></div><div class="timeline-item"><span class="timeline-time">02:01</span><span class="timeline-text">人物对比+外部压环境</span></div><div class="timeline-item"><span class="timeline-time">03:02</span><span class="timeline-text">渐变∩圆差集按光衰减提中灰</span></div><div class="timeline-item"><span class="timeline-time">05:09</span><span class="timeline-text">加饱和看色→加蓝保暖→RGB 青橙→压艳</span></div><div class="timeline-item"><span class="timeline-time">07:28</span><span class="timeline-text">外观创造器不能代替前期曝光+颜色</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">还原<br/>符合时间</div><span class="arrow">→</span><div class="node-green">影调<br/>大光比靠暗</div><span class="arrow">→</span><div class="node-orange">主体<br/>分区+光衰减</div><span class="arrow">→</span><div class="node-blue">颜色<br/>先合理再倾向</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「一条就变成了一坨」校正为「一调就变成了一坨」；「Wipe节点」校正为「外部节点」；「体量」语境为受光提亮力度；「叉戟」校正为「差集」；「中灰色蓝」校正为「中灰色轮」；「2Gb混合器」校正为「RGB 混合器」；「色冷60辆切片」校正为「色相切片」；「不上用」校正为「不商用」；「小子」校正为「小字」；「系下」校正为「线下」。</p><p>误区：傍晚也按90%高光还原。不符合真实。</p><p>误区：人物不够亮就整脸猛抬 Light。不符光衰减。</p><p>误区：直接上外观创造器跳过曝光与颜色。底座一关就塌。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>还原问时间：晚了就别太亮</h3>
+      <p>有夕阳余光则受光面&lt;80%。硬拉90%一定过亮。白平衡+饱和后若仍像手机，进影调。</p>
+      <div class="quote">既然时间比较晚，我们在还原的时候就不要做太亮</div>
+      <div class="relation">灰片好看≠还原目标是亮堂。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>影调：更多内容靠暗，再护高光</h3>
+      <p>夕阳＝柔和高光大光比。降 Shadow/Light 让中灰靠暗；脸光感没了再抬 Highlight。</p>
+      <div class="quote">不是让它的暗面曝光往下降，而是让更多的内容往暗面去靠</div>
+      <div class="relation">靠暗≠死黑。</div>
+    </div>
+    <div class="card card-green">
+      <h3>光衰减：差集遮罩局部提</h3>
+      <p>只要受光更亮。渐变跟光向，与圆遮罩差集，使渐变仅作用圆内并校正方向，略提中灰。</p>
+      <div class="quote">要符合光衰减</div>
+      <div class="relation">谁被减去就点谁的差集按钮。</div>
+    </div>
+    <div class="card card-red">
+      <h3>外观是加成不是底座</h3>
+      <p>关前期只留外观：不行。只开曝光：影调好颜色寡。必须先做出合理冷暖再谈倾向/外观。</p>
+      <div class="quote">我们要把颜色先做出来，这件事情非常重要</div>
+      <div class="relation">强工具前先做完思考链。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>国外素材站案例，授权以作者说明为准。</li><li>光向与差集操作依赖具体构图。</li><li>青橙与灰蓝为作者偏好。</li><li>外观创造器参数因版本而异。</li></ul><div class="pitfall">灰片好看就猛提曝光。</div><div class="pitfall">主体加对比过猛假。</div><div class="pitfall">整脸抬 Light 不顾光衰减。</div><div class="pitfall">差集点错对象或方向未反转。</div><div class="pitfall">跳过颜色直接上外观。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>思考链：时间→影调→主体→光衰减→颜色→外观</li><li>傍晚还原克制高光</li><li>更亮要对齐光衰减</li><li>外观依赖曝光+颜色底座</li></ul><h3>行动清单</h3><ol><li>还原前判断时段与最亮应落在哪</li><li>中灰靠暗后护 Highlight</li><li>主体对比+外部，力度宁小</li><li>需局部提亮：圆∩渐变差集</li><li>加饱和看色→补缺色→混合器→切片；最后才外观</li></ol><h3>关键认知转变</h3><p>以前：灰片好看却越调越坨；现在：按光与时间逐步回答每个「为什么」，外观放最后。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 9分14秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

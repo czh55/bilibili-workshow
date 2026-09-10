@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="老叉拆解下午/傍晚/晚上混剪短片：先通看，选最好看或涵盖最多情况的锚点镜头做到位，再粘贴同时段镜头并统一主要成分（如天空蓝）。跨时段无法调成同一夜景时，压暗、闷高光、对齐天空观感与高光暖度，找「小范围亮」等共同点；全片加颗粒统一噪点，比硬降噪更稳。">
+<title>多场景不同时间的视频素材该怎么匹配调色？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>多场景不同时间的视频素材该怎么匹配调色？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">7分34秒</span><span class="meta-tag tag-topic">达芬奇 多场景匹配 全片一致 天空 夜景 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/e92klFp3Zn" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">立题：下午傍晚晚上怎么融</a><a href="#ch2">同时段粘贴：统一天空等主要成分</a><a href="#ch3">跨时段：不可能调成夜景，就压暗对齐</a><a href="#ch4">共同点：高光暖、亮区结构、全片颗粒</a><a href="#ch5">流程总结与反馈</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>老叉拆解下午/傍晚/晚上混剪短片：先通看，选最好看或涵盖最多情况的锚点镜头做到位，再粘贴同时段镜头并统一主要成分（如天空蓝）。跨时段无法调成同一夜景时，压暗、闷高光、对齐天空观感与高光暖度，找「小范围亮」等共同点；全片加颗粒统一噪点，比硬降噪更稳。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→02:25]</span><div><strong>通看定锚</strong><p>先看调色/还原结果；选锚点镜头完整做到位。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:25→04:07]</span><div><strong>同时段粘贴</strong><p>粘贴同时间镜头；天空等主要成分尽量一致。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:07→05:26]</span><div><strong>跨时段压暗</strong><p>无法变夜景：压暗、闷太阳、HDR 展中灰、融合曲线压高光。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:26→06:40]</span><div><strong>找共同点</strong><p>高光暖观感对齐；亮区结构接近；胶片颗粒统一噪点。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:40→07:34]</span><div><strong>总结投票</strong><p>锚点→同场景粘贴→跨场景找共同点；全流程素材可领。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>全片一致不是把不同时段调成同一张图，而是锚点做到位、同时段粘齐主要成分，跨时段找天空/高光暖/亮区结构等共同点，并用颗粒统一噪点质感。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-02:25</span>立题：下午傍晚晚上怎么融</h2><p>朋友小梅同学的一组镜头时间混乱：下午、傍晚、晚上。素材与调色全流程会分享；作者强调思路未必最优，欢迎自调后评论区交流。</p><p>建议先通看全片，再选最好看、最重要或涵盖最多情况的镜头作锚点——本片选片头模特镜头，从灰片还原→曝光→颜色风格一步做到位。</p><figure><img src="assets/multi-scene-grade-match/shot-01.jpg" alt="调色后全片预览：下午/傍晚/晚上混剪结果" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:40] 调色后全片预览：下午/傍晚/晚上混剪结果</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/57513686cca8.mp3" type="button" aria-label="Play English audio">🔊</button><span>Full-timeline preview after grade: afternoon/dusk/night mix.</span></div>
+<audio class="cap-audio" src="audio/57513686cca8.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">02:25-04:07</span>同时段粘贴：统一天空等主要成分</h2><p>锚点做好后粘贴给同一时间段其他镜头。即使时间接近，还原结果也会不一致，但要把画面主要成分调同——尤其天空蓝尽量一致。夜景段调差不多后，再按剪辑顺序进下一场景。</p><figure><img src="assets/multi-scene-grade-match/shot-02.jpg" alt="锚点镜头做到位后粘贴同时段，统一天空蓝" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 锚点镜头做到位后粘贴同时段，统一天空蓝</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/dd55dc41ee99.mp3" type="button" aria-label="Play English audio">🔊</button><span>Nail the anchor shot, then paste to same-time clips for unified sky blue.</span></div>
+<audio class="cap-audio" src="audio/dd55dc41ee99.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">04:07-05:26</span>跨时段：不可能调成夜景，就压暗对齐</h2><p>灰片一看就与夜景不一致，硬调成夜景不可能。还原刻意闷高光（含地面日晒区），HDR 压中灰并拉开高光层次，天空压暗再平衡地面——天空比重大，若不压成接近夜景的蓝/暗，画面会极跳跃。</p><p>更难的时段：整体还原往下压（高光可牺牲），HDR 展中灰偏暗并降，人物中心遮罩微提找回光感（略带剪影、勿提假），11 号节点用融合曲线压平高光。同场景后续就更好粘。</p><figure><img src="assets/multi-scene-grade-match/shot-03.jpg" alt="跨时段：闷高光、压天空以靠近夜景观感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:45] 跨时段：闷高光、压天空以靠近夜景观感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9fff619fa114.mp3" type="button" aria-label="Play English audio">🔊</button><span>Cross time of day: mute highlights and press sky toward a night feel.</span></div>
+<audio class="cap-audio" src="audio/9fff619fa114.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/multi-scene-grade-match/shot-04.jpg" alt="人物微提+融合曲线压高光，略带剪影" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:50] 人物微提+融合曲线压高光，略带剪影</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/71ec80c72cdb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Slight subject lift + fusion curve presses highs toward a soft silhouette.</span></div>
+<audio class="cap-audio" src="audio/71ec80c72cdb.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:26-06:40</span>共同点：高光暖、亮区结构、全片颗粒</h2><p>天空做不成同一片蓝时，让高光暖与前后镜头/人造高光观感尽量一致，整体带一点冷即可。同拍时段两镜结果可不同，因要向下一段靠：让「中间人亮、四周暗」等结构接近。</p><p>每镜末节点上电影感外观冲激器并开胶片颗粒：夜景噪点难免，降不干净不如全片统一加噪——也是求一致。</p><figure><img src="assets/multi-scene-grade-match/shot-05.jpg" alt="电影感外观+胶片颗粒：全片统一噪点" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:25] 电影感外观+胶片颗粒：全片统一噪点</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c0b61c8c14bf.mp3" type="button" aria-label="Play English audio">🔊</button><span>Film look + grain unifies noise across the whole piece.</span></div>
+<audio class="cap-audio" src="audio/c0b61c8c14bf.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">06:40-07:34</span>流程总结与反馈</h2><p>习惯：一镜做到位→同场景同时段粘齐→下一场景；跨场景找共同点（如小范围亮光结构），再谈质感颗粒。全流程实录是否受欢迎可投票评论。</p></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（202段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>前两天有位朋友问了这个问题</p></div>
+<div class="transcript-row"><time>00:01</time><p>朋友巧呢小梅同学拍了这一组镜头</p></div>
+<div class="transcript-row"><time>00:04</time><p>我们就拿来做一下简单的一个拆解</p></div>
+<div class="transcript-row"><time>00:06</time><p>素材呢同样会免费分享给大家</p></div>
+<div class="transcript-row"><time>00:08</time><p>我们先来看一下调色后的结果</p></div>
+<div class="transcript-row"><time>01:00</time><p>这个是还原后的结果</p></div>
+<div class="transcript-row"><time>02:01</time><p>其实能够看得出来</p></div>
+<div class="transcript-row"><time>02:03</time><p>整个片子的时间点是非常混乱的</p></div>
+<div class="transcript-row"><time>02:05</time><p>下午傍晚晚上</p></div>
+<div class="transcript-row"><time>02:07</time><p>那么这三个时间点的内容要怎么去做融合呢</p></div>
+<div class="transcript-row"><time>02:10</time><p>我在素材分享的文件夹里面传了这个片子调色的全流程</p></div>
+<div class="transcript-row"><time>02:13</time><p>如果大家有需要的话可以去看一看</p></div>
+<div class="transcript-row"><time>02:15</time><p>我在这里呢讲一下我的思路</p></div>
+<div class="transcript-row"><time>02:17</time><p>当然啊我说的这个思路不一定是最优解的</p></div>
+<div class="transcript-row"><time>02:19</time><p>大家如果有更好的想法</p></div>
+<div class="transcript-row"><time>02:20</time><p>有办法可以把素材理取过去之后自己尝试一下</p></div>
+<div class="transcript-row"><time>02:23</time><p>调出来了也可以发到评论区给大家参考参考</p></div>
+<div class="transcript-row"><time>02:25</time><p>在调一个完整的片子的时候</p></div>
+<div class="transcript-row"><time>02:27</time><p>我其实建议大家尽可能的通篇看一看</p></div>
+<div class="transcript-row"><time>02:29</time><p>然后我个人的习惯呢</p></div>
+<div class="transcript-row"><time>02:31</time><p>我会找到最好看或者是最重要</p></div>
+<div class="transcript-row"><time>02:33</time><p>或者是涵盖最多情况的那个镜头</p></div>
+<div class="transcript-row"><time>02:35</time><p>我选择的是这个片子的第一个镜头</p></div>
+<div class="transcript-row"><time>02:37</time><p>模特儿很美很有意境</p></div>
+<div class="transcript-row"><time>02:39</time><p>对不对</p></div>
+<div class="transcript-row"><time>02:40</time><p>调它的时候不会想太多</p></div>
+<div class="transcript-row"><time>02:41</time><p>我会把它一步一步的给它做到位</p></div>
+<div class="transcript-row"><time>02:43</time><p>从灰片的状态做好还原</p></div>
+<div class="transcript-row"><time>02:45</time><p>然后呢把它的曝光做好调整</p></div>
+<div class="transcript-row"><time>02:47</time><p>再然后把颜色跟风格做好调整</p></div>
+<div class="transcript-row"><time>02:49</time><p>其实素材是比较简单的</p></div>
+<div class="transcript-row"><time>02:51</time><p>那还原好了之后呢</p></div>
+<div class="transcript-row"><time>02:52</time><p>我就会把它粘贴给同一时间段的其他几个镜头</p></div>
+<div class="transcript-row"><time>02:56</time><p>都快速的粘贴</p></div>
+<div class="transcript-row"><time>02:57</time><p>粘贴的过程中</p></div>
+<div class="transcript-row"><time>02:58</time><p>其实大家看那个调色全流程的时候能够发现</p></div>
+<div class="transcript-row"><time>03:01</time><p>其实每个镜头还原后就算它们时间点很接近</p></div>
+<div class="transcript-row"><time>03:04</time><p>它还原后的结果也非常不一致</p></div>
+<div class="transcript-row"><time>03:06</time><p>但是呢我们一定要把画面主要成分给调的相同</p></div>
+<div class="transcript-row"><time>03:09</time><p>也就是天空的蓝要尽可能的一致</p></div>
+<div class="transcript-row"><time>03:11</time><p>那这些晚上的镜头呢</p></div>
+<div class="transcript-row"><time>03:13</time><p>我们给它调的差不多了之后</p></div>
+<div class="transcript-row"><time>03:14</time><p>我们就可以开始考虑下一个场景了</p></div>
+<div class="transcript-row"><time>03:17</time><p>下一个场景我们可以按剪辑的顺序来</p></div>
+<div class="transcript-row"><time>03:19</time><p>比如说我们给这个画面去粘</p></div>
+<div class="transcript-row"><time>03:20</time><p>这个画面我们其实从灰片状态下看得出来</p></div>
+<div class="transcript-row"><time>03:22</time><p>它并不是一个很好看很标准的一个场景</p></div>
+<div class="transcript-row"><time>03:25</time><p>至少它和我们的晚上一定是不一致的</p></div>
+<div class="transcript-row"><time>03:27</time><p>那你说我把它调成夜景可不可能呢</p></div>
+<div class="transcript-row"><time>03:30</time><p>不可能</p></div>
+<div class="transcript-row"><time>03:31</time><p>所以我们可以看一下</p></div>
+<div class="transcript-row"><time>03:32</time><p>这是还原后的画面</p></div>
+<div class="transcript-row"><time>03:33</time><p>我有刻意的把高光给做的闷一点</p></div>
+<div class="transcript-row"><time>03:36</time><p>特别是地面上这个太阳照到的部分</p></div>
+<div class="transcript-row"><time>03:38</time><p>给它做闷一点</p></div>
+<div class="transcript-row"><time>03:39</time><p>我还利用HDR四轮</p></div>
+<div class="transcript-row"><time>03:40</time><p>把它整个中灰部分的内容都往下降</p></div>
+<div class="transcript-row"><time>03:43</time><p>同时也是拉开了高光部分的层次</p></div>
+<div class="transcript-row"><time>03:45</time><p>再然后呢我会刻意的把天空给压暗</p></div>
+<div class="transcript-row"><time>03:48</time><p>然后地面呢把它的曝光重新平衡一下</p></div>
+<div class="transcript-row"><time>03:51</time><p>再然后这个点就非常重要了</p></div>
+<div class="transcript-row"><time>03:52</time><p>我们已经把天空压暗了</p></div>
+<div class="transcript-row"><time>03:54</time><p>所以我们就可以更好地把这个画面的天空</p></div>
+<div class="transcript-row"><time>03:56</time><p>跟前面这些夜景画面的天空给它调成一致</p></div>
+<div class="transcript-row"><time>03:59</time><p>因为这个画面它的天空比重实在太大了</p></div>
+<div class="transcript-row"><time>04:02</time><p>如果这里的天空是白色或者是那种淡蓝色</p></div>
+<div class="transcript-row"><time>04:05</time><p>那你这个画面就非常非常跳跃</p></div>
+<div class="transcript-row"><time>04:07</time><p>这个时间段其实还好做一点</p></div>
+<div class="transcript-row"><time>04:09</time><p>但是来到了这个时间段就不好做了</p></div>
+<div class="transcript-row"><time>04:11</time><p>我们看到这是原片的效果</p></div>
+<div class="transcript-row"><time>04:13</time><p>你怎么调都调不成前面这些</p></div>
+<div class="transcript-row"><time>04:15</time><p>其他时间点的这种效果</p></div>
+<div class="transcript-row"><time>04:16</time><p>那我们该怎么考虑呢</p></div>
+<div class="transcript-row"><time>04:17</time><p>首先压暗是一定的</p></div>
+<div class="transcript-row"><time>04:19</time><p>你不能说我一个片子大部分都是夜景的</p></div>
+<div class="transcript-row"><time>04:21</time><p>暗掉的然后突然来一个特别亮的</p></div>
+<div class="transcript-row"><time>04:23</time><p>这肯定是不行的对不对</p></div>
+<div class="transcript-row"><time>04:25</time><p>所以我就整体的还原的时候尽可能往下压</p></div>
+<div class="transcript-row"><time>04:27</time><p>高光会受到牺牲不管它</p></div>
+<div class="transcript-row"><time>04:29</time><p>我在5号节点给它用HDR色轮</p></div>
+<div class="transcript-row"><time>04:31</time><p>拉开了中灰部分的层次</p></div>
+<div class="transcript-row"><time>04:33</time><p>同时把中灰偏暗部分往下降</p></div>
+<div class="transcript-row"><time>04:35</time><p>然后我给中间人物的位置画了一个遮罩</p></div>
+<div class="transcript-row"><time>04:37</time><p>把它稍微提亮一点点</p></div>
+<div class="transcript-row"><time>04:39</time><p>提亮完了之后呢</p></div>
+<div class="transcript-row"><time>04:40</time><p>其实我在后面这些颜色我先不说</p></div>
+<div class="transcript-row"><time>04:42</time><p>重点在于11号节点</p></div>
+<div class="transcript-row"><time>04:44</time><p>我们看到我在11号节点用了一个这样的融合曲线</p></div>
+<div class="transcript-row"><time>04:47</time><p>把高光这里尽可能再给它压平</p></div>
+<div class="transcript-row"><time>04:49</time><p>那这样做的行为有什么好处呢</p></div>
+<div class="transcript-row"><time>04:51</time><p>首先第一个整体是走暗掉的</p></div>
+<div class="transcript-row"><time>04:53</time><p>这个是当然的</p></div>
+<div class="transcript-row"><time>04:54</time><p>但是我们在6号节点把人物这里稍微提亮了一点</p></div>
+<div class="transcript-row"><time>04:57</time><p>其实是给画面中的主要成分</p></div>
+<div class="transcript-row"><time>04:59</time><p>给它找回光感</p></div>
+<div class="transcript-row"><time>05:01</time><p>所以前面给人物稍微提亮这个行为</p></div>
+<div class="transcript-row"><time>05:03</time><p>就变得特别重要</p></div>
+<div class="transcript-row"><time>05:04</time><p>可是你不能提的太多</p></div>
+<div class="transcript-row"><time>05:05</time><p>太多又很假</p></div>
+<div class="transcript-row"><time>05:06</time><p>我们这个想做的那个效果</p></div>
+<div class="transcript-row"><time>05:08</time><p>其实是带上那么一点点剪影的感觉</p></div>
+<div class="transcript-row"><time>05:11</time><p>我们要客观说</p></div>
+<div class="transcript-row"><time>05:12</time><p>这个画面想调整前面这种效果是绝对不可能的</p></div>
+<div class="transcript-row"><time>05:15</time><p>这是个大前提</p></div>
+<div class="transcript-row"><time>05:16</time><p>但是我们不能让画面中这些特别突兀的内容</p></div>
+<div class="transcript-row"><time>05:19</time><p>过于抢戏</p></div>
+<div class="transcript-row"><time>05:20</time><p>也就是这个太阳</p></div>
+<div class="transcript-row"><time>05:21</time><p>那这样调完了之后你会发现</p></div>
+<div class="transcript-row"><time>05:22</time><p>后面几个同场景的镜头去粘就变得好粘了</p></div>
+<div class="transcript-row"><time>05:25</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:26</time><p>都是一样的一个质感</p></div>
+<div class="transcript-row"><time>05:27</time><p>同时我们要考虑一个点</p></div>
+<div class="transcript-row"><time>05:28</time><p>我们当然知道</p></div>
+<div class="transcript-row"><time>05:29</time><p>在这个原始状态下它是偏暖的</p></div>
+<div class="transcript-row"><time>05:31</time><p>但是我们一定要把它调冷</p></div>
+<div class="transcript-row"><time>05:32</time><p>为什么呀</p></div>
+<div class="transcript-row"><time>05:33</time><p>我们已经明确天空做不成前面这种蓝了</p></div>
+<div class="transcript-row"><time>05:36</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:37</time><p>既然做不到</p></div>
+<div class="transcript-row"><time>05:38</time><p>我们就要考虑一个点</p></div>
+<div class="transcript-row"><time>05:39</time><p>让这个画面它的高光的暖</p></div>
+<div class="transcript-row"><time>05:41</time><p>和前面这个镜头的高光</p></div>
+<div class="transcript-row"><time>05:43</time><p>以及一开始人造的这个高光</p></div>
+<div class="transcript-row"><time>05:45</time><p>它的暖从观感上来讲尽可能一致</p></div>
+<div class="transcript-row"><time>05:48</time><p>然后呢</p></div>
+<div class="transcript-row"><time>05:49</time><p>整体的颜色</p></div>
+<div class="transcript-row"><time>05:50</time><p>让画面中带上一定的冷调就行了</p></div>
+<div class="transcript-row"><time>05:52</time><p>不需要做成一模一样的蓝</p></div>
+<div class="transcript-row"><time>05:53</time><p>而且你也做不出来</p></div>
+<div class="transcript-row"><time>05:54</time><p>但也有例外</p></div>
+<div class="transcript-row"><time>05:55</time><p>比如说我们看到这两个场景</p></div>
+<div class="transcript-row"><time>05:57</time><p>这个镜头和前面刚刚看的这个镜头</p></div>
+<div class="transcript-row"><time>05:59</time><p>其实是同一个时间段拍的</p></div>
+<div class="transcript-row"><time>06:00</time><p>对不对</p></div>
+<div class="transcript-row"><time>06:01</time><p>但是我们调出来的结果是不一样的</p></div>
+<div class="transcript-row"><time>06:03</time><p>为什么呀</p></div>
+<div class="transcript-row"><time>06:04</time><p>因为这个镜头后面跟了一个这个</p></div>
+<div class="transcript-row"><time>06:05</time><p>我们要让这两个镜头尽可能接近</p></div>
+<div class="transcript-row"><time>06:07</time><p>那该怎么做呢</p></div>
+<div class="transcript-row"><time>06:08</time><p>我们要让每个画面</p></div>
+<div class="transcript-row"><time>06:09</time><p>它的特点尽可能接近</p></div>
+<div class="transcript-row"><time>06:10</time><p>这个镜头一定是好调也是好看的</p></div>
+<div class="transcript-row"><time>06:12</time><p>它有什么特点</p></div>
+<div class="transcript-row"><time>06:13</time><p>人物在中间位置特别亮对不对</p></div>
+<div class="transcript-row"><time>06:16</time><p>其他地方调的比较暗</p></div>
+<div class="transcript-row"><time>06:17</time><p>那么我们就要让前面这个镜头</p></div>
+<div class="transcript-row"><time>06:18</time><p>也符合这样的一个特点</p></div>
+<div class="transcript-row"><time>06:20</time><p>大家可以看到我这些画面</p></div>
+<div class="transcript-row"><time>06:21</time><p>每个画面的最后一个节点</p></div>
+<div class="transcript-row"><time>06:23</time><p>我都给它上了一个电影港外观冲测器</p></div>
+<div class="transcript-row"><time>06:25</time><p>并且我在胶片颗粒中</p></div>
+<div class="transcript-row"><time>06:27</time><p>打开了这个选项</p></div>
+<div class="transcript-row"><time>06:28</time><p>那这个做的目的是为了什么呢</p></div>
+<div class="transcript-row"><time>06:30</time><p>我们都知道夜景调色</p></div>
+<div class="transcript-row"><time>06:31</time><p>大概率会出现噪点</p></div>
+<div class="transcript-row"><time>06:32</time><p>但是降噪你不能做得很干净</p></div>
+<div class="transcript-row"><time>06:34</time><p>那既然做不干净</p></div>
+<div class="transcript-row"><time>06:35</time><p>我还不如全片都加噪点</p></div>
+<div class="transcript-row"><time>06:37</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:38</time><p>这同样是寻求一致的操作</p></div>
+<div class="transcript-row"><time>06:40</time><p>那我们大概总结下思路</p></div>
+<div class="transcript-row"><time>06:41</time><p>你想要做的全片一致</p></div>
+<div class="transcript-row"><time>06:43</time><p>我个人的习惯是</p></div>
+<div class="transcript-row"><time>06:44</time><p>把一个画面先做到位</p></div>
+<div class="transcript-row"><time>06:45</time><p>然后去把同场景</p></div>
+<div class="transcript-row"><time>06:46</time><p>同时段的镜头都粘贴一致</p></div>
+<div class="transcript-row"><time>06:48</time><p>然后再去找下个场景</p></div>
+<div class="transcript-row"><time>06:49</time><p>而不同场景</p></div>
+<div class="transcript-row"><time>06:50</time><p>或者是不同时间点之间的镜头</p></div>
+<div class="transcript-row"><time>06:52</time><p>去做匹配的话</p></div>
+<div class="transcript-row"><time>06:53</time><p>一定要去找共同点</p></div>
+<div class="transcript-row"><time>06:54</time><p>你不可能把两个</p></div>
+<div class="transcript-row"><time>06:55</time><p>完全不一样的镜头调成一样的</p></div>
+<div class="transcript-row"><time>06:57</time><p>但是我们可以考虑让画面中</p></div>
+<div class="transcript-row"><time>06:58</time><p>比如说刚刚这两个镜头</p></div>
+<div class="transcript-row"><time>06:59</time><p>这两个镜头调成一样不可能</p></div>
+<div class="transcript-row"><time>07:01</time><p>但是我们可以考虑</p></div>
+<div class="transcript-row"><time>07:02</time><p>把画面中亮的部分</p></div>
+<div class="transcript-row"><time>07:03</time><p>尽可能一样对不对</p></div>
+<div class="transcript-row"><time>07:04</time><p>都是一个小范围的亮光</p></div>
+<div class="transcript-row"><time>07:06</time><p>那就可以让你的画面不会特别跳</p></div>
+<div class="transcript-row"><time>07:08</time><p>再然后就是考虑画面的质感了</p></div>
+<div class="transcript-row"><time>07:10</time><p>比如说胶片颗粒和噪点</p></div>
+<div class="transcript-row"><time>07:12</time><p>大家可以把素材领取过去之后</p></div>
+<div class="transcript-row"><time>07:13</time><p>感受下还是挺难的</p></div>
+<div class="transcript-row"><time>07:14</time><p>我说实话</p></div>
+<div class="transcript-row"><time>07:15</time><p>还有达芬吉的线上系统课程</p></div>
+<div class="transcript-row"><time>07:16</time><p>和线下调色训练</p></div>
+<div class="transcript-row"><time>07:17</time><p>您看视频下方来找我就行了</p></div>
+<div class="transcript-row"><time>07:19</time><p>调色全流程也放在了</p></div>
+<div class="transcript-row"><time>07:20</time><p>分享的文件夹</p></div>
+<div class="transcript-row"><time>07:21</time><p>不知道大家对这种</p></div>
+<div class="transcript-row"><time>07:22</time><p>真实全流程的实录感不感兴趣</p></div>
+<div class="transcript-row"><time>07:24</time><p>还是说你更喜欢</p></div>
+<div class="transcript-row"><time>07:25</time><p>之前那种单一镜头的操作分享呢</p></div>
+<div class="transcript-row"><time>07:27</time><p>可以投个票</p></div>
+<div class="transcript-row"><time>07:28</time><p>或者是评论区说一说</p></div>
+<div class="transcript-row"><time>07:29</time><p>那讲到这里</p></div>
+<div class="transcript-row"><time>07:30</time><p>如果绝对你有帮助的话</p></div>
+<div class="transcript-row"><time>07:31</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>07:32</time><p>好了这期就到这里</p></div>
+<div class="transcript-row"><time>07:33</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

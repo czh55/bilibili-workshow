@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="HDR 色轮名字来自处理高动态范围，但同样可用于 SDR。六分区从暗到亮：Black/Dark/Shadow 与 Light/Highlight/Specular，加 Global。未开广色域时 Specular 常无效；达芬奇广色域后可用。范围可拖分区竖线/白色波谷改，衰减控柔">
+<title>达芬奇的 HDR 色轮怎么用？只能给 HDR 素材用吗？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>达芬奇的 HDR 色轮怎么用？只能给 HDR 素材用吗？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">8分20秒</span><span class="meta-tag tag-topic">达芬奇 HDR色轮 SDR 广色域 Specular 分区 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/4ttVhcc4pf6" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">面板：暗三亮三 + Specular 与广色域</a><a href="#ch2">范围可调；衰减是柔化不是范围</a><a href="#ch3">实战：压 Shadow、出灰面、护 Highlight</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>HDR 色轮名字来自处理高动态范围，但同样可用于 SDR。六分区从暗到亮：Black/Dark/Shadow 与 Light/Highlight/Specular，加 Global。未开广色域时 Specular 常无效；达芬奇广色域后可用。范围可拖分区竖线/白色波谷改，衰减控柔化。实战常 Shadow 压暗、Light 出灰面、Highlight 护高光，相当于自定义范围的 S 曲线。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:00]</span><div><strong>能用于 SDR</strong><p>设计为 HDR，但 SDR 同样有效。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:00→03:12]</span><div><strong>分区规律</strong><p>暗轮只动左侧、亮轮只动右侧；Specular 需广色域。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:12→05:46]</span><div><strong>范围与衰减</strong><p>竖线改起点；白波谷改范围；红波谷=衰减柔化。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:46→07:15]</span><div><strong>实战立体</strong><p>降 Shadow → 降 Light → 抬 Highlight 出灰面层次。</p></div></div>
+<div class="summary-row"><span class="time-marker">[07:15→08:20]</span><div><strong>染色可选</strong><p>可加蓝；并行蜘蛛网保暖肤。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>HDR 色轮不是 HDR 专用。弄清左右分区与广色域下的 Specular，用 Shadow/Light/Highlight 组合展层次；范围与衰减可调，相当于精细版分区 S 曲线。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-03:12</span>面板：暗三亮三 + Specular 与广色域</h2><p>开场即强调：任何素材都能用。默认从左到右 Black、Dark、Shadow，再 Light、Highlight、Specular，另有 Global。黑白渐变上：Shadow/Dark 主要改左半暗区，起点越暗范围越偏黑；Light/Highlight 改右半，越亮起点越右、范围越小。</p><p>未做色彩管理时动 Specular 画面不变：齿轮→色彩管理→达芬奇广色域（取消自动），输出如 Gamma 2.4 或 709A。Rec.709 下高于约 100 尼特信息处理不到，Specular 无作用；广色域后正常。</p><figure><img src="assets/davinci-hdr-wheels-usage/shot-01.jpg" alt="HDR 色轮面板：暗三亮三 + Global" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:20] HDR 色轮面板：暗三亮三 + Global</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3cf5786f1c3a.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR wheels panel: three dark, three bright, plus Global.</span></div>
+<audio class="cap-audio" src="audio/3cf5786f1c3a.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-hdr-wheels-usage/shot-02.jpg" alt="广色域后 Specular 才有响应" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:45] 广色域后 Specular 才有响应</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/885d9f27ab7a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Specular only responds after a wide gamut setup.</span></div>
+<audio class="cap-audio" src="audio/885d9f27ab7a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">03:12-05:46</span>范围可调；衰减是柔化不是范围</h2><p>展开完整面板：直方图上方竖线对应各轮，箭头示影响方向。Shift+H 突出显示可看范围。拖竖线改起点；左侧白色波谷也可改范围但有上限，右侧分区面板可无限制拖。红色波谷与「衰减」相同——改柔化而非范围：衰减小更硬、大更柔。还可创建新分区（默认可删自定义）。</p><figure><img src="assets/davinci-hdr-wheels-usage/shot-03.jpg" alt="分区面板竖线：拖动改色轮起点范围" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:00] 分区面板竖线：拖动改色轮起点范围</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b9205618b821.mp3" type="button" aria-label="Play English audio">🔊</button><span>Zone panel ticks: drag to change each wheel’s start range.</span></div>
+<audio class="cap-audio" src="audio/b9205618b821.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">05:46-08:20</span>实战：压 Shadow、出灰面、护 Highlight</h2><p>人像还原后层次弱：缺够暗的暗面与灰面。降 Shadow 立刻立体；过渡仍硬则降 Light（默认含大量中灰）出灰面，高光被带暗再抬 Highlight。脸部层次更丰富、高光不再一片。黑白渐变上同操作≈自定义范围 S 曲线。可略加蓝，肤色受影响则并行蜘蛛网找回暖。</p><figure><img src="assets/davinci-hdr-wheels-usage/shot-04.jpg" alt="降 Shadow：暗面够暗，立体感起来" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:15] 降 Shadow：暗面够暗，立体感起来</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3a016c1ab750.mp3" type="button" aria-label="Play English audio">🔊</button><span>Lower Shadow so darks are dark enough for volume.</span></div>
+<audio class="cap-audio" src="audio/3a016c1ab750.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-hdr-wheels-usage/shot-05.jpg" alt="降 Light 抬 Highlight：灰面与高光层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:45] 降 Light 抬 Highlight：灰面与高光层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0014bca32a75.mp3" type="button" aria-label="Play English audio">🔊</button><span>Lower Light, raise Highlight for gray-mass vs highlight layers.</span></div>
+<audio class="cap-audio" src="audio/0014bca32a75.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-hdr-wheels-usage/shot-06.jpg" alt="黑白渐变上同操作≈自定义 S 曲线" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:30] 黑白渐变上同操作≈自定义 S 曲线</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a1eb83d678af.mp3" type="button" aria-label="Play English audio">🔊</button><span>Same moves on a B/W ramp ≈ a custom S-curve.</span></div>
+<audio class="cap-audio" src="audio/a1eb83d678af.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（271段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>HDR色轮怎么用</p></div>
+<div class="transcript-row"><time>00:08</time><p>我们说在最前面</p></div>
+<div class="transcript-row"><time>00:09</time><p>任何素材都能使用HDR色轮</p></div>
+<div class="transcript-row"><time>00:11</time><p>它的名字源于它处理高灯带范围图像数据的能力</p></div>
+<div class="transcript-row"><time>00:14</time><p>我们可以看到面板</p></div>
+<div class="transcript-row"><time>00:15</time><p>在默认的排布下</p></div>
+<div class="transcript-row"><time>00:17</time><p>从左往右</p></div>
+<div class="transcript-row"><time>00:18</time><p>它分别是Black、Dark和Shadow的三个暗部色轮</p></div>
+<div class="transcript-row"><time>00:21</time><p>在往右则是Light、Highlight和Specular的三个亮部色轮</p></div>
+<div class="transcript-row"><time>00:25</time><p>还有一个全景影响的Global色轮</p></div>
+<div class="transcript-row"><time>00:27</time><p>这种划分是为了应对HDR内容更宽的亮度范围</p></div>
+<div class="transcript-row"><time>00:31</time><p>允许调色师在极暗和极亮的区域</p></div>
+<div class="transcript-row"><time>00:34</time><p>进行更精准独立的调整而不会互相干扰</p></div>
+<div class="transcript-row"><time>00:37</time><p>虽然说它的设计初衷是为了更好地处理HDR内容</p></div>
+<div class="transcript-row"><time>00:40</time><p>但它同样可以非常有效地用于标准动态范围</p></div>
+<div class="transcript-row"><time>00:44</time><p>也就是SDR的素材的调色</p></div>
+<div class="transcript-row"><time>00:45</time><p>原理不讲太多</p></div>
+<div class="transcript-row"><time>00:46</time><p>我们直接看操作</p></div>
+<div class="transcript-row"><time>00:47</time><p>当我们有一张黑白渐变图</p></div>
+<div class="transcript-row"><time>00:49</time><p>从左到右分别是从暗到亮</p></div>
+<div class="transcript-row"><time>00:52</time><p>我们刚刚提到HDR色轮分为暗部色轮以及亮部色轮</p></div>
+<div class="transcript-row"><time>00:55</time><p>通过名字我们也能够明确</p></div>
+<div class="transcript-row"><time>00:57</time><p>HDR色轮也是从左往右从暗到亮</p></div>
+<div class="transcript-row"><time>01:00</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:01</time><p>Black就是最黑的</p></div>
+<div class="transcript-row"><time>01:02</time><p>Dark稍微亮一点但还是黑的</p></div>
+<div class="transcript-row"><time>01:04</time><p>Shadow则是更亮一点的黑</p></div>
+<div class="transcript-row"><time>01:06</time><p>往右Light Highlight Speculum</p></div>
+<div class="transcript-row"><time>01:08</time><p>那就是一丝变亮</p></div>
+<div class="transcript-row"><time>01:09</time><p>如果此时我们看到</p></div>
+<div class="transcript-row"><time>01:11</time><p>当我们改变了暗部色轮中</p></div>
+<div class="transcript-row"><time>01:13</time><p>相对最亮的Shadow色轮的曝光时</p></div>
+<div class="transcript-row"><time>01:16</time><p>我们看到画面中它左半部分的区域受到了影响</p></div>
+<div class="transcript-row"><time>01:20</time><p>受到了改变</p></div>
+<div class="transcript-row"><time>01:21</time><p>我们用颜色来调吧</p></div>
+<div class="transcript-row"><time>01:22</time><p>颜色调会更加明确</p></div>
+<div class="transcript-row"><time>01:23</time><p>当我们用Shadow色轮给暗部加了一定的颜色之后</p></div>
+<div class="transcript-row"><time>01:26</time><p>在画面中呈现出来的</p></div>
+<div class="transcript-row"><time>01:27</time><p>就是左半部分受到了影响</p></div>
+<div class="transcript-row"><time>01:29</time><p>右半侧是不会受到任何的改变的</p></div>
+<div class="transcript-row"><time>01:31</time><p>那如果说此时我们选择一个更暗的Dark色轮</p></div>
+<div class="transcript-row"><time>01:35</time><p>它的影响范围也同样在左侧</p></div>
+<div class="transcript-row"><time>01:38</time><p>不过影响的起点更暗了</p></div>
+<div class="transcript-row"><time>01:40</time><p>那这一点我们从波线图也看得出来</p></div>
+<div class="transcript-row"><time>01:42</time><p>使用HDR色轮如果我们改变的是曝光</p></div>
+<div class="transcript-row"><time>01:44</time><p>它的所有的形态都会以一个大肚子的一个形态来呈现</p></div>
+<div class="transcript-row"><time>01:48</time><p>对画面改变的力度</p></div>
+<div class="transcript-row"><time>01:49</time><p>离影响的起点越近力度越大</p></div>
+<div class="transcript-row"><time>01:52</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:52</time><p>Dark也是一样</p></div>
+<div class="transcript-row"><time>01:53</time><p>它离起点越近</p></div>
+<div class="transcript-row"><time>01:55</time><p>影响的力度就越大</p></div>
+<div class="transcript-row"><time>01:56</time><p>Black也是如此</p></div>
+<div class="transcript-row"><time>01:57</time><p>不过它影响的范围非常小</p></div>
+<div class="transcript-row"><time>01:59</time><p>这三个暗部色轮它只影响左侧</p></div>
+<div class="transcript-row"><time>02:02</time><p>那么亮部色轮是不是也有相同的一个规律呢</p></div>
+<div class="transcript-row"><time>02:04</time><p>当我们去改变亮部色轮中相对最暗的Light色轮曝光时</p></div>
+<div class="transcript-row"><time>02:09</time><p>我们看到影响的范围只有在右侧</p></div>
+<div class="transcript-row"><time>02:12</time><p>而选择相对更亮的Highlight色轮时</p></div>
+<div class="transcript-row"><time>02:15</time><p>它的起点更往右更亮</p></div>
+<div class="transcript-row"><time>02:17</time><p>而它的范围越小</p></div>
+<div class="transcript-row"><time>02:18</time><p>最后就是Specular色轮</p></div>
+<div class="transcript-row"><time>02:20</time><p>你会发现此时我们在动Specular色轮的时候</p></div>
+<div class="transcript-row"><time>02:23</time><p>画面不做任何的改变</p></div>
+<div class="transcript-row"><time>02:25</time><p>因为我们并没有去做任何的色彩管理</p></div>
+<div class="transcript-row"><time>02:28</time><p>打开达芬奇右下角齿轮的设置中</p></div>
+<div class="transcript-row"><time>02:30</time><p>我们左侧第四个选项色彩管理</p></div>
+<div class="transcript-row"><time>02:33</time><p>我们可以将色彩管理设置为达芬奇广色域</p></div>
+<div class="transcript-row"><time>02:36</time><p>也就是在第一个色彩科学中选择第二个最长的</p></div>
+<div class="transcript-row"><time>02:38</time><p>取消勾选自动色彩管理</p></div>
+<div class="transcript-row"><time>02:40</time><p>再在第二个选项中选择达芬奇广色域</p></div>
+<div class="transcript-row"><time>02:44</time><p>在输出色彩空间可以根据你的需求</p></div>
+<div class="transcript-row"><time>02:46</time><p>一般来讲我们可以选Gamma2.4或者是709A</p></div>
+<div class="transcript-row"><time>02:49</time><p>这个我们今天不细讲</p></div>
+<div class="transcript-row"><time>02:50</time><p>将它设置完了之后我们点保存</p></div>
+<div class="transcript-row"><time>02:52</time><p>此时我们去改变Specular色轮</p></div>
+<div class="transcript-row"><time>02:54</time><p>我们看画面以及波星图</p></div>
+<div class="transcript-row"><time>02:56</time><p>它就能够有影响</p></div>
+<div class="transcript-row"><time>02:58</time><p>虽然说HDR色轮能够处理SDR素材</p></div>
+<div class="transcript-row"><time>03:00</time><p>但是若你的色彩空间处在709的环境下</p></div>
+<div class="transcript-row"><time>03:03</time><p>量于100尼特的信息就无法被处理</p></div>
+<div class="transcript-row"><time>03:05</time><p>所以Specular没有作用</p></div>
+<div class="transcript-row"><time>03:07</time><p>那我们把色彩管理做成了达芬奇广色域之后</p></div>
+<div class="transcript-row"><time>03:10</time><p>Specular它就能够正常使用了</p></div>
+<div class="transcript-row"><time>03:12</time><p>了解了这个基础的用法之后</p></div>
+<div class="transcript-row"><time>03:14</time><p>大家有没有疑惑</p></div>
+<div class="transcript-row"><time>03:15</time><p>每个色轮的范围难道是固定的吗</p></div>
+<div class="transcript-row"><time>03:17</time><p>并不是</p></div>
+<div class="transcript-row"><time>03:18</time><p>我们可以打开HDR色轮右上角这个按钮</p></div>
+<div class="transcript-row"><time>03:21</time><p>展开HDR色轮的完整面板</p></div>
+<div class="transcript-row"><time>03:23</time><p>在右侧这个面板中</p></div>
+<div class="transcript-row"><time>03:24</time><p>我们能够看到有一个直方图</p></div>
+<div class="transcript-row"><time>03:26</time><p>而在直方图的上方有非常多的这个竖线</p></div>
+<div class="transcript-row"><time>03:29</time><p>而每一根竖线就对应了一个色轮</p></div>
+<div class="transcript-row"><time>03:31</time><p>在每根竖线的上方都有一个箭头</p></div>
+<div class="transcript-row"><time>03:34</time><p>这个箭头就代表着色轮影响的方向</p></div>
+<div class="transcript-row"><time>03:37</time><p>向左就是暗部色轮只会影响到暗部</p></div>
+<div class="transcript-row"><time>03:40</time><p>向右是亮部色轮</p></div>
+<div class="transcript-row"><time>03:41</time><p>我们可以先给画面做一个全局染色</p></div>
+<div class="transcript-row"><time>03:44</time><p>这样看着会直观一点</p></div>
+<div class="transcript-row"><time>03:45</time><p>然后呢</p></div>
+<div class="transcript-row"><time>03:45</time><p>按住Shift加H打开突出显示</p></div>
+<div class="transcript-row"><time>03:47</time><p>那此时我们选择色轮</p></div>
+<div class="transcript-row"><time>03:49</time><p>就能够更加清晰的看到</p></div>
+<div class="transcript-row"><time>03:50</time><p>每一个色轮它对应的范围</p></div>
+<div class="transcript-row"><time>03:52</time><p>它的范围就是按照曝光作为区分的</p></div>
+<div class="transcript-row"><time>03:55</time><p>以Dark色轮为例</p></div>
+<div class="transcript-row"><time>03:56</time><p>它此时影响的范围就是左侧的暗部</p></div>
+<div class="transcript-row"><time>03:59</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:59</time><p>当我们去拖动</p></div>
+<div class="transcript-row"><time>04:00</time><p>每一个色轮对应的竖线时</p></div>
+<div class="transcript-row"><time>04:02</time><p>就能够改变这个色轮的起点</p></div>
+<div class="transcript-row"><time>04:05</time><p>越往右拖</p></div>
+<div class="transcript-row"><time>04:06</time><p>它的起点越亮</p></div>
+<div class="transcript-row"><time>04:07</time><p>那向左就是反直</p></div>
+<div class="transcript-row"><time>04:08</time><p>除了改变曝光和颜色以外</p></div>
+<div class="transcript-row"><time>04:10</time><p>HDR色轮还能改变某一个区域的饱和度</p></div>
+<div class="transcript-row"><time>04:13</time><p>这个在每个色轮下有对应的一个选项</p></div>
+<div class="transcript-row"><time>04:15</time><p>除了改变分区中的竖线</p></div>
+<div class="transcript-row"><time>04:17</time><p>来改变色轮对应的范围以外</p></div>
+<div class="transcript-row"><time>04:19</time><p>改变色轮左侧的白色波感也能够实现</p></div>
+<div class="transcript-row"><time>04:23</time><p>同样我们也选择Dark色轮为例</p></div>
+<div class="transcript-row"><time>04:25</time><p>当我们去改变左侧这个波感的时候</p></div>
+<div class="transcript-row"><time>04:27</time><p>它也能够去做一定的改变</p></div>
+<div class="transcript-row"><time>04:28</time><p>但是要注意的是</p></div>
+<div class="transcript-row"><time>04:29</time><p>在左侧波感改变它的范围的时候</p></div>
+<div class="transcript-row"><time>04:31</time><p>它是会受限的</p></div>
+<div class="transcript-row"><time>04:32</time><p>它不能突破一个限定值</p></div>
+<div class="transcript-row"><time>04:34</time><p>但是在右侧这里分区面板中</p></div>
+<div class="transcript-row"><time>04:36</time><p>你可以无限制的去改变它</p></div>
+<div class="transcript-row"><time>04:38</time><p>这个白色波感在每个色轮中都会有</p></div>
+<div class="transcript-row"><time>04:41</time><p>除了全局影响的Global色轮</p></div>
+<div class="transcript-row"><time>04:42</time><p>因为它是全局影响</p></div>
+<div class="transcript-row"><time>04:43</time><p>不需要它去改变范围</p></div>
+<div class="transcript-row"><time>04:45</time><p>而在右侧有一个红色波感</p></div>
+<div class="transcript-row"><time>04:47</time><p>这个红色波感是干嘛的</p></div>
+<div class="transcript-row"><time>04:48</time><p>在分区的右下角也有一个工具叫做衰减</p></div>
+<div class="transcript-row"><time>04:51</time><p>这两个调整的内容是一模一样的</p></div>
+<div class="transcript-row"><time>04:53</time><p>要注意的是</p></div>
+<div class="transcript-row"><time>04:54</time><p>改变衰减不是改变它的范围</p></div>
+<div class="transcript-row"><time>04:56</time><p>而是改变它的柔化</p></div>
+<div class="transcript-row"><time>04:58</time><p>HDR色轮的变化默认不是硬性的</p></div>
+<div class="transcript-row"><time>05:00</time><p>假如说我们用Highlight色轮</p></div>
+<div class="transcript-row"><time>05:02</time><p>给画面加一点点暖</p></div>
+<div class="transcript-row"><time>05:03</time><p>我们从分区的直方图上也能看得到</p></div>
+<div class="transcript-row"><time>05:05</time><p>它在原有的一条蓝色的线的基础上</p></div>
+<div class="transcript-row"><time>05:08</time><p>拆解了它原有的颜色比例</p></div>
+<div class="transcript-row"><time>05:10</time><p>加暖那自然就是让红色变多 蓝色变少</p></div>
+<div class="transcript-row"><time>05:13</time><p>而这种变化它是渐变的</p></div>
+<div class="transcript-row"><time>05:15</time><p>从起点开始逐渐变强</p></div>
+<div class="transcript-row"><time>05:17</time><p>如果我们降低衰减</p></div>
+<div class="transcript-row"><time>05:19</time><p>我们能够看到</p></div>
+<div class="transcript-row"><time>05:20</time><p>渐变就变弱</p></div>
+<div class="transcript-row"><time>05:21</time><p>变化就变得更加生硬</p></div>
+<div class="transcript-row"><time>05:23</time><p>如果增加衰减</p></div>
+<div class="transcript-row"><time>05:25</time><p>柔化的力度就会增加</p></div>
+<div class="transcript-row"><time>05:26</time><p>在这里改变衰减</p></div>
+<div class="transcript-row"><time>05:27</time><p>和在色轮右侧这里改变红色波感</p></div>
+<div class="transcript-row"><time>05:30</time><p>其实是一模一样的</p></div>
+<div class="transcript-row"><time>05:31</time><p>有意思的是</p></div>
+<div class="transcript-row"><time>05:32</time><p>HDR色轮的数量</p></div>
+<div class="transcript-row"><time>05:33</time><p>在理论上是可以无限增加的</p></div>
+<div class="transcript-row"><time>05:35</time><p>点击分区面板的左下方</p></div>
+<div class="transcript-row"><time>05:37</time><p>这里有一个创建新分区</p></div>
+<div class="transcript-row"><time>05:39</time><p>你可以根据你的需求</p></div>
+<div class="transcript-row"><time>05:40</time><p>你去无限制的去创建新的一个分区</p></div>
+<div class="transcript-row"><time>05:43</time><p>新建的分区也可以去删除</p></div>
+<div class="transcript-row"><time>05:45</time><p>默认的是不能删除的</p></div>
+<div class="transcript-row"><time>05:46</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>05:47</time><p>大家是不是对HDR色轮</p></div>
+<div class="transcript-row"><time>05:48</time><p>就已经完全掌握了</p></div>
+<div class="transcript-row"><time>05:49</time><p>非常简单对不对</p></div>
+<div class="transcript-row"><time>05:50</time><p>那又怎么应用呢</p></div>
+<div class="transcript-row"><time>05:51</time><p>我们看到这个画面</p></div>
+<div class="transcript-row"><time>05:52</time><p>简单坐下还原之后</p></div>
+<div class="transcript-row"><time>05:53</time><p>我们发现画面乍一看</p></div>
+<div class="transcript-row"><time>05:55</time><p>好像还好</p></div>
+<div class="transcript-row"><time>05:56</time><p>但实际上层次非常非常弱</p></div>
+<div class="transcript-row"><time>05:58</time><p>画面中有明确的色光</p></div>
+<div class="transcript-row"><time>05:59</time><p>可是人物的立体感却无法体现</p></div>
+<div class="transcript-row"><time>06:01</time><p>究其原因就是因为它</p></div>
+<div class="transcript-row"><time>06:03</time><p>暗的不够暗的同时</p></div>
+<div class="transcript-row"><time>06:04</time><p>缺少了灰面</p></div>
+<div class="transcript-row"><time>06:05</time><p>所以我们可以考虑</p></div>
+<div class="transcript-row"><time>06:07</time><p>降低Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>06:09</time><p>来把暗面调暗</p></div>
+<div class="transcript-row"><time>06:11</time><p>我就到这里差不多</p></div>
+<div class="transcript-row"><time>06:12</time><p>我们看到</p></div>
+<div class="transcript-row"><time>06:13</time><p>画面是不是瞬间变得立体了</p></div>
+<div class="transcript-row"><time>06:15</time><p>但此时</p></div>
+<div class="transcript-row"><time>06:16</time><p>暗面的暗是有了</p></div>
+<div class="transcript-row"><time>06:17</time><p>灰面还不够</p></div>
+<div class="transcript-row"><time>06:18</time><p>画面从亮到暗的过度太生硬了</p></div>
+<div class="transcript-row"><time>06:21</time><p>通过这个渐变图我们能够看到</p></div>
+<div class="transcript-row"><time>06:23</time><p>在默认范围内</p></div>
+<div class="transcript-row"><time>06:24</time><p>Light色轮涵盖了</p></div>
+<div class="transcript-row"><time>06:25</time><p>绝大部分的中灰区域</p></div>
+<div class="transcript-row"><time>06:27</time><p>而此时我们的画面</p></div>
+<div class="transcript-row"><time>06:28</time><p>因为中灰亮度太高</p></div>
+<div class="transcript-row"><time>06:30</time><p>所以我们需要降低中灰的曝光</p></div>
+<div class="transcript-row"><time>06:33</time><p>那也就是降低Light色轮的曝光</p></div>
+<div class="transcript-row"><time>06:36</time><p>降低了之后</p></div>
+<div class="transcript-row"><time>06:37</time><p>灰面就有了对不对</p></div>
+<div class="transcript-row"><time>06:38</time><p>但是高光受到了影响</p></div>
+<div class="transcript-row"><time>06:40</time><p>它也被掩暗了</p></div>
+<div class="transcript-row"><time>06:41</time><p>所以我们可以再次去提高一点</p></div>
+<div class="transcript-row"><time>06:43</time><p>Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>06:44</time><p>那此时</p></div>
+<div class="transcript-row"><time>06:45</time><p>人物是不是就变得更加立体了</p></div>
+<div class="transcript-row"><time>06:47</time><p>该亮的亮该暗的暗</p></div>
+<div class="transcript-row"><time>06:48</time><p>该有的光影表现也变得更加明显</p></div>
+<div class="transcript-row"><time>06:51</time><p>我们可以抓一个竞争来做下对比</p></div>
+<div class="transcript-row"><time>06:53</time><p>这个画面是只降低了</p></div>
+<div class="transcript-row"><time>06:55</time><p>Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>06:56</time><p>这个画面是降低了Light色轮</p></div>
+<div class="transcript-row"><time>06:58</time><p>然后提高了点Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>06:59</time><p>我们能够看到</p></div>
+<div class="transcript-row"><time>07:00</time><p>人物脸上的层次</p></div>
+<div class="transcript-row"><time>07:02</time><p>再经过我们刚刚这样的调整</p></div>
+<div class="transcript-row"><time>07:04</time><p>是不是更加立体了</p></div>
+<div class="transcript-row"><time>07:05</time><p>而且在人物的左脸上</p></div>
+<div class="transcript-row"><time>07:07</time><p>它这里的高光</p></div>
+<div class="transcript-row"><time>07:08</time><p>也不会像之前一样亮成一片</p></div>
+<div class="transcript-row"><time>07:10</time><p>整体的画面就会变得更加立体</p></div>
+<div class="transcript-row"><time>07:12</time><p>不像之前</p></div>
+<div class="transcript-row"><time>07:13</time><p>这个层次特别特别弱</p></div>
+<div class="transcript-row"><time>07:14</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:15</time><p>效果是非常好的</p></div>
+<div class="transcript-row"><time>07:16</time><p>而我们刚刚做的这个行为</p></div>
+<div class="transcript-row"><time>07:17</time><p>我们可以把它应用在黑白渐变图</p></div>
+<div class="transcript-row"><time>07:19</time><p>看看它的结果是怎么样的</p></div>
+<div class="transcript-row"><time>07:20</time><p>也就是降低Shadow色轮</p></div>
+<div class="transcript-row"><time>07:22</time><p>然后同步的降低一点Light色轮</p></div>
+<div class="transcript-row"><time>07:24</time><p>再提高点Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>07:25</time><p>我们能够看到波星图的变化</p></div>
+<div class="transcript-row"><time>07:27</time><p>它就是做了一个</p></div>
+<div class="transcript-row"><time>07:29</time><p>自定义范围的S曲线</p></div>
+<div class="transcript-row"><time>07:30</time><p>对不对</p></div>
+<div class="transcript-row"><time>07:31</time><p>整体的画面就会变得更加立体</p></div>
+<div class="transcript-row"><time>07:33</time><p>亮面变得更亮</p></div>
+<div class="transcript-row"><time>07:34</time><p>灰面保留</p></div>
+<div class="transcript-row"><time>07:35</time><p>暗面变得更暗</p></div>
+<div class="transcript-row"><time>07:36</time><p>那这样的一个操作</p></div>
+<div class="transcript-row"><time>07:37</time><p>就能够让你的画面变得更有层次</p></div>
+<div class="transcript-row"><time>07:39</time><p>那对于这个素材</p></div>
+<div class="transcript-row"><time>07:40</time><p>我觉得可以给画面再加一点点蓝</p></div>
+<div class="transcript-row"><time>07:42</time><p>让它能够</p></div>
+<div class="transcript-row"><time>07:43</time><p>呈现出更冷的一个效果</p></div>
+<div class="transcript-row"><time>07:45</time><p>如果你觉得肤色受到太多影响</p></div>
+<div class="transcript-row"><time>07:46</time><p>可以按照L的加P来个并行节点</p></div>
+<div class="transcript-row"><time>07:48</time><p>把肤色利用蜘蛛网去给它找回来一点</p></div>
+<div class="transcript-row"><time>07:51</time><p>让它稍微暖一点</p></div>
+<div class="transcript-row"><time>07:52</time><p>保温度稍微高一点</p></div>
+<div class="transcript-row"><time>07:54</time><p>这样的一个结果</p></div>
+<div class="transcript-row"><time>07:54</time><p>就能够让这些暖的保持暖</p></div>
+<div class="transcript-row"><time>07:56</time><p>同时其他部分</p></div>
+<div class="transcript-row"><time>07:57</time><p>都能够呈现出一定的冷色</p></div>
+<div class="transcript-row"><time>07:59</time><p>效果还是不错的</p></div>
+<div class="transcript-row"><time>08:00</time><p>HDR色轮的应用场景非常广泛</p></div>
+<div class="transcript-row"><time>08:02</time><p>而且它是非常非常有力的一个工具</p></div>
+<div class="transcript-row"><time>08:04</time><p>今天只是大概讲了一下使用逻辑</p></div>
+<div class="transcript-row"><time>08:07</time><p>后续我还会持续以实战为角度</p></div>
+<div class="transcript-row"><time>08:09</time><p>分享HDR色轮的具体应用</p></div>
+<div class="transcript-row"><time>08:11</time><p>素材大家可以领过去之后</p></div>
+<div class="transcript-row"><time>08:12</time><p>自己去感受一下</p></div>
+<div class="transcript-row"><time>08:13</time><p>HDR色轮的一个具体使用的方式</p></div>
+<div class="transcript-row"><time>08:15</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>08:16</time><p>如果你觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>08:17</time><p>还希望多多赞联</p></div>
+<div class="transcript-row"><time>08:18</time><p>好了这期就到这里</p></div>
+<div class="transcript-row"><time>08:19</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

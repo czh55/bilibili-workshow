@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="把高反差亮调街景做成「又暗又亮」的低反差暗调电影感：HDR 上压保光感 → 分区重塑天空/建筑/水面 → 蓝青加密度压天空 → 一级轮高光暖暗部冷并向量靠青 → 图层+高斯模糊做黑柔 → 柔和对比度样条线压缩两端。素材需大光比、非大平光/顺光。">
+<title>暗调青绿胶片风，把普通街景调成电影截图｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>暗调青绿胶片风，把普通街景调成电影截图</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">5分37秒</span><span class="meta-tag tag-topic">达芬奇 暗调 青绿 胶片风 HDR色轮 黑柔 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/2IhTyeID7YZ" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">目标：高反差亮调 → 低反差暗调且保光感</a><a href="#ch2">重塑分区：中间亮、天空暗、水面有对比</a><a href="#ch3">天空不够暗：用密度降明度，别死磕前面曝光</a><a href="#ch4">染色：高光暖暗部冷，蓝往青靠</a><a href="#ch5">后期黑柔：图层滤色 + 高斯模糊 + 曲线，增益控力度</a><a href="#ch6">柔和对比度收「又暗又亮」+ 适用边界</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>把高反差亮调街景做成「又暗又亮」的低反差暗调电影感：HDR 上压保光感 → 分区重塑天空/建筑/水面 → 蓝青加密度压天空 → 一级轮高光暖暗部冷并向量靠青 → 图层+高斯模糊做黑柔 → 柔和对比度样条线压缩两端。素材需大光比、非大平光/顺光。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:09]</span><div><strong>HDR压反差</strong><p>降 Light、略降 Shadow、抬 Highlight：上压成暗调仍留光感。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:09→02:21]</span><div><strong>分区曝光</strong><p>中间建筑对比度；天空渐变+限定器压暗；水面遮罩加对比。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:21→02:50]</span><div><strong>密度压天</strong><p>蓝青加密度降明度；不够再略全局密度。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:50→03:38]</span><div><strong>冷暖+靠青</strong><p>一级轮亮暖中灰回调暗冷；向量蓝→青并略降青饱和。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:38→04:30]</span><div><strong>黑柔</strong><p>图层滤色+高斯模糊满+曲线；复合节点用增益控不透明度。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:30→05:37]</span><div><strong>柔和对比</strong><p>样条线裁切高光/暗部两端；对比参考微调天空。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>暗调电影感＝全局影调压缩 + 分区（天暗、中间与水面亮）+ 青绿染色 + 黑柔与柔和对比度。关键是「又暗又亮」：压反差时仍用 Highlight 找回光感。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:09</span>目标：高反差亮调 → 低反差暗调且保光感</h2><p>朋友问「这种画面达芬奇怎么调」。先还原再看参考：整体闷、又亮又不亮——把高反差亮调做成低反差暗调，还要保住光感。HDR：要暗调就选「上往下压」——降 Light；过渡不舒服再略降 Shadow，让暗部略像平移下压但仍收缩；再略抬 Highlight 把光感找回。波形上半可不动或略上，中灰以下往暗压。</p><figure><img src="assets/dark-teal-film-street/shot-01.jpg" alt="HDR 上压 Light/Shadow 并抬 Highlight，暗调仍留光感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] HDR 上压 Light/Shadow 并抬 Highlight，暗调仍留光感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/0183cff9b652.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR: press Light/Shadow, lift Highlight—dark look still keeps light.</span></div>
+<audio class="cap-audio" src="audio/0183cff9b652.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:09-02:21</span>重塑分区：中间亮、天空暗、水面有对比</h2><p>全局影调不够：参考天空暗、中间建筑亮、地面水偏亮。中间画遮罩略加对比度（不是重心，别加太多）；Option/Shift+P 并行拉上→下渐变压天空，两侧有建筑则加限定器只选天空，再降曝光/阴影滑块/中灰。水面再并行遮罩略加对比——水面像镜面，靠对比去灰。三节点重塑曝光分布，接近「暴雨前晴天」：天暗云在、地面受光仍亮。</p><figure><img src="assets/dark-teal-film-street/shot-02.jpg" alt="分区：中间建筑对比 + 天空渐变限定 + 水面遮罩" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:50] 分区：中间建筑对比 + 天空渐变限定 + 水面遮罩</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/80824d8b289b.mp3" type="button" aria-label="Play English audio">🔊</button><span>Zones: mid building contrast, sky gradient qualifier, water mask.</span></div>
+<audio class="cap-audio" src="audio/80824d8b289b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:21-02:50</span>天空不够暗：用密度降明度，别死磕前面曝光</h2><p>天空仍不够暗时，不必再在前链路猛压曝光（易不舒服）。新节点给蓝、青略加密度——密度升则明度降；不够再略全局加一点密度即可。</p><figure><img src="assets/dark-teal-film-street/shot-03.jpg" alt="蓝青加密度降低天空明度，接近暴雨前暗天" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:30] 蓝青加密度降低天空明度，接近暴雨前暗天</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/7f7294c5f1b6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Add blue/cyan density to darken the sky toward pre-storm gloom.</span></div>
+<audio class="cap-audio" src="audio/7f7294c5f1b6.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:50-03:38</span>染色：高光暖暗部冷，蓝往青靠</h2><p>素材可知识平台免费自取。参考明显高光暖、暗部冷：亮部左上加暖，中灰右下回调，暗部右下加冷。色相上参考偏青，不必用色轮硬磨——向量示波器把蓝往青拉，并略降青饱和，对照参考即可接近。</p><figure><img src="assets/dark-teal-film-street/shot-04.jpg" alt="一级轮高光暖暗部冷，向量把蓝往青靠" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:20] 一级轮高光暖暗部冷，向量把蓝往青靠</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/30d84c11bd2e.mp3" type="button" aria-label="Play English audio">🔊</button><span>Primary: warm highs, cool lows; vectors nudge blue toward cyan.</span></div>
+<audio class="cap-audio" src="audio/30d84c11bd2e.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">03:38-04:30</span>后期黑柔：图层滤色 + 高斯模糊 + 曲线，增益控力度</h2><p>参考拍摄带黑柔。后期：Alt/Option+L 建图层节点，混合器合成模式改滤色（Screen）；下层拖入高斯模糊拉满，曲线压高光、中间略抬做柔化；暗部抬太多则把暗部段右移减弱。力度过大且方向对时，三选中建复合节点，用键输出增益降不透明度，留淡淡柔感即可。</p><figure><img src="assets/dark-teal-film-street/shot-05.jpg" alt="图层滤色 + 高斯模糊做黑柔，复合增益控力度" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:05] 图层滤色 + 高斯模糊做黑柔，复合增益控力度</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4480da0eb0eb.mp3" type="button" aria-label="Play English audio">🔊</button><span>Layer Screen + Gaussian blur for black diffusion; compound gain sets strength.</span></div>
+<audio class="cap-audio" src="audio/4480da0eb0eb.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">04:30-05:37</span>柔和对比度收「又暗又亮」+ 适用边界</h2><p>最后上柔和对比度可编辑样条线：高光降、高光波谷提，暗部提、暗部波谷压——在保护中低调反差前提下压缩两端，这是「又暗又亮」能否成立的关键一步。与参考比可回调天空与饱和。该风格不太挑素材，但需前期大光比、非大平光也非顺光，场景要对。</p><figure><img src="assets/dark-teal-film-street/shot-06.jpg" alt="柔和对比度样条线收「又暗又亮」，对照参考出片" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:05] 柔和对比度样条线收「又暗又亮」，对照参考出片</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b04ea6b9a53f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Soft-contrast splines keep both dark and bright; match the reference.</span></div>
+<audio class="cap-audio" src="audio/b04ea6b9a53f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（198段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>这种画面又打不进怎么调啊 这是有位朋友的问题</p></div>
+<div class="transcript-row"><time>00:07</time><p>首先呢我们要先还原 然后呢观察一下参考图</p></div>
+<div class="transcript-row"><time>00:10</time><p>其实就算不看波形图我们也能够发现啊</p></div>
+<div class="transcript-row"><time>00:12</time><p>它整体是有点闷的感觉的对吧</p></div>
+<div class="transcript-row"><time>00:14</time><p>就是一种又亮又不亮的效果</p></div>
+<div class="transcript-row"><time>00:15</time><p>这其实是将高反差的亮调画面做成低反差暗调</p></div>
+<div class="transcript-row"><time>00:19</time><p>但是又能够保证它的光感的效果</p></div>
+<div class="transcript-row"><time>00:21</time><p>要实现这个我们可以借助HDR色轮来操作</p></div>
+<div class="transcript-row"><time>00:24</time><p>先建一个节点拉到第二排</p></div>
+<div class="transcript-row"><time>00:25</time><p>降低反差能有几种方式</p></div>
+<div class="transcript-row"><time>00:27</time><p>第一个就是上下一起压缩</p></div>
+<div class="transcript-row"><time>00:29</time><p>或者是上往下压 再或者就是下往上提</p></div>
+<div class="transcript-row"><time>00:32</time><p>那我们想要低反差暗调的画面</p></div>
+<div class="transcript-row"><time>00:34</time><p>自然就是要选择上往下压</p></div>
+<div class="transcript-row"><time>00:37</time><p>所以呢我们可以先降低点Light色轮的曝光</p></div>
+<div class="transcript-row"><time>00:39</time><p>我们看到降低Light色轮的曝光之后呢</p></div>
+<div class="transcript-row"><time>00:42</time><p>在波形图上它是不是往下压了</p></div>
+<div class="transcript-row"><time>00:44</time><p>整体的反差就是会降低了</p></div>
+<div class="transcript-row"><time>00:45</time><p>可是这样做呢画面的高光和暗部其实过度不舒服</p></div>
+<div class="transcript-row"><time>00:48</time><p>所以呢我们可以稍微再降低点Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>00:51</time><p>让它的暗部有一点点像是平移往下降的一个效果</p></div>
+<div class="transcript-row"><time>00:55</time><p>但是还是收缩的</p></div>
+<div class="transcript-row"><time>00:56</time><p>再稍微提高一点Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>00:58</time><p>让它的光感能够回来</p></div>
+<div class="transcript-row"><time>01:00</time><p>大概是这样的一个情况</p></div>
+<div class="transcript-row"><time>01:02</time><p>看到波形图的变化</p></div>
+<div class="transcript-row"><time>01:03</time><p>上半部分保持不变或者是稍微有点往上走</p></div>
+<div class="transcript-row"><time>01:05</time><p>但是终会开始就会往暗部去压缩</p></div>
+<div class="transcript-row"><time>01:07</time><p>就能够实现这样的一个效果了</p></div>
+<div class="transcript-row"><time>01:09</time><p>但是全局调整影调肯定是不够的</p></div>
+<div class="transcript-row"><time>01:11</time><p>画面的曝光分区其实也不是很正确</p></div>
+<div class="transcript-row"><time>01:13</time><p>参考图的天空是暗的</p></div>
+<div class="transcript-row"><time>01:15</time><p>中间的建筑是亮的</p></div>
+<div class="transcript-row"><time>01:16</time><p>地面的水其实也偏亮</p></div>
+<div class="transcript-row"><time>01:18</time><p>那这一点我们可以依次去来操作</p></div>
+<div class="transcript-row"><time>01:20</time><p>首先先建立一个节点</p></div>
+<div class="transcript-row"><time>01:21</time><p>给中间部分画一个遮罩</p></div>
+<div class="transcript-row"><time>01:23</time><p>然后给它稍微加一点点对比度</p></div>
+<div class="transcript-row"><time>01:26</time><p>不用加太多</p></div>
+<div class="transcript-row"><time>01:26</time><p>因为它不是我们调整的重心</p></div>
+<div class="transcript-row"><time>01:28</time><p>再按住要的加P或者是Option加P</p></div>
+<div class="transcript-row"><time>01:30</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>01:31</time><p>我们给它从上往下拉一个渐变遮罩</p></div>
+<div class="transcript-row"><time>01:34</time><p>其实参考图它也是从上往下</p></div>
+<div class="transcript-row"><time>01:36</time><p>有个渐变的效果的</p></div>
+<div class="transcript-row"><time>01:37</time><p>但是又因为左右两侧有建筑对吧</p></div>
+<div class="transcript-row"><time>01:39</time><p>我不想影响到建筑</p></div>
+<div class="transcript-row"><time>01:40</time><p>所以我们可以再加一个限定器</p></div>
+<div class="transcript-row"><time>01:41</time><p>来把天空给选出来</p></div>
+<div class="transcript-row"><time>01:44</time><p>大概一选</p></div>
+<div class="transcript-row"><time>01:45</time><p>然后我们给它稍微降低一点曝光</p></div>
+<div class="transcript-row"><time>01:47</time><p>稍微降一点阴影滑块</p></div>
+<div class="transcript-row"><time>01:48</time><p>再降低一点中灰色轮</p></div>
+<div class="transcript-row"><time>01:50</time><p>然后是水面</p></div>
+<div class="transcript-row"><time>01:51</time><p>同样我们再按住要的加P</p></div>
+<div class="transcript-row"><time>01:52</time><p>或者是Option加P</p></div>
+<div class="transcript-row"><time>01:53</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>01:54</time><p>给水面画一个遮罩</p></div>
+<div class="transcript-row"><time>01:56</time><p>加一点点对比度</p></div>
+<div class="transcript-row"><time>01:59</time><p>其实水面和镜面是有点像的</p></div>
+<div class="transcript-row"><time>02:01</time><p>我们都需要通过增加对比度来</p></div>
+<div class="transcript-row"><time>02:03</time><p>让它显得不灰</p></div>
+<div class="transcript-row"><time>02:04</time><p>那这时候我们看到</p></div>
+<div class="transcript-row"><time>02:05</time><p>通过这三个节点的调整</p></div>
+<div class="transcript-row"><time>02:07</time><p>重塑了画面曝光分布</p></div>
+<div class="transcript-row"><time>02:09</time><p>你看到效果其实还是挺不错的对吧</p></div>
+<div class="transcript-row"><time>02:11</time><p>这点其实很重要</p></div>
+<div class="transcript-row"><time>02:12</time><p>参考图它这样的一个风格</p></div>
+<div class="transcript-row"><time>02:14</time><p>有一点点像是暴雨前的晴天</p></div>
+<div class="transcript-row"><time>02:16</time><p>天空有云但是偏暗</p></div>
+<div class="transcript-row"><time>02:17</time><p>但地面的受光面又偏亮</p></div>
+<div class="transcript-row"><time>02:19</time><p>所以我们要实现这个</p></div>
+<div class="transcript-row"><time>02:20</time><p>就必须要分区调整</p></div>
+<div class="transcript-row"><time>02:21</time><p>但如果你觉得天空还是不够暗的话</p></div>
+<div class="transcript-row"><time>02:24</time><p>你其实不用在前面再调曝光了</p></div>
+<div class="transcript-row"><time>02:26</time><p>因为调多了可能不舒服</p></div>
+<div class="transcript-row"><time>02:27</time><p>我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>02:29</time><p>给蓝色和青色稍微加一点密度</p></div>
+<div class="transcript-row"><time>02:31</time><p>你看这个效果是不是挺好的</p></div>
+<div class="transcript-row"><time>02:33</time><p>因为增加密度会降低明度</p></div>
+<div class="transcript-row"><time>02:34</time><p>如果还不够的话</p></div>
+<div class="transcript-row"><time>02:36</time><p>你也可以稍微全局加一点点密度</p></div>
+<div class="transcript-row"><time>02:38</time><p>再补一下</p></div>
+<div class="transcript-row"><time>02:39</time><p>我觉得稍微来一点就行了</p></div>
+<div class="transcript-row"><time>02:40</time><p>然后就要开始去染色</p></div>
+<div class="transcript-row"><time>02:42</time><p>作者也同意分享这一个素材</p></div>
+<div class="transcript-row"><time>02:43</time><p>我传到了现场分享平台</p></div>
+<div class="transcript-row"><time>02:45</time><p>可以私信或是看我剪辑来加入后面</p></div>
+<div class="transcript-row"><time>02:46</time><p>免费自取</p></div>
+<div class="transcript-row"><time>02:47</time><p>还要打开你的线上系统课程</p></div>
+<div class="transcript-row"><time>02:48</time><p>和线下调色训练营</p></div>
+<div class="transcript-row"><time>02:50</time><p>我们看到参考图</p></div>
+<div class="transcript-row"><time>02:51</time><p>参考图它其实有非常明显的</p></div>
+<div class="transcript-row"><time>02:52</time><p>高光暖暗不冷的特性</p></div>
+<div class="transcript-row"><time>02:57</time><p>首先把亮部色轮往左上角去移动</p></div>
+<div class="transcript-row"><time>02:59</time><p>给它加一点点暖</p></div>
+<div class="transcript-row"><time>03:00</time><p>然后再把中晖色轮往右下角去移动</p></div>
+<div class="transcript-row"><time>03:03</time><p>给它稍微做一下回调</p></div>
+<div class="transcript-row"><time>03:05</time><p>让它的过渡能够顺滑一些</p></div>
+<div class="transcript-row"><time>03:07</time><p>最后再是暗部色轮</p></div>
+<div class="transcript-row"><time>03:08</time><p>给它也往右下角去走</p></div>
+<div class="transcript-row"><time>03:09</time><p>让它暗部能够带上一点的冷</p></div>
+<div class="transcript-row"><time>03:12</time><p>大概是这样的一个效果</p></div>
+<div class="transcript-row"><time>03:14</time><p>这个能够给画面带上淡淡的暖色</p></div>
+<div class="transcript-row"><time>03:16</time><p>但同时不会丢失暗部的冷色</p></div>
+<div class="transcript-row"><time>03:17</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:18</time><p>但是我们跟参考图</p></div>
+<div class="transcript-row"><time>03:19</time><p>此时色相是有点不一样的</p></div>
+<div class="transcript-row"><time>03:20</time><p>我们的蓝是蓝</p></div>
+<div class="transcript-row"><time>03:21</time><p>它的蓝是青色</p></div>
+<div class="transcript-row"><time>03:22</time><p>关于这一点点小调整</p></div>
+<div class="transcript-row"><time>03:24</time><p>我不建议你用色轮再去磨了</p></div>
+<div class="transcript-row"><time>03:25</time><p>麻烦我们可以直接再来一个节点</p></div>
+<div class="transcript-row"><time>03:27</time><p>用蜘蛛网去调</p></div>
+<div class="transcript-row"><time>03:28</time><p>这个更加直观</p></div>
+<div class="transcript-row"><time>03:29</time><p>把蓝色往青色方向去拉</p></div>
+<div class="transcript-row"><time>03:31</time><p>也可以稍微降低点青色的饱和度</p></div>
+<div class="transcript-row"><time>03:34</time><p>我们把参考图打开对照一下</p></div>
+<div class="transcript-row"><time>03:36</time><p>好</p></div>
+<div class="transcript-row"><time>03:36</time><p>大概是这样的一个情况</p></div>
+<div class="transcript-row"><time>03:37</time><p>其实就比较接近了</p></div>
+<div class="transcript-row"><time>03:38</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:38</time><p>然后就是黑柔</p></div>
+<div class="transcript-row"><time>03:39</time><p>参考图它其实就是有黑柔的</p></div>
+<div class="transcript-row"><time>03:41</time><p>它拍摄的时候就放了黑柔</p></div>
+<div class="transcript-row"><time>03:42</time><p>那我们在后期怎么建立呢</p></div>
+<div class="transcript-row"><time>03:43</time><p>可以先建一个节点</p></div>
+<div class="transcript-row"><time>03:44</time><p>在Android Out加L</p></div>
+<div class="transcript-row"><time>03:45</time><p>建立一个涂层节点</p></div>
+<div class="transcript-row"><time>03:46</time><p>在涂层混合器中</p></div>
+<div class="transcript-row"><time>03:48</time><p>给它右键</p></div>
+<div class="transcript-row"><time>03:49</time><p>将合成模式改成绿色</p></div>
+<div class="transcript-row"><time>03:51</time><p>然后再在下面这个节点</p></div>
+<div class="transcript-row"><time>03:53</time><p>我们拖入达芬奇自带的高丝模糊</p></div>
+<div class="transcript-row"><time>03:55</time><p>将高丝模糊的数值给它拉满</p></div>
+<div class="transcript-row"><time>03:58</time><p>再来到曲线面板</p></div>
+<div class="transcript-row"><time>03:59</time><p>把高光这一段给它往下降</p></div>
+<div class="transcript-row"><time>04:01</time><p>再把中间这一部分</p></div>
+<div class="transcript-row"><time>04:03</time><p>给它稍微往上一提</p></div>
+<div class="transcript-row"><time>04:04</time><p>这样一做</p></div>
+<div class="transcript-row"><time>04:05</time><p>我们就给它画面带上了一个柔化的效果</p></div>
+<div class="transcript-row"><time>04:07</time><p>可是暗部提升我觉得有点太多了</p></div>
+<div class="transcript-row"><time>04:09</time><p>所以我们可以把暗部这一段</p></div>
+<div class="transcript-row"><time>04:10</time><p>给它往右边稍微拉一拉</p></div>
+<div class="transcript-row"><time>04:11</time><p>稍微降低点暗部的一个效果</p></div>
+<div class="transcript-row"><time>04:13</time><p>好</p></div>
+<div class="transcript-row"><time>04:13</time><p>我觉得这样的一个情况挺好的</p></div>
+<div class="transcript-row"><time>04:15</time><p>但如果这时候你的力度稍微大了一点</p></div>
+<div class="transcript-row"><time>04:17</time><p>但整体的一个效果方向是没问题的话</p></div>
+<div class="transcript-row"><time>04:19</time><p>你其实不用再去改你的曲线了</p></div>
+<div class="transcript-row"><time>04:21</time><p>可以把这三个东西选中</p></div>
+<div class="transcript-row"><time>04:22</time><p>右键创建复合节点</p></div>
+<div class="transcript-row"><time>04:24</time><p>通过键输出的增益</p></div>
+<div class="transcript-row"><time>04:26</time><p>去降低它的一个不透明度</p></div>
+<div class="transcript-row"><time>04:28</time><p>带上淡淡的这种柔和的感觉就可以了</p></div>
+<div class="transcript-row"><time>04:30</time><p>最后也是最关键的一步</p></div>
+<div class="transcript-row"><time>04:32</time><p>这一步就取决于你画面能不能实现</p></div>
+<div class="transcript-row"><time>04:34</time><p>又暗又亮的效果</p></div>
+<div class="transcript-row"><time>04:35</time><p>我们再来个节点</p></div>
+<div class="transcript-row"><time>04:36</time><p>要建立一个柔和对不堵</p></div>
+<div class="transcript-row"><time>04:38</time><p>在曲线右上角三个点的设置中</p></div>
+<div class="transcript-row"><time>04:40</time><p>我们勾选可编辑的样条线</p></div>
+<div class="transcript-row"><time>04:42</time><p>再把高光这一段给它往下降</p></div>
+<div class="transcript-row"><time>04:44</time><p>把高光延伸出来的波感给它往上提</p></div>
+<div class="transcript-row"><time>04:47</time><p>再把暗部给它往上提</p></div>
+<div class="transcript-row"><time>04:49</time><p>把暗部延伸出来的波感给它往下压</p></div>
+<div class="transcript-row"><time>04:52</time><p>好 此时你看</p></div>
+<div class="transcript-row"><time>04:54</time><p>我们波形图上</p></div>
+<div class="transcript-row"><time>04:55</time><p>它的高光这部分是被我们裁切了</p></div>
+<div class="transcript-row"><time>04:57</time><p>暗部也被我们往上提也裁切了</p></div>
+<div class="transcript-row"><time>04:59</time><p>那这样就能够保护中低调反差</p></div>
+<div class="transcript-row"><time>05:01</time><p>不受到影响的前提下</p></div>
+<div class="transcript-row"><time>05:03</time><p>压缩高光跟暗部</p></div>
+<div class="transcript-row"><time>05:04</time><p>整体效果还挺好的 对吧</p></div>
+<div class="transcript-row"><time>05:05</time><p>我们与参考图做一下对比</p></div>
+<div class="transcript-row"><time>05:07</time><p>那我们的天空稍微暗了一点</p></div>
+<div class="transcript-row"><time>05:09</time><p>可以把天空回调一些</p></div>
+<div class="transcript-row"><time>05:11</time><p>饱和度也稍微降低一点点吧</p></div>
+<div class="transcript-row"><time>05:13</time><p>好</p></div>
+<div class="transcript-row"><time>05:13</time><p>其他的其大差不差</p></div>
+<div class="transcript-row"><time>05:15</time><p>整体效果是有的</p></div>
+<div class="transcript-row"><time>05:16</time><p>在与我们自己的一个还原后的画面</p></div>
+<div class="transcript-row"><time>05:18</time><p>做对比的话</p></div>
+<div class="transcript-row"><time>05:18</time><p>它就能够赋予一个</p></div>
+<div class="transcript-row"><time>05:20</time><p>非常非常强的风格</p></div>
+<div class="transcript-row"><time>05:21</time><p>其实这种风格没有很挑素材</p></div>
+<div class="transcript-row"><time>05:23</time><p>只要你前期拍摄的时候</p></div>
+<div class="transcript-row"><time>05:24</time><p>有明确的大光比</p></div>
+<div class="transcript-row"><time>05:25</time><p>然后又不是大屏光</p></div>
+<div class="transcript-row"><time>05:26</time><p>也不是顺光的话</p></div>
+<div class="transcript-row"><time>05:28</time><p>其实就能够大概模拟出来</p></div>
+<div class="transcript-row"><time>05:30</time><p>但是场景要对</p></div>
+<div class="transcript-row"><time>05:31</time><p>素材大家可以领取过去做练练手</p></div>
+<div class="transcript-row"><time>05:33</time><p>剪到这里</p></div>
+<div class="transcript-row"><time>05:33</time><p>如果你觉得你有帮助的话</p></div>
+<div class="transcript-row"><time>05:35</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>05:36</time><p>好了 这期就到这里</p></div>
+<div class="transcript-row"><time>05:37</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

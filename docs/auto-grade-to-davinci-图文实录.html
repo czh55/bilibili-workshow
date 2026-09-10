@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="老叉把一键创建 LUT 仿色工具升到 3.5：浏览器可直接截取达芬奇窗口省去存图上传，生成后一键发送到本机 LUT 文件夹。Mac 绑定路径即可复用；Windows 若达芬奇装在系统盘，需在偏好设置里新增非系统盘 LUT 位置并重启。拖入节点后可微调色相密度与曝光出片，欢迎把不准">
+<title>自动调色流程再优化，一键传递给达芬奇｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>自动调色流程再优化，一键传递给达芬奇</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">3分36秒</span><span class="meta-tag tag-topic">达芬奇 自动调色 LUT 仿色 一键传递 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/8gTlYkyEIcx" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">3.5 更新：浏览器直截达芬奇画面</a><a href="#ch2">一键发送：绑定本机 LUT 文件夹</a><a href="#ch3">Windows：非系统盘 LUT 库 + 重启</a><a href="#ch4">拖入节点微调出片，欢迎反馈不准案例</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>老叉把一键创建 LUT 仿色工具升到 3.5：浏览器可直接截取达芬奇窗口省去存图上传，生成后一键发送到本机 LUT 文件夹。Mac 绑定路径即可复用；Windows 若达芬奇装在系统盘，需在偏好设置里新增非系统盘 LUT 位置并重启。拖入节点后可微调色相密度与曝光出片，欢迎把不准的案例发他继续优化。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:41]</span><div><strong>网页截图</strong><p>还原后按 P 全屏；Chrome/Edge 用网页截图按钮选达芬奇窗口，省截图保存上传。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:41→01:21]</span><div><strong>绑定路径</strong><p>网页小按钮绑定 LUT 目录；达芬奇 LUT 库右键「打开文件位置」找大文件夹，做一次可复用。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:21→02:29]</span><div><strong>Windows 注意</strong><p>系统盘网页传不过去→偏好设置·系统·常规加非系统盘 LUT（如 D:\色彩匹配）；首次改路径需重启。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:29→03:36]</span><div><strong>拖入微调</strong><p>LUT 库刷新→拖到节点；色偏可再靠青、加密度；评论区网址，不准案例可反馈优化。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>3.5 版把「截图→生成 LUT→进达芬奇」收成网页直截 + 一键发送；Windows 用户务必把 LUT 库指到非系统盘并重启一次。仿色接近后，再用节点修色偏与曝光即可出片。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:41</span>3.5 更新：浏览器直截达芬奇画面</h2><p>几次测试后，一键创建 LUT 仿色效果不错，但旧流程要截图保存、上传、下载 LUT 再进达芬奇，偏麻烦。3.5 版优化流程：先给画面做好还原，按键盘 P 全屏预览，再切到网页；原始画面右上角有截图按钮。</p><p>Chrome 或 Edge 可调用系统截图：窗口里选达芬奇，点分享后回到网页即自动截好，省好几步。参考图可本地上传，也可用同样方式对任意窗口截图，再微调参数点生成 LUT。</p><figure><img src="assets/auto-grade-to-davinci/shot-01.jpg" alt="网页截图：选择达芬奇窗口分享，直截还原后画面" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:24] 网页截图：选择达芬奇窗口分享，直截还原后画面</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/fdf9251bc405.mp3" type="button" aria-label="Play English audio">🔊</button><span>Web screenshot: pick the DaVinci window to capture the restored frame directly.</span></div>
+<audio class="cap-audio" src="audio/fdf9251bc405.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:41-01:21</span>一键发送：绑定本机 LUT 文件夹</h2><p>生成后以前要下载再拖进 LUT 库。现在网页多出一个小按钮，可直接绑定 LUT 所在路径。路径怎么找：达芬奇左上角 LUT 库里任意右键一个 LUT→打开文件位置，找到 LUT 大文件夹，在网页里选到该路径。</p><p>只要做一次，不换电脑即可复用。对 Mac 用户通常没问题；Windows 则另有限制。</p><figure><img src="assets/auto-grade-to-davinci/shot-02.jpg" alt="绑定本机 LUT 文件夹：打开文件位置取根目录" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:05] 绑定本机 LUT 文件夹：打开文件位置取根目录</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/30dbfa66a12a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Bind the local LUT folder via Reveal in Finder/Explorer to the LUT root.</span></div>
+<audio class="cap-audio" src="audio/30dbfa66a12a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:21-02:29</span>Windows：非系统盘 LUT 库 + 重启</h2><p>若达芬奇默认装在 C 盘（系统盘），网页往往传不过去，需要新增 LUT 库位置：偏好设置→系统→常规下方「LUT 位置」，添加非系统盘路径。他演示在 D 盘建「色彩匹配 / Color Match」文件夹，网页保存目标选该文件夹确认。</p><p>之后点「发送给达芬奇」，文件自动进新建文件夹；命名加了时间戳与独立后缀防重名。LUT 库空白处右键刷新即可看到新文件夹与 LUT。若是第一次改偏好设置里的 LUT 位置，保存后务必重启达芬奇。</p><figure><img src="assets/auto-grade-to-davinci/shot-03.jpg" alt="Windows 偏好设置添加非系统盘 LUT 位置" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:48] Windows 偏好设置添加非系统盘 LUT 位置</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/360dbe2f35e5.mp3" type="button" aria-label="Play English audio">🔊</button><span>Windows: add a non-system-drive LUT path in Preferences.</span></div>
+<audio class="cap-audio" src="audio/360dbe2f35e5.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:29-03:36</span>拖入节点微调出片，欢迎反馈不准案例</h2><p>传好后把 LUT 拖到达芬奇节点，可快速得到接近参考图的风格化；颜色可能略偏（例如参考更青而结果偏蓝），可再开节点把蓝往青靠，或增加蓝与青的密度，并适当微调曝光后出片。</p><p>网址附评论区；被屏蔽可私信。线下训练营优先测新功能，也有线上系统课。测试已有大几百人；若仿色不准，把原始画面、参考图与套 LUT 后结果发给他，他会按情况继续优化。</p><figure><img src="assets/auto-grade-to-davinci/shot-04.jpg" alt="套 LUT 后把蓝往青靠并加密度的微调出片" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:45] 套 LUT 后把蓝往青靠并加密度的微调出片</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/dbc528a28633.mp3" type="button" aria-label="Play English audio">🔊</button><span>After the LUT, nudge blue toward cyan and add density for the final look.</span></div>
+<audio class="cap-audio" src="audio/dbc528a28633.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（141段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>经过几次测试</p></div>
+<div class="transcript-row"><time>00:01</time><p>我们这个一键创建LUT仿色的工具</p></div>
+<div class="transcript-row"><time>00:03</time><p>反射还是不错的</p></div>
+<div class="transcript-row"><time>00:04</time><p>但是流程还是有点麻烦</p></div>
+<div class="transcript-row"><time>00:05</time><p>要先截图保存上传</p></div>
+<div class="transcript-row"><time>00:08</time><p>再下载LUT再传那个达芬奇</p></div>
+<div class="transcript-row"><time>00:10</time><p>所以我们这一次更新优化了这个流程</p></div>
+<div class="transcript-row"><time>00:12</time><p>来到3.5版本</p></div>
+<div class="transcript-row"><time>00:13</time><p>首先是截图</p></div>
+<div class="transcript-row"><time>00:14</time><p>我们可以这样做</p></div>
+<div class="transcript-row"><time>00:16</time><p>先给一个画面做好还原</p></div>
+<div class="transcript-row"><time>00:18</time><p>然后按住键盘上的P键</p></div>
+<div class="transcript-row"><time>00:20</time><p>这时候它会全屏呈现对不对</p></div>
+<div class="transcript-row"><time>00:21</time><p>然后我们再切换到这个网页</p></div>
+<div class="transcript-row"><time>00:23</time><p>在原始画面的右上角中</p></div>
+<div class="transcript-row"><time>00:25</time><p>会有个截图按钮</p></div>
+<div class="transcript-row"><time>00:26</time><p>我们点一下截图按钮</p></div>
+<div class="transcript-row"><time>00:27</time><p>如果你用的是谷歌或者是H浏览器的话</p></div>
+<div class="transcript-row"><time>00:30</time><p>就可以调用这个功能</p></div>
+<div class="transcript-row"><time>00:32</time><p>我们在这个窗口中可以选择达芬奇</p></div>
+<div class="transcript-row"><time>00:34</time><p>那此时点击分享</p></div>
+<div class="transcript-row"><time>00:36</time><p>它会变回到达芬奇这个窗口</p></div>
+<div class="transcript-row"><time>00:38</time><p>我们再回去它就自动截图好了</p></div>
+<div class="transcript-row"><time>00:40</time><p>这可以省好几件事情</p></div>
+<div class="transcript-row"><time>00:41</time><p>然后再传入你想要的一个参考图</p></div>
+<div class="transcript-row"><time>00:43</time><p>这个参考图你可以从本地传</p></div>
+<div class="transcript-row"><time>00:44</time><p>也可以用一样的方式</p></div>
+<div class="transcript-row"><time>00:45</time><p>换取任何窗口去做截图</p></div>
+<div class="transcript-row"><time>00:47</time><p>然后我们再微调参数</p></div>
+<div class="transcript-row"><time>00:48</time><p>点击生成LUT</p></div>
+<div class="transcript-row"><time>00:49</time><p>生成好了LUT中</p></div>
+<div class="transcript-row"><time>00:50</time><p>我们要传递给达芬奇</p></div>
+<div class="transcript-row"><time>00:51</time><p>对不对</p></div>
+<div class="transcript-row"><time>00:52</time><p>之前要先下载</p></div>
+<div class="transcript-row"><time>00:53</time><p>再打开达芬奇的LUT库</p></div>
+<div class="transcript-row"><time>00:54</time><p>再拉进去这个太麻烦了</p></div>
+<div class="transcript-row"><time>00:56</time><p>我们可以在这个位置</p></div>
+<div class="transcript-row"><time>00:57</time><p>我们看到这个地方多出一个小按钮</p></div>
+<div class="transcript-row"><time>00:59</time><p>点击它</p></div>
+<div class="transcript-row"><time>00:59</time><p>你可以用它直接去绑定你的LUT所在位置</p></div>
+<div class="transcript-row"><time>01:02</time><p>那LUT的文件夹在哪呢</p></div>
+<div class="transcript-row"><time>01:04</time><p>我们可以在达芬奇左上角LUT库中</p></div>
+<div class="transcript-row"><time>01:06</time><p>随便右键点开一个LUT</p></div>
+<div class="transcript-row"><time>01:08</time><p>然后选择打开文件位置</p></div>
+<div class="transcript-row"><time>01:10</time><p>那这时候它会弹出它所对应的文件夹</p></div>
+<div class="transcript-row"><time>01:12</time><p>我们可以找到这个LUT的大文件夹</p></div>
+<div class="transcript-row"><time>01:14</time><p>然后把这个路径</p></div>
+<div class="transcript-row"><time>01:15</time><p>在这个网页中选择到它</p></div>
+<div class="transcript-row"><time>01:17</time><p>这个只要做一次</p></div>
+<div class="transcript-row"><time>01:18</time><p>后面只要你不换电脑</p></div>
+<div class="transcript-row"><time>01:19</time><p>它都可以去复用这个行为</p></div>
+<div class="transcript-row"><time>01:21</time><p>这个流程对Mac用户来讲问题不大</p></div>
+<div class="transcript-row"><time>01:22</time><p>但是Windows用户情况就不同了</p></div>
+<div class="transcript-row"><time>01:24</time><p>如果你的达芬奇是默认装在C盘的</p></div>
+<div class="transcript-row"><time>01:26</time><p>因为这个盘是系统盘</p></div>
+<div class="transcript-row"><time>01:28</time><p>网页传递不过去</p></div>
+<div class="transcript-row"><time>01:29</time><p>所以我们需要给它新增一个LUT库的位置</p></div>
+<div class="transcript-row"><time>01:31</time><p>我们可以在达芬奇左上角选择偏好设置</p></div>
+<div class="transcript-row"><time>01:35</time><p>在偏好设置中我们选择系统常规</p></div>
+<div class="transcript-row"><time>01:38</time><p>在常规的下方有一个LUT位置</p></div>
+<div class="transcript-row"><time>01:40</time><p>我们可以给它添加一个非系统盘</p></div>
+<div class="transcript-row"><time>01:42</time><p>任何一个盘都行</p></div>
+<div class="transcript-row"><time>01:43</time><p>佛这里选择的是D盘</p></div>
+<div class="transcript-row"><time>01:44</time><p>那么我在D盘中再创建一个文件夹</p></div>
+<div class="transcript-row"><time>01:48</time><p>给它叫做色彩匹配</p></div>
+<div class="transcript-row"><time>01:49</time><p>然后我们就获得了一个</p></div>
+<div class="transcript-row"><time>01:51</time><p>非系统盘的一个地址</p></div>
+<div class="transcript-row"><time>01:52</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:52</time><p>我们再回到这个网页</p></div>
+<div class="transcript-row"><time>01:54</time><p>将这个保存的目标路径</p></div>
+<div class="transcript-row"><time>01:56</time><p>选择我们刚刚新建的Color Match</p></div>
+<div class="transcript-row"><time>01:58</time><p>这个文件夹点击确认就行了</p></div>
+<div class="transcript-row"><time>01:59</time><p>这时候我们只需要给它把生成好的LUT</p></div>
+<div class="transcript-row"><time>02:02</time><p>点击发送给达芬奇</p></div>
+<div class="transcript-row"><time>02:04</time><p>它就会自动传到我们刚刚新建的文件夹中</p></div>
+<div class="transcript-row"><time>02:07</time><p>这个文件夹的命名我也做了调整</p></div>
+<div class="transcript-row"><time>02:08</time><p>因为我们这一次是自动流程</p></div>
+<div class="transcript-row"><time>02:10</time><p>所以为了避免它出现重名的一个情况</p></div>
+<div class="transcript-row"><time>02:12</time><p>我们会增加了很多时间戳</p></div>
+<div class="transcript-row"><time>02:14</time><p>以及独立的后缀</p></div>
+<div class="transcript-row"><time>02:15</time><p>这时候你不需要做任何事情</p></div>
+<div class="transcript-row"><time>02:16</time><p>我们只需要在这个空白处右键点击刷新</p></div>
+<div class="transcript-row"><time>02:20</time><p>它就会弹出一个新的文件夹</p></div>
+<div class="transcript-row"><time>02:22</time><p>我们刚刚生成的这个LUT也在里面了</p></div>
+<div class="transcript-row"><time>02:23</time><p>那如果说你是第一次修改</p></div>
+<div class="transcript-row"><time>02:25</time><p>这个偏好设置中的LUT位置的话</p></div>
+<div class="transcript-row"><time>02:27</time><p>你在保存好了之后</p></div>
+<div class="transcript-row"><time>02:28</time><p>记得要重启一下达芬奇</p></div>
+<div class="transcript-row"><time>02:29</time><p>那我们传好了这个LUT之后呢</p></div>
+<div class="transcript-row"><time>02:31</time><p>就可以把LUT拖到你的达芬奇中</p></div>
+<div class="transcript-row"><time>02:33</time><p>这样就可以快速给画面带来一种风格化</p></div>
+<div class="transcript-row"><time>02:35</time><p>和我们的参考图其实还是比较接近的</p></div>
+<div class="transcript-row"><time>02:37</time><p>虽然颜色会有一点点偏差</p></div>
+<div class="transcript-row"><time>02:38</time><p>比如说我们这个画面稍微带了点蓝</p></div>
+<div class="transcript-row"><time>02:41</time><p>它是更加的偏青色</p></div>
+<div class="transcript-row"><time>02:42</time><p>我们可以再来个节点</p></div>
+<div class="transcript-row"><time>02:44</time><p>把蓝色往青的方向去靠</p></div>
+<div class="transcript-row"><time>02:45</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:46</time><p>你想怎么动怎么动</p></div>
+<div class="transcript-row"><time>02:47</time><p>我们变成这种青色了之后呢</p></div>
+<div class="transcript-row"><time>02:48</time><p>也可以再来个节点</p></div>
+<div class="transcript-row"><time>02:49</time><p>把蓝色和青色的密度给它增加</p></div>
+<div class="transcript-row"><time>02:51</time><p>那这样呢</p></div>
+<div class="transcript-row"><time>02:52</time><p>我们是不是就可以给它赋予一个</p></div>
+<div class="transcript-row"><time>02:54</time><p>完全不同的一个风格</p></div>
+<div class="transcript-row"><time>02:56</time><p>而且这个效果还是非常好的</p></div>
+<div class="transcript-row"><time>02:57</time><p>非常非常快啊</p></div>
+<div class="transcript-row"><time>02:58</time><p>然后呢</p></div>
+<div class="transcript-row"><time>02:58</time><p>你在适当微调一下曝光</p></div>
+<div class="transcript-row"><time>03:00</time><p>我们就可以出片了</p></div>
+<div class="transcript-row"><time>03:01</time><p>网址呢</p></div>
+<div class="transcript-row"><time>03:01</time><p>我同样会附在评论区</p></div>
+<div class="transcript-row"><time>03:02</time><p>如果被推了的话</p></div>
+<div class="transcript-row"><time>03:03</time><p>你可以私信找我啊</p></div>
+<div class="transcript-row"><time>03:04</time><p>还会有更多的新功能</p></div>
+<div class="transcript-row"><time>03:05</time><p>在线下班会优先开启测试</p></div>
+<div class="transcript-row"><time>03:07</time><p>不只有线下班</p></div>
+<div class="transcript-row"><time>03:08</time><p>还有线上系统课程啊</p></div>
+<div class="transcript-row"><time>03:09</time><p>如果需要的话</p></div>
+<div class="transcript-row"><time>03:10</time><p>也可以私信</p></div>
+<div class="transcript-row"><time>03:11</time><p>或是看我简介来找我</p></div>
+<div class="transcript-row"><time>03:12</time><p>也欢迎大家来多多的一个测试</p></div>
+<div class="transcript-row"><time>03:14</time><p>我们目前测试的人数</p></div>
+<div class="transcript-row"><time>03:15</time><p>也有大几百人了</p></div>
+<div class="transcript-row"><time>03:16</time><p>还是非常感谢大家的支持的啊</p></div>
+<div class="transcript-row"><time>03:17</time><p>测试好了</p></div>
+<div class="transcript-row"><time>03:18</time><p>如果有任何问题</p></div>
+<div class="transcript-row"><time>03:19</time><p>你都可以随时找我</p></div>
+<div class="transcript-row"><time>03:20</time><p>我会根据你的情况</p></div>
+<div class="transcript-row"><time>03:21</time><p>来尝试的优化</p></div>
+<div class="transcript-row"><time>03:22</time><p>特别是如果你遇到了某些情况</p></div>
+<div class="transcript-row"><time>03:24</time><p>无法做到精准的仿色</p></div>
+<div class="transcript-row"><time>03:26</time><p>也可以把这个事情告诉我</p></div>
+<div class="transcript-row"><time>03:28</time><p>你把你的原始画面</p></div>
+<div class="transcript-row"><time>03:29</time><p>你的参考画面</p></div>
+<div class="transcript-row"><time>03:29</time><p>以及你的生成好辣的之后的</p></div>
+<div class="transcript-row"><time>03:31</time><p>结果都发给我看</p></div>
+<div class="transcript-row"><time>03:32</time><p>我来看看怎么优化</p></div>
+<div class="transcript-row"><time>03:33</time><p>好了</p></div>
+<div class="transcript-row"><time>03:33</time><p>这集就到这里</p></div>
+<div class="transcript-row"><time>03:34</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

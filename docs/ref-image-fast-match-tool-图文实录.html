@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一键仿色做 LUT 工具更新：因无自定义分区、全局易偏，初次生成力度调小，并新增网页微调（色温/色调/对比等）。下载后须在还原之后新节点套 LUT，用键输出增益降不透明度；LUT 后新问题再后插节点修。参考须尽量同拍摄条件；LUT 当颜色干扰，Shift+S 前插先调光，工具再强">
+<title>只要你有参考图，就能用这个工具快速仿色｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>只要你有参考图，就能用这个工具快速仿色</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">7分50秒</span><span class="meta-tag tag-topic">达芬奇 LUT 仿色工具 参考图 键输出 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/7V76r6lT8Vm" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">更新：弱初生成 + 网页微调参数</a><a href="#ch2">达芬奇套用：后节点 + 键输出 + 修黄绿</a><a href="#ch3">换风格：可微调，也要承认「不合适」</a><a href="#ch4">LUT 当前当颜色干扰：先调光，再谈工具</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一键仿色做 LUT 工具更新：因无自定义分区、全局易偏，初次生成力度调小，并新增网页微调（色温/色调/对比等）。下载后须在还原之后新节点套 LUT，用键输出增益降不透明度；LUT 后新问题再后插节点修。参考须尽量同拍摄条件；LUT 当颜色干扰，Shift+S 前插先调光，工具再强也要画面分析。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:47]</span><div><strong>力度+微调</strong><p>无分区→初生成减弱；网页加色温/色调/对比再下载。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:47→03:12]</span><div><strong>套 LUT 修偏</strong><p>末节点套用；键输出降增益；后插降黄密度+蜘蛛网。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:12→04:43]</span><div><strong>选型边界</strong><p>第二风格可微调；暗调室内 LUT 对晴天人像不合适。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:43→07:50]</span><div><strong>先光后色</strong><p>Shift+S 前插主体/外部压暗；跟踪补帧；外观冲动器可选。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>工具给的是全局影调/颜色起点，不是分区大师。选型对齐天气与光比；套在还原后，力度用键输出；偏差在 LUT 后修。前插重塑曝光、跟踪与外观仍要会。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:47</span>更新：弱初生成 + 网页微调参数</h2><p>上期一键仿色工具测试中普遍遇偏；网址藏视频顶部。功能无自定义分区，局部必有偏差，故新增调整滑块，且初次生成力度故意调小、预览更淡。</p><p>简单还原后抓静帧拖「原始画面」，右侧选风格参考→生成 LUT→预览。觉得不够暖可加色温、减色调偏黄绿、少加对比，再下载。</p><figure><img src="assets/ref-image-fast-match-tool/shot-01.jpg" alt="网页生成 LUT 预览：初力度调小 + 微调色温色调" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:50] 网页生成 LUT 预览：初力度调小 + 微调色温色调</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/3634fa2c8bd0.mp3" type="button" aria-label="Play English audio">🔊</button><span>Web LUT preview: start weak + nudge temp/tint.</span></div>
+<audio class="cap-audio" src="audio/3634fa2c8bd0.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:47-03:12</span>达芬奇套用：后节点 + 键输出 + 修黄绿</h2><p>LUT 必须拖进新建节点，勿在还原节点上干扰。力度大则到「键」里降键输出增益（降不透明度）。</p><p>对比参考：参考暖偏红，己方黄绿不适——这是套 LUT 后新问题，须在 LUT 后建节点：降皮肤/黄密度透一点，蜘蛛网略降黄饱和。通看可有度假慵懒感，且很快。</p><figure><img src="assets/ref-image-fast-match-tool/shot-02.jpg" alt="达芬奇末节点套 LUT，键输出降增益控力度" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:10] 达芬奇末节点套 LUT，键输出降增益控力度</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6d0467555bd6.mp3" type="button" aria-label="Play English audio">🔊</button><span>End-node LUT in DaVinci; key output gain down for strength.</span></div>
+<audio class="cap-audio" src="audio/6d0467555bd6.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">03:12-04:43</span>换风格：可微调，也要承认「不合适」</h2><p>换更灰的参考：生成偏灰、色偏暖——微调降色温、略加暗部冷、加对比再套。参考本就闷暗，晴天人像可抬 Light 找高光、降蓝青饱和，不必像素一致，可当一种风格。</p><p>暗调室内参考生成的 LUT 对人像「没法看」——不是生成器坏了，是拍摄情况不一致。晴天找晴天风，阴天硬套必错；故套 LUT 后仍要调色优化与画面分析。</p><figure><img src="assets/ref-image-fast-match-tool/shot-03.jpg" alt="第二风格套用后抬 Light、降蓝青；承认错天气不合适" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:00] 第二风格套用后抬 Light、降蓝青；承认错天气不合适</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e83c28a2a618.mp3" type="button" aria-label="Play English audio">🔊</button><span>Second look: lift Light, ease blue/cyan; admit wrong weather for the look.</span></div>
+<audio class="cap-audio" src="audio/e83c28a2a618.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">04:43-07:50</span>LUT 当前当颜色干扰：先调光，再谈工具</h2><p>想突出人物：Shift+S 在 LUT 前建节点，遮罩略加对比；Option+O 外部压四周重塑曝光。遮罩要跟踪，跟丢可切帧模式补关键帧。</p><p>风格不够强可在最后套电影感外观冲动器并调参数。反馈可私信或网页右上角；也会当面内测。工具加速给色，分析能力不能丢。</p><figure><img src="assets/ref-image-fast-match-tool/shot-04.jpg" alt="Shift+S 前插：人物遮罩 + 外部压四周重塑曝光" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:50] Shift+S 前插：人物遮罩 + 外部压四周重塑曝光</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6728417e4036.mp3" type="button" aria-label="Play English audio">🔊</button><span>Shift+S insert: subject mask + outside press rebuilds exposure.</span></div>
+<audio class="cap-audio" src="audio/6728417e4036.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/ref-image-fast-match-tool/shot-05.jpg" alt="跟踪补帧与外观冲动器；反馈入口说明" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[07:00] 跟踪补帧与外观冲动器；反馈入口说明</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ceca4a27467f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Track fill frames and look creator; feedback entry notes.</span></div>
+<audio class="cap-audio" src="audio/ceca4a27467f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（318段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>上一期分享过我们做的这个一键仿色做辣子的工具</p></div>
+<div class="transcript-row"><time>00:15</time><p>已经有不少朋友参与了测试</p></div>
+<div class="transcript-row"><time>00:17</time><p>但是大家也普遍的遇到了一些问题</p></div>
+<div class="transcript-row"><time>00:19</time><p>这一次算是一个更新视频</p></div>
+<div class="transcript-row"><time>00:21</time><p>也给大家分享一下新功能</p></div>
+<div class="transcript-row"><time>00:22</time><p>网址我放在评论区会被吞</p></div>
+<div class="transcript-row"><time>00:24</time><p>所以我就藏住在视频顶部</p></div>
+<div class="transcript-row"><time>00:26</time><p>大家可以自行前往</p></div>
+<div class="transcript-row"><time>00:27</time><p>buff叠在最前面</p></div>
+<div class="transcript-row"><time>00:28</time><p>不好用别骂我</p></div>
+<div class="transcript-row"><time>00:29</time><p>我们来到工具</p></div>
+<div class="transcript-row"><time>00:30</time><p>因为我们这个功能呢</p></div>
+<div class="transcript-row"><time>00:31</time><p>是不具备自定义分区调整的能力的</p></div>
+<div class="transcript-row"><time>00:34</time><p>所以一定会出现局部内容产生偏差的情况</p></div>
+<div class="transcript-row"><time>00:37</time><p>所以我们新增了一个调整滑块</p></div>
+<div class="transcript-row"><time>00:39</time><p>比如说这个画面</p></div>
+<div class="transcript-row"><time>00:40</time><p>在我们给它做好了简单的还原之后呢</p></div>
+<div class="transcript-row"><time>00:42</time><p>抓取一个竞争</p></div>
+<div class="transcript-row"><time>00:44</time><p>把它拖到网页中的原始画面</p></div>
+<div class="transcript-row"><time>00:45</time><p>然后在右侧参考画面中</p></div>
+<div class="transcript-row"><time>00:47</time><p>选择一个风格化的参考</p></div>
+<div class="transcript-row"><time>00:49</time><p>比如说这张图</p></div>
+<div class="transcript-row"><time>00:51</time><p>我们点进来了之后</p></div>
+<div class="transcript-row"><time>00:52</time><p>点击下方生成LUT</p></div>
+<div class="transcript-row"><time>00:54</time><p>生成好了之后</p></div>
+<div class="transcript-row"><time>00:54</time><p>下方就会有一个预览画面</p></div>
+<div class="transcript-row"><time>00:56</time><p>我们可以偷动的来看这个LUT</p></div>
+<div class="transcript-row"><time>00:58</time><p>应用之后的大致情况</p></div>
+<div class="transcript-row"><time>00:59</time><p>其实跟参考图有点接近对吧</p></div>
+<div class="transcript-row"><time>01:01</time><p>那大家不知道有没有发现</p></div>
+<div class="transcript-row"><time>01:02</time><p>我们这一次生成的这个预览结果</p></div>
+<div class="transcript-row"><time>01:04</time><p>比起上一次要淡了很多</p></div>
+<div class="transcript-row"><time>01:06</time><p>为啥呀</p></div>
+<div class="transcript-row"><time>01:06</time><p>因为我们刚刚说那个情况</p></div>
+<div class="transcript-row"><time>01:08</time><p>它是不具备自定义分区调整的</p></div>
+<div class="transcript-row"><time>01:10</time><p>也就是说它是全局颜色干扰</p></div>
+<div class="transcript-row"><time>01:12</time><p>那么它就会极大概率产生偏差意外的情况</p></div>
+<div class="transcript-row"><time>01:15</time><p>所以我们在初次生成LUT的时候</p></div>
+<div class="transcript-row"><time>01:17</time><p>力度就给它调小了</p></div>
+<div class="transcript-row"><time>01:18</time><p>但如果说你觉得还有差距的话</p></div>
+<div class="transcript-row"><time>01:20</time><p>我们在网页中</p></div>
+<div class="transcript-row"><time>01:21</time><p>增加了这个板块</p></div>
+<div class="transcript-row"><time>01:23</time><p>微调参数的一个行为</p></div>
+<div class="transcript-row"><time>01:24</time><p>你可以根据自己的需求来做一定的调整</p></div>
+<div class="transcript-row"><time>01:26</time><p>比如说现在</p></div>
+<div class="transcript-row"><time>01:27</time><p>我觉得大体的感觉是有的</p></div>
+<div class="transcript-row"><time>01:29</time><p>但是颜色还是有一点点不同</p></div>
+<div class="transcript-row"><time>01:31</time><p>不够暖</p></div>
+<div class="transcript-row"><time>01:32</time><p>所以我们可以给它增加一点色温</p></div>
+<div class="transcript-row"><time>01:33</time><p>给它加到</p></div>
+<div class="transcript-row"><time>01:35</time><p>然后再给它减一点点色调</p></div>
+<div class="transcript-row"><time>01:37</time><p>因为我觉得它不够黄绿</p></div>
+<div class="transcript-row"><time>01:38</time><p>整体结果要偏黄绿对吧</p></div>
+<div class="transcript-row"><time>01:40</time><p>它是这种西洋的暖调的感觉</p></div>
+<div class="transcript-row"><time>01:42</time><p>也可以给它再加一点点对比度</p></div>
+<div class="transcript-row"><time>01:44</time><p>少加一些</p></div>
+<div class="transcript-row"><time>01:45</time><p>那这样看起来就跟参考图会更加接近了对吧</p></div>
+<div class="transcript-row"><time>01:47</time><p>然后我们就可以点击下方下载LUT</p></div>
+<div class="transcript-row"><time>01:49</time><p>下载好LUT之后</p></div>
+<div class="transcript-row"><time>01:50</time><p>我们可以给它拖进达芬奇</p></div>
+<div class="transcript-row"><time>01:52</time><p>那我已经拖好了</p></div>
+<div class="transcript-row"><time>01:53</time><p>我们可以在LUT库里面找到</p></div>
+<div class="transcript-row"><time>01:54</time><p>要应用它的话</p></div>
+<div class="transcript-row"><time>01:55</time><p>一定要在后面新建一个节点</p></div>
+<div class="transcript-row"><time>01:57</time><p>不要在前面还原节点上去干扰它</p></div>
+<div class="transcript-row"><time>01:59</time><p>我们可以把这个LUT拖进新建的节点中</p></div>
+<div class="transcript-row"><time>02:02</time><p>一套</p></div>
+<div class="transcript-row"><time>02:02</time><p>你看这个风格是不是就有了</p></div>
+<div class="transcript-row"><time>02:04</time><p>如果你套上去了之后</p></div>
+<div class="transcript-row"><time>02:05</time><p>感觉这个力度有点太大了</p></div>
+<div class="transcript-row"><time>02:06</time><p>你可以来到键</p></div>
+<div class="transcript-row"><time>02:07</time><p>这里有个键这个功能</p></div>
+<div class="transcript-row"><time>02:09</time><p>我们在键输出的增益中降低它的竖直</p></div>
+<div class="transcript-row"><time>02:11</time><p>也就是降低LUT节点的不透明度</p></div>
+<div class="transcript-row"><time>02:14</time><p>稍微给它降低一点</p></div>
+<div class="transcript-row"><time>02:15</time><p>我就到这个情况</p></div>
+<div class="transcript-row"><time>02:16</time><p>这种结果就挺好了对吧</p></div>
+<div class="transcript-row"><time>02:17</time><p>可是我们再打开参考图</p></div>
+<div class="transcript-row"><time>02:19</time><p>你会发现一个情况</p></div>
+<div class="transcript-row"><time>02:21</time><p>在参考图中</p></div>
+<div class="transcript-row"><time>02:22</time><p>它所有的暖色</p></div>
+<div class="transcript-row"><time>02:23</time><p>它其实有点偏红的对吧</p></div>
+<div class="transcript-row"><time>02:24</time><p>你看肤色包括这里的墙面</p></div>
+<div class="transcript-row"><time>02:26</time><p>而我们的画面就是黄绿黄绿的</p></div>
+<div class="transcript-row"><time>02:28</time><p>这个不太舒服</p></div>
+<div class="transcript-row"><time>02:29</time><p>所以我们需要再加一个节点</p></div>
+<div class="transcript-row"><time>02:31</time><p>来解决这个问题</p></div>
+<div class="transcript-row"><time>02:32</time><p>为什么是加一个节点呢</p></div>
+<div class="transcript-row"><time>02:33</time><p>因为这个是由于LUT套上之后</p></div>
+<div class="transcript-row"><time>02:36</time><p>产生的新问题</p></div>
+<div class="transcript-row"><time>02:37</time><p>所以我们要在LUT之后再建立节点</p></div>
+<div class="transcript-row"><time>02:39</time><p>而不是在之前</p></div>
+<div class="transcript-row"><time>02:40</time><p>首先我先降低了皮肤的密度</p></div>
+<div class="transcript-row"><time>02:43</time><p>让皮肤也就是这些黄色</p></div>
+<div class="transcript-row"><time>02:44</time><p>都稍微能够透一点</p></div>
+<div class="transcript-row"><time>02:46</time><p>然后再在老板蜘蛛网</p></div>
+<div class="transcript-row"><time>02:47</time><p>稍微给它降低一点黄色的饱和度</p></div>
+<div class="transcript-row"><time>02:50</time><p>让它到这个程度</p></div>
+<div class="transcript-row"><time>02:53</time><p>好</p></div>
+<div class="transcript-row"><time>02:53</time><p>我觉得这样就挺好了</p></div>
+<div class="transcript-row"><time>02:54</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:55</time><p>那这样一条</p></div>
+<div class="transcript-row"><time>02:55</time><p>我们就能够给画面带来一个</p></div>
+<div class="transcript-row"><time>02:57</time><p>非常强的一个风格</p></div>
+<div class="transcript-row"><time>02:58</time><p>我们通天来看一看</p></div>
+<div class="transcript-row"><time>02:59</time><p>其实在之前</p></div>
+<div class="transcript-row"><time>03:00</time><p>这里就是有那种度假的感觉</p></div>
+<div class="transcript-row"><time>03:02</time><p>特别符合我们这个场景的这个颜色风格</p></div>
+<div class="transcript-row"><time>03:04</time><p>而且最重要的是它非常快</p></div>
+<div class="transcript-row"><time>03:06</time><p>你不需要调太多的东西</p></div>
+<div class="transcript-row"><time>03:07</time><p>你这种闷闷的慵懒的感觉</p></div>
+<div class="transcript-row"><time>03:09</time><p>能够通过这个功能快速的去实现</p></div>
+<div class="transcript-row"><time>03:11</time><p>挺好的</p></div>
+<div class="transcript-row"><time>03:12</time><p>那如果说换一个风格呢</p></div>
+<div class="transcript-row"><time>03:13</time><p>比如说我们来尝试一下这个风格</p></div>
+<div class="transcript-row"><time>03:16</time><p>换一张图</p></div>
+<div class="transcript-row"><time>03:17</time><p>我们用这张</p></div>
+<div class="transcript-row"><time>03:18</time><p>完全不同的风格对不对</p></div>
+<div class="transcript-row"><time>03:20</time><p>但是有接近的物体</p></div>
+<div class="transcript-row"><time>03:21</time><p>那我们也一样给它生成一个LUT</p></div>
+<div class="transcript-row"><time>03:23</time><p>生成好了之后你会发现</p></div>
+<div class="transcript-row"><time>03:24</time><p>非常的灰</p></div>
+<div class="transcript-row"><time>03:25</time><p>因为它与这个参考图它就非常灰</p></div>
+<div class="transcript-row"><time>03:27</time><p>那这个灰呢</p></div>
+<div class="transcript-row"><time>03:28</time><p>跟我们这个曝光情况是不一致的</p></div>
+<div class="transcript-row"><time>03:30</time><p>而且颜色我们比它要稍微暖了一点</p></div>
+<div class="transcript-row"><time>03:32</time><p>那我们可以在微调参数中</p></div>
+<div class="transcript-row"><time>03:34</time><p>给它把色温稍微降一点</p></div>
+<div class="transcript-row"><time>03:37</time><p>往左拉</p></div>
+<div class="transcript-row"><time>03:37</time><p>拉到底吧</p></div>
+<div class="transcript-row"><time>03:38</time><p>也可以稍微再加一点点暗部的冷色</p></div>
+<div class="transcript-row"><time>03:41</time><p>这个功能大家可以自己去挖掘</p></div>
+<div class="transcript-row"><time>03:43</time><p>然后再给它加一点对比度</p></div>
+<div class="transcript-row"><time>03:45</time><p>那不要这么灰</p></div>
+<div class="transcript-row"><time>03:47</time><p>好</p></div>
+<div class="transcript-row"><time>03:47</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>03:48</time><p>我们同样给它下载LUT</p></div>
+<div class="transcript-row"><time>03:50</time><p>然后再给它拖到达芬奇</p></div>
+<div class="transcript-row"><time>03:51</time><p>同样我已经拖完了</p></div>
+<div class="transcript-row"><time>03:52</time><p>我们可以再加一个节点</p></div>
+<div class="transcript-row"><time>03:54</time><p>拉到第三排来尝试一下</p></div>
+<div class="transcript-row"><time>03:56</time><p>刚刚那个节点是这个风格</p></div>
+<div class="transcript-row"><time>03:57</time><p>那这个风格一套了之后</p></div>
+<div class="transcript-row"><time>03:59</time><p>你会发现</p></div>
+<div class="transcript-row"><time>04:00</time><p>嗯</p></div>
+<div class="transcript-row"><time>04:00</time><p>感觉又对又不对</p></div>
+<div class="transcript-row"><time>04:02</time><p>那确实因为参考图</p></div>
+<div class="transcript-row"><time>04:03</time><p>它就是偏暗掉的</p></div>
+<div class="transcript-row"><time>04:05</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:05</time><p>它非常闷</p></div>
+<div class="transcript-row"><time>04:06</time><p>它闷的闷是因为它这个天气</p></div>
+<div class="transcript-row"><time>04:08</time><p>但是我们这个画面就不适合这么闷</p></div>
+<div class="transcript-row"><time>04:10</time><p>那我们这个时候就应该</p></div>
+<div class="transcript-row"><time>04:11</time><p>根据我们已有的情况去做微调</p></div>
+<div class="transcript-row"><time>04:13</time><p>首先感觉它闷是因为它缺了高光</p></div>
+<div class="transcript-row"><time>04:15</time><p>我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>04:16</time><p>稍微提高一点Light色冷的曝光</p></div>
+<div class="transcript-row"><time>04:18</time><p>把它的高光稍微找回来一点</p></div>
+<div class="transcript-row"><time>04:21</time><p>好</p></div>
+<div class="transcript-row"><time>04:21</time><p>找回来了点之后能舒服不少</p></div>
+<div class="transcript-row"><time>04:22</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:23</time><p>那同样我们可以再稍微降低点</p></div>
+<div class="transcript-row"><time>04:25</time><p>蓝色和青色的饱和度</p></div>
+<div class="transcript-row"><time>04:26</time><p>让它蓝色不要这么艳</p></div>
+<div class="transcript-row"><time>04:28</time><p>因为它的参考图</p></div>
+<div class="transcript-row"><time>04:29</time><p>它这个蓝色就是非常淡的蓝</p></div>
+<div class="transcript-row"><time>04:31</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:31</time><p>那到这个程度</p></div>
+<div class="transcript-row"><time>04:32</time><p>我们就能够也给画面带来一种风格</p></div>
+<div class="transcript-row"><time>04:34</time><p>你说这个风格好不好看呢</p></div>
+<div class="transcript-row"><time>04:35</time><p>我倒是觉得挺有意思的</p></div>
+<div class="transcript-row"><time>04:37</time><p>那好不好看这个也是见仁见智</p></div>
+<div class="transcript-row"><time>04:39</time><p>虽然和参考图不一样</p></div>
+<div class="transcript-row"><time>04:40</time><p>但对于我们这个画面来讲</p></div>
+<div class="transcript-row"><time>04:41</time><p>也属于一种风格挺好的</p></div>
+<div class="transcript-row"><time>04:43</time><p>然后我们也可以再尝试另外一种风格</p></div>
+<div class="transcript-row"><time>04:45</time><p>比如说我们用这个场景</p></div>
+<div class="transcript-row"><time>04:48</time><p>它是个暗调室内的</p></div>
+<div class="transcript-row"><time>04:49</time><p>我们给它生成一个LUT</p></div>
+<div class="transcript-row"><time>04:50</time><p>那生成好了之后你会发现</p></div>
+<div class="transcript-row"><time>04:52</time><p>你怎么看都是不对的</p></div>
+<div class="transcript-row"><time>04:53</time><p>那当然这个LUT呢</p></div>
+<div class="transcript-row"><time>04:54</time><p>我也做好了</p></div>
+<div class="transcript-row"><time>04:55</time><p>我给它拉到节点中</p></div>
+<div class="transcript-row"><time>04:56</time><p>这个LUT一套</p></div>
+<div class="transcript-row"><time>04:58</time><p>你会发现</p></div>
+<div class="transcript-row"><time>04:58</time><p>就没法看</p></div>
+<div class="transcript-row"><time>04:59</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:59</time><p>没法看</p></div>
+<div class="transcript-row"><time>05:00</time><p>就算我们降低了它的这个键输出</p></div>
+<div class="transcript-row"><time>05:02</time><p>它也没法看</p></div>
+<div class="transcript-row"><time>05:03</time><p>为啥没法看</p></div>
+<div class="transcript-row"><time>05:04</time><p>原因很简单</p></div>
+<div class="transcript-row"><time>05:05</time><p>不是我们这个生成的LUT不行</p></div>
+<div class="transcript-row"><time>05:07</time><p>而是它不合适</p></div>
+<div class="transcript-row"><time>05:09</time><p>我们需要让我们的画面</p></div>
+<div class="transcript-row"><time>05:10</time><p>与参考画面的拍摄情况</p></div>
+<div class="transcript-row"><time>05:12</time><p>尽可能一致</p></div>
+<div class="transcript-row"><time>05:13</time><p>你是晴天</p></div>
+<div class="transcript-row"><time>05:14</time><p>我们找晴天的那个风格</p></div>
+<div class="transcript-row"><time>05:16</time><p>一定是相对舒服的</p></div>
+<div class="transcript-row"><time>05:17</time><p>但你如果找阴天</p></div>
+<div class="transcript-row"><time>05:18</time><p>那肯定不对</p></div>
+<div class="transcript-row"><time>05:19</time><p>那也正是因为这个原因</p></div>
+<div class="transcript-row"><time>05:20</time><p>我们在应用了LUT之后</p></div>
+<div class="transcript-row"><time>05:21</time><p>其实还是需要去做</p></div>
+<div class="transcript-row"><time>05:22</time><p>适当的调色优化的</p></div>
+<div class="transcript-row"><time>05:24</time><p>所以我们对调色的这个流程也好</p></div>
+<div class="transcript-row"><time>05:26</time><p>画面分析也好</p></div>
+<div class="transcript-row"><time>05:27</time><p>这种学习还是要持续</p></div>
+<div class="transcript-row"><time>05:28</time><p>那后面呢</p></div>
+<div class="transcript-row"><time>05:29</time><p>我也会结合我们这个功能</p></div>
+<div class="transcript-row"><time>05:30</time><p>来应用在我们的</p></div>
+<div class="transcript-row"><time>05:31</time><p>实操调色流程中</p></div>
+<div class="transcript-row"><time>05:33</time><p>我们可以再延伸一个点</p></div>
+<div class="transcript-row"><time>05:34</time><p>比如说我们按照第一种风格</p></div>
+<div class="transcript-row"><time>05:35</time><p>这种风格挺好的</p></div>
+<div class="transcript-row"><time>05:36</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:36</time><p>但是你觉得我希望</p></div>
+<div class="transcript-row"><time>05:38</time><p>让人物更加突出怎么办呢</p></div>
+<div class="transcript-row"><time>05:40</time><p>那么我们其实应该在</p></div>
+<div class="transcript-row"><time>05:41</time><p>这个节点之前</p></div>
+<div class="transcript-row"><time>05:42</time><p>我们可以把这个LUT节点</p></div>
+<div class="transcript-row"><time>05:43</time><p>当作我们颜色干扰的节点</p></div>
+<div class="transcript-row"><time>05:45</time><p>而我们应该要先调光</p></div>
+<div class="transcript-row"><time>05:47</time><p>或调色对不对</p></div>
+<div class="transcript-row"><time>05:47</time><p>所以我们需要按住Shift加S</p></div>
+<div class="transcript-row"><time>05:49</time><p>往前建立一个节点</p></div>
+<div class="transcript-row"><time>05:50</time><p>然后呢</p></div>
+<div class="transcript-row"><time>05:51</time><p>可以给人物做一定的调整</p></div>
+<div class="transcript-row"><time>05:53</time><p>什么意思</p></div>
+<div class="transcript-row"><time>05:53</time><p>比如说</p></div>
+<div class="transcript-row"><time>05:54</time><p>我想让人物</p></div>
+<div class="transcript-row"><time>05:55</time><p>我先给它画一个遮罩</p></div>
+<div class="transcript-row"><time>05:56</time><p>稍微给它增加一点对比度</p></div>
+<div class="transcript-row"><time>05:57</time><p>不用加太多</p></div>
+<div class="transcript-row"><time>05:58</time><p>重点不在它</p></div>
+<div class="transcript-row"><time>05:59</time><p>重点在于我们需要按照LUT加O</p></div>
+<div class="transcript-row"><time>06:01</time><p>来建立一个外部节点</p></div>
+<div class="transcript-row"><time>06:02</time><p>把其余部分稍微给它压暗一点</p></div>
+<div class="transcript-row"><time>06:04</time><p>我举这个例子而已</p></div>
+<div class="transcript-row"><time>06:06</time><p>好不好看再说吧</p></div>
+<div class="transcript-row"><time>06:06</time><p>你看那这样一调的话</p></div>
+<div class="transcript-row"><time>06:07</time><p>我们是不是把曝光给它</p></div>
+<div class="transcript-row"><time>06:09</time><p>做了一定的重塑</p></div>
+<div class="transcript-row"><time>06:10</time><p>让整个画面的主体更加突出</p></div>
+<div class="transcript-row"><time>06:11</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:12</time><p>你像类似这种情况也是需要做的</p></div>
+<div class="transcript-row"><time>06:14</time><p>那这时候就是我们对画面</p></div>
+<div class="transcript-row"><time>06:15</time><p>需要去做分析</p></div>
+<div class="transcript-row"><time>06:16</time><p>并且我们对我们的需求要去明确</p></div>
+<div class="transcript-row"><time>06:18</time><p>同样的</p></div>
+<div class="transcript-row"><time>06:18</time><p>我们对达分析所有的这功能使用</p></div>
+<div class="transcript-row"><time>06:20</time><p>还是照旧</p></div>
+<div class="transcript-row"><time>06:21</time><p>都是要去了解</p></div>
+<div class="transcript-row"><time>06:22</time><p>比如说我对人物画了</p></div>
+<div class="transcript-row"><time>06:23</time><p>知道这我要跟踪对不对</p></div>
+<div class="transcript-row"><time>06:24</time><p>那我点了跟踪</p></div>
+<div class="transcript-row"><time>06:25</time><p>我们让它快速的跑一下</p></div>
+<div class="transcript-row"><time>06:27</time><p>我加个速</p></div>
+<div class="transcript-row"><time>06:29</time><p>你看这个时候</p></div>
+<div class="transcript-row"><time>06:30</time><p>在这一部分</p></div>
+<div class="transcript-row"><time>06:31</time><p>它是不是跟丢了</p></div>
+<div class="transcript-row"><time>06:32</time><p>跟丢的话</p></div>
+<div class="transcript-row"><time>06:32</time><p>我们也可以通过切换成帧模式</p></div>
+<div class="transcript-row"><time>06:35</time><p>在这个地方打上一个帧</p></div>
+<div class="transcript-row"><time>06:37</time><p>然后在开头也把它移动过来</p></div>
+<div class="transcript-row"><time>06:39</time><p>让它跟上这一帧</p></div>
+<div class="transcript-row"><time>06:40</time><p>那这样就跟上了</p></div>
+<div class="transcript-row"><time>06:41</time><p>所以我们工具的使用还是照旧</p></div>
+<div class="transcript-row"><time>06:43</time><p>该怎么用还是要怎么用</p></div>
+<div class="transcript-row"><time>06:44</time><p>同样的</p></div>
+<div class="transcript-row"><time>06:44</time><p>如果你觉得这个画面中</p></div>
+<div class="transcript-row"><time>06:46</time><p>它这个风格还是不够强</p></div>
+<div class="transcript-row"><time>06:48</time><p>也可以在所有的节点之后</p></div>
+<div class="transcript-row"><time>06:50</time><p>套用一个达分析自带的电影感外观冲动器</p></div>
+<div class="transcript-row"><time>06:53</time><p>通上去之后</p></div>
+<div class="transcript-row"><time>06:54</time><p>它也会给你赋予一个更强的风格</p></div>
+<div class="transcript-row"><time>06:56</time><p>里面的一些参数</p></div>
+<div class="transcript-row"><time>06:57</time><p>你也可以去做调整</p></div>
+<div class="transcript-row"><time>06:58</time><p>你比如说让它不要这么绿</p></div>
+<div class="transcript-row"><time>07:00</time><p>稍微带点屏</p></div>
+<div class="transcript-row"><time>07:01</time><p>对吧</p></div>
+<div class="transcript-row"><time>07:02</time><p>然后呢</p></div>
+<div class="transcript-row"><time>07:02</time><p>饱和度稍微高一点</p></div>
+<div class="transcript-row"><time>07:04</time><p>我举个例子而已</p></div>
+<div class="transcript-row"><time>07:05</time><p>你看这种结果是不是挺好的</p></div>
+<div class="transcript-row"><time>07:07</time><p>或者你给它上一个遮浮</p></div>
+<div class="transcript-row"><time>07:09</time><p>那我想说那个点其实在于</p></div>
+<div class="transcript-row"><time>07:10</time><p>可以利用我们这个功能</p></div>
+<div class="transcript-row"><time>07:12</time><p>快速的去给画面带来一个颜色</p></div>
+<div class="transcript-row"><time>07:14</time><p>或者是一个基础的影调风格</p></div>
+<div class="transcript-row"><time>07:15</time><p>但是做完了之后呢</p></div>
+<div class="transcript-row"><time>07:16</time><p>我们对于画面</p></div>
+<div class="transcript-row"><time>07:17</time><p>还是需要有一定的分析能力</p></div>
+<div class="transcript-row"><time>07:18</time><p>我们需要去明确我们该怎么去做</p></div>
+<div class="transcript-row"><time>07:20</time><p>该怎么去调</p></div>
+<div class="transcript-row"><time>07:21</time><p>该怎么去优化我们的画面</p></div>
+<div class="transcript-row"><time>07:23</time><p>大家如果在使用的过程中</p></div>
+<div class="transcript-row"><time>07:24</time><p>遇到了任何问题</p></div>
+<div class="transcript-row"><time>07:25</time><p>假如说你觉得这个断层了</p></div>
+<div class="transcript-row"><time>07:26</time><p>在某种情况下实现不了</p></div>
+<div class="transcript-row"><time>07:28</time><p>之类之类的</p></div>
+<div class="transcript-row"><time>07:28</time><p>你都可以私信</p></div>
+<div class="transcript-row"><time>07:29</time><p>或者看我姐姐来找我</p></div>
+<div class="transcript-row"><time>07:30</time><p>我也会在接下来几次的一个</p></div>
+<div class="transcript-row"><time>07:32</time><p>星霞客去做当面的一个内测测试</p></div>
+<div class="transcript-row"><time>07:35</time><p>你在线上尝试了之后呢</p></div>
+<div class="transcript-row"><time>07:36</time><p>如果你发现问题</p></div>
+<div class="transcript-row"><time>07:37</time><p>也可以把你的图</p></div>
+<div class="transcript-row"><time>07:38</time><p>参考图以及应用之后的图都发给我</p></div>
+<div class="transcript-row"><time>07:41</time><p>我会想办法给它优化的</p></div>
+<div class="transcript-row"><time>07:42</time><p>或者你也可以在网页的右上角点反馈</p></div>
+<div class="transcript-row"><time>07:45</time><p>在这个地方你也可以选择ASI调整</p></div>
+<div class="transcript-row"><time>07:47</time><p>把你遇到的情况也告诉我</p></div>
+<div class="transcript-row"><time>07:49</time><p>好了</p></div>
+<div class="transcript-row"><time>07:49</time><p>那这期就到这里</p></div>
+<div class="transcript-row"><time>07:50</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

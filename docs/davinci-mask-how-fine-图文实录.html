@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="网上钢笔抠得很细再调色，大概率用不上——真要精细不如神奇遮罩。遮罩核心是区域调整。夕阳剪影案例：先微暖，用 HDR 拉开远处山体高光层次；全局加对比诊断层次不足后，才用超大柔化圆遮罩给山加对比、并行提光源（高光滑块不伤背光）、近景加对比，再用渐变遮罩压天空。重点：结合自带分区能力">
+<title>达芬奇的遮罩真的需要这么精细吗｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>达芬奇的遮罩真的需要这么精细吗</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">6分19秒</span><span class="meta-tag tag-topic">达芬奇 遮罩 分区 对比度 轴心 HDR 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/5rQhcUzgtAn" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">精细钢笔遮罩：也许用得上，大概率用不上</a><a href="#ch2">远山发灰：HDR 拉开高光窄带</a><a href="#ch3">全局加对比诊断：层次够不够</a><a href="#ch4">粗大柔化遮罩 + 分区工具，不必描边</a><a href="#ch5">快速修色与结论：遮罩会简单，工具要会配</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>网上钢笔抠得很细再调色，大概率用不上——真要精细不如神奇遮罩。遮罩核心是区域调整。夕阳剪影案例：先微暖，用 HDR 拉开远处山体高光层次；全局加对比诊断层次不足后，才用超大柔化圆遮罩给山加对比、并行提光源（高光滑块不伤背光）、近景加对比，再用渐变遮罩压天空。重点：结合自带分区能力的工具，粗遮罩就够。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:45]</span><div><strong>立题</strong><p>钢笔精细遮罩大概率用不上；还原后微暖定夕阳基调。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:45→01:43]</span><div><strong>山体 HDR</strong><p>远山发灰：降 Shadow/Light、抬 Highlight，拉开窄高光区反差。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:43→02:17]</span><div><strong>对比诊断</strong><p>全局猛加对比到没法看再开关：层次仍不足、发灰，才进入局部。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:17→04:20]</span><div><strong>粗遮罩分区</strong><p>山大柔化圆遮罩加对比；并行提光源用高光滑块；近景对比度+轴心；渐变压天空用阴影滑块。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:20→06:19]</span><div><strong>颜色与结论</strong><p>减色调去紫、蜘蛛网蓝偏青、密度耐看；可选 2.35 遮幅。精细遮罩少用，优先分区工具。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>遮罩服务于区域调整，不是描边比赛。先全局/HDR 能解决的别急画罩；要画就画大柔化，并配合高光滑块、对比度+轴心等自带分区能力的工具，省掉钢笔精细。真要抠细，优先神奇遮罩。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:45</span>精细钢笔遮罩：也许用得上，大概率用不上</h2><p>朋友常在网上看到钢笔抠得很细再调色的视频，问是否必须。老叉觉得也许用得上，但大概率用不上；真要这么精细，不如用神奇遮罩。遮罩核心目的只有一个：区域性调整。</p><p>以本片夕阳山景为例：还原后底子不错，但缺层次质感，颜色也不够夕阳。四号节点略加色温与色调微暖，定基调后再调影调。</p><figure><img src="assets/davinci-mask-how-fine/shot-01.jpg" alt="夕阳山景还原后微暖，底子好但缺层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 夕阳山景还原后微暖，底子好但缺层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/4840dbeac494.mp3" type="button" aria-label="Play English audio">🔊</button><span>Sunset mountains restore slightly warm—good base, thin depth.</span></div>
+<audio class="cap-audio" src="audio/4840dbeac494.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:45-01:43</span>远山发灰：HDR 拉开高光窄带</h2><p>远处山带雾发灰；人物比重不小但光照下大概率提不太亮，远山反而关键。波形上山体高光信息很窄又处亮面——要拉开高光反差。</p><p>第二排首节点：略降 Shadow 让山体暗面更暗，略降 Light 再压高光，再抬 Highlight 把高光找回来。开关对比，山体立刻立体很多。</p><figure><img src="assets/davinci-mask-how-fine/shot-02.jpg" alt="HDR 拉开远山高光窄带，山体立体起来" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] HDR 拉开远山高光窄带，山体立体起来</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f71a7d7e2dc8.mp3" type="button" aria-label="Play English audio">🔊</button><span>HDR opens a narrow far-mountain highlight band for volume.</span></div>
+<audio class="cap-audio" src="audio/f71a7d7e2dc8.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:43-02:17</span>全局加对比诊断：层次够不够</h2><p>判断层次：新节点全局加对比度到没法看，再开关——很直观看出仍发灰、层次不足。于是试小幅全局加对比：山还行，但近景背光太黑、部分光源又该更亮——有好有坏，说明需要局部，这时才上遮罩。</p></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:17-04:20</span>粗大柔化遮罩 + 分区工具，不必描边</h2><p>远山不钢笔描边：超大柔化圆遮罩，沿用「加对比有效」的思路再加对比，轴心略暗一点。罩到部分人物也没关系——变化很小，别纠结。找光：并行节点给远处光源画罩，用一级轮高光滑块提亮，只动罩内高光，不伤近处背光，省掉精细遮罩需求。</p><p>近景石头有受光、中间弧偏灰：再并行画罩，对比度+轴心强化。只抬高光不能解决发灰；全局曝光会整区一起亮更灰。对比度让亮更亮暗更暗，轴心控制提亮侧重。最后渐变遮罩顺光源方向压天空：阴影滑块压暗部、略抬高光护山体——波形上天空比山暗，才能只压天。</p><figure><img src="assets/davinci-mask-how-fine/shot-03.jpg" alt="超大柔化圆遮罩给山加对比，不必钢笔描边" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 超大柔化圆遮罩给山加对比，不必钢笔描边</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6a0074c415b4.mp3" type="button" aria-label="Play English audio">🔊</button><span>Huge soft circular mask adds mountain contrast—no pen tracing.</span></div>
+<audio class="cap-audio" src="audio/6a0074c415b4.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/davinci-mask-how-fine/shot-04.jpg" alt="并行节点用高光滑块提远处光源，不伤背光" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:15] 并行节点用高光滑块提远处光源，不伤背光</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/416d471a9dba.mp3" type="button" aria-label="Play English audio">🔊</button><span>Parallel Gain/Highlight lifts distant light without hurting backlight.</span></div>
+<audio class="cap-audio" src="audio/416d471a9dba.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:20-06:19</span>快速修色与结论：遮罩会简单，工具要会配</h2><p>与还原对比，曝光分区已明显改善。颜色略偏紫则减一点色调；可用向量示波器让蓝偏青增质感，再节点给蓝青加密度、略降饱和更耐看。可选 2.35:1 遮幅。</p><p>重点：他的遮罩通常很简单，但有意结合自带分区能力的工具。画精细遮罩个人认为用处较小；真要精细，神奇遮罩更好。素材记得领取练手。</p><figure><img src="assets/davinci-mask-how-fine/shot-05.jpg" alt="修色后可选 2.35 遮幅，与还原对比收束" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:10] 修色后可选 2.35 遮幅，与还原对比收束</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/016d4e68307c.mp3" type="button" aria-label="Play English audio">🔊</button><span>After color, optional 2.35 crop; compare to restore.</span></div>
+<audio class="cap-audio" src="audio/016d4e68307c.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（236段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>前两天我有朋友给我发消息</p></div>
+<div class="transcript-row"><time>00:06</time><p>说最近经常在网上看到那种用钢笔抠的很细的</p></div>
+<div class="transcript-row"><time>00:09</time><p>然后在调色的视频</p></div>
+<div class="transcript-row"><time>00:10</time><p>他问我真的需要这样做吗</p></div>
+<div class="transcript-row"><time>00:12</time><p>我其实是觉得也许会用得上</p></div>
+<div class="transcript-row"><time>00:14</time><p>但是大概率用不上</p></div>
+<div class="transcript-row"><time>00:15</time><p>如果真的需要化这么精细的遮罩的话</p></div>
+<div class="transcript-row"><time>00:17</time><p>那你还不如用神奇遮罩呢</p></div>
+<div class="transcript-row"><time>00:18</time><p>那遮罩到底要怎么用呢</p></div>
+<div class="transcript-row"><time>00:19</time><p>我们以这个画面为例</p></div>
+<div class="transcript-row"><time>00:20</time><p>遮罩的核心目的就是一个</p></div>
+<div class="transcript-row"><time>00:22</time><p>能够实现区域性调整的作用</p></div>
+<div class="transcript-row"><time>00:25</time><p>我们给这个素材做一下还原</p></div>
+<div class="transcript-row"><time>00:26</time><p>还原好之后</p></div>
+<div class="transcript-row"><time>00:27</time><p>其实能看到这个画面内容底子还是不错的</p></div>
+<div class="transcript-row"><time>00:29</time><p>但是整体画面没有层次</p></div>
+<div class="transcript-row"><time>00:31</time><p>没有质感</p></div>
+<div class="transcript-row"><time>00:32</time><p>而且颜色也不是特别符合夕阳的一个效果</p></div>
+<div class="transcript-row"><time>00:35</time><p>所以呢</p></div>
+<div class="transcript-row"><time>00:36</time><p>我在4号节点给他稍微加一点暖</p></div>
+<div class="transcript-row"><time>00:38</time><p>也就是稍微加一点色温</p></div>
+<div class="transcript-row"><time>00:40</time><p>再给他加一点点色调啊</p></div>
+<div class="transcript-row"><time>00:43</time><p>好</p></div>
+<div class="transcript-row"><time>00:43</time><p>大概是这样的结果</p></div>
+<div class="transcript-row"><time>00:44</time><p>看着还可以对吧</p></div>
+<div class="transcript-row"><time>00:45</time><p>然后呢</p></div>
+<div class="transcript-row"><time>00:45</time><p>我们就开始去调影调的关系</p></div>
+<div class="transcript-row"><time>00:47</time><p>首先我们看到远处这个山还是有点发灰的</p></div>
+<div class="transcript-row"><time>00:50</time><p>这有点雾气</p></div>
+<div class="transcript-row"><time>00:51</time><p>这个空气质量不是特别好</p></div>
+<div class="transcript-row"><time>00:52</time><p>虽然人物的笔重不算小</p></div>
+<div class="transcript-row"><time>00:54</time><p>但是这样的光照情况</p></div>
+<div class="transcript-row"><time>00:55</time><p>人物大概率不会被体量太多</p></div>
+<div class="transcript-row"><time>00:58</time><p>有可能你也体量不了</p></div>
+<div class="transcript-row"><time>00:59</time><p>所以远处的山此时就变得很重要了</p></div>
+<div class="transcript-row"><time>01:01</time><p>而他的发挥</p></div>
+<div class="transcript-row"><time>01:02</time><p>我们从波形图上来看</p></div>
+<div class="transcript-row"><time>01:04</time><p>他其实是在于他的高光的信息不够拉伸</p></div>
+<div class="transcript-row"><time>01:07</time><p>我们能够看到他所覆盖的内容</p></div>
+<div class="transcript-row"><time>01:09</time><p>其实就是非常非常窄的一个区域</p></div>
+<div class="transcript-row"><time>01:10</time><p>而且他又处在亮面</p></div>
+<div class="transcript-row"><time>01:12</time><p>所以呢</p></div>
+<div class="transcript-row"><time>01:12</time><p>我们可以拉开高光部分的反差</p></div>
+<div class="transcript-row"><time>01:14</time><p>建立几个节点拉到第二排</p></div>
+<div class="transcript-row"><time>01:16</time><p>在第二排的第一个节点中</p></div>
+<div class="transcript-row"><time>01:17</time><p>我们稍微降低点Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>01:20</time><p>让他这个山体上的暗面能够暗一些</p></div>
+<div class="transcript-row"><time>01:23</time><p>我们看这边</p></div>
+<div class="transcript-row"><time>01:24</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:25</time><p>再然后呢</p></div>
+<div class="transcript-row"><time>01:25</time><p>我们还可以再稍微降低一点Light色轮的曝光</p></div>
+<div class="transcript-row"><time>01:28</time><p>不用降太多</p></div>
+<div class="transcript-row"><time>01:29</time><p>稍微让他高光能够再往下压一压</p></div>
+<div class="transcript-row"><time>01:31</time><p>然后我们还需要再稍微提高一点</p></div>
+<div class="transcript-row"><time>01:34</time><p>Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>01:35</time><p>把他的高光给他找回来</p></div>
+<div class="transcript-row"><time>01:36</time><p>那此时我们看到这个山</p></div>
+<div class="transcript-row"><time>01:38</time><p>这是调整前</p></div>
+<div class="transcript-row"><time>01:39</time><p>这调整后</p></div>
+<div class="transcript-row"><time>01:40</time><p>效果挺好的</p></div>
+<div class="transcript-row"><time>01:41</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:41</time><p>那这时候我们就要想这样做就够了吗</p></div>
+<div class="transcript-row"><time>01:43</time><p>我们之前说过一个判断画面层次</p></div>
+<div class="transcript-row"><time>01:45</time><p>是否足够的方法</p></div>
+<div class="transcript-row"><time>01:46</time><p>就是新增一个节点</p></div>
+<div class="transcript-row"><time>01:47</time><p>给画面全局增加对比度</p></div>
+<div class="transcript-row"><time>01:50</time><p>加到没法看为止</p></div>
+<div class="transcript-row"><time>01:51</time><p>然后开关这个节点</p></div>
+<div class="transcript-row"><time>01:52</time><p>这样一做是不是就很直观的能看到</p></div>
+<div class="transcript-row"><time>01:54</time><p>画面其实层次还是不足</p></div>
+<div class="transcript-row"><time>01:56</time><p>还是有点发挥的</p></div>
+<div class="transcript-row"><time>01:57</time><p>那么这时候</p></div>
+<div class="transcript-row"><time>01:57</time><p>我们就要先考虑</p></div>
+<div class="transcript-row"><time>01:58</time><p>能不能通过全局增加对比度的方式</p></div>
+<div class="transcript-row"><time>02:01</time><p>来解决这个问题</p></div>
+<div class="transcript-row"><time>02:01</time><p>我们给他稍微加一点对比度</p></div>
+<div class="transcript-row"><time>02:04</time><p>大概到这个程度</p></div>
+<div class="transcript-row"><time>02:04</time><p>我们看到这个山其实还是不错的</p></div>
+<div class="transcript-row"><time>02:07</time><p>但是近景这个背光面就太黑了</p></div>
+<div class="transcript-row"><time>02:10</time><p>这里的光源</p></div>
+<div class="transcript-row"><time>02:11</time><p>他其实也挺好的能够亮一些</p></div>
+<div class="transcript-row"><time>02:12</time><p>但既然有好有坏</p></div>
+<div class="transcript-row"><time>02:13</time><p>就说明我们需要去局部调整</p></div>
+<div class="transcript-row"><time>02:15</time><p>这时候才是用到遮罩的一个情况</p></div>
+<div class="transcript-row"><time>02:17</time><p>我们首先肯定还是先调整远处这个山</p></div>
+<div class="transcript-row"><time>02:20</time><p>我不会用钢笔给他描这个边</p></div>
+<div class="transcript-row"><time>02:22</time><p>给他扣得非常细</p></div>
+<div class="transcript-row"><time>02:23</time><p>没啥意义</p></div>
+<div class="transcript-row"><time>02:24</time><p>我觉得我们给他可以直接画一个</p></div>
+<div class="transcript-row"><time>02:26</time><p>超大柔化的圆形遮罩</p></div>
+<div class="transcript-row"><time>02:28</time><p>大概是这个范围</p></div>
+<div class="transcript-row"><time>02:29</time><p>我们刚刚给全局加对比的时候</p></div>
+<div class="transcript-row"><time>02:31</time><p>山的效果其实不错的</p></div>
+<div class="transcript-row"><time>02:32</time><p>对不对</p></div>
+<div class="transcript-row"><time>02:32</time><p>所以这时候我们还是给他增加对比度</p></div>
+<div class="transcript-row"><time>02:35</time><p>然后配合轴心可以让他稍微暗一点点</p></div>
+<div class="transcript-row"><time>02:38</time><p>好</p></div>
+<div class="transcript-row"><time>02:39</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>02:39</time><p>但是会有朋友会说</p></div>
+<div class="transcript-row"><time>02:40</time><p>你这个遮罩不是包含了一部分任务的区域吗</p></div>
+<div class="transcript-row"><time>02:43</time><p>这没啥关系的</p></div>
+<div class="transcript-row"><time>02:44</time><p>因为他的变化实在太小了</p></div>
+<div class="transcript-row"><time>02:46</time><p>不用太纠结这一点点的变化</p></div>
+<div class="transcript-row"><time>02:47</time><p>再然后我们想让画面有亮点</p></div>
+<div class="transcript-row"><time>02:49</time><p>那就需要去找光</p></div>
+<div class="transcript-row"><time>02:50</time><p>我们刚刚通过增加对比度的方式</p></div>
+<div class="transcript-row"><time>02:52</time><p>让这里的光源</p></div>
+<div class="transcript-row"><time>02:53</time><p>这一处</p></div>
+<div class="transcript-row"><time>02:54</time><p>这里这个地方</p></div>
+<div class="transcript-row"><time>02:55</time><p>它的提亮机效果还是挺好的</p></div>
+<div class="transcript-row"><time>02:56</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:56</time><p>那所以呢</p></div>
+<div class="transcript-row"><time>02:57</time><p>我们也需要按住Alt加P或者是Option加P</p></div>
+<div class="transcript-row"><time>02:59</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>03:00</time><p>给远处这个光源</p></div>
+<div class="transcript-row"><time>03:01</time><p>也画一个遮罩</p></div>
+<div class="transcript-row"><time>03:03</time><p>大概是这个区域</p></div>
+<div class="transcript-row"><time>03:04</time><p>然后我们要给他提亮</p></div>
+<div class="transcript-row"><time>03:05</time><p>那这位朋友又有疑问</p></div>
+<div class="transcript-row"><time>03:06</time><p>如果你要提亮的话</p></div>
+<div class="transcript-row"><time>03:07</time><p>不会把近处这个受光面也提亮吗</p></div>
+<div class="transcript-row"><time>03:09</time><p>要知道的是</p></div>
+<div class="transcript-row"><time>03:10</time><p>达芬吉有许多的工具都自带分区调整的能力</p></div>
+<div class="transcript-row"><time>03:12</time><p>我们要提亮的是这个光</p></div>
+<div class="transcript-row"><time>03:14</time><p>也就是提亮这个遮罩范围内高光曲</p></div>
+<div class="transcript-row"><time>03:17</time><p>所以我们可以用</p></div>
+<div class="transcript-row"><time>03:19</time><p>比如说一级校色轮的高光滑块</p></div>
+<div class="transcript-row"><time>03:22</time><p>用这个工具的提亮</p></div>
+<div class="transcript-row"><time>03:24</time><p>就不会影响到我们这里的背光面了</p></div>
+<div class="transcript-row"><time>03:26</time><p>对不对</p></div>
+<div class="transcript-row"><time>03:26</time><p>也就省了我们画精细遮罩的一个需求</p></div>
+<div class="transcript-row"><time>03:29</time><p>再然后</p></div>
+<div class="transcript-row"><time>03:30</time><p>虽然说人物是剪影的效果</p></div>
+<div class="transcript-row"><time>03:31</time><p>但是我不希望他</p></div>
+<div class="transcript-row"><time>03:32</time><p>你看这地面上的这个石头</p></div>
+<div class="transcript-row"><time>03:34</time><p>它其实有一定受光的情况的</p></div>
+<div class="transcript-row"><time>03:35</time><p>它有光感</p></div>
+<div class="transcript-row"><time>03:36</time><p>我不想让它太暗</p></div>
+<div class="transcript-row"><time>03:37</time><p>而且中间这里的弧也有点太灰了</p></div>
+<div class="transcript-row"><time>03:39</time><p>所以呢</p></div>
+<div class="transcript-row"><time>03:39</time><p>我们可以再按住Alt加P建一个并行节点</p></div>
+<div class="transcript-row"><time>03:42</time><p>然后画一个这样的遮罩</p></div>
+<div class="transcript-row"><time>03:44</time><p>也是利用对比度和配合轴心的方式</p></div>
+<div class="transcript-row"><time>03:46</time><p>来给他做强化</p></div>
+<div class="transcript-row"><time>03:47</time><p>大概是这个结果</p></div>
+<div class="transcript-row"><time>03:48</time><p>你看效果挺好的</p></div>
+<div class="transcript-row"><time>03:49</time><p>对不对</p></div>
+<div class="transcript-row"><time>03:49</time><p>那这位朋友又来了</p></div>
+<div class="transcript-row"><time>03:51</time><p>那你为啥不直接提高高光呢</p></div>
+<div class="transcript-row"><time>03:52</time><p>提高光不能解决发挥的问题</p></div>
+<div class="transcript-row"><time>03:54</time><p>我们来看一下</p></div>
+<div class="transcript-row"><time>03:55</time><p>如果我只是给他提高高光滑块</p></div>
+<div class="transcript-row"><time>03:57</time><p>它确实提亮了</p></div>
+<div class="transcript-row"><time>03:58</time><p>但它该会还是回</p></div>
+<div class="transcript-row"><time>03:59</time><p>因为我们没有把它安补给他做调整</p></div>
+<div class="transcript-row"><time>04:01</time><p>所以我们用对比度会更好</p></div>
+<div class="transcript-row"><time>04:03</time><p>那为啥不直接提高全局的曝光呢</p></div>
+<div class="transcript-row"><time>04:05</time><p>同样也是因为不能解决发挥的问题</p></div>
+<div class="transcript-row"><time>04:07</time><p>而且全局曝光的提高</p></div>
+<div class="transcript-row"><time>04:10</time><p>会把这个区域内所有的内容都提亮</p></div>
+<div class="transcript-row"><time>04:12</time><p>它一定会更回</p></div>
+<div class="transcript-row"><time>04:13</time><p>增加对比度是让亮的更亮</p></div>
+<div class="transcript-row"><time>04:14</time><p>暗的更暗</p></div>
+<div class="transcript-row"><time>04:15</time><p>那配合轴心的能够控制我们提亮的区域</p></div>
+<div class="transcript-row"><time>04:17</time><p>这样就能够既解决发挥的问题</p></div>
+<div class="transcript-row"><time>04:19</time><p>又能够做到提亮的效果</p></div>
+<div class="transcript-row"><time>04:20</time><p>最后呢</p></div>
+<div class="transcript-row"><time>04:23</time><p>所以我们也可以再来个地形节点</p></div>
+<div class="transcript-row"><time>04:24</time><p>建立一个和光源方向平行的一个渐变遮罩</p></div>
+<div class="transcript-row"><time>04:28</time><p>大概是这样的一个形状</p></div>
+<div class="transcript-row"><time>04:29</time><p>然后呢</p></div>
+<div class="transcript-row"><time>04:29</time><p>我们可以稍微压一下天空</p></div>
+<div class="transcript-row"><time>04:31</time><p>让它做一个渐变的效果</p></div>
+<div class="transcript-row"><time>04:32</time><p>那这个时候怎么压</p></div>
+<div class="transcript-row"><time>04:33</time><p>这个遮罩的范围会带上这个左上角的山体</p></div>
+<div class="transcript-row"><time>04:36</time><p>我们要做的是让天空压</p></div>
+<div class="transcript-row"><time>04:38</time><p>而从波形组上来看</p></div>
+<div class="transcript-row"><time>04:39</time><p>天空的曝光比起山的曝光</p></div>
+<div class="transcript-row"><time>04:41</time><p>其实是要低的对不对</p></div>
+<div class="transcript-row"><time>04:43</time><p>所以我们可以降低阴影滑块</p></div>
+<div class="transcript-row"><time>04:45</time><p>来压暗暴</p></div>
+<div class="transcript-row"><time>04:47</time><p>同时呢也可以适当的提高一点高光滑块</p></div>
+<div class="transcript-row"><time>04:50</time><p>来确保山体不会受到影响</p></div>
+<div class="transcript-row"><time>04:52</time><p>我们看到这一部分高光可以再来一点</p></div>
+<div class="transcript-row"><time>04:54</time><p>那这样的调整呢</p></div>
+<div class="transcript-row"><time>04:55</time><p>我们就只能天空压了对不对</p></div>
+<div class="transcript-row"><time>04:56</time><p>那么到现在为止</p></div>
+<div class="transcript-row"><time>04:58</time><p>我们就利用一个非常简单的遮罩以及操作</p></div>
+<div class="transcript-row"><time>05:00</time><p>来让画面做好了曝光的分区</p></div>
+<div class="transcript-row"><time>05:03</time><p>并且解决了它发挥的问题</p></div>
+<div class="transcript-row"><time>05:04</time><p>我们可以看一下这个效果</p></div>
+<div class="transcript-row"><time>05:06</time><p>这是还原后的画面</p></div>
+<div class="transcript-row"><time>05:07</time><p>这是我们调好后的画面</p></div>
+<div class="transcript-row"><time>05:08</time><p>整体感觉还是挺棒的对不对</p></div>
+<div class="transcript-row"><time>05:10</time><p>素材我也传到了现场分享平台</p></div>
+<div class="transcript-row"><time>05:11</time><p>私信或者看我姐姐来加入后免费自取</p></div>
+<div class="transcript-row"><time>05:13</time><p>还要打分级的线上系统课程和线下调色训练营</p></div>
+<div class="transcript-row"><time>05:16</time><p>再然后我们可以快速调一下颜色</p></div>
+<div class="transcript-row"><time>05:18</time><p>我觉得整体的颜色稍微有点偏紫了</p></div>
+<div class="transcript-row"><time>05:20</time><p>我们就给它稍微减一点点色调</p></div>
+<div class="transcript-row"><time>05:22</time><p>减到这个程度就行</p></div>
+<div class="transcript-row"><time>05:24</time><p>哎挺好的</p></div>
+<div class="transcript-row"><time>05:25</time><p>同时你也可以打开老板的蜘蛛网</p></div>
+<div class="transcript-row"><time>05:27</time><p>把蓝色往青色方向稍微走一点</p></div>
+<div class="transcript-row"><time>05:29</time><p>让它蓝色更有质感</p></div>
+<div class="transcript-row"><time>05:30</time><p>也就是让天空更有风格</p></div>
+<div class="transcript-row"><time>05:32</time><p>我们也可以再来一个节点</p></div>
+<div class="transcript-row"><time>05:33</time><p>给天空的蓝和青增加一点密度</p></div>
+<div class="transcript-row"><time>05:35</time><p>也可以给它再稍微降低一点饱和度</p></div>
+<div class="transcript-row"><time>05:38</time><p>这样颜色就会更耐看</p></div>
+<div class="transcript-row"><time>05:39</time><p>这样我们就快速的调好了</p></div>
+<div class="transcript-row"><time>05:41</time><p>如果你愿意的话</p></div>
+<div class="transcript-row"><time>05:42</time><p>也可以给它上一个遮浮</p></div>
+<div class="transcript-row"><time>05:44</time><p>2.35比1的遮浮</p></div>
+<div class="transcript-row"><time>05:46</time><p>这种感觉也挺棒的对不对</p></div>
+<div class="transcript-row"><time>05:47</time><p>我们可以与还原后的画面</p></div>
+<div class="transcript-row"><time>05:48</time><p>再一次做对比</p></div>
+<div class="transcript-row"><time>05:49</time><p>这是还原后的画面</p></div>
+<div class="transcript-row"><time>05:50</time><p>这是我们调好后的画面</p></div>
+<div class="transcript-row"><time>05:52</time><p>不错吧</p></div>
+<div class="transcript-row"><time>05:52</time><p>重点在于遮罩的会</p></div>
+<div class="transcript-row"><time>05:54</time><p>只要一般我的遮罩</p></div>
+<div class="transcript-row"><time>05:55</time><p>会画的还是比较简单的</p></div>
+<div class="transcript-row"><time>05:56</time><p>但是要有意的去结合</p></div>
+<div class="transcript-row"><time>05:58</time><p>自带分区能力的工具来配合的使用</p></div>
+<div class="transcript-row"><time>06:00</time><p>画精细遮罩这件事情</p></div>
+<div class="transcript-row"><time>06:02</time><p>我个人认为用处还是比较小的</p></div>
+<div class="transcript-row"><time>06:04</time><p>当然不是说它绝对用不上</p></div>
+<div class="transcript-row"><time>06:05</time><p>还是有可能的</p></div>
+<div class="transcript-row"><time>06:06</time><p>但是一般情况下我不怎么会用</p></div>
+<div class="transcript-row"><time>06:07</time><p>如果你真的要画精细的话</p></div>
+<div class="transcript-row"><time>06:08</time><p>还是那句话</p></div>
+<div class="transcript-row"><time>06:09</time><p>用神器遮罩会更好</p></div>
+<div class="transcript-row"><time>06:10</time><p>素材大家别忘了</p></div>
+<div class="transcript-row"><time>06:11</time><p>领取过去做练练手</p></div>
+<div class="transcript-row"><time>06:12</time><p>讲到这里</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

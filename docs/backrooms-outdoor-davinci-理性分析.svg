@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5601" viewBox="0 0 1320 5601">
+  <foreignObject x="0" y="0" width="1320" height="5601">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>《后室》的室外风格用达芬奇怎么仿色</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">后室</span><span class="tag tag-orange">仿色</span><span class="tag tag-purple">柔和对比度</span><span class="tag tag-red">电影感物效</span><span class="tag tag-gray">时长 9分51秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/31YXtrLdjjT">原视频</a>
+  <div class="summary-line">后室外景仿色：颜色次要，影调优先——高光约70、暗约10%，中灰拉开。样条线在两端夹住后展中调；HDR 再展，遮罩分主次。染色补暖后中灰加冷；蜘蛛网蓝转青。电影感物效损背景锐度去数码感。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">读波形：收高光、抬暗部、展中灰</span></div><div class="timeline-item"><span class="timeline-time">00:59</span><span class="timeline-text">样条线限定两端再展中低调</span></div><div class="timeline-item"><span class="timeline-time">01:57</span><span class="timeline-text">HDR 展中间调；遮罩提前景、外部压四周</span></div><div class="timeline-item"><span class="timeline-time">04:04</span><span class="timeline-text">加暖补缺 + 中灰加冷；蓝→青</span></div><div class="timeline-item"><span class="timeline-time">06:45</span><span class="timeline-text">电影感物效：分辨率损失去数码感</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">优先<br/>影调区间</div><span class="arrow">→</span><div class="node-green">展层<br/>样条线 + HDR</div><span class="arrow">→</span><div class="node-orange">主次<br/>提主体 / 压四周</div><span class="arrow">→</span><div class="node-blue">收尾<br/>物效去锐</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「后视外景」校正为「后室外景」；「跳了」校正为「调了」；「波线图」校正为「波形图」；「中晖」校正为「中灰」；「高光接」语境为高光再；「中低调」校正为「中低调/中间调」；「过度」校正为「过渡」；「波杆」即样条线控制杆；「HGR」校正为「HDR」；「体量」校正为「提亮」；「现场分享」校正为「知识分享」；「看我姐姐」校正为「看简介」；「胶内/胶外」校正为「框内/框外」；「电影感物效」即 Atmosphere/电影感相关 OFX；「星星的」校正为「新建的」；「赛联」校正为「三连」。</p><p>误区：只对齐两端亮度却不展中调 → 发灰无聊。</p><p>误区：RGB 混合器一刀青橙（云易留冷）。</p><p>误区：只调色不处理背景过度锐利的数码感。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>风格在影调，不在色名</h3>
+      <p>晴天高光却收在约70、暗抬到约10%，中灰层次拉开——先复制区间逻辑，再谈青橙。</p>
+      <div class="quote">颜色不是最重要的……影调才是它的一个风格最大的一个走向</div>
+      <div class="relation">先画波形目标再动手。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>夹住两端，再展中间</h3>
+      <p>硬加对比会撑开两端。先压高光端、抬暗部端，再打点/样条线杠杆展中低调。</p>
+      <div class="quote">高光和暗部都能够在限定的前提下，拉开中低调的反差</div>
+      <div class="relation">可编辑样条线让过渡更顺。</div>
+    </div>
+    <div class="card card-green">
+      <h3>染色：补缺 + 中灰留冷</h3>
+      <p>不缺冷缺暖：先加暖，中灰轮加冷，使冷主要落在中灰、高光仍可暖。蓝转青用蜘蛛网。</p>
+      <div class="quote">参考图的冷，它其实是中灰区域的冷，高光区域依旧是暖的</div>
+      <div class="relation">中灰承载信息最多。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>物效去数码感</h3>
+      <p>电影感物效+深度贴图控范围，主拉分辨率损失虚背景，大气光找回亮度；键输出约0.6回调。</p>
+      <div class="quote">要的就是没那么清晰……去除掉它的一个数码感</div>
+      <div class="relation">变暗可回外部节点找曝光。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>针对特定后室外景参考，非通用恐怖片配方。</li><li>物效名称以达芬奇版本界面为准。</li><li>课程/素材平台为引流信息。</li></ul><div class="pitfall">只对齐高光暗部数值，中间调仍挤在一起。</div><div class="pitfall">用 RGB 混合器强行青橙导致云偏冷。</div><div class="pitfall">染色后不管背景刀锐数码感。</div><div class="pitfall">物效力度过大发灰发暗不回调。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>先锁影调区间再展中调</li><li>主次用提/压此消彼长</li><li>冷落中灰、高光可暖</li><li>物效损锐去数码感</li></ul><h3>行动清单</h3><ol><li>对照参考标高光/暗部目标百分比</li><li>样条线夹两端 → HDR 展中调</li><li>前景提、四周压，再补中景</li><li>最后物效虚背景并键输出回调</li></ol><h3>关键认知转变</h3><p>以前：先调青橙滤镜；现在：先波形区间与中调层次，颜色按冷暖落点补，最后去锐。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 9分51秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

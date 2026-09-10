@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5544" viewBox="0 0 1320 5544">
+  <foreignObject x="0" y="0" width="1320" height="5544">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>只要你有参考图，就能用这个工具快速仿色</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">LUT</span><span class="tag tag-orange">仿色工具</span><span class="tag tag-purple">参考图</span><span class="tag tag-red">键输出</span><span class="tag tag-gray">时长 7分50秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/7V76r6lT8Vm">原视频</a>
+  <div class="summary-line">一键 LUT 工具无分区故初生成减弱，并加网页微调。套在还原后节点，键输出控力度；偏差在 LUT 后修。参考须同拍摄条件。LUT 当颜色干扰，前插先调光；分析与跟踪能力不能丢。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">更新：弱初生成 + 微调滑块</span></div><div class="timeline-item"><span class="timeline-time">01:47</span><span class="timeline-text">末节点套 LUT；键输出降增益；后修黄绿</span></div><div class="timeline-item"><span class="timeline-time">03:12</span><span class="timeline-text">换风格可微调；错天气则「不合适」</span></div><div class="timeline-item"><span class="timeline-time">04:43</span><span class="timeline-text">Shift+S 前插先调光；跟踪；外观可选</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">工具<br/>全局 LUT 起点</div><span class="arrow">→</span><div class="node-green">套用<br/>还原后 + 键输出</div><span class="arrow">→</span><div class="node-orange">边界<br/>拍摄条件对齐</div><span class="arrow">→</span><div class="node-blue">之后<br/>分析 / 调光 / 跟踪</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「做辣子」校正为「做 LUT」；「竞争」校正为「静帧」；「偷动」校正为「拖动」；「竖直」校正为「数值」；「老板蜘蛛网」校正为「到/用蜘蛛网」；「通天」校正为「通看」；「色冷」校正为「色轮」；「LUT加O」校正为「Alt/Option+O」；「达分析」校正为「达芬奇」；「外观冲动器」校正为「外观/Look 冲动器」；「遮浮」校正为「柔和对比度/相关」；「看我姐姐」校正为「看简介」；「星霞客」校正为「线下课」；「ASI调整」校正为「按需/反馈选项」。</p><p>误区：把 LUT 当分区大师。</p><p>误区：阴天参考硬套晴天人像。</p><p>误区：有工具就不再学遮罩跟踪与画面分析。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card card-orange">
+      <h3>无分区 → 弱生成 + 网页微调</h3>
+      <p>全局干扰易偏，故初力度小；用色温/色调/对比微调后再下载。</p>
+      <div class="quote">它是不具备自定义分区调整的能力的……力度就给它调小了</div>
+      <div class="relation">预览淡是设计，不是坏了。</div>
+    </div>
+    <div class="card ">
+      <h3>套用顺序与修偏位置</h3>
+      <p>还原后新节点套 LUT；过大用键输出降增益。黄绿等新问题在 LUT 后节点修，不回还原。</p>
+      <div class="quote">一定要在后面新建一个节点，不要在前面还原节点上去干扰它</div>
+      <div class="relation">谁造成的问题，就在谁后面修。</div>
+    </div>
+    <div class="card card-red">
+      <h3>不合适 ≠ 工具坏了</h3>
+      <p>暗调室内 LUT 套晴天人像会没法看——拍摄情况不一致。选型对齐天气光比。</p>
+      <div class="quote">不是我们这个生成的LUT不行，而是它不合适</div>
+      <div class="relation">晴天找晴天风。</div>
+    </div>
+    <div class="card card-green">
+      <h3>LUT 当前当颜色干扰</h3>
+      <p>前插遮罩提主体、外部压四周；跟踪补帧；可再外观冲动器。工具加速，分析仍要。</p>
+      <div class="quote">我们应该要先调光……利用我们这个功能快速的去给画面带来一个颜色</div>
+      <div class="relation">流程：光 → LUT 色 → 再优化。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>作者自研网页工具，功能随版本变。</li><li>内测/反馈渠道以视频说明为准。</li><li>非替代系统调色学习。</li></ul><div class="pitfall">在还原节点上直接套 LUT。</div><div class="pitfall">错天气参考硬套。</div><div class="pitfall">有偏差却回改还原而非 LUT 后节点。</div><div class="pitfall">放弃遮罩跟踪与画面分析。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>工具=弱全局起点+微调</li><li>还原后套用，键输出控力</li><li>选型对齐拍摄条件</li><li>前插调光，分析不能丢</li></ul><h3>行动清单</h3><ol><li>还原静帧上传 → 选同天气参考 → 微调再下载</li><li>新节点套 LUT，键输出回调</li><li>色偏在 LUT 后修</li><li>需要主次时 Shift+S 前插分区</li></ol><h3>关键认知转变</h3><p>以前：期望一键完美分区；现在：接受全局起点，选型+后修+前插调光。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 7分50秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

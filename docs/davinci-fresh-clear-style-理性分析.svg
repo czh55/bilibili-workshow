@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="5742" viewBox="0 0 1320 5742">
+  <foreignObject x="0" y="0" width="1320" height="5742">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}
+.container{max-width:1200px;margin:0 auto}
+h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,#1e40af,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;color:#1e40af;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0}
+h3{font-size:20px;font-weight:700;color:#334155;margin-bottom:12px}
+p{font-size:16px;line-height:1.8;color:#475569;margin-bottom:10px}
+ul,ol{padding-left:24px;margin:8px 0}
+li{font-size:15px;line-height:1.8;color:#475569;margin-bottom:6px}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-right:8px}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-orange{background:#ffedd5;color:#9a3412}
+.tag-purple{background:#ede9fe;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-gray{background:#f1f5f9;color:#64748b}
+.meta{margin:12px 0 20px}
+.summary-line{font-size:18px;line-height:1.7;color:#334155;padding:20px 24px;background:#fff;border-radius:12px;border-left:4px solid #3b82f6;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline{background:#fff;border-radius:16px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.timeline h3{color:#1e40af;margin-bottom:12px}
+.timeline-item{display:flex;align-items:baseline;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.timeline-time{font-size:14px;font-weight:700;color:#3b82f6;min-width:70px;font-variant-numeric:tabular-nums}
+.timeline-text{font-size:15px;color:#475569}
+.map{background:#fff;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.map h2{font-size:24px;margin-top:0;border-bottom:none;padding-bottom:0}
+.diagram{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0}
+.node{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:20px 28px;text-align:center;min-width:160px;font-weight:700;font-size:16px;color:#1e40af}
+.node-green{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-color:#6ee7b7;color:#065f46}
+.node-orange{background:linear-gradient(135deg,#fff7ed,#ffedd5);border-color:#fdba74;color:#9a3412}
+.arrow{font-size:24px;color:#94a3b8}
+.correction{background:linear-gradient(135deg,#fef3c7,#fef9c3);border-left:4px solid #f59e0b;padding:20px 24px;border-radius:12px;margin-bottom:24px}
+.correction h3,.correction p{color:#92400e}
+.section{margin-bottom:32px}
+.sec-title{font-size:22px;font-weight:700;color:#1e40af;margin-bottom:16px;padding-left:16px;border-left:4px solid #3b82f6}
+.card{background:#fff;border-radius:16px;padding:32px;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.06);border-left:5px solid #3b82f6}
+.card.card-green{border-left-color:#10b981}
+.card.card-orange{border-left-color:#f59e0b}
+.card.card-purple{border-left-color:#8b5cf6}
+.card.card-red{border-left-color:#ef4444}
+.card.card-blue{border-left-color:#3b82f6}
+.card h3{font-size:20px;font-weight:700;color:#1e40af;margin-bottom:12px}
+.card .highlight{background:#fef3c7;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#92400e;border-left:4px solid #f59e0b}
+.card .quote{background:#f8fafc;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#64748b;border-left:4px solid #cbd5e1;font-style:italic}
+.card .relation{background:#f0fdf4;padding:10px 14px;border-radius:10px;margin:8px 0;font-size:14px;color:#166534}
+.card .pitfall{background:#fef2f2;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#991b1b;border-left:4px solid #ef4444}
+.card .action,.card .insight{background:#eff6ff;padding:12px 16px;border-radius:10px;margin:12px 0;font-size:15px;color:#1e40af;border-left:4px solid #3b82f6}
+.speaker{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:12px;margin-right:8px}
+.speaker-host{background:#dbeafe;color:#1e40af}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th{background:#f1f5f9;padding:12px 16px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#475569;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.conclusion{background:linear-gradient(135deg,#1e40af,#3b82f6);color:#fff;border-radius:20px;padding:36px;margin-top:32px}
+.conclusion h2{font-size:26px;font-weight:800;margin-top:0;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2);color:#fff}
+.conclusion h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.9);margin:20px 0 10px}
+.conclusion p,.conclusion li{color:rgba(255,255,255,.9);font-size:15px}
+.footer{text-align:center;color:#94a3b8;font-size:13px;padding:32px 0 16px}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none;margin-bottom:24px;display:inline-block}
+.key-data{display:inline-block;background:#1e40af;color:#fff;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:4px}
+.root-wrap{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);padding:48px 60px;color:#1e293b}</style>
+      <div class="container root-wrap">
+  <h1>小清新风格用达芬奇该怎么调？两个核心思路</h1>
+  <div class="meta"><span class="tag tag-blue">达芬奇</span><span class="tag tag-green">小清新</span><span class="tag tag-orange">日系</span><span class="tag tag-purple">胶片</span><span class="tag tag-red">高光压灰</span><span class="tag tag-gray">时长 7分59秒</span><span class="tag tag-gray">理性分析</span></div>
+  <a class="source-link" href="https://xhslink.cn/o/6aJd7FoJUSj">原视频</a>
+  <div class="summary-line">日系小清新两核心：胶片宽容度式「整体提亮+高光压灰」；颜色先冷再弱暖回调（冷大于暖），并行保住肤与受光草。前提晴天蓝天；白柔与柔和对比度可选。节点可粘贴多段再微调。</div>
+
+  <div class="timeline"><h3>关键证据时间轴</h3><div class="timeline-item"><span class="timeline-time">00:00</span><span class="timeline-text">须晴天；还原高光~90、暗~10，曲线纠回高光</span></div><div class="timeline-item"><span class="timeline-time">00:56</span><span class="timeline-text">抬 Light、压 Highlight：提亮且高光发灰</span></div><div class="timeline-item"><span class="timeline-time">02:36</span><span class="timeline-text">反转遮罩压四周；可选白柔涂层</span></div><div class="timeline-item"><span class="timeline-time">04:02</span><span class="timeline-text">降温→并行纠肤/墨绿→弱回调暖</span></div><div class="timeline-item"><span class="timeline-time">06:14</span><span class="timeline-text">柔和对比度强化胶片感；粘贴他段微调</span></div></div>
+
+  <div class="map"><h2>核心脉络</h2><div class="diagram"><div class="node">前提<br/>晴天通透</div><span class="arrow">→</span><div class="node-green">曝光<br/>提亮+高光压灰</div><span class="arrow">→</span><div class="node-orange">颜色<br/>冷主暖辅</div><span class="arrow">→</span><div class="node-blue">复用<br/>粘贴后微调</div></div></div>
+
+  <div class="correction"><h3>常见误解与认知纠偏</h3><p>ASR「打分级」校正为「达芬奇」；「波星图」校正为「波形图」；「制造」校正为「遮罩」；「小敷」校正为「小幅」；「白柔/涂层」「绿色」校正为「柔光」合成模式；「Amp 发挥」校正为「暗部发灰」；「全球染色」校正为「全局染色」；「以前和矛盾」校正为「互相矛盾」；「小星星」校正为「小清新」；「冷掉」校正为「冷调」；「现场分享」校正为「线上分享」；「赞联」校正为「三连」。</p><p>误区：阴天硬抠小清新。作者强调须晴天。</p><p>误区：只提亮不过问高光刺眼。风格关键是高光压灰。</p><p>误区：加冷后肤与草浮冷不纠。必须并行找回。</p></div>
+
+  <div class="section"><h2 class="sec-title">观点拆解：在讲什么 → 关键理解 → 怎么用 → 原文依据</h2>
+    <div class="card ">
+      <h3>前提：晴天才能通透</h3>
+      <p>小清新要亮才通透；还原高光到位约90%，暗约10%，曲线降暗后记得纠高光。受光别过曝。</p>
+      <div class="quote">你的画面得有个大前提，就是得是晴天</div>
+      <div class="relation">选片先看天气与天空。</div>
+    </div>
+    <div class="card card-orange">
+      <h3>核心一：胶片裁切＝高光压灰</h3>
+      <p>胶片宽容度窄，亮暗被裁切发灰成了风格。抬 Light 让中灰上行，压 Highlight 收缩高光；可微压 Shadow。脸亮、刺眼亮面消失。</p>
+      <div class="quote">整体是稍微提亮的前提下，高光是压灰的</div>
+      <div class="relation">先看波形：中灰上、高光收。</div>
+    </div>
+    <div class="card card-green">
+      <h3>主体与可选白柔</h3>
+      <p>反转遮罩压四周（压阴影+提高光）。白柔：涂层柔光+高斯模糊拉满+曲线控力，可加可不加。</p>
+      <div class="quote">要压就不能只压，你还得提亮</div>
+      <div class="relation">人物已在最亮区再压环境。</div>
+    </div>
+    <div class="card card-purple">
+      <h3>核心二：冷大于暖的补丁思维</h3>
+      <p>先降温，并行纠肤与墨绿；后弱加暖（例 −370 vs +170）。一步不准就后节点打补丁，不必苛求单步精准。</p>
+      <div class="quote">加冷要大于加暖的力度</div>
+      <div class="relation">浮色用并行；力度用补丁。</div>
+    </div></div>
+
+  
+
+  <div class="section"><h2 class="sec-title">方法边界与避坑</h2><div class="card card-red"><h3>适用边界</h3><ul><li>风格审美偏向日系胶片感，非唯一小清新定义。</li><li>白柔与柔和对比度可选，力度因片而异。</li><li>粘贴节点不能替代每段还原检查。</li><li>课程引流与素材授权以作者说明为准。</li></ul><div class="pitfall">阴天素材硬套通透小清新。</div><div class="pitfall">只提亮导致高光刺眼。</div><div class="pitfall">加冷后不纠肤，颜色浮在表面。</div><div class="pitfall">前后色温力度相同，冷暖抵消。</div><div class="pitfall">粘贴后不调偏暗偏暖片段。</div></div></div>
+
+  <div class="conclusion"><h2>总结与行动</h2><h3>核心要点</h3><ul><li>晴天前提 + 高光还原到位</li><li>提亮且高光压灰＝胶片感核心</li><li>颜色：冷主、并行护暖、弱回调</li><li>细节可选；大方向对了再细修</li></ul><h3>行动清单</h3><ol><li>确认晴天与蓝天后再立项</li><li>第二排：Light↑ Highlight↓ 看波形</li><li>四周反转遮罩：压阴影+提高光</li><li>降温→并行肤/叶→必要时弱回暖</li><li>柔和对比度加强压灰；他段粘贴后查还原</li></ol><h3>关键认知转变</h3><p>以前：猛提亮+猛加冷；现在：提亮同时压高光灰感，冷暖用力度差与并行分层。</p></div>
+
+  <div class="footer">双轨产物之二 · 理性分析 · 证据来自同一 Whisper 转录 · 7分59秒</div>
+</div>
+    </div>
+  </foreignObject>
+</svg>

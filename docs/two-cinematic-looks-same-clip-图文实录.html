@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="老叉用小明同学短片演示：缺灵感时可看内容导向与音乐情绪。同内容两版风格——温柔质感：HDR 先降反差再局部给人物/镜面加反差并加白柔；现代快节奏：灰片直接套 FilmLooks 2383（D60），关键是 LUT 前降对比、补饱和以匹配预设，后再微调。用音乐定故事流向与调色走向。">
+<title>同一段素材，两种电影感？｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>同一段素材，两种电影感？</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">6分45秒</span><span class="meta-tag tag-topic">达芬奇 风格参考 音乐 2383 LUT 白柔 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/1eevRWRVg1U" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">缺灵感：内容与音乐都是参考</a><a href="#ch2">风格一：温柔——先降反差再局部强化</a><a href="#ch3">风格二：现代快节奏——灰片套 2383</a><a href="#ch4">LUT 前匹配、后微调</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>老叉用小明同学短片演示：缺灵感时可看内容导向与音乐情绪。同内容两版风格——温柔质感：HDR 先降反差再局部给人物/镜面加反差并加白柔；现代快节奏：灰片直接套 FilmLooks 2383（D60），关键是 LUT 前降对比、补饱和以匹配预设，后再微调。用音乐定故事流向与调色走向。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→02:22]</span><div><strong>灵感来源</strong><p>内容+音乐定风格；两版对照后讲调法（中含曲多多合作段）。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:22→04:08]</span><div><strong>温柔风</strong><p>HDR 降反差→人物/镜面遮罩加反差→白柔→弱化过黄肤暖。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:08→05:20]</span><div><strong>2383 快调</strong><p>灰片直接套 2383 D60；问题是反差过强+饱和不足。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:20→06:45]</span><div><strong>LUT 前后</strong><p>前节点匹配 LUT；后节点遮罩/靠青/柔和对比度按需。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>同一素材可因音乐走出完全不同电影感。温柔风用「全局降反差 + 局部还反差 + 白柔」；套 LUT 时先让素材匹配预设工况，再在后面修，而不是盲套后硬拧。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-02:22</span>缺灵感：内容与音乐都是参考</h2><p>风格可参考视频内容导向，也可参考音乐。同组短片两版风格完全不同，剪辑差别不大，依据主要是音乐——通过音乐感受故事流向再匹配调色。</p><p>中间有曲多多找乐与福利说明；找好音乐后再对画面匹配调色。素材免费分享。</p><figure><img src="assets/two-cinematic-looks-same-clip/shot-01.jpg" alt="同内容两风格对照：灵感可来自内容与音乐情绪流向" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:10] 同内容两风格对照：灵感可来自内容与音乐情绪流向</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/bd7500cee629.mp3" type="button" aria-label="Play English audio">🔊</button><span>Same content, two looks—inspiration from story and music mood.</span></div>
+<audio class="cap-audio" src="audio/bd7500cee629.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">02:22-04:08</span>风格一：温柔——先降反差再局部强化</h2><p>暖调常被做成特强反差突出明暗，易脏且主体不突出。反其道：还原后 HDR 抬 Shadow、压 Light，小幅抬 Highlight 少牺牲高光——整体先发灰，方向对，但人物也灰则不对。</p><p>后节点人物遮罩单独加对比，使人物成反差最强、视线聚焦；并行给过灰镜面/贯穿全片的玻璃加反差。再加白柔强化温柔。最后略降脸上过黄暖饱和，勿失血色。</p><figure><img src="assets/two-cinematic-looks-same-clip/shot-02.jpg" alt="温柔风：HDR 降反差（抬 Shadow、压 Light）整体先发灰" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 温柔风：HDR 降反差（抬 Shadow、压 Light）整体先发灰</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6c76cd2f8716.mp3" type="button" aria-label="Play English audio">🔊</button><span>Soft look: HDR lower contrast (lift Shadow, press Light) goes gray first.</span></div>
+<audio class="cap-audio" src="audio/6c76cd2f8716.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/two-cinematic-looks-same-clip/shot-03.jpg" alt="人物/镜面遮罩单独加反差+白柔：主体最强反差、温柔质感" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:30] 人物/镜面遮罩单独加反差+白柔：主体最强反差、温柔质感</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/edb9fa118f80.mp3" type="button" aria-label="Play English audio">🔊</button><span>Subject/mirror masks: local contrast + soft white—strongest subject, gentle texture.</span></div>
+<audio class="cap-audio" src="audio/edb9fa118f80.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">04:08-05:20</span>风格二：现代快节奏——灰片套 2383</h2><p>音乐更快更现代，要明确冷暖反差，节点很少。灰片可直接用 LUT 库 FilmLooks 的 2383（选 D60 中间色温档），不必非得色彩空间转到 Cineon/CineLog。</p><p>套上后常见：反差太强、欠饱和、颜色不够。</p><figure><img src="assets/two-cinematic-looks-same-clip/shot-04.jpg" alt="现代快节奏：灰片直接套 FilmLooks 2383 D60，节点很少" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:50] 现代快节奏：灰片直接套 FilmLooks 2383 D60，节点很少</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/ddeaafda85aa.mp3" type="button" aria-label="Play English audio">🔊</button><span>Modern pace: log straight into FilmLooks 2383 D60—few nodes.</span></div>
+<audio class="cap-audio" src="audio/ddeaafda85aa.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">05:20-06:45</span>LUT 前匹配、后微调</h2><p>LUT 针对特定工况。务必在前面建节点让素材匹配：如先降对比、单独节点补饱和，出片往往已可用。</p><p>再对 LUT 结果后调：人物遮罩加反差、向量蓝靠青、柔和对比度等。也可用音乐重想剪辑与风格。鼓励给摄影师反馈多出练习素材。</p><figure><img src="assets/two-cinematic-looks-same-clip/shot-05.jpg" alt="LUT 前降对比/补饱和匹配预设；后节点遮罩与靠青微调" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:50] LUT 前降对比/补饱和匹配预设；后节点遮罩与靠青微调</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/2376500ca303.mp3" type="button" aria-label="Play English audio">🔊</button><span>Before LUT: lower contrast/add sat to fit preset; after: mask and cyan nudge.</span></div>
+<audio class="cap-audio" src="audio/2376500ca303.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（218段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>很多朋友对视频调色一直存在的一个问题</p></div>
+<div class="transcript-row"><time>00:02</time><p>就是我缺少灵感</p></div>
+<div class="transcript-row"><time>00:03</time><p>其实对于一个画面的风格素材</p></div>
+<div class="transcript-row"><time>00:04</time><p>我们有非常多值得参考的方向</p></div>
+<div class="transcript-row"><time>00:07</time><p>第一个就是视频本身的内容导向</p></div>
+<div class="transcript-row"><time>00:09</time><p>第二个就是音乐的素材</p></div>
+<div class="transcript-row"><time>00:10</time><p>这是小明同学拍的一组短片</p></div>
+<div class="transcript-row"><time>00:12</time><p>我同样会免费给大家分享</p></div>
+<div class="transcript-row"><time>00:13</time><p>我给这组短片调了两种风格</p></div>
+<div class="transcript-row"><time>00:16</time><p>我们可以快速的看一下</p></div>
+<div class="transcript-row"><time>01:00</time><p>这是两种完全不同的风格对吧</p></div>
+<div class="transcript-row"><time>01:03</time><p>大家更喜欢哪一种</p></div>
+<div class="transcript-row"><time>01:04</time><p>内容其实是一样的</p></div>
+<div class="transcript-row"><time>01:06</time><p>剪辑的区别也不是特别大</p></div>
+<div class="transcript-row"><time>01:07</time><p>那两种风格的参考依据是什么</p></div>
+<div class="transcript-row"><time>01:09</time><p>其实就是音乐</p></div>
+<div class="transcript-row"><time>01:10</time><p>我们能够通过不同的风格</p></div>
+<div class="transcript-row"><time>01:12</time><p>去把音乐变成不同的风格</p></div>
+<div class="transcript-row"><time>01:13</time><p>去调整音乐的变化</p></div>
+<div class="transcript-row"><time>01:15</time><p>去把音乐变成不同的方式</p></div>
+<div class="transcript-row"><time>01:16</time><p>去把音乐变成一种音乐的变化</p></div>
+<div class="transcript-row"><time>01:18</time><p>去把音乐变成一种音乐的变化</p></div>
+<div class="transcript-row"><time>01:20</time><p>去把音乐变成一种音乐的变化</p></div>
+<div class="transcript-row"><time>01:24</time><p>这是两种完全不同的风格对吧</p></div>
+<div class="transcript-row"><time>01:25</time><p>大家更喜欢哪一种</p></div>
+<div class="transcript-row"><time>01:27</time><p>内容其实是一样的</p></div>
+<div class="transcript-row"><time>01:28</time><p>其实就是音乐</p></div>
+<div class="transcript-row"><time>01:29</time><p>我们能够通过音乐来感受到故事的流向</p></div>
+<div class="transcript-row"><time>01:32</time><p>后面我会给大家分享这两种风格怎么调</p></div>
+<div class="transcript-row"><time>01:34</time><p>而要说到找音乐</p></div>
+<div class="transcript-row"><time>01:35</time><p>那就不得不提曲多多平台了</p></div>
+<div class="transcript-row"><time>01:37</time><p>不仅个人使用非常方便便宜</p></div>
+<div class="transcript-row"><time>01:39</time><p>企业会员更划算</p></div>
+<div class="transcript-row"><time>01:40</time><p>折算下来一天只需要一杯咖啡钱</p></div>
+<div class="transcript-row"><time>01:42</time><p>选取快捷方便</p></div>
+<div class="transcript-row"><time>01:43</time><p>可以根据场景情绪这种关键词</p></div>
+<div class="transcript-row"><time>01:45</time><p>快速的找想要的音乐 歌单</p></div>
+<div class="transcript-row"><time>01:47</time><p>类别详细</p></div>
+<div class="transcript-row"><time>01:48</time><p>并且都是影视级别的质量</p></div>
+<div class="transcript-row"><time>01:49</time><p>但是我相信大家对于找音乐都是爱恨交织</p></div>
+<div class="transcript-row"><time>01:52</time><p>想要找到合适的音乐非常耗时耗力</p></div>
+<div class="transcript-row"><time>01:54</time><p>曲多多的AI相似音乐就可以解决这个问题</p></div>
+<div class="transcript-row"><time>01:57</time><p>只需要你把喜欢的对标视频导入</p></div>
+<div class="transcript-row"><time>01:59</time><p>曲多多就会自动识别</p></div>
+<div class="transcript-row"><time>02:00</time><p>并给你推荐相似的音乐</p></div>
+<div class="transcript-row"><time>02:02</time><p>大幅减少找音乐的时间</p></div>
+<div class="transcript-row"><time>02:03</time><p>至少你可以在客户说这个BGN不错</p></div>
+<div class="transcript-row"><time>02:06</time><p>但是你换一个同风格的</p></div>
+<div class="transcript-row"><time>02:07</time><p>这个我听腻了的时候</p></div>
+<div class="transcript-row"><time>02:08</time><p>你可以快速的完成它的需求</p></div>
+<div class="transcript-row"><time>02:10</time><p>曲多多也给我们送了福利</p></div>
+<div class="transcript-row"><time>02:11</time><p>大家只需要在这个位置</p></div>
+<div class="transcript-row"><time>02:14</time><p>留言老X的摄影教室</p></div>
+<div class="transcript-row"><time>02:17</time><p>就可以免费领取会员</p></div>
+<div class="transcript-row"><time>02:18</time><p>等我们找好了音乐之后</p></div>
+<div class="transcript-row"><time>02:20</time><p>我们就可以对画面来进行匹配调色了</p></div>
+<div class="transcript-row"><time>02:22</time><p>第一个风格</p></div>
+<div class="transcript-row"><time>02:23</time><p>我个人感觉还是需要有一定的温柔质感</p></div>
+<div class="transcript-row"><time>02:25</time><p>以这个画面为例</p></div>
+<div class="transcript-row"><time>02:26</time><p>我们看到画面</p></div>
+<div class="transcript-row"><time>02:27</time><p>对于暖调的结果</p></div>
+<div class="transcript-row"><time>02:28</time><p>我们通常会把它做的反差特别强</p></div>
+<div class="transcript-row"><time>02:31</time><p>想要突出名语暗的关系</p></div>
+<div class="transcript-row"><time>02:32</time><p>就类似这种结果</p></div>
+<div class="transcript-row"><time>02:33</time><p>但是这样做会有点脏</p></div>
+<div class="transcript-row"><time>02:35</time><p>而且主体也不够突出</p></div>
+<div class="transcript-row"><time>02:36</time><p>所以我换了一个思路</p></div>
+<div class="transcript-row"><time>02:37</time><p>直接来看操作</p></div>
+<div class="transcript-row"><time>02:38</time><p>这个是还原后的结果</p></div>
+<div class="transcript-row"><time>02:40</time><p>整体还是不错的对吧</p></div>
+<div class="transcript-row"><time>02:41</time><p>因为小妹同学光用的还是比较不错的</p></div>
+<div class="transcript-row"><time>02:43</time><p>但是很无聊</p></div>
+<div class="transcript-row"><time>02:44</time><p>所以我们来到第二排的节点</p></div>
+<div class="transcript-row"><time>02:46</time><p>在第二排的第一个节点中</p></div>
+<div class="transcript-row"><time>02:47</time><p>我反其道而行</p></div>
+<div class="transcript-row"><time>02:49</time><p>我用HDR色轮给整体降低反差</p></div>
+<div class="transcript-row"><time>02:52</time><p>也就是提高了Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>02:54</time><p>再降低了Light色轮的曝光</p></div>
+<div class="transcript-row"><time>02:55</time><p>然后小幅提高Highlight色轮的曝光</p></div>
+<div class="transcript-row"><time>02:57</time><p>让高光不要牺牲太多</p></div>
+<div class="transcript-row"><time>02:59</time><p>就这里的光</p></div>
+<div class="transcript-row"><time>03:00</time><p>我就不从头开始操作了</p></div>
+<div class="transcript-row"><time>03:01</time><p>整个工程我都会给大家发</p></div>
+<div class="transcript-row"><time>03:03</time><p>大家如果想要仔细的看</p></div>
+<div class="transcript-row"><time>03:04</time><p>可以自行开关节点</p></div>
+<div class="transcript-row"><time>03:05</time><p>降低完反差之后</p></div>
+<div class="transcript-row"><time>03:07</time><p>整体画面都发挥了</p></div>
+<div class="transcript-row"><time>03:08</time><p>方向是对的</p></div>
+<div class="transcript-row"><time>03:09</time><p>但是人物也发挥了</p></div>
+<div class="transcript-row"><time>03:10</time><p>这就不对了对吧</p></div>
+<div class="transcript-row"><time>03:11</time><p>所以我们在后面再来一个节点</p></div>
+<div class="transcript-row"><time>03:13</time><p>给人物画一个遮罩</p></div>
+<div class="transcript-row"><time>03:15</time><p>对人物单独的去强化一点反差</p></div>
+<div class="transcript-row"><time>03:18</time><p>也就是增加一点对比度</p></div>
+<div class="transcript-row"><time>03:19</time><p>这样做</p></div>
+<div class="transcript-row"><time>03:20</time><p>人物就是画面中反差最强的结果了</p></div>
+<div class="transcript-row"><time>03:23</time><p>所以你的视线中心也会更加的聚焦</p></div>
+<div class="transcript-row"><time>03:26</time><p>这个思路特别适用于环境</p></div>
+<div class="transcript-row"><time>03:28</time><p>过于一致但是杂乱的结果</p></div>
+<div class="transcript-row"><time>03:30</time><p>还没完</p></div>
+<div class="transcript-row"><time>03:30</time><p>右侧的镜子实在是太灰了</p></div>
+<div class="transcript-row"><time>03:33</time><p>所以我再来个并行节点</p></div>
+<div class="transcript-row"><time>03:34</time><p>也给右侧的镜子增加了一点反差</p></div>
+<div class="transcript-row"><time>03:36</time><p>左侧角这里一个玻璃也是</p></div>
+<div class="transcript-row"><time>03:38</time><p>我们刚刚看过全片</p></div>
+<div class="transcript-row"><time>03:39</time><p>这个玻璃屏是贯穿全片的元素</p></div>
+<div class="transcript-row"><time>03:41</time><p>所以我们不能忽视它</p></div>
+<div class="transcript-row"><time>03:43</time><p>然后我又给画面加了一个白揉</p></div>
+<div class="transcript-row"><time>03:45</time><p>这个白揉我们之前讲过非常多次</p></div>
+<div class="transcript-row"><time>03:47</time><p>怎么加我就不重复了</p></div>
+<div class="transcript-row"><time>03:48</time><p>我们看到加了白揉之后</p></div>
+<div class="transcript-row"><time>03:50</time><p>这种温柔的质感不就更明显了吗</p></div>
+<div class="transcript-row"><time>03:51</time><p>效果还挺好的对吧</p></div>
+<div class="transcript-row"><time>03:52</time><p>最后我就再来了一个节点</p></div>
+<div class="transcript-row"><time>03:54</time><p>把不舒服的颜色给它弱化了</p></div>
+<div class="transcript-row"><time>03:56</time><p>也就是这个画面中人物脸上的暖</p></div>
+<div class="transcript-row"><time>03:58</time><p>我觉得脸上的暖太黄了</p></div>
+<div class="transcript-row"><time>04:01</time><p>稍微给它降低了一点饱和度</p></div>
+<div class="transcript-row"><time>04:02</time><p>但也不能降太多</p></div>
+<div class="transcript-row"><time>04:03</time><p>你不能让它失去血色</p></div>
+<div class="transcript-row"><time>04:04</time><p>这样我们就给这个画面</p></div>
+<div class="transcript-row"><time>04:06</time><p>带来了这种温柔的质感</p></div>
+<div class="transcript-row"><time>04:07</time><p>我觉得效果还不错的</p></div>
+<div class="transcript-row"><time>04:08</time><p>然后我们来到第二种风格</p></div>
+<div class="transcript-row"><time>04:10</time><p>这个风格就非常有趣了</p></div>
+<div class="transcript-row"><time>04:11</time><p>我们看到节点数量是不是非常少</p></div>
+<div class="transcript-row"><time>04:13</time><p>我们通过音乐能够感受到</p></div>
+<div class="transcript-row"><time>04:15</time><p>第二种风格的节奏比较快比较现代</p></div>
+<div class="transcript-row"><time>04:17</time><p>那么我就想让画面有明确的冷暖反差</p></div>
+<div class="transcript-row"><time>04:20</time><p>所以我这里用的是2383来操作</p></div>
+<div class="transcript-row"><time>04:23</time><p>我把节点给大家开关一下看</p></div>
+<div class="transcript-row"><time>04:24</time><p>在灰片状态下</p></div>
+<div class="transcript-row"><time>04:26</time><p>我个人认为</p></div>
+<div class="transcript-row"><time>04:28</time><p>2383你直接套用就行了</p></div>
+<div class="transcript-row"><time>04:29</time><p>你不是一定要用色彩空间转换的</p></div>
+<div class="transcript-row"><time>04:31</time><p>给它转换成CineLog</p></div>
+<div class="transcript-row"><time>04:32</time><p>太麻烦了</p></div>
+<div class="transcript-row"><time>04:33</time><p>它是灰片对吧</p></div>
+<div class="transcript-row"><time>04:34</time><p>那灰片我就在4号节点加了一个2383</p></div>
+<div class="transcript-row"><time>04:37</time><p>就是达芬奇在</p></div>
+<div class="transcript-row"><time>04:38</time><p>他在拉特库的FilmLooks中自带的2383</p></div>
+<div class="transcript-row"><time>04:41</time><p>我选择的是D60</p></div>
+<div class="transcript-row"><time>04:42</time><p>它这个色温是相对中间那一档的</p></div>
+<div class="transcript-row"><time>04:44</time><p>加完了之后画面有问题对吧</p></div>
+<div class="transcript-row"><time>04:46</time><p>有什么问题</p></div>
+<div class="transcript-row"><time>04:47</time><p>两个问题</p></div>
+<div class="transcript-row"><time>04:47</time><p>第一个就是反差太强了</p></div>
+<div class="transcript-row"><time>04:49</time><p>第二个就是欠了太多的饱和度</p></div>
+<div class="transcript-row"><time>04:51</time><p>导致画面中其实没有什么颜色</p></div>
+<div class="transcript-row"><time>04:53</time><p>所以我在前面</p></div>
+<div class="transcript-row"><time>04:54</time><p>重点是在前面</p></div>
+<div class="transcript-row"><time>04:55</time><p>一定要在前面</p></div>
+<div class="transcript-row"><time>04:56</time><p>我进行了几个节点</p></div>
+<div class="transcript-row"><time>04:57</time><p>我先是在2号节点给画面降低了对比度</p></div>
+<div class="transcript-row"><time>05:01</time><p>我们看到这里降低了对比度</p></div>
+<div class="transcript-row"><time>05:02</time><p>然后也给它稍微调了一下色温</p></div>
+<div class="transcript-row"><time>05:04</time><p>往你想的方向调就好了</p></div>
+<div class="transcript-row"><time>05:05</time><p>这都问题不大</p></div>
+<div class="transcript-row"><time>05:06</time><p>然后在3号节点</p></div>
+<div class="transcript-row"><time>05:08</time><p>当然你放在一个节点也可以</p></div>
+<div class="transcript-row"><time>05:09</time><p>我个人习惯把饱和度单独另一个节点</p></div>
+<div class="transcript-row"><time>05:11</time><p>在3号节点中增加一点饱和度</p></div>
+<div class="transcript-row"><time>05:13</time><p>此时你看</p></div>
+<div class="transcript-row"><time>05:14</time><p>是不是画面就有一个不错的结果了</p></div>
+<div class="transcript-row"><time>05:17</time><p>该有的颜色都有了</p></div>
+<div class="transcript-row"><time>05:18</time><p>反差也是比较到位了对吧</p></div>
+<div class="transcript-row"><time>05:20</time><p>那么为什么一定要在前面建立节点来调整呢</p></div>
+<div class="transcript-row"><time>05:23</time><p>要注意的是</p></div>
+<div class="transcript-row"><time>05:24</time><p>LUT是针对某一种情况制作的预设</p></div>
+<div class="transcript-row"><time>05:26</time><p>我们可以简单的把它理解成预设</p></div>
+<div class="transcript-row"><time>05:28</time><p>它当然不是预设</p></div>
+<div class="transcript-row"><time>05:29</time><p>我们需要让我们的素材</p></div>
+<div class="transcript-row"><time>05:30</time><p>匹配上这个LUT适合的情况</p></div>
+<div class="transcript-row"><time>05:33</time><p>所以我们要在前面建立节点</p></div>
+<div class="transcript-row"><time>05:35</time><p>让素材匹配上这个LUT</p></div>
+<div class="transcript-row"><time>05:37</time><p>当你的画面呈现出不错的结果之后</p></div>
+<div class="transcript-row"><time>05:39</time><p>你可以说</p></div>
+<div class="transcript-row"><time>05:40</time><p>我要对这个LUT的结果来做调整</p></div>
+<div class="transcript-row"><time>05:42</time><p>那么你就可以在后面建立节点</p></div>
+<div class="transcript-row"><time>05:44</time><p>来对已有的结果去做操作了</p></div>
+<div class="transcript-row"><time>05:46</time><p>比如说我想</p></div>
+<div class="transcript-row"><time>05:47</time><p>哎呀 我觉得人物有点发灰</p></div>
+<div class="transcript-row"><time>05:48</time><p>我给人物再画个遮罩</p></div>
+<div class="transcript-row"><time>05:49</time><p>给它稍微强化一下</p></div>
+<div class="transcript-row"><time>05:50</time><p>让它增加一点反差对吧</p></div>
+<div class="transcript-row"><time>05:52</time><p>这个是可以的</p></div>
+<div class="transcript-row"><time>05:53</time><p>也可以让背景中这里不是有点蓝吗</p></div>
+<div class="transcript-row"><time>05:56</time><p>我想让它稍微往轻的方向走一点</p></div>
+<div class="transcript-row"><time>05:58</time><p>我在后面加个节点</p></div>
+<div class="transcript-row"><time>05:59</time><p>用蜘蛛网把蓝色往轻色方向走一点</p></div>
+<div class="transcript-row"><time>06:02</time><p>稍微走一点就行了</p></div>
+<div class="transcript-row"><time>06:03</time><p>也可以在最后来一个柔和对比度之类的</p></div>
+<div class="transcript-row"><time>06:05</time><p>这个都随你</p></div>
+<div class="transcript-row"><time>06:06</time><p>问题都不大</p></div>
+<div class="transcript-row"><time>06:07</time><p>这样调是不是整体位置还是不错的对吧</p></div>
+<div class="transcript-row"><time>06:09</time><p>大概的思路与大家分享一下</p></div>
+<div class="transcript-row"><time>06:11</time><p>大家素材别忘了领取</p></div>
+<div class="transcript-row"><time>06:12</time><p>当然所有的原素材我都会传</p></div>
+<div class="transcript-row"><time>06:14</time><p>你也可以自己按照你的思路去做重新剪辑</p></div>
+<div class="transcript-row"><time>06:17</time><p>也可以去曲度桌上看一看音乐</p></div>
+<div class="transcript-row"><time>06:19</time><p>根据音乐来调整一下你的剪辑思路</p></div>
+<div class="transcript-row"><time>06:22</time><p>以及你整个画面调色的风格走向</p></div>
+<div class="transcript-row"><time>06:25</time><p>用音乐来给你调色做参考</p></div>
+<div class="transcript-row"><time>06:27</time><p>要领取的话私信或者看我剪辑就可以</p></div>
+<div class="transcript-row"><time>06:29</time><p>还有达芬吉的线上系统课程</p></div>
+<div class="transcript-row"><time>06:30</time><p>线下调色训练赢</p></div>
+<div class="transcript-row"><time>06:32</time><p>最后我们也一起在评论区</p></div>
+<div class="transcript-row"><time>06:34</time><p>夸一夸小明同志</p></div>
+<div class="transcript-row"><time>06:35</time><p>鼓励他一下</p></div>
+<div class="transcript-row"><time>06:35</time><p>希望他在年前能够再出一条</p></div>
+<div class="transcript-row"><time>06:37</time><p>让大家手上有更多的素材</p></div>
+<div class="transcript-row"><time>06:39</time><p>可以练习督促一下他</p></div>
+<div class="transcript-row"><time>06:40</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>06:41</time><p>如果你觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>06:42</time><p>还希望多多赞联</p></div>
+<div class="transcript-row"><time>06:43</time><p>好了</p></div>
+<div class="transcript-row"><time>06:43</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>06:44</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

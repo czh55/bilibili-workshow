@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="暗面人物一提就发灰：提亮本质在降反差，最暗也被抬走丢失黑位。四技巧：①先 HDR 压中灰增反差，再阴影滑块提、高光滑块护天空；②曲线中提+高压，同节点降 Shadow（或暗端右移）保黑位；③亮画面要找暗——人物与滑板局部加对比；④高亮场景颜色可更鲜艳（RGB 青橙等），并用六相降">
+<title>达芬奇想要让提亮不发灰，有四个小技巧｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>达芬奇想要让提亮不发灰，有四个小技巧</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">7分04秒</span><span class="meta-tag tag-topic">达芬奇 提亮 发灰 中灰 HDR 曲线 六相切片 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/8GyVGz6dWs6" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">暗面一提就发灰：先还原留操作空间</a><a href="#ch2">技巧1：先增中灰反差，再阴影提、高光护天</a><a href="#ch3">技巧2：曲线中提高压 + Shadow 锁黑位</a><a href="#ch4">亮掉的画面要找暗：局部加对比</a><a href="#ch5">技巧3–4：颜色助层次，六相提肤</a><a href="#ch6">总结四阶段：可按需选用或全上</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>暗面人物一提就发灰：提亮本质在降反差，最暗也被抬走丢失黑位。四技巧：①先 HDR 压中灰增反差，再阴影滑块提、高光滑块护天空；②曲线中提+高压，同节点降 Shadow（或暗端右移）保黑位；③亮画面要找暗——人物与滑板局部加对比；④高亮场景颜色可更鲜艳（RGB 青橙等），并用六相降皮肤密度小幅提亮肤色。组合保证中灰提亮而高低两端少动。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:37]</span><div><strong>问题</strong><p>暗面提亮发灰；还原暗部留空间，主内容约 10% 附近。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:37→02:41]</span><div><strong>技巧1</strong><p>先降 Shadow/Light 增中灰反差并抬 Highlight；再阴影提+高光压，护天空。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:41→03:45]</span><div><strong>技巧2</strong><p>曲线中提高压会发灰→同节点降 Shadow 去灰；波形同样是中灰上移。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:45→04:35]</span><div><strong>找暗</strong><p>亮掉画面要找暗：人物/滑板遮罩加对比，层次回来。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:35→05:44]</span><div><strong>技巧3–4</strong><p>RGB 青橙增色；六相降皮肤密度提亮肤色，再略降饱和。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:44→07:04]</span><div><strong>四阶段</strong><p>增反差再降反差提中灰→曲线中提→局部找暗→颜色助层次；可按需选用。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>提亮不发灰＝别把最暗一起抬走，也别把天空一起过曝。先给中灰制造反差再提，或曲线提中压高并锁 Shadow；亮了还要局部找暗；颜色鲜艳能丰富层次、减轻发灰感。四技巧可单用可全上。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:37</span>暗面一提就发灰：先还原留操作空间</h2><p>常有朋友：人物在暗面，每次提亮都发灰。先简单还原：曲线拉高光与暗部，暗部别拉太狠——波形暗部留空间，主内容大约在 10% 附近即可。结果可能略灰，但给后面留空间。三号饱和可多加一点。</p><p>明确要提暗部：提亮本质是降反差（暗变亮、亮变暗），所以容易发灰——要先为操作做准备。</p><figure><img src="assets/davinci-lift-no-gray/shot-01.jpg" alt="暗面人像还原：暗部留空间，主内容约 10%" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:20] 暗面人像还原：暗部留空间，主内容约 10%</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f0e789a8893f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Dark-side portrait restore: leave shadow room; main mass ~10%.</span></div>
+<audio class="cap-audio" src="audio/f0e789a8893f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:37-02:41</span>技巧1：先增中灰反差，再阴影提、高光护天</h2><p>先增中间调反差：降 Shadow 与 Light 压中灰，再抬 Highlight 并收窄范围贴近要提亮的区域——人脸与背景建筑更立体。下一节点提高阴影滑块提暗部；阴影也会影响高光，故再降高光滑块防天空过曝。</p><p>两节点一起开关：暗部亮了、天空变化不大。关掉前一节点只开提亮，发灰明显；打开前一节点后曝光变化不大但人物更立体。波形上高低两端少动、中灰明显上提——发灰是因为最暗也被抬、丢失合适黑位，这组组合就是解法。</p><figure><img src="assets/davinci-lift-no-gray/shot-02.jpg" alt="技巧1：先 HDR 增中灰反差，人脸更立体" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:20] 技巧1：先 HDR 增中灰反差，人脸更立体</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/a2c9459dc351.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tip 1: HDR midtone contrast first—faces gain volume.</span></div>
+<audio class="cap-audio" src="audio/a2c9459dc351.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:41-03:45</span>技巧2：曲线中提高压 + Shadow 锁黑位</h2><p>力度不够可用第二思路：同节点曲线中间上提（画面亮但天空也亮），高光端下降护天；仍会暗部发灰——再略降 Shadow（或把曲线暗端右移，看习惯），发灰去掉且明显提亮。</p><p>波形变化与技巧1同类：高光暗部少动、中灰上提。提中灰不发灰，就是保证暗部不受影响，同时高光别带飞，否则远亮于人物的天空易过曝。</p><figure><img src="assets/davinci-lift-no-gray/shot-03.jpg" alt="阴影滑块提亮 + 高光滑块护天空，两端少动" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:00] 阴影滑块提亮 + 高光滑块护天空，两端少动</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e20aecc6ecdc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Shadow slider lifts, Highlight protects sky—move the ends less.</span></div>
+<audio class="cap-audio" src="audio/e20aecc6ecdc.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:45-04:35</span>亮掉的画面要找暗：局部加对比</h2><p>提亮时不能让画面只剩亮。人物与滑板应保持相对高反差，否则层次太弱。给人物画罩小幅加对比调轴；并行给滑板同样加对比——亮画面要去找暗，层次才回来。素材可自取。</p><figure><img src="assets/davinci-lift-no-gray/shot-04.jpg" alt="技巧2：曲线中提高压，Shadow 锁黑位去灰" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:10] 技巧2：曲线中提高压，Shadow 锁黑位去灰</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/110cd08dd2ce.mp3" type="button" aria-label="Play English audio">🔊</button><span>Tip 2: S-curve mid lift/press; Shadow locks blacks to kill gray.</span></div>
+<audio class="cap-audio" src="audio/110cd08dd2ce.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:35-05:44</span>技巧3–4：颜色助层次，六相提肤</h2><p>高亮画面颜色通常可更鲜艳：RGB 混合器抬红降蓝做青橙；可用蜘蛛网再偏青。小幅提肤：六相切片在皮肤区降低密度（明度升、饱和略增），再略降饱和——皮肤被「提亮」且不脏。颜色越鲜艳层次越丰富，提亮也不那么容易显灰。</p><figure><img src="assets/davinci-lift-no-gray/shot-05.jpg" alt="人物与滑板局部加对比：亮调要找暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:10] 人物与滑板局部加对比：亮调要找暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/490cbb4e6b69.mp3" type="button" aria-label="Play English audio">🔊</button><span>Local contrast on person/skateboard—bright looks need darks.</span></div>
+<audio class="cap-audio" src="audio/490cbb4e6b69.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">05:44-07:04</span>总结四阶段：可按需选用或全上</h2><p>四阶段：①先增反差再阴影/高光组合提中灰护两端；②曲线中提高压并锁 Shadow；③局部给值得压暗/加反差的主体找暗；④颜色增艳 + 六相提肤。四种技巧按需选，全选也可以。操作简单，效果从发灰提亮变成有层次的亮。</p><figure><img src="assets/davinci-lift-no-gray/shot-06.jpg" alt="六相降皮肤密度小幅提肤，青橙增色助层次" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:20] 六相降皮肤密度小幅提肤，青橙增色助层次</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/edbecdbc1cdc.mp3" type="button" aria-label="Play English audio">🔊</button><span>Six-vector ease skin density slightly; teal-orange adds depth.</span></div>
+<audio class="cap-audio" src="audio/edbecdbc1cdc.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（279段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>经常会有朋友问我</p></div>
+<div class="transcript-row"><time>00:06</time><p>人物如果处在暗面</p></div>
+<div class="transcript-row"><time>00:08</time><p>每次提亮的时候都会发挥</p></div>
+<div class="transcript-row"><time>00:09</time><p>就像这样</p></div>
+<div class="transcript-row"><time>00:10</time><p>这种情况下我们要怎么办呢</p></div>
+<div class="transcript-row"><time>00:12</time><p>比如说我们这个素材</p></div>
+<div class="transcript-row"><time>00:13</time><p>我们给它简单做一下还原</p></div>
+<div class="transcript-row"><time>00:14</time><p>还原其实很容易</p></div>
+<div class="transcript-row"><time>00:15</time><p>我是利用曲线</p></div>
+<div class="transcript-row"><time>00:17</time><p>把它的高光和暗部拉到位</p></div>
+<div class="transcript-row"><time>00:18</time><p>暗部不要拉太多</p></div>
+<div class="transcript-row"><time>00:20</time><p>我们看波星图</p></div>
+<div class="transcript-row"><time>00:21</time><p>其实我在暗部留的还是蛮多空间的</p></div>
+<div class="transcript-row"><time>00:23</time><p>主要的内容都在差不多10%左右</p></div>
+<div class="transcript-row"><time>00:26</time><p>就可以了</p></div>
+<div class="transcript-row"><time>00:26</time><p>不要太暗</p></div>
+<div class="transcript-row"><time>00:27</time><p>你可能从结果上看</p></div>
+<div class="transcript-row"><time>00:28</time><p>会有一点发挥</p></div>
+<div class="transcript-row"><time>00:29</time><p>但是可以给我们留更多的空间去操作</p></div>
+<div class="transcript-row"><time>00:32</time><p>然后3号节点加一点点饱和度</p></div>
+<div class="transcript-row"><time>00:34</time><p>饱和度要多加一点</p></div>
+<div class="transcript-row"><time>00:35</time><p>然后我们建立几个节点拉到第二排</p></div>
+<div class="transcript-row"><time>00:37</time><p>我们是明确要让暗部提亮的</p></div>
+<div class="transcript-row"><time>00:39</time><p>既然知道目的</p></div>
+<div class="transcript-row"><time>00:40</time><p>我们就要为这个操作去做准备</p></div>
+<div class="transcript-row"><time>00:43</time><p>要提亮</p></div>
+<div class="transcript-row"><time>00:44</time><p>但是不能让天空过曝</p></div>
+<div class="transcript-row"><time>00:45</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:46</time><p>这个行为本质上</p></div>
+<div class="transcript-row"><time>00:47</time><p>就是在降低我们画面的反差</p></div>
+<div class="transcript-row"><time>00:49</time><p>就是让暗的变亮</p></div>
+<div class="transcript-row"><time>00:50</time><p>亮的变暗</p></div>
+<div class="transcript-row"><time>00:51</time><p>所以才会让画面发挥</p></div>
+<div class="transcript-row"><time>00:53</time><p>那么我们就要先增加中间调部分的反差</p></div>
+<div class="transcript-row"><time>00:56</time><p>我们可以通过降低</p></div>
+<div class="transcript-row"><time>00:57</time><p>Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>00:59</time><p>以及Light色轮的曝光</p></div>
+<div class="transcript-row"><time>01:00</time><p>来把中晖部分给它稍微往下压一点</p></div>
+<div class="transcript-row"><time>01:03</time><p>但压完了暗之后</p></div>
+<div class="transcript-row"><time>01:04</time><p>我们高光也会受到影响</p></div>
+<div class="transcript-row"><time>01:06</time><p>对不对</p></div>
+<div class="transcript-row"><time>01:06</time><p>我们再把Highlight色轮也给它提高</p></div>
+<div class="transcript-row"><time>01:08</time><p>稍微改一下Highlight色轮的范围</p></div>
+<div class="transcript-row"><time>01:10</time><p>让它内容更加的贴近</p></div>
+<div class="transcript-row"><time>01:12</time><p>我们想要提亮的这个区域</p></div>
+<div class="transcript-row"><time>01:14</time><p>好</p></div>
+<div class="transcript-row"><time>01:14</time><p>大概是这个情况</p></div>
+<div class="transcript-row"><time>01:15</time><p>我们看到整体的画面反差是不是增加了</p></div>
+<div class="transcript-row"><time>01:17</time><p>特别是人脸的变化</p></div>
+<div class="transcript-row"><time>01:19</time><p>这是调整前</p></div>
+<div class="transcript-row"><time>01:20</time><p>这调整后更加立体了</p></div>
+<div class="transcript-row"><time>01:21</time><p>包括背景中的这个建筑也变得更加立体了</p></div>
+<div class="transcript-row"><time>01:24</time><p>这时候我们就可以在后面这个节点</p></div>
+<div class="transcript-row"><time>01:26</time><p>来减少反差了</p></div>
+<div class="transcript-row"><time>01:27</time><p>我这里选择的是提高</p></div>
+<div class="transcript-row"><time>01:29</time><p>一级教室轮中阴影滑块的曝光</p></div>
+<div class="transcript-row"><time>01:32</time><p>这样的操作</p></div>
+<div class="transcript-row"><time>01:33</time><p>确实可以让暗部提亮</p></div>
+<div class="transcript-row"><time>01:34</time><p>但是阴影滑块也会影响到高光</p></div>
+<div class="transcript-row"><time>01:36</time><p>可能会让你的高光过曝</p></div>
+<div class="transcript-row"><time>01:38</time><p>天空过曝</p></div>
+<div class="transcript-row"><time>01:38</time><p>所以我们要再降低一点</p></div>
+<div class="transcript-row"><time>01:40</time><p>高光滑块</p></div>
+<div class="transcript-row"><time>01:41</time><p>大概是这个效果</p></div>
+<div class="transcript-row"><time>01:42</time><p>此时我们可以把这两个节点开关</p></div>
+<div class="transcript-row"><time>01:45</time><p>一起来看一下画面变化</p></div>
+<div class="transcript-row"><time>01:46</time><p>是不是能够看到暗部被提亮了</p></div>
+<div class="transcript-row"><time>01:49</time><p>而天空则没有特别明显的变化</p></div>
+<div class="transcript-row"><time>01:51</time><p>有些朋友可能会有疑惑</p></div>
+<div class="transcript-row"><time>01:53</time><p>这样做你前面四号节点的行为</p></div>
+<div class="transcript-row"><time>01:55</time><p>感觉不是很有必要</p></div>
+<div class="transcript-row"><time>01:56</time><p>我们可以先把四号节点给它关闭了</p></div>
+<div class="transcript-row"><time>01:58</time><p>单独开关五号节点</p></div>
+<div class="transcript-row"><time>01:59</time><p>我们看画面的变化</p></div>
+<div class="transcript-row"><time>02:00</time><p>五号节点的提亮</p></div>
+<div class="transcript-row"><time>02:02</time><p>对画面的影响还是比较明显的</p></div>
+<div class="transcript-row"><time>02:03</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:04</time><p>但是这样的提亮会让暗部明显发挥</p></div>
+<div class="transcript-row"><time>02:06</time><p>此时我们再打开四号节点</p></div>
+<div class="transcript-row"><time>02:09</time><p>你会发现</p></div>
+<div class="transcript-row"><time>02:10</time><p>整体的曝光没有明显变化</p></div>
+<div class="transcript-row"><time>02:11</time><p>但是人物能够更加立体</p></div>
+<div class="transcript-row"><time>02:13</time><p>其实我们这个点</p></div>
+<div class="transcript-row"><time>02:14</time><p>在拨信图上也看得到</p></div>
+<div class="transcript-row"><time>02:16</time><p>我把这两个节点一起开关</p></div>
+<div class="transcript-row"><time>02:17</time><p>我们看一下</p></div>
+<div class="transcript-row"><time>02:17</time><p>在这两个操作下</p></div>
+<div class="transcript-row"><time>02:19</time><p>你会发现暗部和高光部分</p></div>
+<div class="transcript-row"><time>02:21</time><p>几乎没有受到太多的影响</p></div>
+<div class="transcript-row"><time>02:23</time><p>但是中间调部分</p></div>
+<div class="transcript-row"><time>02:24</time><p>它有明显的往上提的一个行为</p></div>
+<div class="transcript-row"><time>02:26</time><p>那也就是说</p></div>
+<div class="transcript-row"><time>02:27</time><p>我们让中晖部分提亮</p></div>
+<div class="transcript-row"><time>02:28</time><p>并且没有让高光变得特别亮</p></div>
+<div class="transcript-row"><time>02:30</time><p>也没让暗部压得特别灰</p></div>
+<div class="transcript-row"><time>02:32</time><p>就像我们一开始说过的</p></div>
+<div class="transcript-row"><time>02:33</time><p>提亮暗部发挥</p></div>
+<div class="transcript-row"><time>02:34</time><p>是因为最暗的区域也一起被提亮了</p></div>
+<div class="transcript-row"><time>02:37</time><p>从而失去了它合适的黑位</p></div>
+<div class="transcript-row"><time>02:39</time><p>而我们这两个节点的组合</p></div>
+<div class="transcript-row"><time>02:40</time><p>就能够解决这个问题</p></div>
+<div class="transcript-row"><time>02:41</time><p>那如果说你觉得</p></div>
+<div class="transcript-row"><time>02:42</time><p>这样提亮的力度还不够</p></div>
+<div class="transcript-row"><time>02:44</time><p>我们可以利用第二种思路来</p></div>
+<div class="transcript-row"><time>02:45</time><p>在新的这个节点上</p></div>
+<div class="transcript-row"><time>02:47</time><p>我们先把曲线中间这一端</p></div>
+<div class="transcript-row"><time>02:49</time><p>稍微往上一提</p></div>
+<div class="transcript-row"><time>02:50</time><p>这样的操作</p></div>
+<div class="transcript-row"><time>02:51</time><p>确实能让画面变亮</p></div>
+<div class="transcript-row"><time>02:52</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:53</time><p>但是也会让天空变亮</p></div>
+<div class="transcript-row"><time>02:54</time><p>所以我们在这个地方</p></div>
+<div class="transcript-row"><time>02:55</time><p>把高光这一端给它往下一降</p></div>
+<div class="transcript-row"><time>02:57</time><p>让天空不要受太多的影响</p></div>
+<div class="transcript-row"><time>02:59</time><p>中间我们可以回来一点</p></div>
+<div class="transcript-row"><time>03:01</time><p>大概是这样的一个结果</p></div>
+<div class="transcript-row"><time>03:02</time><p>但这样同样也会让暗部发挥</p></div>
+<div class="transcript-row"><time>03:04</time><p>对不对</p></div>
+<div class="transcript-row"><time>03:05</time><p>所以此时我们在同一个节点中</p></div>
+<div class="transcript-row"><time>03:07</time><p>稍微降低一点</p></div>
+<div class="transcript-row"><time>03:08</time><p>Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>03:09</time><p>我们看画面的变化</p></div>
+<div class="transcript-row"><time>03:10</time><p>是不是降低Shadow色轮之后</p></div>
+<div class="transcript-row"><time>03:12</time><p>我们就能够去掉画面发挥的这个情况</p></div>
+<div class="transcript-row"><time>03:14</time><p>并且这样的一个组合</p></div>
+<div class="transcript-row"><time>03:16</time><p>也能够让画面明显的提亮</p></div>
+<div class="transcript-row"><time>03:18</time><p>那你说我不用Shadow色轮</p></div>
+<div class="transcript-row"><time>03:19</time><p>我在曲线这一端</p></div>
+<div class="transcript-row"><time>03:20</time><p>往右边移动行不行</p></div>
+<div class="transcript-row"><time>03:21</time><p>当然是可以的</p></div>
+<div class="transcript-row"><time>03:22</time><p>这看你自己的操作习惯就行</p></div>
+<div class="transcript-row"><time>03:24</time><p>利用这个操作</p></div>
+<div class="transcript-row"><time>03:25</time><p>我们再次看波星图</p></div>
+<div class="transcript-row"><time>03:26</time><p>波星图的变化</p></div>
+<div class="transcript-row"><time>03:27</time><p>是不是和第一个技巧的那种调整</p></div>
+<div class="transcript-row"><time>03:29</time><p>变化的幅度是一样的</p></div>
+<div class="transcript-row"><time>03:30</time><p>高光没什么影响</p></div>
+<div class="transcript-row"><time>03:32</time><p>暗部没什么变化</p></div>
+<div class="transcript-row"><time>03:33</time><p>但是中间调部分明显往上提了</p></div>
+<div class="transcript-row"><time>03:35</time><p>所以要提亮中晖部分</p></div>
+<div class="transcript-row"><time>03:37</time><p>不让你画面发挥</p></div>
+<div class="transcript-row"><time>03:38</time><p>就是要保证你的暗部</p></div>
+<div class="transcript-row"><time>03:39</time><p>不会受它的影响</p></div>
+<div class="transcript-row"><time>03:40</time><p>同时要让高光也别受到太多的影响</p></div>
+<div class="transcript-row"><time>03:42</time><p>否则你的天空这种</p></div>
+<div class="transcript-row"><time>03:44</time><p>远亮于人物的就容易过曝</p></div>
+<div class="transcript-row"><time>03:45</time><p>但是大家要注意</p></div>
+<div class="transcript-row"><time>03:46</time><p>我们提亮一个画面的时候</p></div>
+<div class="transcript-row"><time>03:48</time><p>你不能让画面中只有亮</p></div>
+<div class="transcript-row"><time>03:49</time><p>亮掉画面</p></div>
+<div class="transcript-row"><time>03:51</time><p>对于这个画面来说</p></div>
+<div class="transcript-row"><time>03:52</time><p>我觉得人物和滑板</p></div>
+<div class="transcript-row"><time>03:53</time><p>还是要保持相对较高的反差的</p></div>
+<div class="transcript-row"><time>03:56</time><p>否则你画面的层次就太弱了</p></div>
+<div class="transcript-row"><time>03:57</time><p>素材我也传到了</p></div>
+<div class="transcript-row"><time>03:58</time><p>线上分享平台</p></div>
+<div class="transcript-row"><time>03:59</time><p>私信或是看我警戒来找我就行</p></div>
+<div class="transcript-row"><time>04:01</time><p>这是免费领取的</p></div>
+<div class="transcript-row"><time>04:02</time><p>还要打分析线上系统课程</p></div>
+<div class="transcript-row"><time>04:03</time><p>和线下调色训练营</p></div>
+<div class="transcript-row"><time>04:04</time><p>那既然要增加画面层次</p></div>
+<div class="transcript-row"><time>04:06</time><p>我们可以给画面中的人物</p></div>
+<div class="transcript-row"><time>04:08</time><p>画一个遮罩</p></div>
+<div class="transcript-row"><time>04:10</time><p>然后小幅度增加一点对比度</p></div>
+<div class="transcript-row"><time>04:12</time><p>轴心也可以稍微调整调整</p></div>
+<div class="transcript-row"><time>04:14</time><p>根据你的最终观感来调整</p></div>
+<div class="transcript-row"><time>04:15</time><p>好 人物变得立体了对吧</p></div>
+<div class="transcript-row"><time>04:17</time><p>我们可以在Android Out加P</p></div>
+<div class="transcript-row"><time>04:18</time><p>或者是Option加P</p></div>
+<div class="transcript-row"><time>04:19</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>04:20</time><p>给左边这个滑板</p></div>
+<div class="transcript-row"><time>04:22</time><p>也给它画一个遮罩</p></div>
+<div class="transcript-row"><time>04:24</time><p>同样的 稍微增加一点对比度</p></div>
+<div class="transcript-row"><time>04:26</time><p>好 此时我们通过</p></div>
+<div class="transcript-row"><time>04:28</time><p>增加这两个区域的对比度之后</p></div>
+<div class="transcript-row"><time>04:30</time><p>画面中的层次</p></div>
+<div class="transcript-row"><time>04:31</time><p>是不是就变得更加明显了</p></div>
+<div class="transcript-row"><time>04:32</time><p>所以我们亮掉画面</p></div>
+<div class="transcript-row"><time>04:33</time><p>要去找暗</p></div>
+<div class="transcript-row"><time>04:34</time><p>然后我们就来到第三个技巧</p></div>
+<div class="transcript-row"><time>04:35</time><p>其实对于这种高亮的画面</p></div>
+<div class="transcript-row"><time>04:37</time><p>颜色一般情况下</p></div>
+<div class="transcript-row"><time>04:38</time><p>是需要鲜艳一点的</p></div>
+<div class="transcript-row"><time>04:40</time><p>所以我们就可以快速的利用</p></div>
+<div class="transcript-row"><time>04:41</time><p>RGB混合器来给画面加颜色</p></div>
+<div class="transcript-row"><time>04:44</time><p>比如说我们给它来点青橙色调</p></div>
+<div class="transcript-row"><time>04:46</time><p>在RGB混合器中</p></div>
+<div class="transcript-row"><time>04:47</time><p>我们提高红色输出中的红色通道</p></div>
+<div class="transcript-row"><time>04:49</time><p>然后再降低蓝色通道的数值</p></div>
+<div class="transcript-row"><time>04:52</time><p>你看 这样一做</p></div>
+<div class="transcript-row"><time>04:53</time><p>就快速的给画面</p></div>
+<div class="transcript-row"><time>04:54</time><p>做了一个青橙色调 对吧</p></div>
+<div class="transcript-row"><time>04:55</time><p>针对目前的颜色</p></div>
+<div class="transcript-row"><time>04:56</time><p>假如说你想要让这个青色</p></div>
+<div class="transcript-row"><time>04:58</time><p>更加明显一点</p></div>
+<div class="transcript-row"><time>04:59</time><p>你可以再来个节点</p></div>
+<div class="transcript-row"><time>05:00</time><p>利用蜘蛛网</p></div>
+<div class="transcript-row"><time>05:01</time><p>把色相往青色方向移调</p></div>
+<div class="transcript-row"><time>05:03</time><p>这样也是可以的 随便你</p></div>
+<div class="transcript-row"><time>05:04</time><p>肤色也能够再次体谅</p></div>
+<div class="transcript-row"><time>05:06</time><p>我们之前其实说过</p></div>
+<div class="transcript-row"><time>05:08</time><p>如果你需要小幅体谅肤色的话</p></div>
+<div class="transcript-row"><time>05:09</time><p>可以利用色能六相切片工具</p></div>
+<div class="transcript-row"><time>05:11</time><p>来降低皮肤的密度</p></div>
+<div class="transcript-row"><time>05:12</time><p>我再来一个节点</p></div>
+<div class="transcript-row"><time>05:13</time><p>其实你们放在一个节点也是可以的</p></div>
+<div class="transcript-row"><time>05:17</time><p>我们在新建这个节点中</p></div>
+<div class="transcript-row"><time>05:18</time><p>选择色能六相切片工具</p></div>
+<div class="transcript-row"><time>05:20</time><p>在皮肤的这个切片区域中</p></div>
+<div class="transcript-row"><time>05:22</time><p>我们可以把它的密度</p></div>
+<div class="transcript-row"><time>05:23</time><p>也就是左边这个滑块</p></div>
+<div class="transcript-row"><time>05:25</time><p>给它降低</p></div>
+<div class="transcript-row"><time>05:26</time><p>此时你看</p></div>
+<div class="transcript-row"><time>05:27</time><p>皮肤是不是就变得</p></div>
+<div class="transcript-row"><time>05:28</time><p>更加鲜艳了 对吧</p></div>
+<div class="transcript-row"><time>05:29</time><p>那同时也会增加它的饱和度</p></div>
+<div class="transcript-row"><time>05:31</time><p>所以我们再把饱和度</p></div>
+<div class="transcript-row"><time>05:32</time><p>也给它稍微降低一点点</p></div>
+<div class="transcript-row"><time>05:35</time><p>此时你看</p></div>
+<div class="transcript-row"><time>05:35</time><p>皮肤是不是就被体谅了</p></div>
+<div class="transcript-row"><time>05:37</time><p>因为降低密度</p></div>
+<div class="transcript-row"><time>05:38</time><p>是会在提高明度的同时</p></div>
+<div class="transcript-row"><time>05:39</time><p>小幅增加饱和度</p></div>
+<div class="transcript-row"><time>05:40</time><p>所以我们需要再降低一点饱和度</p></div>
+<div class="transcript-row"><time>05:42</time><p>效果还是不错的 对吧</p></div>
+<div class="transcript-row"><time>05:44</time><p>我们可以快速的总结一下</p></div>
+<div class="transcript-row"><time>05:45</time><p>其实我们真正对画面</p></div>
+<div class="transcript-row"><time>05:46</time><p>做的是有四个阶段的不同行为</p></div>
+<div class="transcript-row"><time>05:48</time><p>第一个行为</p></div>
+<div class="transcript-row"><time>05:49</time><p>就是这两个节点的一个组合</p></div>
+<div class="transcript-row"><time>05:50</time><p>也就是先增加画面的反差</p></div>
+<div class="transcript-row"><time>05:53</time><p>再利用阴影滑块和高光滑块的方式</p></div>
+<div class="transcript-row"><time>05:55</time><p>降低它们的反差</p></div>
+<div class="transcript-row"><time>05:56</time><p>这样能够保证</p></div>
+<div class="transcript-row"><time>05:58</time><p>高光和暗部的曝光</p></div>
+<div class="transcript-row"><time>05:59</time><p>不会受太多的影响</p></div>
+<div class="transcript-row"><time>06:00</time><p>但中会偏暗的区域</p></div>
+<div class="transcript-row"><time>06:01</time><p>能够稍微提亮一点</p></div>
+<div class="transcript-row"><time>06:02</time><p>然后再利用曲线的方式</p></div>
+<div class="transcript-row"><time>06:04</time><p>把高光这一端往下压</p></div>
+<div class="transcript-row"><time>06:06</time><p>但是把中间这一部分的曝光</p></div>
+<div class="transcript-row"><time>06:07</time><p>给它稍微往上一提</p></div>
+<div class="transcript-row"><time>06:09</time><p>来给画面实现提亮</p></div>
+<div class="transcript-row"><time>06:10</time><p>中间掉曝光的一个行为</p></div>
+<div class="transcript-row"><time>06:11</time><p>同时稍微降低点</p></div>
+<div class="transcript-row"><time>06:13</time><p>或者曲线暗部这一端</p></div>
+<div class="transcript-row"><time>06:15</time><p>往右边去移动一点</p></div>
+<div class="transcript-row"><time>06:16</time><p>保证它暗部不要受它的影响</p></div>
+<div class="transcript-row"><time>06:18</time><p>然后我们针对亮的画面</p></div>
+<div class="transcript-row"><time>06:19</time><p>要早暗 对不对</p></div>
+<div class="transcript-row"><time>06:20</time><p>所以我们把画面中值得压暗</p></div>
+<div class="transcript-row"><time>06:22</time><p>或者是增加反差的人物和滑板</p></div>
+<div class="transcript-row"><time>06:24</time><p>也给它稍微增加一点反差</p></div>
+<div class="transcript-row"><time>06:26</time><p>再然后就可以利用颜色</p></div>
+<div class="transcript-row"><time>06:28</time><p>去给画面增加一点鲜艳的感觉</p></div>
+<div class="transcript-row"><time>06:30</time><p>颜色越鲜艳</p></div>
+<div class="transcript-row"><time>06:31</time><p>你的画面的层次就会更加丰富</p></div>
+<div class="transcript-row"><time>06:33</time><p>也能够让你提亮</p></div>
+<div class="transcript-row"><time>06:34</time><p>没那么容易发挥</p></div>
+<div class="transcript-row"><time>06:35</time><p>针对这个颜色</p></div>
+<div class="transcript-row"><time>06:36</time><p>你可以再来个节点</p></div>
+<div class="transcript-row"><time>06:37</time><p>想怎么调整就怎么调整</p></div>
+<div class="transcript-row"><time>06:38</time><p>最后第四个技巧</p></div>
+<div class="transcript-row"><time>06:40</time><p>就是利用色轮流扇切片工具</p></div>
+<div class="transcript-row"><time>06:41</time><p>把皮肤再一次的给它提亮</p></div>
+<div class="transcript-row"><time>06:43</time><p>经过这样的操作</p></div>
+<div class="transcript-row"><time>06:44</time><p>我们就把画面从这样变成了这样</p></div>
+<div class="transcript-row"><time>06:47</time><p>效果还是很明显的</p></div>
+<div class="transcript-row"><time>06:48</time><p>操作也非常非常简单</p></div>
+<div class="transcript-row"><time>06:49</time><p>这四种技巧</p></div>
+<div class="transcript-row"><time>06:50</time><p>你可以根据你的需要自行选择</p></div>
+<div class="transcript-row"><time>06:52</time><p>你当然全选也是可以的</p></div>
+<div class="transcript-row"><time>06:54</time><p>素材大家别忘了</p></div>
+<div class="transcript-row"><time>06:55</time><p>领取过去之后练练手</p></div>
+<div class="transcript-row"><time>06:56</time><p>讲到这里</p></div>
+<div class="transcript-row"><time>06:57</time><p>如果你绝对你有帮助的话</p></div>
+<div class="transcript-row"><time>06:58</time><p>还希望多多赞联</p></div>
+<div class="transcript-row"><time>06:59</time><p>好了 这期就到这里</p></div>
+<div class="transcript-row"><time>07:00</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="一键仿色工具升到 V3：更多调色大模型介入。直出或灰片（先还原）上传生成 LUT，匹配强度可拉满并补饱和；达芬奇侧暂用 Rec.709 非广色域。套 LUT 后用并行向量修天蓝/高光暖、渐变遮罩分区，灰片案例再用内外节点塑氛围。预告网页端经 WorkBuddy 自动进达芬奇，降低">
+<title>自动调色大更新，无需额外插件一键调色工具｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>自动调色大更新，无需额外插件一键调色工具</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">5分24秒</span><span class="meta-tag tag-topic">达芬奇 自动调色 LUT V3 仿色 无需插件 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/8lkMHW4NjKg" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">V3：上传参考生成 LUT，强度与饱和可重跑</a><a href="#ch2">套用前：先检查色彩空间，暂用 709</a><a href="#ch3">对照参考：并行向量修天蓝与暖高光，渐变压天空</a><a href="#ch4">灰片：先还原再生成；LUT 套在还原之后</a><a href="#ch5">再分区：主体立体 + 外部压暗，LUT 当风格基底</a><a href="#ch6">反馈入口 + WorkBuddy 自动进达芬奇预告</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>一键仿色工具升到 V3：更多调色大模型介入。直出或灰片（先还原）上传生成 LUT，匹配强度可拉满并补饱和；达芬奇侧暂用 Rec.709 非广色域。套 LUT 后用并行向量修天蓝/高光暖、渐变遮罩分区，灰片案例再用内外节点塑氛围。预告网页端经 WorkBuddy 自动进达芬奇，降低 Codex 门槛。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:50]</span><div><strong>V3 生成</strong><p>上传素材+参考；默认70%可拉满100%，可加全局饱和再生成。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:50→01:18]</span><div><strong>色彩空间</strong><p>暂勿用达芬奇广色域 LUT；默认709套用看影调变化。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:18→02:21]</span><div><strong>并行收色</strong><p>向量加蓝饱和靠青；暖高光加饱和略降黄；渐变压天空氛围。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:21→03:19]</span><div><strong>灰片流程</strong><p>先还原曝光饱和→截图生成；LUT 必须套在还原后。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:19→04:32]</span><div><strong>分区氛围</strong><p>主体遮罩对比度+轴心；外部节点压其余，LUT 作风格基底。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:32→05:24]</span><div><strong>反馈预告</strong><p>网页反馈；免费素材工具；WorkBuddy 自动进达芬奇开发中。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>V3 LUT 是快速风格基底，不是终稿：先选对色彩空间与还原顺序，再用少量节点修色相分区。自动降低门槛，最终观感仍靠你的调色判断。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:50</span>V3：上传参考生成 LUT，强度与饱和可重跑</h2><p>开场演示：传参考、点生成 LUT，简单操作即可大变风格。工具到 V3，按反馈优化并增加更多调色大模型。直出素材上传后再传参考生成；默认匹配约 70%，可拉满 100%，饱和偏低可加全局饱和再生成。LUT 无法做局部，结果接近但仍有差别，下载后进达芬奇。</p><figure><img src="assets/auto-grade-update-no-plugin/shot-01.jpg" alt="V3 网页：匹配强度拉满并补饱和后重新生成 LUT" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:35] V3 网页：匹配强度拉满并补饱和后重新生成 LUT</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f81650375d12.mp3" type="button" aria-label="Play English audio">🔊</button><span>V3 web: max match strength, add saturation, regenerate the LUT.</span></div>
+<audio class="cap-audio" src="audio/f81650375d12.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:50-01:18</span>套用前：先检查色彩空间，暂用 709</h2><p>目前还不能选达芬奇广色域——广色域 LUT 逻辑不同，仍在优化。默认 Rec.709 下结果通常不错。建节点套入 LUT，影调会明显变化。</p></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:18-02:21</span>对照参考：并行向量修天蓝与暖高光，渐变压天空</h2><p>与参考比：天空偏灰、高光暖色偏黄不舒服。Shift/Option+P 建并行，用向量示波器增加蓝饱和并靠青；再略加暖色饱和、略降黄，让橙更干净。新节点做与光线平行的渐变遮罩，压右上天空，氛围与层次立刻上来，整体非常接近参考。强调：用 LUT 仍需一定调色能力。</p><figure><img src="assets/auto-grade-update-no-plugin/shot-02.jpg" alt="并行向量修天蓝靠青，并优化高光暖色" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:40] 并行向量修天蓝靠青，并优化高光暖色</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/c158f0497e73.mp3" type="button" aria-label="Play English audio">🔊</button><span>Parallel vectors push sky blue toward cyan and refine highlight warmth.</span></div>
+<audio class="cap-audio" src="audio/c158f0497e73.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:21-03:19</span>灰片：先还原再生成；LUT 套在还原之后</h2><p>灰片先简单还原：曝光到位、饱和拉上，截图上传工具再配参考生成。强度可到 100%，反差等参数微调后重跑。套用必须在还原后的新节点——LUT 行为不特别暴力，保留后续调整空间。</p><figure><img src="assets/auto-grade-update-no-plugin/shot-03.jpg" alt="灰片先还原再截图上传生成 LUT" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:50] 灰片先还原再截图上传生成 LUT</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/31271eea750a.mp3" type="button" aria-label="Play English audio">🔊</button><span>Restore the log still first, then screenshot and upload to build a LUT.</span></div>
+<audio class="cap-audio" src="audio/31271eea750a.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">03:19-04:32</span>再分区：主体立体 + 外部压暗，LUT 当风格基底</h2><p>参考整体更暗时：中间人物与车画遮罩，对比度+轴心右移更立体又暗；Alt/Option+O 外部节点对其余同样组合压暗。三节点开关可见：氛围建立在 LUT 风格基底上，颜色细节（如车色）可再调，重点是影调关系被快速拉近。</p><figure><img src="assets/auto-grade-update-no-plugin/shot-04.jpg" alt="主体遮罩对比度+轴心，外部节点压暗塑氛围" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:50] 主体遮罩对比度+轴心，外部节点压暗塑氛围</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/80db29dbb4c3.mp3" type="button" aria-label="Play English audio">🔊</button><span>Subject mask: contrast + pivot; outside node darkens for mood.</span></div>
+<audio class="cap-audio" src="audio/80db29dbb4c3.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch6"><h2><span class="time-marker">04:32-05:24</span>反馈入口 + WorkBuddy 自动进达芬奇预告</h2><p>欢迎试用；问题可网页头像反馈或私信。两则素材与参考在知识平台可免费领，工具免费。预告：相对 Codex 自动调色门槛，正做网页端只调国产 WorkBuddy 即可自动应用到达芬奇，开发中即将上线。</p><figure><img src="assets/auto-grade-update-no-plugin/shot-05.jpg" alt="反馈入口与 WorkBuddy 自动进达芬奇预告" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:00] 反馈入口与 WorkBuddy 自动进达芬奇预告</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f0765979025f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Feedback entry and a preview of WorkBuddy auto-into-DaVinci.</span></div>
+<audio class="cap-audio" src="audio/f0765979025f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（235段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>把我们需要参考的画面传上去</p></div>
+<div class="transcript-row"><time>00:01</time><p>点击生成LUT</p></div>
+<div class="transcript-row"><time>00:03</time><p>给它一定的时间</p></div>
+<div class="transcript-row"><time>00:03</time><p>它就生成好了一个匹配结果</p></div>
+<div class="transcript-row"><time>00:05</time><p>我们通过非常简单的操作</p></div>
+<div class="transcript-row"><time>00:07</time><p>就能让画面从这样变成这样</p></div>
+<div class="transcript-row"><time>00:11</time><p>我们这个工具来到V3版本</p></div>
+<div class="transcript-row"><time>00:13</time><p>根据大家反映的一个问题</p></div>
+<div class="transcript-row"><time>00:14</time><p>我做了一定的修改优化</p></div>
+<div class="transcript-row"><time>00:15</time><p>增加了更多调色大模型的介入</p></div>
+<div class="transcript-row"><time>00:17</time><p>这次我们用这个素材来演示</p></div>
+<div class="transcript-row"><time>00:19</time><p>这是一个直出画面</p></div>
+<div class="transcript-row"><time>00:20</time><p>我们把它传到这个网站上</p></div>
+<div class="transcript-row"><time>00:22</time><p>然后再把我们需要参考的画面传上去</p></div>
+<div class="transcript-row"><time>00:24</time><p>点击生成LUT</p></div>
+<div class="transcript-row"><time>00:25</time><p>给它一定的时间</p></div>
+<div class="transcript-row"><time>00:26</time><p>它就生成好了一个匹配结果</p></div>
+<div class="transcript-row"><time>00:28</time><p>但是我觉得这个强度不是很够</p></div>
+<div class="transcript-row"><time>00:29</time><p>因为我给它设置的默认匹配强度是70%</p></div>
+<div class="transcript-row"><time>00:32</time><p>我觉得需要给它拉满</p></div>
+<div class="transcript-row"><time>00:33</time><p>拉到100%</p></div>
+<div class="transcript-row"><time>00:34</time><p>然后我觉得它饱和度也是有点低的</p></div>
+<div class="transcript-row"><time>00:36</time><p>所以我再增加一点全局的饱和度</p></div>
+<div class="transcript-row"><time>00:39</time><p>调好参数之后</p></div>
+<div class="transcript-row"><time>00:39</time><p>我们再一次点击生成LUT</p></div>
+<div class="transcript-row"><time>00:41</time><p>稍等一会儿</p></div>
+<div class="transcript-row"><time>00:41</time><p>它就能够出现一个修改后的结果</p></div>
+<div class="transcript-row"><time>00:43</time><p>感觉还挺像的</p></div>
+<div class="transcript-row"><time>00:45</time><p>但是肯定会有区别</p></div>
+<div class="transcript-row"><time>00:46</time><p>因为它没法通过局部调整</p></div>
+<div class="transcript-row"><time>00:48</time><p>来实现某些效果</p></div>
+<div class="transcript-row"><time>00:49</time><p>我们点击下载LUT</p></div>
+<div class="transcript-row"><time>00:50</time><p>再把它打到达分集中</p></div>
+<div class="transcript-row"><time>00:51</time><p>我已经倒完了</p></div>
+<div class="transcript-row"><time>00:52</time><p>是这个LUT</p></div>
+<div class="transcript-row"><time>00:53</time><p>在我们套用之前</p></div>
+<div class="transcript-row"><time>00:54</time><p>大家可能得检查一下</p></div>
+<div class="transcript-row"><time>00:56</time><p>你的色彩空间设置</p></div>
+<div class="transcript-row"><time>00:57</time><p>目前你还不能选择达分集广色域</p></div>
+<div class="transcript-row"><time>00:59</time><p>因为广色域的LUT</p></div>
+<div class="transcript-row"><time>01:00</time><p>它的逻辑稍微有点不同</p></div>
+<div class="transcript-row"><time>01:02</time><p>我还在优化</p></div>
+<div class="transcript-row"><time>01:03</time><p>在默认709的情况下</p></div>
+<div class="transcript-row"><time>01:05</time><p>它的结果就能够不错了</p></div>
+<div class="transcript-row"><time>01:06</time><p>我们可以套上去看一下</p></div>
+<div class="transcript-row"><time>01:07</time><p>我建立一个节点</p></div>
+<div class="transcript-row"><time>01:08</time><p>把刚刚拉进来的这个LUT套上去</p></div>
+<div class="transcript-row"><time>01:10</time><p>套上去了之后</p></div>
+<div class="transcript-row"><time>01:11</time><p>整体的影调其实有个明显的变化</p></div>
+<div class="transcript-row"><time>01:13</time><p>但是和参考图去做对比</p></div>
+<div class="transcript-row"><time>01:15</time><p>你会发现颜色差别是比较大的</p></div>
+<div class="transcript-row"><time>01:18</time><p>第一个就是天空</p></div>
+<div class="transcript-row"><time>01:19</time><p>我们的天空太灰了</p></div>
+<div class="transcript-row"><time>01:20</time><p>第二个就是我们高光的暖色</p></div>
+<div class="transcript-row"><time>01:22</time><p>没有它舒服</p></div>
+<div class="transcript-row"><time>01:22</time><p>我们太黄了</p></div>
+<div class="transcript-row"><time>01:23</time><p>那这个要怎么解决</p></div>
+<div class="transcript-row"><time>01:24</time><p>我建议大家按住L的加P</p></div>
+<div class="transcript-row"><time>01:26</time><p>或者是Option加P</p></div>
+<div class="transcript-row"><time>01:27</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>01:28</time><p>在新建的下面这个节点中</p></div>
+<div class="transcript-row"><time>01:29</time><p>我们可以利用蜘蛛网</p></div>
+<div class="transcript-row"><time>01:31</time><p>来把蓝色的薄度增加</p></div>
+<div class="transcript-row"><time>01:32</time><p>并且让它改变一下色相</p></div>
+<div class="transcript-row"><time>01:33</time><p>让它往青色方向稍微靠一靠</p></div>
+<div class="transcript-row"><time>01:35</time><p>我们可以与参考图去做对比</p></div>
+<div class="transcript-row"><time>01:37</time><p>这一部分稍微再来一点点</p></div>
+<div class="transcript-row"><time>01:39</time><p>那天空的蓝色做出来了</p></div>
+<div class="transcript-row"><time>01:41</time><p>然后再优化我们这个受光面</p></div>
+<div class="transcript-row"><time>01:43</time><p>它的高光的暖色</p></div>
+<div class="transcript-row"><time>01:45</time><p>我们可以把这个暖色的薄度</p></div>
+<div class="transcript-row"><time>01:46</time><p>稍微给它增加一点点</p></div>
+<div class="transcript-row"><time>01:48</time><p>也可以稍微降低一点黄色</p></div>
+<div class="transcript-row"><time>01:50</time><p>让它这个橙色能够更加干净</p></div>
+<div class="transcript-row"><time>01:52</time><p>好 我觉得大概做到这个程度</p></div>
+<div class="transcript-row"><time>01:53</time><p>差不多了</p></div>
+<div class="transcript-row"><time>01:54</time><p>与参考图是比较接近了</p></div>
+<div class="transcript-row"><time>01:55</time><p>对不对</p></div>
+<div class="transcript-row"><time>01:55</time><p>也可以再来一个节点</p></div>
+<div class="transcript-row"><time>01:57</time><p>稍微改变一下影调的分布</p></div>
+<div class="transcript-row"><time>01:58</time><p>我觉得因为我们这个画面</p></div>
+<div class="transcript-row"><time>02:00</time><p>光是从左上往右下来的</p></div>
+<div class="transcript-row"><time>02:01</time><p>那么我们就可以做一个</p></div>
+<div class="transcript-row"><time>02:03</time><p>平行与这个光的一个渐变遮照</p></div>
+<div class="transcript-row"><time>02:05</time><p>从右上往左下来</p></div>
+<div class="transcript-row"><time>02:07</time><p>大概是这样的一个情况</p></div>
+<div class="transcript-row"><time>02:08</time><p>然后把右上角的天空</p></div>
+<div class="transcript-row"><time>02:09</time><p>给它稍微压暗一点点</p></div>
+<div class="transcript-row"><time>02:12</time><p>你看 是不是压暗了之后</p></div>
+<div class="transcript-row"><time>02:13</time><p>能够让它有更强的一个氛围感</p></div>
+<div class="transcript-row"><time>02:16</time><p>它的层次也能够变得更加丰富了</p></div>
+<div class="transcript-row"><time>02:17</time><p>那这样一做</p></div>
+<div class="transcript-row"><time>02:18</time><p>我们与参考图去对比的话</p></div>
+<div class="transcript-row"><time>02:20</time><p>就会非常接近了 对吧</p></div>
+<div class="transcript-row"><time>02:21</time><p>整体效果挺好的</p></div>
+<div class="transcript-row"><time>02:22</time><p>最重要的就是</p></div>
+<div class="transcript-row"><time>02:23</time><p>我们通过非常简单的操作</p></div>
+<div class="transcript-row"><time>02:25</time><p>就能让画面从这样变成这样</p></div>
+<div class="transcript-row"><time>02:27</time><p>你看 这种风格塑造是非常非常快的</p></div>
+<div class="transcript-row"><time>02:30</time><p>额外说的一个点就是</p></div>
+<div class="transcript-row"><time>02:31</time><p>我们要用这个LUT</p></div>
+<div class="transcript-row"><time>02:32</time><p>还是得要基于我们对画面</p></div>
+<div class="transcript-row"><time>02:34</time><p>有一定的调色能力的</p></div>
+<div class="transcript-row"><time>02:35</time><p>而调色的学习也有线上课程</p></div>
+<div class="transcript-row"><time>02:36</time><p>和线下调色训练营</p></div>
+<div class="transcript-row"><time>02:38</time><p>大家如果有需要的话</p></div>
+<div class="transcript-row"><time>02:38</time><p>也可以来找我</p></div>
+<div class="transcript-row"><time>02:39</time><p>那这个是指出画面的调色</p></div>
+<div class="transcript-row"><time>02:41</time><p>如果是一个灰片</p></div>
+<div class="transcript-row"><time>02:42</time><p>我们以这个画面为例</p></div>
+<div class="transcript-row"><time>02:43</time><p>我们先给它做一下简单的还原</p></div>
+<div class="transcript-row"><time>02:45</time><p>还原非常简单</p></div>
+<div class="transcript-row"><time>02:46</time><p>曝光做到位</p></div>
+<div class="transcript-row"><time>02:46</time><p>饱和度给它拉上来</p></div>
+<div class="transcript-row"><time>02:48</time><p>到这个程度就行了</p></div>
+<div class="transcript-row"><time>02:49</time><p>然后给它截一张图</p></div>
+<div class="transcript-row"><time>02:51</time><p>同样回到我们这个工具</p></div>
+<div class="transcript-row"><time>02:52</time><p>把刚刚截的图给它揣上来</p></div>
+<div class="transcript-row"><time>02:54</time><p>再找一张参考图</p></div>
+<div class="transcript-row"><time>02:55</time><p>我这里同样也是</p></div>
+<div class="transcript-row"><time>02:56</time><p>随便找了一张参考图</p></div>
+<div class="transcript-row"><time>02:57</time><p>这两个风格差别是非常大的</p></div>
+<div class="transcript-row"><time>02:59</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:59</time><p>然后再次点击生成LUT</p></div>
+<div class="transcript-row"><time>03:01</time><p>有一定的效果</p></div>
+<div class="transcript-row"><time>03:02</time><p>但效果不是特别到位</p></div>
+<div class="transcript-row"><time>03:03</time><p>同样还是我们可以稍微把匹配强度</p></div>
+<div class="transcript-row"><time>03:06</time><p>给它增加到100</p></div>
+<div class="transcript-row"><time>03:07</time><p>然后按不下沉</p></div>
+<div class="transcript-row"><time>03:08</time><p>也可以给它稍微增加一点</p></div>
+<div class="transcript-row"><time>03:10</time><p>我觉得整体的一个反差</p></div>
+<div class="transcript-row"><time>03:11</time><p>也是有点低的</p></div>
+<div class="transcript-row"><time>03:12</time><p>我们都可以这些微调一下参数</p></div>
+<div class="transcript-row"><time>03:14</time><p>调完了之后</p></div>
+<div class="transcript-row"><time>03:14</time><p>再给它生成一次LUT</p></div>
+<div class="transcript-row"><time>03:16</time><p>你看 这个效果感觉更好了</p></div>
+<div class="transcript-row"><time>03:17</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:19</time><p>我已经套完了</p></div>
+<div class="transcript-row"><time>03:20</time><p>我们要套用这个LUT的话</p></div>
+<div class="transcript-row"><time>03:21</time><p>一定要在还原后</p></div>
+<div class="transcript-row"><time>03:22</time><p>我们再新建一个节点</p></div>
+<div class="transcript-row"><time>03:23</time><p>把这个LUT套上去</p></div>
+<div class="transcript-row"><time>03:24</time><p>一套</p></div>
+<div class="transcript-row"><time>03:25</time><p>你看</p></div>
+<div class="transcript-row"><time>03:25</time><p>效果其实挺好的</p></div>
+<div class="transcript-row"><time>03:26</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:27</time><p>影调也有 颜色也有</p></div>
+<div class="transcript-row"><time>03:28</time><p>而且它做的行为</p></div>
+<div class="transcript-row"><time>03:29</time><p>不会特别的暴力</p></div>
+<div class="transcript-row"><time>03:31</time><p>所以它能够保留更多的调整空间</p></div>
+<div class="transcript-row"><time>03:33</time><p>能够让你去自由发挥</p></div>
+<div class="transcript-row"><time>03:34</time><p>但是与参考图去做对比的话</p></div>
+<div class="transcript-row"><time>03:36</time><p>我们会看到参考图</p></div>
+<div class="transcript-row"><time>03:37</time><p>整体是比我们要偏暗的</p></div>
+<div class="transcript-row"><time>03:38</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:38</time><p>我们也可以对我们的画面</p></div>
+<div class="transcript-row"><time>03:40</time><p>再一次的做调整</p></div>
+<div class="transcript-row"><time>03:41</time><p>我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>03:42</time><p>给中间人物和车画</p></div>
+<div class="transcript-row"><time>03:44</time><p>一个简单的遮罩</p></div>
+<div class="transcript-row"><time>03:46</time><p>然后通过对比度和轴心的调整</p></div>
+<div class="transcript-row"><time>03:48</time><p>让它能够更加立体一点</p></div>
+<div class="transcript-row"><time>03:51</time><p>轴心可以向右移动一点</p></div>
+<div class="transcript-row"><time>03:52</time><p>让它能够又暗又立体</p></div>
+<div class="transcript-row"><time>03:54</time><p>然后我们再按着ALT加O</p></div>
+<div class="transcript-row"><time>03:55</time><p>或者是OPTION加O</p></div>
+<div class="transcript-row"><time>03:56</time><p>建立一个外部节点</p></div>
+<div class="transcript-row"><time>03:57</time><p>把其余部分也通过</p></div>
+<div class="transcript-row"><time>03:59</time><p>对比度和轴心的一个组合</p></div>
+<div class="transcript-row"><time>04:01</time><p>来把它稍微压暗一些</p></div>
+<div class="transcript-row"><time>04:03</time><p>力度可以大一点</p></div>
+<div class="transcript-row"><time>04:04</time><p>轴心向右移动</p></div>
+<div class="transcript-row"><time>04:04</time><p>让它变暗一些</p></div>
+<div class="transcript-row"><time>04:06</time><p>好 此时你看</p></div>
+<div class="transcript-row"><time>04:07</time><p>这两个节点的调整</p></div>
+<div class="transcript-row"><time>04:08</time><p>是不是让我们的画面</p></div>
+<div class="transcript-row"><time>04:09</time><p>更加有氛围了</p></div>
+<div class="transcript-row"><time>04:09</time><p>而这个氛围就是通过我们这个LUT</p></div>
+<div class="transcript-row"><time>04:12</time><p>作为一个风格化的基底来实现的</p></div>
+<div class="transcript-row"><time>04:14</time><p>我们通过这三个节点</p></div>
+<div class="transcript-row"><time>04:15</time><p>一起开关来看一下</p></div>
+<div class="transcript-row"><time>04:16</time><p>风格化的塑造</p></div>
+<div class="transcript-row"><time>04:17</time><p>是不是非常非常容易</p></div>
+<div class="transcript-row"><time>04:18</time><p>虽然和我们参考图</p></div>
+<div class="transcript-row"><time>04:20</time><p>会有一定的区别</p></div>
+<div class="transcript-row"><time>04:21</time><p>它整体都是非常闷的</p></div>
+<div class="transcript-row"><time>04:22</time><p>但这都是我们自己</p></div>
+<div class="transcript-row"><time>04:23</time><p>可以随便调整的</p></div>
+<div class="transcript-row"><time>04:24</time><p>包括车的颜色 对吧</p></div>
+<div class="transcript-row"><time>04:25</time><p>这都是可以调整</p></div>
+<div class="transcript-row"><time>04:26</time><p>重点在于我们</p></div>
+<div class="transcript-row"><time>04:27</time><p>整体的一个影的关系</p></div>
+<div class="transcript-row"><time>04:28</time><p>它是能够通过这个LUT的功能</p></div>
+<div class="transcript-row"><time>04:30</time><p>来快速的实现</p></div>
+<div class="transcript-row"><time>04:31</time><p>效果还是挺好的 对吧</p></div>
+<div class="transcript-row"><time>04:32</time><p>那也欢迎大家</p></div>
+<div class="transcript-row"><time>04:33</time><p>多多来尝试这个工具</p></div>
+<div class="transcript-row"><time>04:34</time><p>如果你遇到了任何的问题</p></div>
+<div class="transcript-row"><time>04:36</time><p>都可以反馈给我</p></div>
+<div class="transcript-row"><time>04:37</time><p>你可以选择在这个右上角</p></div>
+<div class="transcript-row"><time>04:38</time><p>点击你登录之后的头像</p></div>
+<div class="transcript-row"><time>04:40</time><p>在这里写上你的反馈意见</p></div>
+<div class="transcript-row"><time>04:42</time><p>也可以你来找我 对吧</p></div>
+<div class="transcript-row"><time>04:43</time><p>那这一期这两个素材</p></div>
+<div class="transcript-row"><time>04:44</time><p>以及参考图</p></div>
+<div class="transcript-row"><time>04:45</time><p>我都传到了现场分享平台</p></div>
+<div class="transcript-row"><time>04:47</time><p>大家如果想要感受一下的话</p></div>
+<div class="transcript-row"><time>04:48</time><p>也可以来找我免费领取</p></div>
+<div class="transcript-row"><time>04:49</time><p>这个工具也是免费的</p></div>
+<div class="transcript-row"><time>04:51</time><p>然后呢在一个小预告</p></div>
+<div class="transcript-row"><time>04:52</time><p>不知道大家最近</p></div>
+<div class="transcript-row"><time>04:52</time><p>有没有看到很多人</p></div>
+<div class="transcript-row"><time>04:53</time><p>有发过一个视频</p></div>
+<div class="transcript-row"><time>04:54</time><p>就是比如用Codex</p></div>
+<div class="transcript-row"><time>04:56</time><p>去自动给你画面做调色</p></div>
+<div class="transcript-row"><time>04:58</time><p>这个功能当然很好</p></div>
+<div class="transcript-row"><time>04:59</time><p>也是AI时代的一个更新</p></div>
+<div class="transcript-row"><time>05:01</time><p>但是你想要去实现这个点</p></div>
+<div class="transcript-row"><time>05:03</time><p>你不还是得要借助Codex吗</p></div>
+<div class="transcript-row"><time>05:05</time><p>而Codex对于普通用户来讲</p></div>
+<div class="transcript-row"><time>05:06</time><p>安装跟使用或者注册</p></div>
+<div class="transcript-row"><time>05:08</time><p>还是有一定的门槛的</p></div>
+<div class="transcript-row"><time>05:09</time><p>那我现在正在做一个</p></div>
+<div class="transcript-row"><time>05:11</time><p>能够通过网页端</p></div>
+<div class="transcript-row"><time>05:13</time><p>只需要调取一个</p></div>
+<div class="transcript-row"><time>05:14</time><p>国产软件WorkBuddy</p></div>
+<div class="transcript-row"><time>05:15</time><p>它就能够自动帮你</p></div>
+<div class="transcript-row"><time>05:17</time><p>去应用在你的达分器中</p></div>
+<div class="transcript-row"><time>05:18</time><p>那这个功能还在开发</p></div>
+<div class="transcript-row"><time>05:19</time><p>很快就会上线</p></div>
+<div class="transcript-row"><time>05:20</time><p>可能就这两天了</p></div>
+<div class="transcript-row"><time>05:21</time><p>大家可以期待一下</p></div>
+<div class="transcript-row"><time>05:22</time><p>好了</p></div>
+<div class="transcript-row"><time>05:22</time><p>那这期就到这里</p></div>
+<div class="transcript-row"><time>05:23</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

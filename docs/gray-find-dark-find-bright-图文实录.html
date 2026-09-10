@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="发灰说到底是层次不够。用临时加对比度节点开关自测。亮调亮已够→缺暗：压 Shadow 让中灰下沉，但压不能过猛防死黑，再用顺光大羽化遮罩局部提亮衬托暗。暗调暗已够→缺亮：抬 Light；力度不够或顶高光时，再压 Shadow 用暗衬亮，比全局对比滑块更可控。拉开层次后再提阴影也不">
+<title>视频画面总是发灰？亮调要找暗，暗调要找亮｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>视频画面总是发灰？亮调要找暗，暗调要找亮</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">6分44秒</span><span class="meta-tag tag-topic">达芬奇 发灰 亮调 暗调 HDR色轮 层次 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/1d1yDCRvZWR" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">测灰：亮调缺暗就压 Shadow</a><a href="#ch2">压暗有限：用亮衬托暗</a><a href="#ch3">附：肤色偏冷的诊断与冷暖补丁</a><a href="#ch4">暗调：缺亮则抬 Light，顶不住就压暗衬亮</a><a href="#ch5">拉开层次后再提暗部也不吃灰</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>发灰说到底是层次不够。用临时加对比度节点开关自测。亮调亮已够→缺暗：压 Shadow 让中灰下沉，但压不能过猛防死黑，再用顺光大羽化遮罩局部提亮衬托暗。暗调暗已够→缺亮：抬 Light；力度不够或顶高光时，再压 Shadow 用暗衬亮，比全局对比滑块更可控。拉开层次后再提阴影也不吃回灰。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→01:14]</span><div><strong>测灰+亮调找暗</strong><p>对比度开关测灰；亮调压 Shadow 去灰。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:14→02:20]</span><div><strong>亮衬暗</strong><p>压暗有限：顺光羽化遮罩提亮（可带人脸），局部可控。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:20→03:43]</span><div><strong>肤色冷暖</strong><p>提饱和诊断缺暖→全局加暖+并行回冷+再微冷。</p></div></div>
+<div class="summary-row"><span class="time-marker">[03:43→05:02]</span><div><strong>暗调找亮</strong><p>暗调测灰后抬 Light；顶过曝则改压 Shadow 衬亮。</p></div></div>
+<div class="summary-row"><span class="time-marker">[05:02→06:44]</span><div><strong>层次后再提</strong><p>压 Shadow 后可提阴影/压高光；波形相近但更立体。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>亮调找暗、暗调找亮；都怕过头就用另一侧衬托。临时对比度是测灰工具，正式去灰用区域更可控的 HDR/遮罩，而不是只会拧全局对比。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-01:14</span>测灰：亮调缺暗就压 Shadow</h2><p>发灰因为层次不够。亮调例：还原后好像不错，新节点猛加对比开关一看——之前是灰的。加对比去灰是因为亮更亮暗更暗；亮调亮已够，说明缺暗。</p><p>波形大面积堆上半，让中灰往暗走：降 Shadow。人物会明显去灰，力度可略收。</p><figure><img src="assets/gray-find-dark-find-bright/shot-01.jpg" alt="对比度节点测灰：开关可见原片发灰；亮调波形堆上半缺暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:30] 对比度节点测灰：开关可见原片发灰；亮调波形堆上半缺暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b03af35cde27.mp3" type="button" aria-label="Play English audio">🔊</button><span>Contrast node gray test: toggle shows gray source; bright look piles top half, lacks dark.</span></div>
+<audio class="cap-audio" src="audio/b03af35cde27.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">01:14-02:20</span>压暗有限：用亮衬托暗</h2><p>仍雾蒙蒙时，压暗不能太大否则死黑。用亮衬暗：顺光方向画大羽化遮罩，提高光滑块，可顺带提脸。两节点同开效果更好。</p><p>不同于纯加对比：全局对比力度难分区；这里提亮是局部且含人物，一举两得。人物仍暗可再遮罩提。</p><figure><img src="assets/gray-find-dark-find-bright/shot-02.jpg" alt="亮调：压 Shadow 找暗；再用大羽化遮罩顺光提亮衬托暗" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[01:30] 亮调：压 Shadow 找暗；再用大羽化遮罩顺光提亮衬托暗</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/9a2f0d5b8690.mp3" type="button" aria-label="Play English audio">🔊</button><span>Bright look: press Shadow to find dark; soft mask lifts with-light against it.</span></div>
+<audio class="cap-audio" src="audio/9a2f0d5b8690.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">02:20-03:43</span>附：肤色偏冷的诊断与冷暖补丁</h2><p>肤与背光/受光色不对时，可临时提肤饱和：没颜色对暖肤来说就是偏冷。全局加暖让肤各区正常，再用并行找回冷饱和；背景过暖则后再微加冷。</p><p>三节点开关：肤正常、冷仍在。蓝浓或肤再修可后开节点——颜色先出来再细修。</p><figure><img src="assets/gray-find-dark-find-bright/shot-03.jpg" alt="肤色诊断：提饱和见缺暖→全局加暖+并行找回冷+再微冷" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:40] 肤色诊断：提饱和见缺暖→全局加暖+并行找回冷+再微冷</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/5d6192297793.mp3" type="button" aria-label="Play English audio">🔊</button><span>Skin check: boost sat to see missing warm→global warm, parallel recover cool, tiny cool.</span></div>
+<audio class="cap-audio" src="audio/5d6192297793.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">03:43-05:02</span>暗调：缺亮则抬 Light，顶不住就压暗衬亮</h2><p>暗调还原乍看也行，对比度一测仍灰。暗已多→缺亮：小幅抬 Light 让画面出现一些较亮处，即丰富起来。</p><p>另一例同样测灰后抬 Light 略好，但光头顶部易过曝，力度有限。与亮调相反：无法大幅提亮时，降 Shadow 用暗衬亮——亮面积反而更显。仍比全局对比滑块可控、可单向调。</p><figure><img src="assets/gray-find-dark-find-bright/shot-04.jpg" alt="暗调同样用对比度测灰：暗已够则缺亮，小幅抬 Light" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:50] 暗调同样用对比度测灰：暗已够则缺亮，小幅抬 Light</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/bf8552972b92.mp3" type="button" aria-label="Play English audio">🔊</button><span>Dark looks: same contrast gray test—if dark enough, missing light; slight Light lift.</span></div>
+<audio class="cap-audio" src="audio/bf8552972b92.mp3" preload="none"></audio>
+</figcaption></figure><figure><img src="assets/gray-find-dark-find-bright/shot-05.jpg" alt="Light 力度有限防过曝：再压 Shadow 用暗衬亮，区域更可控" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[05:00] Light 力度有限防过曝：再压 Shadow 用暗衬亮，区域更可控</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/34bbc7d2821f.mp3" type="button" aria-label="Play English audio">🔊</button><span>Light alone is limited vs blowout—press Shadow so dark sells bright, more control.</span></div>
+<audio class="cap-audio" src="audio/34bbc7d2821f.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">05:02-06:44</span>拉开层次后再提暗部也不吃灰</h2><p>若暗还不够透，可再提阴影滑块并略压高光。看似重复，但提亮建立在已拉开层次上，仍保留质感。三节点开关：波形整体曝光差不多，观感立体得多。</p><p>实用思路：先解决灰（找暗或找亮/互衬），再谈局部提透。素材可领取练习。</p><figure><img src="assets/gray-find-dark-find-bright/shot-06.jpg" alt="拉开层次后再提阴影/压高光：波形相近但观感更立体" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[06:20] 拉开层次后再提阴影/压高光：波形相近但观感更立体</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/b8fbc670c78b.mp3" type="button" aria-label="Play English audio">🔊</button><span>After separation, lift shadows/press highs—scopes similar, look more 3D.</span></div>
+<audio class="cap-audio" src="audio/b8fbc670c78b.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（281段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>这两天一直有朋友问我画面发灰的问题</p></div>
+<div class="transcript-row"><time>00:11</time><p>发灰说到底还是因为你的层次不够</p></div>
+<div class="transcript-row"><time>00:13</time><p>我们先以亮掉画面为例</p></div>
+<div class="transcript-row"><time>00:14</time><p>这个画面我们给它简单做一下还原</p></div>
+<div class="transcript-row"><time>00:17</time><p>之后能看到好像还不错</p></div>
+<div class="transcript-row"><time>00:18</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:19</time><p>那我们要怎么检查你的画面是否发灰</p></div>
+<div class="transcript-row"><time>00:21</time><p>有一个很好用的小技巧</p></div>
+<div class="transcript-row"><time>00:23</time><p>我们再来一个节点</p></div>
+<div class="transcript-row"><time>00:24</time><p>给画面加一点对比度试试看</p></div>
+<div class="transcript-row"><time>00:26</time><p>你不管它好不好看</p></div>
+<div class="transcript-row"><time>00:27</time><p>可以多加一点</p></div>
+<div class="transcript-row"><time>00:28</time><p>加完了之后</p></div>
+<div class="transcript-row"><time>00:29</time><p>你开关这个节点</p></div>
+<div class="transcript-row"><time>00:30</time><p>你就能够发现之前画面发灰的情况</p></div>
+<div class="transcript-row"><time>00:33</time><p>那既然我们已经明确了它发灰</p></div>
+<div class="transcript-row"><time>00:35</time><p>我们该怎么解决呢</p></div>
+<div class="transcript-row"><time>00:36</time><p>给这个画面增加对比度之后</p></div>
+<div class="transcript-row"><time>00:37</time><p>它不灰是因为亮的更亮</p></div>
+<div class="transcript-row"><time>00:40</time><p>暗的更暗</p></div>
+<div class="transcript-row"><time>00:40</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:40</time><p>那既然它是亮掉画面</p></div>
+<div class="transcript-row"><time>00:42</time><p>说明亮的部分是足够的</p></div>
+<div class="transcript-row"><time>00:44</time><p>那也就是说它原本的画面缺了暗</p></div>
+<div class="transcript-row"><time>00:46</time><p>那我们就要给画面去找更多的暗</p></div>
+<div class="transcript-row"><time>00:48</time><p>这一点其实从波线图上也看得出来</p></div>
+<div class="transcript-row"><time>00:50</time><p>大面积的内容堆积在了上半部分</p></div>
+<div class="transcript-row"><time>00:52</time><p>对吧</p></div>
+<div class="transcript-row"><time>00:53</time><p>所以我们需要让中灰的内容</p></div>
+<div class="transcript-row"><time>00:55</time><p>让它往暗部去走</p></div>
+<div class="transcript-row"><time>00:56</time><p>所以我们可以在后面跟一个节点</p></div>
+<div class="transcript-row"><time>00:58</time><p>稍微给它降低一点shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>01:02</time><p>让它中灰部分的内容能够往下走</p></div>
+<div class="transcript-row"><time>01:04</time><p>我们看到画面的变化</p></div>
+<div class="transcript-row"><time>01:06</time><p>是不是去掉灰了</p></div>
+<div class="transcript-row"><time>01:07</time><p>特别是人物这一块</p></div>
+<div class="transcript-row"><time>01:08</time><p>它明显的去灰了</p></div>
+<div class="transcript-row"><time>01:09</time><p>当然力度可以稍微小一点</p></div>
+<div class="transcript-row"><time>01:11</time><p>不用这么多</p></div>
+<div class="transcript-row"><time>01:11</time><p>那此时我们已经给它稍微去灰了一部分</p></div>
+<div class="transcript-row"><time>01:14</time><p>但还不是很够</p></div>
+<div class="transcript-row"><time>01:15</time><p>感觉画面还是雾蒙蒙的</p></div>
+<div class="transcript-row"><time>01:17</time><p>这是为什么呢</p></div>
+<div class="transcript-row"><time>01:17</time><p>最大的原因还是因为</p></div>
+<div class="transcript-row"><time>01:19</time><p>我们压暗的力度不能太大</p></div>
+<div class="transcript-row"><time>01:20</time><p>否则会有死黑的风险</p></div>
+<div class="transcript-row"><time>01:22</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:22</time><p>那要怎么让黑的更黑</p></div>
+<div class="transcript-row"><time>01:23</time><p>我们可以用亮来衬托</p></div>
+<div class="transcript-row"><time>01:25</time><p>我们再来一个节点</p></div>
+<div class="transcript-row"><time>01:26</time><p>可以给画面画一个这样的遮罩</p></div>
+<div class="transcript-row"><time>01:29</time><p>也就是顺着光的方向</p></div>
+<div class="transcript-row"><time>01:30</time><p>来画一个大融化的遮罩</p></div>
+<div class="transcript-row"><time>01:33</time><p>画完了之后</p></div>
+<div class="transcript-row"><time>01:34</time><p>稍微给它提高一点曝光</p></div>
+<div class="transcript-row"><time>01:35</time><p>我这里选择是提高了高光划块</p></div>
+<div class="transcript-row"><time>01:38</time><p>把人脸给带上一点</p></div>
+<div class="transcript-row"><time>01:40</time><p>好</p></div>
+<div class="transcript-row"><time>01:40</time><p>大概是这样的结果</p></div>
+<div class="transcript-row"><time>01:41</time><p>我们可以把这两个节点一起来开关</p></div>
+<div class="transcript-row"><time>01:43</time><p>看一下画面变化</p></div>
+<div class="transcript-row"><time>01:45</time><p>是不是效果挺好的</p></div>
+<div class="transcript-row"><time>01:46</time><p>对吧</p></div>
+<div class="transcript-row"><time>01:46</time><p>那你说这不还是增加对比度吗</p></div>
+<div class="transcript-row"><time>01:48</time><p>不一样</p></div>
+<div class="transcript-row"><time>01:49</time><p>一方面只是单纯的增加对比度</p></div>
+<div class="transcript-row"><time>01:51</time><p>它会对画面整体增加明暗反差</p></div>
+<div class="transcript-row"><time>01:54</time><p>就导致了你对每个区域的力度不好控制</p></div>
+<div class="transcript-row"><time>01:56</time><p>另一方面</p></div>
+<div class="transcript-row"><time>01:57</time><p>我们提亮的行为只是局部</p></div>
+<div class="transcript-row"><time>01:59</time><p>并且我们这个遮罩范围包含了人物</p></div>
+<div class="transcript-row"><time>02:02</time><p>所以我们在提亮这个区域内的时候</p></div>
+<div class="transcript-row"><time>02:04</time><p>还能够顺势提亮一下人物</p></div>
+<div class="transcript-row"><time>02:06</time><p>一举两得</p></div>
+<div class="transcript-row"><time>02:06</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:07</time><p>那当然了</p></div>
+<div class="transcript-row"><time>02:07</time><p>如果你觉得此时人物还是太暗</p></div>
+<div class="transcript-row"><time>02:09</time><p>你可以再画个制造提亮就行了</p></div>
+<div class="transcript-row"><time>02:10</time><p>这里我就不操作了</p></div>
+<div class="transcript-row"><time>02:11</time><p>也就是说我们对于亮调画面要找暗</p></div>
+<div class="transcript-row"><time>02:14</time><p>但是压暗的行为又不能太过</p></div>
+<div class="transcript-row"><time>02:16</time><p>太过会容易死黑</p></div>
+<div class="transcript-row"><time>02:16</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:17</time><p>所以我们可以用亮来衬托暗</p></div>
+<div class="transcript-row"><time>02:19</time><p>那对于这个画面</p></div>
+<div class="transcript-row"><time>02:20</time><p>我们可以再多讲一下颜色</p></div>
+<div class="transcript-row"><time>02:21</time><p>此时我们看到人物的肤色其实是不对的</p></div>
+<div class="transcript-row"><time>02:24</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:24</time><p>包括这里的背光面</p></div>
+<div class="transcript-row"><time>02:25</time><p>以及这里的瘦光面</p></div>
+<div class="transcript-row"><time>02:26</time><p>颜色都是不对的</p></div>
+<div class="transcript-row"><time>02:27</time><p>那我们怎么知道它不对呢</p></div>
+<div class="transcript-row"><time>02:29</time><p>我们可以再来个节点</p></div>
+<div class="transcript-row"><time>02:30</time><p>比如说用蜘蛛网</p></div>
+<div class="transcript-row"><time>02:31</time><p>把肤色这里的薄度给它往上提</p></div>
+<div class="transcript-row"><time>02:33</time><p>多提一点</p></div>
+<div class="transcript-row"><time>02:34</time><p>提完了之后你会发现这里是没颜色</p></div>
+<div class="transcript-row"><time>02:36</time><p>那它没颜色</p></div>
+<div class="transcript-row"><time>02:37</time><p>对于肤色的暖色来讲</p></div>
+<div class="transcript-row"><time>02:38</time><p>它就是偏冷</p></div>
+<div class="transcript-row"><time>02:39</time><p>人脸这里也是一样的</p></div>
+<div class="transcript-row"><time>02:40</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:40</time><p>那当然了</p></div>
+<div class="transcript-row"><time>02:41</time><p>这里有非常多的噪点</p></div>
+<div class="transcript-row"><time>02:42</time><p>这个不管它</p></div>
+<div class="transcript-row"><time>02:42</time><p>那该怎么解决这个问题呢</p></div>
+<div class="transcript-row"><time>02:44</time><p>我们明确的是肤色有部分偏冷</p></div>
+<div class="transcript-row"><time>02:46</time><p>那偏冷就说明画面圈暖</p></div>
+<div class="transcript-row"><time>02:48</time><p>我们就可以直接给画面加点暖</p></div>
+<div class="transcript-row"><time>02:50</time><p>多加一点</p></div>
+<div class="transcript-row"><time>02:51</time><p>先把肤色</p></div>
+<div class="transcript-row"><time>02:52</time><p>给它每个区域的颜色</p></div>
+<div class="transcript-row"><time>02:53</time><p>都能够呈现出一个正常的结果</p></div>
+<div class="transcript-row"><time>02:55</time><p>大概是这样的一个情况</p></div>
+<div class="transcript-row"><time>02:56</time><p>那肤色变暖了</p></div>
+<div class="transcript-row"><time>02:57</time><p>其他冷的区域不也发生问题吗</p></div>
+<div class="transcript-row"><time>02:59</time><p>所以我们可以按住</p></div>
+<div class="transcript-row"><time>03:00</time><p>out加p或者是option加p</p></div>
+<div class="transcript-row"><time>03:01</time><p>建立一个并行节点</p></div>
+<div class="transcript-row"><time>03:02</time><p>在并行节点中</p></div>
+<div class="transcript-row"><time>03:04</time><p>把冷的薄度给它加回来就好了</p></div>
+<div class="transcript-row"><time>03:06</time><p>我们来看一下</p></div>
+<div class="transcript-row"><time>03:07</time><p>大概是加到这个程度</p></div>
+<div class="transcript-row"><time>03:09</time><p>我们来看画面此时冷与暖都有了</p></div>
+<div class="transcript-row"><time>03:11</time><p>但是又出现了一个问题</p></div>
+<div class="transcript-row"><time>03:13</time><p>那背景也偏暖了</p></div>
+<div class="transcript-row"><time>03:14</time><p>对吧</p></div>
+<div class="transcript-row"><time>03:14</time><p>包括这里的瘦光面也偏暖了</p></div>
+<div class="transcript-row"><time>03:16</time><p>这个是我不想要的</p></div>
+<div class="transcript-row"><time>03:17</time><p>所以我们可以再来一个节点</p></div>
+<div class="transcript-row"><time>03:19</time><p>给整体的画面再加一点点冷</p></div>
+<div class="transcript-row"><time>03:22</time><p>此时你看</p></div>
+<div class="transcript-row"><time>03:22</time><p>是不是画面保持冷的效果</p></div>
+<div class="transcript-row"><time>03:24</time><p>同时肤色也是相对正常的</p></div>
+<div class="transcript-row"><time>03:26</time><p>我们可以把这三个节点</p></div>
+<div class="transcript-row"><time>03:28</time><p>一起来开关看一下</p></div>
+<div class="transcript-row"><time>03:29</time><p>肤色从这样变成了这样</p></div>
+<div class="transcript-row"><time>03:32</time><p>同时这些冷的还是保留了</p></div>
+<div class="transcript-row"><time>03:33</time><p>那当然</p></div>
+<div class="transcript-row"><time>03:34</time><p>你说这个蓝的太浓</p></div>
+<div class="transcript-row"><time>03:36</time><p>或者是肤色怎么样有什么问题</p></div>
+<div class="transcript-row"><time>03:37</time><p>你完全可以再来个节点</p></div>
+<div class="transcript-row"><time>03:39</time><p>单独去调整</p></div>
+<div class="transcript-row"><time>03:39</time><p>因为颜色都出来了</p></div>
+<div class="transcript-row"><time>03:41</time><p>这个思路大家可以感受一下</p></div>
+<div class="transcript-row"><time>03:42</time><p>不讲太多</p></div>
+<div class="transcript-row"><time>03:43</time><p>我们接下来来看暗调画面怎么办</p></div>
+<div class="transcript-row"><time>03:45</time><p>我们看到这个画面</p></div>
+<div class="transcript-row"><time>03:46</time><p>这是我们还原好的画面</p></div>
+<div class="transcript-row"><time>03:47</time><p>乍一看好像也没有什么</p></div>
+<div class="transcript-row"><time>03:49</time><p>特别大的问题对吧</p></div>
+<div class="transcript-row"><time>03:50</time><p>但是呢</p></div>
+<div class="transcript-row"><time>03:50</time><p>我们依旧通过对比度的方式</p></div>
+<div class="transcript-row"><time>03:52</time><p>来测试一下</p></div>
+<div class="transcript-row"><time>03:53</time><p>原本就是发灰的</p></div>
+<div class="transcript-row"><time>03:55</time><p>那我们再分析这个画面</p></div>
+<div class="transcript-row"><time>03:56</time><p>既然它缺对比导致发灰</p></div>
+<div class="transcript-row"><time>03:58</time><p>而暗调画面暗的信息已经足够多了</p></div>
+<div class="transcript-row"><time>04:00</time><p>那就证明画面缺亮</p></div>
+<div class="transcript-row"><time>04:01</time><p>我们可以稍微给它提高一点</p></div>
+<div class="transcript-row"><time>04:03</time><p>Light色轮的曝光</p></div>
+<div class="transcript-row"><time>04:04</time><p>不用太多</p></div>
+<div class="transcript-row"><time>04:05</time><p>只要能够让画面中呈现出一些</p></div>
+<div class="transcript-row"><time>04:07</time><p>比较亮的东西就行了</p></div>
+<div class="transcript-row"><time>04:09</time><p>我们看到</p></div>
+<div class="transcript-row"><time>04:09</time><p>这样是不是画面就丰富起来了</p></div>
+<div class="transcript-row"><time>04:11</time><p>也活过来了对吧</p></div>
+<div class="transcript-row"><time>04:12</time><p>但是这样做也会有问题</p></div>
+<div class="transcript-row"><time>04:14</time><p>什么问题呢</p></div>
+<div class="transcript-row"><time>04:15</time><p>我们来看这个画面</p></div>
+<div class="transcript-row"><time>04:16</time><p>给它移动到这一帧</p></div>
+<div class="transcript-row"><time>04:17</time><p>这是还原后的画面</p></div>
+<div class="transcript-row"><time>04:18</time><p>我们能看到</p></div>
+<div class="transcript-row"><time>04:20</time><p>我们对它用对比度的方式</p></div>
+<div class="transcript-row"><time>04:22</time><p>来测试一下是不是发灰</p></div>
+<div class="transcript-row"><time>04:24</time><p>增加点对比度</p></div>
+<div class="transcript-row"><time>04:24</time><p>然后开关一下</p></div>
+<div class="transcript-row"><time>04:26</time><p>原本也是发灰的</p></div>
+<div class="transcript-row"><time>04:27</time><p>对吧</p></div>
+<div class="transcript-row"><time>04:27</time><p>那这三个素材呢</p></div>
+<div class="transcript-row"><time>04:28</time><p>我都传到了线上分享平台</p></div>
+<div class="transcript-row"><time>04:30</time><p>大家如果想要来感受一下的话</p></div>
+<div class="transcript-row"><time>04:31</time><p>也可以看视频下方小字来找我</p></div>
+<div class="transcript-row"><time>04:33</time><p>素材都是免费的</p></div>
+<div class="transcript-row"><time>04:34</time><p>还有答复你的线上和线下的课程</p></div>
+<div class="transcript-row"><time>04:36</time><p>我们已经明确它发灰了</p></div>
+<div class="transcript-row"><time>04:37</time><p>而且它也是暗调画面</p></div>
+<div class="transcript-row"><time>04:38</time><p>那此时我们是不是</p></div>
+<div class="transcript-row"><time>04:40</time><p>也可以通过提高Light色轮的曝光</p></div>
+<div class="transcript-row"><time>04:42</time><p>就能解决呢</p></div>
+<div class="transcript-row"><time>04:43</time><p>我们来试试看</p></div>
+<div class="transcript-row"><time>04:43</time><p>我们稍微提高点Light色轮的曝光</p></div>
+<div class="transcript-row"><time>04:45</time><p>你能感觉出来稍微好了一点</p></div>
+<div class="transcript-row"><time>04:47</time><p>画面有层次了</p></div>
+<div class="transcript-row"><time>04:48</time><p>但是出现了一个问题</p></div>
+<div class="transcript-row"><time>04:50</time><p>我们看中间光头的头顶</p></div>
+<div class="transcript-row"><time>04:52</time><p>已经提的太亮了对吧</p></div>
+<div class="transcript-row"><time>04:53</time><p>我们虽然能够提高Light色轮</p></div>
+<div class="transcript-row"><time>04:55</time><p>来解决部分问题</p></div>
+<div class="transcript-row"><time>04:57</time><p>但是力度是有限的</p></div>
+<div class="transcript-row"><time>04:58</time><p>你再高的话</p></div>
+<div class="transcript-row"><time>04:59</time><p>光头的头顶就过曝了</p></div>
+<div class="transcript-row"><time>05:00</time><p>这肯定是不行的对吧</p></div>
+<div class="transcript-row"><time>05:02</time><p>那该怎么办呢</p></div>
+<div class="transcript-row"><time>05:03</time><p>此时我们就要与</p></div>
+<div class="transcript-row"><time>05:04</time><p>亮调画面的思路相反</p></div>
+<div class="transcript-row"><time>05:05</time><p>亮调画面还记得吧</p></div>
+<div class="transcript-row"><time>05:06</time><p>我们是用亮来衬托暗的</p></div>
+<div class="transcript-row"><time>05:08</time><p>那既然相反的话</p></div>
+<div class="transcript-row"><time>05:09</time><p>暗调画面就可以用暗来衬托亮</p></div>
+<div class="transcript-row"><time>05:11</time><p>也就是在我们无法大幅提高</p></div>
+<div class="transcript-row"><time>05:13</time><p>亮部区域亮度的时候</p></div>
+<div class="transcript-row"><time>05:15</time><p>可以通过降低暗部的曝光</p></div>
+<div class="transcript-row"><time>05:17</time><p>也就是稍微降低一点</p></div>
+<div class="transcript-row"><time>05:18</time><p>Shadow色轮的曝光</p></div>
+<div class="transcript-row"><time>05:20</time><p>来衬托画面中小面积的亮</p></div>
+<div class="transcript-row"><time>05:22</time><p>我们看到</p></div>
+<div class="transcript-row"><time>05:23</time><p>我再来个节点吧</p></div>
+<div class="transcript-row"><time>05:24</time><p>再来个节点我们看纸观一点</p></div>
+<div class="transcript-row"><time>05:25</time><p>其实你可以放在</p></div>
+<div class="transcript-row"><time>05:26</time><p>同一个节点上去操作</p></div>
+<div class="transcript-row"><time>05:27</time><p>我们看到</p></div>
+<div class="transcript-row"><time>05:27</time><p>当我们降低了</p></div>
+<div class="transcript-row"><time>05:28</time><p>Shadow色轮的曝光之后</p></div>
+<div class="transcript-row"><time>05:29</time><p>你会发现</p></div>
+<div class="transcript-row"><time>05:30</time><p>画面中这些亮的面积</p></div>
+<div class="transcript-row"><time>05:32</time><p>反而更亮了对不对</p></div>
+<div class="transcript-row"><time>05:34</time><p>因为我们是用暗来衬托亮</p></div>
+<div class="transcript-row"><time>05:36</time><p>然后你又说</p></div>
+<div class="transcript-row"><time>05:36</time><p>这不还是增加对比度吗</p></div>
+<div class="transcript-row"><time>05:38</time><p>是给画面增加对比度</p></div>
+<div class="transcript-row"><time>05:39</time><p>但是它跟对比度又有点不同</p></div>
+<div class="transcript-row"><time>05:41</time><p>理由跟亮调画面是一样的</p></div>
+<div class="transcript-row"><time>05:42</time><p>你增加对比度滑块</p></div>
+<div class="transcript-row"><time>05:44</time><p>是全局的并且不可控</p></div>
+<div class="transcript-row"><time>05:45</time><p>而区域控制</p></div>
+<div class="transcript-row"><time>05:46</time><p>也就是我们这样的操作</p></div>
+<div class="transcript-row"><time>05:47</time><p>会更加可控</p></div>
+<div class="transcript-row"><time>05:48</time><p>力度也可以根据你的需要</p></div>
+<div class="transcript-row"><time>05:50</time><p>来单向调整</p></div>
+<div class="transcript-row"><time>05:51</time><p>那此时我们画面</p></div>
+<div class="transcript-row"><time>05:52</time><p>虽然变得更加立体了</p></div>
+<div class="transcript-row"><time>05:53</time><p>也不会特别灰了</p></div>
+<div class="transcript-row"><time>05:55</time><p>但是如果你觉得暗不太暗的话</p></div>
+<div class="transcript-row"><time>05:57</time><p>你可以再来一个节点</p></div>
+<div class="transcript-row"><time>05:58</time><p>稍微给它提高一点</p></div>
+<div class="transcript-row"><time>06:00</time><p>阴影滑块的曝光</p></div>
+<div class="transcript-row"><time>06:01</time><p>再稍微降低一点</p></div>
+<div class="transcript-row"><time>06:02</time><p>高光滑块的曝光</p></div>
+<div class="transcript-row"><time>06:04</time><p>让高光不要太亮</p></div>
+<div class="transcript-row"><time>06:05</time><p>哎 你看</p></div>
+<div class="transcript-row"><time>06:06</time><p>此时我们就让暗部提亮了</p></div>
+<div class="transcript-row"><time>06:07</time><p>那这时候你又发现</p></div>
+<div class="transcript-row"><time>06:08</time><p>这不还是一个重复行为吗</p></div>
+<div class="transcript-row"><time>06:10</time><p>我们可以把这三个节点</p></div>
+<div class="transcript-row"><time>06:11</time><p>开关一下看</p></div>
+<div class="transcript-row"><time>06:12</time><p>我们把播信图再拉到这里来</p></div>
+<div class="transcript-row"><time>06:14</time><p>我们看到</p></div>
+<div class="transcript-row"><time>06:14</time><p>整体的曝光没有很大的区别</p></div>
+<div class="transcript-row"><time>06:17</time><p>但是我们看画面的变化</p></div>
+<div class="transcript-row"><time>06:19</time><p>是不是我们调整后</p></div>
+<div class="transcript-row"><time>06:20</time><p>明显要立体的多</p></div>
+<div class="transcript-row"><time>06:21</time><p>对吧</p></div>
+<div class="transcript-row"><time>06:22</time><p>那这是因为我们</p></div>
+<div class="transcript-row"><time>06:23</time><p>后续的提亮</p></div>
+<div class="transcript-row"><time>06:24</time><p>也就是6号节点</p></div>
+<div class="transcript-row"><time>06:25</time><p>提高阴影滑块的这个提亮</p></div>
+<div class="transcript-row"><time>06:26</time><p>是在拉开层次的基础上做的</p></div>
+<div class="transcript-row"><time>06:29</time><p>所以它还保留了</p></div>
+<div class="transcript-row"><time>06:31</time><p>拉开层次后的一个曝光质感</p></div>
+<div class="transcript-row"><time>06:32</time><p>所以这是一个很实用的思路</p></div>
+<div class="transcript-row"><time>06:34</time><p>大家可以感受感受</p></div>
+<div class="transcript-row"><time>06:35</time><p>素材大家记得领取</p></div>
+<div class="transcript-row"><time>06:36</time><p>领取之后也可以练一练</p></div>
+<div class="transcript-row"><time>06:37</time><p>还有打分级的线上和线下课程</p></div>
+<div class="transcript-row"><time>06:39</time><p>那讲到这里</p></div>
+<div class="transcript-row"><time>06:40</time><p>如果你觉得对你有帮助的话</p></div>
+<div class="transcript-row"><time>06:41</time><p>还希望多多三连</p></div>
+<div class="transcript-row"><time>06:42</time><p>好了</p></div>
+<div class="transcript-row"><time>06:42</time><p>这期就到这里</p></div>
+<div class="transcript-row"><time>06:43</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

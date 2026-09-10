@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="老叉先手搓阴天浓郁街景车片：还原别太亮，用遮罩给车身加对比强化光感、压地面与天空，HDR 再拉开高光光泽，再加绿保暖、电影感外观与神奇遮罩还原白车。随后演示本地 AI 工具：只留曝光层次截静帧，网页生成 LUT 拖回达芬奇广色域，色偏再前插节点微调，键输出增益回调力度。">
+<title>真正的AI自动调色：一键仿色，一键制作LUT｜图文实录</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#ff2442;color:#fff}.tag-duration{background:#f1f5f9;color:#64748b}.tag-topic{background:#dbeafe;color:#1e40af}
+.source-link{color:#3b82f6;font-size:14px;text-decoration:none}.source-link:hover{text-decoration:underline}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section p{margin:0 0 14px;color:#44403c}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.transcript-section{margin-top:48px}.transcript-section h2{font-size:24px;font-weight:700;color:#1c1917}
+.transcript-note{font-size:14px;color:#78716c;margin-bottom:24px}.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700}.transcript-row p{margin:0}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}
+.transcript-collapsible{border:none;margin:0;padding:0}.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}.transcript-collapsible[open] summary{margin-bottom:16px}.transcript-collapsible .transcript-body{margin-top:0}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+</style>
+<style id="cap-en-style">
+.cap-bilingual{padding:14px 18px}.cap-bilingual .cap-zh{color:#57534e;font-size:14px;line-height:1.7}.cap-bilingual .cap-zh .time-badge{font-weight:700;color:#b45309;margin-right:6px}.cap-bilingual .cap-en{display:flex;align-items:flex-start;gap:10px;margin-top:8px;padding-top:8px;border-top:1px dashed #e7e5e4;color:#0f766e;font-size:14px;line-height:1.7}.cap-speak{flex:none;width:34px;height:34px;border:none;border-radius:50%;background:#0f766e;color:#fff;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}.cap-speak:hover{background:#115e59;transform:scale(1.08)}.cap-speak.playing{background:#b45309;animation:capPulse 1s infinite}@keyframes capPulse{0%,100%{opacity:1}50%{opacity:.55}}
+</style>
+</head>
+<body><main class="container">
+<header><h1>真正的AI自动调色：一键仿色，一键制作LUT</h1>
+<div class="meta-row"><span class="meta-tag tag-platform">小红书</span><span class="meta-tag tag-duration">5分29秒</span><span class="meta-tag tag-topic">达芬奇 AI调色 LUT 仿色 曝光层次 老叉的摄影教室</span></div>
+<a class="source-link" href="https://xhslink.cn/o/2kuBFtuBYg0" target="_blank" rel="noopener">→ 原视频链接</a></header>
+<nav class="toc"><h3>内容导航</h3>
+<a href="#ch1">立题：阴天浓郁先还原，别太亮</a><a href="#ch2">车身加对比、压地面天空，HDR 强化光泽</a><a href="#ch3">加绿保暖、外观冲动器与白车校正</a><a href="#ch4">曝光层次静帧 → 本地生成 LUT → 微调</a><a href="#ch5">内测说明与反馈入口</a><a href="#transcript">完整转录</a></nav>
+<article class="documentary"><div class="content-points"><h2>内容要点</h2><p>老叉先手搓阴天浓郁街景车片：还原别太亮，用遮罩给车身加对比强化光感、压地面与天空，HDR 再拉开高光光泽，再加绿保暖、电影感外观与神奇遮罩还原白车。随后演示本地 AI 工具：只留曝光层次截静帧，网页生成 LUT 拖回达芬奇广色域，色偏再前插节点微调，键输出增益回调力度。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:30]</span><div><strong>还原定调</strong><p>阴天浓郁：还原别太亮；主体是车，后续局部强化。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:30→01:33]</span><div><strong>分区+光泽</strong><p>车遮罩加对比/抬 Light；压地面与天空；HDR 降 Light/Shadow、抬 Highlight 强化车身光泽。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:33→02:51]</span><div><strong>颜色手搓</strong><p>全局加绿+并行蜘蛛网保暖；电影感外观；神奇遮罩去车身染色；柔和对比度。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:51→04:32]</span><div><strong>AI 出 LUT</strong><p>只留曝光层次→静帧上传→选广色域/Rec.709→下载 LUT 放末节点；偏暖则前插偏绿冷，键输出增益回调。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:32→05:29]</span><div><strong>内测与反馈</strong><p>线下班内测有 Bug；登录反馈；后续上传图与其他工具待完善。</p></div></div>
+<div class="takeaway-box"><strong>总结</strong><p>手搓仍按「曝光层次→分区光泽→颜色」；AI LUT 更适合在曝光层次已做好后快速试风格。色域选项要对齐色彩管理，力度用键输出增益回调，车身等需再校正的细节仍要手动节点。</p></div></div>
+<section class="story-section" id="ch1"><h2><span class="time-marker">00:00-00:30</span>立题：阴天浓郁先还原，别太亮</h2><p>朋友在群里问这组阴天车景怎么调，老叉先给了一版对方认可的结果；这几天还做了可一键生成 LUT 的小工具，后文免费分享。先讲手动思路：作者要阴天浓郁感，还原时自然不能太亮，做到大致舒适即可，步骤快速过。</p><p>还原到位后进入局部调整：主体是车——若不加对比就会发灰。</p><figure><img src="assets/ai-auto-grade-lut/shot-01.jpg" alt="阴天车景还原偏暗，定浓郁基调，主体为白车" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:22] 阴天车景还原偏暗，定浓郁基调，主体为白车</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/eefe0b104037.mp3" type="button" aria-label="Play English audio">🔊</button><span>Overcast car scene restore stays dark—rich base, white car as subject.</span></div>
+<audio class="cap-audio" src="audio/eefe0b104037.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch2"><h2><span class="time-marker">00:30-01:33</span>车身加对比、压地面天空，HDR 强化光泽</h2><p>给车画遮罩略加反差，并提高一点 Light 色轮，把车身光感拉出来。地面用渐变遮罩自下而上压暗：阴天是漫反射，反差不能太强，但受光面又不亮，容易拧巴——要找可牺牲区（如地面）当暗部，天空反差也略弱、别太亮，才符合阴雨氛围。</p><p>再开节点用 HDR：略降 Light 与 Shadow、抬 Highlight，车身光泽更强。调车几乎一定要把光泽感做出来；这样曝光结果才差不多。</p><figure><img src="assets/ai-auto-grade-lut/shot-02.jpg" alt="车身遮罩加对比抬 Light，地面渐变压暗重塑分区" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[00:55] 车身遮罩加对比抬 Light，地面渐变压暗重塑分区</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6eff78447c69.mp3" type="button" aria-label="Play English audio">🔊</button><span>Car mask adds contrast and Light; ground gradient darkens to rezone.</span></div>
+<audio class="cap-audio" src="audio/6eff78447c69.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch3"><h2><span class="time-marker">01:33-02:51</span>加绿保暖、外观冲动器与白车校正</h2><p>参考风格整体偏绿、地面偏暖；画面缺绿时在节点加绿并微调色温色调，并行节点用向量示波器（蜘蛛网）把暖色饱和拉回，使又暖又有绿。颜色略怪可再开节点单独用蜘蛛网修，不必回头硬拧前面竖直参数。</p><p>要强胶片感可叠「电影感外观」类效果（参数几乎不动）；白车会被染色，再用神奇遮罩抠车去色还原白车，最后柔和对比度略抬黑位收束。节点多，手搓偏麻烦——于是引出工具。</p><figure><img src="assets/ai-auto-grade-lut/shot-03.jpg" alt="加绿保暖与电影感外观；神奇遮罩还原白车" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[02:10] 加绿保暖与电影感外观；神奇遮罩还原白车</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/e163adbd03df.mp3" type="button" aria-label="Play English audio">🔊</button><span>Add green warmth plus film look; Magic Mask restores the white car.</span></div>
+<audio class="cap-audio" src="audio/e163adbd03df.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch4"><h2><span class="time-marker">02:51-04:32</span>曝光层次静帧 → 本地生成 LUT → 微调</h2><p>建议上传「已做好曝光层次」的画面：删掉后面颜色节点，只留层次强化结果，抓静帧导出，拖到网页「原始画面」，装好参考图后点生成 LUT。已做达芬奇广色域色彩管理就选广色域字样，否则选 Rec.709。本地计算很快；预览窗可能有 Bug，可直接下载 LUT。</p><p>把 LUT 拖进广色域节点链末尾，往往更接近参考但偏黄暖：按 Shift+S 前插节点略偏绿、略冷。力度过大可在该节点用键输出增益回调。精细手调仍更准，但试风格效率高。</p><figure><img src="assets/ai-auto-grade-lut/shot-04.jpg" alt="网页本地生成 LUT：原始层次静帧 + 参考图" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[03:20] 网页本地生成 LUT：原始层次静帧 + 参考图</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/f1cf6a9ee2e7.mp3" type="button" aria-label="Play English audio">🔊</button><span>Local web LUT: original-grade still plus a reference image.</span></div>
+<audio class="cap-audio" src="audio/f1cf6a9ee2e7.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="story-section" id="ch5"><h2><span class="time-marker">04:32-05:29</span>内测说明与反馈入口</h2><p>工具测试未完善、有 Bug，线下班做过一轮内测，多数情况可用。登录后有反馈按钮，可选相关色彩调整项报问题；后续会加上传图片等功能，左侧导航还有项目用工具待完善后再分享。</p><p>网址已打出；功能仍在优化，不好用先别骂——好用再继续分享。本期完。</p><figure><img src="assets/ai-auto-grade-lut/shot-05.jpg" alt="工具内测反馈入口与功能说明收束" loading="lazy"><figcaption class="cap-bilingual">
+<div class="cap-zh">[04:50] 工具内测反馈入口与功能说明收束</div>
+<div class="cap-en"><button class="cap-speak" data-audio="audio/6849ae4140c6.mp3" type="button" aria-label="Play English audio">🔊</button><span>Beta feedback entry and feature notes to close.</span></div>
+<audio class="cap-audio" src="audio/6849ae4140c6.mp3" preload="none"></audio>
+</figcaption></figure></section>
+<section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>完整转录（229段）</summary>
+<div class="transcript-body"><p class="transcript-note">以下文本由 Whisper medium 模型自动转录，可能存在少量识别误差，已尽可能修正。</p>
+<div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>前两天我有朋友在群里问了这个情况该怎么调</p></div>
+<div class="transcript-row"><time>00:02</time><p>他也找我了</p></div>
+<div class="transcript-row"><time>00:03</time><p>我大概调了一个结果给他看</p></div>
+<div class="transcript-row"><time>00:04</time><p>他觉得还不错</p></div>
+<div class="transcript-row"><time>00:05</time><p>然后这几天我不是没更新吗</p></div>
+<div class="transcript-row"><time>00:07</time><p>一方面是因为活太多了</p></div>
+<div class="transcript-row"><time>00:08</time><p>另一方面也是花了几天的时间</p></div>
+<div class="transcript-row"><time>00:10</time><p>融入出了一个小工具</p></div>
+<div class="transcript-row"><time>00:11</time><p>能够一键生成辣子的小工具</p></div>
+<div class="transcript-row"><time>00:14</time><p>就是这个东西</p></div>
+<div class="transcript-row"><time>00:15</time><p>这个当然也是会给大家免费分享的</p></div>
+<div class="transcript-row"><time>00:17</time><p>王子会提到视频的后面</p></div>
+<div class="transcript-row"><time>00:18</time><p>我先说一下</p></div>
+<div class="transcript-row"><time>00:19</time><p>如果想要手动调的话该怎么办</p></div>
+<div class="transcript-row"><time>00:21</time><p>作者想要阴天浓郁的感觉</p></div>
+<div class="transcript-row"><time>00:23</time><p>那我们还原的时候</p></div>
+<div class="transcript-row"><time>00:24</time><p>自然不能太亮</p></div>
+<div class="transcript-row"><time>00:25</time><p>大概给他做到这个程度就行了</p></div>
+<div class="transcript-row"><time>00:27</time><p>我们快速过一下思路</p></div>
+<div class="transcript-row"><time>00:29</time><p>步骤就不详细说了</p></div>
+<div class="transcript-row"><time>00:30</time><p>那还原好了之后</p></div>
+<div class="transcript-row"><time>00:31</time><p>我们就需要对画面进行局部调整</p></div>
+<div class="transcript-row"><time>00:33</time><p>主题也就是这个车</p></div>
+<div class="transcript-row"><time>00:34</time><p>我们可能是要稍微体谅一些</p></div>
+<div class="transcript-row"><time>00:36</time><p>因为它是车</p></div>
+<div class="transcript-row"><time>00:36</time><p>如果你不给它加对比</p></div>
+<div class="transcript-row"><time>00:37</time><p>它就会发灰</p></div>
+<div class="transcript-row"><time>00:38</time><p>就这么简单</p></div>
+<div class="transcript-row"><time>00:39</time><p>所以我给它画了一个遮罩</p></div>
+<div class="transcript-row"><time>00:41</time><p>然后给它增加了一点反差</p></div>
+<div class="transcript-row"><time>00:42</time><p>我这里是提高了点Light四轮</p></div>
+<div class="transcript-row"><time>00:44</time><p>把它车身上的光感</p></div>
+<div class="transcript-row"><time>00:46</time><p>你看这边</p></div>
+<div class="transcript-row"><time>00:46</time><p>光感给它强化点上来</p></div>
+<div class="transcript-row"><time>00:48</time><p>否则它就会发灰</p></div>
+<div class="transcript-row"><time>00:49</time><p>然后地面要压暗</p></div>
+<div class="transcript-row"><time>00:50</time><p>也就是我画了一个界面制造</p></div>
+<div class="transcript-row"><time>00:52</time><p>从下往上做了一个压暗的行为</p></div>
+<div class="transcript-row"><time>00:54</time><p>压暗的原因</p></div>
+<div class="transcript-row"><time>00:55</time><p>我前两天也和这位朋友说过</p></div>
+<div class="transcript-row"><time>00:56</time><p>他其实很纠结阴天的饮料关系</p></div>
+<div class="transcript-row"><time>00:58</time><p>该怎么做</p></div>
+<div class="transcript-row"><time>00:59</time><p>对比强对比弱</p></div>
+<div class="transcript-row"><time>01:00</time><p>你要明白的是</p></div>
+<div class="transcript-row"><time>01:01</time><p>阴天的反差不能太强</p></div>
+<div class="transcript-row"><time>01:02</time><p>因为它是慢反射</p></div>
+<div class="transcript-row"><time>01:03</time><p>但又因为这个慢反射</p></div>
+<div class="transcript-row"><time>01:05</time><p>会导致受光面不亮</p></div>
+<div class="transcript-row"><time>01:06</time><p>所以就会出现反差又强又弱</p></div>
+<div class="transcript-row"><time>01:09</time><p>这么一个拧巴的状态</p></div>
+<div class="transcript-row"><time>01:10</time><p>那这种情况</p></div>
+<div class="transcript-row"><time>01:11</time><p>其实就是我们需要找到画面中</p></div>
+<div class="transcript-row"><time>01:13</time><p>可以被牺牲的部分</p></div>
+<div class="transcript-row"><time>01:14</time><p>比如说地面</p></div>
+<div class="transcript-row"><time>01:15</time><p>让地面成为画面中暗的内容</p></div>
+<div class="transcript-row"><time>01:17</time><p>同时天空的反差</p></div>
+<div class="transcript-row"><time>01:19</time><p>也要稍微弱化一点</p></div>
+<div class="transcript-row"><time>01:20</time><p>不要让它太亮</p></div>
+<div class="transcript-row"><time>01:21</time><p>你太亮肯定是不对的</p></div>
+<div class="transcript-row"><time>01:22</time><p>不符合作者</p></div>
+<div class="transcript-row"><time>01:23</time><p>想要的这种阴雨的阴天感觉</p></div>
+<div class="transcript-row"><time>01:24</time><p>那压暗了两次</p></div>
+<div class="transcript-row"><time>01:26</time><p>稍微又提高了中间</p></div>
+<div class="transcript-row"><time>01:27</time><p>那就能够给主体做一点的强化</p></div>
+<div class="transcript-row"><time>01:29</time><p>我们看到这种效果是很关键的</p></div>
+<div class="transcript-row"><time>01:31</time><p>这样的曝光结果才差不多</p></div>
+<div class="transcript-row"><time>01:33</time><p>然后我又加了一个节点</p></div>
+<div class="transcript-row"><time>01:34</time><p>用H加色轮再一次的做了强化</p></div>
+<div class="transcript-row"><time>01:36</time><p>我这里选择是降了点Light</p></div>
+<div class="transcript-row"><time>01:38</time><p>降了点Shadow</p></div>
+<div class="transcript-row"><time>01:39</time><p>再提高了点Highlight</p></div>
+<div class="transcript-row"><time>01:40</time><p>你看到这种感觉是不是</p></div>
+<div class="transcript-row"><time>01:42</time><p>特别是这个车对吧</p></div>
+<div class="transcript-row"><time>01:43</time><p>它车上的这个光泽感就更强了</p></div>
+<div class="transcript-row"><time>01:45</time><p>只要你要调车</p></div>
+<div class="transcript-row"><time>01:46</time><p>它的光泽感是一定要做出来的</p></div>
+<div class="transcript-row"><time>01:47</time><p>接下来就是颜色</p></div>
+<div class="transcript-row"><time>01:49</time><p>那我仿的风格是这样的</p></div>
+<div class="transcript-row"><time>01:50</time><p>其实能够看到</p></div>
+<div class="transcript-row"><time>01:51</time><p>整体是明显的偏绿</p></div>
+<div class="transcript-row"><time>01:52</time><p>但是地面是暖色的</p></div>
+<div class="transcript-row"><time>01:54</time><p>而我们的画面地面有暖</p></div>
+<div class="transcript-row"><time>01:56</time><p>但是绿的不够</p></div>
+<div class="transcript-row"><time>01:57</time><p>那也就是说画面缺绿对吧</p></div>
+<div class="transcript-row"><time>01:58</time><p>我们在9号节点</p></div>
+<div class="transcript-row"><time>01:59</time><p>我给画面加了绿</p></div>
+<div class="transcript-row"><time>02:01</time><p>稍微加了点色温</p></div>
+<div class="transcript-row"><time>02:02</time><p>又减了点色调</p></div>
+<div class="transcript-row"><time>02:03</time><p>给它加一点黄绿黄绿的感觉</p></div>
+<div class="transcript-row"><time>02:05</time><p>然后再来一个并行节点</p></div>
+<div class="transcript-row"><time>02:06</time><p>把暖的给找回来</p></div>
+<div class="transcript-row"><time>02:07</time><p>我这里用的是蜘蛛网</p></div>
+<div class="transcript-row"><time>02:08</time><p>把它暖的保温度给它提上来</p></div>
+<div class="transcript-row"><time>02:10</time><p>我们看到</p></div>
+<div class="transcript-row"><time>02:10</time><p>对吧</p></div>
+<div class="transcript-row"><time>02:11</time><p>这样一做了之后</p></div>
+<div class="transcript-row"><time>02:12</time><p>画面中又暖又有绿</p></div>
+<div class="transcript-row"><time>02:14</time><p>我们来看这个并行节点的结果</p></div>
+<div class="transcript-row"><time>02:15</time><p>是不是开始有感觉了</p></div>
+<div class="transcript-row"><time>02:16</time><p>但是我觉得这个颜色</p></div>
+<div class="transcript-row"><time>02:18</time><p>稍微有一点点怪</p></div>
+<div class="transcript-row"><time>02:19</time><p>那我们完全可以再来一个节点</p></div>
+<div class="transcript-row"><time>02:20</time><p>用蜘蛛网单独给它调一下颜色</p></div>
+<div class="transcript-row"><time>02:22</time><p>你如果在前面再去调这个竖直的话</p></div>
+<div class="transcript-row"><time>02:24</time><p>我觉得会有点抽象</p></div>
+<div class="transcript-row"><time>02:25</time><p>还不如再来一个节点去给它调</p></div>
+<div class="transcript-row"><time>02:27</time><p>那作者想要的效果</p></div>
+<div class="transcript-row"><time>02:28</time><p>是很强的胶片感</p></div>
+<div class="transcript-row"><time>02:29</time><p>那我们图省事</p></div>
+<div class="transcript-row"><time>02:30</time><p>可以直接给画面</p></div>
+<div class="transcript-row"><time>02:31</time><p>加一个电影感外观冲动器</p></div>
+<div class="transcript-row"><time>02:33</time><p>你可以看一下我这个参数</p></div>
+<div class="transcript-row"><time>02:34</time><p>基本没怎么动</p></div>
+<div class="transcript-row"><time>02:34</time><p>这个感觉是不是又强化了一点对吧</p></div>
+<div class="transcript-row"><time>02:36</time><p>但这样做</p></div>
+<div class="transcript-row"><time>02:37</time><p>会让车身的颜色发生改变</p></div>
+<div class="transcript-row"><time>02:39</time><p>它是白车</p></div>
+<div class="transcript-row"><time>02:40</time><p>所以我后面又跟了一个节点</p></div>
+<div class="transcript-row"><time>02:42</time><p>用神奇遮罩卷出了这个车</p></div>
+<div class="transcript-row"><time>02:44</time><p>给它去了颜色</p></div>
+<div class="transcript-row"><time>02:44</time><p>让它变成白车</p></div>
+<div class="transcript-row"><time>02:46</time><p>最后再给它来一个柔和对比度</p></div>
+<div class="transcript-row"><time>02:48</time><p>给它稍微提高点黑位</p></div>
+<div class="transcript-row"><time>02:49</time><p>让它这个APP能够发挥</p></div>
+<div class="transcript-row"><time>02:50</time><p>那这样一做就差不多了</p></div>
+<div class="transcript-row"><time>02:51</time><p>对于这个结果来讲</p></div>
+<div class="transcript-row"><time>02:53</time><p>我们要加这么多的节点</p></div>
+<div class="transcript-row"><time>02:54</time><p>我觉得还是比较麻烦的</p></div>
+<div class="transcript-row"><time>02:56</time><p>那如果说我们利用</p></div>
+<div class="transcript-row"><time>02:57</time><p>刚刚那个工具会怎么样呢</p></div>
+<div class="transcript-row"><time>02:59</time><p>我们可以试一下</p></div>
+<div class="transcript-row"><time>03:00</time><p>要用这个工具</p></div>
+<div class="transcript-row"><time>03:01</time><p>我建议大家在原始画面中</p></div>
+<div class="transcript-row"><time>03:03</time><p>上传已经做好曝光层次的画面</p></div>
+<div class="transcript-row"><time>03:05</time><p>比如说我们这个画面</p></div>
+<div class="transcript-row"><time>03:06</time><p>可以把它后面这些节点都给它删了</p></div>
+<div class="transcript-row"><time>03:08</time><p>只留曝光层次强化的这个结果</p></div>
+<div class="transcript-row"><time>03:10</time><p>然后给它抓取一个竞争</p></div>
+<div class="transcript-row"><time>03:12</time><p>再把竞争给它导出</p></div>
+<div class="transcript-row"><time>03:14</time><p>导出了之后在这个网页中</p></div>
+<div class="transcript-row"><time>03:15</time><p>把这个竞争给它拖到原始画面中</p></div>
+<div class="transcript-row"><time>03:18</time><p>然后再在这个参考画面</p></div>
+<div class="transcript-row"><time>03:20</time><p>装好了图之后</p></div>
+<div class="transcript-row"><time>03:21</time><p>我们可以点击生成LAD</p></div>
+<div class="transcript-row"><time>03:22</time><p>这里有个地方要选择</p></div>
+<div class="transcript-row"><time>03:23</time><p>你如果是做好了</p></div>
+<div class="transcript-row"><time>03:24</time><p>达芬基广色域的色彩管理</p></div>
+<div class="transcript-row"><time>03:26</time><p>记得选择达芬基广色域这个字样</p></div>
+<div class="transcript-row"><time>03:28</time><p>如果你没有做色彩管理</p></div>
+<div class="transcript-row"><time>03:29</time><p>或者是在默认的色彩管理下的话</p></div>
+<div class="transcript-row"><time>03:30</time><p>你要选择REG709</p></div>
+<div class="transcript-row"><time>03:31</time><p>那我们已经做了色彩管理了</p></div>
+<div class="transcript-row"><time>03:33</time><p>我们就可以点击生成LAD</p></div>
+<div class="transcript-row"><time>03:34</time><p>生成LAD之后</p></div>
+<div class="transcript-row"><time>03:35</time><p>不用等待很长时间</p></div>
+<div class="transcript-row"><time>03:36</time><p>非常非常快</p></div>
+<div class="transcript-row"><time>03:37</time><p>因为它是本地计算的嘛</p></div>
+<div class="transcript-row"><time>03:38</time><p>它就能够出现一个</p></div>
+<div class="transcript-row"><time>03:39</time><p>能够让你看到预览的一个小窗口</p></div>
+<div class="transcript-row"><time>03:42</time><p>但这个预览画面</p></div>
+<div class="transcript-row"><time>03:43</time><p>目前还是有点BUG</p></div>
+<div class="transcript-row"><time>03:44</time><p>它显示出来的结果不是很正确</p></div>
+<div class="transcript-row"><time>03:45</time><p>先不管它</p></div>
+<div class="transcript-row"><time>03:46</time><p>后面会再优化</p></div>
+<div class="transcript-row"><time>03:47</time><p>我们直接点击下方的下载LAD</p></div>
+<div class="transcript-row"><time>03:49</time><p>下载完了LAD之后呢</p></div>
+<div class="transcript-row"><time>03:50</time><p>把它拖到你的达芬基广色域中</p></div>
+<div class="transcript-row"><time>03:51</time><p>那此时因为我已经拖好了</p></div>
+<div class="transcript-row"><time>03:53</time><p>我就不演示了</p></div>
+<div class="transcript-row"><time>03:54</time><p>我们可以在后面建立一个节点</p></div>
+<div class="transcript-row"><time>03:56</time><p>给它拉到最后</p></div>
+<div class="transcript-row"><time>03:57</time><p>把这个刚刚生成好的LAD</p></div>
+<div class="transcript-row"><time>03:58</time><p>给它放到最后这个节点中</p></div>
+<div class="transcript-row"><time>04:00</time><p>一套</p></div>
+<div class="transcript-row"><time>04:01</time><p>哎 你看这个感觉是不是又更好</p></div>
+<div class="transcript-row"><time>04:03</time><p>但是比起我们的参考图</p></div>
+<div class="transcript-row"><time>04:04</time><p>它会更加的黄</p></div>
+<div class="transcript-row"><time>04:05</time><p>更加的暖</p></div>
+<div class="transcript-row"><time>04:05</time><p>所以我们按着Shift加S</p></div>
+<div class="transcript-row"><time>04:07</time><p>往前建立一个节点</p></div>
+<div class="transcript-row"><time>04:08</time><p>在前面这个节点中</p></div>
+<div class="transcript-row"><time>04:09</time><p>稍微给它往绿的方向走一点点</p></div>
+<div class="transcript-row"><time>04:12</time><p>也可以给它稍微冷一点点</p></div>
+<div class="transcript-row"><time>04:13</time><p>好 大概这样一做</p></div>
+<div class="transcript-row"><time>04:15</time><p>那当然车身的颜色要给它再还原</p></div>
+<div class="transcript-row"><time>04:16</time><p>我们就不做了</p></div>
+<div class="transcript-row"><time>04:17</time><p>我们看到这样的结果是不是</p></div>
+<div class="transcript-row"><time>04:19</time><p>也能够给它带来一个非常强的风格</p></div>
+<div class="transcript-row"><time>04:21</time><p>你如果觉得这个LAD力度太大的话</p></div>
+<div class="transcript-row"><time>04:23</time><p>你可以在10号节点</p></div>
+<div class="transcript-row"><time>04:24</time><p>通过键输出的增益</p></div>
+<div class="transcript-row"><time>04:26</time><p>降低它的数值来回调一下</p></div>
+<div class="transcript-row"><time>04:28</time><p>你看 回调到这个结果</p></div>
+<div class="transcript-row"><time>04:29</time><p>是不是也挺好的</p></div>
+<div class="transcript-row"><time>04:30</time><p>那这样我们也能够给画面</p></div>
+<div class="transcript-row"><time>04:32</time><p>快速的带来一种风格</p></div>
+<div class="transcript-row"><time>04:33</time><p>肯定它没有我们精细调整那么好</p></div>
+<div class="transcript-row"><time>04:35</time><p>但是如果你想要快速</p></div>
+<div class="transcript-row"><time>04:36</time><p>去感受某种风格</p></div>
+<div class="transcript-row"><time>04:38</time><p>适不适合自己的画面</p></div>
+<div class="transcript-row"><time>04:40</time><p>其实用这个方法效率还挺高的</p></div>
+<div class="transcript-row"><time>04:41</time><p>那目前测试没有特别的完善</p></div>
+<div class="transcript-row"><time>04:44</time><p>还是有不少Bug</p></div>
+<div class="transcript-row"><time>04:45</time><p>但是我也在我们6月底的这一次</p></div>
+<div class="transcript-row"><time>04:47</time><p>线下班展开了一轮内测</p></div>
+<div class="transcript-row"><time>04:49</time><p>大部分情况下还是不错的</p></div>
+<div class="transcript-row"><time>04:50</time><p>大家也可以来玩一玩</p></div>
+<div class="transcript-row"><time>04:51</time><p>那画面右上角会有个登录</p></div>
+<div class="transcript-row"><time>04:53</time><p>你登录了之后会有个反馈按钮</p></div>
+<div class="transcript-row"><time>04:55</time><p>大家如果遇到了啥问题</p></div>
+<div class="transcript-row"><time>04:57</time><p>你可以在这个地方选择AEI色彩调整</p></div>
+<div class="transcript-row"><time>04:59</time><p>去告诉我</p></div>
+<div class="transcript-row"><time>05:00</time><p>你如果遇到问题都可以跟我说</p></div>
+<div class="transcript-row"><time>05:01</time><p>后面我还会再加一个</p></div>
+<div class="transcript-row"><time>05:03</time><p>上传图片的一个功能</p></div>
+<div class="transcript-row"><time>05:04</time><p>除此之外左侧导航栏</p></div>
+<div class="transcript-row"><time>05:06</time><p>我们也能看到还有些别的功能</p></div>
+<div class="transcript-row"><time>05:08</time><p>这都是我们自己在项目执行中</p></div>
+<div class="transcript-row"><time>05:10</time><p>需要用到的一些功能</p></div>
+<div class="transcript-row"><time>05:11</time><p>等晚上好了之后再会给大家做分享</p></div>
+<div class="transcript-row"><time>05:13</time><p>这都是能去给我们去确认</p></div>
+<div class="transcript-row"><time>05:15</time><p>你的场景定位空间关系</p></div>
+<div class="transcript-row"><time>05:17</time><p>来给我们做AI项目用的</p></div>
+<div class="transcript-row"><time>05:19</time><p>网址我也打出来给大家</p></div>
+<div class="transcript-row"><time>05:20</time><p>一切的功能都还在优化</p></div>
+<div class="transcript-row"><time>05:21</time><p>所以不好用或者用不了也别骂我</p></div>
+<div class="transcript-row"><time>05:23</time><p>如果好的话我会给大家再分享</p></div>
+<div class="transcript-row"><time>05:25</time><p>好了这期就到这里</p></div>
+<div class="transcript-row"><time>05:26</time><p>886</p></div>
+</div></div></details></section>
+</article>
+</main>
+<script id="cap-en-script">
+(function(){
+  function stopOthers(except){
+    document.querySelectorAll('.cap-audio').forEach(function(a){
+      if(a!==except){a.pause();a.currentTime=0;}
+    });
+    document.querySelectorAll('.cap-speak.playing').forEach(function(b){
+      if(!except||b.dataset.audio!==except.dataset.audio){b.classList.remove('playing');}
+    });
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.cap-speak');
+    if(!btn)return;
+    var cap=btn.closest('.cap-bilingual');
+    if(!cap)return;
+    var au=cap.querySelector('.cap-audio');
+    if(!au)return;
+    if(au.paused){
+      stopOthers(au);
+      btn.classList.add('playing');
+      au.play();
+    }else{
+      au.pause();au.currentTime=0;btn.classList.remove('playing');
+    }
+  });
+  ['pause','ended'].forEach(function(ev){
+    document.addEventListener(ev,function(e){
+      if(e.target.classList&&e.target.classList.contains('cap-audio')){
+        var cap=e.target.closest('.cap-bilingual');
+        if(cap){var b=cap.querySelector('.cap-speak');if(b)b.classList.remove('playing');}
+      }
+    },true);
+  });
+})();
+</script>
+</body></html>

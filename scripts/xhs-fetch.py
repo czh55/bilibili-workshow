@@ -43,13 +43,14 @@ def main() -> None:
     prefix = Path(prefix_str)
 
     if not no_rate_limit:
-        subprocess.run(["node", str(RATE_LIMIT)], check=True)
+        subprocess.run(["node", str(RATE_LIMIT)], check=True, stdin=subprocess.DEVNULL)
 
     # 1. 展开短链（跟随跳转直接拿页面，一次请求）
     out = subprocess.run(
         ["curl", "-s", "-L", "-A", UA, "-H", "Referer: https://www.xiaohongshu.com/",
          "-w", "\n__FINAL_URL__%{url_effective}",
-         short_url], capture_output=True, timeout=90)
+         short_url], capture_output=True, timeout=90,
+        stdin=subprocess.DEVNULL)
     body = out.stdout.decode("utf-8", errors="replace")
     if "__FINAL_URL__" in body:
         html, _, tail = body.rpartition("__FINAL_URL__")
@@ -110,7 +111,8 @@ def main() -> None:
     src = prefix.with_name(prefix.name + ".source.mp4")
     dl = subprocess.run(
         ["curl", "-s", "-A", UA, "-H", "Referer: https://www.xiaohongshu.com/",
-         "-o", str(src), master_url], capture_output=True, timeout=300)
+         "-o", str(src), master_url], capture_output=True, timeout=300,
+        stdin=subprocess.DEVNULL)
     if dl.returncode != 0 or not src.exists() or src.stat().st_size < 1000:
         raise SystemExit(f"视频下载失败 rc={dl.returncode}")
     print(f"视频: {src.name} {src.stat().st_size/1e6:.1f} MB")
@@ -120,6 +122,7 @@ def main() -> None:
     if not no_audio:
         subprocess.run(["ffmpeg", "-y", "-i", str(src), "-vn", "-acodec", "aac",
                         "-b:a", "128k", str(m4a)], check=True,
+                       stdin=subprocess.DEVNULL,
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"音频: {m4a.name} 完成")
 
