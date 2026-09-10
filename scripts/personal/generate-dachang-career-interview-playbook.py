@@ -1,0 +1,340 @@
+#!/usr/bin/env python3
+"""从 Downloads 聊天截图整理：大厂应届选岗 + 阿里/小米多轮面试专题。"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent.parent
+DOCS = ROOT / "docs"
+ASSETS = "assets/dachang-career-interview-playbook"
+SLUG = "dachang-career-interview-playbook"
+
+CSS = r"""*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}
+header{margin-bottom:40px}
+header h1{font-size:32px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.meta-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.tag-platform{background:#d97706;color:#fff}
+.tag-duration{background:#f1f5f9;color:#64748b}
+.tag-topic{background:#dbeafe;color:#1e40af}
+.source-note{color:#78716c;font-size:14px;margin:0 0 8px}
+.toc{background:#fff;border-radius:16px;padding:20px 24px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.toc h3{font-size:16px;color:#1e40af;margin:0 0 12px}
+.toc a{display:block;color:#475569;font-size:14px;text-decoration:none;padding:4px 0;border-bottom:1px solid #f1f5f9}
+.toc a:hover{color:#3b82f6}
+.documentary{font-size:17px}
+.story-section{margin:48px 0}
+.story-section h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.story-section h3{font-size:18px;font-weight:700;color:#1c1917;margin:22px 0 10px}
+.story-section p{margin:0 0 14px;color:#44403c}
+.story-section ul,.story-section ol{margin:0 0 14px;padding-left:22px;color:#44403c}
+.story-section li{margin:0 0 8px}
+.time-marker{display:inline-block;padding:2px 8px;background:#fef3c7;border-radius:6px;font-size:13px;font-weight:700;color:#b45309;margin-right:6px}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#1e40af;margin:0;font-size:15px}
+.content-points h2{font-size:24px;font-weight:700;color:#1c1917;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.content-points h3{font-size:20px;font-weight:700;color:#1c1917;margin:22px 0 14px}
+.callout{background:#fff;border-radius:14px;padding:18px 20px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.04);border-left:4px solid #3b82f6}
+.callout.warn{border-left-color:#f59e0b;background:#fffbeb}
+.callout.fail{border-left-color:#ef4444;background:#fef2f2}
+.callout h3{margin:0 0 8px;font-size:16px;color:#1e40af}
+.callout.warn h3{color:#92400e}
+.callout.fail h3{color:#991b1b}
+.callout p,.callout li{font-size:15px;color:#57534e;margin:0 0 8px}
+.callout ul{margin:0;padding-left:20px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+th{background:#f1f5f9;padding:12px 14px;text-align:left;font-weight:700;color:#1e40af;border-bottom:2px solid #cbd5e1}
+td{padding:12px 14px;border-bottom:1px solid #e2e8f0;color:#44403c;vertical-align:top}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+img{display:block;max-width:100%;height:auto}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px}
+.q{background:#f8fafc;border-radius:10px;padding:12px 14px;margin:10px 0;font-size:15px;color:#334155;border-left:4px solid #94a3b8}
+@media(max-width:640px){.container{padding:28px 18px 56px}header h1{font-size:24px}}"""
+
+
+def fig(name: str, cap: str) -> str:
+    return (
+        f'<figure><img src="{ASSETS}/{name}" alt="{cap}" loading="lazy">'
+        f"<figcaption>{cap}</figcaption></figure>"
+    )
+
+
+def main() -> None:
+    html = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="专题整理：应届生大厂选岗八条、阿里四轮面试与小米四轮面试打法，含挂点、准备清单与反问问法。素材来自小红书聊天截图全文。">
+<title>大厂应届选岗与面试打法：阿里 / 小米对照｜专题</title>
+<style>{CSS}</style>
+</head>
+<body>
+<main class="container">
+<header>
+  <h1>大厂应届选岗与面试打法：阿里 / 小米对照</h1>
+  <div class="meta-row">
+    <span class="meta-tag tag-platform">个人专栏</span>
+    <span class="meta-tag tag-duration">截图专题整理</span>
+    <span class="meta-tag tag-topic">校招 大厂 阿里 小米 面试 选岗</span>
+  </div>
+  <p class="source-note">来源：小红书笔记聊天截图 13 张（账号水印 ID 4335833863），拍摄于 2026-09-10。本文按主题重组，不删减原意；公司战略与文化表述以截图原文为准，求职时请再核对官网与最新 JD。</p>
+</header>
+
+<nav class="toc">
+  <h3>内容导航</h3>
+  <a href="#overview">专题结构与怎么用</a>
+  <a href="#career">一、应届生大厂选岗：八条完整建议</a>
+  <a href="#ali">二、阿里面试：四面各打什么</a>
+  <a href="#xiaomi">三、小米面试：四面各打什么</a>
+  <a href="#questions">四、通用反问与收束</a>
+  <a href="#sources">五、原始截图附录</a>
+</nav>
+
+<article class="documentary">
+<div class="content-points" id="overview">
+  <h2>内容要点</h2>
+  <p>这组截图其实是三条线拧在一起：<strong>应届生怎么选大厂岗位</strong>、<strong>阿里多轮面试每一面考什么</strong>、<strong>小米多轮面试每一面考什么</strong>。共同点是：大厂面试几乎都是 3～4 轮，每轮面试官立场不同，一套话术打天下很容易挂；选岗则强调「性格特质适配」高于「岗位虚名」。</p>
+  <h3>知识结构</h3>
+  <div class="summary-row"><span class="time-marker">选岗</span><div><strong>八条决策框架</strong><p>认清三类人 → 警惕高大上岗名 → 研发算法要长期深耕 → 勿轻视运营市场 → 产品数据项目是稳健赛道 → 实习是底牌 → 高匹配赛道 → 简历写法；收束句：没有绝对好坏，只有适配。</p></div></div>
+  <div class="summary-row"><span class="time-marker">阿里</span><div><strong>四面递进</strong><p>一面验货（骨干深挖项目）→ 二面 Owner 与业务规划（主管）→ 三面格局与价值观（跨业务/总监）→ 四面 HRG「闻味道」；附两道高杠杆反问。</p></div></div>
+  <div class="summary-row"><span class="time-marker">小米</span><div><strong>同构但文化不同</strong><p>一面同样扣细节验真；二面看业务思维与潜力；三面格局与「人车家」战略共鸣；四面 HR 找同道中人，强调发烧友精神与厚道；反问多一道「和用户交朋友」怎么落地。</p></div></div>
+  <div class="takeaway-box"><strong>总结</strong><p>先用性格与抗压匹配赛道，再用「每轮换剧本」打面试：一面证明你做过，二面证明你会想，三面证明你站得高，四面证明你是同路人。反问用来确认紧急需求与卓越标准，不要在匹配面谈薪假。</p></div>
+</div>
+
+<section class="story-section" id="career">
+  <h2><span class="time-marker">专题一</span>应届生大厂选岗：八条完整建议</h2>
+
+  <h3>1. 先认清自己是哪一类应届生</h3>
+  <p>适配互联网大厂的应届生大致分三类：</p>
+  <ul>
+    <li><strong>技术钻研型</strong>：喜欢敲代码、深耕技术、钻研项目。</li>
+    <li><strong>逻辑统筹型</strong>：擅长梳理流程、拆解需求、统筹对接。</li>
+    <li><strong>外向落地型</strong>：擅长沟通对接、落地执行、拓展资源。</li>
+  </ul>
+  <p>不同特质，岗位适配度天差地别。擅长编程、耐得住打磨、热爱技术深耕 → 研发、算法、测试岗很适配。逻辑清晰、擅长拆解业务、统筹协作 → 产品、项目管理岗更合适。性格外向、执行力强、擅长对接沟通 → 各类运营、市场、商务岗能让你快速出彩。</p>
+  <div class="callout warn"><h3>关键判断</h3><p>别被专业固化思维束缚：性格特质和岗位匹配度，远比专业对口更重要。</p></div>
+
+  <h3>2. 别盲目追高大上的岗位名头</h3>
+  <p>很多应届生跟风追捧「算法工程师、策略产品、数据分析师」这类高端岗位，看似含金量高，实则门槛极高、成长周期长、前期变现慢。</p>
+  <p>应届生入职策略、算法岗，前一两年基本以打杂、跑数据、复盘基础业务为主，很难独立负责项目，成就感极低。反而被很多人低估的<strong>内容运营、用户运营、电商运营、商务渠道岗</strong>，入门友好、落地性强，成长速度快，薪资弹性大，短短三五年就能积累核心业务能力、实现薪资跃升。</p>
+  <p>所以选岗要看自身基础、抗压能力和长期规划，切勿只看岗位虚名。</p>
+
+  <h3>3. 研发算法岗虽香，但要做好长期深耕的准备</h3>
+  <p>研发、算法是互联网大厂的核心高薪岗位，但学历和能力门槛逐年提升。普通本科应届生入职大厂研发岗，大多只能负责基础迭代、代码维护、测试补位等基础工作，很难接触核心项目。</p>
+  <ul>
+    <li>如果未来有读研、读博深耕技术的规划，可坚定技术赛道。</li>
+    <li>如果没有深造计划，本科技术岗在大厂晋升速度极慢，极易遇到职业瓶颈。</li>
+  </ul>
+  <div class="callout fail"><h3>谁适合 / 谁不适合</h3><p>这类岗位只适合热爱钻研、耐得住寂寞、能接受长期打磨的人，不适合急于求成、想快速出成果的应届生。</p></div>
+
+  <h3>4. 运营市场岗千万别轻视</h3>
+  <p>很多应届生觉得运营、市场岗门槛低、技术含量不足，盲目嫌弃。如今大厂运营早已不是简单的发帖、控评、做活动，而是围绕<strong>用户增长、GMV 提升、品牌推广</strong>的核心业务岗，直接关联公司营收。</p>
+  <p>字节、美团、拼多多等头部大厂的运营体系、新人培养机制非常成熟，能快速锻炼业务思维、统筹能力和落地能力，积累经验后跳槽选择多、适配岗位广。只要你执行力强、逻辑清晰、抗压性好，这类岗位是应届生快速立足大厂的优质选择。</p>
+
+  <h3>5. 产品、数据、项目岗：细水长流的稳健赛道</h3>
+  <p>这类岗位适配追求稳定发展、注重职场沉淀的应届生，工作节奏相对规律、业务技术性强、通用性高。</p>
+  <ul>
+    <li><strong>产品岗</strong>：完整掌握从需求调研、方案设计到落地迭代的全流程，是互联网行业通用性极强的核心能力。</li>
+    <li><strong>数据岗、项目岗</strong>：积累系统化的业务思维和统筹能力；深耕三五年后，薪资涨幅和职业发展空间都十分可观。</li>
+  </ul>
+  <p>但要注意：这类岗位需要极致细心、持续复盘沉淀，要做好长期深耕、稳步积累的心理准备。</p>
+
+  <h3>6. 大厂实习是求职核心底牌</h3>
+  <p>千万别等到秋招才临时了解岗位、投递简历。互联网大厂校招极度看重实习经历。越早实习，越能直观区分技术、产品、运营、市场岗的真实工作内容，找准自身适配方向。</p>
+  <p>哪怕暑期短实习，也能摸清大厂节奏与商业模式，识别岗位差异，积累项目经历，弥补校园经历不足。</p>
+
+  <h3>7. 三类高匹配、高红利赛道（截图原文）</h3>
+  <ol>
+    <li><strong>AI 应用与大数据</strong>：大模型落地、数据开发、AI 产品等；需求旺盛、人才缺口大。不只顶尖算法才能进，普通应届生也能找到合适入口。</li>
+    <li><strong>网络安全与信创</strong>：政策托底，需求稳、岗位稳、薪资有溢价，年龄焦虑相对弱于部分互联网赛道。</li>
+    <li><strong>AI 加持的运营</strong>：内容 / 用户 / 电商运营结合 AI 工具；全行业招人、门槛相对友好、跳槽面宽，是非技术背景同学的优质赛道之一。</li>
+  </ol>
+
+  <h3>8. 简历写法：按 JD 定制，不要一份通投</h3>
+  <ul>
+    <li>别写成流水账履历，按 JD 关键词贯穿全文。</li>
+    <li>经历突出项目结果与数据，用「行动 + 行为 + 结果」句式替代空话（接近 STAR）。</li>
+    <li>零基础也要从课程设计、校园项目、短实习里挖，并尽量对齐目标岗位业务。</li>
+    <li>删冗余：无关社团、通识经历可砍；一页为佳。</li>
+    <li><strong>分赛道定制</strong>：技术岗突出代码与落地项目；产品 / 运营岗突出复盘、增长指标与执行结果。<strong>严禁一份简历通投所有岗位。</strong></li>
+  </ul>
+
+  <div class="callout"><h3>选岗收束原句</h3><p>互联网岗位没有绝对的好坏，只有适配与否。求职择业不用盲从身边人的选择，也别轻信某岗位最有前景的片面言论。大厂每个主流岗位都能走出高薪精英，核心在于能不能沉下心深耕三五年，把单一方向做到极致。</p></div>
+</section>
+
+<section class="story-section" id="ali">
+  <h2><span class="time-marker">专题二</span>阿里面试：四面各打什么</h2>
+  <p>大厂面试通常多轮（一面、二面、终面）。阿里常见四轮。每一面的面试官角色与考察重点完全不同，不能用同一套话术硬套。</p>
+
+  <h3>一面：技术骨干「验货」</h3>
+  <p>面试官通常是你将加入团队的资深技术骨干。核心目标是<strong>验货</strong>——核对简历上的技术经历是否真实。</p>
+  <p>风格是对项目细节反复深挖：遇技术难点时怎么想、方案怎么比、为何最终这么选。常见挂点：一问细节就含糊（「经不起追问」）；方案太常规，没有个人亮点。</p>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>用 STAR 吃透核心项目：数据、痛点、个人贡献必须清楚。</li>
+    <li>了解目标业务线（电商 / 云 / 本地生活等），想清楚技术经验如何迁移。</li>
+    <li>准备「快速解决问题」的工程案例——阿里很看重实战落地与现场解题能力。</li>
+  </ol></div>
+
+  <h3>二面：未来直属主管——从「会不会做」到「为什么这么做」</h3>
+  <p>面试官多半是未来直属 leader。仍看技术底子，但更重<strong>业务思维与技术规划</strong>：系统如何迭代、资源紧时如何取舍、跨团队如何协作。</p>
+  <div class="callout fail"><h3>常见挂点</h3><p>思路停在「被动执行」；缺少主动思考与 Owner 意识。</p></div>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>对本领域有基本认知（如中间件稳定性治理、面向业务的增长逻辑等）。</li>
+    <li>准备一个「从发现问题到推动落地」的完整案例。</li>
+    <li>表达对阿里业务与用户的真实理解与兴趣。</li>
+  </ol></div>
+
+  <h3>三面：跨业务负责人 / 总监——格局与文化匹配</h3>
+  <p>面试官常为跨业务线负责人或总监。考察技术视野、软素质、价值观匹配。问题更宏观：行业趋势判断、复杂架构权衡、多团队协作冲突怎么处理。</p>
+  <div class="callout fail"><h3>常见挂点</h3><p>往往不是技术不行，而是格局不够、自我中心，或对「客户第一」「团队合作」等价值观理解浮浅。</p></div>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>了解阿里战略方向（如全球化、云计算、AI 驱动），形成自己的看法。</li>
+    <li>准备跨团队沟通、争取资源、达成共赢的案例。</li>
+    <li>真诚展现务实、皮实、敢担责。</li>
+  </ol></div>
+
+  <h3>四面：HRG（政委）——终极「闻味道」</h3>
+  <p>第四轮是 HRG，被描述为终极<strong>闻味道</strong>：看你的「气味」是否与阿里文化合拍。HR 会系统梳理职业轨迹、动机与长期规划，并深挖性格与价值观底子。</p>
+  <div class="callout fail"><h3>三挂点</h3>
+  <ol>
+    <li>不稳定：履历跳跃、叙事断裂。</li>
+    <li>不真实：答案过于套路。</li>
+    <li>不匹配：价值观根本拧巴。</li>
+  </ol></div>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>理顺职业叙事：每次跳槽都有正向、合理的解释。</li>
+    <li>真心理解并认同公司文化，回答才会自然有感染力。</li>
+    <li>准备有洞察力的反问，例如：「这个岗位当前最大的挑战是什么？」「公司对技术人员的长期期待是什么？」</li>
+  </ol></div>
+</section>
+
+<section class="story-section" id="xiaomi">
+  <h2><span class="time-marker">专题三</span>小米面试：四面各打什么</h2>
+  <p>像小米这类业务线很长的大厂，面试通常也很严，常见 3～4 轮。每一面面试官立场不同，一套稿打四轮很容易挂。</p>
+
+  <h3>一面：核心同事——深挖业务 / 技术细节</h3>
+  <p>一面通常是核心团队成员或直接同事，目标是<strong>扣细节验真</strong>：把简历项目拆碎，追问场景思考、解题方法、具体方法论。</p>
+  <div class="callout fail"><h3>常见挂点</h3><p>经历经不起追问、细节含糊，或方法太常规、拉不开差异。</p></div>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>用 STAR 复盘 1～2 个核心项目：数据、困难、个人贡献要清楚。</li>
+    <li>研究小米产品线（手机、生态链、汽车等），想清楚经验如何落到这些业务。</li>
+    <li>准备若干「动手解决小问题」的案例——小米看重工程落地与务实精神。</li>
+  </ol></div>
+
+  <h3>二面：部门主管 / 项目负责人——业务思维与潜力</h3>
+  <p>二面通常是部门主管或项目负责人（未来直属 leader）。除业务基本功外，更看业务思维与潜力：跳出单个任务，看你如何理解功能模块迭代、如何取舍、如何协调资源；也在判断你进团队后能不能快速上手、带新想法。</p>
+  <div class="callout fail"><h3>常见挂点</h3><p>思路停在执行层，缺产品感与 Ownership（主人翁意识）。</p></div>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>对本领域有基本认知：硬件要懂供应链与品控关键点；软件要懂用户体验与数据驱动逻辑。</li>
+    <li>梳理一个从发现问题到推动落地的全过程案例。</li>
+    <li>表达对业务及其用户群体的真实理解与兴趣；也可借助求职辅导系统练习，形成自己的思路框架。</li>
+  </ol></div>
+
+  <h3>三面：交叉面 / 总监面——格局、软素质与价值观</h3>
+  <p>可能是其他业务线负责人交叉面，或总监面。站位更高：格局、软素质、价值观是否匹配。问题偏宏观（行业趋势、假设性战略题），也爱问多方协作的复杂情况你怎么处理。</p>
+  <div class="callout fail"><h3>常见挂点</h3><p>通常不是技术不行，而是思维偏狭、协作过于自我，或价值观不符（例如对「极致性价比」理解有偏差）。</p></div>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>了解小米发展史与近期战略（如「人车家全生态」），形成朴素但自己的看法。</li>
+    <li>准备跨团队沟通、争取资源、达成共赢的案例。</li>
+    <li>回答真诚，展现务实、有韧性、愿意拥抱变化——这很「小米」。</li>
+  </ol></div>
+
+  <h3>四面：HR 面——终极匹配度，找「同道中人」</h3>
+  <p>HR 系统核对职业轨迹、离职动机、长期规划，以及性格与价值观底子。小米文化鲜明，HR 在找同道中人。</p>
+  <div class="callout fail"><h3>核心挂因</h3><p>不稳定、不真实、不匹配。例如：规划混乱；每次离职都归咎外部；对「发烧友精神」「厚道」无共鸣；背调出现出入。</p></div>
+  <div class="callout"><h3>准备三件事</h3>
+  <ol>
+    <li>熨平职业叙事，段与段之间逻辑正向。</li>
+    <li>真诚理解并认同小米文化，回答才自然。</li>
+    <li>准备有深度的反问，如团队当前最大挑战、公司对该岗位的长期期待等。</li>
+  </ol></div>
+</section>
+
+<section class="story-section" id="questions">
+  <h2><span class="time-marker">专题四</span>通用反问与收束</h2>
+  <p>提问环节是关键机会。截图建议这几道就够，不要问太多；匹配面<strong>不要问薪资和假期</strong>。</p>
+
+  <div class="q"><strong>反问 1（紧急需求）</strong><br>如果我有幸加入，入职前 3～6 个月，您最希望我优先在哪个方面为团队创造价值？</div>
+  <div class="q"><strong>反问 2（卓越标准）</strong><br>在您看来，这个岗位上「做得好」和「做得特别出色」的同事，主要差别在哪里？</div>
+  <div class="q"><strong>反问 3（小米文化落地，截图特有）</strong><br>小米倡导「和用户交朋友」，在咱们日常工作流里具体怎么体现？</div>
+
+  <h3>阿里 vs 小米：对照表</h3>
+  <table>
+    <thead><tr><th>轮次</th><th>阿里侧重点</th><th>小米侧重点</th></tr></thead>
+    <tbody>
+      <tr><td>一面</td><td>骨干验货；工程落地与快速解题</td><td>同事扣细节；务实与动手解决小问题</td></tr>
+      <tr><td>二面</td><td>Owner、业务规划、跨团队</td><td>业务思维、潜力、产品感</td></tr>
+      <tr><td>三面</td><td>格局；客户第一 / 团队合作</td><td>格局；人车家战略；极致性价比理解</td></tr>
+      <tr><td>四面</td><td>HRG 闻味道</td><td>HR 找同道；发烧友精神 / 厚道</td></tr>
+    </tbody>
+  </table>
+
+  <div class="takeaway-box"><strong>整篇行动清单</strong>
+    <p>① 用三类人格对照自己，写下「适配岗位 / 不碰岗位」各 3 个；② 每条目标岗准备 1 份定制简历；③ 核心项目按 STAR 写到能扛三层追问；④ 阿里线补业务迁移与 Owner 案例，小米线补产品线映射与人车家看法；⑤ 背熟两道通用反问，小米再加一道文化落地题；⑥ 尽早拿实习验证赛道，而不是秋招才第一次了解岗位。</p>
+  </div>
+</section>
+
+<section class="story-section" id="sources">
+  <h2><span class="time-marker">附录</span>原始截图（13 张全文依据）</h2>
+  <p>以下按文件名顺序附录，便于对照原文。正文已覆盖全部文字内容；图中为聊天气泡原貌。</p>
+  {"".join(
+      fig(f"IMG_{n}.JPG", f"原始截图 IMG_{n}.JPG")
+      for n in range(5986, 5999)
+  )}
+</section>
+</article>
+</main>
+</body>
+</html>
+"""
+    out = DOCS / f"{SLUG}-图文实录.html"
+    out.write_text(html, encoding="utf-8")
+    print("wrote", out)
+
+    # index append
+    index_path = DOCS / "index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    url = f"personal:{SLUG}"
+    if not any(e.get("url") == url for e in index):
+        index.append(
+            {
+                "date": "2026-09-10",
+                "title": "大厂应届选岗与面试打法：阿里 / 小米对照",
+                "summary": "应届大厂选岗八条（特质适配、慎追虚名、研发深耕、运营勿轻视、产品数据稳健、实习底牌、高匹配赛道、简历定制）+ 阿里/小米四轮面试对照与反问清单。",
+                "tags": ["个人专栏", "校招", "大厂", "阿里", "小米", "面试", "选岗"],
+                "platform": "personal",
+                "url": url,
+                "duration": "截图专题整理",
+                "outputs": {
+                    "html": f"{SLUG}-图文实录.html",
+                    "svg": f"{SLUG}-理性分析.svg",
+                },
+                "screenshot_count": 13,
+                "transcript_segments": 0,
+                "svg_height": 0,
+            }
+        )
+        index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print("index appended")
+    else:
+        print("index already has entry")
+
+
+if __name__ == "__main__":
+    main()
