@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log 调色与色彩管理｜图文实录</title>
+<meta name="description" content="个人专栏：Log 调色九章讨论整理——流程、LUT、标准显示空间、高光损失、白平衡与饱和、Final Cut Pro 工具地图与色轮三轴。">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #F5EDDE;
+    --card: #FFFDF7;
+    --card-deep: #F9F1E2;
+    --ink: #32281A;
+    --ink-soft: #675843;
+    --ink-faint: #9A8A72;
+    --accent: #A4622D;
+    --accent-deep: #7C4920;
+    --teal: #356E68;
+    --teal-deep: #26524D;
+    --line: #E4D6BC;
+    --line-soft: #EDE2CC;
+    --serif: Georgia, "Songti SC", "Noto Serif SC", "SimSun", serif;
+    --sans: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    --mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, "Courier New", monospace;
+    --shadow-card: 0 1px 2px rgba(50,40,26,.05), 0 4px 14px rgba(50,40,26,.07), 0 20px 44px rgba(164,98,45,.13);
+    --shadow-soft: 0 1px 2px rgba(50,40,26,.05), 0 6px 16px rgba(164,98,45,.08);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse 1200px 500px at 50% -100px, rgba(255,251,242,.65), transparent);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.9;
+  }
+  .progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 100;
+    background: linear-gradient(90deg, var(--accent), var(--teal)); border-radius: 0 99px 99px 0; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 88px 24px 56px; text-align: center; }
+  .hero-inner { max-width: 720px; margin: 0 auto; }
+  .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 5px; color: var(--accent-deep); margin-bottom: 22px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(34px, 6vw, 52px); font-weight: 700; letter-spacing: 2px; margin-bottom: 18px; }
+  .subtitle { font-size: 16px; color: var(--ink-soft); line-height: 2; }
+  .grade-strip { margin: 44px auto 0; max-width: 560px; text-align: left; }
+  .strip-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .strip-label { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); width: 62px; text-align: right; flex: none; letter-spacing: 1px; }
+  .strip { height: 13px; border-radius: 99px; flex: 1; box-shadow: inset 0 0 0 1px rgba(90,70,45,.14); }
+  .strip-log { background: linear-gradient(90deg, #8F897C, #B4AEA1, #8F897C); }
+  .strip-grade { background: linear-gradient(90deg, #22403C, #4C7A6E, #B99C6E, #F0DFC0); }
+  .strip-caption { text-align: center; font-size: 12.5px; color: var(--ink-faint); margin-top: 16px; font-family: var(--serif); }
+  .hero-meta { margin-top: 36px; font-size: 13px; color: var(--ink-faint); display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+
+  /* ---------- Layout & TOC ---------- */
+  .layout { max-width: 1180px; margin: 0 auto; padding: 24px 28px 40px; display: grid; grid-template-columns: 218px minmax(0, 1fr); gap: 60px; }
+  .toc { position: sticky; top: 28px; align-self: start; }
+  .toc-title { font-family: var(--mono); font-size: 11px; letter-spacing: 4px; color: var(--ink-faint); margin-bottom: 14px; }
+  .toc a { display: block; padding: 7px 0 7px 14px; border-left: 2px solid var(--line); color: var(--ink-soft); text-decoration: none; font-size: 13.5px; line-height: 1.5; transition: color .2s, border-color .2s, padding-left .2s; }
+  .toc a:hover { color: var(--accent-deep); }
+  .toc a.active { color: var(--accent-deep); border-left-color: var(--accent); padding-left: 18px; font-weight: 600; }
+  .toc-num { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-right: 7px; }
+
+  /* ---------- Chapter ---------- */
+  .chapter { margin-bottom: 96px; scroll-margin-top: 36px; }
+  .ch-head { display: flex; align-items: baseline; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 14px; }
+  .ch-num { font-family: var(--mono); font-size: 15px; color: var(--accent); letter-spacing: 2px; }
+  .ch-head h2 { font-family: var(--serif); font-size: clamp(23px, 3.4vw, 30px); font-weight: 700; letter-spacing: 1px; }
+  .ch-sub { color: var(--ink-faint); font-size: 14px; margin: 12px 0 26px; }
+  .origin-q { background: var(--card-deep); border-left: 3px solid var(--accent); padding: 14px 20px; margin: 0 0 32px; font-size: 14px; color: var(--ink-soft); border-radius: 0 10px 10px 0; line-height: 1.9; }
+  .q-label { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--accent-deep); margin-bottom: 6px; letter-spacing: 3px; }
+
+  .chapter p { line-height: 2.05; margin: 0 0 18px; font-size: 15.5px; text-align: justify; }
+  .chapter p:last-child { margin-bottom: 0; }
+  .chapter strong { font-weight: 700; color: #4A3823; }
+  .term { font-style: normal; color: var(--teal-deep); font-weight: 600; }
+  code { font-family: var(--mono); background: rgba(164,98,45,.10); padding: 1px 6px; border-radius: 4px; font-size: .88em; color: var(--accent-deep); }
+  .chapter h3 { font-family: var(--serif); font-size: 20px; margin: 44px 0 14px; padding-left: 14px; border-left: 3px solid var(--teal); letter-spacing: .5px; }
+  .chapter h4 { font-size: 16px; margin: 26px 0 10px; font-family: var(--serif); color: #4A3823; }
+  .formula { font-family: var(--mono); background: #32281A; color: #EDE0C8; padding: 15px 20px; border-radius: 10px; margin: 22px 0; font-size: 14px; text-align: center; letter-spacing: .5px; box-shadow: var(--shadow-soft); }
+
+  /* ---------- Callouts ---------- */
+  .essence { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 26px 0; box-shadow: var(--shadow-card); }
+  .essence .tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 3px; color: #FFFDF7; background: var(--accent); padding: 3px 12px; border-radius: 99px; margin-bottom: 10px; }
+  .essence p { margin: 0; font-size: 15px; }
+  .takeaway { margin-top: 42px; background: linear-gradient(135deg, #33281A, #4A3823); color: #F2E7D5; border-radius: 14px; padding: 24px 28px; box-shadow: var(--shadow-card); }
+  .takeaway .tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 3px; color: #E8B77D; border: 1px solid rgba(232,183,125,.5); padding: 3px 12px; border-radius: 99px; margin-bottom: 12px; }
+  .takeaway p { color: #F2E7D5; margin: 0; font-size: 15px; line-height: 2; text-align: left; }
+
+  /* ---------- Tables ---------- */
+  .tbl-wrap { overflow-x: auto; margin: 26px 0; border-radius: 12px; box-shadow: var(--shadow-card); border: 1px solid var(--line); background: var(--card); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 540px; }
+  thead th { background: #3E2F1D; color: #F0E5D0; text-align: left; padding: 11px 16px; font-weight: 600; font-size: 13.5px; letter-spacing: .5px; white-space: nowrap; }
+  tbody td { padding: 12px 16px; border-top: 1px solid var(--line-soft); line-height: 1.85; vertical-align: top; font-size: 13.8px; }
+  tbody tr:nth-child(even) { background: #FBF6EC; }
+  td:first-child { font-weight: 600; color: var(--accent-deep); }
+
+  /* ---------- Step cards ---------- */
+  .steps { display: grid; gap: 16px; margin: 28px 0; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; box-shadow: var(--shadow-card); display: grid; grid-template-columns: 40px 1fr; gap: 16px; }
+  .step-num { font-family: var(--serif); font-size: 27px; color: var(--accent); opacity: .8; line-height: 1; padding-top: 3px; }
+  .step h4 { margin: 0 0 8px; font-size: 16.5px; }
+  .step p { font-size: 14.5px; margin: 0; line-height: 1.95; }
+  .step .why { margin-top: 10px; padding-top: 12px; border-top: 1px dashed var(--line); }
+  .why-label { display: inline-block; font-family: var(--mono); font-size: 10px; color: #FFFDF7; background: var(--teal); padding: 2px 9px; border-radius: 99px; margin-right: 8px; vertical-align: 2px; letter-spacing: 2px; }
+
+  /* ---------- Numbered rules ---------- */
+  .rules { counter-reset: rule; list-style: none; margin: 20px 0 26px; }
+  .rules li { counter-increment: rule; position: relative; padding-left: 42px; margin-bottom: 14px; line-height: 1.95; font-size: 15px; text-align: justify; }
+  .rules li::before { content: counter(rule); position: absolute; left: 0; top: 4px; width: 27px; height: 27px; border-radius: 50%; background: var(--card); border: 1.5px solid var(--accent); color: var(--accent-deep); font-family: var(--mono); font-size: 13px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-soft); }
+
+  /* ---------- Flow chips ---------- */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 22px 0 28px; }
+  .f-item { background: var(--card); border: 1px solid var(--line); border-radius: 99px; padding: 7px 18px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-soft); }
+  .f-arrow { color: var(--accent); font-weight: 700; }
+
+  /* ---------- Duo cards ---------- */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+  .duo .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; box-shadow: var(--shadow-card); }
+  .duo .card h4 { margin: 0 0 10px; font-size: 17px; color: var(--accent-deep); }
+  .duo .card p { font-size: 14.5px; margin: 0 0 10px; }
+  .duo .card p:last-child { margin-bottom: 0; }
+
+  /* ---------- Figures ---------- */
+  figure { margin: 30px 0; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 22px 18px; box-shadow: var(--shadow-card); text-align: center; }
+  figure svg { max-width: 100%; height: auto; }
+  figcaption { font-size: 13px; color: var(--ink-faint); margin-top: 14px; text-align: center; line-height: 1.8; }
+  .svg-t { font-family: var(--sans); font-size: 12.5px; fill: #675843; }
+  .svg-tb { font-family: var(--sans); font-size: 12.5px; fill: #7C4920; font-weight: 600; }
+  .grid-line { stroke: rgba(96,74,48,.28); stroke-width: 1; }
+
+  /* ---------- Node stack ---------- */
+  .stack { display: flex; flex-direction: column; align-items: center; margin: 28px 0; }
+  .stack-node { width: min(460px, 100%); border-radius: 12px; padding: 15px 20px; text-align: center; border: 1px solid var(--line); box-shadow: var(--shadow-card); background: var(--card); }
+  .node-title { font-weight: 700; font-family: var(--serif); font-size: 16px; margin-bottom: 4px; }
+  .node-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.7; }
+  .node-log { background: #EDF2EE; border-color: #C4D2CB; }
+  .node-log .node-title { color: var(--teal-deep); }
+  .node-lut { background: #F6E9DB; border-color: #E0C6A8; }
+  .node-lut .node-title { color: var(--accent-deep); }
+  .node-disp { background: #F7F0E4; border-color: #E4D6BC; }
+  .stack-arrow { color: var(--ink-faint); font-size: 19px; line-height: 1.3; padding: 6px 0; text-align: center; }
+  .stack-arrow span { font-size: 11.5px; font-family: var(--mono); letter-spacing: 2px; margin-left: 8px; color: var(--ink-faint); }
+  .chip { display: inline-block; font-size: 11px; font-family: var(--mono); letter-spacing: 1px; padding: 1px 10px; border-radius: 99px; border: 1px solid; margin-bottom: 6px; }
+  .chip-log { color: var(--teal-deep); border-color: var(--teal); background: rgba(53,110,104,.08); }
+  .chip-disp { color: var(--accent-deep); border-color: var(--accent); background: rgba(164,98,45,.08); }
+
+  .note { font-size: 13.5px; color: var(--ink-faint); line-height: 1.9; }
+
+  footer { border-top: 1px solid var(--line); padding: 44px 24px 64px; text-align: center; color: var(--ink-faint); font-size: 13px; }
+  footer .foot-title { font-family: var(--serif); font-size: 16px; color: var(--ink-soft); margin-bottom: 8px; letter-spacing: 1px; }
+
+  @media (max-width: 1020px) {
+    .layout { grid-template-columns: 1fr; gap: 0; padding: 16px 20px 32px; }
+    .toc { position: sticky; top: 0; z-index: 50; background: rgba(245,237,222,.96); backdrop-filter: blur(8px); display: flex; gap: 2px; overflow-x: auto; padding: 10px 0; border-bottom: 1px solid var(--line); margin-bottom: 36px; -webkit-overflow-scrolling: touch; }
+    .toc-title { display: none; }
+    .toc a { white-space: nowrap; border-left: none; border-bottom: 2px solid transparent; border-radius: 99px; padding: 5px 12px; flex: none; }
+    .toc a.active { border-bottom-color: transparent; background: rgba(164,98,45,.12); padding-left: 12px; }
+    .toc-num { display: none; }
+    .chapter { scroll-margin-top: 84px; }
+  }
+  @media (max-width: 640px) {
+    .hero { padding: 64px 20px 44px; }
+    .step { grid-template-columns: 1fr; gap: 8px; }
+    .duo { grid-template-columns: 1fr; }
+    .chapter p { font-size: 15px; }
+    .chapter { margin-bottom: 72px; }
+  }
+  @media print {
+    .progress, .toc { display: none; }
+    .layout { grid-template-columns: 1fr; padding: 0; }
+    body { background: #fff; }
+    figure, .tbl-wrap, .step, .duo .card, .stack-node, .essence, .takeaway { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">COLOR GRADING · DISCUSSION NOTES</p>
+    <h1>Log 调色与色彩管理</h1>
+    <p class="subtitle">一次完整讨论的结构化整理<br>从基本流程、LUT 原理、标准显示空间，到 Final Cut Pro 实操</p>
+    <div class="grade-strip">
+      <div class="strip-row">
+        <span class="strip-label">Log 记录</span>
+        <div class="strip strip-log"></div>
+      </div>
+      <div class="strip-row">
+        <span class="strip-label">显示渲染</span>
+        <div class="strip strip-grade"></div>
+      </div>
+      <p class="strip-caption">记录保存信息，呈现做出解释 —— 两者越晚绑定，创作的自由度越大</p>
+    </div>
+    <div class="hero-meta"><span>个人专栏</span><span>·</span><span>九章</span><span>·</span><span>Log / LUT / 色彩管理</span><span>·</span><span>FCP 实操</span></div>
+  </div>
+</header>
+
+<div class="layout">
+<nav class="toc" id="toc">
+  <p class="toc-title">目 录</p>
+  <a href="#ch1"><span class="toc-num">01</span>调色的基本流程</a>
+  <a href="#ch2"><span class="toc-num">02</span>LUT：原理与场景</a>
+  <a href="#ch3"><span class="toc-num">03</span>官方 LUT 与机内烘焙</a>
+  <a href="#ch4"><span class="toc-num">04</span>标准显示空间</a>
+  <a href="#ch5"><span class="toc-num">05</span>高光损失问题</a>
+  <a href="#ch6"><span class="toc-num">06</span>手工还原与 LUT 制作</a>
+  <a href="#ch7"><span class="toc-num">07</span>白平衡与饱和度</a>
+  <a href="#ch8"><span class="toc-num">08</span>FCP 工具地图</a>
+  <a href="#ch9"><span class="toc-num">09</span>色轮的三轴本质</a>
+</nav>
+
+<main>
+
+<!-- ================= 第一章 ================= -->
+<section class="chapter" id="ch1">
+  <div class="ch-head"><span class="ch-num">01</span><h2>Log 素材的调色流程</h2></div>
+  <p class="ch-sub">五个步骤、每一步的本质，以及不同场景下 pipeline 的差异</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>使用 log 素材进行调色的基本流程有哪些？每个步骤的本质是在处理什么？不同的场景是否需要不同的流程 pipeline？</blockquote>
+
+  <p>Log 素材的调色流程可以概括为一条主线：</p>
+  <div class="flow">
+    <span class="f-item">标准化</span><span class="f-arrow">→</span>
+    <span class="f-item">校正</span><span class="f-arrow">→</span>
+    <span class="f-item">匹配</span><span class="f-arrow">→</span>
+    <span class="f-item">风格化</span><span class="f-arrow">→</span>
+    <span class="f-item">输出适配</span>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>色彩管理设置 —— 统一「语言」</h4>
+        <p class="do"><strong>做什么</strong>：确定工作色彩空间，为不同来源的素材挂载对应的输入变换（IDT）。</p>
+        <p class="why"><span class="why-label">本质</span>Log 不是一种格式，而是一族编码曲线——ARRI LogC3、Sony S-Log3、RED Log3G10、Canon C-Log3 各不相同，且各自的原生色域也不同（AWG3、S-Gamut3.Cine、REDWideGamutRGB…）。同一组 RGB 数值在不同编码下代表完全不同的颜色。这一步是在做<strong>坐标变换</strong>：把所有素材翻译到同一个工作空间（如 ACEScct、DaVinci Wide Gamut Intermediate），让后续所有操作具有统一的数学意义。不做这一步，跨机器匹配就是在错误的坐标系里比较坐标。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>技术校正 —— 确立基准</h4>
+        <p class="do"><strong>做什么</strong>：借助波形图、伪色、直方图，修正曝光、定黑位白位、校白平衡。</p>
+        <p class="why"><span class="why-label">本质</span>Log 为了把高动态范围塞进有限的编码位深，刻意压低了中间调——直出的 log 画面灰、平、闷，波形上「白色」可能只落在 60–70 IRE。这一步回答的问题是：<em class="term">这个画面里，白应该多白、黑应该多黑、中性应该是哪个色温</em>。它把摄影机的记录值还原为<strong>场景的真实亮度关系</strong>。后面所有创意决策都依赖这个基准是否可靠。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>镜头匹配 —— 消除叙事噪音</h4>
+        <p class="do"><strong>做什么</strong>：将同一场戏中不同镜头（不同机位、焦段、光线漂移）调整到视觉一致。</p>
+        <p class="why"><span class="why-label">本质</span>观众对跨镜头的色彩漂移极其敏感，哪怕说不出哪里不对，也会感到「不连贯」。匹配不是让所有镜头数值相同，而是让<strong>观众的感知</strong>连续。这一步做的是感知一致性，服务于叙事沉浸，而不是画面的「正确」。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h4>创意调色 —— 建立视觉语言</h4>
+        <p class="do"><strong>做什么</strong>：二级调色（HSL 限定、Power Window、局部调整）、Look 开发、风格化。</p>
+        <p class="why"><span class="why-label">本质</span>前提是一级已经「正确」，二级与 Look 在此之上做<strong>选择性表达</strong>——引导视线（局部明暗对比）、传达情绪（冷暖分离、色相偏移）、确立时代感与类型感（胶片模拟）。这一步在心理和文化符号层面工作，是整个流程中唯一真正「主观」的环节。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>
+        <h4>输出转换 —— 适配观看环境</h4>
+        <p class="do"><strong>做什么</strong>：挂输出变换（ODT / LUT），渲染到交付目标——Rec.709 SDR、HDR10、Dolby Vision、DCI-P3 等。</p>
+        <p class="why"><span class="why-label">本质</span>工作空间通常是宽色域、线性或对数的「中间格式」，不能直接显示。Rec.709 Gamma 2.4 假设暗室观看，HDR 的 PQ 曲线对应完全不同的亮度映射。同一个 master 在不同环境需要不同呈现——这一步是把创作意图<strong>翻译到目标媒介的物理特性</strong>上。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>不同场景需要不同的 pipeline 吗？</h3>
+  <p>需要，而且差异很大。核心变量是三个：<strong>素材一致性、时间预算、交付目标</strong>。流程的复杂度本质上是在管理这些不确定性。</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>场景</th><th>Pipeline 特点</th><th>背后的原因</th></tr></thead>
+    <tbody>
+      <tr><td>电影长片</td><td>DIT 现场 CDL + Show LUT → dailies → 剪辑定剪 → conform 回批 → 精调；ACES 或摄影机原生流程；输出 DCP</td><td>周期长、多机位混拍、影院级色彩要求；需要可追溯的色彩决策链</td></tr>
+      <tr><td>流媒体剧集</td><td>强制 ACES 全流程；HDR 母版 + SDR 衍生（Dolby Vision trim pass）</td><td>Netflix 等平台有硬性技术规范；交付目标多元</td></tr>
+      <tr><td>广告 / 商业</td><td>Look 先行——开拍前锁定 Show LUT，现场监看即最终方向；后期主要做匹配和微调；多版本交付（TV、竖屏、户外）</td><td>时间预算极短；客户要「所见即所得」；创意在拍摄阶段已确定</td></tr>
+      <tr><td>纪录片</td><td>轻色彩管理、重归一化：A 机 log、无人机、手机、档案素材混在一起，重点是让所有来源「看起来像一部片子」</td><td>素材来源最不可控；没有现场色彩决策；匹配优先于风格</td></tr>
+      <tr><td>直播 / 多机位综艺</td><td>无后期窗口：摄影机 paint 工程师实时匹配，播出信号直出，log 仅用于存档</td><td>实时性压倒一切；流程发生在切换台而非调色台</td></tr>
+      <tr><td>MV / 时尚短片</td><td>Look Development 主导，结构自由，可能刻意破坏「正确」基准</td><td>创意权重最高，甚至不需要严格的镜头间匹配</td></tr>
+    </tbody>
+  </table></div>
+
+  <p>几个值得注意的规律：</p>
+  <ol class="rules">
+    <li><strong>素材越混杂，前期标准化越重</strong>。纪录片和剧集必须依赖色彩管理体系；单一摄影机的小项目可以跳过大部分 IDT 环节，直接「LUT + 手调」。</li>
+    <li><strong>创意介入越早，后期余地越小、方向越确定</strong>。广告的 Show LUT 在开机前定死，后期只是执行；电影则相反，前期只做方向性的 CDL，最终 Look 留到精调阶段。</li>
+    <li><strong>交付目标越多，尾部流程越长</strong>。只交付一个 709 网络版本，输出环节一步完事；要做 HDR + SDR + 影院，就需要 tone mapping、trim，甚至按交付目标维护多条分支。</li>
+    <li><strong>流程不是线性固定顺序，而是分层结构</strong>——色彩管理是地基、校正是骨架、匹配和风格是内容、输出是出口。真正变化的不是步骤的有无，而是每层的厚度和执行主体（DIT、调色师、还是摄影机端）。</li>
+  </ol>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>流程的标准部分处理的是<strong style="color:#E8B77D">数学</strong>（色彩空间变换、基准确立），差异部分处理的是<strong style="color:#E8B77D">生产关系</strong>（谁在什么阶段做决策）。理解了这一点，面对任何新场景都可以自行推导该裁剪或加重哪一段。</p>
+  </div>
+</section>
+
+<!-- ================= 第二章 ================= -->
+<section class="chapter" id="ch2">
+  <div class="ch-head"><span class="ch-num">02</span><h2>LUT：原理、场景与替代方案</h2></div>
+  <p class="ch-sub">查找表的数学本质、三类使用场景，以及「不用 LUT」的三条路</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>LUT 的使用场景是什么？不使用 LUT 可以吗？LUT 的原理是什么？</blockquote>
+
+  <h3>原理：预计算的颜色查找表</h3>
+  <p>LUT（Look-Up Table）的本质是一张<strong>「输入颜色 → 输出颜色」的离散映射表</strong>。它不包含任何算法，只是一堆采样好的结果值。任何颜色变换——无论多复杂——都可以先在数学上定义为一个函数，然后对这个函数进行采样，把结果存进表里。运行时不再计算函数，直接查表。</p>
+
+  <div class="duo">
+    <div class="card">
+      <h4>1D LUT</h4>
+      <p>三个通道各自独立映射，R→R'、G→G'、B→B'，互不影响。数学上只能表达「每通道的曲线调整」，做不了通道间的交叉运算——因此<strong>无法表达色域转换、色相与饱和度的变换</strong>（这些都需要三个通道的联合信息）。适合密度、伽马类调整。</p>
+    </div>
+    <div class="card">
+      <h4>3D LUT</h4>
+      <p>把 RGB 空间视为一个立方体，在网格点（常见 17³、33³、65³）上存储映射后的结果，可以表达<strong>任意</strong>的颜色变换——色域映射、胶片模拟、复杂的创意 Look 都行。格点之间的值靠三线性插值估算。</p>
+    </div>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 420 322" role="img" aria-label="3D LUT 立方体网格示意图">
+      <polygon points="180,40 310,105 180,170 50,105" fill="#EFE3CC"/>
+      <polygon points="50,105 180,170 180,280 50,215" fill="#DCC8A6"/>
+      <polygon points="310,105 180,170 180,280 310,215" fill="#CBB490"/>
+      <line x1="212.5" y1="56.25" x2="82.5" y2="121.25" class="grid-line"/>
+      <line x1="245" y1="72.5" x2="115" y2="137.5" class="grid-line"/>
+      <line x1="277.5" y1="88.75" x2="147.5" y2="153.75" class="grid-line"/>
+      <line x1="147.5" y1="56.25" x2="277.5" y2="121.25" class="grid-line"/>
+      <line x1="115" y1="72.5" x2="245" y2="137.5" class="grid-line"/>
+      <line x1="82.5" y1="88.75" x2="212.5" y2="153.75" class="grid-line"/>
+      <line x1="50" y1="141.7" x2="180" y2="206.7" class="grid-line"/>
+      <line x1="50" y1="178.3" x2="180" y2="243.3" class="grid-line"/>
+      <line x1="93.3" y1="126.7" x2="93.3" y2="236.7" class="grid-line"/>
+      <line x1="136.7" y1="148.3" x2="136.7" y2="258.3" class="grid-line"/>
+      <line x1="310" y1="141.7" x2="180" y2="206.7" class="grid-line"/>
+      <line x1="310" y1="178.3" x2="180" y2="243.3" class="grid-line"/>
+      <line x1="266.7" y1="126.7" x2="266.7" y2="236.7" class="grid-line"/>
+      <line x1="223.3" y1="148.3" x2="223.3" y2="258.3" class="grid-line"/>
+      <polygon points="180,40 310,105 310,215 180,280 50,215 50,105" fill="none" stroke="#7C4920" stroke-width="1.6"/>
+      <polygon points="180,170 310,105 50,105" fill="none" stroke="#7C4920" stroke-width="1.1"/>
+      <circle cx="180" cy="40" r="4.5" fill="#B03A2E"/>
+      <circle cx="310" cy="105" r="4.5" fill="#3E7C4F"/>
+      <circle cx="50" cy="105" r="4.5" fill="#2F5D8A"/>
+      <circle cx="180" cy="105" r="5" fill="#A4622D" stroke="#FFFDF7" stroke-width="1.5"/>
+      <line x1="186" y1="99" x2="240" y2="58" stroke="#7C4920" stroke-width="1"/>
+      <text x="244" y="55" class="svg-t">网格点 = 预计算的输出色</text>
+      <text x="210" y="312" text-anchor="middle" class="svg-t">格点之间 → 三线性插值 ｜ 常见网格密度：17³ / 33³ / 65³</text>
+    </svg>
+    <figcaption>3D LUT：在 RGB 立方体的网格点上存储变换结果，格点之间靠插值估算</figcaption>
+  </figure>
+
+  <h3>三个关键特性（决定了它的一切优缺点）</h3>
+  <ol class="rules">
+    <li><strong>它是函数的采样快照，不是函数本身</strong>。LUT 丢弃了原变换的语义和结构，只剩结果。这意味着它不可逆推、不可参数化修改——你能做的只是叠加别的调整去「修正」它。</li>
+    <li><strong>精度有限</strong>。受网格密度和位深限制，格点之间靠插值，极端 Look（大跨度色域压缩）可能产生 banding 或色阶断裂。</li>
+    <li><strong>LUT 不知道自己的输入空间</strong>。一个 LUT 只是「收到什么数就查什么表」，它不会验证你喂给它的是 LogC3 还是 S-Log3。把 A 机型的转换 LUT 挂到 B 机型的素材上，LUT 照样工作，只是结果是错的——<em class="term">这是实践中最常见的误用根源</em>。</li>
+  </ol>
+
+  <h3>使用场景：LUT 到底在解决什么问题</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>技术转换 —— 色彩管理的载体</h4>
+        <p class="do">Log → 显示空间（如 LogC3 → Rec.709）的变换，摄影机厂商或 ACES 官方以 LUT 形式分发。</p>
+        <p class="why"><span class="why-label">本质</span>这类变换数学上完全明确，用 LUT 只因为它是<strong>跨软件、跨硬件的通用交换格式</strong>——DaVinci、Baselight、现场监视器、录机全都认。它是数学函数的「便携包装」。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>现场监看</h4>
+        <p class="do">Log 素材直出是灰的，人眼无法评估曝光和构图。现场在监视器或摄影机输出链路上挂转换 LUT（叠加 CDL 做 creative 调整）。</p>
+        <p class="why"><span class="why-label">本质</span><strong>在记录 log 的同时，让人「看见」最终的意图</strong>。解决的是「记录格式为技术优化服务（保留动态范围），但决策者需要看正常画面」的矛盾。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>Look 的传递与复用</h4>
+        <p class="do">调色师开发的风格 Look 打包成 LUT，分发到现场（所见即所得）、剪辑代理、多集剧集保持统一、VFX 部门做预览。</p>
+        <p class="why"><span class="why-label">本质</span><strong>把一个创作决策固化为可分发、可一致执行的资产</strong>。一个剧组几十号人需要在拍摄当天就朝同一个视觉方向工作，LUT 是这个共识的物理载体。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>不用 LUT 可以吗？</h3>
+  <p>可以。<strong>LUT 不是调色的必需品，只是颜色变换的一种实现形式</strong>。需要区分「不用 LUT」和「不用色彩管理」这两件事：</p>
+  <div class="duo">
+    <div class="card">
+      <h4>替代一：原生色彩管理（推荐）</h4>
+      <p>DaVinci 的 RCM、ACES 流程中，软件内部直接执行数学变换（DRT），全程无需手动挂任何 LUT。素材标签写清楚是 LogC3 / AWG3，软件自动做正确变换。</p>
+      <p>这其实是更「正统」的方式——因为 LUT 本来就是这些数学变换的<strong>降级采样版本</strong>。原生管理精度更高、无插值损失、且不会挂错。很多「必须用 LUT」的场景，其实是硬件不支持原生管理才退而求其次。</p>
+    </div>
+    <div class="card">
+      <h4>替代二：手动调色</h4>
+      <p>不挂任何转换，直接在 log 素材上用 Lift / Gamma / Gain 手工建立基准和风格。单机位、时间充裕的项目完全可以，很多调色师偏好这条路——因为它保留了<strong>完全的参数控制权</strong>（对比 LUT 的黑盒快照）。</p>
+    </div>
+  </div>
+
+  <h4>真正离不开 LUT 的情况</h4>
+  <p>只有当<strong>对端设备或协作者只能通过 LUT 接收颜色信息</strong>时，LUT 才不可替代：现场监视器、录机、切换台等硬件设备；剪辑软件不认识你的色彩管理体系时；跨公司、跨平台的 Look 交付（一个 <code>.cube</code> 文件谁都打得开）。</p>
+
+  <p>两个实践中的判断：</p>
+  <ol class="rules">
+    <li><strong>LUT 的价值随团队规模和分发需求增长</strong>。一个人调完就交付，LUT 意义不大；几十人的剧组要在开拍日对齐视觉方向，LUT 几乎是唯一现实的手段。</li>
+    <li><strong>警惕把 LUT 当「滤镜」叠加</strong>。正确顺序是：技术转换（或色彩管理）建立正常画面 → 在此之上应用创意 LUT → 必要时再修正。直接把创意 LUT 挂在原始 log 上，等于在一个未定义的坐标系里做风格化——结果可能是「碰巧好看」，但不可控、不可复现。</li>
+  </ol>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>LUT 是颜色变换的「罐头」——方便、通用、可分发，但你始终可以自己现做（原生管理 / 手动调色），只要现场和协作链条上的所有人都吃得起「现做的」。</p>
+  </div>
+</section>
+
+<!-- ================= 第三章 ================= -->
+<section class="chapter" id="ch3">
+  <div class="ch-head"><span class="ch-num">03</span><h2>索尼官方 LUT 与「为什么不机内生成」</h2></div>
+  <p class="ch-sub">技术 LUT 与创意 LUT 的分界，以及记录 / 监看双路径的设计哲学</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>索尼官方提供的 LUT 属于创意 LUT 吗？区别是什么？既然需要给 log 套官方的 LUT，那么为什么不直接在机内生成呢？</blockquote>
+
+  <h3>索尼官方 LUT 是创意 LUT 吗？</h3>
+  <p><strong>主流的那批不是，但边界比想象中模糊。</strong>索尼官网提供的 S-Log3 LUT 包，主体是这些：</p>
+  <ul style="margin:0 0 18px 24px; line-height:2.1; font-size:15px;">
+    <li><strong>S-Log3 / S-Gamut3.Cine → Rec.709 类</strong>（LC-709 TypeA / B / C…、s709 等）：把 log 素材还原成正常观看画面</li>
+    <li><strong>Log 互转类</strong>（S-Log2 ↔ S-Log3）：统一新老机身的编码</li>
+    <li>少量渲染风格变体（如 VENICE 相关的渲染）</li>
+  </ul>
+  <p>这些都是<strong>技术转换 LUT</strong>（更准确地说是显示渲染变换，Display Rendering Transform）——输入是严格约定的编码空间，输出是标准显示空间，职责是「让 log 变得可看」，相当于把「底片显影成照片」。</p>
+  <p>但有个值得玩味的事实：<strong>索尼同时提供了好几个 log→709 的版本</strong>（TypeA、s709……）。如果这是纯技术转换，为什么不止一个正确答案？因为「高光怎么滚降、中间调对比多强、肤色怎么渲染」本身没有唯一正确解——每个版本都内嵌了一套美学决策。</p>
+  <div class="essence">
+    <span class="tag">定 位</span>
+    <p>索尼官方 LUT 是「<strong>带官方审美的技术转换</strong>」。它的<strong>结构是技术的</strong>（log → 709 的确定性变换），但<strong>内容包含审美</strong>（选择了哪种渲染方式）。真正的创意 LUT 则反过来：结构上不约束输入输出空间，内容上纯粹为表达服务。</p>
+  </div>
+
+  <h3>技术 LUT 与创意 LUT 的区别</h3>
+  <p>区别不在文件格式（一个 <code>.cube</code> 装什么都行），而在<strong>变换的性质和它在流程中的位置</strong>：</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>维度</th><th>技术转换 LUT</th><th>创意 LUT</th></tr></thead>
+    <tbody>
+      <tr><td>回答的问题</td><td>「这段 log 怎么变成可看的画面」</td><td>「这个画面应该长什么样」</td></tr>
+      <tr><td>输入契约</td><td>严格（必须是声明的那种 log + 色域）</td><td>宽松（假设输入已归一化）</td></tr>
+      <tr><td>输出</td><td>标准显示空间（709 等）</td><td>任意</td></tr>
+      <tr><td>可替代性</td><td>可被原生色彩管理（RCM / ACES）等价替代</td><td>不可替代——它本身就是创意决策</td></tr>
+      <tr><td>典型失败</td><td>挂错了输入空间（S-Log3 的 LUT 喂了 LogC）</td><td>叠加顺序错了（直接套在原始 log 上）</td></tr>
+      <tr><td>类比</td><td>底片的显影工艺</td><td>照片的暗房风格化</td></tr>
+    </tbody>
+  </table></div>
+  <p>一个实用的判断法：<strong>把它从流程里删掉会发生什么</strong>。删掉技术 LUT，画面回到灰暗的 log，是「不可看」；删掉创意 LUT，画面依然正常，只是「不够味」。前者是必需品，后者是选择。</p>
+
+  <h3>为什么不直接在机内生成（烘焙进去）？</h3>
+  <p>先纠正一个前提：<strong>机内其实已经「生成」了——只是生成给监看路径，不生成给记录路径</strong>。索尼的电影线机身（FX6 / FX9 / VENICE 等）都有 MLUT 系统：EVF 和 SDI / HDMI 输出可以挂上 s709 等 LUT，让现场所有人看到「成品方向」的画面，同时记录卡里写入的是<strong>干净的 log</strong>。监看和记录是两条独立的信号路径——这不是技术做不到，而是刻意的设计。</p>
+  <p>那为什么不把 LUT 直接烧进记录文件？因为那等于放弃了 log 存在的全部理由：</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>烘焙是有损且不可逆的压缩</h4>
+        <p>S-Log3 用 10-bit 编码保存了传感器 14+ 档的动态范围，是「摊开来存」的；而 709 渲染是把这些信息<strong>压缩进显示器能呈现的范围</strong>——高光被滚降、暗部被裁切。这个压缩在数学上不可逆：烘焙之后再想找回高光细节、再想改变曝光权衡，信息已经物理性地没了。记录 log、后期再转换，等于把「压缩决策」的时点无限推迟。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>决策的可修订性</h4>
+        <p>调色不是拍摄当天就终局的事。导演在精调阶段改主意、客户临时要求另一个方向、三年后平台要 HDR 版本——log 母版都能响应。2015 年如果烘焙了 709 交片，今天就不可能有 HDR 重制版。<strong>log 母版是对未来的保险</strong>。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>后期转换在精度上更优</h4>
+        <p>机身内部处理链路是定点的、固定的；后期软件在 32-bit 浮点空间里执行同一个变换，精度更高。即便 Look 已完全锁定，「记 log + 后期挂 LUT」在数学上仍优于机内烘焙——同样结果，零损失，还保留了反悔权。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h4>但确实有烘焙的场景</h4>
+        <p>这个选项并非不存在，很多机身支持把 MLUT 烧录进记录文件。选择它的场景：新闻、直播、当天交片的快拍——<strong>没有后期预算，灵活性一文不值，即时性才是全部</strong>。这时候直接拍烘焙画面（甚至直接拍 709 / HLG profile）就是正确答案。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>「机内生成」其实一直在发生——在监看路径上。记录路径保持 log，是「负片 / 正片分离」哲学在数字时代的延续：<strong>记录保存信息，呈现做出解释，两者越晚绑定，创作的自由度越大</strong>。什么时候烘焙？当你确定「永不需要第二次解释」的时候。</p>
+  </div>
+</section>
+
+<!-- ================= 第四章 ================= -->
+<section class="chapter" id="ch4">
+  <div class="ch-head"><span class="ch-num">04</span><h2>标准显示空间：数值如何变成光</h2></div>
+  <p class="ch-sub">一份关于「颜色数值 → 光」的行业契约，由四个要素构成</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>什么是标准显示空间？</blockquote>
+
+  <div class="essence">
+    <span class="tag">定义</span>
+    <p>标准显示空间（standard display space）是由标准化组织（ITU、SMPTE、IEC）精确定义的<strong>颜色编码规范</strong>，规定了「一组 RGB 数值在显示时应该呈现为什么样的光」。它是一个<strong>约定</strong>，不是一个设备，也不是一个文件格式。</p>
+  </div>
+  <p>「标准」二字的意义在于：<strong>它让内容方和设备方有了共同的假设</strong>。制作端可以宣称「我的画面是按 Rec.709 做的」，显示端可以宣称「我按 Rec.709 解释收到的信号」——两端各自对齐同一个规范，颜色才能跨设备、跨地域地可复现。没有这个契约，同样的 RGB 数值在每台机器上都会呈现成不同的颜色。</p>
+
+  <h3>它到底规定了哪四件事</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>色域 —— 三原色坐标</h4>
+        <p>定义 R、G、B 三个原色在色度图上的精确位置，划定了这个空间<strong>能表示的颜色范围</strong>。Rec.709 的色域较小（与 sRGB 基本重合），DCI-P3 更大，Rec.2020 大得多。超出三角形的颜色，这个空间「拼写」不出来。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>白点</h4>
+        <p>规定「白色」的色度坐标，通常是 D65（6500K 日光白）。这决定了整套 RGB 数值的锚点。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>传递函数 —— 线性光与编码值的数学关系</h4>
+        <p>这是最容易被忽视但最关键的一项。SDR 空间用 Gamma 类曲线（如 Rec.709 的 BT.1886，约 gamma 2.4）：编码值与光的关系是幂函数，符合人眼对亮度的对数感知，把有限的码值优先分配给人眼敏感的区域。HDR 空间用 PQ（感知量化，SMPTE ST 2084）：直接按人眼对比灵敏度建模，用 10-bit 就能覆盖 0.0001–10000 nits；或 HLG（混合对数 Gamma），兼容广播链路。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h4>观看环境假设</h4>
+        <p>每个标准都隐含了对环境的假设：Rec.709 / BT.1886 假设<strong>昏暗的客厅</strong>（gamma 2.4）；sRGB 假设<strong>明亮的办公环境</strong>（约 gamma 2.2，这就是为什么同一个文件在「专业暗房」和「办公室」看会不一样——不是文件错了，是环境假设不匹配）；影院 DCI-P3 假设全黑环境。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>常见的标准显示空间</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>空间</th><th>色域</th><th>传递函数</th><th>峰值亮度</th><th>假设环境 / 用途</th></tr></thead>
+    <tbody>
+      <tr><td>Rec.709 / BT.1886</td><td>~sRGB 大小</td><td>Gamma 2.4</td><td>~100 nits</td><td>昏暗客厅；HD 电视、网络视频的事实标准</td></tr>
+      <tr><td>sRGB</td><td>与 709 基本同</td><td>~Gamma 2.2</td><td>~80 nits</td><td>明亮环境；网页、电脑显示</td></tr>
+      <tr><td>DCI-P3 (XYZ)</td><td>P3</td><td>Gamma 2.6</td><td>48 nits</td><td>全黑影院；DCP 放映</td></tr>
+      <tr><td>Rec.2020 + PQ</td><td>2020（极宽）</td><td>PQ</td><td>1000–10000 nits</td><td>HDR10、流媒体 HDR 母版</td></tr>
+      <tr><td>Rec.2020 / P3 + HLG</td><td>2020 / P3</td><td>HLG</td><td>~1000 nits</td><td>广播 HDR，兼容旧接收机</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">注意两点：一是<strong>色域和传递函数是独立选择</strong>，所以 HDR 标准是「组合」出来的；二是实际内容很少真用满 Rec.2020 色域，HDR 母版通常在 P3 色域内制作、装在 2020 容器里交付。</p>
+
+  <h3>它在调色流程中的位置</h3>
+  <ol class="rules">
+    <li><strong>它是「显示参照」的终点</strong>。Log 编码是场景参照（scene-referred）——数值描述的是<strong>场景本身的光</strong>；标准显示空间是显示参照（display-referred）——数值描述的是<strong>显示器该发出的光</strong>。整个输出变换（DRT / ODT）的工作，就是把前者映射到后者：压缩动态范围、裁剪色域、应用渲染曲线。</li>
+    <li><strong>一个母版，多个标准空间</strong>。这就是为什么输出环节要做多次转换——同一个调色决策，渲染到 709、PQ、影院 P3 各得一份「针对该标准优化的解释」。HDR 母版 + SDR trim 的本质，是在两个标准显示空间之间维护视觉一致性。</li>
+    <li><strong>调色监看的意义</strong>：调色师必须在经过校准、符合目标标准的监视器上工作。校准（calibration）做的就是「让这台物理设备尽量精确地执行标准空间的契约」——设备永远是对标准的逼近，而不是标准本身。</li>
+  </ol>
+
+  <h3>两个容易混淆的概念</h3>
+  <div class="duo">
+    <div class="card">
+      <h4>标准显示空间 ≠ 工作色彩空间</h4>
+      <p>ACEScct、DaVinci Wide Gamut 这类工作空间是「中间格式」，设计目标是保留信息和运算精度，<strong>不为任何显示设备服务</strong>；标准显示空间是为「最终被看见」而设计的。把两者混用（比如直接在 709 里做宽色域合成）会处处碰壁。</p>
+    </div>
+    <div class="card">
+      <h4>「标准」是复数的</h4>
+      <p>不存在唯一的「正确显示空间」，只存在「为哪类观看条件定义的标准」。这也是为什么 LUT 库里 log→709 会有多个版本——输出空间的标准只有一个，但<strong>怎么优雅地进入这个空间</strong>（高光怎么压、对比怎么给）仍有创作余地。</p>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>标准显示空间是一份关于「颜色数值 → 光」的行业契约，由<strong>色域、白点、传递函数、观看环境</strong>四要素构成；它既是调色输出的目标，也是内容与亿万台显示设备之间不需要互相认识、却能达成一致的原因。</p>
+  </div>
+</section>
+
+<!-- ================= 第五章 ================= -->
+<section class="chapter" id="ch5">
+  <div class="ch-head"><span class="ch-num">05</span><h2>技术转换 LUT 的高光损失问题</h2></div>
+  <p class="ch-sub">设计内的压缩、边界处的裁切、LUT 格式本身的精度损耗——三层性质完全不同</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>技术转换 LUT 转换后是否对高光已经造成了损失？</blockquote>
+
+  <p>答案取决于你把哪种「损失」当作损失。先给结论：</p>
+  <ol class="rules">
+    <li><strong>对高光做了大幅压缩？是的</strong>——这是显示变换的天职，躲不掉。</li>
+    <li><strong>这种压缩是损失吗？</strong>从输出端看：是（多对一映射，不可逆）；从母版端看：不是（log 母版一个比特都没动）。</li>
+    <li><strong>LUT 格式本身还会额外添一点精度损耗</strong>——这是它区别于原生色彩管理的地方。</li>
+  </ol>
+
+  <h3>高光在 log → 709 变换中实际经历了什么</h3>
+  <p>S-Log3 记录了 14+ 档动态范围，而 100 nits 的 SDR 显示器只能呈现约 6 档。变换必须把前者塞进后者，高光经历三个阶段：</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>滚降（rolloff）</h4>
+        <p>中间调之前是接近线性的忠实映射；从大约中灰上方两档开始，曲线渐近平缓——场景中 200%、400%、800% 的亮度被压进越来越窄的 IRE 区间（比如都落在 90–100 之间）。<strong>多对一映射</strong>：从输出值反推不回原始亮度。这是「优雅的损失」。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>去饱和</h4>
+        <p>接近显示白时，色度信息也被同步压缩——高光被拉向无彩色。所以损失的不只是亮度层次，还有高光里的<strong>颜色信息</strong>（这既模拟人眼 / 胶片响应，也避免裁切时的色相突变）。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>硬裁切</h4>
+        <p>超过变换设计余量的部分，无论多亮，全部映射为同一个显示白。信息彻底塌缩。</p>
+      </div>
+    </div>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 460 340" role="img" aria-label="显示渲染变换的色调曲线示意图">
+      <line x1="70" y1="290" x2="400" y2="290" stroke="#9A8A72" stroke-width="1.5"/>
+      <line x1="70" y1="290" x2="70" y2="50" stroke="#9A8A72" stroke-width="1.5"/>
+      <line x1="70" y1="194" x2="400" y2="194" stroke="#E4D6BC" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="70" y1="74" x2="400" y2="74" stroke="#E4D6BC" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="70" y1="50" x2="400" y2="50" stroke="#B03A2E" stroke-width="1.2" stroke-dasharray="4 4" opacity=".65"/>
+      <text x="62" y="294" text-anchor="end" class="svg-t">0</text>
+      <text x="62" y="198" text-anchor="end" class="svg-t">40</text>
+      <text x="62" y="78" text-anchor="end" class="svg-t">90</text>
+      <text x="62" y="54" text-anchor="end" class="svg-t">100</text>
+      <text x="74" y="38" class="svg-tb" fill="#B03A2E">显示白 · 硬裁切线</text>
+      <text x="74" y="316" class="svg-t">输出（IRE）</text>
+      <text x="240" y="330" text-anchor="middle" class="svg-t">场景亮度（对数档位）→</text>
+      <polyline points="70,290 225,50 400,50" fill="none" stroke="#C77F5A" stroke-width="2" stroke-dasharray="7 5"/>
+      <text x="322" y="40" text-anchor="middle" class="svg-t" fill="#B03A2E">线性直上 → 两档即满，随后全部硬切</text>
+      <path d="M 70 290 C 125 284, 165 252, 198 218 C 215 200, 224 194, 235 180 C 258 150, 275 130, 298 110 C 325 87, 355 76, 400 70" fill="none" stroke="#356E68" stroke-width="3" stroke-linecap="round"/>
+      <text x="398" y="90" text-anchor="end" class="svg-tb" fill="#26524D">显示渲染变换（滚降）</text>
+      <circle cx="222" cy="189" r="4.5" fill="#A4622D" stroke="#FFFDF7" stroke-width="1.5"/>
+      <text x="238" y="193" class="svg-t">18% 灰 · 几乎线性忠实</text>
+      <text x="88" y="264" class="svg-t">趾部（暗部缓起）</text>
+      <text x="284" y="152" class="svg-t">滚降区：200% / 400% / 800%</text>
+      <text x="284" y="169" class="svg-t">被压进越来越窄的输出区间</text>
+    </svg>
+    <figcaption>同一个 log 场景：无滚降的线性映射在中灰以上一两档就硬切（虚线）；显示渲染变换用渐平的肩部（滚降）把高光「优雅地」压进显示范围</figcaption>
+  </figure>
+
+  <h3>一个关键的反转：损失不是 LUT 造成的，是显示器造成的</h3>
+  <p><strong>14 档进 6 档的压缩，瓶颈在显示端，不在变换本身。</strong>做个思想实验：不做任何变换，把线性光直接打上 100 nits 的屏——中灰以上一档多就硬切，高光损失得比任何 DRT 都惨烈。变换（无论 LUT 还是原生 DRT）做的不是「造成损失」，而是<strong>对必然发生的损失做管理</strong>：决定哪些档位牺牲、怎么牺牲才不刺眼、肤色和天空哪边多留一点。滚降曲线本身就是一套「损失分配的美学」。</p>
+  <p>所以更准确的说法是：<strong>技术转换 LUT 是高光损失的「谈判代表」，而不是肇事者</strong>。这也呼应了「log→709 有多个官方版本」——分歧不在要不要压高光，而在怎么压。</p>
+
+  <h3>判定「是否损失」取决于：什么是一手数据</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>工作方式</th><th>高光是否损失</th></tr></thead>
+    <tbody>
+      <tr><td>Log 母版 + LUT 作为节点（未烘焙）</td><td><strong>母版零损失</strong>。LUT 输出只是一个「视图」——对 log 的一种解释。改主意了，换一条解释路径（比如 HDR DRT），高光全部回来</td></tr>
+      <tr><td>LUT 烘焙进交付文件</td><td><strong>永久损失</strong>。该文件里 90 IRE 以上再也分不出 200% 和 800%，未来任何重制都无米下锅</td></tr>
+      <tr><td>需要 HDR 版本时</td><td>只有 log（或 HDR）母版还在，高光才有第二次分配的机会——这正是「为什么不机内烘焙」的数学根据</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">顺带划一个界限：并非所有技术变换都损高光。log ↔ 线性互转、log → log、小色域 → 大色域，这些是可逆的坐标变换，理论上无损；<strong>只有「向下压缩」的变换</strong>（场景参照 → 显示参照、宽色域 → 窄色域）才必然有损。技术 LUT ≠ 有损 LUT，损的是「往显示空间压」这一类。</p>
+
+  <h3>LUT 相对原生变换的额外损耗</h3>
+  <p>同一个 log→709 数学变换，用 LUT 承载 vs 软件内原生执行，压缩量完全相同，但 LUT 会<strong>叠加格式性损耗</strong>：</p>
+  <ul style="margin:0 0 18px 24px; line-height:2.1; font-size:15px;">
+    <li><strong>网格插值</strong>：33³ 立方体格点间靠三线性插值，大跨度渐变（天空、黄昏）可能出现 banding 或色阶断裂；原生 DRT 在浮点空间逐像素计算，无此问题</li>
+    <li><strong>边界钳制</strong>：LUT 只在定义域内工作，超出输入域的值（过曝溢出、super-white）通常被直接钳到边缘值；原生管理的边界行为更可控</li>
+    <li><strong>量化</strong>：表值本身的离散化带来微小舍入误差</li>
+  </ul>
+  <p>这就是「能用原生色彩管理就别手动挂转换 LUT」的实际理由——<strong>不是因为 LUT 压得更狠，而是它在同样压缩之上又添了精度噪声</strong>。</p>
+
+  <h3>实践推论</h3>
+  <ol class="rules">
+    <li><strong>高光的调整必须放在 LUT 之前</strong>（场景参照空间）。在 LUT 之后拉高光，是在已经被压缩过的 6 档里强行掰，只会放大 banding 和裁切伪影。</li>
+    <li><strong>永远维护 log 母版</strong>，任何交付物都视为「渲染产物」而非「素材本体」。</li>
+    <li>发现渐变 banding，优先排查 LUT 精度（换 65³、或改用原生色彩管理）。</li>
+    <li>做 HDR 母版时高光余量充足，正说明 SDR 渲染从来就是对高光的深度妥协——HDR 不是「多了什么」，而是<strong>少压了很多</strong>。</li>
+  </ol>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>技术转换 LUT 对高光的压缩是真实且不可逆的——但那是显示器的物理上限所迫、由变换优雅管理掉的损失；只要 log 母版还在，损失只发生在「视图」上而非「资产」上。LUT 真正的额外罪过只有精度噪声，而非压缩本身。</p>
+  </div>
+</section>
+
+<!-- ================= 第六章 ================= -->
+<section class="chapter" id="ch6">
+  <div class="ch-head"><span class="ch-num">06</span><h2>手工还原 LUT 与 LUT 的制作</h2></div>
+  <p class="ch-sub">锚点插值法、三条实现路径，以及「解题」与「总结公式」的关系</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>不使用技术还原 LUT，纯手工的方式如何达到 LUT 的效果？这个问题是不是和如何制作 LUT 是一个思路？</blockquote>
+
+  <p>这两个问题确实是同一个思路的两个阶段，但「制作 LUT」比「手工达到效果」<strong>严格一档</strong>。先看手工怎么做。</p>
+
+  <h3>手工还原的方法论：锚点插值法</h3>
+  <p>核心思想：还原 LUT 的效果 = 复现一组确定的「输入 → 输出」映射。手工的做法是<strong>抓住几个已知锚点，用调色工具在锚点之间搭出等价曲线</strong>。</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>用灰阶卡建立亮度锚点</h4>
+        <p>在波形图上确认 S-Log3 的已知落点，并写明 709 的目标落点：0% 黑（黑卡）约 9 IRE → 0；18% 灰（灰卡）约 41 IRE → 约 40；90% 白（白卡）约 59 IRE → 90+。注意一个关键事实：<strong>中灰几乎不动，手工的主体工作是把两端拉开</strong>。log 画面之所以灰平，数学上就是黑白被压进了 9–59% 的窄带。工具上用 Custom Curve 或 Offset + Contrast / Pivot（pivot 对准 41% 做中心拉伸）即可完成主体。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>把对比做成 S 形（高光滚降）</h4>
+        <p>单纯线性拉开两端，高光会硬切。需要把曲线头部压成渐平的滚降——这一步是感知活：天空、灯箱的层次要「压而不死」。顺带说明：这一条复合曲线其实同时完成了「逆 log 解码 + 色调映射」，<strong>不需要分两步做</strong>——官方 LUT 内部也是把多个函数复合后再采样的。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>色域与饱和度（真正的难点）</h4>
+        <p>到这里画面能「像」八成，因为亮度维度基本是一维的、一条曲线就能逼近。剩下的差距全在<strong>三维部分</strong>：色域压缩的补偿——S-Gamut3.Cine → 709 的原色内收，直接压完画面会发灰，用 RGB Mixer 近似 3×3 色域矩阵，或手动补饱和度；高光去饱和——用 Lum vs Sat 曲线在高亮端收饱和，否则高光区色相发脏、裁切处会变色。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h4>验证</h4>
+        <p>灰阶卡落点、矢量示波器肤色线、高饱和色不出框、渐变无 banding。</p>
+      </div>
+    </div>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 480 195" role="img" aria-label="S-Log3 与 Rec.709 的灰阶锚点映射">
+      <defs>
+        <linearGradient id="logGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#6E6A5F"/><stop offset="1" stop-color="#B9B4A6"/>
+        </linearGradient>
+        <linearGradient id="dispGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#14100B"/><stop offset="1" stop-color="#EFE8DA"/>
+        </linearGradient>
+      </defs>
+      <text x="440" y="24" text-anchor="end" class="svg-tb">S-Log3 记录域（IRE）</text>
+      <rect x="60" y="48" width="380" height="14" rx="7" fill="url(#logGrad)"/>
+      <line x1="94" y1="44" x2="94" y2="66" stroke="#32281A" stroke-width="1.5"/>
+      <line x1="216" y1="44" x2="216" y2="66" stroke="#32281A" stroke-width="1.5"/>
+      <line x1="284" y1="44" x2="284" y2="66" stroke="#32281A" stroke-width="1.5"/>
+      <text x="94" y="38" text-anchor="middle" class="svg-t">黑卡 · 9</text>
+      <text x="216" y="38" text-anchor="middle" class="svg-t">灰卡 · 41</text>
+      <text x="284" y="38" text-anchor="middle" class="svg-t">白卡 · 59</text>
+      <line x1="94" y1="66" x2="60" y2="124" stroke="#A4622D" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <line x1="216" y1="66" x2="212" y2="124" stroke="#A4622D" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <line x1="284" y1="66" x2="402" y2="124" stroke="#A4622D" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <circle cx="94" cy="66" r="3" fill="#A4622D"/><circle cx="60" cy="124" r="3" fill="#A4622D"/>
+      <circle cx="216" cy="66" r="3" fill="#A4622D"/><circle cx="212" cy="124" r="3" fill="#A4622D"/>
+      <circle cx="284" cy="66" r="3" fill="#A4622D"/><circle cx="402" cy="124" r="3" fill="#A4622D"/>
+      <text x="78" y="90" text-anchor="end" class="svg-t">黑位下探</text>
+      <text x="206" y="100" text-anchor="end" class="svg-t">中灰几乎不动</text>
+      <text x="298" y="90" class="svg-t">白位上拉 + 滚降</text>
+      <text x="440" y="122" text-anchor="end" class="svg-tb">Rec.709 显示域（IRE）</text>
+      <rect x="60" y="128" width="380" height="14" rx="7" fill="url(#dispGrad)"/>
+      <line x1="60" y1="124" x2="60" y2="146" stroke="#32281A" stroke-width="1.5"/>
+      <line x1="212" y1="124" x2="212" y2="146" stroke="#32281A" stroke-width="1.5"/>
+      <line x1="402" y1="124" x2="402" y2="146" stroke="#32281A" stroke-width="1.5"/>
+      <text x="60" y="170" text-anchor="middle" class="svg-t">黑位 · 0</text>
+      <text x="212" y="170" text-anchor="middle" class="svg-t">中灰 · 40</text>
+      <text x="402" y="170" text-anchor="middle" class="svg-t">白位 · 90+</text>
+    </svg>
+    <figcaption>三个锚点的映射关系：中灰几乎不动，主体工作是把两端拉开——这正是 log「灰平」的数学本质</figcaption>
+  </figure>
+
+  <p>要坦白一个极限：<strong>手工只能逼近，不能精确复现</strong>。官方变换是精确公式（逆对数函数 + 矩阵 + 固定滚降算法），而曲线、色轮的参数空间表达不了任意公式——你做到的是<strong>视觉等效</strong>，不是数学等效。</p>
+
+  <h3>严格版的「手工」：三条路径</h3>
+  <p>如果用 DCTL 或公式节点把索尼公布的 S-Log3 逆变换、色域矩阵、滚降公式直接写出来——那就不是「调」而是「写」。此时产物是 LUT 的<strong>等价源码</strong>，精度反而超过 LUT（浮点逐像素计算 vs 离散采样）。关系完全反转：<strong>LUT 成了这份代码的降级采样</strong>。</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>路径</th><th>思维</th><th>产物</th><th>与 LUT 的关系</th></tr></thead>
+    <tbody>
+      <tr><td>感知逼近</td><td>调色师（结果导向）</td><td>当前画面的等效渲染</td><td>LUT 的近似复现</td></tr>
+      <tr><td>数学复刻</td><td>工程师（函数导向）</td><td>变换的精确源码</td><td>LUT 是它的采样</td></tr>
+      <tr><td>原生色彩管理</td><td>用户（工具导向）</td><td>软件内置变换</td><td>官方源码直接执行</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>和「制作 LUT」是同一个思路吗？</h3>
+  <h4>同构的部分</h4>
+  <p>制作 LUT 的标准流程恰恰就是：<strong>搭节点图（手工）→ Generate LUT（全域采样固化）</strong>。你的手工方案就是 LUT 的源代码，LUT 只是它的编译产物。在这个意义上，两件事是同一条流水线的上下游。</p>
+  <h4>严格一档的部分：语境依赖性</h4>
+  <p>差异的本质是<strong>语境依赖性</strong>：</p>
+  <ul style="margin:0 0 18px 24px; line-height:2.1; font-size:15px;">
+    <li>手工调色可以逐镜头适配、用 Power Window 局部提亮、用 qualifier 单独抓肤色——你在利用「我知道这个画面里有什么」这一信息。所以手工的效果甚至可以<strong>好于</strong> LUT：它是「带语境的 LUT」。</li>
+    <li>但 LUT 是<strong>无语境的纯函数</strong>：同一个数值进来必须同一个结果出去，无论它来自天空还是皮肤；它没有像素位置、没有时间、没有前后文。</li>
+  </ul>
+  <p>因此，把手工作品封装成 LUT，必须完成三个升级：</p>
+  <ol class="rules">
+    <li><strong>剥离语境操作</strong>：窗口、限定器、逐镜头修正全部去掉，只留下纯颜色 → 颜色的映射。</li>
+    <li><strong>验证域从「这个画面」扩展到「所有输入」</strong>：渐变全域测试（banding）、色域边界（越界）、极端值（负值、super-white）都要行为正确。</li>
+    <li><strong>接受普适性换针对性的交易</strong>：LUT 对所有素材一视同仁，失去了手工的「看菜下饭」。</li>
+  </ol>
+  <p class="note">另外，手工也不是 LUT 唯一的出生方式——LUT 还可以由厂家用数学直接生成（从未经过任何人「调」），或对着目标画面逆向匹配反推。手工采样只是其中一条路。</p>
+
+  <h4>一个值得做的练习</h4>
+  <p>完整手工还原一遍 log→709，是理解整个色彩管理的最短路径——做完之后你看 log 素材的波形就能「脑内渲染」，也才真正知道 LUT 前面该放什么（曝光、白平衡）、LUT 后面该修什么（滚降口味、饱和补偿）。LUT 从「套上就完事的滤镜」变成一个你完全理解其内部结构的工具。</p>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>手工还原 = 编写 LUT 的源代码；制作 LUT = 把源代码编译成无语境的纯函数。同一个思路，但后者要求你的方案对<strong>每一个可能的输入</strong>负责，而不只是对眼前这个画面负责。手工是「解这道题」，LUT 是「总结成公式」——解题可以取巧，公式必须对一般情形成立。</p>
+  </div>
+</section>
+
+<!-- ================= 第七章 ================= -->
+<section class="chapter" id="ch7">
+  <div class="ch-head"><span class="ch-num">07</span><h2>白平衡与饱和度：中性轴框架</h2></div>
+  <p class="ch-sub">为什么色轮既是「白平衡工具」又是「饱和工具」——因为它们动的根本不是同一个东西</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>曝光我理解是明度分布的调整，但我不理解白平衡如何调整。调节色轮、蜘蛛网这些不都是调整白平衡吗？和饱和补偿的区别是什么？</blockquote>
+
+  <p>这个困惑的根源值得先点破：<strong>色轮是工具，蜘蛛网（矢量图）是测量仪器，而白平衡是一种操作</strong>——三者不在一个层面上。同一个色轮，既可以用来做白平衡，也可以用来做创意染色；决定「这是什么操作」的不是工具，而是<strong>调整的目标和几何效果</strong>。饱和补偿和白平衡用的旋钮长得再像，它们在颜色空间里干的事也完全不同。</p>
+
+  <h3>核心框架：中性轴——两者的分水岭</h3>
+  <p>把颜色空间想象成一个以<strong>中性轴</strong>（从纯黑到纯白的灰线）为中心的圆柱，任何颜色操作都能分解为三件事：</p>
+  <figure>
+    <svg viewBox="0 0 480 300" role="img" aria-label="中性轴圆柱示意图">
+      <defs>
+        <marker id="arrT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#356E68"/></marker>
+        <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B03A2E"/></marker>
+      </defs>
+      <path d="M 90 70 L 90 240 A 60 18 0 0 0 210 240 L 210 70 Z" fill="#EADCC0"/>
+      <path d="M 90 70 L 90 240 A 60 18 0 0 0 210 240 L 210 70" fill="none" stroke="#7C4920" stroke-width="1.5"/>
+      <ellipse cx="150" cy="70" rx="60" ry="18" fill="#F7EDDA" stroke="#7C4920" stroke-width="1.5"/>
+      <line x1="150" y1="42" x2="150" y2="272" stroke="#B03A2E" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="160" y="52" class="svg-tb" fill="#B03A2E">中性轴（纯黑 → 纯白）</text>
+      <path d="M 96 100 A 54 15 0 0 1 204 100" fill="none" stroke="#356E68" stroke-width="2" marker-end="url(#arrT)"/>
+      <text x="218" y="104" class="svg-t" fill="#26524D">绕轴角度 = 色相</text>
+      <line x1="150" y1="160" x2="181" y2="160" stroke="#7C4920" stroke-width="1.5"/>
+      <circle cx="188" cy="160" r="6" fill="#D07A3A" stroke="#FFFDF7" stroke-width="1.5"/>
+      <text x="202" y="164" class="svg-t">离轴距离 = 饱和度</text>
+      <line x1="152" y1="266" x2="248" y2="266" stroke="#B03A2E" stroke-width="2" marker-start="url(#arrR)" marker-end="url(#arrR)"/>
+      <text x="200" y="292" text-anchor="middle" class="svg-t" fill="#B03A2E">轴位移 = 白平衡（参考系修正）</text>
+    </svg>
+    <figcaption>以中性轴为中心的颜色圆柱：白平衡移动轴本身，饱和度改变离轴距离，色相改变绕轴角度</figcaption>
+  </figure>
+  <ul style="margin:0 0 18px 24px; line-height:2.1; font-size:15px;">
+    <li><strong>白平衡 = 移动中性轴本身</strong>（参考系修正）</li>
+    <li><strong>饱和度 = 改变颜色离轴的远近</strong>（径向伸缩）</li>
+    <li><strong>色相 = 改变绕轴的角度</strong>（旋转）</li>
+  </ul>
+  <p>用极坐标看：先定轴，再谈距离和角度。<strong>轴没立正之前，「离轴多远」是没有意义的</strong>——这就是为什么白平衡必须最先做。它不是众多色彩调整中的一个，而是所有色彩调整的<strong>坐标系</strong>。</p>
+  <p>这也回应了「曝光」的理解：曝光是明度分布的调整，白平衡是它的<strong>色度对偶物</strong>——曝光给亮度轴定刻度（黑在哪、白在哪、灰在哪），白平衡给色彩轴定原点（中性在哪）。两者同属「确立基准」家族，都有场景中的客观锚点（灰卡 / 白墙 / 眼白），所以都放在 LUT 之前。</p>
+
+  <h3>白平衡的物理与数学本质</h3>
+  <p><strong>物理上</strong>：校正「场景光源」与「记录时假设的光源」的错位。钨丝灯下拍，传感器把白色织物记成了橙色——白色物体在场景里是中性的，在文件里却不在轴上。白平衡就是把它推回轴上。</p>
+  <p><strong>数学上</strong>：白平衡是<strong>通道增益</strong>——</p>
+  <div class="formula">R' = g<sub>r</sub> · R　　G' = g<sub>g</sub> · G　　B' = g<sub>b</sub> · B</div>
+  <p>三个通道按不同倍率缩放。注意一个漂亮的性质：在 log 空间里，增益变成<strong>每通道的 Offset</strong>（log 的乘法变加法）——这正是 log 空间里白平衡用 Offset 色轮调的技术根据，也是为什么软件里的「色温 / 色调」滑块在 log 素材上内部走的是 Offset 路径。关键特征：增益对<strong>全亮度范围一视同仁</strong>。一个偏暖的画面，黑、灰、白三个段落朝同一方向偏，校正也一次到位、全段生效。这是它区别于创意染色的标志。</p>
+
+  <h3>在示波器上，两者长得完全不同</h3>
+  <p>这是最直观的判别法，也顺带纠正一下工具用法——<strong>白平衡的主战场是 RGB 分列波形（Parade），不是矢量图</strong>：</p>
+  <figure>
+    <svg viewBox="0 0 480 240" role="img" aria-label="矢量图上白平衡与饱和度的对比">
+      <circle cx="125" cy="110" r="82" fill="#FAF4E7" stroke="#D8C7A6" stroke-width="1.5"/>
+      <line x1="125" y1="36" x2="125" y2="184" stroke="#E4D6BC" stroke-width="1"/>
+      <line x1="47" y1="110" x2="203" y2="110" stroke="#E4D6BC" stroke-width="1"/>
+      <path d="M 110 48 C 132 50 150 62 154 84 C 158 104 148 124 128 132 C 108 140 86 132 76 114 C 66 96 72 72 90 58 C 96 53 103 50 110 48 Z" fill="rgba(72,116,150,.30)" stroke="#4874A0" stroke-width="1.5"/>
+      <circle cx="110" cy="90" r="4.5" fill="#8A8578" stroke="#FFFDF7" stroke-width="1"/>
+      <line x1="117" y1="110" x2="133" y2="110" stroke="#B03A2E" stroke-width="2"/>
+      <line x1="125" y1="102" x2="125" y2="118" stroke="#B03A2E" stroke-width="2"/>
+      <line x1="113" y1="93" x2="121" y2="104" stroke="#B03A2E" stroke-width="1.8" marker-end="url(#arrR)"/>
+      <text x="125" y="26" text-anchor="middle" class="svg-tb">白平衡偏色时</text>
+      <text x="125" y="222" text-anchor="middle" class="svg-t">整图偏移，中性色离心</text>
+      <circle cx="355" cy="110" r="82" fill="#FAF4E7" stroke="#D8C7A6" stroke-width="1.5"/>
+      <line x1="355" y1="36" x2="355" y2="184" stroke="#E4D6BC" stroke-width="1"/>
+      <line x1="277" y1="110" x2="433" y2="110" stroke="#E4D6BC" stroke-width="1"/>
+      <path d="M 355 63 C 381 63 402 84 402 110 C 402 136 381 157 355 157 C 329 157 308 136 308 110 C 308 84 329 63 355 63 Z" fill="rgba(164,98,45,.28)" stroke="#A4622D" stroke-width="1.5"/>
+      <circle cx="355" cy="110" r="4.5" fill="#6B5D48"/>
+      <circle cx="355" cy="110" r="8.5" fill="none" stroke="#B03A2E" stroke-width="1.5"/>
+      <line x1="393.2" y1="71.8" x2="405.9" y2="59.1" stroke="#356E68" stroke-width="2" marker-end="url(#arrT)"/>
+      <line x1="316.8" y1="71.8" x2="304.1" y2="59.1" stroke="#356E68" stroke-width="2" marker-end="url(#arrT)"/>
+      <line x1="316.8" y1="148.2" x2="304.1" y2="160.9" stroke="#356E68" stroke-width="2" marker-end="url(#arrT)"/>
+      <line x1="393.2" y1="148.2" x2="405.9" y2="160.9" stroke="#356E68" stroke-width="2" marker-end="url(#arrT)"/>
+      <text x="355" y="26" text-anchor="middle" class="svg-tb">饱和度增减时</text>
+      <text x="355" y="222" text-anchor="middle" class="svg-t">径向伸缩，中性钉在中心</text>
+    </svg>
+    <figcaption>矢量图判别：左——色偏时连中性色（灰点）都离开了中心，白平衡就是把它推回轴上（红叉）；右——饱和度沿半径方向呼吸，中心永远不动</figcaption>
+  </figure>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>白平衡</th><th>饱和度</th></tr></thead>
+    <tbody>
+      <tr><td>移动的是什么</td><td>中性轴（参考系）</td><td>颜色离轴的距离</td></tr>
+      <tr><td>矢量图表现</td><td>整图偏移 / 歪斜，中性色离心</td><td>径向伸缩，中性钉在中心</td></tr>
+      <tr><td>Parade 表现</td><td>三通道错位 / 对齐</td><td>三通道包络整体胖瘦</td></tr>
+      <tr><td>有无客观基准</td><td>有（场景中性物）</td><td>无（美学选择，或对已知副作用的补偿）</td></tr>
+      <tr><td>作用范围</td><td>全亮度段同步</td><td>可以按亮度 / 色相分段</td></tr>
+      <tr><td>顺序</td><td>LUT 之前</td><td>补偿类在 LUT 之后</td></tr>
+    </tbody>
+  </table></div>
+  <p>所以「色轮不都是在调白平衡吗」这个直觉，反过来看就清楚了：<strong>同一根色轮拖杆，如果目标是「让本该灰的东西回灰」，它在做白平衡；如果目标是「让已经正确的颜色更浓」，它在做饱和 / 染色。工具不知道你的意图，示波器知道。</strong></p>
+
+  <h3>为什么顺序不可交换</h3>
+  <h4>白平衡必须在 LUT 之前</h4>
+  <ol class="rules">
+    <li><strong>LUT 假设输入的轴向是正的</strong>。log→709 变换里的肤色渲染、高光去饱和、色域压缩，全部以「文件中性 = 场景中性」为前提。轴向歪着进去，LUT 会<strong>对称地犯错</strong>：肤色掉出肤色线，色域压缩偏向一侧。</li>
+    <li><strong>高光去饱和会把高光拉向「错误的白」</strong>。这个最致命：画面偏蓝时，LUT 的高光滚降把高光去饱和到偏蓝的白——事后你把轴修正了，但<strong>被丢弃的那部分色度永远回不来</strong>，高光残留一片洗不干净的色偏。</li>
+    <li><strong>在显示空间补色温是按段打补丁</strong>。LUT 之后加色轮，Lift 污染暗部、Gain 污染亮部，一个全局色偏要拆成好几段分别修，且永远修不齐——因为轴的歪斜已经和对比曲线、滚降<strong>耦合</strong>在一起了。</li>
+  </ol>
+  <h4>饱和补偿必须在 LUT 之后</h4>
+  <p>原因非常直接：<strong>去饱和是 LUT 造成的，所以补偿必须发生在肇事之后</strong>。S-Gamut3.Cine → 709 的色域压缩把原色内收，颜色离中性轴的距离集体缩水——这是变换的已知副作用，量一下输出再补回去即可。</p>
+  <p>反过来在 LUT <strong>之前</strong>加饱和是什么下场？你在宽色域里把颜色推到 709 容不下的位置，LUT 的色域压缩又把它们按回去——你在和变换掰手腕，推力被抵消，还可能在压缩边界上掰出色相歪斜。补偿量本来就该按<strong>压缩后的结果</strong>定，事前猜毫无意义。</p>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p><strong>白平衡是「立轴」</strong>——把场景里本该中性的东西推回中性轴，一次增益、全段生效，必须在 LUT 前完成，否则整个变换在歪的坐标系里运行且高光永久受损；<strong>饱和补偿是「调距」</strong>——中性轴不动、只改颜色离轴的远近，针对 LUT 色域压缩的副作用，必须在 LUT 后测量着补。色轮和蜘蛛网只是工具和仪器，区分操作的从来是几何对象：动轴的，还是动距离的。</p>
+  </div>
+</section>
+
+<!-- ================= 第八章 ================= -->
+<section class="chapter" id="ch8">
+  <div class="ch-head"><span class="ch-num">08</span><h2>Final Cut Pro 的曝光与白平衡工具</h2></div>
+  <p class="ch-sub">五层工具地图、两个 LUT 机制，以及「色轮在 LUT 前还是后」的完整答案</p>
+  <blockquote class="origin-q"><span class="q-label">原始问题</span>在 FCP 中，调节曝光和白平衡的工具具体有哪些？分别有什么功能？<br>—— 追问：前面说色轮是白平衡主力，后面又说色轮在 Custom LUT 之后，相互矛盾吗？</blockquote>
+
+  <p>FCP 的工具可以分成五层：<strong>自动分析类、手动主校正类、曲线类、局部遮罩类、测量类</strong>。界面以较新版本（FCP 10.7 之后的统一调色面板 / FCP 11）为准——旧版本里这些是三个独立效果（Color Wheels / Color Curves / Hue &amp; Saturation Curves），功能相同。</p>
+
+  <h3>一、自动类：一键打底</h3>
+  <p>都在魔棒菜单里，本质是「机器替你找锚点」：</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>工具</th><th>快捷键</th><th>功能</th><th>本质</th></tr></thead>
+    <tbody>
+      <tr><td>平衡色彩 Balance Color</td><td>⌥⌘B</td><td>自动检测画面中的黑 / 白 / 灰参考点，中和色偏并对齐黑白位；检查器里可查看、手动挪动它采样的锚点</td><td>自动版「灰卡法」——机器找中性锚点</td></tr>
+      <tr><td>匹配色彩 Match Color</td><td>⌥⌘M</td><td>指定一个参考画面（当前工程或检视器中的帧），把选中片段的影调与色彩匹配过去</td><td>自动镜头匹配——对应 pipeline 的「一致性」步骤</td></tr>
+      <tr><td>增强光线与颜色 Enhance Light and Color</td><td>—</td><td>FCP 11 新增：ML 一键分析并优化曝光、对比与色彩，可调强度</td><td>自动「建立基调」——内嵌了审美判断，介于校正与调色之间</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">定位：自动类负责「打底归一」，复杂光线（混合色温、大面积单一色）它常常采错锚点，需要手动接管。</p>
+
+  <h3>二、手动主力：Color Adjustments（颜色调整）</h3>
+  <h4>1. 白平衡控制：色温 Temp / 色调 Tint 滑块</h4>
+  <p>色温走蓝↔黄轴，色调走绿↔品红轴；数学上就是通道增益的参数化包装（加暖 = 提 R 压 B）；手动时配合 RGB Parade 三列对齐验证。</p>
+  <h4>2. 色轮 Color Wheels（四轮）</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>轮</th><th>作用范围</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td>全局 Master</td><td>全亮度段统一作用</td><td><strong>白平衡主力</strong>——行为 ≈ Resolve 的 Offset，log 未映射素材上最接近「增益」语义；全局亮度滑块即整体曝光</td></tr>
+      <tr><td>阴影 / 中间调 / 高光</td><td>按亮度段加权</td><td>分区曝光与分区染色</td></tr>
+    </tbody>
+  </table></div>
+  <p>每个轮子三个控件：拖动方向 = 补色方向；饱和度滑块 = 该段径向伸缩；<strong>亮度滑块 = 该段曝光</strong>。曝光的分区塑造（压暗天空、提亮人脸）主要靠三个 tonal 轮的亮度滑块。</p>
+  <h4>3. 颜色曲线 Color Curves</h4>
+  <p><strong>亮度（Luma）曲线</strong>：精密曝光工具——打点、拉 S、锚定灰阶落点，就是「锚点插值法」的直接实现。<strong>RGB 单通道曲线</strong>：白平衡的教科书做法——Parade 上哪列低了就抬哪条通道；对未映射的 log 素材做通道首尾平移 ≈ 每通道 Offset。</p>
+  <h4>4. 色相 / 饱和度曲线（五条）</h4>
+  <p>Hue vs Hue（换色相）、Hue vs Sat（按色相增减饱和）、Hue vs Luma（按色相调明度）、<strong>Luma vs Sat（按亮度调饱和——高光去饱和、暗部收灰的口味工具）</strong>、Sat vs Sat（高饱和端压缩、播出安全）。前两条偏创意，后两条正是「LUT 之后的饱和补偿」要用的。</p>
+  <h4>5. 色彩板 Color Board（旧）</h4>
+  <p>三面板（色彩 / 饱和度 / 曝光）× 四推子（全局 / 阴影 / 中间调 / 高光）。10.4 之前 FCP 的唯一调色工具，现在是兼容旧工程用——功能上是色轮的低维版本，曝光面板推子 = 分区曝光。</p>
+
+  <h3>三、局部修正：遮罩（二级）</h3>
+  <p>任何色彩效果都可以单独挂遮罩，同一片段可叠加多个色彩效果：<strong>形状遮罩 Shape Mask</strong>（窗口：位置 / 大小 / 羽化）、<strong>颜色遮罩 Color Mask</strong>（吸管选色 + 范围 / 柔和度——限定器）、<strong>磁性遮罩 Magnetic Mask</strong>（FCP 11：ML 自动分离人物 / 物体）。典型用途：混合光源场景（钨丝灯室内 + 日光窗）全局白平衡无解，只能遮罩分区各修各的；以及局部曝光（Power Window 语义）。</p>
+
+  <h3>四、测量：视频示波器</h3>
+  <p>检视器显示菜单开启：<strong>Waveform</strong>（曝光落点）、<strong>RGB Parade</strong>（白平衡对齐）、<strong>Vectorscope</strong>（肤色线、饱和范围）、<strong>Histogram</strong>（分布）。工具操作是多解的，仪器读数才是裁判——Parade 管白平衡、Waveform 管曝光。</p>
+
+  <h3>五、与 Log 工作流的衔接：两个 LUT 机制</h3>
+  <p>这部分是把前面整个讨论落到 FCP 的关键——FCP 有两个名字几乎一样的 LUT 机制，行为完全相反：</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Camera LUT</th><th>Custom LUT</th></tr></thead>
+    <tbody>
+      <tr><td>在哪里</td><td>检查器 Info 面板的片段属性</td><td>Effects 里的普通效果</td></tr>
+      <tr><td>位置</td><td><strong>钉死在最前</strong>——解码后立即应用，先于一切调色效果，不可移动</td><td>堆栈内<strong>自由排序</strong>（FCP 按自上而下处理效果）</td></tr>
+      <tr><td>后果</td><td>你的一切手动调整都发生在 LUT <strong>之后</strong>（显示空间）</td><td>谁前谁后你说了算</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>Camera LUT 路线</strong>（LUT 钉死在最前，图省事）：</p>
+  <div class="flow">
+    <span class="f-item">素材解码</span><span class="f-arrow">→</span>
+    <span class="f-item">Camera LUT（技术还原）</span><span class="f-arrow">→</span>
+    <span class="f-item">全部手动调色（显示域）</span>
+  </div>
+  <p><strong>Custom LUT 堆栈路线</strong>（可控制 LUT 前后的分工）：</p>
+  <div class="stack">
+    <div class="stack-node node-log">
+      <span class="chip chip-log">log 域</span>
+      <div class="node-title">色轮 #1 · Color Adjustments</div>
+      <div class="node-desc">白平衡（Master 轮盘 ≈ 通道增益）＋ 曝光（亮度滑块 / Luma 曲线）</div>
+    </div>
+    <div class="stack-arrow">↓<span>技术还原</span></div>
+    <div class="stack-node node-lut">
+      <div class="node-title">Custom LUT</div>
+      <div class="node-desc">S-Log3 / S-Gamut3.Cine → Rec.709（在 Video 检查器里可自由拖动位置）</div>
+    </div>
+    <div class="stack-arrow">↓<span>进入显示域</span></div>
+    <div class="stack-node node-disp">
+      <span class="chip chip-disp">显示域</span>
+      <div class="node-title">色轮 #2 ＋ Hue / Sat 曲线</div>
+      <div class="node-desc">饱和补偿（Luma vs Sat）＋ 滚降口味</div>
+    </div>
+  </div>
+
+  <h4>那「矛盾」怎么解释？——工具（what）与工位（where）是正交的</h4>
+  <p>做白平衡的工具始终是色轮（「主力」指的是<strong>工具身份</strong>），变的只是它的<strong>工位</strong>：</p>
+  <ul style="margin:0 0 18px 24px; line-height:2.1; font-size:15px;">
+    <li><strong>堆栈路线</strong>里，做白平衡的是 #1（LUT 之前）——log 域里 Master 轮的 offset 在数学上就是通道增益，一次修正全段生效。#2 不是「再做一遍白平衡」，是同一个工具在干另一种活：补偿 LUT 的去饱和副作用、做口味调整。</li>
+    <li><strong>Camera LUT 路线</strong>里，白平衡确实发生在 LUT 之后——主力被迫在显示空间上班。工具没换，位置妥协了。</li>
+  </ul>
+  <p>Camera LUT 路线「可行但有代价」。数学上一句话：<strong>正确的白平衡是线性域的通道增益，而 LUT 之后的画面里，这个增益误差已经被非线性、通道耦合的曲线重新分配过了</strong>——全局 offset 只能把中间调拉回中性，阴影和高光会残留不同方向的色偏，得拆成 Lift / Gain 分段打补丁，且永远修不齐；极端情况下高光色度已被 LUT 丢弃，物理上修不回来。所以适用域是：轻微色偏、素材记录时白平衡基本正确（如索尼机器一键存镜头位的用户）。混合光源、忘了锁白平衡的素材，必须走堆栈路线。</p>
+
+  <div class="essence">
+    <span class="tag">合并规则</span>
+    <p>色轮永远是白平衡的主力工具——这与位置无关。它的理想工位在技术 LUT 之前（在 Video 检查器里把 Color Adjustments 拖到 Custom LUT 上方即可实现）；Camera LUT 路线把工位让给了便利，换来的是修正精度的天花板。</p>
+  </div>
+
+  <h3>分工速查表</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>需求</th><th>首选工具</th><th>辅助</th></tr></thead>
+    <tbody>
+      <tr><td>快速白平衡</td><td>Balance Color</td><td>Temp / Tint 微调</td></tr>
+      <tr><td>精密白平衡</td><td>Temp / Tint ＋ RGB Parade</td><td>RGB 通道曲线</td></tr>
+      <tr><td>整体曝光</td><td>全局轮亮度 / Luma 曲线</td><td>Enhance Light &amp; Color</td></tr>
+      <tr><td>分区曝光、对比</td><td>三段轮亮度滑块</td><td>Luma 曲线做 S</td></tr>
+      <tr><td>镜头一致性</td><td>Match Color</td><td>粘贴属性（⌥⌘V）批量复制效果</td></tr>
+      <tr><td>高光去饱和、饱和补偿</td><td>Luma vs Sat</td><td>Sat vs Sat</td></tr>
+      <tr><td>混合光源 / 局部修正</td><td>遮罩 ＋ 色轮</td><td>Magnetic Mask</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>FCP 的这套工具仍然是那三个几何操作的不同包装：<strong>白平衡 = 动轴</strong>（Temp / Tint、全局轮、通道曲线），<strong>饱和 = 动距</strong>（各饱和度控件），<strong>曝光 = 动亮度分布</strong>（亮度滑块、Luma 曲线）。FCP 的特点是自动工具强、上手快；代价是原生流程里 LUT 位置不可重排——需要严格的「LUT 前后」顺序时，用 Custom LUT 效果搭堆栈即可补齐。</p>
+  </div>
+</section>
+
+<!-- ================= 第九章 ================= -->
+<section class="chapter" id="ch9">
+  <div class="ch-head"><span class="ch-num">09</span><h2>色轮的三轴本质</h2></div>
+  <p class="ch-sub">同一个控件，为何既能校准白平衡，又能补偿饱和度——因为它们用的是不同的轴</p>
+  <blockquote class="origin-q"><span class="q-label">讨论确认</span>色轮作为工具：既可以用于白平衡的校准，也可以用于饱和度的补偿。</blockquote>
+
+  <p>这个理解是对的——而且还能再往下拧紧一圈：<strong>色轮不是一个控件，是一个三轴控制器</strong>。「做白平衡」和「做饱和补偿」用的其实不是同一个部件，几何行为完全不同。</p>
+
+  <h3>色轮的三个子控件 → 三种几何操作</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>子控件</th><th>几何效果</th><th>典型任务</th></tr></thead>
+    <tbody>
+      <tr><td>轮盘拖拽（圆盘部分）</td><td>沿某个色相<strong>方向</strong>平移色度——给整个亮度段加一个「带方向的色向量」</td><td><strong>白平衡</strong>（把中性物推回轴上）；创意染色（橙青 split-tone）</td></tr>
+      <tr><td>饱和度滑块（轮子下方）</td><td><strong>无方向的径向缩放</strong>——所有颜色离中性轴的距离按倍率伸缩，不引入任何色相偏向</td><td><strong>饱和补偿</strong>、高光收饱和</td></tr>
+      <tr><td>亮度滑块</td><td>明度升降</td><td>曝光</td></tr>
+    </tbody>
+  </table></div>
+  <p>所以精确的说法是：<strong>白平衡用的是轮盘，饱和补偿用的是滑块</strong>。两者住在同一个效果控件里，但一个动的是「轴的位置」，一个动的是「离轴的距离」。</p>
+
+  <h3>两者不可互换——这是最容易踩的坑</h3>
+  <div class="duo">
+    <div class="card">
+      <h4>拿饱和滑块修色偏：无效</h4>
+      <p>色偏是中性轴的整体位移，不是「多余的饱和」。把偏蓝的画面降饱和，只是把错误的东西一起洗灰——中性色确实不蓝了，但所有有色内容也跟着褪色，色相关系依然是错的。结果是一张发闷的、<strong>错误得比较安静</strong>的画面。</p>
+    </div>
+    <div class="card">
+      <h4>拿轮盘做补偿：同样不行</h4>
+      <p>拖轮盘是朝一个方向加色向量——天空、肤色、草地全部朝同一个方向偏移。而补偿需要的是各颜色<strong>沿自己的半径</strong>均匀伸缩。矢量图上一眼可辨：滑块是径向呼吸、中心钉死；轮盘是整体位移、连中心都离心。</p>
+    </div>
+  </div>
+
+  <h3>回到那条原则：意图定操作，示波器做裁决</h3>
+  <p>轮盘拖杆把矢量图里的中性色<strong>钉回中心</strong>——它刚才执行的是白平衡；同一根拖杆把画面<strong>推向橙青</strong>——它执行的是染色。工具对操作是无知的，操作由你的目标和仪器读数共同定义。</p>
+  <p>在「色轮 #1 → LUT → 色轮 #2」的堆栈里，这个分工看得最清楚：</p>
+  <div class="duo">
+    <div class="card">
+      <h4>色轮 #1（log 域）</h4>
+      <p>主要用<strong>轮盘 + 亮度滑块</strong>——轮盘 ≈ 通道增益，干修正的活：白平衡与曝光基准。</p>
+    </div>
+    <div class="card">
+      <h4>色轮 #2（显示域）</h4>
+      <p>主要用<strong>各段饱和滑块 + Luma vs Sat</strong>——干补偿和口味的活：饱和补偿与滚降审美。</p>
+    </div>
+  </div>
+  <p>同一个控件被实例化两次，各取所需的那根轴。</p>
+
+  <div class="takeaway">
+    <span class="tag">一句话总结</span>
+    <p>色轮是三轴控制器（色度方向 × 色度量 × 亮度），「白平衡工具」或「饱和工具」从来不是它的固有属性，而是<strong>你在哪根轴上、朝着什么目标移动时被赋予的角色</strong>。</p>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <p class="foot-title">Log 调色与色彩管理 · 讨论整理</p>
+  <p>个人专栏 · 讨论整理 · 点击左侧目录跳转章节 · 可直接打印导出 PDF</p>
+</footer>
+
+<script>
+(function () {
+  var bar = document.getElementById('progress');
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var sections = links.map(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (l) {
+            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    sections.forEach(function (s) { if (s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
