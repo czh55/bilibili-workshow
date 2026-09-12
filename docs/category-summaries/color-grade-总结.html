@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="调色与修图的核心不是「加颜色」，而是先还原曝光与影调分层，再用蒙版/LUT/节点做非破坏性分区塑形；达芬奇管视频链路，PS与Camera Raw管人像底座，仿色要学结构而非抄参数。">
+<title>调色后期 · 类目核心观点｜总结</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(920px,100%);margin:0 auto;padding:48px 28px 80px}
+header{margin-bottom:36px}
+.back{display:inline-block;margin-bottom:16px;color:#64748b;font-size:14px;text-decoration:none}
+.back:hover{color:#3b82f6}
+header h1{font-size:30px;font-weight:900;color:#1c1917;margin:0 0 12px;line-height:1.3}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.meta-tag{display:inline-block;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600}
+.tag-cat{background:#1e293b;color:#fff}
+.tag-count{background:#e2e8f0;color:#334155}
+.tag-dim{background:#dbeafe;color:#1e40af}
+.thesis{background:#fff;border-left:4px solid #3b82f6;border-radius:12px;padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,.04);font-size:16px;color:#334155}
+.section{margin:40px 0}
+.section h2{font-size:22px;font-weight:700;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4;color:#1c1917}
+.card{background:#fff;border-radius:14px;padding:18px 20px;margin:0 0 14px;box-shadow:0 2px 12px rgba(0,0,0,.04);border-left:4px solid #94a3b8}
+.card h3{margin:0 0 8px;font-size:17px;color:#0f172a}
+.card p{margin:0 0 10px;color:#57534e;font-size:15px}
+.evidence{display:flex;flex-wrap:wrap;gap:8px}
+.evidence a{font-size:13px;color:#1d4ed8;text-decoration:none;background:#eff6ff;padding:4px 10px;border-radius:8px}
+.evidence a:hover{background:#dbeafe}
+.list{background:#fff;border-radius:14px;padding:18px 22px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.list li{margin:0 0 10px;color:#44403c}
+.list.pitfalls{border-left:4px solid #f59e0b}
+.list.actions{border-left:4px solid #10b981}
+.footer{margin-top:48px;padding-top:20px;border-top:1px solid #e7e5e4;color:#78716c;font-size:13px}
+@media(max-width:640px){.container{padding:28px 16px 56px}header h1{font-size:24px}}
+</style>
+</head>
+<body>
+<main class="container">
+<a class="back" href="../index.html">← 返回总结墙</a>
+<header>
+<h1>调色后期 · 核心观点总结</h1>
+<div class="meta-row">
+<span class="meta-tag tag-cat">类目导读</span>
+<span class="meta-tag tag-count">83 篇</span>
+<span class="meta-tag tag-dim">laocha</span><span class="meta-tag tag-dim">camera-raw</span><span class="meta-tag tag-dim">davinci</span><span class="meta-tag tag-dim">final-cut</span><span class="meta-tag tag-dim">lightroom</span>
+</div>
+<p class="thesis">调色与修图的核心不是「加颜色」，而是先还原曝光与影调分层，再用蒙版/LUT/节点做非破坏性分区塑形；达芬奇管视频链路，PS与Camera Raw管人像底座，仿色要学结构而非抄参数。</p>
+</header>
+
+<section class="section">
+<h2>核心观点</h2>
+<article class="card"><h3>1. 调色先做减法：减对立色，而非缺色就加色</h3><p>发灰、发脏往往是对立色混进画面，不是饱和度不够。按「近少远多」控制增减量，先让目标色自然透出，再谈风格染色。直方图两端拉开、中性色去灰，是通透的前提。</p><div class="evidence"><a href="../color-grade-basics-图文实录.html" target="_blank" rel="noopener">小小调色，拿捏啦🫴！！</a><a href="../photo-clarity-图文实录.html" target="_blank" rel="noopener">照片通透是由什么决定的呢？通透只需两点</a><a href="../curve-color-grade-图文实录.html" target="_blank" rel="noopener">小小曲线调色，拿捏啦🫴！！</a></div></article><article class="card"><h3>2. 曝光还原到位，调色已完成八成</h3><p>想法很多却无从下手时，先把曝光还原到画面该有的状态，质感往往已经到位大半。用大范围遮罩重塑分区——提亮主体、压暗抢戏区域，避免小遮罩硬提人物留下痕迹。</p><div class="evidence"><a href="../exposure-done-grade-80-图文实录.html" target="_blank" rel="noopener">只要做对了曝光，你的调色就完成了80%</a><a href="../davinci-grade-logic-图文实录.html" target="_blank" rel="noopener">达芬奇调色的底层逻辑，如何分析调色思路</a><a href="../gray-find-dark-find-bright-图文实录.html" target="_blank" rel="noopener">视频画面总是发灰？亮调要找暗，暗调要找亮</a></div></article><article class="card"><h3>3. 达芬奇节点：串行打底，并行纠偏</h3><p>串行节点适合线性流程：还原→白平衡影调→风格化；并行节点从同源分流，避免串行连锁反应。一级校色定高光/中间调/暗部基调，二级再用曲线、向量、遮罩分离元素独立塑造。</p><div class="evidence"><a href="../davinci-node-system-图文实录.html" target="_blank" rel="noopener">达芬奇节点系统：一个视频教会你</a><a href="../secondary-grading-图文实录.html" target="_blank" rel="noopener">二级调色，一个视频教会你</a><a href="../la-la-land-colorist-图文实录.html" target="_blank" rel="noopener">《爱乐之城》调色师，带你调色：从一级校色开始建立色彩分离</a></div></article><article class="card"><h3>4. LUT放链路要有色域意识，仿色要学结构</h3><p>LUT放开头需DCI P3 limiter兜底；更稳的是先校色后套LUT，用键输出调浓度。仿色硬核是可迁移结构：曲线铺影调、混色褪色、颜色分级嵌冷暖、校准收束，复制到同组片只改曝光仍成立。</p><div class="evidence"><a href="../lut-placement-tips-图文实录.html" target="_blank" rel="noopener">LUT使用的小秘诀：放链路开头还是结尾？</a><a href="../master-color-grade-tone-图文实录.html" target="_blank" rel="noopener">这个色调学会了一定是大师｜品川力 Lightroom 仿色</a><a href="../ref-image-fast-match-tool-图文实录.html" target="_blank" rel="noopener">只要你有参考图，就能用这个工具快速仿色</a></div></article><article class="card"><h3>5. 人像先液化骨像，再调色摆盘</h3><p>调色没问题成片仍不好看，毛病常在液化：顺序先头发（抬颅顶）、再体态（头肩比）、后面部（微调保辨识度）。留住原生高光与肌理，只去暗沉疲惫，避免塑料假磨皮。</p><div class="evidence"><a href="../liquify-beats-colorgrade-图文实录.html" target="_blank" rel="noopener">调色再好也没用！高手差距藏在人像液化里</a><a href="../liquify-bone-structure-图文实录.html" target="_blank" rel="noopener">人像高不高级，主要看液化！</a><a href="../original-vs-retouch-图文实录.html" target="_blank" rel="noopener">原图VS精修小姐姐底子很好稍稍修一点更精致</a></div></article><article class="card"><h3>6. HDR色轮与轴心：按明暗分层改倾向</h3><p>发灰本质是层次不够，用临时加对比节点自测。亮调要找暗、暗调要找亮；轴心决定谁算亮面谁算暗面，配合HDR在暗部或亮部内部做局部S曲线，比暴力提暗部更自然。</p><div class="evidence"><a href="../davinci-hdr-wheels-usage-图文实录.html" target="_blank" rel="noopener">达芬奇的 HDR 色轮怎么用？只能给 HDR 素材用吗？</a><a href="../davinci-axis-what-for-图文实录.html" target="_blank" rel="noopener">达芬奇的轴心到底是干嘛的？学会调色提升</a><a href="../texture-depth-no-mask-图文实录.html" target="_blank" rel="noopener">画面质感和层次怎么强化？不画遮罩行不行</a></div></article>
+</section>
+
+<section class="section">
+<h2>避坑</h2>
+<ul class="list pitfalls"><li>直接加粉/加饱和导致闷脏，应先曲线提光、减黄再染色</li><li>一级校色轮硬拧亮暖暗冷，像错白平衡滤镜</li><li>仿色LUT力度拉满且套在还原之前，全局易偏</li><li>钢笔抠到像素级再调色，性价比极低</li><li>提亮暗面人物却不保黑位，画面立刻发灰</li></ul>
+</section>
+
+<section class="section">
+<h2>行动清单</h2>
+<ul class="list actions"><li>每条片先波形定曝光：高光约80–90%、暗部约10%，再进风格</li><li>建立串行还原链+并行纠肤/纠天节点模板</li><li>仿色用参考图生成保守LUT，还原后新节点套入并键输出降浓度</li><li>人像精修按液化→瑕疵清理→分区调色顺序验收</li><li>多场景混剪先定锚点镜头，再粘贴同时段并统一天空等主成分</li></ul>
+</section>
+
+<p class="footer">由 taxonomy primary=<code>color-grade</code> 汇总 · 证据链指向站内图文实录 · 可用 scripts/generate-category-summaries.py 重生</p>
+</main>
+</body>
+</html>
