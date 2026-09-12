@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-"""Propose primary/skills/creator/tool/series from taxonomy.json + index.json.
+"""Propose (and optionally apply) primary/skills/creator/tool/series from taxonomy.json.
 
-Does NOT mutate index.json. Writes:
-  docs/taxonomy-preview.json   — per-item proposals
-  docs/taxonomy-preview.md     — human review summary
-
-Usage:
-  python3 scripts/propose-taxonomy.py
-  python3 scripts/propose-taxonomy.py --apply-dry-run   # same, print would-be field patch
+Default: write preview only (docs/taxonomy-preview.{json,md}).
+Apply:   python3 scripts/propose-taxonomy.py --apply
+Dry-run: python3 scripts/propose-taxonomy.py --apply --dry-run
 """
 
 from __future__ import annotations
@@ -30,6 +26,9 @@ def slug_of(item: dict) -> str:
         return html[: -len("-图文实录.html")]
     if html:
         return Path(html).stem
+    url = item.get("url") or ""
+    if url.startswith("personal:"):
+        return url[len("personal:") :]
     return ""
 
 
@@ -49,7 +48,6 @@ def propose(item: dict, tax: dict) -> dict:
 
     label_by_id = {p["id"]: p["label"] for p in tax.get("primaries") or []}
 
-    # personal stays out of video primary nav
     is_personal = item.get("platform") == "personal" or "个人专栏" in tags
 
     hits: dict[str, list[str]] = defaultdict(list)
@@ -62,7 +60,7 @@ def propose(item: dict, tax: dict) -> dict:
             hits[pid].append(f"tag:{t}")
 
     for prefix, pid in (tax.get("slug_hints") or {}).items():
-        if slug.startswith(prefix) or prefix in slug:
+        if slug.startswith(prefix) or (prefix in slug if len(prefix) > 3 else False):
             hits[pid].append(f"slug:{prefix}")
 
     if hits:
@@ -118,7 +116,42 @@ def propose(item: dict, tax: dict) -> dict:
     }
 
 
-def write_reports(proposals: list[dict], tax: dict) -> None:
+def apply_fields(item: dict, prop: dict, tax: dict) -> None:
+    """Mutate index item with taxonomy fields."""
+    noise = set(tax.get("noise_tags") or [])
+    slug = prop.get("slug") or ""
+    if slug:
+        item["slug"] = slug
+
+    if prop.get("is_personal"):
+        item.pop("primary", None)
+        item.pop("skills", None)
+        item.pop("creator", None)
+        item.pop("tool", None)
+        item.pop("series", None)
+        # keep 个人专栏 in tags; still strip platform noise
+        tags = [t for t in (item.get("tags") or []) if t not in noise or t == "个人专栏"]
+        item["tags"] = tags
+        return
+
+    item["primary"] = prop["primary"]
+    if prop.get("skills"):
+        item["skills"] = list(prop["skills"])
+    else:
+        item.pop("skills", None)
+
+    for key in ("creator", "tool", "series"):
+        val = prop.get(key)
+        if val:
+            item[key] = val
+        else:
+            item.pop(key, None)
+
+    tags = [t for t in (item.get("tags") or []) if t not in noise]
+    item["tags"] = tags
+
+
+def write_reports(proposals: list[dict], tax: dict, *, applied: bool = False) -> None:
     by_primary = Counter(p["primary"] for p in proposals if not p["is_personal"])
     by_conf = Counter(p["confidence"] for p in proposals if not p["is_personal"])
     label = {p["id"]: p["label"] for p in tax["primaries"]}
@@ -128,6 +161,7 @@ def write_reports(proposals: list[dict], tax: dict) -> None:
             {
                 "taxonomy_version": tax.get("version"),
                 "item_count": len(proposals),
+                "applied": applied,
                 "distribution": {label.get(k, k): v for k, v in by_primary.most_common()},
                 "confidence": dict(by_conf),
                 "items": proposals,
@@ -139,8 +173,13 @@ def write_reports(proposals: list[dict], tax: dict) -> None:
         encoding="utf-8",
     )
 
+    header = (
+        "# 分类预览（已写入 index.json）"
+        if applied
+        else "# 分类预览（自动提案，未写入 index）"
+    )
     lines = [
-        "# 分类预览（自动提案，未写入 index）",
+        header,
         "",
         f"词表版本：`taxonomy.json` v{tax.get('version')} · 条目 {len(proposals)}",
         "",
@@ -169,16 +208,14 @@ def write_reports(proposals: list[dict], tax: dict) -> None:
     lines.append(f"共 {len(review)} 条需要人工看一眼。\n")
     for p in review[:80]:
         tags = ", ".join(p["old_tags"][:8])
-        lines.append(f"- **{p['title'][:50]}** `{p['slug']}` → `{p['primary_label']}` · tags: {tags}")
+        lines.append(
+            f"- **{p['title'][:50]}** `{p['slug']}` → `{p['primary_label']}` · tags: {tags}"
+        )
     if len(review) > 80:
         lines.append(f"\n… 另有 {len(review) - 80} 条，见 `taxonomy-preview.json`\n")
 
     lines += ["", "## 多命中冲突样例（medium，有 alt）", ""]
-    conflicts = [
-        p
-        for p in proposals
-        if p.get("alt_primaries") and not p["is_personal"]
-    ][:40]
+    conflicts = [p for p in proposals if p.get("alt_primaries") and not p["is_personal"]][:40]
     for p in conflicts:
         alts = ", ".join(a["label"] for a in p["alt_primaries"])
         lines.append(
@@ -187,11 +224,11 @@ def write_reports(proposals: list[dict], tax: dict) -> None:
 
     lines += [
         "",
-        "## 下一步",
+        "## 维护",
         "",
         "1. 审 `other` / 冲突样例，改 `docs/taxonomy.json` 的映射或 priority",
-        "2. 确认后可写脚本把 `primary`/`skills`/`creator`/`tool`/`series` 写回 `index.json`",
-        "3. 首页改为读 `taxonomy.json` + `item.primary`，废弃 tag→类模糊匹配",
+        "2. 重跑：`python3 scripts/propose-taxonomy.py --apply`",
+        "3. 首页读 `taxonomy.json` + `item.primary`；二级面用 `creator` / `tool`",
         "",
     ]
     OUT_MD.write_text("\n".join(lines), encoding="utf-8")
@@ -199,25 +236,50 @@ def write_reports(proposals: list[dict], tax: dict) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--apply-dry-run", action="store_true")
+    parser.add_argument("--apply", action="store_true", help="Write fields into index.json")
+    parser.add_argument("--dry-run", action="store_true", help="With --apply, do not write index")
     args = parser.parse_args()
 
     tax, idx = load()
     proposals = [propose(it, tax) for it in idx]
-    write_reports(proposals, tax)
+    write_reports(proposals, tax, applied=False)
 
     video = [p for p in proposals if not p["is_personal"]]
     dist = Counter(p["primary"] for p in video)
     label = {p["id"]: p["label"] for p in tax["primaries"]}
     print(f"Wrote {OUT_MD.relative_to(ROOT)} and {OUT_JSON.relative_to(ROOT)}")
-    print(f"Video items: {len(video)}")
+    print(f"Video items: {len(video)}  primary_sum={sum(dist.values())}")
     for pid in tax["priority"]:
         print(f"  {label[pid]:8s} {dist.get(pid, 0):4d}")
     other_n = dist.get("other", 0)
     print(f"其他占比: {100 * other_n / max(len(video), 1):.1f}%")
-    if args.apply_dry_run:
-        sample = next(p for p in proposals if p["primary"] == "color-grade")
-        print("dry-run sample fields:", {k: sample[k] for k in ("slug", "primary", "skills", "creator", "tool", "series")})
+
+    if not args.apply:
+        return
+
+    changed = 0
+    for item, prop in zip(idx, proposals):
+        before = json.dumps(
+            {k: item.get(k) for k in ("slug", "primary", "skills", "creator", "tool", "series", "tags")},
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+        apply_fields(item, prop, tax)
+        after = json.dumps(
+            {k: item.get(k) for k in ("slug", "primary", "skills", "creator", "tool", "series", "tags")},
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+        if before != after:
+            changed += 1
+
+    print(f"{'Would update' if args.dry_run else 'Updated'} {changed} / {len(idx)} items")
+    if args.dry_run:
+        return
+
+    INDEX_PATH.write_text(json.dumps(idx, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_reports(proposals, tax, applied=True)
+    print(f"Wrote {INDEX_PATH.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

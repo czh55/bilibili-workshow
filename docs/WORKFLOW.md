@@ -866,6 +866,8 @@ XML 注意事项：
   "date": "YYYY-MM-DD",
   "title": "视频标题",
   "summary": "一句话摘要，≤120字",
+  "primary": "film",
+  "skills": ["视听语言"],
   "tags": ["影视", "视听分析"],
   "platform": "bilibili",
   "url": "https://www.bilibili.com/video/BVxxx",
@@ -882,6 +884,10 @@ XML 注意事项：
 }
 ```
 
+- `primary`：**必填**（视频总结）。取自 [`docs/taxonomy.json`](taxonomy.json) 的 `primaries[].id`（如 `color-grade` / `photo` / `workplace`）。首页分类栏只认此字段，不再用自由 tags 模糊匹配。漏写则归入 `other`；批量补全可跑 `python3 scripts/propose-taxonomy.py --apply`
+- `skills`：可选，0–4 个，优先用词表 `skills` 列表中的受控词
+- `creator` / `tool` / `series`：可选；取值见词表 `creators` / `tools` / `series` 的 **value**（如 `laocha`、`davinci`），供主类下的二级筛选
+- `tags`：3–6 个长尾检索词；**不要**写平台名（小红书/B站已有 `platform`）；不要依赖 tags 驱动分类栏
 - `platform`：`bilibili` / `xiaohongshu`（Step 0）；另支持 `local`（本地视频）与 `personal`（个人专栏）
 - `outputs.html`：轻松纪实、含截图与完整转录的 HTML；个人专栏可为讨论问答实录（无截图时 `screenshot_count` 可为 0）
 - `outputs.svg`：客观结构化分析 SVG
@@ -890,6 +896,7 @@ XML 注意事项：
 - `screenshot_count`：实际提交的截图数
 - `transcript_segments`：HTML 呈现的非空 Whisper 分段数；个人专栏可为讨论问条数
 - `svg_height`：`buildSvg()` 返回的最终高度
+- `slug`：可选但推荐；与产物文件名前缀一致。`--apply` 会从 `outputs.html` 回填
 
 ### 个人专栏（platform: personal）
 
@@ -898,7 +905,7 @@ XML 注意事项：
 1. `url` 使用稳定本地标识，如 `personal:{slug}`
 2. 仍须双轨：`{slug}-图文实录.html` + `{slug}-理性分析.svg`
 3. 首页顶栏 Tab **「个人专栏」**（`#personal`）单独展示，banner 样式参考 drama-analysis english-hub；**不要**混入视频总结分类条
-4. 标签建议含 `个人专栏`；不展示「原视频」链接
+4. 标签建议含 `个人专栏`；不展示「原视频」链接；**不必**填 `primary`（视频分类栏不展示专栏）
 5. 视频总结时间线与搜索排除 `platform: personal`，避免与搬运总结混排
 
 **增强/替换既有文章后必须同步索引**：若只是增强或替换某个既有条目（如新增大量截图），必须同步更新该条目的 `screenshot_count`（以及变化了的 `transcript_segments`、`svg_height` 等字段），保持索引与实际产物一致；不要只更新 HTML 而留下过期的元数据。

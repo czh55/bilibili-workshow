@@ -847,6 +847,44 @@
       color: rgba(255,255,255,0.92);
     }
 
+    .facet-bar {
+      max-width: 860px;
+      margin: -8px auto 20px;
+      padding: 0 24px;
+      display: none;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .facet-bar.visible { display: flex; }
+    .facet-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-right: 4px;
+    }
+    .facet-btn {
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .facet-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .facet-btn.active {
+      background: rgba(96,165,250,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
     /* ====== 搜索 ====== */
     .search-bar {
       max-width: 860px;
@@ -1018,6 +1056,8 @@
       .search-icon { left: 28px; }
       .category-bar { padding: 0 12px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .category-bar::-webkit-scrollbar { display: none; }
+      .facet-bar { padding: 0 12px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .facet-bar::-webkit-scrollbar { display: none; }
       .mode-tabs { padding: 0 12px 20px; gap: 8px; }
       .mode-tab { padding: 10px 18px; font-size: 14px; }
       .phrasebook-row { grid-template-columns: 1fr; }
@@ -1124,6 +1164,7 @@
 
   <!-- 分类标签栏 -->
   <div class="category-bar" id="categoryBar"></div>
+  <div class="facet-bar" id="facetBar" aria-label="二级筛选"></div>
 
   <!-- 主内容 -->
   <div class="container" id="mainContainer">
@@ -1143,30 +1184,16 @@
       let allData = [];
       let allTopics = [];
       let searchIndex = [];
+      let taxonomy = null;
+      let categories = [{ key: null, label: '全部' }];
+      let creatorLabels = {};
+      let toolLabels = {};
       let dateMap = {};
       let calYear, calMonth;
       let viewMode = (location.hash === '#personal') ? 'personal' : 'videos';
 
-      const CATEGORIES = [
-        { key: null, label: '全部', match: [] },
-        { key: '摄影', label: '摄影', match: ['摄影', '摄影技巧', '拍摄技巧', '人像拍照', '灯光', '器材', '旅拍', '构图', '光圈', '快门', 'ISO', '运镜', '相机', '摄影教程', '拍摄教程', '布光', '产品拍摄', '静物摄影', '摄影教学', '手机摄影', '相机上手', '摄影背包', '户外摄影', '相机对比', '街拍', '摄影教材', '拍照姿势'] },
-        { key: '视频制作', label: '视频制作', match: ['视频制作', '后期', '剪辑干货', '视频剪辑', 'vlog', 'Vlog', 'vlog教程', '电影感', '剪辑', '剪辑后期', '剪映', '短视频', '分镜头', '拍摄思维', 'AI剪辑', 'Remotion', '剪辑教程', '转场', '运动相机', '延时摄影', '收音教程', '声道选择', '后期导出', '视频清晰度', '旅行视频', '短视频带货'] },
-        { key: '化妆', label: '化妆', match: ['化妆', '眉毛', '脸型分析', '五官分析', '侧脸面型', '变美', '美商', '面部分析', '三庭比例', '脸型', '面部中轴线', '审美自检', '五官结构', '面部设计', '立体度', '颜值'] },
-        { key: '穿搭', label: '穿搭', match: ['穿搭', '买衣技巧', '方圆脸', '做工细节', '显贵细节', '蜂巢针', '浮雕大提花', '斜裁', '服装工艺'] },
-        { key: '游泳', label: '游泳', match: ['游泳', '自由泳', '蛙泳', '打腿', '动作纠正', '动作对比', '移臂'] },
-        { key: '跑步', label: '跑步', match: ['跑步', '送髋'] },
-        { key: '影视', label: '影视', match: ['影视', '视听分析', '周星驰', '拉片', '视听语言', '镜头语言'] },
-        { key: '数码', label: '数码', match: ['数码'] },
-        { key: '汽车', label: '汽车', match: ['汽车', '驾驶', '汽车用品', '中国汽车', '新能源'] },
-        { key: '咖啡', label: '咖啡', match: ['咖啡', '拉花'] },
-        { key: '修图', label: '修图', match: ['修图', '调色', '婚纱照', '精修', '修图过程', '婚纱修图', '人像精修', '液化', '蒙版'] },
-        { key: '动作教学', label: '动作教学', match: ['动作教学'] },
-        { key: '光学科普', label: '光学科普', match: ['光学科普', '曝光三要素', '感光度', '色彩', '色度学', 'CIE'] },
-        { key: '动画', label: '动画', match: ['动画', '动画科普', 'After Effects', 'MG动画', '关键帧'] },
-        { key: '其他', label: '其他', match: [] }
-      ];
-
       let activeCategory = null;
+      let activeFacet = null; // { type: 'creator'|'tool', id: string }
 
       const $ = id => document.getElementById(id);
 
@@ -1183,6 +1210,23 @@
 
       function personalItems() {
         return allData.filter(isPersonalItem);
+      }
+
+      function buildTaxonomyMaps(tax) {
+        taxonomy = tax || null;
+        categories = [{ key: null, label: '全部' }];
+        creatorLabels = {};
+        toolLabels = {};
+        if (!tax) return;
+        (tax.primaries || []).forEach(function(p) {
+          categories.push({ key: p.id, label: p.label });
+        });
+        Object.keys(tax.creators || {}).forEach(function(name) {
+          creatorLabels[tax.creators[name]] = name;
+        });
+        Object.keys(tax.tools || {}).forEach(function(name) {
+          toolLabels[tax.tools[name]] = name;
+        });
       }
 
       function escapeHtml(s) {
@@ -1271,6 +1315,13 @@
           allData = [];
         }
         try {
+          const resp = await fetch('taxonomy.json');
+          if (!resp.ok) throw new Error('Failed');
+          buildTaxonomyMaps(await resp.json());
+        } catch (e) {
+          buildTaxonomyMaps(null);
+        }
+        try {
           const resp = await fetch('topics.json');
           if (!resp.ok) throw new Error('Failed');
           allTopics = await resp.json();
@@ -1301,6 +1352,7 @@
             }
             $('searchInput').value = '';
             activeCategory = null;
+            activeFacet = null;
             syncModeTabs();
             render();
           });
@@ -1311,6 +1363,7 @@
           viewMode = next;
           $('searchInput').value = '';
           activeCategory = null;
+          activeFacet = null;
           syncModeTabs();
           render();
         });
@@ -1341,20 +1394,22 @@
       }
 
       function itemHasCategory(item, catKey) {
-        if (catKey === '其他') {
-          const otherCats = CATEGORIES.filter(c => c.key && c.key !== '其他');
-          return !otherCats.some(function(c) { return itemHasCategory(item, c.key); });
-        }
-        const cat = CATEGORIES.find(c => c.key === catKey);
-        if (!cat || cat.match.length === 0) return false;
-        const tags = item.tags || [];
-        return cat.match.some(m => tags.includes(m));
+        if (!catKey) return true;
+        const primary = item.primary || 'other';
+        return primary === catKey;
+      }
+
+      function itemMatchesFacet(item, facet) {
+        if (!facet) return true;
+        if (facet.type === 'creator') return item.creator === facet.id;
+        if (facet.type === 'tool') return item.tool === facet.id;
+        return true;
       }
 
       function getCategoryCounts() {
         const counts = {};
         const pool = videoItems();
-        CATEGORIES.forEach(function(cat) {
+        categories.forEach(function(cat) {
           if (cat.key === null) {
             counts[null] = pool.length;
             return;
@@ -1370,7 +1425,10 @@
         const bar = $('categoryBar');
         const counts = getCategoryCounts();
         bar.innerHTML = '';
-        CATEGORIES.forEach(function(cat) {
+        categories.forEach(function(cat) {
+          const n = counts[cat.key] || 0;
+          // Hide empty non-all categories to keep the bar usable
+          if (cat.key && n === 0) return;
           const btn = document.createElement('button');
           btn.className = 'category-btn' + (activeCategory === cat.key ? ' active' : '');
           const label = document.createElement('span');
@@ -1378,11 +1436,67 @@
           label.textContent = cat.label;
           const count = document.createElement('span');
           count.className = 'category-count';
-          count.textContent = String(counts[cat.key] || 0);
+          count.textContent = String(n);
           btn.appendChild(label);
           btn.appendChild(count);
           btn.addEventListener('click', function() {
             activeCategory = cat.key;
+            activeFacet = null;
+            render();
+          });
+          bar.appendChild(btn);
+        });
+      }
+
+      function buildFacetBar() {
+        const bar = $('facetBar');
+        if (!bar) return;
+        bar.innerHTML = '';
+        if (!activeCategory) {
+          bar.classList.remove('visible');
+          return;
+        }
+        const pool = videoItems().filter(function(item) {
+          return itemHasCategory(item, activeCategory);
+        });
+        const creatorCounts = {};
+        const toolCounts = {};
+        pool.forEach(function(item) {
+          if (item.creator) creatorCounts[item.creator] = (creatorCounts[item.creator] || 0) + 1;
+          if (item.tool) toolCounts[item.tool] = (toolCounts[item.tool] || 0) + 1;
+        });
+        const chips = [];
+        Object.keys(creatorCounts).forEach(function(id) {
+          if (creatorCounts[id] >= 2) {
+            chips.push({ type: 'creator', id: id, label: creatorLabels[id] || id, count: creatorCounts[id] });
+          }
+        });
+        Object.keys(toolCounts).forEach(function(id) {
+          if (toolCounts[id] >= 2) {
+            chips.push({ type: 'tool', id: id, label: toolLabels[id] || id, count: toolCounts[id] });
+          }
+        });
+        chips.sort(function(a, b) { return b.count - a.count; });
+        if (chips.length === 0) {
+          bar.classList.remove('visible');
+          return;
+        }
+        bar.classList.add('visible');
+        const hint = document.createElement('span');
+        hint.className = 'facet-label';
+        hint.textContent = '细分';
+        bar.appendChild(hint);
+        chips.forEach(function(chip) {
+          const btn = document.createElement('button');
+          const isActive = activeFacet && activeFacet.type === chip.type && activeFacet.id === chip.id;
+          btn.className = 'facet-btn' + (isActive ? ' active' : '');
+          btn.textContent = chip.label + ' ' + chip.count;
+          btn.addEventListener('click', function() {
+            if (isActive) {
+              activeFacet = null;
+            } else {
+              activeFacet = { type: chip.type, id: chip.id };
+            }
             render();
           });
           bar.appendChild(btn);
@@ -1459,6 +1573,13 @@
         $('searchBar').style.display = (isPersonal ? hasPersonals : (hasVideos || hasTopics)) ? 'block' : 'none';
         $('calendarWrapper').style.display = (!isPersonal && hasVideos) ? 'block' : 'none';
         $('categoryBar').style.display = (!isPersonal && hasVideos) ? 'flex' : 'none';
+        if (isPersonal || !hasVideos) {
+          const fb = $('facetBar');
+          if (fb) {
+            fb.classList.remove('visible');
+            fb.innerHTML = '';
+          }
+        }
         $('topicsSection').style.display = (!isPersonal && hasTopics) ? 'block' : 'none';
         $('podcastHeading').style.display = (!isPersonal && hasVideos) ? 'block' : 'none';
         $('mainContainer').style.display = isPersonal ? 'none' : '';
@@ -1488,6 +1609,11 @@
 
         if (query) {
           $('categoryBar').style.display = 'none';
+          const fb = $('facetBar');
+          if (fb) {
+            fb.classList.remove('visible');
+            fb.innerHTML = '';
+          }
           $('topicsSection').style.display = 'none';
           $('podcastHeading').style.display = 'none';
           buildSearchResults(query);
@@ -1497,6 +1623,7 @@
         $('searchResults').style.display = 'none';
 
         buildCategoryBar();
+        buildFacetBar();
         buildTopics(query);
 
         if (hasVideos) {
@@ -1837,6 +1964,7 @@
             (item.error_message || '').toLowerCase().includes(query)
           )) return false;
           if (activeCategory && !itemHasCategory(item, activeCategory)) return false;
+          if (activeFacet && !itemMatchesFacet(item, activeFacet)) return false;
           return true;
         }
 
@@ -1847,11 +1975,11 @@
           return items.length > 0;
         });
 
-        if ((query || activeCategory) && visibleCount === 0 && !topicMatchesQuery(query)) {
+        if ((query || activeCategory || activeFacet) && visibleCount === 0 && !topicMatchesQuery(query)) {
           $('timeline').style.display = 'none';
           $('searchEmpty').style.display = '';
         } else {
-          $('timeline').style.display = (query || activeCategory) && visibleCount === 0 ? 'none' : '';
+          $('timeline').style.display = (query || activeCategory || activeFacet) && visibleCount === 0 ? 'none' : '';
           $('searchEmpty').style.display = 'none';
           if (visibleCount > 0) buildTimeline(filteredDays);
         }

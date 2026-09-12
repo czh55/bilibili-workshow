@@ -1,30 +1,30 @@
-# 分类预览（自动提案，未写入 index）
+# 分类预览（已写入 index.json）
 
-词表版本：`taxonomy.json` v1 · 条目 814
+词表版本：`taxonomy.json` v1 · 条目 822
 
 ## 主类分布（不含个人专栏）
 
 | 主类 | 数量 | 占比 |
 |------|------|------|
-| 调色后期 (`color-grade`) | 81 | 10.0% |
-| 摄影拍摄 (`photo`) | 162 | 20.0% |
-| 视频制作 (`video`) | 126 | 15.5% |
-| 职场表达 (`workplace`) | 89 | 11.0% |
+| 调色后期 (`color-grade`) | 83 | 10.2% |
+| 摄影拍摄 (`photo`) | 162 | 19.8% |
+| 视频制作 (`video`) | 126 | 15.4% |
+| 职场表达 (`workplace`) | 89 | 10.9% |
 | 穿搭造型 (`fashion`) | 57 | 7.0% |
-| 美妆化妆 (`makeup`) | 29 | 3.6% |
-| 运动动作 (`sports`) | 51 | 6.3% |
-| 咖啡手作 (`coffee`) | 37 | 4.6% |
-| 绘画造型 (`painting`) | 59 | 7.3% |
+| 美妆化妆 (`makeup`) | 29 | 3.5% |
+| 运动动作 (`sports`) | 51 | 6.2% |
+| 咖啡手作 (`coffee`) | 37 | 4.5% |
+| 绘画造型 (`painting`) | 59 | 7.2% |
 | 影视视听 (`film`) | 15 | 1.8% |
-| 汽车数码 (`auto-digital`) | 33 | 4.1% |
+| 汽车数码 (`auto-digital`) | 33 | 4.0% |
 | 家装空间 (`home`) | 8 | 1.0% |
-| 其他 (`other`) | 65 | 8.0% |
+| 其他 (`other`) | 68 | 8.3% |
 
-置信度：{'high': 556, 'low': 65, 'medium': 191}
+置信度：{'high': 558, 'low': 68, 'medium': 191}
 
 ## 待审：`other` 与 `low` 置信度
 
-共 65 条需要人工看一眼。
+共 68 条需要人工看一眼。
 
 - **从雪山到热带雨林! 中国最后一个通公路的县城--墨脱｜Links A7R6** `motuo` → `其他` · tags: 旅行, 西藏, 墨脱, 公路, 徒步
 - **叹气要往上叹！** `sigh-up` → `其他` · tags: 健康, 呼吸, 气息, 护嗓
@@ -91,6 +91,9 @@
 - **沙特2030愿景，现在怎么样了？** `saudi-vision-2030-now` → `其他` · tags: 沙特, 2030愿景, 页岩油, PIF, IKTVA, 小Lin说
 - **照片越精致越是陷阱？AI 时代什么才是一张好照片** `photo-refine-trap-ai-era` → `其他` · tags: 哈苏大师赛, AI时代, 好照片, 叙事性, 林海音
 - **开了四年电车又换回油车：四点亲身总结** `ev-four-years-summary` → `其他` · tags: 电车, 油车, 续航, 充电, 贬值, 爱车研习社
+- **王自如剖析iPhone Duo** `wangziru-iphone-duo-fold` → `其他` · tags: iPhone Duo, 折叠屏, OLED, 铰链, 生态, 王自如
+- **最高才两千，学生党超低预算相机捡漏** `budget-camera-under-2k` → `其他` · tags: 二手相机, 5D2, Z30, ZV-E10, Pocket3, 学生党
+- **这些是什么厚黑 不同类型厚黑展示讲解** `thick-black-stockings-types` → `其他` · tags: 厚黑袜, 连裤袜, 天鹅绒, 油亮, 水光, 竖条纹
 
 ## 多命中冲突样例（medium，有 alt）
 
@@ -135,8 +138,8 @@
 - **为什么ISO不能碰？这个习惯要从胶卷说起！** → **视频制作**（备选: 摄影拍摄） evidence=['tag:视频制作']
 - **苹果AppleLog为什么是无敌的？** → **视频制作**（备选: 摄影拍摄） evidence=['tag:视频制作', 'tag:后期']
 
-## 下一步
+## 维护
 
 1. 审 `other` / 冲突样例，改 `docs/taxonomy.json` 的映射或 priority
-2. 确认后可写脚本把 `primary`/`skills`/`creator`/`tool`/`series` 写回 `index.json`
-3. 首页改为读 `taxonomy.json` + `item.primary`，废弃 tag→类模糊匹配
+2. 重跑：`python3 scripts/propose-taxonomy.py --apply`
+3. 首页读 `taxonomy.json` + `item.primary`；二级面用 `creator` / `tool`
