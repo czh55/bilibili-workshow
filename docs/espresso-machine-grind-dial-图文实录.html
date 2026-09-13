@@ -1,0 +1,514 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="意式调磨底层逻辑：先定 18g 粉 / 30s / 36g 液，再按流速调粗细；洗磨、压粉、放水、可接受区间与酸苦平衡。约12分27秒实操全记录。"><title>13分钟教会你咖啡机调磨｜图文实录</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.8;color:#292524;background:#fafaf9}
+.container{width:min(960px,100%);margin:0 auto;padding:48px 32px 80px}header{margin-bottom:40px}
+header h1{font-size:28px;font-weight:800;color:#1c1917;margin:0 0 8px;line-height:1.4}
+header .meta{font-size:14px;color:#78716c;margin-bottom:16px}header .meta span{margin-right:16px}
+.original-link{display:inline-block;margin-top:8px;font-size:14px;color:#3b82f6;text-decoration:none;border:1px solid #3b82f6;padding:4px 14px;border-radius:8px}
+.original-link:hover{background:#3b82f6;color:#fff}
+.documentary{font-size:17px}
+.documentary h2{font-size:22px;font-weight:700;color:#1c1917;margin:32px 0 16px;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.summary-row{display:flex;gap:12px;padding:16px 20px;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);align-items:flex-start}
+.summary-row .time-marker{flex-shrink:0;margin-top:2px;font-size:14px;color:#b45309;font-weight:700;font-variant-numeric:tabular-nums;min-width:88px}
+.summary-row strong{display:block;font-size:16px;color:#1c1917;margin-bottom:4px}
+.summary-row p{color:#57534e;margin:0;font-size:15px}
+.takeaway-box{background:#eff6ff;border-left:4px solid #3b82f6;border-radius:12px;padding:16px 20px;margin-top:20px}
+.takeaway-box strong{display:block;font-size:16px;color:#1e40af;margin-bottom:6px}
+.takeaway-box p{color:#3b82f6;margin:0;font-size:15px}
+.story-section{margin:48px 0}
+.story-section h3{font-size:20px;font-weight:700;color:#1c1917;margin:28px 0 6px}
+.story-section .section-time{font-size:14px;color:#b45309;font-weight:600;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.story-section p{color:#44403c;margin:0 0 12px;line-height:1.9}
+img{display:block;max-width:100%;height:auto}
+figure{margin:28px 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(41,37,36,.1)}
+figcaption{padding:14px 18px;color:#57534e;font-size:14px;line-height:1.6}
+.transcript-section{margin-top:64px}
+.transcript-list{list-style:none;padding:0}
+.transcript-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e7e5e4}
+.transcript-row time{font-variant-numeric:tabular-nums;color:#b45309;font-weight:700;font-size:14px}
+.transcript-row p{margin:0;font-size:15px}
+.transcript-collapsible{border:none;margin:0;padding:0}
+.transcript-collapsible summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;user-select:none;font-size:24px;font-weight:700;color:#1c1917;margin:0;padding-bottom:8px;border-bottom:2px solid #e7e5e4}
+.transcript-collapsible summary::-webkit-details-marker,.transcript-collapsible summary::marker{display:none}
+.transcript-collapsible summary::before{content:"▶";font-size:12px;color:#b45309;transition:transform .2s;flex-shrink:0}
+.transcript-collapsible[open] summary::before{transform:rotate(90deg)}
+.transcript-collapsible[open] summary{margin-bottom:16px}
+.transcript-note{font-size:14px;color:#a8a29e;margin-bottom:16px}
+@media(max-width:640px){.container{padding:28px 18px 56px}.transcript-row{grid-template-columns:56px 1fr;gap:10px}}</style></head><body><main class="container"><header><h1>13分钟教会你咖啡机调磨 小白也能变高手</h1><div class="meta"><span>来源：小红书</span><span>时长：12分27秒</span></div><a class="original-link" href="https://xhslink.cn/o/2D4CZQoofgP" target="_blank" rel="noopener">查看原视频</a></header><article class="documentary"><h2>内容要点</h2><p>网上标准未必直接套用你的机与豆——要先学会底层逻辑。作者把调磨拆成两段：先不管好不好喝，钉死目标「18 克粉、30 秒、萃取 36 克液」，在同一台磨豆机与咖啡机上反复洗磨、称粉、布粉、压粉、放水、上粉，用流速判断偏细还是偏粗；再用「大约每差 5 秒调一格」把刻度从太细（35 秒几乎不出液、43 秒才 38 克）推到偏粗（22 秒已 41 克），落在约 1.7–2.0 的区间，最后一把约 28 秒近目标。随后才谈风味：浓缩喝的是酸苦平衡与回甘，油脂主要是视觉；理想值之外给出家用/门店可接受区间（粉 18–19g、时 25–30s、液 30–36g）。收束：天气气压与换豆才需要重调；咖啡师是豆—磨—机之间的连接器，今天只是皮毛。</p><h3>知识结构</h3>
+<div class="summary-row"><span class="time-marker">[00:00→00:30]</span><div><strong>立题与目标</strong><p>意式最难；先定 18g/30s/36g，调完再评判好喝。</p></div></div>
+<div class="summary-row"><span class="time-marker">[00:30→01:10]</span><div><strong>洗磨必做</strong><p>少倒豆磨净丢弃：清掉刀盘旧粉，意式就是费粉。</p></div></div>
+<div class="summary-row"><span class="time-marker">[01:10→02:00]</span><div><strong>盲测第一把</strong><p>填满粉碗先萃：35s 几乎不出液、无油脂 → 太细。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:00→02:50]</span><div><strong>调粗与四变量</strong><p>刻度 1.2→1.8；粉/液/时固定后，第四变量是刻度盘。</p></div></div>
+<div class="summary-row"><span class="time-marker">[02:50→04:00]</span><div><strong>称粉与压粉</strong><p>动作一致；压平压实即可，力道比不过机端约 9 bar。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:00→04:40]</span><div><strong>第二把与换算</strong><p>43s/38g 仍细；差 13s≈3 个 5 秒 → 调到约 2。</p></div></div>
+<div class="summary-row"><span class="time-marker">[04:40→06:00]</span><div><strong>放水上粉与第三把</strong><p>E61 冲煮头放水降温；流速变快、油脂变好 → 再调细。</p></div></div>
+<div class="summary-row"><span class="time-marker">[06:00→08:10]</span><div><strong>区间与理想值</strong><p>1.7–2.0；28s 近成；理想值 vs 25–30s/30–36g 可接受区间。</p></div></div>
+<div class="summary-row"><span class="time-marker">[08:10→09:55]</span><div><strong>风味与回甘</strong><p>酸苦平衡优先；油脂次要；清水演示回甘。</p></div></div>
+<div class="summary-row"><span class="time-marker">[09:55→11:00]</span><div><strong>门店定量与豆子边界</strong><p>高杯量靠定量；区间内约六七成豆好喝。</p></div></div>
+<div class="summary-row"><span class="time-marker">[11:00→12:27]</span><div><strong>天气与连接器</strong><p>换豆/气压变才重调；咖啡师连接豆磨机。</p></div></div>
+<div class="takeaway-box"><strong>核心口诀</strong><p>先钉死 18g/30s/36g → 流速慢/无油脂=太细调粗，太快=调细；每约 5 秒一格；再谈酸苦平衡。理想值难天天中，落在可接受区间就算调磨成功。</p></div>
+<section class="story-section"><h3>先定目标，再谈好喝</h3><span class="section-time">[00:00 → 00:30]</span><p>开场声明：约 13 分钟讲清意式咖啡机调磨，小白也能上手。意式是做咖啡里最难的一块——不是网上所有标准、视频都能直接套到你的机与豆上，你要先掌握基础逻辑。</p><p>条目一：先给自己定目标。作者要求的目标是 18 克咖啡粉、30 秒时间、萃取 36 克咖啡液。此刻不要管好不好喝：给你一台磨豆机、一台咖啡机，就按这个目标调；调完之后再评判风味，再做微调。</p></section>
+<section class="story-section"><h3>洗磨：看起来浪费，其实是清刀盘</h3><span class="section-time">[00:30 → 01:10]</span><p>实操从磨豆机开始：打开豆仓开关，先少倒一点豆子，把粉磨完。这点粉直接不要——很浪费，但意式就是这么浪费。这一步叫洗磨：你不知道刀盘里之前磨过什么豆、放了多久；只有用新粉把旧粉「洗掉」，后续刻度判断才干净。</p><p>洗磨完成后正式倒豆。第一轮可以先不管精确重量：粉碗按 18 克规格，先磨到大概铺平、填满即可，按作者方法走，避免一开始就被称重吓退。</p><figure><img src="assets/espresso-machine-grind-dial/shot-01.jpg" alt="拍打豆仓把咖啡粉磨完，字幕「然后把整个的咖啡粉磨完」" loading="lazy"><figcaption>[00:44] 洗磨现场：少倒豆、磨净、丢弃——清掉刀盘残留，再进入正式称粉</figcaption></figure></section>
+<section class="story-section"><h3>第一把盲萃：太细的现场证据</h3><span class="section-time">[01:10 → 02:00]</span><p>直接上机萃取。细节一：一边流一边不流，往往是机器没放平。关掉时已约 35 秒，只出极少咖啡液，且几乎看不到油脂；流速慢、无油脂，说明研磨太细——水难穿过粉层。</p><p>诊断清楚后调粗：刚才约 1.2，先调到 1.6，再定到 1.8。调完还要把机内细粉再洗磨一遍，否则新旧研磨度混在一起，下一把仍会骗人。</p><figure><img src="assets/espresso-machine-grind-dial/shot-02.jpg" alt="双手转动磨豆机刻度环，字幕「那我们把它磨粗一点」" loading="lazy"><figcaption>[02:00] 粗细判断：粉太细 → 水难过粉层 → 调粗一丢丢（示意 1.2→1.8）</figcaption></figure></section>
+<section class="story-section"><h3>四个变量：粉、液、时，最后钉死刻度</h3><span class="section-time">[02:00 → 02:50]</span><p>正式定目标：18 克粉、萃 36 克液、30 秒。粉量、液量、时间都固定后，第四个要固定的变量就是磨豆机刻度盘——先找到能复现的刻度，细节才可谈。</p><p>称粉时深烘豆可能偏轻偏重（示意到过 20 克），作者强调：先别管中烘深烘浅烘叙事，按方法把粉量调回约 18 克；操作动作全程保持一致。</p></section>
+<section class="story-section"><h3>布粉、压粉：目的是压平压实，不是比力气</h3><span class="section-time">[02:50 → 04:00]</span><p>布粉器放上铺匀，再用粉锤压粉。常见纠结是「使多大劲」：有人轻轻压、有人按重量压。作者指出：萃取时机器端提供约 9 bar 的稳定压力，换算到粉碗表面相当于约 250 公斤量级的力——你压粉再大力也比不过机端。压粉唯一目的是压平压实，不要在小劲大劲上自我较劲。</p><p>怎么确保压平？练。标准动作提示：手柄轴线与手臂成一线，压粉唇垂直下压。上机前冲煮头放水约三秒即可。</p></section>
+<section class="story-section"><h3>第二把仍细：用「每 5 秒一格」粗调</h3><span class="section-time">[04:00 → 04:40]</span><p>机器仍可能不平。结果：43 秒才萃出约 38 克——相对 30 秒目标偏慢，粉仍太细，刀盘间距偏小。这把废掉后继续调粗。</p><p>简易换算：43−30=13 秒，大约每差 5 秒调粗一格 → 约 3 格。从约 1.7–1.8 调到 2 再多一丢丢。仍要短时放粉洗磨（约 2–3 秒），再称到约 18.4→拨回 18 克；每一杯都要过秤。布粉、粉锤压粉、再放水。</p><figure><img src="assets/espresso-machine-grind-dial/shot-03.jpg" alt="冲煮头下秤与奶缸，字幕「这机器还是不平」" loading="lazy"><figcaption>[03:59] 第二把计时称重现场：机器不平会影响双侧出液，先排除再读流速</figcaption></figure></section>
+<section class="story-section"><h3>为何放水、如何上粉，以及第三把偏粗</h3><span class="section-time">[04:40 → 06:00]</span><p>细节：有的机不需要每次放水；这台冲煮头为 E61（ASR 作 161），有利于水温稳定，但久不萃时头部会过热，放一点水是为降温。上粉：意式把手双耳多数约 45° 平着推入、卡住再拧紧。</p><p>第三把流速明显变快、前十秒油脂也好看——想要油脂，往往要把粉磨得相对粗一些。两次有效微调后，这台磨×这台机×这豆的区间落在约 1.7–2.0。但 22 秒已萃约 41 克，流速过快（粉太粗）→ 再调细到约 1.9。提醒：这一切不是为「这一杯好喝」，而是为找到刻度——这才叫调磨。意式费粉，所以店里与认真在家做的人常买公斤装。</p><figure><img src="assets/espresso-machine-grind-dial/shot-04.jpg" alt="目标 18g/30s/36g 对照现在 22s/41g（粉太粗）" loading="lazy"><figcaption>[05:57] 第三把诊断：相对目标过快过满 → 粉太粗，刻度再细一丢丢</figcaption></figure></section>
+<section class="story-section"><h3>近成功、理想值与可接受区间</h3><span class="section-time">[06:00 → 08:10]</span><p>再调细再萃：约 28 秒、约 41 克液——差两秒，几乎成了。作者坦白：下一次即使刻度与动作看似不变，参数仍可能漂——拼配豆比例、压粉力度都无法绝对复现。所谓「30 秒萃 18 克粉得 36 克液」是理想值；开店一天可能只有一两把完美中靶，下一把又偏。</p><p>因此给出可接受区间：时间约 25–30 秒，粉约 18–19 克，液约 30–36 克——落在区间就算调磨成功，不必迷信每一次都刚好 30/36。</p><figure><img src="assets/espresso-machine-grind-dial/shot-05.jpg" alt="理想值 18g/30s/36g 与参考区间对照讲解" loading="lazy"><figcaption>[07:52] 理想值 vs 参考区间：调磨成功看区间，不看每一把是否完美中靶</figcaption></figure></section>
+<section class="story-section"><h3>好喝是什么：酸苦平衡，油脂其次</h3><span class="section-time">[08:10 → 09:55]</span><p>下一问：这杯到底好不好喝？表面油脂好看，但喝到的是酸涩与来得慢的微苦。作者主张：喝浓缩主要是喝酸苦平衡，不是追复杂风味叙事；油脂在意式里最不重要，多半是视觉好看。</p><p>现场品饮：酸甜苦较平衡；甜往往难直接感知。倒清水漱口后觉得「水甜、有回甘」——不是水加了糖，而是酸苦刺激下降后舌头对甜的相对感知上来。门店目标：酸与苦平衡，并把酸苦的「距离」拉长；极甜豆子很贵，生意要算成本。</p></section>
+<section class="story-section"><h3>门店不靠每杯电子秤，家用仍可用秤学</h3><span class="section-time">[09:55 → 11:00]</span><p>日产两三百甚至四百杯时，不可能每杯都像教学那样反复称重计时。意式机常有定量功能；家里杯量少，仍可按称重方法学，但调一次磨很费粉——所以要学底层逻辑，而不是只抄一个网上刻度。</p><p>区间里仍可能遇到不好喝的豆：作者经验约六七成日常豆在这套目标下会过得去；极差拼配与极贵豆是两端例外。对开店能买到的日常豆，这套数值已够用。</p><figure><img src="assets/espresso-machine-grind-dial/shot-06.jpg" alt="讲师竖拇指，字幕「比如说每天出杯」" loading="lazy"><figcaption>[09:58] 出品现实：高杯量靠定量与稳定手感；家用低频可继续用秤练</figcaption></figure></section>
+<section class="story-section"><h3>何时重调：天气气压、换豆；咖啡师是连接器</h3><span class="section-time">[11:00 → 12:27]</span><p>总结：意式难，早上常要调磨。两类触发：天气变化、换豆子。连续晴天温湿度气压近似，可能四五天甚至一周才调一次；刮风下雨大气压改变时，机内约 9 bar 相对外界的压差变了，萃取就会变，通常要调。</p><p>咖啡师最难的不是「把某一杯吹得天花乱坠」，而是任意豆、任意磨、任意机之间承担连接：豆→磨成粉→机端萃取，中间全是人。今天只是底层皮毛；后续还有感官训练与操作一致性。做一两年的人都会这些——关键是先会这套逻辑。</p><figure><img src="assets/espresso-machine-grind-dial/shot-07.jpg" alt="讲解机端约 9 bar 压力与萃取关系" loading="lazy"><figcaption>[11:25] 气压与 9 bar：外界压强一变，同样机压下的萃取表现也会跟着变</figcaption></figure></section>
+</article><section class="transcript-section" id="transcript"><details class="transcript-collapsible"><summary>详细文字转录（453段）</summary><div class="transcript-body"><p class="transcript-note">以下内容按 Whisper 原始分段完整呈现，可能包含识别误差。</p><div class="transcript-list">
+<div class="transcript-row"><time>00:00</time><p>本视频耗时13分钟</p></div>
+<div class="transcript-row"><time>00:01</time><p>讲清意识咖啡机调磨</p></div>
+<div class="transcript-row"><time>00:03</time><p>小白也能变成大神</p></div>
+<div class="transcript-row"><time>00:04</time><p>意识咖啡是我们在做咖啡当中最难的</p></div>
+<div class="transcript-row"><time>00:07</time><p>不是说网上的所有的标准啊</p></div>
+<div class="transcript-row"><time>00:10</time><p>视频啊都适用于你</p></div>
+<div class="transcript-row"><time>00:12</time><p>它是基础的逻辑你要知道</p></div>
+<div class="transcript-row"><time>00:14</time><p>条目的话我们应该给自己定一个目标</p></div>
+<div class="transcript-row"><time>00:16</time><p>我们要的是18克的咖啡粉</p></div>
+<div class="transcript-row"><time>00:19</time><p>30秒的时间</p></div>
+<div class="transcript-row"><time>00:20</time><p>萃取36克的咖啡液</p></div>
+<div class="transcript-row"><time>00:22</time><p>你不要管好不好喝</p></div>
+<div class="transcript-row"><time>00:24</time><p>给你一台磨豆机</p></div>
+<div class="transcript-row"><time>00:25</time><p>给你一台咖啡机</p></div>
+<div class="transcript-row"><time>00:25</time><p>你就要这么调</p></div>
+<div class="transcript-row"><time>00:26</time><p>这么调完之后</p></div>
+<div class="transcript-row"><time>00:27</time><p>我们再来评判这杯咖啡好不好喝</p></div>
+<div class="transcript-row"><time>00:29</time><p>然后再进行微调</p></div>
+<div class="transcript-row"><time>00:30</time><p>一台磨豆机</p></div>
+<div class="transcript-row"><time>00:31</time><p>比如说我们先用这台磨豆机来做</p></div>
+<div class="transcript-row"><time>00:33</time><p>首先呢</p></div>
+<div class="transcript-row"><time>00:34</time><p>第一个步骤你要把这个开关打开</p></div>
+<div class="transcript-row"><time>00:36</time><p>这个豆仓开关</p></div>
+<div class="transcript-row"><time>00:37</time><p>第一个步骤先少一点</p></div>
+<div class="transcript-row"><time>00:38</time><p>先少倒一点咖啡豆</p></div>
+<div class="transcript-row"><time>00:39</time><p>然后把整个的咖啡粉磨完</p></div>
+<div class="transcript-row"><time>00:44</time><p>现在把咖啡粉磨完</p></div>
+<div class="transcript-row"><time>00:45</time><p>这点粉就不要了</p></div>
+<div class="transcript-row"><time>00:47</time><p>都不要了</p></div>
+<div class="transcript-row"><time>00:48</time><p>很浪费对吧</p></div>
+<div class="transcript-row"><time>00:49</time><p>这有点太浪费了吧</p></div>
+<div class="transcript-row"><time>00:50</time><p>意识咖啡就是这么浪费</p></div>
+<div class="transcript-row"><time>00:52</time><p>为什么要磨粉啊</p></div>
+<div class="transcript-row"><time>00:53</time><p>这个步骤叫做洗墨</p></div>
+<div class="transcript-row"><time>00:55</time><p>因为之前的刀盘</p></div>
+<div class="transcript-row"><time>00:56</time><p>它磨过什么咖啡豆</p></div>
+<div class="transcript-row"><time>00:57</time><p>但是这个咖啡豆放在里面多长时间了</p></div>
+<div class="transcript-row"><time>01:00</time><p>我都不知道</p></div>
+<div class="transcript-row"><time>01:00</time><p>我只有加一丁的咖啡粉</p></div>
+<div class="transcript-row"><time>01:03</time><p>让新的咖啡粉在刀盘上磨</p></div>
+<div class="transcript-row"><time>01:05</time><p>把旧的咖啡豆怎么样</p></div>
+<div class="transcript-row"><time>01:06</time><p>洗掉</p></div>
+<div class="transcript-row"><time>01:07</time><p>对 接下来我们往里倒豆子</p></div>
+<div class="transcript-row"><time>01:12</time><p>接下来呢</p></div>
+<div class="transcript-row"><time>01:13</time><p>我们不用去管重量</p></div>
+<div class="transcript-row"><time>01:14</time><p>我们先做一杯</p></div>
+<div class="transcript-row"><time>01:15</time><p>咖啡机的粉碗是固定的</p></div>
+<div class="transcript-row"><time>01:17</time><p>18克的粉碗</p></div>
+<div class="transcript-row"><time>01:18</time><p>18克</p></div>
+<div class="transcript-row"><time>01:19</time><p>对 我们先磨个咖啡粉</p></div>
+<div class="transcript-row"><time>01:21</time><p>大概给它铺平就可以了</p></div>
+<div class="transcript-row"><time>01:23</time><p>继续不粉</p></div>
+<div class="transcript-row"><time>01:24</time><p>这有18克吗</p></div>
+<div class="transcript-row"><time>01:25</time><p>你别管有没有</p></div>
+<div class="transcript-row"><time>01:26</time><p>大概把它填满就行了</p></div>
+<div class="transcript-row"><time>01:28</time><p>第一个步骤</p></div>
+<div class="transcript-row"><time>01:28</time><p>你就按照我的方法来做</p></div>
+<div class="transcript-row"><time>01:30</time><p>它绝对不会出错的</p></div>
+<div class="transcript-row"><time>01:32</time><p>直接点</p></div>
+<div class="transcript-row"><time>01:33</time><p>这杯咖啡直接催</p></div>
+<div class="transcript-row"><time>01:35</time><p>出咖啡液了对吧</p></div>
+<div class="transcript-row"><time>01:36</time><p>好 现在有一个细节</p></div>
+<div class="transcript-row"><time>01:38</time><p>这边流 这边不流对吧</p></div>
+<div class="transcript-row"><time>01:39</time><p>是什么问题</p></div>
+<div class="transcript-row"><time>01:40</time><p>是因为你的机器没有放平</p></div>
+<div class="transcript-row"><time>01:42</time><p>好 但是现在关掉吧</p></div>
+<div class="transcript-row"><time>01:44</time><p>已经纵长35秒的时间了</p></div>
+<div class="transcript-row"><time>01:45</time><p>才出一点这么样的</p></div>
+<div class="transcript-row"><time>01:46</time><p>这么一点咖啡液</p></div>
+<div class="transcript-row"><time>01:47</time><p>这点咖啡液有油脂吗</p></div>
+<div class="transcript-row"><time>01:49</time><p>并没有</p></div>
+<div class="transcript-row"><time>01:49</time><p>并没有</p></div>
+<div class="transcript-row"><time>01:50</time><p>流速又慢</p></div>
+<div class="transcript-row"><time>01:51</time><p>又没有油脂</p></div>
+<div class="transcript-row"><time>01:52</time><p>我催了35秒</p></div>
+<div class="transcript-row"><time>01:53</time><p>才出了这么点咖啡液</p></div>
+<div class="transcript-row"><time>01:54</time><p>证明现在的研磨度怎么样</p></div>
+<div class="transcript-row"><time>01:56</time><p>是粗了还是细了</p></div>
+<div class="transcript-row"><time>01:57</time><p>太细了对吧</p></div>
+<div class="transcript-row"><time>01:58</time><p>那我们把它磨粗一点</p></div>
+<div class="transcript-row"><time>02:00</time><p>先调一丢丢调</p></div>
+<div class="transcript-row"><time>02:02</time><p>刚才是1.2</p></div>
+<div class="transcript-row"><time>02:03</time><p>现在我们调到1.6</p></div>
+<div class="transcript-row"><time>02:05</time><p>1.8吧</p></div>
+<div class="transcript-row"><time>02:06</time><p>调到1.8</p></div>
+<div class="transcript-row"><time>02:06</time><p>刚才磨的细粉</p></div>
+<div class="transcript-row"><time>02:08</time><p>有没有在磨豆机里面</p></div>
+<div class="transcript-row"><time>02:09</time><p>在</p></div>
+<div class="transcript-row"><time>02:09</time><p>这时候我们要把细粉</p></div>
+<div class="transcript-row"><time>02:11</time><p>再给它洗掉</p></div>
+<div class="transcript-row"><time>02:13</time><p>洗掉了对吧</p></div>
+<div class="transcript-row"><time>02:16</time><p>接下来我们开始定目标了</p></div>
+<div class="transcript-row"><time>02:17</time><p>我们要用18克的咖啡粉</p></div>
+<div class="transcript-row"><time>02:19</time><p>催取36克的咖啡液</p></div>
+<div class="transcript-row"><time>02:21</time><p>对 30秒的时间</p></div>
+<div class="transcript-row"><time>02:23</time><p>18克的咖啡粉固定了</p></div>
+<div class="transcript-row"><time>02:25</time><p>36克的咖啡液固定了</p></div>
+<div class="transcript-row"><time>02:26</time><p>30秒的时间固定了</p></div>
+<div class="transcript-row"><time>02:28</time><p>得到第四个变量什么固定了</p></div>
+<div class="transcript-row"><time>02:30</time><p>我们需要把我们的</p></div>
+<div class="transcript-row"><time>02:31</time><p>刻度盘固定了</p></div>
+<div class="transcript-row"><time>02:32</time><p>先找到固定的刻度盘</p></div>
+<div class="transcript-row"><time>02:34</time><p>这一点细节</p></div>
+<div class="transcript-row"><time>02:37</time><p>20克多了多了</p></div>
+<div class="transcript-row"><time>02:39</time><p>这是什么烘焙度的</p></div>
+<div class="transcript-row"><time>02:40</time><p>这是个深度烘焙的</p></div>
+<div class="transcript-row"><time>02:42</time><p>你先不用管什么烘焙度</p></div>
+<div class="transcript-row"><time>02:44</time><p>你就按照我的方法调</p></div>
+<div class="transcript-row"><time>02:45</time><p>管它中烘深烘浅烘的</p></div>
+<div class="transcript-row"><time>02:47</time><p>先调18克</p></div>
+<div class="transcript-row"><time>02:50</time><p>这个操作动作要保持一致</p></div>
+<div class="transcript-row"><time>02:54</time><p>这个是个布粉器</p></div>
+<div class="transcript-row"><time>02:55</time><p>直接放在上面</p></div>
+<div class="transcript-row"><time>02:56</time><p>然后这边压粉</p></div>
+<div class="transcript-row"><time>02:59</time><p>压粉大概多大力道</p></div>
+<div class="transcript-row"><time>03:01</time><p>有多大劲使多大劲</p></div>
+<div class="transcript-row"><time>03:03</time><p>你这个问题问得特别好</p></div>
+<div class="transcript-row"><time>03:04</time><p>我来跟你讲一下</p></div>
+<div class="transcript-row"><time>03:04</time><p>很多人压粉都是轻轻压的</p></div>
+<div class="transcript-row"><time>03:06</time><p>很多人用重量来压</p></div>
+<div class="transcript-row"><time>03:08</time><p>因为一会我们要催取这杯咖啡了</p></div>
+<div class="transcript-row"><time>03:10</time><p>它要为我们提供一个</p></div>
+<div class="transcript-row"><time>03:11</time><p>稳定的9%的压力</p></div>
+<div class="transcript-row"><time>03:13</time><p>9%的压力换算成</p></div>
+<div class="transcript-row"><time>03:15</time><p>单位粉碗的表面</p></div>
+<div class="transcript-row"><time>03:17</time><p>相当于大概是一个</p></div>
+<div class="transcript-row"><time>03:19</time><p>250公斤的一个重量</p></div>
+<div class="transcript-row"><time>03:22</time><p>压在上面</p></div>
+<div class="transcript-row"><time>03:23</time><p>你压粉的力度再大</p></div>
+<div class="transcript-row"><time>03:25</time><p>你能大过咖啡机的力度吗</p></div>
+<div class="transcript-row"><time>03:27</time><p>压粉的唯一目的是什么</p></div>
+<div class="transcript-row"><time>03:29</time><p>压平压实</p></div>
+<div class="transcript-row"><time>03:30</time><p>千万不要小劲大劲</p></div>
+<div class="transcript-row"><time>03:32</time><p>明白了吗</p></div>
+<div class="transcript-row"><time>03:33</time><p>我怎么能确保我压平了</p></div>
+<div class="transcript-row"><time>03:35</time><p>练呀</p></div>
+<div class="transcript-row"><time>03:36</time><p>刚才那动作你没有注意</p></div>
+<div class="transcript-row"><time>03:38</time><p>仔细看吧</p></div>
+<div class="transcript-row"><time>03:38</time><p>刚开始练的时候</p></div>
+<div class="transcript-row"><time>03:39</time><p>有一个标准的动作是这样</p></div>
+<div class="transcript-row"><time>03:40</time><p>你的手柄的这条线</p></div>
+<div class="transcript-row"><time>03:43</time><p>跟你的胳膊是这条线上</p></div>
+<div class="transcript-row"><time>03:46</time><p>你的压粉唇</p></div>
+<div class="transcript-row"><time>03:47</time><p>这个地方是垂直的</p></div>
+<div class="transcript-row"><time>03:50</time><p>这样往下压</p></div>
+<div class="transcript-row"><time>03:51</time><p>尽量去练的</p></div>
+<div class="transcript-row"><time>03:53</time><p>好 放水</p></div>
+<div class="transcript-row"><time>03:54</time><p>要放多久</p></div>
+<div class="transcript-row"><time>03:55</time><p>放三秒就可以</p></div>
+<div class="transcript-row"><time>03:59</time><p>这机器还是不平</p></div>
+<div class="transcript-row"><time>04:03</time><p>43秒催了38克的咖啡液</p></div>
+<div class="transcript-row"><time>04:05</time><p>我们要求的话是</p></div>
+<div class="transcript-row"><time>04:06</time><p>30秒</p></div>
+<div class="transcript-row"><time>04:08</time><p>那现在时间变长了</p></div>
+<div class="transcript-row"><time>04:09</time><p>粉是变得</p></div>
+<div class="transcript-row"><time>04:10</time><p>粉太细了</p></div>
+<div class="transcript-row"><time>04:11</time><p>粉太细了对吧</p></div>
+<div class="transcript-row"><time>04:12</time><p>证明我们的高盘间距太小了</p></div>
+<div class="transcript-row"><time>04:14</time><p>粉太细了</p></div>
+<div class="transcript-row"><time>04:16</time><p>这边废掉了对吧</p></div>
+<div class="transcript-row"><time>04:17</time><p>然后接下来我们要把粉调粗一点</p></div>
+<div class="transcript-row"><time>04:19</time><p>教大家一个简单的换算方法</p></div>
+<div class="transcript-row"><time>04:21</time><p>43秒减30秒</p></div>
+<div class="transcript-row"><time>04:23</time><p>还差13秒</p></div>
+<div class="transcript-row"><time>04:23</time><p>大概每5秒</p></div>
+<div class="transcript-row"><time>04:25</time><p>调粗一个格</p></div>
+<div class="transcript-row"><time>04:27</time><p>大概现在就是有几个5秒</p></div>
+<div class="transcript-row"><time>04:28</time><p>有3个5秒</p></div>
+<div class="transcript-row"><time>04:30</time><p>我们大概调到2这个刻度就可以了</p></div>
+<div class="transcript-row"><time>04:32</time><p>调到2这个刻度</p></div>
+<div class="transcript-row"><time>04:33</time><p>刚才是1.7 1.8</p></div>
+<div class="transcript-row"><time>04:35</time><p>现在我们2稍微多一丢丢</p></div>
+<div class="transcript-row"><time>04:37</time><p>可以吧</p></div>
+<div class="transcript-row"><time>04:38</time><p>可以</p></div>
+<div class="transcript-row"><time>04:38</time><p>接下来还是放粉</p></div>
+<div class="transcript-row"><time>04:39</time><p>然后放粉</p></div>
+<div class="transcript-row"><time>04:40</time><p>大概放个2到3秒就可以了</p></div>
+<div class="transcript-row"><time>04:43</time><p>真的浪费你自己看</p></div>
+<div class="transcript-row"><time>04:45</time><p>然后再抹一下咖啡</p></div>
+<div class="transcript-row"><time>04:47</time><p>18.4克</p></div>
+<div class="transcript-row"><time>04:49</time><p>18克</p></div>
+<div class="transcript-row"><time>04:51</time><p>每一杯都要冲吗</p></div>
+<div class="transcript-row"><time>04:53</time><p>每一杯都要冲</p></div>
+<div class="transcript-row"><time>04:54</time><p>这是布粉</p></div>
+<div class="transcript-row"><time>04:56</time><p>对</p></div>
+<div class="transcript-row"><time>04:57</time><p>这个是粉锤</p></div>
+<div class="transcript-row"><time>04:58</time><p>这是粉锤鸭粉</p></div>
+<div class="transcript-row"><time>04:59</time><p>鸭粉</p></div>
+<div class="transcript-row"><time>05:00</time><p>继续放水</p></div>
+<div class="transcript-row"><time>05:01</time><p>你们发现有个细节</p></div>
+<div class="transcript-row"><time>05:02</time><p>我每次做咖啡的时候都要放水</p></div>
+<div class="transcript-row"><time>05:03</time><p>给你们讲一下</p></div>
+<div class="transcript-row"><time>05:04</time><p>为什么样的咖啡机需要放水</p></div>
+<div class="transcript-row"><time>05:05</time><p>有的咖啡机是不需要放水的</p></div>
+<div class="transcript-row"><time>05:07</time><p>这台机器它的冲煮头叫做161冲煮头</p></div>
+<div class="transcript-row"><time>05:10</time><p>有了这个冲煮头</p></div>
+<div class="transcript-row"><time>05:11</time><p>我们冲萃取咖啡的水温会更加的稳定</p></div>
+<div class="transcript-row"><time>05:14</time><p>但是如果我长时间不去萃取的话</p></div>
+<div class="transcript-row"><time>05:16</time><p>这个头的温度会变高</p></div>
+<div class="transcript-row"><time>05:18</time><p>所以我要放一点水</p></div>
+<div class="transcript-row"><time>05:19</time><p>让这个头的温度降低</p></div>
+<div class="transcript-row"><time>05:20</time><p>所有的一式咖啡机</p></div>
+<div class="transcript-row"><time>05:22</time><p>大部分99%的情况下上粉</p></div>
+<div class="transcript-row"><time>05:24</time><p>看这两个耳朵里面</p></div>
+<div class="transcript-row"><time>05:25</time><p>都是45度角</p></div>
+<div class="transcript-row"><time>05:27</time><p>平着上去</p></div>
+<div class="transcript-row"><time>05:28</time><p>45度角</p></div>
+<div class="transcript-row"><time>05:29</time><p>都是45度角</p></div>
+<div class="transcript-row"><time>05:30</time><p>然后卡住</p></div>
+<div class="transcript-row"><time>05:31</time><p>卡住</p></div>
+<div class="transcript-row"><time>05:32</time><p>拧紧一点</p></div>
+<div class="transcript-row"><time>05:33</time><p>接下来我们开始萃咖啡了</p></div>
+<div class="transcript-row"><time>05:36</time><p>这次流速变快了</p></div>
+<div class="transcript-row"><time>05:37</time><p>对</p></div>
+<div class="transcript-row"><time>05:38</time><p>粉也变粗了</p></div>
+<div class="transcript-row"><time>05:39</time><p>对吧</p></div>
+<div class="transcript-row"><time>05:40</time><p>你看前十秒的油脂也变好了</p></div>
+<div class="transcript-row"><time>05:42</time><p>想要油脂</p></div>
+<div class="transcript-row"><time>05:43</time><p>尽量的去把咖啡粉磨粗</p></div>
+<div class="transcript-row"><time>05:45</time><p>调了几次</p></div>
+<div class="transcript-row"><time>05:46</time><p>调了两次</p></div>
+<div class="transcript-row"><time>05:47</time><p>第一次不算调了两次</p></div>
+<div class="transcript-row"><time>05:48</time><p>我们又找到了一个区间</p></div>
+<div class="transcript-row"><time>05:49</time><p>这个区间</p></div>
+<div class="transcript-row"><time>05:50</time><p>豆子配合这台磨豆机</p></div>
+<div class="transcript-row"><time>05:52</time><p>在这台机器上</p></div>
+<div class="transcript-row"><time>05:53</time><p>我们整个的磨豆的区间</p></div>
+<div class="transcript-row"><time>05:55</time><p>是在1.7到2.0之间</p></div>
+<div class="transcript-row"><time>05:57</time><p>现在22秒萃了41克</p></div>
+<div class="transcript-row"><time>06:00</time><p>是不是代表流速很快了</p></div>
+<div class="transcript-row"><time>06:02</time><p>这时候我们要把磨豆机再调细一丢丢</p></div>
+<div class="transcript-row"><time>06:05</time><p>大概我们调到1.9这个位置就可以了</p></div>
+<div class="transcript-row"><time>06:08</time><p>我们现在所做的所有的事情</p></div>
+<div class="transcript-row"><time>06:10</time><p>18克碎36个咖啡</p></div>
+<div class="transcript-row"><time>06:11</time><p>用30秒的时间记住</p></div>
+<div class="transcript-row"><time>06:12</time><p>不是为了这杯咖啡好喝</p></div>
+<div class="transcript-row"><time>06:13</time><p>我们是要找到一个刻度</p></div>
+<div class="transcript-row"><time>06:15</time><p>这个叫调磨</p></div>
+<div class="transcript-row"><time>06:18</time><p>这样</p></div>
+<div class="transcript-row"><time>06:23</time><p>所以做一时咖啡废不废粉</p></div>
+<div class="transcript-row"><time>06:25</time><p>这时候你能知道吗</p></div>
+<div class="transcript-row"><time>06:26</time><p>为什么一时咖啡店</p></div>
+<div class="transcript-row"><time>06:27</time><p>带在家里的一做一时咖啡的</p></div>
+<div class="transcript-row"><time>06:29</time><p>都是买那种一公斤的大包装的</p></div>
+<div class="transcript-row"><time>06:32</time><p>再调细一遍</p></div>
+<div class="transcript-row"><time>06:33</time><p>再来一次</p></div>
+<div class="transcript-row"><time>06:37</time><p>你们猜这次能不能成功</p></div>
+<div class="transcript-row"><time>06:39</time><p>这次能不能成功</p></div>
+<div class="transcript-row"><time>06:40</time><p>这次</p></div>
+<div class="transcript-row"><time>06:51</time><p>必须萃到30秒吗</p></div>
+<div class="transcript-row"><time>06:53</time><p>必须萃到30秒</p></div>
+<div class="transcript-row"><time>06:56</time><p>这把成了</p></div>
+<div class="transcript-row"><time>06:57</time><p>大概差了两秒</p></div>
+<div class="transcript-row"><time>06:58</time><p>28秒</p></div>
+<div class="transcript-row"><time>06:59</time><p>然后萃到41克咖啡盐</p></div>
+<div class="transcript-row"><time>07:01</time><p>其实调到这里</p></div>
+<div class="transcript-row"><time>07:02</time><p>我给你们说一下</p></div>
+<div class="transcript-row"><time>07:03</time><p>几乎已经成了</p></div>
+<div class="transcript-row"><time>07:04</time><p>我做下一次</p></div>
+<div class="transcript-row"><time>07:06</time><p>什么都不变的情况下</p></div>
+<div class="transcript-row"><time>07:07</time><p>同样的研磨度</p></div>
+<div class="transcript-row"><time>07:08</time><p>同样的萃取</p></div>
+<div class="transcript-row"><time>07:09</time><p>下一次参数会变</p></div>
+<div class="transcript-row"><time>07:11</time><p>所有的变量都在变</p></div>
+<div class="transcript-row"><time>07:13</time><p>豆子是拼配的豆子</p></div>
+<div class="transcript-row"><time>07:15</time><p>你能确定你磨那个18克的咖啡豆</p></div>
+<div class="transcript-row"><time>07:17</time><p>每一次都是磨了1比1比1的比例</p></div>
+<div class="transcript-row"><time>07:20</time><p>每一次都是磨了1比1比1的比例</p></div>
+<div class="transcript-row"><time>07:22</time><p>每一次都是磨了1比1比1的比例</p></div>
+<div class="transcript-row"><time>07:24</time><p>每一次都是磨了1比1比1的比例</p></div>
+<div class="transcript-row"><time>07:26</time><p>你能保证你每次压粉的力度是一样的吗</p></div>
+<div class="transcript-row"><time>07:29</time><p>都不能吧</p></div>
+<div class="transcript-row"><time>07:30</time><p>所以一式咖啡</p></div>
+<div class="transcript-row"><time>07:32</time><p>我要求大家做到30秒萃18克咖啡粉</p></div>
+<div class="transcript-row"><time>07:36</time><p>萃36克咖啡液</p></div>
+<div class="transcript-row"><time>07:37</time><p>这个叫做什么</p></div>
+<div class="transcript-row"><time>07:38</time><p>这个叫做理想值</p></div>
+<div class="transcript-row"><time>07:39</time><p>如果我们开门店的话</p></div>
+<div class="transcript-row"><time>07:41</time><p>我们萃一天</p></div>
+<div class="transcript-row"><time>07:42</time><p>可能有一到两把会成功</p></div>
+<div class="transcript-row"><time>07:44</time><p>但你下一把绝对不会成功</p></div>
+<div class="transcript-row"><time>07:46</time><p>那这个时候这杯咖啡就不能够喝了吗</p></div>
+<div class="transcript-row"><time>07:48</time><p>不能够做了吗</p></div>
+<div class="transcript-row"><time>07:49</time><p>并不是</p></div>
+<div class="transcript-row"><time>07:50</time><p>来说也给大家给你们一个区间</p></div>
+<div class="transcript-row"><time>07:52</time><p>我们在萃咖啡的时候</p></div>
+<div class="transcript-row"><time>07:53</time><p>萃咖啡的时候</p></div>
+<div class="transcript-row"><time>07:54</time><p>我们只需要萃到25秒到30秒的时间</p></div>
+<div class="transcript-row"><time>07:57</time><p>萃取18克的咖啡粉</p></div>
+<div class="transcript-row"><time>07:59</time><p>得到的咖啡液</p></div>
+<div class="transcript-row"><time>08:00</time><p>约30到36克就可以了</p></div>
+<div class="transcript-row"><time>08:02</time><p>就是克重也可以调整的</p></div>
+<div class="transcript-row"><time>08:04</time><p>大概是在18克到19克之间</p></div>
+<div class="transcript-row"><time>08:06</time><p>那这个样子我们调磨就算成功了</p></div>
+<div class="transcript-row"><time>08:08</time><p>在那个区间都可以</p></div>
+<div class="transcript-row"><time>08:10</time><p>对 在那个区间都可以</p></div>
+<div class="transcript-row"><time>08:11</time><p>那现在出现另外一个问题</p></div>
+<div class="transcript-row"><time>08:13</time><p>这杯咖啡它到底好不好喝</p></div>
+<div class="transcript-row"><time>08:15</time><p>这一层叫做咖啡的油脂对吧</p></div>
+<div class="transcript-row"><time>08:18</time><p>有什么味</p></div>
+<div class="transcript-row"><time>08:19</time><p>酸涩</p></div>
+<div class="transcript-row"><time>08:20</time><p>酸涩</p></div>
+<div class="transcript-row"><time>08:21</time><p>微微的苦</p></div>
+<div class="transcript-row"><time>08:22</time><p>这个苦是来的慢还是来的快</p></div>
+<div class="transcript-row"><time>08:24</time><p>来的很慢</p></div>
+<div class="transcript-row"><time>08:25</time><p>来的很慢</p></div>
+<div class="transcript-row"><time>08:26</time><p>所以我们在喝一杯浓缩的时候</p></div>
+<div class="transcript-row"><time>08:27</time><p>我们并不是喝它的风味</p></div>
+<div class="transcript-row"><time>08:29</time><p>我们喝的是酸苦平衡</p></div>
+<div class="transcript-row"><time>08:31</time><p>所以咖啡当中的油脂</p></div>
+<div class="transcript-row"><time>08:33</time><p>在意识当中是最不重要的</p></div>
+<div class="transcript-row"><time>08:35</time><p>油脂只是让我们视觉觉得好看而已</p></div>
+<div class="transcript-row"><time>08:37</time><p>你自己的追求是你自己的事情</p></div>
+<div class="transcript-row"><time>08:39</time><p>那接下来我们来喝这杯浓缩咖啡</p></div>
+<div class="transcript-row"><time>08:43</time><p>这杯浓缩咖啡就是</p></div>
+<div class="transcript-row"><time>08:44</time><p>酸甜苦比较平衡一点</p></div>
+<div class="transcript-row"><time>08:47</time><p>你可能感受不到咖啡的甜对吧</p></div>
+<div class="transcript-row"><time>08:49</time><p>喝到酸了没有</p></div>
+<div class="transcript-row"><time>08:50</time><p>喝到了</p></div>
+<div class="transcript-row"><time>08:51</time><p>喝到了没有</p></div>
+<div class="transcript-row"><time>08:52</time><p>也有</p></div>
+<div class="transcript-row"><time>08:53</time><p>好我来给你倒杯水</p></div>
+<div class="transcript-row"><time>08:54</time><p>让你感受一下咖啡的甜</p></div>
+<div class="transcript-row"><time>08:56</time><p>现在嘴巴里什么都没有了对吧</p></div>
+<div class="transcript-row"><time>08:58</time><p>来喝口水</p></div>
+<div class="transcript-row"><time>09:03</time><p>水是不是甜的</p></div>
+<div class="transcript-row"><time>09:05</time><p>有回甘</p></div>
+<div class="transcript-row"><time>09:06</time><p>有回甘</p></div>
+<div class="transcript-row"><time>09:07</time><p>这个水有加糖了吗</p></div>
+<div class="transcript-row"><time>09:08</time><p>没有</p></div>
+<div class="transcript-row"><time>09:09</time><p>那你为什么感觉到甜</p></div>
+<div class="transcript-row"><time>09:10</time><p>是因为你的舌头尝到了酸</p></div>
+<div class="transcript-row"><time>09:12</time><p>尝到了苦</p></div>
+<div class="transcript-row"><time>09:13</time><p>在酸跟苦中间</p></div>
+<div class="transcript-row"><time>09:14</time><p>你的舌头对于甜还没有那么强烈的感知</p></div>
+<div class="transcript-row"><time>09:17</time><p>当你把这个水喝完之后</p></div>
+<div class="transcript-row"><time>09:19</time><p>舌头里面的酸跟苦就瞬间下降了</p></div>
+<div class="transcript-row"><time>09:22</time><p>你的舌头会怎么样</p></div>
+<div class="transcript-row"><time>09:23</time><p>不以为你喝了一个甜的东西</p></div>
+<div class="transcript-row"><time>09:26</time><p>所以一杯浓缩想做到好喝</p></div>
+<div class="transcript-row"><time>09:28</time><p>实际上根本的原因</p></div>
+<div class="transcript-row"><time>09:30</time><p>在门店出品</p></div>
+<div class="transcript-row"><time>09:31</time><p>你要做到酸跟苦是有平衡的</p></div>
+<div class="transcript-row"><time>09:35</time><p>意思就没有甜是吧</p></div>
+<div class="transcript-row"><time>09:37</time><p>有甜</p></div>
+<div class="transcript-row"><time>09:38</time><p>但是这个甜你很难去感觉到</p></div>
+<div class="transcript-row"><time>09:40</time><p>但是有甜的豆子它会很贵</p></div>
+<div class="transcript-row"><time>09:42</time><p>那我们在意识是做生意的</p></div>
+<div class="transcript-row"><time>09:44</time><p>我们一杯成本是多少钱对吧</p></div>
+<div class="transcript-row"><time>09:45</time><p>你真的用上万块钱的咖啡都来做吗</p></div>
+<div class="transcript-row"><time>09:47</time><p>所以我们要做到一个酸跟苦的平衡</p></div>
+<div class="transcript-row"><time>09:50</time><p>而且要把酸跟苦的距离拉长</p></div>
+<div class="transcript-row"><time>09:52</time><p>这个时候这杯咖啡就可以了</p></div>
+<div class="transcript-row"><time>09:54</time><p>浓酸咖啡做完了</p></div>
+<div class="transcript-row"><time>09:55</time><p>那我给你讲一些细节</p></div>
+<div class="transcript-row"><time>09:56</time><p>现在我们门店出品的时候</p></div>
+<div class="transcript-row"><time>09:59</time><p>比如说每天出杯200杯或者300杯的时候</p></div>
+<div class="transcript-row"><time>10:01</time><p>400杯</p></div>
+<div class="transcript-row"><time>10:02</time><p>问你一个问题</p></div>
+<div class="transcript-row"><time>10:03</time><p>你会每一杯都用电子秤去称吗</p></div>
+<div class="transcript-row"><time>10:06</time><p>400</p></div>
+<div class="transcript-row"><time>10:07</time><p>你想想我教你们这么长时间了</p></div>
+<div class="transcript-row"><time>10:08</time><p>做了三杯咖啡</p></div>
+<div class="transcript-row"><time>10:09</time><p>每次都用称</p></div>
+<div class="transcript-row"><time>10:10</time><p>每一杯咖啡的时间来得及吗</p></div>
+<div class="transcript-row"><time>10:12</time><p>来不及那怎么办</p></div>
+<div class="transcript-row"><time>10:13</time><p>怎么办</p></div>
+<div class="transcript-row"><time>10:14</time><p>所以这个意识咖啡它有定量的</p></div>
+<div class="transcript-row"><time>10:16</time><p>那我家里没有</p></div>
+<div class="transcript-row"><time>10:17</time><p>家里你也按照我这种方法来做</p></div>
+<div class="transcript-row"><time>10:20</time><p>你家里一天喝三四百杯咖啡</p></div>
+<div class="transcript-row"><time>10:22</time><p>所以你只要需要用秤来就可以了</p></div>
+<div class="transcript-row"><time>10:24</time><p>但家里调一次墨这也太费了</p></div>
+<div class="transcript-row"><time>10:26</time><p>所以你要学</p></div>
+<div class="transcript-row"><time>10:27</time><p>我这不再教你吗</p></div>
+<div class="transcript-row"><time>10:29</time><p>这个就是已经基础的</p></div>
+<div class="transcript-row"><time>10:31</time><p>不能再基础的一个动手能力了</p></div>
+<div class="transcript-row"><time>10:33</time><p>会不会在这个区间这个豆子也不好喝</p></div>
+<div class="transcript-row"><time>10:35</time><p>会</p></div>
+<div class="transcript-row"><time>10:36</time><p>在这个区间不好喝肯定会</p></div>
+<div class="transcript-row"><time>10:38</time><p>但是与我这么多年的经验来说</p></div>
+<div class="transcript-row"><time>10:40</time><p>60%到70%豆子在这个区间</p></div>
+<div class="transcript-row"><time>10:42</time><p>它毕竟是好喝的</p></div>
+<div class="transcript-row"><time>10:43</time><p>在我这个区间当中不好喝的豆子</p></div>
+<div class="transcript-row"><time>10:45</time><p>放为两种</p></div>
+<div class="transcript-row"><time>10:46</time><p>一种是它的拼配做的贼差贼差</p></div>
+<div class="transcript-row"><time>10:49</time><p>一种是这个豆子贼贵贼贵</p></div>
+<div class="transcript-row"><time>10:51</time><p>只有两个极限制</p></div>
+<div class="transcript-row"><time>10:52</time><p>对</p></div>
+<div class="transcript-row"><time>10:53</time><p>我们考虑到我们开店</p></div>
+<div class="transcript-row"><time>10:54</time><p>我们日常能够买到的豆子</p></div>
+<div class="transcript-row"><time>10:56</time><p>这个数值已经完全够用了</p></div>
+<div class="transcript-row"><time>10:57</time><p>来总结一下</p></div>
+<div class="transcript-row"><time>10:58</time><p>做意识咖啡非常的难</p></div>
+<div class="transcript-row"><time>11:00</time><p>每天早上都要调墨</p></div>
+<div class="transcript-row"><time>11:02</time><p>有一个基础是什么的</p></div>
+<div class="transcript-row"><time>11:03</time><p>两种条件要调</p></div>
+<div class="transcript-row"><time>11:04</time><p>一是根据天气</p></div>
+<div class="transcript-row"><time>11:06</time><p>二是你豆子的换豆子</p></div>
+<div class="transcript-row"><time>11:08</time><p>换豆子</p></div>
+<div class="transcript-row"><time>11:09</time><p>如果现在都是这种晴天</p></div>
+<div class="transcript-row"><time>11:10</time><p>每天都是晴天</p></div>
+<div class="transcript-row"><time>11:11</time><p>温度压强湿度</p></div>
+<div class="transcript-row"><time>11:12</time><p>就几乎都是一样的</p></div>
+<div class="transcript-row"><time>11:13</time><p>其实就不需要调</p></div>
+<div class="transcript-row"><time>11:14</time><p>就不是每天就要调</p></div>
+<div class="transcript-row"><time>11:15</time><p>可能一个礼拜</p></div>
+<div class="transcript-row"><time>11:16</time><p>可能四到五天调一次</p></div>
+<div class="transcript-row"><time>11:17</time><p>今天下雨明天刮风</p></div>
+<div class="transcript-row"><time>11:19</time><p>要不要调</p></div>
+<div class="transcript-row"><time>11:20</time><p>如果刮风下雨的话</p></div>
+<div class="transcript-row"><time>11:21</time><p>应该是</p></div>
+<div class="transcript-row"><time>11:22</time><p>肯定要调的</p></div>
+<div class="transcript-row"><time>11:23</time><p>湿度影响其实算小的</p></div>
+<div class="transcript-row"><time>11:25</time><p>它是不是我们提供了9%的压力</p></div>
+<div class="transcript-row"><time>11:27</time><p>刮风下雨</p></div>
+<div class="transcript-row"><time>11:28</time><p>大气压强是变大了还是变小了</p></div>
+<div class="transcript-row"><time>11:29</time><p>大气压强变小了</p></div>
+<div class="transcript-row"><time>11:31</time><p>喘不上来气了</p></div>
+<div class="transcript-row"><time>11:32</time><p>你别管它变大变小</p></div>
+<div class="transcript-row"><time>11:33</time><p>大气压强是不是改变了</p></div>
+<div class="transcript-row"><time>11:34</time><p>改变了</p></div>
+<div class="transcript-row"><time>11:35</time><p>缝头的旋转速度有改变吗</p></div>
+<div class="transcript-row"><time>11:37</time><p>没有</p></div>
+<div class="transcript-row"><time>11:38</time><p>机器在提供的压力</p></div>
+<div class="transcript-row"><time>11:39</time><p>9%的压力</p></div>
+<div class="transcript-row"><time>11:40</time><p>内部的压力跟外部的压力</p></div>
+<div class="transcript-row"><time>11:41</time><p>如果不一样的话</p></div>
+<div class="transcript-row"><time>11:42</time><p>你萃取会不会改变</p></div>
+<div class="transcript-row"><time>11:43</time><p>会</p></div>
+<div class="transcript-row"><time>11:44</time><p>肯定会改变的</p></div>
+<div class="transcript-row"><time>11:45</time><p>咖啡师做意识咖啡</p></div>
+<div class="transcript-row"><time>11:47</time><p>为什么是最难的</p></div>
+<div class="transcript-row"><time>11:48</time><p>不是这杯咖啡师</p></div>
+<div class="transcript-row"><time>11:49</time><p>把这杯咖啡做得有多好喝</p></div>
+<div class="transcript-row"><time>11:51</time><p>是我给你任何一个豆子</p></div>
+<div class="transcript-row"><time>11:53</time><p>任何一个磨豆机</p></div>
+<div class="transcript-row"><time>11:54</time><p>任何一台咖啡机</p></div>
+<div class="transcript-row"><time>11:55</time><p>你要承担一个连接的作用</p></div>
+<div class="transcript-row"><time>11:58</time><p>豆子磨耗粉</p></div>
+<div class="transcript-row"><time>11:59</time><p>在这边萃取</p></div>
+<div class="transcript-row"><time>12:00</time><p>中间都是你来完成</p></div>
+<div class="transcript-row"><time>12:01</time><p>今天给你们讲的就是</p></div>
+<div class="transcript-row"><time>12:03</time><p>底层的不能再底层的一个逻辑</p></div>
+<div class="transcript-row"><time>12:05</time><p>接下来的课程内容</p></div>
+<div class="transcript-row"><time>12:06</time><p>一是感官训练</p></div>
+<div class="transcript-row"><time>12:08</time><p>二是你的操作一致性训练</p></div>
+<div class="transcript-row"><time>12:10</time><p>然后在感官跟操作一致性训练中</p></div>
+<div class="transcript-row"><time>12:12</time><p>表示你原理</p></div>
+<div class="transcript-row"><time>12:13</time><p>今天教的这些就是皮毛</p></div>
+<div class="transcript-row"><time>12:15</time><p>做个一年咖啡</p></div>
+<div class="transcript-row"><time>12:16</time><p>两年咖啡的人全部都懂</p></div>
+<div class="transcript-row"><time>12:18</time><p>都会的</p></div>
+</div></div></details></section></main><script>(function(){var d=document.querySelector(".transcript-collapsible");if(!d)return;function open(){d.setAttribute("open","")}document.querySelectorAll('a[href="#transcript"]').forEach(function(a){a.addEventListener("click",open)});if(location.hash==="#transcript")open()})();</script></body></html>
