@@ -417,6 +417,12 @@
       color: #fcd34d;
       box-shadow: 0 0 0 1px rgba(251,191,36,0.15);
     }
+    .mode-tab.active[data-mode="topics"] {
+      background: rgba(167,139,250,0.16);
+      border-color: rgba(167,139,250,0.55);
+      color: #c4b5fd;
+      box-shadow: 0 0 0 1px rgba(167,139,250,0.15);
+    }
     .mode-tab .tab-count {
       opacity: 0.7;
       font-weight: 500;
@@ -1014,8 +1020,11 @@
     }
     .result-card .card-actions { margin-top: 0; }
 
-    /* ====== 空状态 ====== */
-    .empty-state {
+    .topics-section .empty-state {
+      padding: 48px 20px;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
       text-align: center;
       padding: 80px 20px;
     }
@@ -1107,6 +1116,9 @@
     <button type="button" class="mode-tab active" data-mode="videos" id="tabVideos">
       视频总结<span class="tab-count" id="tabCountVideos"></span>
     </button>
+    <button type="button" class="mode-tab" data-mode="topics" id="tabTopics">
+      专题<span class="tab-count" id="tabCountTopics"></span>
+    </button>
     <button type="button" class="mode-tab" data-mode="personal" id="tabPersonal">
       个人专栏<span class="tab-count" id="tabCountPersonal"></span>
     </button>
@@ -1115,7 +1127,7 @@
   <!-- 搜索 -->
   <div class="search-bar" id="searchBar">
     <span class="search-icon">&#x1F50D;</span>
-    <input class="search-input" id="searchInput" type="text" placeholder="搜索视频总结或专题（支持中文 / English）...">
+    <input class="search-input" id="searchInput" type="text" placeholder="搜索视频总结（支持中文 / English）...">
     <div class="search-hint">空格分隔多个词（AND）· <code>-词</code> 排除 · <code>词1|词2</code> 或 <code>OR</code> 任一匹配 · <code>"短语"</code> 精确匹配 · 英文支持词形前缀（<code>rotate</code> 命中 rotating）</div>
   </div>
 
@@ -1132,15 +1144,16 @@
     </div>
   </div>
 
-  <!-- 专题 -->
+  <!-- 专题（独立 Tab，不与视频列表混排） -->
   <div class="topics-section" id="topicsSection" style="display:none;">
     <div class="section-heading">
       <div>
         <h2>专题</h2>
-        <p>系列课程的可滚动深度阅读页面</p>
+        <p>类目导读与系列课程 · 与视频列表分开浏览</p>
       </div>
     </div>
     <div id="topicsContainer"></div>
+    <div class="empty-state" id="topicsEmpty" style="display:none;">没有匹配的专题</div>
   </div>
 
   <!-- 播客标题 -->
@@ -1203,12 +1216,24 @@
       let toolLabels = {};
       let dateMap = {};
       let calYear, calMonth;
-      let viewMode = (location.hash === '#personal') ? 'personal' : 'videos';
+      let viewMode = modeFromHash();
 
       let activeCategory = null;
       let activeFacet = null; // { type: 'creator'|'tool', id: string }
 
       const $ = id => document.getElementById(id);
+
+      function modeFromHash() {
+        if (location.hash === '#personal') return 'personal';
+        if (location.hash === '#topics') return 'topics';
+        return 'videos';
+      }
+
+      function hashForMode(mode) {
+        if (mode === 'personal') return '#personal';
+        if (mode === 'topics') return '#topics';
+        return '';
+      }
 
       function isPersonalItem(item) {
         if (!item) return false;
@@ -1358,11 +1383,8 @@
         document.querySelectorAll('.mode-tab').forEach(function(btn) {
           btn.addEventListener('click', function() {
             viewMode = btn.getAttribute('data-mode') || 'videos';
-            if (viewMode === 'personal') {
-              history.replaceState(null, '', '#personal');
-            } else {
-              history.replaceState(null, '', location.pathname + location.search);
-            }
+            const hash = hashForMode(viewMode);
+            history.replaceState(null, '', hash || (location.pathname + location.search));
             $('searchInput').value = '';
             activeCategory = null;
             activeFacet = null;
@@ -1371,7 +1393,7 @@
           });
         });
         window.addEventListener('hashchange', function() {
-          const next = (location.hash === '#personal') ? 'personal' : 'videos';
+          const next = modeFromHash();
           if (next === viewMode) return;
           viewMode = next;
           $('searchInput').value = '';
@@ -1390,9 +1412,15 @@
         const personals = personalItems();
         $('tabCountVideos').textContent = String(videos.filter(function(i) { return !i.error; }).length);
         $('tabCountPersonal').textContent = String(personals.length);
-        $('searchInput').placeholder = viewMode === 'personal'
-          ? '搜索个人专栏标题 / 摘要 / 标签…'
-          : '搜索视频总结或专题（支持中文 / English）...';
+        const topicsCountEl = $('tabCountTopics');
+        if (topicsCountEl) topicsCountEl.textContent = String(allTopics.length);
+        if (viewMode === 'personal') {
+          $('searchInput').placeholder = '搜索个人专栏标题 / 摘要 / 标签…';
+        } else if (viewMode === 'topics') {
+          $('searchInput').placeholder = '搜索专题标题 / 摘要 / 章节…';
+        } else {
+          $('searchInput').placeholder = '搜索视频总结（支持中文 / English）...';
+        }
       }
 
       function buildDateMap() {
@@ -1586,6 +1614,14 @@
         });
       }
 
+      function hideFacetBar() {
+        const fb = $('facetBar');
+        if (fb) {
+          fb.classList.remove('visible');
+          fb.innerHTML = '';
+        }
+      }
+
       function render() {
         const videos = videoItems();
         const personals = personalItems();
@@ -1593,36 +1629,60 @@
         const hasPersonals = personals.length > 0;
         const hasTopics = allTopics.length > 0;
         const isPersonal = viewMode === 'personal';
+        const isTopics = viewMode === 'topics';
 
         syncModeTabs();
 
         $('personalHub').style.display = isPersonal ? 'block' : 'none';
-        $('searchBar').style.display = (isPersonal ? hasPersonals : (hasVideos || hasTopics)) ? 'block' : 'none';
-        $('calendarWrapper').style.display = (!isPersonal && hasVideos) ? 'block' : 'none';
-        $('categoryBar').style.display = (!isPersonal && hasVideos) ? 'flex' : 'none';
-        if (isPersonal || !hasVideos) {
-          const fb = $('facetBar');
-          if (fb) {
-            fb.classList.remove('visible');
-            fb.innerHTML = '';
-          }
-        }
-        $('topicsSection').style.display = (!isPersonal && hasTopics) ? 'block' : 'none';
-        $('podcastHeading').style.display = (!isPersonal && hasVideos) ? 'block' : 'none';
-        $('mainContainer').style.display = isPersonal ? 'none' : '';
+        $('topicsSection').style.display = isTopics ? 'block' : 'none';
+        $('searchResults').style.display = 'none';
 
         if (isPersonal) {
+          $('searchBar').style.display = hasPersonals ? 'block' : 'none';
+          $('calendarWrapper').style.display = 'none';
+          $('categoryBar').style.display = 'none';
+          hideFacetBar();
+          $('podcastHeading').style.display = 'none';
+          $('mainContainer').style.display = 'none';
           $('emptyState').style.display = 'none';
           $('timeline').style.display = 'none';
           $('searchEmpty').style.display = 'none';
-          $('searchResults').style.display = 'none';
+          const te = $('topicsEmpty');
+          if (te) te.style.display = 'none';
           updateStatsPersonal(personals);
           renderPersonalHub($('searchInput').value);
           return;
         }
 
-        const hasData = hasVideos || hasTopics;
-        if (!hasData) {
+        if (isTopics) {
+          $('searchBar').style.display = hasTopics ? 'block' : 'none';
+          $('calendarWrapper').style.display = 'none';
+          $('categoryBar').style.display = 'none';
+          hideFacetBar();
+          $('podcastHeading').style.display = 'none';
+          $('mainContainer').style.display = 'none';
+          $('emptyState').style.display = hasTopics ? 'none' : '';
+          $('timeline').style.display = 'none';
+          $('searchEmpty').style.display = 'none';
+          updateStatsTopics();
+          const q = $('searchInput').value.trim().toLowerCase();
+          const shown = buildTopics(q);
+          const te = $('topicsEmpty');
+          if (te) te.style.display = (hasTopics && shown === 0) ? '' : 'none';
+          return;
+        }
+
+        // 视频总结 Tab：不再混入专题区
+        const te = $('topicsEmpty');
+        if (te) te.style.display = 'none';
+        $('searchBar').style.display = hasVideos ? 'block' : 'none';
+        $('calendarWrapper').style.display = hasVideos ? 'block' : 'none';
+        $('categoryBar').style.display = hasVideos ? 'flex' : 'none';
+        if (!hasVideos) hideFacetBar();
+        $('podcastHeading').style.display = hasVideos ? 'block' : 'none';
+        $('mainContainer').style.display = '';
+
+        if (!hasVideos) {
           $('emptyState').style.display = '';
           $('timeline').style.display = 'none';
           $('searchEmpty').style.display = 'none';
@@ -1636,12 +1696,7 @@
 
         if (query) {
           $('categoryBar').style.display = 'none';
-          const fb = $('facetBar');
-          if (fb) {
-            fb.classList.remove('visible');
-            fb.innerHTML = '';
-          }
-          $('topicsSection').style.display = 'none';
+          hideFacetBar();
           $('podcastHeading').style.display = 'none';
           buildSearchResults(query);
           return;
@@ -1651,15 +1706,8 @@
 
         buildCategoryBar();
         buildFacetBar();
-        buildTopics(query);
 
-        if (hasVideos) {
-          renderPodcasts(query);
-        } else {
-          $('timeline').style.display = 'none';
-          $('searchEmpty').style.display = 'none';
-          updateStats(0, 0);
-        }
+        renderPodcasts(query);
       }
 
       function buildSearchResults(query) {
@@ -1960,20 +2008,7 @@
           series.appendChild(chapters);
           container.appendChild(series);
         });
-      }
-
-      function topicMatchesQuery(query) {
-        return allTopics.some(function(topic) {
-          const haystack = [
-            topic.title,
-            topic.subtitle,
-            topic.summary,
-            (topic.tags || []).join(' ')
-          ].concat((topic.items || []).map(function(item) {
-            return [item.title, item.summary].join(' ');
-          })).join(' ').toLowerCase();
-          return haystack.indexOf(query) !== -1;
-        });
+        return filteredTopics.length;
       }
 
       function renderPodcasts(query) {
@@ -2002,7 +2037,7 @@
           return items.length > 0;
         });
 
-        if ((query || activeCategory || activeFacet) && visibleCount === 0 && !topicMatchesQuery(query)) {
+        if ((query || activeCategory || activeFacet) && visibleCount === 0) {
           $('timeline').style.display = 'none';
           $('searchEmpty').style.display = '';
         } else {
@@ -2186,7 +2221,7 @@
         $('statCountLabel').textContent = '专栏篇数';
         $('statDurationLabel').textContent = '双轨产物';
         $('statDaysLabel').textContent = '最近更新日期';
-        $('statTopicsLabel').textContent = '专题（视频区）';
+        $('statTopicsLabel').textContent = '专题总数';
         $('totalCount').textContent = String(items.length);
         var dual = 0;
         items.forEach(function(item) {
@@ -2196,6 +2231,23 @@
         $('totalDuration').textContent = String(dual);
         var dates = items.map(function(i) { return i.date || ''; }).filter(Boolean).sort();
         $('totalDays').textContent = dates.length ? dates[dates.length - 1].slice(5) : '—';
+        $('totalTopics').textContent = String(allTopics.length);
+      }
+
+      function updateStatsTopics() {
+        $('statCountLabel').textContent = '专题数';
+        $('statDurationLabel').textContent = '关联篇目';
+        $('statDaysLabel').textContent = '类目导读';
+        $('statTopicsLabel').textContent = '专题';
+        $('totalCount').textContent = String(allTopics.length);
+        var itemCount = 0;
+        var catGuides = 0;
+        allTopics.forEach(function(t) {
+          itemCount += (t.items || []).filter(function(it) { return it.order !== 0; }).length;
+          if (t.cover) catGuides++;
+        });
+        $('totalDuration').textContent = String(itemCount);
+        $('totalDays').textContent = String(catGuides);
         $('totalTopics').textContent = String(allTopics.length);
       }
 
