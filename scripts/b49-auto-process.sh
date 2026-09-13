@@ -1,7 +1,7 @@
 #!/bin/bash
 # b49 自动流水线：轮询检测新下载的 .source.mp4 -> 抽音频 -> Whisper 转录
 # 与 b49-download.sh 并行运行，下载完成一个即处理一个。
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 
 KEYS=(c01 c02 c03 c04 c05 c06 c07 c08 c09 c10 c11 c12 c13 c14 c15 c16 c17 c18 c19 c20 c21 c22 c23 c24)
 

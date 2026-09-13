@@ -1,6 +1,6 @@
 #!/bin/bash
 # b44 提取关键截图：slug -> 视频键|时间点列表
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 FF=/opt/homebrew/bin/ffmpeg
 SLUGS=(no-many-clothes wulingshan-aranya easy-pose-simple urban-village-answer one-house-vs-zijian)
 VALS=(

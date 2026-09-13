@@ -1,4 +1,4 @@
-# bilibili-workshop
+# video-notes
 
 B 站 / 小红书视频 → Whisper 完整转录 → HTML 图文实录 + SVG 理性分析 → GitHub Pages。
 
@@ -10,7 +10,7 @@ Webhook 收到链接后先自动识别平台，再按同一套双轨流程生成
 ## 结构
 
 ```
-bilibili-workshop/
+video-notes/
 ├── detect-platform.mjs   # 自动识别 B 站 / 小红书
 ├── svg-auto-height.mjs   # SVG 自动测高与 XML 修复
 ├── docs/

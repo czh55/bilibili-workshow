@@ -1,6 +1,6 @@
 #!/bin/bash
 # b57 Whisper：短视频并行，长视频串行
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 SHORT=(b57a b57b b57c b57d b57e)
 LONG=(b57i b57g b57h b57f)  # 约 9→12→13→19 分钟，由短到长

@@ -17,7 +17,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path("/Users/chenzhiheng/Projects/bilibili-workshop")
+ROOT = Path("/Users/chenzhiheng/Projects/video-notes")
 FF = "/opt/homebrew/bin/ffmpeg"
 
 

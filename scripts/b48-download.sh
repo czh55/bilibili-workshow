@@ -1,7 +1,7 @@
 #!/bin/bash
 # b48 下载：12 个小红书视频串行下载（xhs-fetch.py 内置 60s 限流），
 # --no-audio 下载视频，结束后统一抽音频（避免后台 ffmpeg 中断）。
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 FFMPEG=/opt/homebrew/bin/ffmpeg
 KEYS=(v01 v02 v03 v04 v05 v06 v07 v08 v09 v10 v11 v12)

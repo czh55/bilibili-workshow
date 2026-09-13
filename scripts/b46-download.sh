@@ -1,6 +1,6 @@
 #!/bin/bash
 # b46 下载：14 篇小红书，--no-audio 下载视频，结束后统一抽音频（后台运行 ffmpeg 易中断，故手动抽）
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 FFMPEG=/opt/homebrew/bin/ffmpeg
 KEYS=(f01 f02 f03 f04 f05 f06 f07 f08 f09 f10 f11 f12 f13 f14)

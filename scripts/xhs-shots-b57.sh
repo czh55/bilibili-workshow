@@ -1,6 +1,6 @@
 #!/bin/bash
 # b57 抽帧：按时长均匀取 5 张（长视频 8 张）
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 # key slug times(seconds space-separated)
 declare -a ROWS=(
   "b57a|host-pop-professional-feel|20 55 95 140 190"

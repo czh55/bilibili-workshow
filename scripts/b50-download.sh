@@ -1,7 +1,7 @@
 #!/bin/bash
 # b50 下载：14 个小红书视频串行下载（xhs-fetch.py 内置 60s 限流），
 # 下载含抽音频，一次性产出 .source.mp4 + .m4a + .meta.json
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 [ -x "$PY" ] || PY=python3
 KEYS=(d01 d02 d03 d04 d05 d06 d07 d08 d09 d10 d11 d12 d13 d14)

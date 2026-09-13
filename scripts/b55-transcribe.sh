@@ -1,6 +1,6 @@
 #!/bin/bash
 # b55 短优先转录：k01–k05
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 FFMPEG=$(command -v ffmpeg)
 [ -z "$FFMPEG" ] && FFMPEG=/opt/homebrew/bin/ffmpeg
 LOCKDIR=_work/b55-logs/whisper-locks

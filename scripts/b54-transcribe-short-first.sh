@@ -1,6 +1,6 @@
 #!/bin/bash
 # b54 短优先转录：j01–j46，有 m4a 即 Whisper medium 中文
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 FFMPEG=$(command -v ffmpeg)
 [ -z "$FFMPEG" ] && FFMPEG=/opt/homebrew/bin/ffmpeg
 LOCKDIR=_work/b54-logs/whisper-locks

@@ -1,7 +1,7 @@
 #!/bin/bash
 # b52 自动流水线：轮询 h01–h106，有 m4a 即 Whisper medium 中文转录
 # 与 b52-download.sh 并行运行
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 
 KEYS=()
 for n in $(seq 1 106); do

@@ -5,7 +5,7 @@ from __future__ import annotations
 import subprocess
 from pathlib import Path
 
-ROOT = Path("/Users/chenzhiheng/Projects/bilibili-workshop")
+ROOT = Path("/Users/chenzhiheng/Projects/video-notes")
 PREV = ROOT / "_work/b46-preview"
 FF = "/opt/homebrew/bin/ffmpeg"
 

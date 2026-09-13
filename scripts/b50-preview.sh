@@ -1,6 +1,6 @@
 #!/bin/bash
 # b50 预览抽帧：对每个视频每 N 秒抽一帧低分辨率，供图像审阅选图
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 FF=/opt/homebrew/bin/ffmpeg
 mkdir -p _work/b50-preview
 # key|间隔秒

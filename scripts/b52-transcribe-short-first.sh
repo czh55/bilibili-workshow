@@ -1,7 +1,7 @@
 #!/bin/bash
 # b52 并行转录：按音频时长升序处理，避免长视频阻塞短视频
 # 可与 b52-auto-process.sh / b52-download.sh 并存；已有 .json 则跳过
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 
 FFMPEG=$(command -v ffmpeg)
 [ -z "$FFMPEG" ] && FFMPEG=/opt/homebrew/bin/ffmpeg

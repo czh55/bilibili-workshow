@@ -1,7 +1,7 @@
 #!/bin/bash
 # b51 自动流水线：轮询检测新下载的 e*.source.mp4 -> 抽音频兜底 -> Whisper 转录
 # 与 b51-download.sh 并行运行，下载完成一个即处理一个。
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 
 KEYS=(e01 e02 e03 e04 e05 e06 e07 e08 e09 e10 e11 e12 e13 e14 e15 e16 e17 e18 e19 e20 e21 e22 e23)
 

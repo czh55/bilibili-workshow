@@ -1,6 +1,6 @@
 #!/bin/bash
 # 批量抽帧（纯 bash）：从 v0X.source.mp4 抽取候选帧到 _work/{k}/
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 mkdir -p _work
 KEYS=(v03 v04 v05 v06 v07 v08 v09 v10 v11 v12 v14 v15)
 TIMES=(

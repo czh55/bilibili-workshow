@@ -1,6 +1,6 @@
 #!/bin/bash
 # b56: 6 条小红书咖啡笔记下载（前缀 b56a–b56f，避免与旧 c01 冲突）
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 KEYS=(b56a b56b b56c b56d b56e b56f)
 URLS=(

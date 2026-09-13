@@ -9,7 +9,7 @@ import path from 'node:path';
 
 const intervalMs = 60_000;
 const stateFile = process.env.XHS_RATE_LIMIT_FILE ||
-  path.join(os.tmpdir(), 'bilibili-workshop-xhs-last-request');
+  path.join(os.tmpdir(), 'video-notes-xhs-last-request');
 const lockFile = `${stateFile}.lock`;
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));

@@ -3,8 +3,8 @@
 """从转录文本生成 guide-pose-model 完整版图文实录 HTML。"""
 import re, html
 
-TRANS = "/Users/chenzhiheng/Projects/bilibili-workshop/_work/gpm-transcript.txt"
-OUT = "/Users/chenzhiheng/Projects/bilibili-workshop/docs/guide-pose-model-图文实录.html"
+TRANS = "/Users/chenzhiheng/Projects/video-notes/_work/gpm-transcript.txt"
+OUT = "/Users/chenzhiheng/Projects/video-notes/docs/guide-pose-model-图文实录.html"
 
 CSS = """*{box-sizing:border-box}
 html{scroll-behavior:smooth}

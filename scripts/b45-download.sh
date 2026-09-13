@@ -1,6 +1,6 @@
 #!/bin/bash
 # b45 下载：--no-audio 下载视频，结束后手动抽音频（脚本内 ffmpeg 在后台易中断）
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 FFMPEG=/opt/homebrew/bin/ffmpeg
 KEYS=(e01 e02 e03 e04 e05 e06 e07 e08 e09)

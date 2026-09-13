@@ -1,7 +1,7 @@
 #!/bin/bash
 # 批量 Whisper 转录：短视频 3 路并行，长视频随后串行
 # 用法: bash scripts/xhs-transcribe.sh
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 SHORT=(v03 v04 v05 v06 v07 v08 v09 v10 v11 v12 v14 v15)
 LONG=(v01 v02 v13)

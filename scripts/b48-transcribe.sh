@@ -1,6 +1,6 @@
 #!/bin/bash
 # b48 转录：串行跑 11 个视频（v09 已存在跳过）
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 KEYS=(v01 v02 v03 v04 v05 v06 v07 v08 v10 v11 v12)
 for k in "${KEYS[@]}"; do
   if [ -f "$k.json" ]; then

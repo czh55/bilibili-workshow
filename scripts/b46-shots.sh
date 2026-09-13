@@ -1,6 +1,6 @@
 #!/bin/bash
 # b46 批量抽高清截图：slug|视频键|时间点列表
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 FF=/opt/homebrew/bin/ffmpeg
 S=(
   "latte-3-moves|f01|10 40 85 130 170 240 300 370"

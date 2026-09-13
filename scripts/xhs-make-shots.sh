@@ -1,6 +1,6 @@
 #!/bin/bash
 # 批量创建正式截图 docs/assets/{slug}/shot-XX.jpg（纯 bash）
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 KEYS=(v04 v05 v06 v07 v08 v09 v10 v11 v12 v14 v15)
 SLUGS=(lingdong-move-tutorial yaqi-lighting-trick outdoor-light-control light-distance-guide restaurant-toplight-fix home-lighting-gap sofa-portrait petite-longleg-poses summer-skirt-slim photo-course-14 beach-pose-machine)
 TIMES=(

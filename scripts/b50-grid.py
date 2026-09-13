@@ -5,7 +5,7 @@ from __future__ import annotations
 from PIL import Image
 from pathlib import Path
 
-PREV = Path("/Users/chenzhiheng/Projects/bilibili-workshop/_work/b50-preview")
+PREV = Path("/Users/chenzhiheng/Projects/video-notes/_work/b50-preview")
 
 keys = [f"d{i:02d}" for i in range(1, 15)]
 for k in keys:

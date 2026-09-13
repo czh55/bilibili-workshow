@@ -5,7 +5,7 @@
 import json, re
 from pathlib import Path
 
-ROOT = Path("/Users/chenzhiheng/Projects/bilibili-workshop")
+ROOT = Path("/Users/chenzhiheng/Projects/video-notes")
 DATA = ROOT / "scripts" / "scene-data"
 
 # scene 元组: (id, scene_zh, scene_en, time, context, [(zh, en, note), ...])

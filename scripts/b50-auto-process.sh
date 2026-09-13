@@ -1,7 +1,7 @@
 #!/bin/bash
 # b50 自动流水线：轮询检测新下载的 d*.source.mp4 -> 抽音频 -> Whisper 转录
 # 与 b50-download.sh 并行运行，下载完成一个即处理一个。
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 
 KEYS=(d01 d02 d03 d04 d05 d06 d07 d08 d09 d10 d11 d12 d13 d14)
 

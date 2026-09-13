@@ -2,7 +2,7 @@
 # b51 下载：23 个小红书视频串行下载（xhs-fetch.py 内置 60s 限流），
 # 下载含抽音频，一次性产出 .source.mp4 + .m4a + .meta.json
 # 跳过用户消息中的无效占位符 ${shortLink}（服装人干货｜网感细节图）
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 [ -x "$PY" ] || PY=python3
 KEYS=(e01 e02 e03 e04 e05 e06 e07 e08 e09 e10 e11 e12 e13 e14 e15 e16 e17 e18 e19 e20 e21 e22 e23)

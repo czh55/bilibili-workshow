@@ -3,7 +3,7 @@
 import json, re, unicodedata
 from pathlib import Path
 
-ROOT = Path("/Users/chenzhiheng/Projects/bilibili-workshop")
+ROOT = Path("/Users/chenzhiheng/Projects/video-notes")
 DATA = ROOT / "scripts" / "scene-data"
 
 # 每篇的额外信息：duration、topic、practice、pitfalls、shifts、footer

@@ -1,7 +1,7 @@
 #!/bin/bash
 # b52 下载：5 个 B 站 + 101 个小红书（串行；xhs-fetch 内置 60s 限流）
 # 键位 h01–h106，映射见 scripts/b52-slug-map.json
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 [ -x "$PY" ] || PY=python3
 YTDLP=$(command -v yt-dlp)

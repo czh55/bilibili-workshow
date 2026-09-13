@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-ROOT = Path("/Users/chenzhiheng/Projects/bilibili-workshop")
+ROOT = Path("/Users/chenzhiheng/Projects/video-notes")
 
 PLAN = {
     "la-la-land-colorist": {

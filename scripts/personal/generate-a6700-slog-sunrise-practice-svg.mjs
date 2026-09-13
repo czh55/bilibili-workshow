@@ -183,7 +183,7 @@ const body = `
     <h3>关键认知转变</h3>
     <p>以前：以为 Log 自动扛住动态范围，参数设一次就行。现在：Log 只负责把拍到的光比带进后期；现场仍要锁原生 ISO、保高光追光，并用分段与调色管理连续性。</p>
   </div>
-  <div class="footer">个人专栏 · 对话整理 · bilibili-workshop</div>
+  <div class="footer">个人专栏 · 对话整理 · video-notes</div>
 </div>
 `;
 

@@ -3,7 +3,7 @@
 import json, re
 from pathlib import Path
 
-ROOT = Path("/Users/chenzhiheng/Projects/bilibili-workshop")
+ROOT = Path("/Users/chenzhiheng/Projects/video-notes")
 DATA = ROOT / "scripts" / "scene-data"
 
 ARTICLES = {}

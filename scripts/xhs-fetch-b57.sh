@@ -1,6 +1,6 @@
 #!/bin/bash
 # b57: 9 条新小红书（主持表达 + 咖啡）；跳过已入库的 41kZeQUP6oQ / 32Grn8RIzTy
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 KEYS=(b57a b57b b57c b57d b57e b57f b57g b57h b57i)
 URLS=(

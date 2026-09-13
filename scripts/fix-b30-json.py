@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-DATA = Path("/Users/chenzhiheng/Projects/bilibili-workshop/scripts/scene-data")
+DATA = Path("/Users/chenzhiheng/Projects/video-notes/scripts/scene-data")
 
 ENRICH = {
 "paobu-songkuan-tips": {

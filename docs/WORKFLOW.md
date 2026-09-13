@@ -43,7 +43,7 @@ HTML 不是 SVG 的加长版，SVG 也不是 HTML 的缩略图。二者共享同
 - 一个视频的元数据和下载必须合并为一次下载调用，禁止先探测、再分别请求音频和视频。不得使用 `HEAD`、额外探测或并发请求。默认使用新方式 `python3 scripts/xhs-fetch.py`（脚本内部已执行限流、短链展开、页面解析并产出 meta.json）；若新方式失效，可退回备选方式：执行 `node xhs-rate-limit.mjs` 后单次 `yt-dlp -f "best[height<=1080]/best"` 下载混合文件。
 - 出现 403、412、429、网络错误或下载失败时，不得立即重试；每次重试同样等待至少 60 秒，最多 3 次。达到上限后记录失败并停止。
 - 修复既有小红书文章时，优先且默认只使用仓库中已有的 HTML、截图、SVG 和本地转录；**不得**为润色、补全、转简体或重建摘要重新访问小红书。只有本地源文件确实缺失、且用户明确要求重新抓取时，才可按上述限流规则单独排队。
-- **限流器锁文件死锁恢复（2026-08 b45 批次实战）**：`xhs-rate-limit.mjs` 用 `os.tmpdir()` 下的 `bilibili-workshop-xhs-last-request*` 状态/锁文件串行化请求。进程被中断（Ctrl-C、超时 kill、沙箱终止）会留下孤儿锁文件，导致后续请求被误判为“间隔不足”而无限等待。症状：脚本长时间停留在「等待 N 秒」不前进。恢复：先 `pkill -f xhs-fetch.py; pkill -f xhs-rate-limit`，再删除锁文件 `rm -f "$(node -e 'console.log(require("os").tmpdir())')"/bilibili-workshop-xhs-last-request*` 后重试。
+- **限流器锁文件死锁恢复（2026-08 b45 批次实战）**：`xhs-rate-limit.mjs` 用 `os.tmpdir()` 下的 `video-notes-xhs-last-request*` 状态/锁文件串行化请求。进程被中断（Ctrl-C、超时 kill、沙箱终止）会留下孤儿锁文件，导致后续请求被误判为“间隔不足”而无限等待。症状：脚本长时间停留在「等待 N 秒」不前进。恢复：先 `pkill -f xhs-fetch.py; pkill -f xhs-rate-limit`，再删除锁文件 `rm -f "$(node -e 'console.log(require("os").tmpdir())')"/video-notes-xhs-last-request*` 后重试。
 
 ### 执行环境网络权限（沙箱限制，2026-08 b49 批次实战）
 
@@ -142,7 +142,7 @@ node detect-platform.mjs "{url}"
 ## Step 1：获取元数据并下载音频、视频
 
 ```bash
-cd ~/Projects/bilibili-workshop
+cd ~/Projects/video-notes
 yt-dlp --print title --print duration_string --print id "{url}"
 ```
 

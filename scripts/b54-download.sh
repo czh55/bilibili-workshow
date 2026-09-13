@@ -1,7 +1,7 @@
 #!/bin/bash
 # b54：46 条小红书达芬奇调色视频串行下载（xhs-fetch 内置 60s 限流）
 # 注意：必须用独立 fd 读列表，避免 xhs-fetch 内部 ffmpeg 吞掉 while-read 的 stdin。
-cd /Users/chenzhiheng/Projects/bilibili-workshop
+cd /Users/chenzhiheng/Projects/video-notes
 PY=/opt/homebrew/Cellar/yt-dlp/2026.7.4/libexec/bin/python
 [ -x "$PY" ] || PY=python3
 
